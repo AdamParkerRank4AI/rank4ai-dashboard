@@ -1,0 +1,151 @@
+---
+import DashboardLayout from '../../layouts/DashboardLayout.astro';
+import SectionCard from '../../components/SectionCard.astro';
+import clients from '../../data/clients.json';
+import sections from '../../data/sections.json';
+
+export function getStaticPaths() {
+  return clients.map((c) => ({ params: { client: c.id } }));
+}
+
+const { client: clientId } = Astro.params;
+const client = clients.find((c) => c.id === clientId);
+
+if (!client) {
+  return Astro.redirect('/');
+}
+
+// Demo data — replace with real API calls later
+const sectionStatus: Record<string, any> = {
+  'overview': {
+    status: 'healthy',
+    statusText: 'All systems normal',
+    metric: '2 sites',
+    metricLabel: 'Active monitoring',
+  },
+  'seo-health': {
+    status: 'not-connected',
+    statusText: 'Connect LibreCrawl',
+    metric: '--',
+    metricLabel: 'Awaiting first crawl',
+  },
+  'site-tree': {
+    status: 'not-connected',
+    statusText: 'Connect crawler',
+    metric: '--',
+    metricLabel: 'Pages discovered',
+  },
+  'internal-links': {
+    status: 'not-connected',
+    statusText: 'Connect crawler',
+    metric: '--',
+    metricLabel: 'Internal links mapped',
+  },
+  'ai-citations': {
+    status: 'not-connected',
+    statusText: 'Connect Promptfoo',
+    metric: '--',
+    metricLabel: 'Citation rate',
+  },
+  'rank-tracking': {
+    status: 'not-connected',
+    statusText: 'Connect SerpBear',
+    metric: '--',
+    metricLabel: 'Keywords tracked',
+  },
+  'traffic': {
+    status: 'not-connected',
+    statusText: 'Connect Plausible / GA4',
+    metric: '--',
+    metricLabel: 'Monthly visitors',
+  },
+  'uptime': {
+    status: 'not-connected',
+    statusText: 'Connect UptimeFlare',
+    metric: '--',
+    metricLabel: 'Uptime percentage',
+  },
+  'content-gaps': {
+    status: 'not-connected',
+    statusText: 'Connect GSC',
+    metric: '--',
+    metricLabel: 'Opportunities found',
+  },
+  'crawl-status': {
+    status: 'not-connected',
+    statusText: 'No crawls yet',
+    metric: '--',
+    metricLabel: 'Last crawl',
+  },
+  'positive-signals': {
+    status: 'not-connected',
+    statusText: 'Connect data sources',
+    metric: '--',
+    metricLabel: 'Positive signals detected',
+  },
+};
+---
+
+<DashboardLayout title={client.name} currentClient={clientId} view="agency">
+  <div class="mb-6">
+    <div class="flex items-center justify-between">
+      <div>
+        <h1 class="text-2xl font-bold text-white">{client.name}</h1>
+        <p class="text-sm text-gray-400 mt-1">{client.domain}</p>
+      </div>
+      <div class="flex gap-2">
+        <a
+          href={`/agency/${clientId}/settings`}
+          class="px-3 py-1.5 rounded bg-gray-800 text-gray-300 hover:bg-gray-700 text-xs transition"
+        >
+          Client View Settings
+        </a>
+        <a
+          href={`/client/${clientId}`}
+          class="px-3 py-1.5 rounded bg-blue-600 text-white hover:bg-blue-500 text-xs transition"
+        >
+          Preview Client View
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Status bar -->
+  <div class="flex gap-3 mb-6 text-xs">
+    <div class="px-3 py-1.5 rounded-full bg-gray-800 text-gray-400">
+      {client.allSections.length} total sections
+    </div>
+    <div class="px-3 py-1.5 rounded-full bg-blue-900/50 text-blue-300">
+      {client.clientViewSections.length} visible to client
+    </div>
+    <div class="px-3 py-1.5 rounded-full bg-gray-800 text-gray-400">
+      {Object.values(sectionStatus).filter((s: any) => s.status === 'healthy').length} connected
+    </div>
+  </div>
+
+  <!-- Section cards -->
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+    {sections.map((section) => {
+      const data = sectionStatus[section.id] || {};
+      const isInClientView = client.clientViewSections.includes(section.id);
+      return (
+        <div class="relative">
+          {isInClientView && (
+            <span class="absolute -top-2 -right-2 z-10 px-2 py-0.5 rounded-full bg-blue-600 text-white text-[10px]">
+              Client visible
+            </span>
+          )}
+          <SectionCard
+            id={section.id}
+            label={section.label}
+            description={section.description}
+            status={data.status}
+            statusText={data.statusText}
+            metric={data.metric}
+            metricLabel={data.metricLabel}
+          />
+        </div>
+      );
+    })}
+  </div>
+</DashboardLayout>

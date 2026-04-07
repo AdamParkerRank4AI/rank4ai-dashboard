@@ -1,0 +1,110 @@
+---
+import DashboardLayout from '../../layouts/DashboardLayout.astro';
+import SectionCard from '../../components/SectionCard.astro';
+import clients from '../../data/clients.json';
+import allSections from '../../data/sections.json';
+
+export function getStaticPaths() {
+  return clients.map((c) => ({ params: { client: c.id } }));
+}
+
+const { client: clientId } = Astro.params;
+const client = clients.find((c) => c.id === clientId);
+
+if (!client) {
+  return Astro.redirect('/');
+}
+
+// Only show sections toggled ON for this client
+const visibleSections = allSections.filter((s) =>
+  client.clientViewSections.includes(s.id)
+);
+
+// Demo data — same as agency view, replace with real API calls later
+const sectionStatus: Record<string, any> = {
+  'seo-health': {
+    status: 'not-connected',
+    statusText: 'Pending setup',
+    metric: '--',
+    metricLabel: 'Awaiting first audit',
+  },
+  'ai-citations': {
+    status: 'not-connected',
+    statusText: 'Pending setup',
+    metric: '--',
+    metricLabel: 'Citation rate across AI models',
+  },
+  'traffic': {
+    status: 'not-connected',
+    statusText: 'Pending setup',
+    metric: '--',
+    metricLabel: 'Monthly visitors',
+  },
+  'uptime': {
+    status: 'not-connected',
+    statusText: 'Pending setup',
+    metric: '--',
+    metricLabel: 'Uptime percentage',
+  },
+  'rank-tracking': {
+    status: 'not-connected',
+    statusText: 'Pending setup',
+    metric: '--',
+    metricLabel: 'Keywords tracked',
+  },
+  'positive-signals': {
+    status: 'not-connected',
+    statusText: 'Pending setup',
+    metric: '--',
+    metricLabel: 'Positive signals',
+  },
+  'crawl-status': {
+    status: 'not-connected',
+    statusText: 'Pending setup',
+    metric: '--',
+    metricLabel: 'Last crawl',
+  },
+  'content-gaps': {
+    status: 'not-connected',
+    statusText: 'Pending setup',
+    metric: '--',
+    metricLabel: 'Opportunities',
+  },
+};
+---
+
+<DashboardLayout title={client.name} currentClient={clientId} view="client">
+  <div class="mb-6">
+    <h1 class="text-2xl font-bold text-white">{client.name}</h1>
+    <p class="text-sm text-gray-400 mt-1">Your SEO and AI search visibility dashboard</p>
+  </div>
+
+  {visibleSections.length === 0 ? (
+    <div class="text-center py-16">
+      <p class="text-gray-500">No sections have been enabled for this view yet.</p>
+      <p class="text-gray-600 text-sm mt-2">Contact your Rank4AI account manager to configure your dashboard.</p>
+    </div>
+  ) : (
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+      {visibleSections.map((section) => {
+        const data = sectionStatus[section.id] || {
+          status: 'not-connected',
+          statusText: 'Pending setup',
+          metric: '--',
+          metricLabel: '',
+        };
+        return (
+          <SectionCard
+            id={section.id}
+            label={section.label}
+            description={section.description}
+            status={data.status}
+            statusText={data.statusText}
+            metric={data.metric}
+            metricLabel={data.metricLabel}
+          />
+        );
+      })}
+    </div>
+  )}
+</DashboardLayout>

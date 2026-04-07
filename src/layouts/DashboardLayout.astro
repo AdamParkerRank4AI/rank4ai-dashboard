@@ -1,0 +1,94 @@
+---
+import '../styles/global.css';
+import clients from '../data/clients.json';
+
+interface Props {
+  title: string;
+  currentClient?: string;
+  view?: 'agency' | 'client';
+}
+
+const { title, currentClient, view = 'agency' } = Astro.props;
+const isAgency = view === 'agency';
+---
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>{title} — Rank4AI Dashboard</title>
+</head>
+<body class="bg-gray-950 text-gray-100 min-h-screen">
+  <!-- Top nav -->
+  <nav class="bg-gray-900 border-b border-gray-800 px-6 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-4">
+      <a href="/" class="text-lg font-bold text-white tracking-tight">Rank4AI</a>
+      <span class="text-gray-500">|</span>
+      <span class="text-sm text-gray-400">{isAgency ? 'Agency View' : 'Client View'}</span>
+    </div>
+    <div class="flex items-center gap-4">
+      {currentClient && (
+        <a
+          href={isAgency ? `/client/${currentClient}` : `/agency/${currentClient}`}
+          class="text-xs px-3 py-1.5 rounded bg-gray-800 text-gray-300 hover:bg-gray-700 transition"
+        >
+          Switch to {isAgency ? 'Client' : 'Agency'} View
+        </a>
+      )}
+    </div>
+  </nav>
+
+  <div class="flex">
+    <!-- Sidebar -->
+    <aside class="w-56 bg-gray-900 border-r border-gray-800 min-h-[calc(100vh-52px)] p-4">
+      <div class="mb-6">
+        <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Clients</p>
+        <ul class="space-y-1">
+          {clients.map((c) => (
+            <li>
+              <a
+                href={isAgency ? `/agency/${c.id}` : `/client/${c.id}`}
+                class={`block px-3 py-2 rounded text-sm transition ${
+                  currentClient === c.id
+                    ? 'bg-blue-600 text-white'
+                    : 'text-gray-300 hover:bg-gray-800'
+                }`}
+              >
+                {c.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {currentClient && isAgency && (
+        <div class="mt-4">
+          <a
+            href={`/agency/${currentClient}/settings`}
+            class="block px-3 py-2 rounded text-sm text-gray-400 hover:bg-gray-800 transition"
+          >
+            Client View Settings
+          </a>
+        </div>
+      )}
+
+      <div class="mt-6">
+        <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Quick Actions</p>
+        <ul class="space-y-1">
+          <li>
+            <a href="/add-client" class="block px-3 py-2 rounded text-sm text-green-400 hover:bg-gray-800 transition">
+              + Add Client
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="flex-1 p-6">
+      <slot />
+    </main>
+  </div>
+</body>
+</html>

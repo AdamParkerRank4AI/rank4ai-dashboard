@@ -1,0 +1,29 @@
+---
+interface Props {
+  id: string;
+  label: string;
+  description: string;
+  checked: boolean;
+  clientId: string;
+}
+
+const { id, label, description, checked, clientId } = Astro.props;
+---
+
+<label class="flex items-center justify-between p-4 rounded-lg bg-gray-800 border border-gray-700 cursor-pointer hover:bg-gray-750 transition group" data-toggle={id}>
+  <div>
+    <p class="text-sm text-white font-medium">{label}</p>
+    <p class="text-xs text-gray-400">{description}</p>
+  </div>
+  <div class="relative">
+    <input
+      type="checkbox"
+      checked={checked}
+      class="sr-only peer"
+      data-section-id={id}
+      data-client-id={clientId}
+    />
+    <div class="w-10 h-5 bg-gray-600 rounded-full peer-checked:bg-blue-600 transition"></div>
+    <div class="absolute top-0.5 left-0.5 w-4 h-4 bg-white rounded-full peer-checked:translate-x-5 transition"></div>
+  </div>
+</label>

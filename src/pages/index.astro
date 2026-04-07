@@ -1,0 +1,31 @@
+---
+import DashboardLayout from '../layouts/DashboardLayout.astro';
+import clients from '../data/clients.json';
+---
+
+<DashboardLayout title="Dashboard">
+  <div class="max-w-4xl">
+    <h1 class="text-2xl font-bold text-white mb-2">Rank4AI Dashboard</h1>
+    <p class="text-gray-400 mb-8">Select a client to view their SEO and AI search visibility data.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {clients.map((client) => (
+        <a
+          href={`/agency/${client.id}`}
+          class="block p-6 rounded-lg bg-gray-900 border border-gray-800 hover:border-blue-500/50 transition group"
+        >
+          <h2 class="text-lg font-semibold text-white group-hover:text-blue-400 transition">{client.name}</h2>
+          <p class="text-sm text-gray-400 mt-1">{client.domain}</p>
+          <div class="flex gap-4 mt-4 text-xs text-gray-500">
+            <span>{client.allSections.length} sections</span>
+            <span>{client.clientViewSections.length} visible to client</span>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <a href="/add-client" class="inline-block mt-6 px-4 py-2 rounded bg-green-600 hover:bg-green-500 text-white text-sm transition">
+      + Add Client
+    </a>
+  </div>
+</DashboardLayout>

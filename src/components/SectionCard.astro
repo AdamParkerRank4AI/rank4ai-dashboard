@@ -1,0 +1,65 @@
+---
+interface Props {
+  id: string;
+  label: string;
+  description: string;
+  status?: 'healthy' | 'warning' | 'error' | 'pending' | 'not-connected';
+  statusText?: string;
+  metric?: string;
+  metricLabel?: string;
+  lastUpdated?: string;
+}
+
+const {
+  id,
+  label,
+  description,
+  status = 'not-connected',
+  statusText = 'Not connected',
+  metric,
+  metricLabel,
+  lastUpdated,
+} = Astro.props;
+
+const statusColors = {
+  healthy: 'bg-green-500/10 border-green-500/30 text-green-400',
+  warning: 'bg-yellow-500/10 border-yellow-500/30 text-yellow-400',
+  error: 'bg-red-500/10 border-red-500/30 text-red-400',
+  pending: 'bg-blue-500/10 border-blue-500/30 text-blue-400',
+  'not-connected': 'bg-gray-500/10 border-gray-500/30 text-gray-500',
+};
+
+const dotColors = {
+  healthy: 'bg-green-400',
+  warning: 'bg-yellow-400',
+  error: 'bg-red-400',
+  pending: 'bg-blue-400',
+  'not-connected': 'bg-gray-600',
+};
+---
+
+<div class={`rounded-lg border p-5 ${statusColors[status]} transition hover:brightness-110`} data-section={id}>
+  <div class="flex items-start justify-between mb-3">
+    <div>
+      <h3 class="text-white font-semibold text-sm">{label}</h3>
+      <p class="text-xs text-gray-400 mt-0.5">{description}</p>
+    </div>
+    <div class="flex items-center gap-1.5">
+      <span class={`w-2 h-2 rounded-full ${dotColors[status]}`}></span>
+      <span class="text-xs">{statusText}</span>
+    </div>
+  </div>
+
+  {metric && (
+    <div class="mt-4">
+      <p class="text-2xl font-bold text-white">{metric}</p>
+      {metricLabel && <p class="text-xs text-gray-400 mt-0.5">{metricLabel}</p>}
+    </div>
+  )}
+
+  {lastUpdated && (
+    <p class="text-xs text-gray-600 mt-3">Last updated: {lastUpdated}</p>
+  )}
+
+  <slot />
+</div>
