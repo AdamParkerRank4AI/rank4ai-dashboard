@@ -8,6 +8,7 @@ interface Props {
   metric?: string;
   metricLabel?: string;
   lastUpdated?: string;
+  clientId?: string;
 }
 
 const {
@@ -19,6 +20,7 @@ const {
   metric,
   metricLabel,
   lastUpdated,
+  clientId,
 } = Astro.props;
 
 const statusColors = {
@@ -36,9 +38,17 @@ const dotColors = {
   pending: 'bg-blue-400',
   'not-connected': 'bg-gray-600',
 };
+
+const hasDetail = status !== 'not-connected' && clientId;
+const href = `/agency/${clientId}/${id}`;
+const Tag = hasDetail ? 'a' : 'div';
 ---
 
-<div class={`rounded-lg border p-5 ${statusColors[status]} transition hover:brightness-110`} data-section={id}>
+<Tag
+  href={hasDetail ? href : undefined}
+  class={`block rounded-lg border p-5 ${statusColors[status]} transition hover:brightness-125 ${hasDetail ? 'cursor-pointer' : ''}`}
+  data-section={id}
+>
   <div class="flex items-start justify-between mb-3">
     <div>
       <h3 class="text-white font-semibold text-sm">{label}</h3>
@@ -58,8 +68,11 @@ const dotColors = {
   )}
 
   {lastUpdated && (
-    <p class="text-xs text-gray-600 mt-3">Last updated: {lastUpdated}</p>
+    <div class="flex items-center justify-between mt-3">
+      <p class="text-xs text-gray-600">Last updated: {lastUpdated}</p>
+      {hasDetail && <span class="text-xs text-gray-500">View details →</span>}
+    </div>
   )}
 
   <slot />
-</div>
+</Tag>

@@ -1,0 +1,481 @@
+---
+import DashboardLayout from '../../../layouts/DashboardLayout.astro';
+import clients from '../../../data/clients.json';
+import sections from '../../../data/sections.json';
+import fs from 'node:fs';
+import path from 'node:path';
+
+export function getStaticPaths() {
+  const paths: any[] = [];
+  for (const c of clients) {
+    for (const s of sections) {
+      paths.push({ params: { client: c.id, section: s.id } });
+    }
+  }
+  return paths;
+}
+
+const { client: clientId, section: sectionId } = Astro.params;
+const client = clients.find((c) => c.id === clientId);
+const section = sections.find((s) => s.id === sectionId);
+
+if (!client || !section) {
+  return Astro.redirect('/');
+}
+
+function loadJson(filename: string) {
+  try {
+    const filePath = path.join(process.cwd(), 'src', 'data', 'live', filename);
+    if (fs.existsSync(filePath)) {
+      return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    }
+  } catch {}
+  return null;
+}
+
+const ga4All = loadJson('ga4.json');
+const gscAll = loadJson('gsc.json');
+const crawlData = loadJson(`crawl_${clientId}.json`);
+const uptimeAll = loadJson('uptime.json');
+const uptimeHistory = loadJson('uptime_history.json');
+const citationsAll = loadJson('ai_citations.json');
+
+const ga4 = ga4All?.[clientId];
+const gsc = gscAll?.[clientId];
+const uptime = uptimeAll?.[clientId];
+const citations = citationsAll?.[clientId];
+
+// Prepare chart data as JSON strings for client-side JS
+const dailyTraffic = JSON.stringify(ga4?.daily || []);
+const topPages = JSON.stringify(ga4?.top_pages || []);
+const sources = JSON.stringify(ga4?.sources || []);
+const countries = JSON.stringify(ga4?.countries || []);
+const topQueries = JSON.stringify(gsc?.top_queries || []);
+const gscPages = JSON.stringify(gsc?.top_pages || []);
+const contentGaps = JSON.stringify(gsc?.content_gaps || []);
+const crawlPages = JSON.stringify(crawlData?.pages || []);
+const crawlIssues = JSON.stringify(crawlData?.issues || []);
+const crawlLinks = JSON.stringify(crawlData?.links?.slice(0, 200) || []);
+const positiveSignals = JSON.stringify(crawlData?.positive_signals || []);
+const citationResults = JSON.stringify(citations?.results || []);
+const uptimeChecks = JSON.stringify(uptimeHistory?.[clientId] || []);
+---
+
+<DashboardLayout title={`${section.label} — ${client.name}`} currentClient={clientId} view="agency">
+  <div class="mb-6">
+    <a href={`/agency/${clientId}`} class="text-sm text-gray-400 hover:text-gray-300 transition">
+      &larr; Back to {client.name}
+    </a>
+  </div>
+
+  <h1 class="text-2xl font-bold text-white mb-1">{section.label}</h1>
+  <p class="text-sm text-gray-400 mb-6">{client.name} — {client.domain}</p>
+
+  <!-- TRAFFIC -->
+  {sectionId === 'traffic' && ga4 && (
+    <div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{ga4.overview.active_users.toLocaleString()}</div>
+          <div class="text-xs text-gray-500">Active Users</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{ga4.overview.sessions.toLocaleString()}</div>
+          <div class="text-xs text-gray-500">Sessions</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{ga4.overview.pageviews.toLocaleString()}</div>
+          <div class="text-xs text-gray-500">Pageviews</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{ga4.overview.bounce_rate}%</div>
+          <div class="text-xs text-gray-500">Bounce Rate</div>
+        </div>
+      </div>
+
+      <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
+        <h3 class="text-sm font-semibold text-gray-400 mb-4">Daily Users (Last 30 Days)</h3>
+        <canvas id="trafficChart" height="250"></canvas>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+          <h3 class="text-sm font-semibold text-gray-400 mb-4">Top Pages</h3>
+          <div class="space-y-2">
+            {ga4.top_pages.slice(0, 10).map((p: any) => (
+              <div class="flex justify-between text-xs border-b border-gray-800 pb-2">
+                <span class="text-gray-300 truncate max-w-[250px]">{p.path}</span>
+                <span class="text-white font-medium">{p.pageviews} views</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+          <h3 class="text-sm font-semibold text-gray-400 mb-4">Traffic Sources</h3>
+          <div class="space-y-2">
+            {ga4.sources.map((s: any) => (
+              <div class="flex justify-between text-xs border-b border-gray-800 pb-2">
+                <span class="text-gray-300">{s.channel}</span>
+                <span class="text-white font-medium">{s.sessions} sessions</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mt-6">
+        <h3 class="text-sm font-semibold text-gray-400 mb-4">Top Countries</h3>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+          {ga4.countries.slice(0, 10).map((c: any) => (
+            <div class="text-center p-3 bg-gray-800 rounded-lg">
+              <div class="text-white font-medium text-sm">{c.users}</div>
+              <div class="text-xs text-gray-500">{c.country}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )}
+
+  <!-- CONTENT GAPS -->
+  {sectionId === 'content-gaps' && gsc && (
+    <div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{gsc.totals?.clicks || 0}</div>
+          <div class="text-xs text-gray-500">Total Clicks</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{gsc.totals?.impressions?.toLocaleString() || 0}</div>
+          <div class="text-xs text-gray-500">Impressions</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{gsc.totals?.ctr || 0}%</div>
+          <div class="text-xs text-gray-500">CTR</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{gsc.totals?.position || 0}</div>
+          <div class="text-xs text-gray-500">Avg Position</div>
+        </div>
+      </div>
+
+      {gsc.content_gaps?.length > 0 && (
+        <div class="bg-gray-900 border border-yellow-800/50 rounded-lg p-6 mb-6">
+          <h3 class="text-sm font-semibold text-yellow-400 mb-4">Content Gaps — High Impressions, Low Clicks</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs">
+              <thead>
+                <tr class="text-gray-500 border-b border-gray-800">
+                  <th class="text-left py-2 px-3">Query</th>
+                  <th class="text-right py-2 px-3">Impressions</th>
+                  <th class="text-right py-2 px-3">Clicks</th>
+                  <th class="text-right py-2 px-3">CTR</th>
+                  <th class="text-right py-2 px-3">Position</th>
+                </tr>
+              </thead>
+              <tbody>
+                {gsc.content_gaps.map((g: any) => (
+                  <tr class="border-b border-gray-800/50">
+                    <td class="py-2 px-3 text-gray-300">{g.query}</td>
+                    <td class="py-2 px-3 text-right text-white">{g.impressions}</td>
+                    <td class="py-2 px-3 text-right text-white">{g.clicks}</td>
+                    <td class="py-2 px-3 text-right text-yellow-400">{g.ctr}%</td>
+                    <td class="py-2 px-3 text-right text-gray-400">{g.position}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
+
+      <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+        <h3 class="text-sm font-semibold text-gray-400 mb-4">Top Queries</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-xs">
+            <thead>
+              <tr class="text-gray-500 border-b border-gray-800">
+                <th class="text-left py-2 px-3">Query</th>
+                <th class="text-right py-2 px-3">Clicks</th>
+                <th class="text-right py-2 px-3">Impressions</th>
+                <th class="text-right py-2 px-3">CTR</th>
+                <th class="text-right py-2 px-3">Position</th>
+              </tr>
+            </thead>
+            <tbody>
+              {gsc.top_queries.map((q: any) => (
+                <tr class="border-b border-gray-800/50">
+                  <td class="py-2 px-3 text-gray-300">{q.query}</td>
+                  <td class="py-2 px-3 text-right text-white">{q.clicks}</td>
+                  <td class="py-2 px-3 text-right text-white">{q.impressions}</td>
+                  <td class="py-2 px-3 text-right text-blue-400">{q.ctr}%</td>
+                  <td class="py-2 px-3 text-right text-gray-400">{q.position}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  )}
+
+  <!-- SEO HEALTH -->
+  {sectionId === 'seo-health' && crawlData && (
+    <div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{crawlData.pages_crawled}</div>
+          <div class="text-xs text-gray-500">Pages Crawled</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-yellow-400">{crawlData.total_issues}</div>
+          <div class="text-xs text-gray-500">Issues Found</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-green-400">{crawlData.pages_with_schema}</div>
+          <div class="text-xs text-gray-500">With Schema</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{crawlData.avg_word_count}</div>
+          <div class="text-xs text-gray-500">Avg Word Count</div>
+        </div>
+      </div>
+
+      {crawlData.issues.length > 0 && (
+        <div class="bg-gray-900 border border-yellow-800/50 rounded-lg p-6 mb-6">
+          <h3 class="text-sm font-semibold text-yellow-400 mb-4">Issues</h3>
+          <div class="overflow-x-auto max-h-96 overflow-y-auto">
+            <table class="w-full text-xs">
+              <thead class="sticky top-0 bg-gray-900">
+                <tr class="text-gray-500 border-b border-gray-800">
+                  <th class="text-left py-2 px-3">Type</th>
+                  <th class="text-left py-2 px-3">URL</th>
+                  <th class="text-left py-2 px-3">Detail</th>
+                </tr>
+              </thead>
+              <tbody>
+                {crawlData.issues.map((issue: any) => (
+                  <tr class="border-b border-gray-800/50">
+                    <td class="py-2 px-3 text-yellow-400 whitespace-nowrap">{issue.type.replace(/_/g, ' ')}</td>
+                    <td class="py-2 px-3 text-gray-300 truncate max-w-[300px]">{new URL(issue.url).pathname}</td>
+                    <td class="py-2 px-3 text-gray-500">{issue.detail}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
+
+      <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+        <h3 class="text-sm font-semibold text-gray-400 mb-4">All Pages</h3>
+        <div class="overflow-x-auto max-h-[500px] overflow-y-auto">
+          <table class="w-full text-xs">
+            <thead class="sticky top-0 bg-gray-900">
+              <tr class="text-gray-500 border-b border-gray-800">
+                <th class="text-left py-2 px-3">Path</th>
+                <th class="text-left py-2 px-3">H1</th>
+                <th class="text-right py-2 px-3">Words</th>
+                <th class="text-right py-2 px-3">Links In</th>
+                <th class="text-right py-2 px-3">Depth</th>
+                <th class="text-left py-2 px-3">Schema</th>
+              </tr>
+            </thead>
+            <tbody>
+              {crawlData.pages.slice(0, 100).map((p: any) => (
+                <tr class="border-b border-gray-800/50">
+                  <td class="py-2 px-3 text-gray-300 truncate max-w-[200px]">{p.path}</td>
+                  <td class="py-2 px-3 text-gray-400 truncate max-w-[200px]">{p.h1 || '—'}</td>
+                  <td class="py-2 px-3 text-right text-white">{p.word_count}</td>
+                  <td class="py-2 px-3 text-right text-white">{p.internal_links_in}</td>
+                  <td class="py-2 px-3 text-right text-gray-400">{p.depth}</td>
+                  <td class="py-2 px-3 text-green-400 text-[10px]">{p.schemas?.join(', ') || '—'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  )}
+
+  <!-- AI CITATIONS -->
+  {sectionId === 'ai-citations' && citations && (
+    <div>
+      <div class="grid grid-cols-3 gap-4 mb-6">
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{citations.citation_rate}%</div>
+          <div class="text-xs text-gray-500">Citation Rate</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{citations.cited_count}/{citations.total_queries}</div>
+          <div class="text-xs text-gray-500">Queries Cited</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">Claude</div>
+          <div class="text-xs text-gray-500">Model Tested</div>
+        </div>
+      </div>
+
+      <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+        <h3 class="text-sm font-semibold text-gray-400 mb-4">Query Results</h3>
+        <div class="space-y-3">
+          {citations.results.map((r: any) => (
+            <div class={`p-4 rounded-lg border ${r.mentioned ? 'border-green-800/50 bg-green-900/10' : 'border-gray-800 bg-gray-800/30'}`}>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-sm text-white">{r.query}</span>
+                <span class={`text-xs px-2 py-0.5 rounded-full ${r.mentioned ? 'bg-green-600 text-white' : 'bg-gray-700 text-gray-400'}`}>
+                  {r.mentioned ? 'CITED' : 'Not cited'}
+                </span>
+              </div>
+              {r.response_preview && (
+                <p class="text-xs text-gray-500 mt-1 line-clamp-2">{r.response_preview}</p>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )}
+
+  <!-- UPTIME -->
+  {sectionId === 'uptime' && uptime && (
+    <div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class={`text-2xl font-bold ${uptime.is_up ? 'text-green-400' : 'text-red-400'}`}>{uptime.is_up ? 'UP' : 'DOWN'}</div>
+          <div class="text-xs text-gray-500">Current Status</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{uptime.uptime_pct}%</div>
+          <div class="text-xs text-gray-500">Uptime</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{uptime.response_time_ms}ms</div>
+          <div class="text-xs text-gray-500">Response Time</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{uptime.checks_total}</div>
+          <div class="text-xs text-gray-500">Total Checks</div>
+        </div>
+      </div>
+      <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+        <h3 class="text-sm font-semibold text-gray-400 mb-4">Response Time History</h3>
+        <canvas id="uptimeChart" height="200"></canvas>
+      </div>
+    </div>
+  )}
+
+  <!-- POSITIVE SIGNALS -->
+  {sectionId === 'positive-signals' && crawlData?.positive_signals && (
+    <div>
+      <div class="bg-gray-900 border border-green-800/50 rounded-lg p-6">
+        <h3 class="text-sm font-semibold text-green-400 mb-4">What's Working ({crawlData.positive_signals.length} signals)</h3>
+        <div class="space-y-2 max-h-[600px] overflow-y-auto">
+          {crawlData.positive_signals.map((s: any) => (
+            <div class="flex items-center gap-3 text-xs border-b border-gray-800/50 pb-2">
+              <span class={`px-2 py-0.5 rounded text-[10px] ${s.type === 'schema' ? 'bg-blue-900/50 text-blue-300' : s.type === 'good_content' ? 'bg-green-900/50 text-green-300' : 'bg-purple-900/50 text-purple-300'}`}>
+                {s.type.replace(/_/g, ' ')}
+              </span>
+              <span class="text-gray-300 truncate">{new URL(s.url).pathname}</span>
+              <span class="text-gray-500 ml-auto">{s.detail}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )}
+
+  <!-- Fallback for sections without detail pages -->
+  {!['traffic', 'content-gaps', 'seo-health', 'ai-citations', 'uptime', 'positive-signals'].includes(sectionId) && (
+    <div class="bg-gray-900 border border-gray-800 rounded-lg p-8 text-center">
+      <p class="text-gray-500">Detailed view for {section.label} coming soon.</p>
+      <a href={`/agency/${clientId}`} class="text-sm text-blue-400 hover:text-blue-300 mt-2 inline-block">Back to dashboard</a>
+    </div>
+  )}
+</DashboardLayout>
+
+<!-- Chart scripts -->
+<script define:vars={{ dailyTraffic, uptimeChecks }}>
+  const daily = JSON.parse(dailyTraffic);
+  const checks = JSON.parse(uptimeChecks);
+
+  async function renderCharts() {
+    const { Chart, registerables } = await import('https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.js');
+
+    // Traffic chart
+    const trafficEl = document.getElementById('trafficChart');
+    if (trafficEl && daily.length > 0) {
+      const labels = daily.map(d => {
+        const date = `${d.date.slice(0,4)}-${d.date.slice(4,6)}-${d.date.slice(6,8)}`;
+        return new Date(date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+      });
+      new Chart(trafficEl, {
+        type: 'line',
+        data: {
+          labels,
+          datasets: [{
+            label: 'Users',
+            data: daily.map(d => d.users),
+            borderColor: '#3b82f6',
+            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+            fill: true,
+            tension: 0.3,
+            pointRadius: 2,
+          }, {
+            label: 'Sessions',
+            data: daily.map(d => d.sessions),
+            borderColor: '#8b5cf6',
+            borderDash: [5, 5],
+            tension: 0.3,
+            pointRadius: 0,
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { labels: { color: '#9ca3af', font: { size: 11 } } } },
+          scales: {
+            x: { ticks: { color: '#6b7280', font: { size: 10 } }, grid: { color: '#1f2937' } },
+            y: { ticks: { color: '#6b7280', font: { size: 10 } }, grid: { color: '#1f2937' } },
+          }
+        }
+      });
+    }
+
+    // Uptime chart
+    const uptimeEl = document.getElementById('uptimeChart');
+    if (uptimeEl && checks.length > 0) {
+      const labels = checks.map(c => new Date(c.time).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }));
+      new Chart(uptimeEl, {
+        type: 'line',
+        data: {
+          labels,
+          datasets: [{
+            label: 'Response Time (ms)',
+            data: checks.map(c => c.ms),
+            borderColor: c => c.raw > 2000 ? '#ef4444' : '#10b981',
+            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+            fill: true,
+            tension: 0.3,
+            pointRadius: 3,
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { labels: { color: '#9ca3af', font: { size: 11 } } } },
+          scales: {
+            x: { ticks: { color: '#6b7280', font: { size: 10 } }, grid: { color: '#1f2937' } },
+            y: { ticks: { color: '#6b7280', font: { size: 10 } }, grid: { color: '#1f2937' } },
+          }
+        }
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderCharts);
+  } else {
+    renderCharts();
+  }
+</script>
