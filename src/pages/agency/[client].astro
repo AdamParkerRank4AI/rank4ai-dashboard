@@ -1,8 +1,10 @@
 ---
 import DashboardLayout from '../../layouts/DashboardLayout.astro';
 import SectionCard from '../../components/SectionCard.astro';
+import AutomationCard from '../../components/AutomationCard.astro';
 import clients from '../../data/clients.json';
 import sections from '../../data/sections.json';
+import automations from '../../data/automations.json';
 
 export function getStaticPaths() {
   return clients.map((c) => ({ params: { client: c.id } }));
@@ -14,6 +16,9 @@ const client = clients.find((c) => c.id === clientId);
 if (!client) {
   return Astro.redirect('/');
 }
+
+const auto = (automations as any)[clientId] || { stats: [], automated: [], batch: [], semi: [], pending: [], tokens: [], actions: [] };
+const hasAutomations = auto.automated.length > 0 || auto.batch.length > 0 || auto.semi.length > 0;
 
 // Demo data — replace with real API calls later
 const sectionStatus: Record<string, any> = {
@@ -84,6 +89,14 @@ const sectionStatus: Record<string, any> = {
     metricLabel: 'Positive signals detected',
   },
 };
+
+// Token expiry calc
+function daysUntil(dateStr: string): number {
+  if (dateStr === 'never' || dateStr === 'auto') return 999;
+  const d = new Date(dateStr);
+  const now = new Date();
+  return Math.ceil((d.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+}
 ---
 
 <DashboardLayout title={client.name} currentClient={clientId} view="agency">
@@ -110,21 +123,41 @@ const sectionStatus: Record<string, any> = {
     </div>
   </div>
 
+  <!-- Stats bar -->
+  {auto.stats.length > 0 && (
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-6">
+      {auto.stats.map((stat: any) => (
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{stat.value}</div>
+          <div class="text-xs text-gray-500 mt-1">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+  )}
+
   <!-- Status bar -->
-  <div class="flex gap-3 mb-6 text-xs">
+  <div class="flex flex-wrap gap-3 mb-6 text-xs">
     <div class="px-3 py-1.5 rounded-full bg-gray-800 text-gray-400">
-      {client.allSections.length} total sections
+      {client.allSections.length} data sections
     </div>
     <div class="px-3 py-1.5 rounded-full bg-blue-900/50 text-blue-300">
       {client.clientViewSections.length} visible to client
     </div>
-    <div class="px-3 py-1.5 rounded-full bg-gray-800 text-gray-400">
-      {Object.values(sectionStatus).filter((s: any) => s.status === 'healthy').length} connected
-    </div>
+    {hasAutomations && (
+      <div class="px-3 py-1.5 rounded-full bg-green-900/50 text-green-300">
+        {auto.automated.length} automations live
+      </div>
+    )}
+    {auto.actions.filter((a: any) => a.priority === 'high').length > 0 && (
+      <div class="px-3 py-1.5 rounded-full bg-red-900/50 text-red-300">
+        {auto.actions.filter((a: any) => a.priority === 'high').length} urgent actions
+      </div>
+    )}
   </div>
 
-  <!-- Section cards -->
-  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+  <!-- Data Section cards -->
+  <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Data Sources</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
     {sections.map((section) => {
       const data = sectionStatus[section.id] || {};
       const isInClientView = client.clientViewSections.includes(section.id);
@@ -148,4 +181,112 @@ const sectionStatus: Record<string, any> = {
       );
     })}
   </div>
+
+  {hasAutomations && (
+    <>
+      <!-- Fully Automated -->
+      {auto.automated.length > 0 && (
+        <>
+          <div class="flex items-center gap-2 mb-3 mt-8">
+            <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Fully Automated</h2>
+            <span class="text-xs px-2 py-0.5 rounded-full bg-green-900/50 text-green-300">{auto.automated.length} platforms</span>
+          </div>
+          <p class="text-xs text-gray-600 mb-4">Running automatically via launchd. No manual action required.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 mb-8">
+            {auto.automated.map((item: any) => (
+              <AutomationCard {...item} />
+            ))}
+          </div>
+        </>
+      )}
+
+      <!-- Batch Automated -->
+      {auto.batch.length > 0 && (
+        <>
+          <div class="flex items-center gap-2 mb-3">
+            <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Batch / Pre-Scheduled</h2>
+            <span class="text-xs px-2 py-0.5 rounded-full bg-blue-900/50 text-blue-300">{auto.batch.length} platforms</span>
+          </div>
+          <p class="text-xs text-gray-600 mb-4">Scheduled in bulk. May need periodic re-batching.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 mb-8">
+            {auto.batch.map((item: any) => (
+              <AutomationCard {...item} />
+            ))}
+          </div>
+        </>
+      )}
+
+      <!-- Semi-Automated -->
+      {auto.semi.length > 0 && (
+        <>
+          <div class="flex items-center gap-2 mb-3">
+            <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Semi-Automated</h2>
+            <span class="text-xs px-2 py-0.5 rounded-full bg-yellow-900/50 text-yellow-300">{auto.semi.length} platforms</span>
+          </div>
+          <p class="text-xs text-gray-600 mb-4">Content emailed daily. Manual paste required.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 mb-8">
+            {auto.semi.map((item: any) => (
+              <AutomationCard {...item} />
+            ))}
+          </div>
+        </>
+      )}
+
+      <!-- Pending / To Activate -->
+      {auto.pending.length > 0 && (
+        <>
+          <div class="flex items-center gap-2 mb-3">
+            <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Pending / To Activate</h2>
+            <span class="text-xs px-2 py-0.5 rounded-full bg-gray-800 text-gray-400">{auto.pending.length} platforms</span>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 mb-8">
+            {auto.pending.map((item: any) => (
+              <AutomationCard {...item} volume="" method="" />
+            ))}
+          </div>
+        </>
+      )}
+
+      <!-- Outstanding Actions -->
+      {auto.actions.length > 0 && (
+        <div class="mt-8 mb-8">
+          <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Outstanding Actions</h2>
+          <div class="bg-gray-900 border border-gray-800 rounded-lg overflow-hidden">
+            {auto.actions.map((action: any) => (
+              <div class={`flex items-center gap-3 px-4 py-3 border-b border-gray-800 last:border-0 ${action.priority === 'high' ? 'bg-red-950/20' : ''}`}>
+                <span class={`w-2 h-2 rounded-full flex-shrink-0 ${action.priority === 'high' ? 'bg-red-400' : action.priority === 'medium' ? 'bg-yellow-400' : 'bg-gray-600'}`}></span>
+                <span class="text-sm text-white font-medium min-w-[180px]">{action.title}</span>
+                <span class="text-xs text-gray-500">{action.detail}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <!-- Token Expiry -->
+      {auto.tokens.length > 0 && (
+        <div class="mt-8 mb-8">
+          <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Token Expiry</h2>
+          <div class="bg-gray-900 border border-gray-800 rounded-lg overflow-hidden">
+            <div class="grid grid-cols-4 gap-0 px-4 py-2 border-b border-gray-800 text-xs text-gray-500 uppercase">
+              <span>Platform</span><span>Expires</span><span>Days Left</span><span>Type</span>
+            </div>
+            {auto.tokens.map((token: any) => {
+              const days = daysUntil(token.expires);
+              const color = days > 30 ? 'text-green-400' : days > 14 ? 'text-yellow-400' : days < 999 ? 'text-red-400' : 'text-green-400';
+              const daysText = days >= 999 ? 'N/A' : `${days} days`;
+              return (
+                <div class="grid grid-cols-4 gap-0 px-4 py-2 border-b border-gray-800 last:border-0 text-sm">
+                  <span class="text-white">{token.name}</span>
+                  <span class="text-gray-400">{token.expires === 'never' ? 'Never' : token.expires === 'auto' ? 'Auto-refresh' : token.expires}</span>
+                  <span class={color}>{daysText}</span>
+                  <span class="text-gray-500 text-xs">{token.type}</span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </>
+  )}
 </DashboardLayout>

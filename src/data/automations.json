@@ -1,0 +1,191 @@
+{
+  "rank4ai": {
+    "stats": [
+      { "label": "Social Posts", "value": "208+" },
+      { "label": "GitHub Entries", "value": "93+" },
+      { "label": "YouTube Videos", "value": "243" },
+      { "label": "Quora Answers", "value": "35+" },
+      { "label": "WordPress Posts", "value": "500" },
+      { "label": "Tumblr Posts", "value": "474" }
+    ],
+    "automated": [
+      {
+        "name": "Instagram", "icon": "camera", "type": "auto",
+        "volume": "2 posts/day", "method": "Unified 9am publisher",
+        "content": "Q&A from spreadsheet (offset Q50)", "posted": "105+ posts",
+        "launchd": "com.rank4ai.daily-publish", "status": "live"
+      },
+      {
+        "name": "Threads", "icon": "thread", "type": "auto",
+        "volume": "2 posts/day", "method": "Unified 9am publisher",
+        "content": "Q&A from spreadsheet (offset Q50)", "posted": "103+ posts",
+        "launchd": "com.rank4ai.daily-publish", "status": "live"
+      },
+      {
+        "name": "Dev.to", "icon": "code", "type": "auto",
+        "volume": "1 article/day", "method": "Unified 9am publisher",
+        "content": "Q&A articles (offset Q250)", "status": "live"
+      },
+      {
+        "name": "GitHub Index", "icon": "github", "type": "auto",
+        "volume": "3 entries/day", "method": "Unified 9am publisher",
+        "content": "Q&A index entries (offset Q1)", "posted": "93+ entries",
+        "status": "live"
+      },
+      {
+        "name": "Website Questions", "icon": "help", "type": "auto",
+        "volume": "5 questions/day", "method": "Claude API > Supabase > rank4ai.co.uk",
+        "content": "AI-generated Q&A for question pages",
+        "launchd": "com.rank4ai.questions", "status": "live"
+      },
+      {
+        "name": "Website Blog", "icon": "article", "type": "auto",
+        "volume": "1 blog/day", "method": "Claude API > Supabase > rank4ai.co.uk",
+        "content": "Full blog articles, rotating authors",
+        "launchd": "com.rank4ai.blogs", "status": "live"
+      },
+      {
+        "name": "Weekly Intelligence", "icon": "chart", "type": "auto",
+        "volume": "1 briefing/week", "method": "RSS > Claude API > Email + HTML",
+        "content": "AI search industry intelligence briefing",
+        "launchd": "com.rank4ai.weekly-intelligence", "status": "live"
+      },
+      {
+        "name": "Podcasts (Buzzsprout)", "icon": "mic", "type": "auto",
+        "volume": "1 episode/day", "method": "Unified 9am publisher > Buzzsprout",
+        "content": "AI-generated from question pages", "posted": "25+ episodes",
+        "status": "live"
+      },
+      {
+        "name": "YouTube Descriptions", "icon": "video", "type": "auto",
+        "volume": "Batch updates", "method": "YouTube API videos.update()",
+        "content": "Enriched descriptions on uploaded videos",
+        "launchd": "com.rank4ai.youtube-descriptions", "status": "live"
+      },
+      {
+        "name": "Google Indexing API", "icon": "search", "type": "auto",
+        "volume": "On-demand", "method": "Google Indexing API",
+        "content": "516 URLs submitted", "status": "live"
+      },
+      {
+        "name": "Audit Server", "icon": "shield", "type": "auto",
+        "volume": "Always on", "method": "Local server + ngrok tunnel",
+        "content": "AI visibility audit tool",
+        "launchd": "co.rank4ai.audit-server", "status": "live"
+      }
+    ],
+    "batch": [
+      {
+        "name": "YouTube Uploads", "icon": "video", "type": "batch",
+        "volume": "243 uploaded / 500 target", "method": "Batch upload script",
+        "content": "Video + metadata + tags from spreadsheet",
+        "note": "Currently posting under wrong account - need re-auth", "status": "warning"
+      },
+      {
+        "name": "WordPress", "icon": "wordpress", "type": "batch",
+        "volume": "500 posts scheduled", "method": "WordPress API batch schedule",
+        "content": "Mar 5 2026 - Jul 17 2027 (offset Q375)", "status": "live"
+      },
+      {
+        "name": "Tumblr", "icon": "tumblr", "type": "batch",
+        "volume": "474 posts scheduled", "method": "Tumblr API batch schedule",
+        "content": "Mar 4 2026 - Jun 20 2027", "status": "live",
+        "note": "Q475-500 failed (queue limit)"
+      },
+      {
+        "name": "Facebook", "icon": "facebook", "type": "batch",
+        "volume": "60 posts per batch", "method": "Facebook API batch schedule",
+        "content": "30-day photo scheduling limit",
+        "note": "Next batch OVERDUE - was due Mar 28", "status": "warning"
+      }
+    ],
+    "semi": [
+      {
+        "name": "Medium", "icon": "edit", "type": "semi",
+        "volume": "1 post/day", "method": "Content emailed Mon-Fri 8am", "status": "live"
+      },
+      {
+        "name": "Substack", "icon": "mail", "type": "semi",
+        "volume": "2 posts/day", "method": "Content emailed Mon-Fri 8am", "status": "live"
+      },
+      {
+        "name": "Blogger", "icon": "blog", "type": "semi",
+        "volume": "2 posts/day", "method": "Content emailed Mon-Fri 8am",
+        "content": "rank4aisearch.blogspot.com", "status": "live"
+      },
+      {
+        "name": "Google Business Profile", "icon": "map", "type": "semi",
+        "volume": "1 post/day", "method": "Content emailed Mon-Fri 8am", "status": "live"
+      },
+      {
+        "name": "Quora Posts", "icon": "question", "type": "semi",
+        "volume": "1 post/day", "method": "Included in daily email", "status": "live"
+      },
+      {
+        "name": "Quora Answers", "icon": "answer", "type": "semi",
+        "volume": "5 answers/day", "method": "Separate email Mon-Fri 8:30am", "status": "live"
+      }
+    ],
+    "pending": [
+      {
+        "name": "LinkedIn (Company)", "type": "pending",
+        "note": "Waiting on Community Management API approval", "status": "blocked"
+      },
+      {
+        "name": "LinkedIn (Personal)", "type": "manual",
+        "note": "30 personal posts ready - Adam posts manually", "status": "ready"
+      },
+      {
+        "name": "Hashnode", "type": "pending",
+        "note": "RSS import from WordPress - 15 min setup", "status": "ready"
+      },
+      {
+        "name": "Flipboard", "type": "pending",
+        "note": "RSS magazine - need 30+ posts with images first", "status": "waiting"
+      },
+      {
+        "name": "Pinterest", "type": "pending",
+        "note": "Batch schedule like Facebook", "status": "ready"
+      },
+      {
+        "name": "X / Twitter", "type": "pending",
+        "note": "Free batch or $100/mo API - decision needed", "status": "waiting"
+      },
+      {
+        "name": "Reddit", "type": "manual",
+        "note": "3-5 genuine answers/week in key subreddits", "status": "ready"
+      }
+    ],
+    "tokens": [
+      { "name": "Instagram", "expires": "2026-05-02", "type": "60-day, refreshable" },
+      { "name": "Threads", "expires": "2026-05-02", "type": "60-day, refreshable" },
+      { "name": "LinkedIn", "expires": "2026-05-02", "type": "60-day" },
+      { "name": "Facebook User", "expires": "2026-05-02", "type": "60-day" },
+      { "name": "Facebook Page", "expires": "never", "type": "Long-lived" },
+      { "name": "YouTube", "expires": "auto", "type": "OAuth2 auto-refresh" }
+    ],
+    "actions": [
+      { "priority": "high", "title": "Facebook next batch", "detail": "OVERDUE - was due Mar 28" },
+      { "priority": "high", "title": "YouTube re-auth", "detail": "Currently posting under wrong account" },
+      { "priority": "medium", "title": "Instagram token refresh", "detail": "Expires ~May 2" },
+      { "priority": "medium", "title": "Threads token refresh", "detail": "Expires ~May 2" },
+      { "priority": "medium", "title": "LinkedIn token refresh", "detail": "Expires ~May 2" },
+      { "priority": "medium", "title": "Blog distribution refresh", "detail": "Every 2 weeks" },
+      { "priority": "medium", "title": "Blogger pages update", "detail": "Still say AIPOPPY LTD" },
+      { "priority": "medium", "title": "Google Sites indexing", "detail": "Submit 18 pages to GSC" },
+      { "priority": "medium", "title": "Bing Places verification", "detail": "Check if listing went live" },
+      { "priority": "low", "title": "100 Mistakes page", "detail": "Phase 1: Top 25" },
+      { "priority": "low", "title": "Research papers", "detail": "Package audit data" },
+      { "priority": "low", "title": "Tumblr Q475-500", "detail": "Re-run once queue has space" }
+    ]
+  },
+  "market-invoice": {
+    "stats": [],
+    "automated": [],
+    "batch": [],
+    "semi": [],
+    "pending": [],
+    "tokens": [],
+    "actions": []
+  }
+}

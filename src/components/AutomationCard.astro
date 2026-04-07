@@ -1,0 +1,85 @@
+---
+interface Props {
+  name: string;
+  type: 'auto' | 'batch' | 'semi' | 'manual' | 'pending';
+  volume?: string;
+  method?: string;
+  content?: string;
+  posted?: string;
+  launchd?: string;
+  note?: string;
+  status: string;
+}
+
+const { name, type, volume, method, content, posted, launchd, note, status } = Astro.props;
+
+const typeBadge: Record<string, { bg: string; text: string; label: string }> = {
+  auto: { bg: 'bg-green-600', text: 'text-white', label: 'Automated' },
+  batch: { bg: 'bg-blue-600', text: 'text-white', label: 'Batch' },
+  semi: { bg: 'bg-yellow-600', text: 'text-white', label: 'Semi-Auto' },
+  manual: { bg: 'bg-gray-600', text: 'text-white', label: 'Manual' },
+  pending: { bg: 'bg-red-600', text: 'text-white', label: 'Pending' },
+};
+
+const statusDot: Record<string, string> = {
+  live: 'bg-green-400',
+  warning: 'bg-yellow-400',
+  blocked: 'bg-red-400',
+  ready: 'bg-blue-400',
+  waiting: 'bg-gray-500',
+};
+
+const badge = typeBadge[type] || typeBadge.manual;
+const dot = statusDot[status] || statusDot.waiting;
+---
+
+<div class="bg-gray-800 border border-gray-700 rounded-lg p-4">
+  <div class="flex items-center justify-between mb-3">
+    <div class="flex items-center gap-2">
+      <span class={`w-2.5 h-2.5 rounded-full ${dot}`}></span>
+      <span class="text-white font-medium text-sm">{name}</span>
+    </div>
+    <span class={`${badge.bg} ${badge.text} text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wider`}>
+      {badge.label}
+    </span>
+  </div>
+
+  <div class="space-y-1.5">
+    {volume && (
+      <div class="flex justify-between text-xs">
+        <span class="text-gray-500">Volume</span>
+        <span class="text-gray-300">{volume}</span>
+      </div>
+    )}
+    {method && (
+      <div class="flex justify-between text-xs">
+        <span class="text-gray-500">Method</span>
+        <span class="text-gray-300">{method}</span>
+      </div>
+    )}
+    {content && (
+      <div class="flex justify-between text-xs">
+        <span class="text-gray-500">Content</span>
+        <span class="text-gray-300">{content}</span>
+      </div>
+    )}
+    {posted && (
+      <div class="flex justify-between text-xs">
+        <span class="text-gray-500">Posted</span>
+        <span class="text-gray-300">{posted}</span>
+      </div>
+    )}
+    {launchd && (
+      <div class="flex justify-between text-xs">
+        <span class="text-gray-500">Launchd</span>
+        <span class="text-gray-400 font-mono text-[10px]">{launchd}</span>
+      </div>
+    )}
+  </div>
+
+  {note && (
+    <div class={`mt-3 text-xs px-2 py-1.5 rounded ${status === 'warning' ? 'bg-yellow-900/30 text-yellow-400' : status === 'blocked' ? 'bg-red-900/30 text-red-400' : 'bg-gray-900 text-gray-500'}`}>
+      {note}
+    </div>
+  )}
+</div>
