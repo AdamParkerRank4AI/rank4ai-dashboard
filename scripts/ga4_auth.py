@@ -1,27 +1,27 @@
 """
-One-time OAuth setup for GA4 Data API.
-Run this once to generate a token, then the fetch script uses the token.
+One-time OAuth setup for GA4 + GSC APIs.
+Run this once to generate a token.
 """
 import json
 import os
 from google_auth_oauthlib.flow import InstalledAppFlow
-from google.analytics.data_v1beta import BetaAnalyticsDataClient
 from google.analytics.admin_v1alpha import AnalyticsAdminServiceClient
 
 SCOPES = [
     'https://www.googleapis.com/auth/analytics.readonly',
     'https://www.googleapis.com/auth/analytics.manage.users.readonly',
+    'https://www.googleapis.com/auth/webmasters.readonly',
 ]
 
 CLIENT_SECRET = os.path.expanduser(
-    '~/Downloads/client_secret_1042841170665-cd2p5fokhonq4hf37ko0kfeb0ta9dtc8.apps.googleusercontent.com.json'
+    '~/Downloads/client_secret_570249470362-thrbb8uo285crbgc0lu2ouq7hud09j5s.apps.googleusercontent.com.json'
 )
 TOKEN_FILE = os.path.expanduser('~/rank4ai-dashboard/scripts/ga4_token.json')
 
 
 def main():
     flow = InstalledAppFlow.from_client_secrets_file(CLIENT_SECRET, SCOPES)
-    creds = flow.run_local_server(port=8080)
+    creds = flow.run_local_server(port=0)
 
     # Save token
     token_data = {
@@ -30,7 +30,7 @@ def main():
         'token_uri': creds.token_uri,
         'client_id': creds.client_id,
         'client_secret': creds.client_secret,
-        'scopes': creds.scopes,
+        'scopes': list(creds.scopes) if creds.scopes else [],
     }
     with open(TOKEN_FILE, 'w') as f:
         json.dump(token_data, f, indent=2)
@@ -48,7 +48,7 @@ def main():
                 print(f'  Property ID: {prop.property.split("/")[-1]}')
                 print()
     except Exception as e:
-        print(f'Could not list properties (Analytics Admin API may not be enabled): {e}')
+        print(f'Could not list properties: {e}')
         print('\nYou can find your property ID at:')
         print('analytics.google.com → Admin → Property Settings → Property ID')
 

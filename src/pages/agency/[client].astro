@@ -36,9 +36,13 @@ function loadJson(filename: string) {
 const uptimeData = loadJson('uptime.json');
 const crawlData = loadJson(`crawl_${clientId}.json`);
 const citationData = loadJson('ai_citations.json');
+const ga4Data = loadJson('ga4.json');
+const gscData = loadJson('gsc.json');
 
 const uptime = uptimeData?.[clientId];
 const crawl = crawlData;
+const ga4 = ga4Data?.[clientId];
+const gsc = gscData?.[clientId];
 const citations = citationData?.[clientId];
 
 // Build section status from live data
@@ -103,7 +107,13 @@ const sectionStatus: Record<string, any> = {
     metric: '--',
     metricLabel: 'Keywords tracked',
   },
-  'traffic': {
+  'traffic': ga4 ? {
+    status: 'healthy',
+    statusText: `${ga4.overview.sessions} sessions (30d)`,
+    metric: `${ga4.overview.active_users.toLocaleString()}`,
+    metricLabel: `Users (30d) · ${ga4.overview.pageviews.toLocaleString()} pageviews · ${ga4.overview.bounce_rate}% bounce`,
+    lastUpdated: new Date(ga4.fetched_at).toLocaleDateString('en-GB'),
+  } : {
     status: 'not-connected',
     statusText: 'Enable GA4 API',
     metric: '--',
@@ -121,9 +131,15 @@ const sectionStatus: Record<string, any> = {
     metric: '--',
     metricLabel: 'Uptime percentage',
   },
-  'content-gaps': {
+  'content-gaps': gsc?.totals?.impressions ? {
+    status: gsc.content_gaps.length > 0 ? 'warning' : 'healthy',
+    statusText: `${gsc.content_gaps.length} gaps found`,
+    metric: `${gsc.totals.impressions.toLocaleString()}`,
+    metricLabel: `Impressions · ${gsc.totals.clicks} clicks · Avg pos ${gsc.totals.position}`,
+    lastUpdated: new Date(gsc.fetched_at).toLocaleDateString('en-GB'),
+  } : {
     status: 'not-connected',
-    statusText: 'Enable GSC API',
+    statusText: gsc ? 'No GSC data yet' : 'Enable GSC API',
     metric: '--',
     metricLabel: 'Opportunities found',
   },
