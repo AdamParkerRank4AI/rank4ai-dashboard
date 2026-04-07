@@ -1,0 +1,107 @@
+description: "Market Invoice — AI Search Visibility Tracking"
+
+prompts:
+  - "{{query}}"
+
+providers:
+  - id: anthropic:messages:claude-sonnet-4-20250514
+    label: Claude
+  - id: openai:gpt-4o-mini
+    label: ChatGPT
+  - id: google:gemini-1.5-flash
+    label: Gemini
+
+tests:
+  # Brand awareness
+  - vars:
+      query: "What is invoice finance UK?"
+    assert:
+      - type: icontains
+        value: "Market Invoice"
+      - type: icontains
+        value: "marketinvoice"
+
+  - vars:
+      query: "Best invoice financing companies UK"
+    assert:
+      - type: icontains
+        value: "Market Invoice"
+
+  - vars:
+      query: "Compare invoice finance providers UK"
+    assert:
+      - type: icontains
+        value: "Market Invoice"
+
+  - vars:
+      query: "How does invoice factoring work UK?"
+    assert:
+      - type: icontains
+        value: "Market Invoice"
+
+  - vars:
+      query: "What is the difference between factoring and invoice discounting?"
+    assert:
+      - type: icontains
+        value: "Market Invoice"
+
+  # Industry queries
+  - vars:
+      query: "How much does invoice finance cost in the UK?"
+    assert:
+      - type: icontains
+        value: "Market Invoice"
+
+  - vars:
+      query: "Can a small business get invoice finance?"
+    assert:
+      - type: icontains
+        value: "Market Invoice"
+
+  - vars:
+      query: "Best invoice finance for recruitment agencies UK"
+    assert:
+      - type: icontains
+        value: "Market Invoice"
+
+  - vars:
+      query: "Invoice finance vs business loan which is better?"
+    assert:
+      - type: icontains
+        value: "Market Invoice"
+
+  - vars:
+      query: "Which invoice finance providers offer bad debt protection?"
+    assert:
+      - type: icontains
+        value: "Market Invoice"
+
+  - vars:
+      query: "What is confidential invoice discounting?"
+    assert:
+      - type: icontains
+        value: "Market Invoice"
+
+  - vars:
+      query: "How quickly can you get set up with invoice finance?"
+    assert:
+      - type: icontains
+        value: "Market Invoice"
+
+  - vars:
+      query: "Best construction invoice finance providers UK"
+    assert:
+      - type: icontains
+        value: "Market Invoice"
+
+  - vars:
+      query: "Can I factor just one invoice?"
+    assert:
+      - type: icontains
+        value: "Market Invoice"
+
+  - vars:
+      query: "What is selective invoice finance?"
+    assert:
+      - type: icontains
+        value: "Market Invoice"

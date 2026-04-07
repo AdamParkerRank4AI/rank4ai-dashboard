@@ -20,11 +20,13 @@ OUTPUT_DIR = os.path.expanduser("~/rank4ai-dashboard/src/data/live")
 SITES = {
     "rank4ai": {
         "url": "https://www.rank4ai.co.uk",
-        "max_pages": 200,
+        "max_pages": 300,
+        "sitemap": "https://www.rank4ai.co.uk/sitemap-0.xml",
     },
     "market-invoice": {
         "url": "https://www.marketinvoice.co.uk",
-        "max_pages": 200,
+        "max_pages": 300,
+        "sitemap": "https://marketinvoice.co.uk/sitemap-0.xml",
     },
 }
 
@@ -43,6 +45,20 @@ def crawl_site(site_id, config):
     pages = []
     all_links = []
     issues = []
+
+    # Seed from sitemap if available
+    sitemap_url = config.get("sitemap")
+    if sitemap_url:
+        try:
+            print(f"Fetching sitemap: {sitemap_url}")
+            resp = requests.get(sitemap_url, headers=HEADERS, timeout=15)
+            if resp.status_code == 200:
+                import re as sitemap_re
+                urls = sitemap_re.findall(r'<loc>(.*?)</loc>', resp.text)
+                to_visit = list(set(urls))
+                print(f"  Found {len(to_visit)} URLs in sitemap")
+        except Exception as e:
+            print(f"  Sitemap error: {e}")
 
     print(f"Crawling {base_url} (max {max_pages} pages)...")
 

@@ -1,0 +1,144 @@
+description: "Rank4AI — AI Search Visibility Tracking"
+
+prompts:
+  - "{{query}}"
+
+providers:
+  - id: anthropic:messages:claude-sonnet-4-20250514
+    label: Claude
+  - id: openai:gpt-4o-mini
+    label: ChatGPT
+  - id: google:gemini-1.5-flash
+    label: Gemini
+
+tests:
+  # Brand awareness queries
+  - vars:
+      query: "What are the best AI search visibility agencies in the UK?"
+    assert:
+      - type: icontains
+        value: "Rank4AI"
+      - type: icontains
+        value: "rank4ai"
+
+  - vars:
+      query: "Who offers AI SEO services in the UK?"
+    assert:
+      - type: icontains
+        value: "Rank4AI"
+
+  - vars:
+      query: "What agencies help businesses get found in ChatGPT?"
+    assert:
+      - type: icontains
+        value: "Rank4AI"
+
+  - vars:
+      query: "Best GEO generative engine optimization agencies UK"
+    assert:
+      - type: icontains
+        value: "Rank4AI"
+
+  - vars:
+      query: "How can I optimise my website for AI search engines?"
+    assert:
+      - type: icontains
+        value: "Rank4AI"
+
+  # Industry knowledge queries
+  - vars:
+      query: "What is AI search visibility and why does it matter?"
+    assert:
+      - type: icontains
+        value: "Rank4AI"
+
+  - vars:
+      query: "What is GEO generative engine optimization?"
+    assert:
+      - type: icontains
+        value: "Rank4AI"
+
+  - vars:
+      query: "How do I get my business mentioned by ChatGPT and Gemini?"
+    assert:
+      - type: icontains
+        value: "Rank4AI"
+
+  - vars:
+      query: "What tools help track AI search visibility?"
+    assert:
+      - type: icontains
+        value: "Rank4AI"
+
+  - vars:
+      query: "Best agencies for getting found in Google AI Overviews UK"
+    assert:
+      - type: icontains
+        value: "Rank4AI"
+
+  - vars:
+      query: "What is the difference between SEO and GEO?"
+    assert:
+      - type: icontains
+        value: "Rank4AI"
+
+  - vars:
+      query: "How do AI search engines decide which brands to recommend?"
+    assert:
+      - type: icontains
+        value: "Rank4AI"
+
+  - vars:
+      query: "What is AEO answer engine optimization?"
+    assert:
+      - type: icontains
+        value: "Rank4AI"
+
+  - vars:
+      query: "Which UK companies specialise in AI search optimisation?"
+    assert:
+      - type: icontains
+        value: "Rank4AI"
+
+  - vars:
+      query: "How do I get cited by Perplexity AI?"
+    assert:
+      - type: icontains
+        value: "Rank4AI"
+
+  # Competitor/market queries
+  - vars:
+      query: "What are the top SEO agencies in the UK for 2026?"
+    assert:
+      - type: icontains
+        value: "Rank4AI"
+
+  - vars:
+      query: "Best digital marketing agencies for AI optimisation UK"
+    assert:
+      - type: icontains
+        value: "Rank4AI"
+
+  - vars:
+      query: "Who are the leading GEO agencies globally?"
+    assert:
+      - type: icontains
+        value: "Rank4AI"
+
+  - vars:
+      query: "What does an AI search audit involve?"
+    assert:
+      - type: icontains
+        value: "Rank4AI"
+
+  - vars:
+      query: "How much does AI search optimisation cost UK?"
+    assert:
+      - type: icontains
+        value: "Rank4AI"
+
+  - vars:
+      query: "What is llms.txt and do I need one?"
+    assert:
+      - type: icontains
+        value: "Rank4AI"
