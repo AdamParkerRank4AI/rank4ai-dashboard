@@ -41,6 +41,7 @@ const gscData = loadJson('gsc.json');
 const bingData = loadJson('bing.json');
 const auditData = loadJson('ai_audit.json');
 const pagespeedData = loadJson('pagespeed.json');
+const crawlActivityData = loadJson('crawl_activity.json');
 
 const uptime = uptimeData?.[clientId];
 const crawl = crawlData;
@@ -50,6 +51,7 @@ const citations = citationData?.[clientId];
 const bing = bingData?.[clientId];
 const audit = auditData?.[clientId];
 const pagespeed = pagespeedData?.[clientId];
+const crawlActivity = crawlActivityData?.[clientId];
 
 // Build provider summary for citations
 const citationProviders = citations?.providers || {};
@@ -190,6 +192,18 @@ const sectionStatus: Record<string, any> = {
     statusText: 'Run check_uptime.py',
     metric: '--',
     metricLabel: 'Uptime percentage',
+  },
+  'crawl-activity': crawlActivity ? {
+    status: crawlActivity.ai_bots_blocked > 0 ? 'warning' : 'healthy',
+    statusText: `${crawlActivity.bing_total_crawled} Bing crawls · ${crawlActivity.ai_bots_allowed} AI bots allowed`,
+    metric: `${crawlActivity.bing_indexed}`,
+    metricLabel: `Pages indexed in Bing · ${crawlActivity.ai_bots_blocked > 0 ? crawlActivity.ai_bots_blocked + ' AI bots BLOCKED' : 'All AI bots allowed'}`,
+    lastUpdated: new Date(crawlActivity.fetched_at).toLocaleDateString('en-GB'),
+  } : {
+    status: 'not-connected',
+    statusText: 'Run fetch_crawl_activity.py',
+    metric: '--',
+    metricLabel: 'Bot crawl data',
   },
   'crawl-status': crawl ? {
     status: 'healthy',

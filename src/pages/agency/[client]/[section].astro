@@ -42,6 +42,7 @@ const uptimeHistory = loadJson('uptime_history.json');
 const citationsAll = loadJson('promptfoo_citations.json') || loadJson('ai_citations.json');
 const auditAll = loadJson('ai_audit.json');
 const pagespeedAll = loadJson('pagespeed.json');
+const crawlActivityAll = loadJson('crawl_activity.json');
 
 const ga4 = ga4All?.[clientId];
 const gsc = gscAll?.[clientId];
@@ -50,6 +51,7 @@ const uptime = uptimeAll?.[clientId];
 const citations = citationsAll?.[clientId];
 const audit = auditAll?.[clientId];
 const pagespeed = pagespeedAll?.[clientId];
+const crawlActivityDetail = crawlActivityAll?.[clientId];
 
 // Prepare chart data as JSON strings for client-side JS
 const dailyTraffic = JSON.stringify(ga4?.daily || []);
@@ -65,6 +67,7 @@ const crawlLinks = JSON.stringify(crawlData?.links?.slice(0, 200) || []);
 const positiveSignals = JSON.stringify(crawlData?.positive_signals || []);
 const citationResults = JSON.stringify(citations?.results || []);
 const uptimeChecks = JSON.stringify(uptimeHistory?.[clientId] || []);
+const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
 ---
 
 <DashboardLayout title={`${section.label} — ${client.name}`} currentClient={clientId} view="agency">
@@ -671,6 +674,58 @@ const uptimeChecks = JSON.stringify(uptimeHistory?.[clientId] || []);
     </div>
   )}
 
+  <!-- CRAWL ACTIVITY -->
+  {sectionId === 'crawl-activity' && crawlActivityDetail && (
+    <div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{crawlActivityDetail.bing_total_crawled}</div>
+          <div class="text-xs text-gray-500">Total Bing Crawls</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-blue-400">{crawlActivityDetail.bing_indexed}</div>
+          <div class="text-xs text-gray-500">Pages Indexed (Bing)</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-green-400">{crawlActivityDetail.ai_bots_allowed}</div>
+          <div class="text-xs text-gray-500">AI Bots Allowed</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class={`text-2xl font-bold ${crawlActivityDetail.ai_bots_blocked > 0 ? 'text-red-400' : 'text-green-400'}`}>{crawlActivityDetail.ai_bots_blocked}</div>
+          <div class="text-xs text-gray-500">AI Bots Blocked</div>
+        </div>
+      </div>
+
+      {crawlActivityDetail.bing_crawl_daily?.length > 0 && (
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
+          <h3 class="text-sm font-semibold text-gray-400 mb-4">Bing Crawler Activity (Last 45 Days)</h3>
+          <canvas id="crawlChart" height="250"></canvas>
+        </div>
+      )}
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+          <h3 class="text-sm font-semibold text-gray-400 mb-4">AI Crawler Access</h3>
+          <div class="space-y-2">
+            {Object.entries(crawlActivityDetail.ai_bot_access || {}).map(([bot, status]: [string, any]) => (
+              <div class="flex justify-between text-xs border-b border-gray-800/50 pb-1.5">
+                <span class="text-gray-300">{bot}</span>
+                <span class={status === 'blocked' ? 'text-red-400 font-medium' : status === 'allowed' ? 'text-green-400' : 'text-gray-600'}>{status}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {crawlActivityDetail.bing_crawl_daily?.length > 0 && (
+          <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+            <h3 class="text-sm font-semibold text-gray-400 mb-4">Bing Index Growth</h3>
+            <canvas id="indexChart" height="200"></canvas>
+          </div>
+        )}
+      </div>
+    </div>
+  )}
+
   <!-- SITE SPEED -->
   {sectionId === 'site-speed' && pagespeed && (
     <div>
@@ -739,7 +794,7 @@ const uptimeChecks = JSON.stringify(uptimeHistory?.[clientId] || []);
 </DashboardLayout>
 
 <!-- Chart scripts -->
-<script define:vars={{ dailyTraffic, uptimeChecks }}>
+<script define:vars={{ dailyTraffic, uptimeChecks, crawlDaily }}>
   const daily = JSON.parse(dailyTraffic);
   const checks = JSON.parse(uptimeChecks);
 
@@ -808,6 +863,77 @@ const uptimeChecks = JSON.stringify(uptimeHistory?.[clientId] || []);
           plugins: { legend: { labels: { color: '#9ca3af', font: { size: 11 } } } },
           scales: {
             x: { ticks: { color: '#6b7280', font: { size: 10 } }, grid: { color: '#1f2937' } },
+            y: { ticks: { color: '#6b7280', font: { size: 10 } }, grid: { color: '#1f2937' } },
+          }
+        }
+      });
+    }
+  }
+
+    // Crawl activity chart
+    const crawlData = JSON.parse(crawlDaily);
+    const crawlEl = document.getElementById('crawlChart');
+    if (crawlEl && crawlData.length > 0) {
+      const labels = crawlData.map(d => {
+        const date = new Date(d.date);
+        return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+      });
+      new Chart(crawlEl, {
+        type: 'bar',
+        data: {
+          labels,
+          datasets: [{
+            label: 'Pages Crawled',
+            data: crawlData.map(d => d.crawled_pages),
+            backgroundColor: 'rgba(59, 130, 246, 0.6)',
+            borderColor: '#3b82f6',
+            borderWidth: 1,
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { labels: { color: '#9ca3af', font: { size: 11 } } } },
+          scales: {
+            x: { ticks: { color: '#6b7280', font: { size: 9 }, maxRotation: 45 }, grid: { color: '#1f2937' } },
+            y: { ticks: { color: '#6b7280', font: { size: 10 } }, grid: { color: '#1f2937' } },
+          }
+        }
+      });
+    }
+
+    // Index growth chart
+    const indexEl = document.getElementById('indexChart');
+    if (indexEl && crawlData.length > 0) {
+      const labels = crawlData.map(d => {
+        const date = new Date(d.date);
+        return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+      });
+      new Chart(indexEl, {
+        type: 'line',
+        data: {
+          labels,
+          datasets: [{
+            label: 'Pages Indexed',
+            data: crawlData.map(d => d.in_index),
+            borderColor: '#10b981',
+            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+            fill: true,
+            tension: 0.3,
+            pointRadius: 2,
+          }, {
+            label: 'Inbound Links',
+            data: crawlData.map(d => d.in_links),
+            borderColor: '#8b5cf6',
+            borderDash: [5, 5],
+            tension: 0.3,
+            pointRadius: 0,
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { labels: { color: '#9ca3af', font: { size: 11 } } } },
+          scales: {
+            x: { ticks: { color: '#6b7280', font: { size: 9 }, maxRotation: 45 }, grid: { color: '#1f2937' } },
             y: { ticks: { color: '#6b7280', font: { size: 10 } }, grid: { color: '#1f2937' } },
           }
         }
