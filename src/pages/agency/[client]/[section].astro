@@ -41,6 +41,7 @@ const uptimeAll = loadJson('uptime.json');
 const uptimeHistory = loadJson('uptime_history.json');
 const citationsAll = loadJson('promptfoo_citations.json') || loadJson('ai_citations.json');
 const auditAll = loadJson('ai_audit.json');
+const pagespeedAll = loadJson('pagespeed.json');
 
 const ga4 = ga4All?.[clientId];
 const gsc = gscAll?.[clientId];
@@ -48,6 +49,7 @@ const bing = bingAll?.[clientId];
 const uptime = uptimeAll?.[clientId];
 const citations = citationsAll?.[clientId];
 const audit = auditAll?.[clientId];
+const pagespeed = pagespeedAll?.[clientId];
 
 // Prepare chart data as JSON strings for client-side JS
 const dailyTraffic = JSON.stringify(ga4?.daily || []);
@@ -669,8 +671,66 @@ const uptimeChecks = JSON.stringify(uptimeHistory?.[clientId] || []);
     </div>
   )}
 
+  <!-- SITE SPEED -->
+  {sectionId === 'site-speed' && pagespeed && (
+    <div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class={`text-2xl font-bold ${(pagespeed.avg_scores?.performance || 0) >= 80 ? 'text-green-400' : (pagespeed.avg_scores?.performance || 0) >= 50 ? 'text-yellow-400' : 'text-red-400'}`}>{pagespeed.avg_scores?.performance || 0}</div>
+          <div class="text-xs text-gray-500">Performance</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class={`text-2xl font-bold ${(pagespeed.avg_scores?.accessibility || 0) >= 80 ? 'text-green-400' : 'text-yellow-400'}`}>{pagespeed.avg_scores?.accessibility || 0}</div>
+          <div class="text-xs text-gray-500">Accessibility</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class={`text-2xl font-bold ${(pagespeed.avg_scores?.seo || 0) >= 80 ? 'text-green-400' : 'text-yellow-400'}`}>{pagespeed.avg_scores?.seo || 0}</div>
+          <div class="text-xs text-gray-500">SEO Score</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{pagespeed.avg_scores?.['best-practices'] || 0}</div>
+          <div class="text-xs text-gray-500">Best Practices</div>
+        </div>
+      </div>
+
+      <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+        <h3 class="text-sm font-semibold text-gray-400 mb-4">Page-by-Page Scores</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-xs">
+            <thead>
+              <tr class="text-gray-500 border-b border-gray-800">
+                <th class="text-left py-2 px-3">Page</th>
+                <th class="text-right py-2 px-3">Performance</th>
+                <th class="text-right py-2 px-3">Accessibility</th>
+                <th class="text-right py-2 px-3">SEO</th>
+                <th class="text-right py-2 px-3">Best Practices</th>
+                <th class="text-right py-2 px-3">LCP</th>
+                <th class="text-right py-2 px-3">CLS</th>
+                <th class="text-center py-2 px-3">CWV</th>
+              </tr>
+            </thead>
+            <tbody>
+              {pagespeed.pages?.map((p: any) => (
+                <tr class="border-b border-gray-800/50">
+                  <td class="py-2 px-3 text-gray-300 truncate max-w-[200px]">{new URL(p.url).pathname}</td>
+                  <td class={`py-2 px-3 text-right font-medium ${(p.scores?.performance || 0) >= 80 ? 'text-green-400' : (p.scores?.performance || 0) >= 50 ? 'text-yellow-400' : 'text-red-400'}`}>{p.scores?.performance || '--'}</td>
+                  <td class="py-2 px-3 text-right text-gray-400">{p.scores?.accessibility || '--'}</td>
+                  <td class="py-2 px-3 text-right text-gray-400">{p.scores?.seo || '--'}</td>
+                  <td class="py-2 px-3 text-right text-gray-400">{p.scores?.['best-practices'] || '--'}</td>
+                  <td class="py-2 px-3 text-right text-gray-400">{p.cwv?.lcp_ms ? `${p.cwv.lcp_ms}ms` : '--'}</td>
+                  <td class="py-2 px-3 text-right text-gray-400">{p.cwv?.cls !== undefined ? (p.cwv.cls / 100).toFixed(2) : '--'}</td>
+                  <td class={`py-2 px-3 text-center ${p.cwv_pass ? 'text-green-400' : p.overall_category === 'NONE' ? 'text-gray-600' : 'text-yellow-400'}`}>{p.cwv_pass ? 'Pass' : p.overall_category === 'NONE' ? 'No data' : p.overall_category}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  )}
+
   <!-- Fallback for sections without detail pages -->
-  {!['traffic', 'content-gaps', 'seo-health', 'ai-citations', 'uptime', 'positive-signals', 'ai-readiness', 'search-performance', 'overview'].includes(sectionId) && (
+  {!['traffic', 'content-gaps', 'seo-health', 'ai-citations', 'uptime', 'positive-signals', 'ai-readiness', 'search-performance', 'overview', 'site-speed'].includes(sectionId) && (
     <div class="bg-gray-900 border border-gray-800 rounded-lg p-8 text-center">
       <p class="text-gray-500">Detailed view for {section.label} coming soon.</p>
       <a href={`/agency/${clientId}`} class="text-sm text-blue-400 hover:text-blue-300 mt-2 inline-block">Back to dashboard</a>

@@ -40,6 +40,7 @@ const ga4Data = loadJson('ga4.json');
 const gscData = loadJson('gsc.json');
 const bingData = loadJson('bing.json');
 const auditData = loadJson('ai_audit.json');
+const pagespeedData = loadJson('pagespeed.json');
 
 const uptime = uptimeData?.[clientId];
 const crawl = crawlData;
@@ -48,6 +49,7 @@ const gsc = gscData?.[clientId];
 const citations = citationData?.[clientId];
 const bing = bingData?.[clientId];
 const audit = auditData?.[clientId];
+const pagespeed = pagespeedData?.[clientId];
 
 // Build provider summary for citations
 const citationProviders = citations?.providers || {};
@@ -164,6 +166,18 @@ const sectionStatus: Record<string, any> = {
     statusText: 'Run crawl_sites.py',
     metric: '--',
     metricLabel: 'Internal links mapped',
+  },
+  'site-speed': pagespeed ? {
+    status: (pagespeed.avg_scores?.performance || 0) >= 80 ? 'healthy' : (pagespeed.avg_scores?.performance || 0) >= 50 ? 'warning' : 'error',
+    statusText: `Performance: ${pagespeed.avg_scores?.performance || 0} · SEO: ${pagespeed.avg_scores?.seo || 0}`,
+    metric: `${pagespeed.avg_scores?.performance || 0}/100`,
+    metricLabel: `Perf ${pagespeed.avg_scores?.performance || 0} · A11y ${pagespeed.avg_scores?.accessibility || 0} · SEO ${pagespeed.avg_scores?.seo || 0} · ${pagespeed.pages_tested} pages tested`,
+    lastUpdated: new Date(pagespeed.fetched_at).toLocaleDateString('en-GB'),
+  } : {
+    status: 'not-connected',
+    statusText: 'Run fetch_pagespeed.py',
+    metric: '--',
+    metricLabel: 'Lighthouse scores',
   },
   'uptime': uptime ? {
     status: uptime.is_up ? 'healthy' : 'error',
