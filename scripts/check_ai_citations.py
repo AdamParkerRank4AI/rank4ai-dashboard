@@ -39,6 +39,17 @@ BRANDS = {
             "What is the difference between factoring and invoice discounting?",
         ],
     },
+    "seocompare": {
+        "name": "SEO Compare",
+        "domain": "seocompare.co.uk",
+        "queries": [
+            "Best SEO agencies UK",
+            "Compare SEO companies UK",
+            "How to choose an SEO agency",
+            "SEO agency comparison tool",
+            "Top rated SEO services UK",
+        ],
+    },
 }
 
 

@@ -19,6 +19,7 @@ OUTPUT_DIR = os.path.expanduser("~/rank4ai-dashboard/src/data/live")
 SITES = {
     "rank4ai": "https://www.rank4ai.co.uk",
     "market-invoice": "https://www.marketinvoice.co.uk",
+    "seocompare": "https://www.seocompare.co.uk",
 }
 
 AI_CRAWLERS = [

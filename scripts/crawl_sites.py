@@ -28,6 +28,10 @@ SITES = {
         "max_pages": 300,
         "sitemap": "https://marketinvoice.co.uk/sitemap-0.xml",
     },
+    "seocompare": {
+        "url": "https://www.seocompare.co.uk",
+        "max_pages": 300,
+    },
 }
 
 HEADERS = {
