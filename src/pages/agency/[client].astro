@@ -35,35 +35,111 @@ function loadJson(filename: string) {
 
 const uptimeData = loadJson('uptime.json');
 const crawlData = loadJson(`crawl_${clientId}.json`);
-const citationData = loadJson('ai_citations.json');
+const citationData = loadJson('promptfoo_citations.json') || loadJson('ai_citations.json');
 const ga4Data = loadJson('ga4.json');
 const gscData = loadJson('gsc.json');
+const bingData = loadJson('bing.json');
+const auditData = loadJson('ai_audit.json');
 
 const uptime = uptimeData?.[clientId];
 const crawl = crawlData;
 const ga4 = ga4Data?.[clientId];
 const gsc = gscData?.[clientId];
 const citations = citationData?.[clientId];
+const bing = bingData?.[clientId];
+const audit = auditData?.[clientId];
+
+// Build provider summary for citations
+const citationProviders = citations?.providers || {};
+const providerSummary = Object.entries(citationProviders)
+  .filter(([_, s]: [string, any]) => (s as any).tested > 0)
+  .map(([name, s]: [string, any]) => `${name}: ${(s as any).rate}%`)
+  .join(' · ') || 'Not tested';
+
+// Bing stats
+const bingQueries = bing?.top_queries?.length || 0;
+const bingImpressions = bing?.top_queries?.reduce((sum: number, q: any) => sum + (q.Impressions || 0), 0) || 0;
 
 // Build section status from live data
 const sectionStatus: Record<string, any> = {
   'overview': {
     status: 'healthy',
-    statusText: 'All systems normal',
-    metric: '2 sites',
-    metricLabel: 'Active monitoring',
+    statusText: 'All data sources active',
+    metric: audit ? `${audit.overall_score}/100` : '--',
+    metricLabel: audit ? `AI Readiness: ${audit.readiness}` : 'Active monitoring',
+    lastUpdated: audit ? new Date(audit.audited_at).toLocaleDateString('en-GB') : undefined,
+  },
+  'ai-readiness': audit ? {
+    status: audit.overall_score >= 70 ? 'healthy' : audit.overall_score >= 40 ? 'warning' : 'error',
+    statusText: `${audit.readiness} — ${audit.pages_audited} pages scored`,
+    metric: `${audit.overall_score}/100`,
+    metricLabel: `Schema: ${audit.scores.schema}/100 · E-E-A-T: ${audit.scores.eeat}/100 · Citation: ${audit.scores.citation_potential}/100`,
+    lastUpdated: new Date(audit.audited_at).toLocaleDateString('en-GB'),
+  } : {
+    status: 'not-connected',
+    statusText: 'Run run_ai_audit.py',
+    metric: '--',
+    metricLabel: 'AI readiness score',
+  },
+  'ai-citations': citations ? {
+    status: citations.citation_rate >= 50 ? 'healthy' : citations.citation_rate >= 20 ? 'warning' : 'error',
+    statusText: `${citations.cited_count}/${citations.total_queries} queries cited`,
+    metric: `${citations.citation_rate}%`,
+    metricLabel: providerSummary,
+    lastUpdated: citations.tested_at ? new Date(citations.tested_at).toLocaleDateString('en-GB') : undefined,
+  } : {
+    status: 'not-connected',
+    statusText: 'Run Promptfoo tests',
+    metric: '--',
+    metricLabel: 'Citation rate',
   },
   'seo-health': crawl ? {
     status: crawl.total_issues > 10 ? 'warning' : crawl.total_issues > 0 ? 'warning' : 'healthy',
     statusText: `${crawl.total_issues} issues found`,
     metric: `${crawl.pages_crawled} pages`,
-    metricLabel: `${crawl.total_issues} issues, ${crawl.pages_with_schema} with schema`,
+    metricLabel: `${crawl.total_issues} issues · ${crawl.pages_with_schema} with schema`,
     lastUpdated: new Date(crawl.crawled_at).toLocaleDateString('en-GB'),
   } : {
     status: 'not-connected',
     statusText: 'Run crawl_sites.py',
     metric: '--',
     metricLabel: 'Awaiting first crawl',
+  },
+  'traffic': ga4 ? {
+    status: 'healthy',
+    statusText: `${ga4.overview.sessions} sessions (30d)`,
+    metric: `${ga4.overview.active_users.toLocaleString()}`,
+    metricLabel: `Users (30d) · ${ga4.overview.pageviews.toLocaleString()} pageviews · ${ga4.overview.bounce_rate}% bounce`,
+    lastUpdated: new Date(ga4.fetched_at).toLocaleDateString('en-GB'),
+  } : {
+    status: 'not-connected',
+    statusText: 'Connect GA4',
+    metric: '--',
+    metricLabel: 'Monthly visitors',
+  },
+  'search-performance': gsc?.totals?.impressions || bingQueries ? {
+    status: 'healthy',
+    statusText: `Google: ${gsc?.totals?.clicks || 0} clicks · Bing: ${bingImpressions} impressions`,
+    metric: `${(gsc?.totals?.impressions || 0) + bingImpressions}`,
+    metricLabel: `Total impressions (Google + Bing) · Avg pos ${gsc?.totals?.position || '--'}`,
+    lastUpdated: gsc ? new Date(gsc.fetched_at).toLocaleDateString('en-GB') : undefined,
+  } : {
+    status: 'not-connected',
+    statusText: 'Connect GSC + Bing',
+    metric: '--',
+    metricLabel: 'Search impressions',
+  },
+  'content-gaps': gsc?.totals?.impressions ? {
+    status: gsc.content_gaps.length > 0 ? 'warning' : 'healthy',
+    statusText: `${gsc.content_gaps.length} gaps found`,
+    metric: `${gsc.content_gaps.length}`,
+    metricLabel: `High impressions, low clicks — opportunities to improve`,
+    lastUpdated: new Date(gsc.fetched_at).toLocaleDateString('en-GB'),
+  } : {
+    status: 'not-connected',
+    statusText: gsc ? 'No gaps detected' : 'Connect GSC',
+    metric: '--',
+    metricLabel: 'Opportunities found',
   },
   'site-tree': crawl ? {
     status: 'healthy',
@@ -81,7 +157,7 @@ const sectionStatus: Record<string, any> = {
     status: crawl.orphan_pages > 0 ? 'warning' : 'healthy',
     statusText: crawl.orphan_pages > 0 ? `${crawl.orphan_pages} orphan pages` : 'All pages linked',
     metric: `${crawl.links?.length || 0}`,
-    metricLabel: `links mapped, ${crawl.orphan_pages} orphans`,
+    metricLabel: `links mapped · ${crawl.orphan_pages} orphans`,
     lastUpdated: new Date(crawl.crawled_at).toLocaleDateString('en-GB'),
   } : {
     status: 'not-connected',
@@ -89,41 +165,11 @@ const sectionStatus: Record<string, any> = {
     metric: '--',
     metricLabel: 'Internal links mapped',
   },
-  'ai-citations': citations ? {
-    status: citations.citation_rate >= 50 ? 'healthy' : citations.citation_rate >= 20 ? 'warning' : 'error',
-    statusText: `${citations.cited_count}/${citations.total_queries} queries cited`,
-    metric: `${citations.citation_rate}%`,
-    metricLabel: `Citation rate (Claude)`,
-    lastUpdated: new Date(citations.checked_at).toLocaleDateString('en-GB'),
-  } : {
-    status: 'not-connected',
-    statusText: 'Run check_ai_citations.py',
-    metric: '--',
-    metricLabel: 'Citation rate',
-  },
-  'rank-tracking': {
-    status: 'not-connected',
-    statusText: 'Connect SerpBear',
-    metric: '--',
-    metricLabel: 'Keywords tracked',
-  },
-  'traffic': ga4 ? {
-    status: 'healthy',
-    statusText: `${ga4.overview.sessions} sessions (30d)`,
-    metric: `${ga4.overview.active_users.toLocaleString()}`,
-    metricLabel: `Users (30d) · ${ga4.overview.pageviews.toLocaleString()} pageviews · ${ga4.overview.bounce_rate}% bounce`,
-    lastUpdated: new Date(ga4.fetched_at).toLocaleDateString('en-GB'),
-  } : {
-    status: 'not-connected',
-    statusText: 'Enable GA4 API',
-    metric: '--',
-    metricLabel: 'Monthly visitors',
-  },
   'uptime': uptime ? {
     status: uptime.is_up ? 'healthy' : 'error',
     statusText: uptime.is_up ? `${uptime.response_time_ms}ms response` : 'SITE DOWN',
     metric: `${uptime.uptime_pct}%`,
-    metricLabel: `Uptime (${uptime.checks_total} checks), avg ${uptime.avg_response_ms || uptime.response_time_ms}ms`,
+    metricLabel: `Uptime (${uptime.checks_total} checks) · avg ${uptime.avg_response_ms || uptime.response_time_ms}ms`,
     lastUpdated: new Date(uptime.checked_at).toLocaleDateString('en-GB'),
   } : {
     status: 'not-connected',
@@ -131,23 +177,11 @@ const sectionStatus: Record<string, any> = {
     metric: '--',
     metricLabel: 'Uptime percentage',
   },
-  'content-gaps': gsc?.totals?.impressions ? {
-    status: gsc.content_gaps.length > 0 ? 'warning' : 'healthy',
-    statusText: `${gsc.content_gaps.length} gaps found`,
-    metric: `${gsc.totals.impressions.toLocaleString()}`,
-    metricLabel: `Impressions · ${gsc.totals.clicks} clicks · Avg pos ${gsc.totals.position}`,
-    lastUpdated: new Date(gsc.fetched_at).toLocaleDateString('en-GB'),
-  } : {
-    status: 'not-connected',
-    statusText: gsc ? 'No GSC data yet' : 'Enable GSC API',
-    metric: '--',
-    metricLabel: 'Opportunities found',
-  },
   'crawl-status': crawl ? {
     status: 'healthy',
     statusText: 'Last crawl complete',
     metric: new Date(crawl.crawled_at).toLocaleDateString('en-GB'),
-    metricLabel: `${crawl.pages_crawled} pages, ${crawl.total_issues} issues`,
+    metricLabel: `${crawl.pages_crawled} pages · ${crawl.total_issues} issues`,
     lastUpdated: new Date(crawl.crawled_at).toLocaleDateString('en-GB'),
   } : {
     status: 'not-connected',
@@ -159,7 +193,7 @@ const sectionStatus: Record<string, any> = {
     status: 'healthy',
     statusText: `${crawl.positive_signals?.length || 0} signals detected`,
     metric: `${crawl.positive_signals?.length || 0}`,
-    metricLabel: `${crawl.pages_with_schema} pages with schema, avg ${crawl.avg_word_count} words`,
+    metricLabel: `${crawl.pages_with_schema} pages with schema · avg ${crawl.avg_word_count} words`,
     lastUpdated: new Date(crawl.crawled_at).toLocaleDateString('en-GB'),
   } : {
     status: 'not-connected',

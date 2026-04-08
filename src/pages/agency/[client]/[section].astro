@@ -35,15 +35,19 @@ function loadJson(filename: string) {
 
 const ga4All = loadJson('ga4.json');
 const gscAll = loadJson('gsc.json');
+const bingAll = loadJson('bing.json');
 const crawlData = loadJson(`crawl_${clientId}.json`);
 const uptimeAll = loadJson('uptime.json');
 const uptimeHistory = loadJson('uptime_history.json');
-const citationsAll = loadJson('ai_citations.json');
+const citationsAll = loadJson('promptfoo_citations.json') || loadJson('ai_citations.json');
+const auditAll = loadJson('ai_audit.json');
 
 const ga4 = ga4All?.[clientId];
 const gsc = gscAll?.[clientId];
+const bing = bingAll?.[clientId];
 const uptime = uptimeAll?.[clientId];
 const citations = citationsAll?.[clientId];
+const audit = auditAll?.[clientId];
 
 // Prepare chart data as JSON strings for client-side JS
 const dailyTraffic = JSON.stringify(ga4?.daily || []);
@@ -387,8 +391,286 @@ const uptimeChecks = JSON.stringify(uptimeHistory?.[clientId] || []);
     </div>
   )}
 
+  <!-- AI READINESS -->
+  {sectionId === 'ai-readiness' && audit && (
+    <div>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class={`text-2xl font-bold ${audit.overall_score >= 70 ? 'text-green-400' : audit.overall_score >= 40 ? 'text-yellow-400' : 'text-red-400'}`}>{audit.overall_score}/100</div>
+          <div class="text-xs text-gray-500">Overall Score</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{audit.scores.schema}/100</div>
+          <div class="text-xs text-gray-500">Schema</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{audit.scores.content_structure}/100</div>
+          <div class="text-xs text-gray-500">Content Structure</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{audit.scores.eeat}/100</div>
+          <div class="text-xs text-gray-500">E-E-A-T</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{audit.scores.citation_potential}/100</div>
+          <div class="text-xs text-gray-500">Citation Potential</div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+          <h3 class="text-sm font-semibold text-gray-400 mb-4">llms.txt</h3>
+          <div class={`text-lg font-bold ${audit.llms_txt?.exists ? 'text-green-400' : 'text-red-400'}`}>
+            {audit.llms_txt?.exists ? 'Found' : 'Not Found'}
+          </div>
+          {audit.llms_txt?.exists && (
+            <p class="text-xs text-gray-500 mt-2">{audit.llms_txt.content_length} characters</p>
+          )}
+          {!audit.llms_txt?.exists && (
+            <p class="text-xs text-gray-500 mt-2">Add /llms.txt to tell AI crawlers about your site</p>
+          )}
+        </div>
+
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+          <h3 class="text-sm font-semibold text-gray-400 mb-4">AI Crawler Access (robots.txt)</h3>
+          {audit.robots_txt?.exists ? (
+            <div class="space-y-1.5">
+              {Object.entries(audit.robots_txt.ai_crawlers || {}).map(([crawler, status]: [string, any]) => (
+                <div class="flex justify-between text-xs">
+                  <span class="text-gray-300">{crawler}</span>
+                  <span class={status === 'blocked' ? 'text-red-400' : status === 'allowed' ? 'text-green-400' : 'text-gray-600'}>{status}</span>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p class="text-xs text-gray-500">No robots.txt found</p>
+          )}
+        </div>
+      </div>
+
+      <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+        <h3 class="text-sm font-semibold text-gray-400 mb-4">Page-by-Page AI Readiness Scores</h3>
+        <div class="overflow-x-auto max-h-[500px] overflow-y-auto">
+          <table class="w-full text-xs">
+            <thead class="sticky top-0 bg-gray-900">
+              <tr class="text-gray-500 border-b border-gray-800">
+                <th class="text-left py-2 px-3">Page</th>
+                <th class="text-right py-2 px-3">Overall</th>
+                <th class="text-right py-2 px-3">Schema</th>
+                <th class="text-right py-2 px-3">Structure</th>
+                <th class="text-right py-2 px-3">E-E-A-T</th>
+                <th class="text-right py-2 px-3">Citation</th>
+                <th class="text-right py-2 px-3">Words</th>
+              </tr>
+            </thead>
+            <tbody>
+              {audit.page_results?.sort((a: any, b: any) => b.overall_score - a.overall_score).map((p: any) => (
+                <tr class="border-b border-gray-800/50">
+                  <td class="py-2 px-3 text-gray-300 truncate max-w-[250px]">{new URL(p.url).pathname}</td>
+                  <td class={`py-2 px-3 text-right font-medium ${p.overall_score >= 70 ? 'text-green-400' : p.overall_score >= 40 ? 'text-yellow-400' : 'text-red-400'}`}>{p.overall_score}</td>
+                  <td class="py-2 px-3 text-right text-gray-400">{p.scores.schema}</td>
+                  <td class="py-2 px-3 text-right text-gray-400">{p.scores.content_structure}</td>
+                  <td class="py-2 px-3 text-right text-gray-400">{p.scores.eeat}</td>
+                  <td class="py-2 px-3 text-right text-gray-400">{p.scores.citation_potential}</td>
+                  <td class="py-2 px-3 text-right text-gray-500">{p.word_count}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  )}
+
+  <!-- SEARCH PERFORMANCE (Google + Bing) -->
+  {sectionId === 'search-performance' && (gsc || bing) && (
+    <div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{gsc?.totals?.clicks || 0}</div>
+          <div class="text-xs text-gray-500">Google Clicks</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{gsc?.totals?.impressions?.toLocaleString() || 0}</div>
+          <div class="text-xs text-gray-500">Google Impressions</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{gsc?.totals?.position || '--'}</div>
+          <div class="text-xs text-gray-500">Google Avg Position</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-blue-400">{bing?.top_queries?.length || 0}</div>
+          <div class="text-xs text-gray-500">Bing Queries</div>
+        </div>
+      </div>
+
+      {gsc?.top_queries?.length > 0 && (
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
+          <h3 class="text-sm font-semibold text-gray-400 mb-4">Google — Top Queries</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs">
+              <thead>
+                <tr class="text-gray-500 border-b border-gray-800">
+                  <th class="text-left py-2 px-3">Query</th>
+                  <th class="text-right py-2 px-3">Clicks</th>
+                  <th class="text-right py-2 px-3">Impressions</th>
+                  <th class="text-right py-2 px-3">CTR</th>
+                  <th class="text-right py-2 px-3">Position</th>
+                </tr>
+              </thead>
+              <tbody>
+                {gsc.top_queries.map((q: any) => (
+                  <tr class="border-b border-gray-800/50">
+                    <td class="py-2 px-3 text-gray-300">{q.query}</td>
+                    <td class="py-2 px-3 text-right text-white">{q.clicks}</td>
+                    <td class="py-2 px-3 text-right text-white">{q.impressions}</td>
+                    <td class="py-2 px-3 text-right text-blue-400">{q.ctr}%</td>
+                    <td class="py-2 px-3 text-right text-gray-400">{q.position}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
+
+      {bing?.top_queries?.length > 0 && (
+        <div class="bg-gray-900 border border-blue-800/30 rounded-lg p-6 mb-6">
+          <h3 class="text-sm font-semibold text-blue-400 mb-4">Bing — Top Queries</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs">
+              <thead>
+                <tr class="text-gray-500 border-b border-gray-800">
+                  <th class="text-left py-2 px-3">Query</th>
+                  <th class="text-right py-2 px-3">Impressions</th>
+                  <th class="text-right py-2 px-3">Clicks</th>
+                  <th class="text-right py-2 px-3">Avg Position</th>
+                </tr>
+              </thead>
+              <tbody>
+                {bing.top_queries.map((q: any) => (
+                  <tr class="border-b border-gray-800/50">
+                    <td class="py-2 px-3 text-gray-300">{q.Query}</td>
+                    <td class="py-2 px-3 text-right text-white">{q.Impressions}</td>
+                    <td class="py-2 px-3 text-right text-white">{q.Clicks}</td>
+                    <td class="py-2 px-3 text-right text-gray-400">{q.AvgImpressionPosition}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
+
+      {gsc?.top_pages?.length > 0 && (
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+          <h3 class="text-sm font-semibold text-gray-400 mb-4">Google — Top Pages</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs">
+              <thead>
+                <tr class="text-gray-500 border-b border-gray-800">
+                  <th class="text-left py-2 px-3">Page</th>
+                  <th class="text-right py-2 px-3">Clicks</th>
+                  <th class="text-right py-2 px-3">Impressions</th>
+                  <th class="text-right py-2 px-3">CTR</th>
+                  <th class="text-right py-2 px-3">Position</th>
+                </tr>
+              </thead>
+              <tbody>
+                {gsc.top_pages.map((p: any) => (
+                  <tr class="border-b border-gray-800/50">
+                    <td class="py-2 px-3 text-gray-300 truncate max-w-[300px]">{new URL(p.page).pathname}</td>
+                    <td class="py-2 px-3 text-right text-white">{p.clicks}</td>
+                    <td class="py-2 px-3 text-right text-white">{p.impressions}</td>
+                    <td class="py-2 px-3 text-right text-blue-400">{p.ctr}%</td>
+                    <td class="py-2 px-3 text-right text-gray-400">{p.position}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
+    </div>
+  )}
+
+  <!-- OVERVIEW -->
+  {sectionId === 'overview' && (
+    <div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        {audit && (
+          <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+            <div class={`text-2xl font-bold ${audit.overall_score >= 70 ? 'text-green-400' : audit.overall_score >= 40 ? 'text-yellow-400' : 'text-red-400'}`}>{audit.overall_score}/100</div>
+            <div class="text-xs text-gray-500">AI Readiness</div>
+          </div>
+        )}
+        {citations && (
+          <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+            <div class="text-2xl font-bold text-white">{citations.citation_rate}%</div>
+            <div class="text-xs text-gray-500">AI Citation Rate</div>
+          </div>
+        )}
+        {ga4 && (
+          <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+            <div class="text-2xl font-bold text-white">{ga4.overview.active_users.toLocaleString()}</div>
+            <div class="text-xs text-gray-500">Users (30d)</div>
+          </div>
+        )}
+        {crawlData && (
+          <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+            <div class="text-2xl font-bold text-white">{crawlData.pages_crawled}</div>
+            <div class="text-xs text-gray-500">Pages</div>
+          </div>
+        )}
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+          <h3 class="text-sm font-semibold text-gray-400 mb-4">AI Search Status</h3>
+          <div class="space-y-3">
+            {audit && <div class="flex justify-between text-sm"><span class="text-gray-400">AI Readiness</span><span class={audit.overall_score >= 70 ? 'text-green-400' : 'text-yellow-400'}>{audit.overall_score}/100 ({audit.readiness})</span></div>}
+            {citations && <div class="flex justify-between text-sm"><span class="text-gray-400">Citation Rate</span><span class="text-white">{citations.citation_rate}% ({citations.cited_count}/{citations.total_queries})</span></div>}
+            {audit && <div class="flex justify-between text-sm"><span class="text-gray-400">llms.txt</span><span class={audit.llms_txt?.exists ? 'text-green-400' : 'text-red-400'}>{audit.llms_txt?.exists ? 'Present' : 'Missing'}</span></div>}
+            {audit && <div class="flex justify-between text-sm"><span class="text-gray-400">AI Crawlers Blocked</span><span class={audit.robots_txt?.blocked_count > 0 ? 'text-red-400' : 'text-green-400'}>{audit.robots_txt?.blocked_count || 0}</span></div>}
+          </div>
+        </div>
+
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+          <h3 class="text-sm font-semibold text-gray-400 mb-4">Site Health</h3>
+          <div class="space-y-3">
+            {crawlData && <div class="flex justify-between text-sm"><span class="text-gray-400">Pages</span><span class="text-white">{crawlData.pages_crawled}</span></div>}
+            {crawlData && <div class="flex justify-between text-sm"><span class="text-gray-400">Issues</span><span class={crawlData.total_issues > 0 ? 'text-yellow-400' : 'text-green-400'}>{crawlData.total_issues}</span></div>}
+            {crawlData && <div class="flex justify-between text-sm"><span class="text-gray-400">Schema Coverage</span><span class="text-white">{crawlData.pages_with_schema}/{crawlData.pages_crawled}</span></div>}
+            {uptime && <div class="flex justify-between text-sm"><span class="text-gray-400">Uptime</span><span class={uptime.is_up ? 'text-green-400' : 'text-red-400'}>{uptime.uptime_pct}%</span></div>}
+            {ga4 && <div class="flex justify-between text-sm"><span class="text-gray-400">Bounce Rate</span><span class="text-white">{ga4.overview.bounce_rate}%</span></div>}
+          </div>
+        </div>
+
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+          <h3 class="text-sm font-semibold text-gray-400 mb-4">Search Performance</h3>
+          <div class="space-y-3">
+            {gsc?.totals && <div class="flex justify-between text-sm"><span class="text-gray-400">Google Clicks</span><span class="text-white">{gsc.totals.clicks}</span></div>}
+            {gsc?.totals && <div class="flex justify-between text-sm"><span class="text-gray-400">Google Impressions</span><span class="text-white">{gsc.totals.impressions?.toLocaleString()}</span></div>}
+            {bing?.top_queries && <div class="flex justify-between text-sm"><span class="text-gray-400">Bing Queries</span><span class="text-white">{bing.top_queries.length}</span></div>}
+            {gsc?.totals && <div class="flex justify-between text-sm"><span class="text-gray-400">Avg Position</span><span class="text-white">{gsc.totals.position}</span></div>}
+          </div>
+        </div>
+
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+          <h3 class="text-sm font-semibold text-gray-400 mb-4">Traffic</h3>
+          <div class="space-y-3">
+            {ga4 && <div class="flex justify-between text-sm"><span class="text-gray-400">Users</span><span class="text-white">{ga4.overview.active_users.toLocaleString()}</span></div>}
+            {ga4 && <div class="flex justify-between text-sm"><span class="text-gray-400">Sessions</span><span class="text-white">{ga4.overview.sessions.toLocaleString()}</span></div>}
+            {ga4 && <div class="flex justify-between text-sm"><span class="text-gray-400">Pageviews</span><span class="text-white">{ga4.overview.pageviews.toLocaleString()}</span></div>}
+            {ga4?.sources?.[0] && <div class="flex justify-between text-sm"><span class="text-gray-400">Top Source</span><span class="text-white">{ga4.sources[0].channel}</span></div>}
+          </div>
+        </div>
+      </div>
+    </div>
+  )}
+
   <!-- Fallback for sections without detail pages -->
-  {!['traffic', 'content-gaps', 'seo-health', 'ai-citations', 'uptime', 'positive-signals'].includes(sectionId) && (
+  {!['traffic', 'content-gaps', 'seo-health', 'ai-citations', 'uptime', 'positive-signals', 'ai-readiness', 'search-performance', 'overview'].includes(sectionId) && (
     <div class="bg-gray-900 border border-gray-800 rounded-lg p-8 text-center">
       <p class="text-gray-500">Detailed view for {section.label} coming soon.</p>
       <a href={`/agency/${clientId}`} class="text-sm text-blue-400 hover:text-blue-300 mt-2 inline-block">Back to dashboard</a>

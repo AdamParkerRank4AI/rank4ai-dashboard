@@ -6,10 +6,40 @@
     "icon": "grid"
   },
   {
+    "id": "ai-readiness",
+    "label": "AI Readiness",
+    "description": "AI citation readiness score — schema, E-E-A-T, content structure, llms.txt",
+    "icon": "zap"
+  },
+  {
+    "id": "ai-citations",
+    "label": "AI Citations",
+    "description": "LLM mention tracking — ChatGPT, Claude, Gemini",
+    "icon": "brain"
+  },
+  {
     "id": "seo-health",
     "label": "SEO Health",
     "description": "H1s, meta tags, schema, duplicate content, broken links",
     "icon": "check-circle"
+  },
+  {
+    "id": "traffic",
+    "label": "Traffic",
+    "description": "GA4 visitors, pageviews, sources, countries",
+    "icon": "bar-chart"
+  },
+  {
+    "id": "search-performance",
+    "label": "Search Performance",
+    "description": "Google + Bing — clicks, impressions, queries, positions",
+    "icon": "search"
+  },
+  {
+    "id": "content-gaps",
+    "label": "Content Gaps",
+    "description": "Keywords with impressions but no clicks, missing topics",
+    "icon": "target"
   },
   {
     "id": "site-tree",
@@ -24,45 +54,21 @@
     "icon": "link"
   },
   {
-    "id": "ai-citations",
-    "label": "AI Citations",
-    "description": "LLM mention tracking — ChatGPT, Claude, Gemini, Perplexity",
-    "icon": "brain"
-  },
-  {
-    "id": "rank-tracking",
-    "label": "Rank Tracking",
-    "description": "Keyword positions, trends, SERP data",
-    "icon": "trending-up"
-  },
-  {
-    "id": "traffic",
-    "label": "Traffic",
-    "description": "Visitors, pageviews, sources, countries",
-    "icon": "bar-chart"
-  },
-  {
     "id": "uptime",
     "label": "Uptime",
     "description": "Site status, response times, uptime percentage",
     "icon": "activity"
   },
   {
-    "id": "content-gaps",
-    "label": "Content Gaps",
-    "description": "Keywords with impressions but no clicks, missing topics",
-    "icon": "search"
-  },
-  {
     "id": "crawl-status",
     "label": "Crawl Status",
-    "description": "Last crawl date, pages crawled, issues found, next scheduled",
+    "description": "Last crawl date, pages crawled, issues found",
     "icon": "refresh"
   },
   {
     "id": "positive-signals",
     "label": "Positive Signals",
-    "description": "What's working — strong pages, rising keywords, good schema, citations gained",
+    "description": "What's working — strong pages, good schema, citations gained",
     "icon": "thumbs-up"
   }
 ]
