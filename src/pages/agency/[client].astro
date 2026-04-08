@@ -119,8 +119,8 @@ const sectionStatus: Record<string, any> = {
     metric: '--',
     metricLabel: 'Monthly visitors',
   },
-  'search-performance': gsc?.totals?.impressions || bingQueries ? {
-    status: 'healthy',
+  'search-performance': gsc || bing ? {
+    status: (gsc?.totals?.impressions || 0) + bingImpressions > 0 ? 'healthy' : 'warning',
     statusText: `Google: ${gsc?.totals?.clicks || 0} clicks · Bing: ${bingImpressions} impressions`,
     metric: `${(gsc?.totals?.impressions || 0) + bingImpressions}`,
     metricLabel: `Total impressions (Google + Bing) · Avg pos ${gsc?.totals?.position || '--'}`,
@@ -131,15 +131,15 @@ const sectionStatus: Record<string, any> = {
     metric: '--',
     metricLabel: 'Search impressions',
   },
-  'content-gaps': gsc?.totals?.impressions ? {
-    status: gsc.content_gaps.length > 0 ? 'warning' : 'healthy',
-    statusText: `${gsc.content_gaps.length} gaps found`,
-    metric: `${gsc.content_gaps.length}`,
-    metricLabel: `High impressions, low clicks — opportunities to improve`,
+  'content-gaps': gsc ? {
+    status: (gsc.content_gaps?.length || 0) > 0 ? 'warning' : 'healthy',
+    statusText: (gsc.content_gaps?.length || 0) > 0 ? `${gsc.content_gaps.length} gaps found` : 'No gaps detected',
+    metric: `${gsc.content_gaps?.length || 0}`,
+    metricLabel: (gsc.totals?.impressions || 0) > 0 ? `From ${gsc.totals.impressions.toLocaleString()} impressions` : 'Monitoring for opportunities',
     lastUpdated: new Date(gsc.fetched_at).toLocaleDateString('en-GB'),
   } : {
     status: 'not-connected',
-    statusText: gsc ? 'No gaps detected' : 'Connect GSC',
+    statusText: 'Connect GSC',
     metric: '--',
     metricLabel: 'Opportunities found',
   },
