@@ -1,0 +1,144 @@
+{
+  "rank4ai": {
+    "generated_at": "2026-04-09T12:47:31.924661",
+    "total": 6,
+    "critical": 2,
+    "high": 2,
+    "medium": 2,
+    "low": 0,
+    "recommendations": [
+      {
+        "priority": "critical",
+        "category": "AI Visibility",
+        "title": "Not a known entity in Google Knowledge Graph",
+        "detail": "Google does not recognise this brand as an entity. This severely limits AI citation potential. Build entity signals through structured data, Wikipedia, Wikidata, and authoritative mentions.",
+        "impact": "high"
+      },
+      {
+        "priority": "critical",
+        "category": "Search Visibility",
+        "title": "0% Google visibility for target queries \u2014 top competitor at 75.0%",
+        "detail": "Not ranking in Google top 20 for any of 8 target queries. clickslice.co.uk is visible in 75.0% of queries. Need targeted content + link building for these terms.",
+        "impact": "high"
+      },
+      {
+        "priority": "high",
+        "category": "AI Citations",
+        "title": "Low AI citation rate (12.5%) \u2014 brand queries 100.0%",
+        "detail": "AI knows the brand exists but doesn't recommend it for industry queries. Focus on getting mentioned on authoritative sources (Reddit, industry publications, Wikipedia).",
+        "impact": "high"
+      },
+      {
+        "priority": "high",
+        "category": "Performance",
+        "title": "Mobile performance score is 39/100",
+        "detail": "Poor mobile performance affects both user experience and search rankings. Optimise images, reduce JavaScript, implement lazy loading.",
+        "impact": "medium"
+      },
+      {
+        "priority": "medium",
+        "category": "Content",
+        "title": "6 content gap opportunities from Google Search Console",
+        "detail": "Queries with high impressions but low clicks. Top gap: 'ai visibility seo agency' (38 impressions, 0% CTR). Improve meta titles/descriptions or create dedicated content.",
+        "impact": "medium"
+      },
+      {
+        "priority": "medium",
+        "category": "SEO Health",
+        "title": "56 technical SEO issues found",
+        "detail": "Most common: missing h1 (24 instances). Fix these to improve crawlability and indexing.",
+        "impact": "medium"
+      }
+    ]
+  },
+  "market-invoice": {
+    "generated_at": "2026-04-09T12:47:31.932394",
+    "total": 5,
+    "critical": 2,
+    "high": 1,
+    "medium": 1,
+    "low": 1,
+    "recommendations": [
+      {
+        "priority": "critical",
+        "category": "AI Visibility",
+        "title": "Not a known entity in Google Knowledge Graph",
+        "detail": "Google does not recognise this brand as an entity. This severely limits AI citation potential. Build entity signals through structured data, Wikipedia, Wikidata, and authoritative mentions.",
+        "impact": "high"
+      },
+      {
+        "priority": "critical",
+        "category": "Search Visibility",
+        "title": "0% Google visibility for target queries \u2014 top competitor at 62.5%",
+        "detail": "Not ranking in Google top 20 for any of 8 target queries. bibbyfinancialservices.com is visible in 62.5% of queries. Need targeted content + link building for these terms.",
+        "impact": "high"
+      },
+      {
+        "priority": "high",
+        "category": "AI Citations",
+        "title": "Low AI citation rate (5.3%) \u2014 brand queries 100.0%",
+        "detail": "AI knows the brand exists but doesn't recommend it for industry queries. Focus on getting mentioned on authoritative sources (Reddit, industry publications, Wikipedia).",
+        "impact": "high"
+      },
+      {
+        "priority": "medium",
+        "category": "Internal Links",
+        "title": "50 orphan pages with no internal links",
+        "detail": "These pages have no internal links pointing to them \u2014 search engines and AI crawlers may not discover them. Add internal links from related content.",
+        "impact": "medium"
+      },
+      {
+        "priority": "low",
+        "category": "Indexing",
+        "title": "Only 0 pages indexed in Bing (site has 257)",
+        "detail": "Submit all pages via IndexNow to improve Bing/Copilot visibility. Run: python3 scripts/submit_indexnow.py market-invoice",
+        "impact": "medium"
+      }
+    ]
+  },
+  "seocompare": {
+    "generated_at": "2026-04-09T12:47:31.941088",
+    "total": 5,
+    "critical": 2,
+    "high": 2,
+    "medium": 0,
+    "low": 1,
+    "recommendations": [
+      {
+        "priority": "critical",
+        "category": "AI Visibility",
+        "title": "Not a known entity in Google Knowledge Graph",
+        "detail": "Google does not recognise this brand as an entity. This severely limits AI citation potential. Build entity signals through structured data, Wikipedia, Wikidata, and authoritative mentions.",
+        "impact": "high"
+      },
+      {
+        "priority": "critical",
+        "category": "Search Visibility",
+        "title": "0% Google visibility for target queries \u2014 top competitor at 20.0%",
+        "detail": "Not ranking in Google top 20 for any of 5 target queries. clickslice.co.uk is visible in 20.0% of queries. Need targeted content + link building for these terms.",
+        "impact": "high"
+      },
+      {
+        "priority": "high",
+        "category": "AI Citations",
+        "title": "Low AI citation rate (5.1%) \u2014 brand queries 100.0%",
+        "detail": "AI knows the brand exists but doesn't recommend it for industry queries. Focus on getting mentioned on authoritative sources (Reddit, industry publications, Wikipedia).",
+        "impact": "high"
+      },
+      {
+        "priority": "high",
+        "category": "AI Readiness",
+        "title": "7 AI crawlers blocked in robots.txt",
+        "detail": "AI crawlers are being blocked from accessing the site. Update robots.txt to allow GPTBot, ClaudeBot, PerplexityBot, and Google-Extended.",
+        "impact": "high"
+      },
+      {
+        "priority": "low",
+        "category": "Indexing",
+        "title": "Only 0 pages indexed in Bing (site has 122)",
+        "detail": "Submit all pages via IndexNow to improve Bing/Copilot visibility. Run: python3 scripts/submit_indexnow.py seocompare",
+        "impact": "medium"
+      }
+    ]
+  }
+}

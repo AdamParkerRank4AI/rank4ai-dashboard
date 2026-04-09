@@ -1,5 +1,7 @@
 ---
 import DashboardLayout from '../../../layouts/DashboardLayout.astro';
+import SiteTree from '../../../components/SiteTree.jsx';
+import LinkGraph from '../../../components/LinkGraph.jsx';
 import clients from '../../../data/clients.json';
 import sections from '../../../data/sections.json';
 import fs from 'node:fs';
@@ -38,6 +40,7 @@ const gscAll = loadJson('gsc.json');
 const bingAll = loadJson('bing.json');
 const serpAll = loadJson('serp_data.json');
 const competitorAll = loadJson('competitor_serp.json');
+const recsAll = loadJson('recommendations.json');
 const crawlData = loadJson(`crawl_${clientId}.json`);
 const uptimeAll = loadJson('uptime.json');
 const uptimeHistory = loadJson('uptime_history.json');
@@ -54,6 +57,7 @@ const gsc = gscAll?.[clientId];
 const bing = bingAll?.[clientId];
 const serp = serpAll?.[clientId];
 const competitors = competitorAll?.[clientId];
+const recs = recsAll?.[clientId];
 const uptime = uptimeAll?.[clientId];
 const citations = citationsAll?.[clientId];
 const citByType = citByTypeAll?.[clientId];
@@ -1090,8 +1094,98 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
     </div>
   )}
 
+  <!-- RECOMMENDATIONS -->
+  {sectionId === 'recommendations' && recs && (
+    <div>
+      <div class="grid grid-cols-4 gap-4 mb-6">
+        <div class="bg-red-950/30 border border-red-800/50 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-red-400">{recs.critical}</div>
+          <div class="text-xs text-gray-500">Critical</div>
+        </div>
+        <div class="bg-yellow-950/30 border border-yellow-800/50 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-yellow-400">{recs.high}</div>
+          <div class="text-xs text-gray-500">High</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-blue-400">{recs.medium}</div>
+          <div class="text-xs text-gray-500">Medium</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-gray-400">{recs.low}</div>
+          <div class="text-xs text-gray-500">Low</div>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        {recs.recommendations?.map((r: any, i: number) => (
+          <div class={`rounded-lg border p-5 ${r.priority === 'critical' ? 'border-red-800/50 bg-red-950/20' : r.priority === 'high' ? 'border-yellow-800/50 bg-yellow-950/10' : r.priority === 'medium' ? 'border-blue-800/50 bg-blue-950/10' : 'border-gray-800 bg-gray-900'}`}>
+            <div class="flex items-start justify-between mb-2">
+              <div class="flex items-center gap-3">
+                <span class={`text-xs px-2 py-0.5 rounded-full font-medium ${r.priority === 'critical' ? 'bg-red-600 text-white' : r.priority === 'high' ? 'bg-yellow-600 text-white' : r.priority === 'medium' ? 'bg-blue-600 text-white' : 'bg-gray-600 text-white'}`}>
+                  {r.priority.toUpperCase()}
+                </span>
+                <span class="text-[10px] text-gray-500 px-2 py-0.5 rounded bg-gray-800">{r.category}</span>
+              </div>
+              <span class="text-[10px] text-gray-600">Impact: {r.impact}</span>
+            </div>
+            <h3 class="text-white font-medium text-sm mb-2">{r.title}</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">{r.detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+
+  <!-- SITE TREE -->
+  {sectionId === 'site-tree' && crawlData?.tree && (
+    <div>
+      <div class="grid grid-cols-3 gap-4 mb-6">
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{crawlData.pages_crawled}</div>
+          <div class="text-xs text-gray-500">Total Pages</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{crawlData.avg_depth}</div>
+          <div class="text-xs text-gray-500">Avg Depth</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{crawlData.tree?.children?.length || 0}</div>
+          <div class="text-xs text-gray-500">Top-Level Sections</div>
+        </div>
+      </div>
+      <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+        <h3 class="text-sm font-semibold text-gray-400 mb-4">Site Structure</h3>
+        <SiteTree tree={crawlData.tree} client:load />
+      </div>
+    </div>
+  )}
+
+  <!-- INTERNAL LINKS -->
+  {sectionId === 'internal-links' && crawlData && (
+    <div>
+      <div class="grid grid-cols-3 gap-4 mb-6">
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{crawlData.links?.filter((l: any) => l.type === 'internal').length || 0}</div>
+          <div class="text-xs text-gray-500">Internal Links</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class={`text-2xl font-bold ${crawlData.orphan_pages > 0 ? 'text-red-400' : 'text-green-400'}`}>{crawlData.orphan_pages}</div>
+          <div class="text-xs text-gray-500">Orphan Pages</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{crawlData.avg_depth}</div>
+          <div class="text-xs text-gray-500">Avg Link Depth</div>
+        </div>
+      </div>
+      <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+        <h3 class="text-sm font-semibold text-gray-400 mb-4">Internal Link Map</h3>
+        <LinkGraph pages={crawlData.pages} links={crawlData.links?.slice(0, 500)} client:load />
+      </div>
+    </div>
+  )}
+
   <!-- Fallback for sections without detail pages -->
-  {!['traffic', 'content-gaps', 'seo-health', 'ai-citations', 'uptime', 'positive-signals', 'ai-readiness', 'search-performance', 'overview', 'site-speed', 'crawl-activity', 'competitors'].includes(sectionId) && (
+  {!['traffic', 'content-gaps', 'seo-health', 'ai-citations', 'uptime', 'positive-signals', 'ai-readiness', 'search-performance', 'overview', 'site-speed', 'crawl-activity', 'competitors', 'recommendations', 'site-tree', 'internal-links'].includes(sectionId) && (
     <div class="bg-gray-900 border border-gray-800 rounded-lg p-8 text-center">
       <p class="text-gray-500">Detailed view for {section.label} coming soon.</p>
       <a href={`/agency/${clientId}`} class="text-sm text-blue-400 hover:text-blue-300 mt-2 inline-block">Back to dashboard</a>

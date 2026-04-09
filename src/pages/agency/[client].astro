@@ -47,6 +47,7 @@ const kgData = loadJson('knowledge_graph.json');
 const nlpData = loadJson('nlp_entities.json');
 const serpData = loadJson('serp_data.json');
 const competitorData = loadJson('competitor_serp.json');
+const recsData = loadJson('recommendations.json');
 
 const uptime = uptimeData?.[clientId];
 const crawl = crawlData;
@@ -62,6 +63,7 @@ const kg = kgData?.[clientId];
 const nlp = nlpData?.[clientId];
 const serp = serpData?.[clientId];
 const competitors = competitorData?.[clientId];
+const recs = recsData?.[clientId];
 
 // Build provider summary for citations
 const citationProviders = citations?.providers || {};
@@ -244,6 +246,18 @@ const sectionStatus: Record<string, any> = {
     statusText: 'No crawls yet',
     metric: '--',
     metricLabel: 'Last crawl',
+  },
+  'recommendations': recs ? {
+    status: recs.critical > 0 ? 'error' : recs.high > 0 ? 'warning' : 'healthy',
+    statusText: `${recs.critical} critical · ${recs.high} high · ${recs.medium} medium`,
+    metric: `${recs.total}`,
+    metricLabel: `Prioritised actions to improve AI visibility`,
+    lastUpdated: new Date(recs.generated_at).toLocaleDateString('en-GB'),
+  } : {
+    status: 'not-connected',
+    statusText: 'Run generate_recommendations.py',
+    metric: '--',
+    metricLabel: 'Recommendations',
   },
   'positive-signals': crawl ? {
     status: 'healthy',
