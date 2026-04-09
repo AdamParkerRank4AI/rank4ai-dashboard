@@ -194,6 +194,91 @@ def generate_for_client(client_id):
         })
 
     # ============================================================
+    # AI CRAWLERS NOT MENTIONED (should add Allow)
+    # ============================================================
+    if crawl_activity:
+        not_mentioned = [bot for bot, status in crawl_activity.get("ai_bot_access", {}).items() if status == "not_mentioned"]
+        if not_mentioned:
+            recs.append({
+                "priority": "medium", "category": "AI Readiness",
+                "title": f"{len(not_mentioned)} AI crawlers not explicitly allowed in robots.txt",
+                "detail": f"These crawlers are not mentioned in robots.txt — add explicit 'Allow' rules to ensure they can access the site: {', '.join(not_mentioned)}. While not actively blocked, explicit rules are best practice for AI visibility.",
+                "impact": "medium", "pages": ["/robots.txt"],
+            })
+
+    # ============================================================
+    # MISSING SCHEMA TYPES
+    # ============================================================
+    if entities and entities.get("schema_types"):
+        current_types = set(s["type"] for s in entities["schema_types"])
+        ideal_types = {"Article", "FAQPage", "Organization", "LocalBusiness", "HowTo", "BreadcrumbList"}
+        missing_types = ideal_types - current_types
+        if missing_types:
+            recs.append({
+                "priority": "medium", "category": "Schema",
+                "title": f"Missing schema types: {', '.join(missing_types)}",
+                "detail": f"The site is using {', '.join(current_types)} but is missing these important schema types: {', '.join(missing_types)}. Organization and LocalBusiness schema help AI identify who you are. FAQPage and HowTo schema have the highest AI citation rates.",
+                "impact": "medium", "pages": [],
+            })
+
+    # ============================================================
+    # HIGH BOUNCE RATE
+    # ============================================================
+    if ga4 and ga4.get("overview", {}).get("bounce_rate", 0) > 60:
+        bounce = ga4["overview"]["bounce_rate"]
+        recs.append({
+            "priority": "medium", "category": "Traffic",
+            "title": f"High bounce rate: {bounce}%",
+            "detail": f"Bounce rate is {bounce}% — over 60% suggests visitors aren't finding what they need. Improve: 1) Page load speed 2) Content relevance to search queries 3) Clear CTAs and navigation 4) Mobile experience 5) Internal linking to related content.",
+            "impact": "medium", "pages": [],
+        })
+
+    # ============================================================
+    # SLOW RESPONSE TIME
+    # ============================================================
+    uptime = load("uptime.json").get(client_id, {})
+    if uptime and uptime.get("response_time_ms", 0) > 2000:
+        recs.append({
+            "priority": "medium", "category": "Performance",
+            "title": f"Slow server response time: {uptime['response_time_ms']}ms",
+            "detail": f"Server response time is {uptime['response_time_ms']}ms — should be under 500ms. Check server configuration, caching, CDN setup, and database queries.",
+            "impact": "medium", "pages": [],
+        })
+
+    # ============================================================
+    # NO BING CRAWL DATA
+    # ============================================================
+    if crawl_activity and crawl_activity.get("bing_total_crawled", 0) == 0 and crawl:
+        recs.append({
+            "priority": "medium", "category": "Indexing",
+            "title": "No Bing crawl activity detected",
+            "detail": f"Bing has not crawled any pages. Bing feeds Copilot (Microsoft's AI). Submit sitemap at bing.com/webmasters and run IndexNow submission: python3 scripts/submit_indexnow.py {client_id}",
+            "impact": "medium", "pages": [],
+        })
+
+    # ============================================================
+    # NO GSC DATA
+    # ============================================================
+    if gsc and gsc.get("totals", {}).get("impressions", 0) == 0:
+        recs.append({
+            "priority": "low", "category": "Search Visibility",
+            "title": "No Google Search Console impressions",
+            "detail": "Google Search Console shows zero impressions. The site may not be indexed, or the GSC property may need verification. Check coverage reports in GSC and submit sitemap.",
+            "impact": "medium", "pages": [],
+        })
+
+    # ============================================================
+    # LOW TRAFFIC (for sites that should have some)
+    # ============================================================
+    if ga4 and ga4.get("overview", {}).get("active_users", 0) == 0 and crawl and crawl.get("pages_crawled", 0) > 50:
+        recs.append({
+            "priority": "medium", "category": "Traffic",
+            "title": "No traffic recorded in GA4 (30 days)",
+            "detail": "GA4 shows zero users despite having content. Check: 1) GA4 tracking code is installed correctly 2) The measurement ID is correct 3) Filters aren't excluding all traffic.",
+            "impact": "medium", "pages": [],
+        })
+
+    # ============================================================
     # PERFORMANCE
     # ============================================================
     if pagespeed and pagespeed.get("avg_scores"):

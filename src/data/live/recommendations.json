@@ -1,10 +1,10 @@
 {
   "rank4ai": {
-    "generated_at": "2026-04-09T14:55:02.705976",
-    "total": 16,
+    "generated_at": "2026-04-09T15:16:03.954901",
+    "total": 18,
     "critical": 2,
     "high": 6,
-    "medium": 8,
+    "medium": 10,
     "low": 0,
     "recommendations": [
       {
@@ -174,6 +174,24 @@
       {
         "priority": "medium",
         "category": "AI Readiness",
+        "title": "3 AI crawlers not explicitly allowed in robots.txt",
+        "detail": "These crawlers are not mentioned in robots.txt \u2014 add explicit 'Allow' rules to ensure they can access the site: GoogleOther, Amazonbot, FacebookBot. While not actively blocked, explicit rules are best practice for AI visibility.",
+        "impact": "medium",
+        "pages": [
+          "/robots.txt"
+        ]
+      },
+      {
+        "priority": "medium",
+        "category": "Traffic",
+        "title": "High bounce rate: 82.7%",
+        "detail": "Bounce rate is 82.7% \u2014 over 60% suggests visitors aren't finding what they need. Improve: 1) Page load speed 2) Content relevance to search queries 3) Clear CTAs and navigation 4) Mobile experience 5) Internal linking to related content.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "AI Readiness",
         "title": "2 pages score below 40/100 for AI readiness",
         "detail": "These pages have poor AI citation potential. Improve by adding: FAQ sections, clear definitions, comparison tables, statistics, author credentials. Low-scoring pages: /ai-search-questions/what-is-the-five-signal-model-and-how-does-it-apply-to-ai-marketing, /ai-seo/technical/guides/complete-guide",
         "impact": "medium",
@@ -225,12 +243,12 @@
     ]
   },
   "market-invoice": {
-    "generated_at": "2026-04-09T14:55:02.711684",
-    "total": 14,
+    "generated_at": "2026-04-09T15:16:03.975619",
+    "total": 19,
     "critical": 2,
     "high": 6,
-    "medium": 6,
-    "low": 0,
+    "medium": 10,
+    "low": 1,
     "recommendations": [
       {
         "priority": "critical",
@@ -395,6 +413,40 @@
       {
         "priority": "medium",
         "category": "AI Readiness",
+        "title": "7 AI crawlers not explicitly allowed in robots.txt",
+        "detail": "These crawlers are not mentioned in robots.txt \u2014 add explicit 'Allow' rules to ensure they can access the site: Claude-Web, Bytespider, cohere-ai, Amazonbot, anthropic-ai, FacebookBot, Applebot-Extended. While not actively blocked, explicit rules are best practice for AI visibility.",
+        "impact": "medium",
+        "pages": [
+          "/robots.txt"
+        ]
+      },
+      {
+        "priority": "medium",
+        "category": "Schema",
+        "title": "Missing schema types: Organization, LocalBusiness, HowTo",
+        "detail": "The site is using Product, Service, BreadcrumbList, WebApplication, WebPage, Article, FAQPage but is missing these important schema types: Organization, LocalBusiness, HowTo. Organization and LocalBusiness schema help AI identify who you are. FAQPage and HowTo schema have the highest AI citation rates.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Traffic",
+        "title": "High bounce rate: 68.4%",
+        "detail": "Bounce rate is 68.4% \u2014 over 60% suggests visitors aren't finding what they need. Improve: 1) Page load speed 2) Content relevance to search queries 3) Clear CTAs and navigation 4) Mobile experience 5) Internal linking to related content.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Indexing",
+        "title": "No Bing crawl activity detected",
+        "detail": "Bing has not crawled any pages. Bing feeds Copilot (Microsoft's AI). Submit sitemap at bing.com/webmasters and run IndexNow submission: python3 scripts/submit_indexnow.py market-invoice",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "AI Readiness",
         "title": "3 pages score below 40/100 for AI readiness",
         "detail": "These pages have poor AI citation potential. Improve by adding: FAQ sections, clear definitions, comparison tables, statistics, author credentials. Low-scoring pages: /privacy/, /compare/, /providers/secure-trust/",
         "impact": "medium",
@@ -411,15 +463,23 @@
         "detail": "Bing feeds Copilot (which has 94+ citations for some sites). Submit all pages via IndexNow: python3 scripts/submit_indexnow.py market-invoice",
         "impact": "medium",
         "pages": []
+      },
+      {
+        "priority": "low",
+        "category": "Search Visibility",
+        "title": "No Google Search Console impressions",
+        "detail": "Google Search Console shows zero impressions. The site may not be indexed, or the GSC property may need verification. Check coverage reports in GSC and submit sitemap.",
+        "impact": "medium",
+        "pages": []
       }
     ]
   },
   "seocompare": {
-    "generated_at": "2026-04-09T14:55:02.717016",
-    "total": 11,
+    "generated_at": "2026-04-09T15:16:03.993486",
+    "total": 14,
     "critical": 2,
     "high": 4,
-    "medium": 5,
+    "medium": 8,
     "low": 0,
     "recommendations": [
       {
@@ -511,6 +571,32 @@
         "category": "AI Citations",
         "title": "Competitor 'Aira' mentioned 1x instead of you",
         "detail": "Aira is being cited by AI in 1 of your target queries. Analyse what content they have that you don't. Create better, more detailed, more authoritative versions of the same topics.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "AI Readiness",
+        "title": "5 AI crawlers not explicitly allowed in robots.txt",
+        "detail": "These crawlers are not mentioned in robots.txt \u2014 add explicit 'Allow' rules to ensure they can access the site: Claude-Web, cohere-ai, anthropic-ai, FacebookBot, Bingbot. While not actively blocked, explicit rules are best practice for AI visibility.",
+        "impact": "medium",
+        "pages": [
+          "/robots.txt"
+        ]
+      },
+      {
+        "priority": "medium",
+        "category": "Schema",
+        "title": "Missing schema types: Organization, LocalBusiness, HowTo",
+        "detail": "The site is using Service, BreadcrumbList, Article, FAQPage but is missing these important schema types: Organization, LocalBusiness, HowTo. Organization and LocalBusiness schema help AI identify who you are. FAQPage and HowTo schema have the highest AI citation rates.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Indexing",
+        "title": "No Bing crawl activity detected",
+        "detail": "Bing has not crawled any pages. Bing feeds Copilot (Microsoft's AI). Submit sitemap at bing.com/webmasters and run IndexNow submission: python3 scripts/submit_indexnow.py seocompare",
         "impact": "medium",
         "pages": []
       },
