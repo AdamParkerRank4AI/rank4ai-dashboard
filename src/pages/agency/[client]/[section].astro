@@ -41,6 +41,7 @@ const bingAll = loadJson('bing.json');
 const serpAll = loadJson('serp_data.json');
 const competitorAll = loadJson('competitor_serp.json');
 const recsAll = loadJson('recommendations.json');
+const dailyHistory = loadJson('daily_history.json');
 const crawlData = loadJson(`crawl_${clientId}.json`);
 const uptimeAll = loadJson('uptime.json');
 const uptimeHistory = loadJson('uptime_history.json');
@@ -58,6 +59,7 @@ const bing = bingAll?.[clientId];
 const serp = serpAll?.[clientId];
 const competitors = competitorAll?.[clientId];
 const recs = recsAll?.[clientId];
+const history = dailyHistory?.[clientId] || [];
 const uptime = uptimeAll?.[clientId];
 const citations = citationsAll?.[clientId];
 const citByType = citByTypeAll?.[clientId];
@@ -897,6 +899,36 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
           </div>
         </div>
       </div>
+      {history.length > 1 && (
+        <div class="mt-6">
+          <h2 class="text-sm font-semibold text-gray-400 mb-4">Trend Charts (updates daily)</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+              <h3 class="text-xs text-gray-500 mb-3">AI Readiness Score</h3>
+              <canvas id="trend-ai-score" height="150"></canvas>
+            </div>
+            <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+              <h3 class="text-xs text-gray-500 mb-3">Citation Rate (%)</h3>
+              <canvas id="trend-citation" height="150"></canvas>
+            </div>
+            <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+              <h3 class="text-xs text-gray-500 mb-3">Users (30d)</h3>
+              <canvas id="trend-users" height="150"></canvas>
+            </div>
+            <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+              <h3 class="text-xs text-gray-500 mb-3">Pages Indexed (Bing)</h3>
+              <canvas id="trend-indexed" height="150"></canvas>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {history.length <= 1 && (
+        <div class="mt-6 bg-gray-900 border border-gray-800 rounded-lg p-6 text-center">
+          <p class="text-gray-500 text-sm">Trend charts will appear after 2+ days of data collection.</p>
+          <p class="text-gray-600 text-xs mt-1">The daily refresh job runs at 6am and saves metrics automatically.</p>
+        </div>
+      )}
     </div>
   )}
 
@@ -1194,7 +1226,7 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
 </DashboardLayout>
 
 <!-- Chart scripts -->
-<script define:vars={{ dailyTraffic, uptimeChecks, crawlDaily }}>
+<script define:vars={{ dailyTraffic, uptimeChecks, crawlDaily, historyData: JSON.stringify(history) }}>
   const daily = JSON.parse(dailyTraffic);
   const checks = JSON.parse(uptimeChecks);
 
@@ -1338,6 +1370,52 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
           }
         }
       });
+    }
+  }
+
+    // Trend charts from daily history
+    const hist = JSON.parse(historyData);
+    if (hist.length > 1) {
+      const trendLabels = hist.map(h => {
+        const d = new Date(h.date);
+        return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+      });
+
+      const trendCharts = [
+        { id: 'trend-ai-score', data: hist.map(h => h.ai_score), color: '#8b5cf6', label: 'AI Score' },
+        { id: 'trend-citation', data: hist.map(h => h.citation_rate), color: '#ef4444', label: 'Citation %' },
+        { id: 'trend-users', data: hist.map(h => h.users), color: '#3b82f6', label: 'Users' },
+        { id: 'trend-indexed', data: hist.map(h => h.bing_indexed), color: '#10b981', label: 'Indexed' },
+      ];
+
+      for (const tc of trendCharts) {
+        const el = document.getElementById(tc.id);
+        if (el) {
+          new Chart(el, {
+            type: 'line',
+            data: {
+              labels: trendLabels,
+              datasets: [{
+                label: tc.label,
+                data: tc.data,
+                borderColor: tc.color,
+                backgroundColor: tc.color + '20',
+                fill: true,
+                tension: 0.3,
+                pointRadius: 3,
+              }]
+            },
+            options: {
+              responsive: true,
+              plugins: { legend: { display: false } },
+              scales: {
+                x: { ticks: { color: '#6b7280', font: { size: 9 } }, grid: { color: '#1f2937' } },
+                y: { ticks: { color: '#6b7280', font: { size: 10 } }, grid: { color: '#1f2937' } },
+              }
+            }
+          });
+        }
+      }
     }
   }
 
