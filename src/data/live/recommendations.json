@@ -1,11 +1,11 @@
 {
   "rank4ai": {
-    "generated_at": "2026-04-09T15:41:29.118128",
-    "total": 22,
+    "generated_at": "2026-04-09T16:26:39.308411",
+    "total": 21,
     "critical": 2,
-    "high": 7,
-    "medium": 13,
-    "low": 0,
+    "high": 6,
+    "medium": 12,
+    "low": 1,
     "recommendations": [
       {
         "priority": "critical",
@@ -42,72 +42,38 @@
       },
       {
         "priority": "high",
-        "category": "Schema",
-        "title": "24 pages missing structured data (168/192 have schema)",
-        "detail": "Pages with schema have 2.5x higher chance of AI citation. Add Article, FAQPage, or HowTo schema to these pages. Pages missing schema: /seo-to-aio, /ai-seo-agency-uk/colchester, /uk-coverage, /ai-search/guides/complete-guide, /ai-seo/technical/guides/complete-guide, /ai-services/ai-messaging-clean-up, /ai-seo/technical/internal-linking, /ai-search/comparisons/guide, /ai-search/comparisons/why-seo-changing, /ai-search-questions/what-does-an-ai-seo-agency-actually-do...",
-        "impact": "high",
-        "pages": [
-          "/seo-to-aio",
-          "/ai-seo-agency-uk/colchester",
-          "/uk-coverage",
-          "/ai-search/guides/complete-guide",
-          "/ai-seo/technical/guides/complete-guide",
-          "/ai-services/ai-messaging-clean-up",
-          "/ai-seo/technical/internal-linking",
-          "/ai-search/comparisons/guide",
-          "/ai-search/comparisons/why-seo-changing",
-          "/ai-search-questions/what-does-an-ai-seo-agency-actually-do",
-          "/ai-search-questions/what-does-a-good-ai-seo-strategy-look-like",
-          "/ai-search-questions/what-is-the-difference-between-keywords-and-prompts-in-ai-search",
-          "/ai-search-questions/what-is-the-difference-between-ai-search-and-traditional-search",
-          "/ai-search-questions/what-is-the-five-signal-model-and-how-does-it-apply-to-ai-marketing",
-          "/ai-search-questions/what-technical-factors-affect-ai-search-visibility",
-          "/ai-search-questions/what-is-ecosystem-validation-in-ai-search",
-          "/ai-search-questions/what-does-an-ai-seo-agency-measure-that-a-traditional-seo-agency-doesnt",
-          "/ai-search-questions/how-do-i-know-if-my-current-seo-agency-understands-ai-search",
-          "/ai-search-questions/what-type-of-content-gets-cited-by-chatgpt",
-          "/ai-search-questions/how-does-ai-marketing-growth-differ-from-traditional-digital-marketing"
-        ]
-      },
-      {
-        "priority": "high",
         "category": "SEO Health",
-        "title": "24 pages with missing h1",
-        "detail": "These pages have no H1 tag. Add a clear, descriptive H1 to each page. AI models use H1s to understand page topics. Affected pages: /seo-to-aio, /ai-seo-agency-uk/colchester, /uk-coverage, /ai-search/guides/complete-guide, /ai-seo/technical/guides/complete-guide, /ai-services/ai-messaging-clean-up, /ai-seo/technical/internal-linking, /ai-search/comparisons/guide...",
-        "impact": "medium",
-        "pages": [
-          "/seo-to-aio",
-          "/ai-seo-agency-uk/colchester",
-          "/uk-coverage",
-          "/ai-search/guides/complete-guide",
-          "/ai-seo/technical/guides/complete-guide",
-          "/ai-services/ai-messaging-clean-up",
-          "/ai-seo/technical/internal-linking",
-          "/ai-search/comparisons/guide",
-          "/ai-search/comparisons/why-seo-changing",
-          "/ai-search-questions/what-does-an-ai-seo-agency-actually-do",
-          "/ai-search-questions/what-does-a-good-ai-seo-strategy-look-like",
-          "/ai-search-questions/what-is-the-difference-between-keywords-and-prompts-in-ai-search",
-          "/ai-search-questions/what-is-the-difference-between-ai-search-and-traditional-search",
-          "/ai-search-questions/what-is-the-five-signal-model-and-how-does-it-apply-to-ai-marketing",
-          "/ai-search-questions/what-technical-factors-affect-ai-search-visibility"
-        ]
-      },
-      {
-        "priority": "high",
-        "category": "SEO Health",
-        "title": "8 pages with broken",
-        "detail": "These URLs returned HTTP errors. Fix or redirect broken pages. Affected pages: /ai-search-audit, /quick-check, /assets/ai_search_framework.pdf, /ai-search/comparisons/future-of-organic-search, /ai-search/comparisons/ranking-vs-reasoning, /ai-search/comparisons/meaning-as-ranking-factor, /ai-search/comparisons/ai-vs-seo-comparison, /ai-search/conversational-search",
+        "title": "11 pages with broken",
+        "detail": "These URLs returned HTTP errors. Fix or redirect broken pages. Affected pages: /ai-search-audit, /quick-check, /assets/ai_search_framework.pdf, /ai-search/conversational-search, /ai-search/comparisons/future-of-organic-search, /ai-search/comparisons/ranking-vs-reasoning, /ai-search/comparisons/meaning-as-ranking-factor, /ai-search/comparisons/ai-vs-seo-comparison...",
         "impact": "medium",
         "pages": [
           "/ai-search-audit",
           "/quick-check",
           "/assets/ai_search_framework.pdf",
+          "/ai-search/conversational-search",
           "/ai-search/comparisons/future-of-organic-search",
           "/ai-search/comparisons/ranking-vs-reasoning",
           "/ai-search/comparisons/meaning-as-ranking-factor",
           "/ai-search/comparisons/ai-vs-seo-comparison",
-          "/ai-search/conversational-search"
+          "/ai-seo/technical/diagnosing-weak-meaning",
+          "/ai-seo/technical/meaning-graphs",
+          "/ai-seo/technical/trust-signals"
+        ]
+      },
+      {
+        "priority": "high",
+        "category": "SEO Health",
+        "title": "7 pages with missing h1",
+        "detail": "These pages have no H1 tag. Add a clear, descriptive H1 to each page. AI models use H1s to understand page topics. Affected pages: /ai-seo-agency-uk/colchester, /uk-coverage, /ai-seo/technical/internal-linking, /ai-search/comparisons/guide, /ai-search/comparisons/why-seo-changing, /ai-search/ecosystem-validation/insights/do-directories-help-ai-recommendations, /ai-seo/technical/ai-misinterpretation",
+        "impact": "medium",
+        "pages": [
+          "/ai-seo-agency-uk/colchester",
+          "/uk-coverage",
+          "/ai-seo/technical/internal-linking",
+          "/ai-search/comparisons/guide",
+          "/ai-search/comparisons/why-seo-changing",
+          "/ai-search/ecosystem-validation/insights/do-directories-help-ai-recommendations",
+          "/ai-seo/technical/ai-misinterpretation"
         ]
       },
       {
@@ -157,26 +123,34 @@
       },
       {
         "priority": "medium",
-        "category": "SEO Health",
-        "title": "24 pages with thin content",
-        "detail": "These pages have fewer than 100 words. Expand with detailed, authoritative content. AI models prefer pages with 500+ words. Affected pages: /seo-to-aio, /ai-seo-agency-uk/colchester, /uk-coverage, /ai-search/guides/complete-guide, /ai-seo/technical/guides/complete-guide, /ai-services/ai-messaging-clean-up, /ai-seo/technical/internal-linking, /ai-search/comparisons/guide...",
-        "impact": "medium",
+        "category": "Schema",
+        "title": "7 pages missing structured data (235/242 have schema)",
+        "detail": "Pages with schema have 2.5x higher chance of AI citation. Add Article, FAQPage, or HowTo schema to these pages. Pages missing schema: /ai-seo-agency-uk/colchester, /uk-coverage, /ai-seo/technical/internal-linking, /ai-search/comparisons/guide, /ai-search/comparisons/why-seo-changing, /ai-search/ecosystem-validation/insights/do-directories-help-ai-recommendations, /ai-seo/technical/ai-misinterpretation",
+        "impact": "high",
         "pages": [
-          "/seo-to-aio",
           "/ai-seo-agency-uk/colchester",
           "/uk-coverage",
-          "/ai-search/guides/complete-guide",
-          "/ai-seo/technical/guides/complete-guide",
-          "/ai-services/ai-messaging-clean-up",
           "/ai-seo/technical/internal-linking",
           "/ai-search/comparisons/guide",
           "/ai-search/comparisons/why-seo-changing",
-          "/ai-search-questions/what-does-an-ai-seo-agency-actually-do",
-          "/ai-search-questions/what-does-a-good-ai-seo-strategy-look-like",
-          "/ai-search-questions/what-is-the-difference-between-keywords-and-prompts-in-ai-search",
-          "/ai-search-questions/what-is-the-difference-between-ai-search-and-traditional-search",
-          "/ai-search-questions/what-is-the-five-signal-model-and-how-does-it-apply-to-ai-marketing",
-          "/ai-search-questions/what-technical-factors-affect-ai-search-visibility"
+          "/ai-search/ecosystem-validation/insights/do-directories-help-ai-recommendations",
+          "/ai-seo/technical/ai-misinterpretation"
+        ]
+      },
+      {
+        "priority": "medium",
+        "category": "SEO Health",
+        "title": "7 pages with thin content",
+        "detail": "These pages have fewer than 100 words. Expand with detailed, authoritative content. AI models prefer pages with 500+ words. Affected pages: /ai-seo-agency-uk/colchester, /uk-coverage, /ai-seo/technical/internal-linking, /ai-search/comparisons/guide, /ai-search/comparisons/why-seo-changing, /ai-search/ecosystem-validation/insights/do-directories-help-ai-recommendations, /ai-seo/technical/ai-misinterpretation",
+        "impact": "medium",
+        "pages": [
+          "/ai-seo-agency-uk/colchester",
+          "/uk-coverage",
+          "/ai-seo/technical/internal-linking",
+          "/ai-search/comparisons/guide",
+          "/ai-search/comparisons/why-seo-changing",
+          "/ai-search/ecosystem-validation/insights/do-directories-help-ai-recommendations",
+          "/ai-seo/technical/ai-misinterpretation"
         ]
       },
       {
@@ -251,35 +225,27 @@
       {
         "priority": "medium",
         "category": "Content",
-        "title": "Only 0/192 pages have multi-modal content (images + video)",
+        "title": "Only 3/242 pages have multi-modal content (images + video)",
         "detail": "Pages with images AND video get 156-317% more AI citations. Add relevant images, infographics, and embedded videos to key content pages.",
         "impact": "high",
         "pages": []
       },
       {
-        "priority": "medium",
-        "category": "Content",
-        "title": "No comparison tables detected on the site",
-        "detail": "Pages with comparison tables have 2.5x higher AI citation rate. Add comparison tables to key pages \u2014 e.g. pricing comparisons, feature comparisons, provider comparisons.",
-        "impact": "medium",
-        "pages": []
-      },
-      {
-        "priority": "medium",
-        "category": "Content",
-        "title": "Only 0 pages have 2,000+ words",
-        "detail": "Pages with 2,000+ words get 3x more AI citations. Create in-depth, comprehensive content on your key topics \u2014 guides, research reports, definitive explainers.",
-        "impact": "medium",
+        "priority": "low",
+        "category": "Accessibility",
+        "title": "7 images missing alt text",
+        "detail": "Alt text helps search engines and AI understand images. Add descriptive alt text to all images.",
+        "impact": "low",
         "pages": []
       }
     ]
   },
   "market-invoice": {
-    "generated_at": "2026-04-09T15:41:29.122254",
-    "total": 23,
+    "generated_at": "2026-04-09T16:26:39.312844",
+    "total": 20,
     "critical": 2,
-    "high": 7,
-    "medium": 13,
+    "high": 6,
+    "medium": 11,
     "low": 1,
     "recommendations": [
       {
@@ -318,39 +284,24 @@
       {
         "priority": "high",
         "category": "Schema",
-        "title": "18 pages missing structured data (239/257 have schema)",
-        "detail": "Pages with schema have 2.5x higher chance of AI citation. Add Article, FAQPage, or HowTo schema to these pages. Pages missing schema: /industries/, /blog/, /contact/, /preview/option-b/, /preview/option-a/, /editorial-policy/, /how-we-are-funded/, /guides/, /providers/, /locations/...",
+        "title": "14 pages missing structured data (286/300 have schema)",
+        "detail": "Pages with schema have 2.5x higher chance of AI citation. Add Article, FAQPage, or HowTo schema to these pages. Pages missing schema: /guides/, /how-we-are-funded/, /disclaimer/, /about/, /cookie-policy/, /compare/, /industries/, /contact/, /terms/, /providers/...",
         "impact": "high",
         "pages": [
-          "/industries/",
-          "/blog/",
-          "/contact/",
-          "/preview/option-b/",
-          "/preview/option-a/",
-          "/editorial-policy/",
-          "/how-we-are-funded/",
           "/guides/",
-          "/providers/",
-          "/locations/",
-          "/compare/",
+          "/how-we-are-funded/",
           "/disclaimer/",
-          "/questions/",
-          "/terms/",
-          "/privacy/",
           "/about/",
-          "/preview/option-c/",
-          "/cookie-policy/"
-        ]
-      },
-      {
-        "priority": "high",
-        "category": "SEO Health",
-        "title": "2 pages with broken",
-        "detail": "These URLs returned HTTP errors. Fix or redirect broken pages. Affected pages: /cdn-cgi/l/email-protection, /guides/non-recourse-factoring/",
-        "impact": "medium",
-        "pages": [
-          "/cdn-cgi/l/email-protection",
-          "/guides/non-recourse-factoring/"
+          "/cookie-policy/",
+          "/compare/",
+          "/industries/",
+          "/contact/",
+          "/terms/",
+          "/providers/",
+          "/blog/",
+          "/questions/",
+          "/locations/",
+          "/editorial-policy/"
         ]
       },
       {
@@ -366,25 +317,25 @@
       {
         "priority": "high",
         "category": "Internal Links",
-        "title": "50 orphan pages with no internal links pointing to them",
-        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /blog/, /compare/aldermore-vs-skipton/, /compare/factoring-vs-asset-finance/, /contact/, /best/best-for-transport/, /blog/uk-p2p-lending-collapse/, /working-capital/funding-business-growth/, /guides/borrow-against-invoices/...",
+        "title": "99 orphan pages with no internal links pointing to them",
+        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /best/best-for-government-contractors/, /providers/investly/, /working-capital/, /providers/partnership/, /providers/growth-lending/, /guides/, /stats/, /compare/invoice-finance-vs-equity/...",
         "impact": "medium",
         "pages": [
-          "/blog/",
-          "/compare/aldermore-vs-skipton/",
+          "/best/best-for-government-contractors/",
+          "/providers/investly/",
+          "/working-capital/",
+          "/providers/partnership/",
+          "/providers/growth-lending/",
+          "/guides/",
+          "/stats/",
+          "/compare/invoice-finance-vs-equity/",
+          "/best/best-with-xero-integration/",
+          "/providers/allica-bank/",
           "/compare/factoring-vs-asset-finance/",
-          "/contact/",
-          "/best/best-for-transport/",
-          "/blog/uk-p2p-lending-collapse/",
-          "/working-capital/funding-business-growth/",
-          "/guides/borrow-against-invoices/",
-          "/working-capital/cash-flow-problems/",
-          "/preview/option-b/",
-          "/providers/arbuthnot/",
-          "/preview/option-a/",
-          "/guides/glossary/",
-          "/best/best-for-construction/",
-          "/guides/advance-on-invoices/"
+          "/providers/accident-credit-group/",
+          "/blog/startup-funding-compared/",
+          "/providers/penny/",
+          "/providers/panel-financial/"
         ]
       },
       {
@@ -440,18 +391,6 @@
       },
       {
         "priority": "medium",
-        "category": "SEO Health",
-        "title": "3 pages with missing meta desc",
-        "detail": "These pages have no meta description. Add unique, descriptive meta descriptions (150-160 chars) that summarise the page content. Affected pages: /preview/option-b/, /preview/option-a/, /preview/option-c/",
-        "impact": "medium",
-        "pages": [
-          "/preview/option-b/",
-          "/preview/option-a/",
-          "/preview/option-c/"
-        ]
-      },
-      {
-        "priority": "medium",
         "category": "AI Readiness",
         "title": "7 AI crawlers not explicitly allowed in robots.txt",
         "detail": "These crawlers are not mentioned in robots.txt \u2014 add explicit 'Allow' rules to ensure they can access the site: Claude-Web, Bytespider, cohere-ai, Amazonbot, anthropic-ai, FacebookBot, Applebot-Extended. While not actively blocked, explicit rules are best practice for AI visibility.",
@@ -463,8 +402,8 @@
       {
         "priority": "medium",
         "category": "Schema",
-        "title": "Missing schema types: HowTo, LocalBusiness, Organization",
-        "detail": "The site is using FAQPage, WebApplication, BreadcrumbList, Article, Service, Product, WebPage but is missing these important schema types: HowTo, LocalBusiness, Organization. Organization and LocalBusiness schema help AI identify who you are. FAQPage and HowTo schema have the highest AI citation rates.",
+        "title": "Missing schema types: LocalBusiness, Organization, HowTo",
+        "detail": "The site is using Product, BreadcrumbList, WebApplication, WebPage, Service, Article, FAQPage but is missing these important schema types: LocalBusiness, Organization, HowTo. Organization and LocalBusiness schema help AI identify who you are. FAQPage and HowTo schema have the highest AI citation rates.",
         "impact": "medium",
         "pages": []
       },
@@ -499,17 +438,9 @@
       {
         "priority": "medium",
         "category": "Content",
-        "title": "Only 0/257 pages have multi-modal content (images + video)",
+        "title": "Only 0/300 pages have multi-modal content (images + video)",
         "detail": "Pages with images AND video get 156-317% more AI citations. Add relevant images, infographics, and embedded videos to key content pages.",
         "impact": "high",
-        "pages": []
-      },
-      {
-        "priority": "medium",
-        "category": "Content",
-        "title": "No comparison tables detected on the site",
-        "detail": "Pages with comparison tables have 2.5x higher AI citation rate. Add comparison tables to key pages \u2014 e.g. pricing comparisons, feature comparisons, provider comparisons.",
-        "impact": "medium",
         "pages": []
       },
       {
@@ -523,7 +454,7 @@
       {
         "priority": "medium",
         "category": "Indexing",
-        "title": "Only 0/257 pages indexed in Bing",
+        "title": "Only 0/300 pages indexed in Bing",
         "detail": "Bing feeds Copilot (which has 94+ citations for some sites). Submit all pages via IndexNow: python3 scripts/submit_indexnow.py market-invoice",
         "impact": "medium",
         "pages": []
@@ -539,11 +470,11 @@
     ]
   },
   "seocompare": {
-    "generated_at": "2026-04-09T15:41:29.126085",
-    "total": 18,
+    "generated_at": "2026-04-09T16:26:39.316217",
+    "total": 16,
     "critical": 2,
     "high": 5,
-    "medium": 11,
+    "medium": 9,
     "low": 0,
     "recommendations": [
       {
@@ -659,8 +590,8 @@
       {
         "priority": "medium",
         "category": "Schema",
-        "title": "Missing schema types: HowTo, LocalBusiness, Organization",
-        "detail": "The site is using Service, BreadcrumbList, Article, FAQPage but is missing these important schema types: HowTo, LocalBusiness, Organization. Organization and LocalBusiness schema help AI identify who you are. FAQPage and HowTo schema have the highest AI citation rates.",
+        "title": "Missing schema types: LocalBusiness, Organization, HowTo",
+        "detail": "The site is using Article, BreadcrumbList, FAQPage, Service but is missing these important schema types: LocalBusiness, Organization, HowTo. Organization and LocalBusiness schema help AI identify who you are. FAQPage and HowTo schema have the highest AI citation rates.",
         "impact": "medium",
         "pages": []
       },
@@ -685,31 +616,15 @@
       {
         "priority": "medium",
         "category": "Content",
-        "title": "Only 0/122 pages have multi-modal content (images + video)",
+        "title": "Only 0/125 pages have multi-modal content (images + video)",
         "detail": "Pages with images AND video get 156-317% more AI citations. Add relevant images, infographics, and embedded videos to key content pages.",
         "impact": "high",
         "pages": []
       },
       {
         "priority": "medium",
-        "category": "Content",
-        "title": "No comparison tables detected on the site",
-        "detail": "Pages with comparison tables have 2.5x higher AI citation rate. Add comparison tables to key pages \u2014 e.g. pricing comparisons, feature comparisons, provider comparisons.",
-        "impact": "medium",
-        "pages": []
-      },
-      {
-        "priority": "medium",
-        "category": "Content",
-        "title": "Only 0 pages have 2,000+ words",
-        "detail": "Pages with 2,000+ words get 3x more AI citations. Create in-depth, comprehensive content on your key topics \u2014 guides, research reports, definitive explainers.",
-        "impact": "medium",
-        "pages": []
-      },
-      {
-        "priority": "medium",
         "category": "Indexing",
-        "title": "Only 0/122 pages indexed in Bing",
+        "title": "Only 0/125 pages indexed in Bing",
         "detail": "Bing feeds Copilot (which has 94+ citations for some sites). Submit all pages via IndexNow: python3 scripts/submit_indexnow.py seocompare",
         "impact": "medium",
         "pages": []
