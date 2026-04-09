@@ -40,6 +40,7 @@ const crawlData = loadJson(`crawl_${clientId}.json`);
 const uptimeAll = loadJson('uptime.json');
 const uptimeHistory = loadJson('uptime_history.json');
 const citationsAll = loadJson('promptfoo_citations.json') || loadJson('ai_citations.json');
+const citByTypeAll = loadJson('citations_by_type.json');
 const auditAll = loadJson('ai_audit.json');
 const pagespeedAll = loadJson('pagespeed.json');
 const crawlActivityAll = loadJson('crawl_activity.json');
@@ -49,6 +50,7 @@ const gsc = gscAll?.[clientId];
 const bing = bingAll?.[clientId];
 const uptime = uptimeAll?.[clientId];
 const citations = citationsAll?.[clientId];
+const citByType = citByTypeAll?.[clientId];
 const audit = auditAll?.[clientId];
 const pagespeed = pagespeedAll?.[clientId];
 const crawlActivityDetail = crawlActivityAll?.[clientId];
@@ -310,41 +312,113 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
   )}
 
   <!-- AI CITATIONS -->
-  {sectionId === 'ai-citations' && citations && (
+  {sectionId === 'ai-citations' && (citByType || citations) && (
     <div>
-      <div class="grid grid-cols-3 gap-4 mb-6">
-        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
-          <div class="text-2xl font-bold text-white">{citations.citation_rate}%</div>
-          <div class="text-xs text-gray-500">Citation Rate</div>
-        </div>
-        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
-          <div class="text-2xl font-bold text-white">{citations.cited_count}/{citations.total_queries}</div>
-          <div class="text-xs text-gray-500">Queries Cited</div>
-        </div>
-        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
-          <div class="text-2xl font-bold text-white">Claude</div>
-          <div class="text-xs text-gray-500">Model Tested</div>
-        </div>
-      </div>
+      {citByType ? (
+        <>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+            <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+              <div class={`text-2xl font-bold ${citByType.overall_rate >= 50 ? 'text-green-400' : citByType.overall_rate >= 10 ? 'text-yellow-400' : 'text-red-400'}`}>{citByType.overall_rate}%</div>
+              <div class="text-xs text-gray-500">Overall Citation Rate</div>
+            </div>
+            <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+              <div class="text-2xl font-bold text-white">{citByType.total_cited}/{citByType.total_queries}</div>
+              <div class="text-xs text-gray-500">Queries Cited</div>
+            </div>
+            <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+              <div class={`text-2xl font-bold ${(citByType.by_type?.brand?.rate || 0) >= 50 ? 'text-green-400' : 'text-red-400'}`}>{citByType.by_type?.brand?.rate || 0}%</div>
+              <div class="text-xs text-gray-500">Brand Queries</div>
+            </div>
+            <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+              <div class="text-2xl font-bold text-white">Claude</div>
+              <div class="text-xs text-gray-500">Model Tested</div>
+            </div>
+          </div>
 
-      <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
-        <h3 class="text-sm font-semibold text-gray-400 mb-4">Query Results</h3>
-        <div class="space-y-3">
-          {citations.results.map((r: any) => (
-            <div class={`p-4 rounded-lg border ${r.mentioned ? 'border-green-800/50 bg-green-900/10' : 'border-gray-800 bg-gray-800/30'}`}>
-              <div class="flex items-center justify-between mb-2">
-                <span class="text-sm text-white">{r.query}</span>
-                <span class={`text-xs px-2 py-0.5 rounded-full ${r.mentioned ? 'bg-green-600 text-white' : 'bg-gray-700 text-gray-400'}`}>
-                  {r.mentioned ? 'CITED' : 'Not cited'}
-                </span>
+          <!-- Citation rate by query type -->
+          <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
+            <h3 class="text-sm font-semibold text-gray-400 mb-4">Citation Rate by Query Type</h3>
+            <div class="space-y-3">
+              {Object.entries(citByType.by_type || {}).map(([type, data]: [string, any]) => (
+                <div class="flex items-center gap-4">
+                  <span class="text-xs text-gray-400 w-24 capitalize">{type.replace(/_/g, ' ')}</span>
+                  <div class="flex-1 bg-gray-800 rounded-full h-6 overflow-hidden">
+                    <div
+                      class={`h-full rounded-full flex items-center px-2 text-[10px] font-medium text-white ${data.rate >= 50 ? 'bg-green-600' : data.rate > 0 ? 'bg-yellow-600' : 'bg-red-900'}`}
+                      style={`width: ${Math.max(data.rate, 8)}%`}
+                    >
+                      {data.rate}%
+                    </div>
+                  </div>
+                  <span class="text-xs text-gray-500 w-16 text-right">{data.cited}/{data.queries}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Competitor mentions -->
+          {citByType.top_competitors?.length > 0 && (
+            <div class="bg-gray-900 border border-red-800/30 rounded-lg p-6 mb-6">
+              <h3 class="text-sm font-semibold text-red-400 mb-4">Who Gets Mentioned Instead</h3>
+              <div class="space-y-2">
+                {citByType.top_competitors.map((c: any) => (
+                  <div class="flex items-center gap-4">
+                    <span class="text-sm text-white w-40">{c.name}</span>
+                    <div class="flex-1 bg-gray-800 rounded-full h-5 overflow-hidden">
+                      <div class="h-full bg-red-600/60 rounded-full flex items-center px-2 text-[10px] text-white" style={`width: ${Math.max((c.mentions / citByType.total_queries) * 100, 5)}%`}>
+                        {c.mentions}x
+                      </div>
+                    </div>
+                    <span class="text-xs text-gray-500 w-20 text-right">in {c.mentions}/{citByType.total_queries} queries</span>
+                  </div>
+                ))}
               </div>
-              {r.response_preview && (
-                <p class="text-xs text-gray-500 mt-1 line-clamp-2">{r.response_preview}</p>
-              )}
+            </div>
+          )}
+
+          <!-- Query results by type -->
+          {Object.entries(citByType.by_type || {}).map(([type, data]: [string, any]) => (
+            <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-4">
+              <h3 class="text-sm font-semibold text-gray-400 mb-3 capitalize">{type.replace(/_/g, ' ')} queries — {data.rate}%</h3>
+              <div class="space-y-2">
+                {data.results?.map((r: any) => (
+                  <div class={`p-3 rounded-lg border ${r.brand_mentioned ? 'border-green-800/50 bg-green-900/10' : 'border-gray-800 bg-gray-800/30'}`}>
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="text-xs text-white">{r.query}</span>
+                      <div class="flex items-center gap-2">
+                        {r.competitors_mentioned?.length > 0 && (
+                          <span class="text-[10px] text-red-400">{r.competitors_mentioned.join(', ')}</span>
+                        )}
+                        <span class={`text-[10px] px-2 py-0.5 rounded-full ${r.brand_mentioned ? 'bg-green-600 text-white' : 'bg-gray-700 text-gray-400'}`}>
+                          {r.brand_mentioned ? 'CITED' : 'Not cited'}
+                        </span>
+                      </div>
+                    </div>
+                    <p class="text-[10px] text-gray-600 line-clamp-1">{r.response_preview?.slice(0, 150)}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
+        </>
+      ) : citations && (
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+          <h3 class="text-sm font-semibold text-gray-400 mb-4">Query Results</h3>
+          <div class="space-y-3">
+            {citations.results?.map((r: any) => (
+              <div class={`p-4 rounded-lg border ${r.mentioned || r.cited ? 'border-green-800/50 bg-green-900/10' : 'border-gray-800 bg-gray-800/30'}`}>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm text-white">{r.query}</span>
+                  <span class={`text-xs px-2 py-0.5 rounded-full ${r.mentioned || r.cited ? 'bg-green-600 text-white' : 'bg-gray-700 text-gray-400'}`}>
+                    {r.mentioned || r.cited ? 'CITED' : 'Not cited'}
+                  </span>
+                </div>
+                {r.response_preview && <p class="text-xs text-gray-500 mt-1 line-clamp-2">{r.response_preview}</p>}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   )}
 
