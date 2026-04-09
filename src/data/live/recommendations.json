@@ -1,143 +1,536 @@
 {
   "rank4ai": {
-    "generated_at": "2026-04-09T12:47:31.924661",
-    "total": 6,
+    "generated_at": "2026-04-09T14:55:02.705976",
+    "total": 16,
     "critical": 2,
-    "high": 2,
-    "medium": 2,
+    "high": 6,
+    "medium": 8,
     "low": 0,
     "recommendations": [
       {
         "priority": "critical",
         "category": "AI Visibility",
         "title": "Not a known entity in Google Knowledge Graph",
-        "detail": "Google does not recognise this brand as an entity. This severely limits AI citation potential. Build entity signals through structured data, Wikipedia, Wikidata, and authoritative mentions.",
-        "impact": "high"
+        "detail": "Google does not recognise this brand as an entity. This severely limits AI citation potential. Actions: 1) Create a Wikidata entry 2) Build a Wikipedia stub page 3) Add comprehensive Organization schema 4) Get mentioned on authoritative sources (Crunchbase, LinkedIn company page, Companies House link) 5) Ensure consistent NAP across all directories.",
+        "impact": "high",
+        "pages": []
       },
       {
         "priority": "critical",
         "category": "Search Visibility",
-        "title": "0% Google visibility for target queries \u2014 top competitor at 75.0%",
-        "detail": "Not ranking in Google top 20 for any of 8 target queries. clickslice.co.uk is visible in 75.0% of queries. Need targeted content + link building for these terms.",
-        "impact": "high"
+        "title": "0% Google visibility \u2014 not ranking for any target queries",
+        "detail": "Not in Google top 20 for any of 8 target queries. Top competitors: clickslice.co.uk (75.0%), found.co.uk (50.0%), charle.co.uk (50.0%). Actions: 1) Create dedicated landing pages for each target query 2) Build topical authority with supporting content 3) Acquire backlinks to key pages 4) Improve internal linking to target pages.",
+        "impact": "high",
+        "pages": [
+          "AI search visibility agency UK",
+          "best AI SEO agencies UK",
+          "GEO agency UK",
+          "AI search audit UK",
+          "generative engine optimization UK",
+          "best GEO agencies UK",
+          "AI overviews optimization UK",
+          "AI SEO services UK"
+        ]
       },
       {
         "priority": "high",
         "category": "AI Citations",
-        "title": "Low AI citation rate (12.5%) \u2014 brand queries 100.0%",
-        "detail": "AI knows the brand exists but doesn't recommend it for industry queries. Focus on getting mentioned on authoritative sources (Reddit, industry publications, Wikipedia).",
-        "impact": "high"
+        "title": "Low AI citation rate (12.5%) \u2014 only brand queries cited",
+        "detail": "AI knows the brand exists but doesn't recommend it for industry queries. The gap is in topical authority \u2014 AI doesn't associate this brand with the industry. Fix by creating definitive content that AI can quote: statistics, clear definitions, comparison tables, step-by-step guides.",
+        "impact": "high",
+        "pages": []
+      },
+      {
+        "priority": "high",
+        "category": "Schema",
+        "title": "24 pages missing structured data (168/192 have schema)",
+        "detail": "Pages with schema have 2.5x higher chance of AI citation. Add Article, FAQPage, or HowTo schema to these pages. Pages missing schema: /seo-to-aio, /ai-seo-agency-uk/colchester, /uk-coverage, /ai-search/guides/complete-guide, /ai-seo/technical/guides/complete-guide, /ai-services/ai-messaging-clean-up, /ai-seo/technical/internal-linking, /ai-search/comparisons/guide, /ai-search/comparisons/why-seo-changing, /ai-search-questions/what-does-an-ai-seo-agency-actually-do...",
+        "impact": "high",
+        "pages": [
+          "/seo-to-aio",
+          "/ai-seo-agency-uk/colchester",
+          "/uk-coverage",
+          "/ai-search/guides/complete-guide",
+          "/ai-seo/technical/guides/complete-guide",
+          "/ai-services/ai-messaging-clean-up",
+          "/ai-seo/technical/internal-linking",
+          "/ai-search/comparisons/guide",
+          "/ai-search/comparisons/why-seo-changing",
+          "/ai-search-questions/what-does-an-ai-seo-agency-actually-do",
+          "/ai-search-questions/what-does-a-good-ai-seo-strategy-look-like",
+          "/ai-search-questions/what-is-the-difference-between-keywords-and-prompts-in-ai-search",
+          "/ai-search-questions/what-is-the-difference-between-ai-search-and-traditional-search",
+          "/ai-search-questions/what-is-the-five-signal-model-and-how-does-it-apply-to-ai-marketing",
+          "/ai-search-questions/what-technical-factors-affect-ai-search-visibility",
+          "/ai-search-questions/what-is-ecosystem-validation-in-ai-search",
+          "/ai-search-questions/what-does-an-ai-seo-agency-measure-that-a-traditional-seo-agency-doesnt",
+          "/ai-search-questions/how-do-i-know-if-my-current-seo-agency-understands-ai-search",
+          "/ai-search-questions/what-type-of-content-gets-cited-by-chatgpt",
+          "/ai-search-questions/how-does-ai-marketing-growth-differ-from-traditional-digital-marketing"
+        ]
+      },
+      {
+        "priority": "high",
+        "category": "SEO Health",
+        "title": "24 pages with missing h1",
+        "detail": "These pages have no H1 tag. Add a clear, descriptive H1 to each page. AI models use H1s to understand page topics. Affected pages: /seo-to-aio, /ai-seo-agency-uk/colchester, /uk-coverage, /ai-search/guides/complete-guide, /ai-seo/technical/guides/complete-guide, /ai-services/ai-messaging-clean-up, /ai-seo/technical/internal-linking, /ai-search/comparisons/guide...",
+        "impact": "medium",
+        "pages": [
+          "/seo-to-aio",
+          "/ai-seo-agency-uk/colchester",
+          "/uk-coverage",
+          "/ai-search/guides/complete-guide",
+          "/ai-seo/technical/guides/complete-guide",
+          "/ai-services/ai-messaging-clean-up",
+          "/ai-seo/technical/internal-linking",
+          "/ai-search/comparisons/guide",
+          "/ai-search/comparisons/why-seo-changing",
+          "/ai-search-questions/what-does-an-ai-seo-agency-actually-do",
+          "/ai-search-questions/what-does-a-good-ai-seo-strategy-look-like",
+          "/ai-search-questions/what-is-the-difference-between-keywords-and-prompts-in-ai-search",
+          "/ai-search-questions/what-is-the-difference-between-ai-search-and-traditional-search",
+          "/ai-search-questions/what-is-the-five-signal-model-and-how-does-it-apply-to-ai-marketing",
+          "/ai-search-questions/what-technical-factors-affect-ai-search-visibility"
+        ]
+      },
+      {
+        "priority": "high",
+        "category": "SEO Health",
+        "title": "8 pages with broken",
+        "detail": "These URLs returned HTTP errors. Fix or redirect broken pages. Affected pages: /ai-search-audit, /quick-check, /assets/ai_search_framework.pdf, /ai-search/comparisons/future-of-organic-search, /ai-search/comparisons/ranking-vs-reasoning, /ai-search/comparisons/meaning-as-ranking-factor, /ai-search/comparisons/ai-vs-seo-comparison, /ai-search/conversational-search",
+        "impact": "medium",
+        "pages": [
+          "/ai-search-audit",
+          "/quick-check",
+          "/assets/ai_search_framework.pdf",
+          "/ai-search/comparisons/future-of-organic-search",
+          "/ai-search/comparisons/ranking-vs-reasoning",
+          "/ai-search/comparisons/meaning-as-ranking-factor",
+          "/ai-search/comparisons/ai-vs-seo-comparison",
+          "/ai-search/conversational-search"
+        ]
       },
       {
         "priority": "high",
         "category": "Performance",
         "title": "Mobile performance score is 39/100",
-        "detail": "Poor mobile performance affects both user experience and search rankings. Optimise images, reduce JavaScript, implement lazy loading.",
-        "impact": "medium"
+        "detail": "Poor mobile performance affects user experience, search rankings, and Core Web Vitals. Actions: 1) Optimise images (WebP, lazy loading) 2) Reduce JavaScript 3) Implement critical CSS 4) Use CDN caching. Slow pages: /",
+        "impact": "medium",
+        "pages": [
+          "/"
+        ]
+      },
+      {
+        "priority": "high",
+        "category": "Search Visibility",
+        "title": "Not ranking in Google top 10 for any of 10 tested queries",
+        "detail": "Queries tested: AI search visibility agency UK, best AI SEO agencies UK, GEO agency UK, what is AI search visibility, how to get found in ChatGPT. Create dedicated, in-depth pages for each query. Target 1,500+ words with FAQ schema, comparison tables, and internal links.",
+        "impact": "high",
+        "pages": [
+          "AI search visibility agency UK",
+          "best AI SEO agencies UK",
+          "GEO agency UK",
+          "what is AI search visibility",
+          "how to get found in ChatGPT",
+          "AI search audit UK",
+          "generative engine optimization UK",
+          "AI overviews optimization UK",
+          "best GEO agencies UK 2026",
+          "llms.txt what is it"
+        ]
       },
       {
         "priority": "medium",
-        "category": "Content",
-        "title": "6 content gap opportunities from Google Search Console",
-        "detail": "Queries with high impressions but low clicks. Top gap: 'ai visibility seo agency' (38 impressions, 0% CTR). Improve meta titles/descriptions or create dedicated content.",
-        "impact": "medium"
+        "category": "AI Citations",
+        "title": "Competitor 'Screaming Frog' mentioned 2x instead of you",
+        "detail": "Screaming Frog is being cited by AI in 2 of your target queries. Analyse what content they have that you don't. Create better, more detailed, more authoritative versions of the same topics.",
+        "impact": "medium",
+        "pages": []
       },
       {
         "priority": "medium",
         "category": "SEO Health",
-        "title": "56 technical SEO issues found",
-        "detail": "Most common: missing h1 (24 instances). Fix these to improve crawlability and indexing.",
-        "impact": "medium"
+        "title": "24 pages with thin content",
+        "detail": "These pages have fewer than 100 words. Expand with detailed, authoritative content. AI models prefer pages with 500+ words. Affected pages: /seo-to-aio, /ai-seo-agency-uk/colchester, /uk-coverage, /ai-search/guides/complete-guide, /ai-seo/technical/guides/complete-guide, /ai-services/ai-messaging-clean-up, /ai-seo/technical/internal-linking, /ai-search/comparisons/guide...",
+        "impact": "medium",
+        "pages": [
+          "/seo-to-aio",
+          "/ai-seo-agency-uk/colchester",
+          "/uk-coverage",
+          "/ai-search/guides/complete-guide",
+          "/ai-seo/technical/guides/complete-guide",
+          "/ai-services/ai-messaging-clean-up",
+          "/ai-seo/technical/internal-linking",
+          "/ai-search/comparisons/guide",
+          "/ai-search/comparisons/why-seo-changing",
+          "/ai-search-questions/what-does-an-ai-seo-agency-actually-do",
+          "/ai-search-questions/what-does-a-good-ai-seo-strategy-look-like",
+          "/ai-search-questions/what-is-the-difference-between-keywords-and-prompts-in-ai-search",
+          "/ai-search-questions/what-is-the-difference-between-ai-search-and-traditional-search",
+          "/ai-search-questions/what-is-the-five-signal-model-and-how-does-it-apply-to-ai-marketing",
+          "/ai-search-questions/what-technical-factors-affect-ai-search-visibility"
+        ]
+      },
+      {
+        "priority": "medium",
+        "category": "AI Readiness",
+        "title": "2 pages score below 40/100 for AI readiness",
+        "detail": "These pages have poor AI citation potential. Improve by adding: FAQ sections, clear definitions, comparison tables, statistics, author credentials. Low-scoring pages: /ai-search-questions/what-is-the-five-signal-model-and-how-does-it-apply-to-ai-marketing, /ai-seo/technical/guides/complete-guide",
+        "impact": "medium",
+        "pages": [
+          "/ai-search-questions/what-is-the-five-signal-model-and-how-does-it-apply-to-ai-marketing",
+          "/ai-seo/technical/guides/complete-guide"
+        ]
+      },
+      {
+        "priority": "medium",
+        "category": "Content Gap",
+        "title": "'ai visibility seo agency' \u2014 38 impressions, 0% CTR",
+        "detail": "This query gets 38 impressions but only 0 clicks (CTR: 0%). Position: 39.8. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Content Gap",
+        "title": "'ai search visibility' \u2014 36 impressions, 0% CTR",
+        "detail": "This query gets 36 impressions but only 0 clicks (CTR: 0%). Position: 76.2. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Content Gap",
+        "title": "'ai visibility (20 | 20)' \u2014 18 impressions, 0% CTR",
+        "detail": "This query gets 18 impressions but only 0 clicks (CTR: 0%). Position: 84.5. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Content Gap",
+        "title": "'ai visibility agency' \u2014 15 impressions, 0% CTR",
+        "detail": "This query gets 15 impressions but only 0 clicks (CTR: 0%). Position: 23.5. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Content Gap",
+        "title": "'ai search agency' \u2014 11 impressions, 0% CTR",
+        "detail": "This query gets 11 impressions but only 0 clicks (CTR: 0%). Position: 83.9. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "impact": "medium",
+        "pages": []
       }
     ]
   },
   "market-invoice": {
-    "generated_at": "2026-04-09T12:47:31.932394",
-    "total": 5,
+    "generated_at": "2026-04-09T14:55:02.711684",
+    "total": 14,
     "critical": 2,
-    "high": 1,
-    "medium": 1,
-    "low": 1,
+    "high": 6,
+    "medium": 6,
+    "low": 0,
     "recommendations": [
       {
         "priority": "critical",
         "category": "AI Visibility",
         "title": "Not a known entity in Google Knowledge Graph",
-        "detail": "Google does not recognise this brand as an entity. This severely limits AI citation potential. Build entity signals through structured data, Wikipedia, Wikidata, and authoritative mentions.",
-        "impact": "high"
+        "detail": "Google does not recognise this brand as an entity. This severely limits AI citation potential. Actions: 1) Create a Wikidata entry 2) Build a Wikipedia stub page 3) Add comprehensive Organization schema 4) Get mentioned on authoritative sources (Crunchbase, LinkedIn company page, Companies House link) 5) Ensure consistent NAP across all directories.",
+        "impact": "high",
+        "pages": []
       },
       {
         "priority": "critical",
         "category": "Search Visibility",
-        "title": "0% Google visibility for target queries \u2014 top competitor at 62.5%",
-        "detail": "Not ranking in Google top 20 for any of 8 target queries. bibbyfinancialservices.com is visible in 62.5% of queries. Need targeted content + link building for these terms.",
-        "impact": "high"
+        "title": "0% Google visibility \u2014 not ranking for any target queries",
+        "detail": "Not in Google top 20 for any of 8 target queries. Top competitors: bibbyfinancialservices.com (62.5%), fundinvoice.co.uk (62.5%), smeinvoicefinance.co.uk (62.5%). Actions: 1) Create dedicated landing pages for each target query 2) Build topical authority with supporting content 3) Acquire backlinks to key pages 4) Improve internal linking to target pages.",
+        "impact": "high",
+        "pages": [
+          "invoice finance UK",
+          "best invoice factoring companies UK",
+          "compare invoice finance providers UK",
+          "invoice finance for small business UK",
+          "how does invoice finance work",
+          "confidential invoice discounting UK",
+          "invoice finance costs UK",
+          "best construction invoice finance UK"
+        ]
       },
       {
         "priority": "high",
         "category": "AI Citations",
-        "title": "Low AI citation rate (5.3%) \u2014 brand queries 100.0%",
-        "detail": "AI knows the brand exists but doesn't recommend it for industry queries. Focus on getting mentioned on authoritative sources (Reddit, industry publications, Wikipedia).",
-        "impact": "high"
+        "title": "Low AI citation rate (5.3%) \u2014 only brand queries cited",
+        "detail": "AI knows the brand exists but doesn't recommend it for industry queries. The gap is in topical authority \u2014 AI doesn't associate this brand with the industry. Fix by creating definitive content that AI can quote: statistics, clear definitions, comparison tables, step-by-step guides.",
+        "impact": "high",
+        "pages": []
+      },
+      {
+        "priority": "high",
+        "category": "Schema",
+        "title": "18 pages missing structured data (239/257 have schema)",
+        "detail": "Pages with schema have 2.5x higher chance of AI citation. Add Article, FAQPage, or HowTo schema to these pages. Pages missing schema: /industries/, /blog/, /contact/, /preview/option-b/, /preview/option-a/, /editorial-policy/, /how-we-are-funded/, /guides/, /providers/, /locations/...",
+        "impact": "high",
+        "pages": [
+          "/industries/",
+          "/blog/",
+          "/contact/",
+          "/preview/option-b/",
+          "/preview/option-a/",
+          "/editorial-policy/",
+          "/how-we-are-funded/",
+          "/guides/",
+          "/providers/",
+          "/locations/",
+          "/compare/",
+          "/disclaimer/",
+          "/questions/",
+          "/terms/",
+          "/privacy/",
+          "/about/",
+          "/preview/option-c/",
+          "/cookie-policy/"
+        ]
+      },
+      {
+        "priority": "high",
+        "category": "SEO Health",
+        "title": "2 pages with broken",
+        "detail": "These URLs returned HTTP errors. Fix or redirect broken pages. Affected pages: /cdn-cgi/l/email-protection, /guides/non-recourse-factoring/",
+        "impact": "medium",
+        "pages": [
+          "/cdn-cgi/l/email-protection",
+          "/guides/non-recourse-factoring/"
+        ]
+      },
+      {
+        "priority": "high",
+        "category": "SEO Health",
+        "title": "1 pages with missing h1",
+        "detail": "These pages have no H1 tag. Add a clear, descriptive H1 to each page. AI models use H1s to understand page topics. Affected pages: /compare/",
+        "impact": "medium",
+        "pages": [
+          "/compare/"
+        ]
+      },
+      {
+        "priority": "high",
+        "category": "Internal Links",
+        "title": "50 orphan pages with no internal links pointing to them",
+        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /blog/, /compare/aldermore-vs-skipton/, /compare/factoring-vs-asset-finance/, /contact/, /best/best-for-transport/, /blog/uk-p2p-lending-collapse/, /working-capital/funding-business-growth/, /guides/borrow-against-invoices/...",
+        "impact": "medium",
+        "pages": [
+          "/blog/",
+          "/compare/aldermore-vs-skipton/",
+          "/compare/factoring-vs-asset-finance/",
+          "/contact/",
+          "/best/best-for-transport/",
+          "/blog/uk-p2p-lending-collapse/",
+          "/working-capital/funding-business-growth/",
+          "/guides/borrow-against-invoices/",
+          "/working-capital/cash-flow-problems/",
+          "/preview/option-b/",
+          "/providers/arbuthnot/",
+          "/preview/option-a/",
+          "/guides/glossary/",
+          "/best/best-for-construction/",
+          "/guides/advance-on-invoices/"
+        ]
+      },
+      {
+        "priority": "high",
+        "category": "Search Visibility",
+        "title": "Not ranking in Google top 10 for any of 10 tested queries",
+        "detail": "Queries tested: invoice finance UK, best invoice factoring companies UK, compare invoice finance providers UK, how does invoice finance work, invoice finance for small business UK. Create dedicated, in-depth pages for each query. Target 1,500+ words with FAQ schema, comparison tables, and internal links.",
+        "impact": "high",
+        "pages": [
+          "invoice finance UK",
+          "best invoice factoring companies UK",
+          "compare invoice finance providers UK",
+          "how does invoice finance work",
+          "invoice finance for small business UK",
+          "confidential invoice discounting UK",
+          "invoice finance costs UK",
+          "best construction invoice finance UK",
+          "invoice finance vs business loan",
+          "selective invoice finance UK"
+        ]
       },
       {
         "priority": "medium",
-        "category": "Internal Links",
-        "title": "50 orphan pages with no internal links",
-        "detail": "These pages have no internal links pointing to them \u2014 search engines and AI crawlers may not discover them. Add internal links from related content.",
-        "impact": "medium"
+        "category": "AI Citations",
+        "title": "Competitor 'Close Brothers' mentioned 3x instead of you",
+        "detail": "Close Brothers is being cited by AI in 3 of your target queries. Analyse what content they have that you don't. Create better, more detailed, more authoritative versions of the same topics.",
+        "impact": "medium",
+        "pages": []
       },
       {
-        "priority": "low",
+        "priority": "medium",
+        "category": "AI Citations",
+        "title": "Competitor 'Bibby' mentioned 2x instead of you",
+        "detail": "Bibby is being cited by AI in 2 of your target queries. Analyse what content they have that you don't. Create better, more detailed, more authoritative versions of the same topics.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "AI Citations",
+        "title": "Competitor 'HSBC' mentioned 2x instead of you",
+        "detail": "HSBC is being cited by AI in 2 of your target queries. Analyse what content they have that you don't. Create better, more detailed, more authoritative versions of the same topics.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "SEO Health",
+        "title": "3 pages with missing meta desc",
+        "detail": "These pages have no meta description. Add unique, descriptive meta descriptions (150-160 chars) that summarise the page content. Affected pages: /preview/option-b/, /preview/option-a/, /preview/option-c/",
+        "impact": "medium",
+        "pages": [
+          "/preview/option-b/",
+          "/preview/option-a/",
+          "/preview/option-c/"
+        ]
+      },
+      {
+        "priority": "medium",
+        "category": "AI Readiness",
+        "title": "3 pages score below 40/100 for AI readiness",
+        "detail": "These pages have poor AI citation potential. Improve by adding: FAQ sections, clear definitions, comparison tables, statistics, author credentials. Low-scoring pages: /privacy/, /compare/, /providers/secure-trust/",
+        "impact": "medium",
+        "pages": [
+          "/privacy/",
+          "/compare/",
+          "/providers/secure-trust/"
+        ]
+      },
+      {
+        "priority": "medium",
         "category": "Indexing",
-        "title": "Only 0 pages indexed in Bing (site has 257)",
-        "detail": "Submit all pages via IndexNow to improve Bing/Copilot visibility. Run: python3 scripts/submit_indexnow.py market-invoice",
-        "impact": "medium"
+        "title": "Only 0/257 pages indexed in Bing",
+        "detail": "Bing feeds Copilot (which has 94+ citations for some sites). Submit all pages via IndexNow: python3 scripts/submit_indexnow.py market-invoice",
+        "impact": "medium",
+        "pages": []
       }
     ]
   },
   "seocompare": {
-    "generated_at": "2026-04-09T12:47:31.941088",
-    "total": 5,
+    "generated_at": "2026-04-09T14:55:02.717016",
+    "total": 11,
     "critical": 2,
-    "high": 2,
-    "medium": 0,
-    "low": 1,
+    "high": 4,
+    "medium": 5,
+    "low": 0,
     "recommendations": [
       {
         "priority": "critical",
         "category": "AI Visibility",
         "title": "Not a known entity in Google Knowledge Graph",
-        "detail": "Google does not recognise this brand as an entity. This severely limits AI citation potential. Build entity signals through structured data, Wikipedia, Wikidata, and authoritative mentions.",
-        "impact": "high"
+        "detail": "Google does not recognise this brand as an entity. This severely limits AI citation potential. Actions: 1) Create a Wikidata entry 2) Build a Wikipedia stub page 3) Add comprehensive Organization schema 4) Get mentioned on authoritative sources (Crunchbase, LinkedIn company page, Companies House link) 5) Ensure consistent NAP across all directories.",
+        "impact": "high",
+        "pages": []
       },
       {
         "priority": "critical",
         "category": "Search Visibility",
-        "title": "0% Google visibility for target queries \u2014 top competitor at 20.0%",
-        "detail": "Not ranking in Google top 20 for any of 5 target queries. clickslice.co.uk is visible in 20.0% of queries. Need targeted content + link building for these terms.",
-        "impact": "high"
+        "title": "0% Google visibility \u2014 not ranking for any target queries",
+        "detail": "Not in Google top 20 for any of 5 target queries. Top competitors: clickslice.co.uk (20.0%), propeller.co.uk (20.0%). Actions: 1) Create dedicated landing pages for each target query 2) Build topical authority with supporting content 3) Acquire backlinks to key pages 4) Improve internal linking to target pages.",
+        "impact": "high",
+        "pages": [
+          "compare SEO agencies UK",
+          "best SEO companies UK 2026",
+          "how to choose an SEO agency UK",
+          "top rated SEO services UK",
+          "SEO agency comparison"
+        ]
       },
       {
         "priority": "high",
         "category": "AI Citations",
-        "title": "Low AI citation rate (5.1%) \u2014 brand queries 100.0%",
-        "detail": "AI knows the brand exists but doesn't recommend it for industry queries. Focus on getting mentioned on authoritative sources (Reddit, industry publications, Wikipedia).",
-        "impact": "high"
+        "title": "Low AI citation rate (5.1%) \u2014 only brand queries cited",
+        "detail": "AI knows the brand exists but doesn't recommend it for industry queries. The gap is in topical authority \u2014 AI doesn't associate this brand with the industry. Fix by creating definitive content that AI can quote: statistics, clear definitions, comparison tables, step-by-step guides.",
+        "impact": "high",
+        "pages": []
+      },
+      {
+        "priority": "high",
+        "category": "SEO Health",
+        "title": "5 pages with broken",
+        "detail": "These URLs returned HTTP errors. Fix or redirect broken pages. Affected pages: /blog/h1-clarity-uk-smes/, /blog/blocking-ai-crawlers/, /blog/ai-search-conversion-rates/, /blog/freshness-and-citations/, /cdn-cgi/l/email-protection",
+        "impact": "medium",
+        "pages": [
+          "/blog/h1-clarity-uk-smes/",
+          "/blog/blocking-ai-crawlers/",
+          "/blog/ai-search-conversion-rates/",
+          "/blog/freshness-and-citations/",
+          "/cdn-cgi/l/email-protection"
+        ]
       },
       {
         "priority": "high",
         "category": "AI Readiness",
         "title": "7 AI crawlers blocked in robots.txt",
-        "detail": "AI crawlers are being blocked from accessing the site. Update robots.txt to allow GPTBot, ClaudeBot, PerplexityBot, and Google-Extended.",
-        "impact": "high"
+        "detail": "These AI crawlers are blocked from accessing the site: GPTBot, Google-Extended, ClaudeBot, Bytespider, CCBot, Amazonbot, Applebot-Extended. Update robots.txt to allow them. Each blocked crawler means invisibility to that AI platform.",
+        "impact": "high",
+        "pages": [
+          "/robots.txt"
+        ]
       },
       {
-        "priority": "low",
+        "priority": "high",
+        "category": "Search Visibility",
+        "title": "Not ranking in Google top 10 for any of 5 tested queries",
+        "detail": "Queries tested: compare SEO agencies UK, best SEO companies UK 2026, SEO agency comparison tool, how to choose an SEO agency UK, top rated SEO services UK. Create dedicated, in-depth pages for each query. Target 1,500+ words with FAQ schema, comparison tables, and internal links.",
+        "impact": "high",
+        "pages": [
+          "compare SEO agencies UK",
+          "best SEO companies UK 2026",
+          "SEO agency comparison tool",
+          "how to choose an SEO agency UK",
+          "top rated SEO services UK"
+        ]
+      },
+      {
+        "priority": "medium",
+        "category": "AI Citations",
+        "title": "Competitor 'Found' mentioned 4x instead of you",
+        "detail": "Found is being cited by AI in 4 of your target queries. Analyse what content they have that you don't. Create better, more detailed, more authoritative versions of the same topics.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "AI Citations",
+        "title": "Competitor 'Impression' mentioned 2x instead of you",
+        "detail": "Impression is being cited by AI in 2 of your target queries. Analyse what content they have that you don't. Create better, more detailed, more authoritative versions of the same topics.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "AI Citations",
+        "title": "Competitor 'Aira' mentioned 1x instead of you",
+        "detail": "Aira is being cited by AI in 1 of your target queries. Analyse what content they have that you don't. Create better, more detailed, more authoritative versions of the same topics.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "AI Readiness",
+        "title": "1 pages score below 40/100 for AI readiness",
+        "detail": "These pages have poor AI citation potential. Improve by adding: FAQ sections, clear definitions, comparison tables, statistics, author credentials. Low-scoring pages: /free-ai-visibility-audit/",
+        "impact": "medium",
+        "pages": [
+          "/free-ai-visibility-audit/"
+        ]
+      },
+      {
+        "priority": "medium",
         "category": "Indexing",
-        "title": "Only 0 pages indexed in Bing (site has 122)",
-        "detail": "Submit all pages via IndexNow to improve Bing/Copilot visibility. Run: python3 scripts/submit_indexnow.py seocompare",
-        "impact": "medium"
+        "title": "Only 0/122 pages indexed in Bing",
+        "detail": "Bing feeds Copilot (which has 94+ citations for some sites). Submit all pages via IndexNow: python3 scripts/submit_indexnow.py seocompare",
+        "impact": "medium",
+        "pages": []
       }
     ]
   }
