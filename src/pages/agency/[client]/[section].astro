@@ -42,6 +42,7 @@ const serpAll = loadJson('serp_data.json');
 const competitorAll = loadJson('competitor_serp.json');
 const recsAll = loadJson('recommendations.json');
 const newPagesAll = loadJson('new_pages.json');
+const citationPrompts = loadJson('citation_prompts.json');
 const dailyHistory = loadJson('daily_history.json');
 const crawlData = loadJson(`crawl_${clientId}.json`);
 const uptimeAll = loadJson('uptime.json');
@@ -61,6 +62,7 @@ const serp = serpAll?.[clientId];
 const competitors = competitorAll?.[clientId];
 const recs = recsAll?.[clientId];
 const newPagesDetail = newPagesAll?.[clientId];
+const prompts = citationPrompts?.[clientId];
 const history = dailyHistory?.[clientId] || [];
 const uptime = uptimeAll?.[clientId];
 const citations = citationsAll?.[clientId];
@@ -436,6 +438,156 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
         </div>
       )}
     </div>
+
+    <!-- Prompt Testing Section -->
+    {prompts && (
+      <div class="mt-8">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Citation Prompt Testing</h2>
+          <div class="flex gap-2">
+            <button id="run-all-high" class="px-3 py-1.5 rounded text-xs bg-red-600 text-white hover:bg-red-500 transition">
+              Run All High Intent
+            </button>
+            <button id="run-all-discovery" class="px-3 py-1.5 rounded text-xs bg-blue-600 text-white hover:bg-blue-500 transition">
+              Run All Discovery
+            </button>
+          </div>
+        </div>
+
+        {prompts.high_intent?.length > 0 && (
+          <div class="mb-6">
+            <h3 class="text-xs text-red-400 font-semibold mb-3 uppercase tracking-wider">
+              High Intent ({prompts.high_intent.length} prompts)
+              <span class="text-gray-500 normal-case font-normal ml-2">Recommendation, industry, problem queries — where citations drive business</span>
+            </h3>
+            <div class="space-y-2" id="high-intent-prompts">
+              {prompts.high_intent.map((p: any) => (
+                <div class="prompt-row flex items-center gap-3 p-3 rounded-lg bg-gray-900 border border-gray-800" data-prompt-id={p.id} data-query={p.query}>
+                  <span class={`text-[10px] px-1.5 py-0.5 rounded ${p.type === 'recommendation' ? 'bg-red-900/50 text-red-300' : p.type === 'problem' ? 'bg-yellow-900/50 text-yellow-300' : p.type === 'industry' ? 'bg-blue-900/50 text-blue-300' : 'bg-gray-800 text-gray-400'}`}>{p.type}</span>
+                  <span class="text-xs text-gray-300 flex-1">{p.query}</span>
+                  <span class="text-[10px] text-gray-600">{p.source}</span>
+                  <span class="result-indicator text-xs" data-result-for={p.id}></span>
+                  <button class="run-single-btn px-2 py-1 rounded text-[10px] bg-gray-700 text-gray-300 hover:bg-gray-600 hover:text-white transition" data-prompt-id={p.id} data-query={p.query}>
+                    Run
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {prompts.discovery?.length > 0 && (
+          <div>
+            <h3 class="text-xs text-blue-400 font-semibold mb-3 uppercase tracking-wider">
+              Discovery ({prompts.discovery.length} prompts)
+              <span class="text-gray-500 normal-case font-normal ml-2">Brand, question, how-to, comparison — builds authority</span>
+            </h3>
+            <div class="space-y-2" id="discovery-prompts">
+              {prompts.discovery.map((p: any) => (
+                <div class="prompt-row flex items-center gap-3 p-3 rounded-lg bg-gray-900 border border-gray-800" data-prompt-id={p.id} data-query={p.query}>
+                  <span class={`text-[10px] px-1.5 py-0.5 rounded ${p.type === 'brand' ? 'bg-green-900/50 text-green-300' : p.type === 'question' ? 'bg-purple-900/50 text-purple-300' : p.type === 'how_to' ? 'bg-cyan-900/50 text-cyan-300' : p.type === 'comparison' ? 'bg-orange-900/50 text-orange-300' : 'bg-gray-800 text-gray-400'}`}>{p.type}</span>
+                  <span class="text-xs text-gray-300 flex-1">{p.query}</span>
+                  <span class="text-[10px] text-gray-600">{p.source}</span>
+                  <span class="result-indicator text-xs" data-result-for={p.id}></span>
+                  <button class="run-single-btn px-2 py-1 rounded text-[10px] bg-gray-700 text-gray-300 hover:bg-gray-600 hover:text-white transition" data-prompt-id={p.id} data-query={p.query}>
+                    Run
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    )}
+
+    <script define:vars={{ clientBrand: citByType?.brand || client?.name, clientDomain: client?.domain, workerUrl: 'https://rank4ai-tracker.dawn-field-3d16.workers.dev' }}>
+      async function runCitation(promptId, query, btn) {
+        btn.textContent = 'Testing...';
+        btn.disabled = true;
+        btn.style.background = '#374151';
+
+        try {
+          const resp = await fetch(`${workerUrl}/test-citation`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              query, brand: clientBrand, domain: clientDomain, id: promptId,
+            }),
+          });
+
+          if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+          const data = await resp.json();
+
+          // Update result indicator
+          const indicator = document.querySelector(`[data-result-for="${promptId}"]`);
+          if (indicator) {
+            const claudeCited = data.results?.claude?.cited;
+            const gptCited = data.results?.chatgpt?.cited;
+            let html = '';
+            if (claudeCited !== undefined) html += `<span class="${claudeCited ? 'text-green-400' : 'text-red-400'}">C:${claudeCited ? 'Yes' : 'No'}</span>`;
+            if (gptCited !== undefined) html += ` <span class="${gptCited ? 'text-green-400' : 'text-red-400'}">G:${gptCited ? 'Yes' : 'No'}</span>`;
+            indicator.innerHTML = html;
+          }
+
+          // Update row styling
+          const row = btn.closest('.prompt-row');
+          if (row) {
+            const anyCited = data.results?.claude?.cited || data.results?.chatgpt?.cited;
+            row.style.borderColor = anyCited ? '#166534' : '#7f1d1d';
+            row.style.background = anyCited ? 'rgba(22, 101, 52, 0.1)' : '';
+          }
+
+          btn.textContent = 'Done';
+          btn.style.background = '#22c55e';
+          setTimeout(() => { btn.textContent = 'Run'; btn.style.background = ''; btn.disabled = false; }, 3000);
+
+        } catch (e) {
+          btn.textContent = 'Error';
+          btn.style.background = '#ef4444';
+          setTimeout(() => { btn.textContent = 'Run'; btn.style.background = ''; btn.disabled = false; }, 3000);
+        }
+      }
+
+      // Single run buttons
+      document.querySelectorAll('.run-single-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const promptId = btn.getAttribute('data-prompt-id');
+          const query = btn.getAttribute('data-query');
+          runCitation(promptId, query, btn);
+        });
+      });
+
+      // Run all high intent
+      document.getElementById('run-all-high')?.addEventListener('click', async function() {
+        this.textContent = 'Running...';
+        this.disabled = true;
+        const btns = document.querySelectorAll('#high-intent-prompts .run-single-btn');
+        for (const btn of btns) {
+          const promptId = btn.getAttribute('data-prompt-id');
+          const query = btn.getAttribute('data-query');
+          await runCitation(promptId, query, btn);
+          await new Promise(r => setTimeout(r, 500)); // Small delay between calls
+        }
+        this.textContent = 'Run All High Intent';
+        this.disabled = false;
+      });
+
+      // Run all discovery
+      document.getElementById('run-all-discovery')?.addEventListener('click', async function() {
+        this.textContent = 'Running...';
+        this.disabled = true;
+        const btns = document.querySelectorAll('#discovery-prompts .run-single-btn');
+        for (const btn of btns) {
+          const promptId = btn.getAttribute('data-prompt-id');
+          const query = btn.getAttribute('data-query');
+          await runCitation(promptId, query, btn);
+          await new Promise(r => setTimeout(r, 500));
+        }
+        this.textContent = 'Run All Discovery';
+        this.disabled = false;
+      });
+    </script>
   )}
 
   <!-- UPTIME -->
@@ -1067,6 +1219,80 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
           </div>
         )}
       </div>
+
+      <!-- Live Crawler Access Test (from crawl data) -->
+      {crawlData?.crawler_access && (
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
+          <h3 class="text-sm font-semibold text-gray-400 mb-4">Live Crawler Access Test (HTTP Response)</h3>
+          <p class="text-xs text-gray-500 mb-3">Tests if each bot actually gets a 200 response when visiting the homepage</p>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+            {Object.entries(crawlData.crawler_access).map(([bot, data]: [string, any]) => (
+              <div class={`p-3 rounded-lg border ${data.accessible ? 'border-green-800/50 bg-green-950/10' : 'border-red-800/50 bg-red-950/10'}`}>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs text-white font-medium">{bot}</span>
+                  <span class={`text-xs px-2 py-0.5 rounded-full ${data.accessible ? 'bg-green-600 text-white' : 'bg-red-600 text-white'}`}>
+                    {data.status}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <!-- Social Links Found -->
+      {crawlData?.social_links && Object.keys(crawlData.social_links).length > 0 && (
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
+          <h3 class="text-sm font-semibold text-gray-400 mb-4">Social Profiles Detected</h3>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+            {Object.entries(crawlData.social_links).map(([platform, urls]: [string, any]) => (
+              <div class="p-3 rounded-lg bg-gray-800">
+                <span class="text-xs text-white font-medium capitalize">{platform}</span>
+                <div class="mt-1">
+                  {(urls as string[]).map((u: string) => (
+                    <p class="text-[10px] text-gray-500 truncate">{u}</p>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <!-- Topic Clusters -->
+      {crawlData?.topic_clusters && Object.keys(crawlData.topic_clusters).length > 0 && (
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
+          <h3 class="text-sm font-semibold text-gray-400 mb-4">Topic Clusters ({crawlData.topic_cluster_count} detected)</h3>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+            {Object.entries(crawlData.topic_clusters).map(([cluster, data]: [string, any]) => (
+              <div class="p-3 rounded-lg bg-gray-800">
+                <span class="text-xs text-blue-400 font-medium">/{cluster}/</span>
+                <div class="text-lg font-bold text-white mt-1">{data.page_count}</div>
+                <div class="text-[10px] text-gray-500">pages in cluster</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <!-- Terminology Consistency -->
+      {crawlData?.term_consistency && Object.keys(crawlData.term_consistency).length > 0 && (
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+          <h3 class="text-sm font-semibold text-gray-400 mb-4">Terminology Consistency (H1 Analysis)</h3>
+          <div class="space-y-2">
+            {Object.entries(crawlData.term_consistency).map(([term, data]: [string, any]) => (
+              <div class="flex items-center gap-3">
+                <span class="text-xs text-gray-300 w-28">{term}</span>
+                <div class="flex-1 bg-gray-800 rounded-full h-5 overflow-hidden">
+                  <div class="h-full bg-blue-600/50 rounded-full flex items-center px-2 text-[10px] text-white" style={`width: ${Math.max(data.pct, 5)}%`}>
+                    {data.count}x ({data.pct}%)
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   )}
 
