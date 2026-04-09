@@ -9,6 +9,7 @@ interface Props {
   metricLabel?: string;
   lastUpdated?: string;
   clientId?: string;
+  chartData?: string;
 }
 
 const {
@@ -21,6 +22,7 @@ const {
   metricLabel,
   lastUpdated,
   clientId,
+  chartData,
 } = Astro.props;
 
 const statusColors = {
@@ -41,38 +43,78 @@ const dotColors = {
 
 const hasDetail = status !== 'not-connected' && clientId;
 const href = `/agency/${clientId}/${id}`;
-const Tag = hasDetail ? 'a' : 'div';
 ---
 
-<Tag
-  href={hasDetail ? href : undefined}
-  class={`block rounded-lg border p-5 ${statusColors[status]} transition hover:brightness-125 ${hasDetail ? 'cursor-pointer' : ''}`}
-  data-section={id}
->
-  <div class="flex items-start justify-between mb-3">
-    <div>
-      <h3 class="text-white font-semibold text-sm">{label}</h3>
-      <p class="text-xs text-gray-400 mt-0.5">{description}</p>
+<div class={`rounded-lg border ${statusColors[status]} transition`} data-section={id}>
+  <!-- Clickable header -->
+  <div
+    class={`p-5 ${hasDetail ? 'cursor-pointer hover:brightness-125' : ''}`}
+    data-card-toggle={hasDetail ? id : undefined}
+    data-card-href={hasDetail ? href : undefined}
+  >
+    <div class="flex items-start justify-between mb-3">
+      <div>
+        <h3 class="text-white font-semibold text-sm">{label}</h3>
+        <p class="text-xs text-gray-400 mt-0.5">{description}</p>
+      </div>
+      <div class="flex items-center gap-1.5">
+        <span class={`w-2 h-2 rounded-full ${dotColors[status]}`}></span>
+        <span class="text-xs">{statusText}</span>
+      </div>
     </div>
-    <div class="flex items-center gap-1.5">
-      <span class={`w-2 h-2 rounded-full ${dotColors[status]}`}></span>
-      <span class="text-xs">{statusText}</span>
-    </div>
+
+    {metric && (
+      <div class="mt-4">
+        <p class="text-2xl font-bold text-white">{metric}</p>
+        {metricLabel && <p class="text-xs text-gray-400 mt-0.5">{metricLabel}</p>}
+      </div>
+    )}
+
+    {lastUpdated && (
+      <div class="flex items-center justify-between mt-3">
+        <p class="text-xs text-gray-600">Last updated: {lastUpdated}</p>
+        {hasDetail && (
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-gray-500 expand-label">Click to expand</span>
+            <a href={href} class="text-xs text-gray-600 hover:text-gray-400" onclick="event.stopPropagation();">Full view →</a>
+          </div>
+        )}
+      </div>
+    )}
   </div>
 
-  {metric && (
-    <div class="mt-4">
-      <p class="text-2xl font-bold text-white">{metric}</p>
-      {metricLabel && <p class="text-xs text-gray-400 mt-0.5">{metricLabel}</p>}
-    </div>
-  )}
-
-  {lastUpdated && (
-    <div class="flex items-center justify-between mt-3">
-      <p class="text-xs text-gray-600">Last updated: {lastUpdated}</p>
-      {hasDetail && <span class="text-xs text-gray-500">View details →</span>}
+  <!-- Expandable chart area -->
+  {hasDetail && chartData && (
+    <div class="chart-panel hidden border-t border-gray-800/50 p-5" data-chart-panel={id}>
+      <canvas data-chart-canvas={id} height="180"></canvas>
     </div>
   )}
 
   <slot />
-</Tag>
+</div>
+
+<script>
+  // Handle card click to expand/collapse chart
+  document.querySelectorAll('[data-card-toggle]').forEach(card => {
+    card.addEventListener('click', (e) => {
+      const id = card.getAttribute('data-card-toggle');
+      const panel = document.querySelector(`[data-chart-panel="${id}"]`);
+      const label = card.querySelector('.expand-label');
+
+      if (panel) {
+        panel.classList.toggle('hidden');
+        if (label) {
+          label.textContent = panel.classList.contains('hidden') ? 'Click to expand' : 'Click to collapse';
+        }
+        // Trigger chart render if not already done
+        if (!panel.classList.contains('hidden') && !panel.dataset.rendered) {
+          panel.dataset.rendered = 'true';
+          panel.dispatchEvent(new CustomEvent('render-chart', { detail: { id } }));
+        }
+      } else {
+        // No chart — navigate to detail page
+        window.location.href = card.getAttribute('data-card-href');
+      }
+    });
+  });
+</script>

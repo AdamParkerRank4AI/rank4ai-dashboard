@@ -245,6 +245,18 @@ const sectionStatus: Record<string, any> = {
   },
 };
 
+// Chart data for inline expansion
+const chartDataMap: Record<string, string> = {};
+if (ga4?.daily) {
+  chartDataMap['traffic'] = JSON.stringify(ga4.daily.map((d: any) => ({ date: d.date, value: d.users })));
+}
+if (crawlActivity?.bing_crawl_daily) {
+  chartDataMap['crawl-activity'] = JSON.stringify(crawlActivity.bing_crawl_daily.map((d: any) => ({ date: d.date, value: d.crawled_pages })));
+}
+if (crawlActivity?.bing_crawl_daily) {
+  chartDataMap['crawl-status'] = JSON.stringify(crawlActivity.bing_crawl_daily.map((d: any) => ({ date: d.date, value: d.in_index })));
+}
+
 // Token expiry calc
 function daysUntil(dateStr: string): number {
   if (dateStr === 'never' || dateStr === 'auto') return 999;
@@ -333,6 +345,7 @@ function daysUntil(dateStr: string): number {
             metricLabel={data.metricLabel}
             lastUpdated={data.lastUpdated}
             clientId={clientId}
+            chartData={chartDataMap[section.id]}
           />
         </div>
       );
@@ -447,3 +460,61 @@ function daysUntil(dateStr: string): number {
     </>
   )}
 </DashboardLayout>
+
+<script define:vars={{ chartDataMap }}>
+  // Render inline charts when panels are expanded
+  document.querySelectorAll('[data-chart-panel]').forEach(panel => {
+    panel.addEventListener('render-chart', async (e) => {
+      const id = e.detail.id;
+      const dataStr = JSON.stringify(chartDataMap[id] || '[]');
+      const data = JSON.parse(JSON.parse(dataStr));
+
+      if (!data || data.length === 0) return;
+
+      const canvas = panel.querySelector(`[data-chart-canvas="${id}"]`);
+      if (!canvas) return;
+
+      const { Chart } = await import('https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.js');
+
+      const labels = data.map(d => {
+        if (d.date && d.date.length === 8) {
+          // YYYYMMDD format
+          const date = `${d.date.slice(0,4)}-${d.date.slice(4,6)}-${d.date.slice(6,8)}`;
+          return new Date(date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+        }
+        return new Date(d.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+      });
+
+      const colors = {
+        'traffic': { border: '#3b82f6', bg: 'rgba(59, 130, 246, 0.1)' },
+        'crawl-activity': { border: '#8b5cf6', bg: 'rgba(139, 92, 246, 0.1)' },
+        'crawl-status': { border: '#10b981', bg: 'rgba(16, 185, 129, 0.1)' },
+      };
+      const color = colors[id] || { border: '#3b82f6', bg: 'rgba(59, 130, 246, 0.1)' };
+
+      new Chart(canvas, {
+        type: id === 'crawl-activity' ? 'bar' : 'line',
+        data: {
+          labels,
+          datasets: [{
+            label: id.replace(/-/g, ' '),
+            data: data.map(d => d.value),
+            borderColor: color.border,
+            backgroundColor: color.bg,
+            fill: true,
+            tension: 0.3,
+            pointRadius: 2,
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { ticks: { color: '#6b7280', font: { size: 9 }, maxTicksLimit: 10 }, grid: { color: '#1f2937' } },
+            y: { ticks: { color: '#6b7280', font: { size: 10 } }, grid: { color: '#1f2937' } },
+          }
+        }
+      });
+    });
+  });
+</script>
