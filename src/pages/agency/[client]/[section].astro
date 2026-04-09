@@ -1553,6 +1553,13 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
         </div>
       </div>
 
+      <!-- Park info -->
+      <div class="bg-gray-900 border border-gray-800 rounded-lg p-3 mb-4 flex items-center gap-3">
+        <span class="text-[10px] px-2 py-0.5 rounded bg-yellow-900/50 text-yellow-300">Park</span>
+        <span class="text-xs text-gray-500">Parking a fix means it's not being done now — maybe not relevant, maybe later. It stays visible but greyed out and doesn't count towards your active fixes.</span>
+        <span id="parked-count" class="text-[10px] text-yellow-400 ml-auto hidden">0 parked</span>
+      </div>
+
       <!-- Filter + Copy controls -->
       <div class="flex flex-wrap items-center gap-2 mb-4">
         <span class="text-xs text-gray-500">Filter:</span>
@@ -1590,9 +1597,16 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
                 >
                   Copy
                 </button>
+                <button
+                  class="park-rec-btn text-[10px] px-2 py-1 rounded bg-gray-800 text-gray-400 hover:bg-yellow-900 hover:text-yellow-300 transition"
+                  data-index={i}
+                  title="Park — not doing now but not dismissed"
+                >
+                  Park
+                </button>
               </div>
             </div>
-            <h3 class="text-white font-medium text-sm mb-2">{r.title}</h3>
+            <h3 class="text-white font-medium text-sm mb-2 rec-title">{r.title}</h3>
             <p class="text-xs text-gray-400 leading-relaxed">{r.detail}</p>
           </div>
         ))}
@@ -1670,6 +1684,41 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
             });
             copyText(buildPrompt(selected), this);
           }
+        });
+
+        // Park button
+        let parkedCount = 0;
+        document.querySelectorAll('.park-rec-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const item = btn.closest('.rec-item');
+            if (!item) return;
+
+            const isParked = item.dataset.parked === 'true';
+            if (isParked) {
+              // Unpark
+              item.dataset.parked = 'false';
+              item.style.opacity = '1';
+              item.style.borderColor = '';
+              btn.textContent = 'Park';
+              btn.style.background = '';
+              parkedCount--;
+            } else {
+              // Park it
+              item.dataset.parked = 'true';
+              item.style.opacity = '0.35';
+              item.style.borderColor = '#854d0e';
+              btn.textContent = 'Unpark';
+              btn.style.background = '#854d0e';
+              parkedCount++;
+            }
+
+            const counter = document.getElementById('parked-count');
+            if (counter) {
+              counter.textContent = `${parkedCount} parked`;
+              counter.classList.toggle('hidden', parkedCount === 0);
+            }
+          });
         });
 
         // Click row to toggle checkbox
