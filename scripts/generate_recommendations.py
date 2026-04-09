@@ -341,6 +341,69 @@ def generate_for_client(client_id):
             })
 
     # ============================================================
+    # WIKIDATA
+    # ============================================================
+    wikidata = load("wikidata.json").get(client_id, {})
+    if wikidata and not wikidata.get("exists"):
+        recs.append({
+            "priority": "high", "category": "Entity",
+            "title": "Not listed on Wikidata",
+            "detail": "Wikidata feeds Google Knowledge Graph and AI models. Create a Wikidata entry with: company name, type (Q4830453 = business), founding date, website, industry, founders. This is free and takes 10 minutes.",
+            "impact": "high", "pages": [],
+        })
+
+    # ============================================================
+    # MULTI-MODAL CONTENT
+    # ============================================================
+    if crawl:
+        multimodal = crawl.get("pages_with_multimodal", 0)
+        total = crawl.get("pages_crawled", 0)
+        if total > 10 and multimodal < total * 0.1:
+            recs.append({
+                "priority": "medium", "category": "Content",
+                "title": f"Only {multimodal}/{total} pages have multi-modal content (images + video)",
+                "detail": "Pages with images AND video get 156-317% more AI citations. Add relevant images, infographics, and embedded videos to key content pages.",
+                "impact": "high", "pages": [],
+            })
+
+    # ============================================================
+    # COMPARISON TABLES
+    # ============================================================
+    if crawl:
+        comp_tables = crawl.get("pages_with_comparison_table", 0)
+        if comp_tables == 0:
+            recs.append({
+                "priority": "medium", "category": "Content",
+                "title": "No comparison tables detected on the site",
+                "detail": "Pages with comparison tables have 2.5x higher AI citation rate. Add comparison tables to key pages — e.g. pricing comparisons, feature comparisons, provider comparisons.",
+                "impact": "medium", "pages": [],
+            })
+
+    # ============================================================
+    # IMAGES MISSING ALT TEXT
+    # ============================================================
+    if crawl and crawl.get("images_missing_alt", 0) > 5:
+        recs.append({
+            "priority": "low", "category": "Accessibility",
+            "title": f"{crawl['images_missing_alt']} images missing alt text",
+            "detail": "Alt text helps search engines and AI understand images. Add descriptive alt text to all images.",
+            "impact": "low", "pages": [],
+        })
+
+    # ============================================================
+    # LONG-FORM CONTENT
+    # ============================================================
+    if crawl:
+        long_pages = crawl.get("pages_over_2000_words", 0)
+        if total > 20 and long_pages < 3:
+            recs.append({
+                "priority": "medium", "category": "Content",
+                "title": f"Only {long_pages} pages have 2,000+ words",
+                "detail": "Pages with 2,000+ words get 3x more AI citations. Create in-depth, comprehensive content on your key topics — guides, research reports, definitive explainers.",
+                "impact": "medium", "pages": [],
+            })
+
+    # ============================================================
     # BING INDEXING
     # ============================================================
     if crawl_activity and crawl:

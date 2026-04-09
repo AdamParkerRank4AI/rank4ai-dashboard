@@ -164,6 +164,37 @@ def crawl_site(site_id, config):
         if word_count < 100:
             issues.append({"url": url, "type": "thin_content", "detail": f"Only {word_count} words"})
 
+        # Multi-modal content detection
+        images = soup.find_all("img")
+        image_count = len(images)
+        images_with_alt = sum(1 for img in images if img.get("alt", "").strip())
+        videos = soup.find_all(["video", "iframe"])
+        video_count = sum(1 for v in videos if "youtube" in str(v).lower() or "vimeo" in str(v).lower() or v.name == "video")
+        has_multimodal = image_count > 0 and (video_count > 0 or image_count >= 3)
+
+        # Comparison tables
+        tables = soup.find_all("table")
+        has_comparison_table = any(
+            len(t.find_all("tr")) >= 3 and len(t.find_all("th")) >= 2
+            for t in tables
+        )
+
+        # Content freshness (from meta tags or schema)
+        last_modified = None
+        date_meta = soup.find("meta", attrs={"property": "article:modified_time"}) or \
+                     soup.find("meta", attrs={"name": "last-modified"}) or \
+                     soup.find("meta", attrs={"property": "article:published_time"})
+        if date_meta:
+            last_modified = date_meta.get("content", "")[:10]
+
+        # Lists count for AI structure
+        lists = soup.find_all(["ul", "ol"])
+        list_count = len(lists)
+
+        # H2 questions (AI-friendly headings)
+        h2s = soup.find_all("h2")
+        question_h2s = sum(1 for h in h2s if "?" in h.get_text())
+
         page = {
             "url": url,
             "path": urlparse(url).path or "/",
@@ -177,6 +208,16 @@ def crawl_site(site_id, config):
             "external_links_out": len(external_links[:10]),
             "canonical": canonical,
             "response_time_ms": int(resp.elapsed.total_seconds() * 1000),
+            "image_count": image_count,
+            "images_with_alt": images_with_alt,
+            "video_count": video_count,
+            "has_multimodal": has_multimodal,
+            "has_comparison_table": has_comparison_table,
+            "table_count": len(tables),
+            "list_count": list_count,
+            "question_h2s": question_h2s,
+            "h2_count": len(h2s),
+            "last_modified": last_modified,
         }
         pages.append(page)
 
@@ -213,8 +254,16 @@ def crawl_site(site_id, config):
             positive.append({"type": "schema", "url": p["url"], "detail": f"Has {', '.join(p['schemas'])} schema"})
         if p["word_count"] >= 500:
             positive.append({"type": "good_content", "url": p["url"], "detail": f"{p['word_count']} words"})
+        if p["word_count"] >= 2000:
+            positive.append({"type": "long_content", "url": p["url"], "detail": f"{p['word_count']} words — 3x more likely to be cited"})
         if p["internal_links_in"] >= 5:
             positive.append({"type": "well_linked", "url": p["url"], "detail": f"{p['internal_links_in']} internal links pointing here"})
+        if p.get("has_multimodal"):
+            positive.append({"type": "multimodal", "url": p["url"], "detail": f"{p['image_count']} images + {p['video_count']} videos — +156-317% citation rate"})
+        if p.get("has_comparison_table"):
+            positive.append({"type": "comparison_table", "url": p["url"], "detail": "Has comparison table — 2.5x citation rate"})
+        if p.get("question_h2s", 0) >= 2:
+            positive.append({"type": "faq_structure", "url": p["url"], "detail": f"{p['question_h2s']} question headings — AI-friendly structure"})
 
     result = {
         "site_id": site_id,
@@ -226,8 +275,14 @@ def crawl_site(site_id, config):
         "avg_depth": round(sum(p.get("depth", 0) for p in pages) / max(len(pages), 1), 1),
         "avg_word_count": round(sum(p["word_count"] for p in pages) / max(len(pages), 1)),
         "pages_with_schema": sum(1 for p in pages if p["schemas"]),
+        "pages_with_multimodal": sum(1 for p in pages if p.get("has_multimodal")),
+        "pages_with_comparison_table": sum(1 for p in pages if p.get("has_comparison_table")),
+        "pages_with_video": sum(1 for p in pages if p.get("video_count", 0) > 0),
+        "pages_over_2000_words": sum(1 for p in pages if p["word_count"] >= 2000),
+        "images_missing_alt": sum(p.get("image_count", 0) - p.get("images_with_alt", 0) for p in pages),
+        "pages_with_date": sum(1 for p in pages if p.get("last_modified")),
         "pages": pages,
-        "links": all_links[:2000],  # Cap for file size
+        "links": all_links[:2000],
         "issues": issues,
         "orphans": orphans,
         "tree": tree,
