@@ -46,6 +46,7 @@ const crawlActivityData = loadJson('crawl_activity.json');
 const kgData = loadJson('knowledge_graph.json');
 const nlpData = loadJson('nlp_entities.json');
 const serpData = loadJson('serp_data.json');
+const competitorData = loadJson('competitor_serp.json');
 
 const uptime = uptimeData?.[clientId];
 const crawl = crawlData;
@@ -60,6 +61,7 @@ const crawlActivity = crawlActivityData?.[clientId];
 const kg = kgData?.[clientId];
 const nlp = nlpData?.[clientId];
 const serp = serpData?.[clientId];
+const competitors = competitorData?.[clientId];
 
 // Build provider summary for citations
 const citationProviders = citations?.providers || {};
@@ -146,6 +148,18 @@ const sectionStatus: Record<string, any> = {
     statusText: 'Connect GSC + Bing',
     metric: '--',
     metricLabel: 'Search impressions',
+  },
+  'competitors': competitors ? {
+    status: competitors.client_visibility_pct > 50 ? 'healthy' : competitors.client_visibility_pct > 0 ? 'warning' : 'error',
+    statusText: `Visible in ${competitors.client_visibility_pct}% of queries${competitors.client_avg_position ? ` · avg #${competitors.client_avg_position}` : ''}`,
+    metric: `${competitors.client_visibility_pct}%`,
+    metricLabel: competitors.competitors?.length ? `Top competitor: ${competitors.competitors[0].domain} (${competitors.competitors[0].visibility_pct}% visible)` : 'No competitor data',
+    lastUpdated: new Date(competitors.checked_at).toLocaleDateString('en-GB'),
+  } : {
+    status: 'not-connected',
+    statusText: 'Run competitor analysis',
+    metric: '--',
+    metricLabel: 'Competitor comparison',
   },
   'content-gaps': gsc ? {
     status: (gsc.content_gaps?.length || 0) > 0 ? 'warning' : 'healthy',
@@ -250,11 +264,37 @@ const chartDataMap: Record<string, string> = {};
 if (ga4?.daily) {
   chartDataMap['traffic'] = JSON.stringify(ga4.daily.map((d: any) => ({ date: d.date, value: d.users })));
 }
-if (crawlActivity?.bing_crawl_daily) {
+if (crawlActivity?.bing_crawl_daily?.length) {
   chartDataMap['crawl-activity'] = JSON.stringify(crawlActivity.bing_crawl_daily.map((d: any) => ({ date: d.date, value: d.crawled_pages })));
-}
-if (crawlActivity?.bing_crawl_daily) {
   chartDataMap['crawl-status'] = JSON.stringify(crawlActivity.bing_crawl_daily.map((d: any) => ({ date: d.date, value: d.in_index })));
+}
+// Search performance — GSC impressions over time (use daily from GA4 as proxy for now)
+if (ga4?.daily) {
+  chartDataMap['search-performance'] = JSON.stringify(ga4.daily.map((d: any) => ({ date: d.date, value: d.sessions })));
+}
+// AI readiness — just show the score breakdown as a bar
+if (audit) {
+  chartDataMap['ai-readiness'] = JSON.stringify([
+    { date: 'Schema', value: audit.scores.schema },
+    { date: 'Structure', value: audit.scores.content_structure },
+    { date: 'E-E-A-T', value: audit.scores.eeat },
+    { date: 'Citation', value: audit.scores.citation_potential },
+  ]);
+}
+// Uptime — show response time if we have history
+const uptimeHistoryData = loadJson('uptime_history.json');
+const uptimeHist = uptimeHistoryData?.[clientId];
+if (uptimeHist?.length) {
+  chartDataMap['uptime'] = JSON.stringify(uptimeHist.map((d: any) => ({ date: d.time, value: d.ms })));
+}
+// Site speed — show scores as bar
+if (pagespeed?.avg_scores) {
+  chartDataMap['site-speed'] = JSON.stringify([
+    { date: 'Performance', value: pagespeed.avg_scores.performance || 0 },
+    { date: 'SEO', value: pagespeed.avg_scores.seo || 0 },
+    { date: 'Accessibility', value: pagespeed.avg_scores.accessibility || 0 },
+    { date: 'Best Practices', value: pagespeed.avg_scores['best-practices'] || 0 },
+  ]);
 }
 
 // Token expiry calc
@@ -477,12 +517,18 @@ function daysUntil(dateStr: string): number {
       const { Chart } = await import('https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.js');
 
       const labels = data.map(d => {
-        if (d.date && d.date.length === 8) {
-          // YYYYMMDD format
+        if (!d.date) return '';
+        if (d.date.length === 8 && /^\d{8}$/.test(d.date)) {
           const date = `${d.date.slice(0,4)}-${d.date.slice(4,6)}-${d.date.slice(6,8)}`;
           return new Date(date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
         }
-        return new Date(d.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+        // Check if it's a date string
+        const parsed = new Date(d.date);
+        if (!isNaN(parsed.getTime()) && d.date.includes('-')) {
+          return parsed.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+        }
+        // Not a date — use as-is (e.g. "Schema", "Performance")
+        return d.date;
       });
 
       const colors = {
@@ -493,7 +539,7 @@ function daysUntil(dateStr: string): number {
       const color = colors[id] || { border: '#3b82f6', bg: 'rgba(59, 130, 246, 0.1)' };
 
       new Chart(canvas, {
-        type: id === 'crawl-activity' ? 'bar' : 'line',
+        type: ['crawl-activity', 'ai-readiness', 'site-speed'].includes(id) ? 'bar' : 'line',
         data: {
           labels,
           datasets: [{
