@@ -48,6 +48,16 @@ const nlpData = loadJson('nlp_entities.json');
 const serpData = loadJson('serp_data.json');
 const competitorData = loadJson('competitor_serp.json');
 const recsData = loadJson('recommendations.json');
+const historyData = loadJson('daily_history.json');
+const snapshotDir = path.join(process.cwd(), 'src', 'data', 'snapshots', clientId || '');
+let baseline: any = null;
+try {
+  const baselinePath = path.join(snapshotDir, 'baseline.json');
+  if (fs.existsSync(baselinePath)) {
+    baseline = JSON.parse(fs.readFileSync(baselinePath, 'utf-8'));
+  }
+} catch {}
+const history = historyData?.[clientId] || [];
 
 const uptime = uptimeData?.[clientId];
 const crawl = crawlData;
@@ -311,6 +321,46 @@ if (pagespeed?.avg_scores) {
   ]);
 }
 
+// Count issues per section from recommendations
+const recsForSection: Record<string, number> = {};
+if (recs?.recommendations) {
+  for (const r of recs.recommendations) {
+    const cat = r.category.toLowerCase();
+    if (cat.includes('schema')) recsForSection['seo-health'] = (recsForSection['seo-health'] || 0) + 1;
+    else if (cat.includes('seo')) recsForSection['seo-health'] = (recsForSection['seo-health'] || 0) + 1;
+    else if (cat.includes('citation')) recsForSection['ai-citations'] = (recsForSection['ai-citations'] || 0) + 1;
+    else if (cat.includes('ai readiness') || cat.includes('ai visibility')) recsForSection['ai-readiness'] = (recsForSection['ai-readiness'] || 0) + 1;
+    else if (cat.includes('performance')) recsForSection['site-speed'] = (recsForSection['site-speed'] || 0) + 1;
+    else if (cat.includes('internal')) recsForSection['internal-links'] = (recsForSection['internal-links'] || 0) + 1;
+    else if (cat.includes('content')) recsForSection['content-gaps'] = (recsForSection['content-gaps'] || 0) + 1;
+    else if (cat.includes('search')) recsForSection['search-performance'] = (recsForSection['search-performance'] || 0) + 1;
+    else if (cat.includes('index')) recsForSection['crawl-activity'] = (recsForSection['crawl-activity'] || 0) + 1;
+    else if (cat.includes('e-e-a-t')) recsForSection['ai-readiness'] = (recsForSection['ai-readiness'] || 0) + 1;
+    else if (cat.includes('access')) recsForSection['accessibility'] = (recsForSection['accessibility'] || 0) + 1;
+  }
+}
+
+// Calculate changes from baseline
+const changes: Record<string, { value: number; label: string }> = {};
+if (baseline) {
+  if (audit && baseline.ai_readiness) {
+    const diff = audit.overall_score - (baseline.ai_readiness.overall_score || 0);
+    if (diff !== 0) changes['ai-readiness'] = { value: diff, label: 'pts' };
+  }
+  if (citations && baseline.ai_citations) {
+    const diff = Math.round((citations.overall_rate || 0) - (baseline.ai_citations.citation_rate || 0));
+    if (diff !== 0) changes['ai-citations'] = { value: diff, label: '%' };
+  }
+  if (crawl && baseline.crawl) {
+    const diff = (crawl.total_issues || 0) - (baseline.crawl.total_issues || 0);
+    if (diff !== 0) changes['seo-health'] = { value: -diff, label: 'issues' }; // negative = improvement
+  }
+  if (ga4?.overview && baseline.traffic) {
+    const diff = (ga4.overview.active_users || 0) - (baseline.traffic.active_users || 0);
+    if (diff !== 0) changes['traffic'] = { value: diff, label: 'users' };
+  }
+}
+
 // Token expiry calc
 function daysUntil(dateStr: string): number {
   if (dateStr === 'never' || dateStr === 'auto') return 999;
@@ -344,6 +394,32 @@ function daysUntil(dateStr: string): number {
     </div>
   </div>
 
+  <!-- Fixes summary bar -->
+  {recs && recs.total > 0 && (
+    <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 mb-4 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <div class="flex items-center gap-2">
+          <span class="text-sm font-semibold text-white">{recs.total} fixes needed</span>
+        </div>
+        {recs.critical > 0 && (
+          <span class="px-2 py-1 rounded bg-red-900/50 text-red-300 text-xs font-medium">{recs.critical} critical</span>
+        )}
+        {recs.high > 0 && (
+          <span class="px-2 py-1 rounded bg-yellow-900/50 text-yellow-300 text-xs font-medium">{recs.high} high</span>
+        )}
+        {recs.medium > 0 && (
+          <span class="px-2 py-1 rounded bg-blue-900/50 text-blue-300 text-xs font-medium">{recs.medium} medium</span>
+        )}
+        {recs.low > 0 && (
+          <span class="px-2 py-1 rounded bg-gray-800 text-gray-400 text-xs">{recs.low} low</span>
+        )}
+      </div>
+      <a href={`/agency/${clientId}/recommendations`} class="text-xs text-blue-400 hover:text-blue-300 transition">
+        View all fixes →
+      </a>
+    </div>
+  )}
+
   <!-- Stats bar -->
   {auto.stats.length > 0 && (
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-6">
@@ -376,12 +452,30 @@ function daysUntil(dateStr: string): number {
     )}
   </div>
 
-  <!-- Data Section cards -->
-  <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Data Sources</h2>
+  <!-- AI SEARCH section -->
+  {(() => {
+    const aiSections = ['overview', 'ai-readiness', 'ai-citations', 'recommendations', 'competitors'];
+    const seoSections = ['seo-health', 'traffic', 'search-performance', 'content-gaps', 'site-tree', 'internal-links'];
+    const monitorSections = ['site-speed', 'crawl-activity', 'uptime', 'crawl-status', 'positive-signals'];
+
+    function renderGroup(title: string, ids: string[]) {
+      const filtered = sections.filter((s: any) => ids.includes(s.id));
+      if (filtered.length === 0) return null;
+      return `group:${title}`;
+    }
+
+    return null;
+  })()}
+
+  <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+    AI Search Visibility
+    <span class="text-[10px] px-2 py-0.5 rounded-full bg-gray-800 text-gray-500 normal-case font-normal">Core metrics</span>
+  </h2>
   <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
-    {sections.map((section) => {
+    {sections.filter((s: any) => ['overview', 'ai-readiness', 'ai-citations', 'recommendations', 'competitors'].includes(s.id)).map((section: any) => {
       const data = sectionStatus[section.id] || {};
       const isInClientView = client.clientViewSections.includes(section.id);
+      const change = changes[section.id];
       return (
         <div class="relative">
           {isInClientView && (
@@ -390,16 +484,70 @@ function daysUntil(dateStr: string): number {
             </span>
           )}
           <SectionCard
-            id={section.id}
-            label={section.label}
-            description={section.description}
-            status={data.status}
-            statusText={data.statusText}
-            metric={data.metric}
-            metricLabel={data.metricLabel}
-            lastUpdated={data.lastUpdated}
-            clientId={clientId}
-            chartData={chartDataMap[section.id]}
+            id={section.id} label={section.label} description={section.description}
+            status={data.status} statusText={data.statusText} metric={data.metric}
+            metricLabel={data.metricLabel} lastUpdated={data.lastUpdated}
+            clientId={clientId} chartData={chartDataMap[section.id]}
+            change={change?.value} changeLabel={change?.label}
+            issueCount={recsForSection[section.id]}
+          />
+        </div>
+      );
+    })}
+  </div>
+
+  <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+    SEO & Content
+    <span class="text-[10px] px-2 py-0.5 rounded-full bg-gray-800 text-gray-500 normal-case font-normal">Traditional SEO</span>
+  </h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
+    {sections.filter((s: any) => ['seo-health', 'traffic', 'search-performance', 'content-gaps', 'site-tree', 'internal-links'].includes(s.id)).map((section: any) => {
+      const data = sectionStatus[section.id] || {};
+      const isInClientView = client.clientViewSections.includes(section.id);
+      const change = changes[section.id];
+      return (
+        <div class="relative">
+          {isInClientView && (
+            <span class="absolute -top-2 -right-2 z-10 px-2 py-0.5 rounded-full bg-blue-600 text-white text-[10px]">
+              Client visible
+            </span>
+          )}
+          <SectionCard
+            id={section.id} label={section.label} description={section.description}
+            status={data.status} statusText={data.statusText} metric={data.metric}
+            metricLabel={data.metricLabel} lastUpdated={data.lastUpdated}
+            clientId={clientId} chartData={chartDataMap[section.id]}
+            change={change?.value} changeLabel={change?.label}
+            issueCount={recsForSection[section.id]}
+          />
+        </div>
+      );
+    })}
+  </div>
+
+  <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+    Monitoring
+    <span class="text-[10px] px-2 py-0.5 rounded-full bg-gray-800 text-gray-500 normal-case font-normal">Speed, uptime, crawlers</span>
+  </h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
+    {sections.filter((s: any) => ['site-speed', 'crawl-activity', 'uptime', 'crawl-status', 'positive-signals'].includes(s.id)).map((section: any) => {
+      const data = sectionStatus[section.id] || {};
+      const isInClientView = client.clientViewSections.includes(section.id);
+      const change = changes[section.id];
+      return (
+        <div class="relative">
+          {isInClientView && (
+            <span class="absolute -top-2 -right-2 z-10 px-2 py-0.5 rounded-full bg-blue-600 text-white text-[10px]">
+              Client visible
+            </span>
+          )}
+          <SectionCard
+            id={section.id} label={section.label} description={section.description}
+            status={data.status} statusText={data.statusText} metric={data.metric}
+            metricLabel={data.metricLabel} lastUpdated={data.lastUpdated}
+            clientId={clientId} chartData={chartDataMap[section.id]}
+            change={change?.value} changeLabel={change?.label}
+            issueCount={recsForSection[section.id]}
           />
         </div>
       );
