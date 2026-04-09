@@ -212,14 +212,132 @@ export default {
       });
     }
 
+    // Citation test endpoint — test a single query against AI models
+    if (url.pathname === '/test-citation' && request.method === 'POST') {
+      try {
+        const body = await request.json();
+        const query = body.query;
+        const brand = body.brand;
+        const domain = body.domain;
+        const promptId = body.id || '';
+
+        if (!query || !brand) {
+          return new Response(JSON.stringify({ error: 'query and brand required' }), {
+            status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+          });
+        }
+
+        const results = {};
+
+        // Test Claude
+        if (env.ANTHROPIC_API_KEY) {
+          try {
+            const resp = await fetch('https://api.anthropic.com/v1/messages', {
+              method: 'POST',
+              headers: {
+                'x-api-key': env.ANTHROPIC_API_KEY,
+                'anthropic-version': '2023-06-01',
+                'content-type': 'application/json',
+              },
+              body: JSON.stringify({
+                model: 'claude-sonnet-4-20250514',
+                max_tokens: 1024,
+                messages: [{ role: 'user', content: query }],
+              }),
+            });
+            if (resp.ok) {
+              const data = await resp.json();
+              const text = data.content?.[0]?.text || '';
+              const textLower = text.toLowerCase();
+              results.claude = {
+                cited: textLower.includes(brand.toLowerCase()) || textLower.includes((domain || '').toLowerCase()),
+                preview: text.slice(0, 300),
+              };
+            }
+          } catch (e) {
+            results.claude = { error: e.message };
+          }
+        }
+
+        // Test ChatGPT
+        if (env.OPENAI_API_KEY) {
+          try {
+            const resp = await fetch('https://api.openai.com/v1/chat/completions', {
+              method: 'POST',
+              headers: {
+                'Authorization': `Bearer ${env.OPENAI_API_KEY}`,
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                model: 'gpt-4o-mini',
+                max_tokens: 1024,
+                messages: [{ role: 'user', content: query }],
+              }),
+            });
+            if (resp.ok) {
+              const data = await resp.json();
+              const text = data.choices?.[0]?.message?.content || '';
+              const textLower = text.toLowerCase();
+              results.chatgpt = {
+                cited: textLower.includes(brand.toLowerCase()) || textLower.includes((domain || '').toLowerCase()),
+                preview: text.slice(0, 300),
+              };
+            }
+          } catch (e) {
+            results.chatgpt = { error: e.message };
+          }
+        }
+
+        // Store result in KV
+        const today = new Date().toISOString().slice(0, 10);
+        const resultKey = `citation:${promptId || query.slice(0, 50)}:${today}`;
+        const resultData = {
+          query, brand, domain, promptId,
+          tested_at: new Date().toISOString(),
+          results,
+        };
+        await env.TRACKER_KV.put(resultKey, JSON.stringify(resultData), {
+          expirationTtl: 60 * 60 * 24 * 90,
+        });
+
+        return new Response(JSON.stringify(resultData), {
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+
+      } catch (e) {
+        return new Response(JSON.stringify({ error: e.message }), {
+          status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+    }
+
+    // Get citation history for a prompt
+    if (url.pathname === '/api/citation-history') {
+      const promptId = url.searchParams.get('id') || '';
+      const days = parseInt(url.searchParams.get('days') || '30');
+      const history = [];
+
+      for (let i = 0; i < days; i++) {
+        const date = new Date(Date.now() - i * 86400000).toISOString().slice(0, 10);
+        const data = await env.TRACKER_KV.get(`citation:${promptId}:${date}`, 'json');
+        if (data) history.push(data);
+      }
+
+      return new Response(JSON.stringify({ id: promptId, history: history.reverse() }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
     // Default — info page
     return new Response(JSON.stringify({
       name: 'Rank4AI Visitor & Bot Tracker',
       endpoints: {
         'POST /track': 'Log a visit (send {site, path, ua, hostname, referer})',
+        'POST /test-citation': 'Test a query against AI models (send {query, brand, domain, id})',
         'GET /api/summary?site=rank4ai&days=30': 'Get daily summaries',
         'GET /api/bots?site=rank4ai': 'Get today\'s bot breakdown',
         'GET /api/overview': 'Get all sites overview',
+        'GET /api/citation-history?id=prompt-id&days=30': 'Get citation test history',
       },
     }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
