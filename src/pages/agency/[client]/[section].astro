@@ -454,6 +454,32 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
           </div>
         </div>
 
+        <!-- Add prompt form -->
+        <div class="bg-gray-900 border border-dashed border-gray-700 rounded-lg p-4 mb-6">
+          <div class="flex items-center gap-3">
+            <input id="new-prompt-query" type="text" placeholder="Enter a new query to test..." class="flex-1 bg-gray-800 border border-gray-700 rounded px-3 py-2 text-xs text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none" />
+            <select id="new-prompt-type" class="bg-gray-800 border border-gray-700 rounded px-2 py-2 text-xs text-gray-300">
+              <option value="recommendation">Recommendation</option>
+              <option value="industry">Industry</option>
+              <option value="problem">Problem</option>
+              <option value="question">Question</option>
+              <option value="how_to">How-to</option>
+              <option value="comparison">Comparison</option>
+              <option value="brand">Brand</option>
+              <option value="cost">Cost</option>
+              <option value="local">Local</option>
+              <option value="review">Review</option>
+            </select>
+            <select id="new-prompt-group" class="bg-gray-800 border border-gray-700 rounded px-2 py-2 text-xs text-gray-300">
+              <option value="high_intent">High Intent</option>
+              <option value="discovery">Discovery</option>
+            </select>
+            <button id="add-prompt-btn" class="px-3 py-2 rounded text-xs bg-green-600 text-white hover:bg-green-500 transition">
+              + Add
+            </button>
+          </div>
+        </div>
+
         {prompts.high_intent?.length > 0 && (
           <div class="mb-6">
             <h3 class="text-xs text-red-400 font-semibold mb-3 uppercase tracking-wider">
@@ -462,7 +488,7 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
             </h3>
             <div class="space-y-2" id="high-intent-prompts">
               {prompts.high_intent.map((p: any) => (
-                <div class="prompt-row flex items-center gap-3 p-3 rounded-lg bg-gray-900 border border-gray-800" data-prompt-id={p.id} data-query={p.query}>
+                <div class="prompt-row flex items-center gap-3 p-3 rounded-lg bg-gray-900 border border-gray-800" data-prompt-id={p.id} data-query={p.query} data-group="high_intent">
                   <span class={`text-[10px] px-1.5 py-0.5 rounded ${p.type === 'recommendation' ? 'bg-red-900/50 text-red-300' : p.type === 'problem' ? 'bg-yellow-900/50 text-yellow-300' : p.type === 'industry' ? 'bg-blue-900/50 text-blue-300' : 'bg-gray-800 text-gray-400'}`}>{p.type}</span>
                   <span class="text-xs text-gray-300 flex-1">{p.query}</span>
                   <span class="text-[10px] text-gray-600">{p.source}</span>
@@ -470,6 +496,7 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
                   <button class="run-single-btn px-2 py-1 rounded text-[10px] bg-gray-700 text-gray-300 hover:bg-gray-600 hover:text-white transition" data-prompt-id={p.id} data-query={p.query}>
                     Run
                   </button>
+                  <button class="remove-prompt-btn px-1.5 py-0.5 rounded text-[10px] bg-gray-800 text-gray-500 hover:bg-red-900 hover:text-red-300 transition" data-prompt-id={p.id} title="Remove prompt">x</button>
                 </div>
               ))}
             </div>
@@ -484,7 +511,7 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
             </h3>
             <div class="space-y-2" id="discovery-prompts">
               {prompts.discovery.map((p: any) => (
-                <div class="prompt-row flex items-center gap-3 p-3 rounded-lg bg-gray-900 border border-gray-800" data-prompt-id={p.id} data-query={p.query}>
+                <div class="prompt-row flex items-center gap-3 p-3 rounded-lg bg-gray-900 border border-gray-800" data-prompt-id={p.id} data-query={p.query} data-group="discovery">
                   <span class={`text-[10px] px-1.5 py-0.5 rounded ${p.type === 'brand' ? 'bg-green-900/50 text-green-300' : p.type === 'question' ? 'bg-purple-900/50 text-purple-300' : p.type === 'how_to' ? 'bg-cyan-900/50 text-cyan-300' : p.type === 'comparison' ? 'bg-orange-900/50 text-orange-300' : 'bg-gray-800 text-gray-400'}`}>{p.type}</span>
                   <span class="text-xs text-gray-300 flex-1">{p.query}</span>
                   <span class="text-[10px] text-gray-600">{p.source}</span>
@@ -492,6 +519,7 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
                   <button class="run-single-btn px-2 py-1 rounded text-[10px] bg-gray-700 text-gray-300 hover:bg-gray-600 hover:text-white transition" data-prompt-id={p.id} data-query={p.query}>
                     Run
                   </button>
+                  <button class="remove-prompt-btn px-1.5 py-0.5 rounded text-[10px] bg-gray-800 text-gray-500 hover:bg-red-900 hover:text-red-300 transition" data-prompt-id={p.id} title="Remove prompt">x</button>
                 </div>
               ))}
             </div>
@@ -588,6 +616,81 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
         }
         this.textContent = 'Run All Discovery';
         this.disabled = false;
+      });
+
+      // Remove prompt
+      document.querySelectorAll('.remove-prompt-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const row = btn.closest('.prompt-row');
+          if (row && confirm('Remove this prompt?')) {
+            row.style.opacity = '0.3';
+            row.style.pointerEvents = 'none';
+            row.dataset.removed = 'true';
+          }
+        });
+      });
+
+      // Add new prompt
+      document.getElementById('add-prompt-btn')?.addEventListener('click', () => {
+        const queryInput = document.getElementById('new-prompt-query');
+        const typeSelect = document.getElementById('new-prompt-type');
+        const groupSelect = document.getElementById('new-prompt-group');
+
+        const query = queryInput.value.trim();
+        if (!query) { queryInput.focus(); return; }
+
+        const type = typeSelect.value;
+        const group = groupSelect.value;
+        const id = 'custom-' + Date.now();
+
+        const typeColors = {
+          recommendation: 'bg-red-900/50 text-red-300',
+          industry: 'bg-blue-900/50 text-blue-300',
+          problem: 'bg-yellow-900/50 text-yellow-300',
+          brand: 'bg-green-900/50 text-green-300',
+          question: 'bg-purple-900/50 text-purple-300',
+          how_to: 'bg-cyan-900/50 text-cyan-300',
+          comparison: 'bg-orange-900/50 text-orange-300',
+          cost: 'bg-gray-800 text-gray-400',
+          local: 'bg-gray-800 text-gray-400',
+          review: 'bg-gray-800 text-gray-400',
+        };
+
+        const row = document.createElement('div');
+        row.className = 'prompt-row flex items-center gap-3 p-3 rounded-lg bg-gray-900 border border-green-800/50';
+        row.dataset.promptId = id;
+        row.dataset.query = query;
+        row.dataset.group = group;
+        row.innerHTML = `
+          <span class="text-[10px] px-1.5 py-0.5 rounded ${typeColors[type] || 'bg-gray-800 text-gray-400'}">${type}</span>
+          <span class="text-xs text-gray-300 flex-1">${query}</span>
+          <span class="text-[10px] text-green-400">new</span>
+          <span class="result-indicator text-xs" data-result-for="${id}"></span>
+          <button class="run-single-btn px-2 py-1 rounded text-[10px] bg-gray-700 text-gray-300 hover:bg-gray-600 hover:text-white transition" data-prompt-id="${id}" data-query="${query}">Run</button>
+          <button class="remove-prompt-btn px-1.5 py-0.5 rounded text-[10px] bg-gray-800 text-gray-500 hover:bg-red-900 hover:text-red-300 transition" data-prompt-id="${id}" title="Remove">x</button>
+        `;
+
+        // Add Run handler
+        row.querySelector('.run-single-btn').addEventListener('click', (e) => {
+          e.stopPropagation();
+          runCitation(id, query, row.querySelector('.run-single-btn'));
+        });
+
+        // Add Remove handler
+        row.querySelector('.remove-prompt-btn').addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (confirm('Remove this prompt?')) {
+            row.style.opacity = '0.3';
+            row.style.pointerEvents = 'none';
+          }
+        });
+
+        const container = document.getElementById(group === 'high_intent' ? 'high-intent-prompts' : 'discovery-prompts');
+        if (container) container.appendChild(row);
+
+        queryInput.value = '';
+        queryInput.focus();
       });
     </script>
   )}
