@@ -1,4 +1,24 @@
 ---
+const INFO_TOOLTIPS: Record<string, string> = {
+  'overview': 'High-level summary of all metrics. Shows AI readiness, citation rate, traffic, and site health at a glance.',
+  'ai-readiness': 'How ready your site is for AI citation. Scores schema markup, E-E-A-T signals, content structure, and citation potential. Pages with schema have 2.5x higher AI citation rates.',
+  'ai-citations': 'How often AI models mention your brand when asked industry questions. Tested across ChatGPT and Claude with real search queries. 0% means AI doesn\'t recommend you for any industry queries yet.',
+  'competitors': 'Who ranks in Google for your target queries vs you. Shows visibility percentage and average position for each competitor.',
+  'recommendations': 'Prioritised fixes to improve your AI search visibility. Generated from all data sources. Copy any fix to Claude Code to action it.',
+  'seo-health': 'Technical health of your site — missing H1 tags, meta descriptions, broken links, schema coverage. Issues here affect both traditional SEO and AI visibility.',
+  'traffic': 'Website visitors from Google Analytics over the last 30 days. Shows users, sessions, pageviews, bounce rate, top pages, and traffic sources.',
+  'search-performance': 'Clicks and impressions from Google Search Console and Bing Webmaster Tools. Shows what queries bring people to your site and your average position.',
+  'content-gaps': 'Queries where you get impressions but not clicks — people see you in search results but don\'t click. Improving titles and descriptions for these queries is a quick win.',
+  'new-pages': 'Content added since we started working together, categorised by type (blog, question, guide, etc.). Shows the content investment over time.',
+  'site-tree': 'Visual hierarchy of your site structure. Shows how pages are organised and how deep they are from the homepage. Shallow, well-structured sites are easier for AI to understand.',
+  'internal-links': 'Map of how pages link to each other. Shows which pages get the most internal links (important pages) and orphan pages with no links pointing to them.',
+  'site-speed': 'Google Lighthouse performance scores on mobile. Performance, SEO, accessibility, and best practices. Fast sites (under 0.4s FCP) get 3x more AI citations.',
+  'crawl-activity': 'How often search engine and AI bots visit your site. Shows Bing crawl frequency, pages indexed, and which AI crawlers have access.',
+  'uptime': 'Whether your site is online and how fast it responds. Monitors response time and uptime percentage. Slow sites (over 2 seconds) get fewer AI citations.',
+  'crawl-status': 'When the last site crawl happened and what it found. Shows pages crawled, issues detected, and schema coverage.',
+  'positive-signals': 'What\'s working well — pages with good schema, strong content, proper linking, multi-modal content. These are the foundations AI citation is built on.',
+};
+
 interface Props {
   id: string;
   label: string;
@@ -49,6 +69,7 @@ const dotColors = {
 
 const hasDetail = status !== 'not-connected' && clientId;
 const href = `/agency/${clientId}/${id}`;
+const tooltip = INFO_TOOLTIPS[id] || '';
 ---
 
 <div class={`rounded-lg border ${statusColors[status]} transition`} data-section={id}>
@@ -58,9 +79,24 @@ const href = `/agency/${clientId}/${id}`;
     data-card-href={hasDetail ? href : undefined}
   >
     <div class="flex items-start justify-between mb-3">
-      <div>
-        <h3 class="text-white font-semibold text-sm">{label}</h3>
-        <p class="text-xs text-gray-400 mt-0.5">{description}</p>
+      <div class="flex items-start gap-2">
+        <div>
+          <h3 class="text-white font-semibold text-sm">{label}</h3>
+          <p class="text-xs text-gray-400 mt-0.5">{description}</p>
+        </div>
+        {tooltip && (
+          <button
+            class="info-btn flex-shrink-0 w-4 h-4 rounded-full bg-gray-700 text-gray-400 text-[9px] hover:bg-gray-600 hover:text-white transition mt-0.5"
+            data-tooltip={tooltip}
+            onclick="event.stopPropagation(); const tip = this.nextElementSibling; tip.classList.toggle('hidden');"
+          >i</button>
+        )}
+        {tooltip && (
+          <div class="hidden absolute z-20 mt-6 ml-[-120px] w-64 p-3 rounded-lg bg-gray-800 border border-gray-700 text-xs text-gray-300 leading-relaxed shadow-xl">
+            {tooltip}
+            <div class="mt-2 text-[10px] text-gray-500 cursor-pointer" onclick="event.stopPropagation(); this.parentElement.classList.add('hidden');">Click to close</div>
+          </div>
+        )}
       </div>
       <div class="flex items-center gap-2">
         {issueCount !== undefined && issueCount > 0 && (
