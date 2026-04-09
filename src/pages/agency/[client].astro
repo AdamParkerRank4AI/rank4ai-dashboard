@@ -43,6 +43,8 @@ const bingData = loadJson('bing.json');
 const auditData = loadJson('ai_audit.json');
 const pagespeedData = loadJson('pagespeed.json');
 const crawlActivityData = loadJson('crawl_activity.json');
+const kgData = loadJson('knowledge_graph.json');
+const nlpData = loadJson('nlp_entities.json');
 
 const uptime = uptimeData?.[clientId];
 const crawl = crawlData;
@@ -54,6 +56,8 @@ const audit = auditData?.[clientId];
 const citByType = citationByType?.[clientId];
 const pagespeed = pagespeedData?.[clientId];
 const crawlActivity = crawlActivityData?.[clientId];
+const kg = kgData?.[clientId];
+const nlp = nlpData?.[clientId];
 
 // Build provider summary for citations
 const citationProviders = citations?.providers || {};
@@ -77,9 +81,9 @@ const sectionStatus: Record<string, any> = {
   },
   'ai-readiness': audit ? {
     status: audit.overall_score >= 70 ? 'healthy' : audit.overall_score >= 40 ? 'warning' : 'error',
-    statusText: `${audit.readiness} — ${audit.pages_audited} pages scored`,
+    statusText: `${audit.readiness} — ${audit.pages_audited} pages scored${kg ? (kg.is_known_entity ? ' · Known Entity' : ' · Not in Knowledge Graph') : ''}`,
     metric: `${audit.overall_score}/100`,
-    metricLabel: `Schema: ${audit.scores.schema}/100 · E-E-A-T: ${audit.scores.eeat}/100 · Citation: ${audit.scores.citation_potential}/100`,
+    metricLabel: `Schema: ${audit.scores.schema}/100 · E-E-A-T: ${audit.scores.eeat}/100 · Citation: ${audit.scores.citation_potential}/100${nlp?.top_entities?.length ? ` · Top entity: ${nlp.top_entities[0].name}` : ''}`,
     lastUpdated: new Date(audit.audited_at).toLocaleDateString('en-GB'),
   } : {
     status: 'not-connected',
