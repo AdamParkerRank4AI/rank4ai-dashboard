@@ -481,12 +481,28 @@ function daysUntil(dateStr: string): number {
     return null;
   })()}
 
+  <!-- Recommendations first -->
+  <div class="grid grid-cols-1 gap-4 mb-6">
+    {sections.filter((s: any) => s.id === 'recommendations').map((section: any) => {
+      const data = sectionStatus[section.id] || {};
+      return (
+        <SectionCard
+          id={section.id} label={section.label} description={section.description}
+          status={data.status} statusText={data.statusText} metric={data.metric}
+          metricLabel={data.metricLabel} lastUpdated={data.lastUpdated}
+          clientId={clientId}
+          issueCount={recs?.total}
+        />
+      );
+    })}
+  </div>
+
   <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3 flex items-center gap-2">
     AI Search Visibility
     <span class="text-[10px] px-2 py-0.5 rounded-full bg-gray-800 text-gray-500 normal-case font-normal">Core metrics</span>
   </h2>
   <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
-    {sections.filter((s: any) => ['overview', 'ai-readiness', 'ai-citations', 'recommendations', 'competitors'].includes(s.id)).map((section: any) => {
+    {sections.filter((s: any) => ['overview', 'ai-readiness', 'ai-citations', 'competitors'].includes(s.id)).map((section: any) => {
       const data = sectionStatus[section.id] || {};
       const isInClientView = client.clientViewSections.includes(section.id);
       const change = changes[section.id];
@@ -515,7 +531,7 @@ function daysUntil(dateStr: string): number {
     <span class="text-[10px] px-2 py-0.5 rounded-full bg-gray-800 text-gray-500 normal-case font-normal">Traditional SEO</span>
   </h2>
   <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
-    {sections.filter((s: any) => ['seo-health', 'traffic', 'search-performance', 'content-gaps', 'site-tree', 'internal-links'].includes(s.id)).map((section: any) => {
+    {sections.filter((s: any) => ['seo-health', 'traffic', 'search-performance', 'content-gaps', 'new-pages', 'site-tree', 'internal-links'].includes(s.id)).map((section: any) => {
       const data = sectionStatus[section.id] || {};
       const isInClientView = client.clientViewSections.includes(section.id);
       const change = changes[section.id];
