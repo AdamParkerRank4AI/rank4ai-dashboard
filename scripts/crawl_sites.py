@@ -10,7 +10,8 @@ import sys
 import time
 from datetime import datetime
 from urllib.parse import urljoin, urlparse
-from collections import defaultdict
+from collections import defaultdict, Counter
+import re
 
 import requests
 from bs4 import BeautifulSoup
@@ -265,6 +266,92 @@ def crawl_site(site_id, config):
         if p.get("question_h2s", 0) >= 2:
             positive.append({"type": "faq_structure", "url": p["url"], "detail": f"{p['question_h2s']} question headings — AI-friendly structure"})
 
+    # ── Multi-crawler access test (do bots get 200?) ──
+    crawler_access = {}
+    bot_uas = {
+        "GPTBot": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GPTBot/1.0; +https://openai.com/gptbot)",
+        "ClaudeBot": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; ClaudeBot/1.0; +https://www.anthropic.com)",
+        "PerplexityBot": "Mozilla/5.0 (compatible; PerplexityBot/1.0; +https://perplexity.ai)",
+        "Googlebot": "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+        "Bingbot": "Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)",
+        "Browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+    }
+    print("  Testing crawler access...")
+    for bot_name, ua in bot_uas.items():
+        try:
+            r = requests.get(base_url, headers={"User-Agent": ua}, timeout=10, allow_redirects=True)
+            crawler_access[bot_name] = {"status": r.status_code, "accessible": r.status_code == 200}
+        except Exception as e:
+            crawler_access[bot_name] = {"status": 0, "accessible": False, "error": str(e)[:50]}
+
+    # ── Social links aggregation ──
+    social_patterns = {
+        "linkedin": r"linkedin\.com/(?:company|in)/[^\"'\s]+",
+        "twitter": r"(?:twitter|x)\.com/[^\"'\s]+",
+        "youtube": r"youtube\.com/(?:channel|c|@|user)/[^\"'\s]+",
+        "facebook": r"facebook\.com/[^\"'\s]+",
+        "instagram": r"instagram\.com/[^\"'\s]+",
+        "tiktok": r"tiktok\.com/@[^\"'\s]+",
+        "github": r"github\.com/[^\"'\s]+",
+    }
+    social_links = {}
+    all_html = " ".join(p.get("_html", "") for p in pages if p.get("_html"))
+    # Use the first few pages HTML if available, otherwise check links
+    for platform, pattern in social_patterns.items():
+        found = set()
+        for link in all_links:
+            url_str = link.get("to", "")
+            if re.search(pattern, url_str, re.IGNORECASE):
+                found.add(url_str)
+        if found:
+            social_links[platform] = list(found)[:3]
+
+    # ── Topic cluster detection ──
+    topic_clusters = {}
+    for p in pages:
+        parts = [x for x in p.get("path", "/").split("/") if x]
+        if len(parts) >= 2:
+            cluster = parts[0]
+            if cluster not in topic_clusters:
+                topic_clusters[cluster] = {"hub": f"/{cluster}/", "pages": []}
+            topic_clusters[cluster]["pages"].append(p["path"])
+    # Only keep clusters with 3+ pages
+    topic_clusters = {k: v for k, v in topic_clusters.items() if len(v["pages"]) >= 3}
+
+    # ── Terminology consistency (H1 word analysis) ──
+    h1_words = Counter()
+    for p in pages:
+        h1 = p.get("h1", "").lower()
+        words = re.findall(r'\b[a-z]{4,}\b', h1)
+        meaningful = [w for w in words if w not in {"the", "and", "for", "with", "from", "this", "that", "your", "about", "what", "how", "does", "page", "home"}]
+        h1_words.update(meaningful)
+    top_terms = h1_words.most_common(20)
+    # Check consistency: are the same terms used across many pages?
+    total_h1s = len([p for p in pages if p.get("h1")])
+    term_consistency = {}
+    for term, count in top_terms[:10]:
+        term_consistency[term] = {"count": count, "pct": round(count / max(total_h1s, 1) * 100, 1)}
+
+    # ── Content freshness summary ──
+    from datetime import datetime as dt
+    pages_with_dates = [p for p in pages if p.get("last_modified")]
+    fresh_30 = 0
+    fresh_90 = 0
+    stale = 0
+    now = dt.now()
+    for p in pages_with_dates:
+        try:
+            mod_date = dt.strptime(p["last_modified"][:10], "%Y-%m-%d")
+            days_old = (now - mod_date).days
+            if days_old <= 30:
+                fresh_30 += 1
+            elif days_old <= 90:
+                fresh_90 += 1
+            else:
+                stale += 1
+        except:
+            pass
+
     result = {
         "site_id": site_id,
         "domain": domain,
@@ -281,6 +368,17 @@ def crawl_site(site_id, config):
         "pages_over_2000_words": sum(1 for p in pages if p["word_count"] >= 2000),
         "images_missing_alt": sum(p.get("image_count", 0) - p.get("images_with_alt", 0) for p in pages),
         "pages_with_date": sum(1 for p in pages if p.get("last_modified")),
+        "crawler_access": crawler_access,
+        "social_links": social_links,
+        "topic_clusters": {k: {"hub": v["hub"], "page_count": len(v["pages"])} for k, v in list(topic_clusters.items())[:20]},
+        "topic_cluster_count": len(topic_clusters),
+        "term_consistency": term_consistency,
+        "content_freshness": {
+            "pages_with_dates": len(pages_with_dates),
+            "fresh_30_days": fresh_30,
+            "fresh_90_days": fresh_90,
+            "stale": stale,
+        },
         "pages": pages,
         "links": all_links[:2000],
         "issues": issues,
