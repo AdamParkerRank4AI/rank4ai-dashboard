@@ -68,14 +68,16 @@ def generate_for_client(client_id):
             all_prompts = json.load(f)
         existing = all_prompts.get(client_id, {})
 
-    # Existing prompt queries (to avoid duplicates)
+    # Existing prompt queries (to avoid duplicates) — but NOT from faq
     existing_queries = set()
     for group in ["high_intent", "discovery"]:
         for p in existing.get(group, []):
             existing_queries.add(p["query"].lower().strip())
+    # Don't count existing FAQs as duplicates — we want to re-sort them
+
 
     # Generate from pages
-    page_prompts = {"high_intent": [], "discovery": []}
+    page_prompts = {"high_intent": [], "discovery": [], "faq": []}
     seen_queries = set(existing_queries)
 
     for page in crawl.get("pages", []):
@@ -100,7 +102,14 @@ def generate_for_client(client_id):
         seen_queries.add(query.lower().strip())
 
         prompt_type = classify_prompt_type(h1, path)
-        intent = classify_intent(prompt_type, path)
+
+        # Genuine questions (with ?) go to FAQ section
+        is_faq = "?" in h1 and not any(w in h1.lower() for w in ["best", "top", "top 5", "top 10", "compare", "rated", "recommended"])
+
+        if is_faq:
+            group = "faq"
+        else:
+            group = classify_intent(prompt_type, path)
 
         prompt_id = f"{client_id}-page-{len(seen_queries)}"
 
@@ -114,16 +123,17 @@ def generate_for_client(client_id):
             "has_schema": bool(page.get("schemas")),
         }
 
-        page_prompts[intent].append(prompt)
+        page_prompts[group].append(prompt)
 
     # Merge: existing first, then page-generated
     merged = {
         "high_intent": list(existing.get("high_intent", [])) + page_prompts["high_intent"],
         "discovery": list(existing.get("discovery", [])) + page_prompts["discovery"],
+        "faq": list(existing.get("faq", [])) + page_prompts["faq"],
     }
 
     # Deduplicate by query
-    for group in ["high_intent", "discovery"]:
+    for group in ["high_intent", "discovery", "faq"]:
         seen = set()
         unique = []
         for p in merged[group]:
@@ -132,6 +142,29 @@ def generate_for_client(client_id):
                 seen.add(q)
                 unique.append(p)
         merged[group] = unique
+
+    # Re-sort: move genuine questions from discovery/high_intent to faq
+    stuffing_words = ["best", "top", "top 5", "top 10", "compare", "rated", "recommended", "leading", "affordable", "which", "should i use", "can you recommend"]
+    for group in ["high_intent", "discovery"]:
+        keep = []
+        for p in merged[group]:
+            q = p["query"]
+            is_genuine_q = "?" in q and not any(w in q.lower() for w in stuffing_words)
+            if is_genuine_q:
+                merged["faq"].append(p)
+            else:
+                keep.append(p)
+        merged[group] = keep
+
+    # Deduplicate faq
+    seen = set()
+    unique = []
+    for p in merged["faq"]:
+        q = p["query"].lower().strip()
+        if q not in seen:
+            seen.add(q)
+            unique.append(p)
+    merged["faq"] = unique
 
     return merged
 
