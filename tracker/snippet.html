@@ -1,0 +1,18 @@
+<!-- Rank4AI Visitor & Bot Tracker — paste this before </body> on each site -->
+<script>
+(function(){
+  try {
+    fetch('https://rank4ai-tracker.dawn-field-3d16.workers.dev/track', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        site: location.hostname.replace('www.',''),
+        hostname: location.hostname,
+        path: location.pathname,
+        ua: navigator.userAgent,
+        referer: document.referrer || '',
+      }),
+    }).catch(function(){});
+  } catch(e){}
+})();
+</script>
