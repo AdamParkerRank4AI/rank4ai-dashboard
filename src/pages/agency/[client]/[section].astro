@@ -36,6 +36,7 @@ function loadJson(filename: string) {
 const ga4All = loadJson('ga4.json');
 const gscAll = loadJson('gsc.json');
 const bingAll = loadJson('bing.json');
+const serpAll = loadJson('serp_data.json');
 const crawlData = loadJson(`crawl_${clientId}.json`);
 const uptimeAll = loadJson('uptime.json');
 const uptimeHistory = loadJson('uptime_history.json');
@@ -50,6 +51,7 @@ const nlpAll = loadJson('nlp_entities.json');
 const ga4 = ga4All?.[clientId];
 const gsc = gscAll?.[clientId];
 const bing = bingAll?.[clientId];
+const serp = serpAll?.[clientId];
 const uptime = uptimeAll?.[clientId];
 const citations = citationsAll?.[clientId];
 const citByType = citByTypeAll?.[clientId];
@@ -749,6 +751,68 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
                 ))}
               </tbody>
             </table>
+          </div>
+        </div>
+      )}
+
+      <!-- SERP Analysis (from Serper.dev) -->
+      {serp?.results?.length > 0 && (
+        <div class="bg-gray-900 border border-blue-800/30 rounded-lg p-6 mt-6">
+          <h3 class="text-sm font-semibold text-blue-400 mb-2">Google SERP Analysis (Live)</h3>
+          <p class="text-xs text-gray-500 mb-4">What Google actually shows when someone searches these queries</p>
+
+          <div class="grid grid-cols-3 gap-4 mb-6">
+            <div class="bg-gray-800 rounded-lg p-3 text-center">
+              <div class={`text-lg font-bold ${(serp.organic_rate || 0) > 0 ? 'text-green-400' : 'text-red-400'}`}>{serp.organic_rate}%</div>
+              <div class="text-[10px] text-gray-500">Ranked in Top 10</div>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-3 text-center">
+              <div class="text-lg font-bold text-white">{serp.queries_with_ai_overview}/{serp.total_queries}</div>
+              <div class="text-[10px] text-gray-500">AI Overviews Detected</div>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-3 text-center">
+              <div class={`text-lg font-bold ${serp.brand_in_ai_overview > 0 ? 'text-green-400' : 'text-gray-600'}`}>{serp.brand_in_ai_overview}</div>
+              <div class="text-[10px] text-gray-500">Cited in AI Overview</div>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            {serp.results.map((r: any) => (
+              <div class="border border-gray-800 rounded-lg p-4">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm text-white font-medium">{r.query}</span>
+                  <div class="flex gap-2">
+                    {r.brand_organic_position && (
+                      <span class="text-[10px] px-2 py-0.5 rounded-full bg-green-600 text-white">#{r.brand_organic_position}</span>
+                    )}
+                    {r.has_ai_overview && (
+                      <span class={`text-[10px] px-2 py-0.5 rounded-full ${r.brand_in_ai_overview ? 'bg-green-600' : 'bg-gray-700'} text-white`}>
+                        {r.brand_in_ai_overview ? 'In AI Overview' : 'AI Overview (not cited)'}
+                      </span>
+                    )}
+                    {!r.brand_organic_position && !r.has_ai_overview && (
+                      <span class="text-[10px] px-2 py-0.5 rounded-full bg-red-900 text-red-300">Not ranked</span>
+                    )}
+                  </div>
+                </div>
+                {r.serp_features?.length > 0 && (
+                  <div class="flex gap-1 mb-2">
+                    {r.serp_features.map((f: string) => (
+                      <span class="text-[10px] px-1.5 py-0.5 rounded bg-gray-800 text-gray-400">{f}</span>
+                    ))}
+                  </div>
+                )}
+                <div class="space-y-1">
+                  {r.organic?.slice(0, 5).map((o: any) => (
+                    <div class="flex items-center gap-2 text-[11px]">
+                      <span class="text-gray-500 w-6">#{o.position}</span>
+                      <span class={`truncate ${o.domain?.includes(serp.domain) ? 'text-green-400 font-medium' : 'text-gray-400'}`}>{o.domain}</span>
+                      <span class="text-gray-600 truncate max-w-[250px]">{o.title}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       )}

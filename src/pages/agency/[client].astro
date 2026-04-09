@@ -45,6 +45,7 @@ const pagespeedData = loadJson('pagespeed.json');
 const crawlActivityData = loadJson('crawl_activity.json');
 const kgData = loadJson('knowledge_graph.json');
 const nlpData = loadJson('nlp_entities.json');
+const serpData = loadJson('serp_data.json');
 
 const uptime = uptimeData?.[clientId];
 const crawl = crawlData;
@@ -58,6 +59,7 @@ const pagespeed = pagespeedData?.[clientId];
 const crawlActivity = crawlActivityData?.[clientId];
 const kg = kgData?.[clientId];
 const nlp = nlpData?.[clientId];
+const serp = serpData?.[clientId];
 
 // Build provider summary for citations
 const citationProviders = citations?.providers || {};
@@ -133,12 +135,12 @@ const sectionStatus: Record<string, any> = {
     metric: '--',
     metricLabel: 'Monthly visitors',
   },
-  'search-performance': gsc || bing ? {
+  'search-performance': gsc || bing || serp ? {
     status: (gsc?.totals?.impressions || 0) + bingImpressions > 0 ? 'healthy' : 'warning',
-    statusText: `Google: ${gsc?.totals?.clicks || 0} clicks · Bing: ${bingImpressions} impressions`,
+    statusText: `Google: ${gsc?.totals?.clicks || 0} clicks · Bing: ${bingImpressions} imp · Organic: ${serp?.organic_rate || 0}% ranked`,
     metric: `${(gsc?.totals?.impressions || 0) + bingImpressions}`,
-    metricLabel: `Total impressions (Google + Bing) · Avg pos ${gsc?.totals?.position || '--'}`,
-    lastUpdated: gsc ? new Date(gsc.fetched_at).toLocaleDateString('en-GB') : undefined,
+    metricLabel: serp ? `AI Overviews: ${serp.queries_with_ai_overview}/${serp.total_queries} queries · In AIO: ${serp.brand_in_ai_overview}` : `Total impressions (Google + Bing)`,
+    lastUpdated: serp ? new Date(serp.checked_at).toLocaleDateString('en-GB') : gsc ? new Date(gsc.fetched_at).toLocaleDateString('en-GB') : undefined,
   } : {
     status: 'not-connected',
     statusText: 'Connect GSC + Bing',
