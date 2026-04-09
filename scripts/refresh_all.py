@@ -92,6 +92,7 @@ def main():
         ("extract_entities.py", 30),
         ("fetch_knowledge_graph.py", 30),
         ("generate_recommendations.py", 30),
+        ("track_new_pages.py", 30),
         ("save_daily_metrics.py", 30),
     ]
 

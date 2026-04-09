@@ -49,6 +49,7 @@ const serpData = loadJson('serp_data.json');
 const competitorData = loadJson('competitor_serp.json');
 const recsData = loadJson('recommendations.json');
 const historyData = loadJson('daily_history.json');
+const newPagesData = loadJson('new_pages.json');
 const snapshotDir = path.join(process.cwd(), 'src', 'data', 'snapshots', clientId || '');
 let baseline: any = null;
 try {
@@ -58,6 +59,7 @@ try {
   }
 } catch {}
 const history = historyData?.[clientId] || [];
+const newPages = newPagesData?.[clientId];
 
 const uptime = uptimeData?.[clientId];
 const crawl = crawlData;
@@ -244,6 +246,18 @@ const sectionStatus: Record<string, any> = {
     statusText: 'Run fetch_crawl_activity.py',
     metric: '--',
     metricLabel: 'Bot crawl data',
+  },
+  'new-pages': newPages ? {
+    status: newPages.new_pages_count > 0 ? 'healthy' : 'pending',
+    statusText: newPages.new_pages_count > 0 ? `${newPages.new_pages_count} new pages since baseline` : `${newPages.current_pages} pages tracked`,
+    metric: `${newPages.new_pages_count}`,
+    metricLabel: newPages.new_pages_count > 0 ? Object.entries(newPages.by_category || {}).map(([cat, d]: [string, any]) => `${d.count} ${cat}`).join(' · ') : `Baseline: ${newPages.baseline_pages} pages · tracking changes`,
+    lastUpdated: new Date(newPages.checked_at).toLocaleDateString('en-GB'),
+  } : {
+    status: 'not-connected',
+    statusText: 'Run track_new_pages.py',
+    metric: '--',
+    metricLabel: 'New pages added',
   },
   'crawl-status': crawl ? {
     status: 'healthy',
@@ -455,7 +469,7 @@ function daysUntil(dateStr: string): number {
   <!-- AI SEARCH section -->
   {(() => {
     const aiSections = ['overview', 'ai-readiness', 'ai-citations', 'recommendations', 'competitors'];
-    const seoSections = ['seo-health', 'traffic', 'search-performance', 'content-gaps', 'site-tree', 'internal-links'];
+    const seoSections = ['seo-health', 'traffic', 'search-performance', 'content-gaps', 'new-pages', 'site-tree', 'internal-links'];
     const monitorSections = ['site-speed', 'crawl-activity', 'uptime', 'crawl-status', 'positive-signals'];
 
     function renderGroup(title: string, ids: string[]) {
