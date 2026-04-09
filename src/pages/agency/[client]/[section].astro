@@ -524,15 +524,17 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
             const claudeCited = data.results?.claude?.cited;
             const gptCited = data.results?.chatgpt?.cited;
             let html = '';
-            if (claudeCited !== undefined) html += `<span class="${claudeCited ? 'text-green-400' : 'text-red-400'}">C:${claudeCited ? 'Yes' : 'No'}</span>`;
-            if (gptCited !== undefined) html += ` <span class="${gptCited ? 'text-green-400' : 'text-red-400'}">G:${gptCited ? 'Yes' : 'No'}</span>`;
+            const gemCited = data.results?.gemini?.cited;
+            if (claudeCited !== undefined) html += `<span class="${claudeCited ? 'text-green-400' : 'text-red-400'}">C:${claudeCited ? 'Y' : 'N'}</span>`;
+            if (gptCited !== undefined) html += ` <span class="${gptCited ? 'text-green-400' : 'text-red-400'}">G:${gptCited ? 'Y' : 'N'}</span>`;
+            if (gemCited !== undefined) html += ` <span class="${gemCited ? 'text-green-400' : 'text-red-400'}">Gm:${gemCited ? 'Y' : 'N'}</span>`;
             indicator.innerHTML = html;
           }
 
           // Update row styling
           const row = btn.closest('.prompt-row');
           if (row) {
-            const anyCited = data.results?.claude?.cited || data.results?.chatgpt?.cited;
+            const anyCited = data.results?.claude?.cited || data.results?.chatgpt?.cited || data.results?.gemini?.cited;
             row.style.borderColor = anyCited ? '#166534' : '#7f1d1d';
             row.style.background = anyCited ? 'rgba(22, 101, 52, 0.1)' : '';
           }

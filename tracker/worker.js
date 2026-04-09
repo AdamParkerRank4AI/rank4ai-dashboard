@@ -288,6 +288,31 @@ export default {
           }
         }
 
+        // Test Gemini
+        if (env.GEMINI_API_KEY) {
+          try {
+            const resp = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${env.GEMINI_API_KEY}`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                contents: [{ parts: [{ text: query }] }],
+                generationConfig: { maxOutputTokens: 1024 },
+              }),
+            });
+            if (resp.ok) {
+              const data = await resp.json();
+              const text = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+              const textLower = text.toLowerCase();
+              results.gemini = {
+                cited: textLower.includes(brand.toLowerCase()) || textLower.includes((domain || '').toLowerCase()),
+                preview: text.slice(0, 300),
+              };
+            }
+          } catch (e) {
+            results.gemini = { error: e.message };
+          }
+        }
+
         // Store result in KV
         const today = new Date().toISOString().slice(0, 10);
         const resultKey = `citation:${promptId || query.slice(0, 50)}:${today}`;
