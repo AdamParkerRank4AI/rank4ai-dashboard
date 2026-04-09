@@ -1148,23 +1148,134 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
         </div>
       </div>
 
-      <div class="space-y-4">
+      <!-- Filter + Copy controls -->
+      <div class="flex flex-wrap items-center gap-2 mb-4">
+        <span class="text-xs text-gray-500">Filter:</span>
+        <button class="rec-filter px-3 py-1.5 rounded text-xs bg-gray-800 text-white border border-gray-700 hover:bg-gray-700 transition" data-filter="all">All ({recs.total})</button>
+        <button class="rec-filter px-3 py-1.5 rounded text-xs bg-red-900/50 text-red-300 border border-red-800/50 hover:bg-red-900 transition" data-filter="critical">Critical ({recs.critical})</button>
+        <button class="rec-filter px-3 py-1.5 rounded text-xs bg-yellow-900/50 text-yellow-300 border border-yellow-800/50 hover:bg-yellow-900 transition" data-filter="high">High ({recs.high})</button>
+        <button class="rec-filter px-3 py-1.5 rounded text-xs bg-blue-900/50 text-blue-300 border border-blue-800/50 hover:bg-blue-900 transition" data-filter="medium">Medium ({recs.medium})</button>
+        <button class="rec-filter px-3 py-1.5 rounded text-xs bg-gray-800 text-gray-400 border border-gray-700 hover:bg-gray-700 transition" data-filter="low">Low ({recs.low})</button>
+        <span class="text-gray-700 mx-1">|</span>
+        <button id="copy-selected-recs" class="px-3 py-1.5 rounded text-xs bg-blue-600 text-white hover:bg-blue-500 transition">
+          Copy Selected to Clipboard
+        </button>
+      </div>
+
+      <div class="space-y-4" id="recs-list">
         {recs.recommendations?.map((r: any, i: number) => (
-          <div class={`rounded-lg border p-5 ${r.priority === 'critical' ? 'border-red-800/50 bg-red-950/20' : r.priority === 'high' ? 'border-yellow-800/50 bg-yellow-950/10' : r.priority === 'medium' ? 'border-blue-800/50 bg-blue-950/10' : 'border-gray-800 bg-gray-900'}`}>
+          <div
+            class={`rec-item rounded-lg border p-5 cursor-pointer transition ${r.priority === 'critical' ? 'border-red-800/50 bg-red-950/20' : r.priority === 'high' ? 'border-yellow-800/50 bg-yellow-950/10' : r.priority === 'medium' ? 'border-blue-800/50 bg-blue-950/10' : 'border-gray-800 bg-gray-900'}`}
+            data-rec-priority={r.priority}
+            data-rec-index={i}
+          >
             <div class="flex items-start justify-between mb-2">
               <div class="flex items-center gap-3">
+                <input type="checkbox" class="rec-checkbox w-4 h-4 rounded" data-index={i} />
                 <span class={`text-xs px-2 py-0.5 rounded-full font-medium ${r.priority === 'critical' ? 'bg-red-600 text-white' : r.priority === 'high' ? 'bg-yellow-600 text-white' : r.priority === 'medium' ? 'bg-blue-600 text-white' : 'bg-gray-600 text-white'}`}>
                   {r.priority.toUpperCase()}
                 </span>
                 <span class="text-[10px] text-gray-500 px-2 py-0.5 rounded bg-gray-800">{r.category}</span>
               </div>
-              <span class="text-[10px] text-gray-600">Impact: {r.impact}</span>
+              <div class="flex items-center gap-2">
+                <span class="text-[10px] text-gray-600">Impact: {r.impact}</span>
+                <button
+                  class="copy-single-rec text-[10px] px-2 py-1 rounded bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white transition"
+                  data-index={i}
+                >
+                  Copy
+                </button>
+              </div>
             </div>
             <h3 class="text-white font-medium text-sm mb-2">{r.title}</h3>
             <p class="text-xs text-gray-400 leading-relaxed">{r.detail}</p>
           </div>
         ))}
       </div>
+
+      <script define:vars={{ clientDomain: client?.domain, recsJson: JSON.stringify(recs.recommendations || []) }}>
+        const allRecs = JSON.parse(recsJson);
+
+        function buildPrompt(items) {
+          if (items.length === 1) {
+            return `Fix this issue on ${clientDomain}:\n\n[${items[0].priority.toUpperCase()}] ${items[0].title}\n${items[0].detail}`;
+          }
+          return `Fix these ${items.length} issues on ${clientDomain}:\n\n` +
+            items.map((r, i) => `${i+1}. [${r.priority.toUpperCase()}] ${r.title}\n   ${r.detail}`).join('\n\n');
+        }
+
+        function copyText(text, btn) {
+          navigator.clipboard.writeText(text).then(() => {
+            const orig = btn.textContent;
+            btn.textContent = 'Copied!';
+            btn.style.background = '#22c55e';
+            setTimeout(() => { btn.textContent = orig; btn.style.background = ''; }, 2000);
+          });
+        }
+
+        // Filter buttons
+        document.querySelectorAll('.rec-filter').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const filter = btn.getAttribute('data-filter');
+            document.querySelectorAll('.rec-item').forEach(item => {
+              if (filter === 'all' || item.getAttribute('data-rec-priority') === filter) {
+                item.style.display = '';
+              } else {
+                item.style.display = 'none';
+              }
+            });
+            // Update active state
+            document.querySelectorAll('.rec-filter').forEach(b => b.style.outline = '');
+            btn.style.outline = '2px solid white';
+
+            // Select all visible checkboxes
+            document.querySelectorAll('.rec-checkbox').forEach(cb => {
+              const item = cb.closest('.rec-item');
+              cb.checked = item.style.display !== 'none';
+            });
+          });
+        });
+
+        // Copy single
+        document.querySelectorAll('.copy-single-rec').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const idx = parseInt(btn.getAttribute('data-index'));
+            copyText(buildPrompt([allRecs[idx]]), btn);
+          });
+        });
+
+        // Copy selected
+        document.getElementById('copy-selected-recs')?.addEventListener('click', function() {
+          const checked = document.querySelectorAll('.rec-checkbox:checked');
+          if (checked.length === 0) {
+            // If none selected, copy all visible
+            const visible = [];
+            document.querySelectorAll('.rec-item').forEach((item, i) => {
+              if (item.style.display !== 'none') {
+                visible.push(allRecs[parseInt(item.getAttribute('data-rec-index'))]);
+              }
+            });
+            if (visible.length > 0) copyText(buildPrompt(visible), this);
+          } else {
+            const selected = [];
+            checked.forEach(cb => {
+              const idx = parseInt(cb.getAttribute('data-index'));
+              selected.push(allRecs[idx]);
+            });
+            copyText(buildPrompt(selected), this);
+          }
+        });
+
+        // Click row to toggle checkbox
+        document.querySelectorAll('.rec-item').forEach(item => {
+          item.addEventListener('click', (e) => {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'BUTTON') return;
+            const cb = item.querySelector('.rec-checkbox');
+            cb.checked = !cb.checked;
+          });
+        });
+      </script>
     </div>
   )}
 
