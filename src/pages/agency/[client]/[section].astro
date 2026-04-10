@@ -407,6 +407,9 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
             <button id="run-everything" class="px-3 py-1.5 rounded text-xs bg-green-600 text-white hover:bg-green-500 transition font-medium">
               Run Everything
             </button>
+            <button id="stop-running" class="hidden px-3 py-1.5 rounded text-xs bg-red-600 text-white hover:bg-red-500 transition font-medium">
+              Stop
+            </button>
             <button id="run-all-high" class="px-3 py-1.5 rounded text-xs bg-red-600 text-white hover:bg-red-500 transition">
               High Intent
             </button>
@@ -510,6 +513,67 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
     )}
 
     <script define:vars={{ clientBrand: citByType?.brand || client?.name, clientDomain: client?.domain, workerUrl: 'https://rank4ai-tracker.dawn-field-3d16.workers.dev' }}>
+      // Load previous results on page load
+      async function loadPreviousResults() {
+        const rows = document.querySelectorAll('.prompt-row[data-prompt-id]');
+        for (const row of rows) {
+          const promptId = row.getAttribute('data-prompt-id');
+          if (!promptId) continue;
+          try {
+            const resp = await fetch(`${workerUrl}/api/citation-history?id=${encodeURIComponent(promptId)}&days=7`);
+            if (!resp.ok) continue;
+            const data = await resp.json();
+            if (data.history && data.history.length > 0) {
+              const latest = data.history[data.history.length - 1];
+              const indicator = document.querySelector(`[data-result-for="${promptId}"]`);
+              if (indicator && latest.results) {
+                let html = '';
+                const c = latest.results.claude;
+                const g = latest.results.chatgpt;
+                const gm = latest.results.gemini;
+                if (c) html += `<span class="${c.cited ? 'text-green-400' : 'text-red-400'}">C:${c.cited ? 'Y' : 'N'}</span>`;
+                if (g) html += ` <span class="${g.cited ? 'text-green-400' : 'text-red-400'}">G:${g.cited ? 'Y' : 'N'}</span>`;
+                if (gm) html += ` <span class="${gm.cited ? 'text-green-400' : 'text-red-400'}">Gm:${gm.cited ? 'Y' : 'N'}</span>`;
+                if (html) {
+                  const date = new Date(latest.tested_at).toLocaleDateString('en-GB', {day:'numeric',month:'short'});
+                  indicator.innerHTML = html + ` <span class="text-gray-600 text-[9px]">(${date})</span>`;
+                }
+              }
+            }
+          } catch {}
+        }
+      }
+
+      // Load results for first 20 prompts (don't hammer the API)
+      (async () => {
+        const rows = Array.from(document.querySelectorAll('.prompt-row[data-prompt-id]')).slice(0, 20);
+        for (const row of rows) {
+          const promptId = row.getAttribute('data-prompt-id');
+          try {
+            const resp = await fetch(`${workerUrl}/api/citation-history?id=${encodeURIComponent(promptId)}&days=7`);
+            if (!resp.ok) continue;
+            const data = await resp.json();
+            if (data.history?.length > 0) {
+              const latest = data.history[data.history.length - 1];
+              const indicator = document.querySelector(`[data-result-for="${promptId}"]`);
+              if (indicator && latest.results) {
+                let html = '';
+                const c = latest.results.claude;
+                const g = latest.results.chatgpt;
+                const gm = latest.results.gemini;
+                if (c) html += `<span class="${c.cited ? 'text-green-400' : 'text-red-400'}">C:${c.cited ? 'Y' : 'N'}</span>`;
+                if (g) html += ` <span class="${g.cited ? 'text-green-400' : 'text-red-400'}">G:${g.cited ? 'Y' : 'N'}</span>`;
+                if (gm) html += ` <span class="${gm.cited ? 'text-green-400' : 'text-red-400'}">Gm:${gm.cited ? 'Y' : 'N'}</span>`;
+                if (html) {
+                  const date = new Date(latest.tested_at).toLocaleDateString('en-GB', {day:'numeric',month:'short'});
+                  indicator.innerHTML = html + ` <span class="text-gray-600 text-[9px]">(${date})</span>`;
+                }
+              }
+            }
+          } catch {}
+        }
+      })();
+
       async function runCitation(promptId, query, btn) {
         btn.textContent = 'Testing...';
         btn.disabled = true;
@@ -599,24 +663,45 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
         this.disabled = false;
       });
 
-      // Run Everything
+      // Run Everything with Stop support
+      let stopRequested = false;
+      const stopBtn = document.getElementById('stop-running');
+
+      stopBtn?.addEventListener('click', () => {
+        stopRequested = true;
+        stopBtn.textContent = 'Stopping...';
+      });
+
       document.getElementById('run-everything')?.addEventListener('click', async function() {
-        this.textContent = 'Running all...';
+        stopRequested = false;
+        this.textContent = 'Running...';
         this.disabled = true;
+        stopBtn.classList.remove('hidden');
+
         const allBtns = document.querySelectorAll('.run-single-btn');
+        const total = allBtns.length;
         let done = 0;
+        let cited = 0;
+
         for (const btn of allBtns) {
+          if (stopRequested) break;
           const row = btn.closest('.prompt-row');
           if (row && (row.dataset.parked === 'true' || row.dataset.done === 'true' || row.dataset.removed === 'true')) continue;
           const promptId = btn.getAttribute('data-prompt-id');
           const query = btn.getAttribute('data-query');
           await runCitation(promptId, query, btn);
           done++;
-          this.textContent = `Running... ${done}/${allBtns.length}`;
+          // Count cited
+          const indicator = document.querySelector(`[data-result-for="${promptId}"]`);
+          if (indicator && indicator.innerHTML.includes('text-green-400')) cited++;
+          this.textContent = `Running... ${done}/${total} (${cited} cited)`;
           await new Promise(r => setTimeout(r, 500));
         }
-        this.textContent = `Done (${done} tested)`;
-        setTimeout(() => { this.textContent = 'Run Everything'; this.disabled = false; }, 3000);
+
+        stopBtn.classList.add('hidden');
+        const status = stopRequested ? `Stopped (${done} tested, ${cited} cited)` : `Done (${done} tested, ${cited} cited)`;
+        this.textContent = status;
+        setTimeout(() => { this.textContent = 'Run Everything'; this.disabled = false; }, 5000);
       });
 
       // Remove prompt
