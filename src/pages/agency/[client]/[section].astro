@@ -44,6 +44,8 @@ const recsAll = loadJson('recommendations.json');
 const newPagesAll = loadJson('new_pages.json');
 const citationPrompts = loadJson('citation_prompts.json');
 const citationResults = loadJson('citation_results.json');
+const siteConfigAll = loadJson('../site-config.json');
+const siteConf = siteConfigAll?.[clientId];
 const dailyHistory = loadJson('daily_history.json');
 const crawlData = loadJson(`crawl_${clientId}.json`);
 const uptimeAll = loadJson('uptime.json');
@@ -448,6 +450,124 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
     </div>
   )}
 
+
+  <!-- SITE MANAGER -->
+  {sectionId === 'site-manager' && crawlData && (
+    <div>
+      <!-- Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{crawlData.pages_crawled}</div>
+          <div class="text-xs text-gray-500">Total Pages</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{crawlData.topic_cluster_count || 0}</div>
+          <div class="text-xs text-gray-500">Sections</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-green-400">{crawlData.pages_with_schema}</div>
+          <div class="text-xs text-gray-500">With Schema</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{crawlData.avg_word_count}</div>
+          <div class="text-xs text-gray-500">Avg Words</div>
+        </div>
+      </div>
+
+      <!-- Content types grid -->
+      {siteConf?.page_types && (
+        <div class="mb-6">
+          <h3 class="text-sm font-semibold text-gray-400 mb-3">Content Types</h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {Object.entries(siteConf.page_types).map(([key, type]: [string, any]) => {
+              const count = crawlData.pages?.filter((p: any) => p.path?.startsWith(`/${type.path}`)).length || 0;
+              return (
+                <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 hover:border-blue-500/50 transition cursor-pointer" data-filter-type={type.path}>
+                  <div class="text-lg font-bold text-white">{count}</div>
+                  <div class="text-xs text-gray-400">{type.label}</div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      <!-- Site tree -->
+      <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
+        <h3 class="text-sm font-semibold text-gray-400 mb-4">Site Structure</h3>
+        <SiteTree tree={crawlData.tree} client:load />
+      </div>
+
+      <!-- Page inventory with search -->
+      <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-sm font-semibold text-gray-400">All Pages ({crawlData.pages_crawled})</h3>
+          <input
+            type="text"
+            placeholder="Search pages..."
+            class="bg-gray-800 border border-gray-700 rounded px-3 py-1.5 text-xs text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none w-48"
+            id="page-search"
+          />
+        </div>
+        <div class="overflow-x-auto max-h-[600px] overflow-y-auto" id="page-list">
+          <table class="w-full text-xs">
+            <thead class="sticky top-0 bg-gray-900">
+              <tr class="text-gray-500 border-b border-gray-800">
+                <th class="text-left py-2 px-3 cursor-pointer hover:text-white" data-sort="path">Path</th>
+                <th class="text-left py-2 px-3 cursor-pointer hover:text-white" data-sort="h1">H1</th>
+                <th class="text-left py-2 px-3 cursor-pointer hover:text-white" data-sort="title">Title</th>
+                <th class="text-right py-2 px-3 cursor-pointer hover:text-white" data-sort="words">Words</th>
+                <th class="text-center py-2 px-3">Schema</th>
+                <th class="text-right py-2 px-3 cursor-pointer hover:text-white" data-sort="links">Links In</th>
+                <th class="text-right py-2 px-3">Depth</th>
+              </tr>
+            </thead>
+            <tbody>
+              {crawlData.pages?.sort((a: any, b: any) => a.path.localeCompare(b.path)).map((p: any) => (
+                <tr class="border-b border-gray-800/50 hover:bg-gray-800/30 page-row" data-path={p.path}>
+                  <td class="py-2 px-3 text-blue-400 truncate max-w-[180px]">
+                    <a href={p.url} target="_blank" class="hover:underline">{p.path}</a>
+                  </td>
+                  <td class={`py-2 px-3 truncate max-w-[200px] ${p.h1 ? 'text-gray-300' : 'text-red-400'}`}>{p.h1 || 'MISSING'}</td>
+                  <td class="py-2 px-3 text-gray-500 truncate max-w-[200px]">{p.title?.slice(0, 50)}</td>
+                  <td class={`py-2 px-3 text-right ${p.word_count < 100 ? 'text-red-400' : p.word_count >= 2000 ? 'text-green-400' : 'text-white'}`}>{p.word_count}</td>
+                  <td class="py-2 px-3 text-center">{p.schemas?.length > 0 ? <span class="text-green-400 text-[10px]">{p.schemas.join(', ')}</span> : <span class="text-red-400">None</span>}</td>
+                  <td class="py-2 px-3 text-right text-white">{p.internal_links_in || 0}</td>
+                  <td class="py-2 px-3 text-right text-gray-400">{p.depth || 0}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Search filter script -->
+      <script>
+        document.getElementById('page-search')?.addEventListener('input', (e) => {
+          const query = e.target.value.toLowerCase();
+          document.querySelectorAll('.page-row').forEach(row => {
+            const path = row.getAttribute('data-path')?.toLowerCase() || '';
+            const h1 = row.querySelector('td:nth-child(2)')?.textContent?.toLowerCase() || '';
+            row.style.display = (path.includes(query) || h1.includes(query)) ? '' : 'none';
+          });
+        });
+
+        // Content type filter
+        document.querySelectorAll('[data-filter-type]').forEach(card => {
+          card.addEventListener('click', () => {
+            const type = card.getAttribute('data-filter-type');
+            document.querySelectorAll('.page-row').forEach(row => {
+              const path = row.getAttribute('data-path') || '';
+              row.style.display = path.startsWith('/' + type) ? '' : 'none';
+            });
+            // Clear search
+            const search = document.getElementById('page-search');
+            if (search) search.value = type;
+          });
+        });
+      </script>
+    </div>
+  )}
 
   <!-- UPTIME -->
   {sectionId === 'uptime' && uptime && (
@@ -1533,7 +1653,7 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
   )}
 
   <!-- Fallback for sections without detail pages -->
-  {!['traffic', 'content-gaps', 'seo-health', 'ai-citations', 'uptime', 'positive-signals', 'ai-readiness', 'search-performance', 'overview', 'site-speed', 'crawl-activity', 'competitors', 'recommendations', 'new-pages', 'site-tree', 'internal-links'].includes(sectionId) && (
+  {!['traffic', 'content-gaps', 'seo-health', 'ai-citations', 'uptime', 'positive-signals', 'ai-readiness', 'search-performance', 'overview', 'site-speed', 'crawl-activity', 'competitors', 'recommendations', 'new-pages', 'site-tree', 'internal-links', 'site-manager'].includes(sectionId) && (
     <div class="bg-gray-900 border border-gray-800 rounded-lg p-8 text-center">
       <p class="text-gray-500">Detailed view for {section.label} coming soon.</p>
       <a href={`/agency/${clientId}`} class="text-sm text-blue-400 hover:text-blue-300 mt-2 inline-block">Back to dashboard</a>

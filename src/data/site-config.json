@@ -1,0 +1,90 @@
+{
+  "market-invoice": {
+    "repo": "AdamParkerRank4AI/market-invoice",
+    "branch": "main",
+    "pages_dir": "src/pages",
+    "content_dir": "src/content",
+    "layouts_dir": "src/layouts",
+    "page_types": {
+      "blog": {
+        "label": "Blog Posts",
+        "path": "blog/",
+        "template": "blog",
+        "icon": "article"
+      },
+      "questions": {
+        "label": "Questions & Answers",
+        "path": "questions/",
+        "template": "question",
+        "icon": "help"
+      },
+      "guides": {
+        "label": "Guides",
+        "path": "guides/",
+        "template": "guide",
+        "icon": "book"
+      },
+      "providers": {
+        "label": "Provider Reviews",
+        "path": "providers/",
+        "template": "provider",
+        "icon": "building"
+      },
+      "industries": {
+        "label": "Industry Pages",
+        "path": "industries/",
+        "template": "industry",
+        "icon": "factory"
+      },
+      "locations": {
+        "label": "Location Pages",
+        "path": "locations/",
+        "template": "location",
+        "icon": "map"
+      },
+      "best": {
+        "label": "Best-Of Pages",
+        "path": "best/",
+        "template": "best",
+        "icon": "star"
+      },
+      "compare": {
+        "label": "Comparison Pages",
+        "path": "compare/",
+        "template": "compare",
+        "icon": "arrows"
+      }
+    }
+  },
+  "seocompare": {
+    "repo": "AdamParkerRank4AI/seocompare",
+    "branch": "main",
+    "pages_dir": "src/pages",
+    "page_types": {
+      "blog": {
+        "label": "Blog Posts",
+        "path": "blog/",
+        "template": "blog",
+        "icon": "article"
+      },
+      "questions": {
+        "label": "Questions",
+        "path": "questions/",
+        "template": "question",
+        "icon": "help"
+      },
+      "insights": {
+        "label": "Insights",
+        "path": "insights/",
+        "template": "insight",
+        "icon": "lightbulb"
+      },
+      "stats": {
+        "label": "Stats & Data",
+        "path": "stats/",
+        "template": "stats",
+        "icon": "chart"
+      }
+    }
+  }
+}

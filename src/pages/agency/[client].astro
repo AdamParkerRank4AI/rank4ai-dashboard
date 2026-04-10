@@ -48,6 +48,7 @@ const nlpData = loadJson('nlp_entities.json');
 const serpData = loadJson('serp_data.json');
 const competitorData = loadJson('competitor_serp.json');
 const recsData = loadJson('recommendations.json');
+const siteConfig = loadJson('../site-config.json');
 const historyData = loadJson('daily_history.json');
 const newPagesData = loadJson('new_pages.json');
 const snapshotDir = path.join(process.cwd(), 'src', 'data', 'snapshots', clientId || '');
@@ -126,6 +127,18 @@ const sectionStatus: Record<string, any> = {
     statusText: 'Run citation tests',
     metric: '--',
     metricLabel: 'Citation rate',
+  },
+  'site-manager': crawl ? {
+    status: 'healthy',
+    statusText: `${crawl.pages_crawled} pages · ${Object.keys(crawl.topic_clusters || {}).length} sections`,
+    metric: `${crawl.pages_crawled}`,
+    metricLabel: siteConfig?.[clientId] ? `${Object.keys(siteConfig[clientId].page_types || {}).length} content types · Click to manage` : 'View-only (Lovable site)',
+    lastUpdated: new Date(crawl.crawled_at).toLocaleDateString('en-GB'),
+  } : {
+    status: 'not-connected',
+    statusText: 'Run crawl first',
+    metric: '--',
+    metricLabel: 'Site management',
   },
   'seo-health': crawl ? {
     status: crawl.total_issues > 10 ? 'warning' : crawl.total_issues > 0 ? 'warning' : 'healthy',
@@ -531,7 +544,7 @@ function daysUntil(dateStr: string): number {
     <span class="text-[10px] px-2 py-0.5 rounded-full bg-gray-800 text-gray-500 normal-case font-normal">Traditional SEO</span>
   </h2>
   <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
-    {sections.filter((s: any) => ['seo-health', 'traffic', 'search-performance', 'content-gaps', 'new-pages', 'site-tree', 'internal-links'].includes(s.id)).map((section: any) => {
+    {sections.filter((s: any) => ['site-manager', 'seo-health', 'traffic', 'search-performance', 'content-gaps', 'new-pages', 'site-tree', 'internal-links'].includes(s.id)).map((section: any) => {
       const data = sectionStatus[section.id] || {};
       const isInClientView = client.clientViewSections.includes(section.id);
       const change = changes[section.id];
