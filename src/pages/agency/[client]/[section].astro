@@ -721,11 +721,13 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
               var data = await resp.json();
               var content = data.content;
 
-              // Parse title and description from frontmatter
+              // Parse title, description, and H1 from content
               var titleMatch = content.match(/(?:const\s+)?title\s*=\s*["'](.*?)["']/);
               var descMatch = content.match(/(?:const\s+)?description\s*=\s*["'](.*?)["']/);
+              var h1Match = content.match(/<h1[^>]*>(.*?)<\/h1>/);
               var title = titleMatch ? titleMatch[1] : '';
               var desc = descMatch ? descMatch[1] : '';
+              var h1 = h1Match ? h1Match[1].replace(/<[^>]+>/g, '') : '';
 
               // Build editor UI
               editorPanel.innerHTML = '';
@@ -746,6 +748,14 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
               titleInput.id = 'edit-title';
               titleDiv.appendChild(titleInput);
               editorPanel.appendChild(titleDiv);
+
+              // H1 display (read-only — H1 is in the template HTML)
+              if (h1) {
+                var h1Div = document.createElement('div');
+                h1Div.className = 'mb-3';
+                h1Div.innerHTML = '<label class="text-[10px] text-gray-500 uppercase block mb-1">H1 Tag</label><div class="px-3 py-2 bg-gray-800/50 border border-gray-700 rounded text-xs text-gray-300">' + h1 + '</div>';
+                editorPanel.appendChild(h1Div);
+              }
 
               // Description field
               var descDiv = document.createElement('div');

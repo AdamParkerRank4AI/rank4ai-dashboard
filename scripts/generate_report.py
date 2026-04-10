@@ -53,6 +53,7 @@ def generate_html_report(client_id):
     entities = load("nlp_entities.json").get(client_id, {})
     crawl_activity = load("crawl_activity.json").get(client_id, {})
     serp = load("serp_data.json").get(client_id, {})
+    cit_results = load("citation_results.json").get(client_id, {})
     snapshot = None
     snap_dir = os.path.join(PROJECT_DIR, "src", "data", "snapshots", client_id)
     baseline_file = os.path.join(snap_dir, "baseline.json")
@@ -136,15 +137,19 @@ def generate_html_report(client_id):
 
         sections.append(f"""
         <h2 style="color: #1a3a4a; font-size: 16px; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px;">AI Citation Tracking</h2>
-        <p style="font-size: 12px; color: #6b7280; margin-bottom: 12px;">Tested across Claude (Anthropic). Shows whether AI models cite {brand} when asked industry queries.</p>
+        <p style="font-size: 12px; color: #6b7280; margin-bottom: 12px;">Tested across Claude, ChatGPT, and Gemini. Shows whether AI models cite {brand} when asked industry queries.</p>
         <div style="display: flex; gap: 16px; margin-bottom: 16px;">
           <div style="text-align: center; padding: 16px; background: #fef2f2; border-radius: 8px; flex: 1;">
-            <div style="font-size: 32px; font-weight: 700; color: {score_color(citations.get('overall_rate', 0), 50, 10)};">{citations.get('overall_rate', 0)}%</div>
-            <div style="font-size: 11px; color: #6b7280;">Citation Rate</div>
+            <div style="font-size: 24px; font-weight: 700; color: {score_color(cit_results.get('summary', {{}}).get('claude', {{}}).get('rate', citations.get('overall_rate', 0)), 50, 10)};">{cit_results.get('summary', {{}}).get('claude', {{}}).get('rate', citations.get('overall_rate', 0))}%</div>
+            <div style="font-size: 11px; color: #6b7280;">Claude</div>
           </div>
           <div style="text-align: center; padding: 16px; background: #f9fafb; border-radius: 8px; flex: 1;">
-            <div style="font-size: 20px; font-weight: 600;">{citations.get('total_cited', 0)}/{citations.get('total_queries', 0)}</div>
-            <div style="font-size: 11px; color: #6b7280;">Queries Cited</div>
+            <div style="font-size: 24px; font-weight: 700;">{cit_results.get('summary', {{}}).get('chatgpt', {{}}).get('rate', 0)}%</div>
+            <div style="font-size: 11px; color: #6b7280;">ChatGPT</div>
+          </div>
+          <div style="text-align: center; padding: 16px; background: #f9fafb; border-radius: 8px; flex: 1;">
+            <div style="font-size: 24px; font-weight: 700;">{cit_results.get('summary', {{}}).get('gemini', {{}}).get('rate', 0)}%</div>
+            <div style="font-size: 11px; color: #6b7280;">Gemini</div>
           </div>
         </div>
         <h3 style="font-size: 13px; color: #374151; margin: 16px 0 8px;">By Query Type</h3>
