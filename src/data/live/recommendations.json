@@ -1,6 +1,6 @@
 {
   "rank4ai": {
-    "generated_at": "2026-04-10T09:26:12.335059",
+    "generated_at": "2026-04-10T09:32:47.854982",
     "total": 18,
     "critical": 2,
     "high": 5,
@@ -215,10 +215,10 @@
     ]
   },
   "market-invoice": {
-    "generated_at": "2026-04-10T09:26:12.344014",
-    "total": 18,
+    "generated_at": "2026-04-10T09:32:47.860598",
+    "total": 17,
     "critical": 2,
-    "high": 6,
+    "high": 5,
     "medium": 9,
     "low": 1,
     "recommendations": [
@@ -257,36 +257,26 @@
       },
       {
         "priority": "high",
-        "category": "SEO Health",
-        "title": "1 pages with missing h1",
-        "detail": "These pages have no H1 tag. Add a clear, descriptive H1 to each page. AI models use H1s to understand page topics. Affected pages: /compare/",
-        "impact": "medium",
-        "pages": [
-          "/compare/"
-        ]
-      },
-      {
-        "priority": "high",
         "category": "Internal Links",
-        "title": "99 orphan pages with no internal links pointing to them",
-        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /best/best-for-government-contractors/, /providers/investly/, /working-capital/, /providers/partnership/, /providers/growth-lending/, /guides/, /stats/, /compare/invoice-finance-vs-equity/...",
+        "title": "93 orphan pages with no internal links pointing to them",
+        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /guides/release-cash-from-invoices/, /best/best-for-nhs-suppliers/, /blog/transport-payment-guide/, /compare/ultimate-vs-igf/, /providers/sallyport/, /best/best-for-government-contractors/, /best/best-for-recruitment/, /blog/future-of-invoice-finance/...",
         "impact": "medium",
         "pages": [
+          "/guides/release-cash-from-invoices/",
+          "/best/best-for-nhs-suppliers/",
+          "/blog/transport-payment-guide/",
+          "/compare/ultimate-vs-igf/",
+          "/providers/sallyport/",
           "/best/best-for-government-contractors/",
-          "/providers/investly/",
-          "/working-capital/",
-          "/providers/partnership/",
-          "/providers/growth-lending/",
-          "/guides/",
-          "/stats/",
-          "/compare/invoice-finance-vs-equity/",
-          "/best/best-with-xero-integration/",
-          "/providers/allica-bank/",
-          "/compare/factoring-vs-asset-finance/",
-          "/providers/accident-credit-group/",
-          "/blog/startup-funding-compared/",
-          "/providers/penny/",
-          "/providers/panel-financial/"
+          "/best/best-for-recruitment/",
+          "/blog/future-of-invoice-finance/",
+          "/about/",
+          "/providers/quba/",
+          "/guides/borrow-against-invoices/",
+          "/providers/ecapital/",
+          "/providers/muse/",
+          "/best/best-for-construction/",
+          "/best/best-no-minimum-turnover/"
         ]
       },
       {
@@ -353,25 +343,25 @@
       {
         "priority": "medium",
         "category": "Schema",
-        "title": "8 pages missing structured data (286/300 have schema)",
-        "detail": "Pages with schema have 2.5x higher chance of AI citation. Add Article, FAQPage, or HowTo schema to these pages. Pages missing schema: /guides/, /about/, /compare/, /industries/, /providers/, /blog/, /questions/, /locations/",
+        "title": "8 pages missing structured data (285/300 have schema)",
+        "detail": "Pages with schema have 2.5x higher chance of AI citation. Add Article, FAQPage, or HowTo schema to these pages. Pages missing schema: /blog/, /about/, /locations/, /guides/, /industries/, /compare/, /providers/, /questions/",
         "impact": "high",
         "pages": [
-          "/guides/",
-          "/about/",
-          "/compare/",
-          "/industries/",
-          "/providers/",
           "/blog/",
-          "/questions/",
-          "/locations/"
+          "/about/",
+          "/locations/",
+          "/guides/",
+          "/industries/",
+          "/compare/",
+          "/providers/",
+          "/questions/"
         ]
       },
       {
         "priority": "medium",
         "category": "Schema",
         "title": "Schema gaps: No Organization or LocalBusiness schema \u2014 AI can't identify who you are; Missing content schema types: HowTo",
-        "detail": "Currently using: Product, Article, BreadcrumbList, FAQPage, Service, WebApplication, WebPage. No Organization or LocalBusiness schema \u2014 AI can't identify who you are Missing content schema types: HowTo. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
+        "detail": "Currently using: Service, FAQPage, BreadcrumbList, WebPage, Article, WebApplication, Product. No Organization or LocalBusiness schema \u2014 AI can't identify who you are Missing content schema types: HowTo. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
         "impact": "medium",
         "pages": []
       },
@@ -421,7 +411,7 @@
     ]
   },
   "seocompare": {
-    "generated_at": "2026-04-10T09:26:12.349321",
+    "generated_at": "2026-04-10T09:32:47.864965",
     "total": 15,
     "critical": 2,
     "high": 5,
@@ -461,14 +451,10 @@
       {
         "priority": "high",
         "category": "SEO Health",
-        "title": "5 pages with broken",
-        "detail": "These URLs returned HTTP errors. Fix or redirect broken pages. Affected pages: /blog/h1-clarity-uk-smes/, /blog/blocking-ai-crawlers/, /blog/ai-search-conversion-rates/, /blog/freshness-and-citations/, /cdn-cgi/l/email-protection",
+        "title": "1 pages with broken",
+        "detail": "These URLs returned HTTP errors. Fix or redirect broken pages. Affected pages: /cdn-cgi/l/email-protection",
         "impact": "medium",
         "pages": [
-          "/blog/h1-clarity-uk-smes/",
-          "/blog/blocking-ai-crawlers/",
-          "/blog/ai-search-conversion-rates/",
-          "/blog/freshness-and-citations/",
           "/cdn-cgi/l/email-protection"
         ]
       },
@@ -532,7 +518,7 @@
         "priority": "medium",
         "category": "Schema",
         "title": "Schema gaps: No Organization or LocalBusiness schema \u2014 AI can't identify who you are; Missing content schema types: HowTo",
-        "detail": "Currently using: Article, BreadcrumbList, FAQPage, Service, WebPage. No Organization or LocalBusiness schema \u2014 AI can't identify who you are Missing content schema types: HowTo. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
+        "detail": "Currently using: Service, FAQPage, BreadcrumbList, WebPage, Article. No Organization or LocalBusiness schema \u2014 AI can't identify who you are Missing content schema types: HowTo. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
         "impact": "medium",
         "pages": []
       },
