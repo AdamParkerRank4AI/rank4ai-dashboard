@@ -1,6 +1,6 @@
 {
   "rank4ai": {
-    "generated_at": "2026-04-10T17:08:16.657271",
+    "generated_at": "2026-04-10T17:15:45.594594",
     "total": 18,
     "critical": 2,
     "high": 6,
@@ -63,15 +63,18 @@
       {
         "priority": "high",
         "category": "SEO Health",
-        "title": "7 pages with missing h1",
-        "detail": "These pages have no H1 tag. Add a clear, descriptive H1 to each page. AI models use H1s to understand page topics. Affected pages: /ai-seo-agency-uk/colchester, /uk-coverage, /ai-seo/technical/internal-linking, /ai-search/comparisons/guide, /ai-search/comparisons/why-seo-changing, /ai-search/ecosystem-validation/insights/do-directories-help-ai-recommendations, /ai-seo/technical/ai-misinterpretation",
+        "title": "10 pages with missing h1",
+        "detail": "These pages have no H1 tag. Add a clear, descriptive H1 to each page. AI models use H1s to understand page topics. Affected pages: /seo-vs-aio-comparison, /ai-seo-agency-uk/colchester, /uk-coverage, /ai-seo/technical/internal-linking, /ai-search/comparisons/guide, /ai-search/comparisons/why-seo-changing, /ai-search-visibility, /technical-ai-optimisation...",
         "impact": "medium",
         "pages": [
+          "/seo-vs-aio-comparison",
           "/ai-seo-agency-uk/colchester",
           "/uk-coverage",
           "/ai-seo/technical/internal-linking",
           "/ai-search/comparisons/guide",
           "/ai-search/comparisons/why-seo-changing",
+          "/ai-search-visibility",
+          "/technical-ai-optimisation",
           "/ai-search/ecosystem-validation/insights/do-directories-help-ai-recommendations",
           "/ai-seo/technical/ai-misinterpretation"
         ]
@@ -124,15 +127,18 @@
       {
         "priority": "medium",
         "category": "Schema",
-        "title": "7 pages missing structured data (237/244 have schema)",
-        "detail": "Pages with schema have 2.5x higher chance of AI citation. Add Article, FAQPage, or HowTo schema to these pages. Pages missing schema: /ai-seo-agency-uk/colchester, /uk-coverage, /ai-seo/technical/internal-linking, /ai-search/comparisons/guide, /ai-search/comparisons/why-seo-changing, /ai-search/ecosystem-validation/insights/do-directories-help-ai-recommendations, /ai-seo/technical/ai-misinterpretation",
+        "title": "10 pages missing structured data (234/244 have schema)",
+        "detail": "Pages with schema have 2.5x higher chance of AI citation. Add Article, FAQPage, or HowTo schema to these pages. Pages missing schema: /seo-vs-aio-comparison, /ai-seo-agency-uk/colchester, /uk-coverage, /ai-seo/technical/internal-linking, /ai-search/comparisons/guide, /ai-search/comparisons/why-seo-changing, /ai-search-visibility, /technical-ai-optimisation, /ai-search/ecosystem-validation/insights/do-directories-help-ai-recommendations, /ai-seo/technical/ai-misinterpretation",
         "impact": "high",
         "pages": [
+          "/seo-vs-aio-comparison",
           "/ai-seo-agency-uk/colchester",
           "/uk-coverage",
           "/ai-seo/technical/internal-linking",
           "/ai-search/comparisons/guide",
           "/ai-search/comparisons/why-seo-changing",
+          "/ai-search-visibility",
+          "/technical-ai-optimisation",
           "/ai-search/ecosystem-validation/insights/do-directories-help-ai-recommendations",
           "/ai-seo/technical/ai-misinterpretation"
         ]
@@ -140,15 +146,18 @@
       {
         "priority": "medium",
         "category": "SEO Health",
-        "title": "7 pages with thin content",
-        "detail": "These pages have fewer than 100 words. Expand with detailed, authoritative content. AI models prefer pages with 500+ words. Affected pages: /ai-seo-agency-uk/colchester, /uk-coverage, /ai-seo/technical/internal-linking, /ai-search/comparisons/guide, /ai-search/comparisons/why-seo-changing, /ai-search/ecosystem-validation/insights/do-directories-help-ai-recommendations, /ai-seo/technical/ai-misinterpretation",
+        "title": "10 pages with thin content",
+        "detail": "These pages have fewer than 100 words. Expand with detailed, authoritative content. AI models prefer pages with 500+ words. Affected pages: /seo-vs-aio-comparison, /ai-seo-agency-uk/colchester, /uk-coverage, /ai-seo/technical/internal-linking, /ai-search/comparisons/guide, /ai-search/comparisons/why-seo-changing, /ai-search-visibility, /technical-ai-optimisation...",
         "impact": "medium",
         "pages": [
+          "/seo-vs-aio-comparison",
           "/ai-seo-agency-uk/colchester",
           "/uk-coverage",
           "/ai-seo/technical/internal-linking",
           "/ai-search/comparisons/guide",
           "/ai-search/comparisons/why-seo-changing",
+          "/ai-search-visibility",
+          "/technical-ai-optimisation",
           "/ai-search/ecosystem-validation/insights/do-directories-help-ai-recommendations",
           "/ai-seo/technical/ai-misinterpretation"
         ]
@@ -217,11 +226,11 @@
     ]
   },
   "market-invoice": {
-    "generated_at": "2026-04-10T17:08:16.668102",
+    "generated_at": "2026-04-10T17:15:45.602187",
     "total": 17,
     "critical": 2,
-    "high": 5,
-    "medium": 9,
+    "high": 6,
+    "medium": 8,
     "low": 1,
     "recommendations": [
       {
@@ -259,26 +268,37 @@
       },
       {
         "priority": "high",
-        "category": "Internal Links",
-        "title": "93 orphan pages with no internal links pointing to them",
-        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /guides/release-cash-from-invoices/, /best/best-for-nhs-suppliers/, /blog/transport-payment-guide/, /compare/ultimate-vs-igf/, /providers/sallyport/, /best/best-for-government-contractors/, /best/best-for-recruitment/, /blog/future-of-invoice-finance/...",
+        "category": "SEO Health",
+        "title": "2 pages with broken",
+        "detail": "These URLs returned HTTP errors. Fix or redirect broken pages. Affected pages: /cdn-cgi/l/email-protection, /guides/non-recourse-factoring/",
         "impact": "medium",
         "pages": [
-          "/guides/release-cash-from-invoices/",
-          "/best/best-for-nhs-suppliers/",
-          "/blog/transport-payment-guide/",
-          "/compare/ultimate-vs-igf/",
-          "/providers/sallyport/",
-          "/best/best-for-government-contractors/",
-          "/best/best-for-recruitment/",
+          "/cdn-cgi/l/email-protection",
+          "/guides/non-recourse-factoring/"
+        ]
+      },
+      {
+        "priority": "high",
+        "category": "Internal Links",
+        "title": "73 orphan pages with no internal links pointing to them",
+        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /providers/jmk-group/, /disclaimer/, /providers/ifg/, /blog/manufacturing-cash-flow-2026/, /providers/leumi-abl/, /providers/handelsbanken/, /providers/qube/, /providers/tandem/...",
+        "impact": "medium",
+        "pages": [
+          "/providers/jmk-group/",
+          "/disclaimer/",
+          "/providers/ifg/",
+          "/blog/manufacturing-cash-flow-2026/",
+          "/providers/leumi-abl/",
+          "/providers/handelsbanken/",
+          "/providers/qube/",
+          "/providers/tandem/",
           "/blog/future-of-invoice-finance/",
-          "/about/",
-          "/providers/quba/",
-          "/guides/borrow-against-invoices/",
-          "/providers/ecapital/",
-          "/providers/muse/",
-          "/best/best-for-construction/",
-          "/best/best-no-minimum-turnover/"
+          "/compare/invoice-finance-vs-equity/",
+          "/providers/abc-finance/",
+          "/providers/funding-circle/",
+          "/providers/investly/",
+          "/providers/jardine-norton/",
+          "/providers/quba/"
         ]
       },
       {
@@ -345,18 +365,8 @@
       {
         "priority": "medium",
         "category": "Schema",
-        "title": "1 pages missing structured data (285/300 have schema)",
-        "detail": "Pages with schema have 2.5x higher chance of AI citation. Add Article, FAQPage, or HowTo schema to these pages. Pages missing schema: /about/",
-        "impact": "high",
-        "pages": [
-          "/about/"
-        ]
-      },
-      {
-        "priority": "medium",
-        "category": "Schema",
-        "title": "Schema gaps: No Organization or LocalBusiness schema \u2014 AI can't identify who you are; Missing content schema types: HowTo",
-        "detail": "Currently using: BreadcrumbList, Product, FAQPage, WebPage, Service, WebApplication, Article. No Organization or LocalBusiness schema \u2014 AI can't identify who you are Missing content schema types: HowTo. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
+        "title": "Schema gaps: Missing content schema types: HowTo",
+        "detail": "Currently using: WebPage, Service, WebSite, Organization, WebApplication, FAQPage, Product, Article, BreadcrumbList. Missing content schema types: HowTo. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
         "impact": "medium",
         "pages": []
       },
@@ -398,7 +408,7 @@
       {
         "priority": "low",
         "category": "Indexing",
-        "title": "Only 0/300 pages indexed in Bing",
+        "title": "Only 0/332 pages indexed in Bing",
         "detail": "Bing feeds Copilot. If URLs were recently submitted via IndexNow, allow 7-14 days for propagation. Re-check after that period. Submit: python3 scripts/submit_indexnow.py market-invoice",
         "impact": "medium",
         "pages": []
@@ -406,7 +416,7 @@
     ]
   },
   "seocompare": {
-    "generated_at": "2026-04-10T17:08:16.674107",
+    "generated_at": "2026-04-10T17:15:45.606799",
     "total": 15,
     "critical": 2,
     "high": 5,
@@ -513,7 +523,7 @@
         "priority": "medium",
         "category": "Schema",
         "title": "Schema gaps: No Organization or LocalBusiness schema \u2014 AI can't identify who you are; Missing content schema types: HowTo",
-        "detail": "Currently using: BreadcrumbList, FAQPage, WebPage, Service, Article. No Organization or LocalBusiness schema \u2014 AI can't identify who you are Missing content schema types: HowTo. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
+        "detail": "Currently using: WebPage, Service, FAQPage, Article, BreadcrumbList. No Organization or LocalBusiness schema \u2014 AI can't identify who you are Missing content schema types: HowTo. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
         "impact": "medium",
         "pages": []
       },
