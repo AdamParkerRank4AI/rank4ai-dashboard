@@ -492,6 +492,45 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
         </div>
       )}
 
+      <!-- Create New Page -->
+      {siteConf?.repo && (
+        <div class="bg-gray-900 border border-dashed border-green-800/50 rounded-lg p-6 mb-6">
+          <h3 class="text-sm font-semibold text-green-400 mb-4">Create New Page</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="text-[10px] text-gray-500 uppercase block mb-1">Page Type</label>
+              <select id="new-page-type" class="w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-xs text-white">
+                {Object.entries(siteConf.page_types || {}).map(([key, type]: [string, any]) => (
+                  <option value={key}>{type.label}</option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label class="text-[10px] text-gray-500 uppercase block mb-1">URL Slug</label>
+              <input id="new-page-slug" type="text" placeholder="my-new-page" class="w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-xs text-white placeholder-gray-600" />
+            </div>
+            <div class="md:col-span-2">
+              <label class="text-[10px] text-gray-500 uppercase block mb-1">Page Title (H1)</label>
+              <input id="new-page-title" type="text" placeholder="Your Page Title Here" class="w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-xs text-white placeholder-gray-600" />
+            </div>
+            <div class="md:col-span-2">
+              <label class="text-[10px] text-gray-500 uppercase block mb-1">Meta Description</label>
+              <textarea id="new-page-desc" rows="2" placeholder="150-160 character description for search results..." class="w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-xs text-white placeholder-gray-600"></textarea>
+            </div>
+            <div class="md:col-span-2">
+              <label class="text-[10px] text-gray-500 uppercase block mb-1">Content (HTML)</label>
+              <textarea id="new-page-content" rows="8" placeholder="<p>Your content here...</p>" class="w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-xs text-white placeholder-gray-600 font-mono"></textarea>
+            </div>
+            <div class="md:col-span-2 flex items-center gap-3">
+              <button id="create-page-btn" class="px-4 py-2 rounded text-xs bg-green-600 text-white hover:bg-green-500 transition font-medium">
+                Create Page
+              </button>
+              <span id="create-status" class="text-xs text-gray-500"></span>
+            </div>
+          </div>
+        </div>
+      )}
+
       <!-- Site tree -->
       <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
         <h3 class="text-sm font-semibold text-gray-400 mb-4">Site Structure</h3>
@@ -568,6 +607,100 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
 
         const workerUrl = 'https://rank4ai-tracker.dawn-field-3d16.workers.dev';
         const siteRepo = document.querySelector('[data-site-repo]')?.getAttribute('data-site-repo') || '';
+
+        // Create new page handler
+        document.getElementById('create-page-btn')?.addEventListener('click', async function() {
+          var pageType = document.getElementById('new-page-type').value;
+          var slug = document.getElementById('new-page-slug').value.trim();
+          var title = document.getElementById('new-page-title').value.trim();
+          var desc = document.getElementById('new-page-desc').value.trim();
+          var content = document.getElementById('new-page-content').value;
+          var status = document.getElementById('create-status');
+
+          if (!slug || !title) {
+            status.textContent = 'Slug and title required';
+            status.style.color = '#ef4444';
+            return;
+          }
+
+          // Clean slug
+          slug = slug.toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/-+/g, '-');
+
+          this.textContent = 'Creating...';
+          this.disabled = true;
+
+          // Build the page content from template
+          var today = new Date().toISOString().slice(0, 10);
+          var pageContent = '---\n';
+          pageContent += "import BaseLayout from '../../layouts/BaseLayout.astro';\n";
+          pageContent += "import Breadcrumbs from '../../components/Breadcrumbs.astro';\n";
+          pageContent += "import LeadForm from '../../components/LeadForm.astro';\n\n";
+          pageContent += 'const title = "' + title.replace(/"/g, '\\"') + '";\n';
+          pageContent += 'const description = "' + desc.replace(/"/g, '\\"') + '";\n';
+          pageContent += '\nconst schema = {\n';
+          pageContent += '  "@context": "https://schema.org",\n';
+          pageContent += '  "@type": "Article",\n';
+          pageContent += '  "headline": "' + title.replace(/"/g, '\\"') + '",\n';
+          pageContent += '  "description": description,\n';
+          pageContent += '  "datePublished": "' + today + '",\n';
+          pageContent += '  "dateModified": "' + today + '",\n';
+          pageContent += '  "author": { "@type": "Organization", "name": "Market Invoice" },\n';
+          pageContent += '  "publisher": { "@type": "Organization", "name": "Market Invoice", "url": "https://marketinvoice.co.uk" }\n';
+          pageContent += '};\n';
+          pageContent += '---\n\n';
+          pageContent += '<BaseLayout title={title} description={description} schema={schema}>\n';
+          pageContent += '  <article class="max-w-3xl mx-auto px-4 py-12 md:py-16">\n';
+          pageContent += '    <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "' + pageType + '", href: "/' + pageType + '/" }, { label: title.slice(0,30) }]} />\n\n';
+          pageContent += '    <h1 class="text-3xl md:text-4xl font-bold mb-6">' + title + '</h1>\n\n';
+          if (content) {
+            pageContent += '    ' + content + '\n\n';
+          } else {
+            pageContent += '    <p class="text-lg text-gray-700 leading-relaxed mb-6">Content coming soon.</p>\n\n';
+          }
+          pageContent += '    <LeadForm />\n';
+          pageContent += '  </article>\n';
+          pageContent += '</BaseLayout>\n';
+
+          // Determine file path
+          var filePath = 'src/pages/' + pageType + '/' + slug + '.astro';
+
+          try {
+            var resp = await fetch(workerUrl + '/api/file', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                repo: siteRepo,
+                path: filePath,
+                content: pageContent,
+                message: 'Create ' + pageType + ': ' + title + ' via dashboard',
+              }),
+            });
+
+            if (resp.ok) {
+              status.textContent = 'Created! Auto-deploying...';
+              status.style.color = '#22c55e';
+              this.textContent = 'Created!';
+              this.style.background = '#22c55e';
+              // Clear form
+              document.getElementById('new-page-slug').value = '';
+              document.getElementById('new-page-title').value = '';
+              document.getElementById('new-page-desc').value = '';
+              document.getElementById('new-page-content').value = '';
+            } else {
+              var err = await resp.json();
+              status.textContent = 'Error: ' + (err.error || 'Failed');
+              status.style.color = '#ef4444';
+              this.textContent = 'Error';
+              this.style.background = '#ef4444';
+            }
+          } catch (err) {
+            status.textContent = 'Error: ' + err.message;
+            status.style.color = '#ef4444';
+          }
+
+          var btn = this;
+          setTimeout(function() { btn.textContent = 'Create Page'; btn.style.background = ''; btn.disabled = false; }, 3000);
+        });
 
         // Click page row to open editor
         document.querySelectorAll('.page-row').forEach(function(row) {

@@ -1,0 +1,59 @@
+{
+  "market-invoice": {
+    "blog": {
+      "imports": "import BaseLayout from '../../layouts/BaseLayout.astro';\nimport SpeakableSchema from '../../components/SpeakableSchema.astro';\nimport AIComprehension from '../../components/AIComprehension.astro';\nimport AuthorBox from '../../components/AuthorBox.astro';\nimport Breadcrumbs from '../../components/Breadcrumbs.astro';\nimport LeadForm from '../../components/LeadForm.astro';",
+      "breadcrumb_base": [{"label": "Home", "href": "/"}, {"label": "Blog", "href": "/blog/"}],
+      "wrapper": "article",
+      "wrapper_class": "max-w-3xl mx-auto px-4 py-12 md:py-16",
+      "badge": "<div class=\"inline-block bg-surface-alt border border-border-accent text-accent-hover text-xs font-semibold px-3 py-1 rounded-full mb-4 uppercase tracking-wider\">Blog</div>",
+      "includes_ai_comprehension": true,
+      "includes_author_box": true,
+      "includes_lead_form": true,
+      "path_prefix": "src/pages/blog/"
+    },
+    "question": {
+      "imports": "import BaseLayout from '../../layouts/BaseLayout.astro';\nimport SpeakableSchema from '../../components/SpeakableSchema.astro';\nimport AuthorBox from '../../components/AuthorBox.astro';\nimport Breadcrumbs from '../../components/Breadcrumbs.astro';\nimport LeadForm from '../../components/LeadForm.astro';",
+      "breadcrumb_base": [{"label": "Home", "href": "/"}, {"label": "Questions", "href": "/questions/"}],
+      "wrapper": "article",
+      "wrapper_class": "max-w-3xl mx-auto px-4 py-12 md:py-16",
+      "includes_schema": true,
+      "includes_author_box": true,
+      "includes_lead_form": true,
+      "path_prefix": "src/pages/questions/"
+    },
+    "guide": {
+      "imports": "import BaseLayout from '../../layouts/BaseLayout.astro';\nimport SpeakableSchema from '../../components/SpeakableSchema.astro';\nimport AuthorBox from '../../components/AuthorBox.astro';\nimport Breadcrumbs from '../../components/Breadcrumbs.astro';\nimport LeadForm from '../../components/LeadForm.astro';",
+      "breadcrumb_base": [{"label": "Home", "href": "/"}, {"label": "Guides", "href": "/guides/"}],
+      "wrapper": "article",
+      "wrapper_class": "max-w-3xl mx-auto px-4 py-12 md:py-16",
+      "includes_schema": true,
+      "includes_author_box": true,
+      "includes_lead_form": true,
+      "path_prefix": "src/pages/guides/"
+    }
+  },
+  "seocompare": {
+    "blog": {
+      "imports": "import BaseLayout from '../../layouts/BaseLayout.astro';\nimport AuthorBox from '../../components/AuthorBox.astro';\nimport Breadcrumbs from '../../components/Breadcrumbs.astro';",
+      "breadcrumb_base": [{"label": "Home", "href": "/"}, {"label": "Blog", "href": "/blog/"}],
+      "wrapper": "article",
+      "wrapper_class": "max-w-3xl mx-auto px-4 py-12 md:py-16",
+      "includes_author_box": true,
+      "path_prefix": "src/pages/blog/"
+    },
+    "question": {
+      "imports": "import BaseLayout from '../../layouts/BaseLayout.astro';\nimport Breadcrumbs from '../../components/Breadcrumbs.astro';",
+      "breadcrumb_base": [{"label": "Home", "href": "/"}, {"label": "Questions", "href": "/questions/"}],
+      "wrapper": "article",
+      "wrapper_class": "max-w-3xl mx-auto px-4 py-12 md:py-16",
+      "path_prefix": "src/pages/questions/"
+    },
+    "insight": {
+      "imports": "import BaseLayout from '../../layouts/BaseLayout.astro';\nimport Breadcrumbs from '../../components/Breadcrumbs.astro';",
+      "breadcrumb_base": [{"label": "Home", "href": "/"}, {"label": "Insights", "href": "/insights/"}],
+      "wrapper": "article",
+      "wrapper_class": "max-w-3xl mx-auto px-4 py-12 md:py-16",
+      "path_prefix": "src/pages/insights/"
+    }
+  }
+}
