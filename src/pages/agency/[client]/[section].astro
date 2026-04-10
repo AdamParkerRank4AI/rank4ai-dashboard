@@ -394,49 +394,8 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
             </div>
           )}
 
-          <!-- Query results by type -->
-          {Object.entries(citByType.by_type || {}).map(([type, data]: [string, any]) => (
-            <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-4">
-              <h3 class="text-sm font-semibold text-gray-400 mb-3 capitalize">{type.replace(/_/g, ' ')} queries — {data.rate}%</h3>
-              <div class="space-y-2">
-                {data.results?.map((r: any) => (
-                  <div class={`p-3 rounded-lg border ${r.brand_mentioned ? 'border-green-800/50 bg-green-900/10' : 'border-gray-800 bg-gray-800/30'}`}>
-                    <div class="flex items-center justify-between mb-1">
-                      <span class="text-xs text-white">{r.query}</span>
-                      <div class="flex items-center gap-2">
-                        {r.competitors_mentioned?.length > 0 && (
-                          <span class="text-[10px] text-red-400">{r.competitors_mentioned.join(', ')}</span>
-                        )}
-                        <span class={`text-[10px] px-2 py-0.5 rounded-full ${r.brand_mentioned ? 'bg-green-600 text-white' : 'bg-gray-700 text-gray-400'}`}>
-                          {r.brand_mentioned ? 'CITED' : 'Not cited'}
-                        </span>
-                      </div>
-                    </div>
-                    <p class="text-[10px] text-gray-600 line-clamp-1">{r.response_preview?.slice(0, 150)}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
         </>
-      ) : citations && (
-        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
-          <h3 class="text-sm font-semibold text-gray-400 mb-4">Query Results</h3>
-          <div class="space-y-3">
-            {citations.results?.map((r: any) => (
-              <div class={`p-4 rounded-lg border ${r.mentioned || r.cited ? 'border-green-800/50 bg-green-900/10' : 'border-gray-800 bg-gray-800/30'}`}>
-                <div class="flex items-center justify-between mb-2">
-                  <span class="text-sm text-white">{r.query}</span>
-                  <span class={`text-xs px-2 py-0.5 rounded-full ${r.mentioned || r.cited ? 'bg-green-600 text-white' : 'bg-gray-700 text-gray-400'}`}>
-                    {r.mentioned || r.cited ? 'CITED' : 'Not cited'}
-                  </span>
-                </div>
-                {r.response_preview && <p class="text-xs text-gray-500 mt-1 line-clamp-2">{r.response_preview}</p>}
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
+      ) : null}
     </div>
 
     <!-- Prompt Testing Section -->
