@@ -1,6 +1,6 @@
 {
   "rank4ai": {
-    "generated_at": "2026-04-10T09:32:47.854982",
+    "generated_at": "2026-04-10T09:40:45.587504",
     "total": 18,
     "critical": 2,
     "high": 5,
@@ -155,9 +155,9 @@
       },
       {
         "priority": "medium",
-        "category": "Performance",
-        "title": "Slow server response time: 2394ms",
-        "detail": "Server response time is 2394ms \u2014 should be under 500ms. Check server configuration, caching, CDN setup, and database queries.",
+        "category": "Traffic",
+        "title": "High bounce rate: 87.0%",
+        "detail": "Bounce rate is 87.0% \u2014 over 60% suggests visitors aren't finding what they need. Improve: 1) Page load speed 2) Content relevance to search queries 3) Clear CTAs and navigation 4) Mobile experience 5) Internal linking to related content.",
         "impact": "medium",
         "pages": []
       },
@@ -215,11 +215,11 @@
     ]
   },
   "market-invoice": {
-    "generated_at": "2026-04-10T09:32:47.860598",
-    "total": 17,
+    "generated_at": "2026-04-10T09:40:45.615216",
+    "total": 18,
     "critical": 2,
     "high": 5,
-    "medium": 9,
+    "medium": 10,
     "low": 1,
     "recommendations": [
       {
@@ -361,7 +361,15 @@
         "priority": "medium",
         "category": "Schema",
         "title": "Schema gaps: No Organization or LocalBusiness schema \u2014 AI can't identify who you are; Missing content schema types: HowTo",
-        "detail": "Currently using: Service, FAQPage, BreadcrumbList, WebPage, Article, WebApplication, Product. No Organization or LocalBusiness schema \u2014 AI can't identify who you are Missing content schema types: HowTo. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
+        "detail": "Currently using: BreadcrumbList, FAQPage, Product, WebPage, Article, Service, WebApplication. No Organization or LocalBusiness schema \u2014 AI can't identify who you are Missing content schema types: HowTo. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Traffic",
+        "title": "High bounce rate: 64.7%",
+        "detail": "Bounce rate is 64.7% \u2014 over 60% suggests visitors aren't finding what they need. Improve: 1) Page load speed 2) Content relevance to search queries 3) Clear CTAs and navigation 4) Mobile experience 5) Internal linking to related content.",
         "impact": "medium",
         "pages": []
       },
@@ -411,7 +419,7 @@
     ]
   },
   "seocompare": {
-    "generated_at": "2026-04-10T09:32:47.864965",
+    "generated_at": "2026-04-10T09:40:45.639505",
     "total": 15,
     "critical": 2,
     "high": 5,
@@ -518,7 +526,7 @@
         "priority": "medium",
         "category": "Schema",
         "title": "Schema gaps: No Organization or LocalBusiness schema \u2014 AI can't identify who you are; Missing content schema types: HowTo",
-        "detail": "Currently using: Service, FAQPage, BreadcrumbList, WebPage, Article. No Organization or LocalBusiness schema \u2014 AI can't identify who you are Missing content schema types: HowTo. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
+        "detail": "Currently using: BreadcrumbList, FAQPage, Article, WebPage, Service. No Organization or LocalBusiness schema \u2014 AI can't identify who you are Missing content schema types: HowTo. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
         "impact": "medium",
         "pages": []
       },
