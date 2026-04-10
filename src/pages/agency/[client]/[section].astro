@@ -1609,9 +1609,11 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
                 >
                   Copy
                 </button>
+                <button class="done-rec-btn text-[10px] px-2 py-1 rounded bg-gray-800 text-gray-400 hover:bg-green-900 hover:text-green-300 transition" data-index={i}>Done</button>
+                <button class="park-rec-btn text-[10px] px-2 py-1 rounded bg-gray-800 text-gray-400 hover:bg-yellow-900 hover:text-yellow-300 transition" data-index={i}>Park</button>
               </div>
             </div>
-            <h3 class="text-white font-medium text-sm mb-2">{r.title}</h3>
+            <h3 class="text-white font-medium text-sm mb-2 rec-title">{r.title}</h3>
             <p class="text-xs text-gray-400 leading-relaxed">{r.detail}</p>
           </div>
         ))}
@@ -1689,6 +1691,50 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
             });
             copyText(buildPrompt(selected), this);
           }
+        });
+
+        // Done button on recommendations
+        document.querySelectorAll('.done-rec-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const item = btn.closest('.rec-item');
+            if (!item) return;
+            if (item.dataset.done === 'true') {
+              item.dataset.done = 'false';
+              item.style.opacity = '1';
+              item.style.borderColor = '';
+              btn.textContent = 'Done';
+              btn.style.background = '';
+            } else {
+              item.dataset.done = 'true';
+              item.style.opacity = '0.4';
+              item.style.borderColor = '#166534';
+              btn.textContent = '✓';
+              btn.style.background = '#166534';
+            }
+          });
+        });
+
+        // Park button on recommendations
+        document.querySelectorAll('.park-rec-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const item = btn.closest('.rec-item');
+            if (!item) return;
+            if (item.dataset.parked === 'true') {
+              item.dataset.parked = 'false';
+              item.style.opacity = '1';
+              item.style.borderColor = '';
+              btn.textContent = 'Park';
+              btn.style.background = '';
+            } else {
+              item.dataset.parked = 'true';
+              item.style.opacity = '0.3';
+              item.style.borderColor = '#854d0e';
+              btn.textContent = 'Unpark';
+              btn.style.background = '#854d0e';
+            }
+          });
         });
 
         // Click row to toggle checkbox

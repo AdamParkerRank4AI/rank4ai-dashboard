@@ -1,11 +1,11 @@
 {
   "rank4ai": {
-    "generated_at": "2026-04-09T16:26:39.308411",
-    "total": 21,
+    "generated_at": "2026-04-10T09:11:34.351155",
+    "total": 18,
     "critical": 2,
-    "high": 6,
-    "medium": 12,
-    "low": 1,
+    "high": 5,
+    "medium": 11,
+    "low": 0,
     "recommendations": [
       {
         "priority": "critical",
@@ -78,16 +78,6 @@
       },
       {
         "priority": "high",
-        "category": "Performance",
-        "title": "Mobile performance score is 39/100",
-        "detail": "Poor mobile performance affects user experience, search rankings, and Core Web Vitals. Actions: 1) Optimise images (WebP, lazy loading) 2) Reduce JavaScript 3) Implement critical CSS 4) Use CDN caching. Slow pages: /",
-        "impact": "medium",
-        "pages": [
-          "/"
-        ]
-      },
-      {
-        "priority": "high",
         "category": "Entity",
         "title": "Not listed on Wikidata",
         "detail": "Wikidata feeds Google Knowledge Graph and AI models. Create a Wikidata entry with: company name, type (Q4830453 = business), founding date, website, industry, founders. This is free and takes 10 minutes.",
@@ -124,7 +114,7 @@
       {
         "priority": "medium",
         "category": "Schema",
-        "title": "7 pages missing structured data (235/242 have schema)",
+        "title": "7 pages missing structured data (237/244 have schema)",
         "detail": "Pages with schema have 2.5x higher chance of AI citation. Add Article, FAQPage, or HowTo schema to these pages. Pages missing schema: /ai-seo-agency-uk/colchester, /uk-coverage, /ai-seo/technical/internal-linking, /ai-search/comparisons/guide, /ai-search/comparisons/why-seo-changing, /ai-search/ecosystem-validation/insights/do-directories-help-ai-recommendations, /ai-seo/technical/ai-misinterpretation",
         "impact": "high",
         "pages": [
@@ -156,8 +146,8 @@
       {
         "priority": "medium",
         "category": "AI Readiness",
-        "title": "3 AI crawlers not explicitly allowed in robots.txt",
-        "detail": "These crawlers are not mentioned in robots.txt \u2014 add explicit 'Allow' rules to ensure they can access the site: GoogleOther, Amazonbot, FacebookBot. While not actively blocked, explicit rules are best practice for AI visibility.",
+        "title": "1 AI search crawlers not explicitly allowed in robots.txt",
+        "detail": "These search crawlers are not mentioned: GoogleOther. Add explicit 'Allow' rules. Training crawlers not mentioned is fine.",
         "impact": "medium",
         "pages": [
           "/robots.txt"
@@ -165,9 +155,9 @@
       },
       {
         "priority": "medium",
-        "category": "Traffic",
-        "title": "High bounce rate: 82.7%",
-        "detail": "Bounce rate is 82.7% \u2014 over 60% suggests visitors aren't finding what they need. Improve: 1) Page load speed 2) Content relevance to search queries 3) Clear CTAs and navigation 4) Mobile experience 5) Internal linking to related content.",
+        "category": "Performance",
+        "title": "Slow server response time: 2394ms",
+        "detail": "Server response time is 2394ms \u2014 should be under 500ms. Check server configuration, caching, CDN setup, and database queries.",
         "impact": "medium",
         "pages": []
       },
@@ -185,32 +175,32 @@
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'ai visibility seo agency' \u2014 38 impressions, 0% CTR",
-        "detail": "This query gets 38 impressions but only 0 clicks (CTR: 0%). Position: 39.8. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'ai visibility seo agency' \u2014 40 impressions, 0% CTR",
+        "detail": "This query gets 40 impressions but only 0 clicks (CTR: 0%). Position: 37.6. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'ai search visibility' \u2014 36 impressions, 0% CTR",
-        "detail": "This query gets 36 impressions but only 0 clicks (CTR: 0%). Position: 76.2. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'best chatgpt optimisation company near me' \u2014 39 impressions, 0% CTR",
+        "detail": "This query gets 39 impressions but only 0 clicks (CTR: 0%). Position: 47.6. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'ai visibility (20 | 20)' \u2014 18 impressions, 0% CTR",
-        "detail": "This query gets 18 impressions but only 0 clicks (CTR: 0%). Position: 84.5. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'ai search visibility' \u2014 31 impressions, 0% CTR",
+        "detail": "This query gets 31 impressions but only 0 clicks (CTR: 0%). Position: 75.5. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'ai visibility agency' \u2014 15 impressions, 0% CTR",
-        "detail": "This query gets 15 impressions but only 0 clicks (CTR: 0%). Position: 23.5. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'ai visibility (20 | 20)' \u2014 15 impressions, 0% CTR",
+        "detail": "This query gets 15 impressions but only 0 clicks (CTR: 0%). Position: 85.6. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
@@ -221,31 +211,15 @@
         "detail": "This query gets 11 impressions but only 0 clicks (CTR: 0%). Position: 83.9. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
-      },
-      {
-        "priority": "medium",
-        "category": "Content",
-        "title": "Only 3/242 pages have multi-modal content (images + video)",
-        "detail": "Pages with images AND video get 156-317% more AI citations. Add relevant images, infographics, and embedded videos to key content pages.",
-        "impact": "high",
-        "pages": []
-      },
-      {
-        "priority": "low",
-        "category": "Accessibility",
-        "title": "7 images missing alt text",
-        "detail": "Alt text helps search engines and AI understand images. Add descriptive alt text to all images.",
-        "impact": "low",
-        "pages": []
       }
     ]
   },
   "market-invoice": {
-    "generated_at": "2026-04-09T16:26:39.312844",
-    "total": 20,
+    "generated_at": "2026-04-10T09:11:34.359541",
+    "total": 18,
     "critical": 2,
     "high": 6,
-    "medium": 11,
+    "medium": 9,
     "low": 1,
     "recommendations": [
       {
@@ -283,29 +257,6 @@
       },
       {
         "priority": "high",
-        "category": "Schema",
-        "title": "14 pages missing structured data (286/300 have schema)",
-        "detail": "Pages with schema have 2.5x higher chance of AI citation. Add Article, FAQPage, or HowTo schema to these pages. Pages missing schema: /guides/, /how-we-are-funded/, /disclaimer/, /about/, /cookie-policy/, /compare/, /industries/, /contact/, /terms/, /providers/...",
-        "impact": "high",
-        "pages": [
-          "/guides/",
-          "/how-we-are-funded/",
-          "/disclaimer/",
-          "/about/",
-          "/cookie-policy/",
-          "/compare/",
-          "/industries/",
-          "/contact/",
-          "/terms/",
-          "/providers/",
-          "/blog/",
-          "/questions/",
-          "/locations/",
-          "/editorial-policy/"
-        ]
-      },
-      {
-        "priority": "high",
         "category": "SEO Health",
         "title": "1 pages with missing h1",
         "detail": "These pages have no H1 tag. Add a clear, descriptive H1 to each page. AI models use H1s to understand page topics. Affected pages: /compare/",
@@ -336,6 +287,16 @@
           "/blog/startup-funding-compared/",
           "/providers/penny/",
           "/providers/panel-financial/"
+        ]
+      },
+      {
+        "priority": "high",
+        "category": "AI Readiness",
+        "title": "2 AI SEARCH crawlers blocked in robots.txt",
+        "detail": "These search crawlers are blocked: GPTBot, Google-Extended. These are used for live AI search (ChatGPT browsing, Perplexity, Gemini). Blocking them means invisibility on those platforms. Training crawlers (ClaudeBot, CCBot, Applebot-Extended) are correctly blocked.",
+        "impact": "high",
+        "pages": [
+          "/robots.txt"
         ]
       },
       {
@@ -391,27 +352,26 @@
       },
       {
         "priority": "medium",
-        "category": "AI Readiness",
-        "title": "7 AI crawlers not explicitly allowed in robots.txt",
-        "detail": "These crawlers are not mentioned in robots.txt \u2014 add explicit 'Allow' rules to ensure they can access the site: Claude-Web, Bytespider, cohere-ai, Amazonbot, anthropic-ai, FacebookBot, Applebot-Extended. While not actively blocked, explicit rules are best practice for AI visibility.",
-        "impact": "medium",
+        "category": "Schema",
+        "title": "8 pages missing structured data (286/300 have schema)",
+        "detail": "Pages with schema have 2.5x higher chance of AI citation. Add Article, FAQPage, or HowTo schema to these pages. Pages missing schema: /guides/, /about/, /compare/, /industries/, /providers/, /blog/, /questions/, /locations/",
+        "impact": "high",
         "pages": [
-          "/robots.txt"
+          "/guides/",
+          "/about/",
+          "/compare/",
+          "/industries/",
+          "/providers/",
+          "/blog/",
+          "/questions/",
+          "/locations/"
         ]
       },
       {
         "priority": "medium",
         "category": "Schema",
-        "title": "Missing schema types: LocalBusiness, Organization, HowTo",
-        "detail": "The site is using Product, BreadcrumbList, WebApplication, WebPage, Service, Article, FAQPage but is missing these important schema types: LocalBusiness, Organization, HowTo. Organization and LocalBusiness schema help AI identify who you are. FAQPage and HowTo schema have the highest AI citation rates.",
-        "impact": "medium",
-        "pages": []
-      },
-      {
-        "priority": "medium",
-        "category": "Traffic",
-        "title": "High bounce rate: 68.4%",
-        "detail": "Bounce rate is 68.4% \u2014 over 60% suggests visitors aren't finding what they need. Improve: 1) Page load speed 2) Content relevance to search queries 3) Clear CTAs and navigation 4) Mobile experience 5) Internal linking to related content.",
+        "title": "Schema gaps: No Organization or LocalBusiness schema \u2014 AI can't identify who you are; Missing content schema types: HowTo",
+        "detail": "Currently using: WebApplication, BreadcrumbList, Product, Article, WebPage, Service, FAQPage. No Organization or LocalBusiness schema \u2014 AI can't identify who you are Missing content schema types: HowTo. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
         "impact": "medium",
         "pages": []
       },
@@ -426,11 +386,10 @@
       {
         "priority": "medium",
         "category": "AI Readiness",
-        "title": "3 pages score below 40/100 for AI readiness",
-        "detail": "These pages have poor AI citation potential. Improve by adding: FAQ sections, clear definitions, comparison tables, statistics, author credentials. Low-scoring pages: /privacy/, /compare/, /providers/secure-trust/",
+        "title": "2 pages score below 40/100 for AI readiness",
+        "detail": "These pages have poor AI citation potential. Improve by adding: FAQ sections, clear definitions, comparison tables, statistics, author credentials. Low-scoring pages: /compare/, /providers/secure-trust/",
         "impact": "medium",
         "pages": [
-          "/privacy/",
           "/compare/",
           "/providers/secure-trust/"
         ]
@@ -438,44 +397,36 @@
       {
         "priority": "medium",
         "category": "Content",
-        "title": "Only 0/300 pages have multi-modal content (images + video)",
-        "detail": "Pages with images AND video get 156-317% more AI citations. Add relevant images, infographics, and embedded videos to key content pages.",
+        "title": "Low multi-modal content (0 pages with images+video, 0 with video)",
+        "detail": "Pages with images AND video get 156-317% more AI citations. Add charts, infographics, and short videos to key pillar pages. Note: inline SVG graphics may not be detected by this check.",
         "impact": "high",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content",
-        "title": "Only 0 pages have 2,000+ words",
-        "detail": "Pages with 2,000+ words get 3x more AI citations. Create in-depth, comprehensive content on your key topics \u2014 guides, research reports, definitive explainers.",
-        "impact": "medium",
-        "pages": []
-      },
-      {
-        "priority": "medium",
-        "category": "Indexing",
-        "title": "Only 0/300 pages indexed in Bing",
-        "detail": "Bing feeds Copilot (which has 94+ citations for some sites). Submit all pages via IndexNow: python3 scripts/submit_indexnow.py market-invoice",
+        "title": "Only 0 pillar pages have 2,000+ words (excluding Q&A pages)",
+        "detail": "Pillar pages with 2,000+ words get 3x more AI citations. Q&A pages at 120-180 words are fine \u2014 this applies to guides, service pages, and definitive content. Expand 5-10 key pillar pages.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "low",
-        "category": "Search Visibility",
-        "title": "No Google Search Console impressions",
-        "detail": "Google Search Console shows zero impressions. The site may not be indexed, or the GSC property may need verification. Check coverage reports in GSC and submit sitemap.",
+        "category": "Indexing",
+        "title": "Only 0/300 pages indexed in Bing",
+        "detail": "Bing feeds Copilot. If URLs were recently submitted via IndexNow, allow 7-14 days for propagation. Re-check after that period. Submit: python3 scripts/submit_indexnow.py market-invoice",
         "impact": "medium",
         "pages": []
       }
     ]
   },
   "seocompare": {
-    "generated_at": "2026-04-09T16:26:39.316217",
-    "total": 16,
+    "generated_at": "2026-04-10T09:11:34.368043",
+    "total": 15,
     "critical": 2,
     "high": 5,
-    "medium": 9,
-    "low": 0,
+    "medium": 7,
+    "low": 1,
     "recommendations": [
       {
         "priority": "critical",
@@ -524,8 +475,8 @@
       {
         "priority": "high",
         "category": "AI Readiness",
-        "title": "7 AI crawlers blocked in robots.txt",
-        "detail": "These AI crawlers are blocked from accessing the site: GPTBot, Google-Extended, ClaudeBot, Bytespider, CCBot, Amazonbot, Applebot-Extended. Update robots.txt to allow them. Each blocked crawler means invisibility to that AI platform.",
+        "title": "2 AI SEARCH crawlers blocked in robots.txt",
+        "detail": "These search crawlers are blocked: GPTBot, Google-Extended. These are used for live AI search (ChatGPT browsing, Perplexity, Gemini). Blocking them means invisibility on those platforms. Training crawlers (ClaudeBot, Bytespider, CCBot) are correctly blocked.",
         "impact": "high",
         "pages": [
           "/robots.txt"
@@ -579,19 +530,9 @@
       },
       {
         "priority": "medium",
-        "category": "AI Readiness",
-        "title": "5 AI crawlers not explicitly allowed in robots.txt",
-        "detail": "These crawlers are not mentioned in robots.txt \u2014 add explicit 'Allow' rules to ensure they can access the site: Claude-Web, cohere-ai, anthropic-ai, FacebookBot, Bingbot. While not actively blocked, explicit rules are best practice for AI visibility.",
-        "impact": "medium",
-        "pages": [
-          "/robots.txt"
-        ]
-      },
-      {
-        "priority": "medium",
         "category": "Schema",
-        "title": "Missing schema types: LocalBusiness, Organization, HowTo",
-        "detail": "The site is using Article, BreadcrumbList, FAQPage, Service but is missing these important schema types: LocalBusiness, Organization, HowTo. Organization and LocalBusiness schema help AI identify who you are. FAQPage and HowTo schema have the highest AI citation rates.",
+        "title": "Schema gaps: No Organization or LocalBusiness schema \u2014 AI can't identify who you are; Missing content schema types: HowTo",
+        "detail": "Currently using: BreadcrumbList, Article, WebPage, Service, FAQPage. No Organization or LocalBusiness schema \u2014 AI can't identify who you are Missing content schema types: HowTo. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
         "impact": "medium",
         "pages": []
       },
@@ -616,16 +557,16 @@
       {
         "priority": "medium",
         "category": "Content",
-        "title": "Only 0/125 pages have multi-modal content (images + video)",
-        "detail": "Pages with images AND video get 156-317% more AI citations. Add relevant images, infographics, and embedded videos to key content pages.",
+        "title": "Low multi-modal content (0 pages with images+video, 0 with video)",
+        "detail": "Pages with images AND video get 156-317% more AI citations. Add charts, infographics, and short videos to key pillar pages. Note: inline SVG graphics may not be detected by this check.",
         "impact": "high",
         "pages": []
       },
       {
-        "priority": "medium",
+        "priority": "low",
         "category": "Indexing",
         "title": "Only 0/125 pages indexed in Bing",
-        "detail": "Bing feeds Copilot (which has 94+ citations for some sites). Submit all pages via IndexNow: python3 scripts/submit_indexnow.py seocompare",
+        "detail": "Bing feeds Copilot. If URLs were recently submitted via IndexNow, allow 7-14 days for propagation. Re-check after that period. Submit: python3 scripts/submit_indexnow.py seocompare",
         "impact": "medium",
         "pages": []
       }

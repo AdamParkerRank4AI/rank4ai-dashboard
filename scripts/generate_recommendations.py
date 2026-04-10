@@ -35,6 +35,19 @@ def generate_for_client(client_id):
 
     recs = []
 
+    # Utility/legal pages to exclude from content quality checks
+    UTILITY_PATHS = ["/privacy", "/terms", "/cookie", "/disclaimer", "/contact",
+                     "/404", "/accessibility", "/editorial", "/how-we-are-funded"]
+
+    def is_utility_page(path):
+        path_lower = path.lower()
+        return any(u in path_lower for u in UTILITY_PATHS)
+
+    # Training crawlers vs search crawlers — blocking training is fine
+    TRAINING_CRAWLERS = ["ClaudeBot", "Claude-Web", "anthropic-ai", "Bytespider",
+                         "CCBot", "cohere-ai", "Amazonbot", "Applebot-Extended", "FacebookBot"]
+    SEARCH_CRAWLERS = ["GPTBot", "Google-Extended", "GoogleOther", "PerplexityBot", "Bingbot"]
+
     # ============================================================
     # KNOWLEDGE GRAPH
     # ============================================================
@@ -94,7 +107,7 @@ def generate_for_client(client_id):
     # SCHEMA MARKUP — specific pages missing schema
     # ============================================================
     if crawl:
-        pages_without_schema = [p for p in crawl.get("pages", []) if not p.get("schemas")]
+        pages_without_schema = [p for p in crawl.get("pages", []) if not p.get("schemas") and not is_utility_page(p.get("path", ""))]
         pages_with_schema = crawl.get("pages_with_schema", 0)
         total_pages = crawl.get("pages_crawled", 0)
 
@@ -182,27 +195,34 @@ def generate_for_client(client_id):
         })
 
     # ============================================================
-    # AI CRAWLERS BLOCKED
+    # AI SEARCH CRAWLERS BLOCKED (not training crawlers)
     # ============================================================
     if crawl_activity and crawl_activity.get("ai_bots_blocked", 0) > 0:
         blocked = [bot for bot, status in crawl_activity.get("ai_bot_access", {}).items() if status == "blocked"]
-        recs.append({
-            "priority": "high", "category": "AI Readiness",
-            "title": f"{len(blocked)} AI crawlers blocked in robots.txt",
-            "detail": f"These AI crawlers are blocked from accessing the site: {', '.join(blocked)}. Update robots.txt to allow them. Each blocked crawler means invisibility to that AI platform.",
-            "impact": "high", "pages": ["/robots.txt"],
-        })
+        # Only flag SEARCH crawlers being blocked — blocking training crawlers is fine
+        search_blocked = [b for b in blocked if b in SEARCH_CRAWLERS]
+        training_blocked = [b for b in blocked if b in TRAINING_CRAWLERS]
+
+        if search_blocked:
+            recs.append({
+                "priority": "high", "category": "AI Readiness",
+                "title": f"{len(search_blocked)} AI SEARCH crawlers blocked in robots.txt",
+                "detail": f"These search crawlers are blocked: {', '.join(search_blocked)}. These are used for live AI search (ChatGPT browsing, Perplexity, Gemini). Blocking them means invisibility on those platforms. Training crawlers ({', '.join(training_blocked[:3])}) are correctly blocked.",
+                "impact": "high", "pages": ["/robots.txt"],
+            })
+        # Note: training crawlers being blocked is correct practice, don't flag it
 
     # ============================================================
-    # AI CRAWLERS NOT MENTIONED (should add Allow)
+    # AI CRAWLERS NOT MENTIONED (only flag search crawlers)
     # ============================================================
     if crawl_activity:
         not_mentioned = [bot for bot, status in crawl_activity.get("ai_bot_access", {}).items() if status == "not_mentioned"]
-        if not_mentioned:
+        search_not_mentioned = [b for b in not_mentioned if b in SEARCH_CRAWLERS]
+        if search_not_mentioned:
             recs.append({
                 "priority": "medium", "category": "AI Readiness",
-                "title": f"{len(not_mentioned)} AI crawlers not explicitly allowed in robots.txt",
-                "detail": f"These crawlers are not mentioned in robots.txt — add explicit 'Allow' rules to ensure they can access the site: {', '.join(not_mentioned)}. While not actively blocked, explicit rules are best practice for AI visibility.",
+                "title": f"{len(search_not_mentioned)} AI search crawlers not explicitly allowed in robots.txt",
+                "detail": f"These search crawlers are not mentioned: {', '.join(search_not_mentioned)}. Add explicit 'Allow' rules. Training crawlers not mentioned is fine.",
                 "impact": "medium", "pages": ["/robots.txt"],
             })
 
@@ -211,13 +231,20 @@ def generate_for_client(client_id):
     # ============================================================
     if entities and entities.get("schema_types"):
         current_types = set(s["type"] for s in entities["schema_types"])
-        ideal_types = {"Article", "FAQPage", "Organization", "LocalBusiness", "HowTo", "BreadcrumbList"}
-        missing_types = ideal_types - current_types
-        if missing_types:
+        # Organization OR LocalBusiness is fine — don't require both
+        has_identity_schema = bool(current_types & {"Organization", "LocalBusiness", "Corporation"})
+        ideal_content_types = {"Article", "FAQPage", "HowTo", "BreadcrumbList"}
+        missing_content_types = ideal_content_types - current_types
+        issues = []
+        if not has_identity_schema:
+            issues.append("No Organization or LocalBusiness schema — AI can't identify who you are")
+        if missing_content_types:
+            issues.append(f"Missing content schema types: {', '.join(missing_content_types)}")
+        if issues:
             recs.append({
                 "priority": "medium", "category": "Schema",
-                "title": f"Missing schema types: {', '.join(missing_types)}",
-                "detail": f"The site is using {', '.join(current_types)} but is missing these important schema types: {', '.join(missing_types)}. Organization and LocalBusiness schema help AI identify who you are. FAQPage and HowTo schema have the highest AI citation rates.",
+                "title": f"Schema gaps: {'; '.join(issues)}",
+                "detail": f"Currently using: {', '.join(current_types)}. {' '.join(issues)}. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
                 "impact": "medium", "pages": [],
             })
 
@@ -304,7 +331,7 @@ def generate_for_client(client_id):
     # AI READINESS — low-scoring pages
     # ============================================================
     if audit and audit.get("page_results"):
-        low_ai_pages = [p for p in audit["page_results"] if p.get("overall_score", 100) < 40]
+        low_ai_pages = [p for p in audit["page_results"] if p.get("overall_score", 100) < 40 and not is_utility_page(urlparse(p.get("url", "")).path)]
         if low_ai_pages:
             paths = [urlparse(p["url"]).path for p in low_ai_pages[:10]]
             recs.append({
@@ -357,32 +384,35 @@ def generate_for_client(client_id):
     # ============================================================
     if crawl:
         multimodal = crawl.get("pages_with_multimodal", 0)
+        video_pages = crawl.get("pages_with_video", 0)
         total = crawl.get("pages_crawled", 0)
-        if total > 10 and multimodal < total * 0.1:
+        # Note: inline SVGs may not be detected — only counts <img> and <video>/<iframe> tags
+        content_pages = [p for p in crawl.get("pages", []) if not is_utility_page(p.get("path", ""))]
+        if len(content_pages) > 10 and multimodal < 3 and video_pages < 3:
             recs.append({
                 "priority": "medium", "category": "Content",
-                "title": f"Only {multimodal}/{total} pages have multi-modal content (images + video)",
-                "detail": "Pages with images AND video get 156-317% more AI citations. Add relevant images, infographics, and embedded videos to key content pages.",
+                "title": f"Low multi-modal content ({multimodal} pages with images+video, {video_pages} with video)",
+                "detail": "Pages with images AND video get 156-317% more AI citations. Add charts, infographics, and short videos to key pillar pages. Note: inline SVG graphics may not be detected by this check.",
                 "impact": "high", "pages": [],
             })
 
     # ============================================================
-    # COMPARISON TABLES
+    # COMPARISON TABLES (only flag if there are genuinely none)
     # ============================================================
     if crawl:
         comp_tables = crawl.get("pages_with_comparison_table", 0)
-        if comp_tables == 0:
+        if comp_tables == 0 and total > 20:
             recs.append({
-                "priority": "medium", "category": "Content",
-                "title": "No comparison tables detected on the site",
-                "detail": "Pages with comparison tables have 2.5x higher AI citation rate. Add comparison tables to key pages — e.g. pricing comparisons, feature comparisons, provider comparisons.",
+                "priority": "low", "category": "Content",
+                "title": "No comparison tables detected",
+                "detail": "Pages with comparison tables have 2.5x higher AI citation rate. Consider adding comparison tables to key pages where relevant.",
                 "impact": "medium", "pages": [],
             })
 
     # ============================================================
     # IMAGES MISSING ALT TEXT
     # ============================================================
-    if crawl and crawl.get("images_missing_alt", 0) > 5:
+    if crawl and crawl.get("images_missing_alt", 0) > 10:
         recs.append({
             "priority": "low", "category": "Accessibility",
             "title": f"{crawl['images_missing_alt']} images missing alt text",
@@ -391,15 +421,20 @@ def generate_for_client(client_id):
         })
 
     # ============================================================
-    # LONG-FORM CONTENT
+    # LONG-FORM CONTENT (exclude Q&A pages — 120-180 words is optimal for those)
     # ============================================================
     if crawl:
-        long_pages = crawl.get("pages_over_2000_words", 0)
-        if total > 20 and long_pages < 3:
+        # Only count non-Q&A, non-utility content pages
+        pillar_pages = [p for p in crawl.get("pages", [])
+                       if not is_utility_page(p.get("path", ""))
+                       and "/questions/" not in p.get("path", "").lower()
+                       and "/ai-search-questions/" not in p.get("path", "").lower()]
+        long_pages = sum(1 for p in pillar_pages if p.get("word_count", 0) >= 2000)
+        if len(pillar_pages) > 10 and long_pages < 3:
             recs.append({
                 "priority": "medium", "category": "Content",
-                "title": f"Only {long_pages} pages have 2,000+ words",
-                "detail": "Pages with 2,000+ words get 3x more AI citations. Create in-depth, comprehensive content on your key topics — guides, research reports, definitive explainers.",
+                "title": f"Only {long_pages} pillar pages have 2,000+ words (excluding Q&A pages)",
+                "detail": "Pillar pages with 2,000+ words get 3x more AI citations. Q&A pages at 120-180 words are fine — this applies to guides, service pages, and definitive content. Expand 5-10 key pillar pages.",
                 "impact": "medium", "pages": [],
             })
 
@@ -411,9 +446,9 @@ def generate_for_client(client_id):
         total = crawl.get("pages_crawled", 0)
         if bing_indexed < total * 0.5 and total > 10:
             recs.append({
-                "priority": "medium", "category": "Indexing",
+                "priority": "low", "category": "Indexing",
                 "title": f"Only {bing_indexed}/{total} pages indexed in Bing",
-                "detail": f"Bing feeds Copilot (which has 94+ citations for some sites). Submit all pages via IndexNow: python3 scripts/submit_indexnow.py {client_id}",
+                "detail": f"Bing feeds Copilot. If URLs were recently submitted via IndexNow, allow 7-14 days for propagation. Re-check after that period. Submit: python3 scripts/submit_indexnow.py {client_id}",
                 "impact": "medium", "pages": [],
             })
 

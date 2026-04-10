@@ -1,7 +1,7 @@
 {
   "rank4ai": {
     "site_id": "rank4ai",
-    "fetched_at": "2026-04-08T15:11:44.597114",
+    "fetched_at": "2026-04-10T06:00:16.394505",
     "bing_crawl_daily": [
       {
         "date": "2026-02-22",
@@ -542,10 +542,34 @@
         "code_5xx": 0,
         "blocked_robots": 0,
         "errors": 0
+      },
+      {
+        "date": "2026-04-08",
+        "crawled_pages": 27,
+        "in_index": 228,
+        "in_links": 5,
+        "code_2xx": 112,
+        "code_301": 165,
+        "code_4xx": 0,
+        "code_5xx": 0,
+        "blocked_robots": 0,
+        "errors": 0
+      },
+      {
+        "date": "2026-04-09",
+        "crawled_pages": 7,
+        "in_index": 234,
+        "in_links": 5,
+        "code_2xx": 113,
+        "code_301": 171,
+        "code_4xx": 0,
+        "code_5xx": 0,
+        "blocked_robots": 0,
+        "errors": 0
       }
     ],
-    "bing_total_crawled": 566,
-    "bing_indexed": 221,
+    "bing_total_crawled": 600,
+    "bing_indexed": 234,
     "bing_inlinks": 5,
     "ai_bot_access": {
       "GPTBot": "allowed",
@@ -569,35 +593,21 @@
   },
   "market-invoice": {
     "site_id": "market-invoice",
-    "fetched_at": "2026-04-08T15:11:45.756185",
-    "bing_crawl_daily": [],
-    "bing_total_crawled": 0,
-    "bing_indexed": 0,
-    "bing_inlinks": 0,
-    "ai_bot_access": {
-      "GPTBot": "allowed",
-      "ChatGPT-User": "allowed",
-      "Google-Extended": "allowed",
-      "GoogleOther": "allowed",
-      "ClaudeBot": "allowed",
-      "Claude-Web": "not_mentioned",
-      "PerplexityBot": "allowed",
-      "Bytespider": "not_mentioned",
-      "CCBot": "allowed",
-      "cohere-ai": "not_mentioned",
-      "Amazonbot": "not_mentioned",
-      "anthropic-ai": "not_mentioned",
-      "FacebookBot": "not_mentioned",
-      "Applebot-Extended": "not_mentioned",
-      "Bingbot": "allowed"
-    },
-    "ai_bots_allowed": 8,
-    "ai_bots_blocked": 0
-  },
-  "seocompare": {
-    "site_id": "seocompare",
-    "fetched_at": "2026-04-08T15:11:46.849654",
-    "bing_crawl_daily": [],
+    "fetched_at": "2026-04-10T06:00:17.337033",
+    "bing_crawl_daily": [
+      {
+        "date": "2026-04-09",
+        "crawled_pages": 0,
+        "in_index": 0,
+        "in_links": 0,
+        "code_2xx": 0,
+        "code_301": 0,
+        "code_4xx": 0,
+        "code_5xx": 0,
+        "blocked_robots": 0,
+        "errors": 0
+      }
+    ],
     "bing_total_crawled": 0,
     "bing_indexed": 0,
     "bing_inlinks": 0,
@@ -609,16 +619,43 @@
       "ClaudeBot": "blocked",
       "Claude-Web": "not_mentioned",
       "PerplexityBot": "allowed",
-      "Bytespider": "blocked",
+      "Bytespider": "not_mentioned",
       "CCBot": "blocked",
       "cohere-ai": "not_mentioned",
-      "Amazonbot": "blocked",
+      "Amazonbot": "not_mentioned",
       "anthropic-ai": "not_mentioned",
       "FacebookBot": "not_mentioned",
       "Applebot-Extended": "blocked",
-      "Bingbot": "not_mentioned"
+      "Bingbot": "allowed"
     },
-    "ai_bots_allowed": 3,
-    "ai_bots_blocked": 7
+    "ai_bots_allowed": 4,
+    "ai_bots_blocked": 5
+  },
+  "seocompare": {
+    "site_id": "seocompare",
+    "fetched_at": "2026-04-10T06:00:18.327243",
+    "bing_crawl_daily": [],
+    "bing_total_crawled": 0,
+    "bing_indexed": 0,
+    "bing_inlinks": 0,
+    "ai_bot_access": {
+      "GPTBot": "blocked",
+      "ChatGPT-User": "allowed",
+      "Google-Extended": "blocked",
+      "GoogleOther": "allowed",
+      "ClaudeBot": "blocked",
+      "Claude-Web": "allowed",
+      "PerplexityBot": "allowed",
+      "Bytespider": "blocked",
+      "CCBot": "blocked",
+      "cohere-ai": "blocked",
+      "Amazonbot": "blocked",
+      "anthropic-ai": "blocked",
+      "FacebookBot": "allowed",
+      "Applebot-Extended": "blocked",
+      "Bingbot": "allowed"
+    },
+    "ai_bots_allowed": 6,
+    "ai_bots_blocked": 9
   }
 }
