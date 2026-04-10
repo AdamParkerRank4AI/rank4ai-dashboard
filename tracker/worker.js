@@ -353,6 +353,188 @@ export default {
       });
     }
 
+    // ========== SITE MANAGER ENDPOINTS ==========
+
+    // Get file content from GitHub
+    if (url.pathname === '/api/file' && request.method === 'GET') {
+      const repo = url.searchParams.get('repo');
+      const path = url.searchParams.get('path');
+      const branch = url.searchParams.get('branch') || 'main';
+
+      if (!repo || !path || !env.GITHUB_TOKEN) {
+        return new Response(JSON.stringify({ error: 'repo, path required' }), {
+          status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+
+      try {
+        const resp = await fetch(`https://api.github.com/repos/${repo}/contents/${path}?ref=${branch}`, {
+          headers: {
+            'Authorization': `Bearer ${env.GITHUB_TOKEN}`,
+            'Accept': 'application/vnd.github.v3+json',
+            'User-Agent': 'Rank4AI-Dashboard',
+          },
+        });
+
+        if (!resp.ok) {
+          return new Response(JSON.stringify({ error: `GitHub: ${resp.status}` }), {
+            status: resp.status, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+          });
+        }
+
+        const data = await resp.json();
+        const content = atob(data.content);
+
+        return new Response(JSON.stringify({
+          path: data.path,
+          sha: data.sha,
+          content,
+          size: data.size,
+        }), {
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      } catch (e) {
+        return new Response(JSON.stringify({ error: e.message }), {
+          status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+    }
+
+    // Update file on GitHub
+    if (url.pathname === '/api/file' && request.method === 'PUT') {
+      try {
+        const body = await request.json();
+        const { repo, path, content, sha, message, branch } = body;
+
+        if (!repo || !path || !content || !sha || !env.GITHUB_TOKEN) {
+          return new Response(JSON.stringify({ error: 'repo, path, content, sha required' }), {
+            status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+          });
+        }
+
+        const resp = await fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
+          method: 'PUT',
+          headers: {
+            'Authorization': `Bearer ${env.GITHUB_TOKEN}`,
+            'Accept': 'application/vnd.github.v3+json',
+            'User-Agent': 'Rank4AI-Dashboard',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            message: message || `Update ${path} via dashboard`,
+            content: btoa(unescape(encodeURIComponent(content))),
+            sha,
+            branch: branch || 'main',
+          }),
+        });
+
+        if (!resp.ok) {
+          const err = await resp.text();
+          return new Response(JSON.stringify({ error: `GitHub: ${resp.status} ${err.slice(0, 200)}` }), {
+            status: resp.status, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+          });
+        }
+
+        const data = await resp.json();
+        return new Response(JSON.stringify({ ok: true, sha: data.content?.sha }), {
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      } catch (e) {
+        return new Response(JSON.stringify({ error: e.message }), {
+          status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+    }
+
+    // Create new file on GitHub
+    if (url.pathname === '/api/file' && request.method === 'POST') {
+      try {
+        const body = await request.json();
+        const { repo, path, content, message, branch } = body;
+
+        if (!repo || !path || !content || !env.GITHUB_TOKEN) {
+          return new Response(JSON.stringify({ error: 'repo, path, content required' }), {
+            status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+          });
+        }
+
+        const resp = await fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
+          method: 'PUT',
+          headers: {
+            'Authorization': `Bearer ${env.GITHUB_TOKEN}`,
+            'Accept': 'application/vnd.github.v3+json',
+            'User-Agent': 'Rank4AI-Dashboard',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            message: message || `Create ${path} via dashboard`,
+            content: btoa(unescape(encodeURIComponent(content))),
+            branch: branch || 'main',
+          }),
+        });
+
+        if (!resp.ok) {
+          const err = await resp.text();
+          return new Response(JSON.stringify({ error: `GitHub: ${resp.status} ${err.slice(0, 200)}` }), {
+            status: resp.status, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+          });
+        }
+
+        return new Response(JSON.stringify({ ok: true, path }), {
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      } catch (e) {
+        return new Response(JSON.stringify({ error: e.message }), {
+          status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+    }
+
+    // List files in a directory on GitHub
+    if (url.pathname === '/api/files' && request.method === 'GET') {
+      const repo = url.searchParams.get('repo');
+      const path = url.searchParams.get('path') || '';
+      const branch = url.searchParams.get('branch') || 'main';
+
+      if (!repo || !env.GITHUB_TOKEN) {
+        return new Response(JSON.stringify({ error: 'repo required' }), {
+          status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+
+      try {
+        const resp = await fetch(`https://api.github.com/repos/${repo}/contents/${path}?ref=${branch}`, {
+          headers: {
+            'Authorization': `Bearer ${env.GITHUB_TOKEN}`,
+            'Accept': 'application/vnd.github.v3+json',
+            'User-Agent': 'Rank4AI-Dashboard',
+          },
+        });
+
+        if (!resp.ok) {
+          return new Response(JSON.stringify({ error: `GitHub: ${resp.status}` }), {
+            status: resp.status, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+          });
+        }
+
+        const data = await resp.json();
+        const files = Array.isArray(data) ? data.map(f => ({
+          name: f.name,
+          path: f.path,
+          type: f.type,
+          size: f.size,
+        })) : [];
+
+        return new Response(JSON.stringify({ files }), {
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      } catch (e) {
+        return new Response(JSON.stringify({ error: e.message }), {
+          status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+    }
+
     // Default — info page
     return new Response(JSON.stringify({
       name: 'Rank4AI Visitor & Bot Tracker',

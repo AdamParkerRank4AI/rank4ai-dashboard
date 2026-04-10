@@ -453,7 +453,7 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
 
   <!-- SITE MANAGER -->
   {sectionId === 'site-manager' && crawlData && (
-    <div>
+    <div data-site-repo={siteConf?.repo || ''}>
       <!-- Stats -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
@@ -565,7 +565,130 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
             if (search) search.value = type;
           });
         });
+
+        const workerUrl = 'https://rank4ai-tracker.dawn-field-3d16.workers.dev';
+        const siteRepo = document.querySelector('[data-site-repo]')?.getAttribute('data-site-repo') || '';
+
+        // Click page row to open editor
+        document.querySelectorAll('.page-row').forEach(function(row) {
+          row.addEventListener('click', async function(e) {
+            if (e.target.tagName === 'A') return;
+            var pagePath = row.getAttribute('data-path');
+            var editorPanel = document.getElementById('page-editor');
+            if (!editorPanel) return;
+
+            editorPanel.classList.remove('hidden');
+            editorPanel.textContent = 'Loading...';
+
+            var filePath = 'src/pages' + pagePath.replace(/\/$/, '') + (pagePath.endsWith('/') ? '/index.astro' : '.astro');
+
+            try {
+              var resp = await fetch(workerUrl + '/api/file?repo=' + encodeURIComponent(siteRepo) + '&path=' + encodeURIComponent(filePath));
+              if (!resp.ok) throw new Error('HTTP ' + resp.status);
+              var data = await resp.json();
+              var content = data.content;
+
+              // Parse title and description from frontmatter
+              var titleMatch = content.match(/(?:const\s+)?title\s*=\s*["'](.*?)["']/);
+              var descMatch = content.match(/(?:const\s+)?description\s*=\s*["'](.*?)["']/);
+              var title = titleMatch ? titleMatch[1] : '';
+              var desc = descMatch ? descMatch[1] : '';
+
+              // Build editor UI
+              editorPanel.innerHTML = '';
+
+              var header = document.createElement('div');
+              header.className = 'flex items-center justify-between mb-4';
+              header.innerHTML = '<h3 class="text-sm font-semibold text-white">' + pagePath + '</h3><button id="close-editor" class="text-gray-500 hover:text-white text-xs">Close</button>';
+              editorPanel.appendChild(header);
+
+              // Title field
+              var titleDiv = document.createElement('div');
+              titleDiv.className = 'mb-3';
+              titleDiv.innerHTML = '<label class="text-[10px] text-gray-500 uppercase block mb-1">Title Tag (' + title.length + ' chars)</label>';
+              var titleInput = document.createElement('input');
+              titleInput.type = 'text';
+              titleInput.value = title;
+              titleInput.className = 'w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-xs text-white';
+              titleInput.id = 'edit-title';
+              titleDiv.appendChild(titleInput);
+              editorPanel.appendChild(titleDiv);
+
+              // Description field
+              var descDiv = document.createElement('div');
+              descDiv.className = 'mb-3';
+              descDiv.innerHTML = '<label class="text-[10px] text-gray-500 uppercase block mb-1">Meta Description (' + desc.length + ' chars)</label>';
+              var descArea = document.createElement('textarea');
+              descArea.rows = 3;
+              descArea.value = desc;
+              descArea.className = 'w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-xs text-white';
+              descArea.id = 'edit-desc';
+              descDiv.appendChild(descArea);
+              editorPanel.appendChild(descDiv);
+
+              // Buttons
+              var btnDiv = document.createElement('div');
+              btnDiv.className = 'flex gap-2';
+              var saveBtn = document.createElement('button');
+              saveBtn.textContent = 'Save to GitHub';
+              saveBtn.className = 'px-4 py-2 rounded text-xs bg-blue-600 text-white hover:bg-blue-500 transition';
+              var ghLink = document.createElement('a');
+              ghLink.href = 'https://github.com/' + siteRepo + '/blob/main/' + filePath;
+              ghLink.target = '_blank';
+              ghLink.textContent = 'View on GitHub';
+              ghLink.className = 'px-4 py-2 rounded text-xs bg-gray-700 text-gray-300 hover:bg-gray-600 transition';
+              btnDiv.appendChild(saveBtn);
+              btnDiv.appendChild(ghLink);
+              editorPanel.appendChild(btnDiv);
+
+              // Close
+              document.getElementById('close-editor').addEventListener('click', function() {
+                editorPanel.classList.add('hidden');
+              });
+
+              // Save
+              saveBtn.addEventListener('click', async function() {
+                var newTitle = document.getElementById('edit-title').value;
+                var newDesc = document.getElementById('edit-desc').value;
+                var newContent = content;
+                if (title) newContent = newContent.replace(title, newTitle);
+                if (desc) newContent = newContent.replace(desc, newDesc);
+
+                saveBtn.textContent = 'Saving...';
+                saveBtn.disabled = true;
+
+                try {
+                  var saveResp = await fetch(workerUrl + '/api/file', {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                      repo: siteRepo, path: filePath, content: newContent,
+                      sha: data.sha, message: 'Update meta: ' + pagePath + ' via dashboard',
+                    }),
+                  });
+                  if (saveResp.ok) {
+                    saveBtn.textContent = 'Saved!';
+                    saveBtn.style.background = '#22c55e';
+                  } else {
+                    saveBtn.textContent = 'Error';
+                    saveBtn.style.background = '#ef4444';
+                  }
+                } catch (err) {
+                  saveBtn.textContent = 'Error';
+                  saveBtn.style.background = '#ef4444';
+                }
+                setTimeout(function() { saveBtn.textContent = 'Save to GitHub'; saveBtn.style.background = ''; saveBtn.disabled = false; }, 3000);
+              });
+
+            } catch (err) {
+              editorPanel.innerHTML = '<div class="text-red-400 text-xs py-4">Failed to load: ' + err.message + '</div>';
+            }
+          });
+        });
       </script>
+
+      <!-- Page editor panel (hidden by default) -->
+      <div id="page-editor" class="hidden bg-gray-900 border border-blue-800/50 rounded-lg p-6 mt-4"></div>
     </div>
   )}
 
