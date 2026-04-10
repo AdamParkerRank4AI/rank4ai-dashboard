@@ -56,6 +56,7 @@ const isAgency = view === 'agency';
                 }`}
               >
                 {c.name}
+                {c.staging && <span class="ml-1 text-[9px] px-1.5 py-0.5 rounded bg-yellow-900/50 text-yellow-400 uppercase">Staging</span>}
               </a>
             </li>
           ))}

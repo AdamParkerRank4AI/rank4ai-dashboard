@@ -86,5 +86,34 @@
         "icon": "chart"
       }
     }
+  },
+  "rank4ai-staging": {
+    "repo": "AdamParkerRank4AI/rank4ai-preview",
+    "branch": "main",
+    "pages_dir": "src/pages",
+    "staging": true,
+    "preview_url": "https://adamparkerrank4ai.github.io/rank4ai-preview/",
+    "page_types": {
+      "blog": {
+        "label": "Blog Posts",
+        "path": "blog/",
+        "icon": "article"
+      },
+      "questions": {
+        "label": "Questions",
+        "path": "questions/",
+        "icon": "help"
+      },
+      "guides": {
+        "label": "Guides",
+        "path": "guides/",
+        "icon": "book"
+      },
+      "services": {
+        "label": "Services",
+        "path": "services/",
+        "icon": "briefcase"
+      }
+    }
   }
 }
