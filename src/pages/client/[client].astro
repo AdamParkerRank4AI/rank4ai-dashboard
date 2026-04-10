@@ -3,6 +3,8 @@ import DashboardLayout from '../../layouts/DashboardLayout.astro';
 import SectionCard from '../../components/SectionCard.astro';
 import clients from '../../data/clients.json';
 import allSections from '../../data/sections.json';
+import fs from 'node:fs';
+import path from 'node:path';
 
 export function getStaticPaths() {
   return clients.map((c) => ({ params: { client: c.id } }));
@@ -15,83 +17,116 @@ if (!client) {
   return Astro.redirect('/');
 }
 
-// Only show sections toggled ON for this client
+function loadJson(filename: string) {
+  try {
+    const filePath = path.join(process.cwd(), 'src', 'data', 'live', filename);
+    if (fs.existsSync(filePath)) {
+      return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    }
+  } catch {}
+  return null;
+}
+
 const visibleSections = allSections.filter((s) =>
   client.clientViewSections.includes(s.id)
 );
 
-// Demo data — same as agency view, replace with real API calls later
+// Load real data
+const crawlData = loadJson(`crawl_${clientId}.json`);
+const ga4Data = loadJson('ga4.json');
+const auditData = loadJson('ai_audit.json');
+const citResults = loadJson('citation_results.json');
+const uptimeData = loadJson('uptime.json');
+const recsData = loadJson('recommendations.json');
+const pagespeedData = loadJson('pagespeed.json');
+
+const ga4 = ga4Data?.[clientId];
+const audit = auditData?.[clientId];
+const cit = citResults?.[clientId];
+const uptime = uptimeData?.[clientId];
+const recs = recsData?.[clientId];
+const pagespeed = pagespeedData?.[clientId];
+
 const sectionStatus: Record<string, any> = {
-  'seo-health': {
-    status: 'not-connected',
-    statusText: 'Pending setup',
-    metric: '--',
-    metricLabel: 'Awaiting first audit',
-  },
-  'ai-citations': {
-    status: 'not-connected',
-    statusText: 'Pending setup',
-    metric: '--',
-    metricLabel: 'Citation rate across AI models',
-  },
-  'traffic': {
-    status: 'not-connected',
-    statusText: 'Pending setup',
-    metric: '--',
-    metricLabel: 'Monthly visitors',
-  },
-  'uptime': {
-    status: 'not-connected',
-    statusText: 'Pending setup',
-    metric: '--',
-    metricLabel: 'Uptime percentage',
-  },
-  'rank-tracking': {
-    status: 'not-connected',
-    statusText: 'Pending setup',
-    metric: '--',
-    metricLabel: 'Keywords tracked',
-  },
-  'positive-signals': {
-    status: 'not-connected',
-    statusText: 'Pending setup',
-    metric: '--',
-    metricLabel: 'Positive signals',
-  },
-  'crawl-status': {
-    status: 'not-connected',
-    statusText: 'Pending setup',
-    metric: '--',
-    metricLabel: 'Last crawl',
-  },
-  'content-gaps': {
-    status: 'not-connected',
-    statusText: 'Pending setup',
-    metric: '--',
-    metricLabel: 'Opportunities',
-  },
+  'ai-readiness': audit ? {
+    status: audit.overall_score >= 70 ? 'healthy' : audit.overall_score >= 40 ? 'warning' : 'error',
+    statusText: `${audit.readiness}`,
+    metric: `${audit.overall_score}/100`,
+    metricLabel: 'AI Search Readiness Score',
+  } : { status: 'pending', statusText: 'Setting up', metric: '--', metricLabel: '' },
+
+  'ai-citations': cit?.summary ? {
+    status: cit.summary.claude.rate > 0 ? 'warning' : 'error',
+    statusText: `Claude ${cit.summary.claude.rate}% · ChatGPT ${cit.summary.chatgpt.rate}% · Gemini ${cit.summary.gemini.rate}%`,
+    metric: `${cit.summary.claude.rate}%`,
+    metricLabel: 'AI citation rate across 3 models',
+  } : { status: 'pending', statusText: 'Setting up', metric: '--', metricLabel: '' },
+
+  'seo-health': crawlData ? {
+    status: crawlData.total_issues > 10 ? 'warning' : 'healthy',
+    statusText: `${crawlData.pages_crawled} pages · ${crawlData.total_issues} issues`,
+    metric: `${crawlData.pages_crawled}`,
+    metricLabel: `${crawlData.pages_with_schema} with schema`,
+  } : { status: 'pending', statusText: 'Setting up', metric: '--', metricLabel: '' },
+
+  'traffic': ga4?.overview ? {
+    status: 'healthy',
+    statusText: `${ga4.overview.sessions} sessions (30d)`,
+    metric: `${ga4.overview.active_users.toLocaleString()}`,
+    metricLabel: `Users · ${ga4.overview.pageviews.toLocaleString()} pageviews`,
+  } : { status: 'pending', statusText: 'Setting up', metric: '--', metricLabel: '' },
+
+  'uptime': uptime ? {
+    status: uptime.is_up ? 'healthy' : 'error',
+    statusText: uptime.is_up ? `${uptime.response_time_ms}ms` : 'DOWN',
+    metric: `${uptime.uptime_pct}%`,
+    metricLabel: 'Uptime',
+  } : { status: 'pending', statusText: 'Setting up', metric: '--', metricLabel: '' },
+
+  'site-speed': pagespeed?.avg_scores ? {
+    status: pagespeed.avg_scores.performance >= 80 ? 'healthy' : 'warning',
+    statusText: `Perf ${pagespeed.avg_scores.performance} · SEO ${pagespeed.avg_scores.seo}`,
+    metric: `${pagespeed.avg_scores.performance}/100`,
+    metricLabel: 'Mobile performance',
+  } : { status: 'pending', statusText: 'Setting up', metric: '--', metricLabel: '' },
+
+  'search-performance': { status: 'pending', statusText: 'Setting up', metric: '--', metricLabel: '' },
+  'site-manager': { status: 'pending', statusText: 'Setting up', metric: '--', metricLabel: '' },
+  'recommendations': { status: 'pending', statusText: 'Setting up', metric: '--', metricLabel: '' },
 };
 ---
 
 <DashboardLayout title={client.name} currentClient={clientId} view="client">
   <div class="mb-6">
     <h1 class="text-2xl font-bold text-white">{client.name}</h1>
-    <p class="text-sm text-gray-400 mt-1">Your SEO and AI search visibility dashboard</p>
+    <p class="text-sm text-gray-400 mt-1">Your AI search visibility dashboard</p>
   </div>
+
+  <!-- Top fixes for client -->
+  {recs && recs.critical > 0 && (
+    <div class="bg-red-950/20 border border-red-800/50 rounded-lg p-4 mb-6">
+      <div class="flex items-center justify-between">
+        <div>
+          <span class="text-sm text-red-300 font-medium">{recs.critical} critical items need attention</span>
+          <div class="mt-2 space-y-1">
+            {recs.recommendations.filter((r: any) => r.priority === 'critical').slice(0, 3).map((r: any) => (
+              <p class="text-xs text-gray-400">• {r.title}</p>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  )}
 
   {visibleSections.length === 0 ? (
     <div class="text-center py-16">
       <p class="text-gray-500">No sections have been enabled for this view yet.</p>
-      <p class="text-gray-600 text-sm mt-2">Contact your Rank4AI account manager to configure your dashboard.</p>
     </div>
   ) : (
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
       {visibleSections.map((section) => {
         const data = sectionStatus[section.id] || {
-          status: 'not-connected',
-          statusText: 'Pending setup',
-          metric: '--',
-          metricLabel: '',
+          status: 'pending', statusText: 'Setting up', metric: '--', metricLabel: '',
         };
         return (
           <SectionCard

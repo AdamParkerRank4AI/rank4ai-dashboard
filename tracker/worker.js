@@ -490,6 +490,50 @@ export default {
       }
     }
 
+    // Delete file on GitHub
+    if (url.pathname === '/api/file' && request.method === 'DELETE') {
+      try {
+        const body = await request.json();
+        const { repo, path, sha, message, branch } = body;
+
+        if (!repo || !path || !sha || !env.GITHUB_TOKEN) {
+          return new Response(JSON.stringify({ error: 'repo, path, sha required' }), {
+            status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+          });
+        }
+
+        const resp = await fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
+          method: 'DELETE',
+          headers: {
+            'Authorization': `Bearer ${env.GITHUB_TOKEN}`,
+            'Accept': 'application/vnd.github.v3+json',
+            'User-Agent': 'Rank4AI-Dashboard',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            message: message || `Delete ${path} via dashboard`,
+            sha,
+            branch: branch || 'main',
+          }),
+        });
+
+        if (!resp.ok) {
+          const err = await resp.text();
+          return new Response(JSON.stringify({ error: `GitHub: ${resp.status}` }), {
+            status: resp.status, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+          });
+        }
+
+        return new Response(JSON.stringify({ ok: true }), {
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      } catch (e) {
+        return new Response(JSON.stringify({ error: e.message }), {
+          status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+    }
+
     // List files in a directory on GitHub
     if (url.pathname === '/api/files' && request.method === 'GET') {
       const repo = url.searchParams.get('repo');

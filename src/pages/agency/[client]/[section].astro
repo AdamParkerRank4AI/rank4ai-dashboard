@@ -780,13 +780,58 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
               ghLink.target = '_blank';
               ghLink.textContent = 'View on GitHub';
               ghLink.className = 'px-4 py-2 rounded text-xs bg-gray-700 text-gray-300 hover:bg-gray-600 transition';
+              var deleteBtn = document.createElement('button');
+              deleteBtn.textContent = 'Delete Page';
+              deleteBtn.className = 'px-4 py-2 rounded text-xs bg-red-900 text-red-300 hover:bg-red-800 transition';
+
               btnDiv.appendChild(saveBtn);
               btnDiv.appendChild(ghLink);
+              btnDiv.appendChild(deleteBtn);
               editorPanel.appendChild(btnDiv);
+
+              // Preview link
+              var previewDiv = document.createElement('div');
+              previewDiv.className = 'mt-3 pt-3 border-t border-gray-800';
+              var previewLink = document.createElement('a');
+              previewLink.href = 'https://' + (siteRepo.includes('market-invoice') ? 'www.marketinvoice.co.uk' : siteRepo.includes('seocompare') ? 'www.seocompare.co.uk' : 'adamparkerrank4ai.github.io/rank4ai-preview') + pagePath;
+              previewLink.target = '_blank';
+              previewLink.textContent = 'Preview live page →';
+              previewLink.className = 'text-xs text-blue-400 hover:text-blue-300';
+              previewDiv.appendChild(previewLink);
+              editorPanel.appendChild(previewDiv);
 
               // Close
               document.getElementById('close-editor').addEventListener('click', function() {
                 editorPanel.classList.add('hidden');
+              });
+
+              // Delete handler
+              deleteBtn.addEventListener('click', async function() {
+                if (!confirm('DELETE ' + pagePath + '?\n\nThis will remove the page from the site. It cannot be undone (without git revert).')) return;
+                if (!confirm('Are you REALLY sure? Type the page path in the next prompt if you want to proceed.')) return;
+                deleteBtn.textContent = 'Deleting...';
+                deleteBtn.disabled = true;
+                try {
+                  var delResp = await fetch(workerUrl + '/api/file', {
+                    method: 'DELETE',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                      repo: siteRepo, path: filePath, sha: data.sha,
+                      message: 'Delete ' + pagePath + ' via dashboard',
+                    }),
+                  });
+                  if (delResp.ok) {
+                    deleteBtn.textContent = 'Deleted';
+                    deleteBtn.style.background = '#166534';
+                    editorPanel.style.borderColor = '#166534';
+                  } else {
+                    deleteBtn.textContent = 'Error';
+                    deleteBtn.style.background = '#ef4444';
+                  }
+                } catch(e) {
+                  deleteBtn.textContent = 'Error';
+                  deleteBtn.style.background = '#ef4444';
+                }
               });
 
               // Save
