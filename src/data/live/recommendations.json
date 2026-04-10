@@ -1,9 +1,9 @@
 {
   "rank4ai": {
-    "generated_at": "2026-04-10T09:40:45.587504",
-    "total": 18,
+    "generated_at": "2026-04-10T10:51:17.851855",
+    "total": 19,
     "critical": 2,
-    "high": 5,
+    "high": 6,
     "medium": 11,
     "low": 0,
     "recommendations": [
@@ -74,6 +74,16 @@
           "/ai-search/comparisons/why-seo-changing",
           "/ai-search/ecosystem-validation/insights/do-directories-help-ai-recommendations",
           "/ai-seo/technical/ai-misinterpretation"
+        ]
+      },
+      {
+        "priority": "high",
+        "category": "Performance",
+        "title": "Mobile performance score is 39/100",
+        "detail": "Poor mobile performance affects user experience, search rankings, and Core Web Vitals. Actions: 1) Optimise images (WebP, lazy loading) 2) Reduce JavaScript 3) Implement critical CSS 4) Use CDN caching. Slow pages: /",
+        "impact": "medium",
+        "pages": [
+          "/"
         ]
       },
       {
@@ -215,7 +225,7 @@
     ]
   },
   "market-invoice": {
-    "generated_at": "2026-04-10T09:40:45.615216",
+    "generated_at": "2026-04-10T10:51:17.861454",
     "total": 18,
     "critical": 2,
     "high": 5,
@@ -361,7 +371,7 @@
         "priority": "medium",
         "category": "Schema",
         "title": "Schema gaps: No Organization or LocalBusiness schema \u2014 AI can't identify who you are; Missing content schema types: HowTo",
-        "detail": "Currently using: BreadcrumbList, FAQPage, Product, WebPage, Article, Service, WebApplication. No Organization or LocalBusiness schema \u2014 AI can't identify who you are Missing content schema types: HowTo. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
+        "detail": "Currently using: BreadcrumbList, FAQPage, Product, Article, WebApplication, WebPage, Service. No Organization or LocalBusiness schema \u2014 AI can't identify who you are Missing content schema types: HowTo. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
         "impact": "medium",
         "pages": []
       },
@@ -419,7 +429,7 @@
     ]
   },
   "seocompare": {
-    "generated_at": "2026-04-10T09:40:45.639505",
+    "generated_at": "2026-04-10T10:51:17.869291",
     "total": 15,
     "critical": 2,
     "high": 5,
