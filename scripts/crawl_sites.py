@@ -108,19 +108,30 @@ def crawl_site(site_id, config):
         canonical_tag = soup.find("link", attrs={"rel": "canonical"})
         canonical = canonical_tag.get("href", "") if canonical_tag else ""
 
-        # Schema detection
+        # Schema detection — including @graph nested items
         schemas = []
         for script in soup.find_all("script", type="application/ld+json"):
             try:
                 data = json.loads(script.string)
                 items = data if isinstance(data, list) else [data]
                 for item in items:
-                    if isinstance(item, dict) and "@type" in item:
-                        t = item["@type"]
-                        if isinstance(t, list):
-                            schemas.extend([str(x) for x in t])
-                        else:
-                            schemas.append(str(t))
+                    if isinstance(item, dict):
+                        # Direct @type
+                        if "@type" in item:
+                            t = item["@type"]
+                            if isinstance(t, list):
+                                schemas.extend([str(x) for x in t])
+                            else:
+                                schemas.append(str(t))
+                        # @graph array
+                        if "@graph" in item and isinstance(item["@graph"], list):
+                            for graph_item in item["@graph"]:
+                                if isinstance(graph_item, dict) and "@type" in graph_item:
+                                    t = graph_item["@type"]
+                                    if isinstance(t, list):
+                                        schemas.extend([str(x) for x in t])
+                                    else:
+                                        schemas.append(str(t))
             except:
                 pass
 

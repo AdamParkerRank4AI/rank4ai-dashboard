@@ -1,6 +1,6 @@
 {
   "rank4ai": {
-    "generated_at": "2026-04-10T15:28:23.612706",
+    "generated_at": "2026-04-10T17:08:16.657271",
     "total": 18,
     "critical": 2,
     "high": 6,
@@ -217,7 +217,7 @@
     ]
   },
   "market-invoice": {
-    "generated_at": "2026-04-10T15:28:23.619116",
+    "generated_at": "2026-04-10T17:08:16.668102",
     "total": 17,
     "critical": 2,
     "high": 5,
@@ -345,25 +345,18 @@
       {
         "priority": "medium",
         "category": "Schema",
-        "title": "8 pages missing structured data (285/300 have schema)",
-        "detail": "Pages with schema have 2.5x higher chance of AI citation. Add Article, FAQPage, or HowTo schema to these pages. Pages missing schema: /blog/, /about/, /locations/, /guides/, /industries/, /compare/, /providers/, /questions/",
+        "title": "1 pages missing structured data (285/300 have schema)",
+        "detail": "Pages with schema have 2.5x higher chance of AI citation. Add Article, FAQPage, or HowTo schema to these pages. Pages missing schema: /about/",
         "impact": "high",
         "pages": [
-          "/blog/",
-          "/about/",
-          "/locations/",
-          "/guides/",
-          "/industries/",
-          "/compare/",
-          "/providers/",
-          "/questions/"
+          "/about/"
         ]
       },
       {
         "priority": "medium",
         "category": "Schema",
         "title": "Schema gaps: No Organization or LocalBusiness schema \u2014 AI can't identify who you are; Missing content schema types: HowTo",
-        "detail": "Currently using: Product, BreadcrumbList, WebPage, WebApplication, Service, Article, FAQPage. No Organization or LocalBusiness schema \u2014 AI can't identify who you are Missing content schema types: HowTo. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
+        "detail": "Currently using: BreadcrumbList, Product, FAQPage, WebPage, Service, WebApplication, Article. No Organization or LocalBusiness schema \u2014 AI can't identify who you are Missing content schema types: HowTo. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
         "impact": "medium",
         "pages": []
       },
@@ -413,7 +406,7 @@
     ]
   },
   "seocompare": {
-    "generated_at": "2026-04-10T15:28:23.623227",
+    "generated_at": "2026-04-10T17:08:16.674107",
     "total": 15,
     "critical": 2,
     "high": 5,
@@ -520,7 +513,7 @@
         "priority": "medium",
         "category": "Schema",
         "title": "Schema gaps: No Organization or LocalBusiness schema \u2014 AI can't identify who you are; Missing content schema types: HowTo",
-        "detail": "Currently using: BreadcrumbList, WebPage, Service, Article, FAQPage. No Organization or LocalBusiness schema \u2014 AI can't identify who you are Missing content schema types: HowTo. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
+        "detail": "Currently using: BreadcrumbList, FAQPage, WebPage, Service, Article. No Organization or LocalBusiness schema \u2014 AI can't identify who you are Missing content schema types: HowTo. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
         "impact": "medium",
         "pages": []
       },

@@ -124,6 +124,20 @@ def main():
     else:
         log("Crawl already done today — skipping")
 
+    # Check if GA4 returned 0 users (token may have expired)
+    import json as check_json
+    ga4_file = os.path.join(PROJECT_DIR, "src", "data", "live", "ga4.json")
+    if os.path.exists(ga4_file):
+        try:
+            with open(ga4_file) as f:
+                ga4 = check_json.load(f)
+            for cid, data in ga4.items():
+                if data.get("overview", {}).get("active_users", 0) == 0:
+                    log(f"WARNING: GA4 shows 0 users for {cid} — token may have expired")
+                    log(f"  Run: cd ~/rank4ai-dashboard && python3 scripts/ga4_auth.py")
+        except:
+            pass
+
     # Validate data before deploying — don't deploy if key files are empty/corrupt
     log("\nValidating data files...")
     import json as vjson

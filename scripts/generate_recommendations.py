@@ -39,9 +39,18 @@ def generate_for_client(client_id):
     UTILITY_PATHS = ["/privacy", "/terms", "/cookie", "/disclaimer", "/contact",
                      "/404", "/accessibility", "/editorial", "/how-we-are-funded"]
 
+    # Index/listing pages that have site-wide schema, not page-specific
+    INDEX_PATHS = ["/blog/", "/guides/", "/questions/", "/providers/", "/industries/",
+                   "/locations/", "/compare/", "/best/", "/insights/", "/stats/"]
+
     def is_utility_page(path):
         path_lower = path.lower()
         return any(u in path_lower for u in UTILITY_PATHS)
+
+    def is_index_page(path):
+        """Check if path is a section index page (e.g. /blog/ not /blog/my-post)"""
+        path_lower = path.lower().rstrip("/") + "/"
+        return path_lower in INDEX_PATHS or path_lower == "/"
 
     # Training crawlers vs search crawlers — blocking training is fine
     TRAINING_CRAWLERS = ["ClaudeBot", "Claude-Web", "anthropic-ai", "Bytespider",
@@ -107,7 +116,7 @@ def generate_for_client(client_id):
     # SCHEMA MARKUP — specific pages missing schema
     # ============================================================
     if crawl:
-        pages_without_schema = [p for p in crawl.get("pages", []) if not p.get("schemas") and not is_utility_page(p.get("path", ""))]
+        pages_without_schema = [p for p in crawl.get("pages", []) if not p.get("schemas") and not is_utility_page(p.get("path", "")) and not is_index_page(p.get("path", ""))]
         pages_with_schema = crawl.get("pages_with_schema", 0)
         total_pages = crawl.get("pages_crawled", 0)
 
