@@ -35,8 +35,9 @@ function loadJson(filename: string) {
 
 const uptimeData = loadJson('uptime.json');
 const crawlData = loadJson(`crawl_${clientId}.json`);
-const citationData = loadJson('citations_by_type.json');
+const citationData = loadJson('citation_results.json') || loadJson('citations_by_type.json');
 const citationByType = loadJson('citations_by_type.json');
+const citResultsData = loadJson('citation_results.json');
 const ga4Data = loadJson('ga4.json');
 const gscData = loadJson('gsc.json');
 const bingData = loadJson('bing.json');
@@ -70,6 +71,7 @@ const citations = citationData?.[clientId];
 const bing = bingData?.[clientId];
 const audit = auditData?.[clientId];
 const citByType = citationByType?.[clientId];
+const citRes = citResultsData?.[clientId];
 const pagespeed = pagespeedData?.[clientId];
 const crawlActivity = crawlActivityData?.[clientId];
 const kg = kgData?.[clientId];
@@ -110,18 +112,18 @@ const sectionStatus: Record<string, any> = {
     metric: '--',
     metricLabel: 'AI readiness score',
   },
-  'ai-citations': citByType ? {
-    status: citByType.overall_rate >= 50 ? 'healthy' : citByType.overall_rate >= 10 ? 'warning' : 'error',
-    statusText: `${citByType.total_cited}/${citByType.total_queries} queries · Brand: ${citByType.by_type?.brand?.rate || 0}% · Industry: ${citByType.by_type?.best_of?.rate || 0}%`,
+  'ai-citations': citRes?.summary ? {
+    status: (citRes.summary.claude?.rate || 0) > 20 ? 'healthy' : (citRes.summary.claude?.rate || 0) > 0 ? 'warning' : 'error',
+    statusText: `C:${citRes.summary.claude?.rate || 0}% · G:${citRes.summary.chatgpt?.rate || 0}% · Gm:${citRes.summary.gemini?.rate || 0}%`,
+    metric: `${citRes.summary.claude?.rate || 0}%`,
+    metricLabel: `${citRes.total_prompts} prompts tested across Claude, ChatGPT, Gemini`,
+    lastUpdated: new Date(citRes.tested_at).toLocaleDateString('en-GB'),
+  } : citByType ? {
+    status: citByType.overall_rate >= 10 ? 'warning' : 'error',
+    statusText: `Claude: ${citByType.overall_rate}%`,
     metric: `${citByType.overall_rate}%`,
-    metricLabel: citByType.top_competitors?.length ? `Top competitor: ${citByType.top_competitors[0].name} (${citByType.top_competitors[0].mentions} mentions)` : 'No competitors detected',
+    metricLabel: 'Claude only — run baseline for all 3 models',
     lastUpdated: new Date(citByType.tested_at).toLocaleDateString('en-GB'),
-  } : citations ? {
-    status: citations.citation_rate >= 50 ? 'healthy' : citations.citation_rate >= 20 ? 'warning' : 'error',
-    statusText: `${citations.cited_count}/${citations.total_queries} queries cited`,
-    metric: `${citations.citation_rate}%`,
-    metricLabel: providerSummary,
-    lastUpdated: citations.tested_at ? new Date(citations.tested_at).toLocaleDateString('en-GB') : undefined,
   } : {
     status: 'not-connected',
     statusText: 'Run citation tests',
