@@ -43,6 +43,7 @@ const competitorAll = loadJson('competitor_serp.json');
 const recsAll = loadJson('recommendations.json');
 const newPagesAll = loadJson('new_pages.json');
 const citationPrompts = loadJson('citation_prompts.json');
+const citationResults = loadJson('citation_results.json');
 const dailyHistory = loadJson('daily_history.json');
 const crawlData = loadJson(`crawl_${clientId}.json`);
 const uptimeAll = loadJson('uptime.json');
@@ -62,6 +63,7 @@ const serp = serpAll?.[clientId];
 const competitors = competitorAll?.[clientId];
 const recs = recsAll?.[clientId];
 const newPagesDetail = newPagesAll?.[clientId];
+const citResults = citationResults?.[clientId];
 const prompts = citationPrompts?.[clientId];
 const history = dailyHistory?.[clientId] || [];
 const uptime = uptimeAll?.[clientId];
@@ -85,7 +87,7 @@ const crawlPages = JSON.stringify(crawlData?.pages || []);
 const crawlIssues = JSON.stringify(crawlData?.issues || []);
 const crawlLinks = JSON.stringify(crawlData?.links?.slice(0, 200) || []);
 const positiveSignals = JSON.stringify(crawlData?.positive_signals || []);
-const citationResults = JSON.stringify(citations?.results || []);
+const citationResultsJson = JSON.stringify(citations?.results || []);
 const uptimeChecks = JSON.stringify(uptimeHistory?.[clientId] || []);
 const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
 ---
@@ -329,477 +331,123 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
     </div>
   )}
 
-  <!-- AI CITATIONS -->
-  {sectionId === 'ai-citations' && (citByType || citations) && (
+  <!-- AI CITATIONS — Clean rebuild -->
+  {sectionId === 'ai-citations' && (
     <div>
-      {citByType ? (
-        <>
-          <!-- Bing Copilot citation banner -->
-          {bing?.top_queries?.length > 0 && (
-            <div class="bg-blue-950/30 border border-blue-800/50 rounded-lg p-4 mb-6 flex items-center justify-between">
-              <div>
-                <span class="text-sm text-blue-300 font-medium">Bing Copilot Citations</span>
-                <span class="text-xs text-gray-500 ml-2">From Bing AI Performance (live data)</span>
-              </div>
-              <div class="flex items-center gap-4">
-                <div class="text-right">
-                  <div class="text-xl font-bold text-blue-400">{bing.top_queries.reduce((sum: number, q: any) => sum + (q.Impressions || 0), 0)}</div>
-                  <div class="text-[10px] text-gray-500">Total Impressions</div>
-                </div>
-                <div class="text-right">
-                  <div class="text-lg font-bold text-white">{bing.top_queries.length}</div>
-                  <div class="text-[10px] text-gray-500">Queries</div>
-                </div>
-              </div>
-            </div>
-          )}
-
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-            <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
-              <div class={`text-2xl font-bold ${citByType.overall_rate >= 50 ? 'text-green-400' : citByType.overall_rate >= 10 ? 'text-yellow-400' : 'text-red-400'}`}>{citByType.overall_rate}%</div>
-              <div class="text-xs text-gray-500">Claude Citation Rate</div>
-            </div>
-            <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
-              <div class="text-2xl font-bold text-white">{citByType.total_cited}/{citByType.total_queries}</div>
-              <div class="text-xs text-gray-500">Queries Cited</div>
-            </div>
-            <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
-              <div class={`text-2xl font-bold ${(citByType.by_type?.brand?.rate || 0) >= 50 ? 'text-green-400' : 'text-red-400'}`}>{citByType.by_type?.brand?.rate || 0}%</div>
-              <div class="text-xs text-gray-500">Brand Queries</div>
-            </div>
-            <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
-              <div class="text-2xl font-bold text-white">Claude</div>
-              <div class="text-xs text-gray-500">Model Tested</div>
-            </div>
-          </div>
-
-          <!-- Citation rate by query type -->
-          <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
-            <h3 class="text-sm font-semibold text-gray-400 mb-4">Citation Rate by Query Type</h3>
-            <div class="space-y-3">
-              {Object.entries(citByType.by_type || {}).map(([type, data]: [string, any]) => (
-                <div class="flex items-center gap-4">
-                  <span class="text-xs text-gray-400 w-24 capitalize">{type.replace(/_/g, ' ')}</span>
-                  <div class="flex-1 bg-gray-800 rounded-full h-6 overflow-hidden">
-                    <div
-                      class={`h-full rounded-full flex items-center px-2 text-[10px] font-medium text-white ${data.rate >= 50 ? 'bg-green-600' : data.rate > 0 ? 'bg-yellow-600' : 'bg-red-900'}`}
-                      style={`width: ${Math.max(data.rate, 8)}%`}
-                    >
-                      {data.rate}%
-                    </div>
-                  </div>
-                  <span class="text-xs text-gray-500 w-16 text-right">{data.cited}/{data.queries}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <!-- Competitor mentions -->
-          {citByType.top_competitors?.length > 0 && (
-            <div class="bg-gray-900 border border-red-800/30 rounded-lg p-6 mb-6">
-              <h3 class="text-sm font-semibold text-red-400 mb-4">Who Gets Mentioned Instead</h3>
-              <div class="space-y-2">
-                {citByType.top_competitors.map((c: any) => (
-                  <div class="flex items-center gap-4">
-                    <span class="text-sm text-white w-40">{c.name}</span>
-                    <div class="flex-1 bg-gray-800 rounded-full h-5 overflow-hidden">
-                      <div class="h-full bg-red-600/60 rounded-full flex items-center px-2 text-[10px] text-white" style={`width: ${Math.max((c.mentions / citByType.total_queries) * 100, 5)}%`}>
-                        {c.mentions}x
-                      </div>
-                    </div>
-                    <span class="text-xs text-gray-500 w-20 text-right">in {c.mentions}/{citByType.total_queries} queries</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-        </>
-      ) : null}
-    </div>
-
-    <!-- Prompt Testing Section -->
-    {prompts && (
-      <div class="mt-8">
-        <div class="flex items-center justify-between mb-4">
-          <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Citation Prompt Testing</h2>
-          <div class="flex gap-2">
-            <button id="run-everything" class="px-3 py-1.5 rounded text-xs bg-green-600 text-white hover:bg-green-500 transition font-medium">
-              Run Everything
-            </button>
-            <button id="stop-running" class="hidden px-3 py-1.5 rounded text-xs bg-red-600 text-white hover:bg-red-500 transition font-medium">
-              Stop
-            </button>
-            <button id="run-all-high" class="px-3 py-1.5 rounded text-xs bg-red-600 text-white hover:bg-red-500 transition">
-              High Intent
-            </button>
-            <button id="run-all-discovery" class="px-3 py-1.5 rounded text-xs bg-blue-600 text-white hover:bg-blue-500 transition">
-              Discovery
-            </button>
-          </div>
-        </div>
-
-        <!-- Add prompt form -->
-        <div class="bg-gray-900 border border-dashed border-gray-700 rounded-lg p-4 mb-6">
-          <div class="flex items-center gap-3">
-            <input id="new-prompt-query" type="text" placeholder="Enter a new query to test..." class="flex-1 bg-gray-800 border border-gray-700 rounded px-3 py-2 text-xs text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none" />
-            <select id="new-prompt-type" class="bg-gray-800 border border-gray-700 rounded px-2 py-2 text-xs text-gray-300">
-              <option value="recommendation">Recommendation</option>
-              <option value="industry">Industry</option>
-              <option value="problem">Problem</option>
-              <option value="question">Question</option>
-              <option value="how_to">How-to</option>
-              <option value="comparison">Comparison</option>
-              <option value="brand">Brand</option>
-              <option value="cost">Cost</option>
-              <option value="local">Local</option>
-              <option value="review">Review</option>
-            </select>
-            <select id="new-prompt-group" class="bg-gray-800 border border-gray-700 rounded px-2 py-2 text-xs text-gray-300">
-              <option value="high_intent">High Intent</option>
-              <option value="discovery">Discovery</option>
-            </select>
-            <button id="add-prompt-btn" class="px-3 py-2 rounded text-xs bg-green-600 text-white hover:bg-green-500 transition">
-              + Add
-            </button>
-          </div>
-        </div>
-
-        {prompts.high_intent?.length > 0 && (
-          <div class="mb-6">
-            <h3 class="text-xs text-red-400 font-semibold mb-3 uppercase tracking-wider">
-              High Intent ({prompts.high_intent.length} prompts)
-              <span class="text-gray-500 normal-case font-normal ml-2">Recommendation, industry, problem queries — where citations drive business</span>
-            </h3>
-            <div class="space-y-2" id="high-intent-prompts">
-              {prompts.high_intent.map((p: any) => (
-                <div class="prompt-row flex items-center gap-3 p-3 rounded-lg bg-gray-900 border border-gray-800" data-prompt-id={p.id} data-query={p.query} data-group="high_intent">
-                  <span class={`text-[10px] px-1.5 py-0.5 rounded ${p.type === 'recommendation' ? 'bg-red-900/50 text-red-300' : p.type === 'problem' ? 'bg-yellow-900/50 text-yellow-300' : p.type === 'industry' ? 'bg-blue-900/50 text-blue-300' : 'bg-gray-800 text-gray-400'}`}>{p.type}</span>
-                  <span class="text-xs text-gray-300 flex-1">{p.query}</span>
-                  <span class="text-[10px] text-gray-600">{p.source}</span>
-                  <span class="result-indicator text-xs" data-result-for={p.id}></span>
-                  <button class="run-single-btn px-2 py-1 rounded text-[10px] bg-gray-700 text-gray-300 hover:bg-gray-600 hover:text-white transition" data-prompt-id={p.id} data-query={p.query}>
-                    Run
-                  </button>
-                  <button class="remove-prompt-btn px-1.5 py-0.5 rounded text-[10px] bg-gray-800 text-gray-500 hover:bg-red-900 hover:text-red-300 transition" data-prompt-id={p.id} title="Remove prompt">x</button>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {prompts.discovery?.length > 0 && (
+      <!-- Bing Copilot banner -->
+      {bing?.top_queries?.length > 0 && (
+        <div class="bg-blue-950/30 border border-blue-800/50 rounded-lg p-4 mb-6 flex items-center justify-between">
           <div>
-            <h3 class="text-xs text-blue-400 font-semibold mb-3 uppercase tracking-wider">
-              Discovery ({prompts.discovery.length} prompts)
-              <span class="text-gray-500 normal-case font-normal ml-2">Brand, question, how-to, comparison — builds authority</span>
-            </h3>
-            <div class="space-y-2" id="discovery-prompts">
-              {prompts.discovery.map((p: any) => (
-                <div class="prompt-row flex items-center gap-3 p-3 rounded-lg bg-gray-900 border border-gray-800" data-prompt-id={p.id} data-query={p.query} data-group="discovery">
-                  <span class={`text-[10px] px-1.5 py-0.5 rounded ${p.type === 'brand' ? 'bg-green-900/50 text-green-300' : p.type === 'question' ? 'bg-purple-900/50 text-purple-300' : p.type === 'how_to' ? 'bg-cyan-900/50 text-cyan-300' : p.type === 'comparison' ? 'bg-orange-900/50 text-orange-300' : 'bg-gray-800 text-gray-400'}`}>{p.type}</span>
-                  <span class="text-xs text-gray-300 flex-1">{p.query}</span>
-                  <span class="text-[10px] text-gray-600">{p.source}</span>
-                  <span class="result-indicator text-xs" data-result-for={p.id}></span>
-                  <button class="run-single-btn px-2 py-1 rounded text-[10px] bg-gray-700 text-gray-300 hover:bg-gray-600 hover:text-white transition" data-prompt-id={p.id} data-query={p.query}>
-                    Run
-                  </button>
-                  <button class="remove-prompt-btn px-1.5 py-0.5 rounded text-[10px] bg-gray-800 text-gray-500 hover:bg-red-900 hover:text-red-300 transition" data-prompt-id={p.id} title="Remove prompt">x</button>
-                </div>
-              ))}
+            <span class="text-sm text-blue-300 font-medium">Bing Copilot</span>
+            <span class="text-xs text-gray-500 ml-2">Live AI citations from Microsoft</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="text-right">
+              <div class="text-xl font-bold text-blue-400">{bing.top_queries.reduce((sum: number, q: any) => sum + (q.Impressions || 0), 0)}</div>
+              <div class="text-[10px] text-gray-500">Impressions</div>
             </div>
           </div>
-        )}
+        </div>
+      )}
 
-        {prompts.faq?.length > 0 && (
-          <div class="mt-6">
-            <h3 class="text-xs text-green-400 font-semibold mb-3 uppercase tracking-wider">Genuine Questions ({prompts.faq.length} FAQs) <span class="text-gray-500 normal-case font-normal ml-2">Real questions — not keyword variations</span></h3>
-            <div class="space-y-2" id="faq-prompts">
-              {prompts.faq.map((p: any) => (
-                <div class="prompt-row flex items-center gap-3 p-3 rounded-lg bg-gray-900 border border-gray-800" data-prompt-id={p.id} data-query={p.query} data-group="faq">
-                  <span class={`text-[10px] px-1.5 py-0.5 rounded ${p.type === 'question' ? 'bg-purple-900/50 text-purple-300' : p.type === 'how_to' ? 'bg-cyan-900/50 text-cyan-300' : 'bg-gray-800 text-gray-400'}`}>{p.type}</span>
-                  <span class="text-xs text-gray-300 flex-1">{p.query}</span>
-                  <span class="text-[10px] text-gray-600">{p.source}</span>
-                  {p.page_url && <span class="text-[10px] text-blue-400/60">→ {p.page_url}</span>}
-                  <span class="result-indicator text-xs" data-result-for={p.id}></span>
-                  <button class="run-single-btn px-2 py-1 rounded text-[10px] bg-gray-700 text-gray-300 hover:bg-gray-600 hover:text-white transition" data-prompt-id={p.id} data-query={p.query}>Run</button>
-                  <button class="remove-prompt-btn px-1.5 py-0.5 rounded text-[10px] bg-gray-800 text-gray-500 hover:bg-red-900 hover:text-red-300 transition" data-prompt-id={p.id}>x</button>
-                </div>
-              ))}
-            </div>
+      <!-- Summary stats from baseline results -->
+      {citResults?.summary ? (
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+          <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+            <div class={`text-2xl font-bold ${citResults.summary.claude.rate > 20 ? 'text-green-400' : citResults.summary.claude.rate > 0 ? 'text-yellow-400' : 'text-red-400'}`}>{citResults.summary.claude.rate}%</div>
+            <div class="text-xs text-gray-500">Claude</div>
           </div>
-        )}
-      </div>
-    )}
+          <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+            <div class={`text-2xl font-bold ${citResults.summary.chatgpt.rate > 20 ? 'text-green-400' : citResults.summary.chatgpt.rate > 0 ? 'text-yellow-400' : 'text-red-400'}`}>{citResults.summary.chatgpt.rate}%</div>
+            <div class="text-xs text-gray-500">ChatGPT</div>
+          </div>
+          <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+            <div class={`text-2xl font-bold ${citResults.summary.gemini.rate > 20 ? 'text-green-400' : citResults.summary.gemini.rate > 0 ? 'text-yellow-400' : 'text-red-400'}`}>{citResults.summary.gemini.rate}%</div>
+            <div class="text-xs text-gray-500">Gemini</div>
+          </div>
+          <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+            <div class="text-2xl font-bold text-white">{citResults.total_prompts}</div>
+            <div class="text-xs text-gray-500">Prompts Tested</div>
+          </div>
+        </div>
+      ) : citByType ? (
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+            <div class={`text-2xl font-bold ${citByType.overall_rate >= 10 ? 'text-yellow-400' : 'text-red-400'}`}>{citByType.overall_rate}%</div>
+            <div class="text-xs text-gray-500">Claude (old test)</div>
+          </div>
+        </div>
+      ) : null}
 
-    <script define:vars={{ clientBrand: citByType?.brand || client?.name, clientDomain: client?.domain, workerUrl: 'https://rank4ai-tracker.dawn-field-3d16.workers.dev' }}>
-      // Load previous results on page load
-      async function loadPreviousResults() {
-        const rows = document.querySelectorAll('.prompt-row[data-prompt-id]');
-        for (const row of rows) {
-          const promptId = row.getAttribute('data-prompt-id');
-          if (!promptId) continue;
-          try {
-            const resp = await fetch(`${workerUrl}/api/citation-history?id=${encodeURIComponent(promptId)}&days=7`);
-            if (!resp.ok) continue;
-            const data = await resp.json();
-            if (data.history && data.history.length > 0) {
-              const latest = data.history[data.history.length - 1];
-              const indicator = document.querySelector(`[data-result-for="${promptId}"]`);
-              if (indicator && latest.results) {
-                let html = '';
-                const c = latest.results.claude;
-                const g = latest.results.chatgpt;
-                const gm = latest.results.gemini;
-                if (c) html += `<span class="${c.cited ? 'text-green-400' : 'text-red-400'}">C:${c.cited ? 'Y' : 'N'}</span>`;
-                if (g) html += ` <span class="${g.cited ? 'text-green-400' : 'text-red-400'}">G:${g.cited ? 'Y' : 'N'}</span>`;
-                if (gm) html += ` <span class="${gm.cited ? 'text-green-400' : 'text-red-400'}">Gm:${gm.cited ? 'Y' : 'N'}</span>`;
-                if (html) {
-                  const date = new Date(latest.tested_at).toLocaleDateString('en-GB', {day:'numeric',month:'short'});
-                  indicator.innerHTML = html + ` <span class="text-gray-600 text-[9px]">(${date})</span>`;
-                }
-              }
-            }
-          } catch {}
-        }
-      }
+      <!-- Results by category (from baseline results) -->
+      {citResults?.by_category && (
+        <div class="mb-6">
+          <h3 class="text-sm font-semibold text-gray-400 mb-4">Results by Category</h3>
+          <div class="space-y-3">
+            {Object.entries(citResults.by_category).map(([cat, data]: [string, any]) => (
+              <div class="flex items-center gap-4">
+                <span class="text-xs text-gray-400 w-28 capitalize">{cat.replace(/_/g, ' ')}</span>
+                <div class="flex-1 grid grid-cols-3 gap-2">
+                  <div class="bg-gray-800 rounded h-6 flex items-center px-2">
+                    <span class={`text-[10px] ${data.claude_rate > 0 ? 'text-green-400' : 'text-red-400'}`}>C: {data.claude_rate}%</span>
+                  </div>
+                  <div class="bg-gray-800 rounded h-6 flex items-center px-2">
+                    <span class={`text-[10px] ${data.chatgpt_rate > 0 ? 'text-green-400' : 'text-red-400'}`}>G: {data.chatgpt_rate}%</span>
+                  </div>
+                  <div class="bg-gray-800 rounded h-6 flex items-center px-2">
+                    <span class={`text-[10px] ${data.gemini_rate > 0 ? 'text-green-400' : 'text-red-400'}`}>Gm: {data.gemini_rate}%</span>
+                  </div>
+                </div>
+                <span class="text-xs text-gray-500 w-12 text-right">{data.total}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
-      // Load results for first 20 prompts (don't hammer the API)
-      (async () => {
-        const rows = Array.from(document.querySelectorAll('.prompt-row[data-prompt-id]')).slice(0, 20);
-        for (const row of rows) {
-          const promptId = row.getAttribute('data-prompt-id');
-          try {
-            const resp = await fetch(`${workerUrl}/api/citation-history?id=${encodeURIComponent(promptId)}&days=7`);
-            if (!resp.ok) continue;
-            const data = await resp.json();
-            if (data.history?.length > 0) {
-              const latest = data.history[data.history.length - 1];
-              const indicator = document.querySelector(`[data-result-for="${promptId}"]`);
-              if (indicator && latest.results) {
-                let html = '';
-                const c = latest.results.claude;
-                const g = latest.results.chatgpt;
-                const gm = latest.results.gemini;
-                if (c) html += `<span class="${c.cited ? 'text-green-400' : 'text-red-400'}">C:${c.cited ? 'Y' : 'N'}</span>`;
-                if (g) html += ` <span class="${g.cited ? 'text-green-400' : 'text-red-400'}">G:${g.cited ? 'Y' : 'N'}</span>`;
-                if (gm) html += ` <span class="${gm.cited ? 'text-green-400' : 'text-red-400'}">Gm:${gm.cited ? 'Y' : 'N'}</span>`;
-                if (html) {
-                  const date = new Date(latest.tested_at).toLocaleDateString('en-GB', {day:'numeric',month:'short'});
-                  indicator.innerHTML = html + ` <span class="text-gray-600 text-[9px]">(${date})</span>`;
-                }
-              }
-            }
-          } catch {}
-        }
-      })();
+      <!-- Individual results -->
+      {citResults?.results && (
+        <div class="mb-6">
+          <h3 class="text-sm font-semibold text-gray-400 mb-4">Individual Results ({citResults.results.length} tested)</h3>
+          <div class="space-y-2 max-h-[500px] overflow-y-auto">
+            {citResults.results.map((r: any) => (
+              <div class={`flex items-center gap-3 p-3 rounded-lg border ${(r.claude?.cited || r.chatgpt?.cited || r.gemini?.cited) ? 'border-green-800/50 bg-green-950/10' : 'border-gray-800 bg-gray-900'}`}>
+                <span class="text-[10px] px-1.5 py-0.5 rounded bg-gray-800 text-gray-400 flex-shrink-0">{r.type}</span>
+                <span class="text-xs text-gray-300 flex-1">{r.query}</span>
+                {r.page_url && <span class="text-[10px] text-blue-400/50">→ {r.page_url}</span>}
+                <span class={`text-[10px] ${r.claude?.cited ? 'text-green-400' : 'text-red-400'}`}>C:{r.claude?.cited ? 'Y' : 'N'}</span>
+                <span class={`text-[10px] ${r.chatgpt?.cited ? 'text-green-400' : 'text-red-400'}`}>G:{r.chatgpt?.cited ? 'Y' : 'N'}</span>
+                <span class={`text-[10px] ${r.gemini?.cited ? 'text-green-400' : 'text-red-400'}`}>Gm:{r.gemini?.cited ? 'Y' : 'N'}</span>
+              </div>
+            ))}
+          </div>
+          {citResults.tested_at && (
+            <p class="text-[10px] text-gray-600 mt-2">Last tested: {new Date(citResults.tested_at).toLocaleDateString('en-GB', {day:'numeric', month:'long', year:'numeric', hour:'2-digit', minute:'2-digit'})}</p>
+          )}
+        </div>
+      )}
 
-      async function runCitation(promptId, query, btn) {
-        btn.textContent = 'Testing...';
-        btn.disabled = true;
-        btn.style.background = '#374151';
-
-        try {
-          const resp = await fetch(`${workerUrl}/test-citation`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              query, brand: clientBrand, domain: clientDomain, id: promptId,
-            }),
-          });
-
-          if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-          const data = await resp.json();
-
-          // Update result indicator
-          const indicator = document.querySelector(`[data-result-for="${promptId}"]`);
-          if (indicator) {
-            const claudeCited = data.results?.claude?.cited;
-            const gptCited = data.results?.chatgpt?.cited;
-            let html = '';
-            const gemCited = data.results?.gemini?.cited;
-            if (claudeCited !== undefined) html += `<span class="${claudeCited ? 'text-green-400' : 'text-red-400'}">C:${claudeCited ? 'Y' : 'N'}</span>`;
-            if (gptCited !== undefined) html += ` <span class="${gptCited ? 'text-green-400' : 'text-red-400'}">G:${gptCited ? 'Y' : 'N'}</span>`;
-            if (gemCited !== undefined) html += ` <span class="${gemCited ? 'text-green-400' : 'text-red-400'}">Gm:${gemCited ? 'Y' : 'N'}</span>`;
-            indicator.innerHTML = html;
-          }
-
-          // Update row styling
-          const row = btn.closest('.prompt-row');
-          if (row) {
-            const anyCited = data.results?.claude?.cited || data.results?.chatgpt?.cited || data.results?.gemini?.cited;
-            row.style.borderColor = anyCited ? '#166534' : '#7f1d1d';
-            row.style.background = anyCited ? 'rgba(22, 101, 52, 0.1)' : '';
-          }
-
-          btn.textContent = 'Done';
-          btn.style.background = '#22c55e';
-          setTimeout(() => { btn.textContent = 'Run'; btn.style.background = ''; btn.disabled = false; }, 3000);
-
-        } catch (e) {
-          btn.textContent = 'Error';
-          btn.style.background = '#ef4444';
-          setTimeout(() => { btn.textContent = 'Run'; btn.style.background = ''; btn.disabled = false; }, 3000);
-        }
-      }
-
-      // Single run buttons
-      document.querySelectorAll('.run-single-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          const promptId = btn.getAttribute('data-prompt-id');
-          const query = btn.getAttribute('data-query');
-          runCitation(promptId, query, btn);
-        });
-      });
-
-      // Run all high intent
-      document.getElementById('run-all-high')?.addEventListener('click', async function() {
-        this.textContent = 'Running...';
-        this.disabled = true;
-        const btns = document.querySelectorAll('#high-intent-prompts .run-single-btn');
-        for (const btn of btns) {
-          const promptId = btn.getAttribute('data-prompt-id');
-          const query = btn.getAttribute('data-query');
-          await runCitation(promptId, query, btn);
-          await new Promise(r => setTimeout(r, 500)); // Small delay between calls
-        }
-        this.textContent = 'Run All High Intent';
-        this.disabled = false;
-      });
-
-      // Run all discovery
-      document.getElementById('run-all-discovery')?.addEventListener('click', async function() {
-        this.textContent = 'Running...';
-        this.disabled = true;
-        const btns = document.querySelectorAll('#discovery-prompts .run-single-btn');
-        for (const btn of btns) {
-          const promptId = btn.getAttribute('data-prompt-id');
-          const query = btn.getAttribute('data-query');
-          await runCitation(promptId, query, btn);
-          await new Promise(r => setTimeout(r, 500));
-        }
-        this.textContent = 'Run All Discovery';
-        this.disabled = false;
-      });
-
-      // Run Everything with Stop support
-      let stopRequested = false;
-      const stopBtn = document.getElementById('stop-running');
-
-      stopBtn?.addEventListener('click', () => {
-        stopRequested = true;
-        stopBtn.textContent = 'Stopping...';
-      });
-
-      document.getElementById('run-everything')?.addEventListener('click', async function() {
-        stopRequested = false;
-        this.textContent = 'Running...';
-        this.disabled = true;
-        stopBtn.classList.remove('hidden');
-
-        const allBtns = document.querySelectorAll('.run-single-btn');
-        const total = allBtns.length;
-        let done = 0;
-        let cited = 0;
-
-        for (const btn of allBtns) {
-          if (stopRequested) break;
-          const row = btn.closest('.prompt-row');
-          if (row && (row.dataset.parked === 'true' || row.dataset.done === 'true' || row.dataset.removed === 'true')) continue;
-          const promptId = btn.getAttribute('data-prompt-id');
-          const query = btn.getAttribute('data-query');
-          await runCitation(promptId, query, btn);
-          done++;
-          // Count cited
-          const indicator = document.querySelector(`[data-result-for="${promptId}"]`);
-          if (indicator && indicator.innerHTML.includes('text-green-400')) cited++;
-          this.textContent = `Running... ${done}/${total} (${cited} cited)`;
-          await new Promise(r => setTimeout(r, 500));
-        }
-
-        stopBtn.classList.add('hidden');
-        const status = stopRequested ? `Stopped (${done} tested, ${cited} cited)` : `Done (${done} tested, ${cited} cited)`;
-        this.textContent = status;
-        setTimeout(() => { this.textContent = 'Run Everything'; this.disabled = false; }, 5000);
-      });
-
-      // Remove prompt
-      document.querySelectorAll('.remove-prompt-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          const row = btn.closest('.prompt-row');
-          if (row && confirm('Remove this prompt?')) {
-            row.style.opacity = '0.3';
-            row.style.pointerEvents = 'none';
-            row.dataset.removed = 'true';
-          }
-        });
-      });
-
-      // Add new prompt
-      document.getElementById('add-prompt-btn')?.addEventListener('click', () => {
-        const queryInput = document.getElementById('new-prompt-query');
-        const typeSelect = document.getElementById('new-prompt-type');
-        const groupSelect = document.getElementById('new-prompt-group');
-
-        const query = queryInput.value.trim();
-        if (!query) { queryInput.focus(); return; }
-
-        const type = typeSelect.value;
-        const group = groupSelect.value;
-        const id = 'custom-' + Date.now();
-
-        const typeColors = {
-          recommendation: 'bg-red-900/50 text-red-300',
-          industry: 'bg-blue-900/50 text-blue-300',
-          problem: 'bg-yellow-900/50 text-yellow-300',
-          brand: 'bg-green-900/50 text-green-300',
-          question: 'bg-purple-900/50 text-purple-300',
-          how_to: 'bg-cyan-900/50 text-cyan-300',
-          comparison: 'bg-orange-900/50 text-orange-300',
-          cost: 'bg-gray-800 text-gray-400',
-          local: 'bg-gray-800 text-gray-400',
-          review: 'bg-gray-800 text-gray-400',
-        };
-
-        const row = document.createElement('div');
-        row.className = 'prompt-row flex items-center gap-3 p-3 rounded-lg bg-gray-900 border border-green-800/50';
-        row.dataset.promptId = id;
-        row.dataset.query = query;
-        row.dataset.group = group;
-        row.innerHTML = `
-          <span class="text-[10px] px-1.5 py-0.5 rounded ${typeColors[type] || 'bg-gray-800 text-gray-400'}">${type}</span>
-          <span class="text-xs text-gray-300 flex-1">${query}</span>
-          <span class="text-[10px] text-green-400">new</span>
-          <span class="result-indicator text-xs" data-result-for="${id}"></span>
-          <button class="run-single-btn px-2 py-1 rounded text-[10px] bg-gray-700 text-gray-300 hover:bg-gray-600 hover:text-white transition" data-prompt-id="${id}" data-query="${query}">Run</button>
-          <button class="remove-prompt-btn px-1.5 py-0.5 rounded text-[10px] bg-gray-800 text-gray-500 hover:bg-red-900 hover:text-red-300 transition" data-prompt-id="${id}" title="Remove">x</button>
-        `;
-
-        // Add Run handler
-        row.querySelector('.run-single-btn').addEventListener('click', (e) => {
-          e.stopPropagation();
-          runCitation(id, query, row.querySelector('.run-single-btn'));
-        });
-
-        // Add Remove handler
-        row.querySelector('.remove-prompt-btn').addEventListener('click', (e) => {
-          e.stopPropagation();
-          if (confirm('Remove this prompt?')) {
-            row.style.opacity = '0.3';
-            row.style.pointerEvents = 'none';
-          }
-        });
-
-        const container = document.getElementById(group === 'high_intent' ? 'high-intent-prompts' : 'discovery-prompts');
-        if (container) container.appendChild(row);
-
-        queryInput.value = '';
-        queryInput.focus();
-      });
-    </script>
+      <!-- Competitor mentions (from old data if available) -->
+      {citByType?.top_competitors?.length > 0 && (
+        <div class="bg-gray-900 border border-red-800/30 rounded-lg p-6 mb-6">
+          <h3 class="text-sm font-semibold text-red-400 mb-4">Who Gets Mentioned Instead</h3>
+          <div class="space-y-2">
+            {citByType.top_competitors.map((c: any) => (
+              <div class="flex items-center gap-4">
+                <span class="text-sm text-white w-40">{c.name}</span>
+                <div class="flex-1 bg-gray-800 rounded-full h-5 overflow-hidden">
+                  <div class="h-full bg-red-600/60 rounded-full flex items-center px-2 text-[10px] text-white" style={`width: ${Math.max((c.mentions / (citByType.total_queries || 1)) * 100, 5)}%`}>
+                    {c.mentions}x
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
   )}
+
 
   <!-- UPTIME -->
   {sectionId === 'uptime' && uptime && (
@@ -1968,7 +1616,6 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
         }
       });
     }
-  }
 
     // Crawl activity chart
     const crawlData = JSON.parse(crawlDaily);
@@ -2085,7 +1732,6 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
         }
       }
     }
-  }
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', renderCharts);
