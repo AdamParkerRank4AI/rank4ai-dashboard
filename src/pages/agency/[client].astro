@@ -35,7 +35,7 @@ function loadJson(filename: string) {
 
 const uptimeData = loadJson('uptime.json');
 const crawlData = loadJson(`crawl_${clientId}.json`);
-const citationData = loadJson('promptfoo_citations.json') || loadJson('ai_citations.json');
+const citationData = loadJson('promptfoo_citations.json');
 const citationByType = loadJson('citations_by_type.json');
 const ga4Data = loadJson('ga4.json');
 const gscData = loadJson('gsc.json');

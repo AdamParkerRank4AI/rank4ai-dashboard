@@ -81,6 +81,18 @@ def main():
     log("Dashboard refresh started")
     log("=" * 50)
 
+    # Backup current live data before refreshing
+    import shutil
+    backup_dir = os.path.join(PROJECT_DIR, "src", "data", "live_backup")
+    live_dir = os.path.join(PROJECT_DIR, "src", "data", "live")
+    try:
+        if os.path.exists(backup_dir):
+            shutil.rmtree(backup_dir)
+        shutil.copytree(live_dir, backup_dir)
+        log(f"Backed up live data to live_backup/")
+    except Exception as e:
+        log(f"Backup failed: {e} — continuing anyway")
+
     # Run data collection scripts (order matters — crawl first, then analysis)
     scripts = [
         ("check_uptime.py", 30),
@@ -111,6 +123,37 @@ def main():
             open(crawl_marker, "w").close()
     else:
         log("Crawl already done today — skipping")
+
+    # Validate data before deploying — don't deploy if key files are empty/corrupt
+    log("\nValidating data files...")
+    import json as vjson
+    critical_files = [
+        "src/data/live/crawl_rank4ai.json",
+        "src/data/live/recommendations.json",
+        "src/data/live/uptime.json",
+    ]
+    data_ok = True
+    for cf in critical_files:
+        full_path = os.path.join(PROJECT_DIR, cf)
+        if not os.path.exists(full_path):
+            log(f"  MISSING: {cf}")
+            # Don't fail — file might not exist yet
+            continue
+        try:
+            with open(full_path) as f:
+                data = vjson.load(f)
+            size = os.path.getsize(full_path)
+            if size < 10:
+                log(f"  WARNING: {cf} is only {size} bytes — may be empty")
+            else:
+                log(f"  OK: {cf} ({size // 1024}KB)")
+        except vjson.JSONDecodeError as e:
+            log(f"  CORRUPT: {cf} — {e}")
+            data_ok = False
+
+    if not data_ok:
+        log("DATA VALIDATION FAILED — skipping deploy to protect live site")
+        return
 
     # Build and deploy
     build_and_deploy()
