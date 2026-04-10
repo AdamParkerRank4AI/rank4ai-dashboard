@@ -75,23 +75,20 @@ def track_client(client_id):
     current_pages = {p["url"]: p for p in crawl.get("pages", [])}
     current_urls = set(current_pages.keys())
 
-    # Load baseline
-    baseline_file = os.path.join(SNAPSHOTS_DIR, client_id, "baseline.json")
+    # Load baseline — check crawl_baseline.json first, then baseline.json
     baseline_urls = set()
+    baseline_crawl_file = os.path.join(SNAPSHOTS_DIR, client_id, "crawl_baseline.json")
+    baseline_file = os.path.join(SNAPSHOTS_DIR, client_id, "baseline.json")
 
-    if os.path.exists(baseline_file):
+    if os.path.exists(baseline_crawl_file):
+        with open(baseline_crawl_file) as f:
+            bl_crawl = json.load(f)
+        baseline_urls = set(p["url"] for p in bl_crawl.get("pages", []))
+    elif os.path.exists(baseline_file):
         with open(baseline_file) as f:
             baseline = json.load(f)
-        # The baseline might have a crawl section with page count but not URLs
-        # Check if we have a baseline crawl file
-        baseline_crawl_file = os.path.join(SNAPSHOTS_DIR, client_id, "crawl_baseline.json")
-        if os.path.exists(baseline_crawl_file):
-            with open(baseline_crawl_file) as f:
-                bl_crawl = json.load(f)
-            baseline_urls = set(p["url"] for p in bl_crawl.get("pages", []))
 
     # If no baseline crawl saved, save current as baseline for future comparison
-    baseline_crawl_file = os.path.join(SNAPSHOTS_DIR, client_id, "crawl_baseline.json")
     if not os.path.exists(baseline_crawl_file):
         os.makedirs(os.path.dirname(baseline_crawl_file), exist_ok=True)
         # Save just URLs and basic info (not full crawl data)
