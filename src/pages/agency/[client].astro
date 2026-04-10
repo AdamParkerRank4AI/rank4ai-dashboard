@@ -698,8 +698,12 @@ function daysUntil(dateStr: string): number {
   document.querySelectorAll('[data-chart-panel]').forEach(panel => {
     panel.addEventListener('render-chart', async (e) => {
       const id = e.detail.id;
-      const dataStr = JSON.stringify(chartDataMap[id] || '[]');
-      const data = JSON.parse(JSON.parse(dataStr));
+      let data;
+      try {
+        const raw = chartDataMap[id];
+        if (!raw) return;
+        data = typeof raw === 'string' ? JSON.parse(raw) : raw;
+      } catch(e) { return; }
 
       if (!data || data.length === 0) return;
 

@@ -12,9 +12,69 @@ from urllib.parse import urlparse
 LIVE_DIR = os.path.expanduser("~/rank4ai-dashboard/src/data/live")
 OUTPUT = os.path.join(LIVE_DIR, "citation_prompts.json")
 
-# Modifiers to expand key pages
-MODIFIERS = ["best", "top", "top 5", "compare", "recommended", "affordable", "reviewed"]
-GEOGRAPHIES = ["UK", "London", "Manchester"]
+# Modifiers to expand key pages into prompt variations
+MODIFIERS = ["best", "top", "top 5", "top 10", "compare", "recommended", "cheapest", "reviewed"]
+GEOGRAPHIES = ["UK", "London", "Manchester", "near me"]
+
+# Category words that indicate a page targets a specific vertical
+CATEGORY_WORDS = ["agencies", "companies", "firms", "providers", "tools", "services", "consultants", "brokers"]
+
+
+def extract_core_topic(h1):
+    """Extract the core topic from an H1, stripping modifiers and dates."""
+    h1_lower = h1.lower().strip()
+    # Remove common prefixes
+    for prefix in ["best ", "top ", "top 5 ", "top 10 ", "compare ", "the ", "a guide to ", "guide to "]:
+        if h1_lower.startswith(prefix):
+            h1_lower = h1_lower[len(prefix):]
+    # Remove year suffixes
+    import re
+    h1_lower = re.sub(r'\s*\d{4}\s*$', '', h1_lower)
+    # Remove trailing geography
+    for geo in ["uk", "london", "manchester", "birmingham", "near me"]:
+        if h1_lower.endswith(f" {geo}"):
+            h1_lower = h1_lower[:-len(geo)-1]
+    return h1_lower.strip()
+
+
+def generate_modifier_variants(h1, path):
+    """Generate prompt variations using the modifier grid for key pages."""
+    variants = []
+    core_topic = extract_core_topic(h1)
+
+    if not core_topic or len(core_topic) < 5:
+        return []
+
+    # Skip if core topic looks like a CTA rather than a category
+    skip_words = ["get free", "start", "sign up", "contact", "request", "apply"]
+    if any(w in core_topic.lower() for w in skip_words):
+        return []
+
+    # Only generate variants for industry/comparison/best-of pages
+    path_lower = path.lower()
+    h1_lower = h1.lower()
+    is_expandable = (
+        "/best/" in path_lower or
+        any(word in h1_lower for word in ["best", "top", "compare", "leading", "cheapest"])
+    )
+
+    if not is_expandable:
+        return []
+
+    # Generate: modifier + core_topic + geography
+    for modifier in MODIFIERS[:5]:  # Limit to top 5 modifiers
+        # Skip if H1 already starts with this modifier
+        if h1_lower.startswith(modifier):
+            continue
+        variant = f"{modifier} {core_topic}"
+        variants.append(variant)
+
+    # Add geography variants for the top modifier only
+    for geo in GEOGRAPHIES[:2]:  # UK + London only
+        if geo.lower() not in h1_lower:
+            variants.append(f"best {core_topic} {geo}")
+
+    return variants
 
 
 def classify_prompt_type(h1, path):
@@ -124,6 +184,22 @@ def generate_for_client(client_id):
         }
 
         page_prompts[group].append(prompt)
+
+        # Generate modifier variants for key pages
+        variants = generate_modifier_variants(h1, path)
+        for variant in variants:
+            v_lower = variant.lower().strip()
+            if v_lower in seen_queries:
+                continue
+            seen_queries.add(v_lower)
+            v_id = f"{client_id}-var-{len(seen_queries)}"
+            page_prompts["high_intent"].append({
+                "id": v_id,
+                "type": "industry",
+                "query": variant,
+                "source": "modifier",
+                "page_url": path,
+            })
 
     # Merge: existing first, then page-generated
     merged = {
