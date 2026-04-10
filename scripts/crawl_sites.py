@@ -26,7 +26,7 @@ SITES = {
     },
     "market-invoice": {
         "url": "https://www.marketinvoice.co.uk",
-        "max_pages": 300,
+        "max_pages": 500,
         "sitemap": "https://marketinvoice.co.uk/sitemap-0.xml",
     },
     "seocompare": {

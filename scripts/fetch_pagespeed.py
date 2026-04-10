@@ -143,6 +143,25 @@ def main():
         }
 
     output_file = os.path.join(OUTPUT_DIR, "pagespeed.json")
+
+    # Don't overwrite good data with empty data (rate limited)
+    has_any_scores = any(r.get("avg_scores") for r in all_results.values())
+    if not has_any_scores:
+        print("\nAll requests rate limited — keeping existing data")
+        return
+
+    # Merge with existing: keep old data for sites that got rate limited
+    if os.path.exists(output_file):
+        with open(output_file) as f:
+            try:
+                existing = json.load(f)
+                for site_id, data in all_results.items():
+                    if not data.get("avg_scores") and existing.get(site_id, {}).get("avg_scores"):
+                        all_results[site_id] = existing[site_id]
+                        print(f"  Keeping existing data for {site_id} (rate limited)")
+            except:
+                pass
+
     with open(output_file, "w") as f:
         json.dump(all_results, f, indent=2)
     print(f"\nSaved → {output_file}")

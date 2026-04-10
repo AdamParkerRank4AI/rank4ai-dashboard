@@ -108,6 +108,42 @@ def fetch_site(service, site_url, site_id):
             "position": round(row.get("position", 0), 1),
         }
 
+    # AI Overview appearances (searchAppearance filter)
+    ai_overview_data = {}
+    try:
+        aio_resp = service.searchanalytics().query(
+            siteUrl=site_url,
+            body={
+                "startDate": start_date.strftime("%Y-%m-%d"),
+                "endDate": end_date.strftime("%Y-%m-%d"),
+                "dimensions": ["query"],
+                "dimensionFilterGroups": [{
+                    "filters": [{
+                        "dimension": "searchAppearance",
+                        "expression": "AI_OVERVIEW"
+                    }]
+                }],
+                "rowLimit": 25,
+                "type": "web",
+            }
+        ).execute()
+
+        aio_queries = []
+        for row in aio_resp.get("rows", []):
+            aio_queries.append({
+                "query": row["keys"][0],
+                "clicks": row.get("clicks", 0),
+                "impressions": row.get("impressions", 0),
+            })
+
+        ai_overview_data = {
+            "total_impressions": sum(q["impressions"] for q in aio_queries),
+            "total_clicks": sum(q["clicks"] for q in aio_queries),
+            "queries": aio_queries,
+        }
+    except Exception as e:
+        ai_overview_data = {"error": str(e)[:100], "queries": []}
+
     return {
         "site_id": site_id,
         "site_url": site_url,
@@ -117,6 +153,7 @@ def fetch_site(service, site_url, site_id):
         "top_queries": top_queries,
         "top_pages": top_pages,
         "content_gaps": gaps[:15],
+        "ai_overviews": ai_overview_data,
     }
 
 

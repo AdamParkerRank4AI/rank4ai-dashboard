@@ -47,7 +47,7 @@ const dailyHistory = loadJson('daily_history.json');
 const crawlData = loadJson(`crawl_${clientId}.json`);
 const uptimeAll = loadJson('uptime.json');
 const uptimeHistory = loadJson('uptime_history.json');
-const citationsAll = loadJson('promptfoo_citations.json');
+const citationsAll = loadJson('citations_by_type.json');
 const citByTypeAll = loadJson('citations_by_type.json');
 const auditAll = loadJson('ai_audit.json');
 const pagespeedAll = loadJson('pagespeed.json');
@@ -445,11 +445,14 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
         <div class="flex items-center justify-between mb-4">
           <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Citation Prompt Testing</h2>
           <div class="flex gap-2">
+            <button id="run-everything" class="px-3 py-1.5 rounded text-xs bg-green-600 text-white hover:bg-green-500 transition font-medium">
+              Run Everything
+            </button>
             <button id="run-all-high" class="px-3 py-1.5 rounded text-xs bg-red-600 text-white hover:bg-red-500 transition">
-              Run All High Intent
+              High Intent
             </button>
             <button id="run-all-discovery" class="px-3 py-1.5 rounded text-xs bg-blue-600 text-white hover:bg-blue-500 transition">
-              Run All Discovery
+              Discovery
             </button>
           </div>
         </div>
@@ -635,6 +638,26 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
         }
         this.textContent = 'Run All Discovery';
         this.disabled = false;
+      });
+
+      // Run Everything
+      document.getElementById('run-everything')?.addEventListener('click', async function() {
+        this.textContent = 'Running all...';
+        this.disabled = true;
+        const allBtns = document.querySelectorAll('.run-single-btn');
+        let done = 0;
+        for (const btn of allBtns) {
+          const row = btn.closest('.prompt-row');
+          if (row && (row.dataset.parked === 'true' || row.dataset.done === 'true' || row.dataset.removed === 'true')) continue;
+          const promptId = btn.getAttribute('data-prompt-id');
+          const query = btn.getAttribute('data-query');
+          await runCitation(promptId, query, btn);
+          done++;
+          this.textContent = `Running... ${done}/${allBtns.length}`;
+          await new Promise(r => setTimeout(r, 500));
+        }
+        this.textContent = `Done (${done} tested)`;
+        setTimeout(() => { this.textContent = 'Run Everything'; this.disabled = false; }, 3000);
       });
 
       // Remove prompt
