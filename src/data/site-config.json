@@ -92,27 +92,90 @@
     "branch": "main",
     "pages_dir": "src/pages",
     "staging": true,
-    "preview_url": "https://adamparkerrank4ai.github.io/rank4ai-preview/",
+    "preview_url": "https://rank4ai-staging.pages.dev/",
+    "total_pages": 969,
+    "content_pages": 658,
+    "redirect_pages": 311,
+    "data_files": {
+      "blogs": {
+        "path": "src/data/blogs.json",
+        "count": 104
+      },
+      "questions": {
+        "path": "src/data/questions.json",
+        "count": 285
+      },
+      "stats": {
+        "path": "src/data/stats.json",
+        "count": 26
+      },
+      "weekly": {
+        "path": "src/data/weekly.json",
+        "count": 5
+      },
+      "knowledge_library": {
+        "path": "src/data/knowledge-library-full.json",
+        "count": 137
+      },
+      "sectors": {
+        "path": "src/data/sectors.json",
+        "count": 12
+      },
+      "cities": {
+        "path": "src/data/cities.json",
+        "count": 7
+      }
+    },
     "page_types": {
       "blog": {
         "label": "Blog Posts",
         "path": "blog/",
-        "icon": "article"
+        "count": 104
       },
       "questions": {
         "label": "Questions",
-        "path": "questions/",
-        "icon": "help"
+        "path": "learn/questions/",
+        "count": 285
       },
       "guides": {
         "label": "Guides",
-        "path": "guides/",
-        "icon": "book"
+        "path": "learn/guides/",
+        "count": 20
       },
-      "services": {
-        "label": "Services",
-        "path": "services/",
-        "icon": "briefcase"
+      "knowledge": {
+        "label": "Knowledge Library",
+        "path": "ai-search/",
+        "count": 137
+      },
+      "research": {
+        "label": "Research & Stats",
+        "path": "research/",
+        "count": 56
+      },
+      "who-we-help": {
+        "label": "Who We Help",
+        "path": "who-we-help/",
+        "count": 20
+      },
+      "what-we-do": {
+        "label": "What We Do",
+        "path": "what-we-do/",
+        "count": 5
+      },
+      "about": {
+        "label": "About",
+        "path": "about/",
+        "count": 5
+      },
+      "conversion": {
+        "label": "Conversion Pages",
+        "path": "free-",
+        "count": 6
+      },
+      "redirects": {
+        "label": "301 Redirects",
+        "path": "redirect",
+        "count": 311
       }
     }
   }
