@@ -669,7 +669,35 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
                 </tbody>
               </table>
             </div>
-            <p class="text-[10px] text-gray-600 mt-2">Last updated: {agencyDb.last_updated}. 27 listing pages on site.</p>
+            <p class="text-[10px] text-gray-600 mt-2">Last updated: {agencyDb.last_updated}</p>
+          </div>
+        );
+      })()}
+
+      {/* Agency Rankings by Page */}
+      {clientId === 'seocompare' && (() => {
+        const rankingsData = loadJson('agency_rankings.json');
+        if (!rankingsData) return null;
+        return (
+          <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
+            <h3 class="text-sm font-semibold text-gray-400 mb-4">Rankings by Page ({rankingsData.total_pages} pages)</h3>
+            <div class="space-y-3 max-h-[500px] overflow-y-auto">
+              {rankingsData.rankings.map((r: any) => (
+                <div class="border border-gray-800 rounded-lg p-4">
+                  <div class="flex items-center justify-between mb-2">
+                    <a href={'https://www.seocompare.co.uk' + r.page} target="_blank" class="text-xs text-blue-400 hover:underline font-medium">{r.title}</a>
+                    <span class="text-[10px] text-gray-500">{r.count} agencies</span>
+                  </div>
+                  <div class="flex flex-wrap gap-1">
+                    {r.agencies.map((a: any) => (
+                      <span class={`text-[10px] px-2 py-0.5 rounded ${a.rank <= 3 ? 'bg-purple-900/50 text-purple-300' : 'bg-gray-800 text-gray-400'}`}>
+                        #{a.rank} {a.name}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         );
       })()}
