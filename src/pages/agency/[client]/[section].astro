@@ -612,6 +612,68 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
         <SiteTree tree={crawlData.tree} client:load />
       </div>
 
+      <!-- Agency Database (SEO Compare only) -->
+      {clientId === 'seocompare' && (() => {
+        const agencyDb = loadJson('agency_database.json');
+        if (!agencyDb) return null;
+        const agencies = agencyDb.agencies || [];
+        const tier1 = agencies.filter((a: any) => a.tier === 'tier1');
+        const tier2 = agencies.filter((a: any) => a.tier === 'tier2');
+        const tier3 = agencies.filter((a: any) => a.tier === 'tier3');
+        const uk = agencies.filter((a: any) => a.hq?.includes('UK') || a.hq?.includes('London'));
+
+        return (
+          <div class="bg-gray-900 border border-purple-800/30 rounded-lg p-6 mb-6">
+            <h3 class="text-sm font-semibold text-purple-400 mb-4">Agency Database ({agencyDb.total} agencies)</h3>
+            <div class="grid grid-cols-4 gap-3 mb-4">
+              <div class="bg-gray-800 rounded-lg p-3 text-center">
+                <div class="text-lg font-bold text-white">{tier1.length}</div>
+                <div class="text-[10px] text-gray-500">Tier 1 (Leaders)</div>
+              </div>
+              <div class="bg-gray-800 rounded-lg p-3 text-center">
+                <div class="text-lg font-bold text-white">{tier2.length}</div>
+                <div class="text-[10px] text-gray-500">Tier 2 (Established)</div>
+              </div>
+              <div class="bg-gray-800 rounded-lg p-3 text-center">
+                <div class="text-lg font-bold text-white">{tier3.length}</div>
+                <div class="text-[10px] text-gray-500">Tier 3 (Emerging)</div>
+              </div>
+              <div class="bg-gray-800 rounded-lg p-3 text-center">
+                <div class="text-lg font-bold text-blue-400">{uk.length}</div>
+                <div class="text-[10px] text-gray-500">UK Based</div>
+              </div>
+            </div>
+            <div class="overflow-x-auto max-h-[400px] overflow-y-auto">
+              <table class="w-full text-xs">
+                <thead class="sticky top-0 bg-gray-900">
+                  <tr class="text-gray-500 border-b border-gray-800">
+                    <th class="text-left py-2 px-2">#</th>
+                    <th class="text-left py-2 px-2">Agency</th>
+                    <th class="text-left py-2 px-2">HQ</th>
+                    <th class="text-left py-2 px-2">Service</th>
+                    <th class="text-left py-2 px-2">Tier</th>
+                    <th class="text-left py-2 px-2">Target</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {agencies.map((a: any) => (
+                    <tr class={`border-b border-gray-800/30 ${a.tier === 'tier1' ? 'bg-purple-950/10' : ''}`}>
+                      <td class="py-1.5 px-2 text-gray-500">{a.rank}</td>
+                      <td class="py-1.5 px-2 text-white font-medium">{a.name}</td>
+                      <td class="py-1.5 px-2 text-gray-400">{a.hq}</td>
+                      <td class="py-1.5 px-2 text-gray-400">{a.service}</td>
+                      <td class="py-1.5 px-2"><span class={`text-[10px] px-1.5 py-0.5 rounded ${a.tier === 'tier1' ? 'bg-purple-900/50 text-purple-300' : a.tier === 'tier2' ? 'bg-blue-900/50 text-blue-300' : 'bg-gray-800 text-gray-400'}`}>{a.tier === 'tier1' ? 'Leader' : a.tier === 'tier2' ? 'Established' : 'Emerging'}</span></td>
+                      <td class="py-1.5 px-2 text-gray-500 text-[10px]">{a.target || ''}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p class="text-[10px] text-gray-600 mt-2">Last updated: {agencyDb.last_updated}. 27 listing pages on site.</p>
+          </div>
+        );
+      })()}
+
       <!-- Page Compliance Checklist -->
       <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
         <h3 class="text-sm font-semibold text-gray-400 mb-4">Page Compliance Checklist</h3>
