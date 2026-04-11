@@ -674,30 +674,111 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
         );
       })()}
 
-      {/* Agency Rankings by Page */}
+      {/* Rankings + Upcoming tabs */}
       {clientId === 'seocompare' && (() => {
         const rankingsData = loadJson('agency_rankings.json');
+        const upcomingData = loadJson('upcoming_pages.json');
+        const upcoming = upcomingData?.seocompare?.pages || [];
         if (!rankingsData) return null;
         return (
           <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
-            <h3 class="text-sm font-semibold text-gray-400 mb-4">Rankings by Page ({rankingsData.total_pages} pages)</h3>
-            <div class="space-y-3 max-h-[500px] overflow-y-auto">
-              {rankingsData.rankings.map((r: any) => (
-                <div class="border border-gray-800 rounded-lg p-4">
-                  <div class="flex items-center justify-between mb-2">
-                    <a href={'https://www.seocompare.co.uk' + r.page} target="_blank" class="text-xs text-blue-400 hover:underline font-medium">{r.title}</a>
-                    <span class="text-[10px] text-gray-500">{r.count} agencies</span>
-                  </div>
-                  <div class="flex flex-wrap gap-1">
-                    {r.agencies.map((a: any) => (
-                      <span class={`text-[10px] px-2 py-0.5 rounded ${a.rank <= 3 ? 'bg-purple-900/50 text-purple-300' : 'bg-gray-800 text-gray-400'}`}>
-                        #{a.rank} {a.name}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
+            <div class="flex items-center gap-4 mb-4 border-b border-gray-800 pb-3">
+              <button class="ranking-tab text-sm font-semibold text-white border-b-2 border-blue-500 pb-1" data-tab="live">Live Pages ({rankingsData.total_pages})</button>
+              <button class="ranking-tab text-sm font-semibold text-gray-500 hover:text-gray-300 pb-1" data-tab="upcoming">Upcoming ({upcoming.length})</button>
             </div>
+
+            <div id="tab-live">
+              <div class="overflow-x-auto max-h-[500px] overflow-y-auto">
+                <table class="w-full text-xs">
+                  <thead class="sticky top-0 bg-gray-900">
+                    <tr class="text-gray-500 border-b border-gray-800">
+                      <th class="text-left py-2 px-2">Page Title</th>
+                      <th class="text-left py-2 px-2">Slug</th>
+                      <th class="text-center py-2 px-2">Agencies</th>
+                      <th class="text-left py-2 px-2">Published</th>
+                      <th class="text-left py-2 px-2">Updated</th>
+                      <th class="text-left py-2 px-2">Top 3</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {rankingsData.rankings.map((r: any) => (
+                      <tr class="border-b border-gray-800/30 hover:bg-gray-800/20">
+                        <td class="py-2 px-2">
+                          <a href={'https://www.seocompare.co.uk/' + r.slug + '/'} target="_blank" class="text-blue-400 hover:underline">{r.h1 || r.title}</a>
+                        </td>
+                        <td class="py-2 px-2 text-gray-500 font-mono text-[10px]">/{r.slug}/</td>
+                        <td class="py-2 px-2 text-center text-white">{r.count}</td>
+                        <td class="py-2 px-2 text-gray-500">{r.published || <span class="text-yellow-400">No date</span>}</td>
+                        <td class="py-2 px-2 text-gray-500">{r.modified || <span class="text-gray-700">—</span>}</td>
+                        <td class="py-2 px-2">
+                          <div class="flex gap-1">
+                            {r.agencies.slice(0, 3).map((a: any) => (
+                              <span class="text-[9px] px-1.5 py-0.5 rounded bg-purple-900/50 text-purple-300">#{a.rank} {a.name}</span>
+                            ))}
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div id="tab-upcoming" class="hidden">
+              {upcoming.length > 0 ? (
+                <div class="overflow-x-auto">
+                  <table class="w-full text-xs">
+                    <thead>
+                      <tr class="text-gray-500 border-b border-gray-800">
+                        <th class="text-left py-2 px-2">Title</th>
+                        <th class="text-left py-2 px-2">Slug</th>
+                        <th class="text-left py-2 px-2">Type</th>
+                        <th class="text-left py-2 px-2">Status</th>
+                        <th class="text-left py-2 px-2">Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {upcoming.map((p: any) => (
+                        <tr class="border-b border-gray-800/30">
+                          <td class="py-2 px-2 text-white">{p.title}</td>
+                          <td class="py-2 px-2 text-gray-500 font-mono text-[10px]">/{p.slug}/</td>
+                          <td class="py-2 px-2 text-gray-400">{p.type}</td>
+                          <td class="py-2 px-2"><span class={`text-[10px] px-1.5 py-0.5 rounded ${p.status === 'ready' ? 'bg-green-900/50 text-green-300' : p.status === 'drafting' ? 'bg-yellow-900/50 text-yellow-300' : 'bg-gray-800 text-gray-400'}`}>{p.status}</span></td>
+                          <td class="py-2 px-2 text-gray-500 text-[10px]">{p.notes}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              ) : (
+                <div class="text-center py-8">
+                  <p class="text-gray-500 text-sm mb-2">No upcoming pages yet</p>
+                  <p class="text-gray-600 text-xs">To add pages, edit <code class="text-blue-400">src/data/live/upcoming_pages.json</code></p>
+                  <p class="text-gray-600 text-xs mt-1">Or from Claude Code: add to the seocompare.pages array</p>
+                  <pre class="text-left bg-gray-800 rounded p-3 mt-3 text-[10px] text-green-400 max-w-md mx-auto overflow-x-auto">{"{"}"title": "AI Search for Healthcare",
+  "slug": "ai-search-agencies-healthcare",
+  "type": "ranking",
+  "status": "planned",
+  "notes": "Need 6-8 agencies"{"}"}</pre>
+                </div>
+              )}
+            </div>
+
+            <script>
+              document.querySelectorAll('.ranking-tab').forEach(function(tab) {
+                tab.addEventListener('click', function() {
+                  var target = tab.getAttribute('data-tab');
+                  document.getElementById('tab-live').classList.toggle('hidden', target !== 'live');
+                  document.getElementById('tab-upcoming').classList.toggle('hidden', target !== 'upcoming');
+                  document.querySelectorAll('.ranking-tab').forEach(function(t) {
+                    t.classList.toggle('text-white', t === tab);
+                    t.classList.toggle('border-b-2', t === tab);
+                    t.classList.toggle('border-blue-500', t === tab);
+                    t.classList.toggle('text-gray-500', t !== tab);
+                  });
+                });
+              });
+            </script>
           </div>
         );
       })()}
