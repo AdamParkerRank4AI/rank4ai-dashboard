@@ -201,6 +201,55 @@ def crawl_site(site_id, config):
             for t in tables
         )
 
+        # Answer capsule detection (40-60 word paragraph near top with direct answer)
+        first_paras = soup.find_all("p", limit=5)
+        has_answer_capsule = False
+        for p in first_paras:
+            p_text = p.get_text(strip=True)
+            p_words = len(p_text.split())
+            if 30 <= p_words <= 80 and any(cls in (p.get("class") or []) for cls in ["answer-capsule", "answer", "capsule", "summary", "direct-answer"]):
+                has_answer_capsule = True
+                break
+            # Also check if first substantial paragraph is in the right range
+            if 35 <= p_words <= 70 and not has_answer_capsule:
+                has_answer_capsule = True
+
+        # OG tags
+        has_og_title = bool(soup.find("meta", attrs={"property": "og:title"}))
+        has_og_desc = bool(soup.find("meta", attrs={"property": "og:description"}))
+        has_og_image = bool(soup.find("meta", attrs={"property": "og:image"}))
+        has_og_tags = has_og_title and has_og_desc
+
+        # Author detection
+        has_author = False
+        author_name = ""
+        author_el = soup.find(class_=re.compile(r"author", re.I)) or soup.find(attrs={"rel": "author"})
+        if author_el:
+            has_author = True
+            author_name = author_el.get_text(strip=True)[:50]
+        # Also check schema for author
+        for s in schemas:
+            if s == "Person":
+                has_author = True
+
+        # Definition statement ("X is..." near top)
+        has_definition = False
+        for p in first_paras[:3]:
+            p_text = p.get_text(strip=True).lower()
+            if " is " in p_text[:100] or " refers to " in p_text[:100] or " means " in p_text[:100]:
+                has_definition = True
+                break
+
+        # CTA detection
+        cta_patterns = ["get started", "contact us", "book a call", "free audit", "get quotes", "request", "sign up", "learn more", "find out"]
+        has_cta = any(pattern in resp.text.lower() for pattern in cta_patterns)
+
+        # Breadcrumb detection
+        has_breadcrumbs = "BreadcrumbList" in schemas or bool(soup.find(class_=re.compile(r"breadcrumb", re.I)))
+
+        # Viewport
+        has_viewport = bool(soup.find("meta", attrs={"name": "viewport"}))
+
         # Content freshness (from meta tags or schema)
         last_modified = None
         date_meta = soup.find("meta", attrs={"property": "article:modified_time"}) or \
@@ -240,6 +289,13 @@ def crawl_site(site_id, config):
             "question_h2s": question_h2s,
             "h2_count": len(h2s),
             "last_modified": last_modified,
+            "has_answer_capsule": has_answer_capsule,
+            "has_og_tags": has_og_tags,
+            "has_author": has_author,
+            "has_definition": has_definition,
+            "has_cta": has_cta,
+            "has_breadcrumbs": has_breadcrumbs,
+            "has_viewport": has_viewport,
         }
         pages.append(page)
 

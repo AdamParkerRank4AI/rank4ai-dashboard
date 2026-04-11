@@ -612,6 +612,72 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
         <SiteTree tree={crawlData.tree} client:load />
       </div>
 
+      <!-- Page Compliance Checklist -->
+      <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
+        <h3 class="text-sm font-semibold text-gray-400 mb-4">Page Compliance Checklist</h3>
+        <div class="overflow-x-auto max-h-[500px] overflow-y-auto">
+          <table class="w-full text-[10px]">
+            <thead class="sticky top-0 bg-gray-900">
+              <tr class="text-gray-500 border-b border-gray-800">
+                <th class="text-left py-2 px-2 min-w-[150px]">Page</th>
+                <th class="text-center py-2 px-1" title="H1 Tag">H1</th>
+                <th class="text-center py-2 px-1" title="Meta Description">Meta</th>
+                <th class="text-center py-2 px-1" title="Schema Markup">Schema</th>
+                <th class="text-center py-2 px-1" title="Answer Capsule (40-60w direct answer)">Capsule</th>
+                <th class="text-center py-2 px-1" title="FAQ Section">FAQ</th>
+                <th class="text-center py-2 px-1" title="Images">Imgs</th>
+                <th class="text-center py-2 px-1" title="Image Alt Text">Alt</th>
+                <th class="text-center py-2 px-1" title="Video">Vid</th>
+                <th class="text-center py-2 px-1" title="Comparison Table">Table</th>
+                <th class="text-center py-2 px-1" title="Open Graph Tags">OG</th>
+                <th class="text-center py-2 px-1" title="Breadcrumbs">Bread</th>
+                <th class="text-center py-2 px-1" title="Definition Statement">Def</th>
+                <th class="text-center py-2 px-1" title="Author Attribution">Auth</th>
+                <th class="text-center py-2 px-1" title="Call to Action">CTA</th>
+                <th class="text-center py-2 px-1" title="Internal Links In (3+)">Links</th>
+                <th class="text-center py-2 px-1" title="Content Depth (500+ words)">Words</th>
+                <th class="text-center py-2 px-1" title="Last Modified Date">Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              {crawlData.pages?.filter((p: any) => p.word_count > 20).sort((a: any, b: any) => a.path.localeCompare(b.path)).slice(0, 200).map((p: any) => {
+                const tick = '<span class="text-green-400">✓</span>';
+                const cross = '<span class="text-red-400">✗</span>';
+                const dash = '<span class="text-gray-700">-</span>';
+                const isQA = p.path?.includes('/questions/') || p.path?.includes('/ai-search-questions/');
+                return (
+                  <tr class="border-b border-gray-800/30 hover:bg-gray-800/20">
+                    <td class="py-1.5 px-2 text-blue-400 truncate max-w-[150px]">{p.path}</td>
+                    <td class="text-center py-1.5 px-1" set:html={p.h1 ? tick : cross} />
+                    <td class="text-center py-1.5 px-1" set:html={p.meta_desc ? tick : cross} />
+                    <td class="text-center py-1.5 px-1" set:html={p.schemas?.length > 0 ? tick : cross} />
+                    <td class="text-center py-1.5 px-1" set:html={p.has_answer_capsule ? tick : (isQA ? dash : cross)} />
+                    <td class="text-center py-1.5 px-1" set:html={p.schemas?.includes('FAQPage') || p.question_h2s >= 2 ? tick : dash} />
+                    <td class="text-center py-1.5 px-1" set:html={p.image_count > 0 ? tick : (isQA ? dash : cross)} />
+                    <td class="text-center py-1.5 px-1" set:html={p.image_count === 0 || p.images_with_alt === p.image_count ? tick : cross} />
+                    <td class="text-center py-1.5 px-1" set:html={p.video_count > 0 ? tick : dash} />
+                    <td class="text-center py-1.5 px-1" set:html={p.has_comparison_table ? tick : dash} />
+                    <td class="text-center py-1.5 px-1" set:html={p.has_og_tags ? tick : cross} />
+                    <td class="text-center py-1.5 px-1" set:html={p.has_breadcrumbs ? tick : cross} />
+                    <td class="text-center py-1.5 px-1" set:html={p.has_definition ? tick : dash} />
+                    <td class="text-center py-1.5 px-1" set:html={p.has_author ? tick : dash} />
+                    <td class="text-center py-1.5 px-1" set:html={p.has_cta ? tick : dash} />
+                    <td class="text-center py-1.5 px-1" set:html={(p.internal_links_in || 0) >= 3 ? tick : cross} />
+                    <td class="text-center py-1.5 px-1" set:html={isQA ? (p.word_count >= 100 ? tick : cross) : (p.word_count >= 500 ? tick : cross)} />
+                    <td class="text-center py-1.5 px-1" set:html={p.last_modified ? tick : dash} />
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-3 flex gap-4 text-[10px] text-gray-500">
+          <span><span class="text-green-400">✓</span> = present</span>
+          <span><span class="text-red-400">✗</span> = missing (should have)</span>
+          <span><span class="text-gray-700">-</span> = optional / not applicable</span>
+        </div>
+      </div>
+
       <!-- Page inventory with search -->
       <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
         <div class="flex items-center justify-between mb-4">

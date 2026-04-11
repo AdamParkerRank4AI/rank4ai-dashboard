@@ -1,0 +1,34 @@
+{
+  "checks": [
+    {"id": "h1", "label": "H1 Tag", "category": "seo", "required": true, "description": "Clear, descriptive H1 matching the page's primary topic"},
+    {"id": "title", "label": "Title Tag", "category": "seo", "required": true, "description": "Unique title under 60 chars with primary keyword"},
+    {"id": "meta_desc", "label": "Meta Description", "category": "seo", "required": true, "description": "Compelling description, 150-160 chars"},
+    {"id": "canonical", "label": "Canonical URL", "category": "seo", "required": true, "description": "Self-referencing canonical tag"},
+    {"id": "schema", "label": "Schema Markup", "category": "ai_search", "required": true, "description": "JSON-LD structured data (Article, FAQPage, HowTo, etc.)"},
+    {"id": "org_schema", "label": "Organization Schema", "category": "ai_search", "required": true, "description": "Organization schema in @graph (site-wide is fine)"},
+    {"id": "breadcrumbs", "label": "Breadcrumbs", "category": "seo", "required": true, "description": "BreadcrumbList schema + visible breadcrumb navigation"},
+    {"id": "answer_capsule", "label": "Answer Capsule", "category": "ai_search", "required": true, "description": "40-60 word direct answer at top of content — what AI extracts and cites"},
+    {"id": "og_tags", "label": "Open Graph Tags", "category": "seo", "required": true, "description": "og:title, og:description, og:image for social sharing"},
+    {"id": "faq_section", "label": "FAQ Section", "category": "ai_search", "required": false, "description": "Question-answer pairs with FAQPage schema (genuine questions only)"},
+    {"id": "images", "label": "Images", "category": "ai_overview", "required": true, "description": "At least 1 relevant image — multi-modal content gets +156% citations"},
+    {"id": "images_alt", "label": "Image Alt Text", "category": "seo", "required": true, "description": "Descriptive alt text on all images"},
+    {"id": "video", "label": "Video", "category": "ai_overview", "required": false, "description": "Embedded video — multi-modal with video gets +317% citations"},
+    {"id": "comparison_table", "label": "Comparison Table", "category": "ai_overview", "required": false, "description": "Data table comparing options — 2.5x citation rate"},
+    {"id": "lists", "label": "Structured Lists", "category": "ai_search", "required": true, "description": "Bullet or numbered lists — AI-friendly scannable format"},
+    {"id": "question_headings", "label": "Question H2s", "category": "ai_search", "required": false, "description": "H2 headings phrased as questions people ask"},
+    {"id": "internal_links_in", "label": "Inbound Internal Links", "category": "seo", "required": true, "description": "At least 3 internal links pointing to this page"},
+    {"id": "internal_links_out", "label": "Outbound Internal Links", "category": "seo", "required": true, "description": "Links to related pages on the site"},
+    {"id": "word_count", "label": "Content Depth", "category": "ai_overview", "required": true, "description": "500+ words for content pages (2000+ for pillar pages, 120-180 for Q&A)"},
+    {"id": "author", "label": "Author Attribution", "category": "ai_overview", "required": false, "description": "Named author with credentials — E-E-A-T signal"},
+    {"id": "date", "label": "Published/Modified Date", "category": "ai_overview", "required": true, "description": "Visible date — content updated <90 days gets 3x more citations"},
+    {"id": "citations", "label": "Inline Citations", "category": "ai_overview", "required": false, "description": "References to external sources — +132% visibility"},
+    {"id": "definition", "label": "Definition Statement", "category": "ai_search", "required": false, "description": "Clear 'X is...' definition near page start — AI extracts these"},
+    {"id": "cta", "label": "Call to Action", "category": "seo", "required": false, "description": "Clear next step for the visitor"},
+    {"id": "mobile", "label": "Mobile Responsive", "category": "seo", "required": true, "description": "Viewport meta tag + responsive design"}
+  ],
+  "categories": {
+    "seo": {"label": "Traditional SEO", "color": "blue"},
+    "ai_search": {"label": "AI Search (ChatGPT, Claude, Perplexity)", "color": "purple"},
+    "ai_overview": {"label": "Google AI Overviews", "color": "green"}
+  }
+}
