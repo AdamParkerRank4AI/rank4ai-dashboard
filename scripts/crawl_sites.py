@@ -33,6 +33,12 @@ SITES = {
         "url": "https://www.seocompare.co.uk",
         "max_pages": 300,
     },
+    "rank4ai-staging": {
+        "url": "https://rank4ai-staging.pages.dev",
+        "max_pages": 300,
+        "sitemap": "https://rank4ai-staging.pages.dev/sitemap-0.xml",
+        "sitemap_domain_swap": ["https://www.rank4ai.co.uk", "https://rank4ai-staging.pages.dev"],
+    },
 }
 
 HEADERS = {
@@ -60,6 +66,10 @@ def crawl_site(site_id, config):
             if resp.status_code == 200:
                 import re as sitemap_re
                 urls = sitemap_re.findall(r'<loc>(.*?)</loc>', resp.text)
+                # Swap domain if configured (for staging sites)
+                swap = config.get("sitemap_domain_swap")
+                if swap and len(swap) == 2:
+                    urls = [u.replace(swap[0], swap[1]) for u in urls]
                 to_visit = list(set(urls))
                 print(f"  Found {len(to_visit)} URLs in sitemap")
         except Exception as e:
