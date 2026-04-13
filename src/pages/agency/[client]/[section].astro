@@ -785,7 +785,13 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
 
       <!-- Page Compliance Checklist -->
       <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
-        <h3 class="text-sm font-semibold text-gray-400 mb-4">Page Compliance Checklist</h3>
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-sm font-semibold text-gray-400">Page Compliance Checklist ({crawlData.pages?.filter((p: any) => p.word_count > 20).length} pages)</h3>
+          <div class="flex gap-2">
+            <button id="copy-missing-all" class="px-3 py-1.5 rounded text-xs bg-blue-600 text-white hover:bg-blue-500 transition">Copy All Missing</button>
+            <button id="copy-missing-critical" class="px-3 py-1.5 rounded text-xs bg-red-600 text-white hover:bg-red-500 transition">Copy Critical Only</button>
+          </div>
+        </div>
         <div class="overflow-x-auto max-h-[500px] overflow-y-auto">
           <table class="w-full text-[10px]">
             <thead class="sticky top-0 bg-gray-900">
@@ -811,7 +817,7 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
               </tr>
             </thead>
             <tbody>
-              {crawlData.pages?.filter((p: any) => p.word_count > 20).sort((a: any, b: any) => a.path.localeCompare(b.path)).slice(0, 200).map((p: any) => {
+              {crawlData.pages?.filter((p: any) => p.word_count > 20).sort((a: any, b: any) => a.path.localeCompare(b.path)).map((p: any) => {
                 const tick = '<span class="text-green-400">✓</span>';
                 const cross = '<span class="text-red-400">✗</span>';
                 const dash = '<span class="text-gray-700">-</span>';
@@ -847,6 +853,60 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
           <span><span class="text-red-400">✗</span> = missing (should have)</span>
           <span><span class="text-gray-700">-</span> = optional / not applicable</span>
         </div>
+
+        <script>
+          function collectMissing(criticalOnly) {
+            var headers = ['H1', 'Meta', 'Schema', 'Capsule', 'FAQ', 'Images', 'Alt', 'Video', 'Table', 'OG', 'Bread', 'Def', 'Auth', 'CTA', 'Links', 'Words', 'Date'];
+            var criticalHeaders = ['H1', 'Meta', 'Schema', 'Capsule', 'OG', 'Bread', 'Images', 'Links', 'Words'];
+            var rows = document.querySelectorAll('table tbody tr');
+            var lines = [];
+
+            rows.forEach(function(row) {
+              var cells = row.querySelectorAll('td');
+              if (cells.length < 18) return;
+              var path = cells[0]?.textContent?.trim() || '';
+              var missing = [];
+
+              for (var i = 1; i < cells.length && i <= headers.length; i++) {
+                var text = cells[i]?.textContent?.trim() || '';
+                if (text === '✗') {
+                  var header = headers[i - 1];
+                  if (!criticalOnly || criticalHeaders.includes(header)) {
+                    missing.push(header);
+                  }
+                }
+              }
+
+              if (missing.length > 0) {
+                lines.push(path + ': missing ' + missing.join(', '));
+              }
+            });
+
+            return lines;
+          }
+
+          document.getElementById('copy-missing-all')?.addEventListener('click', function() {
+            var lines = collectMissing(false);
+            var text = 'Pages with missing elements (' + lines.length + ' pages):\n\n' + lines.join('\n');
+            navigator.clipboard.writeText(text).then(function() {
+              var btn = document.getElementById('copy-missing-all');
+              btn.textContent = 'Copied! (' + lines.length + ' pages)';
+              btn.style.background = '#22c55e';
+              setTimeout(function() { btn.textContent = 'Copy All Missing'; btn.style.background = ''; }, 3000);
+            });
+          });
+
+          document.getElementById('copy-missing-critical')?.addEventListener('click', function() {
+            var lines = collectMissing(true);
+            var text = 'Pages with critical missing elements (' + lines.length + ' pages):\n\n' + lines.join('\n');
+            navigator.clipboard.writeText(text).then(function() {
+              var btn = document.getElementById('copy-missing-critical');
+              btn.textContent = 'Copied! (' + lines.length + ' pages)';
+              btn.style.background = '#22c55e';
+              setTimeout(function() { btn.textContent = 'Copy Critical Only'; btn.style.background = ''; }, 3000);
+            });
+          });
+        </script>
       </div>
 
       <!-- Page inventory with search -->
