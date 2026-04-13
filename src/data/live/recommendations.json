@@ -1,9 +1,9 @@
 {
   "rank4ai": {
-    "generated_at": "2026-04-11T08:27:57.568893",
-    "total": 20,
+    "generated_at": "2026-04-13T07:03:23.384060",
+    "total": 19,
     "critical": 2,
-    "high": 6,
+    "high": 5,
     "medium": 12,
     "low": 0,
     "recommendations": [
@@ -43,8 +43,8 @@
       {
         "priority": "high",
         "category": "SEO Health",
-        "title": "8 pages with missing h1",
-        "detail": "These pages have no H1 tag. Add a clear, descriptive H1 to each page. AI models use H1s to understand page topics. Affected pages: /seo-vs-aio-comparison, /ai-seo-agency-uk/colchester, /uk-coverage, /blog/why-ai-tools-struggle-vague-websites, /blog/why-about-pages-matter-ai-search, /ai-search-audit, /quick-check, /ai-search/ai-knowledge-graph",
+        "title": "9 pages with missing h1",
+        "detail": "These pages have no H1 tag. Add a clear, descriptive H1 to each page. AI models use H1s to understand page topics. Affected pages: /seo-vs-aio-comparison, /ai-seo-agency-uk/colchester, /uk-coverage, /blog/why-ai-tools-struggle-vague-websites, /blog/why-about-pages-matter-ai-search, /ai-search-audit, /quick-check, /ai-search/conversational-search...",
         "impact": "medium",
         "pages": [
           "/seo-vs-aio-comparison",
@@ -54,17 +54,8 @@
           "/blog/why-about-pages-matter-ai-search",
           "/ai-search-audit",
           "/quick-check",
+          "/ai-search/conversational-search",
           "/ai-search/ai-knowledge-graph"
-        ]
-      },
-      {
-        "priority": "high",
-        "category": "SEO Health",
-        "title": "1 pages with broken",
-        "detail": "These URLs returned HTTP errors. Fix or redirect broken pages. Affected pages: /ai-search/conversational-search",
-        "impact": "medium",
-        "pages": [
-          "/ai-search/conversational-search"
         ]
       },
       {
@@ -115,8 +106,8 @@
       {
         "priority": "medium",
         "category": "Schema",
-        "title": "8 pages missing structured data (47/55 have schema)",
-        "detail": "Pages with schema have 2.5x higher chance of AI citation. Add Article, FAQPage, or HowTo schema to these pages. Pages missing schema: /seo-vs-aio-comparison, /ai-seo-agency-uk/colchester, /uk-coverage, /blog/why-ai-tools-struggle-vague-websites, /blog/why-about-pages-matter-ai-search, /ai-search-audit, /quick-check, /ai-search/ai-knowledge-graph",
+        "title": "9 pages missing structured data (45/54 have schema)",
+        "detail": "Pages with schema have 2.5x higher chance of AI citation. Add Article, FAQPage, or HowTo schema to these pages. Pages missing schema: /seo-vs-aio-comparison, /ai-seo-agency-uk/colchester, /uk-coverage, /blog/why-ai-tools-struggle-vague-websites, /blog/why-about-pages-matter-ai-search, /ai-search-audit, /quick-check, /ai-search/conversational-search, /ai-search/ai-knowledge-graph",
         "impact": "high",
         "pages": [
           "/seo-vs-aio-comparison",
@@ -126,14 +117,15 @@
           "/blog/why-about-pages-matter-ai-search",
           "/ai-search-audit",
           "/quick-check",
+          "/ai-search/conversational-search",
           "/ai-search/ai-knowledge-graph"
         ]
       },
       {
         "priority": "medium",
         "category": "SEO Health",
-        "title": "8 pages with thin content",
-        "detail": "These pages have fewer than 100 words. Expand with detailed, authoritative content. AI models prefer pages with 500+ words. Affected pages: /seo-vs-aio-comparison, /ai-seo-agency-uk/colchester, /uk-coverage, /blog/why-ai-tools-struggle-vague-websites, /blog/why-about-pages-matter-ai-search, /ai-search-audit, /quick-check, /ai-search/ai-knowledge-graph",
+        "title": "9 pages with thin content",
+        "detail": "These pages have fewer than 100 words. Expand with detailed, authoritative content. AI models prefer pages with 500+ words. Affected pages: /seo-vs-aio-comparison, /ai-seo-agency-uk/colchester, /uk-coverage, /blog/why-ai-tools-struggle-vague-websites, /blog/why-about-pages-matter-ai-search, /ai-search-audit, /quick-check, /ai-search/conversational-search...",
         "impact": "medium",
         "pages": [
           "/seo-vs-aio-comparison",
@@ -143,7 +135,19 @@
           "/blog/why-about-pages-matter-ai-search",
           "/ai-search-audit",
           "/quick-check",
+          "/ai-search/conversational-search",
           "/ai-search/ai-knowledge-graph"
+        ]
+      },
+      {
+        "priority": "medium",
+        "category": "SEO Health",
+        "title": "2 pages with error",
+        "detail": "Fix these error issues to improve crawlability. Affected pages: /ai-services/ai-search-audit, /ai-search/rank-in-ai-search",
+        "impact": "medium",
+        "pages": [
+          "/ai-services/ai-search-audit",
+          "/ai-search/rank-in-ai-search"
         ]
       },
       {
@@ -155,14 +159,6 @@
         "pages": [
           "/robots.txt"
         ]
-      },
-      {
-        "priority": "medium",
-        "category": "Performance",
-        "title": "Slow server response time: 2307ms",
-        "detail": "Server response time is 2307ms \u2014 should be under 500ms. Check server configuration, caching, CDN setup, and database queries.",
-        "impact": "medium",
-        "pages": []
       },
       {
         "priority": "medium",
@@ -178,31 +174,31 @@
         "priority": "medium",
         "category": "Content Gap",
         "title": "'ai visibility seo agency' \u2014 40 impressions, 0% CTR",
-        "detail": "This query gets 40 impressions but only 0 clicks (CTR: 0%). Position: 36.0. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "detail": "This query gets 40 impressions but only 0 clicks (CTR: 0%). Position: 35.5. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'best chatgpt optimisation company near me' \u2014 39 impressions, 0% CTR",
-        "detail": "This query gets 39 impressions but only 0 clicks (CTR: 0%). Position: 47.6. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'best chatgpt optimisation company near me' \u2014 35 impressions, 0% CTR",
+        "detail": "This query gets 35 impressions but only 0 clicks (CTR: 0%). Position: 48.1. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'ai search visibility' \u2014 29 impressions, 0% CTR",
-        "detail": "This query gets 29 impressions but only 0 clicks (CTR: 0%). Position: 75.6. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'ai search visibility' \u2014 26 impressions, 0% CTR",
+        "detail": "This query gets 26 impressions but only 0 clicks (CTR: 0%). Position: 75.4. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'ai visibility (20 | 20)' \u2014 14 impressions, 0% CTR",
-        "detail": "This query gets 14 impressions but only 0 clicks (CTR: 0%). Position: 86. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'ai visibility (20 | 20)' \u2014 12 impressions, 0% CTR",
+        "detail": "This query gets 12 impressions but only 0 clicks (CTR: 0%). Position: 87.1. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
@@ -225,7 +221,7 @@
     ]
   },
   "market-invoice": {
-    "generated_at": "2026-04-11T08:27:57.624845",
+    "generated_at": "2026-04-13T07:03:23.390385",
     "total": 16,
     "critical": 2,
     "high": 6,
@@ -280,24 +276,24 @@
         "priority": "high",
         "category": "Internal Links",
         "title": "73 orphan pages with no internal links pointing to them",
-        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /blog/future-of-invoice-finance/, /compare/ultimate-vs-igf/, /compare/invoice-finance-vs-equity/, /providers/grenke/, /compare/invoice-finance-vs-crowdfunding/, /providers/accident-credit-group/, /blog/what-happens-if-provider-goes-bust/, /providers/recruitment-funding/...",
+        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /providers/virgin-money/, /providers/qube/, /providers/fgi-finance/, /providers/redd-factors/, /compare/invoice-finance-vs-equity/, /providers/sallyport/, /providers/select-invoice/, /providers/growth-lending/...",
         "impact": "medium",
         "pages": [
-          "/blog/future-of-invoice-finance/",
-          "/compare/ultimate-vs-igf/",
+          "/providers/virgin-money/",
+          "/providers/qube/",
+          "/providers/fgi-finance/",
+          "/providers/redd-factors/",
           "/compare/invoice-finance-vs-equity/",
-          "/providers/grenke/",
-          "/compare/invoice-finance-vs-crowdfunding/",
-          "/providers/accident-credit-group/",
-          "/blog/what-happens-if-provider-goes-bust/",
-          "/providers/recruitment-funding/",
-          "/providers/key-factors/",
-          "/providers/optimum-finance/",
-          "/blog/transport-payment-guide/",
-          "/providers/jardine-norton/",
-          "/terms/",
+          "/providers/sallyport/",
+          "/providers/select-invoice/",
+          "/providers/growth-lending/",
+          "/compare/invoice-finance-vs-rd-tax-credits/",
+          "/providers/panel-financial/",
           "/providers/handelsbanken/",
-          "/compare/close-brothers-vs-skipton/"
+          "/providers/aib/",
+          "/compare/sonovate-vs-giant-finance/",
+          "/providers/allica-bank/",
+          "/providers/abc-finance/"
         ]
       },
       {
@@ -365,7 +361,7 @@
         "priority": "medium",
         "category": "Schema",
         "title": "Schema gaps: Missing content schema types: HowTo",
-        "detail": "Currently using: FAQPage, WebPage, Organization, WebSite, BreadcrumbList, WebApplication, Article, Service, Product. Missing content schema types: HowTo. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
+        "detail": "Currently using: WebSite, Organization, Service, BreadcrumbList, WebApplication, Article, Product, FAQPage, WebPage. Missing content schema types: HowTo. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
         "impact": "medium",
         "pages": []
       },
@@ -406,11 +402,11 @@
     ]
   },
   "seocompare": {
-    "generated_at": "2026-04-11T08:27:57.677168",
-    "total": 15,
+    "generated_at": "2026-04-13T07:03:23.395360",
+    "total": 14,
     "critical": 2,
     "high": 5,
-    "medium": 7,
+    "medium": 6,
     "low": 1,
     "recommendations": [
       {
@@ -511,14 +507,6 @@
       },
       {
         "priority": "medium",
-        "category": "Schema",
-        "title": "Schema gaps: Missing content schema types: HowTo",
-        "detail": "Currently using: FAQPage, WebPage, Organization, WebSite, Article, BreadcrumbList, Service. Missing content schema types: HowTo. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
-        "impact": "medium",
-        "pages": []
-      },
-      {
-        "priority": "medium",
         "category": "Indexing",
         "title": "No Bing crawl activity detected",
         "detail": "Bing has not crawled any pages. Bing feeds Copilot (Microsoft's AI). Submit sitemap at bing.com/webmasters and run IndexNow submission: python3 scripts/submit_indexnow.py seocompare",
@@ -546,7 +534,7 @@
       {
         "priority": "low",
         "category": "Indexing",
-        "title": "Only 0/125 pages indexed in Bing",
+        "title": "Only 0/198 pages indexed in Bing",
         "detail": "Bing feeds Copilot. If URLs were recently submitted via IndexNow, allow 7-14 days for propagation. Re-check after that period. Submit: python3 scripts/submit_indexnow.py seocompare",
         "impact": "medium",
         "pages": []

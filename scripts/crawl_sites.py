@@ -35,7 +35,7 @@ SITES = {
     },
     "rank4ai-staging": {
         "url": "https://rank4ai-staging.pages.dev",
-        "max_pages": 300,
+        "max_pages": 1000,
         "sitemap": "https://rank4ai-staging.pages.dev/sitemap-0.xml",
         "sitemap_domain_swap": ["https://www.rank4ai.co.uk", "https://rank4ai-staging.pages.dev"],
     },
