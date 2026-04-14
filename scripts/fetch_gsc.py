@@ -15,12 +15,14 @@ OUTPUT_DIR = os.path.expanduser('~/rank4ai-dashboard/src/data/live')
 SITES = {
     "rank4ai": "sc-domain:rank4ai.co.uk",
     "market-invoice": "sc-domain:marketinvoice.co.uk",
+    "seocompare": "sc-domain:seocompare.co.uk",
 }
 
 # Fallback URL-prefix formats if domain property doesn't work
 SITES_FALLBACK = {
     "rank4ai": "https://www.rank4ai.co.uk/",
     "market-invoice": "https://www.marketinvoice.co.uk/",
+    "seocompare": "https://www.seocompare.co.uk/",
 }
 
 

@@ -50,6 +50,8 @@ CLIENTS = {
             "compare SEO agencies UK",
             "best SEO companies UK",
             "how to choose an SEO agency",
+            "top AI SEO agencies UK",
+            "best GEO agencies UK",
         ],
     },
 }

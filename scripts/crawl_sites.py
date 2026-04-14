@@ -21,23 +21,28 @@ OUTPUT_DIR = os.path.expanduser("~/rank4ai-dashboard/src/data/live")
 SITES = {
     "rank4ai": {
         "url": "https://www.rank4ai.co.uk",
-        "max_pages": 300,
-        "sitemap": "https://www.rank4ai.co.uk/sitemap-0.xml",
+        "max_pages": 1000,
+        "sitemap": "https://www.rank4ai.co.uk/sitemap.xml",
     },
     "market-invoice": {
         "url": "https://www.marketinvoice.co.uk",
-        "max_pages": 500,
+        "max_pages": 1000,
         "sitemap": "https://marketinvoice.co.uk/sitemap-0.xml",
     },
     "seocompare": {
         "url": "https://www.seocompare.co.uk",
-        "max_pages": 300,
+        "max_pages": 1000,
     },
     "rank4ai-staging": {
         "url": "https://rank4ai-staging.pages.dev",
         "max_pages": 1000,
         "sitemap": "https://rank4ai-staging.pages.dev/sitemap-0.xml",
         "sitemap_domain_swap": ["https://www.rank4ai.co.uk", "https://rank4ai-staging.pages.dev"],
+    },
+    "rank4ai-online": {
+        "url": "https://www.rank4ai.online",
+        "max_pages": 1000,
+        "sitemap": "https://www.rank4ai.online/sitemap-0.xml",
     },
 }
 

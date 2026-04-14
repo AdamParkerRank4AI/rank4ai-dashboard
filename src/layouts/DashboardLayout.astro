@@ -45,7 +45,7 @@ const isAgency = view === 'agency';
       <div class="mb-6">
         <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Clients</p>
         <ul class="space-y-1">
-          {clients.map((c) => (
+          {clients.filter((c) => !c.staging && c.id !== 'rank4ai').map((c) => (
             <li>
               <a
                 href={isAgency ? `/agency/${c.id}` : `/client/${c.id}`}
@@ -53,6 +53,26 @@ const isAgency = view === 'agency';
                   currentClient === c.id
                     ? 'bg-blue-600 text-white'
                     : 'text-gray-300 hover:bg-gray-800'
+                }`}
+              >
+                {c.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="mb-6">
+        <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Our Sites</p>
+        <ul class="space-y-1">
+          {clients.filter((c) => c.staging || c.id === 'rank4ai').map((c) => (
+            <li>
+              <a
+                href={isAgency ? `/agency/${c.id}` : `/client/${c.id}`}
+                class={`block px-3 py-2 rounded text-sm transition ${
+                  currentClient === c.id
+                    ? 'bg-blue-600 text-white'
+                    : 'text-gray-500 hover:bg-gray-800'
                 }`}
               >
                 {c.name}
@@ -64,41 +84,61 @@ const isAgency = view === 'agency';
       </div>
 
       {currentClient && isAgency && (
-        <div class="mt-4">
-          <a
-            href={`/agency/${currentClient}/settings`}
-            class="block px-3 py-2 rounded text-sm text-gray-400 hover:bg-gray-800 transition"
-          >
-            Client View Settings
-          </a>
-        </div>
-      )}
-
-      {currentClient && isAgency && (
-        <div class="mt-6">
-          <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Site Dashboards</p>
+        <div class="mb-6">
+          <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Site Manager</p>
           <ul class="space-y-1">
-            {clients.map((c) => (
-              <li>
-                <a
-                  href={`/agency/${c.id}/site-manager`}
-                  class={`block px-3 py-2 rounded text-sm transition ${
-                    currentClient === c.id
-                      ? 'text-blue-400 bg-gray-800/50'
-                      : 'text-gray-500 hover:bg-gray-800'
-                  }`}
-                >
-                  {c.name}
-                </a>
-              </li>
-            ))}
+            <li>
+              <a
+                href={`/agency/${currentClient}/site-manager`}
+                class={`block px-3 py-2 rounded text-sm transition ${
+                  Astro.url.pathname.includes('/site-manager')
+                    ? 'bg-blue-600 text-white'
+                    : 'text-gray-300 hover:bg-gray-800'
+                }`}
+              >
+                Pages & Content
+              </a>
+            </li>
+            <li>
+              <a
+                href={`/agency/${currentClient}/seo-health`}
+                class={`block px-3 py-2 rounded text-sm transition ${
+                  Astro.url.pathname.includes('/seo-health')
+                    ? 'bg-blue-600 text-white'
+                    : 'text-gray-300 hover:bg-gray-800'
+                }`}
+              >
+                SEO Health
+              </a>
+            </li>
+            <li>
+              <a
+                href={`/agency/${currentClient}/recommendations`}
+                class={`block px-3 py-2 rounded text-sm transition ${
+                  Astro.url.pathname.includes('/recommendations')
+                    ? 'bg-blue-600 text-white'
+                    : 'text-gray-300 hover:bg-gray-800'
+                }`}
+              >
+                Recommendations
+              </a>
+            </li>
           </ul>
         </div>
       )}
 
-      <div class="mt-6">
-        <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Quick Actions</p>
+      <div class="mb-6">
+        <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Tools</p>
         <ul class="space-y-1">
+          <li>
+            <a href="/crm" class={`block px-3 py-2 rounded text-sm transition ${
+              Astro.url.pathname === '/crm' || Astro.url.pathname === '/crm/'
+                ? 'bg-blue-600 text-white'
+                : 'text-gray-300 hover:bg-gray-800'
+            }`}>
+              CRM Pipeline
+            </a>
+          </li>
           <li>
             <a href="/add-client" class="block px-3 py-2 rounded text-sm text-green-400 hover:bg-gray-800 transition">
               + Add Client

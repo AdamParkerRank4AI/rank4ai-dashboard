@@ -82,7 +82,7 @@ const tooltip = INFO_TOOLTIPS[id] || '';
       <div class="flex items-start gap-2">
         <div>
           <h3 class="text-white font-semibold text-sm">{label}</h3>
-          <p class="text-xs text-gray-400 mt-0.5">{description}</p>
+          <p class="text-xs text-gray-400 mt-0.5 section-status-text" data-section-id={id}>{description}</p>
         </div>
         {tooltip && (
           <button
@@ -100,7 +100,7 @@ const tooltip = INFO_TOOLTIPS[id] || '';
       </div>
       <div class="flex items-center gap-2">
         {issueCount !== undefined && issueCount > 0 && (
-          <span class="text-[10px] px-1.5 py-0.5 rounded bg-red-900/50 text-red-300">
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-red-900/50 text-red-300 rec-badge" data-section-id={id} data-original-count={issueCount}>
             {issueCount} fixes
           </span>
         )}
@@ -111,7 +111,7 @@ const tooltip = INFO_TOOLTIPS[id] || '';
     {metric && (
       <div class="mt-4 flex items-end gap-3">
         <div>
-          <p class="text-2xl font-bold text-white">{metric}</p>
+          <p class="text-2xl font-bold text-white section-metric" data-section-id={id}>{metric}</p>
           {metricLabel && <p class="text-xs text-gray-400 mt-0.5">{metricLabel}</p>}
         </div>
         {change !== undefined && change !== null && (

@@ -12,6 +12,9 @@ SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_DIR = os.path.dirname(SCRIPTS_DIR)
 LOG_FILE = "/tmp/rank4ai_dashboard_refresh.log"
 
+sys.path.insert(0, SCRIPTS_DIR)
+from notify import send_failure_alert
+
 
 def log(msg):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -100,9 +103,13 @@ def main():
         ("fetch_gsc.py", 60),
         ("fetch_bing.py", 30),
         ("fetch_crawl_activity.py", 30),
+        ("fetch_bot_hits.py", 30),
         ("fetch_pagespeed.py", 120),
         ("extract_entities.py", 30),
         ("fetch_knowledge_graph.py", 30),
+        ("fetch_dataforseo.py", 120),
+        ("fetch_serp.py", 120),
+        ("fetch_competitor_serp.py", 120),
         ("generate_recommendations.py", 30),
         ("track_new_pages.py", 30),
         ("save_daily_metrics.py", 30),
@@ -167,15 +174,52 @@ def main():
 
     if not data_ok:
         log("DATA VALIDATION FAILED — skipping deploy to protect live site")
+        send_failure_alert("Dashboard Refresh", "Data validation failed — deploy blocked. Check for corrupt JSON files.", log_file=LOG_FILE)
         return
+
+    # Submit new pages to Google Indexing API (200/day limit shared across all sites)
+    log("\nSubmitting new pages to Google Indexing API...")
+    for site in ["rank4ai", "market-invoice", "seocompare"]:
+        script_path = os.path.join(SCRIPTS_DIR, "submit_google_indexing.py")
+        try:
+            result = subprocess.run(
+                [sys.executable, script_path, site, "50"],
+                capture_output=True, text=True, timeout=120,
+                cwd=PROJECT_DIR, env={**os.environ},
+            )
+            if result.returncode == 0:
+                log(f"  Indexing {site}: OK")
+            else:
+                log(f"  Indexing {site}: {result.stderr[:100] if result.stderr else 'error'}")
+        except Exception as e:
+            log(f"  Indexing {site}: {e}")
 
     # Build and deploy
     build_and_deploy()
 
+    # Check site changelogs + build full changelog
+    log("\nChecking site changelogs...")
+    run_script("check_site_changes.py", 30)
+    run_script("build_changelog.py", 30)
+
+    # Run guardrails check (after everything else)
+    log("\nRunning guardrails check...")
+    run_script("check_guardrails.py", 30)
+
     # Summary
     passed = sum(1 for v in results.values() if v)
     total = len(results)
+    failed_scripts = [k for k, v in results.items() if not v]
     log(f"\nRefresh complete: {passed}/{total} scripts succeeded")
+
+    # Email alert if anything failed
+    if failed_scripts:
+        send_failure_alert(
+            "Dashboard Refresh",
+            [f"{s} failed" for s in failed_scripts],
+            log_file=LOG_FILE,
+        )
+
     log("=" * 50)
 
 

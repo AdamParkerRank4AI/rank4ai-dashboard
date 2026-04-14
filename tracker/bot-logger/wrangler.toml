@@ -1,0 +1,14 @@
+name = "rank4ai-bot-logger"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+# Routes — intercept all requests on these domains
+routes = [
+  { pattern = "www.marketinvoice.co.uk/*", zone_name = "marketinvoice.co.uk" },
+  { pattern = "marketinvoice.co.uk/*", zone_name = "marketinvoice.co.uk" },
+]
+# SEO Compare is on a different Cloudflare account — needs separate bot-logger deployment
+
+[[kv_namespaces]]
+binding = "BOT_KV"
+id = "81ebad5da86d4cdabb0555ca4156d50e"

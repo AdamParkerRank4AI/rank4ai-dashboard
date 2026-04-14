@@ -47,6 +47,7 @@ const crawlActivityData = loadJson('crawl_activity.json');
 const kgData = loadJson('knowledge_graph.json');
 const nlpData = loadJson('nlp_entities.json');
 const serpData = loadJson('serp_data.json');
+const aioSerpData = loadJson('ai_overview_serp.json');
 const competitorData = loadJson('competitor_serp.json');
 const recsData = loadJson('recommendations.json');
 const siteConfig = loadJson('../site-config.json');
@@ -369,6 +370,23 @@ if (recs?.recommendations) {
   }
 }
 
+// Build per-rec section mapping for client-side dismissal tracking
+const recSectionMap: Record<number, string> = {};
+if (recs?.recommendations) {
+  recs.recommendations.forEach((r: any, i: number) => {
+    const cat = r.category.toLowerCase();
+    if (cat.includes('schema') || cat.includes('seo')) recSectionMap[i] = 'seo-health';
+    else if (cat.includes('citation')) recSectionMap[i] = 'ai-citations';
+    else if (cat.includes('ai readiness') || cat.includes('ai visibility') || cat.includes('e-e-a-t')) recSectionMap[i] = 'ai-readiness';
+    else if (cat.includes('performance')) recSectionMap[i] = 'site-speed';
+    else if (cat.includes('internal')) recSectionMap[i] = 'internal-links';
+    else if (cat.includes('content')) recSectionMap[i] = 'content-gaps';
+    else if (cat.includes('search')) recSectionMap[i] = 'search-performance';
+    else if (cat.includes('index')) recSectionMap[i] = 'crawl-activity';
+    else if (cat.includes('access')) recSectionMap[i] = 'accessibility';
+  });
+}
+
 // Calculate changes from baseline
 const changes: Record<string, { value: number; label: string }> = {};
 if (baseline) {
@@ -425,22 +443,22 @@ function daysUntil(dateStr: string): number {
 
   <!-- Fixes summary bar -->
   {recs && recs.total > 0 && (
-    <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 mb-4 flex items-center justify-between">
+    <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 mb-4 flex items-center justify-between" data-fixes-bar>
       <div class="flex items-center gap-4">
         <div class="flex items-center gap-2">
-          <span class="text-sm font-semibold text-white">{recs.total} fixes needed</span>
+          <span class="text-sm font-semibold text-white" data-fixes-total>{recs.total} fixes needed</span>
         </div>
         {recs.critical > 0 && (
-          <span class="px-2 py-1 rounded bg-red-900/50 text-red-300 text-xs font-medium">{recs.critical} critical</span>
+          <span class="px-2 py-1 rounded bg-red-900/50 text-red-300 text-xs font-medium" data-fixes-critical>{recs.critical} critical</span>
         )}
         {recs.high > 0 && (
-          <span class="px-2 py-1 rounded bg-yellow-900/50 text-yellow-300 text-xs font-medium">{recs.high} high</span>
+          <span class="px-2 py-1 rounded bg-yellow-900/50 text-yellow-300 text-xs font-medium" data-fixes-high>{recs.high} high</span>
         )}
         {recs.medium > 0 && (
-          <span class="px-2 py-1 rounded bg-blue-900/50 text-blue-300 text-xs font-medium">{recs.medium} medium</span>
+          <span class="px-2 py-1 rounded bg-blue-900/50 text-blue-300 text-xs font-medium" data-fixes-medium>{recs.medium} medium</span>
         )}
         {recs.low > 0 && (
-          <span class="px-2 py-1 rounded bg-gray-800 text-gray-400 text-xs">{recs.low} low</span>
+          <span class="px-2 py-1 rounded bg-gray-800 text-gray-400 text-xs" data-fixes-low>{recs.low} low</span>
         )}
       </div>
       <a href={`/agency/${clientId}/recommendations`} class="text-xs text-blue-400 hover:text-blue-300 transition">
@@ -546,7 +564,7 @@ function daysUntil(dateStr: string): number {
     <span class="text-[10px] px-2 py-0.5 rounded-full bg-gray-800 text-gray-500 normal-case font-normal">Traditional SEO</span>
   </h2>
   <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
-    {sections.filter((s: any) => ['site-manager', 'seo-health', 'traffic', 'search-performance', 'content-gaps', 'new-pages', 'site-tree', 'internal-links'].includes(s.id)).map((section: any) => {
+    {sections.filter((s: any) => ['site-manager', 'seo-health', 'traffic', 'crawl-activity', 'search-performance', 'content-gaps', 'new-pages', 'site-tree', 'internal-links'].includes(s.id)).map((section: any) => {
       const data = sectionStatus[section.id] || {};
       const isInClientView = client.clientViewSections.includes(section.id);
       const change = changes[section.id];
@@ -575,7 +593,7 @@ function daysUntil(dateStr: string): number {
     <span class="text-[10px] px-2 py-0.5 rounded-full bg-gray-800 text-gray-500 normal-case font-normal">Speed, uptime, crawlers</span>
   </h2>
   <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
-    {sections.filter((s: any) => ['site-speed', 'crawl-activity', 'uptime', 'crawl-status', 'positive-signals'].includes(s.id)).map((section: any) => {
+    {sections.filter((s: any) => ['site-speed', 'uptime', 'crawl-status', 'positive-signals'].includes(s.id)).map((section: any) => {
       const data = sectionStatus[section.id] || {};
       const isInClientView = client.clientViewSections.includes(section.id);
       const change = changes[section.id];
@@ -708,54 +726,53 @@ function daysUntil(dateStr: string): number {
   )}
 </DashboardLayout>
 
+<script is:inline src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.js"></script>
 <script define:vars={{ chartDataMap }}>
   // Render inline charts when panels are expanded
-  document.querySelectorAll('[data-chart-panel]').forEach(panel => {
-    panel.addEventListener('render-chart', async (e) => {
-      const id = e.detail.id;
-      let data;
+  document.querySelectorAll('[data-chart-panel]').forEach(function(panel) {
+    panel.addEventListener('render-chart', function(e) {
+      var id = e.detail.id;
+      var data;
       try {
-        const raw = chartDataMap[id];
+        var raw = chartDataMap[id];
         if (!raw) return;
         data = typeof raw === 'string' ? JSON.parse(raw) : raw;
-      } catch(e) { return; }
+      } catch(err) { return; }
 
       if (!data || data.length === 0) return;
 
-      const canvas = panel.querySelector(`[data-chart-canvas="${id}"]`);
-      if (!canvas) return;
+      var canvas = panel.querySelector('[data-chart-canvas="' + id + '"]');
+      if (!canvas || !window.Chart) return;
 
-      const { Chart } = await import('https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.js');
-
-      const labels = data.map(d => {
+      var labels = data.map(function(d) {
         if (!d.date) return '';
         if (d.date.length === 8 && /^\d{8}$/.test(d.date)) {
-          const date = `${d.date.slice(0,4)}-${d.date.slice(4,6)}-${d.date.slice(6,8)}`;
-          return new Date(date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+          var ds = d.date.slice(0,4) + '-' + d.date.slice(4,6) + '-' + d.date.slice(6,8);
+          return new Date(ds).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
         }
-        // Check if it's a date string
-        const parsed = new Date(d.date);
-        if (!isNaN(parsed.getTime()) && d.date.includes('-')) {
+        var parsed = new Date(d.date);
+        if (!isNaN(parsed.getTime()) && d.date.indexOf('-') >= 0) {
           return parsed.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
         }
-        // Not a date — use as-is (e.g. "Schema", "Performance")
         return d.date;
       });
 
-      const colors = {
+      var colors = {
         'traffic': { border: '#3b82f6', bg: 'rgba(59, 130, 246, 0.1)' },
         'crawl-activity': { border: '#8b5cf6', bg: 'rgba(139, 92, 246, 0.1)' },
         'crawl-status': { border: '#10b981', bg: 'rgba(16, 185, 129, 0.1)' },
+        'search-performance': { border: '#06b6d4', bg: 'rgba(6, 182, 212, 0.1)' },
+        'uptime': { border: '#f59e0b', bg: 'rgba(245, 158, 11, 0.1)' },
       };
-      const color = colors[id] || { border: '#3b82f6', bg: 'rgba(59, 130, 246, 0.1)' };
+      var color = colors[id] || { border: '#3b82f6', bg: 'rgba(59, 130, 246, 0.1)' };
 
-      new Chart(canvas, {
-        type: ['crawl-activity', 'ai-readiness', 'site-speed'].includes(id) ? 'bar' : 'line',
+      new window.Chart(canvas, {
+        type: ['ai-readiness', 'site-speed'].indexOf(id) >= 0 ? 'bar' : 'line',
         data: {
-          labels,
+          labels: labels,
           datasets: [{
             label: id.replace(/-/g, ' '),
-            data: data.map(d => d.value),
+            data: data.map(function(d) { return d.value; }),
             borderColor: color.border,
             backgroundColor: color.bg,
             fill: true,
@@ -774,4 +791,100 @@ function daysUntil(dateStr: string): number {
       });
     });
   });
+</script>
+
+<script define:vars={{ clientId, recSectionMap: JSON.stringify(recSectionMap), recsTotal: recs?.total || 0, recsCritical: recs?.critical || 0, recsHigh: recs?.high || 0, recsMedium: recs?.medium || 0, recsLow: recs?.low || 0, recsJson: JSON.stringify(recs?.recommendations || []) }}>
+  // Adjust recommendation counts based on localStorage dismissals
+  // Try both with and without trailing slash since Cloudflare may add one
+  var recStorageKey = 'rec-state-/agency/' + clientId + '/recommendations';
+  var recState = {};
+  try { recState = JSON.parse(localStorage.getItem(recStorageKey) || '{}'); } catch(e) {}
+  // If empty, try with trailing slash
+  if (Object.keys(recState).length === 0) {
+    try { recState = JSON.parse(localStorage.getItem(recStorageKey + '/') || '{}'); } catch(e) {}
+  }
+  try {
+    var sectionMap = JSON.parse(recSectionMap);
+    var allRecs = JSON.parse(recsJson);
+    var dismissed = Object.keys(recState);
+
+    if (dismissed.length > 0) {
+      // Count dismissed per section and per priority
+      var sectionReductions = {};
+      var priorityReductions = { critical: 0, high: 0, medium: 0, low: 0 };
+      var totalDismissed = 0;
+
+      dismissed.forEach(function(idx) {
+        var section = sectionMap[idx];
+        if (section) {
+          sectionReductions[section] = (sectionReductions[section] || 0) + 1;
+        }
+        var rec = allRecs[parseInt(idx)];
+        if (rec) {
+          priorityReductions[rec.priority] = (priorityReductions[rec.priority] || 0) + 1;
+        }
+        totalDismissed++;
+      });
+
+      // Update recommendations card metric number
+      var recMetric = document.querySelector('.section-metric[data-section-id="recommendations"]');
+      if (recMetric) {
+        var adjustedTotal = recsTotal - totalDismissed;
+        recMetric.textContent = adjustedTotal > 0 ? adjustedTotal : '0';
+        if (adjustedTotal <= 0) recMetric.style.color = '#86efac';
+      }
+
+      // Update section card badges
+      document.querySelectorAll('.rec-badge').forEach(function(badge) {
+        var sectionId = badge.getAttribute('data-section-id');
+        var original = parseInt(badge.getAttribute('data-original-count') || '0');
+        var reduction = sectionReductions[sectionId] || 0;
+        var adjusted = original - reduction;
+        if (adjusted <= 0) {
+          badge.style.display = 'none';
+        } else {
+          badge.textContent = adjusted + ' fixes';
+        }
+      });
+
+      // Update fixes summary bar
+      var adjustedTotal = recsTotal - totalDismissed;
+      var fixesBar = document.querySelector('[data-fixes-bar]');
+      if (fixesBar) {
+        var totalEl = fixesBar.querySelector('[data-fixes-total]');
+        if (totalEl) {
+          if (adjustedTotal <= 0) {
+            totalEl.textContent = 'All fixes addressed';
+            totalEl.style.color = '#86efac';
+          } else {
+            totalEl.textContent = adjustedTotal + ' fixes needed';
+          }
+        }
+        var critEl = fixesBar.querySelector('[data-fixes-critical]');
+        if (critEl) {
+          var adjCrit = recsCritical - (priorityReductions.critical || 0);
+          if (adjCrit <= 0) critEl.style.display = 'none';
+          else critEl.textContent = adjCrit + ' critical';
+        }
+        var highEl = fixesBar.querySelector('[data-fixes-high]');
+        if (highEl) {
+          var adjHigh = recsHigh - (priorityReductions.high || 0);
+          if (adjHigh <= 0) highEl.style.display = 'none';
+          else highEl.textContent = adjHigh + ' high';
+        }
+        var medEl = fixesBar.querySelector('[data-fixes-medium]');
+        if (medEl) {
+          var adjMed = recsMedium - (priorityReductions.medium || 0);
+          if (adjMed <= 0) medEl.style.display = 'none';
+          else medEl.textContent = adjMed + ' medium';
+        }
+        var lowEl = fixesBar.querySelector('[data-fixes-low]');
+        if (lowEl) {
+          var adjLow = recsLow - (priorityReductions.low || 0);
+          if (adjLow <= 0) lowEl.style.display = 'none';
+          else lowEl.textContent = adjLow + ' low';
+        }
+      }
+    }
+  } catch(e) {}
 </script>

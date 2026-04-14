@@ -1,31 +1,336 @@
 ---
 import DashboardLayout from '../layouts/DashboardLayout.astro';
 import clients from '../data/clients.json';
+import fs from 'node:fs';
+import path from 'node:path';
+
+function loadJson(filename: string) {
+  try {
+    const filePath = path.join(process.cwd(), 'src', 'data', 'live', filename);
+    if (fs.existsSync(filePath)) {
+      return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    }
+  } catch {}
+  return null;
+}
+
+const ga4 = loadJson('ga4.json') || {};
+const gsc = loadJson('gsc.json') || {};
+const recs = loadJson('recommendations.json') || {};
+const uptime = loadJson('uptime.json') || {};
+const audit = loadJson('ai_audit.json') || {};
+const citations = loadJson('citation_results.json') || {};
+const botHits = loadJson('bot_hits.json') || {};
+const changelog = loadJson('site_changelog.json') || {};
+const crawlActivity = loadJson('crawl_activity.json') || {};
+
+// Separate our sites from client sites
+const ourSites = clients.filter((c: any) => c.staging || c.id === 'rank4ai');
+const clientSites = clients.filter((c: any) => !c.staging && c.id !== 'rank4ai');
+
+// Build health data per client
+const healthData: Record<string, any> = {};
+for (const c of clients) {
+  const crawl = loadJson(`crawl_${c.id}.json`);
+  const r = recs[c.id] || {};
+  const g = ga4[c.id] || {};
+  const u = uptime[c.id] || {};
+  const a = audit[c.id] || {};
+  const cit = citations[c.id] || {};
+  const bh = botHits[c.id] || {};
+  const cl = changelog[c.id === 'market-invoice' ? 'market-invoice' : c.id === 'seocompare' ? 'seocompare' : 'rank4ai-dashboard'] || {};
+
+  const botTotal = (bh.days || []).reduce((sum: number, d: any) => sum + (d.total || 0), 0);
+
+  healthData[c.id] = {
+    pages: crawl?.pages_crawled || 0,
+    users: g.overview?.active_users || 0,
+    sessions: g.overview?.sessions || 0,
+    clicks: gsc[c.id]?.totals?.clicks || 0,
+    impressions: gsc[c.id]?.totals?.impressions || 0,
+    aiScore: a.overall_score || null,
+    citRate: cit.overall_rate || 0,
+    recsTotal: r.total || 0,
+    recsCritical: r.critical || 0,
+    recsHigh: r.high || 0,
+    upStatus: u.status || null,
+    upMs: u.response_time_ms || null,
+    botHits: botTotal,
+    commits24h: cl.commits_24h || 0,
+    commits7d: cl.commits_7d || 0,
+    lastCommit: cl.recent_commits?.[0]?.message || null,
+    lastCommitDate: cl.recent_commits?.[0]?.date?.slice(0, 10) || null,
+  };
+}
+
+// Get last refresh time from any file
+let lastRefresh = '--';
+try {
+  const recPath = path.join(process.cwd(), 'src', 'data', 'live', 'recommendations.json');
+  if (fs.existsSync(recPath)) {
+    const recData = JSON.parse(fs.readFileSync(recPath, 'utf-8'));
+    const firstClient = Object.keys(recData)[0];
+    if (firstClient && recData[firstClient]?.generated_at) {
+      lastRefresh = new Date(recData[firstClient].generated_at).toLocaleString('en-GB', {
+        day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit'
+      });
+    }
+  }
+} catch {}
+
+// Full categorised changelog
+const fullChangelog = loadJson('full_changelog.json') || [];
+const allCommits = fullChangelog;
+
+// Overall stats
+const totalPages = Object.values(healthData).reduce((sum: number, d: any) => sum + d.pages, 0);
+const totalUsers = Object.values(healthData).reduce((sum: number, d: any) => sum + d.users, 0);
+const totalRecs = Object.values(healthData).reduce((sum: number, d: any) => sum + d.recsTotal, 0);
+const totalCritical = Object.values(healthData).reduce((sum: number, d: any) => sum + d.recsCritical, 0);
 ---
 
 <DashboardLayout title="Dashboard">
-  <div class="max-w-4xl">
-    <h1 class="text-2xl font-bold text-white mb-2">Rank4AI Dashboard</h1>
-    <p class="text-gray-400 mb-8">Select a client to view their SEO and AI search visibility data.</p>
+  <!-- Header -->
+  <div class="flex items-center justify-between mb-6">
+    <div>
+      <h1 class="text-xl font-bold text-white">Dashboard</h1>
+      <p class="text-xs text-gray-500">Last refresh: {lastRefresh}</p>
+    </div>
+    <div class="flex gap-2">
+      <button id="refresh-btn" class="px-3 py-1.5 bg-blue-600 text-white rounded text-sm hover:bg-blue-500 transition">
+        Refresh All Data
+      </button>
+      <a href="/crm" class="px-3 py-1.5 bg-gray-800 text-gray-300 rounded text-sm hover:bg-gray-700 transition">
+        CRM Pipeline
+      </a>
+    </div>
+  </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      {clients.map((client) => (
-        <a
-          href={`/agency/${client.id}`}
-          class="block p-6 rounded-lg bg-gray-900 border border-gray-800 hover:border-blue-500/50 transition group"
-        >
-          <h2 class="text-lg font-semibold text-white group-hover:text-blue-400 transition">{client.name}</h2>
-          <p class="text-sm text-gray-400 mt-1">{client.domain}</p>
-          <div class="flex gap-4 mt-4 text-xs text-gray-500">
-            <span>{client.allSections.length} sections</span>
-            <span>{client.clientViewSections.length} visible to client</span>
+  <!-- Overall stats -->
+  <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-6">
+    <div class="bg-gray-900 border border-gray-800 rounded-lg p-3 text-center">
+      <div class="text-xl font-bold text-white">{totalPages.toLocaleString()}</div>
+      <div class="text-[10px] text-gray-500">Total Pages</div>
+    </div>
+    <div class="bg-gray-900 border border-gray-800 rounded-lg p-3 text-center">
+      <div class="text-xl font-bold text-blue-400">{totalUsers.toLocaleString()}</div>
+      <div class="text-[10px] text-gray-500">Users (30d)</div>
+    </div>
+    <div class="bg-gray-900 border border-gray-800 rounded-lg p-3 text-center">
+      <div class={`text-xl font-bold ${totalCritical > 0 ? 'text-red-400' : totalRecs > 0 ? 'text-yellow-400' : 'text-green-400'}`}>{totalRecs}</div>
+      <div class="text-[10px] text-gray-500">Open Fixes</div>
+    </div>
+    <div class="bg-gray-900 border border-gray-800 rounded-lg p-3 text-center">
+      <div class="text-xl font-bold text-purple-400">{allCommits.filter(c => c.date?.slice(0, 10) === new Date().toISOString().slice(0, 10)).length}</div>
+      <div class="text-[10px] text-gray-500">Changes Today</div>
+    </div>
+    <div class="bg-gray-900 border border-gray-800 rounded-lg p-3 text-center">
+      <div class="text-xl font-bold text-white">{clients.filter((c: any) => !c.staging).length}</div>
+      <div class="text-[10px] text-gray-500">Active Sites</div>
+    </div>
+  </div>
+
+  <!-- Client Sites -->
+  <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Client Sites</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
+    {clientSites.map((client: any) => {
+      const h = healthData[client.id];
+      const statusColor = h.upStatus === 200 ? 'bg-green-400' : h.upStatus ? 'bg-red-400' : 'bg-gray-600';
+      return (
+        <a href={`/agency/${client.id}`} class="block bg-gray-900 border border-gray-800 rounded-lg p-4 hover:border-blue-500/50 transition group">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <h3 class="text-white font-semibold group-hover:text-blue-400 transition">{client.name}</h3>
+              <p class="text-xs text-gray-500">{client.domain}</p>
+            </div>
+            <div class="flex items-center gap-2">
+              {h.recsCritical > 0 && <span class="text-[9px] px-1.5 py-0.5 rounded bg-red-900 text-red-300">{h.recsCritical} critical</span>}
+              <span class={`w-2.5 h-2.5 rounded-full ${statusColor}`} title={h.upStatus ? `${h.upStatus} (${h.upMs}ms)` : 'Not checked'}></span>
+            </div>
+          </div>
+          <div class="grid grid-cols-4 gap-2 text-center mb-3">
+            <div>
+              <div class="text-sm font-bold text-white">{h.pages}</div>
+              <div class="text-[9px] text-gray-600">pages</div>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-blue-400">{h.users.toLocaleString()}</div>
+              <div class="text-[9px] text-gray-600">users</div>
+            </div>
+            <div>
+              <div class={`text-sm font-bold ${h.aiScore >= 70 ? 'text-green-400' : h.aiScore >= 40 ? 'text-yellow-400' : h.aiScore ? 'text-red-400' : 'text-gray-600'}`}>{h.aiScore || '--'}</div>
+              <div class="text-[9px] text-gray-600">AI score</div>
+            </div>
+            <div>
+              <div class={`text-sm font-bold ${h.recsTotal === 0 ? 'text-green-400' : h.recsCritical > 0 ? 'text-red-400' : 'text-yellow-400'}`}>{h.recsTotal}</div>
+              <div class="text-[9px] text-gray-600">fixes</div>
+            </div>
+          </div>
+          <div class="flex items-center justify-between text-[10px]">
+            <div class="flex gap-3 text-gray-500">
+              <span>{h.clicks} clicks</span>
+              <span>{h.impressions} imp</span>
+              <span>{h.botHits} bot hits</span>
+            </div>
+            {h.lastCommit && (
+              <span class="text-gray-600 truncate max-w-[120px]" title={h.lastCommit}>{h.lastCommitDate}</span>
+            )}
           </div>
         </a>
-      ))}
+      );
+    })}
+  </div>
+
+  <!-- Our Sites -->
+  <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Our Sites</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
+    {ourSites.map((client: any) => {
+      const h = healthData[client.id];
+      return (
+        <a href={`/agency/${client.id}`} class="block bg-gray-900 border border-gray-800 rounded-lg p-4 hover:border-gray-700 transition group opacity-80">
+          <div class="flex items-start justify-between mb-2">
+            <div>
+              <h3 class="text-gray-300 font-semibold group-hover:text-white transition text-sm">{client.name}</h3>
+              <p class="text-[10px] text-gray-600">{client.domain}</p>
+            </div>
+            {client.staging && <span class="text-[8px] px-1.5 py-0.5 rounded bg-yellow-900/50 text-yellow-400 uppercase">Staging</span>}
+          </div>
+          <div class="flex gap-4 text-[10px] text-gray-500">
+            <span>{h.pages} pages</span>
+            {h.recsTotal > 0 && <span class="text-yellow-500">{h.recsTotal} fixes</span>}
+            {h.users > 0 && <span>{h.users} users</span>}
+          </div>
+        </a>
+      );
+    })}
+  </div>
+
+  <!-- Two column: Activity Feed + Site Changes -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <!-- Activity Feed -->
+    <div class="bg-gray-900 border border-gray-800 rounded-lg p-5">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-sm font-semibold text-gray-400">Site Changes</h3>
+        <div class="flex gap-1">
+          <button class="changelog-filter text-[9px] px-2 py-0.5 rounded bg-gray-800 text-gray-400" data-filter="all">All</button>
+          <button class="changelog-filter text-[9px] px-2 py-0.5 rounded bg-gray-800 text-gray-400" data-filter="marketinvoice.co.uk">MI</button>
+          <button class="changelog-filter text-[9px] px-2 py-0.5 rounded bg-gray-800 text-gray-400" data-filter="seocompare.co.uk">SEO</button>
+          <button class="changelog-filter text-[9px] px-2 py-0.5 rounded bg-gray-800 text-gray-400" data-filter="dashboard">Dash</button>
+        </div>
+      </div>
+      <div class="space-y-2 max-h-[400px] overflow-y-auto" id="changelog-list">
+        {allCommits.slice(0, 50).map((c: any) => {
+          const siteColor = c.site === 'marketinvoice.co.uk' ? 'bg-teal-900 text-teal-300' : c.site === 'seocompare.co.uk' ? 'bg-yellow-900 text-yellow-300' : 'bg-gray-700 text-gray-300';
+          const catColor = c.label === 'NEW' ? 'bg-green-900 text-green-300' : c.label === 'FIX' ? 'bg-red-900 text-red-300' : c.label === 'IMPROVEMENT' ? 'bg-blue-900 text-blue-300' : c.label === 'REMOVAL' ? 'bg-orange-900 text-orange-300' : c.label === 'CHANGE' ? 'bg-purple-900 text-purple-300' : 'bg-gray-800 text-gray-400';
+          const isToday = c.date === new Date().toISOString().slice(0, 10);
+          return (
+            <div class={`changelog-item flex items-start gap-1.5 text-xs border-b border-gray-800/50 pb-2 ${isToday ? '' : 'opacity-60'}`} data-site={c.site}>
+              <span class={`text-[8px] px-1 py-0.5 rounded ${siteColor} flex-shrink-0 mt-0.5`}>{c.site}</span>
+              <span class={`text-[8px] px-1 py-0.5 rounded ${catColor} flex-shrink-0 mt-0.5`}>{c.label}</span>
+              <div class="flex-1 min-w-0">
+                <span class="text-gray-300 block truncate">{c.message}</span>
+                <span class="text-gray-600">{c.date}</span>
+              </div>
+            </div>
+          );
+        })}
+        {allCommits.length === 0 && <p class="text-xs text-gray-600">No changes tracked yet.</p>}
+      </div>
+      <div class="mt-3 pt-2 border-t border-gray-800 text-[10px] text-gray-600">
+        {allCommits.length} total changes tracked
+      </div>
     </div>
 
-    <a href="/add-client" class="inline-block mt-6 px-4 py-2 rounded bg-green-600 hover:bg-green-500 text-white text-sm transition">
-      + Add Client
-    </a>
+    <script>
+      document.querySelectorAll('.changelog-filter').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var filter = btn.getAttribute('data-filter');
+          document.querySelectorAll('.changelog-filter').forEach(function(b) { b.style.outline = ''; });
+          btn.style.outline = '2px solid white';
+          document.querySelectorAll('.changelog-item').forEach(function(item) {
+            if (filter === 'all' || item.getAttribute('data-site') === filter) {
+              item.style.display = '';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    </script>
+
+    <!-- Quick Status -->
+    <div class="bg-gray-900 border border-gray-800 rounded-lg p-5">
+      <h3 class="text-sm font-semibold text-gray-400 mb-4">System Status</h3>
+      <div class="space-y-2">
+        {clients.filter((c: any) => !c.staging).map((client: any) => {
+          const h = healthData[client.id];
+          const checks = [
+            { label: 'GA4', ok: h.users > 0 },
+            { label: 'GSC', ok: h.impressions > 0 },
+            { label: 'Crawl', ok: h.pages > 0 },
+            { label: 'AI Audit', ok: h.aiScore !== null },
+            { label: 'Recs', ok: h.recsTotal >= 0 },
+            { label: 'Uptime', ok: h.upStatus === 200 },
+            { label: 'Bots', ok: h.botHits > 0 },
+          ];
+          return (
+            <div class="border-b border-gray-800/50 pb-2">
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-sm text-white">{client.name}</span>
+                <span class="text-[10px] text-gray-500">{checks.filter(c => c.ok).length}/{checks.length} connected</span>
+              </div>
+              <div class="flex gap-1">
+                {checks.map(c => (
+                  <span class={`text-[9px] px-1.5 py-0.5 rounded ${c.ok ? 'bg-green-900/50 text-green-400' : 'bg-red-900/50 text-red-400'}`}>{c.label}</span>
+                ))}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <h3 class="text-sm font-semibold text-gray-400 mt-6 mb-3">Automated Tasks</h3>
+      <div class="text-xs text-gray-400 space-y-1" id="task-status">
+        <p class="text-gray-600">Checking...</p>
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-gray-800">
+        <h3 class="text-sm font-semibold text-gray-400 mb-2">Quick Links</h3>
+        <div class="flex flex-wrap gap-2">
+          <a href="/crm" class="text-[10px] px-2 py-1 rounded bg-gray-800 text-gray-400 hover:text-white">CRM Pipeline</a>
+          <a href="/add-client" class="text-[10px] px-2 py-1 rounded bg-gray-800 text-green-400 hover:text-green-300">+ Add Client</a>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <script>
+    // Refresh button
+    document.getElementById('refresh-btn')?.addEventListener('click', function() {
+      var btn = this;
+      btn.textContent = 'Refreshing...';
+      btn.disabled = true;
+      btn.style.opacity = '0.5';
+
+      fetch('https://rank4ai-tracker.dawn-field-3d16.workers.dev/api/refresh-trigger', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'refresh' }),
+      }).then(function() {
+        btn.textContent = 'Refresh triggered — rebuilding...';
+        setTimeout(function() {
+          btn.textContent = 'Refresh All Data';
+          btn.disabled = false;
+          btn.style.opacity = '1';
+        }, 5000);
+      }).catch(function() {
+        btn.textContent = 'Use terminal: python3 scripts/refresh_all.py';
+        setTimeout(function() {
+          btn.textContent = 'Refresh All Data';
+          btn.disabled = false;
+          btn.style.opacity = '1';
+        }, 5000);
+      });
+    });
+  </script>
 </DashboardLayout>

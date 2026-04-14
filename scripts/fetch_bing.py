@@ -15,6 +15,7 @@ BASE_URL = "https://ssl.bing.com/webmaster/api.svc/json"
 SITES = {
     "rank4ai": "https://www.rank4ai.co.uk/",
     "market-invoice": "https://www.marketinvoice.co.uk/",
+    "seocompare": "https://www.seocompare.co.uk/",
 }
 
 

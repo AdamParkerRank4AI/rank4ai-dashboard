@@ -1,0 +1,22 @@
+---
+import DashboardLayout from '../layouts/DashboardLayout.astro';
+---
+
+<DashboardLayout title="CRM — Rank4AI" currentClient="rank4ai" view="agency">
+  <div class="mb-4">
+    <h1 class="text-xl font-bold text-white">CRM Pipeline</h1>
+    <p class="text-sm text-gray-500">Drag leads between stages. Click a card for details.</p>
+  </div>
+  <div id="crm-root"></div>
+
+  <script>
+    import { createElement } from 'react';
+    import { createRoot } from 'react-dom/client';
+    import CrmKanban from '../components/CrmKanban.jsx';
+
+    const el = document.getElementById('crm-root');
+    if (el) {
+      createRoot(el).render(createElement(CrmKanban));
+    }
+  </script>
+</DashboardLayout>

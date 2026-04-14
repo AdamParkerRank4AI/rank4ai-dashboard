@@ -1,0 +1,13 @@
+name = "rank4ai-bot-logger-seo"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+account_id = "927d3dd61a9375f0c8185df7b2a1764e"
+
+routes = [
+  { pattern = "www.seocompare.co.uk/*", zone_name = "seocompare.co.uk" },
+  { pattern = "seocompare.co.uk/*", zone_name = "seocompare.co.uk" },
+]
+
+[[kv_namespaces]]
+binding = "BOT_KV"
+id = "2672e5379b794866b476c9ed0d42b96c"

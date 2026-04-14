@@ -11,6 +11,7 @@ SCOPES = [
     'https://www.googleapis.com/auth/analytics.readonly',
     'https://www.googleapis.com/auth/analytics.manage.users.readonly',
     'https://www.googleapis.com/auth/webmasters.readonly',
+    'https://www.googleapis.com/auth/indexing',
 ]
 
 CLIENT_SECRET = os.path.expanduser(

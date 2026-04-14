@@ -18,6 +18,7 @@ OUTPUT_DIR = os.path.expanduser('~/rank4ai-dashboard/src/data/live')
 PROPERTIES = {
     "rank4ai": "526657151",
     "market-invoice": "531285218",
+    "seocompare": "532266658",
 }
 
 

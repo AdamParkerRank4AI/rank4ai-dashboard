@@ -212,6 +212,42 @@ export default {
       });
     }
 
+    // API endpoint — server-side bot hits (from bot-logger Worker route)
+    if (url.pathname === '/api/bot-hits') {
+      const siteId = url.searchParams.get('site') || 'rank4ai';
+      const days = parseInt(url.searchParams.get('days') || '30');
+      const results = [];
+
+      for (let i = 0; i < days; i++) {
+        const date = new Date(Date.now() - i * 86400000).toISOString().slice(0, 10);
+        const data = await env.TRACKER_KV.get(`bots:${siteId}:${date}`, 'json');
+        if (data) results.push(data);
+      }
+
+      return new Response(JSON.stringify({
+        site: siteId,
+        days: results.length,
+        data: results.reverse(),
+      }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
+    // API endpoint — all sites bot hits today
+    if (url.pathname === '/api/bot-overview') {
+      const today = new Date().toISOString().slice(0, 10);
+      const overview = {};
+
+      for (const site of ['rank4ai', 'market-invoice', 'seocompare']) {
+        const data = await env.TRACKER_KV.get(`bots:${site}:${today}`, 'json');
+        overview[site] = data || { date: today, site, total: 0, by_type: {}, by_name: {} };
+      }
+
+      return new Response(JSON.stringify(overview), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
     // Citation test endpoint — test a single query against AI models
     if (url.pathname === '/test-citation' && request.method === 'POST') {
       try {
