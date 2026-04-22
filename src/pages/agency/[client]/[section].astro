@@ -97,6 +97,45 @@ const trends = trendsAll?.[clientId];
 const botHits = botHitsAll?.[clientId];
 const indexingLog = indexingLogAll?.[clientId];
 
+// Freshness badge data — which source powers this section, when did it last run
+function sectionFreshnessSource(id: string) {
+  const crawlTs = crawlData?.crawled_at || null;
+  if (id === 'traffic') return { ts: ga4?.fetched_at || ga4?.overview?.fetched_at, label: 'GA4', schedule: 'daily 06:00' };
+  if (id === 'search-performance') return { ts: gsc?.fetched_at, label: 'GSC + Bing', schedule: 'daily 06:00' };
+  if (['seo-health','site-manager','site-tree','internal-links','positive-signals'].indexOf(id) !== -1) return { ts: crawlTs, label: 'site crawl', schedule: 'daily 06:00' };
+  if (id === 'ai-readiness') return { ts: audit?.audited_at, label: 'AI audit', schedule: 'daily 06:00' };
+  if (id === 'ai-citations') return { ts: citByType?.tested_at, label: 'citations', schedule: 'weekly (Mon)' };
+  if (id === 'recommendations' || id === 'overview') return { ts: recs?.generated_at, label: 'recs', schedule: 'daily 06:00' };
+  if (id === 'content-gaps') return { ts: gsc?.fetched_at, label: 'GSC', schedule: 'daily 06:00' };
+  if (id === 'uptime') return { ts: uptime?.checked_at, label: 'uptime check', schedule: 'daily 06:00' };
+  if (id === 'crawl-activity') return { ts: crawlActivityDetail?.fetched_at, label: 'Bing crawl', schedule: 'daily 06:00' };
+  if (id === 'site-speed') return { ts: pagespeed?.fetched_at, label: 'PageSpeed', schedule: 'weekly (Mon)' };
+  return null;
+}
+
+const __ds = sectionFreshnessSource(sectionId);
+let freshnessAge = '';
+let freshnessFormatted = '';
+let freshnessTone = '';
+let freshnessLabel = '';
+let freshnessSchedule = '';
+let hasFreshness = false;
+if (__ds && __ds.ts) {
+  hasFreshness = true;
+  freshnessLabel = __ds.label;
+  freshnessSchedule = __ds.schedule;
+  const dt = new Date(__ds.ts);
+  const ageMin = Math.round((Date.now() - dt.getTime()) / 60000);
+  const ageH = ageMin / 60;
+  if (ageH < 1) freshnessAge = ageMin + 'm ago';
+  else if (ageH < 24) freshnessAge = Math.round(ageH) + 'h ago';
+  else freshnessAge = Math.round(ageH / 24) + 'd ago';
+  if (ageH < 24) freshnessTone = 'text-green-400 bg-green-900/30 border-green-800';
+  else if (ageH < 48) freshnessTone = 'text-yellow-400 bg-yellow-900/30 border-yellow-800';
+  else freshnessTone = 'text-red-400 bg-red-900/30 border-red-800';
+  freshnessFormatted = dt.toLocaleString('en-GB', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' });
+}
+
 // Prepare chart data as JSON strings for client-side JS
 const dailyTraffic = JSON.stringify(ga4?.daily || []);
 const topPages = JSON.stringify(ga4?.top_pages || []);
@@ -122,7 +161,18 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
   </div>
 
   <h1 class="text-2xl font-bold text-white mb-1">{section.label}</h1>
-  <p class="text-sm text-gray-400 mb-6">{client.name} — {client.domain}</p>
+  <p class="text-sm text-gray-400 mb-3">{client.name} — {client.domain}</p>
+
+  {hasFreshness && (
+    <div class={`inline-flex items-center gap-2 border rounded px-3 py-1.5 text-xs mb-6 ${freshnessTone}`}>
+      <span class="font-semibold">{freshnessLabel}</span>
+      <span class="opacity-80">ran {freshnessAge}</span>
+      <span class="opacity-50">·</span>
+      <span class="opacity-80">{freshnessFormatted}</span>
+      <span class="opacity-50">·</span>
+      <span class="opacity-70">runs {freshnessSchedule}</span>
+    </div>
+  )}
 
   <!-- TRAFFIC -->
   {sectionId === 'traffic' && ga4 && (
