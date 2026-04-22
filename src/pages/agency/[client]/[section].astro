@@ -3043,19 +3043,64 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
             )}
             {dailyAuditPerSite.flagged_pages?.length > 0 && (
               <div class="space-y-3">
-                {dailyAuditPerSite.flagged_pages.map((p: any) => (
-                  <div class="border-l-2 border-red-700 pl-3">
-                    <a href={p.url} target="_blank" rel="noopener" class="text-xs text-blue-400 hover:text-blue-300 break-all">{p.url}</a>
-                    <ul class="mt-1 space-y-0.5">
-                      {p.issues?.map((iss: string) => (
-                        <li class="text-xs text-gray-400">• {iss}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
+                {dailyAuditPerSite.flagged_pages.map((p: any, idx: number) => {
+                  const issuesList = (p.issues || []).map((i: string) => `  - ${i}`).join('\n');
+                  const repoLocal = clientId === 'rank4ai' ? '~/rank4ai-site' : clientId === 'market-invoice' ? '~/compare-invoice-finance' : '~/compareaiseo';
+                  const promptText = [
+                    `Site: ${dailyAuditPerSite.site_name} (${repoLocal})`,
+                    `URL: ${p.url}`,
+                    `Found: daily audit ${dailyAuditPerSite.audit_date}`,
+                    `Issues:`,
+                    issuesList,
+                    ``,
+                    `Please:`,
+                    `1. Open the page source, identify root cause`,
+                    `2. Fix in the repo`,
+                    `3. Build, then push to main (Cloudflare auto-deploys)`,
+                    `4. Append a one-line entry to iCloud/claude/astro/plan/CHANGELOG_${clientId === 'rank4ai' ? '' : (clientId === 'market-invoice' ? 'MARKET_INVOICE' : 'COMPAREAISEO')}.md`,
+                    `5. Mark resolved in iCloud/claude/astro/FLEET/INBOX.md`,
+                  ].join('\n');
+                  return (
+                    <div class="border-l-2 border-red-700 pl-3">
+                      <div class="flex items-start justify-between gap-3">
+                        <a href={p.url} target="_blank" rel="noopener" class="text-xs text-blue-400 hover:text-blue-300 break-all">{p.url}</a>
+                        <button
+                          class="copy-prompt-btn shrink-0 px-2 py-1 bg-purple-900/40 hover:bg-purple-800/60 border border-purple-700 text-purple-200 text-xs rounded transition"
+                          data-prompt={promptText}
+                          data-idx={idx}
+                          title="Copy a Claude-ready fix prompt for this page"
+                        >Copy fix prompt</button>
+                      </div>
+                      <ul class="mt-1 space-y-0.5">
+                        {p.issues?.map((iss: string) => (
+                          <li class="text-xs text-gray-400">• {iss}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  );
+                })}
               </div>
             )}
           </div>
+
+          <script is:inline>
+            (function() {
+              document.querySelectorAll('.copy-prompt-btn').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                  const text = btn.getAttribute('data-prompt');
+                  navigator.clipboard.writeText(text).then(function() {
+                    const original = btn.textContent;
+                    btn.textContent = '✓ Copied';
+                    btn.classList.add('bg-green-900/60', 'border-green-700', 'text-green-200');
+                    setTimeout(function() {
+                      btn.textContent = original;
+                      btn.classList.remove('bg-green-900/60', 'border-green-700', 'text-green-200');
+                    }, 1800);
+                  });
+                });
+              });
+            })();
+          </script>
 
           <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
             <h3 class="text-sm font-semibold text-gray-400 mb-4">All pages checked ({dailyAuditPerSite.all_pages?.length})</h3>
