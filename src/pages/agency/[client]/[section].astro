@@ -58,8 +58,21 @@ const crawlActivityAll = loadJson('crawl_activity.json');
 const kgAll = loadJson('knowledge_graph.json');
 const nlpAll = loadJson('nlp_entities.json');
 const aioSerpAll = loadJson('ai_overview_serp.json');
+const trendsAll = loadJson('google_trends.json');
 const botHitsAll = loadJson('bot_hits.json');
 const indexingLogAll = loadJson('google_indexing_log.json');
+const dailyAuditPerSite = loadJson(`daily_audit_${clientId}.json`);
+const dailyAuditSummary = loadJson('daily_audit_summary.json');
+const dailyAuditHistoryAll = loadJson('daily_audit_history.json');
+const dailyAuditHistory = dailyAuditHistoryAll?.[clientId] || [];
+
+// Per-site GitHub repo for the Push Live deep link
+const SITE_REPOS: Record<string, string> = {
+  'rank4ai': 'AdamParkerRank4AI/rank4ai-preview',
+  'market-invoice': 'AdamParkerRank4AI/market-invoice',
+  'seocompare': 'AdamParkerRank4AI/seocompare',
+};
+const siteRepo = SITE_REPOS[clientId];
 
 const ga4 = ga4All?.[clientId];
 const gsc = gscAll?.[clientId];
@@ -80,6 +93,7 @@ const crawlActivityDetail = crawlActivityAll?.[clientId];
 const kg = kgAll?.[clientId];
 const nlp = nlpAll?.[clientId];
 const aioSerp = aioSerpAll?.[clientId];
+const trends = trendsAll?.[clientId];
 const botHits = botHitsAll?.[clientId];
 const indexingLog = indexingLogAll?.[clientId];
 
@@ -2284,21 +2298,21 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
   <!-- RECOMMENDATIONS -->
   {sectionId === 'recommendations' && recs && (
     <div>
-      <div class="grid grid-cols-4 gap-4 mb-6">
+      <div class="grid grid-cols-4 gap-4 mb-6" id="rec-stats">
         <div class="bg-red-950/30 border border-red-800/50 rounded-lg p-4 text-center">
-          <div class="text-2xl font-bold text-red-400">{recs.critical}</div>
+          <div class="text-2xl font-bold text-red-400" id="rec-stat-critical">{recs.critical}</div>
           <div class="text-xs text-gray-500">Critical</div>
         </div>
         <div class="bg-yellow-950/30 border border-yellow-800/50 rounded-lg p-4 text-center">
-          <div class="text-2xl font-bold text-yellow-400">{recs.high}</div>
+          <div class="text-2xl font-bold text-yellow-400" id="rec-stat-high">{recs.high}</div>
           <div class="text-xs text-gray-500">High</div>
         </div>
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
-          <div class="text-2xl font-bold text-blue-400">{recs.medium}</div>
+          <div class="text-2xl font-bold text-blue-400" id="rec-stat-medium">{recs.medium}</div>
           <div class="text-xs text-gray-500">Medium</div>
         </div>
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
-          <div class="text-2xl font-bold text-gray-400">{recs.low}</div>
+          <div class="text-2xl font-bold text-gray-400" id="rec-stat-low">{recs.low}</div>
           <div class="text-xs text-gray-500">Low</div>
         </div>
       </div>
@@ -2432,6 +2446,43 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
 
         function saveRecState() {
           localStorage.setItem(storageKey, JSON.stringify(recState));
+          updateRecStats();
+        }
+
+        function updateRecStats() {
+          var dismissed = Object.keys(recState);
+          var counts = { critical: 0, high: 0, medium: 0, low: 0 };
+          dismissed.forEach(function(idx) {
+            var item = document.querySelector('.rec-item[data-rec-index="' + idx + '"]');
+            if (item) {
+              var p = item.getAttribute('data-rec-priority');
+              if (p) counts[p] = (counts[p] || 0) + 1;
+            }
+          });
+          var origCrit = parseInt(allRecs.filter(function(r) { return r.priority === 'critical'; }).length);
+          var origHigh = parseInt(allRecs.filter(function(r) { return r.priority === 'high'; }).length);
+          var origMed = parseInt(allRecs.filter(function(r) { return r.priority === 'medium'; }).length);
+          var origLow = parseInt(allRecs.filter(function(r) { return r.priority === 'low'; }).length);
+
+          var el;
+          el = document.getElementById('rec-stat-critical');
+          if (el) el.textContent = origCrit - (counts.critical || 0);
+          el = document.getElementById('rec-stat-high');
+          if (el) el.textContent = origHigh - (counts.high || 0);
+          el = document.getElementById('rec-stat-medium');
+          if (el) el.textContent = origMed - (counts.medium || 0);
+          el = document.getElementById('rec-stat-low');
+          if (el) el.textContent = origLow - (counts.low || 0);
+
+          // Update filter button labels
+          document.querySelectorAll('.rec-filter').forEach(function(btn) {
+            var f = btn.getAttribute('data-filter');
+            if (f === 'all') btn.textContent = 'All (' + (allRecs.length - dismissed.length) + ')';
+            if (f === 'critical') btn.textContent = 'Critical (' + (origCrit - (counts.critical || 0)) + ')';
+            if (f === 'high') btn.textContent = 'High (' + (origHigh - (counts.high || 0)) + ')';
+            if (f === 'medium') btn.textContent = 'Medium (' + (origMed - (counts.medium || 0)) + ')';
+            if (f === 'low') btn.textContent = 'Low (' + (origLow - (counts.low || 0)) + ')';
+          });
         }
 
         function applyState(item, index) {
@@ -2466,6 +2517,9 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
           var index = item.getAttribute('data-rec-index');
           applyState(item, index);
         });
+
+        // Update stats to reflect dismissed items
+        updateRecStats();
 
         // Done button
         document.querySelectorAll('.done-rec-btn').forEach(function(btn) {
@@ -2630,7 +2684,398 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
   )}
 
   <!-- Fallback for sections without detail pages -->
-  {!['traffic', 'content-gaps', 'seo-health', 'ai-citations', 'uptime', 'positive-signals', 'ai-readiness', 'search-performance', 'overview', 'site-speed', 'crawl-activity', 'competitors', 'recommendations', 'new-pages', 'site-tree', 'internal-links', 'site-manager'].includes(sectionId) && (
+  {sectionId === 'content-plan' && (
+    <div>
+      {/* Keyword Rankings from GSC */}
+      {gsc?.top_queries?.length > 0 && (() => {
+        const reliable = gsc.top_queries.filter((q: any) => q.impressions >= 50);
+        const emerging = gsc.top_queries.filter((q: any) => q.impressions >= 10 && q.impressions < 50);
+        const lowData = gsc.top_queries.filter((q: any) => q.impressions < 10);
+        return (
+          <div class="bg-gray-800 border border-gray-700 rounded-lg p-6 mb-6">
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <h3 class="text-sm font-semibold text-white">Keyword Rankings</h3>
+                <p class="text-xs text-gray-400">GSC avg position (28 days). DataForSEO live positions tracked separately below.</p>
+              </div>
+              <div class="flex gap-2 text-[9px]">
+                <span class="px-2 py-0.5 rounded bg-green-900/50 text-green-300">{reliable.length} reliable (50+ imp)</span>
+                <span class="px-2 py-0.5 rounded bg-yellow-900/50 text-yellow-300">{emerging.length} emerging (10-49)</span>
+                <span class="px-2 py-0.5 rounded bg-gray-700 text-gray-400">{lowData.length} low data (&lt;10)</span>
+              </div>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-xs">
+                <thead>
+                  <tr class="text-gray-400 border-b border-gray-700">
+                    <th class="text-left py-2 px-3">Keyword</th>
+                    <th class="text-right py-2 px-3">Avg Position</th>
+                    <th class="text-right py-2 px-3">Impressions</th>
+                    <th class="text-right py-2 px-3">Clicks</th>
+                    <th class="text-right py-2 px-3">CTR</th>
+                    <th class="text-right py-2 px-3">Confidence</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {gsc.top_queries.sort((a: any, b: any) => b.impressions - a.impressions).map((q: any) => {
+                    const conf = q.impressions >= 50 ? 'Reliable' : q.impressions >= 10 ? 'Emerging' : 'Low';
+                    const confColor = q.impressions >= 50 ? 'text-green-400' : q.impressions >= 10 ? 'text-yellow-400' : 'text-gray-600';
+                    return (
+                      <tr class={`border-b border-gray-800/50 hover:bg-gray-700/30 ${q.impressions < 10 ? 'opacity-50' : ''}`}>
+                        <td class="py-2 px-3 text-gray-200">{q.query}</td>
+                        <td class={`py-2 px-3 text-right font-medium ${q.position <= 10 ? 'text-green-400' : q.position <= 20 ? 'text-yellow-400' : q.position <= 50 ? 'text-orange-400' : 'text-gray-500'}`}>{q.position}</td>
+                        <td class="py-2 px-3 text-right text-white">{q.impressions}</td>
+                        <td class="py-2 px-3 text-right text-white">{q.clicks}</td>
+                        <td class="py-2 px-3 text-right text-blue-400">{q.ctr}%</td>
+                        <td class={`py-2 px-3 text-right text-[10px] ${confColor}`}>{conf}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        );
+      })()}
+
+      {/* Google Trends — Brand Search Volume */}
+      {trends?.brand_trend_3m?.length > 0 && (
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
+          <div class="flex items-center justify-between mb-4">
+            <div>
+              <h3 class="text-sm font-semibold text-gray-400">Brand Search Interest</h3>
+              <p class="text-xs text-gray-600">Google Trends — brand search volume correlates 0.334 with AI citations</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class={`text-xs px-2 py-0.5 rounded-full font-medium ${trends.brand_direction === 'rising' ? 'bg-green-900 text-green-300' : trends.brand_direction === 'declining' ? 'bg-red-900 text-red-300' : 'bg-gray-800 text-gray-400'}`}>
+                {trends.brand_direction === 'rising' ? '▲ Rising' : trends.brand_direction === 'declining' ? '▼ Declining' : '→ Stable'}
+              </span>
+              <span class="text-xs text-gray-500">avg: {trends.brand_avg}</span>
+            </div>
+          </div>
+          <canvas id="brandTrendChart" height="200"></canvas>
+        </div>
+      )}
+
+      {/* Keyword Interest Comparison */}
+      {trends?.keyword_trends_3m?.length > 0 && (
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
+          <h3 class="text-sm font-semibold text-gray-400 mb-2">Keyword Interest Comparison</h3>
+          <p class="text-xs text-gray-600 mb-4">Google Trends — relative interest over 3 months (GB)</p>
+          <canvas id="keywordTrendChart" height="250"></canvas>
+        </div>
+      )}
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        {/* Rising Queries */}
+        {trends?.brand_related?.rising?.length > 0 && (
+          <div class="bg-gray-900 border border-green-800/30 rounded-lg p-6">
+            <h3 class="text-sm font-semibold text-green-400 mb-1">Rising Queries</h3>
+            <p class="text-xs text-gray-600 mb-3">Breakout and fast-growing related searches — content opportunities</p>
+            <div class="space-y-2">
+              {trends.brand_related.rising.map((q: any) => (
+                <div class="flex items-center justify-between text-xs border-b border-gray-800/50 pb-1">
+                  <span class="text-gray-300">{q.query}</span>
+                  <span class={`font-medium ${q.value === 'Breakout' ? 'text-green-400' : 'text-yellow-400'}`}>{q.value}{q.value !== 'Breakout' ? '%' : ''}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Top Related Queries */}
+        {trends?.brand_related?.top?.length > 0 && (
+          <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+            <h3 class="text-sm font-semibold text-gray-400 mb-1">Top Related Queries</h3>
+            <p class="text-xs text-gray-600 mb-3">Most popular related searches — what your audience also searches for</p>
+            <div class="space-y-2">
+              {trends.brand_related.top.map((q: any) => (
+                <div class="flex items-center justify-between text-xs border-b border-gray-800/50 pb-1">
+                  <span class="text-gray-300">{q.query}</span>
+                  <div class="flex items-center gap-2">
+                    <div class="w-16 h-1.5 bg-gray-800 rounded-full overflow-hidden">
+                      <div class="h-full bg-blue-500 rounded-full" style={`width: ${q.value}%`}></div>
+                    </div>
+                    <span class="text-gray-500 w-6 text-right">{q.value}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Keyword Rising Queries */}
+        {trends?.keyword_related?.rising?.length > 0 && (
+          <div class="bg-gray-900 border border-purple-800/30 rounded-lg p-6">
+            <h3 class="text-sm font-semibold text-purple-400 mb-1">Industry Rising Queries</h3>
+            <p class="text-xs text-gray-600 mb-3">Rising searches for "{trends.keywords?.[0]}" — gap analysis opportunities</p>
+            <div class="space-y-2">
+              {trends.keyword_related.rising.map((q: any) => (
+                <div class="flex items-center justify-between text-xs border-b border-gray-800/50 pb-1">
+                  <span class="text-gray-300">{q.query}</span>
+                  <span class={`font-medium ${q.value === 'Breakout' ? 'text-green-400' : 'text-yellow-400'}`}>{q.value}{q.value !== 'Breakout' ? '%' : ''}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Content Gaps from GSC */}
+        {gsc?.content_gaps?.length > 0 && (
+          <div class="bg-gray-900 border border-yellow-800/30 rounded-lg p-6">
+            <h3 class="text-sm font-semibold text-yellow-400 mb-1">Content Gaps</h3>
+            <p class="text-xs text-gray-600 mb-3">GSC queries with impressions but low/no clicks — quick wins</p>
+            <div class="space-y-2">
+              {gsc.content_gaps.slice(0, 10).map((q: any) => (
+                <div class="flex items-center justify-between text-xs border-b border-gray-800/50 pb-1">
+                  <span class="text-gray-300 truncate max-w-[200px]">{q.query}</span>
+                  <div class="flex gap-3 text-gray-500">
+                    <span>{q.impressions} imp</span>
+                    <span>pos {q.position}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* DataForSEO SERP positions */}
+      {aioSerp?.results?.length > 0 && (
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
+          <h3 class="text-sm font-semibold text-gray-400 mb-2">SERP Position Tracking</h3>
+          <p class="text-xs text-gray-600 mb-4">DataForSEO — daily keyword positions in Google UK</p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs">
+              <thead>
+                <tr class="text-gray-500 border-b border-gray-800">
+                  <th class="text-left py-2 px-3">Query</th>
+                  <th class="text-center py-2 px-3">AI Overview</th>
+                  <th class="text-right py-2 px-3">Your Position</th>
+                  <th class="text-left py-2 px-3">Top 3</th>
+                </tr>
+              </thead>
+              <tbody>
+                {aioSerp.results.map((r: any) => {
+                  const ourPos = r.organic?.find((o: any) => {
+                    const domain = o.domain || '';
+                    return domain.includes('rank4ai') || domain.includes('marketinvoice') || domain.includes('seocompare');
+                  });
+                  return (
+                    <tr class="border-b border-gray-800/50">
+                      <td class="py-2 px-3 text-gray-300">{r.query}</td>
+                      <td class="py-2 px-3 text-center">
+                        <span class={`text-[10px] px-1.5 py-0.5 rounded ${r.has_ai_overview ? 'bg-purple-900 text-purple-300' : 'bg-gray-800 text-gray-600'}`}>
+                          {r.has_ai_overview ? 'Yes' : 'No'}
+                        </span>
+                      </td>
+                      <td class="py-2 px-3 text-right">
+                        {ourPos ? (
+                          <span class={`font-medium ${ourPos.position <= 10 ? 'text-green-400' : ourPos.position <= 20 ? 'text-yellow-400' : 'text-gray-400'}`}>#{ourPos.position}</span>
+                        ) : (
+                          <span class="text-gray-600">Not ranked</span>
+                        )}
+                      </td>
+                      <td class="py-2 px-3 text-gray-500 truncate max-w-[200px]">
+                        {r.organic?.slice(0, 3).map((o: any) => o.domain).join(', ')}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
+
+      {/* Coming soon sections */}
+      {!trends?.brand_trend_3m?.length && (
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6 text-center">
+          <p class="text-sm text-gray-500">Google Trends data loading — will appear on next refresh.</p>
+        </div>
+      )}
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 opacity-50">
+          <h4 class="text-sm font-medium text-gray-500 mb-1">Content Calendar</h4>
+          <p class="text-xs text-gray-600">Coming soon — planned and published content schedule</p>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 opacity-50">
+          <h4 class="text-sm font-medium text-gray-500 mb-1">Information Gain Score</h4>
+          <p class="text-xs text-gray-600">Coming soon — content uniqueness scoring vs competitors</p>
+        </div>
+      </div>
+
+      {trends && (
+        <script is:inline src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.js"></script>
+      )}
+      <script define:vars={{ brandTrend: JSON.stringify(trends?.brand_trend_3m || []), brandKeyword: trends?.brand_keyword || '', keywordTrend: JSON.stringify(trends?.keyword_trends_3m || []), trendKeywords: JSON.stringify(trends?.keywords || []) }}>
+        // Brand trend chart
+        var bt = JSON.parse(brandTrend);
+        if (bt.length > 0 && window.Chart) {
+          var canvas = document.getElementById('brandTrendChart');
+          if (canvas) {
+            new window.Chart(canvas, {
+              type: 'line',
+              data: {
+                labels: bt.map(function(d) { return new Date(d.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }); }),
+                datasets: [{
+                  label: brandKeyword,
+                  data: bt.map(function(d) { return d[brandKeyword] || 0; }),
+                  borderColor: '#8b5cf6',
+                  backgroundColor: 'rgba(139, 92, 246, 0.1)',
+                  fill: true, tension: 0.3, pointRadius: 2,
+                }]
+              },
+              options: {
+                responsive: true,
+                plugins: { legend: { display: false } },
+                scales: {
+                  x: { ticks: { color: '#6b7280', font: { size: 9 }, maxTicksLimit: 10 }, grid: { color: '#1f2937' } },
+                  y: { ticks: { color: '#6b7280', font: { size: 10 } }, grid: { color: '#1f2937' }, min: 0 },
+                }
+              }
+            });
+          }
+        }
+
+        // Keyword comparison chart
+        var kt = JSON.parse(keywordTrend);
+        var kws = JSON.parse(trendKeywords);
+        if (kt.length > 0 && kws.length > 0 && window.Chart) {
+          var canvas2 = document.getElementById('keywordTrendChart');
+          if (canvas2) {
+            var colors = ['#3b82f6', '#8b5cf6', '#06b6d4', '#f59e0b', '#10b981'];
+            new window.Chart(canvas2, {
+              type: 'line',
+              data: {
+                labels: kt.map(function(d) { return new Date(d.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }); }),
+                datasets: kws.map(function(kw, i) {
+                  return {
+                    label: kw,
+                    data: kt.map(function(d) { return d[kw] || 0; }),
+                    borderColor: colors[i % colors.length],
+                    backgroundColor: 'transparent',
+                    tension: 0.3, pointRadius: 1, borderWidth: 2,
+                  };
+                })
+              },
+              options: {
+                responsive: true,
+                plugins: { legend: { position: 'bottom', labels: { color: '#9ca3af', font: { size: 10 } } } },
+                scales: {
+                  x: { ticks: { color: '#6b7280', font: { size: 9 }, maxTicksLimit: 10 }, grid: { color: '#1f2937' } },
+                  y: { ticks: { color: '#6b7280', font: { size: 10 } }, grid: { color: '#1f2937' }, min: 0 },
+                }
+              }
+            });
+          }
+        }
+      </script>
+    </div>
+  )}
+
+  {sectionId === 'daily-audit' && (
+    <div>
+      {!dailyAuditPerSite && (
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-8 text-center">
+          <p class="text-gray-400">No daily audit data yet.</p>
+          <p class="text-xs text-gray-500 mt-2">Audit runs 7am via <code class="text-gray-400">com.rank4ai.site-audit</code>; fetcher runs 7:05am via <code class="text-gray-400">com.rank4ai.dashboard-daily-audit-fetch</code>.</p>
+        </div>
+      )}
+
+      {dailyAuditPerSite && (
+        <>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+            <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+              <div class="text-2xl font-bold text-white">{dailyAuditPerSite.pages_checked}</div>
+              <div class="text-xs text-gray-500">Pages checked</div>
+            </div>
+            <div class={`bg-gray-900 border rounded-lg p-4 text-center ${dailyAuditPerSite.issues_total > 0 ? 'border-red-700' : 'border-green-700'}`}>
+              <div class={`text-2xl font-bold ${dailyAuditPerSite.issues_total > 0 ? 'text-red-400' : 'text-green-400'}`}>{dailyAuditPerSite.issues_total}</div>
+              <div class="text-xs text-gray-500">Total issues</div>
+            </div>
+            <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+              <div class="text-2xl font-bold text-white">{dailyAuditPerSite.pages_with_issues}</div>
+              <div class="text-xs text-gray-500">Pages flagged</div>
+            </div>
+            <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+              <div class="text-sm font-bold text-white">{dailyAuditPerSite.audit_date}</div>
+              <div class="text-xs text-gray-500">Last run</div>
+            </div>
+          </div>
+
+          {siteRepo && (
+            <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <h3 class="text-sm font-semibold text-white">Push Live</h3>
+                  <p class="text-xs text-gray-500 mt-1">Cloudflare Pages auto-deploys from <code class="text-gray-400">main</code>. Use this to view the latest deploy or trigger a manual rebuild.</p>
+                </div>
+                <div class="flex gap-2">
+                  <a href={`https://github.com/${siteRepo}/actions`} target="_blank" rel="noopener" class="px-3 py-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition">View Actions</a>
+                  <a href={`https://github.com/${siteRepo}/commits/main`} target="_blank" rel="noopener" class="px-3 py-2 bg-gray-800 hover:bg-gray-700 text-gray-200 text-xs font-medium rounded-lg transition">Recent Commits</a>
+                  <a href={`https://dash.cloudflare.com`} target="_blank" rel="noopener" class="px-3 py-2 bg-gray-800 hover:bg-gray-700 text-gray-200 text-xs font-medium rounded-lg transition">Cloudflare</a>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {dailyAuditHistory.length > 0 && (
+            <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
+              <h3 class="text-sm font-semibold text-gray-400 mb-4">Issue trend (last {dailyAuditHistory.length} days)</h3>
+              <div class="space-y-1">
+                {dailyAuditHistory.slice().reverse().map((h: any) => (
+                  <div class="flex items-center justify-between text-xs border-b border-gray-800 py-1">
+                    <span class="text-gray-400 font-mono">{h.date}</span>
+                    <span class="text-gray-500">{h.pages_checked} pages</span>
+                    <span class={`font-medium ${h.issues_total > 0 ? 'text-red-400' : 'text-green-400'}`}>{h.issues_total} issues</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
+            <h3 class="text-sm font-semibold text-gray-400 mb-4">Pages flagged today</h3>
+            {dailyAuditPerSite.flagged_pages?.length === 0 && (
+              <p class="text-sm text-gray-500">No pages flagged. All clean.</p>
+            )}
+            {dailyAuditPerSite.flagged_pages?.length > 0 && (
+              <div class="space-y-3">
+                {dailyAuditPerSite.flagged_pages.map((p: any) => (
+                  <div class="border-l-2 border-red-700 pl-3">
+                    <a href={p.url} target="_blank" rel="noopener" class="text-xs text-blue-400 hover:text-blue-300 break-all">{p.url}</a>
+                    <ul class="mt-1 space-y-0.5">
+                      {p.issues?.map((iss: string) => (
+                        <li class="text-xs text-gray-400">• {iss}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+            <h3 class="text-sm font-semibold text-gray-400 mb-4">All pages checked ({dailyAuditPerSite.all_pages?.length})</h3>
+            <div class="space-y-1 max-h-96 overflow-y-auto">
+              {dailyAuditPerSite.all_pages?.map((p: any) => (
+                <div class="flex items-center justify-between text-xs border-b border-gray-800 py-1">
+                  <a href={p.url} target="_blank" rel="noopener" class="text-gray-300 hover:text-white truncate max-w-[300px]">{p.url.replace(dailyAuditPerSite.url, '') || '/'}</a>
+                  <span class="text-gray-500">{p.word_count} words</span>
+                  <span class={`font-medium ${p.status === 200 ? 'text-green-400' : 'text-red-400'}`}>{p.status}</span>
+                  <span class={`font-medium ${(p.issues?.length || 0) > 0 ? 'text-red-400' : 'text-gray-600'}`}>{p.issues?.length || 0} issues</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </>
+      )}
+    </div>
+  )}
+
+  {!['traffic', 'content-gaps', 'seo-health', 'ai-citations', 'uptime', 'positive-signals', 'ai-readiness', 'search-performance', 'overview', 'site-speed', 'crawl-activity', 'competitors', 'recommendations', 'new-pages', 'site-tree', 'internal-links', 'site-manager', 'content-plan', 'daily-audit'].includes(sectionId) && (
     <div class="bg-gray-900 border border-gray-800 rounded-lg p-8 text-center">
       <p class="text-gray-500">Detailed view for {section.label} coming soon.</p>
       <a href={`/agency/${clientId}`} class="text-sm text-blue-400 hover:text-blue-300 mt-2 inline-block">Back to dashboard</a>

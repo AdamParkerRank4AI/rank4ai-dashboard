@@ -7,7 +7,6 @@
     "clientViewSections": [
       "ai-readiness",
       "ai-citations",
-      "site-manager",
       "seo-health",
       "traffic",
       "search-performance",
@@ -31,7 +30,9 @@
       "crawl-activity",
       "recommendations",
       "crawl-status",
-      "positive-signals"
+      "positive-signals",
+      "content-plan",
+      "daily-audit"
     ]
   },
   {
@@ -65,7 +66,9 @@
       "crawl-activity",
       "recommendations",
       "crawl-status",
-      "positive-signals"
+      "positive-signals",
+      "content-plan",
+      "daily-audit"
     ]
   },
   {
@@ -99,40 +102,9 @@
       "crawl-activity",
       "recommendations",
       "crawl-status",
-      "positive-signals"
-    ]
-  },
-  {
-    "id": "rank4ai-staging",
-    "name": "Rank4AI Staging",
-    "domain": "rank4ai-staging.pages.dev",
-    "logo": "",
-    "staging": true,
-    "clientViewSections": [],
-    "allSections": [
-      "site-manager",
-      "seo-health",
-      "site-tree",
-      "internal-links",
-      "crawl-status"
-    ]
-  },
-  {
-    "id": "rank4ai-online",
-    "name": "Rank4AI Online",
-    "domain": "rank4ai.online",
-    "logo": "",
-    "staging": true,
-    "clientViewSections": [],
-    "allSections": [
-      "overview",
-      "seo-health",
-      "site-tree",
-      "internal-links",
-      "crawl-status",
-      "site-speed",
       "positive-signals",
-      "recommendations"
+      "content-plan",
+      "daily-audit"
     ]
   }
 ]

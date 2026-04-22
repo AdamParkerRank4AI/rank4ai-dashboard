@@ -8,6 +8,7 @@ import subprocess
 import os
 
 REPOS = {
+    "rank4ai.co.uk": os.path.expanduser("~/rank4ai-site"),
     "marketinvoice.co.uk": os.path.expanduser("~/compare-invoice-finance"),
     "seocompare.co.uk": os.path.expanduser("~/compareaiseo"),
     "dashboard": os.path.expanduser("~/rank4ai-dashboard"),
