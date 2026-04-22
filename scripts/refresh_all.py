@@ -104,15 +104,17 @@ def main():
         ("fetch_bing.py", 30),
         ("fetch_crawl_activity.py", 30),
         ("fetch_bot_hits.py", 30),
-        ("fetch_pagespeed.py", 120),
+        # PageSpeed — run weekly only (Sunday) to avoid rate limits
+        # ("fetch_pagespeed.py", 120),
         ("extract_entities.py", 30),
         ("fetch_knowledge_graph.py", 30),
-        ("fetch_dataforseo.py", 120),
+        ("fetch_dataforseo.py", 300),
         ("fetch_serp.py", 120),
         ("fetch_competitor_serp.py", 120),
         ("generate_recommendations.py", 30),
         ("track_new_pages.py", 30),
         ("save_daily_metrics.py", 30),
+        ("generate_prompts_from_pages.py", 60),
     ]
 
     results = {}
@@ -125,7 +127,7 @@ def main():
 
     if not os.path.exists(crawl_marker):
         # Full crawl — only once per day
-        if run_script("crawl_sites.py", 600):
+        if run_script("crawl_sites.py", 1200):
             run_script("run_ai_audit.py", 300)
             open(crawl_marker, "w").close()
     else:
@@ -197,6 +199,16 @@ def main():
     # Build and deploy
     build_and_deploy()
 
+    # Weekly tasks (Monday only — rate limited APIs)
+    import datetime as dt_mod
+    if dt_mod.datetime.now().weekday() == 0:  # Monday only
+        log("\nFetching Google Trends...")
+        run_script("fetch_trends.py", 300)
+        log("\nFetching PageSpeed...")
+        run_script("fetch_pagespeed.py", 180)
+        log("\nChecking citations by type (API ~$1-2)...")
+        run_script("check_citations_by_type.py", 600)
+
     # Check site changelogs + build full changelog
     log("\nChecking site changelogs...")
     run_script("check_site_changes.py", 30)
@@ -205,6 +217,10 @@ def main():
     # Run guardrails check (after everything else)
     log("\nRunning guardrails check...")
     run_script("check_guardrails.py", 30)
+
+    # Validate data quality
+    log("\nValidating data quality...")
+    run_script("validate_data.py", 30)
 
     # Summary
     passed = sum(1 for v in results.values() if v)

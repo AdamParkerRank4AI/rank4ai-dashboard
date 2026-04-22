@@ -22,11 +22,13 @@ const audit = loadJson('ai_audit.json') || {};
 const citations = loadJson('citation_results.json') || {};
 const botHits = loadJson('bot_hits.json') || {};
 const changelog = loadJson('site_changelog.json') || {};
+const bing = loadJson('bing.json') || {};
 const crawlActivity = loadJson('crawl_activity.json') || {};
+const aioSerp = loadJson('ai_overview_serp.json') || {};
 
 // Separate our sites from client sites
-const ourSites = clients.filter((c: any) => c.staging || c.id === 'rank4ai');
-const clientSites = clients.filter((c: any) => !c.staging && c.id !== 'rank4ai');
+const ourSites = clients.filter((c: any) => c.staging);
+const clientSites = clients.filter((c: any) => !c.staging);
 
 // Build health data per client
 const healthData: Record<string, any> = {};
@@ -38,26 +40,39 @@ for (const c of clients) {
   const a = audit[c.id] || {};
   const cit = citations[c.id] || {};
   const bh = botHits[c.id] || {};
+  const aio = aioSerp[c.id] || {};
   const cl = changelog[c.id === 'market-invoice' ? 'market-invoice' : c.id === 'seocompare' ? 'seocompare' : 'rank4ai-dashboard'] || {};
 
   const botTotal = (bh.days || []).reduce((sum: number, d: any) => sum + (d.total || 0), 0);
+  const citSummary = cit.summary || {};
 
   healthData[c.id] = {
     pages: crawl?.pages_crawled || 0,
+    // Google SEO
     users: g.overview?.active_users || 0,
     sessions: g.overview?.sessions || 0,
     clicks: gsc[c.id]?.totals?.clicks || 0,
     impressions: gsc[c.id]?.totals?.impressions || 0,
-    aiScore: a.overall_score || null,
+    avgPosition: gsc[c.id]?.totals?.position || null,
+    // AI Citations
     citRate: cit.overall_rate || 0,
+    citClaude: citSummary.claude?.rate || 0,
+    citChatgpt: citSummary.chatgpt?.rate || 0,
+    citGemini: citSummary.gemini?.rate || 0,
+    // Bing + Copilot — crawl_activity.bing_indexed = last daily snapshot from Bing Webmaster
+    bingIndexed: (crawlActivity[c.id] || {}).bing_indexed || 0,
+    bingQueries: (bing[c.id] || {}).top_queries?.length || 0,
+    // AI Overviews (Google)
+    aioDetected: aio.ai_overviews_detected || 0,
+    aioTotal: aio.total_queries || 0,
+    // Scores
+    aiScore: a.overall_score || null,
     recsTotal: r.total || 0,
     recsCritical: r.critical || 0,
     recsHigh: r.high || 0,
     upStatus: u.status || null,
     upMs: u.response_time_ms || null,
     botHits: botTotal,
-    commits24h: cl.commits_24h || 0,
-    commits7d: cl.commits_7d || 0,
     lastCommit: cl.recent_commits?.[0]?.message || null,
     lastCommitDate: cl.recent_commits?.[0]?.date?.slice(0, 10) || null,
   };
@@ -87,6 +102,9 @@ const totalPages = Object.values(healthData).reduce((sum: number, d: any) => sum
 const totalUsers = Object.values(healthData).reduce((sum: number, d: any) => sum + d.users, 0);
 const totalRecs = Object.values(healthData).reduce((sum: number, d: any) => sum + d.recsTotal, 0);
 const totalCritical = Object.values(healthData).reduce((sum: number, d: any) => sum + d.recsCritical, 0);
+const totalImpressions = Object.values(healthData).reduce((sum: number, d: any) => sum + d.impressions, 0);
+const totalClicks = Object.values(healthData).reduce((sum: number, d: any) => sum + d.clicks, 0);
+const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: number, c: any) => sum + (healthData[c.id]?.citRate || 0), 0) / clientSites.length * 10) / 10 : 0;
 ---
 
 <DashboardLayout title="Dashboard">
@@ -107,26 +125,53 @@ const totalCritical = Object.values(healthData).reduce((sum: number, d: any) => 
   </div>
 
   <!-- Overall stats -->
-  <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-6">
-    <div class="bg-gray-900 border border-gray-800 rounded-lg p-3 text-center">
-      <div class="text-xl font-bold text-white">{totalPages.toLocaleString()}</div>
-      <div class="text-[10px] text-gray-500">Total Pages</div>
+  {/* Three channel overview */}
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
+    {/* Google SEO */}
+    <div class="bg-gray-800 border border-gray-700 rounded-lg p-4">
+      <div class="text-[10px] text-gray-300 uppercase tracking-wider mb-2 font-medium">Google SEO</div>
+      <div class="flex items-end gap-4">
+        <div>
+          <div class="text-2xl font-bold text-blue-400">{totalImpressions.toLocaleString()}</div>
+          <div class="text-[10px] text-gray-400">impressions</div>
+        </div>
+        <div>
+          <div class="text-lg font-bold text-white">{totalClicks}</div>
+          <div class="text-[10px] text-gray-400">clicks</div>
+        </div>
+        <div>
+          <div class="text-lg font-bold text-white">{totalUsers.toLocaleString()}</div>
+          <div class="text-[10px] text-gray-400">users</div>
+        </div>
+      </div>
     </div>
-    <div class="bg-gray-900 border border-gray-800 rounded-lg p-3 text-center">
-      <div class="text-xl font-bold text-blue-400">{totalUsers.toLocaleString()}</div>
-      <div class="text-[10px] text-gray-500">Users (30d)</div>
+    {/* AI Search */}
+    <div class="bg-gray-800 border border-purple-800/40 rounded-lg p-4">
+      <div class="text-[10px] text-purple-300 uppercase tracking-wider mb-2 font-medium">AI Search Citations</div>
+      <div class="flex items-end gap-4">
+        <div>
+          <div class={`text-2xl font-bold ${avgCitRate > 0 ? 'text-purple-400' : 'text-gray-400'}`}>{avgCitRate}%</div>
+          <div class="text-[10px] text-gray-400">avg citation rate</div>
+        </div>
+        <div>
+          <div class="text-lg font-bold text-white">{totalPages.toLocaleString()}</div>
+          <div class="text-[10px] text-gray-400">pages</div>
+        </div>
+      </div>
     </div>
-    <div class="bg-gray-900 border border-gray-800 rounded-lg p-3 text-center">
-      <div class={`text-xl font-bold ${totalCritical > 0 ? 'text-red-400' : totalRecs > 0 ? 'text-yellow-400' : 'text-green-400'}`}>{totalRecs}</div>
-      <div class="text-[10px] text-gray-500">Open Fixes</div>
-    </div>
-    <div class="bg-gray-900 border border-gray-800 rounded-lg p-3 text-center">
-      <div class="text-xl font-bold text-purple-400">{allCommits.filter(c => c.date?.slice(0, 10) === new Date().toISOString().slice(0, 10)).length}</div>
-      <div class="text-[10px] text-gray-500">Changes Today</div>
-    </div>
-    <div class="bg-gray-900 border border-gray-800 rounded-lg p-3 text-center">
-      <div class="text-xl font-bold text-white">{clients.filter((c: any) => !c.staging).length}</div>
-      <div class="text-[10px] text-gray-500">Active Sites</div>
+    {/* Google AI Overviews */}
+    <div class="bg-gray-800 border border-cyan-800/40 rounded-lg p-4">
+      <div class="text-[10px] text-cyan-300 uppercase tracking-wider mb-2 font-medium">Google AI Overviews</div>
+      <div class="flex items-end gap-4">
+        <div>
+          <div class={`text-2xl font-bold ${totalCritical > 0 ? 'text-red-400' : totalRecs > 0 ? 'text-yellow-400' : 'text-green-400'}`}>{totalRecs}</div>
+          <div class="text-[10px] text-gray-400">fixes needed</div>
+        </div>
+        <div>
+          <div class="text-lg font-bold text-purple-400">{allCommits.filter(c => c.date?.slice(0, 10) === new Date().toISOString().slice(0, 10)).length}</div>
+          <div class="text-[10px] text-gray-400">changes today</div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -137,44 +182,113 @@ const totalCritical = Object.values(healthData).reduce((sum: number, d: any) => 
       const h = healthData[client.id];
       const statusColor = h.upStatus === 200 ? 'bg-green-400' : h.upStatus ? 'bg-red-400' : 'bg-gray-600';
       return (
-        <a href={`/agency/${client.id}`} class="block bg-gray-900 border border-gray-800 rounded-lg p-4 hover:border-blue-500/50 transition group">
+        <a href={`/agency/${client.id}`} class="block bg-gray-800 border border-gray-700 rounded-lg p-4 hover:border-blue-500/50 transition group">
           <div class="flex items-start justify-between mb-3">
             <div>
               <h3 class="text-white font-semibold group-hover:text-blue-400 transition">{client.name}</h3>
-              <p class="text-xs text-gray-500">{client.domain}</p>
+              <p class="text-xs text-gray-400">{client.domain} · {h.pages} pages</p>
             </div>
             <div class="flex items-center gap-2">
               {h.recsCritical > 0 && <span class="text-[9px] px-1.5 py-0.5 rounded bg-red-900 text-red-300">{h.recsCritical} critical</span>}
-              <span class={`w-2.5 h-2.5 rounded-full ${statusColor}`} title={h.upStatus ? `${h.upStatus} (${h.upMs}ms)` : 'Not checked'}></span>
+              {h.recsTotal > 0 && !h.recsCritical && <span class="text-[9px] px-1.5 py-0.5 rounded bg-yellow-900 text-yellow-300">{h.recsTotal} fixes</span>}
+              <span class={`w-2.5 h-2.5 rounded-full ${statusColor}`}></span>
             </div>
           </div>
-          <div class="grid grid-cols-4 gap-2 text-center mb-3">
-            <div>
-              <div class="text-sm font-bold text-white">{h.pages}</div>
-              <div class="text-[9px] text-gray-600">pages</div>
+
+          {/* Three channels */}
+          <div class="space-y-2 mb-3">
+            {/* Google SEO */}
+            <div class="bg-gray-700/40 rounded-lg px-3 py-2">
+              <div class="flex items-center justify-between mb-1">
+                <div class="text-[9px] text-gray-300 uppercase tracking-wider font-medium">Google SEO</div>
+                <div class="text-[8px] text-gray-500">via Search Console</div>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex gap-4">
+                  <div>
+                    <span class="text-sm font-bold text-blue-400">{h.impressions.toLocaleString()}</span>
+                    <span class="text-[9px] text-gray-400 ml-1">impressions</span>
+                  </div>
+                  <div>
+                    <span class="text-sm font-bold text-white">{h.clicks}</span>
+                    <span class="text-[9px] text-gray-400 ml-1">clicks</span>
+                  </div>
+                </div>
+                {h.avgPosition && (
+                  <span class="text-[10px] text-gray-500">pos <span class="text-white font-medium">{h.avgPosition}</span></span>
+                )}
+              </div>
             </div>
-            <div>
-              <div class="text-sm font-bold text-blue-400">{h.users.toLocaleString()}</div>
-              <div class="text-[9px] text-gray-600">users</div>
+
+            {/* Bing + Copilot */}
+            <div class="bg-blue-900/20 rounded-lg px-3 py-2 border border-blue-800/30">
+              <div class="flex items-center justify-between mb-1">
+                <div class="text-[9px] text-blue-300 uppercase tracking-wider font-medium">Bing + Copilot</div>
+                <div class="text-[8px] text-gray-500">via Webmaster Tools</div>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex gap-4">
+                  <div>
+                    <span class={`text-sm font-bold ${h.bingIndexed > 0 ? 'text-blue-300' : 'text-gray-600'}`}>{h.bingIndexed}</span>
+                    <span class="text-[9px] text-gray-400 ml-1">indexed</span>
+                  </div>
+                  <div>
+                    <span class="text-sm font-bold text-white">{h.bingQueries}</span>
+                    <span class="text-[9px] text-gray-400 ml-1">queries</span>
+                  </div>
+                </div>
+                <span class="text-[9px] text-gray-500">feeds Copilot + ChatGPT</span>
+              </div>
             </div>
-            <div>
-              <div class={`text-sm font-bold ${h.aiScore >= 70 ? 'text-green-400' : h.aiScore >= 40 ? 'text-yellow-400' : h.aiScore ? 'text-red-400' : 'text-gray-600'}`}>{h.aiScore || '--'}</div>
-              <div class="text-[9px] text-gray-600">AI score</div>
+
+            {/* AI Search Citations */}
+            <div class="bg-purple-900/20 rounded-lg px-3 py-2 border border-purple-800/30">
+              <div class="flex items-center justify-between mb-1">
+                <div class="text-[9px] text-purple-300 uppercase tracking-wider font-medium">AI Search Citations</div>
+                <div class="text-[8px] text-gray-500">via API testing</div>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex gap-3">
+                  <div>
+                    <span class="text-[10px] text-gray-400">Claude</span>
+                    <span class={`text-sm font-bold ml-1 ${h.citClaude > 0 ? 'text-green-400' : 'text-gray-600'}`}>{h.citClaude}%</span>
+                  </div>
+                  <div>
+                    <span class="text-[10px] text-gray-400">ChatGPT</span>
+                    <span class={`text-sm font-bold ml-1 ${h.citChatgpt > 0 ? 'text-green-400' : 'text-gray-600'}`}>{h.citChatgpt}%</span>
+                  </div>
+                  <div>
+                    <span class="text-[10px] text-gray-400">Gemini</span>
+                    <span class={`text-sm font-bold ml-1 ${h.citGemini > 0 ? 'text-green-400' : 'text-gray-600'}`}>{h.citGemini}%</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div>
-              <div class={`text-sm font-bold ${h.recsTotal === 0 ? 'text-green-400' : h.recsCritical > 0 ? 'text-red-400' : 'text-yellow-400'}`}>{h.recsTotal}</div>
-              <div class="text-[9px] text-gray-600">fixes</div>
+
+            {/* Google AI Overviews */}
+            <div class="bg-cyan-900/20 rounded-lg px-3 py-2 border border-cyan-800/30">
+              <div class="flex items-center justify-between mb-1">
+                <div class="text-[9px] text-cyan-300 uppercase tracking-wider font-medium">Google AI Overviews</div>
+                <div class="text-[8px] text-gray-500">via DataForSEO</div>
+              </div>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class={`text-sm font-bold ${h.aioDetected > 0 ? 'text-cyan-400' : 'text-gray-600'}`}>{h.aioDetected}/{h.aioTotal}</span>
+                  <span class="text-[9px] text-gray-400 ml-1">queries trigger AI Overview</span>
+                </div>
+                <span class={`text-[10px] font-medium ${h.aiScore >= 70 ? 'text-green-400' : h.aiScore >= 40 ? 'text-yellow-400' : h.aiScore ? 'text-red-400' : 'text-gray-600'}`}>
+                  AI Ready: {h.aiScore || '--'}/100
+                </span>
+              </div>
             </div>
           </div>
-          <div class="flex items-center justify-between text-[10px]">
-            <div class="flex gap-3 text-gray-500">
-              <span>{h.clicks} clicks</span>
-              <span>{h.impressions} imp</span>
+
+          <div class="flex items-center justify-between text-[10px] text-gray-500">
+            <div class="flex gap-3">
+              <span>{h.users.toLocaleString()} users</span>
               <span>{h.botHits} bot hits</span>
             </div>
-            {h.lastCommit && (
-              <span class="text-gray-600 truncate max-w-[120px]" title={h.lastCommit}>{h.lastCommitDate}</span>
-            )}
+            {h.lastCommitDate && <span>{h.lastCommitDate}</span>}
           </div>
         </a>
       );
@@ -208,7 +322,7 @@ const totalCritical = Object.values(healthData).reduce((sum: number, d: any) => 
   <!-- Two column: Activity Feed + Site Changes -->
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
     <!-- Activity Feed -->
-    <div class="bg-gray-900 border border-gray-800 rounded-lg p-5">
+    <div class="bg-gray-800 border border-gray-700 rounded-lg p-5">
       <div class="flex items-center justify-between mb-4">
         <h3 class="text-sm font-semibold text-gray-400">Site Changes</h3>
         <div class="flex gap-1">
@@ -259,7 +373,7 @@ const totalCritical = Object.values(healthData).reduce((sum: number, d: any) => 
     </script>
 
     <!-- Quick Status -->
-    <div class="bg-gray-900 border border-gray-800 rounded-lg p-5">
+    <div class="bg-gray-800 border border-gray-700 rounded-lg p-5">
       <h3 class="text-sm font-semibold text-gray-400 mb-4">System Status</h3>
       <div class="space-y-2">
         {clients.filter((c: any) => !c.staging).map((client: any) => {

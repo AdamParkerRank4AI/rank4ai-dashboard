@@ -22,7 +22,7 @@ SITES = {
     "rank4ai": {
         "url": "https://www.rank4ai.co.uk",
         "max_pages": 1000,
-        "sitemap": "https://www.rank4ai.co.uk/sitemap.xml",
+        "sitemap": "https://www.rank4ai.co.uk/sitemap-0.xml",
     },
     "market-invoice": {
         "url": "https://www.marketinvoice.co.uk",
@@ -32,17 +32,7 @@ SITES = {
     "seocompare": {
         "url": "https://www.seocompare.co.uk",
         "max_pages": 1000,
-    },
-    "rank4ai-staging": {
-        "url": "https://rank4ai-staging.pages.dev",
-        "max_pages": 1000,
-        "sitemap": "https://rank4ai-staging.pages.dev/sitemap-0.xml",
-        "sitemap_domain_swap": ["https://www.rank4ai.co.uk", "https://rank4ai-staging.pages.dev"],
-    },
-    "rank4ai-online": {
-        "url": "https://www.rank4ai.online",
-        "max_pages": 1000,
-        "sitemap": "https://www.rank4ai.online/sitemap-0.xml",
+        "sitemap": "https://seocompare.co.uk/sitemap-0.xml",
     },
 }
 
@@ -61,6 +51,7 @@ def crawl_site(site_id, config):
     pages = []
     all_links = []
     issues = []
+    redirect_stubs = []
 
     # Seed from sitemap if available
     sitemap_url = config.get("sitemap")
@@ -90,6 +81,11 @@ def crawl_site(site_id, config):
         if url in visited:
             continue
 
+        # Skip known non-pages (Cloudflare artifacts, malformed URLs)
+        path = urlparse(url).path
+        if "/cdn-cgi/" in path or "%20" in path or " " in path:
+            continue
+
         try:
             resp = requests.get(url, headers=HEADERS, timeout=15, allow_redirects=True)
             visited.add(url)
@@ -103,11 +99,29 @@ def crawl_site(site_id, config):
             issues.append({"url": url, "type": "broken", "detail": f"HTTP {status}"})
             continue
 
+        # Canonicalise on redirect: if the request URL redirected, record under
+        # the final URL and skip if we've already stored it. Keeps same-site
+        # non-slash → slash 301/308s from showing as duplicate pages.
+        final_url = resp.url.split("#")[0].split("?")[0]
+        if final_url != url:
+            if urlparse(final_url).netloc != domain:
+                continue
+            if final_url in visited:
+                continue
+            visited.add(final_url)
+            url = final_url
+
         content_type = resp.headers.get("content-type", "")
         if "text/html" not in content_type:
             continue
 
         soup = BeautifulSoup(resp.text, "html.parser")
+
+        # Skip redirect stub pages (meta http-equiv="refresh")
+        meta_refresh = soup.find("meta", attrs={"http-equiv": "refresh"})
+        if meta_refresh:
+            redirect_stubs.append(url)
+            continue
 
         # Extract page data
         title_tag = soup.find("title")
@@ -150,13 +164,14 @@ def crawl_site(site_id, config):
             except:
                 pass
 
-        # Word count (visible text)
-        for tag in soup(["script", "style", "nav", "footer", "header"]):
+        # Word count (visible text — exclude nav/script but KEEP footer for link counting)
+        text_soup = BeautifulSoup(resp.text, "html.parser")
+        for tag in text_soup(["script", "style", "nav", "header"]):
             tag.decompose()
-        text = soup.get_text(separator=" ", strip=True)
+        text = text_soup.get_text(separator=" ", strip=True)
         word_count = len(text.split())
 
-        # Links
+        # Links — count ALL links on page including footer/related sections
         internal_links = []
         external_links = []
         for a in soup.find_all("a", href=True):
@@ -188,7 +203,7 @@ def crawl_site(site_id, config):
             issues.append({"url": url, "type": "multiple_h1", "detail": f"{h1_count} H1 tags"})
         if not meta_desc:
             issues.append({"url": url, "type": "missing_meta_desc", "detail": "No meta description"})
-        if word_count < 100:
+        if word_count < 200:
             issues.append({"url": url, "type": "thin_content", "detail": f"Only {word_count} words"})
 
         # Multi-modal content detection
@@ -206,18 +221,31 @@ def crawl_site(site_id, config):
             for t in tables
         )
 
-        # Answer capsule detection (40-60 word paragraph near top with direct answer)
+        # Answer capsule detection — expanded for multiple template patterns
         first_paras = soup.find_all("p", limit=5)
         has_answer_capsule = False
-        for p in first_paras:
-            p_text = p.get_text(strip=True)
-            p_words = len(p_text.split())
-            if 30 <= p_words <= 80 and any(cls in (p.get("class") or []) for cls in ["answer-capsule", "answer", "capsule", "summary", "direct-answer"]):
-                has_answer_capsule = True
-                break
-            # Also check if first substantial paragraph is in the right range
-            if 35 <= p_words <= 70 and not has_answer_capsule:
-                has_answer_capsule = True
+        # Pattern 1: CSS class-based capsules
+        capsule_selectors = [
+            soup.find(class_=re.compile(r"border-l-teal|answer-capsule|direct-answer|capsule|quick-answer", re.I)),
+            soup.find(class_=re.compile(r"bg-off-white", re.I)),
+        ]
+        if any(c for c in capsule_selectors):
+            has_answer_capsule = True
+        # Pattern 2: "Quick Answer" or "Direct Answer" heading followed by content
+        if not has_answer_capsule:
+            for heading in soup.find_all(["h2", "h3", "h4"]):
+                h_text = heading.get_text(strip=True).lower()
+                if any(w in h_text for w in ["quick answer", "direct answer", "at a glance", "summary", "key takeaway"]):
+                    has_answer_capsule = True
+                    break
+        # Pattern 3: First substantial paragraph in right range
+        if not has_answer_capsule:
+            for p in first_paras:
+                p_text = p.get_text(strip=True)
+                p_words = len(p_text.split())
+                if 35 <= p_words <= 70:
+                    has_answer_capsule = True
+                    break
 
         # OG tags
         has_og_title = bool(soup.find("meta", attrs={"property": "og:title"}))
@@ -461,6 +489,7 @@ def crawl_site(site_id, config):
             "fresh_90_days": fresh_90,
             "stale": stale,
         },
+        "redirect_stubs": len(redirect_stubs),
         "pages": pages,
         "links": all_links[:2000],
         "issues": issues,
@@ -493,8 +522,9 @@ def build_tree(pages):
 
 def calculate_depth(pages, links, start_url):
     """BFS from homepage to calculate link depth."""
-    depths = {start_url: 0}
-    queue = [start_url]
+    # Normalize: try with and without trailing slash
+    depths = {start_url: 0, start_url + '/': 0, start_url.rstrip('/'): 0}
+    queue = [start_url, start_url + '/', start_url.rstrip('/')]
     internal_links = defaultdict(set)
 
     for link in links:
