@@ -763,9 +763,12 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
               <label class="text-[10px] text-gray-500 uppercase block mb-1">Content (HTML)</label>
               <textarea id="new-page-content" rows="8" placeholder="<p>Your content here...</p>" class="w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-xs text-white placeholder-gray-600 font-mono"></textarea>
             </div>
-            <div class="md:col-span-2 flex items-center gap-3">
+            <div class="md:col-span-2 flex items-center gap-3 flex-wrap">
               <button id="create-page-btn" class="px-4 py-2 rounded text-xs bg-green-600 text-white hover:bg-green-500 transition font-medium">
-                Create Page
+                Create Page (auto-deploy)
+              </button>
+              <button id="copy-create-prompt-btn" class="px-4 py-2 rounded text-xs bg-purple-900/40 hover:bg-purple-800/60 border border-purple-700 text-purple-200 transition font-medium" title="Copy a Claude-ready brief to scaffold this page in a Claude Code session">
+                Copy Claude prompt
               </button>
               <span id="create-status" class="text-xs text-gray-500"></span>
             </div>
@@ -1309,7 +1312,48 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
           }
 
           var btn = this;
-          setTimeout(function() { btn.textContent = 'Create Page'; btn.style.background = ''; btn.disabled = false; }, 3000);
+          setTimeout(function() { btn.textContent = 'Create Page (auto-deploy)'; btn.style.background = ''; btn.disabled = false; }, 3000);
+        });
+
+        // Copy Claude prompt for new page creation
+        document.getElementById('copy-create-prompt-btn')?.addEventListener('click', function() {
+          var pageType = document.getElementById('new-page-type')?.value || 'page';
+          var slug = (document.getElementById('new-page-slug')?.value || '').trim().toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/-+/g, '-');
+          var newTitle = (document.getElementById('new-page-title')?.value || '').trim();
+          var newDesc = (document.getElementById('new-page-desc')?.value || '').trim();
+          var newContent = (document.getElementById('new-page-content')?.value || '').trim();
+          var status = document.getElementById('create-status');
+          if (!slug || !newTitle) {
+            if (status) { status.textContent = 'Slug and title required'; status.style.color = '#ef4444'; }
+            return;
+          }
+          var repoLocal = siteRepo.includes('market-invoice') ? '~/compare-invoice-finance' : siteRepo.includes('seocompare') ? '~/compareaiseo' : '~/rank4ai-site';
+          var prompt = [
+            'Site: ' + siteRepo + ' (' + repoLocal + ')',
+            'Create new ' + pageType + ' page',
+            '',
+            'Slug: ' + slug,
+            'Title: ' + newTitle,
+            'Meta description: ' + newDesc,
+            '',
+            'Content:',
+            newContent || '(no content provided — please draft based on title)',
+            '',
+            '1. Create ' + repoLocal + '/src/pages/' + pageType + '/' + slug + '.astro',
+            '2. Use BaseLayout/Layout pattern from sister pages in the same section',
+            '3. Include Breadcrumbs + AuthorBox + Article schema + SpeakableSchema',
+            '4. Build to verify',
+            '5. Commit + push to main (Cloudflare auto-deploys)',
+            '6. Append entry to CHANGELOG_*.md',
+            '7. Mark in FLEET INBOX if part of a tracked initiative',
+          ].join('\n');
+          navigator.clipboard.writeText(prompt).then(function() {
+            var btn = document.getElementById('copy-create-prompt-btn');
+            var orig = btn.textContent;
+            btn.textContent = '✓ Copied';
+            btn.style.background = 'rgba(34, 197, 94, 0.2)';
+            setTimeout(function() { btn.textContent = orig; btn.style.background = ''; }, 1800);
+          });
         });
 
         // Click page row to open editor
@@ -1394,7 +1438,45 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
               deleteBtn.textContent = 'Delete Page';
               deleteBtn.className = 'px-4 py-2 rounded text-xs bg-red-900 text-red-300 hover:bg-red-800 transition';
 
+              // Copy Claude prompt button (Claude-in-the-loop alternative)
+              var copyPromptBtn = document.createElement('button');
+              copyPromptBtn.textContent = 'Copy Claude prompt';
+              copyPromptBtn.className = 'px-4 py-2 rounded text-xs bg-purple-900/40 hover:bg-purple-800/60 border border-purple-700 text-purple-200 transition';
+              copyPromptBtn.title = 'Copy a Claude-ready edit brief to clipboard (paste into a Claude Code session)';
+              copyPromptBtn.addEventListener('click', function() {
+                var newTitle = document.getElementById('edit-title')?.value || title;
+                var newDesc = document.getElementById('edit-desc')?.value || desc;
+                var repoLocal = siteRepo.includes('market-invoice') ? '~/compare-invoice-finance' : siteRepo.includes('seocompare') ? '~/compareaiseo' : '~/rank4ai-site';
+                var prompt = [
+                  'Site: ' + siteRepo + ' (' + repoLocal + ')',
+                  'File: ' + filePath,
+                  'URL: ' + previewLink.href,
+                  '',
+                  'Current title: ' + title,
+                  'Current meta_desc: ' + desc,
+                  '',
+                  'Please update to:',
+                  '  Title: ' + newTitle,
+                  '  Meta_desc: ' + newDesc,
+                  '',
+                  '1. Edit ' + filePath + ' in the repo',
+                  '2. Build to verify',
+                  '3. Commit + push to main (Cloudflare auto-deploys)',
+                  '4. Append a one-line entry to the relevant CHANGELOG_*.md',
+                ].join('\n');
+                navigator.clipboard.writeText(prompt).then(function() {
+                  var orig = copyPromptBtn.textContent;
+                  copyPromptBtn.textContent = '✓ Copied';
+                  copyPromptBtn.style.background = 'rgba(34, 197, 94, 0.2)';
+                  setTimeout(function() {
+                    copyPromptBtn.textContent = orig;
+                    copyPromptBtn.style.background = '';
+                  }, 1800);
+                });
+              });
+
               btnDiv.appendChild(saveBtn);
+              btnDiv.appendChild(copyPromptBtn);
               btnDiv.appendChild(ghLink);
               btnDiv.appendChild(deleteBtn);
               editorPanel.appendChild(btnDiv);
