@@ -140,6 +140,15 @@ const isAgency = view === 'agency';
             </a>
           </li>
           <li>
+            <a href="/run-audit" class={`block px-3 py-2 rounded text-sm transition ${
+              Astro.url.pathname === '/run-audit' || Astro.url.pathname === '/run-audit/'
+                ? 'bg-blue-600 text-white'
+                : 'text-gray-300 hover:bg-gray-800'
+            }`}>
+              Run Audit
+            </a>
+          </li>
+          <li>
             <a href="/add-client" class="block px-3 py-2 rounded text-sm text-green-400 hover:bg-gray-800 transition">
               + Add Client
             </a>
