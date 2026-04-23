@@ -112,6 +112,7 @@ function sectionFreshnessSource(id: string) {
   if (id === 'ai-citations') return { ts: citByType?.tested_at, label: 'citations', schedule: 'weekly (Mon)' };
   if (id === 'recommendations' || id === 'overview') return { ts: recs?.generated_at, label: 'recs', schedule: 'daily 06:00' };
   if (id === 'leads') return { ts: leadsData?.fetched_at, label: 'Supabase leads', schedule: 'daily 06:00' };
+  if (id === 'page-compliance') return { ts: crawlTs, label: 'site crawl', schedule: 'daily 06:00' };
   if (id === 'content-gaps') return { ts: gsc?.fetched_at, label: 'GSC', schedule: 'daily 06:00' };
   if (id === 'uptime') return { ts: uptime?.checked_at, label: 'uptime check', schedule: 'daily 06:00' };
   if (id === 'crawl-activity') return { ts: crawlActivityDetail?.fetched_at, label: 'Bing crawl', schedule: 'daily 06:00' };
@@ -539,6 +540,221 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
           </p>
         </div>
       )}
+    </div>
+  )}
+
+  <!-- PAGE COMPLIANCE — per-page H1/meta/schema/OG/canonical/author checklist -->
+  {sectionId === 'page-compliance' && crawlData && (
+    <div>
+      {/* Summary row */}
+      <div class="grid grid-cols-2 md:grid-cols-6 gap-3 mb-4">
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-3 text-center">
+          <div class="text-xl font-bold text-white">{crawlData.pages?.filter((p: any) => p.status === 200).length || 0}</div>
+          <div class="text-[10px] text-gray-500 uppercase">Live pages</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-3 text-center">
+          <div class="text-xl font-bold text-green-400">{crawlData.pages?.filter((p: any) => p.status === 200 && p.h1 && p.title && p.meta_desc && p.canonical && p.has_og_tags && p.schemas?.length).length || 0}</div>
+          <div class="text-[10px] text-gray-500 uppercase">All checks ✓</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-3 text-center">
+          <div class="text-xl font-bold text-red-400">{crawlData.pages?.filter((p: any) => p.status === 200 && (!p.h1 || !p.title || !p.meta_desc)).length || 0}</div>
+          <div class="text-[10px] text-gray-500 uppercase">Missing basics</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-3 text-center">
+          <div class="text-xl font-bold text-yellow-400">{crawlData.pages?.filter((p: any) => p.status === 200 && (p.title?.length > 70 || p.meta_desc?.length > 160)).length || 0}</div>
+          <div class="text-[10px] text-gray-500 uppercase">Too long</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-3 text-center">
+          <div class="text-xl font-bold text-orange-400">{crawlData.pages?.filter((p: any) => p.status === 200 && p.internal_links_in === 0).length || 0}</div>
+          <div class="text-[10px] text-gray-500 uppercase">Orphans</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-3 text-center">
+          <div class="text-xl font-bold text-white">{crawlData.pages?.filter((p: any) => p.status === 200 && p.word_count < 300).length || 0}</div>
+          <div class="text-[10px] text-gray-500 uppercase">Thin (&lt;300w)</div>
+        </div>
+      </div>
+
+      {/* Filter toolbar */}
+      <div class="flex flex-wrap items-center gap-2 mb-3">
+        <input type="text" id="pc-search" placeholder="Search URL, title, H1..." class="bg-gray-800 border border-gray-700 rounded px-3 py-1.5 text-sm text-white placeholder-gray-500 flex-1 min-w-[200px]" />
+        <select id="pc-filter" class="bg-gray-800 border border-gray-700 rounded px-2 py-1.5 text-sm text-white">
+          <option value="all">All pages</option>
+          <option value="pass">All checks pass</option>
+          <option value="fail">Missing basics (H1/title/meta)</option>
+          <option value="long-title">Title &gt; 70 chars</option>
+          <option value="long-meta">Meta &gt; 160 chars</option>
+          <option value="no-schema">No schema</option>
+          <option value="no-og">No OG tags</option>
+          <option value="no-author">No author</option>
+          <option value="orphan">Orphan (0 inbound)</option>
+          <option value="thin">Thin (&lt;300 words)</option>
+        </select>
+        <span id="pc-count" class="text-xs text-gray-500">—</span>
+      </div>
+
+      {/* Table */}
+      <div class="bg-gray-900 border border-gray-800 rounded-lg overflow-hidden">
+        <div class="overflow-x-auto max-h-[70vh] overflow-y-auto">
+          <table class="w-full text-xs" id="pc-table">
+            <thead class="sticky top-0 bg-gray-900 border-b border-gray-800 z-10">
+              <tr class="text-left text-gray-500">
+                <th class="py-2 px-2 w-8"></th>
+                <th class="py-2 px-2">URL / H1</th>
+                <th class="py-2 px-1 text-center" title="H1 present">H1</th>
+                <th class="py-2 px-1 text-center" title="Title present + under 70 chars">Title</th>
+                <th class="py-2 px-1 text-center" title="Meta desc present + under 160 chars">Meta</th>
+                <th class="py-2 px-1 text-center" title="Canonical URL set">Canon</th>
+                <th class="py-2 px-1 text-center" title="OG tags present">OG</th>
+                <th class="py-2 px-1 text-center" title="Has schema markup">Schema</th>
+                <th class="py-2 px-1 text-center" title="Has Person/author signal">Author</th>
+                <th class="py-2 px-1 text-center" title="Has answer capsule">Capsule</th>
+                <th class="py-2 px-1 text-center" title="Breadcrumbs">Crumbs</th>
+                <th class="py-2 px-1 text-right" title="Inbound internal links">In</th>
+                <th class="py-2 px-1 text-right" title="Word count">Words</th>
+              </tr>
+            </thead>
+            <tbody set:html={(crawlData.pages || []).filter((p: any) => p.status === 200).map((p: any, idx: number) => {
+              const checks = {
+                h1: !!p.h1,
+                title: !!p.title && p.title.length <= 70,
+                meta: !!p.meta_desc && p.meta_desc.length <= 160 && p.meta_desc.length >= 50,
+                canon: !!p.canonical,
+                og: !!p.has_og_tags,
+                schema: (p.schemas || []).length > 0,
+                author: !!p.has_author,
+                capsule: !!p.has_answer_capsule,
+                crumbs: !!p.has_breadcrumbs,
+              };
+              const tick = (ok: boolean) => ok ? '<span class="text-green-400">✓</span>' : '<span class="text-red-500">✗</span>';
+              const failFlags: string[] = [];
+              if (!checks.h1) failFlags.push('no-h1');
+              if (!checks.title) failFlags.push(p.title?.length > 70 ? 'long-title' : 'no-title');
+              if (!checks.meta) failFlags.push(p.meta_desc?.length > 160 ? 'long-meta' : 'no-meta');
+              if (!checks.schema) failFlags.push('no-schema');
+              if (!checks.og) failFlags.push('no-og');
+              if (!checks.author) failFlags.push('no-author');
+              if ((p.internal_links_in ?? 0) === 0) failFlags.push('orphan');
+              if ((p.word_count ?? 0) < 300) failFlags.push('thin');
+
+              const allPass = Object.values(checks).every(Boolean);
+              const rowClass = allPass ? '' : 'bg-gray-900';
+              const schemasJson = JSON.stringify(p.schemas || []).replace(/</g, '&lt;');
+              const escapedTitle = (p.title || '').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+              const escapedH1 = (p.h1 || '').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+              const escapedMeta = (p.meta_desc || '').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+              return `
+                <tr class="pc-row border-b border-gray-800/50 hover:bg-gray-800/40 cursor-pointer" data-flags="${failFlags.join(' ')}" data-search="${(p.url + ' ' + (p.h1 || '') + ' ' + (p.title || '')).toLowerCase().replace(/"/g, '&quot;')}" data-idx="${idx}">
+                  <td class="py-1.5 px-2 text-gray-500"><span class="pc-chevron">▸</span></td>
+                  <td class="py-1.5 px-2 max-w-[400px]">
+                    <div class="text-white font-medium truncate" title="${escapedH1}">${escapedH1 || '<span class="text-red-500">[missing H1]</span>'}</div>
+                    <div class="text-gray-500 text-[10px] truncate" title="${p.url}">${p.path || '/'}</div>
+                  </td>
+                  <td class="py-1.5 px-1 text-center">${tick(checks.h1)}</td>
+                  <td class="py-1.5 px-1 text-center">${tick(checks.title)}</td>
+                  <td class="py-1.5 px-1 text-center">${tick(checks.meta)}</td>
+                  <td class="py-1.5 px-1 text-center">${tick(checks.canon)}</td>
+                  <td class="py-1.5 px-1 text-center">${tick(checks.og)}</td>
+                  <td class="py-1.5 px-1 text-center">${tick(checks.schema)}</td>
+                  <td class="py-1.5 px-1 text-center">${tick(checks.author)}</td>
+                  <td class="py-1.5 px-1 text-center">${tick(checks.capsule)}</td>
+                  <td class="py-1.5 px-1 text-center">${tick(checks.crumbs)}</td>
+                  <td class="py-1.5 px-1 text-right text-gray-400">${p.internal_links_in ?? 0}</td>
+                  <td class="py-1.5 px-1 text-right ${(p.word_count ?? 0) < 300 ? 'text-red-400' : 'text-gray-400'}">${p.word_count ?? 0}</td>
+                </tr>
+                <tr class="pc-detail hidden bg-gray-950 border-b border-gray-800">
+                  <td></td>
+                  <td colspan="12" class="py-4 px-3">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 text-xs">
+                      <div class="space-y-2">
+                        <div><span class="text-gray-500 uppercase text-[10px] tracking-wider">URL</span><div class="text-blue-400 break-all"><a href="${p.url}" target="_blank" rel="noopener" class="hover:underline">${p.url}</a></div></div>
+                        <div><span class="text-gray-500 uppercase text-[10px] tracking-wider">H1</span><div class="text-white">${escapedH1 || '<span class="text-red-500">(missing)</span>'}</div></div>
+                        <div><span class="text-gray-500 uppercase text-[10px] tracking-wider">Title tag <span class="text-gray-600">(${(p.title || '').length} chars)</span></span><div class="text-white">${escapedTitle || '<span class="text-red-500">(missing)</span>'}</div></div>
+                        <div><span class="text-gray-500 uppercase text-[10px] tracking-wider">Meta description <span class="text-gray-600">(${(p.meta_desc || '').length} chars)</span></span><div class="text-white">${escapedMeta || '<span class="text-red-500">(missing)</span>'}</div></div>
+                        <div><span class="text-gray-500 uppercase text-[10px] tracking-wider">Canonical</span><div class="text-gray-300 break-all">${p.canonical || '<span class="text-red-500">(missing)</span>'}</div></div>
+                        ${p.last_modified ? `<div><span class="text-gray-500 uppercase text-[10px] tracking-wider">Last modified</span><div class="text-gray-300">${p.last_modified}</div></div>` : ''}
+                      </div>
+                      <div class="space-y-2">
+                        <div><span class="text-gray-500 uppercase text-[10px] tracking-wider">Schemas <span class="text-gray-600">(${(p.schemas || []).length})</span></span><div class="flex flex-wrap gap-1 mt-1">${(p.schemas || []).map((s: string) => `<span class="px-1.5 py-0.5 rounded text-[10px] bg-purple-900/40 text-purple-300 border border-purple-800/40">${s}</span>`).join('') || '<span class="text-red-500">(none)</span>'}</div></div>
+                        <div class="grid grid-cols-2 gap-2">
+                          <div><span class="text-gray-500 uppercase text-[10px] tracking-wider">Inbound</span><div class="text-white">${p.internal_links_in ?? 0}</div></div>
+                          <div><span class="text-gray-500 uppercase text-[10px] tracking-wider">Outbound</span><div class="text-white">${p.internal_links_out ?? 0}</div></div>
+                          <div><span class="text-gray-500 uppercase text-[10px] tracking-wider">Words</span><div class="text-white">${p.word_count ?? 0}</div></div>
+                          <div><span class="text-gray-500 uppercase text-[10px] tracking-wider">Depth</span><div class="text-white">${p.depth === 99 ? 'unreachable' : p.depth}</div></div>
+                          <div><span class="text-gray-500 uppercase text-[10px] tracking-wider">H2 count</span><div class="text-white">${p.h2_count ?? 0}</div></div>
+                          <div><span class="text-gray-500 uppercase text-[10px] tracking-wider">Question H2s</span><div class="text-white">${p.question_h2s ?? 0}</div></div>
+                          <div><span class="text-gray-500 uppercase text-[10px] tracking-wider">Lists</span><div class="text-white">${p.list_count ?? 0}</div></div>
+                          <div><span class="text-gray-500 uppercase text-[10px] tracking-wider">Tables</span><div class="text-white">${p.table_count ?? 0}</div></div>
+                          <div><span class="text-gray-500 uppercase text-[10px] tracking-wider">Images</span><div class="text-white">${p.image_count ?? 0} <span class="text-gray-500">(${p.images_with_alt ?? 0} w/ alt)</span></div></div>
+                          <div><span class="text-gray-500 uppercase text-[10px] tracking-wider">Response</span><div class="text-white">${p.response_time_ms ?? 0}ms</div></div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                          <a href="${p.url}" target="_blank" rel="noopener" class="px-2 py-1 rounded text-[11px] bg-blue-900/40 text-blue-300 border border-blue-800/40 hover:bg-blue-900/60">View live →</a>
+                          <a href="https://search.google.com/test/rich-results?url=${encodeURIComponent(p.url)}" target="_blank" rel="noopener" class="px-2 py-1 rounded text-[11px] bg-gray-800 text-gray-300 border border-gray-700 hover:bg-gray-700">Test schema</a>
+                          <a href="https://pagespeed.web.dev/report?url=${encodeURIComponent(p.url)}" target="_blank" rel="noopener" class="px-2 py-1 rounded text-[11px] bg-gray-800 text-gray-300 border border-gray-700 hover:bg-gray-700">PageSpeed</a>
+                          <span class="px-2 py-1 rounded text-[11px] bg-yellow-900/30 text-yellow-400 border border-yellow-800/40">Edit (coming next)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              `;
+            }).join('')} />
+          </table>
+        </div>
+      </div>
+
+      <p class="text-[11px] text-gray-500 mt-3">Showing {crawlData.pages?.filter((p: any) => p.status === 200).length || 0} live pages from the last crawl ({crawlData.crawled_at?.slice(0, 10)}). Click any row to expand full details. Edit capability via GitHub API is the next phase.</p>
+
+      <script is:inline define:vars={{ clientId }}>
+        (function() {
+          const table = document.getElementById('pc-table');
+          if (!table) return;
+          const search = document.getElementById('pc-search');
+          const filter = document.getElementById('pc-filter');
+          const count = document.getElementById('pc-count');
+
+          // Expand/collapse rows
+          table.addEventListener('click', (e) => {
+            const row = e.target.closest('.pc-row');
+            if (!row) return;
+            const detail = row.nextElementSibling;
+            if (!detail || !detail.classList.contains('pc-detail')) return;
+            const isOpen = !detail.classList.contains('hidden');
+            detail.classList.toggle('hidden');
+            const chev = row.querySelector('.pc-chevron');
+            if (chev) chev.textContent = isOpen ? '▸' : '▾';
+          });
+
+          const applyFilters = () => {
+            const q = (search.value || '').toLowerCase().trim();
+            const f = filter.value;
+            let visible = 0;
+            const rows = table.querySelectorAll('.pc-row');
+            rows.forEach((r) => {
+              const matchSearch = !q || (r.dataset.search || '').indexOf(q) !== -1;
+              const flags = (r.dataset.flags || '').split(' ');
+              let matchFilter = true;
+              if (f === 'pass') matchFilter = flags[0] === '';
+              else if (f === 'fail') matchFilter = flags.some((fl) => ['no-h1','no-title','no-meta'].indexOf(fl) !== -1);
+              else if (f !== 'all') matchFilter = flags.indexOf(f) !== -1;
+              const show = matchSearch && matchFilter;
+              r.style.display = show ? '' : 'none';
+              const detail = r.nextElementSibling;
+              if (detail && detail.classList.contains('pc-detail') && !show) {
+                detail.classList.add('hidden');
+                detail.style.display = 'none';
+              } else if (detail && detail.classList.contains('pc-detail')) {
+                detail.style.display = '';
+              }
+              if (show) visible++;
+            });
+            if (count) count.textContent = `Showing ${visible} pages`;
+          };
+          search.addEventListener('input', applyFilters);
+          filter.addEventListener('change', applyFilters);
+          applyFilters();
+        })();
+      </script>
     </div>
   )}
 
