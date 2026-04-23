@@ -17,9 +17,39 @@
  */
 
 const SITE_REPOS = {
-  'rank4ai':        { owner: 'AdamParkerRank4AI', repo: 'rank4ai-preview', pagesDir: 'src/pages' },
-  'market-invoice': { owner: 'AdamParkerRank4AI', repo: 'market-invoice',  pagesDir: 'src/pages' },
-  'seocompare':     { owner: 'AdamParkerRank4AI', repo: 'seocompare',      pagesDir: 'src/pages' },
+  'rank4ai':        { owner: 'AdamParkerRank4AI', repo: 'rank4ai-preview', pagesDir: 'src/pages', dataDir: 'src/data' },
+  'market-invoice': { owner: 'AdamParkerRank4AI', repo: 'market-invoice',  pagesDir: 'src/pages', dataDir: 'src/data' },
+  'seocompare':     { owner: 'AdamParkerRank4AI', repo: 'seocompare',      pagesDir: 'src/pages', dataDir: 'src/data' },
+};
+
+// Which URL prefix maps to which JSON data file + how the edit fields map
+// onto that file's record schema. Only populated for sites/routes that are
+// actually JSON-driven (R4 is the big one).
+// For each mapping the fields object says: given an editor field name
+// (title / meta_desc), which JSON record key do we write to?
+const JSON_ROUTES = {
+  'rank4ai': [
+    {
+      prefix: '/blog/',
+      file: 'blogs.json',
+      fields: { title: 'metaTitle', meta_desc: 'metaDesc' },
+    },
+    {
+      prefix: '/learn/questions/',
+      file: 'questions.json',
+      fields: { title: 'metaTitle', meta_desc: 'metaDesc' },
+    },
+    {
+      prefix: '/research/stats/',
+      file: 'stats.json',
+      fields: { title: 'title' },
+    },
+    {
+      prefix: '/research/weekly-intelligence/',
+      file: 'weekly.json',
+      fields: { title: 'metaTitle', meta_desc: 'metaDesc' },
+    },
+  ],
 };
 
 const ALLOWED_FIELDS = new Set(['title', 'meta_desc']);
@@ -37,6 +67,26 @@ function b64encode(str) {
 }
 function b64decode(str) {
   return decodeURIComponent(escape(atob(str)));
+}
+
+// Given a site + url path, see if it's served from a JSON data file.
+// Returns { file, slug, jsonKey } or null.
+function resolveJsonRoute(site, urlPath, field) {
+  const routes = JSON_ROUTES[site] || [];
+  // Normalise: ensure trailing slash for prefix matching, then strip it to get slug
+  const normalised = urlPath.endsWith('/') ? urlPath : urlPath + '/';
+  for (const route of routes) {
+    if (normalised.startsWith(route.prefix)) {
+      const slug = normalised.slice(route.prefix.length).replace(/\/+$/, '');
+      if (!slug) continue; // skip hub pages
+      const jsonKey = route.fields[field];
+      if (!jsonKey) {
+        return { error: `This field (${field}) is not editable on ${route.prefix}* pages (only ${Object.keys(route.fields).join(', ')} are).` };
+      }
+      return { file: route.file, slug, jsonKey };
+    }
+  }
+  return null;
 }
 
 // Map a URL path to the most likely source .astro file in the repo.
@@ -180,7 +230,88 @@ export async function onRequestPost(context) {
     }, 400);
   }
 
-  // Locate the source file
+  // FIRST: try JSON-driven route (R4 blogs/questions/stats/weekly)
+  const jsonRoute = resolveJsonRoute(site, path, field);
+  if (jsonRoute && jsonRoute.error) {
+    return json({ ok: false, error: jsonRoute.error }, 400);
+  }
+  if (jsonRoute && jsonRoute.file) {
+    const filePath = `${repoConf.dataDir}/${jsonRoute.file}`;
+    const gh = await ghGet({ owner: repoConf.owner, repo: repoConf.repo, path: filePath, token: GITHUB_TOKEN });
+    if (!gh) {
+      return json({ ok: false, error: `JSON file not found: ${filePath}` }, 404);
+    }
+    const src = b64decode(gh.content.replace(/\n/g, ''));
+    let data;
+    try {
+      data = JSON.parse(src);
+    } catch (e) {
+      return json({ ok: false, error: `JSON parse failed on ${filePath}: ${e.message}` }, 500);
+    }
+    if (!Array.isArray(data)) {
+      return json({ ok: false, error: `${filePath} is not a list` }, 500);
+    }
+
+    const entryIdx = data.findIndex((e) => e && e.slug === jsonRoute.slug);
+    if (entryIdx < 0) {
+      return json({
+        ok: false,
+        error: `Slug "${jsonRoute.slug}" not found in ${filePath}. Known first slugs: ${data.slice(0, 3).map(e => e.slug).join(', ')}…`,
+        filePath,
+      }, 404);
+    }
+
+    const oldValue = data[entryIdx][jsonRoute.jsonKey];
+    if (oldValue === newValue) {
+      return json({ ok: true, noChange: true, filePath, slug: jsonRoute.slug });
+    }
+    data[entryIdx][jsonRoute.jsonKey] = newValue;
+
+    // Match existing file's indentation. Most R4 JSON uses 2-space indent.
+    const patched = JSON.stringify(data, null, 2) + '\n';
+
+    if (dryRun) {
+      return json({
+        ok: true,
+        dryRun: true,
+        filePath,
+        slug: jsonRoute.slug,
+        jsonKey: jsonRoute.jsonKey,
+        old: oldValue,
+        new: newValue,
+      });
+    }
+
+    const commitMessage = `Dashboard edit: update ${jsonRoute.jsonKey} on ${path}
+
+Set via Rank4AI Dashboard Page Compliance editor (JSON route).
+Slug: ${jsonRoute.slug}
+Field: ${field} → ${jsonRoute.jsonKey}
+File: ${filePath}
+New value: ${newValue.slice(0, 80)}${newValue.length > 80 ? '…' : ''}`;
+
+    const result = await ghPut({
+      owner: repoConf.owner,
+      repo: repoConf.repo,
+      path: filePath,
+      content: patched,
+      sha: gh.sha,
+      message: commitMessage,
+      token: GITHUB_TOKEN,
+    });
+
+    return json({
+      ok: true,
+      filePath,
+      jsonKey: jsonRoute.jsonKey,
+      slug: jsonRoute.slug,
+      commit: result.commit?.sha,
+      commitUrl: result.commit?.html_url,
+      deployNote: 'Cloudflare Pages will auto-deploy this commit within 1–2 minutes.',
+    });
+  }
+
+  // FALLBACK: static .astro file
   const candidates = candidateAstroPaths(path, repoConf.pagesDir);
   let file = null;
   let filePath = null;
@@ -191,7 +322,7 @@ export async function onRequestPost(context) {
   if (!file) {
     return json({
       ok: false,
-      error: 'Source file not found. This path might be generated from JSON data (blogs.json/questions.json) rather than a static .astro file — JSON editing is not yet supported.',
+      error: 'Source file not found. Path not matched by any .astro file or JSON route.',
       tried: candidates,
     }, 404);
   }

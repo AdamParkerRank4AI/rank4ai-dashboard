@@ -163,6 +163,7 @@ const positiveSignals = JSON.stringify(crawlData?.positive_signals || []);
 const citationResultsJson = JSON.stringify(citations?.results || []);
 const uptimeChecks = JSON.stringify(uptimeHistory?.[clientId] || []);
 const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
+const botHitsDaily = JSON.stringify(botHits?.days || []);
 ---
 
 <DashboardLayout title={`${section.label} — ${client.name}`} currentClient={clientId} view="agency">
@@ -2198,6 +2199,84 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
   <!-- SEARCH PERFORMANCE (Google + Bing) -->
   {sectionId === 'search-performance' && (gsc || bing) && (
     <div>
+      {(gsc?.top_queries?.length > 0 || serp?.results?.length > 0) && (
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-5 mb-6">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-sm font-semibold text-white">Keyword Rankings — GSC vs DataForSEO</h3>
+            <span class="text-[11px] text-gray-500">Discovery (GSC) + target (DFS) queries</span>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-[11px]">
+            <div class="bg-gray-800/50 rounded p-2.5">
+              <div class="text-gray-400 mb-1 font-semibold">GSC (discovery)</div>
+              <div class="text-gray-500">Queries people actually searched and saw you for. Position = 28-day trailing average, weighted. Shows impressions so you can judge reliability.</div>
+            </div>
+            <div class="bg-gray-800/50 rounded p-2.5">
+              <div class="text-gray-400 mb-1 font-semibold">DataForSEO (target)</div>
+              <div class="text-gray-500">Queries you chose to track. Position = live top-100 result from a single scrape. Null = brand not in top 100 for that query right now.</div>
+            </div>
+          </div>
+          <div class="overflow-x-auto max-h-[50vh] overflow-y-auto">
+            <table class="w-full text-xs">
+              <thead class="sticky top-0 bg-gray-900 z-10 border-b border-gray-800">
+                <tr class="text-left text-gray-500">
+                  <th class="py-2 pr-2">Query</th>
+                  <th class="py-2 pr-2 text-right">GSC pos</th>
+                  <th class="py-2 pr-2 text-right">GSC impr</th>
+                  <th class="py-2 pr-2 text-right">GSC clicks</th>
+                  <th class="py-2 pr-2 text-right">DFS pos</th>
+                  <th class="py-2 pr-2 text-center">AIO</th>
+                  <th class="py-2 pr-2">Reliability</th>
+                </tr>
+              </thead>
+              <tbody>
+                {(() => {
+                  const gq = {};
+                  (gsc?.top_queries || []).forEach((q) => {
+                    if (q?.query) gq[q.query.toLowerCase()] = q;
+                  });
+                  const dq = {};
+                  (serp?.results || []).forEach((r) => {
+                    if (r?.query) dq[r.query.toLowerCase()] = r;
+                  });
+                  const keys = Array.from(new Set([...Object.keys(gq), ...Object.keys(dq)]));
+                  // Sort: queries in both first, then GSC-only by impressions desc, then DFS-only
+                  keys.sort((a, b) => {
+                    const aBoth = a in gq && a in dq, bBoth = b in gq && b in dq;
+                    if (aBoth !== bBoth) return aBoth ? -1 : 1;
+                    const aImp = gq[a]?.impressions || 0, bImp = gq[b]?.impressions || 0;
+                    return bImp - aImp;
+                  });
+                  return keys.slice(0, 60).map((k) => {
+                    const g = gq[k];
+                    const d = dq[k];
+                    const imp = g?.impressions || 0;
+                    const reliability = imp >= 50 ? { label: 'Reliable', color: 'text-green-400' }
+                      : imp >= 10 ? { label: 'Emerging', color: 'text-yellow-400' }
+                      : imp > 0 ? { label: 'Low', color: 'text-gray-500' }
+                      : { label: 'Target', color: 'text-blue-400' };
+                    const gPos = g?.position != null ? Number(g.position).toFixed(1) : '—';
+                    const dPos = d?.brand_organic_position != null ? d.brand_organic_position : '—';
+                    const aio = d?.brand_in_ai_overview ? '✓' : (d?.has_ai_overview ? '−' : '');
+                    const displayQ = (g?.query || d?.query || k);
+                    return (
+                      <tr class="border-b border-gray-800/50 hover:bg-gray-800/40">
+                        <td class="py-1.5 pr-2 text-white max-w-[300px] truncate" title={displayQ}>{displayQ}</td>
+                        <td class="py-1.5 pr-2 text-right text-gray-300">{gPos}</td>
+                        <td class="py-1.5 pr-2 text-right text-gray-400">{imp.toLocaleString()}</td>
+                        <td class="py-1.5 pr-2 text-right text-gray-400">{g?.clicks || 0}</td>
+                        <td class="py-1.5 pr-2 text-right text-gray-300">{dPos}</td>
+                        <td class="py-1.5 pr-2 text-center text-green-400">{aio}</td>
+                        <td class={`py-1.5 pr-2 ${reliability.color}`}>{reliability.label}</td>
+                      </tr>
+                    );
+                  });
+                })()}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
+
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
           <div class="text-2xl font-bold text-white">{gsc?.totals?.clicks || 0}</div>
@@ -2668,9 +2747,10 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
         </div>
       </div>
 
-      {crawlActivityDetail.bing_crawl_daily?.length > 0 && (
+      {(crawlActivityDetail.bing_crawl_daily?.length > 0 || botHits?.days?.length > 0) && (
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
-          <h3 class="text-sm font-semibold text-gray-400 mb-4">Bing Crawler Activity (Last 45 Days)</h3>
+          <h3 class="text-sm font-semibold text-gray-400 mb-1">Crawler Activity</h3>
+          <p class="text-[11px] text-gray-500 mb-4">Bing (bars, left axis) vs AI bots (lines, right axis)</p>
           <canvas id="crawlChart" height="250"></canvas>
         </div>
       )}
@@ -3709,17 +3789,58 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
 
           {siteRepo && (
             <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
-              <div class="flex items-center justify-between gap-4">
+              <div class="flex items-center justify-between gap-4 flex-wrap">
                 <div>
                   <h3 class="text-sm font-semibold text-white">Push Live</h3>
-                  <p class="text-xs text-gray-500 mt-1">Cloudflare Pages auto-deploys from <code class="text-gray-400">main</code>. Use this to view the latest deploy or trigger a manual rebuild.</p>
+                  <p class="text-xs text-gray-500 mt-1">Cloudflare Pages auto-deploys from <code class="text-gray-400">main</code>. Click Push Live to force an immediate rebuild from the latest commit.</p>
+                  <p id="pl-status" class="text-xs mt-2"></p>
                 </div>
-                <div class="flex gap-2">
-                  <a href={`https://github.com/${siteRepo}/actions`} target="_blank" rel="noopener" class="px-3 py-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition">View Actions</a>
+                <div class="flex gap-2 flex-wrap">
+                  <button type="button" id="pl-btn" class="px-3 py-2 bg-emerald-700 hover:bg-emerald-600 text-white text-xs font-medium rounded-lg transition">Push Live now</button>
+                  <a href={`https://github.com/${siteRepo}/actions`} target="_blank" rel="noopener" class="px-3 py-2 bg-gray-800 hover:bg-gray-700 text-gray-200 text-xs font-medium rounded-lg transition">GH Actions</a>
                   <a href={`https://github.com/${siteRepo}/commits/main`} target="_blank" rel="noopener" class="px-3 py-2 bg-gray-800 hover:bg-gray-700 text-gray-200 text-xs font-medium rounded-lg transition">Recent Commits</a>
                   <a href={`https://dash.cloudflare.com`} target="_blank" rel="noopener" class="px-3 py-2 bg-gray-800 hover:bg-gray-700 text-gray-200 text-xs font-medium rounded-lg transition">Cloudflare</a>
                 </div>
               </div>
+              <script is:inline define:vars={{ clientId }}>
+                (function() {
+                  const btn = document.getElementById('pl-btn');
+                  const status = document.getElementById('pl-status');
+                  if (!btn || !status) return;
+                  btn.addEventListener('click', async () => {
+                    let token = sessionStorage.getItem('r4ai_edit_token') || '';
+                    if (!token) {
+                      token = prompt('Paste EDIT_SECRET (same as editor token).') || '';
+                      if (!token) return;
+                      sessionStorage.setItem('r4ai_edit_token', token);
+                    }
+                    btn.disabled = true;
+                    status.textContent = 'Triggering deploy…';
+                    status.style.color = '#facc15';
+                    try {
+                      const r = await fetch('/api/push-live', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+                        body: JSON.stringify({ site: clientId }),
+                      });
+                      const data = await r.json();
+                      if (!r.ok || !data.ok) {
+                        status.textContent = '✗ ' + (data.error || ('HTTP ' + r.status)) + (data.hint ? ' · ' + data.hint : '');
+                        status.style.color = '#f87171';
+                        if (r.status === 401) sessionStorage.removeItem('r4ai_edit_token');
+                      } else {
+                        status.innerHTML = '✓ Deploy triggered · <a class="underline text-emerald-300" href="' + (data.deploymentUrl || '#') + '" target="_blank">view in Cloudflare</a> · ' + (data.note || '');
+                        status.style.color = '#34d399';
+                      }
+                    } catch (err) {
+                      status.textContent = '✗ ' + (err.message || 'Network error');
+                      status.style.color = '#f87171';
+                    } finally {
+                      btn.disabled = false;
+                    }
+                  });
+                })();
+              </script>
             </div>
           )}
 
@@ -3906,32 +4027,69 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
       });
     }
 
-    // Crawl activity chart
+    // Crawl activity chart — Bing bars + AI bot lines overlaid
     const crawlData = JSON.parse(crawlDaily);
+    const botDays = JSON.parse(botHitsDaily);
     const crawlEl = document.getElementById('crawlChart');
-    if (crawlEl && crawlData.length > 0) {
-      const labels = crawlData.map(d => {
-        const date = new Date(d.date);
-        return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
-      });
+    if (crawlEl && (crawlData.length > 0 || botDays.length > 0)) {
+      // Merge date axis: union of Bing + bot dates, sorted oldest → newest
+      const allDates = Array.from(new Set([
+        ...crawlData.map(d => d.date),
+        ...botDays.map(d => d.date),
+      ])).sort();
+      const bingByDate = Object.fromEntries(crawlData.map(d => [d.date, d.crawled_pages || 0]));
+      const botByDate = Object.fromEntries(botDays.map(d => [d.date, d]));
+      const fmt = (s) => new Date(s).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+      const series = {
+        'GPTBot': '#10b981',
+        'ChatGPT-User': '#14b8a6',
+        'OAI-SearchBot': '#06b6d4',
+        'ClaudeBot': '#8b5cf6',
+        'Claude-Web': '#a78bfa',
+        'PerplexityBot': '#ec4899',
+        'Googlebot': '#60a5fa',
+        'GoogleOther': '#93c5fd',
+      };
+      // Build line datasets only for bots that actually appear
+      const lineDatasets = [];
+      for (const [bot, color] of Object.entries(series)) {
+        const data = allDates.map(d => (botByDate[d]?.by_name?.[bot]) || 0);
+        if (data.some(v => v > 0)) {
+          lineDatasets.push({
+            type: 'line',
+            label: bot,
+            data,
+            borderColor: color,
+            backgroundColor: 'transparent',
+            tension: 0.3,
+            pointRadius: 2,
+            borderWidth: 2,
+            yAxisID: 'y1',
+          });
+        }
+      }
+      const datasets = [];
+      if (crawlData.length > 0) {
+        datasets.push({
+          type: 'bar',
+          label: 'Bing pages crawled',
+          data: allDates.map(d => bingByDate[d] || 0),
+          backgroundColor: 'rgba(59, 130, 246, 0.5)',
+          borderColor: '#3b82f6',
+          borderWidth: 1,
+          yAxisID: 'y',
+        });
+      }
+      datasets.push(...lineDatasets);
       new Chart(crawlEl, {
-        type: 'bar',
-        data: {
-          labels,
-          datasets: [{
-            label: 'Pages Crawled',
-            data: crawlData.map(d => d.crawled_pages),
-            backgroundColor: 'rgba(59, 130, 246, 0.6)',
-            borderColor: '#3b82f6',
-            borderWidth: 1,
-          }]
-        },
+        data: { labels: allDates.map(fmt), datasets },
         options: {
           responsive: true,
-          plugins: { legend: { labels: { color: '#9ca3af', font: { size: 11 } } } },
+          plugins: { legend: { labels: { color: '#9ca3af', font: { size: 10 }, boxWidth: 12 } } },
           scales: {
             x: { ticks: { color: '#6b7280', font: { size: 9 }, maxRotation: 45 }, grid: { color: '#1f2937' } },
-            y: { ticks: { color: '#6b7280', font: { size: 10 } }, grid: { color: '#1f2937' } },
+            y: { type: 'linear', position: 'left', ticks: { color: '#6b7280', font: { size: 10 } }, grid: { color: '#1f2937' }, title: { display: true, text: 'Bing crawls', color: '#6b7280' } },
+            y1: { type: 'linear', position: 'right', ticks: { color: '#6b7280', font: { size: 10 } }, grid: { drawOnChartArea: false }, title: { display: true, text: 'AI bot hits', color: '#6b7280' } },
           }
         }
       });
