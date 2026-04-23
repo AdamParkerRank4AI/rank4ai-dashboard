@@ -33,6 +33,7 @@ const changelog = loadJson('site_changelog.json') || {};
 const bing = loadJson('bing.json') || {};
 const crawlActivity = loadJson('crawl_activity.json') || {};
 const aioSerp = loadJson('ai_overview_serp.json') || {};
+const freshness = loadJson('data_freshness.json') || null;
 
 // Separate our sites from client sites
 const ourSites = clients.filter((c: any) => c.staging);
@@ -127,6 +128,52 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
     </div>
     <a href="/agency/rank4ai/daily-audit" class="text-xs text-green-300 hover:text-green-100 underline">View Daily Audit →</a>
   </div>
+
+  {freshness && (
+    <div class={`rounded-lg px-4 py-2 mb-4 border ${
+      (freshness.summary?.very_stale || freshness.summary?.missing) ? 'bg-red-900/30 border-red-800'
+      : freshness.summary?.stale ? 'bg-yellow-900/30 border-yellow-800'
+      : 'bg-gray-900 border-gray-700'
+    }`}>
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Data feeds</span>
+          <span class="text-xs text-green-400">{freshness.summary?.fresh || 0} fresh</span>
+          {freshness.summary?.stale ? <span class="text-xs text-yellow-400">· {freshness.summary.stale} stale</span> : null}
+          {freshness.summary?.very_stale ? <span class="text-xs text-red-400">· {freshness.summary.very_stale} very stale</span> : null}
+          {freshness.summary?.missing ? <span class="text-xs text-red-500">· {freshness.summary.missing} missing</span> : null}
+        </div>
+        <details class="text-xs">
+          <summary class="cursor-pointer text-gray-400 hover:text-white">Details</summary>
+          <div class="absolute right-8 mt-2 bg-gray-800 border border-gray-700 rounded-lg p-3 shadow-xl z-50 min-w-[400px] max-h-[400px] overflow-y-auto">
+            <table class="w-full text-xs">
+              <thead>
+                <tr class="text-left text-gray-500 border-b border-gray-700">
+                  <th class="py-1 pr-2">Feed</th>
+                  <th class="py-1 pr-2">Age</th>
+                  <th class="py-1">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {freshness.feeds?.map((f: any) => (
+                  <tr class="border-b border-gray-800/50">
+                    <td class="py-1 pr-2 text-gray-300">{f.label}</td>
+                    <td class="py-1 pr-2 text-gray-400 whitespace-nowrap">{f.age_hours !== null ? `${f.age_hours}h` : 'n/a'}</td>
+                    <td class="py-1">
+                      {f.status === 'fresh' && <span class="text-green-400">✓ fresh</span>}
+                      {f.status === 'stale' && <span class="text-yellow-400">◐ stale</span>}
+                      {f.status === 'very_stale' && <span class="text-red-400">⚠ very stale</span>}
+                      {f.status === 'missing' && <span class="text-red-500">✗ missing</span>}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+    </div>
+  )}
 
   <!-- Header -->
   <div class="flex items-center justify-between mb-6">

@@ -115,7 +115,10 @@ function sectionFreshnessSource(id: string) {
   if (id === 'content-gaps') return { ts: gsc?.fetched_at, label: 'GSC', schedule: 'daily 06:00' };
   if (id === 'uptime') return { ts: uptime?.checked_at, label: 'uptime check', schedule: 'daily 06:00' };
   if (id === 'crawl-activity') return { ts: crawlActivityDetail?.fetched_at, label: 'Bing crawl', schedule: 'daily 06:00' };
-  if (id === 'site-speed') return { ts: pagespeed?.fetched_at, label: 'PageSpeed', schedule: 'weekly (Mon)' };
+  if (id === 'site-speed') return { ts: pagespeedAll?._meta?.last_run_at || pagespeed?.fetched_at, label: 'PageSpeed', schedule: 'weekly (Mon)' };
+  if (id === 'competitors') return { ts: competitors?.checked_at, label: 'competitor SERP', schedule: 'daily 06:00' };
+  if (id === 'new-pages') return { ts: newPagesDetail?.checked_at, label: 'new-page scan', schedule: 'daily 06:00' };
+  if (id === 'crawl-status') return { ts: crawlTs, label: 'site crawl', schedule: 'daily 06:00' };
   return null;
 }
 

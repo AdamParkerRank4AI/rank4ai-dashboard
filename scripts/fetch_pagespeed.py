@@ -143,28 +143,50 @@ def main():
         }
 
     output_file = os.path.join(OUTPUT_DIR, "pagespeed.json")
+    now_iso = datetime.now().isoformat()
 
-    # Don't overwrite good data with empty data (rate limited)
-    has_any_scores = any(r.get("avg_scores") for r in all_results.values())
-    if not has_any_scores:
-        print("\nAll requests rate limited — keeping existing data")
-        return
-
-    # Merge with existing: keep old data for sites that got rate limited
+    # Load existing so we can preserve good data for sites that rate-limited this run
+    existing = {}
     if os.path.exists(output_file):
-        with open(output_file) as f:
-            try:
+        try:
+            with open(output_file) as f:
                 existing = json.load(f)
-                for site_id, data in all_results.items():
-                    if not data.get("avg_scores") and existing.get(site_id, {}).get("avg_scores"):
-                        all_results[site_id] = existing[site_id]
-                        print(f"  Keeping existing data for {site_id} (rate limited)")
-            except:
-                pass
+        except Exception:
+            existing = {}
+
+    # Fully rate-limited run: keep existing per-site data, but ALWAYS record last_run_at
+    # + rate_limited flag at the top level so dashboard can show "last attempted X ago"
+    # instead of silently showing stale Apr data.
+    has_any_scores = any(r.get("avg_scores") for r in all_results.values())
+    merged = {}
+    if not has_any_scores:
+        print("\nAll requests rate limited — keeping existing site data")
+        for site_id, data in existing.items():
+            if isinstance(data, dict) and site_id not in ("_meta",):
+                merged[site_id] = data
+    else:
+        # Per-site merge: keep existing for sites that returned no scores this run
+        for site_id, data in all_results.items():
+            if not data.get("avg_scores") and existing.get(site_id, {}).get("avg_scores"):
+                merged[site_id] = existing[site_id]
+                print(f"  Keeping existing data for {site_id} (rate limited)")
+            else:
+                merged[site_id] = data
+
+    # Always stamp last_run_at at the top level so the dashboard can distinguish
+    # "data is from Apr 9 AND script hasn't run since" from "data is from Apr 9
+    # BUT script ran today and PSI was rate limited".
+    merged["_meta"] = {
+        "last_run_at": now_iso,
+        "last_success_at": (existing.get("_meta", {}).get("last_success_at")
+                            if not has_any_scores
+                            else now_iso),
+        "rate_limited_this_run": not has_any_scores,
+    }
 
     with open(output_file, "w") as f:
-        json.dump(all_results, f, indent=2)
-    print(f"\nSaved → {output_file}")
+        json.dump(merged, f, indent=2)
+    print(f"\nSaved → {output_file} (rate_limited={not has_any_scores})")
 
 
 if __name__ == "__main__":

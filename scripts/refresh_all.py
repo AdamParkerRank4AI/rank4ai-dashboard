@@ -223,6 +223,10 @@ def main():
     log("\nValidating data quality...")
     run_script("validate_data.py", 30)
 
+    # Data freshness guardrail — alerts if any feed is stale beyond its schedule
+    log("\nChecking data freshness...")
+    run_script("check_data_freshness.py", 30)
+
     # Summary
     passed = sum(1 for v in results.values() if v)
     total = len(results)
