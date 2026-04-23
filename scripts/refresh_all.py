@@ -116,6 +116,8 @@ def main():
         ("save_daily_metrics.py", 30),
         ("generate_prompts_from_pages.py", 60),
         ("fetch_leads.py", 30),
+        ("sync_upcoming_pages.py", 30),
+        ("compute_aeo_score.py", 60),
     ]
 
     results = {}

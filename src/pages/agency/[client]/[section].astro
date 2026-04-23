@@ -70,6 +70,8 @@ const contentPlans = contentPlansData?.plans || [];
 
 // Lead tracking (Market Invoice only for now — other sites can be wired later)
 const leadsData = clientId === 'market-invoice' ? loadJson('mi_leads.json') : null;
+const aeoScorecardAll = loadJson('aeo_scorecard.json');
+const aeoScore = aeoScorecardAll?.[clientId];
 
 // Per-site GitHub repo for the Push Live deep link
 const SITE_REPOS: Record<string, string> = {
@@ -1988,6 +1990,45 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
   <!-- AI READINESS -->
   {sectionId === 'ai-readiness' && audit && (
     <div>
+      {aeoScore && (
+        <div class="bg-gradient-to-r from-purple-950/40 to-blue-950/40 border border-purple-700/40 rounded-lg p-5 mb-6">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <h3 class="text-sm font-semibold text-white uppercase tracking-wider">AEO Readiness Scorecard</h3>
+                <span class="text-[10px] text-purple-300 bg-purple-900/40 px-2 py-0.5 rounded">60-point agent readiness</span>
+              </div>
+              <p class="text-[11px] text-gray-400">Osmani 6-layer framework: crawlability, discoverability, readability, citability, schema, technical</p>
+            </div>
+            <div class="text-right">
+              <div class={`text-3xl font-bold ${aeoScore.percentage >= 80 ? 'text-green-400' : aeoScore.percentage >= 60 ? 'text-yellow-400' : 'text-red-400'}`}>{aeoScore.total_score}<span class="text-gray-500 text-lg">/60</span></div>
+              <div class="text-xs text-gray-500">{aeoScore.percentage}%</div>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-6 gap-2">
+            {Object.entries(aeoScore.layers).map(([name, d]: [string, any]) => (
+              <div class="bg-gray-900/60 border border-gray-800 rounded p-2">
+                <div class="flex items-baseline justify-between mb-1">
+                  <span class="text-[10px] text-gray-400 uppercase tracking-wider">{name}</span>
+                  <span class={`text-sm font-bold ${d.score >= 8 ? 'text-green-400' : d.score >= 5 ? 'text-yellow-400' : 'text-red-400'}`}>{d.score}</span>
+                </div>
+                <div class="w-full bg-gray-800 rounded h-1">
+                  <div class={`h-1 rounded ${d.score >= 8 ? 'bg-green-500' : d.score >= 5 ? 'bg-yellow-500' : 'bg-red-500'}`} style={`width: ${d.score * 10}%`}></div>
+                </div>
+                {d.notes && d.notes.length > 0 && (
+                  <details class="mt-1.5">
+                    <summary class="cursor-pointer text-[9px] text-gray-500 hover:text-gray-300">why</summary>
+                    <div class="text-[9px] text-gray-400 mt-1 space-y-0.5">
+                      {d.notes.map((n: string) => (<div>· {n}</div>))}
+                    </div>
+                  </details>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
           <div class={`text-2xl font-bold ${audit.overall_score >= 70 ? 'text-green-400' : audit.overall_score >= 40 ? 'text-yellow-400' : 'text-red-400'}`}>{audit.overall_score}/100</div>

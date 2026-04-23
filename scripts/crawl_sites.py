@@ -521,10 +521,30 @@ def build_tree(pages):
 
 
 def calculate_depth(pages, links, start_url):
-    """BFS from homepage to calculate link depth."""
-    # Normalize: try with and without trailing slash
-    depths = {start_url: 0, start_url + '/': 0, start_url.rstrip('/'): 0}
-    queue = [start_url, start_url + '/', start_url.rstrip('/')]
+    """BFS from homepage to calculate link depth.
+
+    Seeds with every variant of the homepage URL we might encounter after
+    redirects: with/without trailing slash, with/without www. This stops
+    depth 99 bleeding across the whole site when the www → apex (or the
+    reverse) redirect flips which host the pages live under.
+    """
+    from urllib.parse import urlparse
+    parsed = urlparse(start_url)
+    host = parsed.netloc
+    schemes = [parsed.scheme]
+    hosts = {host}
+    if host.startswith('www.'):
+        hosts.add(host[4:])
+    else:
+        hosts.add('www.' + host)
+    seeds = set()
+    for sch in schemes:
+        for h in hosts:
+            base = f"{sch}://{h}"
+            seeds.add(base)
+            seeds.add(base + '/')
+    depths = {s: 0 for s in seeds}
+    queue = list(seeds)
     internal_links = defaultdict(set)
 
     for link in links:
