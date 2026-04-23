@@ -115,6 +115,7 @@ def main():
         ("track_new_pages.py", 30),
         ("save_daily_metrics.py", 30),
         ("generate_prompts_from_pages.py", 60),
+        ("fetch_leads.py", 30),
     ]
 
     results = {}

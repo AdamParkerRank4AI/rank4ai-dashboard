@@ -68,6 +68,9 @@ const dailyAuditHistory = dailyAuditHistoryAll?.[clientId] || [];
 const contentPlansData = loadJson(`content_plan_${clientId}.json`);
 const contentPlans = contentPlansData?.plans || [];
 
+// Lead tracking (Market Invoice only for now — other sites can be wired later)
+const leadsData = clientId === 'market-invoice' ? loadJson('mi_leads.json') : null;
+
 // Per-site GitHub repo for the Push Live deep link
 const SITE_REPOS: Record<string, string> = {
   'rank4ai': 'AdamParkerRank4AI/rank4ai-preview',
@@ -108,6 +111,7 @@ function sectionFreshnessSource(id: string) {
   if (id === 'ai-readiness') return { ts: audit?.audited_at, label: 'AI audit', schedule: 'daily 06:00' };
   if (id === 'ai-citations') return { ts: citByType?.tested_at, label: 'citations', schedule: 'weekly (Mon)' };
   if (id === 'recommendations' || id === 'overview') return { ts: recs?.generated_at, label: 'recs', schedule: 'daily 06:00' };
+  if (id === 'leads') return { ts: leadsData?.fetched_at, label: 'Supabase leads', schedule: 'daily 06:00' };
   if (id === 'content-gaps') return { ts: gsc?.fetched_at, label: 'GSC', schedule: 'daily 06:00' };
   if (id === 'uptime') return { ts: uptime?.checked_at, label: 'uptime check', schedule: 'daily 06:00' };
   if (id === 'crawl-activity') return { ts: crawlActivityDetail?.fetched_at, label: 'Bing crawl', schedule: 'daily 06:00' };
@@ -402,6 +406,136 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
           </table>
         </div>
       </div>
+    </div>
+  )}
+
+  <!-- LEADS — per-site lead tracking + attribution + funnel (market-invoice only for now) -->
+  {sectionId === 'leads' && (
+    <div>
+      {!leadsData && (
+        <div class="bg-gray-900 border border-gray-700 rounded-lg p-6 text-center text-gray-400">
+          Lead data not wired for {client.name} yet. Currently supported: Market Invoice.
+        </div>
+      )}
+      {leadsData && (
+        <div>
+          {/* Top stat row */}
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-6">
+            <div class="bg-gray-900 border border-gray-700 rounded-lg p-4 text-center">
+              <div class="text-2xl font-bold text-white">{leadsData.count_total}</div>
+              <div class="text-[10px] text-gray-500 uppercase tracking-wider">All-time rows</div>
+            </div>
+            <div class="bg-gray-900 border border-gray-700 rounded-lg p-4 text-center">
+              <div class="text-2xl font-bold text-white">{leadsData.count_30d}</div>
+              <div class="text-[10px] text-gray-500 uppercase tracking-wider">Last 30 days</div>
+            </div>
+            <div class="bg-gray-900 border border-gray-700 rounded-lg p-4 text-center">
+              <div class="text-2xl font-bold text-white">{leadsData.count_7d}</div>
+              <div class="text-[10px] text-gray-500 uppercase tracking-wider">Last 7 days</div>
+            </div>
+            <div class="bg-gray-900 border border-emerald-800/40 rounded-lg p-4 text-center">
+              <div class="text-2xl font-bold text-emerald-400">{leadsData.funnel_7d?.form_submit ?? 0}</div>
+              <div class="text-[10px] text-emerald-400/80 uppercase tracking-wider">Submits 7d</div>
+            </div>
+            <div class="bg-gray-900 border border-gray-700 rounded-lg p-4 text-center">
+              <div class="text-2xl font-bold text-white">{leadsData.funnel_7d?.conversion_pct ?? 0}%</div>
+              <div class="text-[10px] text-gray-500 uppercase tracking-wider">Step1 → Submit</div>
+            </div>
+          </div>
+
+          {/* Funnel */}
+          <div class="bg-gray-900 border border-gray-700 rounded-lg p-5 mb-6">
+            <h3 class="text-sm font-semibold text-white mb-3">7-day funnel (Supabase)</h3>
+            <div class="space-y-2">
+              <div class="flex items-center gap-3">
+                <span class="text-xs text-gray-400 w-32">Step 1 complete</span>
+                <div class="flex-1 bg-gray-800 rounded-full h-6 overflow-hidden">
+                  <div class="h-full bg-blue-600 rounded-full" style={`width: 100%`}></div>
+                </div>
+                <span class="text-xs font-bold text-white w-10 text-right">{leadsData.funnel_7d?.step_1_complete ?? 0}</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="text-xs text-gray-400 w-32">Form submitted</span>
+                <div class="flex-1 bg-gray-800 rounded-full h-6 overflow-hidden">
+                  <div class="h-full bg-emerald-600 rounded-full" style={`width: ${leadsData.funnel_7d?.conversion_pct ?? 0}%`}></div>
+                </div>
+                <span class="text-xs font-bold text-white w-10 text-right">{leadsData.funnel_7d?.form_submit ?? 0}</span>
+              </div>
+            </div>
+            <p class="text-[11px] text-gray-500 mt-3">Drop-off from Step 1 to Submit: <span class="text-yellow-400">{((leadsData.funnel_7d?.step_1_complete ?? 0) - (leadsData.funnel_7d?.form_submit ?? 0))}</span> people. GA4 also tracks <code class="bg-gray-800 px-1 rounded">form_view</code>, <code class="bg-gray-800 px-1 rounded">form_step_2</code>, <code class="bg-gray-800 px-1 rounded">form_step_back</code> events.</p>
+          </div>
+
+          {/* Source breakdown */}
+          <div class="bg-gray-900 border border-gray-700 rounded-lg p-5 mb-6">
+            <h3 class="text-sm font-semibold text-white mb-3">Source breakdown (30 days)</h3>
+            {leadsData.sources_30d?.length === 0 && (
+              <p class="text-xs text-gray-500">No source data. Run migration <code class="bg-gray-800 px-1">supabase/migrations/20260423_add_lead_attribution_columns.sql</code> and new leads will include UTM + referrer.</p>
+            )}
+            {leadsData.sources_30d?.map((s: any) => (
+              <div class="flex items-center gap-3 mb-2">
+                <span class="text-xs text-gray-400 w-40 truncate">{s.source}</span>
+                <div class="flex-1 bg-gray-800 rounded-full h-5 overflow-hidden">
+                  <div class="h-full bg-purple-600" style={`width: ${Math.min(100, (s.count / (leadsData.sources_30d[0]?.count || 1)) * 100)}%`}></div>
+                </div>
+                <span class="text-xs font-bold text-white w-10 text-right">{s.count}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Recent leads */}
+          <div class="bg-gray-900 border border-gray-700 rounded-lg p-5">
+            <h3 class="text-sm font-semibold text-white mb-3">Recent submissions (up to 20)</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-xs">
+                <thead>
+                  <tr class="text-left text-gray-500 border-b border-gray-800">
+                    <th class="py-2 pr-2">When</th>
+                    <th class="py-2 pr-2">Type</th>
+                    <th class="py-2 pr-2">Company</th>
+                    <th class="py-2 pr-2">Contact</th>
+                    <th class="py-2 pr-2">Source</th>
+                    <th class="py-2 pr-2">Landing page</th>
+                    <th class="py-2 pr-2">Finance</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {leadsData.recent_leads?.map((l: any) => (
+                    <tr class="border-b border-gray-800/50">
+                      <td class="py-2 pr-2 text-gray-400 whitespace-nowrap">{new Date(l.created_at).toLocaleString('en-GB', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' })}</td>
+                      <td class="py-2 pr-2">
+                        {l.event_type === 'form_submit' && <span class="px-1.5 py-0.5 rounded text-[10px] bg-emerald-900/60 text-emerald-300">submit</span>}
+                        {l.event_type === 'step_1_complete' && <span class="px-1.5 py-0.5 rounded text-[10px] bg-blue-900/60 text-blue-300">step 1</span>}
+                        {l.event_type !== 'form_submit' && l.event_type !== 'step_1_complete' && <span class="px-1.5 py-0.5 rounded text-[10px] bg-gray-800 text-gray-400">{l.event_type}</span>}
+                      </td>
+                      <td class="py-2 pr-2 text-white">{l.company_name || '—'}</td>
+                      <td class="py-2 pr-2">
+                        {l.contact_name && <div class="text-white">{l.contact_name}</div>}
+                        {l.email && <div class="text-gray-500 text-[10px]">{l.email}</div>}
+                        {l.phone && <div class="text-gray-500 text-[10px]">{l.phone}</div>}
+                        {!l.contact_name && !l.email && <span class="text-gray-600">—</span>}
+                      </td>
+                      <td class="py-2 pr-2 text-gray-300">{l.source || <span class="text-gray-600">unknown</span>}</td>
+                      <td class="py-2 pr-2 text-gray-400 text-[10px] max-w-[200px] truncate">{l.page_url?.replace('https://marketinvoice.co.uk','') || '—'}</td>
+                      <td class="py-2 pr-2 text-gray-400">
+                        <div>{l.finance_type}</div>
+                        <div class="text-gray-600 text-[10px]">{l.turnover} · {l.industry}</div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            {(!leadsData.recent_leads || leadsData.recent_leads.length === 0) && (
+              <p class="text-center text-gray-500 py-8">No leads in last 30 days</p>
+            )}
+          </div>
+
+          <p class="text-[11px] text-gray-500 mt-4">
+            Source is inferred from referrer + UTM params at first touch. <span class="text-gray-400">unknown</span> = lead was captured before attribution columns existed (before 23 Apr 2026).
+            Run <code class="bg-gray-800 px-1">supabase/migrations/20260423_add_lead_attribution_columns.sql</code> in the Supabase SQL editor to enable full attribution.
+          </p>
+        </div>
+      )}
     </div>
   )}
 
