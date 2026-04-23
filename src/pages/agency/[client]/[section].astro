@@ -668,8 +668,20 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
                       <div class="space-y-2">
                         <div><span class="text-gray-500 uppercase text-[10px] tracking-wider">URL</span><div class="text-blue-400 break-all"><a href="${p.url}" target="_blank" rel="noopener" class="hover:underline">${p.url}</a></div></div>
                         <div><span class="text-gray-500 uppercase text-[10px] tracking-wider">H1</span><div class="text-white">${escapedH1 || '<span class="text-red-500">(missing)</span>'}</div></div>
-                        <div><span class="text-gray-500 uppercase text-[10px] tracking-wider">Title tag <span class="text-gray-600">(${(p.title || '').length} chars)</span></span><div class="text-white">${escapedTitle || '<span class="text-red-500">(missing)</span>'}</div></div>
-                        <div><span class="text-gray-500 uppercase text-[10px] tracking-wider">Meta description <span class="text-gray-600">(${(p.meta_desc || '').length} chars)</span></span><div class="text-white">${escapedMeta || '<span class="text-red-500">(missing)</span>'}</div></div>
+                        <div>
+                          <div class="flex items-center justify-between mb-0.5">
+                            <span class="text-gray-500 uppercase text-[10px] tracking-wider">Title tag <span class="text-gray-600">(${(p.title || '').length} chars)</span></span>
+                            <button type="button" class="pc-edit-btn text-[10px] text-blue-400 hover:text-blue-300" data-field="title" data-path="${p.path}" data-current="${escapedTitle}">Edit</button>
+                          </div>
+                          <div class="pc-value text-white" data-field="title">${escapedTitle || '<span class="text-red-500">(missing)</span>'}</div>
+                        </div>
+                        <div>
+                          <div class="flex items-center justify-between mb-0.5">
+                            <span class="text-gray-500 uppercase text-[10px] tracking-wider">Meta description <span class="text-gray-600">(${(p.meta_desc || '').length} chars)</span></span>
+                            <button type="button" class="pc-edit-btn text-[10px] text-blue-400 hover:text-blue-300" data-field="meta_desc" data-path="${p.path}" data-current="${escapedMeta}">Edit</button>
+                          </div>
+                          <div class="pc-value text-white" data-field="meta_desc">${escapedMeta || '<span class="text-red-500">(missing)</span>'}</div>
+                        </div>
                         <div><span class="text-gray-500 uppercase text-[10px] tracking-wider">Canonical</span><div class="text-gray-300 break-all">${p.canonical || '<span class="text-red-500">(missing)</span>'}</div></div>
                         ${p.last_modified ? `<div><span class="text-gray-500 uppercase text-[10px] tracking-wider">Last modified</span><div class="text-gray-300">${p.last_modified}</div></div>` : ''}
                       </div>
@@ -691,7 +703,7 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
                           <a href="${p.url}" target="_blank" rel="noopener" class="px-2 py-1 rounded text-[11px] bg-blue-900/40 text-blue-300 border border-blue-800/40 hover:bg-blue-900/60">View live →</a>
                           <a href="https://search.google.com/test/rich-results?url=${encodeURIComponent(p.url)}" target="_blank" rel="noopener" class="px-2 py-1 rounded text-[11px] bg-gray-800 text-gray-300 border border-gray-700 hover:bg-gray-700">Test schema</a>
                           <a href="https://pagespeed.web.dev/report?url=${encodeURIComponent(p.url)}" target="_blank" rel="noopener" class="px-2 py-1 rounded text-[11px] bg-gray-800 text-gray-300 border border-gray-700 hover:bg-gray-700">PageSpeed</a>
-                          <span class="px-2 py-1 rounded text-[11px] bg-yellow-900/30 text-yellow-400 border border-yellow-800/40">Edit (coming next)</span>
+                          <button type="button" class="pc-settings-btn px-2 py-1 rounded text-[11px] bg-gray-800 text-gray-300 border border-gray-700 hover:bg-gray-700">⚙ Edit token</button>
                         </div>
                       </div>
                     </div>
@@ -713,8 +725,29 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
           const filter = document.getElementById('pc-filter');
           const count = document.getElementById('pc-count');
 
+          // ---- Edit token management ----
+          const TOKEN_KEY = 'r4ai_edit_token';
+          function getToken() {
+            try { return sessionStorage.getItem(TOKEN_KEY) || ''; } catch { return ''; }
+          }
+          function setToken(t) {
+            try {
+              if (t) sessionStorage.setItem(TOKEN_KEY, t);
+              else sessionStorage.removeItem(TOKEN_KEY);
+            } catch {}
+          }
+          function promptForToken(reason) {
+            const current = getToken();
+            const t = prompt((reason || 'Paste edit token (set in Cloudflare Pages as EDIT_SECRET).') + '\n\nLeave blank to clear.', current);
+            if (t === null) return false;
+            setToken(t.trim());
+            return true;
+          }
+
           // Expand/collapse rows
           table.addEventListener('click', (e) => {
+            // Never collapse when clicking inside an edit field
+            if (e.target.closest('.pc-edit-btn, .pc-settings-btn, .pc-edit-form, .pc-value')) return;
             const row = e.target.closest('.pc-row');
             if (!row) return;
             const detail = row.nextElementSibling;
@@ -723,6 +756,119 @@ const crawlDaily = JSON.stringify(crawlActivityDetail?.bing_crawl_daily || []);
             detail.classList.toggle('hidden');
             const chev = row.querySelector('.pc-chevron');
             if (chev) chev.textContent = isOpen ? '▸' : '▾';
+          });
+
+          // Settings button — lets user (re)set the token
+          table.addEventListener('click', (e) => {
+            if (!e.target.closest('.pc-settings-btn')) return;
+            e.stopPropagation();
+            promptForToken('Set or update the edit token.');
+          });
+
+          // Inline edit button
+          table.addEventListener('click', async (e) => {
+            const btn = e.target.closest('.pc-edit-btn');
+            if (!btn) return;
+            e.stopPropagation();
+            const field = btn.dataset.field;
+            const path = btn.dataset.path;
+            const current = btn.dataset.current || '';
+            const valueDiv = btn.closest('div').parentElement.querySelector('.pc-value[data-field="' + field + '"]');
+            if (!valueDiv) return;
+
+            // Replace value with edit form
+            const maxLen = field === 'title' ? 70 : 160;
+            const useTextarea = field === 'meta_desc';
+            valueDiv.innerHTML = '';
+            const form = document.createElement('form');
+            form.className = 'pc-edit-form flex flex-col gap-2';
+            const input = document.createElement(useTextarea ? 'textarea' : 'input');
+            if (!useTextarea) input.type = 'text';
+            input.value = current;
+            input.className = 'bg-gray-800 border border-gray-600 rounded px-2 py-1 text-white text-xs w-full' + (useTextarea ? ' min-h-[60px]' : '');
+            input.maxLength = 500;
+            const counter = document.createElement('div');
+            counter.className = 'text-[10px] text-gray-500';
+            const updateCounter = () => {
+              const len = input.value.length;
+              counter.textContent = len + ' chars (limit ' + maxLen + ')';
+              counter.style.color = len > maxLen ? '#f87171' : len > maxLen * 0.9 ? '#facc15' : '#6b7280';
+            };
+            input.addEventListener('input', updateCounter);
+            updateCounter();
+            const actions = document.createElement('div');
+            actions.className = 'flex items-center gap-2';
+            const saveBtn = document.createElement('button');
+            saveBtn.type = 'submit';
+            saveBtn.className = 'px-2 py-1 rounded text-[11px] bg-emerald-700 text-white hover:bg-emerald-600';
+            saveBtn.textContent = 'Save + deploy';
+            const cancelBtn = document.createElement('button');
+            cancelBtn.type = 'button';
+            cancelBtn.className = 'px-2 py-1 rounded text-[11px] bg-gray-700 text-gray-300 hover:bg-gray-600';
+            cancelBtn.textContent = 'Cancel';
+            const status = document.createElement('span');
+            status.className = 'text-[11px]';
+            actions.appendChild(saveBtn);
+            actions.appendChild(cancelBtn);
+            actions.appendChild(status);
+            form.appendChild(input);
+            form.appendChild(counter);
+            form.appendChild(actions);
+            valueDiv.appendChild(form);
+            input.focus();
+
+            cancelBtn.addEventListener('click', () => {
+              valueDiv.innerHTML = current || '<span class="text-red-500">(missing)</span>';
+            });
+
+            form.addEventListener('submit', async (ev) => {
+              ev.preventDefault();
+              const newValue = input.value.trim();
+              if (!newValue) { status.textContent = 'Empty'; status.style.color = '#f87171'; return; }
+              if (newValue.length > maxLen) { status.textContent = 'Too long'; status.style.color = '#f87171'; return; }
+
+              let token = getToken();
+              if (!token) {
+                if (!promptForToken('First edit — paste your edit token (saved in this tab only).')) return;
+                token = getToken();
+                if (!token) return;
+              }
+
+              saveBtn.disabled = true;
+              status.textContent = 'Saving…';
+              status.style.color = '#facc15';
+
+              try {
+                const r = await fetch('/api/edit-page', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + token,
+                  },
+                  body: JSON.stringify({ site: clientId, path, field, newValue }),
+                });
+                const data = await r.json();
+                if (!r.ok || !data.ok) {
+                  status.textContent = '✗ ' + (data.error || ('HTTP ' + r.status));
+                  status.style.color = '#f87171';
+                  if (r.status === 401) setToken('');
+                  saveBtn.disabled = false;
+                  return;
+                }
+                status.innerHTML = '✓ Committed <a href="' + (data.commitUrl || '#') + '" target="_blank" class="underline">' + (data.commit ? data.commit.slice(0, 7) : '') + '</a>';
+                status.style.color = '#34d399';
+                // Update shown value, keep form hidden
+                setTimeout(() => {
+                  valueDiv.textContent = newValue;
+                  // Update the data-current on the edit button so re-edit starts from new value
+                  btn.dataset.current = newValue.replace(/"/g, '&quot;');
+                }, 1500);
+              } catch (err) {
+                status.textContent = '✗ ' + (err.message || 'Network error');
+                status.style.color = '#f87171';
+                saveBtn.disabled = false;
+              }
+            });
           });
 
           const applyFilters = () => {
