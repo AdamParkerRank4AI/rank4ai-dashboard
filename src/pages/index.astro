@@ -35,6 +35,30 @@ const crawlActivity = loadJson('crawl_activity.json') || {};
 const aioSerp = loadJson('ai_overview_serp.json') || {};
 const freshness = loadJson('data_freshness.json') || null;
 const deployParity = loadJson('deploy_parity.json') || null;
+const wins = loadJson('wins_this_week.json') || null;
+
+// Compute real AI Overview numbers across all sites (home tile was showing
+// totalRecs mislabelled as "AI Overview fixes" — not the same thing)
+let aioQueriesChecked = 0, aioPresent = 0, brandInAio = 0;
+for (const site of Object.values(aioSerp)) {
+  const results = (site as any)?.results || [];
+  for (const r of results) {
+    if (r.error) continue;
+    aioQueriesChecked++;
+    if (r.has_ai_overview) {
+      aioPresent++;
+      if (r.brand_in_ai_overview) brandInAio++;
+    }
+  }
+}
+const aioOpportunity = aioPresent - brandInAio;  // AIOs where brand is absent — real "fixes needed"
+
+// Compute total site issues (real fixes count, used for tile that previously mislabelled)
+let totalIssues = 0;
+for (const c of clients) {
+  const crawl = loadJson(`crawl_${c.id}.json`);
+  totalIssues += (crawl?.issues?.length || 0);
+}
 
 // Separate our sites from client sites
 const ourSites = clients.filter((c: any) => c.staging);
@@ -237,6 +261,54 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
     </div>
   </div>
 
+  {/* Wins This Week — daily progress diff */}
+  {wins && (
+    <div class={`rounded-lg px-4 py-3 mb-4 border ${wins.fleet_cleared_today > 0 || wins.fleet_cleared_7d > 0 ? 'bg-emerald-950/30 border-emerald-800/50' : 'bg-gray-900 border-gray-700'}`}>
+      <div class="flex items-center justify-between flex-wrap gap-3">
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-semibold text-emerald-300 uppercase tracking-wider">Wins This Week</span>
+          {wins.fleet_cleared_today > 0
+            ? <span class="text-sm text-emerald-400 font-semibold">{wins.fleet_cleared_today} recs cleared today</span>
+            : <span class="text-sm text-gray-400">0 cleared today</span>
+          }
+          <span class="text-gray-600">·</span>
+          <span class="text-xs text-emerald-400">{wins.fleet_cleared_7d} in last 7 days</span>
+          {wins.fleet_new_today > 0 && <>
+            <span class="text-gray-600">·</span>
+            <span class="text-xs text-red-400">{wins.fleet_new_today} new regressions</span>
+          </>}
+          <span class="text-gray-600">·</span>
+          <span class="text-xs text-gray-500">{wins.fleet_stuck} stuck ≥7d (strategic)</span>
+        </div>
+        <details class="text-xs">
+          <summary class="cursor-pointer text-emerald-400 hover:text-emerald-300">what changed</summary>
+          <div class="absolute right-8 mt-2 bg-gray-800 border border-gray-700 rounded-lg p-3 shadow-xl z-50 min-w-[520px] max-h-[500px] overflow-y-auto">
+            {Object.entries(wins.per_site || {}).map(([site, d]: [string, any]) => (
+              <div class="mb-3">
+                <div class="text-xs font-semibold text-white mb-1">{site}</div>
+                {d.cleared_today?.length > 0 && (
+                  <div class="mb-1">
+                    <div class="text-[10px] text-emerald-400 font-semibold">✓ Cleared today ({d.cleared_today.length})</div>
+                    {d.cleared_today.map((t: string) => <div class="text-[11px] text-gray-300 pl-3">· {t}</div>)}
+                  </div>
+                )}
+                {d.new_today?.length > 0 && (
+                  <div class="mb-1">
+                    <div class="text-[10px] text-red-400 font-semibold">⚠ New today ({d.new_today.length})</div>
+                    {d.new_today.map((t: string) => <div class="text-[11px] text-gray-300 pl-3">· {t}</div>)}
+                  </div>
+                )}
+                {d.counts.cleared_today === 0 && d.counts.new_today === 0 && (
+                  <div class="text-[10px] text-gray-500 italic">no change today</div>
+                )}
+              </div>
+            ))}
+          </div>
+        </details>
+      </div>
+    </div>
+  )}
+
   <!-- Overall stats -->
   {/* Three channel overview */}
   <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
@@ -272,17 +344,55 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
         </div>
       </div>
     </div>
-    {/* Google AI Overviews */}
+    {/* Google AI Overviews — actual AIO data, not mislabelled recs count */}
     <div class="bg-gray-800 border border-cyan-800/40 rounded-lg p-4">
       <div class="text-[10px] text-cyan-300 uppercase tracking-wider mb-2 font-medium">Google AI Overviews</div>
       <div class="flex items-end gap-4">
         <div>
-          <div class={`text-2xl font-bold ${totalCritical > 0 ? 'text-red-400' : totalRecs > 0 ? 'text-yellow-400' : 'text-green-400'}`}>{totalRecs}</div>
-          <div class="text-[10px] text-gray-400">fixes needed</div>
+          <div class={`text-2xl font-bold ${aioPresent === 0 ? 'text-gray-500' : brandInAio === 0 ? 'text-yellow-400' : 'text-cyan-400'}`}>{aioPresent}<span class="text-gray-500 text-lg">/{aioQueriesChecked}</span></div>
+          <div class="text-[10px] text-gray-400">AIOs triggered</div>
         </div>
         <div>
-          <div class="text-lg font-bold text-purple-400">{allCommits.filter(c => c.date?.slice(0, 10) === new Date().toISOString().slice(0, 10)).length}</div>
-          <div class="text-[10px] text-gray-400">changes today</div>
+          <div class={`text-lg font-bold ${brandInAio > 0 ? 'text-green-400' : 'text-gray-500'}`}>{brandInAio}</div>
+          <div class="text-[10px] text-gray-400">brand included</div>
+        </div>
+        <div>
+          <div class={`text-lg font-bold ${aioOpportunity > 0 ? 'text-orange-400' : 'text-gray-500'}`}>{aioOpportunity}</div>
+          <div class="text-[10px] text-gray-400">opportunity</div>
+        </div>
+      </div>
+      <p class="text-[10px] text-gray-500 mt-1.5">{aioPresent === 0 ? `0 of ${aioQueriesChecked} target queries triggered an AI Overview. Either your queries aren't AIO-heavy, or the scrape missed them.` : brandInAio === 0 ? `AIOs present on ${aioPresent} queries, brand not in any of them. Rewrite target pages to answer these directly.` : `Brand in ${brandInAio} of ${aioPresent} AIOs.`}</p>
+    </div>
+  </div>
+
+  {/* Separate tile for real site issues (this is what used to be mislabelled) */}
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
+    <div class="bg-gray-800 border border-gray-700 rounded-lg p-4">
+      <div class="text-[10px] text-gray-300 uppercase tracking-wider mb-2 font-medium">Open recommendations</div>
+      <div class="flex items-end gap-4">
+        <div>
+          <div class={`text-2xl font-bold ${totalCritical > 0 ? 'text-red-400' : totalRecs > 0 ? 'text-yellow-400' : 'text-green-400'}`}>{totalRecs}</div>
+          <div class="text-[10px] text-gray-400">across {clients.length} sites</div>
+        </div>
+        {totalCritical > 0 && (<div><div class="text-lg font-bold text-red-400">{totalCritical}</div><div class="text-[10px] text-gray-400">critical</div></div>)}
+      </div>
+    </div>
+    <div class="bg-gray-800 border border-gray-700 rounded-lg p-4">
+      <div class="text-[10px] text-gray-300 uppercase tracking-wider mb-2 font-medium">Site issues (crawl)</div>
+      <div class="flex items-end gap-4">
+        <div>
+          <div class={`text-2xl font-bold ${totalIssues === 0 ? 'text-green-400' : totalIssues < 10 ? 'text-yellow-400' : 'text-red-400'}`}>{totalIssues}</div>
+          <div class="text-[10px] text-gray-400">broken / dupe H1 / errors</div>
+        </div>
+      </div>
+      <p class="text-[10px] text-gray-500 mt-1.5">{totalIssues === 0 ? 'No crawl issues detected. Latest crawl clean across all 3 sites.' : 'Issues from last crawl — fixable via Page Compliance editor or on-site.'}</p>
+    </div>
+    <div class="bg-gray-800 border border-gray-700 rounded-lg p-4">
+      <div class="text-[10px] text-gray-300 uppercase tracking-wider mb-2 font-medium">Changes today</div>
+      <div class="flex items-end gap-4">
+        <div>
+          <div class="text-2xl font-bold text-purple-400">{allCommits.filter(c => c.date?.slice(0, 10) === new Date().toISOString().slice(0, 10)).length}</div>
+          <div class="text-[10px] text-gray-400">commits across fleet</div>
         </div>
       </div>
     </div>

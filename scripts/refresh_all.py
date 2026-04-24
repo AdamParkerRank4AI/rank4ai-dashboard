@@ -118,6 +118,7 @@ def main():
         ("fetch_leads.py", 30),
         ("sync_upcoming_pages.py", 30),
         ("compute_aeo_score.py", 60),
+        ("compute_wins.py", 30),
     ]
 
     results = {}
