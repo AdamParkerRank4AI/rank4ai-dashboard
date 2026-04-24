@@ -1,82 +1,457 @@
 {
   "rank4ai": {
     "site_id": "rank4ai",
-    "fetched_at": "2026-04-09T09:00:01.402568",
-    "pages_tested": 1,
+    "fetched_at": "2026-04-24T09:48:10.300090",
+    "pages_tested": 4,
     "avg_scores": {
-      "performance": 39,
-      "accessibility": 96,
-      "seo": 92,
-      "best-practices": 96
+      "performance": 88,
+      "accessibility": 95,
+      "seo": 90,
+      "best-practices": 80
     },
+    "cwv_pass_count": 0,
+    "cwv_total": 0,
     "pages": [
       {
         "url": "https://www.rank4ai.co.uk/",
+        "strategy": "mobile",
         "scores": {
-          "performance": 39,
-          "accessibility": 96,
-          "best-practices": 96,
-          "seo": 92
-        },
-        "cwv": {},
-        "cwv_pass": false,
-        "overall_category": "NONE"
-      }
-    ]
-  },
-  "market-invoice": {
-    "site_id": "market-invoice",
-    "fetched_at": "2026-04-09T09:00:20.036786",
-    "pages_tested": 1,
-    "avg_scores": {
-      "performance": 92,
-      "accessibility": 96,
-      "seo": 100,
-      "best-practices": 81
-    },
-    "pages": [
-      {
-        "url": "https://www.marketinvoice.co.uk/",
-        "scores": {
-          "performance": 92,
-          "accessibility": 96,
+          "performance": 89,
+          "accessibility": 95,
           "best-practices": 81,
           "seo": 100
         },
         "cwv": {},
         "cwv_pass": false,
-        "overall_category": "NONE"
+        "overall_category": "NONE",
+        "lab": {
+          "first-contentful-paint": {
+            "value": 2710.1790994961975,
+            "score": 0.6,
+            "display": "2.7\u00a0s"
+          },
+          "largest-contentful-paint": {
+            "value": 2860.1804316053363,
+            "score": 0.81,
+            "display": "2.9\u00a0s"
+          },
+          "total-blocking-time": {
+            "value": 0,
+            "score": 1,
+            "display": "0\u00a0ms"
+          },
+          "cumulative-layout-shift": {
+            "value": 0,
+            "score": 1,
+            "display": "0"
+          },
+          "speed-index": {
+            "value": 4298.299677797753,
+            "score": 0.76,
+            "display": "4.3\u00a0s"
+          },
+          "interactive": {
+            "value": 2875.1805648162504,
+            "score": 0.96,
+            "display": "2.9\u00a0s"
+          }
+        }
+      },
+      {
+        "url": "https://www.rank4ai.co.uk/ai-search-visibility",
+        "strategy": "mobile",
+        "scores": {
+          "performance": 86,
+          "accessibility": 95,
+          "best-practices": 81,
+          "seo": 100
+        },
+        "cwv": {},
+        "cwv_pass": false,
+        "overall_category": "NONE",
+        "lab": {
+          "first-contentful-paint": {
+            "value": 2746.4831101342147,
+            "score": 0.58,
+            "display": "2.7\u00a0s"
+          },
+          "largest-contentful-paint": {
+            "value": 2746.4831101342147,
+            "score": 0.84,
+            "display": "2.7\u00a0s"
+          },
+          "total-blocking-time": {
+            "value": 0,
+            "score": 1,
+            "display": "0\u00a0ms"
+          },
+          "cumulative-layout-shift": {
+            "value": 0.145991,
+            "score": 0.77,
+            "display": "0.146"
+          },
+          "speed-index": {
+            "value": 2867.973080052776,
+            "score": 0.95,
+            "display": "2.9\u00a0s"
+          },
+          "interactive": {
+            "value": 2746.483110134215,
+            "score": 0.97,
+            "display": "2.7\u00a0s"
+          }
+        }
+      },
+      {
+        "url": "https://www.rank4ai.co.uk/questions",
+        "strategy": "mobile",
+        "scores": {
+          "performance": 91,
+          "accessibility": 94,
+          "best-practices": 77,
+          "seo": 61
+        },
+        "cwv": {},
+        "cwv_pass": false,
+        "overall_category": "NONE",
+        "lab": {
+          "first-contentful-paint": {
+            "value": 2589.240598124969,
+            "score": 0.64,
+            "display": "2.6\u00a0s"
+          },
+          "largest-contentful-paint": {
+            "value": 2589.240598124969,
+            "score": 0.88,
+            "display": "2.6\u00a0s"
+          },
+          "total-blocking-time": {
+            "value": 0,
+            "score": 1,
+            "display": "0\u00a0ms"
+          },
+          "cumulative-layout-shift": {
+            "value": 0,
+            "score": 1,
+            "display": "0"
+          },
+          "speed-index": {
+            "value": 4285.790149250374,
+            "score": 0.76,
+            "display": "4.3\u00a0s"
+          },
+          "interactive": {
+            "value": 2589.240598124969,
+            "score": 0.98,
+            "display": "2.6\u00a0s"
+          }
+        }
+      },
+      {
+        "url": "https://www.rank4ai.co.uk/blog",
+        "strategy": "mobile",
+        "scores": {
+          "performance": 84,
+          "accessibility": 95,
+          "best-practices": 81,
+          "seo": 100
+        },
+        "cwv": {},
+        "cwv_pass": false,
+        "overall_category": "NONE",
+        "lab": {
+          "first-contentful-paint": {
+            "value": 2886.3489738663766,
+            "score": 0.53,
+            "display": "2.9\u00a0s"
+          },
+          "largest-contentful-paint": {
+            "value": 2886.3489738663775,
+            "score": 0.81,
+            "display": "2.9\u00a0s"
+          },
+          "total-blocking-time": {
+            "value": 0,
+            "score": 1,
+            "display": "0\u00a0ms"
+          },
+          "cumulative-layout-shift": {
+            "value": 0.118095,
+            "score": 0.85,
+            "display": "0.118"
+          },
+          "speed-index": {
+            "value": 4392.225733552237,
+            "score": 0.74,
+            "display": "4.4\u00a0s"
+          },
+          "interactive": {
+            "value": 2886.3489738663775,
+            "score": 0.96,
+            "display": "2.9\u00a0s"
+          }
+        }
+      }
+    ]
+  },
+  "market-invoice": {
+    "site_id": "market-invoice",
+    "fetched_at": "2026-04-24T09:49:12.733903",
+    "pages_tested": 4,
+    "avg_scores": {
+      "performance": 93,
+      "accessibility": 96,
+      "seo": 100,
+      "best-practices": 77
+    },
+    "cwv_pass_count": 0,
+    "cwv_total": 0,
+    "pages": [
+      {
+        "url": "https://www.marketinvoice.co.uk/",
+        "strategy": "mobile",
+        "scores": {
+          "performance": 91,
+          "accessibility": 96,
+          "best-practices": 77,
+          "seo": 100
+        },
+        "cwv": {},
+        "cwv_pass": false,
+        "overall_category": "NONE",
+        "lab": {
+          "first-contentful-paint": {
+            "value": 2559.1123657189282,
+            "score": 0.65,
+            "display": "2.6\u00a0s"
+          },
+          "largest-contentful-paint": {
+            "value": 2559.1123657189282,
+            "score": 0.88,
+            "display": "2.6\u00a0s"
+          },
+          "total-blocking-time": {
+            "value": 0,
+            "score": 1,
+            "display": "0\u00a0ms"
+          },
+          "cumulative-layout-shift": {
+            "value": 0,
+            "score": 1,
+            "display": "0"
+          },
+          "speed-index": {
+            "value": 4298.630478287601,
+            "score": 0.76,
+            "display": "4.3\u00a0s"
+          },
+          "interactive": {
+            "value": 2559.1123657189282,
+            "score": 0.98,
+            "display": "2.6\u00a0s"
+          }
+        }
+      },
+      {
+        "url": "https://www.marketinvoice.co.uk/providers/",
+        "strategy": "mobile",
+        "scores": {
+          "performance": 95,
+          "accessibility": 96,
+          "best-practices": 77,
+          "seo": 100
+        },
+        "cwv": {},
+        "cwv_pass": false,
+        "overall_category": "NONE",
+        "lab": {
+          "first-contentful-paint": {
+            "value": 2411.1866802223194,
+            "score": 0.7,
+            "display": "2.4\u00a0s"
+          },
+          "largest-contentful-paint": {
+            "value": 2411.1866802223194,
+            "score": 0.91,
+            "display": "2.4\u00a0s"
+          },
+          "total-blocking-time": {
+            "value": 0,
+            "score": 1,
+            "display": "0\u00a0ms"
+          },
+          "cumulative-layout-shift": {
+            "value": 0.008481,
+            "score": 1,
+            "display": "0.008"
+          },
+          "speed-index": {
+            "value": 2411.1866802223194,
+            "score": 0.98,
+            "display": "2.4\u00a0s"
+          },
+          "interactive": {
+            "value": 2411.1866802223194,
+            "score": 0.98,
+            "display": "2.4\u00a0s"
+          }
+        }
+      },
+      {
+        "url": "https://www.marketinvoice.co.uk/guides/how-invoice-finance-works/",
+        "strategy": "mobile",
+        "scores": {
+          "performance": 91,
+          "accessibility": 97,
+          "best-practices": 77,
+          "seo": 100
+        },
+        "cwv": {},
+        "cwv_pass": false,
+        "overall_category": "NONE",
+        "lab": {
+          "first-contentful-paint": {
+            "value": 2558.4039047603956,
+            "score": 0.65,
+            "display": "2.6\u00a0s"
+          },
+          "largest-contentful-paint": {
+            "value": 2558.4039047603956,
+            "score": 0.88,
+            "display": "2.6\u00a0s"
+          },
+          "total-blocking-time": {
+            "value": 0,
+            "score": 1,
+            "display": "0\u00a0ms"
+          },
+          "cumulative-layout-shift": {
+            "value": 0,
+            "score": 1,
+            "display": "0"
+          },
+          "speed-index": {
+            "value": 4357.77787790448,
+            "score": 0.75,
+            "display": "4.4\u00a0s"
+          },
+          "interactive": {
+            "value": 2558.4039047603956,
+            "score": 0.98,
+            "display": "2.6\u00a0s"
+          }
+        }
+      },
+      {
+        "url": "https://www.marketinvoice.co.uk/compare/",
+        "strategy": "mobile",
+        "scores": {
+          "performance": 94,
+          "accessibility": 96,
+          "best-practices": 77,
+          "seo": 100
+        },
+        "cwv": {},
+        "cwv_pass": false,
+        "overall_category": "NONE",
+        "lab": {
+          "first-contentful-paint": {
+            "value": 2440.612872431967,
+            "score": 0.69,
+            "display": "2.4\u00a0s"
+          },
+          "largest-contentful-paint": {
+            "value": 2440.612872431967,
+            "score": 0.91,
+            "display": "2.4\u00a0s"
+          },
+          "total-blocking-time": {
+            "value": 0,
+            "score": 1,
+            "display": "0\u00a0ms"
+          },
+          "cumulative-layout-shift": {
+            "value": 0.005103,
+            "score": 1,
+            "display": "0.005"
+          },
+          "speed-index": {
+            "value": 2440.612872431967,
+            "score": 0.98,
+            "display": "2.4\u00a0s"
+          },
+          "interactive": {
+            "value": 2440.612872431967,
+            "score": 0.98,
+            "display": "2.4\u00a0s"
+          }
+        }
       }
     ]
   },
   "seocompare": {
     "site_id": "seocompare",
-    "fetched_at": "2026-04-09T09:00:42.743934",
+    "fetched_at": "2026-04-24T09:49:35.430441",
     "pages_tested": 1,
     "avg_scores": {
-      "performance": 81,
-      "accessibility": 84,
-      "seo": 92,
-      "best-practices": 100
+      "performance": 79,
+      "accessibility": 88,
+      "seo": 100,
+      "best-practices": 96
     },
+    "cwv_pass_count": 0,
+    "cwv_total": 0,
     "pages": [
       {
         "url": "https://www.seocompare.co.uk/",
+        "strategy": "mobile",
         "scores": {
-          "performance": 81,
-          "accessibility": 84,
-          "best-practices": 100,
-          "seo": 92
+          "performance": 79,
+          "accessibility": 88,
+          "best-practices": 96,
+          "seo": 100
         },
         "cwv": {},
         "cwv_pass": false,
-        "overall_category": "NONE"
+        "overall_category": "NONE",
+        "lab": {
+          "first-contentful-paint": {
+            "value": 3137.015563776439,
+            "score": 0.45,
+            "display": "3.1\u00a0s"
+          },
+          "largest-contentful-paint": {
+            "value": 3953.783323283025,
+            "score": 0.51,
+            "display": "4.0\u00a0s"
+          },
+          "total-blocking-time": {
+            "value": 85,
+            "score": 0.99,
+            "display": "90\u00a0ms"
+          },
+          "cumulative-layout-shift": {
+            "value": 0,
+            "score": 1,
+            "display": "0"
+          },
+          "speed-index": {
+            "value": 4735.802002039569,
+            "score": 0.68,
+            "display": "4.7\u00a0s"
+          },
+          "interactive": {
+            "value": 3953.7833232830253,
+            "score": 0.88,
+            "display": "4.0\u00a0s"
+          }
+        }
       }
     ]
   },
   "_meta": {
-    "last_run_at": "2026-04-23T18:14:38.562705",
-    "last_success_at": null,
-    "rate_limited_this_run": true
+    "last_run_at": "2026-04-24T09:49:35.435042",
+    "last_success_at": "2026-04-24T09:49:35.435042",
+    "rate_limited_this_run": false
   }
 }

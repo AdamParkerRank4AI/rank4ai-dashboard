@@ -40,6 +40,13 @@ def fetch_page(url, strategy="mobile"):
         "strategy": strategy,
         "category": ["performance", "accessibility", "seo", "best-practices"],
     }
+    # Authenticated requests get 25,000/day quota (vs anonymous ~25/day).
+    # Key lives in GOOGLE_API_KEY env var, scoped to PageSpeed Insights API
+    # in Google Cloud (no application restrictions needed, PSI only reads
+    # public URLs).
+    api_key = os.environ.get("GOOGLE_API_KEY")
+    if api_key:
+        params["key"] = api_key
 
     try:
         resp = requests.get(API_URL, params=params, timeout=60)
