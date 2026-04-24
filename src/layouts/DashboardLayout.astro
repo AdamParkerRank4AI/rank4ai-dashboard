@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import clients from '../data/clients.json';
+import sections from '../data/sections.json';
 
 interface Props {
   title: string;
@@ -10,6 +11,11 @@ interface Props {
 
 const { title, currentClient, view = 'agency' } = Astro.props;
 const isAgency = view === 'agency';
+const currentClientObj: any = currentClient ? (clients as any[]).find((c) => c.id === currentClient) : null;
+const clientVisibleSections = !isAgency && currentClientObj
+  ? (sections as any[]).filter((s) => (currentClientObj.clientViewSections || []).includes(s.id))
+  : [];
+const clientCode: string | null = currentClientObj?.clientCode || null;
 ---
 
 <html lang="en">
@@ -23,17 +29,25 @@ const isAgency = view === 'agency';
   <!-- Top nav -->
   <nav class="bg-gray-900 border-b border-gray-800 px-6 py-3 flex items-center justify-between">
     <div class="flex items-center gap-4">
-      <a href="/" class="text-lg font-bold text-white tracking-tight">Rank4AI</a>
-      <span class="text-gray-500">|</span>
-      <span class="text-sm text-gray-400">{isAgency ? 'Agency View' : 'Client View'}</span>
+      {isAgency ? (
+        <a href="/" class="text-lg font-bold text-white tracking-tight">Rank4AI</a>
+      ) : (
+        <span class="text-lg font-bold text-white tracking-tight">{currentClientObj?.name || 'Dashboard'}</span>
+      )}
+      {isAgency && (
+        <>
+          <span class="text-gray-500">|</span>
+          <span class="text-sm text-gray-400">Agency View</span>
+        </>
+      )}
     </div>
     <div class="flex items-center gap-4">
-      {currentClient && (
+      {isAgency && currentClient && (
         <a
-          href={isAgency ? `/client/${currentClient}` : `/agency/${currentClient}`}
+          href={`/client/${currentClient}`}
           class="text-xs px-3 py-1.5 rounded bg-gray-800 text-gray-300 hover:bg-gray-700 transition"
         >
-          Switch to {isAgency ? 'Client' : 'Agency'} View
+          Switch to Client View
         </a>
       )}
     </div>
@@ -42,46 +56,77 @@ const isAgency = view === 'agency';
   <div class="flex">
     <!-- Sidebar -->
     <aside class="w-56 bg-gray-900 border-r border-gray-800 min-h-[calc(100vh-52px)] p-4">
-      <div class="mb-6">
-        <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Clients</p>
-        <ul class="space-y-1">
-          {clients.filter((c) => !c.staging && c.id !== 'rank4ai').map((c) => (
-            <li>
-              <a
-                href={isAgency ? `/agency/${c.id}` : `/client/${c.id}`}
-                class={`block px-3 py-2 rounded text-sm transition ${
-                  currentClient === c.id
-                    ? 'bg-blue-600 text-white'
-                    : 'text-gray-300 hover:bg-gray-800'
-                }`}
-              >
-                {c.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
+      {isAgency && (
+        <>
+          <div class="mb-6">
+            <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Clients</p>
+            <ul class="space-y-1">
+              {clients.filter((c) => !c.staging && c.id !== 'rank4ai').map((c) => (
+                <li>
+                  <a
+                    href={`/agency/${c.id}`}
+                    class={`block px-3 py-2 rounded text-sm transition ${
+                      currentClient === c.id
+                        ? 'bg-blue-600 text-white'
+                        : 'text-gray-300 hover:bg-gray-800'
+                    }`}
+                  >
+                    {c.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-      <div class="mb-6">
-        <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Our Sites</p>
-        <ul class="space-y-1">
-          {clients.filter((c) => c.staging || c.id === 'rank4ai').map((c) => (
+          <div class="mb-6">
+            <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Our Sites</p>
+            <ul class="space-y-1">
+              {clients.filter((c) => c.staging || c.id === 'rank4ai').map((c) => (
+                <li>
+                  <a
+                    href={`/agency/${c.id}`}
+                    class={`block px-3 py-2 rounded text-sm transition ${
+                      currentClient === c.id
+                        ? 'bg-blue-600 text-white'
+                        : 'text-gray-500 hover:bg-gray-800'
+                    }`}
+                  >
+                    {c.name}
+                    {c.staging && <span class="ml-1 text-[9px] px-1.5 py-0.5 rounded bg-yellow-900/50 text-yellow-400 uppercase">Staging</span>}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </>
+      )}
+
+      {!isAgency && currentClientObj && (
+        <div class="mb-6">
+          <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">{currentClientObj.name}</p>
+          <p class="text-[11px] text-gray-500 mb-3 truncate">{currentClientObj.domain}</p>
+          <ul class="space-y-1">
             <li>
               <a
-                href={isAgency ? `/agency/${c.id}` : `/client/${c.id}`}
-                class={`block px-3 py-2 rounded text-sm transition ${
-                  currentClient === c.id
-                    ? 'bg-blue-600 text-white'
-                    : 'text-gray-500 hover:bg-gray-800'
-                }`}
+                href={`/client/${currentClient}`}
+                class="block px-3 py-2 rounded text-sm transition text-white bg-blue-600/40 hover:bg-blue-600/60"
               >
-                {c.name}
-                {c.staging && <span class="ml-1 text-[9px] px-1.5 py-0.5 rounded bg-yellow-900/50 text-yellow-400 uppercase">Staging</span>}
+                Overview
               </a>
             </li>
-          ))}
-        </ul>
-      </div>
+            {clientVisibleSections.map((s: any) => (
+              <li>
+                <a
+                  href={`/client/${currentClient}/${s.id}`}
+                  class="block px-3 py-2 rounded text-sm transition text-gray-300 hover:bg-gray-800"
+                >
+                  {s.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       {currentClient && isAgency && (
         <div class="mb-6">
@@ -190,11 +235,34 @@ const isAgency = view === 'agency';
   )}
 
   {isAgency && (
-    <script is:inline>
+    <script is:inline define:vars={{ gateClientId: currentClient || '' }}>
       (function(){
         var KEY = "r4ai_admin_auth_v1";
         var TTL = 30 * 24 * 60 * 60 * 1000;
         var MASTER = "1210";
+
+        // Accept auto-unlock when /agency/<id>/... is loaded from the client
+        // view with ?view=client&code=<clientcode>. Matches the passcode
+        // stored in localStorage under r4ai_client_auth_v1 for that client.
+        try {
+          var url = new URL(window.location.href);
+          var qView = url.searchParams.get('view');
+          var qCode = url.searchParams.get('code');
+          if (qView === 'client' && qCode && gateClientId) {
+            var clientAuth = {};
+            try { clientAuth = JSON.parse(localStorage.getItem('r4ai_client_auth_v1') || '{}'); } catch(e){}
+            var rec = clientAuth['client_' + gateClientId] || clientAuth['master'];
+            if (rec && (rec.expires === 0 || rec.expires > Date.now())) {
+              // Silent unlock: the client already passed their gate.
+              var g0 = document.getElementById("r4ai-admin-gate");
+              var m0 = document.getElementById("r4ai-main-content");
+              if (g0) g0.style.display = "none";
+              if (m0) m0.style.display = "";
+              return;
+            }
+          }
+        } catch(e){}
+
         function has(){
           try {
             var d = JSON.parse(localStorage.getItem(KEY) || "null");

@@ -1,1 +1,28 @@
 @import "tailwindcss";
+
+/* Global readability fixes — ensure text is always visible on dark backgrounds */
+
+/* Body text defaults */
+body {
+  color: #e5e7eb; /* gray-200 instead of gray-100 */
+}
+
+/* All gray text should be readable */
+.text-gray-400 { color: #d1d5db !important; } /* bump gray-400 to gray-300 */
+.text-gray-500 { color: #9ca3af !important; } /* bump gray-500 to gray-400 */
+.text-gray-600 { color: #9ca3af !important; } /* bump gray-600 to gray-400 */
+
+/* Table text */
+table td { color: #e5e7eb; }
+table th { color: #d1d5db; }
+
+/* Labels and descriptions */
+p, span, div {
+  /* Don't override colored text, just ensure minimum contrast */
+}
+
+/* Ensure section headings pop */
+h1, h2, h3 { color: #f9fafb; } /* near-white */
+
+/* Card backgrounds slightly lighter */
+.bg-gray-900 { background-color: #1f2937 !important; } /* gray-800 instead of gray-900 */

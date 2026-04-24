@@ -1,10 +1,10 @@
 {
   "rank4ai": {
-    "generated_at": "2026-04-24T06:06:50.488897",
+    "generated_at": "2026-04-24T15:11:59.339337",
     "total": 12,
     "critical": 1,
-    "high": 4,
-    "medium": 7,
+    "high": 3,
+    "medium": 8,
     "low": 0,
     "recommendations": [
       {
@@ -26,35 +26,25 @@
       {
         "priority": "high",
         "category": "Internal Links",
-        "title": "147 orphan pages with no internal links pointing to them",
-        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /ai-seo/common-mistakes-ai-seo/, /ai-seo/how-to-talk-about-ai-seo-without-confusion/, /ai-search/platforms/gemini-visibility/, /ai-search/comparisons/conversational-vs-query-search/, /ai-marketing-growth/conversational-marketing-ai/, /ai-seo-agency-uk/ai-seo-vs-seo/, /ai-seo/technical/examples-outcomes-signals/, /ai-search/ai-visibility-agency/...",
+        "title": "145 orphan pages with no internal links pointing to them",
+        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /how-often-should-i-analyze-ai-visibility-performance/, /ai-seo-agency-uk/when-to-use/, /ai-seo/common-mistakes-ai-seo/, /ai-search/ecosystem-validation/media-distribution-entity-reinforcement/, /ai-search/comparisons/adapt-content-for-ai/, /ai-search/what-is-an-ai-search-agency/, /ai-search/platforms/perplexity-visibility/, /ai-search/ecosystem-validation/social-platform-consistency/...",
         "impact": "medium",
         "pages": [
+          "/how-often-should-i-analyze-ai-visibility-performance/",
+          "/ai-seo-agency-uk/when-to-use/",
           "/ai-seo/common-mistakes-ai-seo/",
-          "/ai-seo/how-to-talk-about-ai-seo-without-confusion/",
-          "/ai-search/platforms/gemini-visibility/",
-          "/ai-search/comparisons/conversational-vs-query-search/",
-          "/ai-marketing-growth/conversational-marketing-ai/",
-          "/ai-seo-agency-uk/ai-seo-vs-seo/",
-          "/ai-seo/technical/examples-outcomes-signals/",
-          "/ai-search/ai-visibility-agency/",
+          "/ai-search/ecosystem-validation/media-distribution-entity-reinforcement/",
+          "/ai-search/comparisons/adapt-content-for-ai/",
+          "/ai-search/what-is-an-ai-search-agency/",
           "/ai-search/platforms/perplexity-visibility/",
-          "/ai-search/claude-ranking-agency/",
-          "/ai-search/comparisons/links-matter-less-ai/",
-          "/ai-seo-agency-london/",
-          "/ai-seo-agency-uk/ai-interpretation/",
-          "/ai-seo/technical/meaning-beats-seo/",
-          "/ai-seo/industry/ecommerce-signals-confuse-ai/"
-        ]
-      },
-      {
-        "priority": "high",
-        "category": "Performance",
-        "title": "Mobile performance score is 39/100",
-        "detail": "Poor mobile performance affects user experience, search rankings, and Core Web Vitals. Actions: 1) Optimise images (WebP, lazy loading) 2) Reduce JavaScript 3) Implement critical CSS 4) Use CDN caching. Slow pages: /",
-        "impact": "medium",
-        "pages": [
-          "/"
+          "/ai-search/ecosystem-validation/social-platform-consistency/",
+          "/ai-search/ai-search-consultants/",
+          "/ai-search/comparisons/generic-content-fails/",
+          "/ai-visibility-seo-agency/",
+          "/research/rankings/ai-search-agencies-for-property/",
+          "/ai-search/platforms/chatgpt-visibility/",
+          "/ai-search/comparisons/future-organic-search/",
+          "/ai-seo/ai-seo-vs-geo/"
         ]
       },
       {
@@ -64,6 +54,16 @@
         "detail": "Wikidata feeds Google Knowledge Graph and AI models. Create a Wikidata entry with: company name, type (Q4830453 = business), founding date, website, industry, founders. This is free and takes 10 minutes.",
         "impact": "high",
         "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Schema",
+        "title": "1 pages missing structured data (748/749 have schema)",
+        "detail": "Pages with schema have 2.5x higher chance of AI citation. Add Article, FAQPage, or HowTo schema to these pages. Pages missing schema: /lp/ai-ready-sites/",
+        "impact": "high",
+        "pages": [
+          "/lp/ai-ready-sites/"
+        ]
       },
       {
         "priority": "medium",
@@ -128,7 +128,7 @@
     ]
   },
   "market-invoice": {
-    "generated_at": "2026-04-24T06:06:50.496115",
+    "generated_at": "2026-04-24T15:11:59.348293",
     "total": 13,
     "critical": 2,
     "high": 3,
@@ -261,7 +261,7 @@
       {
         "priority": "low",
         "category": "Indexing",
-        "title": "Only 5/390 pages indexed in Bing",
+        "title": "Only 5/391 pages indexed in Bing",
         "detail": "Bing feeds Copilot. If URLs were recently submitted via IndexNow, allow 7-14 days for propagation. Re-check after that period. Submit: python3 scripts/submit_indexnow.py market-invoice",
         "impact": "medium",
         "pages": []
@@ -269,7 +269,7 @@
     ]
   },
   "seocompare": {
-    "generated_at": "2026-04-24T06:06:50.524536",
+    "generated_at": "2026-04-24T15:11:59.358482",
     "total": 12,
     "critical": 2,
     "high": 3,
@@ -381,6 +381,86 @@
         "category": "Indexing",
         "title": "Only 0/321 pages indexed in Bing",
         "detail": "Bing feeds Copilot. If URLs were recently submitted via IndexNow, allow 7-14 days for propagation. Re-check after that period. Submit: python3 scripts/submit_indexnow.py seocompare",
+        "impact": "medium",
+        "pages": []
+      }
+    ]
+  },
+  "rochellemarashi": {
+    "generated_at": "2026-04-24T15:11:59.363912",
+    "total": 5,
+    "critical": 0,
+    "high": 2,
+    "medium": 2,
+    "low": 1,
+    "recommendations": [
+      {
+        "priority": "high",
+        "category": "SEO Health",
+        "title": "4 pages with missing h1",
+        "detail": "These pages have no H1 tag. Add a clear, descriptive H1 to each page. AI models use H1s to understand page topics. Affected pages: /blog/lifting-the-veil-of-invisibility/, /blog/surviving-stalking/, /blog/just-feelings-wont-keep-clients-safe/, /blog/dont-bite-your-tongue/",
+        "impact": "medium",
+        "pages": [
+          "/blog/lifting-the-veil-of-invisibility/",
+          "/blog/surviving-stalking/",
+          "/blog/just-feelings-wont-keep-clients-safe/",
+          "/blog/dont-bite-your-tongue/"
+        ]
+      },
+      {
+        "priority": "high",
+        "category": "Internal Links",
+        "title": "109 orphan pages with no internal links pointing to them",
+        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /institutional-and-systemic-harm/, /blog/what-to-expect-first-online-therapy-session/, /burnout/, /blog/the-link-between-workplace-stress-and-trauma/, /questions/can-therapy-help-with-workplace-bullying/, /psychotherapy/, /fees/, /blog/lifting-the-veil-of-invisibility/...",
+        "impact": "medium",
+        "pages": [
+          "/institutional-and-systemic-harm/",
+          "/blog/what-to-expect-first-online-therapy-session/",
+          "/burnout/",
+          "/blog/the-link-between-workplace-stress-and-trauma/",
+          "/questions/can-therapy-help-with-workplace-bullying/",
+          "/psychotherapy/",
+          "/fees/",
+          "/blog/lifting-the-veil-of-invisibility/",
+          "/blog/surviving-stalking/",
+          "/online-therapy-uk/",
+          "/anxiety/",
+          "/privacy/",
+          "/blog/just-feelings-wont-keep-clients-safe/",
+          "/darvo/",
+          "/research/"
+        ]
+      },
+      {
+        "priority": "medium",
+        "category": "SEO Health",
+        "title": "8 pages with thin content",
+        "detail": "These pages have fewer than 200 words. Expand with detailed, authoritative content. AI models prefer pages with 500+ words. Affected pages: /blog/lifting-the-veil-of-invisibility/, /blog/surviving-stalking/, /blog/just-feelings-wont-keep-clients-safe/, /contact/, /whitepapers/, /podcast/, /blog/dont-bite-your-tongue/, /videos/",
+        "impact": "medium",
+        "pages": [
+          "/blog/lifting-the-veil-of-invisibility/",
+          "/blog/surviving-stalking/",
+          "/blog/just-feelings-wont-keep-clients-safe/",
+          "/contact/",
+          "/whitepapers/",
+          "/podcast/",
+          "/blog/dont-bite-your-tongue/",
+          "/videos/"
+        ]
+      },
+      {
+        "priority": "medium",
+        "category": "Content",
+        "title": "Only 2 pillar pages have 2,000+ words (excluding Q&A pages)",
+        "detail": "Pillar pages with 2,000+ words get 3x more AI citations. Q&A pages at 120-180 words are fine \u2014 this applies to guides, service pages, and definitive content. Expand 5-10 key pillar pages.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "low",
+        "category": "Content",
+        "title": "No comparison tables detected",
+        "detail": "Pages with comparison tables have 2.5x higher AI citation rate. Consider adding comparison tables to key pages where relevant.",
         "impact": "medium",
         "pages": []
       }

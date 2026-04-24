@@ -52,6 +52,7 @@ const competitorData = loadJson('competitor_serp.json');
 const recsData = loadJson('recommendations.json');
 const siteConfig = loadJson('../site-config.json');
 const historyData = loadJson('daily_history.json');
+const trendsData = loadJson('google_trends.json');
 const newPagesData = loadJson('new_pages.json');
 const snapshotDir = path.join(process.cwd(), 'src', 'data', 'snapshots', clientId || '');
 let baseline: any = null;
@@ -105,8 +106,13 @@ const sectionStatus: Record<string, any> = {
     status: audit.overall_score >= 70 ? 'healthy' : audit.overall_score >= 40 ? 'warning' : 'error',
     statusText: `${audit.readiness} — ${audit.pages_audited} pages scored${kg ? (kg.is_known_entity ? ' · Known Entity' : ' · Not in Knowledge Graph') : ''}`,
     metric: `${audit.overall_score}/100`,
-    metricLabel: `Schema: ${audit.scores.schema}/100 · E-E-A-T: ${audit.scores.eeat}/100 · Citation: ${audit.scores.citation_potential}/100${nlp?.top_entities?.length ? ` · Top entity: ${nlp.top_entities[0].name}` : ''}`,
+    metricLabel: `Schema ${audit.scores.schema}/100 · E-E-A-T ${audit.scores.eeat}/100 · Citation ${audit.scores.citation_potential}/100`,
     lastUpdated: new Date(audit.audited_at).toLocaleDateString('en-GB'),
+    subScores: [
+      { label: 'Schema', value: audit.scores.schema, color: audit.scores.schema >= 70 ? 'green' : audit.scores.schema >= 40 ? 'yellow' : 'red' },
+      { label: 'E-E-A-T', value: audit.scores.eeat, color: audit.scores.eeat >= 70 ? 'green' : audit.scores.eeat >= 40 ? 'yellow' : 'red' },
+      { label: 'Citation', value: audit.scores.citation_potential, color: audit.scores.citation_potential >= 70 ? 'green' : audit.scores.citation_potential >= 40 ? 'yellow' : 'red' },
+    ],
   } : {
     status: 'not-connected',
     statusText: 'Run run_ai_audit.py',
@@ -299,6 +305,27 @@ const sectionStatus: Record<string, any> = {
     metric: '--',
     metricLabel: 'Recommendations',
   },
+  'content-plan': (() => {
+    const t = trendsData?.[clientId];
+    const gaps = gsc?.content_gaps?.length || 0;
+    const rising = t?.brand_related?.rising?.length || 0;
+    const direction = t?.brand_direction;
+    if (t?.brand_trend_3m?.length > 0 || t?.keyword_trends_3m?.length > 0) {
+      return {
+        status: direction === 'rising' ? 'healthy' : direction === 'declining' ? 'warning' : 'pending',
+        statusText: `Brand trend: ${direction || 'tracking'} · ${rising} rising queries · ${gaps} content gaps`,
+        metric: `${t.keywords?.length || 0} keywords`,
+        metricLabel: `Google Trends + GSC gaps + DataForSEO positions`,
+        lastUpdated: t.fetched_at ? new Date(t.fetched_at).toLocaleDateString('en-GB') : undefined,
+      };
+    }
+    return {
+      status: 'pending',
+      statusText: 'Google Trends, keyword tracking, gap analysis',
+      metric: gaps > 0 ? `${gaps} gaps` : 'Setting up',
+      metricLabel: 'Trends data loading — refreshes weekly',
+    };
+  })(),
   'positive-signals': crawl ? {
     status: 'healthy',
     statusText: `${crawl.positive_signals?.length || 0} signals detected`,
@@ -387,24 +414,78 @@ if (recs?.recommendations) {
   });
 }
 
-// Calculate changes from baseline
+// Calculate changes — compare today vs earliest available data
 const changes: Record<string, { value: number; label: string }> = {};
-if (baseline) {
-  if (audit && baseline.ai_readiness) {
-    const diff = audit.overall_score - (baseline.ai_readiness.overall_score || 0);
+const oldest = history.length > 0 ? history[0] : null;
+const latest = history.length > 0 ? history[history.length - 1] : null;
+
+if (oldest && latest && oldest.date !== latest.date) {
+  const period = history.length >= 7 ? '7d' : `${history.length}d`;
+
+  // AI Readiness
+  if (latest.ai_score && oldest.ai_score) {
+    const diff = latest.ai_score - oldest.ai_score;
     if (diff !== 0) changes['ai-readiness'] = { value: diff, label: 'pts' };
   }
-  if (citations && baseline.ai_citations) {
-    const diff = Math.round((citations.overall_rate || 0) - (baseline.ai_citations.citation_rate || 0));
+
+  // Citations
+  if (latest.citation_rate !== undefined && oldest.citation_rate !== undefined) {
+    const diff = Math.round((latest.citation_rate - oldest.citation_rate) * 10) / 10;
     if (diff !== 0) changes['ai-citations'] = { value: diff, label: '%' };
   }
-  if (crawl && baseline.crawl) {
-    const diff = (crawl.total_issues || 0) - (baseline.crawl.total_issues || 0);
-    if (diff !== 0) changes['seo-health'] = { value: -diff, label: 'issues' }; // negative = improvement
+
+  // SEO Health (fewer issues = positive)
+  if (latest.issues !== undefined && oldest.issues !== undefined) {
+    const diff = oldest.issues - latest.issues; // positive = improvement
+    if (diff !== 0) changes['seo-health'] = { value: diff, label: 'fewer' };
   }
-  if (ga4?.overview && baseline.traffic) {
-    const diff = (ga4.overview.active_users || 0) - (baseline.traffic.active_users || 0);
+
+  // Traffic
+  if (latest.users && oldest.users) {
+    const diff = latest.users - oldest.users;
     if (diff !== 0) changes['traffic'] = { value: diff, label: 'users' };
+  }
+
+  // Pages crawled
+  if (latest.pages_crawled && oldest.pages_crawled) {
+    const diff = latest.pages_crawled - oldest.pages_crawled;
+    if (diff !== 0) changes['new-pages'] = { value: diff, label: 'pages' };
+  }
+
+  // GSC impressions
+  if (latest.gsc_impressions && oldest.gsc_impressions) {
+    const diff = latest.gsc_impressions - oldest.gsc_impressions;
+    if (diff !== 0) changes['search-performance'] = { value: diff, label: 'imp' };
+  }
+
+  // GSC position (lower = better, so invert)
+  if (latest.gsc_position && oldest.gsc_position) {
+    const diff = Math.round((oldest.gsc_position - latest.gsc_position) * 10) / 10;
+    if (diff !== 0) changes['overview'] = { value: diff, label: 'pos' };
+  }
+
+  // Performance score
+  if (latest.perf_score && oldest.perf_score) {
+    const diff = latest.perf_score - oldest.perf_score;
+    if (diff !== 0) changes['site-speed'] = { value: diff, label: 'pts' };
+  }
+
+  // Schema coverage
+  if (latest.schema_pages && oldest.schema_pages) {
+    const diff = latest.schema_pages - oldest.schema_pages;
+    if (diff !== 0) changes['positive-signals'] = { value: diff, label: 'pages' };
+  }
+
+  // Bing indexed
+  if (latest.bing_indexed !== undefined && oldest.bing_indexed !== undefined) {
+    const diff = latest.bing_indexed - oldest.bing_indexed;
+    if (diff !== 0) changes['crawl-activity'] = { value: diff, label: 'indexed' };
+  }
+
+  // Orphan pages (fewer = better)
+  if (latest.orphan_pages !== undefined && oldest.orphan_pages !== undefined) {
+    const diff = oldest.orphan_pages - latest.orphan_pages;
+    if (diff !== 0) changes['internal-links'] = { value: diff, label: 'fixed' };
   }
 }
 
@@ -441,9 +522,148 @@ function daysUntil(dateStr: string): number {
     </div>
   </div>
 
+  <!-- Three Channel Overview -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
+    {/* Google SEO */}
+    <a href={`/agency/${clientId}/search-performance`} class="block bg-gray-800 border border-gray-700 rounded-lg p-5 hover:border-blue-500/50 transition">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-sm font-semibold text-white">Google SEO</h3>
+        <span class="text-[8px] text-gray-500">Search Console</span>
+      </div>
+      <div class="grid grid-cols-3 gap-3 mb-3">
+        <div>
+          <div class="text-2xl font-bold text-blue-400">{gsc?.totals?.impressions?.toLocaleString() || 0}</div>
+          <div class="text-[10px] text-gray-400">impressions</div>
+        </div>
+        <div>
+          <div class="text-2xl font-bold text-white">{gsc?.totals?.clicks || 0}</div>
+          <div class="text-[10px] text-gray-400">clicks</div>
+        </div>
+        <div>
+          <div class="text-2xl font-bold text-white">{gsc?.totals?.position || '--'}</div>
+          <div class="text-[10px] text-gray-400">avg position</div>
+        </div>
+      </div>
+      <canvas data-sparkline="impressions" height="40" class="w-full mb-2"></canvas>
+      <div class="grid grid-cols-3 gap-3 pt-3 border-t border-gray-700">
+        <div>
+          <div class="text-sm font-bold text-white">{ga4?.overview?.active_users?.toLocaleString() || 0}</div>
+          <div class="text-[10px] text-gray-400">users (30d)</div>
+        </div>
+        <div>
+          <div class="text-sm font-bold text-white">{ga4?.overview?.pageviews?.toLocaleString() || 0}</div>
+          <div class="text-[10px] text-gray-400">pageviews</div>
+        </div>
+        <div>
+          <div class="text-sm font-bold text-white">{bing?.top_queries?.length || 0}</div>
+          <div class="text-[10px] text-gray-400">Bing queries</div>
+        </div>
+      </div>
+    </a>
+
+    {/* AI Search Citations */}
+    <a href={`/agency/${clientId}/ai-citations`} class="block bg-gray-800 border border-purple-700/40 rounded-lg p-5 hover:border-purple-500/50 transition">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-sm font-semibold text-white">AI Search Citations</h3>
+        <span class="text-[8px] text-gray-500">API testing</span>
+      </div>
+      <div class="grid grid-cols-3 gap-3 mb-3">
+        <div>
+          <div class={`text-2xl font-bold ${(citRes?.summary?.claude?.rate || 0) > 0 ? 'text-green-400' : 'text-gray-500'}`}>{citRes?.summary?.claude?.rate || 0}%</div>
+          <div class="text-[10px] text-gray-400">Claude</div>
+        </div>
+        <div>
+          <div class={`text-2xl font-bold ${(citRes?.summary?.chatgpt?.rate || 0) > 0 ? 'text-green-400' : 'text-gray-500'}`}>{citRes?.summary?.chatgpt?.rate || 0}%</div>
+          <div class="text-[10px] text-gray-400">ChatGPT</div>
+        </div>
+        <div>
+          <div class={`text-2xl font-bold ${(citRes?.summary?.gemini?.rate || 0) > 0 ? 'text-green-400' : 'text-gray-500'}`}>{citRes?.summary?.gemini?.rate || 0}%</div>
+          <div class="text-[10px] text-gray-400">Gemini</div>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-3 pt-3 border-t border-gray-700">
+        <div>
+          <div class="text-sm font-bold text-purple-400">{citRes?.overall_rate || 0}%</div>
+          <div class="text-[10px] text-gray-400">overall citation rate</div>
+        </div>
+        <div>
+          <div class="text-sm font-bold text-white">{citRes?.summary?.claude?.total || citRes?.summary?.chatgpt?.total || 0}</div>
+          <div class="text-[10px] text-gray-400">queries tested</div>
+        </div>
+      </div>
+      <canvas data-sparkline="citations" height="40" class="w-full mt-2"></canvas>
+    </a>
+
+    {/* Google AI Overviews */}
+    <a href={`/agency/${clientId}/search-performance`} class="block bg-gray-800 border border-cyan-700/40 rounded-lg p-5 hover:border-cyan-500/50 transition">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-sm font-semibold text-white">Google AI Overviews</h3>
+        <span class="text-[8px] text-gray-500">DataForSEO</span>
+      </div>
+      {(() => {
+        const aio = aioSerpData?.[clientId] || {};
+        return (
+          <div>
+            <div class="grid grid-cols-3 gap-3 mb-3">
+              <div>
+                <div class={`text-2xl font-bold ${(aio.ai_overviews_detected || 0) > 0 ? 'text-cyan-400' : 'text-gray-500'}`}>{aio.ai_overviews_detected || 0}/{aio.total_queries || 0}</div>
+                <div class="text-[10px] text-gray-400">queries with AIO</div>
+              </div>
+              <div>
+                <div class="text-2xl font-bold text-white">{crawl?.pages_crawled || 0}</div>
+                <div class="text-[10px] text-gray-400">pages crawled</div>
+              </div>
+              <div>
+                <div class="text-2xl font-bold text-white">{crawl?.pages_with_schema || 0}</div>
+                <div class="text-[10px] text-gray-400">with schema</div>
+              </div>
+            </div>
+            <div class="grid grid-cols-3 gap-3 pt-3 border-t border-gray-700">
+              <div>
+                <div class="text-sm font-bold text-white">{crawlActivity?.bing_indexed || 0}</div>
+                <div class="text-[10px] text-gray-400">Bing indexed</div>
+              </div>
+              <div>
+                <div class="text-sm font-bold text-white">{crawlActivity?.ai_bots_allowed || 0}</div>
+                <div class="text-[10px] text-gray-400">AI bots allowed</div>
+              </div>
+              <div>
+                <div class={`text-sm font-bold ${(crawlActivity?.ai_bots_blocked || 0) > 0 ? 'text-red-400' : 'text-green-400'}`}>{crawlActivity?.ai_bots_blocked || 0}</div>
+                <div class="text-[10px] text-gray-400">AI bots blocked</div>
+              </div>
+            </div>
+            <canvas data-sparkline="crawl" height="40" class="w-full mt-2"></canvas>
+          </div>
+        );
+      })()}
+    </a>
+  </div>
+
+  <!-- Always-visible trend charts -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
+    {ga4?.daily?.length > 0 && (
+      <div class="bg-gray-800 border border-gray-700 rounded-lg p-5">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="text-sm font-semibold text-white">Traffic Trend</h3>
+          <span class="text-[8px] text-gray-500">GA4 — 30 days</span>
+        </div>
+        <canvas id="trafficTrendChart" height="160"></canvas>
+      </div>
+    )}
+    {crawlActivity?.bing_crawl_daily?.length > 0 && (
+      <div class="bg-gray-800 border border-gray-700 rounded-lg p-5">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="text-sm font-semibold text-white">Crawl Activity</h3>
+          <span class="text-[8px] text-gray-500">Bing Webmaster Tools</span>
+        </div>
+        <canvas id="crawlTrendChart" height="160"></canvas>
+      </div>
+    )}
+  </div>
+
   <!-- Fixes summary bar -->
   {recs && recs.total > 0 && (
-    <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 mb-4 flex items-center justify-between" data-fixes-bar>
+    <div class="bg-gray-800 border border-gray-700 rounded-lg p-4 mb-4 flex items-center justify-between" data-fixes-bar>
       <div class="flex items-center gap-4">
         <div class="flex items-center gap-2">
           <span class="text-sm font-semibold text-white" data-fixes-total>{recs.total} fixes needed</span>
@@ -553,6 +773,7 @@ function daysUntil(dateStr: string): number {
             clientId={clientId} chartData={chartDataMap[section.id]}
             change={change?.value} changeLabel={change?.label}
             issueCount={recsForSection[section.id]}
+            subScores={data.subScores}
           />
         </div>
       );
@@ -564,7 +785,7 @@ function daysUntil(dateStr: string): number {
     <span class="text-[10px] px-2 py-0.5 rounded-full bg-gray-800 text-gray-500 normal-case font-normal">Traditional SEO</span>
   </h2>
   <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
-    {sections.filter((s: any) => ['site-manager', 'seo-health', 'traffic', 'crawl-activity', 'search-performance', 'content-gaps', 'new-pages', 'site-tree', 'internal-links'].includes(s.id)).map((section: any) => {
+    {sections.filter((s: any) => ['site-manager', 'seo-health', 'traffic', 'crawl-activity', 'search-performance', 'content-gaps', 'content-plan', 'new-pages', 'site-tree', 'internal-links'].includes(s.id)).map((section: any) => {
       const data = sectionStatus[section.id] || {};
       const isInClientView = client.clientViewSections.includes(section.id);
       const change = changes[section.id];
@@ -582,6 +803,7 @@ function daysUntil(dateStr: string): number {
             clientId={clientId} chartData={chartDataMap[section.id]}
             change={change?.value} changeLabel={change?.label}
             issueCount={recsForSection[section.id]}
+            subScores={data.subScores}
           />
         </div>
       );
@@ -611,6 +833,7 @@ function daysUntil(dateStr: string): number {
             clientId={clientId} chartData={chartDataMap[section.id]}
             change={change?.value} changeLabel={change?.label}
             issueCount={recsForSection[section.id]}
+            subScores={data.subScores}
           />
         </div>
       );
@@ -727,6 +950,82 @@ function daysUntil(dateStr: string): number {
 </DashboardLayout>
 
 <script is:inline src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.js"></script>
+<script define:vars={{ trafficDaily: JSON.stringify(ga4?.daily || []), crawlDaily: JSON.stringify(crawlActivity?.bing_crawl_daily || []), historyJson: JSON.stringify(history || []) }}>
+  // Sparkline charts in channel tiles
+  var hist = JSON.parse(historyJson);
+  function cleanData(arr) {
+    // Remove zero values that are likely data gaps (token expiry etc)
+    // Keep zeros only if ALL values are zero
+    var nonZero = arr.filter(function(v) { return v > 0; });
+    if (nonZero.length === 0) return arr;
+    return arr.map(function(v) { return v > 0 ? v : null; });
+  }
+  function renderSparkline(selector, data, color) {
+    var canvas = document.querySelector('[data-sparkline="' + selector + '"]');
+    if (!canvas || !data.length || !window.Chart) return;
+    new window.Chart(canvas, {
+      type: 'line',
+      data: {
+        labels: data.map(function(_, i) { return ''; }),
+        datasets: [{
+          data: data,
+          borderColor: color,
+          backgroundColor: color.replace('rgb', 'rgba').replace(')', ', 0.08)'),
+          fill: true, tension: 0.4, pointRadius: 0, borderWidth: 1.5,
+          spanGaps: true,
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: true, aspectRatio: 6,
+        plugins: { legend: { display: false }, tooltip: { enabled: false } },
+        scales: { x: { display: false }, y: { display: false, beginAtZero: true } },
+        layout: { padding: 0 },
+      }
+    });
+  }
+  if (hist.length > 0) {
+    renderSparkline('impressions', cleanData(hist.map(function(d) { return d.gsc_impressions || 0; })), 'rgb(59, 130, 246)');
+    renderSparkline('citations', hist.map(function(d) { return d.citation_rate || 0; }), 'rgb(168, 85, 247)');
+    renderSparkline('crawl', cleanData(hist.map(function(d) { return d.pages_crawled || 0; })), 'rgb(6, 182, 212)');
+  }
+</script>
+<script define:vars={{ trafficDaily: JSON.stringify(ga4?.daily || []), crawlDaily: JSON.stringify(crawlActivity?.bing_crawl_daily || []) }}>
+  // Always-visible trend charts
+  function renderTrendChart(canvasId, data, valueKey, color, label) {
+    var canvas = document.getElementById(canvasId);
+    if (!canvas || !data.length || !window.Chart) return;
+    var labels = data.map(function(d) {
+      if (!d.date) return '';
+      var ds = d.date.length === 8 ? d.date.slice(0,4)+'-'+d.date.slice(4,6)+'-'+d.date.slice(6,8) : d.date;
+      return new Date(ds).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+    });
+    new window.Chart(canvas, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: label,
+          data: data.map(function(d) { return d[valueKey] || 0; }),
+          borderColor: color,
+          backgroundColor: color.replace(')', ', 0.1)').replace('rgb', 'rgba'),
+          fill: true, tension: 0.3, pointRadius: 1, borderWidth: 2,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { ticks: { color: '#9ca3af', font: { size: 9 }, maxTicksLimit: 8 }, grid: { color: '#374151' } },
+          y: { ticks: { color: '#9ca3af', font: { size: 10 } }, grid: { color: '#374151' }, beginAtZero: true },
+        }
+      }
+    });
+  }
+  var td = JSON.parse(trafficDaily).filter(function(d) { return (d.users || 0) > 0; });
+  var cd = JSON.parse(crawlDaily);
+  renderTrendChart('trafficTrendChart', td, 'users', 'rgb(59, 130, 246)', 'Users');
+  renderTrendChart('crawlTrendChart', cd, 'crawled_pages', 'rgb(139, 92, 246)', 'Pages Crawled');
+</script>
 <script define:vars={{ chartDataMap }}>
   // Render inline charts when panels are expanded
   document.querySelectorAll('[data-chart-panel]').forEach(function(panel) {

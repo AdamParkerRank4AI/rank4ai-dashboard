@@ -1,0 +1,96 @@
+{
+  "rank4ai": {
+    "cycle": {
+      "number": 1,
+      "pages": 30,
+      "platforms": 20,
+      "days": 30,
+      "total_posts": 600,
+      "generated_at": "2026-04-15",
+      "start_date": null,
+      "current_day": 0,
+      "status": "ready"
+    },
+    "platforms": {
+      "auto": [
+        { "name": "instagram", "label": "Instagram", "icon": "camera", "status": "live", "delivery": "api", "volume": "1/day from matrix", "posted": 140, "token_expires": "2026-05-02" },
+        { "name": "threads", "label": "Threads", "icon": "thread", "status": "live", "delivery": "api", "volume": "1/day from matrix", "posted": 141, "token_expires": "2026-05-02" },
+        { "name": "youtube", "label": "YouTube", "icon": "video", "status": "warning", "delivery": "api", "volume": "1/day from matrix", "posted": 293, "note": "Need re-auth (wrong account)" },
+        { "name": "facebook", "label": "Facebook", "icon": "facebook", "status": "live", "delivery": "api", "volume": "2/day batch", "posted": 120, "note": "Batch 2 through May 9, then matrix", "token_expires": "2026-05-02" },
+        { "name": "devto", "label": "Dev.to", "icon": "code", "status": "live", "delivery": "api", "volume": "1/day from matrix", "posted": 3 },
+        { "name": "blogger", "label": "Blogger", "icon": "blog", "status": "live", "delivery": "api", "volume": "1/day from matrix", "posted": 6 },
+        { "name": "tumblr", "label": "Tumblr", "icon": "tumblr", "status": "live", "delivery": "api", "volume": "1/day (bulk through Jul 2027 + matrix)", "posted": 495 },
+        { "name": "wordpress", "label": "WordPress", "icon": "wordpress", "status": "live", "delivery": "api", "volume": "1/day (bulk through Jul 2027 + matrix)", "posted": 500 },
+        { "name": "github", "label": "GitHub Index", "icon": "github", "status": "live", "delivery": "api", "volume": "3/day", "posted": 120 }
+      ],
+      "email": [
+        { "name": "medium", "label": "Medium", "icon": "edit", "status": "live", "delivery": "email", "volume": "1/day" },
+        { "name": "substack", "label": "Substack", "icon": "mail", "status": "live", "delivery": "email", "volume": "1/day" },
+        { "name": "gbp", "label": "Google Business Profile", "icon": "map-pin", "status": "live", "delivery": "email", "volume": "1/day", "note": "API blocked, manual via email" },
+        { "name": "quora", "label": "Quora", "icon": "help-circle", "status": "live", "delivery": "email", "volume": "1/day" },
+        { "name": "linkedin", "label": "LinkedIn", "icon": "linkedin", "status": "live", "delivery": "email", "volume": "1/day", "note": "Auto-poster broken (API 426), using email" },
+        { "name": "reddit", "label": "Reddit", "icon": "message-circle", "status": "live", "delivery": "email", "volume": "1/day", "note": "No self-promotion links" },
+        { "name": "x_twitter", "label": "X / Twitter", "icon": "twitter", "status": "live", "delivery": "email", "volume": "1/day" },
+        { "name": "pinterest", "label": "Pinterest", "icon": "image", "status": "live", "delivery": "email", "volume": "1/day" }
+      ],
+      "pending": [
+        { "name": "hashnode", "label": "Hashnode", "icon": "hash", "status": "pending", "delivery": "email", "note": "Content generated, posting not set up" },
+        { "name": "mastodon", "label": "Mastodon", "icon": "globe", "status": "pending", "delivery": "email", "note": "Content generated, posting not set up" },
+        { "name": "bluesky", "label": "Bluesky", "icon": "cloud", "status": "pending", "delivery": "email", "note": "Content generated, posting not set up" },
+        { "name": "flipboard", "label": "Flipboard", "icon": "layers", "status": "pending", "delivery": "rss", "note": "RSS import — not set up yet" }
+      ],
+      "separate": [
+        { "name": "podcast", "label": "Podcast", "icon": "mic", "status": "broken", "note": "Anthropic API 401 — needs new key", "posted": 29 },
+        { "name": "quora_answers", "label": "Quora Answers", "icon": "message-square", "status": "live", "delivery": "email", "volume": "5/day (separate email)", "note": "55/97 sent" }
+      ]
+    },
+    "tokens": [
+      { "platform": "instagram", "expires": "2026-05-02", "days_left": 17, "type": "60-day refreshable" },
+      { "platform": "threads", "expires": "2026-05-02", "days_left": 17, "type": "shares IG token" },
+      { "platform": "facebook_user", "expires": "2026-05-02", "days_left": 17, "type": "60-day" },
+      { "platform": "facebook_page", "expires": "never", "type": "long-lived" },
+      { "platform": "linkedin", "expires": "2026-05-03", "days_left": 18, "type": "60-day" },
+      { "platform": "youtube", "expires": "auto", "type": "OAuth2 auto-refresh" }
+    ],
+    "actions": {
+      "build": [
+        { "id": "matrix-publisher", "title": "Build matrix publisher script", "detail": "Replaces run_daily_publish.py — posts to 9 auto platforms from matrix", "priority": "high" },
+        { "id": "matrix-email", "title": "Build matrix email script", "detail": "Replaces send_daily_posts.py — sends daily email for 11 platforms", "priority": "high" },
+        { "id": "dashboard-panel", "title": "Build dashboard Content Distribution panel", "detail": "Shows today's matrix row, cycle progress, platform health", "priority": "medium" },
+        { "id": "supabase-tables", "title": "Set up Supabase distribution tables", "detail": "Populate ecosystem_distribution_platforms, create distribution_log", "priority": "medium" },
+        { "id": "guardrails", "title": "Build guardrails and health checks", "detail": "Daily 8pm health check, failure alerts, token expiry warnings", "priority": "medium" },
+        { "id": "launchd-migration", "title": "Migrate launchd agents to matrix scripts", "detail": "Switch from old scripts to new unified matrix system", "priority": "medium" }
+      ],
+      "fix": [
+        { "id": "youtube-reauth", "title": "YouTube re-auth", "detail": "Token auth'd as wrong account (Sarah Jeff). Needs interactive browser login.", "priority": "high" },
+        { "id": "podcast-api", "title": "Podcast API key", "detail": "Anthropic 401 error. Generate new key at console.anthropic.com.", "priority": "high" },
+        { "id": "linkedin-api", "title": "LinkedIn API version", "detail": "Version 202401 retired. Update header in linkedin_publish.py.", "priority": "medium" }
+      ],
+      "time_sensitive": [
+        { "id": "token-refresh", "title": "Refresh all tokens by Apr 25", "detail": "Instagram, Facebook, LinkedIn all expire May 2. Refresh 7 days early.", "priority": "critical", "deadline": "2026-04-25" }
+      ],
+      "new_platforms": [
+        { "id": "hashnode", "title": "Set up Hashnode posting", "detail": "Content generated in cycle 1. Needs posting method (RSS or API).", "priority": "low" },
+        { "id": "mastodon", "title": "Set up Mastodon posting", "detail": "Content generated. Needs account + API setup.", "priority": "low" },
+        { "id": "bluesky", "title": "Set up Bluesky posting", "detail": "Content generated. Needs account + API setup.", "priority": "low" }
+      ]
+    },
+    "stats": {
+      "total_platforms": 20,
+      "live_auto": 9,
+      "live_email": 8,
+      "pending": 4,
+      "separate": 2,
+      "total_content_generated": 600,
+      "cycle_1_pages": 30,
+      "site_pages": 630
+    }
+  },
+  "market-invoice": {
+    "cycle": null,
+    "platforms": { "auto": [], "email": [], "pending": [], "separate": [] },
+    "tokens": [],
+    "actions": { "build": [], "fix": [], "time_sensitive": [], "new_platforms": [] },
+    "stats": {}
+  }
+}

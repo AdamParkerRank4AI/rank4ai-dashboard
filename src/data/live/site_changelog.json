@@ -1,138 +1,447 @@
 {
-  "market-invoice": {
-    "checked_at": "2026-04-14T10:38:10.428313",
-    "commits_7d": 56,
-    "commits_24h": 8,
-    "files_changed_24h": 296,
-    "new_pages_24h": 280,
+  "rank4ai": {
+    "checked_at": "2026-04-24T06:29:36.853041",
+    "commits_7d": 125,
+    "commits_24h": 10,
+    "files_changed_24h": 50,
+    "new_pages_24h": 44,
     "recent_commits": [
       {
-        "hash": "a6e5e394",
-        "date": "2026-04-14 10:08:55",
-        "message": "Fix broken page + add missing AI search crawlers"
+        "hash": "04a707f4",
+        "date": "2026-04-24 05:36:58",
+        "message": "webhook-probe 043657"
       },
       {
-        "hash": "e7aa38ce",
-        "date": "2026-04-14 09:20:23",
-        "message": "Fix em dashes + meta descriptions: site-wide cleanup"
+        "hash": "355c5252",
+        "date": "2026-04-23 21:11:08",
+        "message": "Add Step 4 cache-purge to deploy pipeline"
       },
       {
-        "hash": "d04d0c2f",
-        "date": "2026-04-14 09:01:20",
-        "message": "Add skip-to-content, ARIA landmarks for accessibility"
+        "hash": "0800b2c1",
+        "date": "2026-04-23 13:55:48",
+        "message": "Roll AIReadinessBlock + SpeakableSchema to 22 R4 guides"
       },
       {
-        "hash": "3a94db64",
-        "date": "2026-04-13 16:22:10",
-        "message": "Improve semantic HTML: footer divs \u2192 nav/section with aria-labels"
+        "hash": "a931232c",
+        "date": "2026-04-23 13:47:59",
+        "message": "Add ServiceComparisonTable to 3 service pages"
       },
       {
-        "hash": "c8b35128",
-        "date": "2026-04-13 16:20:16",
-        "message": "Design feedback fixes: credibility bar, popups, cards, clickability"
+        "hash": "ccf63ed8",
+        "date": "2026-04-23 13:40:30",
+        "message": "Roll AIReadinessBlock + SpeakableSchema to R4 blog + stats templates"
       },
       {
-        "hash": "e502420e",
-        "date": "2026-04-13 16:01:53",
-        "message": "Move company name to step 1 \u2014 captured on all partial fills"
+        "hash": "8af459a9",
+        "date": "2026-04-23 10:02:37",
+        "message": "Fix dev-note meta descs (40 blogs) + 404 in search results"
       },
       {
-        "hash": "92cc6535",
-        "date": "2026-04-13 13:16:38",
-        "message": "Abandon timer: 60s \u2192 5 mins, cancel on successful submit"
+        "hash": "65f51ff7",
+        "date": "2026-04-23 09:57:29",
+        "message": "Fix LP mobile layout: table fits, stats reordered, badge fixed"
       },
       {
-        "hash": "b6bc6aa4",
-        "date": "2026-04-13 13:14:49",
-        "message": "Add Supabase lead tracking + email notifications for partial fills"
+        "hash": "94b503b0",
+        "date": "2026-04-23 09:41:31",
+        "message": "Add 8 more ranking pages: tools, tactics, strategies (991 -> 999)"
       },
       {
-        "hash": "5f897f6e",
-        "date": "2026-04-13 09:56:01",
-        "message": "10 new core pages: application guides, best-for lists, working capital, trust pages"
+        "hash": "b1e2dd28",
+        "date": "2026-04-23 07:46:00",
+        "message": "AutoRelated: include dynamic-route data sources"
       },
       {
-        "hash": "3d0404cf",
-        "date": "2026-04-13 08:55:44",
-        "message": "Major update: schema, AIComprehension, infographics, scenario pages, fixes"
+        "hash": "806450a1",
+        "date": "2026-04-23 07:44:45",
+        "message": "Add 8 method/strategy ranking pages with comparison tables"
       }
     ],
     "changed_files": [
-      "src/pages/providers/metro-bank.astro",
-      "src/pages/accessibility.astro",
-      "src/pages/best/same-day-invoice-finance.astro",
-      "src/pages/questions/will-invoice-finance-eat-my-margins.astro",
-      "src/pages/providers/key-factors.astro",
-      "src/pages/working-capital/vat-tax-bills.astro",
-      "src/pages/complaints.astro",
-      "src/pages/blog/construction-payment-chain.astro",
-      "src/pages/compare/invoice-finance-vs-equity.astro",
-      "src/pages/providers/investly.astro",
-      "src/pages/industries/distribution.astro",
-      "src/pages/locations/index.astro",
-      "src/components/InfographicCostBreakdown.astro",
-      "src/pages/providers/novuna.astro",
-      "src/pages/industries/care-agencies.astro",
-      "src/pages/questions/does-cost-go-up-if-customers-pay-late.astro",
-      "src/pages/questions/can-i-get-invoice-finance-with-bad-credit.astro",
-      "src/pages/providers/skipton.astro",
-      "src/pages/stats/index.astro",
-      "src/pages/compare/invoice-finance-vs-rd-tax-credits.astro",
-      "src/pages/guides/how-to-choose-provider.astro",
-      "src/pages/tools/eligibility-checker.astro",
-      "src/pages/questions/invoice-finance-without-long-contract.astro",
-      "src/pages/blog/whatever-happened-to-greensill.astro",
-      "src/pages/providers/sallyport.astro",
-      "src/pages/providers/raise.astro",
-      "src/pages/best/best-for-manufacturing.astro",
-      "src/pages/providers/giant-finance.astro",
-      "src/pages/working-capital/late-payment-uk.astro",
-      "src/pages/questions/invoice-finance-for-freelancers.astro",
-      "src/pages/providers/bibby.astro",
-      "src/pages/guides/how-invoice-finance-works.astro",
-      "src/pages/providers/handelsbanken.astro",
-      "src/components/LeadForm.astro",
-      "src/pages/questions/getting-out-of-invoice-finance.astro",
-      "src/pages/providers/penny.astro",
-      "src/pages/questions/what-is-whole-turnover-factoring.astro",
-      "src/pages/industries/it-contractors.astro",
-      "src/pages/blog/transport-payment-guide.astro",
-      "src/pages/questions/why-invoice-finance-is-expensive.astro",
-      "src/layouts/BaseLayout.astro",
-      "src/pages/providers/funding-circle.astro",
-      "src/pages/providers/zodeq.astro",
-      "src/pages/providers/abc-finance.astro",
-      "src/pages/working-capital/trade-credit-guide.astro",
-      "src/pages/blog/manufacturing-cash-flow-2026.astro",
-      "src/pages/guides/selective-invoice-finance.astro",
-      "src/pages/providers/recruitment-funding.astro",
-      "src/pages/questions/industries-that-cant-use-invoice-finance.astro",
-      "src/pages/compare/invoice-finance-vs-business-loan.astro"
+      "src/pages/learn/guides/claude-optimisation.astro",
+      "src/pages/learn/guides/structured-data-for-ai.astro",
+      "src/pages/learn/guides/ai-search-roi.astro",
+      "src/pages/learn/guides/who-should-i-hire.astro",
+      "src/pages/research/rankings/best-content-formats-for-ai-citations.astro",
+      "src/pages/learn/guides/geo.astro",
+      "src/pages/research/stats/[slug].astro",
+      "src/pages/what-we-do/advisory.astro",
+      "src/pages/research/rankings/best-llms-txt-examples-2026.astro",
+      "src/pages/lp/ai-ready-sites.astro",
+      "src/pages/learn/guides/complete-guide-ai-search.astro",
+      "src/pages/research/rankings/best-google-business-profile-tips-for-ai-search.astro",
+      "src/data/blogs.json",
+      "src/pages/learn/guides/aeo.astro",
+      "src/pages/research/rankings/top-ai-search-signals-that-actually-work.astro",
+      "src/pages/research/rankings/top-ranking-factors-for-ai-search-2026.astro",
+      "src/pages/learn/guides/get-cited-chatgpt.astro",
+      "src/pages/learn/guides/how-ai-chooses-businesses.astro",
+      "src/pages/learn/guides/copilot-optimisation.astro",
+      "src/pages/research/rankings/best-ai-search-monitoring-tools-2026.astro",
+      "src/pages/research/rankings/best-schema-markup-for-ai-search.astro",
+      "src/pages/learn/guides/searchgpt.astro",
+      "scripts/purge-cf-cache.cjs",
+      "src/pages/learn/guides/chatgpt-seo.astro",
+      "src/pages/learn/guides/perplexity-seo.astro",
+      "src/pages/what-we-do/full-agency.astro",
+      "src/pages/blog/[slug].astro",
+      "src/components/ServiceComparisonTable.astro",
+      "src/pages/research/rankings/best-site-structure-for-ai-visibility.astro",
+      "src/components/AutoRelated.astro",
+      "src/pages/research/rankings/best-robots-txt-for-ai-search.astro",
+      "src/pages/learn/guides/google-ai-overview-optimisation.astro",
+      "src/pages/research/rankings/best-ai-search-strategy-for-local-business.astro",
+      "src/data/services.json",
+      "src/pages/learn/guides/check-ai-visibility.astro",
+      "src/pages/learn/guides/ai-search-for-solicitors.astro",
+      "src/pages/research/rankings/best-ai-search-strategy-for-ecommerce.astro",
+      "scripts/deploy.cjs",
+      "src/pages/what-we-do/ecosystem-services.astro",
+      "src/pages/research/rankings/top-free-ai-search-tools-2026.astro",
+      "src/pages/learn/guides/entity-seo-for-ai.astro",
+      "src/pages/learn/guides/geo-vs-seo.astro",
+      "src/pages/research/rankings/best-ways-to-check-ai-visibility.astro",
+      "src/pages/learn/guides/google-ai-mode.astro",
+      "src/pages/research/rankings/best-ai-search-strategy-for-professional-services.astro",
+      "src/pages/research/rankings/best-website-builders-for-ai-search.astro",
+      "src/pages/learn/guides/ai-search-b2b.astro",
+      "src/pages/research/rankings/best-ai-search-strategy-for-small-business.astro",
+      "src/pages/learn/guides/google-ai-overview-ranking-factors.astro",
+      "src/pages/learn/guides/appear-in-perplexity.astro"
     ],
     "new_page_files": [
-      "src/pages/providers/metro-bank.astro",
-      "src/pages/accessibility.astro",
-      "src/pages/best/same-day-invoice-finance.astro",
-      "src/pages/questions/will-invoice-finance-eat-my-margins.astro",
-      "src/pages/providers/key-factors.astro",
-      "src/pages/working-capital/vat-tax-bills.astro",
-      "src/pages/complaints.astro",
-      "src/pages/blog/construction-payment-chain.astro",
-      "src/pages/compare/invoice-finance-vs-equity.astro",
-      "src/pages/providers/investly.astro",
-      "src/pages/industries/distribution.astro",
-      "src/pages/locations/index.astro",
-      "src/pages/providers/novuna.astro",
-      "src/pages/industries/care-agencies.astro",
-      "src/pages/questions/does-cost-go-up-if-customers-pay-late.astro",
-      "src/pages/questions/can-i-get-invoice-finance-with-bad-credit.astro",
-      "src/pages/providers/skipton.astro",
-      "src/pages/stats/index.astro",
-      "src/pages/compare/invoice-finance-vs-rd-tax-credits.astro",
-      "src/pages/guides/how-to-choose-provider.astro"
+      "src/pages/learn/guides/claude-optimisation.astro",
+      "src/pages/learn/guides/structured-data-for-ai.astro",
+      "src/pages/learn/guides/ai-search-roi.astro",
+      "src/pages/learn/guides/who-should-i-hire.astro",
+      "src/pages/research/rankings/best-content-formats-for-ai-citations.astro",
+      "src/pages/learn/guides/geo.astro",
+      "src/pages/research/stats/[slug].astro",
+      "src/pages/what-we-do/advisory.astro",
+      "src/pages/research/rankings/best-llms-txt-examples-2026.astro",
+      "src/pages/lp/ai-ready-sites.astro",
+      "src/pages/learn/guides/complete-guide-ai-search.astro",
+      "src/pages/research/rankings/best-google-business-profile-tips-for-ai-search.astro",
+      "src/pages/learn/guides/aeo.astro",
+      "src/pages/research/rankings/top-ai-search-signals-that-actually-work.astro",
+      "src/pages/research/rankings/top-ranking-factors-for-ai-search-2026.astro",
+      "src/pages/learn/guides/get-cited-chatgpt.astro",
+      "src/pages/learn/guides/how-ai-chooses-businesses.astro",
+      "src/pages/learn/guides/copilot-optimisation.astro",
+      "src/pages/research/rankings/best-ai-search-monitoring-tools-2026.astro",
+      "src/pages/research/rankings/best-schema-markup-for-ai-search.astro"
     ],
-    "crawl_status": "stale",
+    "crawl_status": "ok",
     "all_commits": [
+      {
+        "hash": "04a707f4",
+        "date": "2026-04-24 05:36:58",
+        "message": "webhook-probe 043657"
+      },
+      {
+        "hash": "355c5252",
+        "date": "2026-04-23 21:11:08",
+        "message": "Add Step 4 cache-purge to deploy pipeline"
+      },
+      {
+        "hash": "0800b2c1",
+        "date": "2026-04-23 13:55:48",
+        "message": "Roll AIReadinessBlock + SpeakableSchema to 22 R4 guides"
+      },
+      {
+        "hash": "a931232c",
+        "date": "2026-04-23 13:47:59",
+        "message": "Add ServiceComparisonTable to 3 service pages"
+      },
+      {
+        "hash": "ccf63ed8",
+        "date": "2026-04-23 13:40:30",
+        "message": "Roll AIReadinessBlock + SpeakableSchema to R4 blog + stats templates"
+      },
+      {
+        "hash": "8af459a9",
+        "date": "2026-04-23 10:02:37",
+        "message": "Fix dev-note meta descs (40 blogs) + 404 in search results"
+      },
+      {
+        "hash": "65f51ff7",
+        "date": "2026-04-23 09:57:29",
+        "message": "Fix LP mobile layout: table fits, stats reordered, badge fixed"
+      },
+      {
+        "hash": "94b503b0",
+        "date": "2026-04-23 09:41:31",
+        "message": "Add 8 more ranking pages: tools, tactics, strategies (991 -> 999)"
+      },
+      {
+        "hash": "b1e2dd28",
+        "date": "2026-04-23 07:46:00",
+        "message": "AutoRelated: include dynamic-route data sources"
+      },
+      {
+        "hash": "806450a1",
+        "date": "2026-04-23 07:44:45",
+        "message": "Add 8 method/strategy ranking pages with comparison tables"
+      },
+      {
+        "hash": "087caba7",
+        "date": "2026-04-22 20:57:31",
+        "message": "Generate llms-full.txt for R4 (731 URLs, 38 sections)"
+      },
+      {
+        "hash": "ca775dfe",
+        "date": "2026-04-22 20:57:00",
+        "message": "Add 6 \"best way to appear\" platform pages with comparison tables"
+      },
+      {
+        "hash": "dcdf24ae",
+        "date": "2026-04-22 20:56:04",
+        "message": "Add SpeakableSchema to question template + fix @id alignment"
+      },
+      {
+        "hash": "733b09b7",
+        "date": "2026-04-22 20:54:27",
+        "message": "AI Readiness pilot: add stats panel to question pages"
+      },
+      {
+        "hash": "c9348ddc",
+        "date": "2026-04-22 15:30:07",
+        "message": "Wire AutoRelated into Layout main slot (R4 orphan fix live)"
+      },
+      {
+        "hash": "9969908d",
+        "date": "2026-04-22 15:29:39",
+        "message": "LP: reorder stats (3.2x/2.7x centre), purple theme, push to main"
+      },
+      {
+        "hash": "a2519f9e",
+        "date": "2026-04-22 15:27:26",
+        "message": "Add AutoRelated component to layout (orphan fix)"
+      },
+      {
+        "hash": "1ed6e706",
+        "date": "2026-04-22 15:19:39",
+        "message": "Rank4AI to centre column, bigger stats, adjusted scores, no emojis"
+      },
+      {
+        "hash": "b48d1614",
+        "date": "2026-04-22 15:16:32",
+        "message": "Add AutoRelated component to Layout \u2014 fixes 255 orphan pages on R4"
+      },
+      {
+        "hash": "405160f3",
+        "date": "2026-04-22 15:11:14",
+        "message": "Add colour to LP tiles, fix stats bar, remove emojis, reorder features"
+      }
+    ]
+  },
+  "market-invoice": {
+    "checked_at": "2026-04-24T06:29:37.984431",
+    "commits_7d": 82,
+    "commits_24h": 5,
+    "files_changed_24h": 10,
+    "new_pages_24h": 3,
+    "recent_commits": [
+      {
+        "hash": "9b88ad2e",
+        "date": "2026-04-23 21:11:06",
+        "message": "Add Step 4 cache-purge to deploy pipeline"
+      },
+      {
+        "hash": "54b96914",
+        "date": "2026-04-23 18:18:13",
+        "message": "Fix truncated title on sonovate.astro (ended with '| Rates &' \u2014 likely auto-truncation bug)"
+      },
+      {
+        "hash": "9cc327b7",
+        "date": "2026-04-23 13:32:59",
+        "message": "Capture attribution on leads (referrer, UTM, gclid, source) with schema fallback"
+      },
+      {
+        "hash": "b21cec31",
+        "date": "2026-04-23 13:32:56",
+        "message": "Bump astro 6.1.3 -> 6.1.x latest (fleet version alignment)"
+      },
+      {
+        "hash": "8c5f7fb0",
+        "date": "2026-04-23 07:00:10",
+        "message": "Auto: daily Q&A content 2026-04-23"
+      },
+      {
+        "hash": "722d7a0c",
+        "date": "2026-04-22 15:31:58",
+        "message": "Add AutoRelated to MI BaseLayout (orphan fix, mirrors R4 pattern)"
+      },
+      {
+        "hash": "c0c60e99",
+        "date": "2026-04-22 12:15:28",
+        "message": "Add ai-sitemap.txt (390 URLs) for AI crawler discovery"
+      },
+      {
+        "hash": "db4bf6c0",
+        "date": "2026-04-22 11:57:13",
+        "message": "Fleet hygiene: remove em dashes from 41 .astro files (~80 instances)"
+      },
+      {
+        "hash": "79e2fdf8",
+        "date": "2026-04-22 07:00:13",
+        "message": "Auto: daily Q&A content 2026-04-22"
+      },
+      {
+        "hash": "be580e41",
+        "date": "2026-04-21 07:00:08",
+        "message": "Auto: daily Q&A content 2026-04-21"
+      }
+    ],
+    "changed_files": [
+      "src/pages/questions/can-i-finance-recurring-contracts.astro",
+      "scripts/.published_qa.txt",
+      "package.json",
+      "src/components/LeadForm.astro",
+      "scripts/deploy.cjs",
+      "supabase/migrations/20260423_add_lead_attribution_columns.sql",
+      "scripts/purge-cf-cache.cjs",
+      "src/pages/questions/index.astro",
+      "package-lock.json",
+      "src/pages/providers/sonovate.astro"
+    ],
+    "new_page_files": [
+      "src/pages/questions/can-i-finance-recurring-contracts.astro",
+      "src/pages/questions/index.astro",
+      "src/pages/providers/sonovate.astro"
+    ],
+    "crawl_status": "ok",
+    "all_commits": [
+      {
+        "hash": "9b88ad2e",
+        "date": "2026-04-23 21:11:06",
+        "message": "Add Step 4 cache-purge to deploy pipeline"
+      },
+      {
+        "hash": "54b96914",
+        "date": "2026-04-23 18:18:13",
+        "message": "Fix truncated title on sonovate.astro (ended with '| Rates &' \u2014 likely auto-truncation bug)"
+      },
+      {
+        "hash": "9cc327b7",
+        "date": "2026-04-23 13:32:59",
+        "message": "Capture attribution on leads (referrer, UTM, gclid, source) with schema fallback"
+      },
+      {
+        "hash": "b21cec31",
+        "date": "2026-04-23 13:32:56",
+        "message": "Bump astro 6.1.3 -> 6.1.x latest (fleet version alignment)"
+      },
+      {
+        "hash": "8c5f7fb0",
+        "date": "2026-04-23 07:00:10",
+        "message": "Auto: daily Q&A content 2026-04-23"
+      },
+      {
+        "hash": "722d7a0c",
+        "date": "2026-04-22 15:31:58",
+        "message": "Add AutoRelated to MI BaseLayout (orphan fix, mirrors R4 pattern)"
+      },
+      {
+        "hash": "c0c60e99",
+        "date": "2026-04-22 12:15:28",
+        "message": "Add ai-sitemap.txt (390 URLs) for AI crawler discovery"
+      },
+      {
+        "hash": "db4bf6c0",
+        "date": "2026-04-22 11:57:13",
+        "message": "Fleet hygiene: remove em dashes from 41 .astro files (~80 instances)"
+      },
+      {
+        "hash": "79e2fdf8",
+        "date": "2026-04-22 07:00:13",
+        "message": "Auto: daily Q&A content 2026-04-22"
+      },
+      {
+        "hash": "be580e41",
+        "date": "2026-04-21 07:00:08",
+        "message": "Auto: daily Q&A content 2026-04-21"
+      },
+      {
+        "hash": "6b6abe77",
+        "date": "2026-04-20 22:43:56",
+        "message": "Fix IndexNow key file \u2014 use correct MI key"
+      },
+      {
+        "hash": "e5531591",
+        "date": "2026-04-20 22:35:27",
+        "message": "Add IndexNow key file for Bing indexing"
+      },
+      {
+        "hash": "b1fd950b",
+        "date": "2026-04-20 07:00:09",
+        "message": "Auto: daily Q&A content 2026-04-20"
+      },
+      {
+        "hash": "7b0058bf",
+        "date": "2026-04-19 07:32:30",
+        "message": "Auto: daily Q&A content 2026-04-19"
+      },
+      {
+        "hash": "527295ed",
+        "date": "2026-04-18 07:00:09",
+        "message": "Auto: daily Q&A content 2026-04-18"
+      },
+      {
+        "hash": "fab2714e",
+        "date": "2026-04-17 12:39:03",
+        "message": "Top up Q&A pool (+20) and publish reassignment-notice Q&A"
+      },
+      {
+        "hash": "a0b68c5f",
+        "date": "2026-04-17 12:36:52",
+        "message": "Expand 3 pillar guides to 2000+ words with inline SVG diagrams"
+      },
+      {
+        "hash": "4075e80b",
+        "date": "2026-04-17 12:36:29",
+        "message": "Copy for AI button + HowTo schema + orphan fixes"
+      },
+      {
+        "hash": "f8d51809",
+        "date": "2026-04-17 08:54:48",
+        "message": "Allow all AI crawlers in robots.txt \u2014 was blocking GPTBot, ClaudeBot, Google-Extended"
+      },
+      {
+        "hash": "ee0ee337",
+        "date": "2026-04-15 14:33:42",
+        "message": "Floating CTA + author bio page + SVG cover images on 10 key pages"
+      },
+      {
+        "hash": "7ae5617a",
+        "date": "2026-04-15 10:25:59",
+        "message": "Fix stale question counts: 68 \u2192 103 in footer, llms.txt, llms-full.txt"
+      },
+      {
+        "hash": "4d2bcef3",
+        "date": "2026-04-15 09:43:58",
+        "message": "Add 29 Q&A pages (28 backfill + 1 today) - 103 questions total"
+      },
+      {
+        "hash": "5901ae1e",
+        "date": "2026-04-15 08:51:27",
+        "message": "Auto: daily Q&A - Can I Use Invoice Finance Temporarily? (2026-04-15)"
+      },
+      {
+        "hash": "5fa74ef8",
+        "date": "2026-04-14 16:40:31",
+        "message": "4 new provider pages + directory slugs: zero orphan providers now"
+      },
+      {
+        "hash": "4ad384c3",
+        "date": "2026-04-14 14:56:58",
+        "message": "Fix 50 orphan provider pages: add slugs to directory for all review pages"
+      },
+      {
+        "hash": "578f1845",
+        "date": "2026-04-14 10:51:11",
+        "message": "Update BoE base rate from 4.50% to 3.75%"
+      },
       {
         "hash": "a6e5e394",
         "date": "2026-04-14 10:08:55",
@@ -186,139 +495,299 @@
     ]
   },
   "seocompare": {
-    "checked_at": "2026-04-14T10:38:11.309388",
-    "commits_7d": 54,
-    "commits_24h": 6,
-    "files_changed_24h": 218,
-    "new_pages_24h": 215,
+    "checked_at": "2026-04-24T06:29:39.130961",
+    "commits_7d": 86,
+    "commits_24h": 7,
+    "files_changed_24h": 92,
+    "new_pages_24h": 78,
     "recent_commits": [
       {
-        "hash": "e875d38f",
-        "date": "2026-04-14 10:31:05",
-        "message": "Readability rewrite + company details + schema fix"
+        "hash": "1a188b36",
+        "date": "2026-04-24 06:01:21",
+        "message": "Auto: new Blog page - Perplexity Pro for Business: New Features Worth the Upgrade?"
       },
       {
-        "hash": "cbec9ed8",
-        "date": "2026-04-14 10:07:26",
-        "message": "Fix all 165 meta descriptions to under 160 characters"
+        "hash": "5ffd051b",
+        "date": "2026-04-24 05:59:15",
+        "message": "Mobile readability: bulk text-[10/11]px -> text-xs (224 instances)"
       },
       {
-        "hash": "ce96852c",
-        "date": "2026-04-14 09:20:50",
-        "message": "Unblock all AI crawlers in robots.txt"
+        "hash": "89b77a2f",
+        "date": "2026-04-24 05:47:20",
+        "message": "Remove 103 lines of orphan + duplicate content from homepage carousel section"
       },
       {
-        "hash": "66f7ab37",
-        "date": "2026-04-14 09:13:12",
-        "message": "Fix audit issues: robots.txt, breadcrumbs, links, meta descriptions"
+        "hash": "0d4a018d",
+        "date": "2026-04-24 05:40:03",
+        "message": "Add page-dates infrastructure + Added/Updated badges on SC homepage tiles"
       },
       {
-        "hash": "aa1d5bfe",
-        "date": "2026-04-14 09:05:20",
-        "message": "Add skip-to-content, ARIA landmarks for accessibility"
+        "hash": "55bc6812",
+        "date": "2026-04-23 21:11:09",
+        "message": "Add Step 4 cache-purge to deploy pipeline"
       },
       {
-        "hash": "343162db",
-        "date": "2026-04-13 13:20:46",
-        "message": "Add Supabase lead collection to all forms"
+        "hash": "f512e208",
+        "date": "2026-04-23 13:31:45",
+        "message": "SC fleet baseline alignment: Partytown + deploy.cjs + Astro bump"
       },
       {
-        "hash": "ec2389b6",
-        "date": "2026-04-13 09:39:08",
-        "message": "Add cover images to remaining 10 comparison pages + all CTAs"
+        "hash": "617cf551",
+        "date": "2026-04-23 10:21:07",
+        "message": "Fix SC llms.txt: /ai-search-questions/ -> /questions/"
       },
       {
-        "hash": "592cff93",
-        "date": "2026-04-13 09:23:51",
-        "message": "Add cover images to 20 comparison pages"
+        "hash": "bf2e548f",
+        "date": "2026-04-23 06:00:50",
+        "message": "Auto: new Stat page - AI Search Zero-Click Rates: 73% Don't Need to Click Through"
       },
       {
-        "hash": "cd9bbb13",
-        "date": "2026-04-13 08:41:35",
-        "message": "Add 5 Rank4AI keyword pages + favicon fix + nav/llms updates"
+        "hash": "23fd0016",
+        "date": "2026-04-22 15:34:14",
+        "message": "Add AutoRelated to SC BaseLayout (orphan fix, mirrors R4 + MI)"
       },
       {
-        "hash": "c77031db",
-        "date": "2026-04-12 22:18:47",
-        "message": "Fix orphan pages + .gitignore for Instagram PNGs"
+        "hash": "fcc506a9",
+        "date": "2026-04-22 12:15:30",
+        "message": "Add ai-sitemap.txt (320 URLs) for AI crawler discovery"
       }
     ],
     "changed_files": [
-      "src/pages/ai-seo-audit-glasgow/index.astro",
-      "src/pages/ai-seo-professional-services/index.astro",
-      "src/pages/ai-seo-audit-norwich/index.astro",
-      "src/pages/questions/what-is-an-answer-capsule/index.astro",
-      "src/pages/build-brand-ai-trust/index.astro",
-      "src/pages/ai-seo-audit-cambridge/index.astro",
-      "src/pages/ai-search-statistics-2026/index.astro",
-      "src/pages/pure-ai-search-agencies/index.astro",
-      "src/pages/stats/organisation-schema-gap/index.astro",
-      "src/pages/insights/ai-reshaping-local/index.astro",
-      "src/pages/insights/ai-search-not-seo/index.astro",
-      "src/pages/questions/percentage-ai-search/index.astro",
-      "src/pages/insights/seo-agencies-not-ready/index.astro",
-      "src/pages/ai-search-agencies-brighton/index.astro",
-      "src/pages/questions/do-backlinks-still-matter-for-ai/index.astro",
-      "src/pages/ai-search-agencies-london/index.astro",
-      "src/pages/ai-search-agencies-europe/index.astro",
-      "src/pages/ai-search-agencies-b2b/index.astro",
-      "src/pages/ai-search-agencies-australia/index.astro",
-      "src/pages/stats/freshness-and-citations/index.astro",
-      "src/pages/ai-search-agencies-bristol/index.astro",
-      "src/pages/ai-search-agencies-reading/index.astro",
+      "src/pages/best-ai-seo-companies/index.astro",
+      "src/pages/best-geo-agencies-2026/index.astro",
+      "src/pages/best-ai-overviews-agencies-2026/index.astro",
+      "src/pages/best-ai-seo-agencies-financial/index.astro",
+      "src/pages/top-ai-visibility-agencies/index.astro",
+      "src/pages/chatgpt-seo-agencies-uk/index.astro",
+      "package-lock.json",
+      "src/pages/blog/index.astro",
+      "astro.config.mjs",
       "src/pages/ai-search-agencies-canada/index.astro",
-      "src/pages/blog/youtube-strongest-ai-signal/index.astro",
-      "src/pages/questions/google-ranking-enough/index.astro",
-      "src/pages/stats/cross-platform-citation-gap/index.astro",
-      "src/pages/best-perplexity-seo-agencies/index.astro",
-      "src/pages/blog/ai-seo-accounting-firms/index.astro",
-      "src/pages/stats/homepage-confusion-signals/index.astro",
-      "src/pages/best-ai-seo-agencies-b2b/index.astro",
-      "src/pages/ai-search-agencies-sheffield/index.astro",
-      "src/pages/insights/perplexity-publishers/index.astro",
-      "src/pages/ai-search-agencies-colchester/index.astro",
-      "src/pages/top-10-ai-seo-tools/index.astro",
-      "src/pages/ai-search-agencies-saas/index.astro",
-      "src/layouts/BaseLayout.astro",
-      "src/pages/blog/ai-seo-nonprofits/index.astro",
-      "src/pages/best-aeo-agencies/index.astro",
-      "src/pages/structure-website-ai-crawlers/index.astro",
-      "src/pages/ai-seo-audit-southampton/index.astro",
-      "src/components/QuickQuoteForm.astro",
-      "src/pages/questions/how-many-ai-platforms-should-i-target/index.astro",
-      "src/pages/how-to-get-cited-gemini/index.astro",
-      "src/pages/blog/why-agencies-rank-themselves-first/index.astro",
-      "src/pages/blog/healthcare-vs-financial-services-ai-seo/index.astro",
-      "src/pages/stats/march-2026-update-impact/index.astro",
+      "src/pages/best-geo-agencies-saas/index.astro",
+      "src/pages/ai-visibility-agency-uk/index.astro",
+      "public/llms.txt",
+      "src/pages/best-llmo-agencies/index.astro",
+      "src/pages/agency-directory/index.astro",
+      "src/pages/uk-ai-overviews-agencies/index.astro",
+      "scripts/deploy.cjs",
+      "src/pages/best-ai-seo-agencies/index.astro",
+      "src/pages/ai-seo-agencies-b2b-uk/index.astro",
+      "scripts/build-page-dates.cjs",
       "src/pages/ai-seo-agencies-usa/index.astro",
-      "src/pages/ai-seo-audit-birmingham/index.astro",
-      "src/pages/ai-seo-audit-nottingham/index.astro",
-      "src/pages/insights/wordpress-invisible/index.astro"
+      "src/pages/best-ai-seo-agencies-b2b/index.astro",
+      "src/pages/best-geo-agencies/index.astro",
+      "src/pages/best-geo-agencies-ecommerce/index.astro",
+      "src/pages/ai-search-agencies-europe/index.astro",
+      "src/pages/index.astro",
+      "src/pages/best-ai-visibility-agencies/index.astro",
+      "src/pages/ai-seo-agency-london/index.astro",
+      "src/pages/ai-search-agencies-australia/index.astro",
+      "src/pages/top-ai-seo-agencies-ecommerce/index.astro",
+      "src/pages/chatgpt-seo-agency-uk/index.astro",
+      "public/llms-full.txt",
+      "src/pages/ai-seo-agency-manchester/index.astro",
+      "src/pages/top-chatgpt-seo-agencies/index.astro",
+      "src/data/page-dates.json",
+      "src/pages/best-ai-seo-agencies-ecommerce/index.astro",
+      "src/pages/ai-seo-financial-uk/index.astro",
+      "src/pages/free-ai-visibility-audit/index.astro",
+      "src/pages/ai-search-agencies-b2b/index.astro",
+      "src/pages/top-ai-seo-agencies-law-firms/index.astro",
+      "src/pages/ai-seo-healthcare-uk/index.astro",
+      "src/pages/best-chatgpt-seo-agencies/index.astro",
+      "src/pages/best-ai-seo-agencies-uk/index.astro",
+      "src/layouts/BaseLayout.astro",
+      "src/pages/affordable-ai-seo-agencies/index.astro",
+      "src/pages/best-aeo-agencies-ecommerce/index.astro",
+      "src/pages/top-geo-agencies-2026/index.astro",
+      "src/components/RelatedPages.astro",
+      "src/pages/ai-search-agencies-enterprise/index.astro",
+      "src/pages/ai-seo-agencies-saas-uk/index.astro"
     ],
     "new_page_files": [
-      "src/pages/ai-seo-audit-glasgow/index.astro",
-      "src/pages/ai-seo-professional-services/index.astro",
-      "src/pages/ai-seo-audit-norwich/index.astro",
-      "src/pages/questions/what-is-an-answer-capsule/index.astro",
-      "src/pages/build-brand-ai-trust/index.astro",
-      "src/pages/ai-seo-audit-cambridge/index.astro",
-      "src/pages/ai-search-statistics-2026/index.astro",
-      "src/pages/pure-ai-search-agencies/index.astro",
-      "src/pages/stats/organisation-schema-gap/index.astro",
-      "src/pages/insights/ai-reshaping-local/index.astro",
-      "src/pages/insights/ai-search-not-seo/index.astro",
-      "src/pages/questions/percentage-ai-search/index.astro",
-      "src/pages/insights/seo-agencies-not-ready/index.astro",
-      "src/pages/ai-search-agencies-brighton/index.astro",
-      "src/pages/questions/do-backlinks-still-matter-for-ai/index.astro",
-      "src/pages/ai-search-agencies-london/index.astro",
-      "src/pages/ai-search-agencies-europe/index.astro",
-      "src/pages/ai-search-agencies-b2b/index.astro",
-      "src/pages/ai-search-agencies-australia/index.astro",
-      "src/pages/stats/freshness-and-citations/index.astro"
+      "src/pages/best-ai-seo-companies/index.astro",
+      "src/pages/best-geo-agencies-2026/index.astro",
+      "src/pages/best-ai-overviews-agencies-2026/index.astro",
+      "src/pages/best-ai-seo-agencies-financial/index.astro",
+      "src/pages/top-ai-visibility-agencies/index.astro",
+      "src/pages/chatgpt-seo-agencies-uk/index.astro",
+      "src/pages/blog/index.astro",
+      "src/pages/ai-search-agencies-canada/index.astro",
+      "src/pages/best-geo-agencies-saas/index.astro",
+      "src/pages/ai-visibility-agency-uk/index.astro",
+      "src/pages/best-llmo-agencies/index.astro",
+      "src/pages/agency-directory/index.astro",
+      "src/pages/uk-ai-overviews-agencies/index.astro",
+      "src/pages/best-ai-seo-agencies/index.astro",
+      "src/pages/ai-seo-agencies-b2b-uk/index.astro",
+      "src/pages/ai-seo-agencies-usa/index.astro",
+      "src/pages/best-ai-seo-agencies-b2b/index.astro",
+      "src/pages/best-geo-agencies/index.astro",
+      "src/pages/best-geo-agencies-ecommerce/index.astro",
+      "src/pages/ai-search-agencies-europe/index.astro"
     ],
     "crawl_status": "stale",
     "all_commits": [
+      {
+        "hash": "1a188b36",
+        "date": "2026-04-24 06:01:21",
+        "message": "Auto: new Blog page - Perplexity Pro for Business: New Features Worth the Upgrade?"
+      },
+      {
+        "hash": "5ffd051b",
+        "date": "2026-04-24 05:59:15",
+        "message": "Mobile readability: bulk text-[10/11]px -> text-xs (224 instances)"
+      },
+      {
+        "hash": "89b77a2f",
+        "date": "2026-04-24 05:47:20",
+        "message": "Remove 103 lines of orphan + duplicate content from homepage carousel section"
+      },
+      {
+        "hash": "0d4a018d",
+        "date": "2026-04-24 05:40:03",
+        "message": "Add page-dates infrastructure + Added/Updated badges on SC homepage tiles"
+      },
+      {
+        "hash": "55bc6812",
+        "date": "2026-04-23 21:11:09",
+        "message": "Add Step 4 cache-purge to deploy pipeline"
+      },
+      {
+        "hash": "f512e208",
+        "date": "2026-04-23 13:31:45",
+        "message": "SC fleet baseline alignment: Partytown + deploy.cjs + Astro bump"
+      },
+      {
+        "hash": "617cf551",
+        "date": "2026-04-23 10:21:07",
+        "message": "Fix SC llms.txt: /ai-search-questions/ -> /questions/"
+      },
+      {
+        "hash": "bf2e548f",
+        "date": "2026-04-23 06:00:50",
+        "message": "Auto: new Stat page - AI Search Zero-Click Rates: 73% Don't Need to Click Through"
+      },
+      {
+        "hash": "23fd0016",
+        "date": "2026-04-22 15:34:14",
+        "message": "Add AutoRelated to SC BaseLayout (orphan fix, mirrors R4 + MI)"
+      },
+      {
+        "hash": "fcc506a9",
+        "date": "2026-04-22 12:15:30",
+        "message": "Add ai-sitemap.txt (320 URLs) for AI crawler discovery"
+      },
+      {
+        "hash": "1244e2e6",
+        "date": "2026-04-22 12:08:53",
+        "message": "Fix Bing verification (was placeholder), add Google indexing script"
+      },
+      {
+        "hash": "28ecc76a",
+        "date": "2026-04-22 06:30:41",
+        "message": "Auto: new Q&A page - Should I block AI crawlers from my website?"
+      },
+      {
+        "hash": "3e6cc1c6",
+        "date": "2026-04-21 06:00:57",
+        "message": "Auto: new Blog page - ChatGPT Canvas and Citations: What UK Businesses Need to Know"
+      },
+      {
+        "hash": "02401c87",
+        "date": "2026-04-20 10:51:53",
+        "message": "Bulk up thin pages for AI readiness"
+      },
+      {
+        "hash": "ee93cffa",
+        "date": "2026-04-20 08:49:38",
+        "message": "Scanner: ignore <script> blocks and unrendered template placeholders"
+      },
+      {
+        "hash": "7ab5daf9",
+        "date": "2026-04-20 06:00:50",
+        "message": "Auto: new Q&A page - Should I optimize for ChatGPT or Perplexity first?"
+      },
+      {
+        "hash": "bf08475e",
+        "date": "2026-04-19 14:10:17",
+        "message": "Backfill 2 orphans + add sentinel-driven hub insertion"
+      },
+      {
+        "hash": "c9c0faca",
+        "date": "2026-04-19 14:09:55",
+        "message": "Add explicit AI crawler Allow rules to robots.txt"
+      },
+      {
+        "hash": "3b7bb548",
+        "date": "2026-04-19 08:03:35",
+        "message": "Auto: new Guide page - AI SEO for Dentists: Complete UK Guide 2026"
+      },
+      {
+        "hash": "500017fd",
+        "date": "2026-04-18 06:00:48",
+        "message": "Auto: new Q&A page - How AI search citations differ from backlinks"
+      },
+      {
+        "hash": "cc023dbb",
+        "date": "2026-04-17 15:54:34",
+        "message": "Migrate all SEOCompare lead forms to adam@muswellrose.com"
+      },
+      {
+        "hash": "7df6b6dd",
+        "date": "2026-04-17 15:43:07",
+        "message": "Add Find an Agency lead form at /find-an-agency/"
+      },
+      {
+        "hash": "a8004a62",
+        "date": "2026-04-17 15:34:02",
+        "message": "Add Agency Matcher tool at /agency-matcher/"
+      },
+      {
+        "hash": "c201f1d1",
+        "date": "2026-04-17 15:22:32",
+        "message": "Fix doubled '| SEOCompare' suffix on 2 ArticleLayout titles"
+      },
+      {
+        "hash": "65bdaaf1",
+        "date": "2026-04-17 10:59:24",
+        "message": "Improve 3 meta titles, add Copy for AI button, link 2 orphans, homepage hero"
+      },
+      {
+        "hash": "9f67f9f4",
+        "date": "2026-04-17 06:01:02",
+        "message": "Auto: new Blog page - GEO Strategies Beyond Schema: What Works in April 2026"
+      },
+      {
+        "hash": "e5e76f6f",
+        "date": "2026-04-16 07:00:50",
+        "message": "Auto: new Stat page - 73% of UK websites block AI crawlers - impact analysis 2026"
+      },
+      {
+        "hash": "da90e8c9",
+        "date": "2026-04-15 16:52:38",
+        "message": "Fix orphans, llms.txt, covers, semantic HTML, stale counts"
+      },
+      {
+        "hash": "25911ad4",
+        "date": "2026-04-15 10:27:02",
+        "message": "Auto: new Q&A page - How to track AI citations and mentions across ChatGPT, Perplexity"
+      },
+      {
+        "hash": "815294ea",
+        "date": "2026-04-14 17:00:07",
+        "message": "Add 73 new pages + 103 SVG images (239 \u2192 312 pages)"
+      },
+      {
+        "hash": "48108087",
+        "date": "2026-04-14 11:54:47",
+        "message": "Fix stat graphic divider line position"
+      },
+      {
+        "hash": "fafb833b",
+        "date": "2026-04-14 11:37:47",
+        "message": "Expand 5 pillar pages + readability rewrite on 60+ pages"
+      },
       {
         "hash": "e875d38f",
         "date": "2026-04-14 10:31:05",
@@ -376,68 +845,204 @@
       }
     ]
   },
-  "rank4ai-dashboard": {
-    "checked_at": "2026-04-14T10:38:11.902503",
-    "commits_7d": 77,
+  "rochellemarashi": {
+    "checked_at": "2026-04-24T06:29:39.212805",
+    "commits_7d": 0,
     "commits_24h": 0,
     "files_changed_24h": 0,
     "new_pages_24h": 0,
-    "recent_commits": [
-      {
-        "hash": "cd1324ce",
-        "date": "2026-04-13 07:25:01",
-        "message": "Checklist: remove 200 page cap + Copy Missing buttons"
-      },
-      {
-        "hash": "ab3e4342",
-        "date": "2026-04-13 07:21:13",
-        "message": "R4 staging full crawl: 958 pages (645 content + 313 redirects)"
-      },
-      {
-        "hash": "487b1487",
-        "date": "2026-04-11 14:30:23",
-        "message": "Rankings with titles, slugs, dates + Upcoming tab"
-      },
-      {
-        "hash": "53924a78",
-        "date": "2026-04-11 14:24:31",
-        "message": "Add Rankings by Page to SEO Compare Site Manager"
-      },
-      {
-        "hash": "8bb9c00f",
-        "date": "2026-04-11 14:19:06",
-        "message": "Add Agency Database to SEO Compare Site Manager"
-      },
-      {
-        "hash": "dd577149",
-        "date": "2026-04-11 08:43:14",
-        "message": "Build 3 new tools: indexing tracker, DataForSEO, Knowledge Graph"
-      },
-      {
-        "hash": "8b0facce",
-        "date": "2026-04-11 08:28:34",
-        "message": "Full crawl with page compliance checklist data"
-      },
-      {
-        "hash": "79618aa7",
-        "date": "2026-04-11 08:18:34",
-        "message": "Add Page Compliance Checklist to Site Manager"
-      },
-      {
-        "hash": "729bd300",
-        "date": "2026-04-11 08:06:17",
-        "message": "R4 staging: full page breakdown with content vs redirects"
-      },
-      {
-        "hash": "44f845be",
-        "date": "2026-04-11 06:48:43",
-        "message": "R4 staging crawl: 300 pages (197 content + 103 placeholders)"
-      }
-    ],
+    "recent_commits": [],
     "changed_files": [],
     "new_page_files": [],
     "crawl_status": "ok",
+    "all_commits": []
+  },
+  "rank4ai-dashboard": {
+    "checked_at": "2026-04-24T06:29:39.799025",
+    "commits_7d": 101,
+    "commits_24h": 16,
+    "files_changed_24h": 29,
+    "new_pages_24h": 3,
+    "recent_commits": [
+      {
+        "hash": "0361c06a",
+        "date": "2026-04-24 06:25:57",
+        "message": "Wins This Week + fix AIO tile labelling + separate site issues from recs"
+      },
+      {
+        "hash": "9646b569",
+        "date": "2026-04-24 06:16:26",
+        "message": "Redesign Recommendations: progress delta + quick wins + compact table"
+      },
+      {
+        "hash": "733af00c",
+        "date": "2026-04-24 06:01:43",
+        "message": "Preview-before-save on editor + create-page API and form"
+      },
+      {
+        "hash": "b1d836a5",
+        "date": "2026-04-24 05:47:21",
+        "message": "Editor triggers deploy hook \u2014 CF webhook unreliable, force deploy on edit"
+      },
+      {
+        "hash": "436358af",
+        "date": "2026-04-24 05:33:32",
+        "message": "webhook-probe 043331"
+      },
+      {
+        "hash": "4c8ae462",
+        "date": "2026-04-23 19:08:54",
+        "message": "Phase 3 editor + bot hits on crawl chart + keyword side-by-side + Push Live backend"
+      },
+      {
+        "hash": "94876f76",
+        "date": "2026-04-23 18:25:15",
+        "message": "Autonomous dashboard backlog sweep"
+      },
+      {
+        "hash": "c6c0fd39",
+        "date": "2026-04-23 18:15:52",
+        "message": "Trigger redeploy (webhook missed previous push)"
+      },
+      {
+        "hash": "5f0c32da",
+        "date": "2026-04-23 18:06:30",
+        "message": "Add Run Audit to Tools sidebar"
+      },
+      {
+        "hash": "4d84fc29",
+        "date": "2026-04-23 18:02:42",
+        "message": "Trigger redeploy: pick up EDIT_SECRET + GITHUB_TOKEN env vars for /api/edit-page"
+      }
+    ],
+    "changed_files": [
+      "src/data/live/gsc_previous.json",
+      "src/data/live/wins_this_week.json",
+      "scripts/validate_data.py",
+      "functions/api/push-live.js",
+      "src/pages/index.astro",
+      "scripts/refresh_all.py",
+      "scripts/check_data_freshness.py",
+      "scripts/sync_upcoming_pages.py",
+      "src/data/live/pagespeed.json",
+      "scripts/compute_wins.py",
+      "src/layouts/DashboardLayout.astro",
+      "scripts/fetch_pagespeed.py",
+      "scripts/verify_deploy_parity.py",
+      "src/pages/agency/[client]/[section].astro",
+      "scripts/fetch_leads.py",
+      "scripts/compute_aeo_score.py",
+      "src/data/live/deploy_parity.json",
+      "functions/api/edit-page.js",
+      "src/data/live/data_freshness.json",
+      "src/data/clients.json",
+      "src/data/sections.json",
+      "src/pages/run-audit.astro",
+      "functions/api/run-audit.js",
+      "src/data/live/rec_snapshots/recommendations_2026-04-24.json",
+      "src/data/live/aeo_scorecard.json",
+      "src/data/live/mi_leads.json",
+      "scripts/crawl_sites.py",
+      "functions/api/create-page.js",
+      "src/data/live/upcoming_pages.json"
+    ],
+    "new_page_files": [
+      "src/pages/index.astro",
+      "src/pages/agency/[client]/[section].astro",
+      "src/pages/run-audit.astro"
+    ],
+    "crawl_status": "ok",
     "all_commits": [
+      {
+        "hash": "0361c06a",
+        "date": "2026-04-24 06:25:57",
+        "message": "Wins This Week + fix AIO tile labelling + separate site issues from recs"
+      },
+      {
+        "hash": "9646b569",
+        "date": "2026-04-24 06:16:26",
+        "message": "Redesign Recommendations: progress delta + quick wins + compact table"
+      },
+      {
+        "hash": "733af00c",
+        "date": "2026-04-24 06:01:43",
+        "message": "Preview-before-save on editor + create-page API and form"
+      },
+      {
+        "hash": "b1d836a5",
+        "date": "2026-04-24 05:47:21",
+        "message": "Editor triggers deploy hook \u2014 CF webhook unreliable, force deploy on edit"
+      },
+      {
+        "hash": "436358af",
+        "date": "2026-04-24 05:33:32",
+        "message": "webhook-probe 043331"
+      },
+      {
+        "hash": "4c8ae462",
+        "date": "2026-04-23 19:08:54",
+        "message": "Phase 3 editor + bot hits on crawl chart + keyword side-by-side + Push Live backend"
+      },
+      {
+        "hash": "94876f76",
+        "date": "2026-04-23 18:25:15",
+        "message": "Autonomous dashboard backlog sweep"
+      },
+      {
+        "hash": "c6c0fd39",
+        "date": "2026-04-23 18:15:52",
+        "message": "Trigger redeploy (webhook missed previous push)"
+      },
+      {
+        "hash": "5f0c32da",
+        "date": "2026-04-23 18:06:30",
+        "message": "Add Run Audit to Tools sidebar"
+      },
+      {
+        "hash": "4d84fc29",
+        "date": "2026-04-23 18:02:42",
+        "message": "Trigger redeploy: pick up EDIT_SECRET + GITHUB_TOKEN env vars for /api/edit-page"
+      },
+      {
+        "hash": "09309e97",
+        "date": "2026-04-22 21:01:00",
+        "message": "Wire Content Plans iCloud section into Content & Keywords tab"
+      },
+      {
+        "hash": "eb04bb0a",
+        "date": "2026-04-22 20:59:08",
+        "message": "Content plans pulled from iCloud per site (data layer)"
+      },
+      {
+        "hash": "a2c54d4a",
+        "date": "2026-04-22 20:58:00",
+        "message": "gitignore: tracker/.wrangler/ + .DS_Store (housekeeping)"
+      },
+      {
+        "hash": "140a1a31",
+        "date": "2026-04-22 11:40:08",
+        "message": "Add per-section freshness badge \u2014 shows when data last ran"
+      },
+      {
+        "hash": "78566688",
+        "date": "2026-04-22 10:58:07",
+        "message": "Add Copy fix prompt button to Daily Audit flagged pages"
+      },
+      {
+        "hash": "3f2fcf3c",
+        "date": "2026-04-22 10:51:44",
+        "message": "Daily audit wiring + Push Live deep links + fleet alignment"
+      },
+      {
+        "hash": "c24ee5ad",
+        "date": "2026-04-22 10:43:05",
+        "message": "Fix bingIndexed on homepage, add citation scripts to refresh, canonicalise crawler redirects"
+      },
+      {
+        "hash": "b64f4f3d",
+        "date": "2026-04-14 10:52:34",
+        "message": "Update dashboard data refresh"
+      },
       {
         "hash": "cd1324ce",
         "date": "2026-04-13 07:25:01",

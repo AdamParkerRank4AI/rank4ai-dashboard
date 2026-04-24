@@ -1,0 +1,59 @@
+---
+// Client-side drill-down. Renders the same section detail the agency view shows,
+// but wrapped in the client DashboardLayout (no multi-client sidebar, no admin
+// top-bar). Edit buttons still render; they require the EDIT_SECRET bearer to
+// actually save, so they're inert without it.
+//
+// The passcode gate lives on DashboardLayout (client view check is on
+// /client/<id> only for now; this route inherits the client layout but we still
+// need to gate access. Kept with the same per-client localStorage passcode.
+import DashboardLayout from '../../../layouts/DashboardLayout.astro';
+import clients from '../../../data/clients.json';
+import sections from '../../../data/sections.json';
+
+export function getStaticPaths() {
+  const out: any[] = [];
+  for (const c of (clients as any[])) {
+    const visible: string[] = c.clientViewSections || [];
+    for (const sid of visible) {
+      out.push({ params: { client: c.id, section: sid } });
+    }
+  }
+  return out;
+}
+
+const { client: clientId, section: sectionId } = Astro.params;
+const client = (clients as any[]).find((c) => c.id === clientId);
+if (!client) return Astro.redirect('/');
+
+const section = (sections as any[]).find((s) => s.id === sectionId);
+if (!section) return Astro.redirect(`/client/${clientId}`);
+
+// Forward to the agency section URL. Simplest implementation: iframe the agency
+// page so we reuse its full rendering without duplicating 4000 lines of logic.
+// Agency page has admin gate (1210 only). We pass an URL param telling it to
+// accept the client passcode instead.
+const agencyUrl = `/agency/${clientId}/${sectionId}?view=client&code=${encodeURIComponent(client.clientCode || '')}`;
+---
+
+<DashboardLayout title={`${client.name} — ${section.label}`} currentClient={clientId} view="client">
+  <div class="mb-4 flex items-center justify-between">
+    <div>
+      <h1 class="text-2xl font-bold text-white">{section.label}</h1>
+      <p class="text-sm text-gray-400">{section.description}</p>
+    </div>
+    <a href={`/client/${clientId}`} class="text-xs px-3 py-1.5 rounded bg-gray-800 text-gray-300 hover:bg-gray-700 transition">
+      &larr; Back to overview
+    </a>
+  </div>
+
+  <!-- Embed the agency detail in an iframe. This keeps a single source of truth
+       (the agency [section].astro) and ensures the client sees the exact same
+       data you see. The agency page's admin gate checks the URL query for a
+       client code so it unlocks automatically when referenced this way. -->
+  <iframe
+    src={agencyUrl}
+    style="width:100%; min-height:calc(100vh - 180px); border:0; background:#030712; border-radius:8px;"
+    title={`${section.label} detail`}
+  ></iframe>
+</DashboardLayout>
