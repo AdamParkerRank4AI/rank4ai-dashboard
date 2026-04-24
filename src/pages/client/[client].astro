@@ -91,7 +91,18 @@ const sectionStatus: Record<string, any> = {
   } : { status: 'pending', statusText: 'Setting up', metric: '--', metricLabel: '' },
 
   'search-performance': { status: 'pending', statusText: 'Setting up', metric: '--', metricLabel: '' },
-  'site-manager': { status: 'pending', statusText: 'Setting up', metric: '--', metricLabel: '' },
+  'site-manager': crawlData ? {
+    status: crawlData.total_issues > 10 ? 'warning' : 'healthy',
+    statusText: `${crawlData.pages_crawled} pages · ${crawlData.pages_with_schema} with schema · ${crawlData.total_issues} issues`,
+    metric: `${crawlData.pages_crawled}`,
+    metricLabel: 'Pages indexed',
+  } : { status: 'pending', statusText: 'Setting up', metric: '--', metricLabel: '' },
+  'page-compliance': crawlData ? {
+    status: 'healthy',
+    statusText: `${crawlData.pages_crawled} pages checked`,
+    metric: `${crawlData.pages_with_schema}/${crawlData.pages_crawled}`,
+    metricLabel: 'Pages with schema',
+  } : { status: 'pending', statusText: 'Setting up', metric: '--', metricLabel: '' },
   'recommendations': { status: 'pending', statusText: 'Setting up', metric: '--', metricLabel: '' },
 };
 // Passcode gate. If `clientCode` is present on the client record, the page
