@@ -34,6 +34,7 @@ const bing = loadJson('bing.json') || {};
 const crawlActivity = loadJson('crawl_activity.json') || {};
 const aioSerp = loadJson('ai_overview_serp.json') || {};
 const freshness = loadJson('data_freshness.json') || null;
+const deployParity = loadJson('deploy_parity.json') || null;
 
 // Separate our sites from client sites
 const ourSites = clients.filter((c: any) => c.staging);
@@ -128,6 +129,51 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
     </div>
     <a href="/agency/rank4ai/daily-audit" class="text-xs text-green-300 hover:text-green-100 underline">View Daily Audit →</a>
   </div>
+
+  {deployParity && (
+    <div class={`rounded-lg px-4 py-2 mb-3 border ${deployParity.any_drift ? 'bg-red-900/30 border-red-800' : 'bg-gray-900 border-gray-700'}`}>
+      <div class="flex items-center justify-between flex-wrap gap-2">
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Deploy parity</span>
+          {deployParity.any_drift
+            ? <span class="text-xs text-red-400">⚠ drift detected — git HEAD does not match live deploy on {(deployParity.projects || []).filter((p: any) => p.status === 'drift').length} project(s)</span>
+            : <span class="text-xs text-green-400">✓ all 4 projects in sync (git HEAD = live deploy)</span>
+          }
+          <span class="text-[10px] text-gray-500">checked {deployParity.checked_at?.slice(11, 16)}</span>
+        </div>
+        <details class="text-xs">
+          <summary class="cursor-pointer text-gray-400 hover:text-white">details</summary>
+          <div class="absolute right-8 mt-2 bg-gray-800 border border-gray-700 rounded-lg p-3 shadow-xl z-50 min-w-[460px]">
+            <table class="w-full text-xs">
+              <thead>
+                <tr class="text-left text-gray-500 border-b border-gray-700">
+                  <th class="py-1 pr-2">Project</th>
+                  <th class="py-1 pr-2">git HEAD</th>
+                  <th class="py-1 pr-2">live deploy</th>
+                  <th class="py-1">status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {deployParity.projects?.map((p: any) => (
+                  <tr class="border-b border-gray-800/50">
+                    <td class="py-1 pr-2 text-gray-300">{p.project}</td>
+                    <td class="py-1 pr-2 text-gray-400 font-mono">{(p.git_sha || 'n/a').slice(0, 7)}</td>
+                    <td class="py-1 pr-2 text-gray-400 font-mono">{(p.deploy_sha || 'n/a').slice(0, 7)}</td>
+                    <td class="py-1">
+                      {p.status === 'in_sync' && <span class="text-green-400">✓ in sync</span>}
+                      {p.status === 'drift' && <span class="text-red-400">⚠ drift</span>}
+                      {p.status === 'no_token' && <span class="text-gray-500">? no token</span>}
+                      {p.status === 'api_error' && <span class="text-yellow-400">! api error</span>}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+    </div>
+  )}
 
   {freshness && (
     <div class={`rounded-lg px-4 py-2 mb-4 border ${

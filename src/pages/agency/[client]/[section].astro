@@ -2920,6 +2920,17 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
   )}
 
   <!-- SITE SPEED -->
+  {sectionId === 'site-speed' && pagespeed && pagespeedAll?._meta?.rate_limited_this_run && (
+    <div class="bg-yellow-900/30 border border-yellow-800 rounded-lg p-4 mb-6">
+      <div class="flex items-start gap-3">
+        <span class="text-yellow-400 text-xl">⚠</span>
+        <div class="text-xs">
+          <div class="font-semibold text-yellow-200 mb-1">PageSpeed API rate-limited</div>
+          <div class="text-yellow-300/80">Scores below are from the last successful fetch ({pagespeed.fetched_at?.slice(0, 10) || 'older'}). Today's run (at {pagespeedAll._meta.last_run_at?.slice(11, 16) || '—'}) returned 429 from the PageSpeed Insights API. Scores will refresh once quota resets. Today's site changes may not yet be reflected here.</div>
+        </div>
+      </div>
+    </div>
+  )}
   {sectionId === 'site-speed' && pagespeed && (
     <div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">

@@ -23,26 +23,31 @@
  * message rather than failing silently.
  */
 
+// Per-project CF Pages Deploy Hook IDs. Each hook is a unique URL that
+// triggers a new deployment from the project's configured Git branch.
+// Created once via the CF API (see POST /pages/projects/{name}/deploy_hooks).
+// Hook IDs are not secret on their own but anyone with the ID can trigger
+// a deploy, so we wrap the endpoint with EDIT_SECRET auth.
 const SITE_CONFIG = {
   'rank4ai': {
-    accountEnv: 'CF_TOKEN_RANK4AI',
-    accountId: 'a29a9e6a4fa4965762858586f129b445',
     project: 'rank4ai-preview',
+    hookId: 'fbb51eae-c449-412c-99f7-a01686b1ff32',
+    accountId: 'a29a9e6a4fa4965762858586f129b445',
   },
   'market-invoice': {
-    accountEnv: 'CF_TOKEN_RANK4AI',
-    accountId: 'a29a9e6a4fa4965762858586f129b445',
     project: 'market-invoice',
+    hookId: '3e647ae6-8048-4014-b424-ccb137adfa5f',
+    accountId: 'a29a9e6a4fa4965762858586f129b445',
   },
   'seocompare': {
-    accountEnv: 'CF_TOKEN_MUSWELLROSE',
-    accountId: '927d3dd61a9375f0c8185df7b2a1764e',
     project: 'seocompare',
+    hookId: '2c148416-94e3-4fb1-a91d-84b5d012b229',
+    accountId: '927d3dd61a9375f0c8185df7b2a1764e',
   },
   'dashboard': {
-    accountEnv: 'CF_TOKEN_RANK4AI',
-    accountId: 'a29a9e6a4fa4965762858586f129b445',
     project: 'rank4ai-dashboard',
+    hookId: '0064972e-334f-4b49-8348-e3f666f13c04',
+    accountId: 'a29a9e6a4fa4965762858586f129b445',
   },
 };
 
@@ -81,43 +86,26 @@ export async function onRequestPost(context) {
   const conf = SITE_CONFIG[site];
   if (!conf) return json({ ok: false, error: `Unknown site: ${site}` }, 400);
 
-  const token = env[conf.accountEnv];
-  if (!token) {
-    return json({
-      ok: false,
-      error: `Push Live not wired for ${site}. Set ${conf.accountEnv} in Cloudflare Pages env vars.`,
-      hint: 'Token is the value of ' + conf.accountEnv + ' in ~/.zshrc on Adam\'s machine.',
-    }, 501);
-  }
-
-  // Trigger a new deployment from the configured Git branch (main)
-  // Docs: https://developers.cloudflare.com/api/operations/pages-deployment-create-deployment
-  const url = `https://api.cloudflare.com/client/v4/accounts/${conf.accountId}/pages/projects/${conf.project}/deployments`;
-  const form = new FormData();
-  form.append('branch', 'main');
-  const r = await fetch(url, {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${token}` },
-    body: form,
-  });
+  // Fire the deploy hook. No auth needed on the hook itself (the hook ID
+  // is the auth). POST with empty body triggers a new deployment from the
+  // project's configured Git branch.
+  const hookUrl = `https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/${conf.hookId}`;
+  const r = await fetch(hookUrl, { method: 'POST' });
   const data = await r.json();
-  if (!r.ok || !data.success) {
+  if (!r.ok || !data.result) {
     return json({
       ok: false,
-      error: 'Cloudflare deploy trigger failed',
+      error: 'Cloudflare deploy hook failed',
       cfStatus: r.status,
-      cfErrors: data.errors,
+      cfResponse: data,
     }, 502);
   }
 
-  const d = data.result || {};
   return json({
     ok: true,
     site,
     project: conf.project,
-    deployId: d.id,
-    environment: d.environment,
-    url: d.url,
+    deployId: data.result.id,
     deploymentUrl: `https://dash.cloudflare.com/${conf.accountId}/pages/view/${conf.project}`,
     note: 'Deployment triggered. Usually live within 1–2 minutes.',
   });

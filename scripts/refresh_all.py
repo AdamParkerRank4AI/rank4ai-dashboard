@@ -229,6 +229,11 @@ def main():
     log("\nChecking data freshness...")
     run_script("check_data_freshness.py", 30)
 
+    # Deploy parity guardrail — alerts (and optionally self-heals) if any
+    # Pages project's live deploy doesn't match its origin/main commit
+    log("\nChecking deploy parity (git HEAD vs live deployment)...")
+    run_script("verify_deploy_parity.py", 60)
+
     # Summary
     passed = sum(1 for v in results.values() if v)
     total = len(results)
