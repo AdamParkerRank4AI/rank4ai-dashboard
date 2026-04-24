@@ -10,7 +10,12 @@ interface Props {
 }
 
 const { title, currentClient, view = 'agency' } = Astro.props;
-const isAgency = view === 'agency';
+// When the agency page is embedded from the client drill-down (?view=client)
+// we strip all admin chrome: sidebar, top nav, gate. This lets /client/<id>/<section>
+// iframe in the exact same data without leaking admin UI.
+const embeddedAsClient = Astro.url.searchParams.get('view') === 'client';
+const isAgency = view === 'agency' && !embeddedAsClient;
+const hideChrome = view !== 'agency' || embeddedAsClient;
 const currentClientObj: any = currentClient ? (clients as any[]).find((c) => c.id === currentClient) : null;
 const clientVisibleSections = !isAgency && currentClientObj
   ? (sections as any[]).filter((s) => (currentClientObj.clientViewSections || []).includes(s.id))
@@ -26,8 +31,8 @@ const clientCode: string | null = currentClientObj?.clientCode || null;
   <title>{title} — Rank4AI Dashboard</title>
 </head>
 <body class="bg-gray-950 text-gray-100 min-h-screen">
-  <!-- Top nav -->
-  <nav class="bg-gray-900 border-b border-gray-800 px-6 py-3 flex items-center justify-between">
+  <!-- Top nav (hidden when embedded via client drill-down) -->
+  <nav class="bg-gray-900 border-b border-gray-800 px-6 py-3 flex items-center justify-between" style={embeddedAsClient ? "display:none;" : ""}>
     <div class="flex items-center gap-4">
       {isAgency ? (
         <a href="/" class="text-lg font-bold text-white tracking-tight">Rank4AI</a>
@@ -54,8 +59,8 @@ const clientCode: string | null = currentClientObj?.clientCode || null;
   </nav>
 
   <div class="flex">
-    <!-- Sidebar -->
-    <aside class="w-56 bg-gray-900 border-r border-gray-800 min-h-[calc(100vh-52px)] p-4">
+    <!-- Sidebar (hidden when embedded via client drill-down) -->
+    <aside class="w-56 bg-gray-900 border-r border-gray-800 min-h-[calc(100vh-52px)] p-4" style={embeddedAsClient ? "display:none;" : ""}>
       {isAgency && (
         <>
           <div class="mb-6">
@@ -172,34 +177,36 @@ const clientCode: string | null = currentClientObj?.clientCode || null;
         </div>
       )}
 
-      <div class="mb-6">
-        <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Tools</p>
-        <ul class="space-y-1">
-          <li>
-            <a href="/crm" class={`block px-3 py-2 rounded text-sm transition ${
-              Astro.url.pathname === '/crm' || Astro.url.pathname === '/crm/'
-                ? 'bg-blue-600 text-white'
-                : 'text-gray-300 hover:bg-gray-800'
-            }`}>
-              CRM Pipeline
-            </a>
-          </li>
-          <li>
-            <a href="/run-audit" class={`block px-3 py-2 rounded text-sm transition ${
-              Astro.url.pathname === '/run-audit' || Astro.url.pathname === '/run-audit/'
-                ? 'bg-blue-600 text-white'
-                : 'text-gray-300 hover:bg-gray-800'
-            }`}>
-              Run Audit
-            </a>
-          </li>
-          <li>
-            <a href="/add-client" class="block px-3 py-2 rounded text-sm text-green-400 hover:bg-gray-800 transition">
-              + Add Client
-            </a>
-          </li>
-        </ul>
-      </div>
+      {isAgency && (
+        <div class="mb-6">
+          <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Tools</p>
+          <ul class="space-y-1">
+            <li>
+              <a href="/crm" class={`block px-3 py-2 rounded text-sm transition ${
+                Astro.url.pathname === '/crm' || Astro.url.pathname === '/crm/'
+                  ? 'bg-blue-600 text-white'
+                  : 'text-gray-300 hover:bg-gray-800'
+              }`}>
+                CRM Pipeline
+              </a>
+            </li>
+            <li>
+              <a href="/run-audit" class={`block px-3 py-2 rounded text-sm transition ${
+                Astro.url.pathname === '/run-audit' || Astro.url.pathname === '/run-audit/'
+                  ? 'bg-blue-600 text-white'
+                  : 'text-gray-300 hover:bg-gray-800'
+              }`}>
+                Run Audit
+              </a>
+            </li>
+            <li>
+              <a href="/add-client" class="block px-3 py-2 rounded text-sm text-green-400 hover:bg-gray-800 transition">
+                + Add Client
+              </a>
+            </li>
+          </ul>
+        </div>
+      )}
     </aside>
 
     <!-- Main content -->
