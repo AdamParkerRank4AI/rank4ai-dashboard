@@ -32,7 +32,10 @@ const clientCode: string | null = currentClientObj?.clientCode || null;
 </head>
 <body class="bg-gray-950 text-gray-100 min-h-screen">
   <!-- Top nav (hidden when embedded via client drill-down) -->
-  <nav class="bg-gray-900 border-b border-gray-800 px-6 py-3 flex items-center justify-between" style={embeddedAsClient ? "display:none;" : ""}>
+  <nav class="bg-gray-900 border-b border-gray-800 px-4 md:px-6 py-3 flex items-center justify-between gap-3" style={embeddedAsClient ? "display:none;" : ""}>
+    <button id="r4ai-sidebar-toggle" type="button" class="md:hidden text-gray-300 hover:text-white -ml-1 p-1" aria-label="Toggle menu">
+      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
     <div class="flex items-center gap-4">
       {isAgency ? (
         <a href="/" class="text-lg font-bold text-white tracking-tight">Rank4AI</a>
@@ -58,9 +61,18 @@ const clientCode: string | null = currentClientObj?.clientCode || null;
     </div>
   </nav>
 
-  <div class="flex">
-    <!-- Sidebar (hidden when embedded via client drill-down) -->
-    <aside class="w-56 bg-gray-900 border-r border-gray-800 min-h-[calc(100vh-52px)] p-4" style={embeddedAsClient ? "display:none;" : ""}>
+  <div class="flex relative">
+    <!-- Mobile sidebar backdrop -->
+    {!embeddedAsClient && (
+      <div id="r4ai-sidebar-backdrop" class="hidden fixed inset-0 bg-black/60 z-30 md:hidden" aria-hidden="true"></div>
+    )}
+
+    <!-- Sidebar: always visible on md+, slide-in drawer on mobile -->
+    <aside
+      id="r4ai-sidebar"
+      class="w-56 bg-gray-900 border-r border-gray-800 min-h-[calc(100vh-52px)] p-4 fixed md:static top-[52px] md:top-auto left-0 z-40 md:z-auto -translate-x-full md:translate-x-0 transition-transform"
+      style={embeddedAsClient ? "display:none;" : ""}
+    >
       {isAgency && (
         <>
           <div class="mb-6">
@@ -210,10 +222,36 @@ const clientCode: string | null = currentClientObj?.clientCode || null;
     </aside>
 
     <!-- Main content -->
-    <main class="flex-1 p-6" id="r4ai-main-content" style={isAgency ? "display:none;" : ""}>
+    <main class="flex-1 min-w-0 p-4 md:p-6 overflow-x-hidden" id="r4ai-main-content" style={isAgency ? "display:none;" : ""}>
       <slot />
     </main>
   </div>
+
+  <!-- Mobile sidebar toggle -->
+  <script is:inline>
+    (function(){
+      var btn = document.getElementById('r4ai-sidebar-toggle');
+      var side = document.getElementById('r4ai-sidebar');
+      var back = document.getElementById('r4ai-sidebar-backdrop');
+      if (!btn || !side) return;
+      function open(){
+        side.classList.remove('-translate-x-full');
+        if (back) back.classList.remove('hidden');
+      }
+      function close(){
+        side.classList.add('-translate-x-full');
+        if (back) back.classList.add('hidden');
+      }
+      btn.addEventListener('click', function(){
+        if (side.classList.contains('-translate-x-full')) open(); else close();
+      });
+      if (back) back.addEventListener('click', close);
+      // Close when a link inside is clicked (navigation)
+      side.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', close);
+      });
+    })();
+  </script>
 
   {isAgency && (
     <div id="r4ai-admin-gate" style="position:fixed; inset:0; background:#030712; display:flex; align-items:center; justify-content:center; z-index:9999; padding:24px;">
