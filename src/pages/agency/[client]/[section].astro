@@ -549,33 +549,34 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
   <!-- PAGE COMPLIANCE — per-page H1/meta/schema/OG/canonical/author checklist -->
   {sectionId === 'page-compliance' && crawlData && (
     <div>
-      {/* Summary row */}
+      {/* Summary row — click to filter */}
       <div class="grid grid-cols-2 md:grid-cols-6 gap-3 mb-4">
-        <div class="bg-gray-900 border border-gray-800 rounded-lg p-3 text-center">
+        <button type="button" data-pc-tile="all" class="pc-tile bg-gray-900 border border-gray-800 rounded-lg p-3 text-center hover:border-gray-600 transition cursor-pointer">
           <div class="text-xl font-bold text-white">{crawlData.pages?.filter((p: any) => p.status === 200).length || 0}</div>
           <div class="text-[10px] text-gray-500 uppercase">Live pages</div>
-        </div>
-        <div class="bg-gray-900 border border-gray-800 rounded-lg p-3 text-center">
+        </button>
+        <button type="button" data-pc-tile="pass" class="pc-tile bg-gray-900 border border-gray-800 rounded-lg p-3 text-center hover:border-green-700 transition cursor-pointer">
           <div class="text-xl font-bold text-green-400">{crawlData.pages?.filter((p: any) => p.status === 200 && p.h1 && p.title && p.meta_desc && p.canonical && p.has_og_tags && p.schemas?.length).length || 0}</div>
           <div class="text-[10px] text-gray-500 uppercase">All checks ✓</div>
-        </div>
-        <div class="bg-gray-900 border border-gray-800 rounded-lg p-3 text-center">
+        </button>
+        <button type="button" data-pc-tile="fail" class="pc-tile bg-gray-900 border border-gray-800 rounded-lg p-3 text-center hover:border-red-700 transition cursor-pointer">
           <div class="text-xl font-bold text-red-400">{crawlData.pages?.filter((p: any) => p.status === 200 && (!p.h1 || !p.title || !p.meta_desc)).length || 0}</div>
           <div class="text-[10px] text-gray-500 uppercase">Missing basics</div>
-        </div>
-        <div class="bg-gray-900 border border-gray-800 rounded-lg p-3 text-center">
+        </button>
+        <button type="button" data-pc-tile="long-title" class="pc-tile bg-gray-900 border border-gray-800 rounded-lg p-3 text-center hover:border-yellow-700 transition cursor-pointer">
           <div class="text-xl font-bold text-yellow-400">{crawlData.pages?.filter((p: any) => p.status === 200 && (p.title?.length > 70 || p.meta_desc?.length > 160)).length || 0}</div>
           <div class="text-[10px] text-gray-500 uppercase">Too long</div>
-        </div>
-        <div class="bg-gray-900 border border-gray-800 rounded-lg p-3 text-center">
+        </button>
+        <button type="button" data-pc-tile="orphan" class="pc-tile bg-gray-900 border border-gray-800 rounded-lg p-3 text-center hover:border-orange-700 transition cursor-pointer">
           <div class="text-xl font-bold text-orange-400">{crawlData.pages?.filter((p: any) => p.status === 200 && p.internal_links_in === 0).length || 0}</div>
           <div class="text-[10px] text-gray-500 uppercase">Orphans</div>
-        </div>
-        <div class="bg-gray-900 border border-gray-800 rounded-lg p-3 text-center">
+        </button>
+        <button type="button" data-pc-tile="thin" class="pc-tile bg-gray-900 border border-gray-800 rounded-lg p-3 text-center hover:border-blue-700 transition cursor-pointer">
           <div class="text-xl font-bold text-white">{crawlData.pages?.filter((p: any) => p.status === 200 && p.word_count < 300).length || 0}</div>
           <div class="text-[10px] text-gray-500 uppercase">Thin (&lt;300w)</div>
-        </div>
+        </button>
       </div>
+      <p class="text-[11px] text-gray-500 mb-3">Click any tile above to filter the table. Click a row to expand. Click Edit next to Title or Meta to change the value live.</p>
 
       {/* Filter toolbar */}
       <div class="flex flex-wrap items-center gap-2 mb-3">
@@ -902,6 +903,19 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
           search.addEventListener('input', applyFilters);
           filter.addEventListener('change', applyFilters);
           applyFilters();
+
+          // Summary tiles drive the filter dropdown
+          document.querySelectorAll('.pc-tile').forEach((tile) => {
+            tile.addEventListener('click', () => {
+              const t = tile.dataset.pcTile;
+              if (t && filter) {
+                filter.value = t;
+                applyFilters();
+                // Scroll to table
+                document.getElementById('pc-table')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            });
+          });
         })();
       </script>
     </div>

@@ -17,10 +17,24 @@
  */
 
 const SITE_REPOS = {
-  'rank4ai':        { owner: 'AdamParkerRank4AI', repo: 'rank4ai-preview', pagesDir: 'src/pages', dataDir: 'src/data' },
-  'market-invoice': { owner: 'AdamParkerRank4AI', repo: 'market-invoice',  pagesDir: 'src/pages', dataDir: 'src/data' },
-  'seocompare':     { owner: 'AdamParkerRank4AI', repo: 'seocompare',      pagesDir: 'src/pages', dataDir: 'src/data' },
+  'rank4ai':        { owner: 'AdamParkerRank4AI', repo: 'rank4ai-preview', pagesDir: 'src/pages', dataDir: 'src/data', deployHookId: 'fbb51eae-c449-412c-99f7-a01686b1ff32' },
+  'market-invoice': { owner: 'AdamParkerRank4AI', repo: 'market-invoice',  pagesDir: 'src/pages', dataDir: 'src/data', deployHookId: '3e647ae6-8048-4014-b424-ccb137adfa5f' },
+  'seocompare':     { owner: 'AdamParkerRank4AI', repo: 'seocompare',      pagesDir: 'src/pages', dataDir: 'src/data', deployHookId: '2c148416-94e3-4fb1-a91d-84b5d012b229' },
 };
+
+// Fire a Cloudflare Pages deploy hook to force immediate deployment of a
+// freshly-committed change. CF Pages GitHub webhook has been unreliable;
+// this is the belt-and-braces safeguard so edits always reach live.
+async function triggerDeployHook(hookId) {
+  if (!hookId) return null;
+  try {
+    const r = await fetch(`https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/${hookId}`, { method: 'POST' });
+    const d = await r.json();
+    return d?.result?.id || null;
+  } catch {
+    return null;
+  }
+}
 
 // Which URL prefix maps to which JSON data file + how the edit fields map
 // onto that file's record schema. Only populated for sites/routes that are
@@ -300,6 +314,9 @@ New value: ${newValue.slice(0, 80)}${newValue.length > 80 ? '…' : ''}`;
       token: GITHUB_TOKEN,
     });
 
+    // Force immediate deployment — CF GitHub webhook has been unreliable
+    const deployId = await triggerDeployHook(repoConf.deployHookId);
+
     return json({
       ok: true,
       filePath,
@@ -307,7 +324,11 @@ New value: ${newValue.slice(0, 80)}${newValue.length > 80 ? '…' : ''}`;
       slug: jsonRoute.slug,
       commit: result.commit?.sha,
       commitUrl: result.commit?.html_url,
-      deployNote: 'Cloudflare Pages will auto-deploy this commit within 1–2 minutes.',
+      deployTriggered: !!deployId,
+      deployId,
+      deployNote: deployId
+        ? 'Deploy hook fired. Usually live in 1-2 minutes.'
+        : 'Committed. Waiting for CF auto-deploy (may be delayed — check dashboard parity).',
     });
   }
 
@@ -366,12 +387,18 @@ File: ${filePath}`;
     token: GITHUB_TOKEN,
   });
 
+  const deployId = await triggerDeployHook(repoConf.deployHookId);
+
   return json({
     ok: true,
     filePath,
     patternMatched: which,
     commit: result.commit?.sha,
     commitUrl: result.commit?.html_url,
-    deployNote: 'Cloudflare Pages will auto-deploy this commit within 1–2 minutes.',
+    deployTriggered: !!deployId,
+    deployId,
+    deployNote: deployId
+      ? 'Deploy hook fired. Usually live in 1-2 minutes.'
+      : 'Committed. Waiting for CF auto-deploy (may be delayed — check dashboard parity).',
   });
 }
