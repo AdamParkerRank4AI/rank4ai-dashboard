@@ -3863,6 +3863,145 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
   <!-- Fallback for sections without detail pages -->
   {sectionId === 'content-plan' && (
     <div>
+      {/* Actions Tile — the unified to-do list Adam asked for */}
+      {(() => {
+        // Build merged actions list from 3 sources
+        const actions = [];
+        // 1. SEO gaps — GSC queries with impressions but 0 clicks
+        const seoGaps = gsc?.content_gaps || [];
+        for (const g of seoGaps) {
+          actions.push({
+            source: 'SEO',
+            title: g.query,
+            detail: `${g.impressions} impressions, position ${(g.position || 0).toFixed(1)}, ${(g.ctr || 0).toFixed(1)}% CTR`,
+            impact: g.impressions,
+            query: g.query,
+            type: 'seo-gap',
+          });
+        }
+        // 2. AI Search gaps — queries brand not cited for
+        const byType = citByType?.by_type || {};
+        for (const [qtype, data] of Object.entries(byType)) {
+          for (const r of (data.results || [])) {
+            if (!r.brand_mentioned) {
+              const comps = r.competitors_mentioned || [];
+              actions.push({
+                source: 'AI Search',
+                title: r.query,
+                detail: `Not cited in ${qtype}${comps.length ? ` · competitors cited: ${comps.join(', ')}` : ''}`,
+                impact: comps.length * 5, // rough ranking: more competitor mentions = bigger gap
+                query: r.query,
+                type: 'ai-gap',
+                competitors: comps,
+              });
+            }
+          }
+        }
+        // 3. AIO gaps
+        const aioResults = aioSerp?.results || [];
+        for (const r of aioResults) {
+          if (r.has_ai_overview && !r.brand_in_ai_overview) {
+            actions.push({
+              source: 'AIO',
+              title: r.query,
+              detail: 'AI Overview present but brand absent',
+              impact: 10,
+              query: r.query,
+              type: 'aio-gap',
+            });
+          }
+        }
+        // Sort by impact desc
+        actions.sort((a, b) => (b.impact || 0) - (a.impact || 0));
+
+        if (actions.length === 0) return null;
+
+        return (
+          <div class="bg-gray-900 border border-blue-700 rounded-lg p-5 mb-6">
+            <div class="flex items-center justify-between mb-3">
+              <div>
+                <h3 class="text-sm font-semibold text-white">Actions ({actions.length})</h3>
+                <p class="text-[11px] text-gray-400">Merged to-do list. Click Copy to get a Claude-ready brief. Items grey out after copying; new items added daily. By Friday you see what's done vs outstanding.</p>
+              </div>
+              <button type="button" id="actions-clear" class="text-[10px] text-gray-500 hover:text-gray-300 underline">Reset greyed</button>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-3 text-[11px]">
+              <button type="button" data-actions-filter="all" class="actions-filter px-2 py-1 rounded bg-gray-800 text-white border border-gray-700 hover:bg-gray-700">All ({actions.length})</button>
+              <button type="button" data-actions-filter="SEO" class="actions-filter px-2 py-1 rounded bg-blue-900/40 text-blue-300 border border-blue-800/40 hover:bg-blue-900/60">SEO ({actions.filter((a: any) => a.source === 'SEO').length})</button>
+              <button type="button" data-actions-filter="AI Search" class="actions-filter px-2 py-1 rounded bg-purple-900/40 text-purple-300 border border-purple-800/40 hover:bg-purple-900/60">AI Search ({actions.filter((a: any) => a.source === 'AI Search').length})</button>
+              <button type="button" data-actions-filter="AIO" class="actions-filter px-2 py-1 rounded bg-cyan-900/40 text-cyan-300 border border-cyan-800/40 hover:bg-cyan-900/60">AIO ({actions.filter((a: any) => a.source === 'AIO').length})</button>
+            </div>
+            <div class="space-y-1" id="actions-list">
+              {actions.slice(0, 80).map((a: any, i: number) => (
+                <div class="action-row flex items-center gap-3 px-3 py-2 rounded bg-gray-800/40 hover:bg-gray-800/70 transition" data-action-id={`${clientId}-${a.type}-${i}`} data-action-source={a.source}>
+                  <span class={`text-[9px] px-1.5 py-0.5 rounded font-semibold ${a.source === 'SEO' ? 'bg-blue-900/60 text-blue-300' : a.source === 'AI Search' ? 'bg-purple-900/60 text-purple-300' : 'bg-cyan-900/60 text-cyan-300'}`}>{a.source}</span>
+                  <div class="flex-1 min-w-0">
+                    <div class="text-xs text-white truncate" title={a.title}>{a.title}</div>
+                    <div class="text-[10px] text-gray-500 truncate">{a.detail}</div>
+                  </div>
+                  <button type="button" class="action-copy text-[10px] px-2 py-1 rounded bg-emerald-800/60 text-emerald-200 hover:bg-emerald-700 transition whitespace-nowrap" data-title={a.title} data-detail={a.detail} data-source={a.source} data-type={a.type}>Copy</button>
+                </div>
+              ))}
+            </div>
+            <script is:inline define:vars={{ clientId, clientDomain: client.domain }}>
+              (function() {
+                var key = 'actions-greyed-' + clientId;
+                var greyed = {};
+                try { greyed = JSON.parse(localStorage.getItem(key) || '{}'); } catch {}
+                function render() {
+                  document.querySelectorAll('#actions-list .action-row').forEach(function(row) {
+                    if (greyed[row.dataset.actionId]) {
+                      row.style.opacity = '0.35';
+                      row.style.filter = 'grayscale(100%)';
+                      var btn = row.querySelector('.action-copy');
+                      if (btn) { btn.textContent = 'Copied ✓'; btn.style.background = '#166534'; }
+                    }
+                  });
+                }
+                render();
+                document.querySelectorAll('.action-copy').forEach(function(btn) {
+                  btn.addEventListener('click', function() {
+                    var row = btn.closest('.action-row');
+                    var title = btn.dataset.title;
+                    var detail = btn.dataset.detail;
+                    var source = btn.dataset.source;
+                    var type = btn.dataset.type;
+                    var brief = 'Site: ' + clientDomain + '\\n' +
+                                'Source: ' + source + ' gap\\n' +
+                                'Query: ' + title + '\\n' +
+                                'Detail: ' + detail + '\\n\\n' +
+                                'Action: ' + (type === 'seo-gap'
+                                  ? 'Write/rewrite a page targeting this query. Use the question as H1, answer in the first 150 words, include related subqueries as H2s.'
+                                  : type === 'ai-gap'
+                                  ? 'Create a definitive answer page that AI tools will cite. Structure: clear definition in first sentence, comparison table, sources, author byline.'
+                                  : 'Optimise existing page or create one with structured answer in the first 200 words, listicle H2s, question-format headings.');
+                    navigator.clipboard.writeText(brief).then(function() {
+                      greyed[row.dataset.actionId] = Date.now();
+                      localStorage.setItem(key, JSON.stringify(greyed));
+                      render();
+                    });
+                  });
+                });
+                document.querySelectorAll('.actions-filter').forEach(function(b) {
+                  b.addEventListener('click', function() {
+                    var f = b.dataset.actionsFilter;
+                    document.querySelectorAll('#actions-list .action-row').forEach(function(row) {
+                      row.style.display = (f === 'all' || row.dataset.actionSource === f) ? '' : 'none';
+                    });
+                  });
+                });
+                document.getElementById('actions-clear')?.addEventListener('click', function() {
+                  if (confirm('Reset all greyed-out actions?')) {
+                    localStorage.removeItem(key);
+                    location.reload();
+                  }
+                });
+              })();
+            </script>
+          </div>
+        );
+      })()}
+
       {/* iCloud Content Plans (per-site canonical strategy docs) */}
       {contentPlans.length > 0 && (
         <div class="bg-gray-900 border border-purple-700 rounded-lg p-6 mb-6">
