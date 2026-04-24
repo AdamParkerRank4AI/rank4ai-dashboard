@@ -227,6 +227,29 @@ const clientCode: string | null = currentClientObj?.clientCode || null;
     </main>
   </div>
 
+  <!-- Client drill-down embed: hide all admin chrome via JS.
+       Astro is static, so ?view=client doesn't flow through Astro.url at
+       build time. Detect it here at runtime instead. -->
+  <script is:inline>
+    (function(){
+      try {
+        var params = new URL(window.location.href).searchParams;
+        if (params.get('view') === 'client') {
+          document.documentElement.classList.add('r4ai-embedded');
+          var style = document.createElement('style');
+          style.textContent =
+            '.r4ai-embedded nav.bg-gray-900.border-b { display:none !important; }' +
+            '.r4ai-embedded aside#r4ai-sidebar { display:none !important; }' +
+            '.r4ai-embedded #r4ai-sidebar-backdrop { display:none !important; }' +
+            '.r4ai-embedded #r4ai-admin-gate { display:none !important; }' +
+            '.r4ai-embedded #r4ai-main-content { display:block !important; padding:16px !important; }' +
+            '.r4ai-embedded body { background:#030712; }';
+          document.head.appendChild(style);
+        }
+      } catch(e){}
+    })();
+  </script>
+
   <!-- Mobile sidebar toggle -->
   <script is:inline>
     (function(){

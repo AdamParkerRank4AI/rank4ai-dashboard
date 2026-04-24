@@ -36,6 +36,8 @@ const aioSerp = loadJson('ai_overview_serp.json') || {};
 const freshness = loadJson('data_freshness.json') || null;
 const deployParity = loadJson('deploy_parity.json') || null;
 const wins = loadJson('wins_this_week.json') || null;
+const manualQueue = loadJson('manual_indexing_queue.json') || null;
+const cfCrawls = loadJson('cf_ai_crawls.json') || null;
 
 // Compute real AI Overview numbers across all sites (home tile was showing
 // totalRecs mislabelled as "AI Overview fixes" — not the same thing)
@@ -305,6 +307,112 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
             ))}
           </div>
         </details>
+      </div>
+    </div>
+  )}
+
+  {/* Manual GSC submissions — daily queue for "Request indexing" button */}
+  {manualQueue && (
+    <div class="rounded-lg px-4 py-3 mb-4 border bg-indigo-950/30 border-indigo-800/50">
+      <div class="flex items-center justify-between flex-wrap gap-3 mb-2">
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-semibold text-indigo-300 uppercase tracking-wider">Today's Manual GSC Submissions</span>
+          <span class="text-[11px] text-gray-400">Paste into GSC URL Inspection → click "Request Indexing"</span>
+        </div>
+        <span class="text-[10px] text-gray-500">~30 URLs total today · {new Date(manualQueue.generated_at).toLocaleDateString('en-GB', { day: '2-digit', month: 'short' })}</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+        {Object.entries(manualQueue.per_site || {}).map(([siteId, data]: [string, any]) => (
+          <div class="bg-gray-900/60 border border-gray-800 rounded p-2.5">
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="text-[11px] font-semibold text-white">{siteId}</div>
+              <a href={data.gsc_inspect_url} target="_blank" rel="noopener" class="text-[10px] text-indigo-400 hover:text-indigo-300">Open GSC →</a>
+            </div>
+            <div class="text-[10px] text-gray-500 mb-1.5">{data.never_api_submitted} of {data.sitemap_url_count} not yet API-submitted</div>
+            {data.top?.length ? (
+              <ol class="space-y-1">
+                {data.top.slice(0, 10).map((item: any, i: number) => (
+                  <li class="flex items-start gap-1.5 group">
+                    <span class="text-[10px] text-gray-600 w-4 shrink-0 pt-0.5">{i + 1}.</span>
+                    <button
+                      class="text-[10px] text-gray-300 hover:text-white text-left break-all flex-1 transition manual-copy-btn"
+                      data-url={item.url}
+                      title="Click to copy"
+                    >
+                      {item.url.replace(/^https?:\/\/(www\.)?/, '')}
+                    </button>
+                  </li>
+                ))}
+              </ol>
+            ) : (
+              <div class="text-[10px] text-gray-500 italic">queue empty — all submitted</div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+
+  <script is:inline>
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.manual-copy-btn');
+      if (!btn) return;
+      const url = btn.dataset.url;
+      navigator.clipboard.writeText(url).then(() => {
+        const original = btn.textContent;
+        btn.textContent = '✓ copied';
+        btn.classList.add('text-emerald-400');
+        setTimeout(() => { btn.textContent = original; btn.classList.remove('text-emerald-400'); }, 1200);
+      });
+    });
+  </script>
+
+  {/* Cloudflare AI Crawl Control — true-count bot traffic from the edge */}
+  {cfCrawls && (
+    <div class="rounded-lg px-4 py-3 mb-4 border bg-orange-950/30 border-orange-900/50">
+      <div class="flex items-center justify-between flex-wrap gap-3 mb-2">
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-semibold text-orange-300 uppercase tracking-wider">Cloudflare AI Crawl Control (30d)</span>
+          <span class="text-[11px] text-gray-400">Edge-level bot counts, not sampled</span>
+        </div>
+        <span class="text-[10px] text-gray-500">Fetched {cfCrawls.fetched_at ? new Date(cfCrawls.fetched_at).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }) : '—'}</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+        {Object.entries(cfCrawls.per_site || {}).map(([siteId, data]: [string, any]) => (
+          <div class="bg-gray-900/60 border border-gray-800 rounded p-2.5">
+            <div class="text-[11px] font-semibold text-white mb-1.5">{siteId}</div>
+            {data.error ? (
+              <div class="text-[10px] text-red-400">
+                {data.error.includes('analytics.read') || data.error.includes('permission') ? (
+                  <>⚠ CF token missing Analytics:Read scope. <a href="https://dash.cloudflare.com/profile/api-tokens" target="_blank" class="underline">Edit token</a> and add it.</>
+                ) : (
+                  <>✗ {data.error.slice(0, 80)}</>
+                )}
+              </div>
+            ) : (
+              <>
+                <div class="flex items-end gap-3 mb-2">
+                  <div>
+                    <div class="text-lg font-bold text-orange-400">{(data.total_30d || 0).toLocaleString()}</div>
+                    <div class="text-[10px] text-gray-400">AI bot hits</div>
+                  </div>
+                  <div>
+                    <div class="text-sm font-semibold text-white">{data.unique_bots || 0}</div>
+                    <div class="text-[10px] text-gray-400">distinct bots</div>
+                  </div>
+                </div>
+                <div class="space-y-0.5">
+                  {Object.entries(data.totals_by_bot || {}).slice(0, 5).map(([bot, n]: [string, any]) => (
+                    <div class="flex items-center justify-between text-[10px]">
+                      <span class="text-gray-300">{bot}</span>
+                      <span class="text-gray-500">{n.toLocaleString()}</span>
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   )}
