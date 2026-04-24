@@ -34,6 +34,11 @@ SITES = {
         "max_pages": 1000,
         "sitemap": "https://seocompare.co.uk/sitemap-0.xml",
     },
+    "rochellemarashi": {
+        "url": "https://rochellemarashi.pages.dev",
+        "max_pages": 500,
+        "sitemap": "https://rochellemarashi.pages.dev/sitemap-0.xml",
+    },
 }
 
 HEADERS = {

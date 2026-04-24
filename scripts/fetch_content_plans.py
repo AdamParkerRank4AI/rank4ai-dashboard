@@ -29,6 +29,9 @@ SITE_PLAN_DIRS = {
         f"{ICLOUD}/astro/rank4ai",
         f"{ICLOUD}/astro/compareaiseo" if os.path.isdir(f"{ICLOUD}/astro/compareaiseo") else None,
     ],
+    "rochellemarashi": [
+        f"{ICLOUD}/Clients/Therapy Site",
+    ],
 }
 
 PLAN_FILE_PATTERNS = [

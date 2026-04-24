@@ -31,6 +31,12 @@ REPOS = {
         "local": os.path.expanduser("~/compareaiseo"),
         "crawl_file": "crawl_seocompare.json",
     },
+    "rochellemarashi": {
+        "owner": "AdamParkerRank4AI",
+        "repo": "rochellemarashi",
+        "local": os.path.expanduser("~/rochellemarashi"),
+        "crawl_file": "crawl_rochellemarashi.json",
+    },
     "rank4ai-dashboard": {
         "owner": "AdamParkerRank4AI",
         "repo": "rank4ai-dashboard",

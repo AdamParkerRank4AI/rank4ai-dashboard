@@ -26,6 +26,7 @@ SITE_ID_MAP = {
     "Rank4AI": "rank4ai",
     "Market Invoice": "market-invoice",
     "SEO Compare": "seocompare",
+    "Rochelle Marashi Therapy": "rochellemarashi",
 }
 
 
