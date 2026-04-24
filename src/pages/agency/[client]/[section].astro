@@ -578,6 +578,57 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
       </div>
       <p class="text-[11px] text-gray-500 mb-3">Click any tile above to filter the table. Click a row to expand. Click Edit next to Title or Meta to change the value live.</p>
 
+      {clientId === 'rank4ai' && (
+        <div class="mb-4 bg-gray-900 border border-gray-800 rounded-lg p-4">
+          <div class="flex items-center justify-between mb-2">
+            <div>
+              <h3 class="text-sm font-semibold text-white">Create new page</h3>
+              <p class="text-[11px] text-gray-500">JSON-driven pages (blog / question / stat / weekly). Adds to the data file + fires deploy.</p>
+            </div>
+            <button type="button" id="cp-toggle" class="px-3 py-1.5 rounded text-xs bg-emerald-700 text-white hover:bg-emerald-600">+ New page</button>
+          </div>
+          <div id="cp-form" class="hidden mt-3 grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div>
+              <label class="text-[10px] text-gray-400 uppercase tracking-wider">Type</label>
+              <select id="cp-type" class="w-full bg-gray-800 border border-gray-700 rounded px-2 py-1.5 text-xs text-white">
+                <option value="blog">Blog post (/blog/)</option>
+                <option value="question">Q&A (/learn/questions/)</option>
+                <option value="stat">Stat page (/research/stats/)</option>
+                <option value="weekly">Weekly intel (/research/weekly-intelligence/)</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-[10px] text-gray-400 uppercase tracking-wider">Slug (URL-safe)</label>
+              <input type="text" id="cp-slug" placeholder="e.g. ai-seo-for-plumbers" class="w-full bg-gray-800 border border-gray-700 rounded px-2 py-1.5 text-xs text-white placeholder-gray-600" />
+            </div>
+            <div class="md:col-span-2" id="cp-title-row">
+              <label class="text-[10px] text-gray-400 uppercase tracking-wider">Title</label>
+              <input type="text" id="cp-title" placeholder="Page title" class="w-full bg-gray-800 border border-gray-700 rounded px-2 py-1.5 text-xs text-white placeholder-gray-600" />
+            </div>
+            <div class="md:col-span-2 hidden" id="cp-question-row">
+              <label class="text-[10px] text-gray-400 uppercase tracking-wider">Question</label>
+              <input type="text" id="cp-question" placeholder="What is...?" class="w-full bg-gray-800 border border-gray-700 rounded px-2 py-1.5 text-xs text-white placeholder-gray-600" />
+            </div>
+            <div class="md:col-span-2">
+              <label class="text-[10px] text-gray-400 uppercase tracking-wider">Meta description (optional)</label>
+              <textarea id="cp-metaDesc" maxLength="160" placeholder="Under 160 chars" class="w-full bg-gray-800 border border-gray-700 rounded px-2 py-1.5 text-xs text-white placeholder-gray-600 min-h-[50px]"></textarea>
+              <div id="cp-metaDesc-counter" class="text-[10px] text-gray-500"></div>
+            </div>
+            <div class="md:col-span-2">
+              <label class="text-[10px] text-gray-400 uppercase tracking-wider">Body (HTML, optional)</label>
+              <textarea id="cp-body" placeholder="<p>…</p> — optional, can edit later" class="w-full bg-gray-800 border border-gray-700 rounded px-2 py-1.5 text-xs text-white placeholder-gray-600 min-h-[70px] font-mono"></textarea>
+            </div>
+            <div class="md:col-span-2 flex flex-wrap items-center gap-2">
+              <button type="button" id="cp-preview" class="px-3 py-1.5 rounded text-xs bg-blue-700 text-white hover:bg-blue-600">Preview</button>
+              <button type="button" id="cp-confirm" class="px-3 py-1.5 rounded text-xs bg-emerald-700 text-white hover:bg-emerald-600 hidden">Confirm + create</button>
+              <button type="button" id="cp-cancel" class="px-3 py-1.5 rounded text-xs bg-gray-700 text-gray-300 hover:bg-gray-600">Cancel</button>
+              <span id="cp-status" class="text-[11px] flex-1"></span>
+            </div>
+            <div id="cp-preview-box" class="md:col-span-2 hidden bg-gray-800 border border-blue-800/40 rounded p-3 text-[11px]"></div>
+          </div>
+        </div>
+      )}
+
       {/* Filter toolbar */}
       <div class="flex flex-wrap items-center gap-2 mb-3">
         <input type="text" id="pc-search" placeholder="Search URL, title, H1..." class="bg-gray-800 border border-gray-700 rounded px-3 py-1.5 text-sm text-white placeholder-gray-500 flex-1 min-w-[200px]" />
@@ -801,23 +852,31 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
             input.addEventListener('input', updateCounter);
             updateCounter();
             const actions = document.createElement('div');
-            actions.className = 'flex items-center gap-2';
-            const saveBtn = document.createElement('button');
-            saveBtn.type = 'submit';
-            saveBtn.className = 'px-2 py-1 rounded text-[11px] bg-emerald-700 text-white hover:bg-emerald-600';
-            saveBtn.textContent = 'Save + deploy';
+            actions.className = 'flex items-center gap-2 flex-wrap';
+            const previewBtn = document.createElement('button');
+            previewBtn.type = 'button';
+            previewBtn.className = 'px-2 py-1 rounded text-[11px] bg-blue-700 text-white hover:bg-blue-600';
+            previewBtn.textContent = 'Preview';
+            const confirmBtn = document.createElement('button');
+            confirmBtn.type = 'button';
+            confirmBtn.className = 'px-2 py-1 rounded text-[11px] bg-emerald-700 text-white hover:bg-emerald-600 hidden';
+            confirmBtn.textContent = 'Confirm + deploy';
             const cancelBtn = document.createElement('button');
             cancelBtn.type = 'button';
             cancelBtn.className = 'px-2 py-1 rounded text-[11px] bg-gray-700 text-gray-300 hover:bg-gray-600';
             cancelBtn.textContent = 'Cancel';
             const status = document.createElement('span');
-            status.className = 'text-[11px]';
-            actions.appendChild(saveBtn);
+            status.className = 'text-[11px] flex-1';
+            const previewBox = document.createElement('div');
+            previewBox.className = 'hidden bg-gray-800 border border-blue-800/40 rounded p-2 text-[11px]';
+            actions.appendChild(previewBtn);
+            actions.appendChild(confirmBtn);
             actions.appendChild(cancelBtn);
             actions.appendChild(status);
             form.appendChild(input);
             form.appendChild(counter);
             form.appendChild(actions);
+            form.appendChild(previewBox);
             valueDiv.appendChild(form);
             input.focus();
 
@@ -825,55 +884,202 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
               valueDiv.innerHTML = current || '<span class="text-red-500">(missing)</span>';
             });
 
-            form.addEventListener('submit', async (ev) => {
-              ev.preventDefault();
+            const authedFetch = async (body) => {
+              let token = getToken();
+              if (!token) {
+                if (!promptForToken('First edit — paste your edit token (saved in this tab only).')) return null;
+                token = getToken();
+                if (!token) return null;
+              }
+              const r = await fetch('/api/edit-page', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+                body: JSON.stringify(body),
+              });
+              const data = await r.json();
+              return { r, data };
+            };
+
+            previewBtn.addEventListener('click', async () => {
               const newValue = input.value.trim();
               if (!newValue) { status.textContent = 'Empty'; status.style.color = '#f87171'; return; }
               if (newValue.length > maxLen) { status.textContent = 'Too long'; status.style.color = '#f87171'; return; }
 
-              let token = getToken();
-              if (!token) {
-                if (!promptForToken('First edit — paste your edit token (saved in this tab only).')) return;
-                token = getToken();
-                if (!token) return;
-              }
-
-              saveBtn.disabled = true;
-              status.textContent = 'Saving…';
+              previewBtn.disabled = true;
+              status.textContent = 'Checking…';
               status.style.color = '#facc15';
 
               try {
-                const r = await fetch('/api/edit-page', {
-                  method: 'POST',
-                  headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer ' + token,
-                  },
-                  body: JSON.stringify({ site: clientId, path, field, newValue }),
-                });
-                const data = await r.json();
+                const result = await authedFetch({ site: clientId, path, field, newValue, dryRun: true });
+                if (!result) { previewBtn.disabled = false; status.textContent = ''; return; }
+                const { r, data } = result;
                 if (!r.ok || !data.ok) {
                   status.textContent = '✗ ' + (data.error || ('HTTP ' + r.status));
                   status.style.color = '#f87171';
                   if (r.status === 401) setToken('');
-                  saveBtn.disabled = false;
+                  previewBtn.disabled = false;
                   return;
                 }
-                status.innerHTML = '✓ Committed <a href="' + (data.commitUrl || '#') + '" target="_blank" class="underline">' + (data.commit ? data.commit.slice(0, 7) : '') + '</a>';
-                status.style.color = '#34d399';
-                // Update shown value, keep form hidden
-                setTimeout(() => {
-                  valueDiv.textContent = newValue;
-                  // Update the data-current on the edit button so re-edit starts from new value
-                  btn.dataset.current = newValue.replace(/"/g, '&quot;');
-                }, 1500);
+                // Show diff preview
+                const oldVal = data.old !== undefined ? (data.old || '(empty)') : current || '(empty)';
+                const newVal = data.new || newValue;
+                const srcLabel = data.filePath ? ('→ ' + data.filePath + (data.jsonKey ? ' · field: ' + data.jsonKey : '')) : '';
+                previewBox.innerHTML =
+                  '<div class="font-semibold text-blue-300 mb-1">Preview (nothing committed yet)</div>' +
+                  '<div class="text-gray-500 text-[10px] mb-2">' + srcLabel + '</div>' +
+                  '<div class="grid grid-cols-1 gap-1">' +
+                    '<div><span class="text-red-400 text-[10px] uppercase">before</span><div class="text-gray-300 bg-red-950/30 border-l-2 border-red-600 pl-2 py-1">' + escapeHtml(String(oldVal)) + '</div></div>' +
+                    '<div><span class="text-green-400 text-[10px] uppercase">after</span><div class="text-gray-100 bg-green-950/30 border-l-2 border-green-600 pl-2 py-1">' + escapeHtml(String(newVal)) + '</div></div>' +
+                  '</div>';
+                previewBox.classList.remove('hidden');
+                previewBtn.classList.add('hidden');
+                confirmBtn.classList.remove('hidden');
+                status.textContent = '';
               } catch (err) {
                 status.textContent = '✗ ' + (err.message || 'Network error');
                 status.style.color = '#f87171';
-                saveBtn.disabled = false;
+                previewBtn.disabled = false;
+              }
+            });
+
+            confirmBtn.addEventListener('click', async () => {
+              const newValue = input.value.trim();
+              confirmBtn.disabled = true;
+              status.textContent = 'Saving + deploying…';
+              status.style.color = '#facc15';
+              try {
+                const result = await authedFetch({ site: clientId, path, field, newValue });
+                if (!result) { confirmBtn.disabled = false; return; }
+                const { r, data } = result;
+                if (!r.ok || !data.ok) {
+                  status.textContent = '✗ ' + (data.error || ('HTTP ' + r.status));
+                  status.style.color = '#f87171';
+                  if (r.status === 401) setToken('');
+                  confirmBtn.disabled = false;
+                  return;
+                }
+                status.innerHTML = '✓ Committed <a href="' + (data.commitUrl || '#') + '" target="_blank" class="underline">' + (data.commit ? data.commit.slice(0, 7) : '') + '</a>' + (data.deployTriggered ? ' · deploy fired' : ' · awaiting auto-deploy');
+                status.style.color = '#34d399';
+                setTimeout(() => {
+                  valueDiv.textContent = newValue;
+                  btn.dataset.current = newValue.replace(/"/g, '&quot;');
+                }, 2000);
+              } catch (err) {
+                status.textContent = '✗ ' + (err.message || 'Network error');
+                status.style.color = '#f87171';
+                confirmBtn.disabled = false;
               }
             });
           });
+
+          function escapeHtml(s) {
+            return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+          }
+
+          // ---- Create page form ----
+          const cpToggle = document.getElementById('cp-toggle');
+          const cpForm = document.getElementById('cp-form');
+          if (cpToggle && cpForm) {
+            cpToggle.addEventListener('click', () => cpForm.classList.toggle('hidden'));
+            document.getElementById('cp-cancel')?.addEventListener('click', () => cpForm.classList.add('hidden'));
+
+            const cpType = document.getElementById('cp-type');
+            const cpTitleRow = document.getElementById('cp-title-row');
+            const cpQuestionRow = document.getElementById('cp-question-row');
+            cpType.addEventListener('change', () => {
+              const isQ = cpType.value === 'question';
+              cpQuestionRow.classList.toggle('hidden', !isQ);
+              cpTitleRow.classList.toggle('hidden', isQ);
+            });
+
+            const cpMetaDesc = document.getElementById('cp-metaDesc');
+            const cpMetaDescCounter = document.getElementById('cp-metaDesc-counter');
+            cpMetaDesc.addEventListener('input', () => {
+              const n = cpMetaDesc.value.length;
+              cpMetaDescCounter.textContent = n + '/160';
+              cpMetaDescCounter.style.color = n > 160 ? '#f87171' : n > 144 ? '#facc15' : '#6b7280';
+            });
+
+            const cpStatus = document.getElementById('cp-status');
+            const cpPreview = document.getElementById('cp-preview');
+            const cpConfirm = document.getElementById('cp-confirm');
+            const cpPreviewBox = document.getElementById('cp-preview-box');
+
+            const collectBody = () => {
+              const type = cpType.value;
+              const body = {
+                site: clientId,
+                type,
+                slug: document.getElementById('cp-slug').value.trim(),
+                metaDesc: cpMetaDesc.value.trim() || undefined,
+                bodyContent: document.getElementById('cp-body').value.trim() || undefined,
+              };
+              if (type === 'question') body.question = document.getElementById('cp-question').value.trim();
+              else body.title = document.getElementById('cp-title').value.trim();
+              return body;
+            };
+
+            const cpFetch = async (body) => {
+              let token = sessionStorage.getItem('r4ai_edit_token') || '';
+              if (!token) {
+                token = prompt('Paste EDIT_SECRET (saved in this tab only).') || '';
+                if (!token) return null;
+                sessionStorage.setItem('r4ai_edit_token', token);
+              }
+              const r = await fetch('/api/create-page', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+                body: JSON.stringify(body),
+              });
+              const data = await r.json();
+              return { r, data };
+            };
+
+            cpPreview.addEventListener('click', async () => {
+              cpPreview.disabled = true;
+              cpStatus.textContent = 'Checking…';
+              cpStatus.style.color = '#facc15';
+              const body = collectBody();
+              body.dryRun = true;
+              const result = await cpFetch(body);
+              if (!result) { cpPreview.disabled = false; cpStatus.textContent = ''; return; }
+              const { r, data } = result;
+              if (!r.ok || !data.ok) {
+                cpStatus.textContent = '✗ ' + (data.error || ('HTTP ' + r.status));
+                cpStatus.style.color = '#f87171';
+                if (r.status === 401) sessionStorage.removeItem('r4ai_edit_token');
+                cpPreview.disabled = false;
+                return;
+              }
+              cpPreviewBox.innerHTML =
+                '<div class="font-semibold text-blue-300 mb-2">Preview (not yet created)</div>' +
+                '<div class="mb-2"><span class="text-[10px] text-gray-500 uppercase">Will live at</span> <a href="' + data.liveUrl + '" target="_blank" class="text-blue-400 underline">' + data.liveUrl + '</a></div>' +
+                '<div><span class="text-[10px] text-gray-500 uppercase">Entry that will be added to ' + data.filePath + ':</span></div>' +
+                '<pre class="bg-gray-950 border border-gray-800 rounded p-2 text-[10px] text-gray-300 overflow-x-auto mt-1">' + escapeHtml(JSON.stringify(data.entry, null, 2)) + '</pre>';
+              cpPreviewBox.classList.remove('hidden');
+              cpConfirm.classList.remove('hidden');
+              cpPreview.classList.add('hidden');
+              cpStatus.textContent = '';
+            });
+
+            cpConfirm.addEventListener('click', async () => {
+              cpConfirm.disabled = true;
+              cpStatus.textContent = 'Creating + deploying…';
+              cpStatus.style.color = '#facc15';
+              const result = await cpFetch(collectBody());
+              if (!result) { cpConfirm.disabled = false; return; }
+              const { r, data } = result;
+              if (!r.ok || !data.ok) {
+                cpStatus.textContent = '✗ ' + (data.error || ('HTTP ' + r.status));
+                cpStatus.style.color = '#f87171';
+                if (r.status === 401) sessionStorage.removeItem('r4ai_edit_token');
+                cpConfirm.disabled = false;
+                return;
+              }
+              cpStatus.innerHTML = '✓ Created · <a href="' + data.liveUrl + '" target="_blank" class="underline text-emerald-300">' + data.liveUrl + '</a> · deploy ' + (data.deployTriggered ? 'fired' : 'pending');
+              cpStatus.style.color = '#34d399';
+            });
+          }
 
           const applyFilters = () => {
             const q = (search.value || '').toLowerCase().trim();
