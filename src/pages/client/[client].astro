@@ -94,52 +94,144 @@ const sectionStatus: Record<string, any> = {
   'site-manager': { status: 'pending', statusText: 'Setting up', metric: '--', metricLabel: '' },
   'recommendations': { status: 'pending', statusText: 'Setting up', metric: '--', metricLabel: '' },
 };
+// Passcode gate. If `clientCode` is present on the client record, the page
+// renders behind a localStorage-based passcode form (same pattern as 49k).
+// Master code unlocks all client views for Adam.
+const CLIENT_CODE = (client as any).clientCode || null;
+const MASTER_CODE = "1210";
 ---
 
 <DashboardLayout title={client.name} currentClient={clientId} view="client">
-  <div class="mb-6">
-    <h1 class="text-2xl font-bold text-white">{client.name}</h1>
-    <p class="text-sm text-gray-400 mt-1">Your AI search visibility dashboard</p>
-  </div>
 
-  <!-- Top fixes for client -->
-  {recs && recs.critical > 0 && (
-    <div class="bg-red-950/20 border border-red-800/50 rounded-lg p-4 mb-6">
-      <div class="flex items-center justify-between">
-        <div>
-          <span class="text-sm text-red-300 font-medium">{recs.critical} critical items need attention</span>
-          <div class="mt-2 space-y-1">
-            {recs.recommendations.filter((r: any) => r.priority === 'critical').slice(0, 3).map((r: any) => (
-              <p class="text-xs text-gray-400">• {r.title}</p>
-            ))}
-          </div>
-        </div>
+  {CLIENT_CODE && (
+    <div id="client-gate" style="display:none; min-height:70vh; align-items:center; justify-content:center; padding:24px;">
+      <div style="width:100%; max-width:420px; text-align:center;">
+        <h2 class="text-xl font-semibold text-white mb-2">{client.name}</h2>
+        <p class="text-sm text-gray-400 mb-6">Enter your access code to view the dashboard.</p>
+        <form id="client-gate-form" class="flex flex-col gap-3">
+          <input
+            id="client-code"
+            type="text"
+            placeholder="Access code"
+            autocomplete="off"
+            autocapitalize="characters"
+            autofocus
+            class="w-full px-4 py-3 rounded-md bg-gray-800 border border-gray-700 text-white text-center tracking-widest uppercase focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <label class="flex items-center justify-center gap-2 text-xs text-gray-400 cursor-pointer">
+            <input type="checkbox" id="client-remember" checked class="accent-blue-500" />
+            Remember me for 7 days
+          </label>
+          <button type="submit" class="w-full px-4 py-3 rounded-md bg-blue-600 hover:bg-blue-500 text-white font-medium">
+            Unlock
+          </button>
+          <p id="client-gate-err" class="text-sm text-red-400 min-h-[20px]"></p>
+        </form>
+        <p class="text-xs text-gray-500 mt-6">If you do not have a code, contact Adam at adam@muswellrose.com.</p>
       </div>
     </div>
   )}
 
-  {visibleSections.length === 0 ? (
-    <div class="text-center py-16">
-      <p class="text-gray-500">No sections have been enabled for this view yet.</p>
+  <div id="client-content" style={CLIENT_CODE ? "display:none;" : ""}>
+    <div class="mb-6">
+      <h1 class="text-2xl font-bold text-white">{client.name}</h1>
+      <p class="text-sm text-gray-400 mt-1">Your AI search visibility dashboard</p>
     </div>
-  ) : (
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-      {visibleSections.map((section) => {
-        const data = sectionStatus[section.id] || {
-          status: 'pending', statusText: 'Setting up', metric: '--', metricLabel: '',
-        };
-        return (
-          <SectionCard
-            id={section.id}
-            label={section.label}
-            description={section.description}
-            status={data.status}
-            statusText={data.statusText}
-            metric={data.metric}
-            metricLabel={data.metricLabel}
-          />
-        );
-      })}
-    </div>
+
+    <!-- Top fixes for client -->
+    {recs && recs.critical > 0 && (
+      <div class="bg-red-950/20 border border-red-800/50 rounded-lg p-4 mb-6">
+        <div class="flex items-center justify-between">
+          <div>
+            <span class="text-sm text-red-300 font-medium">{recs.critical} critical items need attention</span>
+            <div class="mt-2 space-y-1">
+              {recs.recommendations.filter((r: any) => r.priority === 'critical').slice(0, 3).map((r: any) => (
+                <p class="text-xs text-gray-400">• {r.title}</p>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    )}
+
+    {visibleSections.length === 0 ? (
+      <div class="text-center py-16">
+        <p class="text-gray-500">No sections have been enabled for this view yet.</p>
+      </div>
+    ) : (
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+        {visibleSections.map((section) => {
+          const data = sectionStatus[section.id] || {
+            status: 'pending', statusText: 'Setting up', metric: '--', metricLabel: '',
+          };
+          return (
+            <SectionCard
+              id={section.id}
+              label={section.label}
+              description={section.description}
+              status={data.status}
+              statusText={data.statusText}
+              metric={data.metric}
+              metricLabel={data.metricLabel}
+            />
+          );
+        })}
+      </div>
+    )}
+  </div>
+
+  {CLIENT_CODE && (
+    <script is:inline define:vars={{ clientId, CLIENT_CODE, MASTER_CODE }}>
+      (function(){
+        const AUTH_KEY = "r4ai_client_auth_v1";
+        const TTL_MS = 7 * 24 * 60 * 60 * 1000;
+        function loadAuth(){ try { return JSON.parse(localStorage.getItem(AUTH_KEY) || "{}"); } catch(e){ return {}; } }
+        function setAuth(scope, remember){
+          const d = loadAuth();
+          d[scope] = { expires: remember ? Date.now() + TTL_MS : 0, created: Date.now() };
+          localStorage.setItem(AUTH_KEY, JSON.stringify(d));
+          if (!remember) sessionStorage.setItem("r4ai_" + scope, "1");
+        }
+        function hasAuth(scope){
+          const d = loadAuth();
+          const rec = d[scope];
+          if (rec && (rec.expires === 0 || rec.expires > Date.now())) return true;
+          return sessionStorage.getItem("r4ai_" + scope) === "1";
+        }
+
+        const gate = document.getElementById("client-gate");
+        const content = document.getElementById("client-content");
+
+        function unlock(){
+          if (gate) gate.style.display = "none";
+          if (content) content.style.display = "";
+        }
+
+        if (hasAuth("master") || hasAuth("client_" + clientId)) {
+          unlock();
+        } else {
+          if (gate) gate.style.display = "flex";
+          const form = document.getElementById("client-gate-form");
+          const input = document.getElementById("client-code");
+          const err = document.getElementById("client-gate-err");
+          const remember = document.getElementById("client-remember");
+          form.addEventListener("submit", function(e){
+            e.preventDefault();
+            const code = (input.value || "").trim().toUpperCase();
+            if (code === String(MASTER_CODE).toUpperCase()) {
+              setAuth("master", remember.checked);
+              unlock();
+            } else if (code === String(CLIENT_CODE).toUpperCase()) {
+              setAuth("client_" + clientId, remember.checked);
+              unlock();
+            } else {
+              err.textContent = "Invalid code. Please try again.";
+              input.value = "";
+              input.focus();
+            }
+          });
+        }
+      })();
+    </script>
   )}
 </DashboardLayout>
