@@ -789,12 +789,12 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
           // ---- Edit token management ----
           const TOKEN_KEY = 'r4ai_edit_token';
           function getToken() {
-            try { return sessionStorage.getItem(TOKEN_KEY) || ''; } catch { return ''; }
+            try { return localStorage.getItem(TOKEN_KEY) || ''; } catch { return ''; }
           }
           function setToken(t) {
             try {
-              if (t) sessionStorage.setItem(TOKEN_KEY, t);
-              else sessionStorage.removeItem(TOKEN_KEY);
+              if (t) localStorage.setItem(TOKEN_KEY, t);
+              else localStorage.removeItem(TOKEN_KEY);
             } catch {}
           }
           function promptForToken(reason) {
@@ -1026,11 +1026,11 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
             };
 
             const cpFetch = async (body) => {
-              let token = sessionStorage.getItem('r4ai_edit_token') || '';
+              let token = localStorage.getItem('r4ai_edit_token') || '';
               if (!token) {
                 token = prompt('Paste EDIT_SECRET (saved in this tab only).') || '';
                 if (!token) return null;
-                sessionStorage.setItem('r4ai_edit_token', token);
+                localStorage.setItem('r4ai_edit_token', token);
               }
               const r = await fetch('/api/create-page', {
                 method: 'POST',
@@ -1053,7 +1053,7 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
               if (!r.ok || !data.ok) {
                 cpStatus.textContent = '✗ ' + (data.error || ('HTTP ' + r.status));
                 cpStatus.style.color = '#f87171';
-                if (r.status === 401) sessionStorage.removeItem('r4ai_edit_token');
+                if (r.status === 401) localStorage.removeItem('r4ai_edit_token');
                 cpPreview.disabled = false;
                 return;
               }
@@ -1078,7 +1078,7 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
               if (!r.ok || !data.ok) {
                 cpStatus.textContent = '✗ ' + (data.error || ('HTTP ' + r.status));
                 cpStatus.style.color = '#f87171';
-                if (r.status === 401) sessionStorage.removeItem('r4ai_edit_token');
+                if (r.status === 401) localStorage.removeItem('r4ai_edit_token');
                 cpConfirm.disabled = false;
                 return;
               }
@@ -4523,11 +4523,11 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
                   const status = document.getElementById('pl-status');
                   if (!btn || !status) return;
                   btn.addEventListener('click', async () => {
-                    let token = sessionStorage.getItem('r4ai_edit_token') || '';
+                    let token = localStorage.getItem('r4ai_edit_token') || '';
                     if (!token) {
                       token = prompt('Paste EDIT_SECRET (same as editor token).') || '';
                       if (!token) return;
-                      sessionStorage.setItem('r4ai_edit_token', token);
+                      localStorage.setItem('r4ai_edit_token', token);
                     }
                     btn.disabled = true;
                     status.textContent = 'Triggering deploy…';
@@ -4542,7 +4542,7 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
                       if (!r.ok || !data.ok) {
                         status.textContent = '✗ ' + (data.error || ('HTTP ' + r.status)) + (data.hint ? ' · ' + data.hint : '');
                         status.style.color = '#f87171';
-                        if (r.status === 401) sessionStorage.removeItem('r4ai_edit_token');
+                        if (r.status === 401) localStorage.removeItem('r4ai_edit_token');
                       } else {
                         status.innerHTML = '✓ Deploy triggered · <a class="underline text-emerald-300" href="' + (data.deploymentUrl || '#') + '" target="_blank">view in Cloudflare</a> · ' + (data.note || '');
                         status.style.color = '#34d399';

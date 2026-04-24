@@ -75,9 +75,9 @@ const toggleableSections = sections.filter((s) => s.id !== 'overview');
     (function() {
       var TOKEN_KEY = 'r4ai_edit_token';
       function getToken() {
-        try { return sessionStorage.getItem(TOKEN_KEY) || ''; } catch { return ''; }
+        try { return localStorage.getItem(TOKEN_KEY) || ''; } catch { return ''; }
       }
-      function setToken(t) { try { if (t) sessionStorage.setItem(TOKEN_KEY, t); else sessionStorage.removeItem(TOKEN_KEY); } catch {} }
+      function setToken(t) { try { if (t) localStorage.setItem(TOKEN_KEY, t); else localStorage.removeItem(TOKEN_KEY); } catch {} }
       var status = document.getElementById('settings-status');
 
       document.querySelectorAll('[data-section-id]').forEach(function(input) {
