@@ -3281,73 +3281,179 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
   )}
 
   <!-- RECOMMENDATIONS -->
-  {sectionId === 'recommendations' && recs && (
+  {sectionId === 'recommendations' && recs && (() => {
+    // Build a progress delta vs 7 days ago using daily_history.json
+    const hist = history || [];
+    const today = hist[hist.length - 1] || {};
+    const weekAgo = hist.length >= 8 ? hist[hist.length - 8] : (hist[0] || {});
+    const delta = (curr: any, prev: any) => {
+      if (curr == null || prev == null) return null;
+      return Math.round((curr - prev) * 10) / 10;
+    };
+    const deltas = {
+      issues: delta(today.issues, weekAgo.issues),
+      orphans: delta(today.orphan_pages, weekAgo.orphan_pages),
+      aiScore: delta(today.ai_score, weekAgo.ai_score),
+      citation: delta(today.citation_rate, weekAgo.citation_rate),
+      bing: delta(today.bing_indexed, weekAgo.bing_indexed),
+      cwv: delta(today.perf_score, weekAgo.perf_score),
+    };
+    // A rec is "quick-win" if its title suggests a title/meta fix (editable via dashboard)
+    const quickWinPatterns = [/title/i, /meta/i, /description/i, /CTR/i, /impression.*0% CTR/i];
+    const allRecs = recs.recommendations || [];
+    const quickWins = allRecs.filter((r: any) => quickWinPatterns.some((p: RegExp) => p.test(r.title)));
+    return (
     <div>
-      <div class="grid grid-cols-4 gap-4 mb-6" id="rec-stats">
-        <div class="bg-red-950/30 border border-red-800/50 rounded-lg p-4 text-center">
-          <div class="text-2xl font-bold text-red-400" id="rec-stat-critical">{recs.critical}</div>
-          <div class="text-xs text-gray-500">Critical</div>
-        </div>
-        <div class="bg-yellow-950/30 border border-yellow-800/50 rounded-lg p-4 text-center">
-          <div class="text-2xl font-bold text-yellow-400" id="rec-stat-high">{recs.high}</div>
-          <div class="text-xs text-gray-500">High</div>
-        </div>
-        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
-          <div class="text-2xl font-bold text-blue-400" id="rec-stat-medium">{recs.medium}</div>
-          <div class="text-xs text-gray-500">Medium</div>
-        </div>
-        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
-          <div class="text-2xl font-bold text-gray-400" id="rec-stat-low">{recs.low}</div>
-          <div class="text-xs text-gray-500">Low</div>
+      {/* Progress delta strip — "what's changed this week" */}
+      <div class="bg-gradient-to-r from-emerald-950/30 to-blue-950/30 border border-emerald-800/40 rounded-lg p-4 mb-4">
+        <div class="flex items-center justify-between flex-wrap gap-3">
+          <div>
+            <div class="text-xs text-emerald-300 font-semibold uppercase tracking-wider">Progress vs 7 days ago</div>
+            <div class="text-[11px] text-gray-400">Shows you whether all this work is actually moving the dial</div>
+          </div>
+          <div class="grid grid-cols-3 md:grid-cols-6 gap-3 text-[11px]">
+            {[
+              { label: 'Crawl issues', value: deltas.issues, good: 'down' },
+              { label: 'Orphans', value: deltas.orphans, good: 'down' },
+              { label: 'AI score', value: deltas.aiScore, good: 'up' },
+              { label: 'Citation %', value: deltas.citation, good: 'up' },
+              { label: 'Bing indexed', value: deltas.bing, good: 'up' },
+              { label: 'Mobile perf', value: deltas.cwv, good: 'up' },
+            ].map((d: any) => {
+              const color = d.value == null ? 'text-gray-500'
+                : (d.good === 'down' && d.value < 0) || (d.good === 'up' && d.value > 0) ? 'text-emerald-400'
+                : d.value === 0 ? 'text-gray-400'
+                : 'text-red-400';
+              const arrow = d.value == null ? '—' : d.value > 0 ? '▲' : d.value < 0 ? '▼' : '=';
+              const display = d.value == null ? '—' : (d.value > 0 ? '+' : '') + d.value;
+              return (
+                <div class="text-center">
+                  <div class={`font-bold ${color}`}>{arrow} {display}</div>
+                  <div class="text-gray-500 text-[10px] uppercase">{d.label}</div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
 
-      <!-- Filter + Copy controls -->
-      <div class="flex flex-wrap items-center gap-2 mb-4">
-        <span class="text-xs text-gray-500">Filter:</span>
-        <button class="rec-filter px-3 py-1.5 rounded text-xs bg-gray-800 text-white border border-gray-700 hover:bg-gray-700 transition" data-filter="all">All ({recs.total})</button>
-        <button class="rec-filter px-3 py-1.5 rounded text-xs bg-red-900/50 text-red-300 border border-red-800/50 hover:bg-red-900 transition" data-filter="critical">Critical ({recs.critical})</button>
-        <button class="rec-filter px-3 py-1.5 rounded text-xs bg-yellow-900/50 text-yellow-300 border border-yellow-800/50 hover:bg-yellow-900 transition" data-filter="high">High ({recs.high})</button>
-        <button class="rec-filter px-3 py-1.5 rounded text-xs bg-blue-900/50 text-blue-300 border border-blue-800/50 hover:bg-blue-900 transition" data-filter="medium">Medium ({recs.medium})</button>
-        <button class="rec-filter px-3 py-1.5 rounded text-xs bg-gray-800 text-gray-400 border border-gray-700 hover:bg-gray-700 transition" data-filter="low">Low ({recs.low})</button>
-        <span class="text-gray-700 mx-1">|</span>
-        <button id="copy-selected-recs" class="px-3 py-1.5 rounded text-xs bg-blue-600 text-white hover:bg-blue-500 transition">
-          Copy Selected to Clipboard
+      {/* Quick wins — recs that can be fixed via the dashboard editor */}
+      {quickWins.length > 0 && (
+        <div class="bg-gray-900 border border-blue-800/40 rounded-lg p-4 mb-4">
+          <div class="flex items-center justify-between mb-2">
+            <div>
+              <h3 class="text-sm font-semibold text-blue-300">Quick wins ({quickWins.length})</h3>
+              <p class="text-[11px] text-gray-500">Recommendations you can action from this dashboard — title / meta rewrites, zero-CTR queries that need better snippets.</p>
+            </div>
+            <a href={`/agency/${clientId}/page-compliance/`} class="text-[11px] text-blue-400 hover:text-blue-300 underline">Go to Page Compliance →</a>
+          </div>
+          <div class="space-y-1.5">
+            {quickWins.slice(0, 5).map((r: any) => (
+              <div class="flex items-center justify-between text-xs border-l-2 border-blue-700/50 pl-2 py-1">
+                <span class="text-gray-300 flex-1 truncate" title={r.title}>{r.title}</span>
+                <span class={`text-[10px] px-1.5 py-0.5 rounded ${r.priority === 'critical' ? 'bg-red-900/60 text-red-300' : r.priority === 'high' ? 'bg-yellow-900/60 text-yellow-300' : 'bg-blue-900/60 text-blue-300'}`}>{r.priority}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Summary tiles — click to filter (matches Page Compliance pattern) */}
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-4" id="rec-stats">
+        <button type="button" data-rec-filter="all" class="rec-tile bg-gray-900 border border-gray-800 rounded-lg p-3 text-center hover:border-gray-600 transition cursor-pointer">
+          <div class="text-xl font-bold text-white" id="rec-stat-all">{allRecs.length}</div>
+          <div class="text-[10px] text-gray-500 uppercase">All open</div>
+        </button>
+        <button type="button" data-rec-filter="critical" class="rec-tile bg-gray-900 border border-gray-800 rounded-lg p-3 text-center hover:border-red-700 transition cursor-pointer">
+          <div class="text-xl font-bold text-red-400" id="rec-stat-critical">{recs.critical}</div>
+          <div class="text-[10px] text-gray-500 uppercase">Critical</div>
+        </button>
+        <button type="button" data-rec-filter="high" class="rec-tile bg-gray-900 border border-gray-800 rounded-lg p-3 text-center hover:border-yellow-700 transition cursor-pointer">
+          <div class="text-xl font-bold text-yellow-400" id="rec-stat-high">{recs.high}</div>
+          <div class="text-[10px] text-gray-500 uppercase">High</div>
+        </button>
+        <button type="button" data-rec-filter="medium" class="rec-tile bg-gray-900 border border-gray-800 rounded-lg p-3 text-center hover:border-blue-700 transition cursor-pointer">
+          <div class="text-xl font-bold text-blue-400" id="rec-stat-medium">{recs.medium}</div>
+          <div class="text-[10px] text-gray-500 uppercase">Medium</div>
+        </button>
+        <button type="button" data-rec-filter="low" class="rec-tile bg-gray-900 border border-gray-800 rounded-lg p-3 text-center hover:border-gray-600 transition cursor-pointer">
+          <div class="text-xl font-bold text-gray-400" id="rec-stat-low">{recs.low}</div>
+          <div class="text-[10px] text-gray-500 uppercase">Low</div>
         </button>
       </div>
 
-      <div class="space-y-4" id="recs-list">
-        {recs.recommendations?.map((r: any, i: number) => (
-          <div
-            class={`rec-item rounded-lg border p-5 cursor-pointer transition ${r.priority === 'critical' ? 'border-red-800/50 bg-red-950/20' : r.priority === 'high' ? 'border-yellow-800/50 bg-yellow-950/10' : r.priority === 'medium' ? 'border-blue-800/50 bg-blue-950/10' : 'border-gray-800 bg-gray-900'}`}
-            data-rec-priority={r.priority}
-            data-rec-index={i}
-          >
-            <div class="flex items-start justify-between mb-2">
-              <div class="flex items-center gap-3">
-                <input type="checkbox" class="rec-checkbox w-4 h-4 rounded" data-index={i} />
-                <span class={`text-xs px-2 py-0.5 rounded-full font-medium ${r.priority === 'critical' ? 'bg-red-600 text-white' : r.priority === 'high' ? 'bg-yellow-600 text-white' : r.priority === 'medium' ? 'bg-blue-600 text-white' : 'bg-gray-600 text-white'}`}>
-                  {r.priority.toUpperCase()}
-                </span>
-                <span class="text-[10px] text-gray-500 px-2 py-0.5 rounded bg-gray-800">{r.category}</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="text-[10px] text-gray-600">Impact: {r.impact}</span>
-                <button
-                  class="copy-single-rec text-[10px] px-2 py-1 rounded bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white transition"
-                  data-index={i}
-                >
-                  Copy
-                </button>
-                <button class="done-rec-btn text-[10px] px-2 py-1 rounded bg-gray-800 text-gray-400 hover:bg-green-900 hover:text-green-300 transition" data-index={i}>Done</button>
-                <button class="park-rec-btn text-[10px] px-2 py-1 rounded bg-gray-800 text-gray-400 hover:bg-yellow-900 hover:text-yellow-300 transition" data-index={i}>Park</button>
-                <button class="na-rec-btn text-[10px] px-2 py-1 rounded bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-gray-300 transition" data-index={i} title="Remove this recommendation">Remove</button>
-              </div>
-            </div>
-            <h3 class="text-white font-medium text-sm mb-2 rec-title">{r.title}</h3>
-            <p class="text-xs text-gray-400 leading-relaxed">{r.detail}</p>
-          </div>
-        ))}
+      {/* Filter toolbar — consistent with Page Compliance */}
+      <div class="flex flex-wrap items-center gap-2 mb-3">
+        <input type="text" id="rec-search" placeholder="Search title, detail..." class="bg-gray-800 border border-gray-700 rounded px-3 py-1.5 text-sm text-white placeholder-gray-500 flex-1 min-w-[200px]" />
+        <select id="rec-filter-select" class="bg-gray-800 border border-gray-700 rounded px-2 py-1.5 text-sm text-white">
+          <option value="all">All open</option>
+          <option value="critical">Critical only</option>
+          <option value="high">High only</option>
+          <option value="medium">Medium only</option>
+          <option value="low">Low only</option>
+          <option value="done">Done</option>
+          <option value="parked">Parked</option>
+        </select>
+        <button id="copy-selected-recs" class="px-3 py-1.5 rounded text-xs bg-emerald-700 text-white hover:bg-emerald-600 transition">Copy visible to clipboard</button>
+      </div>
+
+      {/* Table — rows click to expand detail */}
+      <div class="bg-gray-900 border border-gray-800 rounded-lg overflow-hidden">
+        <table class="w-full text-xs" id="rec-table">
+          <thead class="border-b border-gray-800">
+            <tr class="text-left text-gray-500">
+              <th class="py-2 px-2 w-8"></th>
+              <th class="py-2 px-2 w-16">Priority</th>
+              <th class="py-2 px-2 w-32">Category</th>
+              <th class="py-2 px-2">Title</th>
+              <th class="py-2 px-2 w-14 text-right">Impact</th>
+              <th class="py-2 px-2 w-44 text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {allRecs.map((r: any, i: number) => {
+              const priColor = r.priority === 'critical' ? 'bg-red-900/60 text-red-300 border-red-800/60'
+                : r.priority === 'high' ? 'bg-yellow-900/60 text-yellow-300 border-yellow-800/60'
+                : r.priority === 'medium' ? 'bg-blue-900/60 text-blue-300 border-blue-800/60'
+                : 'bg-gray-800 text-gray-400 border-gray-700';
+              return [
+                <tr class="rec-item border-b border-gray-800/50 hover:bg-gray-800/30 cursor-pointer" data-rec-priority={r.priority} data-rec-index={i} data-rec-search={(r.title + ' ' + (r.detail || '')).toLowerCase()}>
+                  <td class="py-2 px-2 text-gray-500"><span class="rec-chevron">▸</span></td>
+                  <td class="py-2 px-2">
+                    <span class={`inline-block text-[10px] px-1.5 py-0.5 rounded border ${priColor}`}>{r.priority.toUpperCase()}</span>
+                  </td>
+                  <td class="py-2 px-2 text-gray-400 truncate">{r.category}</td>
+                  <td class="py-2 px-2 text-white rec-title">{r.title}</td>
+                  <td class="py-2 px-2 text-right text-gray-400">{r.impact || '—'}</td>
+                  <td class="py-2 px-2 text-right">
+                    <div class="flex gap-1 justify-end">
+                      <button class="copy-single-rec text-[10px] px-1.5 py-0.5 rounded bg-gray-800 text-gray-300 hover:bg-blue-700 hover:text-white transition" data-index={i} title="Copy as Claude prompt">⎘</button>
+                      <button class="done-rec-btn text-[10px] px-1.5 py-0.5 rounded bg-gray-800 text-gray-400 hover:bg-green-800 hover:text-green-200 transition" data-index={i} title="Mark done">✓</button>
+                      <button class="park-rec-btn text-[10px] px-1.5 py-0.5 rounded bg-gray-800 text-gray-400 hover:bg-yellow-800 hover:text-yellow-200 transition" data-index={i} title="Park for later">⏸</button>
+                      <button class="na-rec-btn text-[10px] px-1.5 py-0.5 rounded bg-gray-800 text-gray-400 hover:bg-gray-600 hover:text-white transition" data-index={i} title="Not applicable">✕</button>
+                    </div>
+                  </td>
+                </tr>,
+                <tr class="rec-detail hidden bg-gray-950 border-b border-gray-800">
+                  <td></td>
+                  <td colspan="5" class="py-3 px-3">
+                    <div class="text-xs text-gray-300 leading-relaxed whitespace-pre-wrap mb-2">{r.detail}</div>
+                    {r.pages && Array.isArray(r.pages) && r.pages.length > 0 && (
+                      <div class="mt-2">
+                        <div class="text-[10px] text-gray-500 uppercase tracking-wider mb-1">Affected pages ({r.pages.length})</div>
+                        <div class="flex flex-wrap gap-1">
+                          {r.pages.slice(0, 8).map((p: string) => (
+                            <a href={p.startsWith('http') ? p : `https://${client.domain}${p}`} target="_blank" rel="noopener" class="text-[10px] px-1.5 py-0.5 rounded bg-gray-800 text-blue-400 hover:bg-gray-700 hover:text-blue-300">{p}</a>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </td>
+                </tr>,
+              ];
+            })}
+          </tbody>
+        </table>
       </div>
 
       <script define:vars={{ clientDomain: client?.domain, recsJson: JSON.stringify(recs.recommendations || []) }}>
@@ -3608,17 +3714,63 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
           });
         });
 
-        // Click row to toggle checkbox
+        // Click row to expand/collapse detail
         document.querySelectorAll('.rec-item').forEach(function(item) {
           item.addEventListener('click', function(e) {
-            if (e.target.tagName === 'INPUT' || e.target.tagName === 'BUTTON') return;
-            var cb = item.querySelector('.rec-checkbox');
-            cb.checked = !cb.checked;
+            if (e.target.tagName === 'BUTTON' || e.target.tagName === 'INPUT') return;
+            var detail = item.nextElementSibling;
+            if (!detail || !detail.classList.contains('rec-detail')) return;
+            var isOpen = !detail.classList.contains('hidden');
+            detail.classList.toggle('hidden');
+            var chev = item.querySelector('.rec-chevron');
+            if (chev) chev.textContent = isOpen ? '▸' : '▾';
           });
         });
+
+        // Filter + search (replaces old simple filter)
+        var searchInput = document.getElementById('rec-search');
+        var filterSelect = document.getElementById('rec-filter-select');
+        var rowsList = document.querySelectorAll('.rec-item');
+        function applyRecFilters() {
+          var q = (searchInput?.value || '').toLowerCase().trim();
+          var f = filterSelect?.value || 'all';
+          rowsList.forEach(function(row) {
+            var searchHit = !q || (row.dataset.recSearch || '').indexOf(q) !== -1;
+            var idx = row.getAttribute('data-rec-index');
+            var state = recState[idx];
+            var pri = row.getAttribute('data-rec-priority');
+            var matchFilter;
+            if (f === 'done') matchFilter = state === 'done';
+            else if (f === 'parked') matchFilter = state === 'parked';
+            else if (f === 'all') matchFilter = !state || state !== 'na';
+            else matchFilter = pri === f && state !== 'na';
+            var show = searchHit && matchFilter;
+            row.style.display = show ? '' : 'none';
+            var detail = row.nextElementSibling;
+            if (detail && detail.classList.contains('rec-detail')) {
+              detail.style.display = show ? '' : 'none';
+              if (!show) detail.classList.add('hidden');
+            }
+          });
+        }
+        searchInput?.addEventListener('input', applyRecFilters);
+        filterSelect?.addEventListener('change', applyRecFilters);
+
+        // Summary tiles → filter
+        document.querySelectorAll('.rec-tile').forEach(function(tile) {
+          tile.addEventListener('click', function() {
+            if (filterSelect) {
+              filterSelect.value = tile.dataset.recFilter;
+              applyRecFilters();
+            }
+          });
+        });
+
+        applyRecFilters();
       </script>
     </div>
-  )}
+    );
+  })()}
 
   <!-- SITE TREE -->
   {sectionId === 'site-tree' && crawlData?.tree && (
