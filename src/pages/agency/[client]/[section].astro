@@ -67,6 +67,7 @@ const dailyAuditHistoryAll = loadJson('daily_audit_history.json');
 const dailyAuditHistory = dailyAuditHistoryAll?.[clientId] || [];
 const contentPlansData = loadJson(`content_plan_${clientId}.json`);
 const contentPlans = contentPlansData?.plans || [];
+const siteStructure = loadJson(`site_structure_${clientId}.json`);
 
 // Lead tracking (Market Invoice only for now — other sites can be wired later)
 const leadsData = clientId === 'market-invoice' ? loadJson('mi_leads.json') : null;
@@ -1246,6 +1247,155 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
     </div>
   )}
 
+
+  <!-- SITE STRUCTURE — full content hierarchy by layer, parent/child tree -->
+  {sectionId === 'site-structure' && siteStructure && (
+    <div>
+      <!-- Header + totals -->
+      <div class="mb-6">
+        <p class="text-sm text-gray-400 mb-4">Every page on the site by layer. Live pages are crawlable URLs. Planned slots are placeholders where new blogs, questions, or guides should go.</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <div class="bg-gray-900 border border-gray-800 rounded-lg p-3 text-center">
+            <div class="text-2xl font-bold text-white">{siteStructure.totals.total_rows}</div>
+            <div class="text-xs text-gray-500 mt-0.5">Total rows in plan</div>
+          </div>
+          <div class="bg-gray-900 border border-green-900/40 rounded-lg p-3 text-center">
+            <div class="text-2xl font-bold text-green-400">{siteStructure.totals.live}</div>
+            <div class="text-xs text-gray-500 mt-0.5">Live pages</div>
+          </div>
+          <div class="bg-gray-900 border border-yellow-900/40 rounded-lg p-3 text-center">
+            <div class="text-2xl font-bold text-yellow-400">{siteStructure.totals.not_started}</div>
+            <div class="text-xs text-gray-500 mt-0.5">Planned slots</div>
+          </div>
+          <div class="bg-gray-900 border border-gray-800 rounded-lg p-3 text-center">
+            <div class="text-2xl font-bold text-white">{siteStructure.tree.length}</div>
+            <div class="text-xs text-gray-500 mt-0.5">Layers</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slot family summary -->
+      <div class="mb-6 bg-gray-900/60 border border-gray-800 rounded-lg p-4">
+        <p class="text-xs text-gray-500 uppercase tracking-wider mb-3">Content slot availability</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
+          {Object.entries(siteStructure.totals.slots).map(([fam, counts]: any) => (
+            <div class="flex items-center justify-between bg-gray-900 rounded px-3 py-2 border border-gray-800">
+              <span class="text-gray-300 capitalize">{fam.replace('-', ' ')}</span>
+              <span class="tabular-nums">
+                <span class="text-green-400 font-semibold">{counts.filled}</span>
+                <span class="text-gray-600 mx-0.5">/</span>
+                <span class="text-yellow-400 font-semibold">{counts.empty}</span>
+                <span class="text-gray-500 ml-1 text-[10px]">filled/empty</span>
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Strategy summary -->
+      {siteStructure.strategy_summary && (
+        <details class="mb-6 bg-gray-900/60 border border-gray-800 rounded-lg p-4 group">
+          <summary class="cursor-pointer text-xs text-gray-400 font-semibold uppercase tracking-wider flex items-center justify-between">
+            <span>Strategy · slot rules · cross-link rules</span>
+            <svg class="w-4 h-4 text-gray-500 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="mt-3 space-y-2 text-xs text-gray-300">
+            <div>
+              <span class="text-gray-500 uppercase tracking-wider text-[10px]">Service clusters</span>
+              <p>{siteStructure.strategy_summary.clusters.join(' · ')}</p>
+            </div>
+            <div>
+              <span class="text-gray-500 uppercase tracking-wider text-[10px]">Authority pillars</span>
+              <p>{siteStructure.strategy_summary.authority_pillars.join(' · ')}</p>
+            </div>
+            <div>
+              <span class="text-gray-500 uppercase tracking-wider text-[10px]">Slot rules</span>
+              {Object.entries(siteStructure.strategy_summary.slot_rules).map(([k, v]: any) => (
+                <p class="pl-3">· <span class="text-gray-400">{k}:</span> {v}</p>
+              ))}
+            </div>
+          </div>
+        </details>
+      )}
+
+      <!-- Tree -->
+      {siteStructure.tree.map((layer: any) => (
+        <div class="mb-8">
+          <h2 class="text-sm font-semibold text-white uppercase tracking-wider mb-3 pb-2 border-b border-gray-800">{layer.label}</h2>
+          <div class="space-y-3">
+            {layer.pages.map((page: any) => {
+              const isLive = page.status === 'live';
+              const liveChildren = page.children.filter((c: any) => c.status === 'live');
+              const plannedChildren = page.children.filter((c: any) => c.status !== 'live');
+              return (
+                <div class="bg-gray-900 border border-gray-800 rounded-lg p-4">
+                  <!-- Parent row -->
+                  <div class="flex items-start gap-3">
+                    <span class="text-xs text-gray-500 font-mono w-12 flex-shrink-0 pt-0.5">{page.page_number || '—'}</span>
+                    <span class={`px-2 py-0.5 rounded text-[10px] font-semibold flex-shrink-0 ${isLive ? 'bg-green-900/40 text-green-400 border border-green-800/40' : 'bg-gray-800 text-gray-500 border border-gray-700'}`}>{isLive ? 'LIVE' : page.status.replace('_', ' ').toUpperCase()}</span>
+                    <span class="px-2 py-0.5 rounded text-[10px] bg-blue-900/30 text-blue-300 border border-blue-900/40 flex-shrink-0">{page.page_type}</span>
+                    <div class="flex-1 min-w-0">
+                      <div class="flex items-center gap-2 flex-wrap">
+                        <span class="text-sm font-semibold text-white">{page.page_name}</span>
+                        {page.url_path && isLive && (
+                          <a href={`https://${client.domain}${page.url_path}`} target="_blank" rel="noopener" class="text-xs text-blue-400 hover:text-blue-300">
+                            {page.url_path} ↗
+                          </a>
+                        )}
+                      </div>
+                      {page.word_count_actual != null && page.word_count_target_max && (
+                        <div class="text-[11px] text-gray-500 mt-0.5">
+                          {page.word_count_actual} / {page.word_count_target_max} words
+                          {page.crisis_link_required && <span class="ml-2 text-red-400">· needs crisis notice</span>}
+                          {page.disclaimer_required && <span class="ml-2 text-yellow-400">· needs disclaimer</span>}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  <!-- Children -->
+                  {page.children.length > 0 && (
+                    <div class="mt-3 ml-12 border-l border-gray-800 pl-4 space-y-1.5">
+                      {page.children.map((child: any) => {
+                        const childLive = child.status === 'live';
+                        return (
+                          <div class="flex items-center gap-3 text-xs">
+                            <span class="text-gray-600 font-mono w-14 flex-shrink-0">{child.page_number || '—'}</span>
+                            <span class={`px-1.5 py-0.5 rounded text-[9px] font-semibold flex-shrink-0 ${childLive ? 'bg-green-900/40 text-green-400' : 'bg-gray-800 text-gray-500'}`}>{childLive ? 'LIVE' : 'SLOT'}</span>
+                            <span class="px-1.5 py-0.5 rounded text-[9px] bg-gray-800 text-gray-400 flex-shrink-0">{child.page_type}</span>
+                            <span class={childLive ? 'text-gray-200' : 'text-gray-500 italic'}>{child.page_name}</span>
+                            {child.url_path && childLive && (
+                              <a href={`https://${client.domain}${child.url_path}`} target="_blank" rel="noopener" class="text-blue-400 hover:text-blue-300">
+                                {child.url_path} ↗
+                              </a>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+
+                  <!-- Gap summary -->
+                  {page.children.length > 0 && plannedChildren.length > 0 && (
+                    <div class="mt-2 ml-12 text-[11px] text-yellow-600">
+                      {plannedChildren.length} slot{plannedChildren.length === 1 ? '' : 's'} open · {liveChildren.length} filled
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      ))}
+    </div>
+  )}
+
+  {sectionId === 'site-structure' && !siteStructure && (
+    <div class="bg-gray-900 border border-gray-800 rounded-lg p-8 text-center text-gray-500">
+      <p>No content plan data yet for this site.</p>
+      <p class="text-xs mt-2">Run <code class="bg-gray-800 px-2 py-0.5 rounded">python3 scripts/port_rochelle_content_plan.py</code> to generate.</p>
+    </div>
+  )}
 
   <!-- SITE MANAGER -->
   {sectionId === 'site-manager' && crawlData && (
