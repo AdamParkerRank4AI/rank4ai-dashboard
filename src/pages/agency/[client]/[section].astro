@@ -72,6 +72,8 @@ const contentPlans = contentPlansData?.plans || [];
 const leadsData = clientId === 'market-invoice' ? loadJson('mi_leads.json') : null;
 const aeoScorecardAll = loadJson('aeo_scorecard.json');
 const aeoScore = aeoScorecardAll?.[clientId];
+const winsData = loadJson('wins_this_week.json');
+const siteWins = winsData?.per_site?.[clientId];
 
 // Per-site GitHub repo for the Push Live deep link
 const SITE_REPOS: Record<string, string> = {
@@ -2759,6 +2761,44 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
   <!-- OVERVIEW -->
   {sectionId === 'overview' && (
     <div>
+      {siteWins && (
+        <div class={`rounded-lg px-4 py-3 mb-4 border ${siteWins.counts.cleared_today > 0 ? 'bg-emerald-950/30 border-emerald-800/50' : siteWins.counts.new_today > 0 ? 'bg-amber-950/30 border-amber-800/50' : 'bg-gray-900 border-gray-700'}`}>
+          <div class="flex items-center justify-between flex-wrap gap-3">
+            <div class="flex items-center gap-3 flex-wrap text-xs">
+              <span class="font-semibold text-emerald-300 uppercase tracking-wider">Since yesterday</span>
+              <span class={siteWins.counts.cleared_today > 0 ? 'text-emerald-400 font-semibold' : 'text-gray-500'}>
+                {siteWins.counts.cleared_today > 0 ? `✓ ${siteWins.counts.cleared_today} cleared` : '0 cleared'}
+              </span>
+              {siteWins.counts.new_today > 0 && <>
+                <span class="text-gray-600">·</span>
+                <span class="text-red-400">⚠ {siteWins.counts.new_today} new</span>
+              </>}
+              <span class="text-gray-600">·</span>
+              <span class="text-gray-500">{siteWins.counts.stuck} stuck ≥7d</span>
+              <span class="text-gray-600">·</span>
+              <span class="text-gray-500">{siteWins.today_count} open / {siteWins.yesterday_count} yesterday / {siteWins.seven_days_ago_count} 7d ago</span>
+            </div>
+            <a href={`/agency/${clientId}/recommendations/`} class="text-xs text-blue-400 hover:text-blue-300 underline">See recommendations →</a>
+          </div>
+          {siteWins.cleared_today?.length > 0 && (
+            <div class="mt-2 pt-2 border-t border-emerald-800/30">
+              <div class="text-[10px] text-emerald-400 uppercase tracking-wider mb-1">Cleared today</div>
+              {siteWins.cleared_today.map((t: string) => (
+                <div class="text-[11px] text-gray-300">✓ {t}</div>
+              ))}
+            </div>
+          )}
+          {siteWins.new_today?.length > 0 && (
+            <div class="mt-2 pt-2 border-t border-amber-800/30">
+              <div class="text-[10px] text-red-400 uppercase tracking-wider mb-1">New today</div>
+              {siteWins.new_today.map((t: string) => (
+                <div class="text-[11px] text-gray-300">⚠ {t}</div>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         {audit && (
           <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
