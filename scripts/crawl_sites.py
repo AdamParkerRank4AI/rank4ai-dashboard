@@ -184,7 +184,14 @@ def crawl_site(site_id, config):
             if not href or href.startswith(("#", "mailto:", "tel:", "javascript:")):
                 continue
             full_url = urljoin(url, href).split("#")[0].split("?")[0]
-            link_domain = urlparse(full_url).netloc
+            # Normalise trailing slash: Astro serves routes with trailing slash,
+            # but nav hrefs may omit them. Without normalisation, /about and /about/
+            # register as different URLs and every page looks orphaned.
+            # Rule: if the path has no file extension, ensure a trailing slash.
+            parsed = urlparse(full_url)
+            if parsed.path and "." not in parsed.path.rsplit("/", 1)[-1] and not parsed.path.endswith("/"):
+                full_url = full_url + "/"
+            link_domain = parsed.netloc
 
             if link_domain == domain or link_domain == "www." + domain or "www." + link_domain == domain:
                 internal_links.append(full_url)

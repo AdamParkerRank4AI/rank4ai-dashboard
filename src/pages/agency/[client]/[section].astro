@@ -570,16 +570,19 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
           <div class="text-xl font-bold text-yellow-400">{crawlData.pages?.filter((p: any) => p.status === 200 && (p.title?.length > 70 || p.meta_desc?.length > 160)).length || 0}</div>
           <div class="text-[10px] text-gray-500 uppercase">Too long</div>
         </button>
-        <button type="button" data-pc-tile="orphan" class="pc-tile bg-gray-900 border border-gray-800 rounded-lg p-3 text-center hover:border-orange-700 transition cursor-pointer">
+        <button type="button" data-pc-tile="orphan" class="pc-tile bg-gray-900 border border-gray-800 rounded-lg p-3 text-center hover:border-orange-700 transition cursor-pointer group relative">
           <div class="text-xl font-bold text-orange-400">{crawlData.pages?.filter((p: any) => p.status === 200 && p.internal_links_in === 0).length || 0}</div>
           <div class="text-[10px] text-gray-500 uppercase">Orphans</div>
+          <div class="absolute left-1/2 -translate-x-1/2 top-full mt-1 w-60 hidden group-hover:block bg-gray-950 border border-gray-700 rounded p-2 text-[10px] text-gray-300 z-10 text-left shadow-lg">
+            Orphan means no other page on the site links to it. Usually a nav / footer / internal-link oversight. New pages start orphan until you link them from a parent hub or sibling page.
+          </div>
         </button>
         <button type="button" data-pc-tile="thin" class="pc-tile bg-gray-900 border border-gray-800 rounded-lg p-3 text-center hover:border-blue-700 transition cursor-pointer">
           <div class="text-xl font-bold text-white">{crawlData.pages?.filter((p: any) => p.status === 200 && p.word_count < 300).length || 0}</div>
           <div class="text-[10px] text-gray-500 uppercase">Thin (&lt;300w)</div>
         </button>
       </div>
-      <p class="text-[11px] text-gray-500 mb-3">Click any tile above to filter the table. Click a row to expand. Click Edit next to Title or Meta to change the value live.</p>
+      <p class="text-[11px] text-gray-500 mb-3">Click any tile above to filter the table. <strong class="text-gray-300">Click any row</strong> to expand and see the full meta, schemas, alt text, H2 counts, links, depth, and per-page tools (View live · Test schema · PageSpeed). Click Edit next to Title or Meta to change the value live.</p>
 
       {clientId === 'rank4ai' && (
         <div class="mb-4 bg-gray-900 border border-gray-800 rounded-lg p-4">

@@ -1,6 +1,6 @@
 {
   "rank4ai": {
-    "generated_at": "2026-04-24T15:11:59.339337",
+    "generated_at": "2026-04-24T15:33:06.619448",
     "total": 12,
     "critical": 1,
     "high": 3,
@@ -128,7 +128,7 @@
     ]
   },
   "market-invoice": {
-    "generated_at": "2026-04-24T15:11:59.348293",
+    "generated_at": "2026-04-24T15:33:06.630911",
     "total": 13,
     "critical": 2,
     "high": 3,
@@ -269,7 +269,7 @@
     ]
   },
   "seocompare": {
-    "generated_at": "2026-04-24T15:11:59.358482",
+    "generated_at": "2026-04-24T15:33:06.640066",
     "total": 12,
     "critical": 2,
     "high": 3,
@@ -387,65 +387,55 @@
     ]
   },
   "rochellemarashi": {
-    "generated_at": "2026-04-24T15:11:59.363912",
+    "generated_at": "2026-04-24T15:33:06.645510",
     "total": 5,
     "critical": 0,
-    "high": 2,
-    "medium": 2,
+    "high": 1,
+    "medium": 3,
     "low": 1,
     "recommendations": [
       {
         "priority": "high",
         "category": "SEO Health",
         "title": "4 pages with missing h1",
-        "detail": "These pages have no H1 tag. Add a clear, descriptive H1 to each page. AI models use H1s to understand page topics. Affected pages: /blog/lifting-the-veil-of-invisibility/, /blog/surviving-stalking/, /blog/just-feelings-wont-keep-clients-safe/, /blog/dont-bite-your-tongue/",
+        "detail": "These pages have no H1 tag. Add a clear, descriptive H1 to each page. AI models use H1s to understand page topics. Affected pages: /blog/surviving-stalking/, /blog/lifting-the-veil-of-invisibility/, /blog/just-feelings-wont-keep-clients-safe/, /blog/dont-bite-your-tongue/",
         "impact": "medium",
         "pages": [
-          "/blog/lifting-the-veil-of-invisibility/",
           "/blog/surviving-stalking/",
+          "/blog/lifting-the-veil-of-invisibility/",
           "/blog/just-feelings-wont-keep-clients-safe/",
           "/blog/dont-bite-your-tongue/"
-        ]
-      },
-      {
-        "priority": "high",
-        "category": "Internal Links",
-        "title": "109 orphan pages with no internal links pointing to them",
-        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /institutional-and-systemic-harm/, /blog/what-to-expect-first-online-therapy-session/, /burnout/, /blog/the-link-between-workplace-stress-and-trauma/, /questions/can-therapy-help-with-workplace-bullying/, /psychotherapy/, /fees/, /blog/lifting-the-veil-of-invisibility/...",
-        "impact": "medium",
-        "pages": [
-          "/institutional-and-systemic-harm/",
-          "/blog/what-to-expect-first-online-therapy-session/",
-          "/burnout/",
-          "/blog/the-link-between-workplace-stress-and-trauma/",
-          "/questions/can-therapy-help-with-workplace-bullying/",
-          "/psychotherapy/",
-          "/fees/",
-          "/blog/lifting-the-veil-of-invisibility/",
-          "/blog/surviving-stalking/",
-          "/online-therapy-uk/",
-          "/anxiety/",
-          "/privacy/",
-          "/blog/just-feelings-wont-keep-clients-safe/",
-          "/darvo/",
-          "/research/"
         ]
       },
       {
         "priority": "medium",
         "category": "SEO Health",
         "title": "8 pages with thin content",
-        "detail": "These pages have fewer than 200 words. Expand with detailed, authoritative content. AI models prefer pages with 500+ words. Affected pages: /blog/lifting-the-veil-of-invisibility/, /blog/surviving-stalking/, /blog/just-feelings-wont-keep-clients-safe/, /contact/, /whitepapers/, /podcast/, /blog/dont-bite-your-tongue/, /videos/",
+        "detail": "These pages have fewer than 200 words. Expand with detailed, authoritative content. AI models prefer pages with 500+ words. Affected pages: /blog/surviving-stalking/, /contact/, /videos/, /blog/lifting-the-veil-of-invisibility/, /blog/just-feelings-wont-keep-clients-safe/, /whitepapers/, /blog/dont-bite-your-tongue/, /podcast/",
         "impact": "medium",
         "pages": [
-          "/blog/lifting-the-veil-of-invisibility/",
           "/blog/surviving-stalking/",
-          "/blog/just-feelings-wont-keep-clients-safe/",
           "/contact/",
+          "/videos/",
+          "/blog/lifting-the-veil-of-invisibility/",
+          "/blog/just-feelings-wont-keep-clients-safe/",
           "/whitepapers/",
-          "/podcast/",
           "/blog/dont-bite-your-tongue/",
-          "/videos/"
+          "/podcast/"
+        ]
+      },
+      {
+        "priority": "medium",
+        "category": "Internal Links",
+        "title": "5 orphan pages with no internal links pointing to them",
+        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /bullying/, /gaslighting/, /relationship-difficulties/, /anxiety/, /work-related-stress/",
+        "impact": "medium",
+        "pages": [
+          "/bullying/",
+          "/gaslighting/",
+          "/relationship-difficulties/",
+          "/anxiety/",
+          "/work-related-stress/"
         ]
       },
       {
