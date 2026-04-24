@@ -92,10 +92,13 @@ def cf_canonical_deploy(account_id, project, token):
         r = data.get("result", {})
         canonical = r.get("canonical_deployment") or {}
         latest = r.get("latest_deployment") or {}
-        # Prefer canonical (what's actually serving). Fall back to latest.
         dep = canonical or latest
         trig = dep.get("deployment_trigger", {}) or {}
         meta = trig.get("metadata", {}) or {}
+        # Detect direct-upload projects (no git source bound). For these,
+        # parity cannot be checked because wrangler deploys don't carry a
+        # commit hash. Return a sentinel that main() treats as "n/a".
+        source_type = (r.get("source") or {}).get("type")
         return {
             "deploy_id": dep.get("short_id"),
             "deploy_full_id": dep.get("id"),
@@ -103,6 +106,7 @@ def cf_canonical_deploy(account_id, project, token):
             "commit_msg": meta.get("commit_message", "")[:80],
             "created_on": dep.get("created_on"),
             "status": (dep.get("latest_stage") or {}).get("status"),
+            "source_type": source_type,
         }
     except Exception as e:
         return {"error": str(e)}
@@ -155,7 +159,13 @@ def main():
                 entry["deploy_id"] = dep.get("deploy_id")
                 entry["deploy_created"] = dep.get("created_on")
                 entry["deploy_msg"] = dep.get("commit_msg")
-                if sha and dep.get("commit_sha"):
+                entry["source_type"] = dep.get("source_type")
+                # Direct-upload projects (no git source) can't meaningfully
+                # parity-check — wrangler deploys don't carry a commit SHA.
+                if not dep.get("source_type"):
+                    entry["status"] = "direct_upload"
+                    entry["note"] = "Project uses direct upload, no git source — parity not applicable"
+                elif sha and dep.get("commit_sha"):
                     if sha == dep["commit_sha"]:
                         entry["status"] = "in_sync"
                     elif sha.startswith(dep["commit_sha"]) or dep["commit_sha"].startswith(sha):
@@ -163,7 +173,6 @@ def main():
                     else:
                         entry["status"] = "drift"
                         any_drift = True
-                        # If we can, trigger a redeploy to self-heal
                         if AUTO_REDEPLOY_ON_DRIFT and hook_id:
                             trig = trigger_redeploy(hook_id)
                             entry["auto_redeploy"] = trig
