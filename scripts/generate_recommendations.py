@@ -88,14 +88,8 @@ def generate_for_client(client_id):
                 "impact": "high", "pages": [],
             })
 
-        # Competitors getting mentioned instead
-        for comp in citations.get("top_competitors", [])[:3]:
-            recs.append({
-                "priority": "medium", "category": "AI Citations",
-                "title": f"Competitor '{comp['name']}' mentioned {comp['mentions']}x instead of you",
-                "detail": f"{comp['name']} is being cited by AI in {comp['mentions']} of your target queries. Analyse what content they have that you don't. Create better, more detailed, more authoritative versions of the same topics.",
-                "impact": "medium", "pages": [],
-            })
+        # Competitors getting mentioned — logged as competitor data, not recommendations
+        # This data is surfaced in the Competitors section of the dashboard instead
 
     # ============================================================
     # GOOGLE VISIBILITY
@@ -159,9 +153,17 @@ def generate_for_client(client_id):
                 detail = f"These pages have more than one H1 tag. Each page should have exactly one H1."
                 priority = "low"
             elif issue_type == "thin_content":
-                detail = f"These pages have fewer than 100 words. Expand with detailed, authoritative content. AI models prefer pages with 500+ words."
+                # Filter out pages that are intentionally short
+                paths = [p for p in paths if not any(x in p for x in ["/who-we-help/", "/team/", "/for/"])]
+                if not paths:
+                    continue
+                detail = f"These pages have fewer than 200 words. Expand with detailed, authoritative content. AI models prefer pages with 500+ words."
                 priority = "medium"
             elif issue_type == "broken":
+                # Filter out known non-pages
+                paths = [p for p in paths if "/cdn-cgi/" not in p and "%20" not in p and " " not in p]
+                if not paths:
+                    continue
                 detail = f"These URLs returned HTTP errors. Fix or redirect broken pages."
                 priority = "high"
             else:
@@ -484,7 +486,7 @@ def generate_for_client(client_id):
 def main():
     all_recs = {}
 
-    for client_id in ["rank4ai", "market-invoice", "seocompare", "rank4ai-online"]:
+    for client_id in ["rank4ai", "market-invoice", "seocompare", "rochellemarashi"]:
         recs = generate_for_client(client_id)
         all_recs[client_id] = {
             "generated_at": datetime.now().isoformat(),

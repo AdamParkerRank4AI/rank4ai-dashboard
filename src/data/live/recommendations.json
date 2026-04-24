@@ -1,11 +1,11 @@
 {
   "rank4ai": {
-    "generated_at": "2026-04-14T10:25:44.709672",
-    "total": 19,
+    "generated_at": "2026-04-24T15:11:59.339337",
+    "total": 12,
     "critical": 1,
-    "high": 6,
-    "medium": 10,
-    "low": 2,
+    "high": 3,
+    "medium": 8,
+    "low": 0,
     "recommendations": [
       {
         "priority": "critical",
@@ -25,89 +25,26 @@
       },
       {
         "priority": "high",
-        "category": "Schema",
-        "title": "61 pages missing structured data (675/736 have schema)",
-        "detail": "Pages with schema have 2.5x higher chance of AI citation. Add Article, FAQPage, or HowTo schema to these pages. Pages missing schema: /ai-search/ai-knowledge-graph, /ai-search-visibility, /technical-ai-optimisation, /ai-platform-visibility, /ai-seo/technical/internal-linking, /ai-search-vs-seo, /ai-seo/technical/meaning-signals, /ai-seo-agency-uk/colchester, /uk-coverage, /technical-ai-optimisation/guides/complete-guide...",
-        "impact": "high",
-        "pages": [
-          "/ai-search/ai-knowledge-graph",
-          "/ai-search-visibility",
-          "/technical-ai-optimisation",
-          "/ai-platform-visibility",
-          "/ai-seo/technical/internal-linking",
-          "/ai-search-vs-seo",
-          "/ai-seo/technical/meaning-signals",
-          "/ai-seo-agency-uk/colchester",
-          "/uk-coverage",
-          "/technical-ai-optimisation/guides/complete-guide",
-          "/ai-search-vs-seo/guides/complete-guide",
-          "/ai-search/comparisons/guide",
-          "/ai-search/comparisons/why-seo-changing",
-          "/ai-search/comparisons/ai-vs-seo-comparison",
-          "/ai-search/comparisons/future-of-organic-search",
-          "/ai-seo/technical/meaning-graphs",
-          "/ai search",
-          "/ai seo",
-          "/ai search/citations",
-          "/ai-search/comparisons/ranking-vs-reasoning"
-        ]
-      },
-      {
-        "priority": "high",
-        "category": "SEO Health",
-        "title": "66 pages with missing h1",
-        "detail": "These pages have no H1 tag. Add a clear, descriptive H1 to each page. AI models use H1s to understand page topics. Affected pages: /ai-search-questions/can-i-fix-my-business-appearing-incorrectly-in-ai-search-results-myself-or-do-i-need-an-agency, /ai-market-stats/uk-dentist-websites-ai-search-visibility, /ai-market-stats/23-percent-uk-sme-blocking-ai-crawlers, /ai-search-questions/how-much-should-a-uk-business-budget-for-ai-search-optimisation, /ai-market-stats/76-percent-uk-sme-alt-text-issues, /ai-search/ai-knowledge-graph, /ai-search-visibility, /technical-ai-optimisation...",
-        "impact": "medium",
-        "pages": [
-          "/ai-search-questions/can-i-fix-my-business-appearing-incorrectly-in-ai-search-results-myself-or-do-i-need-an-agency",
-          "/ai-market-stats/uk-dentist-websites-ai-search-visibility",
-          "/ai-market-stats/23-percent-uk-sme-blocking-ai-crawlers",
-          "/ai-search-questions/how-much-should-a-uk-business-budget-for-ai-search-optimisation",
-          "/ai-market-stats/76-percent-uk-sme-alt-text-issues",
-          "/ai-search/ai-knowledge-graph",
-          "/ai-search-visibility",
-          "/technical-ai-optimisation",
-          "/ai-platform-visibility",
-          "/ai-seo/technical/internal-linking",
-          "/ai-search-vs-seo",
-          "/ai-seo/technical/meaning-signals",
-          "/ai-seo-agency-uk/colchester",
-          "/uk-coverage",
-          "/technical-ai-optimisation/guides/complete-guide"
-        ]
-      },
-      {
-        "priority": "high",
         "category": "Internal Links",
-        "title": "261 orphan pages with no internal links pointing to them",
-        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /ai-search-questions/can-you-track-whether-chatgpt-is-citing-your-website, /ai-search-questions/why-does-chatgpt-recommend-different-businesses-than-google-when-i-ask-the-same-commercial-question, /ai-search-questions/how-do-you-measure-success-in-ai-driven-marketing, /ai-search-questions/should-i-hire-an-ai-seo-agency-or-train-my-existing-marketing-team, /ai-search-questions/what-role-do-ai-platforms-play-in-modern-marketing-strategy, /ai-search-questions/why-do-ai-answers-vary-between-similar-prompts, /ai-search-questions/what-happens-to-my-business-if-google-ai-overviews-never-mention-my-company, /ai-search-questions/what-happens-if-my-competitors-start-using-ai-seo-before-i-do...",
+        "title": "145 orphan pages with no internal links pointing to them",
+        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /how-often-should-i-analyze-ai-visibility-performance/, /ai-seo-agency-uk/when-to-use/, /ai-seo/common-mistakes-ai-seo/, /ai-search/ecosystem-validation/media-distribution-entity-reinforcement/, /ai-search/comparisons/adapt-content-for-ai/, /ai-search/what-is-an-ai-search-agency/, /ai-search/platforms/perplexity-visibility/, /ai-search/ecosystem-validation/social-platform-consistency/...",
         "impact": "medium",
         "pages": [
-          "/ai-search-questions/can-you-track-whether-chatgpt-is-citing-your-website",
-          "/ai-search-questions/why-does-chatgpt-recommend-different-businesses-than-google-when-i-ask-the-same-commercial-question",
-          "/ai-search-questions/how-do-you-measure-success-in-ai-driven-marketing",
-          "/ai-search-questions/should-i-hire-an-ai-seo-agency-or-train-my-existing-marketing-team",
-          "/ai-search-questions/what-role-do-ai-platforms-play-in-modern-marketing-strategy",
-          "/ai-search-questions/why-do-ai-answers-vary-between-similar-prompts",
-          "/ai-search-questions/what-happens-to-my-business-if-google-ai-overviews-never-mention-my-company",
-          "/ai-search-questions/what-happens-if-my-competitors-start-using-ai-seo-before-i-do",
-          "/ai-search-questions/what-should-i-expect-from-an-ai-seo-agency-in-the-uk",
-          "/ai-search-questions/should-i-be-worried-that-google-ai-overviews-never-show-my-website-but-feature-my-competitors",
-          "/ai-search-questions/can-over-optimisation-harm-ai-visibility-for-uk-businesses",
-          "/blog",
-          "/ai-marketing-growth/why-ai-marketing-different-seo",
-          "/ai-search-questions/why-do-ai-systems-keep-getting-my-business-description-or-expertise-wrong",
-          "/how-we-work"
-        ]
-      },
-      {
-        "priority": "high",
-        "category": "Performance",
-        "title": "Mobile performance score is 39/100",
-        "detail": "Poor mobile performance affects user experience, search rankings, and Core Web Vitals. Actions: 1) Optimise images (WebP, lazy loading) 2) Reduce JavaScript 3) Implement critical CSS 4) Use CDN caching. Slow pages: /",
-        "impact": "medium",
-        "pages": [
-          "/"
+          "/how-often-should-i-analyze-ai-visibility-performance/",
+          "/ai-seo-agency-uk/when-to-use/",
+          "/ai-seo/common-mistakes-ai-seo/",
+          "/ai-search/ecosystem-validation/media-distribution-entity-reinforcement/",
+          "/ai-search/comparisons/adapt-content-for-ai/",
+          "/ai-search/what-is-an-ai-search-agency/",
+          "/ai-search/platforms/perplexity-visibility/",
+          "/ai-search/ecosystem-validation/social-platform-consistency/",
+          "/ai-search/ai-search-consultants/",
+          "/ai-search/comparisons/generic-content-fails/",
+          "/ai-visibility-seo-agency/",
+          "/research/rankings/ai-search-agencies-for-property/",
+          "/ai-search/platforms/chatgpt-visibility/",
+          "/ai-search/comparisons/future-organic-search/",
+          "/ai-seo/ai-seo-vs-geo/"
         ]
       },
       {
@@ -120,69 +57,63 @@
       },
       {
         "priority": "medium",
-        "category": "AI Citations",
-        "title": "Competitor 'Screaming Frog' mentioned 2x instead of you",
-        "detail": "Screaming Frog is being cited by AI in 2 of your target queries. Analyse what content they have that you don't. Create better, more detailed, more authoritative versions of the same topics.",
-        "impact": "medium",
-        "pages": []
-      },
-      {
-        "priority": "medium",
-        "category": "SEO Health",
-        "title": "64 pages with thin content",
-        "detail": "These pages have fewer than 100 words. Expand with detailed, authoritative content. AI models prefer pages with 500+ words. Affected pages: /ai-search-questions/can-i-fix-my-business-appearing-incorrectly-in-ai-search-results-myself-or-do-i-need-an-agency, /logo, /ai-search-questions/how-much-should-a-uk-business-budget-for-ai-search-optimisation, /ai-search/ai-knowledge-graph, /ai-search-visibility, /technical-ai-optimisation, /ai-platform-visibility, /ai-seo/technical/internal-linking...",
-        "impact": "medium",
+        "category": "Schema",
+        "title": "1 pages missing structured data (748/749 have schema)",
+        "detail": "Pages with schema have 2.5x higher chance of AI citation. Add Article, FAQPage, or HowTo schema to these pages. Pages missing schema: /lp/ai-ready-sites/",
+        "impact": "high",
         "pages": [
-          "/ai-search-questions/can-i-fix-my-business-appearing-incorrectly-in-ai-search-results-myself-or-do-i-need-an-agency",
-          "/logo",
-          "/ai-search-questions/how-much-should-a-uk-business-budget-for-ai-search-optimisation",
-          "/ai-search/ai-knowledge-graph",
-          "/ai-search-visibility",
-          "/technical-ai-optimisation",
-          "/ai-platform-visibility",
-          "/ai-seo/technical/internal-linking",
-          "/ai-search-vs-seo",
-          "/ai-seo/technical/meaning-signals",
-          "/ai-seo-agency-uk/colchester",
-          "/uk-coverage",
-          "/technical-ai-optimisation/guides/complete-guide",
-          "/ai-search-vs-seo/guides/complete-guide",
-          "/ai-search/comparisons/guide"
-        ]
-      },
-      {
-        "priority": "medium",
-        "category": "AI Readiness",
-        "title": "1 AI search crawlers not explicitly allowed in robots.txt",
-        "detail": "These search crawlers are not mentioned: GoogleOther. Add explicit 'Allow' rules. Training crawlers not mentioned is fine.",
-        "impact": "medium",
-        "pages": [
-          "/robots.txt"
+          "/lp/ai-ready-sites/"
         ]
       },
       {
         "priority": "medium",
         "category": "Traffic",
-        "title": "High bounce rate: 91.9%",
-        "detail": "Bounce rate is 91.9% \u2014 over 60% suggests visitors aren't finding what they need. Improve: 1) Page load speed 2) Content relevance to search queries 3) Clear CTAs and navigation 4) Mobile experience 5) Internal linking to related content.",
+        "title": "High bounce rate: 95.7%",
+        "detail": "Bounce rate is 95.7% \u2014 over 60% suggests visitors aren't finding what they need. Improve: 1) Page load speed 2) Content relevance to search queries 3) Clear CTAs and navigation 4) Mobile experience 5) Internal linking to related content.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "AI Readiness",
-        "title": "1 pages score below 40/100 for AI readiness",
-        "detail": "These pages have poor AI citation potential. Improve by adding: FAQ sections, clear definitions, comparison tables, statistics, author credentials. Low-scoring pages: /seo-vs-aio-comparison",
+        "title": "3 pages score below 40/100 for AI readiness",
+        "detail": "These pages have poor AI citation potential. Improve by adding: FAQ sections, clear definitions, comparison tables, statistics, author credentials. Low-scoring pages: /learn/, /research/, /who-we-help/london/",
         "impact": "medium",
         "pages": [
-          "/seo-vs-aio-comparison"
+          "/learn/",
+          "/research/",
+          "/who-we-help/london/"
         ]
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'ai visibility seo agency' \u2014 39 impressions, 0% CTR",
-        "detail": "This query gets 39 impressions but only 0 clicks (CTR: 0%). Position: 35. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'how often should i analyze ai visibility performance' \u2014 53 impressions, 0% CTR",
+        "detail": "This query gets 53 impressions but only 0 clicks (CTR: 0%). Position: 5.5. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Content Gap",
+        "title": "'ai search tracking competitors google ai overviews' \u2014 47 impressions, 0% CTR",
+        "detail": "This query gets 47 impressions but only 0 clicks (CTR: 0%). Position: 71.6. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Content Gap",
+        "title": "'ai seo' \u2014 45 impressions, 0% CTR",
+        "detail": "This query gets 45 impressions but only 0 clicks (CTR: 0%). Position: 56.8. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Content Gap",
+        "title": "'ai search visibility services' \u2014 37 impressions, 0% CTR",
+        "detail": "This query gets 37 impressions but only 0 clicks (CTR: 0%). Position: 29.1. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
@@ -190,58 +121,18 @@
         "priority": "medium",
         "category": "Content Gap",
         "title": "'best chatgpt optimisation company near me' \u2014 35 impressions, 0% CTR",
-        "detail": "This query gets 35 impressions but only 0 clicks (CTR: 0%). Position: 47.9. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
-        "impact": "medium",
-        "pages": []
-      },
-      {
-        "priority": "medium",
-        "category": "Content Gap",
-        "title": "'ai search visibility' \u2014 25 impressions, 0% CTR",
-        "detail": "This query gets 25 impressions but only 0 clicks (CTR: 0%). Position: 75.4. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
-        "impact": "medium",
-        "pages": []
-      },
-      {
-        "priority": "medium",
-        "category": "Content Gap",
-        "title": "'ai search agency' \u2014 11 impressions, 0% CTR",
-        "detail": "This query gets 11 impressions but only 0 clicks (CTR: 0%). Position: 83.9. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
-        "impact": "medium",
-        "pages": []
-      },
-      {
-        "priority": "medium",
-        "category": "Content Gap",
-        "title": "'ai visibility (20 | 20)' \u2014 11 impressions, 0% CTR",
-        "detail": "This query gets 11 impressions but only 0 clicks (CTR: 0%). Position: 87.1. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
-        "impact": "medium",
-        "pages": []
-      },
-      {
-        "priority": "low",
-        "category": "Accessibility",
-        "title": "61 images missing alt text",
-        "detail": "Alt text helps search engines and AI understand images. Add descriptive alt text to all images.",
-        "impact": "low",
-        "pages": []
-      },
-      {
-        "priority": "low",
-        "category": "Indexing",
-        "title": "Only 247/736 pages indexed in Bing",
-        "detail": "Bing feeds Copilot. If URLs were recently submitted via IndexNow, allow 7-14 days for propagation. Re-check after that period. Submit: python3 scripts/submit_indexnow.py rank4ai",
+        "detail": "This query gets 35 impressions but only 0 clicks (CTR: 0%). Position: 43.6. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       }
     ]
   },
   "market-invoice": {
-    "generated_at": "2026-04-14T10:25:44.716729",
-    "total": 17,
+    "generated_at": "2026-04-24T15:11:59.348293",
+    "total": 13,
     "critical": 2,
-    "high": 6,
-    "medium": 8,
+    "high": 3,
+    "medium": 7,
     "low": 1,
     "recommendations": [
       {
@@ -279,51 +170,6 @@
       },
       {
         "priority": "high",
-        "category": "SEO Health",
-        "title": "2 pages with broken",
-        "detail": "These URLs returned HTTP errors. Fix or redirect broken pages. Affected pages: /cdn-cgi/l/email-protection, /guides/non-recourse-factoring/",
-        "impact": "medium",
-        "pages": [
-          "/cdn-cgi/l/email-protection",
-          "/guides/non-recourse-factoring/"
-        ]
-      },
-      {
-        "priority": "high",
-        "category": "Internal Links",
-        "title": "57 orphan pages with no internal links pointing to them",
-        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /providers/bank-of-ireland/, /terms/, /providers/quba/, /accessibility/, /providers/jmk-group/, /providers/qube/, /providers/fgi-finance/, /providers/shire/...",
-        "impact": "medium",
-        "pages": [
-          "/providers/bank-of-ireland/",
-          "/terms/",
-          "/providers/quba/",
-          "/accessibility/",
-          "/providers/jmk-group/",
-          "/providers/qube/",
-          "/providers/fgi-finance/",
-          "/providers/shire/",
-          "/providers/flo-group/",
-          "/providers/4syte/",
-          "/providers/funding-alternative/",
-          "/providers/sme-invoice/",
-          "/providers/allica-bank/",
-          "/providers/jardine-norton/",
-          "/providers/panel-financial/"
-        ]
-      },
-      {
-        "priority": "high",
-        "category": "AI Readiness",
-        "title": "2 AI SEARCH crawlers blocked in robots.txt",
-        "detail": "These search crawlers are blocked: GPTBot, Google-Extended. These are used for live AI search (ChatGPT browsing, Perplexity, Gemini). Blocking them means invisibility on those platforms. Training crawlers (ClaudeBot, CCBot, Applebot-Extended) are correctly blocked.",
-        "impact": "high",
-        "pages": [
-          "/robots.txt"
-        ]
-      },
-      {
-        "priority": "high",
         "category": "Entity",
         "title": "Not listed on Wikidata",
         "detail": "Wikidata feeds Google Knowledge Graph and AI models. Create a Wikidata entry with: company name, type (Q4830453 = business), founding date, website, industry, founders. This is free and takes 10 minutes.",
@@ -351,53 +197,58 @@
       },
       {
         "priority": "medium",
-        "category": "AI Citations",
-        "title": "Competitor 'Close Brothers' mentioned 8x instead of you",
-        "detail": "Close Brothers is being cited by AI in 8 of your target queries. Analyse what content they have that you don't. Create better, more detailed, more authoritative versions of the same topics.",
-        "impact": "medium",
-        "pages": []
-      },
-      {
-        "priority": "medium",
-        "category": "AI Citations",
-        "title": "Competitor 'Bibby' mentioned 8x instead of you",
-        "detail": "Bibby is being cited by AI in 8 of your target queries. Analyse what content they have that you don't. Create better, more detailed, more authoritative versions of the same topics.",
-        "impact": "medium",
-        "pages": []
-      },
-      {
-        "priority": "medium",
-        "category": "AI Citations",
-        "title": "Competitor 'HSBC' mentioned 6x instead of you",
-        "detail": "HSBC is being cited by AI in 6 of your target queries. Analyse what content they have that you don't. Create better, more detailed, more authoritative versions of the same topics.",
-        "impact": "medium",
-        "pages": []
-      },
-      {
-        "priority": "medium",
-        "category": "Schema",
-        "title": "Schema gaps: Missing content schema types: HowTo",
-        "detail": "Currently using: Service, Article, ContactPage, BreadcrumbList, FAQPage, WebPage, Product, WebApplication, WebSite, Organization. Missing content schema types: HowTo. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
-        "impact": "medium",
-        "pages": []
-      },
-      {
-        "priority": "medium",
-        "category": "Traffic",
-        "title": "High bounce rate: 64.7%",
-        "detail": "Bounce rate is 64.7% \u2014 over 60% suggests visitors aren't finding what they need. Improve: 1) Page load speed 2) Content relevance to search queries 3) Clear CTAs and navigation 4) Mobile experience 5) Internal linking to related content.",
-        "impact": "medium",
-        "pages": []
-      },
-      {
-        "priority": "medium",
         "category": "AI Readiness",
-        "title": "1 pages score below 40/100 for AI readiness",
-        "detail": "These pages have poor AI citation potential. Improve by adding: FAQ sections, clear definitions, comparison tables, statistics, author credentials. Low-scoring pages: /compare/",
+        "title": "6 pages score below 40/100 for AI readiness",
+        "detail": "These pages have poor AI citation potential. Improve by adding: FAQ sections, clear definitions, comparison tables, statistics, author credentials. Low-scoring pages: /compare/, /questions/, /industries/, /blog/, /providers/, /guides/",
         "impact": "medium",
         "pages": [
-          "/compare/"
+          "/compare/",
+          "/questions/",
+          "/industries/",
+          "/blog/",
+          "/providers/",
+          "/guides/"
         ]
+      },
+      {
+        "priority": "medium",
+        "category": "Content Gap",
+        "title": "'invoice finance calculator' \u2014 26 impressions, 0% CTR",
+        "detail": "This query gets 26 impressions but only 0 clicks (CTR: 0%). Position: 43.7. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Content Gap",
+        "title": "'market invoice' \u2014 26 impressions, 0% CTR",
+        "detail": "This query gets 26 impressions but only 0 clicks (CTR: 0%). Position: 8.1. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Content Gap",
+        "title": "'market invoice finance' \u2014 22 impressions, 0% CTR",
+        "detail": "This query gets 22 impressions but only 0 clicks (CTR: 0%). Position: 10.3. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Content Gap",
+        "title": "'invoice finance quote' \u2014 20 impressions, 0% CTR",
+        "detail": "This query gets 20 impressions but only 0 clicks (CTR: 0%). Position: 83.2. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Content Gap",
+        "title": "'invoice discounting cost calculator' \u2014 12 impressions, 0% CTR",
+        "detail": "This query gets 12 impressions but only 0 clicks (CTR: 0%). Position: 22.9. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "impact": "medium",
+        "pages": []
       },
       {
         "priority": "medium",
@@ -408,17 +259,9 @@
         "pages": []
       },
       {
-        "priority": "medium",
-        "category": "Content",
-        "title": "Only 0 pillar pages have 2,000+ words (excluding Q&A pages)",
-        "detail": "Pillar pages with 2,000+ words get 3x more AI citations. Q&A pages at 120-180 words are fine \u2014 this applies to guides, service pages, and definitive content. Expand 5-10 key pillar pages.",
-        "impact": "medium",
-        "pages": []
-      },
-      {
         "priority": "low",
         "category": "Indexing",
-        "title": "Only 0/348 pages indexed in Bing",
+        "title": "Only 5/391 pages indexed in Bing",
         "detail": "Bing feeds Copilot. If URLs were recently submitted via IndexNow, allow 7-14 days for propagation. Re-check after that period. Submit: python3 scripts/submit_indexnow.py market-invoice",
         "impact": "medium",
         "pages": []
@@ -426,11 +269,11 @@
     ]
   },
   "seocompare": {
-    "generated_at": "2026-04-14T10:25:44.722287",
-    "total": 16,
+    "generated_at": "2026-04-24T15:11:59.358482",
+    "total": 12,
     "critical": 2,
-    "high": 5,
-    "medium": 8,
+    "high": 3,
+    "medium": 6,
     "low": 1,
     "recommendations": [
       {
@@ -445,7 +288,7 @@
         "priority": "critical",
         "category": "Search Visibility",
         "title": "0% Google visibility \u2014 not ranking for any target queries",
-        "detail": "Not in Google top 20 for any of 5 target queries. Top competitors: clickslice.co.uk (20.0%), propeller.co.uk (20.0%). Actions: 1) Create dedicated landing pages for each target query 2) Build topical authority with supporting content 3) Acquire backlinks to key pages 4) Improve internal linking to target pages.",
+        "detail": "Not in Google top 20 for any of 5 target queries. Top competitors: clickslice.co.uk (20.0%), charle.co.uk (20.0%). Actions: 1) Create dedicated landing pages for each target query 2) Build topical authority with supporting content 3) Acquire backlinks to key pages 4) Improve internal linking to target pages.",
         "impact": "high",
         "pages": [
           "compare SEO agencies UK",
@@ -462,26 +305,6 @@
         "detail": "AI knows the brand exists but doesn't recommend it for industry queries. The gap is in topical authority \u2014 AI doesn't associate this brand with the industry. Fix by creating definitive content that AI can quote: statistics, clear definitions, comparison tables, step-by-step guides.",
         "impact": "high",
         "pages": []
-      },
-      {
-        "priority": "high",
-        "category": "SEO Health",
-        "title": "1 pages with broken",
-        "detail": "These URLs returned HTTP errors. Fix or redirect broken pages. Affected pages: /cdn-cgi/l/email-protection",
-        "impact": "medium",
-        "pages": [
-          "/cdn-cgi/l/email-protection"
-        ]
-      },
-      {
-        "priority": "high",
-        "category": "AI Readiness",
-        "title": "2 AI SEARCH crawlers blocked in robots.txt",
-        "detail": "These search crawlers are blocked: GPTBot, Google-Extended. These are used for live AI search (ChatGPT browsing, Perplexity, Gemini). Blocking them means invisibility on those platforms. Training crawlers (ClaudeBot, Bytespider, CCBot) are correctly blocked.",
-        "impact": "high",
-        "pages": [
-          "/robots.txt"
-        ]
       },
       {
         "priority": "high",
@@ -507,224 +330,139 @@
       },
       {
         "priority": "medium",
-        "category": "AI Citations",
-        "title": "Competitor 'Impression' mentioned 3x instead of you",
-        "detail": "Impression is being cited by AI in 3 of your target queries. Analyse what content they have that you don't. Create better, more detailed, more authoritative versions of the same topics.",
-        "impact": "medium",
-        "pages": []
-      },
-      {
-        "priority": "medium",
-        "category": "AI Citations",
-        "title": "Competitor 'Found' mentioned 2x instead of you",
-        "detail": "Found is being cited by AI in 2 of your target queries. Analyse what content they have that you don't. Create better, more detailed, more authoritative versions of the same topics.",
-        "impact": "medium",
-        "pages": []
-      },
-      {
-        "priority": "medium",
-        "category": "AI Citations",
-        "title": "Competitor 'Rise at Seven' mentioned 2x instead of you",
-        "detail": "Rise at Seven is being cited by AI in 2 of your target queries. Analyse what content they have that you don't. Create better, more detailed, more authoritative versions of the same topics.",
-        "impact": "medium",
-        "pages": []
-      },
-      {
-        "priority": "medium",
-        "category": "AI Readiness",
-        "title": "3 AI search crawlers not explicitly allowed in robots.txt",
-        "detail": "These search crawlers are not mentioned: GoogleOther, PerplexityBot, Bingbot. Add explicit 'Allow' rules. Training crawlers not mentioned is fine.",
-        "impact": "medium",
-        "pages": [
-          "/robots.txt"
-        ]
-      },
-      {
-        "priority": "medium",
         "category": "Traffic",
-        "title": "High bounce rate: 87.1%",
-        "detail": "Bounce rate is 87.1% \u2014 over 60% suggests visitors aren't finding what they need. Improve: 1) Page load speed 2) Content relevance to search queries 3) Clear CTAs and navigation 4) Mobile experience 5) Internal linking to related content.",
+        "title": "High bounce rate: 88.5%",
+        "detail": "Bounce rate is 88.5% \u2014 over 60% suggests visitors aren't finding what they need. Improve: 1) Page load speed 2) Content relevance to search queries 3) Clear CTAs and navigation 4) Mobile experience 5) Internal linking to related content.",
         "impact": "medium",
         "pages": []
-      },
-      {
-        "priority": "medium",
-        "category": "AI Readiness",
-        "title": "1 pages score below 40/100 for AI readiness",
-        "detail": "These pages have poor AI citation potential. Improve by adding: FAQ sections, clear definitions, comparison tables, statistics, author credentials. Low-scoring pages: /free-ai-visibility-audit/",
-        "impact": "medium",
-        "pages": [
-          "/free-ai-visibility-audit/"
-        ]
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'ai search agency' \u2014 13 impressions, 0% CTR",
-        "detail": "This query gets 13 impressions but only 0 clicks (CTR: 0%). Position: 68.1. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'ai seo agency' \u2014 383 impressions, 0% CTR",
+        "detail": "This query gets 383 impressions but only 0 clicks (CTR: 0%). Position: 79.1. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
-        "category": "Content",
-        "title": "Low multi-modal content (0 pages with images+video, 0 with video)",
-        "detail": "Pages with images AND video get 156-317% more AI citations. Add charts, infographics, and short videos to key pillar pages. Note: inline SVG graphics may not be detected by this check.",
-        "impact": "high",
+        "category": "Content Gap",
+        "title": "'ai seo services' \u2014 200 impressions, 0% CTR",
+        "detail": "This query gets 200 impressions but only 0 clicks (CTR: 0%). Position: 87.6. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Content Gap",
+        "title": "'ai seo company' \u2014 99 impressions, 0% CTR",
+        "detail": "This query gets 99 impressions but only 0 clicks (CTR: 0%). Position: 70.1. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Content Gap",
+        "title": "'best ai seo agency' \u2014 94 impressions, 0% CTR",
+        "detail": "This query gets 94 impressions but only 0 clicks (CTR: 0%). Position: 81.0. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Content Gap",
+        "title": "'ai search agency' \u2014 74 impressions, 0% CTR",
+        "detail": "This query gets 74 impressions but only 0 clicks (CTR: 0%). Position: 68.0. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "impact": "medium",
         "pages": []
       },
       {
         "priority": "low",
         "category": "Indexing",
-        "title": "Only 0/226 pages indexed in Bing",
+        "title": "Only 0/321 pages indexed in Bing",
         "detail": "Bing feeds Copilot. If URLs were recently submitted via IndexNow, allow 7-14 days for propagation. Re-check after that period. Submit: python3 scripts/submit_indexnow.py seocompare",
         "impact": "medium",
         "pages": []
       }
     ]
   },
-  "rank4ai-online": {
-    "generated_at": "2026-04-14T10:25:44.735190",
-    "total": 6,
+  "rochellemarashi": {
+    "generated_at": "2026-04-24T15:11:59.363912",
+    "total": 5,
     "critical": 0,
-    "high": 4,
+    "high": 2,
     "medium": 2,
-    "low": 0,
+    "low": 1,
     "recommendations": [
       {
         "priority": "high",
-        "category": "Schema",
-        "title": "245 pages missing structured data (630/875 have schema)",
-        "detail": "Pages with schema have 2.5x higher chance of AI citation. Add Article, FAQPage, or HowTo schema to these pages. Pages missing schema: /ai-search-questions/can-i-fix-my-ai-search-problems-without-hiring-an-agency/, /ai-search-questions/how-does-ai-actually-decide-which-uk-businesses-to-recommend/, /ai-search-questions/is-someone-manipulating-ai-search-results-in-the-uk/, /ai-market-stats/62-percent-uk-sme-description-mismatch/, /ai-search-questions/do-google-reviews-affect-whether-ai-recommends-my-business/, /ai-search-questions/how-should-i-structure-content-for-ai-prompts-rather-than-keywords/, /ai-search-questions/will-my-business-disappear-from-google-ai-overviews-if-i-don-t-optimise-for-it/, /ai-search-weekly/2026-03-16-ai-search-weekly/, /ai-search-questions/what-specific-changes-do-i-need-to-make-to-my-website-content-for-ai-search-engines/, /ai-search-questions/do-ai-platforms-understand-long-tail-queries-better-than-google/...",
-        "impact": "high",
-        "pages": [
-          "/ai-search-questions/can-i-fix-my-ai-search-problems-without-hiring-an-agency/",
-          "/ai-search-questions/how-does-ai-actually-decide-which-uk-businesses-to-recommend/",
-          "/ai-search-questions/is-someone-manipulating-ai-search-results-in-the-uk/",
-          "/ai-market-stats/62-percent-uk-sme-description-mismatch/",
-          "/ai-search-questions/do-google-reviews-affect-whether-ai-recommends-my-business/",
-          "/ai-search-questions/how-should-i-structure-content-for-ai-prompts-rather-than-keywords/",
-          "/ai-search-questions/will-my-business-disappear-from-google-ai-overviews-if-i-don-t-optimise-for-it/",
-          "/ai-search-weekly/2026-03-16-ai-search-weekly/",
-          "/ai-search-questions/what-specific-changes-do-i-need-to-make-to-my-website-content-for-ai-search-engines/",
-          "/ai-search-questions/do-ai-platforms-understand-long-tail-queries-better-than-google/",
-          "/ai-search-questions/is-ai-getting-my-business-information-wrong-and-how-do-i-fix-it/",
-          "/ai-search-questions/can-i-lose-ai-visibility-if-i-stop-working-on-it/",
-          "/ai-market-stats/accountancy-firms-highest-ai-visibility-signals/",
-          "/ai-search-questions/how-do-i-know-if-my-business-needs-an-ai-seo-audit-before-investing-in-ai-search-optimisation/",
-          "/ai-market-stats/53-percent-uk-sme-unclear-h1-heading/",
-          "/ai-search-questions/can-i-fix-my-business-appearing-incorrectly-in-ai-search-results-myself-or-do-i-need-an-agency/",
-          "/ai-search-questions/can-chatgpt-damage-my-business-reputation-if-it-gets-facts-wrong/",
-          "/ai-search-questions/what-s-the-difference-between-being-mentioned-and-cited-by-ai/",
-          "/ai-search-questions/why-do-ai-systems-keep-getting-confused-about-what-my-company-actually-does/",
-          "/ai-search-questions/can-ai-visibility-work-without-strong-backlinks-in-the-uk/"
-        ]
-      },
-      {
-        "priority": "high",
         "category": "SEO Health",
-        "title": "245 pages with missing h1",
-        "detail": "These pages have no H1 tag. Add a clear, descriptive H1 to each page. AI models use H1s to understand page topics. Affected pages: /ai-search-questions/can-i-fix-my-ai-search-problems-without-hiring-an-agency/, /ai-search-questions/how-does-ai-actually-decide-which-uk-businesses-to-recommend/, /ai-search-questions/is-someone-manipulating-ai-search-results-in-the-uk/, /ai-market-stats/62-percent-uk-sme-description-mismatch/, /ai-search-questions/do-google-reviews-affect-whether-ai-recommends-my-business/, /ai-search-questions/how-should-i-structure-content-for-ai-prompts-rather-than-keywords/, /ai-search-questions/will-my-business-disappear-from-google-ai-overviews-if-i-don-t-optimise-for-it/, /ai-search-weekly/2026-03-16-ai-search-weekly/...",
+        "title": "4 pages with missing h1",
+        "detail": "These pages have no H1 tag. Add a clear, descriptive H1 to each page. AI models use H1s to understand page topics. Affected pages: /blog/lifting-the-veil-of-invisibility/, /blog/surviving-stalking/, /blog/just-feelings-wont-keep-clients-safe/, /blog/dont-bite-your-tongue/",
         "impact": "medium",
         "pages": [
-          "/ai-search-questions/can-i-fix-my-ai-search-problems-without-hiring-an-agency/",
-          "/ai-search-questions/how-does-ai-actually-decide-which-uk-businesses-to-recommend/",
-          "/ai-search-questions/is-someone-manipulating-ai-search-results-in-the-uk/",
-          "/ai-market-stats/62-percent-uk-sme-description-mismatch/",
-          "/ai-search-questions/do-google-reviews-affect-whether-ai-recommends-my-business/",
-          "/ai-search-questions/how-should-i-structure-content-for-ai-prompts-rather-than-keywords/",
-          "/ai-search-questions/will-my-business-disappear-from-google-ai-overviews-if-i-don-t-optimise-for-it/",
-          "/ai-search-weekly/2026-03-16-ai-search-weekly/",
-          "/ai-search-questions/what-specific-changes-do-i-need-to-make-to-my-website-content-for-ai-search-engines/",
-          "/ai-search-questions/do-ai-platforms-understand-long-tail-queries-better-than-google/",
-          "/ai-search-questions/is-ai-getting-my-business-information-wrong-and-how-do-i-fix-it/",
-          "/ai-search-questions/can-i-lose-ai-visibility-if-i-stop-working-on-it/",
-          "/ai-market-stats/accountancy-firms-highest-ai-visibility-signals/",
-          "/ai-search-questions/how-do-i-know-if-my-business-needs-an-ai-seo-audit-before-investing-in-ai-search-optimisation/",
-          "/ai-market-stats/53-percent-uk-sme-unclear-h1-heading/"
-        ]
-      },
-      {
-        "priority": "high",
-        "category": "SEO Health",
-        "title": "1 pages with broken",
-        "detail": "These URLs returned HTTP errors. Fix or redirect broken pages. Affected pages: /cdn-cgi/l/email-protection",
-        "impact": "medium",
-        "pages": [
-          "/cdn-cgi/l/email-protection"
+          "/blog/lifting-the-veil-of-invisibility/",
+          "/blog/surviving-stalking/",
+          "/blog/just-feelings-wont-keep-clients-safe/",
+          "/blog/dont-bite-your-tongue/"
         ]
       },
       {
         "priority": "high",
         "category": "Internal Links",
-        "title": "406 orphan pages with no internal links pointing to them",
-        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /ai-marketing-growth/ai-powered-customer-journeys/, /research/rankings/ai-seo-agencies-london/, /ai-search/ecosystem-validation/review-platforms-trust-signals/, /ai-search-questions/can-i-fix-my-ai-search-problems-without-hiring-an-agency/, /ai-search-questions/how-does-ai-actually-decide-which-uk-businesses-to-recommend/, /ai-search-questions/is-someone-manipulating-ai-search-results-in-the-uk/, /ai-market-stats/62-percent-uk-sme-description-mismatch/, /responsible-ai/...",
+        "title": "109 orphan pages with no internal links pointing to them",
+        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /institutional-and-systemic-harm/, /blog/what-to-expect-first-online-therapy-session/, /burnout/, /blog/the-link-between-workplace-stress-and-trauma/, /questions/can-therapy-help-with-workplace-bullying/, /psychotherapy/, /fees/, /blog/lifting-the-veil-of-invisibility/...",
         "impact": "medium",
         "pages": [
-          "/ai-marketing-growth/ai-powered-customer-journeys/",
-          "/research/rankings/ai-seo-agencies-london/",
-          "/ai-search/ecosystem-validation/review-platforms-trust-signals/",
-          "/ai-search-questions/can-i-fix-my-ai-search-problems-without-hiring-an-agency/",
-          "/ai-search-questions/how-does-ai-actually-decide-which-uk-businesses-to-recommend/",
-          "/ai-search-questions/is-someone-manipulating-ai-search-results-in-the-uk/",
-          "/ai-market-stats/62-percent-uk-sme-description-mismatch/",
-          "/responsible-ai/",
-          "/ai-search-questions/do-google-reviews-affect-whether-ai-recommends-my-business/",
-          "/ai-search/rank-in-ai-search/",
-          "/ai-search/citations/why-am-i-not-cited-in-ai-answers/common-reasons-businesses-are-not-cited/",
-          "/ai-search-questions/how-should-i-structure-content-for-ai-prompts-rather-than-keywords/",
-          "/ai-search/comparisons/ai-answers-cannibalise/",
-          "/ai-search-questions/will-my-business-disappear-from-google-ai-overviews-if-i-don-t-optimise-for-it/",
-          "/ai-search/citations/prompt-behaviour-types-overview/"
+          "/institutional-and-systemic-harm/",
+          "/blog/what-to-expect-first-online-therapy-session/",
+          "/burnout/",
+          "/blog/the-link-between-workplace-stress-and-trauma/",
+          "/questions/can-therapy-help-with-workplace-bullying/",
+          "/psychotherapy/",
+          "/fees/",
+          "/blog/lifting-the-veil-of-invisibility/",
+          "/blog/surviving-stalking/",
+          "/online-therapy-uk/",
+          "/anxiety/",
+          "/privacy/",
+          "/blog/just-feelings-wont-keep-clients-safe/",
+          "/darvo/",
+          "/research/"
         ]
       },
       {
         "priority": "medium",
         "category": "SEO Health",
-        "title": "245 pages with missing meta desc",
-        "detail": "These pages have no meta description. Add unique, descriptive meta descriptions (150-160 chars) that summarise the page content. Affected pages: /ai-search-questions/can-i-fix-my-ai-search-problems-without-hiring-an-agency/, /ai-search-questions/how-does-ai-actually-decide-which-uk-businesses-to-recommend/, /ai-search-questions/is-someone-manipulating-ai-search-results-in-the-uk/, /ai-market-stats/62-percent-uk-sme-description-mismatch/, /ai-search-questions/do-google-reviews-affect-whether-ai-recommends-my-business/, /ai-search-questions/how-should-i-structure-content-for-ai-prompts-rather-than-keywords/, /ai-search-questions/will-my-business-disappear-from-google-ai-overviews-if-i-don-t-optimise-for-it/, /ai-search-weekly/2026-03-16-ai-search-weekly/...",
+        "title": "8 pages with thin content",
+        "detail": "These pages have fewer than 200 words. Expand with detailed, authoritative content. AI models prefer pages with 500+ words. Affected pages: /blog/lifting-the-veil-of-invisibility/, /blog/surviving-stalking/, /blog/just-feelings-wont-keep-clients-safe/, /contact/, /whitepapers/, /podcast/, /blog/dont-bite-your-tongue/, /videos/",
         "impact": "medium",
         "pages": [
-          "/ai-search-questions/can-i-fix-my-ai-search-problems-without-hiring-an-agency/",
-          "/ai-search-questions/how-does-ai-actually-decide-which-uk-businesses-to-recommend/",
-          "/ai-search-questions/is-someone-manipulating-ai-search-results-in-the-uk/",
-          "/ai-market-stats/62-percent-uk-sme-description-mismatch/",
-          "/ai-search-questions/do-google-reviews-affect-whether-ai-recommends-my-business/",
-          "/ai-search-questions/how-should-i-structure-content-for-ai-prompts-rather-than-keywords/",
-          "/ai-search-questions/will-my-business-disappear-from-google-ai-overviews-if-i-don-t-optimise-for-it/",
-          "/ai-search-weekly/2026-03-16-ai-search-weekly/",
-          "/ai-search-questions/what-specific-changes-do-i-need-to-make-to-my-website-content-for-ai-search-engines/",
-          "/ai-search-questions/do-ai-platforms-understand-long-tail-queries-better-than-google/",
-          "/ai-search-questions/is-ai-getting-my-business-information-wrong-and-how-do-i-fix-it/",
-          "/ai-search-questions/can-i-lose-ai-visibility-if-i-stop-working-on-it/",
-          "/ai-market-stats/accountancy-firms-highest-ai-visibility-signals/",
-          "/ai-search-questions/how-do-i-know-if-my-business-needs-an-ai-seo-audit-before-investing-in-ai-search-optimisation/",
-          "/ai-market-stats/53-percent-uk-sme-unclear-h1-heading/"
+          "/blog/lifting-the-veil-of-invisibility/",
+          "/blog/surviving-stalking/",
+          "/blog/just-feelings-wont-keep-clients-safe/",
+          "/contact/",
+          "/whitepapers/",
+          "/podcast/",
+          "/blog/dont-bite-your-tongue/",
+          "/videos/"
         ]
       },
       {
         "priority": "medium",
-        "category": "SEO Health",
-        "title": "245 pages with thin content",
-        "detail": "These pages have fewer than 100 words. Expand with detailed, authoritative content. AI models prefer pages with 500+ words. Affected pages: /ai-search-questions/can-i-fix-my-ai-search-problems-without-hiring-an-agency/, /ai-search-questions/how-does-ai-actually-decide-which-uk-businesses-to-recommend/, /ai-search-questions/is-someone-manipulating-ai-search-results-in-the-uk/, /ai-market-stats/62-percent-uk-sme-description-mismatch/, /ai-search-questions/do-google-reviews-affect-whether-ai-recommends-my-business/, /ai-search-questions/how-should-i-structure-content-for-ai-prompts-rather-than-keywords/, /ai-search-questions/will-my-business-disappear-from-google-ai-overviews-if-i-don-t-optimise-for-it/, /ai-search-weekly/2026-03-16-ai-search-weekly/...",
+        "category": "Content",
+        "title": "Only 2 pillar pages have 2,000+ words (excluding Q&A pages)",
+        "detail": "Pillar pages with 2,000+ words get 3x more AI citations. Q&A pages at 120-180 words are fine \u2014 this applies to guides, service pages, and definitive content. Expand 5-10 key pillar pages.",
         "impact": "medium",
-        "pages": [
-          "/ai-search-questions/can-i-fix-my-ai-search-problems-without-hiring-an-agency/",
-          "/ai-search-questions/how-does-ai-actually-decide-which-uk-businesses-to-recommend/",
-          "/ai-search-questions/is-someone-manipulating-ai-search-results-in-the-uk/",
-          "/ai-market-stats/62-percent-uk-sme-description-mismatch/",
-          "/ai-search-questions/do-google-reviews-affect-whether-ai-recommends-my-business/",
-          "/ai-search-questions/how-should-i-structure-content-for-ai-prompts-rather-than-keywords/",
-          "/ai-search-questions/will-my-business-disappear-from-google-ai-overviews-if-i-don-t-optimise-for-it/",
-          "/ai-search-weekly/2026-03-16-ai-search-weekly/",
-          "/ai-search-questions/what-specific-changes-do-i-need-to-make-to-my-website-content-for-ai-search-engines/",
-          "/ai-search-questions/do-ai-platforms-understand-long-tail-queries-better-than-google/",
-          "/ai-search-questions/is-ai-getting-my-business-information-wrong-and-how-do-i-fix-it/",
-          "/ai-search-questions/can-i-lose-ai-visibility-if-i-stop-working-on-it/",
-          "/ai-market-stats/accountancy-firms-highest-ai-visibility-signals/",
-          "/ai-search-questions/how-do-i-know-if-my-business-needs-an-ai-seo-audit-before-investing-in-ai-search-optimisation/",
-          "/ai-market-stats/53-percent-uk-sme-unclear-h1-heading/"
-        ]
+        "pages": []
+      },
+      {
+        "priority": "low",
+        "category": "Content",
+        "title": "No comparison tables detected",
+        "detail": "Pages with comparison tables have 2.5x higher AI citation rate. Consider adding comparison tables to key pages where relevant.",
+        "impact": "medium",
+        "pages": []
       }
     ]
   }

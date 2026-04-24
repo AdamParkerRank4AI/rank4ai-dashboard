@@ -1,10 +1,10 @@
 {
   "rank4ai": {
     "site_id": "rank4ai",
-    "computed_at": "2026-04-23T18:18:56.094448",
-    "total_score": 53,
+    "computed_at": "2026-04-24T14:55:36.275390",
+    "total_score": 54,
     "max_score": 60,
-    "percentage": 88.3,
+    "percentage": 90.0,
     "layers": {
       "crawlability": {
         "score": 10,
@@ -22,26 +22,27 @@
         "notes": [
           "XML sitemap present (+3)",
           "ai-sitemap.txt present (+2)",
-          "20% orphans (+1)",
-          "avg 104.7 inbound per page (+2)"
+          "19% orphans (+1)",
+          "avg 108.5 inbound per page (+2)"
         ]
       },
       "readability": {
         "score": 10,
         "max": 10,
         "notes": [
-          "avg 843 words (+2)",
-          "732/732 pages have answer capsule (+3)",
-          "527/732 pages have question H2s (+3)",
-          "732/732 pages use lists (+2)"
+          "avg 885 words (+2)",
+          "748/749 pages have answer capsule (+3)",
+          "528/749 pages have question H2s (+3)",
+          "748/749 pages use lists (+2)"
         ]
       },
       "citability": {
-        "score": 7,
+        "score": 8,
         "max": 10,
         "notes": [
-          "732/732 pages have author signal (+3)",
-          "116/732 pages use tables (+2)"
+          "748/749 pages have author signal (+3)",
+          "136/749 pages use tables (+2)",
+          "1 pages have definitions (+1)"
         ]
       },
       "schema": {
@@ -57,9 +58,9 @@
         "max": 10,
         "notes": [
           "HTTPS (+2)",
-          "732/732 pages have canonical (+2)",
-          "732/732 pages have OG tags (+2)",
-          "718/732 pages have breadcrumbs (+2)",
+          "748/749 pages have canonical (+2)",
+          "748/749 pages have OG tags (+2)",
+          "734/749 pages have breadcrumbs (+2)",
           "Mobile viewport on all pages (+2)"
         ]
       }
@@ -67,7 +68,7 @@
   },
   "market-invoice": {
     "site_id": "market-invoice",
-    "computed_at": "2026-04-23T18:18:56.935701",
+    "computed_at": "2026-04-24T14:55:37.727890",
     "total_score": 55,
     "max_score": 60,
     "percentage": 91.7,
@@ -96,17 +97,17 @@
         "score": 8,
         "max": 10,
         "notes": [
-          "avg 720 words (+1)",
-          "380/390 pages have answer capsule (+3)",
-          "390/390 pages use lists (+2)"
+          "avg 719 words (+1)",
+          "381/391 pages have answer capsule (+3)",
+          "391/391 pages use lists (+2)"
         ]
       },
       "citability": {
         "score": 9,
         "max": 10,
         "notes": [
-          "390/390 pages have author signal (+3)",
-          "133/390 pages use tables (+2)",
+          "391/391 pages have author signal (+3)",
+          "133/391 pages use tables (+2)",
           "226 pages have definitions (+1)"
         ]
       },
@@ -123,9 +124,9 @@
         "max": 10,
         "notes": [
           "HTTPS (+2)",
-          "390/390 pages have canonical (+2)",
-          "390/390 pages have OG tags (+2)",
-          "344/390 pages have breadcrumbs (+2)",
+          "391/391 pages have canonical (+2)",
+          "391/391 pages have OG tags (+2)",
+          "345/391 pages have breadcrumbs (+2)",
           "Mobile viewport on all pages (+2)"
         ]
       }
@@ -133,7 +134,7 @@
   },
   "seocompare": {
     "site_id": "seocompare",
-    "computed_at": "2026-04-23T18:18:57.849936",
+    "computed_at": "2026-04-24T14:55:38.933682",
     "total_score": 55,
     "max_score": 60,
     "percentage": 91.7,
@@ -196,7 +197,70 @@
       }
     }
   },
+  "rochellemarashi": {
+    "site_id": "rochellemarashi",
+    "computed_at": "2026-04-24T14:55:39.762920",
+    "total_score": 42,
+    "max_score": 60,
+    "percentage": 70.0,
+    "layers": {
+      "crawlability": {
+        "score": 7,
+        "max": 10,
+        "notes": [
+          "robots.txt present (+3)",
+          "llms.txt present (3386b) (+3)",
+          "llms.txt substantive (+1)"
+        ]
+      },
+      "discoverability": {
+        "score": 5,
+        "max": 10,
+        "notes": [
+          "XML sitemap present (+3)",
+          "99% orphans (+0)",
+          "avg 5.0 inbound per page (+2)"
+        ]
+      },
+      "readability": {
+        "score": 7,
+        "max": 10,
+        "notes": [
+          "avg 706 words (+1)",
+          "93/110 pages have answer capsule (+3)",
+          "110/110 pages use lists (+2)"
+        ]
+      },
+      "citability": {
+        "score": 4,
+        "max": 10,
+        "notes": [
+          "110/110 pages have author signal (+3)",
+          "74 pages have definitions (+1)"
+        ]
+      },
+      "schema": {
+        "score": 9,
+        "max": 10,
+        "notes": [
+          "100% pages have schema (+4)",
+          "Speakable schema present (+2)"
+        ]
+      },
+      "technical": {
+        "score": 10,
+        "max": 10,
+        "notes": [
+          "HTTPS (+2)",
+          "110/110 pages have canonical (+2)",
+          "110/110 pages have OG tags (+2)",
+          "109/110 pages have breadcrumbs (+2)",
+          "Mobile viewport on all pages (+2)"
+        ]
+      }
+    }
+  },
   "_meta": {
-    "computed_at": "2026-04-23T18:18:57.850339"
+    "computed_at": "2026-04-24T14:55:39.763390"
   }
 }

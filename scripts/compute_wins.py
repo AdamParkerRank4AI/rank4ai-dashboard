@@ -81,7 +81,7 @@ def main():
     per_site = {}
     fleet = {"cleared_today": 0, "cleared_7d": 0, "new_today": 0, "stuck": 0}
 
-    for site in ["rank4ai", "market-invoice", "seocompare"]:
+    for site in ["rank4ai", "market-invoice", "seocompare", "rochellemarashi"]:
         today_titles = titles_of(current.get(site, {}))
         yest_titles = titles_of(yesterday.get(site, {}))
         seven_titles = titles_of(seven_ago.get(site, {}))

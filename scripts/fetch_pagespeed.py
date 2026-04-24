@@ -28,6 +28,12 @@ SITES = {
     "seocompare": [
         "https://www.seocompare.co.uk/",
     ],
+    "rochellemarashi": [
+        "https://rochellemarashi.pages.dev/",
+        "https://rochellemarashi.pages.dev/coercive-control/",
+        "https://rochellemarashi.pages.dev/research/",
+        "https://rochellemarashi.pages.dev/about/",
+    ],
 }
 
 API_URL = "https://www.googleapis.com/pagespeedonline/v5/runPagespeed"

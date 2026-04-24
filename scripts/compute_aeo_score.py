@@ -26,6 +26,7 @@ SITES = {
     "rank4ai":        "https://www.rank4ai.co.uk",
     "market-invoice": "https://marketinvoice.co.uk",
     "seocompare":     "https://seocompare.co.uk",
+    "rochellemarashi": "https://rochellemarashi.pages.dev",
 }
 
 
