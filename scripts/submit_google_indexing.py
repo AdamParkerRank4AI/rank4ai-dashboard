@@ -26,13 +26,14 @@ SITES = {
     "market-invoice": "https://www.marketinvoice.co.uk",
     "seocompare": "https://www.seocompare.co.uk",
     "rank4ai-staging": "https://rank4ai-staging.pages.dev",
+    "rank4ai-online": "https://www.rank4ai.online",
 }
 
 
 def get_creds():
     with open(TOKEN_FILE) as f:
         token_data = json.load(f)
-    return Credentials(
+    creds = Credentials(
         token=token_data['token'],
         refresh_token=token_data['refresh_token'],
         token_uri=token_data['token_uri'],
@@ -40,6 +41,13 @@ def get_creds():
         client_secret=token_data['client_secret'],
         scopes=token_data.get('scopes', []),
     )
+    if creds.expired or not creds.valid:
+        from google.auth.transport.requests import Request
+        creds.refresh(Request())
+        token_data['token'] = creds.token
+        with open(TOKEN_FILE, 'w') as f:
+            json.dump(token_data, f, indent=2)
+    return creds
 
 
 def submit_url(service, url, action="URL_UPDATED"):

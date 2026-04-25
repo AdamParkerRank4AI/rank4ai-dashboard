@@ -29,7 +29,7 @@ SITES_FALLBACK = {
 def get_creds():
     with open(TOKEN_FILE) as f:
         token_data = json.load(f)
-    return Credentials(
+    creds = Credentials(
         token=token_data['token'],
         refresh_token=token_data['refresh_token'],
         token_uri=token_data['token_uri'],
@@ -37,6 +37,13 @@ def get_creds():
         client_secret=token_data['client_secret'],
         scopes=token_data.get('scopes', []),
     )
+    if creds.expired or not creds.valid:
+        from google.auth.transport.requests import Request
+        creds.refresh(Request())
+        token_data['token'] = creds.token
+        with open(TOKEN_FILE, 'w') as f:
+            json.dump(token_data, f, indent=2)
+    return creds
 
 
 def fetch_site(service, site_url, site_id):
@@ -50,7 +57,7 @@ def fetch_site(service, site_url, site_id):
             "startDate": start_date.strftime("%Y-%m-%d"),
             "endDate": end_date.strftime("%Y-%m-%d"),
             "dimensions": ["query"],
-            "rowLimit": 25,
+            "rowLimit": 100,
             "type": "web",
         }
     ).execute()
@@ -72,20 +79,46 @@ def fetch_site(service, site_url, site_id):
             "startDate": start_date.strftime("%Y-%m-%d"),
             "endDate": end_date.strftime("%Y-%m-%d"),
             "dimensions": ["page"],
-            "rowLimit": 25,
+            "rowLimit": 100,
             "type": "web",
         }
     ).execute()
 
-    top_pages = []
+    # GSC domain properties (sc-domain:) return both www + bare host variants.
+    # Normalise by stripping "www." and merging stats so the same page isn't
+    # double-counted in the top_pages list.
+    def normalise_page(url):
+        import re
+        return re.sub(r"^(https?://)(www\.)", r"\1", url)
+
+    page_agg = {}
     for row in pages_resp.get("rows", []):
+        norm = normalise_page(row["keys"][0])
+        if norm not in page_agg:
+            page_agg[norm] = {
+                "page": norm,
+                "clicks": 0,
+                "impressions": 0,
+                "_ctr_num": 0.0,
+                "_pos_num": 0.0,
+            }
+        clicks = row.get("clicks", 0)
+        impressions = row.get("impressions", 0)
+        page_agg[norm]["clicks"] += clicks
+        page_agg[norm]["impressions"] += impressions
+        page_agg[norm]["_pos_num"] += (row.get("position", 0) or 0) * impressions
+
+    top_pages = []
+    for p in page_agg.values():
+        imp = p["impressions"]
         top_pages.append({
-            "page": row["keys"][0],
-            "clicks": row.get("clicks", 0),
-            "impressions": row.get("impressions", 0),
-            "ctr": round(row.get("ctr", 0) * 100, 2),
-            "position": round(row.get("position", 0), 1),
+            "page": p["page"],
+            "clicks": p["clicks"],
+            "impressions": imp,
+            "ctr": round((p["clicks"] / imp * 100) if imp else 0, 2),
+            "position": round((p["_pos_num"] / imp) if imp else 0, 1),
         })
+    top_pages.sort(key=lambda x: -x["impressions"])
 
     # Content gaps: high impressions, low clicks
     gaps = [q for q in top_queries if q["impressions"] >= 10 and q["ctr"] < 2.0]

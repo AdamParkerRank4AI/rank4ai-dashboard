@@ -29,29 +29,79 @@ PASSWORD = os.environ.get("DATAFORSEO_PASSWORD", "")
 CLIENTS = {
     "rank4ai": {
         "queries": [
+            # Target queries
             "AI search visibility agency UK",
             "best AI SEO agencies UK",
             "what is AI search visibility",
             "GEO agency UK",
             "how to get found in ChatGPT",
+            # Top GSC queries by impressions
+            "ai visibility seo agency",
+            "best chatgpt optimisation company near me",
+            "ai search visibility",
+            "ai search agency",
+            "uk ai seo company",
+            "ai search visibility services",
+            "chatgpt ranking optimisation service near me",
+            "claude visibility agency",
+            "why does chatgpt recommend my competitors",
+            "ai seo solutions uk",
+            "ai search engine ranking",
+            "ai visibility consultant uk",
+            "ai search optimisation agency london",
+            "perplexity seo services uk",
+            "ai seo firm uk",
         ],
     },
     "market-invoice": {
         "queries": [
+            # Target queries
             "invoice finance UK",
             "best invoice factoring companies UK",
             "compare invoice finance providers",
             "how does invoice finance work",
             "invoice finance for small business UK",
+            # Top GSC queries by impressions
+            "invoice finance quote",
+            "invoice finance calculator",
+            "invoice finance derby",
+            "invoice finance cost calculator",
+            "invoice finance brighton",
+            "best invoice finance providers uk 2026",
+            "invoice discounting cost calculator",
+            "invoice finance york",
+            "invoice finance manchester",
+            "invoice finance leeds",
+            "compare invoice finance",
+            "cheapest invoice factoring",
+            "invoice factoring quote",
+            "invoice finance broker",
         ],
     },
     "seocompare": {
         "queries": [
+            # Target queries
             "compare SEO agencies UK",
             "best SEO companies UK",
             "how to choose an SEO agency",
             "top AI SEO agencies UK",
             "best GEO agencies UK",
+            # Top GSC queries by impressions
+            "ai seo agency",
+            "ai seo services",
+            "ai search agency",
+            "ai seo company",
+            "best ai seo agency",
+            "ai search engine optimization services",
+            "ai search optimisation agency",
+            "ai seo agency services",
+            "best ai search agency",
+            "ai seo firm",
+            "top ai seo agencies",
+            "ai seo specialists",
+            "ai seo consultant",
+            "ai seo digital agency",
+            "best ai seo company",
         ],
     },
 }
@@ -95,12 +145,16 @@ def fetch_serp(query, check_ai_overview=True):
         result = tasks[0].get("result", [{}])[0]
         items = result.get("items", [])
 
-        # Extract organic results
+        # Extract organic results and SERP features
         organic = []
         ai_overview = None
+        serp_features = []
+        featured_snippet = None
+        people_also_ask = []
 
         for item in items:
-            if item.get("type") == "organic":
+            item_type = item.get("type", "")
+            if item_type == "organic":
                 organic.append({
                     "position": item.get("rank_absolute"),
                     "title": item.get("title"),
@@ -108,18 +162,43 @@ def fetch_serp(query, check_ai_overview=True):
                     "domain": item.get("domain"),
                     "snippet": item.get("description", "")[:200],
                 })
-            elif item.get("type") == "ai_overview":
+            elif item_type == "ai_overview":
                 ai_overview = {
                     "text": item.get("text", "")[:500],
                     "references": [{"url": r.get("url"), "title": r.get("title")} for r in item.get("references", [])[:5]],
                 }
-            elif item.get("type") == "featured_snippet":
+                serp_features.append("AI Overview")
+            elif item_type == "featured_snippet":
+                featured_snippet = {
+                    "text": item.get("description", "")[:300],
+                    "url": item.get("url"),
+                    "domain": item.get("domain"),
+                }
+                serp_features.append("Featured Snippet")
                 if not ai_overview:
                     ai_overview = {
                         "text": item.get("description", "")[:500],
                         "type": "featured_snippet",
                         "url": item.get("url"),
                     }
+            elif item_type == "people_also_ask":
+                items_paa = item.get("items", [])
+                if isinstance(items_paa, list):
+                    for paa in items_paa[:5]:
+                        people_also_ask.append(paa.get("title", ""))
+                serp_features.append("People Also Ask")
+            elif item_type == "local_pack":
+                serp_features.append("Local Pack")
+            elif item_type == "video":
+                serp_features.append("Video")
+            elif item_type == "images":
+                serp_features.append("Images")
+            elif item_type == "knowledge_graph":
+                serp_features.append("Knowledge Panel")
+            elif item_type == "twitter":
+                serp_features.append("Twitter/X")
+            elif item_type == "top_stories":
+                serp_features.append("Top Stories")
 
         return {
             "query": query,
@@ -127,6 +206,9 @@ def fetch_serp(query, check_ai_overview=True):
             "ai_overview": ai_overview,
             "organic": organic[:10],
             "total_results": result.get("se_results_count"),
+            "serp_features": list(set(serp_features)),
+            "featured_snippet": featured_snippet,
+            "people_also_ask": people_also_ask[:5],
         }
 
     except Exception as e:

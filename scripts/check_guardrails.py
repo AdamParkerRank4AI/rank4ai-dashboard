@@ -78,16 +78,41 @@ def main():
     log("Guardrails check started")
     issues = []
 
-    # 1. GA4 — must have data for all clients
-    log("Checking GA4...")
+    # 1. GA4 — check token health first, then data
+    log("Checking GA4 token...")
+    try:
+        import json as _json
+        from google.oauth2.credentials import Credentials as _Creds
+        token_file = os.path.join(SCRIPTS_DIR, "ga4_token.json")
+        with open(token_file) as _f:
+            _td = _json.load(_f)
+        _creds = _Creds(
+            token=_td['token'], refresh_token=_td['refresh_token'],
+            token_uri=_td['token_uri'], client_id=_td['client_id'],
+            client_secret=_td['client_secret'], scopes=_td.get('scopes', []),
+        )
+        if _creds.expired or not _creds.valid:
+            log("  GA4 token expired — attempting auto-refresh...")
+            from google.auth.transport.requests import Request as _Req
+            _creds.refresh(_Req())
+            _td['token'] = _creds.token
+            with open(token_file, 'w') as _f:
+                _json.dump(_td, _f, indent=2)
+            log("  GA4 token refreshed successfully")
+        else:
+            log("  GA4 token valid")
+    except Exception as _e:
+        issues.append(f"GA4 TOKEN FAILED: Cannot refresh — {str(_e)[:80]}. Run: python3 scripts/ga4_auth.py")
+        log(f"  GA4 token refresh failed: {_e}")
+
+    log("Checking GA4 data...")
     ga4_issues = check_client_data("ga4.json")
     issues.extend(ga4_issues)
     ga4 = load("ga4.json")
     if ga4:
-        for c in CLIENTS:
-            d = ga4.get(c, {})
-            if d and d.get("overview", {}).get("active_users", 0) == 0:
-                issues.append(f"GA4 WARNING: {c} shows 0 users — token may have expired")
+        all_zero = all(ga4.get(c, {}).get("overview", {}).get("active_users", 0) == 0 for c in CLIENTS)
+        if all_zero:
+            issues.append(f"GA4 CRITICAL: ALL clients show 0 users — token likely expired. Run: python3 scripts/ga4_auth.py")
 
     # 2. GSC — must have data for all clients
     log("Checking GSC...")
@@ -140,6 +165,41 @@ def main():
     issue = check_file_freshness("pagespeed.json", max_hours=168)
     if issue:
         issues.append(issue)
+
+    # 10b. Sitemaps — check accessible, count matches crawl
+    log("Checking sitemaps...")
+    import requests
+    from xml.etree import ElementTree
+    SITEMAP_URLS = {
+        "market-invoice": "https://seocompare.co.uk/sitemap-0.xml",
+        "seocompare": "https://seocompare.co.uk/sitemap-0.xml",
+        "rank4ai": "https://www.rank4ai.co.uk/sitemap.xml",
+    }
+    SITEMAP_URLS = {
+        "rank4ai": "https://www.rank4ai.co.uk/sitemap-0.xml",
+        "market-invoice": "https://marketinvoice.co.uk/sitemap-0.xml",
+        "seocompare": "https://seocompare.co.uk/sitemap-0.xml",
+    }
+    for c, sitemap_url in SITEMAP_URLS.items():
+        try:
+            resp = requests.get(sitemap_url, timeout=10)
+            if resp.status_code != 200:
+                issues.append(f"SITEMAP DOWN: {c} sitemap returned {resp.status_code}")
+            else:
+                ns = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
+                root = ElementTree.fromstring(resp.text)
+                urls = root.findall(f".//{ns}url")
+                sitemap_count = len(urls)
+                # Compare to crawl
+                crawl = load(f"crawl_{c}.json")
+                crawl_count = crawl.get("pages_crawled", 0) if crawl else 0
+                if sitemap_count > 0 and crawl_count > 0:
+                    diff = sitemap_count - crawl_count
+                    if diff > 20:
+                        issues.append(f"SITEMAP MISMATCH: {c} has {sitemap_count} URLs in sitemap but only {crawl_count} crawled ({diff} missing)")
+                log(f"  {c}: sitemap {sitemap_count} URLs, crawled {crawl_count}")
+        except Exception as e:
+            issues.append(f"SITEMAP ERROR: {c} — {str(e)[:80]}")
 
     # 11. Uptime — all clients should be 200
     log("Checking uptime...")

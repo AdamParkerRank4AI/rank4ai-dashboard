@@ -25,7 +25,7 @@ PROPERTIES = {
 def get_creds():
     with open(TOKEN_FILE) as f:
         token_data = json.load(f)
-    return Credentials(
+    creds = Credentials(
         token=token_data['token'],
         refresh_token=token_data['refresh_token'],
         token_uri=token_data['token_uri'],
@@ -33,6 +33,16 @@ def get_creds():
         client_secret=token_data['client_secret'],
         scopes=token_data.get('scopes', []),
     )
+    # Always force refresh — token often reports valid but returns 401
+    from google.auth.transport.requests import Request
+    try:
+        creds.refresh(Request())
+        token_data['token'] = creds.token
+        with open(TOKEN_FILE, 'w') as f:
+            json.dump(token_data, f, indent=2)
+    except Exception as e:
+        print(f"  Token refresh failed: {e}")
+    return creds
 
 
 def fetch_property(client, property_id, site_id):
