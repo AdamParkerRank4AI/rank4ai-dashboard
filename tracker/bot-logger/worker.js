@@ -70,9 +70,20 @@ export default {
     const bot = identifyBot(ua);
     const siteId = getSiteId(url.hostname);
 
-    // Log bot visits asynchronously (don't slow down the response)
+    // Log bot visits by POSTing to the tracker Worker (which owns the KV)
     if (bot) {
-      ctx.waitUntil(logBotVisit(env, siteId, bot, url.pathname, ua, request));
+      ctx.waitUntil(fetch('https://rank4ai-tracker.dawn-field-3d16.workers.dev/track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          site: siteId,
+          hostname: url.hostname,
+          path: url.pathname,
+          ua: ua,
+          referer: request.headers.get('referer') || '',
+          _source: 'bot-logger-worker',
+        }),
+      }).catch(() => {}));
     }
 
     // Pass through to origin (Cloudflare Pages)
@@ -111,6 +122,23 @@ async function logBotVisit(env, siteId, bot, path, ua, request) {
 
     await env.BOT_KV.put(summaryKey, JSON.stringify(summary), {
       expirationTtl: 60 * 60 * 24 * 90, // 90 days
+    });
+
+    // Also write to summary: format for tracker API compatibility
+    const compatKey = `summary:${siteId}:${today}`;
+    const compat = await env.BOT_KV.get(compatKey, 'json') || {
+      date: today, site: siteId, humans: 0, bots: 0,
+      by_type: {}, by_name: {}, by_hour: {},
+      top_paths: {}, countries: {},
+    };
+    compat.bots++;
+    compat.by_type[bot.type] = (compat.by_type[bot.type] || 0) + 1;
+    compat.by_name[bot.name] = (compat.by_name[bot.name] || 0) + 1;
+    compat.by_hour[hour] = (compat.by_hour[hour] || 0) + 1;
+    compat.top_paths[path.slice(0, 100)] = (compat.top_paths[path.slice(0, 100)] || 0) + 1;
+    compat.countries[request.headers.get('cf-ipcountry') || ''] = (compat.countries[request.headers.get('cf-ipcountry') || ''] || 0) + 1;
+    await env.BOT_KV.put(compatKey, JSON.stringify(compat), {
+      expirationTtl: 60 * 60 * 24 * 90,
     });
 
     // Also log individual bot hits (last 200 per day per site)

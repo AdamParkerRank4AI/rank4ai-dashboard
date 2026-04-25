@@ -202,9 +202,31 @@ export default {
       const today = new Date().toISOString().slice(0, 10);
       const overview = {};
 
-      for (const site of ['rank4ai', 'market-invoice', 'seocompare']) {
-        const data = await env.TRACKER_KV.get(`summary:${site}:${today}`, 'json');
-        overview[site] = data || { date: today, humans: 0, bots: 0, by_type: {}, by_name: {} };
+      const siteMap = {
+        'rank4ai': ['rank4ai', 'rank4ai.co.uk', 'www.rank4ai.co.uk'],
+        'market-invoice': ['market-invoice', 'marketinvoice.co.uk', 'www.marketinvoice.co.uk'],
+        'seocompare': ['seocompare', 'seocompare.co.uk', 'www.seocompare.co.uk'],
+      };
+
+      for (const [siteId, keys] of Object.entries(siteMap)) {
+        let merged = { date: today, humans: 0, bots: 0, by_type: {}, by_name: {} };
+        for (const key of keys) {
+          const data = await env.TRACKER_KV.get(`summary:${key}:${today}`, 'json');
+          if (data) {
+            merged.humans += data.humans || 0;
+            merged.bots += data.bots || 0;
+            for (const [t, c] of Object.entries(data.by_type || {})) merged.by_type[t] = (merged.by_type[t] || 0) + c;
+            for (const [n, c] of Object.entries(data.by_name || {})) merged.by_name[n] = (merged.by_name[n] || 0) + c;
+          }
+          // Also check bots: prefix
+          const botData = await env.TRACKER_KV.get(`bots:${key}:${today}`, 'json');
+          if (botData) {
+            merged.bots += botData.total || 0;
+            for (const [t, c] of Object.entries(botData.by_type || {})) merged.by_type[t] = (merged.by_type[t] || 0) + c;
+            for (const [n, c] of Object.entries(botData.by_name || {})) merged.by_name[n] = (merged.by_name[n] || 0) + c;
+          }
+        }
+        overview[siteId] = merged;
       }
 
       return new Response(JSON.stringify(overview), {
