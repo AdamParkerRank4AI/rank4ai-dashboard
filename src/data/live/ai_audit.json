@@ -2,15 +2,15 @@
   "rank4ai": {
     "site_id": "rank4ai",
     "domain": "https://www.rank4ai.co.uk",
-    "audited_at": "2026-04-23T06:22:46.941579",
+    "audited_at": "2026-04-25T06:23:54.619162",
     "pages_audited": 20,
-    "overall_score": 53,
+    "overall_score": 57,
     "readiness": "Good",
     "scores": {
-      "schema": 72,
-      "content_structure": 54,
-      "eeat": 82,
-      "citation_potential": 36
+      "schema": 80,
+      "content_structure": 56,
+      "eeat": 85,
+      "citation_potential": 41
     },
     "llms_txt": {
       "exists": true,
@@ -25,19 +25,19 @@
         "Google-Extended": "allowed",
         "GoogleOther": "allowed",
         "ClaudeBot": "allowed",
-        "Claude-Web": "allowed",
+        "Claude-Web": "not_mentioned",
         "PerplexityBot": "allowed",
-        "Bytespider": "allowed",
+        "Bytespider": "not_mentioned",
         "CCBot": "allowed",
         "cohere-ai": "allowed",
-        "Amazonbot": "not_mentioned",
-        "anthropic-ai": "allowed",
+        "Amazonbot": "allowed",
+        "anthropic-ai": "not_mentioned",
         "FacebookBot": "not_mentioned",
         "Applebot-Extended": "allowed"
       },
       "blocked_count": 0,
-      "allowed_count": 12,
-      "not_mentioned_count": 2
+      "allowed_count": 10,
+      "not_mentioned_count": 4
     },
     "page_results": [
       {
@@ -108,49 +108,49 @@
       },
       {
         "url": "https://www.rank4ai.co.uk/what-we-do/full-agency/",
-        "overall_score": 58,
+        "overall_score": 72,
         "readiness": "Good",
         "scores": {
           "schema": 100,
-          "content_structure": 50,
+          "content_structure": 75,
           "passage_quality": 0.0,
-          "eeat": 75,
-          "citation_potential": 40
+          "eeat": 100,
+          "citation_potential": 60
         },
         "schemas": [
           "BreadcrumbList",
           "FAQPage"
         ],
-        "word_count": 711,
-        "h2_count": 6,
+        "word_count": 820,
+        "h2_count": 7,
         "question_headings": 0,
-        "list_count": 5,
-        "table_count": 0,
+        "list_count": 7,
+        "table_count": 1,
         "good_passages": 0,
-        "total_paragraphs": 38
+        "total_paragraphs": 44
       },
       {
         "url": "https://www.rank4ai.co.uk/what-we-do/ecosystem-services/",
-        "overall_score": 58,
+        "overall_score": 72,
         "readiness": "Good",
         "scores": {
           "schema": 100,
-          "content_structure": 50,
+          "content_structure": 75,
           "passage_quality": 0.0,
-          "eeat": 75,
-          "citation_potential": 40
+          "eeat": 100,
+          "citation_potential": 60
         },
         "schemas": [
           "BreadcrumbList",
           "FAQPage"
         ],
-        "word_count": 618,
-        "h2_count": 5,
+        "word_count": 718,
+        "h2_count": 6,
         "question_headings": 0,
-        "list_count": 8,
-        "table_count": 0,
+        "list_count": 10,
+        "table_count": 1,
         "good_passages": 0,
-        "total_paragraphs": 26
+        "total_paragraphs": 32
       },
       {
         "url": "https://www.rank4ai.co.uk/about/",
@@ -177,26 +177,26 @@
       },
       {
         "url": "https://www.rank4ai.co.uk/what-we-do/advisory/",
-        "overall_score": 59,
+        "overall_score": 68,
         "readiness": "Good",
         "scores": {
           "schema": 100,
-          "content_structure": 50,
+          "content_structure": 75,
           "passage_quality": 0.0,
           "eeat": 100,
-          "citation_potential": 20
+          "citation_potential": 40
         },
         "schemas": [
           "BreadcrumbList",
           "FAQPage"
         ],
-        "word_count": 615,
-        "h2_count": 6,
+        "word_count": 726,
+        "h2_count": 7,
         "question_headings": 0,
-        "list_count": 6,
-        "table_count": 0,
+        "list_count": 8,
+        "table_count": 1,
         "good_passages": 0,
-        "total_paragraphs": 27
+        "total_paragraphs": 33
       },
       {
         "url": "https://www.rank4ai.co.uk/what-we-do/ai-visibility-audit/",
@@ -222,28 +222,6 @@
         "total_paragraphs": 18
       },
       {
-        "url": "https://www.rank4ai.co.uk/learn/guides/complete-guide-ai-search/",
-        "overall_score": 73,
-        "readiness": "Good",
-        "scores": {
-          "schema": 50,
-          "content_structure": 100,
-          "passage_quality": 2.197802197802198,
-          "eeat": 100,
-          "citation_potential": 100
-        },
-        "schemas": [
-          "BreadcrumbList"
-        ],
-        "word_count": 3551,
-        "h2_count": 15,
-        "question_headings": 1,
-        "list_count": 35,
-        "table_count": 3,
-        "good_passages": 2,
-        "total_paragraphs": 91
-      },
-      {
         "url": "https://www.rank4ai.co.uk/research/methodology/",
         "overall_score": 54,
         "readiness": "Good",
@@ -265,6 +243,29 @@
         "table_count": 0,
         "good_passages": 0,
         "total_paragraphs": 15
+      },
+      {
+        "url": "https://www.rank4ai.co.uk/learn/guides/complete-guide-ai-search/",
+        "overall_score": 85,
+        "readiness": "Excellent",
+        "scores": {
+          "schema": 100,
+          "content_structure": 100,
+          "passage_quality": 2.1505376344086025,
+          "eeat": 100,
+          "citation_potential": 100
+        },
+        "schemas": [
+          "Article",
+          "BreadcrumbList"
+        ],
+        "word_count": 3593,
+        "h2_count": 15,
+        "question_headings": 1,
+        "list_count": 35,
+        "table_count": 3,
+        "good_passages": 2,
+        "total_paragraphs": 93
       },
       {
         "url": "https://www.rank4ai.co.uk/learn/",
@@ -290,25 +291,25 @@
       },
       {
         "url": "https://www.rank4ai.co.uk/what-we-do/",
-        "overall_score": 50,
+        "overall_score": 54,
         "readiness": "Good",
         "scores": {
           "schema": 50,
           "content_structure": 50,
           "passage_quality": 0.0,
           "eeat": 100,
-          "citation_potential": 40
+          "citation_potential": 60
         },
         "schemas": [
           "BreadcrumbList"
         ],
-        "word_count": 736,
-        "h2_count": 6,
+        "word_count": 811,
+        "h2_count": 7,
         "question_headings": 0,
         "list_count": 5,
         "table_count": 0,
         "good_passages": 0,
-        "total_paragraphs": 39
+        "total_paragraphs": 40
       },
       {
         "url": "https://www.rank4ai.co.uk/research/",
@@ -356,25 +357,26 @@
       },
       {
         "url": "https://www.rank4ai.co.uk/learn/guides/geo/",
-        "overall_score": 73,
-        "readiness": "Good",
+        "overall_score": 85,
+        "readiness": "Excellent",
         "scores": {
-          "schema": 50,
+          "schema": 100,
           "content_structure": 100,
-          "passage_quality": 1.2345679012345678,
+          "passage_quality": 1.2048192771084338,
           "eeat": 100,
           "citation_potential": 100
         },
         "schemas": [
+          "Article",
           "BreadcrumbList"
         ],
-        "word_count": 2668,
+        "word_count": 2711,
         "h2_count": 17,
         "question_headings": 2,
         "list_count": 13,
         "table_count": 2,
         "good_passages": 1,
-        "total_paragraphs": 81
+        "total_paragraphs": 83
       },
       {
         "url": "https://www.rank4ai.co.uk/who-we-help/",
@@ -423,28 +425,6 @@
         "total_paragraphs": 33
       },
       {
-        "url": "https://www.rank4ai.co.uk/about/how-we-work/",
-        "overall_score": 42,
-        "readiness": "Fair",
-        "scores": {
-          "schema": 50,
-          "content_structure": 50,
-          "passage_quality": 0.0,
-          "eeat": 75,
-          "citation_potential": 20
-        },
-        "schemas": [
-          "BreadcrumbList"
-        ],
-        "word_count": 409,
-        "h2_count": 3,
-        "question_headings": 0,
-        "list_count": 5,
-        "table_count": 0,
-        "good_passages": 0,
-        "total_paragraphs": 15
-      },
-      {
         "url": "https://www.rank4ai.co.uk/contact/",
         "overall_score": 50,
         "readiness": "Good",
@@ -468,38 +448,62 @@
         "total_paragraphs": 14
       },
       {
-        "url": "https://www.rank4ai.co.uk/who-we-help/london/",
-        "overall_score": 25,
+        "url": "https://www.rank4ai.co.uk/learn/tools/llms-txt-generator/",
+        "overall_score": 36,
         "readiness": "Fair",
         "scores": {
-          "schema": 0,
-          "content_structure": 50,
+          "schema": 50,
+          "content_structure": 25,
           "passage_quality": 0.0,
           "eeat": 75,
-          "citation_potential": 0
+          "citation_potential": 20
         },
-        "schemas": [],
-        "word_count": 373,
-        "h2_count": 4,
+        "schemas": [
+          "BreadcrumbList"
+        ],
+        "word_count": 285,
+        "h2_count": 2,
         "question_headings": 0,
         "list_count": 5,
         "table_count": 0,
         "good_passages": 0,
-        "total_paragraphs": 12
+        "total_paragraphs": 8
+      },
+      {
+        "url": "https://www.rank4ai.co.uk/about/how-we-work/",
+        "overall_score": 42,
+        "readiness": "Fair",
+        "scores": {
+          "schema": 50,
+          "content_structure": 50,
+          "passage_quality": 0.0,
+          "eeat": 75,
+          "citation_potential": 20
+        },
+        "schemas": [
+          "BreadcrumbList"
+        ],
+        "word_count": 409,
+        "h2_count": 3,
+        "question_headings": 0,
+        "list_count": 5,
+        "table_count": 0,
+        "good_passages": 0,
+        "total_paragraphs": 15
       }
     ]
   },
   "market-invoice": {
     "site_id": "market-invoice",
     "domain": "https://www.marketinvoice.co.uk",
-    "audited_at": "2026-04-23T06:23:00.372715",
+    "audited_at": "2026-04-25T06:24:07.932550",
     "pages_audited": 20,
-    "overall_score": 52,
+    "overall_score": 53,
     "readiness": "Good",
     "scores": {
       "schema": 55,
       "content_structure": 74,
-      "eeat": 56,
+      "eeat": 58,
       "citation_potential": 60
     },
     "llms_txt": {
@@ -562,9 +566,9 @@
           "citation_potential": 80
         },
         "schemas": [],
-        "word_count": 853,
-        "h2_count": 109,
-        "question_headings": 85,
+        "word_count": 871,
+        "h2_count": 111,
+        "question_headings": 87,
         "list_count": 3,
         "table_count": 0,
         "good_passages": 0,
@@ -606,13 +610,13 @@
           "citation_potential": 20
         },
         "schemas": [],
-        "word_count": 261,
-        "h2_count": 29,
+        "word_count": 276,
+        "h2_count": 31,
         "question_headings": 0,
         "list_count": 3,
         "table_count": 0,
         "good_passages": 0,
-        "total_paragraphs": 33
+        "total_paragraphs": 35
       },
       {
         "url": "https://marketinvoice.co.uk/blog/",
@@ -656,23 +660,23 @@
       },
       {
         "url": "https://marketinvoice.co.uk/guides/",
-        "overall_score": 37,
+        "overall_score": 42,
         "readiness": "Fair",
         "scores": {
           "schema": 0,
           "content_structure": 50,
           "passage_quality": 0.0,
-          "eeat": 75,
+          "eeat": 100,
           "citation_potential": 60
         },
         "schemas": [],
-        "word_count": 551,
-        "h2_count": 29,
+        "word_count": 562,
+        "h2_count": 30,
         "question_headings": 0,
         "list_count": 3,
         "table_count": 0,
         "good_passages": 0,
-        "total_paragraphs": 28
+        "total_paragraphs": 29
       },
       {
         "url": "https://marketinvoice.co.uk/working-capital/",
@@ -768,7 +772,7 @@
         "scores": {
           "schema": 100,
           "content_structure": 100,
-          "passage_quality": 5.128205128205128,
+          "passage_quality": 4.878048780487805,
           "eeat": 75,
           "citation_potential": 100
         },
@@ -777,13 +781,13 @@
           "Article",
           "FAQPage"
         ],
-        "word_count": 1797,
+        "word_count": 1819,
         "h2_count": 8,
         "question_headings": 3,
         "list_count": 7,
         "table_count": 2,
         "good_passages": 2,
-        "total_paragraphs": 39
+        "total_paragraphs": 41
       },
       {
         "url": "https://marketinvoice.co.uk/guides/costs/",
@@ -792,7 +796,7 @@
         "scores": {
           "schema": 100,
           "content_structure": 75,
-          "passage_quality": 13.88888888888889,
+          "passage_quality": 13.157894736842104,
           "eeat": 100,
           "citation_potential": 100
         },
@@ -801,13 +805,13 @@
           "Article",
           "FAQPage"
         ],
-        "word_count": 1665,
+        "word_count": 1688,
         "h2_count": 9,
         "question_headings": 0,
         "list_count": 5,
         "table_count": 3,
         "good_passages": 5,
-        "total_paragraphs": 36
+        "total_paragraphs": 38
       },
       {
         "url": "https://marketinvoice.co.uk/guides/factoring-vs-discounting/",
@@ -859,6 +863,28 @@
         "total_paragraphs": 30
       },
       {
+        "url": "https://marketinvoice.co.uk/providers/directory/",
+        "overall_score": 53,
+        "readiness": "Good",
+        "scores": {
+          "schema": 100,
+          "content_structure": 75,
+          "passage_quality": 3.0303030303030303,
+          "eeat": 25,
+          "citation_potential": 40
+        },
+        "schemas": [
+          "Article"
+        ],
+        "word_count": 821,
+        "h2_count": 7,
+        "question_headings": 1,
+        "list_count": 3,
+        "table_count": 0,
+        "good_passages": 1,
+        "total_paragraphs": 33
+      },
+      {
         "url": "https://marketinvoice.co.uk/best/invoice-finance-for-small-business/",
         "overall_score": 77,
         "readiness": "Excellent",
@@ -882,28 +908,6 @@
         "table_count": 1,
         "good_passages": 3,
         "total_paragraphs": 39
-      },
-      {
-        "url": "https://marketinvoice.co.uk/providers/directory/",
-        "overall_score": 53,
-        "readiness": "Good",
-        "scores": {
-          "schema": 100,
-          "content_structure": 75,
-          "passage_quality": 3.0303030303030303,
-          "eeat": 25,
-          "citation_potential": 40
-        },
-        "schemas": [
-          "Article"
-        ],
-        "word_count": 821,
-        "h2_count": 7,
-        "question_headings": 1,
-        "list_count": 3,
-        "table_count": 0,
-        "good_passages": 1,
-        "total_paragraphs": 33
       },
       {
         "url": "https://marketinvoice.co.uk/compare/invoice-finance-vs-business-loan/",
@@ -976,19 +980,19 @@
   "seocompare": {
     "site_id": "seocompare",
     "domain": "https://www.seocompare.co.uk",
-    "audited_at": "2026-04-23T06:23:13.910637",
+    "audited_at": "2026-04-25T06:24:21.097132",
     "pages_audited": 20,
-    "overall_score": 74,
-    "readiness": "Good",
+    "overall_score": 75,
+    "readiness": "Excellent",
     "scores": {
       "schema": 90,
       "content_structure": 94,
       "eeat": 91,
-      "citation_potential": 63
+      "citation_potential": 64
     },
     "llms_txt": {
       "exists": true,
-      "content_length": 5896,
+      "content_length": 5886,
       "preview": "# SEOCompare\n> SEOCompare is the UK's independent comparison of AI search optimisation agencies and tools, helping businesses find the right partner for ChatGPT, Gemini, Perplexity, and AI Overviews visibility.\n\n## About\nSEOCompare evaluates AI search optimisation agencies and tools across 12 criter"
     },
     "robots_txt": {
@@ -999,19 +1003,19 @@
         "Google-Extended": "allowed",
         "GoogleOther": "allowed",
         "ClaudeBot": "allowed",
-        "Claude-Web": "allowed",
+        "Claude-Web": "not_mentioned",
         "PerplexityBot": "allowed",
         "Bytespider": "allowed",
         "CCBot": "allowed",
         "cohere-ai": "allowed",
         "Amazonbot": "allowed",
-        "anthropic-ai": "allowed",
+        "anthropic-ai": "not_mentioned",
         "FacebookBot": "allowed",
         "Applebot-Extended": "allowed"
       },
       "blocked_count": 0,
-      "allowed_count": 14,
-      "not_mentioned_count": 0
+      "allowed_count": 12,
+      "not_mentioned_count": 2
     },
     "page_results": [
       {
@@ -1206,19 +1210,19 @@
       },
       {
         "url": "https://seocompare.co.uk/ai-search-questions/",
-        "overall_score": 50,
+        "overall_score": 54,
         "readiness": "Good",
         "scores": {
           "schema": 50,
           "content_structure": 75,
           "passage_quality": 0.0,
           "eeat": 75,
-          "citation_potential": 40
+          "citation_potential": 60
         },
         "schemas": [
           "Service"
         ],
-        "word_count": 555,
+        "word_count": 563,
         "h2_count": 9,
         "question_headings": 2,
         "list_count": 3,
@@ -1314,13 +1318,13 @@
           "Blog",
           "Service"
         ],
-        "word_count": 972,
-        "h2_count": 33,
-        "question_headings": 3,
+        "word_count": 1004,
+        "h2_count": 34,
+        "question_headings": 4,
         "list_count": 3,
         "table_count": 0,
         "good_passages": 0,
-        "total_paragraphs": 35
+        "total_paragraphs": 36
       },
       {
         "url": "https://seocompare.co.uk/about/",

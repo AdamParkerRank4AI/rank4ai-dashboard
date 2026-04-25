@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-04-24T09:59:35.757271",
+  "checked_at": "2026-04-25T06:26:43.352670",
   "summary": {
     "fresh": 24,
     "stale": 0,
@@ -12,7 +12,7 @@
       "file": "google_trends.json",
       "label": "Google Trends",
       "status": "fresh",
-      "age_hours": 99.7,
+      "age_hours": 120.2,
       "ts": "2026-04-20T06:16:49.824372",
       "max_age_hours": 192,
       "used_mtime_fallback": false
@@ -21,7 +21,7 @@
       "file": "citation_results.json",
       "label": "Citation baseline",
       "status": "fresh",
-      "age_hours": 98.8,
+      "age_hours": 119.3,
       "ts": "2026-04-20T07:11:10.558461",
       "max_age_hours": 192,
       "used_mtime_fallback": false
@@ -30,187 +30,16 @@
       "file": "citations_by_type.json",
       "label": "Citation by type",
       "status": "fresh",
-      "age_hours": 61.9,
+      "age_hours": 82.4,
       "ts": "2026-04-21T20:03:50.220262",
       "max_age_hours": 192,
-      "used_mtime_fallback": false
-    },
-    {
-      "file": "ai_audit.json",
-      "label": "AI audit",
-      "status": "fresh",
-      "age_hours": 27.6,
-      "ts": "2026-04-23T06:22:46.941579",
-      "max_age_hours": 30,
-      "used_mtime_fallback": false
-    },
-    {
-      "file": "crawl_seocompare.json",
-      "label": "SC site crawl",
-      "status": "fresh",
-      "age_hours": 27.6,
-      "ts": "2026-04-23T06:22:33.316522",
-      "max_age_hours": 30,
-      "used_mtime_fallback": false
-    },
-    {
-      "file": "bot_hits.json",
-      "label": "AI bot hits",
-      "status": "fresh",
-      "age_hours": 5.0,
-      "ts": "2026-04-24T05:01:04.400535",
-      "max_age_hours": 30,
-      "used_mtime_fallback": false
-    },
-    {
-      "file": "mi_leads.json",
-      "label": "MI leads (Supabase)",
-      "status": "fresh",
-      "age_hours": 4.9,
-      "ts": "2026-04-24T05:06:51.075211",
-      "max_age_hours": 30,
-      "used_mtime_fallback": false
-    },
-    {
-      "file": "ga4.json",
-      "label": "GA4 (traffic)",
-      "status": "fresh",
-      "age_hours": 4.0,
-      "ts": "2026-04-24T06:00:33.184195",
-      "max_age_hours": 30,
-      "used_mtime_fallback": false
-    },
-    {
-      "file": "gsc.json",
-      "label": "GSC (search perf)",
-      "status": "fresh",
-      "age_hours": 4.0,
-      "ts": "2026-04-24T06:00:48.095459",
-      "max_age_hours": 30,
-      "used_mtime_fallback": false
-    },
-    {
-      "file": "bing.json",
-      "label": "Bing Webmaster",
-      "status": "fresh",
-      "age_hours": 4.0,
-      "ts": "2026-04-24T06:00:49.938321",
-      "max_age_hours": 30,
-      "used_mtime_fallback": false
-    },
-    {
-      "file": "uptime.json",
-      "label": "Uptime",
-      "status": "fresh",
-      "age_hours": 4.0,
-      "ts": "2026-04-24T06:00:22.434158",
-      "max_age_hours": 30,
-      "used_mtime_fallback": false
-    },
-    {
-      "file": "crawl_activity.json",
-      "label": "Bing crawl stats",
-      "status": "fresh",
-      "age_hours": 4.0,
-      "ts": "2026-04-24T06:01:02.113571",
-      "max_age_hours": 30,
-      "used_mtime_fallback": false
-    },
-    {
-      "file": "knowledge_graph.json",
-      "label": "Knowledge Graph",
-      "status": "fresh",
-      "age_hours": 4.0,
-      "ts": "2026-04-24T06:01:13.590254",
-      "max_age_hours": 30,
-      "used_mtime_fallback": true
-    },
-    {
-      "file": "nlp_entities.json",
-      "label": "NLP entities",
-      "status": "fresh",
-      "age_hours": 4.0,
-      "ts": "2026-04-24T06:01:07.417932",
-      "max_age_hours": 30,
-      "used_mtime_fallback": true
-    },
-    {
-      "file": "ai_overview_serp.json",
-      "label": "AI Overviews SERP",
-      "status": "fresh",
-      "age_hours": 3.9,
-      "ts": "2026-04-24T06:05:10.306536",
-      "max_age_hours": 30,
-      "used_mtime_fallback": true
-    },
-    {
-      "file": "recommendations.json",
-      "label": "Recommendations",
-      "status": "fresh",
-      "age_hours": 3.9,
-      "ts": "2026-04-24T06:06:50.488897",
-      "max_age_hours": 30,
-      "used_mtime_fallback": false
-    },
-    {
-      "file": "competitor_serp.json",
-      "label": "Competitor SERP",
-      "status": "fresh",
-      "age_hours": 3.9,
-      "ts": "2026-04-24T06:06:23.233010",
-      "max_age_hours": 30,
-      "used_mtime_fallback": false
-    },
-    {
-      "file": "new_pages.json",
-      "label": "New-page scan",
-      "status": "fresh",
-      "age_hours": 3.9,
-      "ts": "2026-04-24T06:06:50.569934",
-      "max_age_hours": 30,
-      "used_mtime_fallback": false
-    },
-    {
-      "file": "serp_data.json",
-      "label": "SERP data",
-      "status": "fresh",
-      "age_hours": 3.9,
-      "ts": "2026-04-24T06:06:04.658748",
-      "max_age_hours": 30,
-      "used_mtime_fallback": true
-    },
-    {
-      "file": "citation_prompts.json",
-      "label": "Citation prompts",
-      "status": "fresh",
-      "age_hours": 3.9,
-      "ts": "2026-04-24T06:06:50.943370",
-      "max_age_hours": 30,
-      "used_mtime_fallback": true
-    },
-    {
-      "file": "crawl_market-invoice.json",
-      "label": "MI site crawl",
-      "status": "fresh",
-      "age_hours": 3.6,
-      "ts": "2026-04-24T06:24:54.057006",
-      "max_age_hours": 30,
-      "used_mtime_fallback": false
-    },
-    {
-      "file": "crawl_rank4ai.json",
-      "label": "R4 site crawl",
-      "status": "fresh",
-      "age_hours": 0.6,
-      "ts": "2026-04-24T09:23:00.206752",
-      "max_age_hours": 30,
       "used_mtime_fallback": false
     },
     {
       "file": "daily_audit_summary.json",
       "label": "Daily site audit",
       "status": "fresh",
-      "age_hours": 0.4,
+      "age_hours": 20.9,
       "ts": "2026-04-24T09:34:35.920538",
       "max_age_hours": 30,
       "used_mtime_fallback": false
@@ -219,9 +48,180 @@
       "file": "pagespeed.json",
       "label": "PageSpeed (weekly)",
       "status": "fresh",
-      "age_hours": 0.2,
-      "ts": "2026-04-24T09:49:35.435042",
+      "age_hours": 18.0,
+      "ts": "2026-04-24T12:25:19.590440",
       "max_age_hours": 192,
+      "used_mtime_fallback": false
+    },
+    {
+      "file": "bot_hits.json",
+      "label": "AI bot hits",
+      "status": "fresh",
+      "age_hours": 1.4,
+      "ts": "2026-04-25T05:00:33.058336",
+      "max_age_hours": 30,
+      "used_mtime_fallback": false
+    },
+    {
+      "file": "mi_leads.json",
+      "label": "MI leads (Supabase)",
+      "status": "fresh",
+      "age_hours": 1.4,
+      "ts": "2026-04-25T05:05:31.841013",
+      "max_age_hours": 30,
+      "used_mtime_fallback": false
+    },
+    {
+      "file": "ga4.json",
+      "label": "GA4 (traffic)",
+      "status": "fresh",
+      "age_hours": 0.4,
+      "ts": "2026-04-25T06:00:09.611358",
+      "max_age_hours": 30,
+      "used_mtime_fallback": false
+    },
+    {
+      "file": "gsc.json",
+      "label": "GSC (search perf)",
+      "status": "fresh",
+      "age_hours": 0.4,
+      "ts": "2026-04-25T06:00:18.078641",
+      "max_age_hours": 30,
+      "used_mtime_fallback": false
+    },
+    {
+      "file": "bing.json",
+      "label": "Bing Webmaster",
+      "status": "fresh",
+      "age_hours": 0.4,
+      "ts": "2026-04-25T06:00:19.566330",
+      "max_age_hours": 30,
+      "used_mtime_fallback": false
+    },
+    {
+      "file": "uptime.json",
+      "label": "Uptime",
+      "status": "fresh",
+      "age_hours": 0.4,
+      "ts": "2026-04-25T06:00:04.211512",
+      "max_age_hours": 30,
+      "used_mtime_fallback": false
+    },
+    {
+      "file": "crawl_activity.json",
+      "label": "Bing crawl stats",
+      "status": "fresh",
+      "age_hours": 0.4,
+      "ts": "2026-04-25T06:00:30.778196",
+      "max_age_hours": 30,
+      "used_mtime_fallback": false
+    },
+    {
+      "file": "knowledge_graph.json",
+      "label": "Knowledge Graph",
+      "status": "fresh",
+      "age_hours": 0.4,
+      "ts": "2026-04-25T06:00:58.468459",
+      "max_age_hours": 30,
+      "used_mtime_fallback": true
+    },
+    {
+      "file": "nlp_entities.json",
+      "label": "NLP entities",
+      "status": "fresh",
+      "age_hours": 0.4,
+      "ts": "2026-04-25T06:00:53.226152",
+      "max_age_hours": 30,
+      "used_mtime_fallback": true
+    },
+    {
+      "file": "ai_overview_serp.json",
+      "label": "AI Overviews SERP",
+      "status": "fresh",
+      "age_hours": 0.4,
+      "ts": "2026-04-25T06:04:00.681159",
+      "max_age_hours": 30,
+      "used_mtime_fallback": true
+    },
+    {
+      "file": "recommendations.json",
+      "label": "Recommendations",
+      "status": "fresh",
+      "age_hours": 0.4,
+      "ts": "2026-04-25T06:05:31.563257",
+      "max_age_hours": 30,
+      "used_mtime_fallback": false
+    },
+    {
+      "file": "competitor_serp.json",
+      "label": "Competitor SERP",
+      "status": "fresh",
+      "age_hours": 0.4,
+      "ts": "2026-04-25T06:05:05.217079",
+      "max_age_hours": 30,
+      "used_mtime_fallback": false
+    },
+    {
+      "file": "new_pages.json",
+      "label": "New-page scan",
+      "status": "fresh",
+      "age_hours": 0.4,
+      "ts": "2026-04-25T06:05:31.621363",
+      "max_age_hours": 30,
+      "used_mtime_fallback": false
+    },
+    {
+      "file": "serp_data.json",
+      "label": "SERP data",
+      "status": "fresh",
+      "age_hours": 0.4,
+      "ts": "2026-04-25T06:04:49.181127",
+      "max_age_hours": 30,
+      "used_mtime_fallback": true
+    },
+    {
+      "file": "citation_prompts.json",
+      "label": "Citation prompts",
+      "status": "fresh",
+      "age_hours": 0.4,
+      "ts": "2026-04-25T06:05:31.780546",
+      "max_age_hours": 30,
+      "used_mtime_fallback": true
+    },
+    {
+      "file": "crawl_rank4ai.json",
+      "label": "R4 site crawl",
+      "status": "fresh",
+      "age_hours": 0.2,
+      "ts": "2026-04-25T06:14:10.120080",
+      "max_age_hours": 30,
+      "used_mtime_fallback": false
+    },
+    {
+      "file": "crawl_market-invoice.json",
+      "label": "MI site crawl",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-04-25T06:18:40.330824",
+      "max_age_hours": 30,
+      "used_mtime_fallback": false
+    },
+    {
+      "file": "crawl_seocompare.json",
+      "label": "SC site crawl",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-04-25T06:22:28.629419",
+      "max_age_hours": 30,
+      "used_mtime_fallback": false
+    },
+    {
+      "file": "ai_audit.json",
+      "label": "AI audit",
+      "status": "fresh",
+      "age_hours": 0.0,
+      "ts": "2026-04-25T06:23:54.619162",
+      "max_age_hours": 30,
       "used_mtime_fallback": false
     }
   ]

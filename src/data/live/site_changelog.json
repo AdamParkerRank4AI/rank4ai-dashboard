@@ -1,138 +1,157 @@
 {
   "rank4ai": {
-    "checked_at": "2026-04-24T06:29:36.853041",
-    "commits_7d": 125,
-    "commits_24h": 10,
-    "files_changed_24h": 50,
-    "new_pages_24h": 44,
+    "checked_at": "2026-04-25T06:26:35.307883",
+    "commits_7d": 135,
+    "commits_24h": 8,
+    "files_changed_24h": 25,
+    "new_pages_24h": 14,
     "recent_commits": [
       {
-        "hash": "04a707f4",
-        "date": "2026-04-24 05:36:58",
-        "message": "webhook-probe 043657"
+        "hash": "14a76186",
+        "date": "2026-04-24 17:45:14",
+        "message": "Signature market report page (LLM-quotable)"
       },
       {
-        "hash": "355c5252",
-        "date": "2026-04-23 21:11:08",
-        "message": "Add Step 4 cache-purge to deploy pipeline"
+        "hash": "ad99a0a5",
+        "date": "2026-04-24 17:23:12",
+        "message": "Orphan elimination: 15 \u2192 0"
       },
       {
-        "hash": "0800b2c1",
-        "date": "2026-04-23 13:55:48",
-        "message": "Roll AIReadinessBlock + SpeakableSchema to 22 R4 guides"
+        "hash": "ac81a65c",
+        "date": "2026-04-24 17:18:38",
+        "message": "Wire hub indexes to list all child pages (orphan fix: 143 \u2192 15)"
       },
       {
-        "hash": "a931232c",
-        "date": "2026-04-23 13:47:59",
-        "message": "Add ServiceComparisonTable to 3 service pages"
+        "hash": "044313d9",
+        "date": "2026-04-24 17:00:22",
+        "message": "Platform services + editorial policy"
       },
       {
-        "hash": "ccf63ed8",
-        "date": "2026-04-23 13:40:30",
-        "message": "Roll AIReadinessBlock + SpeakableSchema to R4 blog + stats templates"
+        "hash": "125c362d",
+        "date": "2026-04-24 16:54:59",
+        "message": "Cannibal fix + robots.txt rewrite + CTR rewrites"
       },
       {
-        "hash": "8af459a9",
-        "date": "2026-04-23 10:02:37",
-        "message": "Fix dev-note meta descs (40 blogs) + 404 in search results"
+        "hash": "e3e01513",
+        "date": "2026-04-24 15:23:54",
+        "message": "Wire build-page-dates as prebuild step; add google-index + page-dates npm scripts"
       },
       {
-        "hash": "65f51ff7",
-        "date": "2026-04-23 09:57:29",
-        "message": "Fix LP mobile layout: table fits, stats reordered, badge fixed"
+        "hash": "39ff0d1a",
+        "date": "2026-04-24 15:03:30",
+        "message": "Refresh CLAUDE.md: remove stale \"Known Gaps\" (deploy scripts exist)"
       },
       {
-        "hash": "94b503b0",
-        "date": "2026-04-23 09:41:31",
-        "message": "Add 8 more ranking pages: tools, tactics, strategies (991 -> 999)"
+        "hash": "7d5a6cc2",
+        "date": "2026-04-24 14:52:43",
+        "message": "Fleet scripts + /learn/questions/ SEO + broken-link redirects"
       },
       {
-        "hash": "b1e2dd28",
-        "date": "2026-04-23 07:46:00",
-        "message": "AutoRelated: include dynamic-route data sources"
+        "hash": "455fe5d4",
+        "date": "2026-04-24 06:03:17",
+        "message": "chore: rebuild trigger 2026-04-24T05:03:16.793Z"
       },
       {
-        "hash": "806450a1",
-        "date": "2026-04-23 07:44:45",
-        "message": "Add 8 method/strategy ranking pages with comparison tables"
+        "hash": "f2977a40",
+        "date": "2026-04-24 05:40:05",
+        "message": "Dashboard edit: update meta_desc on /contact/"
       }
     ],
     "changed_files": [
-      "src/pages/learn/guides/claude-optimisation.astro",
-      "src/pages/learn/guides/structured-data-for-ai.astro",
-      "src/pages/learn/guides/ai-search-roi.astro",
-      "src/pages/learn/guides/who-should-i-hire.astro",
-      "src/pages/research/rankings/best-content-formats-for-ai-citations.astro",
-      "src/pages/learn/guides/geo.astro",
-      "src/pages/research/stats/[slug].astro",
-      "src/pages/what-we-do/advisory.astro",
-      "src/pages/research/rankings/best-llms-txt-examples-2026.astro",
-      "src/pages/lp/ai-ready-sites.astro",
-      "src/pages/learn/guides/complete-guide-ai-search.astro",
-      "src/pages/research/rankings/best-google-business-profile-tips-for-ai-search.astro",
-      "src/data/blogs.json",
-      "src/pages/learn/guides/aeo.astro",
-      "src/pages/research/rankings/top-ai-search-signals-that-actually-work.astro",
-      "src/pages/research/rankings/top-ranking-factors-for-ai-search-2026.astro",
-      "src/pages/learn/guides/get-cited-chatgpt.astro",
-      "src/pages/learn/guides/how-ai-chooses-businesses.astro",
-      "src/pages/learn/guides/copilot-optimisation.astro",
-      "src/pages/research/rankings/best-ai-search-monitoring-tools-2026.astro",
-      "src/pages/research/rankings/best-schema-markup-for-ai-search.astro",
-      "src/pages/learn/guides/searchgpt.astro",
-      "scripts/purge-cf-cache.cjs",
-      "src/pages/learn/guides/chatgpt-seo.astro",
-      "src/pages/learn/guides/perplexity-seo.astro",
-      "src/pages/what-we-do/full-agency.astro",
-      "src/pages/blog/[slug].astro",
-      "src/components/ServiceComparisonTable.astro",
-      "src/pages/research/rankings/best-site-structure-for-ai-visibility.astro",
-      "src/components/AutoRelated.astro",
-      "src/pages/research/rankings/best-robots-txt-for-ai-search.astro",
-      "src/pages/learn/guides/google-ai-overview-optimisation.astro",
-      "src/pages/research/rankings/best-ai-search-strategy-for-local-business.astro",
-      "src/data/services.json",
-      "src/pages/learn/guides/check-ai-visibility.astro",
-      "src/pages/learn/guides/ai-search-for-solicitors.astro",
-      "src/pages/research/rankings/best-ai-search-strategy-for-ecommerce.astro",
-      "scripts/deploy.cjs",
-      "src/pages/what-we-do/ecosystem-services.astro",
-      "src/pages/research/rankings/top-free-ai-search-tools-2026.astro",
-      "src/pages/learn/guides/entity-seo-for-ai.astro",
-      "src/pages/learn/guides/geo-vs-seo.astro",
-      "src/pages/research/rankings/best-ways-to-check-ai-visibility.astro",
-      "src/pages/learn/guides/google-ai-mode.astro",
-      "src/pages/research/rankings/best-ai-search-strategy-for-professional-services.astro",
-      "src/pages/research/rankings/best-website-builders-for-ai-search.astro",
-      "src/pages/learn/guides/ai-search-b2b.astro",
-      "src/pages/research/rankings/best-ai-search-strategy-for-small-business.astro",
-      "src/pages/learn/guides/google-ai-overview-ranking-factors.astro",
-      "src/pages/learn/guides/appear-in-perplexity.astro"
+      "src/pages/ai-search/index.astro",
+      "CLAUDE.md",
+      "src/pages/about/editorial-policy.astro",
+      "src/pages/research/rankings/index.astro",
+      "src/pages/ai-seo/index.astro",
+      "public/robots.txt",
+      "scripts/build-page-dates.cjs",
+      "src/pages/services/claude-optimisation.astro",
+      "scripts/find-broken.cjs",
+      "src/pages/learn/questions/index.astro",
+      "scripts/find-orphans.cjs",
+      "src/pages/ai-seo-agency-uk/index.astro",
+      "src/data/page-publish-dates.json",
+      "src/components/PageDates.astro",
+      "public/_redirects",
+      "src/pages/services/perplexity-optimisation.astro",
+      "src/data/page-dates.json",
+      "scripts/find-thin.cjs",
+      "src/pages/ai-marketing-growth/index.astro",
+      "src/pages/services/ai-seo-agency-services.astro",
+      "src/pages/services/chatgpt-optimisation.astro",
+      "src/pages/how-often-should-i-analyze-ai-visibility-performance.astro",
+      "package.json",
+      "src/pages/what-we-do/index.astro",
+      "src/pages/research/uk-ai-search-visibility-market-report-q2-2026.astro"
     ],
     "new_page_files": [
-      "src/pages/learn/guides/claude-optimisation.astro",
-      "src/pages/learn/guides/structured-data-for-ai.astro",
-      "src/pages/learn/guides/ai-search-roi.astro",
-      "src/pages/learn/guides/who-should-i-hire.astro",
-      "src/pages/research/rankings/best-content-formats-for-ai-citations.astro",
-      "src/pages/learn/guides/geo.astro",
-      "src/pages/research/stats/[slug].astro",
-      "src/pages/what-we-do/advisory.astro",
-      "src/pages/research/rankings/best-llms-txt-examples-2026.astro",
-      "src/pages/lp/ai-ready-sites.astro",
-      "src/pages/learn/guides/complete-guide-ai-search.astro",
-      "src/pages/research/rankings/best-google-business-profile-tips-for-ai-search.astro",
-      "src/pages/learn/guides/aeo.astro",
-      "src/pages/research/rankings/top-ai-search-signals-that-actually-work.astro",
-      "src/pages/research/rankings/top-ranking-factors-for-ai-search-2026.astro",
-      "src/pages/learn/guides/get-cited-chatgpt.astro",
-      "src/pages/learn/guides/how-ai-chooses-businesses.astro",
-      "src/pages/learn/guides/copilot-optimisation.astro",
-      "src/pages/research/rankings/best-ai-search-monitoring-tools-2026.astro",
-      "src/pages/research/rankings/best-schema-markup-for-ai-search.astro"
+      "src/pages/ai-search/index.astro",
+      "src/pages/about/editorial-policy.astro",
+      "src/pages/research/rankings/index.astro",
+      "src/pages/ai-seo/index.astro",
+      "src/pages/services/claude-optimisation.astro",
+      "src/pages/learn/questions/index.astro",
+      "src/pages/ai-seo-agency-uk/index.astro",
+      "src/pages/services/perplexity-optimisation.astro",
+      "src/pages/ai-marketing-growth/index.astro",
+      "src/pages/services/ai-seo-agency-services.astro",
+      "src/pages/services/chatgpt-optimisation.astro",
+      "src/pages/how-often-should-i-analyze-ai-visibility-performance.astro",
+      "src/pages/what-we-do/index.astro",
+      "src/pages/research/uk-ai-search-visibility-market-report-q2-2026.astro"
     ],
     "crawl_status": "ok",
     "all_commits": [
+      {
+        "hash": "14a76186",
+        "date": "2026-04-24 17:45:14",
+        "message": "Signature market report page (LLM-quotable)"
+      },
+      {
+        "hash": "ad99a0a5",
+        "date": "2026-04-24 17:23:12",
+        "message": "Orphan elimination: 15 \u2192 0"
+      },
+      {
+        "hash": "ac81a65c",
+        "date": "2026-04-24 17:18:38",
+        "message": "Wire hub indexes to list all child pages (orphan fix: 143 \u2192 15)"
+      },
+      {
+        "hash": "044313d9",
+        "date": "2026-04-24 17:00:22",
+        "message": "Platform services + editorial policy"
+      },
+      {
+        "hash": "125c362d",
+        "date": "2026-04-24 16:54:59",
+        "message": "Cannibal fix + robots.txt rewrite + CTR rewrites"
+      },
+      {
+        "hash": "e3e01513",
+        "date": "2026-04-24 15:23:54",
+        "message": "Wire build-page-dates as prebuild step; add google-index + page-dates npm scripts"
+      },
+      {
+        "hash": "39ff0d1a",
+        "date": "2026-04-24 15:03:30",
+        "message": "Refresh CLAUDE.md: remove stale \"Known Gaps\" (deploy scripts exist)"
+      },
+      {
+        "hash": "7d5a6cc2",
+        "date": "2026-04-24 14:52:43",
+        "message": "Fleet scripts + /learn/questions/ SEO + broken-link redirects"
+      },
+      {
+        "hash": "455fe5d4",
+        "date": "2026-04-24 06:03:17",
+        "message": "chore: rebuild trigger 2026-04-24T05:03:16.793Z"
+      },
+      {
+        "hash": "f2977a40",
+        "date": "2026-04-24 05:40:05",
+        "message": "Dashboard edit: update meta_desc on /contact/"
+      },
       {
         "hash": "04a707f4",
         "date": "2026-04-24 05:36:58",
@@ -236,12 +255,42 @@
     ]
   },
   "market-invoice": {
-    "checked_at": "2026-04-24T06:29:37.984431",
-    "commits_7d": 82,
-    "commits_24h": 5,
-    "files_changed_24h": 10,
-    "new_pages_24h": 3,
+    "checked_at": "2026-04-25T06:26:36.307636",
+    "commits_7d": 88,
+    "commits_24h": 6,
+    "files_changed_24h": 26,
+    "new_pages_24h": 12,
     "recent_commits": [
+      {
+        "hash": "1b68ec05",
+        "date": "2026-04-24 17:36:09",
+        "message": "New industry pages: Startups + SaaS (content-gap fills)"
+      },
+      {
+        "hash": "3e5f9624",
+        "date": "2026-04-24 16:54:43",
+        "message": "CTR + trust + AI-crawler polish"
+      },
+      {
+        "hash": "0f6a93b5",
+        "date": "2026-04-24 15:20:38",
+        "message": "Wire build-page-dates as prebuild step; add indexnow + google-index npm scripts"
+      },
+      {
+        "hash": "66437c99",
+        "date": "2026-04-24 12:38:22",
+        "message": "Fleet scripts + QA enrichment + auto-generated guide"
+      },
+      {
+        "hash": "d7e13af5",
+        "date": "2026-04-24 12:15:25",
+        "message": "MI mix auto-publisher: rotate qa/blog/stat/guide via Claude API"
+      },
+      {
+        "hash": "b159e5e8",
+        "date": "2026-04-24 07:00:12",
+        "message": "Auto: daily Q&A content 2026-04-24"
+      },
       {
         "hash": "9b88ad2e",
         "date": "2026-04-23 21:11:06",
@@ -261,57 +310,82 @@
         "hash": "b21cec31",
         "date": "2026-04-23 13:32:56",
         "message": "Bump astro 6.1.3 -> 6.1.x latest (fleet version alignment)"
-      },
-      {
-        "hash": "8c5f7fb0",
-        "date": "2026-04-23 07:00:10",
-        "message": "Auto: daily Q&A content 2026-04-23"
-      },
-      {
-        "hash": "722d7a0c",
-        "date": "2026-04-22 15:31:58",
-        "message": "Add AutoRelated to MI BaseLayout (orphan fix, mirrors R4 pattern)"
-      },
-      {
-        "hash": "c0c60e99",
-        "date": "2026-04-22 12:15:28",
-        "message": "Add ai-sitemap.txt (390 URLs) for AI crawler discovery"
-      },
-      {
-        "hash": "db4bf6c0",
-        "date": "2026-04-22 11:57:13",
-        "message": "Fleet hygiene: remove em dashes from 41 .astro files (~80 instances)"
-      },
-      {
-        "hash": "79e2fdf8",
-        "date": "2026-04-22 07:00:13",
-        "message": "Auto: daily Q&A content 2026-04-22"
-      },
-      {
-        "hash": "be580e41",
-        "date": "2026-04-21 07:00:08",
-        "message": "Auto: daily Q&A content 2026-04-21"
       }
     ],
     "changed_files": [
-      "src/pages/questions/can-i-finance-recurring-contracts.astro",
+      "src/pages/questions/what-is-invoice-purchase.astro",
+      "public/robots.txt",
+      "scripts/find-broken.cjs",
       "scripts/.published_qa.txt",
-      "package.json",
-      "src/components/LeadForm.astro",
-      "scripts/deploy.cjs",
-      "supabase/migrations/20260423_add_lead_attribution_columns.sql",
-      "scripts/purge-cf-cache.cjs",
+      "scripts/build-page-dates.cjs",
+      "src/pages/industries/startups.astro",
+      "scripts/find-orphans.cjs",
+      "src/pages/guides/index.astro",
+      "src/data/page-publish-dates.json",
+      "src/pages/industries/index.astro",
+      "src/pages/guides/costs.astro",
+      "src/components/PageDates.astro",
       "src/pages/questions/index.astro",
-      "package-lock.json",
-      "src/pages/providers/sonovate.astro"
+      "src/data/page-dates.json",
+      "scripts/find-thin.cjs",
+      "scripts/.published_stat_titles.txt",
+      "src/pages/stats/index.astro",
+      "scripts/.published_guide_titles.txt",
+      "src/pages/stats/uk-invoice-finance-statistics-2026.astro",
+      "src/pages/index.astro",
+      "src/pages/guides/how-invoice-finance-works.astro",
+      "scripts/generate-daily-content.py",
+      "package.json",
+      "src/pages/guides/invoice-finance-explained.astro",
+      "src/layouts/BaseLayout.astro",
+      "src/pages/industries/saas.astro"
     ],
     "new_page_files": [
-      "src/pages/questions/can-i-finance-recurring-contracts.astro",
+      "src/pages/questions/what-is-invoice-purchase.astro",
+      "src/pages/industries/startups.astro",
+      "src/pages/guides/index.astro",
+      "src/pages/industries/index.astro",
+      "src/pages/guides/costs.astro",
       "src/pages/questions/index.astro",
-      "src/pages/providers/sonovate.astro"
+      "src/pages/stats/index.astro",
+      "src/pages/stats/uk-invoice-finance-statistics-2026.astro",
+      "src/pages/index.astro",
+      "src/pages/guides/how-invoice-finance-works.astro",
+      "src/pages/guides/invoice-finance-explained.astro",
+      "src/pages/industries/saas.astro"
     ],
     "crawl_status": "ok",
     "all_commits": [
+      {
+        "hash": "1b68ec05",
+        "date": "2026-04-24 17:36:09",
+        "message": "New industry pages: Startups + SaaS (content-gap fills)"
+      },
+      {
+        "hash": "3e5f9624",
+        "date": "2026-04-24 16:54:43",
+        "message": "CTR + trust + AI-crawler polish"
+      },
+      {
+        "hash": "0f6a93b5",
+        "date": "2026-04-24 15:20:38",
+        "message": "Wire build-page-dates as prebuild step; add indexnow + google-index npm scripts"
+      },
+      {
+        "hash": "66437c99",
+        "date": "2026-04-24 12:38:22",
+        "message": "Fleet scripts + QA enrichment + auto-generated guide"
+      },
+      {
+        "hash": "d7e13af5",
+        "date": "2026-04-24 12:15:25",
+        "message": "MI mix auto-publisher: rotate qa/blog/stat/guide via Claude API"
+      },
+      {
+        "hash": "b159e5e8",
+        "date": "2026-04-24 07:00:12",
+        "message": "Auto: daily Q&A content 2026-04-24"
+      },
       {
         "hash": "9b88ad2e",
         "date": "2026-04-23 21:11:06",
@@ -495,12 +569,47 @@
     ]
   },
   "seocompare": {
-    "checked_at": "2026-04-24T06:29:39.130961",
-    "commits_7d": 86,
+    "checked_at": "2026-04-25T06:26:37.282718",
+    "commits_7d": 93,
     "commits_24h": 7,
-    "files_changed_24h": 92,
-    "new_pages_24h": 78,
+    "files_changed_24h": 12,
+    "new_pages_24h": 7,
     "recent_commits": [
+      {
+        "hash": "91102916",
+        "date": "2026-04-25 06:00:52",
+        "message": "Auto: new Q&A page - How to Stop AI Summarising Your Content Incorrectly"
+      },
+      {
+        "hash": "c022a117",
+        "date": "2026-04-24 17:42:33",
+        "message": "Signature market-benchmarks page (LLM-quotable)"
+      },
+      {
+        "hash": "f1c82bab",
+        "date": "2026-04-24 16:53:54",
+        "message": "robots.txt: add Claude-User + Meta-ExternalAgent + DuckAssistBot + MistralAI-User"
+      },
+      {
+        "hash": "886e43ea",
+        "date": "2026-04-24 15:04:48",
+        "message": "Fix /blog/blog/ doubled path in blog index"
+      },
+      {
+        "hash": "98946e7d",
+        "date": "2026-04-24 09:31:03",
+        "message": "Fix Added/Updated dates: filter out stylistic commits + manual override"
+      },
+      {
+        "hash": "5e6e768c",
+        "date": "2026-04-24 09:04:06",
+        "message": "Fix auto-publisher bug: blog post placed in blog/blog/ (move up one level)"
+      },
+      {
+        "hash": "f34a8b51",
+        "date": "2026-04-24 08:57:56",
+        "message": "Rebuild SC homepage rankings section: remove carousel + Instagram-style cover image"
+      },
       {
         "hash": "1a188b36",
         "date": "2026-04-24 06:01:21",
@@ -515,119 +624,68 @@
         "hash": "89b77a2f",
         "date": "2026-04-24 05:47:20",
         "message": "Remove 103 lines of orphan + duplicate content from homepage carousel section"
-      },
-      {
-        "hash": "0d4a018d",
-        "date": "2026-04-24 05:40:03",
-        "message": "Add page-dates infrastructure + Added/Updated badges on SC homepage tiles"
-      },
-      {
-        "hash": "55bc6812",
-        "date": "2026-04-23 21:11:09",
-        "message": "Add Step 4 cache-purge to deploy pipeline"
-      },
-      {
-        "hash": "f512e208",
-        "date": "2026-04-23 13:31:45",
-        "message": "SC fleet baseline alignment: Partytown + deploy.cjs + Astro bump"
-      },
-      {
-        "hash": "617cf551",
-        "date": "2026-04-23 10:21:07",
-        "message": "Fix SC llms.txt: /ai-search-questions/ -> /questions/"
-      },
-      {
-        "hash": "bf2e548f",
-        "date": "2026-04-23 06:00:50",
-        "message": "Auto: new Stat page - AI Search Zero-Click Rates: 73% Don't Need to Click Through"
-      },
-      {
-        "hash": "23fd0016",
-        "date": "2026-04-22 15:34:14",
-        "message": "Add AutoRelated to SC BaseLayout (orphan fix, mirrors R4 + MI)"
-      },
-      {
-        "hash": "fcc506a9",
-        "date": "2026-04-22 12:15:30",
-        "message": "Add ai-sitemap.txt (320 URLs) for AI crawler discovery"
       }
     ],
     "changed_files": [
-      "src/pages/best-ai-seo-companies/index.astro",
-      "src/pages/best-geo-agencies-2026/index.astro",
-      "src/pages/best-ai-overviews-agencies-2026/index.astro",
-      "src/pages/best-ai-seo-agencies-financial/index.astro",
-      "src/pages/top-ai-visibility-agencies/index.astro",
-      "src/pages/chatgpt-seo-agencies-uk/index.astro",
-      "package-lock.json",
-      "src/pages/blog/index.astro",
-      "astro.config.mjs",
-      "src/pages/ai-search-agencies-canada/index.astro",
-      "src/pages/best-geo-agencies-saas/index.astro",
-      "src/pages/ai-visibility-agency-uk/index.astro",
-      "public/llms.txt",
-      "src/pages/best-llmo-agencies/index.astro",
-      "src/pages/agency-directory/index.astro",
-      "src/pages/uk-ai-overviews-agencies/index.astro",
-      "scripts/deploy.cjs",
-      "src/pages/best-ai-seo-agencies/index.astro",
-      "src/pages/ai-seo-agencies-b2b-uk/index.astro",
-      "scripts/build-page-dates.cjs",
-      "src/pages/ai-seo-agencies-usa/index.astro",
-      "src/pages/best-ai-seo-agencies-b2b/index.astro",
-      "src/pages/best-geo-agencies/index.astro",
-      "src/pages/best-geo-agencies-ecommerce/index.astro",
-      "src/pages/ai-search-agencies-europe/index.astro",
       "src/pages/index.astro",
-      "src/pages/best-ai-visibility-agencies/index.astro",
-      "src/pages/ai-seo-agency-london/index.astro",
-      "src/pages/ai-search-agencies-australia/index.astro",
-      "src/pages/top-ai-seo-agencies-ecommerce/index.astro",
-      "src/pages/chatgpt-seo-agency-uk/index.astro",
-      "public/llms-full.txt",
-      "src/pages/ai-seo-agency-manchester/index.astro",
-      "src/pages/top-chatgpt-seo-agencies/index.astro",
-      "src/data/page-dates.json",
-      "src/pages/best-ai-seo-agencies-ecommerce/index.astro",
-      "src/pages/ai-seo-financial-uk/index.astro",
-      "src/pages/free-ai-visibility-audit/index.astro",
-      "src/pages/ai-search-agencies-b2b/index.astro",
-      "src/pages/top-ai-seo-agencies-law-firms/index.astro",
-      "src/pages/ai-seo-healthcare-uk/index.astro",
-      "src/pages/best-chatgpt-seo-agencies/index.astro",
-      "src/pages/best-ai-seo-agencies-uk/index.astro",
-      "src/layouts/BaseLayout.astro",
-      "src/pages/affordable-ai-seo-agencies/index.astro",
-      "src/pages/best-aeo-agencies-ecommerce/index.astro",
-      "src/pages/top-geo-agencies-2026/index.astro",
-      "src/components/RelatedPages.astro",
-      "src/pages/ai-search-agencies-enterprise/index.astro",
-      "src/pages/ai-seo-agencies-saas-uk/index.astro"
+      "src/data/page-publish-dates.json",
+      "src/pages/blog/perplexity-pro-business-features/index.astro",
+      "src/pages/tools/ai-readiness-quiz/index.astro",
+      "src/pages/uk-ai-seo-agency-market-benchmarks-2026.astro",
+      "public/robots.txt",
+      "scripts/build-page-dates.cjs",
+      "src/pages/ai-search-questions/index.astro",
+      "src/components/PageDates.astro",
+      "src/pages/questions/how-to-stop-ai-summarising-content-incorrectly/index.astro",
+      "src/pages/blog/index.astro",
+      "src/data/page-dates.json"
     ],
     "new_page_files": [
-      "src/pages/best-ai-seo-companies/index.astro",
-      "src/pages/best-geo-agencies-2026/index.astro",
-      "src/pages/best-ai-overviews-agencies-2026/index.astro",
-      "src/pages/best-ai-seo-agencies-financial/index.astro",
-      "src/pages/top-ai-visibility-agencies/index.astro",
-      "src/pages/chatgpt-seo-agencies-uk/index.astro",
-      "src/pages/blog/index.astro",
-      "src/pages/ai-search-agencies-canada/index.astro",
-      "src/pages/best-geo-agencies-saas/index.astro",
-      "src/pages/ai-visibility-agency-uk/index.astro",
-      "src/pages/best-llmo-agencies/index.astro",
-      "src/pages/agency-directory/index.astro",
-      "src/pages/uk-ai-overviews-agencies/index.astro",
-      "src/pages/best-ai-seo-agencies/index.astro",
-      "src/pages/ai-seo-agencies-b2b-uk/index.astro",
-      "src/pages/ai-seo-agencies-usa/index.astro",
-      "src/pages/best-ai-seo-agencies-b2b/index.astro",
-      "src/pages/best-geo-agencies/index.astro",
-      "src/pages/best-geo-agencies-ecommerce/index.astro",
-      "src/pages/ai-search-agencies-europe/index.astro"
+      "src/pages/index.astro",
+      "src/pages/blog/perplexity-pro-business-features/index.astro",
+      "src/pages/tools/ai-readiness-quiz/index.astro",
+      "src/pages/uk-ai-seo-agency-market-benchmarks-2026.astro",
+      "src/pages/ai-search-questions/index.astro",
+      "src/pages/questions/how-to-stop-ai-summarising-content-incorrectly/index.astro",
+      "src/pages/blog/index.astro"
     ],
-    "crawl_status": "stale",
+    "crawl_status": "ok",
     "all_commits": [
+      {
+        "hash": "91102916",
+        "date": "2026-04-25 06:00:52",
+        "message": "Auto: new Q&A page - How to Stop AI Summarising Your Content Incorrectly"
+      },
+      {
+        "hash": "c022a117",
+        "date": "2026-04-24 17:42:33",
+        "message": "Signature market-benchmarks page (LLM-quotable)"
+      },
+      {
+        "hash": "f1c82bab",
+        "date": "2026-04-24 16:53:54",
+        "message": "robots.txt: add Claude-User + Meta-ExternalAgent + DuckAssistBot + MistralAI-User"
+      },
+      {
+        "hash": "886e43ea",
+        "date": "2026-04-24 15:04:48",
+        "message": "Fix /blog/blog/ doubled path in blog index"
+      },
+      {
+        "hash": "98946e7d",
+        "date": "2026-04-24 09:31:03",
+        "message": "Fix Added/Updated dates: filter out stylistic commits + manual override"
+      },
+      {
+        "hash": "5e6e768c",
+        "date": "2026-04-24 09:04:06",
+        "message": "Fix auto-publisher bug: blog post placed in blog/blog/ (move up one level)"
+      },
+      {
+        "hash": "f34a8b51",
+        "date": "2026-04-24 08:57:56",
+        "message": "Rebuild SC homepage rankings section: remove carousel + Instagram-style cover image"
+      },
       {
         "hash": "1a188b36",
         "date": "2026-04-24 06:01:21",
@@ -846,113 +904,281 @@
     ]
   },
   "rochellemarashi": {
-    "checked_at": "2026-04-24T06:29:39.212805",
-    "commits_7d": 0,
-    "commits_24h": 0,
-    "files_changed_24h": 0,
-    "new_pages_24h": 0,
-    "recent_commits": [],
-    "changed_files": [],
-    "new_page_files": [],
-    "crawl_status": "ok",
-    "all_commits": []
-  },
-  "rank4ai-dashboard": {
-    "checked_at": "2026-04-24T06:29:39.799025",
-    "commits_7d": 101,
-    "commits_24h": 16,
-    "files_changed_24h": 29,
-    "new_pages_24h": 3,
+    "checked_at": "2026-04-25T06:26:38.222396",
+    "commits_7d": 2,
+    "commits_24h": 2,
+    "files_changed_24h": 159,
+    "new_pages_24h": 117,
     "recent_commits": [
       {
-        "hash": "0361c06a",
-        "date": "2026-04-24 06:25:57",
-        "message": "Wins This Week + fix AIO tile labelling + separate site issues from recs"
+        "hash": "a9a91cd6",
+        "date": "2026-04-24 12:19:23",
+        "message": "Staging guard: noindex on .pages.dev, index once DNS cutover to live domain"
       },
       {
-        "hash": "9646b569",
-        "date": "2026-04-24 06:16:26",
-        "message": "Redesign Recommendations: progress delta + quick wins + compact table"
-      },
-      {
-        "hash": "733af00c",
-        "date": "2026-04-24 06:01:43",
-        "message": "Preview-before-save on editor + create-page API and form"
-      },
-      {
-        "hash": "b1d836a5",
-        "date": "2026-04-24 05:47:21",
-        "message": "Editor triggers deploy hook \u2014 CF webhook unreliable, force deploy on edit"
-      },
-      {
-        "hash": "436358af",
-        "date": "2026-04-24 05:33:32",
-        "message": "webhook-probe 043331"
-      },
-      {
-        "hash": "4c8ae462",
-        "date": "2026-04-23 19:08:54",
-        "message": "Phase 3 editor + bot hits on crawl chart + keyword side-by-side + Push Live backend"
-      },
-      {
-        "hash": "94876f76",
-        "date": "2026-04-23 18:25:15",
-        "message": "Autonomous dashboard backlog sweep"
-      },
-      {
-        "hash": "c6c0fd39",
-        "date": "2026-04-23 18:15:52",
-        "message": "Trigger redeploy (webhook missed previous push)"
-      },
-      {
-        "hash": "5f0c32da",
-        "date": "2026-04-23 18:06:30",
-        "message": "Add Run Audit to Tools sidebar"
-      },
-      {
-        "hash": "4d84fc29",
-        "date": "2026-04-23 18:02:42",
-        "message": "Trigger redeploy: pick up EDIT_SECRET + GITHUB_TOKEN env vars for /api/edit-page"
+        "hash": "fe62d43a",
+        "date": "2026-04-24 09:01:44",
+        "message": "Initial Astro build, migrated from Lovable"
       }
     ],
     "changed_files": [
-      "src/data/live/gsc_previous.json",
-      "src/data/live/wins_this_week.json",
-      "scripts/validate_data.py",
-      "functions/api/push-live.js",
-      "src/pages/index.astro",
-      "scripts/refresh_all.py",
-      "scripts/check_data_freshness.py",
-      "scripts/sync_upcoming_pages.py",
-      "src/data/live/pagespeed.json",
-      "scripts/compute_wins.py",
-      "src/layouts/DashboardLayout.astro",
-      "scripts/fetch_pagespeed.py",
-      "scripts/verify_deploy_parity.py",
-      "src/pages/agency/[client]/[section].astro",
-      "scripts/fetch_leads.py",
-      "scripts/compute_aeo_score.py",
-      "src/data/live/deploy_parity.json",
-      "functions/api/edit-page.js",
-      "src/data/live/data_freshness.json",
-      "src/data/clients.json",
-      "src/data/sections.json",
-      "src/pages/run-audit.astro",
-      "functions/api/run-audit.js",
-      "src/data/live/rec_snapshots/recommendations_2026-04-24.json",
-      "src/data/live/aeo_scorecard.json",
-      "src/data/live/mi_leads.json",
-      "scripts/crawl_sites.py",
-      "functions/api/create-page.js",
-      "src/data/live/upcoming_pages.json"
+      "src/components/AutoRelated.astro",
+      "src/content/blog/understanding-institutional-betrayal.json",
+      "src/components/Section.astro",
+      "src/content/pages/accessibility.json",
+      "src/content/blog/is-burnout-more-than-just-being-tired.json",
+      "src/content/pages/institutional-and-systemic-harm.json",
+      "src/content/pages/when-to-seek-professional-support.json",
+      "src/content/blog/what-is-gender-based-violence-and-why-it-matters-in-therapy.json",
+      "astro.config.mjs",
+      "src/content/pages/nervous-system-dysregulation.json",
+      "src/content/questions/is-my-stress-just-normal-life.json",
+      "src/content/guides/understanding-trauma-responses.json",
+      "public/llms.txt",
+      "src/content/blog/stalking-theres-nothing-romantic-about-it.json",
+      "src/content/questions/can-therapy-help-with-workplace-bullying.json",
+      "src/content/pages/services.json",
+      "src/content/pages/work-related-stress.json",
+      "src/content/blog/understanding-coercive-control-in-relationships.json",
+      "src/content/pages/telephone-therapy-uk.json",
+      "src/content/pages/crisis-and-emergency-guidance.json",
+      "src/content/guides/understanding-coercive-control.json",
+      "src/content/pages/safeguarding.json",
+      "src/content/blog/gas-light-its-not-me-its-you.json",
+      "src/content/blog/the-link-between-workplace-stress-and-trauma.json",
+      "src/content/guides/workplace-harm-and-institutional-betrayal.json",
+      "src/content/pages/institutional-betrayal.json",
+      "src/components/EducationalDisclaimer.astro",
+      "src/data/siteConfig.ts",
+      "src/content/pages/burnout.json",
+      "src/content/questions/can-online-therapy-really-work.json",
+      "src/components/CrisisNotice.astro",
+      "src/content/pages/stalking.json",
+      "src/content/pages/supervision-and-cpd.json",
+      "scripts/purge-cf-cache.cjs",
+      "src/content/pages/boundaries.json",
+      "src/content/questions/how-long-does-therapy-take.json",
+      "src/content/blog/lifting-the-veil-of-invisibility.json",
+      "scripts/indexnow-submit.cjs",
+      "src/components/Navbar.astro",
+      "scripts/google-indexing-submit.cjs",
+      "src/content/pages/who-i-work-with.json",
+      "src/content/pages/legal-abuse-and-ndas.json",
+      "src/content/questions/how-do-i-know-if-coercive-relationship.json",
+      "src/content/pages/workplace-discrimination.json",
+      "src/pages/podcast/index.astro",
+      "public/favicon.ico",
+      "public/downloads/surviving-stalking-p1.jpg",
+      "src/pages/guides/[slug].astro",
+      "src/content/questions/how-do-i-rebuild-trust-after-abuse.json",
+      "src/content/questions/difference-between-therapist-and-psychologist.json"
     ],
     "new_page_files": [
-      "src/pages/index.astro",
-      "src/pages/agency/[client]/[section].astro",
-      "src/pages/run-audit.astro"
+      "src/content/blog/understanding-institutional-betrayal.json",
+      "src/content/pages/accessibility.json",
+      "src/content/blog/is-burnout-more-than-just-being-tired.json",
+      "src/content/pages/institutional-and-systemic-harm.json",
+      "src/content/pages/when-to-seek-professional-support.json",
+      "src/content/blog/what-is-gender-based-violence-and-why-it-matters-in-therapy.json",
+      "src/content/pages/nervous-system-dysregulation.json",
+      "src/content/questions/is-my-stress-just-normal-life.json",
+      "src/content/guides/understanding-trauma-responses.json",
+      "src/content/blog/stalking-theres-nothing-romantic-about-it.json",
+      "src/content/questions/can-therapy-help-with-workplace-bullying.json",
+      "src/content/pages/services.json",
+      "src/content/pages/work-related-stress.json",
+      "src/content/blog/understanding-coercive-control-in-relationships.json",
+      "src/content/pages/telephone-therapy-uk.json",
+      "src/content/pages/crisis-and-emergency-guidance.json",
+      "src/content/guides/understanding-coercive-control.json",
+      "src/content/pages/safeguarding.json",
+      "src/content/blog/gas-light-its-not-me-its-you.json",
+      "src/content/blog/the-link-between-workplace-stress-and-trauma.json"
     ],
     "crawl_status": "ok",
     "all_commits": [
+      {
+        "hash": "a9a91cd6",
+        "date": "2026-04-24 12:19:23",
+        "message": "Staging guard: noindex on .pages.dev, index once DNS cutover to live domain"
+      },
+      {
+        "hash": "fe62d43a",
+        "date": "2026-04-24 09:01:44",
+        "message": "Initial Astro build, migrated from Lovable"
+      }
+    ]
+  },
+  "rank4ai-dashboard": {
+    "checked_at": "2026-04-25T06:26:38.735664",
+    "commits_7d": 118,
+    "commits_24h": 17,
+    "files_changed_24h": 73,
+    "new_pages_24h": 6,
+    "recent_commits": [
+      {
+        "hash": "ff668e9a",
+        "date": "2026-04-24 16:47:04",
+        "message": "Client drill-down iframe: force-hide admin chrome via runtime CSS (Astro is static)"
+      },
+      {
+        "hash": "c4daec5f",
+        "date": "2026-04-24 16:31:44",
+        "message": "Mobile responsive: sidebar collapses to hamburger drawer, padding tightens"
+      },
+      {
+        "hash": "2ad8dbcb",
+        "date": "2026-04-24 16:27:30",
+        "message": "Hide admin sidebar + top-nav when agency page is embedded from client drill-down"
+      },
+      {
+        "hash": "fe1518fb",
+        "date": "2026-04-24 16:22:53",
+        "message": "Client-side drill-down + hidden sidebar on client view"
+      },
+      {
+        "hash": "88fe8c77",
+        "date": "2026-04-24 16:02:56",
+        "message": "Persist edit token in localStorage \u2014 no more repeated prompts on edit/toggle"
+      },
+      {
+        "hash": "d1ec606b",
+        "date": "2026-04-24 15:49:33",
+        "message": "Admin gate on all /agency/* pages \u00b7 master code 1210 \u00b7 30-day localStorage"
+      },
+      {
+        "hash": "aa5eb045",
+        "date": "2026-04-24 15:36:32",
+        "message": "Crawl URL normalisation + orphan tooltip + expand-row hint + client view sections"
+      },
+      {
+        "hash": "a1e16c20",
+        "date": "2026-04-24 15:15:46",
+        "message": "Wire rochellemarashi into PSI, uptime, AEO, recommendations, wins"
+      },
+      {
+        "hash": "e73e2837",
+        "date": "2026-04-24 12:11:15",
+        "message": "Site Structure view on dashboard \u2014 full content hierarchy"
+      },
+      {
+        "hash": "5e07ad20",
+        "date": "2026-04-24 11:50:54",
+        "message": "Client view: wire site-manager and page-compliance to live crawl data"
+      }
+    ],
+    "changed_files": [
+      "src/data/live/site_changelog.json",
+      "src/data/live/manual_indexing_queue.json",
+      "src/data/live/google_trends.json",
+      "src/data/live/cf_ai_crawls.json",
+      "src/data/live/gsc.json",
+      "src/data/live/new_pages.json",
+      "src/data/clients.json",
+      "src/data/live/pagespeed.json",
+      "src/data/live/daily_audit_rochellemarashi.json",
+      "src/data/live/bot_hits.json",
+      "src/data/live/crawl_seocompare.json",
+      "src/data/live/google_indexing_log.json",
+      "src/pages/agency/[client]/[section].astro",
+      "src/data/live/deploy_parity.json",
+      "src/pages/agency/[client]/settings.astro",
+      "functions/api/update-client-sections.js",
+      "src/data/live/upcoming_pages.json",
+      "src/data/live/daily_audit_rank4ai.json",
+      "scripts/fetch_pagespeed.py",
+      "src/data/live/daily_audit_seocompare.json",
+      "src/data/live/daily_audit_market-invoice.json",
+      "src/data/live/uptime_history.json",
+      "src/data/live/daily_audit_summary.json",
+      "src/pages/agency/[client].astro",
+      "src/data/live/recommendations.json",
+      "scripts/compute_wins.py",
+      "scripts/generate_recommendations.py",
+      "src/data/live/bing.json",
+      "src/data/sections.json",
+      "src/data/live/data_freshness.json",
+      "scripts/verify_deploy_parity.py",
+      "src/data/live/gsc_coverage.json",
+      "scripts/build_changelog.py",
+      "src/data/live/crawl_rochellemarashi.json",
+      "src/data/live/ai_overview_serp.json",
+      "src/data/live/ga4.json",
+      "scripts/check_site_changes.py",
+      "src/data/live/nlp_entities.json",
+      "scripts/compute_aeo_score.py",
+      "src/data/live/uptime.json",
+      "src/data/live/citation_prompts.json",
+      "scripts/crawl_sites.py",
+      "src/data/ecosystem-matrix.json",
+      "src/data/live/aeo_scorecard.json",
+      "src/data/live/daily_audit_history.json",
+      "src/data/live/crawl_rank4ai.json",
+      "src/data/live/daily_history.json",
+      "src/data/live/full_changelog.json",
+      "src/data/live/indexing_queue.json",
+      "scripts/port_rochelle_content_plan.py"
+    ],
+    "new_page_files": [
+      "src/pages/agency/[client]/[section].astro",
+      "src/pages/agency/[client]/settings.astro",
+      "src/pages/agency/[client].astro",
+      "src/pages/index.astro",
+      "src/pages/client/[client]/[section].astro",
+      "src/pages/client/[client].astro"
+    ],
+    "crawl_status": "ok",
+    "all_commits": [
+      {
+        "hash": "ff668e9a",
+        "date": "2026-04-24 16:47:04",
+        "message": "Client drill-down iframe: force-hide admin chrome via runtime CSS (Astro is static)"
+      },
+      {
+        "hash": "c4daec5f",
+        "date": "2026-04-24 16:31:44",
+        "message": "Mobile responsive: sidebar collapses to hamburger drawer, padding tightens"
+      },
+      {
+        "hash": "2ad8dbcb",
+        "date": "2026-04-24 16:27:30",
+        "message": "Hide admin sidebar + top-nav when agency page is embedded from client drill-down"
+      },
+      {
+        "hash": "fe1518fb",
+        "date": "2026-04-24 16:22:53",
+        "message": "Client-side drill-down + hidden sidebar on client view"
+      },
+      {
+        "hash": "88fe8c77",
+        "date": "2026-04-24 16:02:56",
+        "message": "Persist edit token in localStorage \u2014 no more repeated prompts on edit/toggle"
+      },
+      {
+        "hash": "d1ec606b",
+        "date": "2026-04-24 15:49:33",
+        "message": "Admin gate on all /agency/* pages \u00b7 master code 1210 \u00b7 30-day localStorage"
+      },
+      {
+        "hash": "aa5eb045",
+        "date": "2026-04-24 15:36:32",
+        "message": "Crawl URL normalisation + orphan tooltip + expand-row hint + client view sections"
+      },
+      {
+        "hash": "a1e16c20",
+        "date": "2026-04-24 15:15:46",
+        "message": "Wire rochellemarashi into PSI, uptime, AEO, recommendations, wins"
+      },
+      {
+        "hash": "e73e2837",
+        "date": "2026-04-24 12:11:15",
+        "message": "Site Structure view on dashboard \u2014 full content hierarchy"
+      },
+      {
+        "hash": "5e07ad20",
+        "date": "2026-04-24 11:50:54",
+        "message": "Client view: wire site-manager and page-compliance to live crawl data"
+      },
       {
         "hash": "0361c06a",
         "date": "2026-04-24 06:25:57",

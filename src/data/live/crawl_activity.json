@@ -1,7 +1,7 @@
 {
   "rank4ai": {
     "site_id": "rank4ai",
-    "fetched_at": "2026-04-24T06:01:02.113571",
+    "fetched_at": "2026-04-25T06:00:30.778196",
     "bing_crawl_daily": [
       {
         "date": "2026-02-22",
@@ -722,34 +722,58 @@
         "code_5xx": 35,
         "blocked_robots": 0,
         "errors": 31
+      },
+      {
+        "date": "2026-04-23",
+        "crawled_pages": 51,
+        "in_index": 532,
+        "in_links": 26,
+        "code_2xx": 402,
+        "code_301": 254,
+        "code_4xx": 11,
+        "code_5xx": 35,
+        "blocked_robots": 0,
+        "errors": 28
+      },
+      {
+        "date": "2026-04-24",
+        "crawled_pages": 55,
+        "in_index": 533,
+        "in_links": 27,
+        "code_2xx": 399,
+        "code_301": 273,
+        "code_4xx": 11,
+        "code_5xx": 33,
+        "blocked_robots": 0,
+        "errors": 28
       }
     ],
-    "bing_total_crawled": 1553,
-    "bing_indexed": 532,
-    "bing_inlinks": 26,
+    "bing_total_crawled": 1659,
+    "bing_indexed": 533,
+    "bing_inlinks": 27,
     "ai_bot_access": {
       "GPTBot": "allowed",
       "ChatGPT-User": "allowed",
       "Google-Extended": "allowed",
       "GoogleOther": "allowed",
       "ClaudeBot": "allowed",
-      "Claude-Web": "allowed",
+      "Claude-Web": "not_mentioned",
       "PerplexityBot": "allowed",
-      "Bytespider": "allowed",
+      "Bytespider": "not_mentioned",
       "CCBot": "allowed",
       "cohere-ai": "allowed",
-      "Amazonbot": "not_mentioned",
-      "anthropic-ai": "allowed",
+      "Amazonbot": "allowed",
+      "anthropic-ai": "not_mentioned",
       "FacebookBot": "not_mentioned",
       "Applebot-Extended": "allowed",
       "Bingbot": "allowed"
     },
-    "ai_bots_allowed": 13,
+    "ai_bots_allowed": 11,
     "ai_bots_blocked": 0
   },
   "market-invoice": {
     "site_id": "market-invoice",
-    "fetched_at": "2026-04-24T06:01:03.137453",
+    "fetched_at": "2026-04-25T06:00:31.812405",
     "bing_crawl_daily": [
       {
         "date": "2026-04-09",
@@ -918,10 +942,34 @@
         "code_5xx": 0,
         "blocked_robots": 0,
         "errors": 1
+      },
+      {
+        "date": "2026-04-23",
+        "crawled_pages": 16,
+        "in_index": 5,
+        "in_links": 0,
+        "code_2xx": 5,
+        "code_301": 1,
+        "code_4xx": 0,
+        "code_5xx": 0,
+        "blocked_robots": 0,
+        "errors": 0
+      },
+      {
+        "date": "2026-04-24",
+        "crawled_pages": 21,
+        "in_index": 9,
+        "in_links": 0,
+        "code_2xx": 9,
+        "code_301": 1,
+        "code_4xx": 0,
+        "code_5xx": 0,
+        "blocked_robots": 0,
+        "errors": 0
       }
     ],
-    "bing_total_crawled": 44,
-    "bing_indexed": 5,
+    "bing_total_crawled": 81,
+    "bing_indexed": 9,
     "bing_inlinks": 0,
     "ai_bot_access": {
       "GPTBot": "allowed",
@@ -945,7 +993,7 @@
   },
   "seocompare": {
     "site_id": "seocompare",
-    "fetched_at": "2026-04-24T06:01:04.247249",
+    "fetched_at": "2026-04-25T06:00:32.916719",
     "bing_crawl_daily": [
       {
         "date": "2026-04-12",
@@ -1078,9 +1126,33 @@
         "code_5xx": 0,
         "blocked_robots": 0,
         "errors": 0
+      },
+      {
+        "date": "2026-04-23",
+        "crawled_pages": 4,
+        "in_index": 0,
+        "in_links": 1,
+        "code_2xx": 0,
+        "code_301": 1,
+        "code_4xx": 0,
+        "code_5xx": 0,
+        "blocked_robots": 0,
+        "errors": 0
+      },
+      {
+        "date": "2026-04-24",
+        "crawled_pages": 13,
+        "in_index": 0,
+        "in_links": 1,
+        "code_2xx": 0,
+        "code_301": 1,
+        "code_4xx": 0,
+        "code_5xx": 0,
+        "blocked_robots": 0,
+        "errors": 0
       }
     ],
-    "bing_total_crawled": 7,
+    "bing_total_crawled": 24,
     "bing_indexed": 0,
     "bing_inlinks": 1,
     "ai_bot_access": {
@@ -1089,18 +1161,18 @@
       "Google-Extended": "allowed",
       "GoogleOther": "allowed",
       "ClaudeBot": "allowed",
-      "Claude-Web": "allowed",
+      "Claude-Web": "not_mentioned",
       "PerplexityBot": "allowed",
       "Bytespider": "allowed",
       "CCBot": "allowed",
       "cohere-ai": "allowed",
       "Amazonbot": "allowed",
-      "anthropic-ai": "allowed",
+      "anthropic-ai": "not_mentioned",
       "FacebookBot": "allowed",
       "Applebot-Extended": "allowed",
       "Bingbot": "allowed"
     },
-    "ai_bots_allowed": 15,
+    "ai_bots_allowed": 13,
     "ai_bots_blocked": 0
   }
 }
