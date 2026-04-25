@@ -76,6 +76,14 @@ const aeoScore = aeoScorecardAll?.[clientId];
 const winsData = loadJson('wins_this_week.json');
 const siteWins = winsData?.per_site?.[clientId];
 
+// Per-client AI bot crawl data (Cloudflare AI Crawl Control)
+const cfCrawlsAll = loadJson('cf_ai_crawls.json');
+const cfCrawls = cfCrawlsAll?.per_site?.[clientId];
+
+// Per-client manual GSC submission queue
+const manualQueueAll = loadJson('manual_indexing_queue.json');
+const manualQueue = manualQueueAll?.per_site?.[clientId];
+
 // Per-site GitHub repo for the Push Live deep link
 const SITE_REPOS: Record<string, string> = {
   'rank4ai': 'AdamParkerRank4AI/rank4ai-preview',
@@ -257,87 +265,7 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
     </div>
   )}
 
-  <!-- CONTENT GAPS -->
-  {sectionId === 'content-gaps' && gsc && (
-    <div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
-          <div class="text-2xl font-bold text-white">{gsc.totals?.clicks || 0}</div>
-          <div class="text-xs text-gray-500">Total Clicks</div>
-        </div>
-        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
-          <div class="text-2xl font-bold text-white">{gsc.totals?.impressions?.toLocaleString() || 0}</div>
-          <div class="text-xs text-gray-500">Impressions</div>
-        </div>
-        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
-          <div class="text-2xl font-bold text-white">{gsc.totals?.ctr || 0}%</div>
-          <div class="text-xs text-gray-500">CTR</div>
-        </div>
-        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
-          <div class="text-2xl font-bold text-white">{gsc.totals?.position || 0}</div>
-          <div class="text-xs text-gray-500">Avg Position</div>
-        </div>
-      </div>
-
-      {gsc.content_gaps?.length > 0 && (
-        <div class="bg-gray-900 border border-yellow-800/50 rounded-lg p-6 mb-6">
-          <h3 class="text-sm font-semibold text-yellow-400 mb-4">Content Gaps — High Impressions, Low Clicks</h3>
-          <div class="overflow-x-auto">
-            <table class="w-full text-xs">
-              <thead>
-                <tr class="text-gray-500 border-b border-gray-800">
-                  <th class="text-left py-2 px-3">Query</th>
-                  <th class="text-right py-2 px-3">Impressions</th>
-                  <th class="text-right py-2 px-3">Clicks</th>
-                  <th class="text-right py-2 px-3">CTR</th>
-                  <th class="text-right py-2 px-3">Position</th>
-                </tr>
-              </thead>
-              <tbody>
-                {gsc.content_gaps.map((g: any) => (
-                  <tr class="border-b border-gray-800/50">
-                    <td class="py-2 px-3 text-gray-300">{g.query}</td>
-                    <td class="py-2 px-3 text-right text-white">{g.impressions}</td>
-                    <td class="py-2 px-3 text-right text-white">{g.clicks}</td>
-                    <td class="py-2 px-3 text-right text-yellow-400">{g.ctr}%</td>
-                    <td class="py-2 px-3 text-right text-gray-400">{g.position}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      )}
-
-      <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
-        <h3 class="text-sm font-semibold text-gray-400 mb-4">Top Queries</h3>
-        <div class="overflow-x-auto">
-          <table class="w-full text-xs">
-            <thead>
-              <tr class="text-gray-500 border-b border-gray-800">
-                <th class="text-left py-2 px-3">Query</th>
-                <th class="text-right py-2 px-3">Clicks</th>
-                <th class="text-right py-2 px-3">Impressions</th>
-                <th class="text-right py-2 px-3">CTR</th>
-                <th class="text-right py-2 px-3">Position</th>
-              </tr>
-            </thead>
-            <tbody>
-              {gsc.top_queries.map((q: any) => (
-                <tr class="border-b border-gray-800/50">
-                  <td class="py-2 px-3 text-gray-300">{q.query}</td>
-                  <td class="py-2 px-3 text-right text-white">{q.clicks}</td>
-                  <td class="py-2 px-3 text-right text-white">{q.impressions}</td>
-                  <td class="py-2 px-3 text-right text-blue-400">{q.ctr}%</td>
-                  <td class="py-2 px-3 text-right text-gray-400">{q.position}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  )}
+  <!-- CONTENT GAPS — folded into search-performance on 25 Apr 2026 -->
 
   <!-- SEO HEALTH -->
   {sectionId === 'seo-health' && crawlData && (
@@ -2574,6 +2502,73 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
   <!-- SEARCH PERFORMANCE (Google + Bing) -->
   {sectionId === 'search-performance' && (gsc || bing) && (
     <div>
+      {/* Manual GSC submission queue — top URLs to push via URL Inspection */}
+      {manualQueue && manualQueue.top?.length > 0 && (
+        <div class="bg-indigo-950/20 border border-indigo-900/40 rounded-lg p-5 mb-6">
+          <div class="flex items-center justify-between mb-2">
+            <div>
+              <h3 class="text-sm font-semibold text-indigo-300">Today's Manual GSC Submissions</h3>
+              <p class="text-[11px] text-gray-500">Paste each into GSC URL Inspection → Request Indexing. ~20-30/day soft limit per property.</p>
+            </div>
+            <a href={manualQueue.gsc_inspect_url} target="_blank" rel="noopener" class="text-[11px] text-indigo-400 hover:text-indigo-300 shrink-0">Open GSC →</a>
+          </div>
+          <div class="text-[10px] text-gray-500 mb-2">{manualQueue.never_api_submitted} of {manualQueue.sitemap_url_count} URLs not yet API-submitted</div>
+          <ol class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-1">
+            {manualQueue.top.slice(0, 10).map((item: any, i: number) => (
+              <li class="flex items-start gap-2 text-[11px]">
+                <span class="text-gray-600 w-4 shrink-0 pt-0.5">{i + 1}.</span>
+                <button
+                  class="manual-copy-btn text-left text-gray-300 hover:text-white break-all flex-1"
+                  data-url={item.url}
+                  title="Click to copy"
+                >{item.url.replace(/^https?:\/\/(www\.)?/, '')}</button>
+              </li>
+            ))}
+          </ol>
+        </div>
+      )}
+
+      {/* Bing Index Growth — moved here from Crawl Activity (25 Apr 2026); Bing belongs with search, not bots */}
+      {crawlActivityDetail?.bing_crawl_daily?.length > 0 && (
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-5 mb-6">
+          <h3 class="text-sm font-semibold text-blue-400 mb-2">Bing Index Growth</h3>
+          <p class="text-[11px] text-gray-500 mb-3">Pages indexed in Bing over time, from Bing Webmaster Tools</p>
+          <canvas id="indexChart" height="200"></canvas>
+        </div>
+      )}
+
+      {/* Content Gaps — folded in from former content-gaps section (25 Apr 2026) */}
+      {gsc?.content_gaps?.length > 0 && (
+        <div class="bg-gray-900 border border-yellow-800/40 rounded-lg p-5 mb-6">
+          <h3 class="text-sm font-semibold text-yellow-400 mb-2">Content Gaps — High Impressions, Low Clicks</h3>
+          <p class="text-[11px] text-gray-500 mb-3">Queries you rank for but barely get clicks. Title/snippet rewrites or better meta descriptions usually unlock these.</p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs">
+              <thead>
+                <tr class="text-gray-500 border-b border-gray-800">
+                  <th class="text-left py-2 px-3">Query</th>
+                  <th class="text-right py-2 px-3">Impressions</th>
+                  <th class="text-right py-2 px-3">Clicks</th>
+                  <th class="text-right py-2 px-3">CTR</th>
+                  <th class="text-right py-2 px-3">Position</th>
+                </tr>
+              </thead>
+              <tbody>
+                {gsc.content_gaps.map((g: any) => (
+                  <tr class="border-b border-gray-800/50">
+                    <td class="py-2 px-3 text-gray-300">{g.query}</td>
+                    <td class="py-2 px-3 text-right text-white">{g.impressions}</td>
+                    <td class="py-2 px-3 text-right text-white">{g.clicks}</td>
+                    <td class="py-2 px-3 text-right text-yellow-400">{g.ctr}%</td>
+                    <td class="py-2 px-3 text-right text-gray-400">{g.position}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
+
       {(gsc?.top_queries?.length > 0 || serp?.results?.length > 0) && (
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-5 mb-6">
           <div class="flex items-center justify-between mb-3">
@@ -3141,6 +3136,65 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
   <!-- CRAWL ACTIVITY -->
   {sectionId === 'crawl-activity' && crawlActivityDetail && (
     <div>
+      {/* Cloudflare AI Crawl Control — true edge-level bot counts */}
+      {cfCrawls && !cfCrawls.error && (() => {
+        const topBots = Object.entries(cfCrawls.totals_by_bot || {}).slice(0, 5);
+        const perDay = cfCrawls.per_day || [];
+        const maxDay = Math.max(1, ...perDay.map((d: any) => d._total || 0));
+        const botColors: any = {
+          GPTBot: '#10b981', 'ChatGPT-User': '#22c55e', 'OAI-SearchBot': '#16a34a',
+          ClaudeBot: '#f59e0b', PerplexityBot: '#8b5cf6',
+          Googlebot: '#3b82f6', 'Google-Extended': '#60a5fa',
+          Applebot: '#d1d5db', Bingbot: '#06b6d4',
+          Amazonbot: '#f97316', Bytespider: '#ec4899',
+          CCBot: '#a78bfa', 'Meta-ExternalAgent': '#0ea5e9',
+        };
+        return (
+          <div class="bg-orange-950/20 border border-orange-900/40 rounded-lg p-5 mb-6">
+            <div class="flex items-center justify-between mb-3">
+              <div>
+                <h3 class="text-sm font-semibold text-orange-300">Cloudflare AI Crawl Control (14d)</h3>
+                <p class="text-[11px] text-gray-500">Edge-level bot counts, true hits — not sampled</p>
+              </div>
+              <div class="text-right">
+                <div class="text-2xl font-bold text-orange-400">{(cfCrawls.total_period || 0).toLocaleString()}</div>
+                <div class="text-[10px] text-gray-400">{cfCrawls.unique_bots || 0} bots tracked</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="flex items-end gap-[2px] h-20">
+                {perDay.map((d: any) => {
+                  const total = d._total || 1;
+                  const hPct = ((d._total || 0) / maxDay) * 100;
+                  return (
+                    <div class="flex-1 flex flex-col-reverse" style={`height: ${Math.max(2, hPct)}%;`} title={`${d.date}: ${(d._total || 0).toLocaleString()}`}>
+                      {topBots.map(([bot]) => {
+                        const n = d[bot] || 0;
+                        if (!n) return null;
+                        return <div style={`flex-grow: ${n / total}; background: ${botColors[bot] || '#6b7280'}; min-height: 1px;`}></div>;
+                      })}
+                    </div>
+                  );
+                })}
+              </div>
+              <div class="flex justify-between text-[9px] text-gray-600 mt-1">
+                <span>{perDay[0]?.date?.slice(5) || ''}</span>
+                <span>{perDay[perDay.length - 1]?.date?.slice(5) || ''}</span>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-2">
+              {topBots.map(([bot, n]) => (
+                <div class="flex items-center gap-1.5 text-[11px]">
+                  <span class="w-2 h-2 rounded-sm shrink-0" style={`background: ${botColors[bot] || '#6b7280'};`}></span>
+                  <span class="text-gray-300">{bot}</span>
+                  <span class="text-gray-500 ml-auto">{Number(n).toLocaleString()}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      })()}
+
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
           <div class="text-2xl font-bold text-white">{crawlActivityDetail.bing_total_crawled}</div>
@@ -3181,12 +3235,6 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
           </div>
         </div>
 
-        {crawlActivityDetail.bing_crawl_daily?.length > 0 && (
-          <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
-            <h3 class="text-sm font-semibold text-gray-400 mb-4">Bing Index Growth</h3>
-            <canvas id="indexChart" height="200"></canvas>
-          </div>
-        )}
       </div>
 
       <!-- Server-Side Bot Hits (from Cloudflare Worker) -->
@@ -4658,7 +4706,7 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
     </div>
   )}
 
-  {!['traffic', 'content-gaps', 'seo-health', 'ai-citations', 'uptime', 'positive-signals', 'ai-readiness', 'search-performance', 'overview', 'site-speed', 'crawl-activity', 'competitors', 'recommendations', 'new-pages', 'site-tree', 'internal-links', 'site-manager', 'content-plan', 'daily-audit'].includes(sectionId) && (
+  {!['traffic', 'seo-health', 'ai-citations', 'leads', 'page-compliance', 'site-structure', 'uptime', 'positive-signals', 'ai-readiness', 'search-performance', 'overview', 'site-speed', 'crawl-activity', 'competitors', 'recommendations', 'new-pages', 'site-tree', 'internal-links', 'site-manager', 'content-plan', 'daily-audit'].includes(sectionId) && (
     <div class="bg-gray-900 border border-gray-800 rounded-lg p-8 text-center">
       <p class="text-gray-500">Detailed view for {section.label} coming soon.</p>
       <a href={`/agency/${clientId}`} class="text-sm text-blue-400 hover:text-blue-300 mt-2 inline-block">Back to dashboard</a>
@@ -4900,4 +4948,19 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
   } else {
     renderCharts();
   }
+</script>
+
+<script is:inline>
+  // Manual GSC queue: click-to-copy URL
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.manual-copy-btn');
+    if (!btn) return;
+    const url = btn.dataset.url;
+    navigator.clipboard.writeText(url).then(() => {
+      const original = btn.textContent;
+      btn.textContent = '✓ copied';
+      btn.classList.add('text-emerald-400');
+      setTimeout(() => { btn.textContent = original; btn.classList.remove('text-emerald-400'); }, 1200);
+    });
+  });
 </script>

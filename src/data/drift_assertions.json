@@ -1,0 +1,52 @@
+{
+  "market-invoice": [
+    {
+      "id": "boe-base-rate",
+      "label": "BoE base rate",
+      "expected": "3.75%",
+      "alternates_to_flag": ["4.00%", "4.25%", "4.50%", "4.75%", "5.00%", "5.25%", "3.50%", "3.25%", "3.00%"],
+      "context_required": ["base rate", "boe", "bank of england"],
+      "exclude_paths": ["/calculator/"]
+    },
+    {
+      "id": "company-name",
+      "label": "Company entity",
+      "expected": "Best Business Loans Ltd",
+      "context_required": ["company"]
+    },
+    {
+      "id": "company-number",
+      "label": "Companies House number",
+      "expected": "16833937",
+      "context_required": []
+    },
+    {
+      "id": "director",
+      "label": "Director / author",
+      "expected": "Oliver Mackman",
+      "context_required": ["director", "author", "by"]
+    }
+  ],
+  "rank4ai": [
+    {
+      "id": "company-name",
+      "label": "Company entity",
+      "expected": "Rank4AI Ltd",
+      "context_required": ["company"]
+    },
+    {
+      "id": "founder",
+      "label": "Founder",
+      "expected": "Adam Parker",
+      "context_required": ["founder", "director", "author"]
+    }
+  ],
+  "seocompare": [
+    {
+      "id": "author",
+      "label": "Author / brand voice",
+      "expected": "Oliver Mackman",
+      "context_required": ["by", "author"]
+    }
+  ]
+}

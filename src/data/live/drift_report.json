@@ -1,0 +1,131 @@
+{
+  "computed_at": "2026-04-25T16:19:07.304593",
+  "per_site": {
+    "market-invoice": {
+      "site_id": "market-invoice",
+      "pages_scanned": 12,
+      "assertions_checked": 4,
+      "drift_count": 0,
+      "findings": [
+        {
+          "id": "boe-base-rate",
+          "label": "BoE base rate",
+          "expected": "3.75%",
+          "relevant_pages": 11,
+          "expected_hits": 11,
+          "missing_pages": [],
+          "alternate_hits": [],
+          "drift_detected": false,
+          "coverage_pct": 100.0
+        },
+        {
+          "id": "company-name",
+          "label": "Company entity",
+          "expected": "Best Business Loans Ltd",
+          "relevant_pages": 12,
+          "expected_hits": 1,
+          "missing_pages": [
+            "https://marketinvoice.co.uk/",
+            "https://marketinvoice.co.uk/best/",
+            "https://marketinvoice.co.uk/disclaimer/",
+            "https://marketinvoice.co.uk/blog/",
+            "https://marketinvoice.co.uk/research/",
+            "https://marketinvoice.co.uk/compare/",
+            "https://marketinvoice.co.uk/questions/",
+            "https://marketinvoice.co.uk/calculator/",
+            "https://marketinvoice.co.uk/industries/",
+            "https://marketinvoice.co.uk/providers/"
+          ],
+          "alternate_hits": [],
+          "drift_detected": false,
+          "coverage_pct": 8.3
+        },
+        {
+          "id": "company-number",
+          "label": "Companies House number",
+          "expected": "16833937",
+          "relevant_pages": 12,
+          "expected_hits": 12,
+          "missing_pages": [],
+          "alternate_hits": [],
+          "drift_detected": false,
+          "coverage_pct": 100.0
+        },
+        {
+          "id": "director",
+          "label": "Director / author",
+          "expected": "Oliver Mackman",
+          "relevant_pages": 12,
+          "expected_hits": 3,
+          "missing_pages": [
+            "https://marketinvoice.co.uk/",
+            "https://marketinvoice.co.uk/disclaimer/",
+            "https://marketinvoice.co.uk/blog/",
+            "https://marketinvoice.co.uk/compare/",
+            "https://marketinvoice.co.uk/questions/",
+            "https://marketinvoice.co.uk/calculator/",
+            "https://marketinvoice.co.uk/industries/",
+            "https://marketinvoice.co.uk/providers/",
+            "https://marketinvoice.co.uk/guides/"
+          ],
+          "alternate_hits": [],
+          "drift_detected": false,
+          "coverage_pct": 25.0
+        }
+      ]
+    },
+    "rank4ai": {
+      "site_id": "rank4ai",
+      "pages_scanned": 12,
+      "assertions_checked": 2,
+      "drift_count": 0,
+      "findings": [
+        {
+          "id": "company-name",
+          "label": "Company entity",
+          "expected": "Rank4AI Ltd",
+          "relevant_pages": 12,
+          "expected_hits": 12,
+          "missing_pages": [],
+          "alternate_hits": [],
+          "drift_detected": false,
+          "coverage_pct": 100.0
+        },
+        {
+          "id": "founder",
+          "label": "Founder",
+          "expected": "Adam Parker",
+          "relevant_pages": 9,
+          "expected_hits": 7,
+          "missing_pages": [
+            "https://www.rank4ai.co.uk/",
+            "https://www.rank4ai.co.uk/learn/questions/"
+          ],
+          "alternate_hits": [],
+          "drift_detected": false,
+          "coverage_pct": 77.8
+        }
+      ]
+    },
+    "seocompare": {
+      "site_id": "seocompare",
+      "pages_scanned": 12,
+      "assertions_checked": 1,
+      "drift_count": 0,
+      "findings": [
+        {
+          "id": "author",
+          "label": "Author / brand voice",
+          "expected": "Oliver Mackman",
+          "relevant_pages": 12,
+          "expected_hits": 12,
+          "missing_pages": [],
+          "alternate_hits": [],
+          "drift_detected": false,
+          "coverage_pct": 100.0
+        }
+      ]
+    }
+  },
+  "fleet_drift_count": 0
+}

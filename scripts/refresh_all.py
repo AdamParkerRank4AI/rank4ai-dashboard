@@ -104,6 +104,7 @@ def main():
         ("fetch_bing.py", 30),
         ("fetch_crawl_activity.py", 30),
         ("fetch_bot_hits.py", 30),
+        ("fetch_cf_ai_crawls.py", 60),
         # PageSpeed — run weekly only (Sunday) to avoid rate limits
         # ("fetch_pagespeed.py", 120),
         ("extract_entities.py", 30),
@@ -119,6 +120,8 @@ def main():
         ("sync_upcoming_pages.py", 30),
         ("compute_aeo_score.py", 60),
         ("compute_wins.py", 30),
+        ("build_manual_indexing_queue.py", 30),
+        ("check_drift.py", 240),
     ]
 
     results = {}

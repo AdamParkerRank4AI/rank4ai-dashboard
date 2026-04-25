@@ -38,6 +38,7 @@ const deployParity = loadJson('deploy_parity.json') || null;
 const wins = loadJson('wins_this_week.json') || null;
 const manualQueue = loadJson('manual_indexing_queue.json') || null;
 const cfCrawls = loadJson('cf_ai_crawls.json') || null;
+const driftReport = loadJson('drift_report.json') || null;
 
 // Compute real AI Overview numbers across all sites (home tile was showing
 // totalRecs mislabelled as "AI Overview fixes" — not the same thing)
@@ -367,13 +368,57 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
     });
   </script>
 
+  {/* Drift detector — CLAUDE.md assertions vs live DOM */}
+  {driftReport && (
+    <div class={`rounded-lg px-4 py-2 mb-4 border ${driftReport.fleet_drift_count > 0 ? 'bg-amber-950/30 border-amber-800/50' : 'bg-gray-900 border-gray-700'}`}>
+      <div class="flex items-center justify-between flex-wrap gap-3">
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-semibold text-amber-300 uppercase tracking-wider">Drift detector</span>
+          {driftReport.fleet_drift_count > 0
+            ? <span class="text-sm text-amber-400 font-semibold">{driftReport.fleet_drift_count} assertion{driftReport.fleet_drift_count === 1 ? '' : 's'} drifted vs CLAUDE.md</span>
+            : <span class="text-sm text-gray-400">All assertions match CLAUDE.md</span>
+          }
+          <span class="text-[10px] text-gray-500">{Object.keys(driftReport.per_site || {}).length} sites checked</span>
+        </div>
+        <details class="text-xs">
+          <summary class="cursor-pointer text-amber-400 hover:text-amber-300">details</summary>
+          <div class="absolute right-8 mt-2 bg-gray-800 border border-gray-700 rounded-lg p-3 shadow-xl z-50 min-w-[480px] max-h-[420px] overflow-y-auto">
+            {Object.entries(driftReport.per_site || {}).map(([sid, d]: [string, any]) => (
+              <div class="mb-3 last:mb-0">
+                <div class="text-xs font-semibold text-white mb-1">{sid}</div>
+                {d.error && <div class="text-[10px] text-red-400">{d.error}</div>}
+                {d.findings?.map((f: any) => (
+                  <div class="text-[11px] mb-1.5">
+                    <span class={f.drift_detected ? 'text-amber-400' : 'text-gray-500'}>
+                      {f.drift_detected ? '⚠' : '✓'}
+                    </span>
+                    <span class="text-gray-300 ml-1">{f.label}</span>
+                    <span class="text-gray-500"> — {f.expected_hits}/{f.relevant_pages} pages have "{f.expected}" ({f.coverage_pct}%)</span>
+                    {f.alternate_hits?.length > 0 && (
+                      <div class="pl-3 mt-0.5 text-[10px] text-amber-400">
+                        Found alternate values:
+                        {f.alternate_hits.slice(0, 3).map((ah: any) => (
+                          <div class="text-gray-400">{ah.value} at {ah.url.replace(/^https?:\/\/(www\.)?/, '')}</div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </details>
+      </div>
+    </div>
+  )}
+
   {/* Cloudflare AI Crawl Control — true-count bot traffic from the edge */}
   {cfCrawls && (
     <div class="rounded-lg px-4 py-3 mb-4 border bg-orange-950/30 border-orange-900/50">
       <div class="flex items-center justify-between flex-wrap gap-3 mb-2">
         <div class="flex items-center gap-3">
-          <span class="text-xs font-semibold text-orange-300 uppercase tracking-wider">Cloudflare AI Crawl Control (30d)</span>
-          <span class="text-[11px] text-gray-400">Edge-level bot counts, not sampled</span>
+          <span class="text-xs font-semibold text-orange-300 uppercase tracking-wider">Cloudflare AI Crawl Control (14d)</span>
+          <span class="text-[11px] text-gray-400">Edge-level bot counts, true hits</span>
         </div>
         <span class="text-[10px] text-gray-500">Fetched {cfCrawls.fetched_at ? new Date(cfCrawls.fetched_at).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }) : '—'}</span>
       </div>
@@ -389,28 +434,71 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
                   <>✗ {data.error.slice(0, 80)}</>
                 )}
               </div>
-            ) : (
-              <>
-                <div class="flex items-end gap-3 mb-2">
-                  <div>
-                    <div class="text-lg font-bold text-orange-400">{(data.total_30d || 0).toLocaleString()}</div>
-                    <div class="text-[10px] text-gray-400">AI bot hits</div>
-                  </div>
-                  <div>
-                    <div class="text-sm font-semibold text-white">{data.unique_bots || 0}</div>
-                    <div class="text-[10px] text-gray-400">distinct bots</div>
-                  </div>
-                </div>
-                <div class="space-y-0.5">
-                  {Object.entries(data.totals_by_bot || {}).slice(0, 5).map(([bot, n]: [string, any]) => (
-                    <div class="flex items-center justify-between text-[10px]">
-                      <span class="text-gray-300">{bot}</span>
-                      <span class="text-gray-500">{n.toLocaleString()}</span>
+            ) : (() => {
+              const topBots = Object.entries(data.totals_by_bot || {}).slice(0, 5);
+              const perDay = data.per_day || [];
+              const maxDay = Math.max(1, ...perDay.map((d: any) => d._total || 0));
+              const botColors: any = {
+                GPTBot: '#10b981', 'ChatGPT-User': '#22c55e', 'OAI-SearchBot': '#16a34a',
+                ClaudeBot: '#f59e0b',
+                PerplexityBot: '#8b5cf6',
+                Googlebot: '#3b82f6', 'Google-Extended': '#60a5fa',
+                Applebot: '#d1d5db',
+                Bingbot: '#06b6d4',
+                Amazonbot: '#f97316',
+                Bytespider: '#ec4899',
+                CCBot: '#a78bfa',
+                'Meta-ExternalAgent': '#0ea5e9',
+              };
+              return (
+                <>
+                  <div class="flex items-end gap-3 mb-2">
+                    <div>
+                      <div class="text-lg font-bold text-orange-400">{(data.total_period || 0).toLocaleString()}</div>
+                      <div class="text-[10px] text-gray-400">AI bot hits</div>
                     </div>
-                  ))}
-                </div>
-              </>
-            )}
+                    <div>
+                      <div class="text-sm font-semibold text-white">{data.unique_bots || 0}</div>
+                      <div class="text-[10px] text-gray-400">distinct bots</div>
+                    </div>
+                  </div>
+                  {/* Stacked daily bars, top 5 bots */}
+                  <div class="mb-2">
+                    <div class="flex items-end gap-[2px] h-14">
+                      {perDay.map((d: any) => {
+                        const total = d._total || 1;
+                        const hPct = ((d._total || 0) / maxDay) * 100;
+                        return (
+                          <div class="flex-1 flex flex-col-reverse" style={`height: ${Math.max(2, hPct)}%;`} title={`${d.date}: ${(d._total || 0).toLocaleString()}`}>
+                            {topBots.map(([bot]) => {
+                              const n = d[bot] || 0;
+                              const frac = n / total;
+                              if (!n) return null;
+                              return <div style={`flex-grow: ${frac}; background: ${botColors[bot] || '#6b7280'}; min-height: 1px;`}></div>;
+                            })}
+                          </div>
+                        );
+                      })}
+                    </div>
+                    <div class="flex justify-between text-[9px] text-gray-600 mt-0.5">
+                      <span>{perDay[0]?.date?.slice(5) || ''}</span>
+                      <span>{perDay[perDay.length - 1]?.date?.slice(5) || ''}</span>
+                    </div>
+                  </div>
+                  <div class="space-y-0.5">
+                    {topBots.map(([bot, n]) => (
+                      <div class="flex items-center justify-between text-[10px]">
+                        <div class="flex items-center gap-1.5">
+                          <span class="w-2 h-2 rounded-sm shrink-0" style={`background: ${botColors[bot] || '#6b7280'};`}></span>
+                          <span class="text-gray-300">{bot}</span>
+                        </div>
+                        <span class="text-gray-500">{Number(n).toLocaleString()}</span>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              );
+            })()}
           </div>
         ))}
       </div>
