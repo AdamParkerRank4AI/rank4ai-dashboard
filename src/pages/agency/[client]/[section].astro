@@ -200,8 +200,8 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
 
   <!-- TRAFFIC -->
   {sectionId === 'traffic' && ga4 && (
-    <div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+    <div data-copy-tile="Traffic">
+      <div data-copy-subtile="Traffic KPIs" class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
           <div class="text-2xl font-bold text-white">{ga4.overview.active_users.toLocaleString()}</div>
           <div class="text-xs text-gray-500">Active Users</div>
@@ -220,13 +220,13 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
         </div>
       </div>
 
-      <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
+      <div data-copy-subtile="Daily Users (30d)" class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
         <h3 class="text-sm font-semibold text-gray-400 mb-4">Daily Users (Last 30 Days)</h3>
         <canvas id="trafficChart" height="250"></canvas>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+        <div data-copy-subtile="Top Pages" class="bg-gray-900 border border-gray-800 rounded-lg p-6">
           <h3 class="text-sm font-semibold text-gray-400 mb-4">Top Pages</h3>
           <div class="space-y-2">
             {ga4.top_pages.slice(0, 10).map((p: any) => (
@@ -238,7 +238,7 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
           </div>
         </div>
 
-        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+        <div data-copy-subtile="Traffic Sources" class="bg-gray-900 border border-gray-800 rounded-lg p-6">
           <h3 class="text-sm font-semibold text-gray-400 mb-4">Traffic Sources</h3>
           <div class="space-y-2">
             {ga4.sources.map((s: any) => (
@@ -251,7 +251,7 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
         </div>
       </div>
 
-      <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mt-6">
+      <div data-copy-subtile="Top Countries" class="bg-gray-900 border border-gray-800 rounded-lg p-6 mt-6">
         <h3 class="text-sm font-semibold text-gray-400 mb-4">Top Countries</h3>
         <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
           {ga4.countries.slice(0, 10).map((c: any) => (
@@ -269,7 +269,7 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
 
   <!-- SEO HEALTH -->
   {sectionId === 'seo-health' && crawlData && (
-    <div>
+    <div data-copy-tile="SEO Health">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
           <div class="text-2xl font-bold text-white">{crawlData.pages_crawled}</div>
@@ -349,7 +349,7 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
 
   <!-- LEADS — per-site lead tracking + attribution + funnel (market-invoice only for now) -->
   {sectionId === 'leads' && (
-    <div>
+    <div data-copy-tile="Leads">
       {!leadsData && (
         <div class="bg-gray-900 border border-gray-700 rounded-lg p-6 text-center text-gray-400">
           Lead data not wired for {client.name} yet. Currently supported: Market Invoice.
@@ -479,7 +479,7 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
 
   <!-- PAGE COMPLIANCE — per-page H1/meta/schema/OG/canonical/author checklist -->
   {sectionId === 'page-compliance' && crawlData && (
-    <div>
+    <div data-copy-tile="Page Compliance">
       {/* Summary row — click to filter */}
       <div class="grid grid-cols-2 md:grid-cols-6 gap-3 mb-4">
         <button type="button" data-pc-tile="all" class="pc-tile bg-gray-900 border border-gray-800 rounded-lg p-3 text-center hover:border-gray-600 transition cursor-pointer">
@@ -1063,7 +1063,7 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
 
   <!-- AI CITATIONS — Clean rebuild -->
   {sectionId === 'ai-citations' && (
-    <div>
+    <div data-copy-tile="AI Citations">
       <!-- Bing Copilot banner -->
       {bing?.top_queries?.length > 0 && (
         <div class="bg-blue-950/30 border border-blue-800/50 rounded-lg p-4 mb-6 flex items-center justify-between">
@@ -1181,7 +1181,7 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
 
   <!-- SITE STRUCTURE — full content hierarchy by layer, parent/child tree -->
   {sectionId === 'site-structure' && siteStructure && (
-    <div>
+    <div data-copy-tile="Site Structure">
       <!-- Header + totals -->
       <div class="mb-6">
         <p class="text-sm text-gray-400 mb-4">Every page on the site by layer. Live pages are crawlable URLs. Planned slots are placeholders where new blogs, questions, or guides should go.</p>
@@ -1330,7 +1330,7 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
 
   <!-- SITE MANAGER -->
   {sectionId === 'site-manager' && crawlData && (
-    <div data-site-repo={siteConf?.repo || ''}>
+    <div data-copy-tile="Site Manager" data-site-repo={siteConf?.repo || ''}>
       <!-- Stats -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
@@ -2245,7 +2245,7 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
 
   <!-- UPTIME -->
   {sectionId === 'uptime' && uptime && (
-    <div>
+    <div data-copy-tile="Uptime">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
           <div class={`text-2xl font-bold ${uptime.is_up ? 'text-green-400' : 'text-red-400'}`}>{uptime.is_up ? 'UP' : 'DOWN'}</div>
@@ -2273,7 +2273,7 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
 
   <!-- POSITIVE SIGNALS -->
   {sectionId === 'positive-signals' && crawlData?.positive_signals && (
-    <div>
+    <div data-copy-tile="Positive Signals">
       <div class="bg-gray-900 border border-green-800/50 rounded-lg p-6">
         <h3 class="text-sm font-semibold text-green-400 mb-4">What's Working ({crawlData.positive_signals.length} signals)</h3>
         <div class="space-y-2 max-h-[600px] overflow-y-auto">
@@ -2293,7 +2293,7 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
 
   <!-- AI READINESS -->
   {sectionId === 'ai-readiness' && audit && (
-    <div>
+    <div data-copy-tile="AI Readiness">
       {aeoScore && (
         <div class="bg-gradient-to-r from-purple-950/40 to-blue-950/40 border border-purple-700/40 rounded-lg p-5 mb-6">
           <div class="flex items-start justify-between mb-3">
@@ -2501,7 +2501,7 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
 
   <!-- SEARCH PERFORMANCE (Google + Bing) -->
   {sectionId === 'search-performance' && (gsc || bing) && (
-    <div>
+    <div data-copy-tile="Search Performance">
       {/* Manual GSC submission queue — top URLs to push via URL Inspection */}
       {manualQueue && manualQueue.top?.length > 0 && (
         <div class="bg-indigo-950/20 border border-indigo-900/40 rounded-lg p-5 mb-6">
@@ -2908,7 +2908,7 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
 
   <!-- OVERVIEW -->
   {sectionId === 'overview' && (
-    <div>
+    <div data-copy-tile="Overview">
       {siteWins && (
         <div class={`rounded-lg px-4 py-3 mb-4 border ${siteWins.counts.cleared_today > 0 ? 'bg-emerald-950/30 border-emerald-800/50' : siteWins.counts.new_today > 0 ? 'bg-amber-950/30 border-amber-800/50' : 'bg-gray-900 border-gray-700'}`}>
           <div class="flex items-center justify-between flex-wrap gap-3">
@@ -3051,7 +3051,7 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
 
   <!-- COMPETITORS -->
   {sectionId === 'competitors' && competitors && (
-    <div>
+    <div data-copy-tile="Competitors">
       <div class="grid grid-cols-3 gap-4 mb-6">
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
           <div class={`text-2xl font-bold ${competitors.client_visibility_pct > 50 ? 'text-green-400' : competitors.client_visibility_pct > 0 ? 'text-yellow-400' : 'text-red-400'}`}>{competitors.client_visibility_pct}%</div>
@@ -3135,7 +3135,7 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
 
   <!-- CRAWL ACTIVITY -->
   {sectionId === 'crawl-activity' && crawlActivityDetail && (
-    <div>
+    <div data-copy-tile="Crawl Activity">
       {/* Cloudflare AI Crawl Control — true edge-level bot counts */}
       {cfCrawls && !cfCrawls.error && (() => {
         const topBots = Object.entries(cfCrawls.totals_by_bot || {}).slice(0, 5);
@@ -3393,7 +3393,7 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
     </div>
   )}
   {sectionId === 'site-speed' && pagespeed && (
-    <div>
+    <div data-copy-tile="Site Speed">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
           <div class={`text-2xl font-bold ${(pagespeed.avg_scores?.performance || 0) >= 80 ? 'text-green-400' : (pagespeed.avg_scores?.performance || 0) >= 50 ? 'text-yellow-400' : 'text-red-400'}`}>{pagespeed.avg_scores?.performance || 0}</div>
@@ -3451,7 +3451,7 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
 
   <!-- NEW PAGES -->
   {sectionId === 'new-pages' && newPagesDetail && (
-    <div>
+    <div data-copy-tile="New Pages">
       <div class="grid grid-cols-3 gap-4 mb-6">
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
           <div class="text-2xl font-bold text-white">{newPagesDetail.baseline_pages}</div>
@@ -3544,9 +3544,9 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
     const allRecs = recs.recommendations || [];
     const quickWins = allRecs.filter((r: any) => quickWinPatterns.some((p: RegExp) => p.test(r.title)));
     return (
-    <div>
+    <div data-copy-tile="Recommendations">
       {/* Progress delta strip — "what's changed this week" */}
-      <div class="bg-gradient-to-r from-emerald-950/30 to-blue-950/30 border border-emerald-800/40 rounded-lg p-4 mb-4">
+      <div data-copy-subtile="Progress vs 7d ago" class="bg-gradient-to-r from-emerald-950/30 to-blue-950/30 border border-emerald-800/40 rounded-lg p-4 mb-4">
         <div class="flex items-center justify-between flex-wrap gap-3">
           <div>
             <div class="text-xs text-emerald-300 font-semibold uppercase tracking-wider">Progress vs 7 days ago</div>
@@ -4015,7 +4015,7 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
 
   <!-- SITE TREE -->
   {sectionId === 'site-tree' && crawlData?.tree && (
-    <div>
+    <div data-copy-tile="Site Tree">
       <div class="grid grid-cols-3 gap-4 mb-6">
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
           <div class="text-2xl font-bold text-white">{crawlData.pages_crawled}</div>
@@ -4039,7 +4039,7 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
 
   <!-- INTERNAL LINKS -->
   {sectionId === 'internal-links' && crawlData && (
-    <div>
+    <div data-copy-tile="Internal Links">
       <div class="grid grid-cols-3 gap-4 mb-6">
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
           <div class="text-2xl font-bold text-white">{crawlData.links?.filter((l: any) => l.type === 'internal').length || 0}</div>
@@ -4063,7 +4063,7 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
 
   <!-- Fallback for sections without detail pages -->
   {sectionId === 'content-plan' && (
-    <div>
+    <div data-copy-tile="Content & Keywords">
       {/* Actions Tile — the unified to-do list Adam asked for */}
       {(() => {
         // Build merged actions list from 3 sources
@@ -4521,7 +4521,7 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
   )}
 
   {sectionId === 'daily-audit' && (
-    <div>
+    <div data-copy-tile="Daily Audit">
       {!dailyAuditPerSite && (
         <div class="bg-gray-900 border border-gray-800 rounded-lg p-8 text-center">
           <p class="text-gray-400">No daily audit data yet.</p>

@@ -158,7 +158,7 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
   </div>
 
   {deployParity && (
-    <div class={`rounded-lg px-4 py-2 mb-3 border ${deployParity.any_drift ? 'bg-red-900/30 border-red-800' : 'bg-gray-900 border-gray-700'}`}>
+    <div data-copy-tile="Deploy Parity" class={`rounded-lg px-4 py-2 mb-3 border ${deployParity.any_drift ? 'bg-red-900/30 border-red-800' : 'bg-gray-900 border-gray-700'}`}>
       <div class="flex items-center justify-between flex-wrap gap-2">
         <div class="flex items-center gap-3">
           <span class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Deploy parity</span>
@@ -203,7 +203,7 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
   )}
 
   {freshness && (
-    <div class={`rounded-lg px-4 py-2 mb-4 border ${
+    <div data-copy-tile="Data Feeds" class={`rounded-lg px-4 py-2 mb-4 border ${
       (freshness.summary?.very_stale || freshness.summary?.missing) ? 'bg-red-900/30 border-red-800'
       : freshness.summary?.stale ? 'bg-yellow-900/30 border-yellow-800'
       : 'bg-gray-900 border-gray-700'
@@ -266,7 +266,7 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
 
   {/* Wins This Week — daily progress diff */}
   {wins && (
-    <div class={`rounded-lg px-4 py-3 mb-4 border ${wins.fleet_cleared_today > 0 || wins.fleet_cleared_7d > 0 ? 'bg-emerald-950/30 border-emerald-800/50' : 'bg-gray-900 border-gray-700'}`}>
+    <div data-copy-tile="Wins This Week" class={`rounded-lg px-4 py-3 mb-4 border ${wins.fleet_cleared_today > 0 || wins.fleet_cleared_7d > 0 ? 'bg-emerald-950/30 border-emerald-800/50' : 'bg-gray-900 border-gray-700'}`}>
       <div class="flex items-center justify-between flex-wrap gap-3">
         <div class="flex items-center gap-3">
           <span class="text-xs font-semibold text-emerald-300 uppercase tracking-wider">Wins This Week</span>
@@ -314,7 +314,7 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
 
   {/* Manual GSC submissions — daily queue for "Request indexing" button */}
   {manualQueue && (
-    <div class="rounded-lg px-4 py-3 mb-4 border bg-indigo-950/30 border-indigo-800/50">
+    <div data-copy-tile="Manual GSC Submissions" class="rounded-lg px-4 py-3 mb-4 border bg-indigo-950/30 border-indigo-800/50">
       <div class="flex items-center justify-between flex-wrap gap-3 mb-2">
         <div class="flex items-center gap-3">
           <span class="text-xs font-semibold text-indigo-300 uppercase tracking-wider">Today's Manual GSC Submissions</span>
@@ -324,7 +324,7 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
         {Object.entries(manualQueue.per_site || {}).map(([siteId, data]: [string, any]) => (
-          <div class="bg-gray-900/60 border border-gray-800 rounded p-2.5">
+          <div data-copy-subtile={`Manual GSC — ${siteId}`} class="bg-gray-900/60 border border-gray-800 rounded p-2.5">
             <div class="flex items-center justify-between mb-1.5">
               <div class="text-[11px] font-semibold text-white">{siteId}</div>
               <a href={data.gsc_inspect_url} target="_blank" rel="noopener" class="text-[10px] text-indigo-400 hover:text-indigo-300">Open GSC →</a>
@@ -370,7 +370,7 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
 
   {/* Drift detector — CLAUDE.md assertions vs live DOM */}
   {driftReport && (
-    <div class={`rounded-lg px-4 py-2 mb-4 border ${driftReport.fleet_drift_count > 0 ? 'bg-amber-950/30 border-amber-800/50' : 'bg-gray-900 border-gray-700'}`}>
+    <div data-copy-tile="Drift Detector" class={`rounded-lg px-4 py-2 mb-4 border ${driftReport.fleet_drift_count > 0 ? 'bg-amber-950/30 border-amber-800/50' : 'bg-gray-900 border-gray-700'}`}>
       <div class="flex items-center justify-between flex-wrap gap-3">
         <div class="flex items-center gap-3">
           <span class="text-xs font-semibold text-amber-300 uppercase tracking-wider">Drift detector</span>
@@ -414,7 +414,7 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
 
   {/* Cloudflare AI Crawl Control — true-count bot traffic from the edge */}
   {cfCrawls && (
-    <div class="rounded-lg px-4 py-3 mb-4 border bg-orange-950/30 border-orange-900/50">
+    <div data-copy-tile="Cloudflare AI Crawl Control" class="rounded-lg px-4 py-3 mb-4 border bg-orange-950/30 border-orange-900/50">
       <div class="flex items-center justify-between flex-wrap gap-3 mb-2">
         <div class="flex items-center gap-3">
           <span class="text-xs font-semibold text-orange-300 uppercase tracking-wider">Cloudflare AI Crawl Control (14d)</span>
@@ -424,7 +424,7 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
         {Object.entries(cfCrawls.per_site || {}).map(([siteId, data]: [string, any]) => (
-          <div class="bg-gray-900/60 border border-gray-800 rounded p-2.5">
+          <div data-copy-subtile={`CF AI Crawls — ${siteId}`} class="bg-gray-900/60 border border-gray-800 rounded p-2.5">
             <div class="text-[11px] font-semibold text-white mb-1.5">{siteId}</div>
             {data.error ? (
               <div class="text-[10px] text-red-400">
@@ -507,9 +507,9 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
 
   <!-- Overall stats -->
   {/* Three channel overview */}
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
+  <div data-copy-tile="Fleet Channel Overview" class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
     {/* Google SEO */}
-    <div class="bg-gray-800 border border-gray-700 rounded-lg p-4">
+    <div data-copy-subtile="Google SEO (fleet)" class="bg-gray-800 border border-gray-700 rounded-lg p-4">
       <div class="text-[10px] text-gray-300 uppercase tracking-wider mb-2 font-medium">Google SEO</div>
       <div class="flex items-end gap-4">
         <div>
@@ -527,7 +527,7 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
       </div>
     </div>
     {/* AI Search */}
-    <div class="bg-gray-800 border border-purple-800/40 rounded-lg p-4">
+    <div data-copy-subtile="AI Search Citations (fleet)" class="bg-gray-800 border border-purple-800/40 rounded-lg p-4">
       <div class="text-[10px] text-purple-300 uppercase tracking-wider mb-2 font-medium">AI Search Citations</div>
       <div class="flex items-end gap-4">
         <div>
@@ -541,7 +541,7 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
       </div>
     </div>
     {/* Google AI Overviews — actual AIO data, not mislabelled recs count */}
-    <div class="bg-gray-800 border border-cyan-800/40 rounded-lg p-4">
+    <div data-copy-subtile="Google AI Overviews (fleet)" class="bg-gray-800 border border-cyan-800/40 rounded-lg p-4">
       <div class="text-[10px] text-cyan-300 uppercase tracking-wider mb-2 font-medium">Google AI Overviews</div>
       <div class="flex items-end gap-4">
         <div>
@@ -562,8 +562,8 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
   </div>
 
   {/* Separate tile for real site issues (this is what used to be mislabelled) */}
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
-    <div class="bg-gray-800 border border-gray-700 rounded-lg p-4">
+  <div data-copy-tile="Recommendations & Issues" class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
+    <div data-copy-subtile="Open recommendations" class="bg-gray-800 border border-gray-700 rounded-lg p-4">
       <div class="text-[10px] text-gray-300 uppercase tracking-wider mb-2 font-medium">Open recommendations</div>
       <div class="flex items-end gap-4">
         <div>
@@ -573,7 +573,7 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
         {totalCritical > 0 && (<div><div class="text-lg font-bold text-red-400">{totalCritical}</div><div class="text-[10px] text-gray-400">critical</div></div>)}
       </div>
     </div>
-    <div class="bg-gray-800 border border-gray-700 rounded-lg p-4">
+    <div data-copy-subtile="Site issues (crawl)" class="bg-gray-800 border border-gray-700 rounded-lg p-4">
       <div class="text-[10px] text-gray-300 uppercase tracking-wider mb-2 font-medium">Site issues (crawl)</div>
       <div class="flex items-end gap-4">
         <div>
@@ -583,7 +583,7 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
       </div>
       <p class="text-[10px] text-gray-500 mt-1.5">{totalIssues === 0 ? 'No crawl issues detected. Latest crawl clean across all 3 sites.' : 'Issues from last crawl — fixable via Page Compliance editor or on-site.'}</p>
     </div>
-    <div class="bg-gray-800 border border-gray-700 rounded-lg p-4">
+    <div data-copy-subtile="Changes today" class="bg-gray-800 border border-gray-700 rounded-lg p-4">
       <div class="text-[10px] text-gray-300 uppercase tracking-wider mb-2 font-medium">Changes today</div>
       <div class="flex items-end gap-4">
         <div>
@@ -596,7 +596,7 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
 
   <!-- Client Sites -->
   <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Client Sites</h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
+  <div data-copy-tile="Client Sites" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
     {clientSites.map((client: any) => {
       const h = healthData[client.id];
       const statusColor = h.upStatus === 200 ? 'bg-green-400' : h.upStatus ? 'bg-red-400' : 'bg-gray-600';
@@ -716,7 +716,7 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
 
   <!-- Our Sites -->
   <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Our Sites</h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
+  <div data-copy-tile="Our Sites" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
     {ourSites.map((client: any) => {
       const h = healthData[client.id];
       return (
@@ -741,7 +741,7 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
   <!-- Two column: Activity Feed + Site Changes -->
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
     <!-- Activity Feed -->
-    <div class="bg-gray-800 border border-gray-700 rounded-lg p-5">
+    <div data-copy-tile="Site Changes" class="bg-gray-800 border border-gray-700 rounded-lg p-5">
       <div class="flex items-center justify-between mb-4">
         <h3 class="text-sm font-semibold text-gray-400">Site Changes</h3>
         <div class="flex gap-1">
@@ -792,7 +792,7 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
     </script>
 
     <!-- Quick Status -->
-    <div class="bg-gray-800 border border-gray-700 rounded-lg p-5">
+    <div data-copy-tile="System Status" class="bg-gray-800 border border-gray-700 rounded-lg p-5">
       <h3 class="text-sm font-semibold text-gray-400 mb-4">System Status</h3>
       <div class="space-y-2">
         {clients.filter((c: any) => !c.staging).map((client: any) => {
