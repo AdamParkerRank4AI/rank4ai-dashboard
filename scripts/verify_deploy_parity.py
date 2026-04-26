@@ -160,11 +160,13 @@ def main():
                 entry["deploy_created"] = dep.get("created_on")
                 entry["deploy_msg"] = dep.get("commit_msg")
                 entry["source_type"] = dep.get("source_type")
-                # Direct-upload projects (no git source) can't meaningfully
-                # parity-check — wrangler deploys don't carry a commit SHA.
-                if not dep.get("source_type"):
+                # Parity check: if a commit_hash is on the deployment (either
+                # from a github source or from wrangler/GH-Action --commit-hash),
+                # compare against local origin/main. Only fall back to
+                # "direct_upload" when no commit_hash exists at all.
+                if not dep.get("commit_sha"):
                     entry["status"] = "direct_upload"
-                    entry["note"] = "Project uses direct upload, no git source — parity not applicable"
+                    entry["note"] = "Deploy has no commit metadata — likely a manual wrangler upload outside a git context"
                 elif sha and dep.get("commit_sha"):
                     if sha == dep["commit_sha"]:
                         entry["status"] = "in_sync"
