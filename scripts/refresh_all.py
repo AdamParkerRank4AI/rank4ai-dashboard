@@ -122,6 +122,7 @@ def main():
         ("compute_wins.py", 30),
         ("build_manual_indexing_queue.py", 30),
         ("check_drift.py", 240),
+        ("push_to_fleet.py", 60),
     ]
 
     results = {}

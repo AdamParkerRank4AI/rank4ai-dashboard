@@ -1,18 +1,27 @@
 {
-  "checked_at": "2026-04-25T06:26:43.352670",
+  "checked_at": "2026-04-26T06:27:17.155681",
   "summary": {
-    "fresh": 24,
-    "stale": 0,
+    "fresh": 23,
+    "stale": 1,
     "very_stale": 0,
     "missing": 0,
     "total": 24
   },
   "feeds": [
     {
+      "file": "daily_audit_summary.json",
+      "label": "Daily site audit",
+      "status": "stale",
+      "age_hours": 44.9,
+      "ts": "2026-04-24T09:34:35.920538",
+      "max_age_hours": 30,
+      "used_mtime_fallback": false
+    },
+    {
       "file": "google_trends.json",
       "label": "Google Trends",
       "status": "fresh",
-      "age_hours": 120.2,
+      "age_hours": 144.2,
       "ts": "2026-04-20T06:16:49.824372",
       "max_age_hours": 192,
       "used_mtime_fallback": false
@@ -21,7 +30,7 @@
       "file": "citation_results.json",
       "label": "Citation baseline",
       "status": "fresh",
-      "age_hours": 119.3,
+      "age_hours": 143.3,
       "ts": "2026-04-20T07:11:10.558461",
       "max_age_hours": 192,
       "used_mtime_fallback": false
@@ -30,25 +39,16 @@
       "file": "citations_by_type.json",
       "label": "Citation by type",
       "status": "fresh",
-      "age_hours": 82.4,
+      "age_hours": 106.4,
       "ts": "2026-04-21T20:03:50.220262",
       "max_age_hours": 192,
-      "used_mtime_fallback": false
-    },
-    {
-      "file": "daily_audit_summary.json",
-      "label": "Daily site audit",
-      "status": "fresh",
-      "age_hours": 20.9,
-      "ts": "2026-04-24T09:34:35.920538",
-      "max_age_hours": 30,
       "used_mtime_fallback": false
     },
     {
       "file": "pagespeed.json",
       "label": "PageSpeed (weekly)",
       "status": "fresh",
-      "age_hours": 18.0,
+      "age_hours": 42.0,
       "ts": "2026-04-24T12:25:19.590440",
       "max_age_hours": 192,
       "used_mtime_fallback": false
@@ -58,7 +58,7 @@
       "label": "AI bot hits",
       "status": "fresh",
       "age_hours": 1.4,
-      "ts": "2026-04-25T05:00:33.058336",
+      "ts": "2026-04-26T05:00:27.882367",
       "max_age_hours": 30,
       "used_mtime_fallback": false
     },
@@ -67,7 +67,7 @@
       "label": "MI leads (Supabase)",
       "status": "fresh",
       "age_hours": 1.4,
-      "ts": "2026-04-25T05:05:31.841013",
+      "ts": "2026-04-26T05:05:34.940512",
       "max_age_hours": 30,
       "used_mtime_fallback": false
     },
@@ -75,8 +75,8 @@
       "file": "ga4.json",
       "label": "GA4 (traffic)",
       "status": "fresh",
-      "age_hours": 0.4,
-      "ts": "2026-04-25T06:00:09.611358",
+      "age_hours": 0.5,
+      "ts": "2026-04-26T06:00:06.753988",
       "max_age_hours": 30,
       "used_mtime_fallback": false
     },
@@ -84,8 +84,8 @@
       "file": "gsc.json",
       "label": "GSC (search perf)",
       "status": "fresh",
-      "age_hours": 0.4,
-      "ts": "2026-04-25T06:00:18.078641",
+      "age_hours": 0.5,
+      "ts": "2026-04-26T06:00:13.933622",
       "max_age_hours": 30,
       "used_mtime_fallback": false
     },
@@ -93,8 +93,8 @@
       "file": "bing.json",
       "label": "Bing Webmaster",
       "status": "fresh",
-      "age_hours": 0.4,
-      "ts": "2026-04-25T06:00:19.566330",
+      "age_hours": 0.5,
+      "ts": "2026-04-26T06:00:15.584909",
       "max_age_hours": 30,
       "used_mtime_fallback": false
     },
@@ -102,8 +102,8 @@
       "file": "uptime.json",
       "label": "Uptime",
       "status": "fresh",
-      "age_hours": 0.4,
-      "ts": "2026-04-25T06:00:04.211512",
+      "age_hours": 0.5,
+      "ts": "2026-04-26T06:00:00.804359",
       "max_age_hours": 30,
       "used_mtime_fallback": false
     },
@@ -112,7 +112,7 @@
       "label": "Bing crawl stats",
       "status": "fresh",
       "age_hours": 0.4,
-      "ts": "2026-04-25T06:00:30.778196",
+      "ts": "2026-04-26T06:00:25.737553",
       "max_age_hours": 30,
       "used_mtime_fallback": false
     },
@@ -121,7 +121,7 @@
       "label": "Knowledge Graph",
       "status": "fresh",
       "age_hours": 0.4,
-      "ts": "2026-04-25T06:00:58.468459",
+      "ts": "2026-04-26T06:00:53.494326",
       "max_age_hours": 30,
       "used_mtime_fallback": true
     },
@@ -130,7 +130,7 @@
       "label": "NLP entities",
       "status": "fresh",
       "age_hours": 0.4,
-      "ts": "2026-04-25T06:00:53.226152",
+      "ts": "2026-04-26T06:00:47.402384",
       "max_age_hours": 30,
       "used_mtime_fallback": true
     },
@@ -139,7 +139,7 @@
       "label": "AI Overviews SERP",
       "status": "fresh",
       "age_hours": 0.4,
-      "ts": "2026-04-25T06:04:00.681159",
+      "ts": "2026-04-26T06:04:05.282907",
       "max_age_hours": 30,
       "used_mtime_fallback": true
     },
@@ -148,7 +148,7 @@
       "label": "Recommendations",
       "status": "fresh",
       "age_hours": 0.4,
-      "ts": "2026-04-25T06:05:31.563257",
+      "ts": "2026-04-26T06:05:34.660297",
       "max_age_hours": 30,
       "used_mtime_fallback": false
     },
@@ -157,7 +157,7 @@
       "label": "Competitor SERP",
       "status": "fresh",
       "age_hours": 0.4,
-      "ts": "2026-04-25T06:05:05.217079",
+      "ts": "2026-04-26T06:05:09.319947",
       "max_age_hours": 30,
       "used_mtime_fallback": false
     },
@@ -166,7 +166,7 @@
       "label": "New-page scan",
       "status": "fresh",
       "age_hours": 0.4,
-      "ts": "2026-04-25T06:05:31.621363",
+      "ts": "2026-04-26T06:05:34.720959",
       "max_age_hours": 30,
       "used_mtime_fallback": false
     },
@@ -175,7 +175,7 @@
       "label": "SERP data",
       "status": "fresh",
       "age_hours": 0.4,
-      "ts": "2026-04-25T06:04:49.181127",
+      "ts": "2026-04-26T06:04:53.916860",
       "max_age_hours": 30,
       "used_mtime_fallback": true
     },
@@ -184,7 +184,7 @@
       "label": "Citation prompts",
       "status": "fresh",
       "age_hours": 0.4,
-      "ts": "2026-04-25T06:05:31.780546",
+      "ts": "2026-04-26T06:05:34.879347",
       "max_age_hours": 30,
       "used_mtime_fallback": true
     },
@@ -193,7 +193,7 @@
       "label": "R4 site crawl",
       "status": "fresh",
       "age_hours": 0.2,
-      "ts": "2026-04-25T06:14:10.120080",
+      "ts": "2026-04-26T06:14:27.258371",
       "max_age_hours": 30,
       "used_mtime_fallback": false
     },
@@ -202,7 +202,7 @@
       "label": "MI site crawl",
       "status": "fresh",
       "age_hours": 0.1,
-      "ts": "2026-04-25T06:18:40.330824",
+      "ts": "2026-04-26T06:19:05.102734",
       "max_age_hours": 30,
       "used_mtime_fallback": false
     },
@@ -211,7 +211,7 @@
       "label": "SC site crawl",
       "status": "fresh",
       "age_hours": 0.1,
-      "ts": "2026-04-25T06:22:28.629419",
+      "ts": "2026-04-26T06:22:55.820726",
       "max_age_hours": 30,
       "used_mtime_fallback": false
     },
@@ -220,7 +220,7 @@
       "label": "AI audit",
       "status": "fresh",
       "age_hours": 0.0,
-      "ts": "2026-04-25T06:23:54.619162",
+      "ts": "2026-04-26T06:24:25.379303",
       "max_age_hours": 30,
       "used_mtime_fallback": false
     }

@@ -1,11 +1,11 @@
 {
-  "computed_at": "2026-04-25T16:19:07.304593",
+  "computed_at": "2026-04-26T06:05:40.408813",
   "per_site": {
     "market-invoice": {
       "site_id": "market-invoice",
       "pages_scanned": 12,
       "assertions_checked": 4,
-      "drift_count": 0,
+      "drift_count": 1,
       "findings": [
         {
           "id": "boe-base-rate",
@@ -14,8 +14,17 @@
           "relevant_pages": 11,
           "expected_hits": 11,
           "missing_pages": [],
-          "alternate_hits": [],
-          "drift_detected": false,
+          "alternate_hits": [
+            {
+              "url": "https://marketinvoice.co.uk/best/",
+              "value": "4.50%"
+            },
+            {
+              "url": "https://marketinvoice.co.uk/compare/",
+              "value": "4.50%"
+            }
+          ],
+          "drift_detected": true,
           "coverage_pct": 100.0
         },
         {
@@ -127,5 +136,5 @@
       ]
     }
   },
-  "fleet_drift_count": 0
+  "fleet_drift_count": 1
 }
