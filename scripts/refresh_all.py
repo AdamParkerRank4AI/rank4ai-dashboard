@@ -121,6 +121,9 @@ def main():
         ("compute_aeo_score.py", 60),
         ("compute_wins.py", 30),
         ("build_manual_indexing_queue.py", 30),
+        ("build_indexing_health.py", 60),
+        ("entity_class_classifier.py", 120),
+        ("compute_content_freshness.py", 30),
         ("check_drift.py", 240),
         ("push_to_fleet.py", 60),
     ]
@@ -140,6 +143,16 @@ def main():
             open(crawl_marker, "w").close()
     else:
         log("Crawl already done today — skipping")
+
+    # Entity coherence — sameAs URL liveness check. Run weekly (Mondays) since
+    # social profile URLs do not change often and external HEADs are slow.
+    weekday = datetime.now().weekday()  # Monday = 0
+    entity_marker = os.path.expanduser(f"~/.rank4ai_dashboard_entity_{today}")
+    if weekday == 0 and not os.path.exists(entity_marker):
+        if run_script("check_entity_coherence.py", 600):
+            open(entity_marker, "w").close()
+    elif weekday != 0:
+        log(f"Entity coherence runs Mondays — skipping (weekday={weekday})")
 
     # Check if GA4 returned 0 users (token may have expired)
     import json as check_json

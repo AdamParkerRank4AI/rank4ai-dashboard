@@ -20,7 +20,7 @@ const BUILD_TIMESTAMP = new Date().toLocaleString('en-GB', {
   day: '2-digit', month: 'short', year: 'numeric',
   hour: '2-digit', minute: '2-digit',
 });
-const BUILD_LABEL = 'Daily Audit + Push Live wired';
+const BUILD_LABEL = 'Entity-Relationship Gap tile (Go Fish) + /entity-relationship-audit skill';
 
 const ga4 = loadJson('ga4.json') || {};
 const gsc = loadJson('gsc.json') || {};
@@ -39,6 +39,8 @@ const wins = loadJson('wins_this_week.json') || null;
 const manualQueue = loadJson('manual_indexing_queue.json') || null;
 const cfCrawls = loadJson('cf_ai_crawls.json') || null;
 const driftReport = loadJson('drift_report.json') || null;
+const entityCoherence = loadJson('entity_coherence.json') || null;
+const contentFreshness = loadJson('content_freshness.json') || null;
 
 // Compute real AI Overview numbers across all sites (home tile was showing
 // totalRecs mislabelled as "AI Overview fixes" — not the same thing)
@@ -406,6 +408,87 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
                 ))}
               </div>
             ))}
+          </div>
+        </details>
+      </div>
+    </div>
+  )}
+
+  {/* Entity coherence — sameAs URL liveness check (Batch 5, weekly) */}
+  {entityCoherence && entityCoherence.fleet_summary && (
+    <div data-copy-tile="Entity Coherence" class={`rounded-lg px-4 py-2 mb-4 border ${entityCoherence.fleet_summary.broken > 0 ? 'bg-red-950/30 border-red-800/50' : 'bg-gray-900 border-gray-700'}`}>
+      <div class="flex items-center justify-between flex-wrap gap-3">
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-semibold text-fuchsia-300 uppercase tracking-wider">Entity coherence</span>
+          <span class="text-sm font-semibold" style={`color: ${entityCoherence.fleet_summary.broken > 0 ? '#f87171' : '#10b981'}`}>
+            {entityCoherence.fleet_summary.ok}/{entityCoherence.fleet_summary.total} sameAs OK ({entityCoherence.fleet_summary.score}%)
+          </span>
+          {entityCoherence.fleet_summary.broken > 0 && (
+            <span class="text-xs text-red-400 font-semibold">⚠ {entityCoherence.fleet_summary.broken} broken</span>
+          )}
+          {entityCoherence.fleet_summary.bot_blocked > 0 && (
+            <span class="text-[10px] text-gray-500">{entityCoherence.fleet_summary.bot_blocked} bot-blocked (LinkedIn, X, etc.)</span>
+          )}
+        </div>
+        <details class="text-xs">
+          <summary class="cursor-pointer text-fuchsia-400 hover:text-fuchsia-300">details</summary>
+          <div class="absolute right-8 mt-2 bg-gray-800 border border-gray-700 rounded-lg p-3 shadow-xl z-50 min-w-[520px] max-h-[420px] overflow-y-auto">
+            {Object.entries(entityCoherence).filter(([k]) => k !== 'fleet_summary').map(([sid, d]: [string, any]) => (
+              <div class="mb-3 last:mb-0 pb-2 border-b border-gray-700 last:border-0">
+                <div class="text-xs font-semibold text-white mb-1">{sid} <span class="text-[10px] text-gray-500 ml-2">{d.summary?.ok}/{d.summary?.total} OK · {d.summary?.score}%</span></div>
+                {d.broken_detail?.length > 0 && d.broken_detail.map((b: any) => (
+                  <div class="text-[11px] mb-1">
+                    <span class="text-red-400">⚠ {b.status}</span>
+                    <span class="text-gray-300 ml-2">{b.from_role}:{b.from_entity}</span>
+                    <div class="text-[10px] text-gray-500 pl-4 break-all">{b.url}</div>
+                  </div>
+                ))}
+                {(!d.broken_detail || d.broken_detail.length === 0) && (
+                  <div class="text-[10px] text-emerald-400 pl-2">All sameAs URLs working</div>
+                )}
+              </div>
+            ))}
+            <div class="text-[10px] text-gray-500 mt-2 pt-2 border-t border-gray-700">Bot-blocked = HTTP 403/429/999 from LinkedIn/X/Medium etc — URL is probably valid, anti-bot rules just block automated checks. Last checked: {entityCoherence.fleet_summary?.fetched_at?.split('T')[0]}</div>
+          </div>
+        </details>
+      </div>
+    </div>
+  )}
+
+  {/* Content freshness — days-since-update + refresh pile (Batch 6, daily) */}
+  {contentFreshness && contentFreshness.fleet_summary && (
+    <div data-copy-tile="Content Freshness" class="rounded-lg px-4 py-2 mb-4 border bg-gray-900 border-gray-700">
+      <div class="flex items-center justify-between flex-wrap gap-3">
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-semibold text-cyan-300 uppercase tracking-wider">Content freshness</span>
+          <span class="text-sm text-gray-300">
+            {contentFreshness.fleet_summary.with_dates}/{contentFreshness.fleet_summary.total_pages} pages dated
+          </span>
+          <span class="text-xs text-gray-500">·</span>
+          <span class="text-xs text-emerald-400">{contentFreshness.fleet_summary.fresh_30d} fresh ≤30d</span>
+          {contentFreshness.fleet_summary.stale_12mo > 0 && (
+            <span class="text-xs text-amber-400 font-semibold">⚠ {contentFreshness.fleet_summary.stale_12mo} stale &gt;12mo</span>
+          )}
+        </div>
+        <details class="text-xs">
+          <summary class="cursor-pointer text-cyan-400 hover:text-cyan-300">refresh pile</summary>
+          <div class="absolute right-8 mt-2 bg-gray-800 border border-gray-700 rounded-lg p-3 shadow-xl z-50 min-w-[560px] max-h-[460px] overflow-y-auto">
+            {Object.entries(contentFreshness).filter(([k]) => k !== 'fleet_summary').map(([sid, d]: [string, any]) => (
+              <div class="mb-3 last:mb-0 pb-2 border-b border-gray-700 last:border-0">
+                <div class="text-xs font-semibold text-white mb-1">
+                  {sid} <span class="text-[10px] text-gray-500 ml-2">median age {d.median_age_days ?? '—'}d</span>
+                </div>
+                {d.refresh_pile?.length > 0 ? d.refresh_pile.slice(0, 5).map((p: any) => (
+                  <div class="text-[11px] mb-1">
+                    <span class="text-cyan-400">{p.age_days}d</span>
+                    <a href={p.url} target="_blank" class="text-gray-300 ml-2 hover:text-white">{p.h1 || p.path}</a>
+                  </div>
+                )) : (
+                  <div class="text-[10px] text-gray-500 pl-2">No dated pages</div>
+                )}
+              </div>
+            ))}
+            <div class="text-[10px] text-gray-500 mt-2 pt-2 border-t border-gray-700">Refresh pile = oldest dated pages excluding privacy/terms/cookies/admin. Source: per-site page-dates.json (git-derived).</div>
           </div>
         </details>
       </div>
