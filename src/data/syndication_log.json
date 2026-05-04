@@ -1,0 +1,23 @@
+{
+  "_schema": {
+    "description": "Per-site syndication log. Each post records which of the 8 platforms it was syndicated to. Distribution score = platforms_published / 8 * 100. Read by scripts/compute_syndication.py.",
+    "platforms": ["medium", "linkedin", "devto", "youtube", "threads", "bluesky", "x", "instagram"],
+    "post_shape": {
+      "url": "https://site.tld/blog/post-slug/",
+      "title": "Post title",
+      "published_iso": "2026-05-04T10:00:00+00:00",
+      "site_id": "rank4ai|market-invoice|seocompare|rochellemarashi",
+      "platforms": {
+        "medium": {"url": "...", "canonical_to_origin": true, "noindex": false, "indexed_iso": "..."},
+        "linkedin": {"url": "...", "canonical_to_origin": true, "noindex": false},
+        "devto": null,
+        "youtube": null,
+        "threads": null,
+        "bluesky": null,
+        "x": null,
+        "instagram": null
+      }
+    }
+  },
+  "posts": []
+}

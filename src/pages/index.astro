@@ -41,6 +41,8 @@ const cfCrawls = loadJson('cf_ai_crawls.json') || null;
 const driftReport = loadJson('drift_report.json') || null;
 const entityCoherence = loadJson('entity_coherence.json') || null;
 const contentFreshness = loadJson('content_freshness.json') || null;
+const syndication = loadJson('syndication.json') || null;
+const llmsValidation = loadJson('llms_validation.json') || null;
 
 // Compute real AI Overview numbers across all sites (home tile was showing
 // totalRecs mislabelled as "AI Overview fixes" — not the same thing)
@@ -491,6 +493,78 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
             <div class="text-[10px] text-gray-500 mt-2 pt-2 border-t border-gray-700">Refresh pile = oldest dated pages excluding privacy/terms/cookies/admin. Source: per-site page-dates.json (git-derived).</div>
           </div>
         </details>
+      </div>
+    </div>
+  )}
+
+  {/* llms.txt validator (Batch 9, daily) */}
+  {llmsValidation && llmsValidation.fleet_summary && (
+    <div data-copy-tile="llms.txt validator" class={`rounded-lg px-4 py-2 mb-4 border ${llmsValidation.fleet_summary.avg_score < 70 ? 'bg-amber-950/30 border-amber-800/50' : 'bg-gray-900 border-gray-700'}`}>
+      <div class="flex items-center justify-between flex-wrap gap-3">
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-semibold text-blue-300 uppercase tracking-wider">llms.txt</span>
+          <span class="text-sm" style={`color: ${llmsValidation.fleet_summary.avg_score >= 80 ? '#10b981' : llmsValidation.fleet_summary.avg_score >= 60 ? '#f59e0b' : '#f87171'}`}>
+            fleet avg {llmsValidation.fleet_summary.avg_score}/100
+          </span>
+          <span class="text-[10px] text-gray-500">{llmsValidation.fleet_summary.accessible}/{llmsValidation.fleet_summary.total} accessible</span>
+        </div>
+        <details class="text-xs">
+          <summary class="cursor-pointer text-blue-400 hover:text-blue-300">per-site</summary>
+          <div class="absolute right-8 mt-2 bg-gray-800 border border-gray-700 rounded-lg p-3 shadow-xl z-50 min-w-[480px] max-h-[420px] overflow-y-auto">
+            {Object.entries(llmsValidation).filter(([k]) => k !== 'fleet_summary').map(([sid, d]: [string, any]) => (
+              <div class="mb-3 last:mb-0 pb-2 border-b border-gray-700 last:border-0">
+                <div class="text-xs font-semibold text-white mb-1">
+                  {sid}
+                  <span class="text-[10px] text-gray-400 ml-2">llms.txt {d.llms_txt?.score}/100 · llms-full.txt {d.llms_full_txt?.score}/100</span>
+                </div>
+                {d.llms_txt?.missing?.length > 0 && (
+                  <div class="text-[10px] text-amber-300 pl-2">missing: {d.llms_txt.missing.slice(0, 3).join(' · ')}</div>
+                )}
+              </div>
+            ))}
+          </div>
+        </details>
+      </div>
+    </div>
+  )}
+
+  {/* Syndication tracker (Batch 8) — empty until syndication starts */}
+  {syndication && syndication.fleet_summary && (
+    <div data-copy-tile="Syndication tracker" class="rounded-lg px-4 py-2 mb-4 border bg-gray-900 border-gray-700">
+      <div class="flex items-center justify-between flex-wrap gap-3">
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-semibold text-purple-300 uppercase tracking-wider">Syndication</span>
+          {syndication.fleet_summary.post_count > 0 ? (
+            <>
+              <span class="text-sm text-gray-300">{syndication.fleet_summary.post_count} posts tracked</span>
+              <span class="text-xs text-emerald-400">{syndication.fleet_summary.fully_distributed} on all 8 platforms</span>
+              {syndication.fleet_summary.under_distributed > 0 && (
+                <span class="text-xs text-amber-400">{syndication.fleet_summary.under_distributed} under-distributed</span>
+              )}
+            </>
+          ) : (
+            <span class="text-sm text-gray-500">No syndication tracked yet — populate src/data/syndication_log.json to light this up</span>
+          )}
+          <span class="text-[10px] text-gray-500">{(syndication.fleet_summary.platforms_tracked || []).join(', ')}</span>
+        </div>
+        {syndication.fleet_summary.post_count > 0 && (
+          <details class="text-xs">
+            <summary class="cursor-pointer text-purple-400 hover:text-purple-300">under-distributed</summary>
+            <div class="absolute right-8 mt-2 bg-gray-800 border border-gray-700 rounded-lg p-3 shadow-xl z-50 min-w-[520px] max-h-[420px] overflow-y-auto">
+              {Object.entries(syndication).filter(([k]) => k !== 'fleet_summary').map(([sid, d]: [string, any]) => (
+                <div class="mb-3 last:mb-0 pb-2 border-b border-gray-700 last:border-0">
+                  <div class="text-xs font-semibold text-white mb-1">{sid} <span class="text-[10px] text-gray-500 ml-2">median {d.median_distribution}%</span></div>
+                  {(d.under_distributed || []).slice(0, 5).map((p: any) => (
+                    <div class="text-[11px] mb-1">
+                      <span class="text-purple-400">{p.score}%</span>
+                      <a href={p.url} target="_blank" class="text-gray-300 ml-2 hover:text-white">{p.title}</a>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </details>
+        )}
       </div>
     </div>
   )}

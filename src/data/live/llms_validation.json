@@ -1,0 +1,362 @@
+{
+  "rank4ai": {
+    "site_url": "https://www.rank4ai.co.uk",
+    "fetched_at": "2026-05-04T20:18:59.471818+00:00",
+    "llms_txt": {
+      "accessible": true,
+      "score": 75,
+      "size_bytes": 2923,
+      "checks": [
+        {
+          "label": "Starts with H1 (# Name)",
+          "pass": true
+        },
+        {
+          "label": "Has entity-function blockquote (> X is a Y)",
+          "pass": true
+        },
+        {
+          "label": "Has section headers (## ...) \u2014 found 7",
+          "pass": true
+        },
+        {
+          "label": "Has 3+ markdown links \u2014 found 0",
+          "pass": false
+        },
+        {
+          "label": "No UTF-8 BOM",
+          "pass": true
+        },
+        {
+          "label": "Size 200B-200KB \u2014 actual 2KB",
+          "pass": true
+        },
+        {
+          "label": "Has 'Core Pages' or equivalent section",
+          "pass": true
+        },
+        {
+          "label": "Has site URL near top",
+          "pass": true
+        },
+        {
+          "label": "Optional sections (About / Author / Methodology / Disambiguation) \u2014 0/4 present",
+          "pass": false
+        }
+      ],
+      "missing": [
+        "Has 3+ markdown links \u2014 found 0",
+        "Optional sections (About / Author / Methodology / Disambiguation) \u2014 0/4 present"
+      ]
+    },
+    "llms_full_txt": {
+      "accessible": true,
+      "score": 100,
+      "size_bytes": 38019,
+      "checks": [
+        {
+          "label": "Starts with H1 (# Name)",
+          "pass": true
+        },
+        {
+          "label": "Has entity-function blockquote (> X is a Y)",
+          "pass": true
+        },
+        {
+          "label": "Has section headers (## ...) \u2014 found 1",
+          "pass": true
+        },
+        {
+          "label": "Has 3+ markdown links \u2014 found 351",
+          "pass": true
+        },
+        {
+          "label": "No UTF-8 BOM",
+          "pass": true
+        },
+        {
+          "label": "Size 5KB-5MB \u2014 actual 37KB",
+          "pass": true
+        },
+        {
+          "label": "Has 'Core Pages' or equivalent section",
+          "pass": true
+        },
+        {
+          "label": "Has site URL near top",
+          "pass": true
+        },
+        {
+          "label": "Optional sections (About / Author / Methodology / Disambiguation) \u2014 1/4 present",
+          "pass": true
+        }
+      ],
+      "missing": []
+    }
+  },
+  "market-invoice": {
+    "site_url": "https://marketinvoice.co.uk",
+    "fetched_at": "2026-05-04T20:19:02.555929+00:00",
+    "llms_txt": {
+      "accessible": true,
+      "score": 90,
+      "size_bytes": 6535,
+      "checks": [
+        {
+          "label": "Starts with H1 (# Name)",
+          "pass": true
+        },
+        {
+          "label": "Has entity-function blockquote (> X is a Y)",
+          "pass": true
+        },
+        {
+          "label": "Has section headers (## ...) \u2014 found 10",
+          "pass": true
+        },
+        {
+          "label": "Has 3+ markdown links \u2014 found 59",
+          "pass": true
+        },
+        {
+          "label": "No UTF-8 BOM",
+          "pass": true
+        },
+        {
+          "label": "Size 200B-200KB \u2014 actual 6KB",
+          "pass": true
+        },
+        {
+          "label": "Has 'Core Pages' or equivalent section",
+          "pass": true
+        },
+        {
+          "label": "Has site URL near top",
+          "pass": true
+        },
+        {
+          "label": "Optional sections (About / Author / Methodology / Disambiguation) \u2014 0/4 present",
+          "pass": false
+        }
+      ],
+      "missing": [
+        "Optional sections (About / Author / Methodology / Disambiguation) \u2014 0/4 present"
+      ]
+    },
+    "llms_full_txt": {
+      "accessible": true,
+      "score": 65,
+      "size_bytes": 8791,
+      "checks": [
+        {
+          "label": "Starts with H1 (# Name)",
+          "pass": true
+        },
+        {
+          "label": "Has entity-function blockquote (> X is a Y)",
+          "pass": true
+        },
+        {
+          "label": "Has section headers (## ...) \u2014 found 15",
+          "pass": true
+        },
+        {
+          "label": "Has 3+ markdown links \u2014 found 0",
+          "pass": false
+        },
+        {
+          "label": "No UTF-8 BOM",
+          "pass": true
+        },
+        {
+          "label": "Size 5KB-5MB \u2014 actual 8KB",
+          "pass": true
+        },
+        {
+          "label": "Has 'Core Pages' or equivalent section",
+          "pass": false
+        },
+        {
+          "label": "Has site URL near top",
+          "pass": true
+        },
+        {
+          "label": "Optional sections (About / Author / Methodology / Disambiguation) \u2014 0/4 present",
+          "pass": false
+        }
+      ],
+      "missing": [
+        "Has 3+ markdown links \u2014 found 0",
+        "Has 'Core Pages' or equivalent section",
+        "Optional sections (About / Author / Methodology / Disambiguation) \u2014 0/4 present"
+      ]
+    }
+  },
+  "seocompare": {
+    "site_url": "https://seocompare.co.uk",
+    "fetched_at": "2026-05-04T20:19:03.972967+00:00",
+    "llms_txt": {
+      "accessible": true,
+      "score": 80,
+      "size_bytes": 5950,
+      "checks": [
+        {
+          "label": "Starts with H1 (# Name)",
+          "pass": true
+        },
+        {
+          "label": "Has entity-function blockquote (> X is a Y)",
+          "pass": true
+        },
+        {
+          "label": "Has section headers (## ...) \u2014 found 12",
+          "pass": true
+        },
+        {
+          "label": "Has 3+ markdown links \u2014 found 0",
+          "pass": false
+        },
+        {
+          "label": "No UTF-8 BOM",
+          "pass": true
+        },
+        {
+          "label": "Size 200B-200KB \u2014 actual 5KB",
+          "pass": true
+        },
+        {
+          "label": "Has 'Core Pages' or equivalent section",
+          "pass": true
+        },
+        {
+          "label": "Has site URL near top",
+          "pass": false
+        },
+        {
+          "label": "Optional sections (About / Author / Methodology / Disambiguation) \u2014 1/4 present",
+          "pass": true
+        }
+      ],
+      "missing": [
+        "Has 3+ markdown links \u2014 found 0",
+        "Has site URL near top"
+      ]
+    },
+    "llms_full_txt": {
+      "accessible": true,
+      "score": 70,
+      "size_bytes": 39321,
+      "checks": [
+        {
+          "label": "Starts with H1 (# Name)",
+          "pass": true
+        },
+        {
+          "label": "Has entity-function blockquote (> X is a Y)",
+          "pass": true
+        },
+        {
+          "label": "Has section headers (## ...) \u2014 found 24",
+          "pass": true
+        },
+        {
+          "label": "Has 3+ markdown links \u2014 found 0",
+          "pass": false
+        },
+        {
+          "label": "No UTF-8 BOM",
+          "pass": true
+        },
+        {
+          "label": "Size 5KB-5MB \u2014 actual 38KB",
+          "pass": true
+        },
+        {
+          "label": "Has 'Core Pages' or equivalent section",
+          "pass": false
+        },
+        {
+          "label": "Has site URL near top",
+          "pass": false
+        },
+        {
+          "label": "Optional sections (About / Author / Methodology / Disambiguation) \u2014 2/4 present",
+          "pass": true
+        }
+      ],
+      "missing": [
+        "Has 3+ markdown links \u2014 found 0",
+        "Has 'Core Pages' or equivalent section",
+        "Has site URL near top"
+      ]
+    }
+  },
+  "rochellemarashi": {
+    "site_url": "https://rochellemarashi.pages.dev",
+    "fetched_at": "2026-05-04T20:19:04.466519+00:00",
+    "llms_txt": {
+      "accessible": true,
+      "score": 75,
+      "size_bytes": 3386,
+      "checks": [
+        {
+          "label": "Starts with H1 (# Name)",
+          "pass": true
+        },
+        {
+          "label": "Has entity-function blockquote (> X is a Y)",
+          "pass": true
+        },
+        {
+          "label": "Has section headers (## ...) \u2014 found 4",
+          "pass": true
+        },
+        {
+          "label": "Has 3+ markdown links \u2014 found 20",
+          "pass": true
+        },
+        {
+          "label": "No UTF-8 BOM",
+          "pass": true
+        },
+        {
+          "label": "Size 200B-200KB \u2014 actual 3KB",
+          "pass": true
+        },
+        {
+          "label": "Has 'Core Pages' or equivalent section",
+          "pass": false
+        },
+        {
+          "label": "Has site URL near top",
+          "pass": false
+        },
+        {
+          "label": "Optional sections (About / Author / Methodology / Disambiguation) \u2014 0/4 present",
+          "pass": false
+        }
+      ],
+      "missing": [
+        "Has 'Core Pages' or equivalent section",
+        "Has site URL near top",
+        "Optional sections (About / Author / Methodology / Disambiguation) \u2014 0/4 present"
+      ]
+    },
+    "llms_full_txt": {
+      "accessible": false,
+      "score": 0,
+      "size_bytes": 0,
+      "checks": [],
+      "missing": [
+        "file not accessible"
+      ]
+    }
+  },
+  "fleet_summary": {
+    "avg_score": 80,
+    "accessible": 4,
+    "total": 4,
+    "all_accessible": true,
+    "fetched_at": "2026-05-04T20:19:04.466540+00:00"
+  }
+}

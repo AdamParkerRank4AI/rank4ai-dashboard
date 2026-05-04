@@ -124,6 +124,8 @@ def main():
         ("build_indexing_health.py", 60),
         ("entity_class_classifier.py", 120),
         ("compute_content_freshness.py", 30),
+        ("compute_syndication.py", 30),
+        ("check_llms_txt.py", 120),
         ("check_drift.py", 240),
         ("push_to_fleet.py", 60),
     ]

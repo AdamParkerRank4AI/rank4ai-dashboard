@@ -164,6 +164,45 @@ Add `indexing@inbound-dahlia-491120-v6.iam.gserviceaccount.com` as Owner in GSC 
 
 ---
 
+## Surfaced from 4 May playbook compliance audit
+
+### R4-4 · Rebalance author rotation in auto-publisher — XS, ~15 min
+
+**Why:** Audit found Adam = 57% of 126 auto-published posts (Jimmy 11, Oliver 12, Rachel 13, Team 18). Playbook expects even rotation across 3 founders for E-E-A-T balance.
+
+**Prompt to paste:**
+```
+On ~/run_blogs.py and ~/run_questions.py (R4 auto-publishers), the author selection is weighted toward Adam Parker. Change to strict round-robin Adam → Jimmy → Oliver based on a counter file at ~/.rank4ai_author_counter (or modulo of post count). Skip Rachel and Team entries entirely (they dilute the founder voice). Keep Person schema bylines pointing at the matching @id from R4 Layout.astro @graph.
+```
+
+### MI-4 · Fix Oliver's Companies House officer URL — XS, ~5 min
+
+**Why:** Today's entity coherence run found `https://find-and-update.company-information.service.gov.uk/officers/dKHZEH-n1H5BVmR2rILJcCJbzY4/appointments` returns 404. The officer ID is wrong or the URL pattern changed.
+
+**Prompt to paste:**
+```
+Open https://find-and-update.company-information.service.gov.uk/company/16833937/officers in a browser, click Oliver Mackman, copy the canonical officer URL. Update ~/compare-invoice-finance/src/site.manifest.ts (or the BaseLayout sameAs reference) with the correct URL. Build, commit, ask before push.
+```
+
+### SC-4 · Create or remove YouTube channel sameAs — XS, ~15 min
+
+**Why:** `youtube.com/@seocompare` returns 404 (channel never created). Today's entity coherence checker keeps flagging this. Two options:
+- (a) Create the channel under SEOCompare (15 min, also unlocks Batch 8 syndication tracking for video)
+- (b) Remove the line from `site.manifest.ts` sameAs array (1 min)
+
+If creating the channel, set the handle to `@seocompare`, link it to oliver@mackmangroup.co.uk, set the About to the canonical SEOCompare entity-function sentence.
+
+### Fleet-1 · Harmonise brand descriptions across touchpoints — S, ~30 min per site
+
+**Why:** Each site has near-identical canonical descriptions that drift slightly across home / about / footer / llms.txt / Organization schema. Today's R4 fix tightened the schema description but other touchpoints are still subtly different. AI uncertainty when descriptions vary.
+
+**Prompt to paste (per site):**
+```
+On <site repo>, run `grep -rn "<short brand description fragment>"` to find all places the brand description appears (BaseLayout.astro / Layout.astro, footer, /about/ first paragraph, llms.txt blockquote line, public/llms-full.txt, site.manifest.ts if present). Pick ONE canonical sentence (use the homepage hero version as canon — that's what users see). Replace across all locations. Build, commit, ask before push.
+```
+
+---
+
 ## Adam-blocked items (do once Adam confirms)
 
 - F-1 Wikidata stubs
