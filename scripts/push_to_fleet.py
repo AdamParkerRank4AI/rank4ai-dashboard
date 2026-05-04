@@ -303,11 +303,183 @@ def section_wins(site_id):
     return "\n".join(lines)
 
 
+# ---------- v2 sections (added 2026-05-04) ----------
+
+def section_aeo(site_id, aeo_data, aeo_mtime):
+    """Top scoring gaps from the AEO scorecard."""
+    if not aeo_data:
+        return "_no AEO scorecard_"
+    site = aeo_data.get(site_id, {})
+    if not site:
+        return "_no AEO data for this site_"
+    note = staleness_note(aeo_mtime, "AEO scorecard")
+    pct = site.get("percentage", 0)
+    total = site.get("total_score", 0)
+    max_s = site.get("max_score", 0)
+    layers = site.get("layers", {}) or {}
+    # Layers below max — sorted by gap (max - score) descending
+    gaps = []
+    for layer_name, payload in layers.items():
+        score = payload.get("score", 0)
+        layer_max = payload.get("max", 0)
+        if score < layer_max:
+            gap = layer_max - score
+            gaps.append((layer_name, score, layer_max, gap, payload.get("notes", []) or []))
+    gaps.sort(key=lambda x: -x[3])
+    lines = [f"**Overall AEO score:** {total}/{max_s} ({pct}%)"]
+    if gaps:
+        lines.append("")
+        lines.append("**Layers with gaps (largest first):**")
+        for name, score, mx, gap, notes in gaps[:5]:
+            lines.append(f"- **{name}**: {score}/{mx} (gap {gap})")
+            for n in notes[:2]:
+                lines.append(f"  - {n}")
+    body = "\n".join(lines)
+    return (note + "\n\n" if note else "") + body
+
+
+def section_manual_indexing(site_id, miq_data, miq_mtime):
+    """Top URLs to paste into GSC URL Inspection."""
+    if not miq_data:
+        return "_no manual indexing queue_"
+    site = (miq_data.get("per_site") or {}).get(site_id, {})
+    if not site:
+        return "_no queue for this site_"
+    note = staleness_note(miq_mtime, "Manual indexing queue")
+    never = site.get("never_api_submitted", 0)
+    sitemap = site.get("sitemap_url_count", 0)
+    inspect = site.get("gsc_inspect_url", "")
+    top = (site.get("top") or [])[:5]
+    lines = [
+        f"**Never-API-submitted:** {never} of {sitemap} sitemap URLs",
+        f"**GSC inspect URL:** {inspect}" if inspect else "",
+        "",
+        "**Top 5 URLs to paste into URL Inspection:**",
+    ]
+    for i, item in enumerate(top, 1):
+        url = item.get("url", "?") if isinstance(item, dict) else str(item)
+        score = item.get("score") if isinstance(item, dict) else None
+        line = f"{i}. {url}"
+        if score is not None:
+            line += f" (score {score})"
+        lines.append(line)
+    body = "\n".join([l for l in lines if l != ""])
+    return (note + "\n\n" if note else "") + body
+
+
+def section_bot_activity(site_id, bot_data, bot_mtime):
+    """7-day rolling AI/search bot hits per platform."""
+    if not bot_data:
+        return "_no bot data_"
+    site = bot_data.get(site_id, {})
+    days = site.get("days", []) or []
+    if not days:
+        return "_no recent bot hits recorded_"
+    note = staleness_note(bot_mtime, "Bot hits")
+    # Last 7 days
+    recent = days[-7:] if len(days) > 7 else days
+    by_name_total = {}
+    total = 0
+    for d in recent:
+        bn = d.get("by_name", {}) or {}
+        for name, count in bn.items():
+            by_name_total[name] = by_name_total.get(name, 0) + count
+            total += count
+    top_bots = sorted(by_name_total.items(), key=lambda x: -x[1])[:8]
+    lines = [f"**7-day total:** {total} hits across {len(recent)} day(s)"]
+    if top_bots:
+        lines.append("")
+        rows = [(name, count) for name, count in top_bots]
+        lines.append(md_table(["Bot", "Hits"], rows))
+    body = "\n".join(lines)
+    return (note + "\n\n" if note else "") + body
+
+
+def section_pagespeed(site_id, ps_data, ps_mtime):
+    """Mobile perf + CLS callouts for the homepage."""
+    if not ps_data:
+        return "_no PageSpeed data_"
+    site = ps_data.get(site_id, {})
+    if not site:
+        return "_no PageSpeed for this site_"
+    note = staleness_note(ps_mtime, "PageSpeed")
+    avg = site.get("avg_scores", {}) or {}
+    pages = site.get("pages", []) or []
+    lines = [
+        f"**Avg scores (mobile):** perf={avg.get('performance', '?')} · a11y={avg.get('accessibility', '?')} · seo={avg.get('seo', '?')} · best-practices={avg.get('best-practices', '?')}"
+    ]
+    cls_flags = []
+    for p in pages[:5]:
+        cwv = p.get("cwv", {}) or p.get("metrics", {}) or {}
+        cls = cwv.get("cls") or cwv.get("CLS")
+        if cls is not None:
+            try:
+                if float(cls) > 0.1:
+                    cls_flags.append((p.get("url", "?"), cls))
+            except Exception:
+                pass
+    if cls_flags:
+        lines.append("")
+        lines.append("**CLS warnings (>0.1):**")
+        for url, cls in cls_flags[:3]:
+            lines.append(f"- {url} → CLS {cls}")
+    body = "\n".join(lines)
+    return (note + "\n\n" if note else "") + body
+
+
+def section_entity_status(site_id, kg_data, kg_mtime):
+    """Wikidata/KG lookup result. Surfaces TASKS #16 blocker visibility."""
+    if not kg_data:
+        return "_no entity status data_"
+    site = kg_data.get(site_id, {})
+    if not site:
+        return "_no entity check for this site_"
+    note = staleness_note(kg_mtime, "Entity status")
+    is_known = site.get("is_known_entity", False)
+    best = site.get("best_match")
+    queries = site.get("queries", []) or []
+    lines = [f"**Known to Google Knowledge Graph:** {'✅ Yes' if is_known else '❌ No'}"]
+    if best:
+        lines.append(f"**Best match:** {best.get('name', '?')} (score {best.get('score', '?')})")
+    error_count = sum(1 for q in queries if q.get("error"))
+    if error_count:
+        lines.append(f"**KG API errors:** {error_count} of {len(queries)} probes (likely rate limit)")
+    if not is_known:
+        lines.append("")
+        lines.append("**Action:** Wikidata + Wikipedia stub authorship (TASKS #16 / #102) — single biggest unblocker for AI citation rate.")
+    body = "\n".join(lines)
+    return (note + "\n\n" if note else "") + body
+
+
+def section_citation_gaps_by_type(site_id, cbt_data, cbt_mtime):
+    """Top 3 query-type clusters with 0% or near-zero citation rate."""
+    if not cbt_data:
+        return "_no citations-by-type data_"
+    site = cbt_data.get(site_id, {})
+    if not site:
+        return "_no citation-by-type for this site_"
+    note = staleness_note(cbt_mtime, "Citations by type")
+    by_type = site.get("by_type", {}) or {}
+    rows = []
+    for type_name, payload in by_type.items():
+        rate = payload.get("rate", 0)
+        queries = payload.get("queries", 0)
+        cited = payload.get("cited", 0)
+        rows.append((type_name, rate, cited, queries))
+    rows.sort(key=lambda x: x[1])  # ascending by rate (worst first)
+    table_rows = [(name, f"{rate}%", f"{cited}/{queries}") for name, rate, cited, queries in rows[:5]]
+    body = "**Worst-performing query-type clusters:**\n\n" + md_table(["Type", "Cite rate", "Cited"], table_rows)
+    return (note + "\n\n" if note else "") + body
+
+
 # ---------- brief assembly ----------
 
 def build_brief(site_id, recs_data, recs_mtime, gsc_data, gsc_mtime, gsc_prev,
                 serp_data, serp_mtime, citations_data, citations_mtime,
-                comp_data, audit_mtime, trends_data, trends_mtime):
+                comp_data, audit_mtime, trends_data, trends_mtime,
+                aeo_data, aeo_mtime, miq_data, miq_mtime,
+                bot_data, bot_mtime, ps_data, ps_mtime,
+                kg_data, kg_mtime, cbt_data, cbt_mtime):
     display, _, domain = SITES[site_id]
     actions_md, top_actions = section_actions(site_id, recs_data, recs_mtime)
     parts = [
@@ -318,6 +490,18 @@ def build_brief(site_id, recs_data, recs_mtime, gsc_data, gsc_mtime, gsc_prev,
         "## Top Actions",
         "",
         actions_md,
+        "",
+        "## Entity status (Wikidata / Google Knowledge Graph)",
+        "",
+        section_entity_status(site_id, kg_data, kg_mtime),
+        "",
+        "## AEO scorecard gaps",
+        "",
+        section_aeo(site_id, aeo_data, aeo_mtime),
+        "",
+        "## Manual indexing queue (paste into GSC URL Inspection)",
+        "",
+        section_manual_indexing(site_id, miq_data, miq_mtime),
         "",
         "## Page-1 zero-click queries (CTR fix targets)",
         "",
@@ -335,9 +519,21 @@ def build_brief(site_id, recs_data, recs_mtime, gsc_data, gsc_mtime, gsc_prev,
         "",
         section_ai_citations(site_id, citations_data, citations_mtime),
         "",
+        "## Citation gaps by query-type cluster",
+        "",
+        section_citation_gaps_by_type(site_id, cbt_data, cbt_mtime),
+        "",
         "## Competitor visibility",
         "",
         section_competitors(site_id, comp_data),
+        "",
+        "## AI/search bot activity (last 7 days)",
+        "",
+        section_bot_activity(site_id, bot_data, bot_mtime),
+        "",
+        "## PageSpeed (mobile)",
+        "",
+        section_pagespeed(site_id, ps_data, ps_mtime),
         "",
         "## Crawl audit (today)",
         "",
@@ -428,6 +624,13 @@ def main(dry_run=False):
     trends_data, trends_mtime = load_json("google_trends.json")
     # audit mtime is per-site, sample one to get a reading
     _, audit_mtime = load_json("daily_audit_rank4ai.json")
+    # v2 sources (added 2026-05-04)
+    aeo_data, aeo_mtime = load_json("aeo_scorecard.json")
+    miq_data, miq_mtime = load_json("manual_indexing_queue.json")
+    bot_data, bot_mtime = load_json("bot_hits.json")
+    ps_data, ps_mtime = load_json("pagespeed.json")
+    kg_data, kg_mtime = load_json("knowledge_graph.json")
+    cbt_data, cbt_mtime = load_json("citations_by_type.json")
 
     inbox_entries = []
     print(f"push_to_fleet.py — {TODAY}")
@@ -437,6 +640,9 @@ def main(dry_run=False):
             site_id, recs_data, recs_mtime, gsc_data, gsc_mtime, gsc_prev,
             serp_data, serp_mtime, citations_data, citations_mtime,
             comp_data, audit_mtime, trends_data, trends_mtime,
+            aeo_data, aeo_mtime, miq_data, miq_mtime,
+            bot_data, bot_mtime, ps_data, ps_mtime,
+            kg_data, kg_mtime, cbt_data, cbt_mtime,
         )
         if dry_run:
             out_dir = Path("/tmp/fleet_dry_run")
