@@ -1,20 +1,20 @@
 {
   "site_id": "bestbusinessloans",
   "domain": "bestbusinessloans.pages.dev",
-  "crawled_at": "2026-05-05T18:11:03.385426+00:00",
+  "crawled_at": "2026-05-05T18:26:14.481553+00:00",
   "source": "fleet-source-reader",
-  "pages_crawled": 88,
+  "pages_crawled": 100,
   "total_issues": 0,
-  "orphan_pages": 9,
-  "avg_depth": 1.75,
-  "avg_word_count": 1553,
-  "pages_with_schema": 88,
+  "orphan_pages": 3,
+  "avg_depth": 1.77,
+  "avg_word_count": 1571,
+  "pages_with_schema": 100,
   "pages_with_multimodal": 0,
   "pages_with_comparison_table": 1,
   "pages_with_video": 0,
-  "pages_over_2000_words": 1,
+  "pages_over_2000_words": 2,
   "images_missing_alt": 0,
-  "pages_with_date": 88,
+  "pages_with_date": 100,
   "crawler_access": {
     "GPTBot": false,
     "ClaudeBot": false,
@@ -46,7 +46,7 @@
     },
     "halal": {
       "hub": "/halal/",
-      "page_count": 1
+      "page_count": 6
     },
     "authors": {
       "hub": "/authors/",
@@ -104,6 +104,10 @@
       "hub": "/glossary/",
       "page_count": 1
     },
+    "hmrc": {
+      "hub": "/hmrc/",
+      "page_count": 7
+    },
     "by-product": {
       "hub": "/by-product/",
       "page_count": 1
@@ -117,27 +121,27 @@
       "page_count": 19
     }
   },
-  "topic_cluster_count": 23,
+  "topic_cluster_count": 24,
   "term_consistency": {
-    "business": 126,
-    "loans": 99,
+    "business": 124,
+    "loans": 98,
+    "review": 61,
+    "2026": 61,
     "loan": 61,
-    "2026": 56,
-    "review": 56,
-    "bestbusinessloans": 54,
-    "finance": 52,
+    "finance": 59,
+    "bestbusinessloans": 55,
     "best": 46,
-    "lenders": 35,
-    "rate": 29,
-    "eligibility": 22,
-    "independent": 22,
-    "decline": 22,
-    "asset": 21,
-    "funding": 21
+    "lenders": 37,
+    "bank": 30,
+    "rate": 28,
+    "commercial": 27,
+    "funding": 24,
+    "independent": 23,
+    "decline": 22
   },
   "content_freshness": {
-    "pages_with_dates": 88,
-    "fresh_30_days": 88,
+    "pages_with_dates": 100,
+    "fresh_30_days": 100,
     "fresh_90_days": 0,
     "stale": 0
   },
@@ -255,7 +259,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 88,
+      "internal_links_in": 100,
       "depth": 1
     },
     {
@@ -293,7 +297,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 88,
+      "internal_links_in": 100,
       "depth": 1
     },
     {
@@ -331,7 +335,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 88,
+      "internal_links_in": 100,
       "depth": 1
     },
     {
@@ -339,8 +343,8 @@
       "path": "/halal/",
       "title": "Halal and Sharia-Compliant UK Business Loans \u2014 BestBusinessLoans",
       "h1": "Halal and Sharia-compliant UK business loans",
-      "meta_desc": "How Sharia-compliant business finance works in the UK, which providers offer it, and how it compares to conventional business loans on rate, eligibility and product type.",
-      "word_count": 1648,
+      "meta_desc": "Independent UK editorial reviews of Sharia-compliant commercial finance: Al Rayan Bank, Gatehouse Bank, BLME, QIB UK and Kestrl. Murabaha, Ijara and Diminishing Musharaka explained.",
+      "word_count": 2138,
       "status": 200,
       "schemas": [
         "Person",
@@ -348,8 +352,8 @@
         "WebSite",
         "WebPage"
       ],
-      "internal_links_out": 30,
-      "external_links_out": -26,
+      "internal_links_out": 35,
+      "external_links_out": -31,
       "canonical": "https://bestbusinessloans.co.uk/halal/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -358,9 +362,9 @@
       "has_multimodal": false,
       "has_comparison_table": false,
       "table_count": 0,
-      "list_count": 6,
-      "question_h2s": 0,
-      "h2_count": 5,
+      "list_count": 4,
+      "question_h2s": 1,
+      "h2_count": 6,
       "last_modified": "2026-04-26",
       "has_answer_capsule": true,
       "has_og_tags": true,
@@ -369,8 +373,203 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 88,
+      "internal_links_in": 100,
       "depth": 1
+    },
+    {
+      "url": "https://bestbusinessloans.co.uk/halal/blme/",
+      "path": "/halal/blme/",
+      "title": "BLME (Bank of London and the Middle East) review (2026) \u2014 Sharia-compliant UK commercial finance",
+      "h1": "BLME (Bank of London and the Middle East)",
+      "meta_desc": "BLME (Bank of London and the Middle East): BLME (now part of Boubyan Bank, Kuwait) is a wholesale-focused Sharia-compliant UK bank. Engages on larger commercial",
+      "word_count": 1504,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Review"
+      ],
+      "internal_links_out": 30,
+      "external_links_out": -25,
+      "canonical": "https://bestbusinessloans.co.uk/halal/blme/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 8,
+      "question_h2s": 0,
+      "h2_count": 7,
+      "last_modified": "2026-04-26",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 1,
+      "depth": 2
+    },
+    {
+      "url": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "path": "/halal/al-rayan-bank/",
+      "title": "Al Rayan Bank review (2026) \u2014 Sharia-compliant UK commercial finance",
+      "h1": "Al Rayan Bank",
+      "meta_desc": "Al Rayan Bank: Al Rayan is the UK",
+      "word_count": 1515,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Review"
+      ],
+      "internal_links_out": 30,
+      "external_links_out": -25,
+      "canonical": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 8,
+      "question_h2s": 0,
+      "h2_count": 7,
+      "last_modified": "2026-04-26",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 1,
+      "depth": 2
+    },
+    {
+      "url": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "path": "/halal/qib-uk/",
+      "title": "Qatar Islamic Bank UK review (2026) \u2014 Sharia-compliant UK commercial finance",
+      "h1": "Qatar Islamic Bank UK",
+      "meta_desc": "Qatar Islamic Bank UK: QIB UK is the UK arm of Qatar Islamic Bank, focused on high-net-worth Sharia-compliant private banking and larger commercial property and",
+      "word_count": 1476,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Review"
+      ],
+      "internal_links_out": 30,
+      "external_links_out": -25,
+      "canonical": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 8,
+      "question_h2s": 0,
+      "h2_count": 7,
+      "last_modified": "2026-04-26",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 1,
+      "depth": 2
+    },
+    {
+      "url": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "path": "/halal/gatehouse-bank/",
+      "title": "Gatehouse Bank review (2026) \u2014 Sharia-compliant UK commercial finance",
+      "h1": "Gatehouse Bank",
+      "meta_desc": "Gatehouse Bank: Gatehouse is a UK PRA-regulated Sharia-compliant bank with a strong commercial property focus. More restricted product range than Al Rayan b",
+      "word_count": 1468,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Review"
+      ],
+      "internal_links_out": 30,
+      "external_links_out": -25,
+      "canonical": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 8,
+      "question_h2s": 0,
+      "h2_count": 7,
+      "last_modified": "2026-04-26",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 1,
+      "depth": 2
+    },
+    {
+      "url": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "path": "/halal/kestrl/",
+      "title": "Kestrl review (2026) \u2014 Sharia-compliant UK commercial finance",
+      "h1": "Kestrl",
+      "meta_desc": "Kestrl: UK Sharia-compliant fintech focused on personal and SME banking. Not a full SME lending bank yet, but the most active UK Sharia fintech wort",
+      "word_count": 1450,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Review"
+      ],
+      "internal_links_out": 30,
+      "external_links_out": -25,
+      "canonical": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 8,
+      "question_h2s": 0,
+      "h2_count": 7,
+      "last_modified": "2026-04-26",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 1,
+      "depth": 2
     },
     {
       "url": "https://bestbusinessloans.co.uk/authors/",
@@ -407,7 +606,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 88,
+      "internal_links_in": 100,
       "depth": 1
     },
     {
@@ -455,7 +654,7 @@
       "title": "UK Business Loans by Sector \u2014 BestBusinessLoans",
       "h1": "UK business loans by sector",
       "meta_desc": "Sector-specific UK business loan guides: which lenders specialise in your trade, what they fund, and how their criteria differ from generalists.",
-      "word_count": 1377,
+      "word_count": 1571,
       "status": 200,
       "schemas": [
         "Person",
@@ -463,8 +662,8 @@
         "WebSite",
         "WebPage"
       ],
-      "internal_links_out": 36,
-      "external_links_out": -32,
+      "internal_links_out": 42,
+      "external_links_out": -38,
       "canonical": "https://bestbusinessloans.co.uk/by-sector/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -475,7 +674,7 @@
       "table_count": 0,
       "list_count": 3,
       "question_h2s": 0,
-      "h2_count": 6,
+      "h2_count": 12,
       "last_modified": "2026-04-26",
       "has_answer_capsule": true,
       "has_og_tags": true,
@@ -484,7 +683,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 88,
+      "internal_links_in": 100,
       "depth": 1
     },
     {
@@ -560,7 +759,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 0,
+      "internal_links_in": 1,
       "depth": 2
     },
     {
@@ -598,7 +797,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 0,
+      "internal_links_in": 1,
       "depth": 2
     },
     {
@@ -636,7 +835,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 0,
+      "internal_links_in": 1,
       "depth": 2
     },
     {
@@ -788,7 +987,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 0,
+      "internal_links_in": 1,
       "depth": 2
     },
     {
@@ -864,7 +1063,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 0,
+      "internal_links_in": 1,
       "depth": 2
     },
     {
@@ -940,7 +1139,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 0,
+      "internal_links_in": 1,
       "depth": 2
     },
     {
@@ -978,7 +1177,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 88,
+      "internal_links_in": 100,
       "depth": 1
     },
     {
@@ -1016,7 +1215,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 88,
+      "internal_links_in": 100,
       "depth": 1
     },
     {
@@ -1054,7 +1253,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 88,
+      "internal_links_in": 100,
       "depth": 1
     },
     {
@@ -1092,7 +1291,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 88,
+      "internal_links_in": 100,
       "depth": 1
     },
     {
@@ -1130,7 +1329,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 88,
+      "internal_links_in": 100,
       "depth": 1
     },
     {
@@ -1754,7 +1953,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 88,
+      "internal_links_in": 100,
       "depth": 2
     },
     {
@@ -1792,7 +1991,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 88,
+      "internal_links_in": 100,
       "depth": 1
     },
     {
@@ -1830,7 +2029,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 88,
+      "internal_links_in": 100,
       "depth": 1
     },
     {
@@ -2134,7 +2333,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 88,
+      "internal_links_in": 100,
       "depth": 1
     },
     {
@@ -2173,7 +2372,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 88,
+      "internal_links_in": 100,
       "depth": 2
     },
     {
@@ -2290,7 +2489,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 88,
+      "internal_links_in": 100,
       "depth": 2
     },
     {
@@ -2407,7 +2606,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 88,
+      "internal_links_in": 100,
       "depth": 2
     },
     {
@@ -2524,7 +2723,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 88,
+      "internal_links_in": 100,
       "depth": 2
     },
     {
@@ -2602,7 +2801,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 88,
+      "internal_links_in": 100,
       "depth": 2
     },
     {
@@ -2640,7 +2839,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 88,
+      "internal_links_in": 100,
       "depth": 1
     },
     {
@@ -2717,8 +2916,280 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 88,
+      "internal_links_in": 100,
       "depth": 1
+    },
+    {
+      "url": "https://bestbusinessloans.co.uk/hmrc/",
+      "path": "/hmrc/",
+      "title": "HMRC Pressure: VAT, PAYE, Corporation Tax Funding Options \u2014 BestBusinessLoans",
+      "h1": "HMRC tax-pressure: when to borrow, when to negotiate",
+      "meta_desc": "Editorial guides to UK HMRC tax-pressure scenarios: Time to Pay, winding-up petitions, VAT bill emergencies, PAYE / CIS arrears. When to borrow, when to negotiate, when to call an insolvency practitioner.",
+      "word_count": 1548,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage"
+      ],
+      "internal_links_out": 36,
+      "external_links_out": -32,
+      "canonical": "https://bestbusinessloans.co.uk/hmrc/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 3,
+      "question_h2s": 0,
+      "h2_count": 7,
+      "last_modified": "2026-04-26",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 6,
+      "depth": 1
+    },
+    {
+      "url": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "path": "/hmrc/directors-personal-tax-pressure/",
+      "title": "Director&#39;s personal tax bill (Self Assessment): commercial-finance considerations",
+      "h1": "Director&#39;s personal tax bill (Self Assessment): commercial-finance considerations",
+      "meta_desc": "Director",
+      "word_count": 1763,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "FAQPage"
+      ],
+      "internal_links_out": 31,
+      "external_links_out": -26,
+      "canonical": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 7,
+      "question_h2s": 0,
+      "h2_count": 8,
+      "last_modified": "2026-04-26",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 1,
+      "depth": 2
+    },
+    {
+      "url": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "path": "/hmrc/paye-cis-arrears/",
+      "title": "PAYE and CIS arrears: how UK lenders treat HMRC payroll debt",
+      "h1": "PAYE and CIS arrears: how UK lenders treat HMRC payroll debt",
+      "meta_desc": "PAYE and CIS arrears: PAYE (income tax + NIC withheld from employee wages) and CIS (Construction Industry Scheme tax withheld from subcontractor payment",
+      "word_count": 1772,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "FAQPage"
+      ],
+      "internal_links_out": 31,
+      "external_links_out": -26,
+      "canonical": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 7,
+      "question_h2s": 0,
+      "h2_count": 8,
+      "last_modified": "2026-04-26",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 1,
+      "depth": 2
+    },
+    {
+      "url": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "path": "/hmrc/hmrc-time-to-pay/",
+      "title": "HMRC Time to Pay arrangement: how it works and when borrowing fits better",
+      "h1": "HMRC Time to Pay arrangement: how it works and when borrowing fits better",
+      "meta_desc": "HMRC Time to Pay arrangement: A formal HMRC arrangement letting you pay tax owed across instalments, typically 6 to 12 months. Available for VAT, PAYE, Self Ass",
+      "word_count": 1830,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "FAQPage"
+      ],
+      "internal_links_out": 31,
+      "external_links_out": -26,
+      "canonical": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 7,
+      "question_h2s": 0,
+      "h2_count": 8,
+      "last_modified": "2026-04-26",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 1,
+      "depth": 2
+    },
+    {
+      "url": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "path": "/hmrc/vat-bill-emergency/",
+      "title": "VAT bill due, no cash: emergency VAT funding options",
+      "h1": "VAT bill due, no cash: emergency VAT funding options",
+      "meta_desc": "VAT bill due, no cash: VAT is collected from customers and held in trust for HMRC. Quarterly returns are filed and paid within 5 weeks of the period end.",
+      "word_count": 1780,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "FAQPage"
+      ],
+      "internal_links_out": 31,
+      "external_links_out": -26,
+      "canonical": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 7,
+      "question_h2s": 0,
+      "h2_count": 8,
+      "last_modified": "2026-04-26",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 1,
+      "depth": 2
+    },
+    {
+      "url": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "path": "/hmrc/corporation-tax-pressure/",
+      "title": "Corporation Tax bill stretching cashflow: rescue and refinance options",
+      "h1": "Corporation Tax bill stretching cashflow: rescue and refinance options",
+      "meta_desc": "Corporation Tax bill stretching cashflow: Corporation Tax is due 9 months and 1 day after the accounting period end (small companies) or earlier for large compa",
+      "word_count": 1775,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "FAQPage"
+      ],
+      "internal_links_out": 31,
+      "external_links_out": -26,
+      "canonical": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 7,
+      "question_h2s": 0,
+      "h2_count": 8,
+      "last_modified": "2026-04-26",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 1,
+      "depth": 2
+    },
+    {
+      "url": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "path": "/hmrc/winding-up-petition/",
+      "title": "Winding-up petition from HMRC: what it means and emergency rescue options",
+      "h1": "Winding-up petition from HMRC: what it means and emergency rescue options",
+      "meta_desc": "Winding-up petition from HMRC: A winding-up petition is a court application to liquidate the company for unpaid debt over \u00a3750. HMRC routinely uses it for unpai",
+      "word_count": 1843,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "FAQPage"
+      ],
+      "internal_links_out": 31,
+      "external_links_out": -26,
+      "canonical": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 7,
+      "question_h2s": 0,
+      "h2_count": 8,
+      "last_modified": "2026-04-26",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 1,
+      "depth": 2
     },
     {
       "url": "https://bestbusinessloans.co.uk/by-product/",
@@ -2755,7 +3226,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 88,
+      "internal_links_in": 100,
       "depth": 1
     },
     {
@@ -2793,7 +3264,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 88,
+      "internal_links_in": 100,
       "depth": 1
     },
     {
@@ -2831,7 +3302,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 88,
+      "internal_links_in": 100,
       "depth": 1
     },
     {
@@ -3550,7 +4021,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/./",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -3820,7 +4291,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/404/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -4065,7 +4536,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/contact/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -4300,7 +4771,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/privacy/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -4535,7 +5006,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/disclaimer/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -4770,7 +5241,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/halal/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -4871,6 +5342,31 @@
     {
       "from": "https://bestbusinessloans.co.uk/halal/",
       "to": "https://bestbusinessloans.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/",
+      "to": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/",
+      "to": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/",
+      "to": "https://bestbusinessloans.co.uk/halal/blme/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/",
+      "to": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/",
+      "to": "https://bestbusinessloans.co.uk/halal/kestrl/",
       "type": "internal"
     },
     {
@@ -4985,6 +5481,1181 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/halal/",
+      "to": "https://bestbusinessloans.co.uk/cookie-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/best/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/best/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/women/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/by-persona/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/by-product/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/glossary/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/best/business-loans-uk-2026/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/by-persona/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/by-product/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loans-uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loan-rates-2026/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loan-calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/guides/secured-vs-unsecured/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/guides/personal-guarantees-explained/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/glossary/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/blme/",
+      "to": "https://bestbusinessloans.co.uk/cookie-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/best/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/best/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/women/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/by-persona/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/by-product/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/glossary/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/best/business-loans-uk-2026/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/by-persona/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/by-product/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loans-uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loan-rates-2026/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loan-calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/guides/secured-vs-unsecured/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/guides/personal-guarantees-explained/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/glossary/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/al-rayan-bank/",
+      "to": "https://bestbusinessloans.co.uk/cookie-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/best/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/best/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/women/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/by-persona/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/by-product/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/glossary/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/best/business-loans-uk-2026/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/by-persona/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/by-product/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loans-uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loan-rates-2026/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loan-calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/guides/secured-vs-unsecured/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/guides/personal-guarantees-explained/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/glossary/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/qib-uk/",
+      "to": "https://bestbusinessloans.co.uk/cookie-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/best/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/best/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/women/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/by-persona/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/by-product/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/glossary/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/best/business-loans-uk-2026/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/by-persona/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/by-product/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loans-uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loan-rates-2026/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loan-calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/guides/secured-vs-unsecured/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/guides/personal-guarantees-explained/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/glossary/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/gatehouse-bank/",
+      "to": "https://bestbusinessloans.co.uk/cookie-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/best/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/best/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/women/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/by-persona/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/by-product/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/glossary/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/best/business-loans-uk-2026/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/by-persona/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/by-product/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loans-uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loan-rates-2026/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loan-calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/guides/secured-vs-unsecured/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/guides/personal-guarantees-explained/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/glossary/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
+      "to": "https://bestbusinessloans.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/halal/kestrl/",
       "to": "https://bestbusinessloans.co.uk/cookie-policy/",
       "type": "internal"
     },
@@ -5000,7 +6671,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/authors/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -5235,7 +6906,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/authors/oliver-mackman/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -5485,7 +7156,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/by-sector/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -5620,6 +7291,36 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/by-sector/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/hgv-operator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/by-sector/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/taxi-private-hire/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/by-sector/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/vets/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/by-sector/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/opticians/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/by-sector/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/nursery-childcare/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/by-sector/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/franchisee/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/by-sector/",
       "to": "https://bestbusinessloans.co.uk/contact/",
       "type": "internal"
     },
@@ -5750,7 +7451,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/by-sector/hospitality/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -5985,7 +7686,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/by-sector/hgv-operator/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -6220,7 +7921,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/by-sector/taxi-private-hire/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -6455,7 +8156,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/by-sector/opticians/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -6690,7 +8391,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/by-sector/recruitment/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -6925,7 +8626,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/by-sector/retail/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -7160,7 +8861,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/by-sector/manufacturing/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -7395,7 +9096,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/by-sector/vets/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -7630,7 +9331,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/by-sector/professional-services/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -7865,7 +9566,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/by-sector/nursery-childcare/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -8100,7 +9801,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/by-sector/construction/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -8335,7 +10036,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/by-sector/franchisee/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -8570,7 +10271,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/by-persona/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -8800,7 +10501,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/how-we-are-funded/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -9030,7 +10731,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/methodology/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -9260,7 +10961,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/terms/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -9490,7 +11191,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/best/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -9800,7 +11501,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/best/business-loans-with-bad-credit/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -10095,7 +11796,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/best/business-loans-for-manufacturing/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -10380,7 +12081,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/best/business-loans-no-trading-history/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -10665,7 +12366,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/best/business-loans-for-e-commerce/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -10960,7 +12661,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/best/business-loans-no-personal-guarantee/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -11235,7 +12936,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/best/business-loans-for-construction/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -11530,7 +13231,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/best/business-loans-for-startups/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -11805,7 +13506,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/best/fastest-business-loans-uk/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -12100,7 +13801,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/best/business-loans-for-recruitment/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -12385,7 +14086,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/best/business-loans-asset-finance/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -12680,7 +14381,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/best/cheapest-business-loans-uk/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -12985,7 +14686,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/best/business-loans-for-retail/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -13290,7 +14991,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/best/business-loans-for-hospitality/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -13585,7 +15286,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/best/business-loans-with-ccj/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -13880,7 +15581,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/best/business-loans-after-decline/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -14165,7 +15866,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/best/business-loans-uk-2026/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -14470,7 +16171,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/about/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -14715,7 +16416,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/women/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -14945,7 +16646,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/use-cases/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -15205,7 +16906,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/use-cases/partner-buyout/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -15440,7 +17141,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/use-cases/bounce-back-refinance/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -15675,7 +17376,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/use-cases/fit-out-loan/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -15910,7 +17611,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/use-cases/vat-loan/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -16145,7 +17846,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/use-cases/small-mbo/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -16380,7 +18081,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/use-cases/hmrc-tax-loan/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -16615,7 +18316,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/guides/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -16905,7 +18606,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/guides/business-loans-uk/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -17145,7 +18846,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/guides/business-loan-no-credit-check/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -17385,7 +19086,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/guides/business-loan-after-bankruptcy/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -17625,7 +19326,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/guides/secured-vs-unsecured/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -17865,7 +19566,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/guides/business-loan-with-ccj/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -18105,7 +19806,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/guides/business-loan-no-pg/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -18345,7 +20046,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/guides/business-loan-rates-2026/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -18585,7 +20286,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/guides/government-business-loan-schemes/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -18825,7 +20526,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/guides/business-loan-first-year-trading/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -19065,7 +20766,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/guides/personal-guarantees-explained/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -19305,7 +21006,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/guides/business-loan-after-iva/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -19545,7 +21246,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/guides/business-loan-calculator/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -19785,7 +21486,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/editorial-policy/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -20020,7 +21721,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/compare/iwoca-vs-funding-circle/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -20255,7 +21956,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/glossary/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -20470,6 +22171,1736 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/glossary/",
+      "to": "https://bestbusinessloans.co.uk/cookie-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/best/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/best/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/women/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/by-persona/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/by-product/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/glossary/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/best/business-loans-uk-2026/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/by-persona/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/by-product/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loans-uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loan-rates-2026/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loan-calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/guides/secured-vs-unsecured/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/guides/personal-guarantees-explained/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/glossary/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/",
+      "to": "https://bestbusinessloans.co.uk/cookie-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/best/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/best/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/women/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/by-persona/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/by-product/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/glossary/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/hmrc/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/hmrc/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/best/business-loans-uk-2026/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/by-persona/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/by-product/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loans-uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loan-rates-2026/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loan-calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/guides/secured-vs-unsecured/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/guides/personal-guarantees-explained/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/glossary/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/directors-personal-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/cookie-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/best/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/best/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/women/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/by-persona/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/by-product/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/glossary/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/hmrc/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/hmrc/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/best/business-loans-uk-2026/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/by-persona/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/by-product/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loans-uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loan-rates-2026/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loan-calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/guides/secured-vs-unsecured/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/guides/personal-guarantees-explained/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/glossary/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/paye-cis-arrears/",
+      "to": "https://bestbusinessloans.co.uk/cookie-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/best/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/best/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/women/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/by-persona/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/by-product/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/glossary/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/hmrc/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/hmrc/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/best/business-loans-uk-2026/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/by-persona/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/by-product/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loans-uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loan-rates-2026/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loan-calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/guides/secured-vs-unsecured/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/guides/personal-guarantees-explained/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/glossary/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/hmrc-time-to-pay/",
+      "to": "https://bestbusinessloans.co.uk/cookie-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/best/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/best/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/women/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/by-persona/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/by-product/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/glossary/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/hmrc/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/hmrc/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/best/business-loans-uk-2026/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/by-persona/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/by-product/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loans-uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loan-rates-2026/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loan-calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/guides/secured-vs-unsecured/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/guides/personal-guarantees-explained/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/glossary/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/vat-bill-emergency/",
+      "to": "https://bestbusinessloans.co.uk/cookie-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/best/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/best/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/women/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/by-persona/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/by-product/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/glossary/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/hmrc/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/hmrc/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/best/business-loans-uk-2026/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/by-persona/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/by-product/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loans-uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loan-rates-2026/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loan-calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/guides/secured-vs-unsecured/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/guides/personal-guarantees-explained/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/glossary/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/corporation-tax-pressure/",
+      "to": "https://bestbusinessloans.co.uk/cookie-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/best/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/best/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/women/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/by-persona/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/by-product/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/glossary/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/hmrc/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/hmrc/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/best/business-loans-uk-2026/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/halal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/by-sector/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/by-persona/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/by-product/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loans-uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loan-rates-2026/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/guides/business-loan-calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/guides/secured-vs-unsecured/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/guides/personal-guarantees-explained/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/glossary/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
+      "to": "https://bestbusinessloans.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
+      "from": "https://bestbusinessloans.co.uk/hmrc/winding-up-petition/",
       "to": "https://bestbusinessloans.co.uk/cookie-policy/",
       "type": "internal"
     },
@@ -20485,7 +23916,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/by-product/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -20715,7 +24146,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/declined/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -20945,7 +24376,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/reviews/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -21270,7 +24701,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/reviews/fleximize/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -21515,7 +24946,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/reviews/jpm-capital/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -21760,7 +25191,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/reviews/bizcap/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -22005,7 +25436,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/reviews/funding-circle/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -22250,7 +25681,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/reviews/time-finance/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -22495,7 +25926,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/reviews/just-cashflow/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -22740,7 +26171,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/reviews/liberis/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -22985,7 +26416,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/reviews/iwoca/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -23230,7 +26661,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/reviews/bolton-finance/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -23475,7 +26906,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/reviews/youlend/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -23720,7 +27151,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/reviews/shawbrook/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -23965,7 +27396,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/reviews/acorn-commercial-finance/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -24210,7 +27641,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/reviews/365-business-finance/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -24455,7 +27886,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/reviews/aldermore/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -24700,7 +28131,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/reviews/oaknorth/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -24945,7 +28376,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/reviews/capify/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -25190,7 +28621,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/reviews/tide-loans/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -25435,7 +28866,7 @@
     },
     {
       "from": "https://bestbusinessloans.co.uk/reviews/allica-bank/",
-      "to": "https://bestbusinessloans.co.uk/_astro/404.D0q0vvd1.css",
+      "to": "https://bestbusinessloans.co.uk/_astro/404.39hYTbdB.css",
       "type": "internal"
     },
     {
@@ -25576,96 +29007,6 @@
     {
       "from": "https://bestbusinessloans.co.uk/reviews/allica-bank/",
       "to": "https://bestbusinessloans.co.uk/by-sector/",
-      "type": "internal"
-    },
-    {
-      "from": "https://bestbusinessloans.co.uk/reviews/allica-bank/",
-      "to": "https://bestbusinessloans.co.uk/by-persona/",
-      "type": "internal"
-    },
-    {
-      "from": "https://bestbusinessloans.co.uk/reviews/allica-bank/",
-      "to": "https://bestbusinessloans.co.uk/by-product/",
-      "type": "internal"
-    },
-    {
-      "from": "https://bestbusinessloans.co.uk/reviews/allica-bank/",
-      "to": "https://bestbusinessloans.co.uk/guides/business-loans-uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://bestbusinessloans.co.uk/reviews/allica-bank/",
-      "to": "https://bestbusinessloans.co.uk/guides/business-loan-rates-2026/",
-      "type": "internal"
-    },
-    {
-      "from": "https://bestbusinessloans.co.uk/reviews/allica-bank/",
-      "to": "https://bestbusinessloans.co.uk/guides/business-loan-calculator/",
-      "type": "internal"
-    },
-    {
-      "from": "https://bestbusinessloans.co.uk/reviews/allica-bank/",
-      "to": "https://bestbusinessloans.co.uk/guides/secured-vs-unsecured/",
-      "type": "internal"
-    },
-    {
-      "from": "https://bestbusinessloans.co.uk/reviews/allica-bank/",
-      "to": "https://bestbusinessloans.co.uk/guides/personal-guarantees-explained/",
-      "type": "internal"
-    },
-    {
-      "from": "https://bestbusinessloans.co.uk/reviews/allica-bank/",
-      "to": "https://bestbusinessloans.co.uk/glossary/",
-      "type": "internal"
-    },
-    {
-      "from": "https://bestbusinessloans.co.uk/reviews/allica-bank/",
-      "to": "https://bestbusinessloans.co.uk/about/",
-      "type": "internal"
-    },
-    {
-      "from": "https://bestbusinessloans.co.uk/reviews/allica-bank/",
-      "to": "https://bestbusinessloans.co.uk/methodology/",
-      "type": "internal"
-    },
-    {
-      "from": "https://bestbusinessloans.co.uk/reviews/allica-bank/",
-      "to": "https://bestbusinessloans.co.uk/authors/",
-      "type": "internal"
-    },
-    {
-      "from": "https://bestbusinessloans.co.uk/reviews/allica-bank/",
-      "to": "https://bestbusinessloans.co.uk/editorial-policy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://bestbusinessloans.co.uk/reviews/allica-bank/",
-      "to": "https://bestbusinessloans.co.uk/how-we-are-funded/",
-      "type": "internal"
-    },
-    {
-      "from": "https://bestbusinessloans.co.uk/reviews/allica-bank/",
-      "to": "https://bestbusinessloans.co.uk/contact/",
-      "type": "internal"
-    },
-    {
-      "from": "https://bestbusinessloans.co.uk/reviews/allica-bank/",
-      "to": "https://bestbusinessloans.co.uk/privacy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://bestbusinessloans.co.uk/reviews/allica-bank/",
-      "to": "https://bestbusinessloans.co.uk/terms/",
-      "type": "internal"
-    },
-    {
-      "from": "https://bestbusinessloans.co.uk/reviews/allica-bank/",
-      "to": "https://bestbusinessloans.co.uk/disclaimer/",
-      "type": "internal"
-    },
-    {
-      "from": "https://bestbusinessloans.co.uk/reviews/allica-bank/",
-      "to": "https://bestbusinessloans.co.uk/cookie-policy/",
       "type": "internal"
     }
   ],
@@ -25678,30 +29019,6 @@
     {
       "path": "/404/",
       "url": "https://bestbusinessloans.co.uk/404/"
-    },
-    {
-      "path": "/by-sector/hgv-operator/",
-      "url": "https://bestbusinessloans.co.uk/by-sector/hgv-operator/"
-    },
-    {
-      "path": "/by-sector/taxi-private-hire/",
-      "url": "https://bestbusinessloans.co.uk/by-sector/taxi-private-hire/"
-    },
-    {
-      "path": "/by-sector/opticians/",
-      "url": "https://bestbusinessloans.co.uk/by-sector/opticians/"
-    },
-    {
-      "path": "/by-sector/vets/",
-      "url": "https://bestbusinessloans.co.uk/by-sector/vets/"
-    },
-    {
-      "path": "/by-sector/nursery-childcare/",
-      "url": "https://bestbusinessloans.co.uk/by-sector/nursery-childcare/"
-    },
-    {
-      "path": "/by-sector/franchisee/",
-      "url": "https://bestbusinessloans.co.uk/by-sector/franchisee/"
     },
     {
       "path": "/compare/iwoca-vs-funding-circle/",
@@ -25740,7 +29057,33 @@
       {
         "name": "halal",
         "path": "/halal/",
-        "children": []
+        "children": [
+          {
+            "name": "blme",
+            "path": "/halal/blme/",
+            "children": []
+          },
+          {
+            "name": "al-rayan-bank",
+            "path": "/halal/al-rayan-bank/",
+            "children": []
+          },
+          {
+            "name": "qib-uk",
+            "path": "/halal/qib-uk/",
+            "children": []
+          },
+          {
+            "name": "gatehouse-bank",
+            "path": "/halal/gatehouse-bank/",
+            "children": []
+          },
+          {
+            "name": "kestrl",
+            "path": "/halal/kestrl/",
+            "children": []
+          }
+        ]
       },
       {
         "name": "authors",
@@ -26059,6 +29402,42 @@
         "children": []
       },
       {
+        "name": "hmrc",
+        "path": "/hmrc/",
+        "children": [
+          {
+            "name": "directors-personal-tax-pressure",
+            "path": "/hmrc/directors-personal-tax-pressure/",
+            "children": []
+          },
+          {
+            "name": "paye-cis-arrears",
+            "path": "/hmrc/paye-cis-arrears/",
+            "children": []
+          },
+          {
+            "name": "hmrc-time-to-pay",
+            "path": "/hmrc/hmrc-time-to-pay/",
+            "children": []
+          },
+          {
+            "name": "vat-bill-emergency",
+            "path": "/hmrc/vat-bill-emergency/",
+            "children": []
+          },
+          {
+            "name": "corporation-tax-pressure",
+            "path": "/hmrc/corporation-tax-pressure/",
+            "children": []
+          },
+          {
+            "name": "winding-up-petition",
+            "path": "/hmrc/winding-up-petition/",
+            "children": []
+          }
+        ]
+      },
+      {
         "name": "by-product",
         "path": "/by-product/",
         "children": []
@@ -26226,6 +29605,61 @@
       "signals": [
         "OG",
         "Schema:4",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/halal/blme/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:5",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/halal/al-rayan-bank/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:5",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/halal/qib-uk/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:5",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/halal/gatehouse-bank/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:5",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/halal/kestrl/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:5",
         "Author",
         "Substantive",
         "Breadcrumbs"
@@ -26897,6 +30331,83 @@
       "signals": [
         "OG",
         "Schema:4",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/hmrc/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:4",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/hmrc/directors-personal-tax-pressure/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:5",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/hmrc/paye-cis-arrears/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:5",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/hmrc/hmrc-time-to-pay/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:5",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/hmrc/vat-bill-emergency/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:5",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/hmrc/corporation-tax-pressure/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:5",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/hmrc/winding-up-petition/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:5",
         "Author",
         "Substantive",
         "Breadcrumbs"
