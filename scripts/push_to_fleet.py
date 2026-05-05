@@ -451,6 +451,204 @@ def section_entity_status(site_id, kg_data, kg_mtime):
     return (note + "\n\n" if note else "") + body
 
 
+def section_drift(site_id, drift_data, drift_mtime):
+    """Pages where dashboard-tracked facts (BoE rate, founder, entity) drifted."""
+    if not drift_data:
+        return "_no drift report_"
+    site = (drift_data.get("per_site") or {}).get(site_id, {})
+    if not site:
+        return "_no drift data for this site_"
+    note = staleness_note(drift_mtime, "Drift")
+    drift_count = site.get("drift_count", 0)
+    pages = site.get("pages_scanned", 0)
+    findings = site.get("findings") or []
+    lines = [f"**Drift count:** {drift_count} of {len(findings)} assertions across {pages} pages"]
+    drifted = [f for f in findings if f.get("drift_detected")]
+    weak = [f for f in findings if not f.get("drift_detected") and f.get("coverage_pct", 100) < 80 and f.get("missing_pages")]
+    if drifted:
+        lines.append("")
+        lines.append("**⚠ Drift detected:**")
+        for f in drifted[:5]:
+            lines.append(f"- **{f.get('label')}** expected `{f.get('expected')}` — {f.get('coverage_pct', 0):.0f}% coverage")
+            for url in (f.get("missing_pages") or [])[:3]:
+                lines.append(f"  - missing on {url}")
+    if weak:
+        lines.append("")
+        lines.append("**Coverage gaps (no drift, but assertion missing on some pages):**")
+        for f in weak[:3]:
+            lines.append(f"- **{f.get('label')}** ({f.get('coverage_pct', 0):.0f}%) — {f.get('expected')}")
+            for url in (f.get("missing_pages") or [])[:2]:
+                lines.append(f"  - {url}")
+    if not drifted and not weak:
+        lines.append("All tracked assertions hold.")
+    body = "\n".join(lines)
+    return (note + "\n\n" if note else "") + body
+
+
+def section_content_freshness(site_id, cf_data, cf_mtime):
+    """Stale pages and refresh pile."""
+    if not cf_data:
+        return "_no content freshness data_"
+    site = cf_data.get(site_id, {})
+    if not site:
+        return "_no freshness for this site_"
+    note = staleness_note(cf_mtime, "Content freshness")
+    total = site.get("total_pages", 0)
+    dated = site.get("with_dates", 0)
+    fresh_30 = site.get("fresh_30d", 0)
+    stale = site.get("stale_12mo", 0)
+    median = site.get("median_age_days", 0)
+    lines = [
+        f"**{dated}/{total} pages dated** · fresh ≤30d: {fresh_30} · stale >12mo: {stale} · median age: {median}d"
+    ]
+    refresh = site.get("refresh_pile") or site.get("oldest_pages") or []
+    if refresh:
+        lines.append("")
+        lines.append("**Top 5 oldest dated pages (refresh candidates):**")
+        for p in refresh[:5]:
+            url = p.get("url") or p.get("path", "?")
+            age = p.get("age_days", "?")
+            lm = p.get("last_modified", "?")
+            wc = p.get("word_count", "?")
+            lines.append(f"- {url} — {age}d old (last_modified {lm}, {wc} words)")
+    body = "\n".join(lines)
+    return (note + "\n\n" if note else "") + body
+
+
+def section_entity_coherence(site_id, ec_data, ec_mtime):
+    """sameAs link health — broken / bot-blocked profile URLs."""
+    if not ec_data:
+        return "_no entity coherence data_"
+    site = ec_data.get(site_id, {})
+    if not site:
+        return "_no coherence for this site_"
+    note = staleness_note(ec_mtime, "Entity coherence")
+    summ = site.get("summary") or {}
+    total = summ.get("total", 0)
+    ok = summ.get("ok", 0)
+    broken = summ.get("broken", 0)
+    blocked = summ.get("bot_blocked", 0)
+    score = summ.get("score", 0)
+    lines = [
+        f"**sameAs health:** {ok}/{total} OK ({score}%) · broken: {broken} · bot-blocked (informational): {blocked}"
+    ]
+    bd = site.get("broken_detail") or []
+    if bd:
+        lines.append("")
+        lines.append("**Broken sameAs links:**")
+        for b in bd[:5]:
+            url = b.get("url", "?") if isinstance(b, dict) else str(b)
+            ent = b.get("entity_name", "?") if isinstance(b, dict) else ""
+            err = b.get("error", "?") if isinstance(b, dict) else ""
+            lines.append(f"- {ent}: {url} — {err}")
+    body = "\n".join(lines)
+    return (note + "\n\n" if note else "") + body
+
+
+def section_llms_validation(site_id, lv_data, lv_mtime):
+    """llms.txt validator score + missing checks."""
+    if not lv_data:
+        return "_no llms.txt validation_"
+    site = lv_data.get(site_id, {})
+    if not site:
+        return "_no validation for this site_"
+    note = staleness_note(lv_mtime, "llms.txt validation")
+    txt = site.get("llms_txt") or {}
+    full = site.get("llms_full_txt") or {}
+    accessible = txt.get("accessible", False)
+    score = txt.get("score", 0)
+    missing = txt.get("missing") or []
+    lines = [
+        f"**llms.txt:** {'✅ accessible' if accessible else '❌ inaccessible'} · score {score}/100"
+    ]
+    if isinstance(full, dict) and full.get("accessible") is not None:
+        lines.append(f"**llms-full.txt:** {'✅ accessible' if full.get('accessible') else '❌ missing'}")
+    if missing:
+        lines.append("")
+        lines.append("**Failed checks:**")
+        for m in missing[:6]:
+            lines.append(f"- {m}")
+    body = "\n".join(lines)
+    return (note + "\n\n" if note else "") + body
+
+
+def section_ai_overview(site_id, ao_data, ao_mtime):
+    """AI Overview triggers and our citation status."""
+    if not ao_data:
+        return "_no AI Overview data_"
+    site = ao_data.get(site_id, {})
+    if not site:
+        return "_no AIO data for this site_"
+    note = staleness_note(ao_mtime, "AI Overview")
+    total = site.get("total_queries", 0)
+    detected = site.get("ai_overviews_detected", 0)
+    if detected == 0:
+        return (note + "\n\n" if note else "") + f"_AI Overviews not detected on any of {total} tracked queries (UK B2B niche pattern, not a bug)._"
+    domain = SITES[site_id][2]
+    results = site.get("results") or []
+    cited_in = []
+    not_cited_in = []
+    for r in results:
+        if not r.get("has_ai_overview"):
+            continue
+        ao = r.get("ai_overview") or {}
+        sources = ao.get("sources") or ao.get("references") or []
+        cited = any(domain in (s.get("domain") or s.get("url") or "") for s in sources if isinstance(s, dict))
+        target = cited_in if cited else not_cited_in
+        target.append(r.get("query"))
+    lines = [f"**{detected}/{total} queries trigger AI Overviews** · we're cited in {len(cited_in)}, missed on {len(not_cited_in)}"]
+    if not_cited_in:
+        lines.append("")
+        lines.append("**Top missed AIO queries (citation opportunity):**")
+        for q in not_cited_in[:5]:
+            lines.append(f"- {q}")
+    body = "\n".join(lines)
+    return (note + "\n\n" if note else "") + body
+
+
+def section_bing_queries(site_id, bing_data, bing_mtime):
+    """Top Bing-specific queries (different intent surface vs Google)."""
+    if not bing_data:
+        return "_no Bing data_"
+    site = bing_data.get(site_id, {})
+    if not site:
+        return "_no Bing for this site_"
+    note = staleness_note(bing_mtime, "Bing")
+    queries = site.get("top_queries") or []
+    if not queries:
+        return (note + "\n\n" if note else "") + "_Bing data not populated (low-authority site, ~0 impressions — expected, not a bug)._"
+    queries_sorted = sorted(queries, key=lambda q: -(q.get("Impressions", 0) or 0))
+    rows = []
+    for q in queries_sorted[:SECTION_CAP]:
+        rows.append((
+            q.get("Query", "?"),
+            q.get("Impressions", 0),
+            q.get("Clicks", 0),
+            q.get("AvgImpressionPosition", "?"),
+        ))
+    body = md_table(["Query", "Imp", "Clicks", "Avg pos"], rows)
+    return (note + "\n\n" if note else "") + body
+
+
+def section_new_pages(site_id, np_data, np_mtime):
+    """Recently shipped — count + breakdown by category."""
+    if not np_data:
+        return "_no new-pages data_"
+    site = np_data.get(site_id, {})
+    if not site:
+        return "_no new pages tracked_"
+    note = staleness_note(np_mtime, "New pages")
+    count = site.get("new_pages_count", 0)
+    bc = site.get("by_category") or {}
+    lines = [f"**Total new vs baseline:** {count} pages"]
+    if bc:
+        rows = sorted([(k, v.get("count", 0) if isinstance(v, dict) else v) for k, v in bc.items()], key=lambda x: -x[1])
+        lines.append("")
+        lines.append(md_table(["Category", "Count"], rows[:8]))
+    body = "\n".join(lines)
+    return (note + "\n\n" if note else "") + body
+
+
 def section_citation_gaps_by_type(site_id, cbt_data, cbt_mtime):
     """Top 3 query-type clusters with 0% or near-zero citation rate."""
     if not cbt_data:
@@ -479,7 +677,11 @@ def build_brief(site_id, recs_data, recs_mtime, gsc_data, gsc_mtime, gsc_prev,
                 comp_data, audit_mtime, trends_data, trends_mtime,
                 aeo_data, aeo_mtime, miq_data, miq_mtime,
                 bot_data, bot_mtime, ps_data, ps_mtime,
-                kg_data, kg_mtime, cbt_data, cbt_mtime):
+                kg_data, kg_mtime, cbt_data, cbt_mtime,
+                drift_data, drift_mtime, cf_data, cf_mtime,
+                ec_data, ec_mtime, lv_data, lv_mtime,
+                ao_data, ao_mtime, bing_data, bing_mtime,
+                np_data, np_mtime):
     display, _, domain = SITES[site_id]
     actions_md, top_actions = section_actions(site_id, recs_data, recs_mtime)
     parts = [
@@ -491,9 +693,25 @@ def build_brief(site_id, recs_data, recs_mtime, gsc_data, gsc_mtime, gsc_prev,
         "",
         actions_md,
         "",
+        "## Drift detector (assertions tracked vs page content)",
+        "",
+        section_drift(site_id, drift_data, drift_mtime),
+        "",
         "## Entity status (Wikidata / Google Knowledge Graph)",
         "",
         section_entity_status(site_id, kg_data, kg_mtime),
+        "",
+        "## Entity coherence (sameAs link health)",
+        "",
+        section_entity_coherence(site_id, ec_data, ec_mtime),
+        "",
+        "## llms.txt validator",
+        "",
+        section_llms_validation(site_id, lv_data, lv_mtime),
+        "",
+        "## Content freshness (refresh pile)",
+        "",
+        section_content_freshness(site_id, cf_data, cf_mtime),
         "",
         "## AEO scorecard gaps",
         "",
@@ -502,6 +720,18 @@ def build_brief(site_id, recs_data, recs_mtime, gsc_data, gsc_mtime, gsc_prev,
         "## Manual indexing queue (paste into GSC URL Inspection)",
         "",
         section_manual_indexing(site_id, miq_data, miq_mtime),
+        "",
+        "## AI Overview triggers + citation status",
+        "",
+        section_ai_overview(site_id, ao_data, ao_mtime),
+        "",
+        "## Bing top queries",
+        "",
+        section_bing_queries(site_id, bing_data, bing_mtime),
+        "",
+        "## New pages since baseline",
+        "",
+        section_new_pages(site_id, np_data, np_mtime),
         "",
         "## Page-1 zero-click queries (CTR fix targets)",
         "",
@@ -631,6 +861,14 @@ def main(dry_run=False):
     ps_data, ps_mtime = load_json("pagespeed.json")
     kg_data, kg_mtime = load_json("knowledge_graph.json")
     cbt_data, cbt_mtime = load_json("citations_by_type.json")
+    # v3 sources (added 2026-05-05)
+    drift_data, drift_mtime = load_json("drift_report.json")
+    cf_data, cf_mtime = load_json("content_freshness.json")
+    ec_data, ec_mtime = load_json("entity_coherence.json")
+    lv_data, lv_mtime = load_json("llms_validation.json")
+    ao_data, ao_mtime = load_json("ai_overview_serp.json")
+    bing_data, bing_mtime = load_json("bing.json")
+    np_data, np_mtime = load_json("new_pages.json")
 
     inbox_entries = []
     print(f"push_to_fleet.py — {TODAY}")
@@ -643,6 +881,10 @@ def main(dry_run=False):
             aeo_data, aeo_mtime, miq_data, miq_mtime,
             bot_data, bot_mtime, ps_data, ps_mtime,
             kg_data, kg_mtime, cbt_data, cbt_mtime,
+            drift_data, drift_mtime, cf_data, cf_mtime,
+            ec_data, ec_mtime, lv_data, lv_mtime,
+            ao_data, ao_mtime, bing_data, bing_mtime,
+            np_data, np_mtime,
         )
         if dry_run:
             out_dir = Path("/tmp/fleet_dry_run")
