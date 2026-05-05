@@ -39,6 +39,24 @@ SITES = {
         "max_pages": 500,
         "sitemap": "https://rochellemarashi.pages.dev/sitemap-0.xml",
     },
+    "bestbusinessloans": {
+        "url": "https://bestbusinessloans.pages.dev",
+        "max_pages": 500,
+        "sitemap": "https://bestbusinessloans.pages.dev/sitemap-0.xml",
+        "sitemap_domain_swap": ("https://bestbusinessloans.co.uk", "https://bestbusinessloans.pages.dev"),
+    },
+    "fundbiz": {
+        "url": "https://fundbiz.pages.dev",
+        "max_pages": 500,
+        "sitemap": "https://fundbiz.pages.dev/sitemap-0.xml",
+        "sitemap_domain_swap": ("https://fundbiz.co.uk", "https://fundbiz.pages.dev"),
+    },
+    "cardmachines": {
+        "url": "https://cardmachines.pages.dev",
+        "max_pages": 500,
+        "sitemap": "https://cardmachines.pages.dev/sitemap-0.xml",
+        "sitemap_domain_swap": ("https://cardmachines.co.uk", "https://cardmachines.pages.dev"),
+    },
 }
 
 HEADERS = {
