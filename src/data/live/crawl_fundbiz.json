@@ -1,13 +1,13 @@
 {
   "site_id": "fundbiz",
   "domain": "fundbiz.pages.dev",
-  "crawled_at": "2026-05-05T18:41:29.978830+00:00",
+  "crawled_at": "2026-05-05T18:56:42.276038+00:00",
   "source": "fleet-source-reader",
   "pages_crawled": 83,
   "total_issues": 0,
-  "orphan_pages": 3,
+  "orphan_pages": 2,
   "avg_depth": 1.7108433734939759,
-  "avg_word_count": 1377,
+  "avg_word_count": 1379,
   "pages_with_schema": 83,
   "pages_with_multimodal": 0,
   "pages_with_comparison_table": 0,
@@ -123,21 +123,21 @@
   },
   "topic_cluster_count": 24,
   "term_consistency": {
-    "business": 129,
-    "finance": 114,
-    "loan": 67,
-    "lenders": 53,
-    "fundbiz": 40,
-    "asset": 38,
+    "business": 127,
+    "finance": 113,
+    "loan": 66,
+    "lenders": 54,
+    "fundbiz": 41,
+    "asset": 37,
     "declined": 35,
     "equipment": 29,
     "bank": 22,
     "eligibility": 21,
+    "decline": 20,
     "loans": 19,
-    "decline": 19,
-    "commercial": 17,
     "rates": 17,
-    "next": 17
+    "next": 17,
+    "commercial": 16
   },
   "content_freshness": {
     "pages_with_dates": 83,
@@ -150,10 +150,10 @@
     {
       "url": "https://fundbiz.co.uk/./",
       "path": "/./",
-      "title": "FundBiz \u2014 UK Specialty Business Finance: MCA, Asset Finance, Commercial Mortgages",
-      "h1": "When a standard business loan won't work",
-      "meta_desc": "Compare specialty UK business finance \u2014 merchant cash advance, asset finance, commercial mortgages, VAT loans, R&#38;D advances, bridging. Limited companies only. Fast funding from \u00a35k to \u00a35m.",
-      "word_count": 1522,
+      "title": "FundBiz \u2014 UK Specialty Business Finance for Limited Companies",
+      "h1": "When mainstream lenders say no, FundBiz routes you to the ones who say yes.",
+      "meta_desc": "UK specialty SMB finance broker for limited companies, LLPs and partnerships of 4+. MCA, asset finance, commercial mortgages, VAT loans, R&#38;D advances, bridging, post-decline matching. \u00a35k to \u00a35m, decisions in 24-72 hours.",
+      "word_count": 1662,
       "status": 200,
       "schemas": [
         "Person",
@@ -161,8 +161,8 @@
         "WebSite",
         "WebPage"
       ],
-      "internal_links_out": 25,
-      "external_links_out": -18,
+      "internal_links_out": 29,
+      "external_links_out": -21,
       "canonical": "https://fundbiz.co.uk/./",
       "response_time_ms": 0,
       "image_count": 0,
@@ -171,13 +171,13 @@
       "has_multimodal": false,
       "has_comparison_table": false,
       "table_count": 0,
-      "list_count": 3,
-      "question_h2s": 2,
-      "h2_count": 3,
+      "list_count": 5,
+      "question_h2s": 1,
+      "h2_count": 4,
       "last_modified": "2026-04-26",
-      "has_answer_capsule": true,
+      "has_answer_capsule": false,
       "has_og_tags": true,
-      "has_author": false,
+      "has_author": true,
       "has_definition": false,
       "has_cta": true,
       "has_breadcrumbs": false,
@@ -905,7 +905,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1,
+      "internal_links_in": 2,
       "depth": 1
     },
     {
@@ -1096,7 +1096,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 2,
+      "internal_links_in": 3,
       "depth": 2
     },
     {
@@ -1476,7 +1476,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 0,
+      "internal_links_in": 1,
       "depth": 1
     },
     {
@@ -1552,7 +1552,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 12,
+      "internal_links_in": 13,
       "depth": 1
     },
     {
@@ -3334,7 +3334,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/./",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -3444,22 +3444,52 @@
     },
     {
       "from": "https://fundbiz.co.uk/./",
-      "to": "https://fundbiz.co.uk/commercial-mortgage/",
+      "to": "https://fundbiz.co.uk/declined/",
       "type": "internal"
     },
     {
       "from": "https://fundbiz.co.uk/./",
-      "to": "https://fundbiz.co.uk/bridging/",
+      "to": "https://fundbiz.co.uk/authors/oliver-mackman/",
       "type": "internal"
     },
     {
       "from": "https://fundbiz.co.uk/./",
-      "to": "https://fundbiz.co.uk/vat-loan/",
+      "to": "https://fundbiz.co.uk/products/",
       "type": "internal"
     },
     {
       "from": "https://fundbiz.co.uk/./",
       "to": "https://fundbiz.co.uk/declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fundbiz.co.uk/./",
+      "to": "https://fundbiz.co.uk/sectors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fundbiz.co.uk/./",
+      "to": "https://fundbiz.co.uk/banks/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fundbiz.co.uk/./",
+      "to": "https://fundbiz.co.uk/asset-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fundbiz.co.uk/./",
+      "to": "https://fundbiz.co.uk/calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fundbiz.co.uk/./",
+      "to": "https://fundbiz.co.uk/eligibility-checker/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fundbiz.co.uk/./",
+      "to": "https://fundbiz.co.uk/hmrc/",
       "type": "internal"
     },
     {
@@ -3579,7 +3609,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/404/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -3799,7 +3829,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/contact/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -4009,7 +4039,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/sectors/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -4284,7 +4314,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/sectors/agriculture/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -4499,7 +4529,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/sectors/hospitality/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -4714,7 +4744,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/sectors/transport/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -4929,7 +4959,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/sectors/technology/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -5144,7 +5174,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/sectors/energy/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -5359,7 +5389,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/sectors/healthcare/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -5574,7 +5604,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/sectors/recruitment/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -5789,7 +5819,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/sectors/education/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -6004,7 +6034,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/sectors/retail/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -6219,7 +6249,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/sectors/manufacturing/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -6434,7 +6464,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/sectors/professional-services/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -6649,7 +6679,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/sectors/e-commerce/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -6864,7 +6894,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/sectors/construction/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -7079,7 +7109,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/sectors/charity-cic/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -7294,7 +7324,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/products/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -7529,7 +7559,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/calculator/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -7744,7 +7774,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/calculator/mca/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -7959,7 +7989,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/privacy/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -8164,7 +8194,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/disclaimer/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -8379,7 +8409,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/authors/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -8589,7 +8619,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/authors/oliver-mackman/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -8814,7 +8844,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/vat-loan/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -9029,7 +9059,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/how-we-are-funded/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -9239,7 +9269,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/terms/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -9444,7 +9474,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/about/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -9659,7 +9689,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/how-we-work/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -9864,7 +9894,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/eligibility-checker/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -10084,7 +10114,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/r-and-d-advance/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -10299,7 +10329,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/editorial-policy/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -10509,7 +10539,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/bridging/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -10724,7 +10754,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/hmrc/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -10949,7 +10979,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/commercial-mortgage/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -11164,7 +11194,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/banks/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -11434,7 +11464,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/banks/allica-bank-business-loan/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -11649,7 +11679,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/banks/rbs/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -11864,7 +11894,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/banks/starling/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -12079,7 +12109,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/banks/tide/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -12294,7 +12324,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/banks/hsbc/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -12509,7 +12539,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/banks/santander/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -12724,7 +12754,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/banks/natwest/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -12939,7 +12969,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/banks/barclays/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -13154,7 +13184,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/banks/metro-bank/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -13369,7 +13399,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/banks/revolut-business/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -13584,7 +13614,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/banks/lloyds/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -13799,7 +13829,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/banks/monzo-business/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -14014,7 +14044,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/mca/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -14229,7 +14259,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/asset-finance/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -14519,7 +14549,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/asset-finance/tractor-finance/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -14729,7 +14759,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/asset-finance/sound-equipment-finance/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -14939,7 +14969,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/asset-finance/salon-equipment-finance/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -15149,7 +15179,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/asset-finance/hgv-finance/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -15359,7 +15389,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/asset-finance/restaurant-equipment-finance/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -15569,7 +15599,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/asset-finance/scaffolding-finance/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -15779,7 +15809,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/asset-finance/modular-building-finance/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -15989,7 +16019,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/asset-finance/cnc-machine-finance/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -16199,7 +16229,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/asset-finance/printer-finance/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -16409,7 +16439,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/asset-finance/photography-equipment-finance/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -16619,7 +16649,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/asset-finance/forklift-finance/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -16829,7 +16859,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/asset-finance/gym-equipment-finance/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -17039,7 +17069,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/asset-finance/dental-chair-finance/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -17249,7 +17279,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/asset-finance/it-equipment-finance/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -17459,7 +17489,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/asset-finance/van-finance/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -17669,7 +17699,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/declined/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -17959,7 +17989,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/declined/recent-director-change/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -18174,7 +18204,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/declined/existing-debt-with-lender/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -18389,7 +18419,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/declined/sole-trader-application/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -18604,7 +18634,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/declined/missed-payments/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -18819,7 +18849,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/declined/sector/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -19034,7 +19064,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/declined/low-turnover/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -19249,7 +19279,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/declined/high-affordability-ratio/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -19464,7 +19494,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/declined/ccj/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -19679,7 +19709,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/declined/companies-house-overdue/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -19894,7 +19924,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/declined/complex-group/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -20109,7 +20139,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/declined/overseas-director/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -20324,7 +20354,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/declined/sub-12-months/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -20539,7 +20569,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/declined/no-business-bank-account/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -20754,7 +20784,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/declined/pre-revenue/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -20969,7 +20999,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/declined/thin-file/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -21184,7 +21214,7 @@
     },
     {
       "from": "https://fundbiz.co.uk/declined/restructured-recent/",
-      "to": "https://fundbiz.co.uk/_astro/404.Bzn2kfQo.css",
+      "to": "https://fundbiz.co.uk/_astro/404.DL8nH9kp.css",
       "type": "internal"
     },
     {
@@ -21397,10 +21427,6 @@
     {
       "path": "/404/",
       "url": "https://fundbiz.co.uk/404/"
-    },
-    {
-      "path": "/hmrc/",
-      "url": "https://fundbiz.co.uk/hmrc/"
     }
   ],
   "tree": {
@@ -21833,10 +21859,11 @@
   "positive_signals": [
     {
       "path": "/./",
-      "score": 3,
+      "score": 4,
       "signals": [
         "OG",
         "Schema:4",
+        "Author",
         "Substantive"
       ]
     },
