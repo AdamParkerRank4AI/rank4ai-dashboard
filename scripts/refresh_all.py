@@ -134,17 +134,21 @@ def main():
     for script, timeout in scripts:
         results[script] = run_script(script, timeout)
 
-    # These take longer — run less frequently (check marker)
+    # Fleet source reader — ~6s, runs every refresh.
+    # Replaces crawler for owned fleet sites (R4/MI/SC/BBL/FB/CM). Crawler
+    # only runs as fallback for sites we do not own (Rochelle, future clients).
+    run_script("read_fleet_source.py", 120)
+
     today = datetime.now().strftime("%Y-%m-%d")
     crawl_marker = os.path.expanduser(f"~/.rank4ai_dashboard_crawl_{today}")
 
     if not os.path.exists(crawl_marker):
-        # Full crawl — only once per day
+        # External crawl — fallback for non-owned sites; runs once per day.
         if run_script("crawl_sites.py", 1200):
             run_script("run_ai_audit.py", 300)
             open(crawl_marker, "w").close()
     else:
-        log("Crawl already done today — skipping")
+        log("External crawl already done today — skipping")
 
     # Entity coherence — sameAs URL liveness check. Run weekly (Mondays) since
     # social profile URLs do not change often and external HEADs are slow.

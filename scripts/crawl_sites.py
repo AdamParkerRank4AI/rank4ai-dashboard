@@ -18,44 +18,15 @@ from bs4 import BeautifulSoup
 
 OUTPUT_DIR = os.path.expanduser("~/rank4ai-dashboard/src/data/live")
 
+# Fleet sites we OWN (R4/MI/SC/BBL/FB/CM) are read from source by
+# scripts/read_fleet_source.py — that's faster, more accurate, no network.
+# This crawler only handles sites we OPERATE BUT DO NOT OWN (clients).
+# When a new client site gets added to clients.json, add the entry here too.
 SITES = {
-    "rank4ai": {
-        "url": "https://www.rank4ai.co.uk",
-        "max_pages": 1000,
-        "sitemap": "https://www.rank4ai.co.uk/sitemap-0.xml",
-    },
-    "market-invoice": {
-        "url": "https://www.marketinvoice.co.uk",
-        "max_pages": 1000,
-        "sitemap": "https://marketinvoice.co.uk/sitemap-0.xml",
-    },
-    "seocompare": {
-        "url": "https://www.seocompare.co.uk",
-        "max_pages": 1000,
-        "sitemap": "https://seocompare.co.uk/sitemap-0.xml",
-    },
     "rochellemarashi": {
         "url": "https://rochellemarashi.pages.dev",
         "max_pages": 500,
         "sitemap": "https://rochellemarashi.pages.dev/sitemap-0.xml",
-    },
-    "bestbusinessloans": {
-        "url": "https://bestbusinessloans.pages.dev",
-        "max_pages": 500,
-        "sitemap": "https://bestbusinessloans.pages.dev/sitemap-0.xml",
-        "sitemap_domain_swap": ("https://bestbusinessloans.co.uk", "https://bestbusinessloans.pages.dev"),
-    },
-    "fundbiz": {
-        "url": "https://fundbiz.pages.dev",
-        "max_pages": 500,
-        "sitemap": "https://fundbiz.pages.dev/sitemap-0.xml",
-        "sitemap_domain_swap": ("https://fundbiz.co.uk", "https://fundbiz.pages.dev"),
-    },
-    "cardmachines": {
-        "url": "https://cardmachines.pages.dev",
-        "max_pages": 500,
-        "sitemap": "https://cardmachines.pages.dev/sitemap-0.xml",
-        "sitemap_domain_swap": ("https://cardmachines.co.uk", "https://cardmachines.pages.dev"),
     },
 }
 
