@@ -2277,12 +2277,12 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
       <div class="bg-gray-900 border border-green-800/50 rounded-lg p-6">
         <h3 class="text-sm font-semibold text-green-400 mb-4">What's Working ({crawlData.positive_signals.length} signals)</h3>
         <div class="space-y-2 max-h-[600px] overflow-y-auto">
-          {crawlData.positive_signals.map((s: any) => (
+          {crawlData.positive_signals.filter((s: any) => s && s.url).map((s: any) => (
             <div class="flex items-center gap-3 text-xs border-b border-gray-800/50 pb-2">
               <span class={`px-2 py-0.5 rounded text-[10px] ${s.type === 'schema' ? 'bg-blue-900/50 text-blue-300' : s.type === 'good_content' ? 'bg-green-900/50 text-green-300' : 'bg-purple-900/50 text-purple-300'}`}>
-                {s.type.replace(/_/g, ' ')}
+                {(s.type || 'signal').replace(/_/g, ' ')}
               </span>
-              <span class="text-gray-300 truncate">{new URL(s.url).pathname}</span>
+              <span class="text-gray-300 truncate">{(() => { try { return new URL(s.url).pathname; } catch { return s.url; } })()}</span>
               <span class="text-gray-500 ml-auto">{s.detail}</span>
             </div>
           ))}
