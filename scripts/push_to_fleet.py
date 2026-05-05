@@ -649,6 +649,109 @@ def section_new_pages(site_id, np_data, np_mtime):
     return (note + "\n\n" if note else "") + body
 
 
+def section_thin_pages_broken(site_id):
+    """Per-page thin (<300 words) + broken (status>=400) + orphan + issue counts from crawl_<site>.json."""
+    crawl, mtime = load_json(f"crawl_{site_id}.json")
+    if not crawl:
+        return "_no crawl data_"
+    note = staleness_note(mtime, "Crawl")
+    pages = crawl.get("pages") or []
+    issues = crawl.get("issues") or []
+    orphans = crawl.get("orphans") or []
+    thin = [p for p in pages if 0 < (p.get("word_count") or 0) < 300]
+    broken = [p for p in pages if (p.get("status") or 200) >= 400]
+    issue_types = {}
+    for i in issues:
+        t = i.get("type", "?")
+        issue_types[t] = issue_types.get(t, 0) + 1
+    issue_summary = " · ".join(f"{t}: {n}" for t, n in sorted(issue_types.items(), key=lambda x: -x[1])[:5])
+    lines = [
+        f"**Crawl:** {len(pages)} pages · {len(issues)} issues · {len(thin)} thin (<300w) · {len(broken)} broken (status≥400) · {len(orphans)} orphans"
+    ]
+    if issue_summary:
+        lines.append(f"**Issue types:** {issue_summary}")
+    if thin:
+        lines.append("")
+        lines.append("**Thinnest 5 pages (refresh or merge):**")
+        for p in sorted(thin, key=lambda x: x.get("word_count") or 0)[:5]:
+            lines.append(f"- {p.get('url','?')} — {p.get('word_count',0)} words")
+    if broken:
+        lines.append("")
+        lines.append("**Broken pages (status≥400):**")
+        for p in broken[:5]:
+            lines.append(f"- {p.get('url','?')} — status {p.get('status')}")
+    if orphans:
+        lines.append("")
+        lines.append(f"**Orphans:** {len(orphans)} page(s) with no inbound internal links")
+        for o in orphans[:3]:
+            url = o.get("url", "?") if isinstance(o, dict) else str(o)
+            lines.append(f"- {url}")
+    body = "\n".join(lines)
+    return (note + "\n\n" if note else "") + body
+
+
+def section_ga4_traffic(site_id, ga4_data, ga4_mtime):
+    """Traffic overview + top sources from GA4."""
+    if not ga4_data:
+        return "_no GA4 data_"
+    site = ga4_data.get(site_id, {})
+    if not site:
+        return "_no GA4 for this site_"
+    note = staleness_note(ga4_mtime, "GA4")
+    overview = site.get("overview") or {}
+    sources = site.get("sources") or []
+    top_pages = site.get("top_pages") or []
+    period = site.get("period") or "?"
+    lines = [
+        f"**Period:** {period}",
+        f"**Users:** {overview.get('active_users', '?')} · **Sessions:** {overview.get('sessions', '?')} · **Pageviews:** {overview.get('pageviews', '?')} · **Bounce:** {overview.get('bounce_rate', '?')}%",
+    ]
+    if sources:
+        lines.append("")
+        lines.append("**Top channels:**")
+        srows = sorted(sources, key=lambda s: -(s.get("sessions") or 0))[:5]
+        rows = [(s.get("channel", "?"), s.get("sessions", 0), s.get("users", 0)) for s in srows]
+        lines.append(md_table(["Channel", "Sessions", "Users"], rows))
+    if top_pages:
+        lines.append("")
+        lines.append("**Top 5 pages by pageviews:**")
+        prows = sorted(top_pages, key=lambda p: -(p.get("pageviews") or 0))[:5]
+        for p in prows:
+            lines.append(f"- {p.get('path','?')} — {p.get('pageviews',0)} views")
+    body = "\n".join(lines)
+    return (note + "\n\n" if note else "") + body
+
+
+def section_audit_history(site_id, ah_data, ah_mtime):
+    """14-day audit issue trend from daily_audit_history.json."""
+    if not ah_data:
+        return "_no audit history_"
+    site = ah_data.get(site_id) or []
+    if not site:
+        return "_no history for this site_"
+    note = staleness_note(ah_mtime, "Audit history")
+    recent = site[-14:] if len(site) > 14 else site
+    if not recent:
+        return (note + "\n\n" if note else "") + "_no entries_"
+    first = recent[0]
+    last = recent[-1]
+    delta_issues = (last.get("issues_total", 0) or 0) - (first.get("issues_total", 0) or 0)
+    arrow = "↓" if delta_issues < 0 else ("↑" if delta_issues > 0 else "→")
+    lines = [
+        f"**{len(recent)}-day window:** {first.get('date','?')} → {last.get('date','?')}",
+        f"**Issues:** {first.get('issues_total', 0)} → {last.get('issues_total', 0)} ({arrow}{abs(delta_issues)})",
+        f"**Pages with issues:** {first.get('pages_with_issues', 0)} → {last.get('pages_with_issues', 0)}",
+    ]
+    spikes = [d for d in recent if (d.get("issues_total") or 0) > 0]
+    if spikes:
+        lines.append("")
+        lines.append("**Days with non-zero issues:**")
+        for d in spikes[-5:]:
+            lines.append(f"- {d.get('date','?')}: {d.get('issues_total',0)} issues across {d.get('pages_with_issues',0)} pages")
+    body = "\n".join(lines)
+    return (note + "\n\n" if note else "") + body
+
+
 def section_citation_gaps_by_type(site_id, cbt_data, cbt_mtime):
     """Top 3 query-type clusters with 0% or near-zero citation rate."""
     if not cbt_data:
@@ -681,7 +784,8 @@ def build_brief(site_id, recs_data, recs_mtime, gsc_data, gsc_mtime, gsc_prev,
                 drift_data, drift_mtime, cf_data, cf_mtime,
                 ec_data, ec_mtime, lv_data, lv_mtime,
                 ao_data, ao_mtime, bing_data, bing_mtime,
-                np_data, np_mtime):
+                np_data, np_mtime, ga4_data, ga4_mtime,
+                ah_data, ah_mtime):
     display, _, domain = SITES[site_id]
     actions_md, top_actions = section_actions(site_id, recs_data, recs_mtime)
     parts = [
@@ -768,6 +872,18 @@ def build_brief(site_id, recs_data, recs_mtime, gsc_data, gsc_mtime, gsc_prev,
         "## Crawl audit (today)",
         "",
         section_audit(site_id, audit_mtime),
+        "",
+        "## Crawl: thin pages, broken pages, orphans",
+        "",
+        section_thin_pages_broken(site_id),
+        "",
+        "## Audit history (last 14 days)",
+        "",
+        section_audit_history(site_id, ah_data, ah_mtime),
+        "",
+        "## GA4 traffic",
+        "",
+        section_ga4_traffic(site_id, ga4_data, ga4_mtime),
         "",
         "## Trends (Google Trends GB, 3mo)",
         "",
@@ -869,6 +985,8 @@ def main(dry_run=False):
     ao_data, ao_mtime = load_json("ai_overview_serp.json")
     bing_data, bing_mtime = load_json("bing.json")
     np_data, np_mtime = load_json("new_pages.json")
+    ga4_data, ga4_mtime = load_json("ga4.json")
+    ah_data, ah_mtime = load_json("daily_audit_history.json")
 
     inbox_entries = []
     print(f"push_to_fleet.py — {TODAY}")
@@ -884,7 +1002,8 @@ def main(dry_run=False):
             drift_data, drift_mtime, cf_data, cf_mtime,
             ec_data, ec_mtime, lv_data, lv_mtime,
             ao_data, ao_mtime, bing_data, bing_mtime,
-            np_data, np_mtime,
+            np_data, np_mtime, ga4_data, ga4_mtime,
+            ah_data, ah_mtime,
         )
         if dry_run:
             out_dir = Path("/tmp/fleet_dry_run")
