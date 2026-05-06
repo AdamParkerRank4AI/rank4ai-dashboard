@@ -180,7 +180,8 @@
       "content-plan",
       "daily-audit"
     ],
-    "sections": []
+    "sections": [],
+    "pre_launch": true
   },
   {
     "id": "fundbiz",
@@ -218,7 +219,8 @@
       "content-plan",
       "daily-audit"
     ],
-    "sections": []
+    "sections": [],
+    "pre_launch": true
   },
   {
     "id": "cardmachines",
@@ -229,6 +231,85 @@
     "flavour": "leadgen",
     "clientCode": "CARDMACHINES",
     "notes": "Pre-launch. Local scaffold at ~/cardmachines. GitHub repo private. CF Pages project not yet created. Terminals + high-risk verticals.",
+    "clientViewSections": [
+      "site-structure",
+      "site-manager",
+      "page-compliance",
+      "ai-readiness",
+      "uptime",
+      "indexing"
+    ],
+    "allSections": [
+      "overview",
+      "site-structure",
+      "ai-readiness",
+      "ai-citations",
+      "site-manager",
+      "page-compliance",
+      "traffic",
+      "search-performance",
+      "indexing",
+      "competitors",
+      "site-tree",
+      "uptime",
+      "site-speed",
+      "crawl-activity",
+      "recommendations",
+      "content-plan",
+      "daily-audit"
+    ],
+    "sections": [],
+    "pre_launch": true
+  },
+  {
+    "id": "findatradey",
+    "name": "FindATradey",
+    "domain": "findatradey.pages.dev",
+    "liveDomain": "findatradey.co.uk",
+    "logo": "",
+    "flavour": "leadgen",
+    "clientCode": "FAT",
+    "pre_launch": true,
+    "notes": "Pre-launch. Local at ~/findatradey, repo AdamParkerRank4AI/findatradey. CF Pages live at findatradey.pages.dev. UK trade lead matching by Best Business Loans Ltd. 8 districts, 3 trades, 11 intents = 88 dynamic + 21 static = 109 URLs. Daily-audit/CWV fetchers should skip until preLaunch flips.",
+    "clientViewSections": [
+      "site-structure",
+      "site-manager",
+      "page-compliance",
+      "ai-readiness",
+      "uptime",
+      "indexing"
+    ],
+    "allSections": [
+      "overview",
+      "site-structure",
+      "ai-readiness",
+      "ai-citations",
+      "site-manager",
+      "page-compliance",
+      "traffic",
+      "search-performance",
+      "indexing",
+      "competitors",
+      "site-tree",
+      "uptime",
+      "site-speed",
+      "crawl-activity",
+      "recommendations",
+      "content-plan",
+      "daily-audit"
+    ],
+    "sections": []
+  },
+  {
+    "id": "findagym",
+    "name": "FindAGym",
+    "domain": "findagym.pages.dev",
+    "liveDomain": "findagym.co.uk",
+    "logo": "",
+    "flavour": "leadgen",
+    "clientCode": "FAG",
+    "pre_launch": true,
+    "notes": "Pre-launch. Local at ~/findagym, repo AdamParkerRank4AI/findagym. CF Pages live at findagym.pages.dev. UK gym + fitness reviews by Best Business Loans Ltd. Colchester pilot, 35 URLs + 10 foundation. Differentiator: honest verdict + worst-for section on every review. Daily-audit/CWV fetchers should skip until preLaunch flips.",
     "clientViewSections": [
       "site-structure",
       "site-manager",
