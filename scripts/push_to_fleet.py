@@ -33,11 +33,33 @@ ICLOUD_FLEET = Path.home() / "Library/Mobile Documents/com~apple~CloudDocs/claud
 INBOX = ICLOUD_FLEET / "INBOX.md"
 
 # site_id -> (display, repo_path, domain)
+# Pre-launch leadgen sites are gated by clients.json `pre_launch: true` —
+# brief generation is skipped for those until they go live (no point pushing
+# DAILY_BRIEF.md to a noindex site). Once the flag flips to false the brief
+# starts flowing automatically.
 SITES = {
-    "rank4ai":        ("R4", Path.home() / "rank4ai-site",            "rank4ai.co.uk"),
-    "market-invoice": ("MI", Path.home() / "compare-invoice-finance", "marketinvoice.co.uk"),
-    "seocompare":     ("SC", Path.home() / "compareaiseo",            "seocompare.co.uk"),
+    "rank4ai":           ("R4",  Path.home() / "rank4ai-site",            "rank4ai.co.uk"),
+    "market-invoice":    ("MI",  Path.home() / "compare-invoice-finance", "marketinvoice.co.uk"),
+    "seocompare":        ("SC",  Path.home() / "compareaiseo",            "seocompare.co.uk"),
+    "bestbusinessloans": ("BBL", Path.home() / "bestbusinessloans",       "bestbusinessloans.co.uk"),
+    "fundbiz":           ("FB",  Path.home() / "fundbiz",                 "fundbiz.co.uk"),
+    "cardmachines":      ("CT",  Path.home() / "cardmachines",            "cardmachines.co.uk"),
 }
+
+
+def _load_pre_launch_set():
+    """Return a set of slugs flagged pre_launch:true in clients.json so
+    push_to_fleet.py skips them until the flag flips."""
+    try:
+        with open(PROJECT_DIR / "src" / "data" / "clients.json") as f:
+            data = json.load(f)
+        clients = data if isinstance(data, list) else data.get("clients", [])
+        return {c.get("slug") or c.get("id") for c in clients if c.get("pre_launch")}
+    except Exception:
+        return set()
+
+
+PRE_LAUNCH = _load_pre_launch_set()
 
 SECTION_CAP = 5           # most sections cap at top-N
 STALE_DAYS = 2            # warn if a source file is older than this
@@ -1037,6 +1059,9 @@ def main(dry_run=False):
     inbox_entries = []
     print(f"push_to_fleet.py — {TODAY}")
     for site_id in SITES:
+        if site_id in PRE_LAUNCH:
+            print(f"  skip {site_id} (pre_launch:true in clients.json)")
+            continue
         display, _, domain = SITES[site_id]
         brief, top_actions = build_brief(
             site_id, recs_data, recs_mtime, gsc_data, gsc_mtime, gsc_prev,
