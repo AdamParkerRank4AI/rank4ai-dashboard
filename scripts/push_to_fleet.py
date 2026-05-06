@@ -649,6 +649,47 @@ def section_new_pages(site_id, np_data, np_mtime):
     return (note + "\n\n" if note else "") + body
 
 
+def section_indexing_health(site_id, ih_data, ih_mtime):
+    """Per-URL ground-truth indexing rollup (today + 7d) + GSC coverage if available."""
+    if not ih_data:
+        return "_no indexing health data_"
+    site = (ih_data.get("per_site") or {}).get(site_id, {})
+    if not site:
+        return "_no indexing health for this site_"
+    note = staleness_note(ih_mtime, "Indexing health")
+    today = site.get("today") or {}
+    last_7d = site.get("last_7d") or {}
+    status = site.get("status", "?")
+    flag = {"healthy": "✅", "warning": "⚠", "error": "❌"}.get(status, "?")
+    today_rate = today.get("success_rate")
+    rate_str = f"{today_rate}%" if today_rate is not None else "—"
+    lines = [
+        f"**Status:** {flag} {status.upper()} · today {today.get('ok', 0)}/{today.get('submitted', 0)} ({rate_str}) · 7d {last_7d.get('ok', 0)}/{last_7d.get('submitted', 0)}"
+    ]
+    for reason in (site.get("status_reasons") or []):
+        lines.append(f"- ⚠ {reason}")
+    cov = site.get("gsc_coverage")
+    if cov:
+        idx = cov.get("indexed", 0)
+        nidx = cov.get("not_indexed", 0)
+        rate = cov.get("index_rate", 0)
+        lines.append("")
+        lines.append(f"**GSC coverage:** {idx} indexed / {nidx} not indexed ({rate}% index rate)")
+        issues = cov.get("issues") or {}
+        if issues:
+            top_issues = sorted(issues.items(), key=lambda x: -x[1])[:3]
+            for itype, count in top_issues:
+                lines.append(f"  - {itype}: {count}")
+    else:
+        lines.append("")
+        lines.append("_GSC coverage data not available (needs manual XLSX export from Search Console — only present for R4 today)._")
+    last_sub = site.get("last_submission_at")
+    if last_sub:
+        lines.append(f"\n**Last submission:** {last_sub}")
+    body = "\n".join(lines)
+    return (note + "\n\n" if note else "") + body
+
+
 def section_thin_pages_broken(site_id):
     """Per-page thin (<300 words) + broken (status>=400) + orphan + issue counts from crawl_<site>.json."""
     crawl, mtime = load_json(f"crawl_{site_id}.json")
@@ -785,7 +826,7 @@ def build_brief(site_id, recs_data, recs_mtime, gsc_data, gsc_mtime, gsc_prev,
                 ec_data, ec_mtime, lv_data, lv_mtime,
                 ao_data, ao_mtime, bing_data, bing_mtime,
                 np_data, np_mtime, ga4_data, ga4_mtime,
-                ah_data, ah_mtime):
+                ah_data, ah_mtime, ih_data, ih_mtime):
     display, _, domain = SITES[site_id]
     actions_md, top_actions = section_actions(site_id, recs_data, recs_mtime)
     parts = [
@@ -820,6 +861,10 @@ def build_brief(site_id, recs_data, recs_mtime, gsc_data, gsc_mtime, gsc_prev,
         "## AEO scorecard gaps",
         "",
         section_aeo(site_id, aeo_data, aeo_mtime),
+        "",
+        "## Indexing health (Google Indexing API per-URL ground truth)",
+        "",
+        section_indexing_health(site_id, ih_data, ih_mtime),
         "",
         "## Manual indexing queue (paste into GSC URL Inspection)",
         "",
@@ -987,6 +1032,7 @@ def main(dry_run=False):
     np_data, np_mtime = load_json("new_pages.json")
     ga4_data, ga4_mtime = load_json("ga4.json")
     ah_data, ah_mtime = load_json("daily_audit_history.json")
+    ih_data, ih_mtime = load_json("indexing_health.json")
 
     inbox_entries = []
     print(f"push_to_fleet.py — {TODAY}")
@@ -1003,7 +1049,7 @@ def main(dry_run=False):
             ec_data, ec_mtime, lv_data, lv_mtime,
             ao_data, ao_mtime, bing_data, bing_mtime,
             np_data, np_mtime, ga4_data, ga4_mtime,
-            ah_data, ah_mtime,
+            ah_data, ah_mtime, ih_data, ih_mtime,
         )
         if dry_run:
             out_dir = Path("/tmp/fleet_dry_run")
