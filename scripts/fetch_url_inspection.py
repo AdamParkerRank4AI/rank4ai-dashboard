@@ -15,7 +15,7 @@ import json
 import os
 import sys
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from google.oauth2.credentials import Credentials
@@ -32,9 +32,10 @@ SITES = {
     "seocompare":     ("sc-domain:seocompare.co.uk",    "seocompare.co.uk"),
 }
 
-# Per-site cap to stay under 2000/day quota with margin
-DAILY_CAP = 1500
-SLEEP_BETWEEN = 0.4
+# Per-site cap. URL Inspection API runs ~6.6s per call (Google's rate). 500 URLs ≈ 55 min.
+# Quota is 2000/day per property, but real-world rate-limit is the bottleneck.
+DAILY_CAP = 500
+SLEEP_BETWEEN = 0.2
 
 
 def get_creds():
@@ -98,11 +99,30 @@ def site_urls(site_id):
     return sorted(urls)
 
 
+def already_checked(site_id, max_age_days=7):
+    """Read prior raw results for this site, return dict of url -> result for
+    any URL inspected within max_age_days. Used to skip recently-inspected
+    URLs and only call the API for new or stale ones."""
+    out_path = LIVE / "indexing_status.json"
+    if not out_path.exists():
+        return {}
+    try:
+        with open(out_path) as f:
+            data = json.load(f)
+    except Exception:
+        return {}
+    site = (data.get("per_site") or {}).get(site_id, {})
+    raw = site.get("raw_results") or []
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=max_age_days)).isoformat()
+    return {r["url"]: r for r in raw if r.get("checked_at", "") >= cutoff and r.get("url")}
+
+
 def classify(results):
-    """Group results by GSC coverage state."""
+    """Group results by GSC coverage state. Returns summary + raw + url lists per bucket."""
     by_state = {}
     broken = []
     not_indexed_serveable = []  # discovered/crawled-not-indexed
+    unknown = []  # "URL is unknown to Google" — Google has never seen this URL
     indexed = []
     redirects = []
     blocked = []
@@ -114,7 +134,9 @@ def classify(results):
         cov = r.get("coverage_state") or "Unknown"
         by_state.setdefault(cov, []).append(r["url"])
         cov_lower = cov.lower()
-        if "404" in cov or "not found" in cov_lower:
+        if "unknown to google" in cov_lower:
+            unknown.append(r)
+        elif "404" in cov or "not found" in cov_lower:
             broken.append(r)
         elif "indexed" in cov_lower and "not indexed" not in cov_lower:
             indexed.append(r)
@@ -128,36 +150,50 @@ def classify(results):
         "by_coverage_state": {k: len(v) for k, v in by_state.items()},
         "indexed_count": len(indexed),
         "not_indexed_count": len(not_indexed_serveable),
+        "unknown_to_google_count": len(unknown),
         "broken_404_count": len(broken),
         "redirects_count": len(redirects),
         "blocked_count": len(blocked),
         "errors_count": len(errors),
         "broken_404_urls": [r["url"] for r in broken],
+        "unknown_urls": [r["url"] for r in unknown],
         "not_indexed_urls": [{"url": r["url"], "state": r["coverage_state"], "last_crawl": r.get("last_crawl_time")} for r in not_indexed_serveable[:50]],
         "broken_detail": [{"url": r["url"], "state": r["coverage_state"], "referring": r.get("referring_urls", [])} for r in broken[:50]],
+        "raw_results": results,  # full per-URL data for incremental updates
     }
 
 
-def fetch_site(service, site_id):
+def fetch_site(service, site_id, force=False):
     site_property, domain = SITES[site_id]
     urls = site_urls(site_id)
     if not urls:
         print(f"  {site_id}: no crawled URLs to inspect")
         return None
-    sample = urls[:DAILY_CAP]
-    print(f"  {site_id}: inspecting {len(sample)}/{len(urls)} URLs (cap {DAILY_CAP})")
+    cached = {} if force else already_checked(site_id, max_age_days=7)
+    to_fetch = [u for u in urls if u not in cached]
+    print(f"  {site_id}: {len(urls)} sitemap URLs · {len(cached)} cached (≤7d) · need to fetch {len(to_fetch)}")
+    sample = to_fetch[:DAILY_CAP]
+    if len(to_fetch) > DAILY_CAP:
+        print(f"  {site_id}: capping at {DAILY_CAP}/run, remainder picks up tomorrow")
     results = []
     for i, url in enumerate(sample, 1):
         r = inspect_url(service, site_property, url)
         results.append(r)
-        if i % 100 == 0:
+        if i % 25 == 0:
             cov = r.get("coverage_state") or r.get("error", "?")
-            print(f"    [{i}/{len(sample)}] last: {cov}")
+            print(f"    [{i}/{len(sample)}] last: {cov}", flush=True)
         time.sleep(SLEEP_BETWEEN)
-    classified = classify(results)
-    classified["total_inspected"] = len(results)
+    # Merge fresh results with cached entries
+    by_url = {r["url"]: r for r in cached.values()}
+    for r in results:
+        by_url[r["url"]] = r
+    all_results = [by_url[u] for u in urls if u in by_url]
+    classified = classify(all_results)
+    classified["total_inspected"] = len(all_results)
+    classified["fetched_this_run"] = len(results)
+    classified["from_cache"] = len(all_results) - len(results)
     classified["total_in_sitemap"] = len(urls)
-    classified["sample_capped"] = len(urls) > DAILY_CAP
+    classified["sample_capped"] = len(to_fetch) > DAILY_CAP
     classified["fetched_at"] = datetime.now(timezone.utc).isoformat()
     classified["domain"] = domain
     return classified

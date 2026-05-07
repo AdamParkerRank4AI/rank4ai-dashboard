@@ -683,6 +683,7 @@ def section_indexing_status(site_id, is_data, is_mtime):
     note = staleness_note(is_mtime, "URL Inspection")
     indexed = site.get("indexed_count", 0)
     not_idx = site.get("not_indexed_count", 0)
+    unknown = site.get("unknown_to_google_count", 0)
     broken = site.get("broken_404_count", 0)
     redirects = site.get("redirects_count", 0)
     blocked = site.get("blocked_count", 0)
@@ -692,8 +693,15 @@ def section_indexing_status(site_id, is_data, is_mtime):
     rate = round(indexed / inspected * 100, 1) if inspected else 0
     lines = [
         f"**Inspected {inspected}/{in_sitemap} sitemap URLs** {'(capped at daily quota — full coverage in 1-2 days)' if sample else ''}",
-        f"**Index rate:** {indexed} indexed ({rate}%) · {not_idx} not indexed · {broken} 404 · {redirects} redirects · {blocked} blocked",
+        f"**Index rate:** {indexed} indexed ({rate}%) · {not_idx} not indexed · **{unknown} unknown to Google** · {broken} 404 · {redirects} redirects · {blocked} blocked",
     ]
+    if unknown:
+        lines.append("")
+        lines.append(f"**🚨 {unknown} URLs Google has NEVER seen** — these are in your sitemap but Google has no record of them. Discovery problem, not indexing problem. Top 10 to manually request indexing for:")
+        for u in (site.get("unknown_urls") or [])[:10]:
+            lines.append(f"- {u}")
+        if unknown > 10:
+            lines.append(f"  …and {unknown - 10} more unknown")
     by_state = site.get("by_coverage_state") or {}
     if by_state:
         lines.append("")
