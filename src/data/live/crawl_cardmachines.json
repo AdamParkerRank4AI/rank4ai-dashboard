@@ -1,20 +1,20 @@
 {
   "site_id": "cardmachines",
   "domain": "cardmachines.pages.dev",
-  "crawled_at": "2026-05-07T14:24:26.464353+00:00",
+  "crawled_at": "2026-05-07T14:39:57.986939+00:00",
   "source": "fleet-source-reader",
-  "pages_crawled": 100,
+  "pages_crawled": 105,
   "total_issues": 0,
-  "orphan_pages": 3,
-  "avg_depth": 1.76,
-  "avg_word_count": 1547,
-  "pages_with_schema": 100,
+  "orphan_pages": 8,
+  "avg_depth": 1.7619047619047619,
+  "avg_word_count": 1622,
+  "pages_with_schema": 105,
   "pages_with_multimodal": 0,
-  "pages_with_comparison_table": 18,
+  "pages_with_comparison_table": 22,
   "pages_with_video": 0,
-  "pages_over_2000_words": 15,
+  "pages_over_2000_words": 20,
   "images_missing_alt": 0,
-  "pages_with_date": 100,
+  "pages_with_date": 105,
   "crawler_access": {
     "GPTBot": false,
     "ClaudeBot": false,
@@ -43,6 +43,10 @@
     "contact": {
       "hub": "/contact/",
       "page_count": 1
+    },
+    "learn": {
+      "hub": "/learn/",
+      "page_count": 2
     },
     "privacy": {
       "hub": "/privacy/",
@@ -112,6 +116,10 @@
       "hub": "/site-structure/",
       "page_count": 1
     },
+    "tap-to-pay-android": {
+      "hub": "/tap-to-pay-android/",
+      "page_count": 1
+    },
     "faith": {
       "hub": "/faith/",
       "page_count": 6
@@ -120,32 +128,36 @@
       "hub": "/get-quotes/",
       "page_count": 1
     },
+    "help": {
+      "hub": "/help/",
+      "page_count": 2
+    },
     "reviews": {
       "hub": "/reviews/",
       "page_count": 14
     }
   },
-  "topic_cluster_count": 25,
+  "topic_cluster_count": 28,
   "term_consistency": {
-    "card": 151,
-    "machine": 83,
+    "card": 157,
+    "machine": 85,
     "takecardpayments": 54,
+    "2026": 53,
     "best": 53,
-    "2026": 45,
     "review": 42,
-    "terminal": 38,
-    "merchant": 35,
+    "terminal": 39,
+    "merchant": 38,
     "accounts": 34,
+    "acquirers": 28,
     "reader": 26,
-    "acquirers": 25,
     "terminals": 24,
+    "fees": 22,
     "rate": 21,
-    "fees": 20,
     "payment": 19
   },
   "content_freshness": {
-    "pages_with_dates": 100,
-    "fresh_30_days": 100,
+    "pages_with_dates": 105,
+    "fresh_30_days": 105,
     "fresh_90_days": 0,
     "stale": 0
   },
@@ -262,7 +274,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 100,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -300,7 +312,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 100,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -757,8 +769,92 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 100,
+      "internal_links_in": 105,
       "depth": 1
+    },
+    {
+      "url": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "path": "/learn/cross-border-interchange-uk-2026/",
+      "title": "UK-EEA Cross-Border Interchange Cap 2026: PSR, Court Ruling, Merchant Impact",
+      "h1": "UK-EEA cross-border interchange cap, May 2026 status",
+      "meta_desc": "Where the UK-EEA cross-border interchange fee cap stands in May 2026: PSR powers upheld in January, Visa and Mastercard appeal granted in March. Current rates, merchant impact, what happens next.",
+      "word_count": 3365,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "FAQPage",
+        "Dataset",
+        "Article"
+      ],
+      "internal_links_out": 26,
+      "external_links_out": -21,
+      "canonical": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 2,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 7,
+      "last_modified": "2026-05-07",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 0,
+      "depth": 2
+    },
+    {
+      "url": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "path": "/learn/match-list-tmf-uk/",
+      "title": "MATCH List and TMF UK Guide: Reason Codes, Removal, High-Risk Acquirers (2026)",
+      "h1": "MATCH list and TMF: a UK merchant's guide",
+      "meta_desc": "UK-specific guide to Mastercard",
+      "word_count": 3141,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "FAQPage",
+        "Dataset",
+        "Article"
+      ],
+      "internal_links_out": 26,
+      "external_links_out": -20,
+      "canonical": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 2,
+      "list_count": 4,
+      "question_h2s": 1,
+      "h2_count": 8,
+      "last_modified": "2026-05-07",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 0,
+      "depth": 2
     },
     {
       "url": "https://takecardpayments.co.uk/privacy/",
@@ -795,7 +891,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 100,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -833,7 +929,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 100,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -871,7 +967,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 100,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -948,7 +1044,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 26,
+      "internal_links_in": 31,
       "depth": 2
     },
     {
@@ -1024,7 +1120,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 100,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -1594,7 +1690,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 100,
+      "internal_links_in": 105,
       "depth": 2
     },
     {
@@ -1670,7 +1766,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 100,
+      "internal_links_in": 105,
       "depth": 2
     },
     {
@@ -2050,7 +2146,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 100,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -2316,7 +2412,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 100,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -2354,7 +2450,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 100,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -2696,7 +2792,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 100,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -2925,7 +3021,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 100,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -3124,7 +3220,7 @@
       "title": "Fleet Site Structure \u2014 CardTerminals",
       "h1": "Six sister sites at a glance",
       "meta_desc": "Fleet-wide site structure for the six Rank4AI fleet sites.",
-      "word_count": 2739,
+      "word_count": 2521,
       "status": 200,
       "schemas": [
         "Person",
@@ -3142,11 +3238,53 @@
       "has_multimodal": false,
       "has_comparison_table": false,
       "table_count": 0,
-      "list_count": 62,
+      "list_count": 54,
       "question_h2s": 0,
       "h2_count": 2,
       "last_modified": "2026-04-26",
       "has_answer_capsule": false,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 0,
+      "depth": 1
+    },
+    {
+      "url": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "path": "/tap-to-pay-android/",
+      "title": "Tap to Pay on Android UK 2026: Acquirers, Fees, Phones, Setup",
+      "h1": "Tap to Pay on Android UK",
+      "meta_desc": "Tap to Pay on Android in the UK: which acquirers offer SoftPOS, fees, supported phones (Android 13+), the \u00a3100 contactless cap status after 19 March 2026, and how it compares to iPhone.",
+      "word_count": 3156,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "FAQPage",
+        "ItemList",
+        "Article"
+      ],
+      "internal_links_out": 31,
+      "external_links_out": -27,
+      "canonical": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 2,
+      "list_count": 6,
+      "question_h2s": 0,
+      "h2_count": 9,
+      "last_modified": "2026-05-07",
+      "has_answer_capsule": true,
       "has_og_tags": true,
       "has_author": true,
       "has_definition": false,
@@ -3419,8 +3557,91 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 100,
+      "internal_links_in": 105,
       "depth": 1
+    },
+    {
+      "url": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "path": "/help/surcharging-uk-b2b-vs-b2c/",
+      "title": "Card Surcharging UK: B2B vs B2C Rules (2026)",
+      "h1": "Card surcharging in the UK: B2B vs B2C",
+      "meta_desc": "UK card surcharging rules explained: full B2C ban since 13 January 2018, B2B surcharges still legal with disclosure. Decision tree, gov.uk source, common pitfalls for UK merchants.",
+      "word_count": 2849,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "FAQPage",
+        "Article"
+      ],
+      "internal_links_out": 27,
+      "external_links_out": -20,
+      "canonical": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 10,
+      "question_h2s": 0,
+      "h2_count": 8,
+      "last_modified": "2026-05-07",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 0,
+      "depth": 2
+    },
+    {
+      "url": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "path": "/help/my-card-machine-isnt-working/",
+      "title": "My Card Machine Is Not Working: UK Crisis Runbook (2026)",
+      "h1": "My card machine is not working: UK crisis runbook",
+      "meta_desc": "Friday-night card terminal down? 4-step troubleshoot, offline mode by acquirer (Dojo, SumUp, Zettle, Square, Stripe), manual fallback, and UK support phone numbers.",
+      "word_count": 3318,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "FAQPage",
+        "HowTo",
+        "Article"
+      ],
+      "internal_links_out": 32,
+      "external_links_out": -23,
+      "canonical": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 2,
+      "list_count": 6,
+      "question_h2s": 1,
+      "h2_count": 8,
+      "last_modified": "2026-05-07",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 0,
+      "depth": 2
     },
     {
       "url": "https://takecardpayments.co.uk/reviews/",
@@ -3457,7 +3678,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 100,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -3609,7 +3830,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1,
+      "internal_links_in": 3,
       "depth": 2
     },
     {
@@ -3647,7 +3868,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 2,
+      "internal_links_in": 5,
       "depth": 2
     },
     {
@@ -3685,7 +3906,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1,
+      "internal_links_in": 3,
       "depth": 2
     },
     {
@@ -3723,7 +3944,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1,
+      "internal_links_in": 3,
       "depth": 2
     },
     {
@@ -3799,7 +4020,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1,
+      "internal_links_in": 3,
       "depth": 2
     },
     {
@@ -3837,7 +4058,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1,
+      "internal_links_in": 2,
       "depth": 2
     },
     {
@@ -3875,7 +4096,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 2,
+      "internal_links_in": 3,
       "depth": 2
     },
     {
@@ -3951,7 +4172,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1,
+      "internal_links_in": 3,
       "depth": 2
     }
   ],
@@ -3968,7 +4189,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/./",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -4243,7 +4464,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/404/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -4453,7 +4674,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -4653,7 +4874,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/high-risk/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -4903,7 +5124,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/high-risk/supplements/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -5108,7 +5329,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/high-risk/crypto/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -5313,7 +5534,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/high-risk/pawnbroker/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -5518,7 +5739,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/high-risk/gambling/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -5723,7 +5944,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/high-risk/vape/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -5928,7 +6149,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/high-risk/cbd/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -6133,7 +6354,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/high-risk/subscription/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -6338,7 +6559,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/high-risk/firearms/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -6543,7 +6764,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/high-risk/adult/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -6748,7 +6969,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/high-risk/dating/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -6953,7 +7174,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/high-risk/travel/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -7158,7 +7379,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/contact/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -7352,6 +7573,431 @@
       "type": "internal"
     },
     {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/terminals/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/high-risk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/switch/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/trade/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/get-quotes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/terminals/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/merchant-accounts/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/high-risk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/switch/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/trade/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/get-quotes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/learn/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/reviews/adyen/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/authors/oliver-mackman/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/terminals/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/merchant-accounts/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/high-risk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/switch/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/hospitality/restaurant/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/hospitality/pub/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/trade/hairdresser-salon/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/trade/mobile-mechanic/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/retail/vape-shop/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/trade/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/get-quotes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/",
+      "to": "https://takecardpayments.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/terminals/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/high-risk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/switch/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/trade/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/get-quotes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/terminals/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/merchant-accounts/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/high-risk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/switch/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/trade/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/get-quotes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/learn/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/high-risk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/get-quotes/?context=match-listed",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/authors/oliver-mackman/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/terminals/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/merchant-accounts/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/high-risk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/switch/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/hospitality/restaurant/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/hospitality/pub/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/trade/hairdresser-salon/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/trade/mobile-mechanic/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/retail/vape-shop/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/trade/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/get-quotes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
       "from": "https://takecardpayments.co.uk/privacy/",
       "to": "https://takecardpayments.co.uk/favicon.svg",
       "type": "internal"
@@ -7363,7 +8009,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/privacy/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -7558,7 +8204,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/disclaimer/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -7758,7 +8404,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/terminals/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -7973,7 +8619,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/authors/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -8173,7 +8819,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/authors/oliver-mackman/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -8388,7 +9034,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/fees-calculator/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -8593,7 +9239,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/trade/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -8913,7 +9559,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/trade/vet/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -9118,7 +9764,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/trade/soft-play/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -9323,7 +9969,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/trade/restaurant/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -9528,7 +10174,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/trade/jeweller/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -9733,7 +10379,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/trade/florist/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -9938,7 +10584,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/trade/beauty-clinic/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -10143,7 +10789,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/trade/electrician/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -10348,7 +10994,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/trade/gardener/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -10553,7 +11199,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/trade/hotel/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -10758,7 +11404,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/trade/b-and-b-airbnb/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -10963,7 +11609,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/trade/gym-fitness/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -11168,7 +11814,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/trade/vape-shop/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -11373,7 +12019,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/trade/tattoo-piercing/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -11578,7 +12224,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/trade/pet-shop/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -11783,7 +12429,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/trade/hairdresser-salon/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -11988,7 +12634,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/trade/dentist/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -12193,7 +12839,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/trade/mobile-mechanic/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -12398,7 +13044,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/trade/cafe/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -12603,7 +13249,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/trade/market-stall/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -12808,7 +13454,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/trade/pub/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -13013,7 +13659,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/trade/taxi/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -13218,7 +13864,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/trade/self-storage/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -13423,7 +14069,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/trade/dog-grooming/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -13628,7 +14274,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/trade/caterer/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -13833,7 +14479,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/trade/butcher/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -14038,7 +14684,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/how-we-are-funded/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -14233,7 +14879,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/methodology/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -14428,7 +15074,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/features/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -14648,7 +15294,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/features/card-machine-amex/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -14853,7 +15499,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/features/multi-currency-card-machine/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -15058,7 +15704,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/features/card-machine-apple-pay/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -15263,7 +15909,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/features/card-machine-tabs/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -15468,7 +16114,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/features/card-machine-tipping/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -15673,7 +16319,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/terms/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -15868,7 +16514,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/about/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -16073,7 +16719,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/integrations/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -16298,7 +16944,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/integrations/card-machine-for-quickbooks/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -16503,7 +17149,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/integrations/card-machine-for-sage/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -16708,7 +17354,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/integrations/card-machine-for-booksy/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -16913,7 +17559,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/integrations/card-machine-for-cliniko/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -17118,7 +17764,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/integrations/card-machine-for-xero/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -17323,7 +17969,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/integrations/card-machine-for-treatwell/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -17528,7 +18174,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/editorial-policy/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -17723,7 +18369,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/merchant-accounts/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -17928,7 +18574,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/compare/square-terminal-vs-stripe-reader-s700/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -18153,7 +18799,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -18378,7 +19024,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/compare/tap-to-pay-iphone-vs-sumup-solo/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -18603,7 +19249,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/compare/dojo-go-vs-zettle-reader-2/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -18828,7 +19474,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/compare/worldpay-vs-dojo/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -19053,7 +19699,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/switch/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -19273,7 +19919,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/switch/leave-takepayments/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -19483,7 +20129,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/switch/leave-barclaycard/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -19693,7 +20339,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/switch/leave-paymentsense/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -19903,7 +20549,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/switch/leave-elavon/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -20113,7 +20759,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/switch/leave-worldpay/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -20323,7 +20969,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/site-structure/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -20507,6 +21153,251 @@
       "type": "internal"
     },
     {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/terminals/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/high-risk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/switch/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/trade/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/get-quotes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/terminals/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/merchant-accounts/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/high-risk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/switch/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/trade/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/get-quotes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/reviews/stripe-reader-s700/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/reviews/sumup-solo/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/reviews/revolut-card-reader/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/reviews/tide-card-reader/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/reviews/square-terminal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/reviews/zettle-reader-2/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/get-quotes/?product=tap-to-pay-android",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/authors/oliver-mackman/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/terminals/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/merchant-accounts/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/high-risk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/switch/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/hospitality/restaurant/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/hospitality/pub/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/trade/hairdresser-salon/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/trade/mobile-mechanic/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/retail/vape-shop/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/trade/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/get-quotes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tap-to-pay-android/",
+      "to": "https://takecardpayments.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
       "from": "https://takecardpayments.co.uk/faith/",
       "to": "https://takecardpayments.co.uk/favicon.svg",
       "type": "internal"
@@ -20518,7 +21409,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/faith/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -20738,7 +21629,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/faith/mosque-donations/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -20943,7 +21834,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/faith/gurdwara-donations/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -21148,7 +22039,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/faith/temple-donations/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -21353,7 +22244,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/faith/synagogue-donations/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -21558,7 +22449,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/faith/church-collection/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -21763,7 +22654,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/get-quotes/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -21957,6 +22848,486 @@
       "type": "internal"
     },
     {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/terminals/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/high-risk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/switch/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/trade/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/get-quotes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/terminals/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/merchant-accounts/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/high-risk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/switch/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/trade/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/get-quotes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/help/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/reviews/sumup-solo/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/reviews/tide-card-reader/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/switch/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/authors/oliver-mackman/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/terminals/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/merchant-accounts/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/high-risk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/switch/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/hospitality/restaurant/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/hospitality/pub/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/trade/hairdresser-salon/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/trade/mobile-mechanic/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/retail/vape-shop/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/trade/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/get-quotes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "to": "https://takecardpayments.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/terminals/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/high-risk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/switch/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/trade/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/get-quotes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/terminals/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/merchant-accounts/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/high-risk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/switch/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/trade/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/get-quotes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/help/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/reviews/dojo-go/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/reviews/sumup-solo/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/reviews/zettle-reader-2/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/reviews/square-terminal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/reviews/stripe-reader-s700/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/reviews/adyen/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/switch/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/reviews/dojo-go/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/reviews/square-terminal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/reviews/sumup-solo/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/get-quotes/?context=outage",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/authors/oliver-mackman/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/terminals/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/merchant-accounts/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/high-risk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/switch/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/hospitality/restaurant/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/hospitality/pub/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/trade/hairdresser-salon/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/trade/mobile-mechanic/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/retail/vape-shop/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/trade/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/get-quotes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/",
+      "to": "https://takecardpayments.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
       "from": "https://takecardpayments.co.uk/reviews/",
       "to": "https://takecardpayments.co.uk/favicon.svg",
       "type": "internal"
@@ -21968,7 +23339,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/reviews/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -22228,7 +23599,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/reviews/tap-to-pay-iphone/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -22438,7 +23809,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/reviews/bbpos-wisepos-e/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -22648,7 +24019,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/reviews/worldpay-terminal/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -22858,7 +24229,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/reviews/adyen/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -23068,7 +24439,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/reviews/sumup-solo/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -23278,7 +24649,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/reviews/stripe-reader-s700/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -23488,7 +24859,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/reviews/zettle-reader-2/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -23698,7 +25069,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/reviews/tyl-by-natwest/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -23908,7 +25279,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/reviews/tide-card-reader/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -24118,7 +25489,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/reviews/revolut-card-reader/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -24328,7 +25699,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/reviews/dojo-go/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -24538,7 +25909,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/reviews/pax-a920-pro/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -24748,7 +26119,7 @@
     },
     {
       "from": "https://takecardpayments.co.uk/reviews/square-terminal/",
-      "to": "https://takecardpayments.co.uk/_astro/404.COG61QP4.css",
+      "to": "https://takecardpayments.co.uk/_astro/404.DpE9kbII.css",
       "type": "internal"
     },
     {
@@ -24958,8 +26329,28 @@
       "url": "https://takecardpayments.co.uk/404/"
     },
     {
+      "path": "/learn/cross-border-interchange-uk-2026/",
+      "url": "https://takecardpayments.co.uk/learn/cross-border-interchange-uk-2026/"
+    },
+    {
+      "path": "/learn/match-list-tmf-uk/",
+      "url": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/"
+    },
+    {
       "path": "/site-structure/",
       "url": "https://takecardpayments.co.uk/site-structure/"
+    },
+    {
+      "path": "/tap-to-pay-android/",
+      "url": "https://takecardpayments.co.uk/tap-to-pay-android/"
+    },
+    {
+      "path": "/help/surcharging-uk-b2b-vs-b2c/",
+      "url": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/"
+    },
+    {
+      "path": "/help/my-card-machine-isnt-working/",
+      "url": "https://takecardpayments.co.uk/help/my-card-machine-isnt-working/"
     }
   ],
   "tree": {
@@ -25046,6 +26437,22 @@
         "name": "contact",
         "path": "/contact/",
         "children": []
+      },
+      {
+        "name": "learn",
+        "path": "/learn/",
+        "children": [
+          {
+            "name": "cross-border-interchange-uk-2026",
+            "path": "/learn/cross-border-interchange-uk-2026/",
+            "children": []
+          },
+          {
+            "name": "match-list-tmf-uk",
+            "path": "/learn/match-list-tmf-uk/",
+            "children": []
+          }
+        ]
       },
       {
         "name": "privacy",
@@ -25374,6 +26781,11 @@
         "children": []
       },
       {
+        "name": "tap-to-pay-android",
+        "path": "/tap-to-pay-android/",
+        "children": []
+      },
+      {
         "name": "faith",
         "path": "/faith/",
         "children": [
@@ -25408,6 +26820,22 @@
         "name": "get-quotes",
         "path": "/get-quotes/",
         "children": []
+      },
+      {
+        "name": "help",
+        "path": "/help/",
+        "children": [
+          {
+            "name": "surcharging-uk-b2b-vs-b2c",
+            "path": "/help/surcharging-uk-b2b-vs-b2c/",
+            "children": []
+          },
+          {
+            "name": "my-card-machine-isnt-working",
+            "path": "/help/my-card-machine-isnt-working/",
+            "children": []
+          }
+        ]
       },
       {
         "name": "reviews",
@@ -25640,6 +27068,28 @@
       "signals": [
         "OG",
         "Schema:5",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/learn/cross-border-interchange-uk-2026/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:8",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/learn/match-list-tmf-uk/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:8",
+        "Author",
         "Substantive",
         "Breadcrumbs"
       ]
@@ -26300,6 +27750,17 @@
       ]
     },
     {
+      "path": "/tap-to-pay-android/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:8",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
       "path": "/faith/",
       "score": 4,
       "signals": [
@@ -26365,6 +27826,28 @@
       "signals": [
         "OG",
         "Schema:4",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/help/surcharging-uk-b2b-vs-b2c/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:7",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/help/my-card-machine-isnt-working/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:8",
         "Author",
         "Substantive",
         "Breadcrumbs"
