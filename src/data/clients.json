@@ -224,9 +224,9 @@
   },
   {
     "id": "cardmachines",
-    "name": "CardMachines",
+    "name": "TakeCardPayments",
     "domain": "cardmachines.pages.dev",
-    "liveDomain": "cardmachines.co.uk",
+    "liveDomain": "takecardpayments.co.uk",
     "logo": "",
     "flavour": "leadgen",
     "clientCode": "CARDMACHINES",
@@ -376,5 +376,54 @@
       "daily-audit"
     ],
     "sections": []
+  },
+  {
+    "id": "ukmetabolic",
+    "name": "UK Metabolic",
+    "domain": "ukmetabolic.pages.dev",
+    "liveDomain": "ukmetabolic.co.uk",
+    "logo": "",
+    "flavour": "leadgen",
+    "clientCode": "UKMETABOLIC",
+    "notes": "Pre-launch. Local scaffold at ~/ukmetabolic (Astro 6, Tailwind 4, fleet-core v0.6.0). Domain not yet purchased. GitHub repo not yet created. CF Pages project not yet created. Brand: UK metabolic and longevity health. Spine: GLP-1 (Mounjaro/Wegovy/tirzepatide). Operating company at scaffold: Best Business Loans Ltd (16833937). Migrate to clean health SPV at v0.2 cutover. Daily-audit / CWV / Bing fetchers should skip until liveDomain is reachable.",
+    "clientViewSections": [
+      "site-structure",
+      "site-manager",
+      "page-compliance",
+      "ai-readiness",
+      "uptime",
+      "indexing"
+    ],
+    "allSections": [
+      "overview",
+      "site-structure",
+      "ai-readiness",
+      "ai-citations",
+      "site-manager",
+      "page-compliance",
+      "traffic",
+      "search-performance",
+      "indexing",
+      "competitors",
+      "site-tree",
+      "uptime",
+      "site-speed",
+      "crawl-activity",
+      "recommendations",
+      "content-plan",
+      "daily-audit"
+    ],
+    "sections": [],
+    "pre_launch": true,
+    "pending_decisions": [
+      { "id": "domain_purchase", "label": "Buy ukmetabolic.co.uk", "status": "TBD", "owner": "Adam", "note": "Confirmed available 2026-05-07. 123-reg or Cloudflare Registrar." },
+      { "id": "lead_destination", "label": "Where do leads route to?", "status": "TBD", "owner": "Adam", "note": "Currently: hello@ukmetabolic.co.uk via FormSubmit. Decide: add Supabase like MI, or keep email-only for v0.1." },
+      { "id": "lead_category", "label": "Lead category in CRM?", "status": "TBD", "owner": "Adam", "note": "Suggested categories: nhs-eligibility / private-clinic-intro / pharmacy-direct / aftercare / partnership. Pick or extend." },
+      { "id": "named_gp", "label": "Named GMC-registered prescriber for byline", "status": "TBD", "owner": "Adam", "note": "Mandatory before /side-effects-when-to-see-gp-or-ae/ and /eligibility-calculator/ go live. Either retainer (£X/mo + clinic-introducer bonus) or per-page (~£300-500 each)." },
+      { "id": "spv_migration", "label": "Migrate from BBL Ltd to clean health SPV", "status": "TBD", "owner": "Adam", "note": "Liability isolation. Not a launch blocker. Target v0.2 cutover (~week 4)." },
+      { "id": "prelaunch_lawyer", "label": "Pre-launch legal review", "status": "TBD", "owner": "Adam", "note": "Brabners (cheapest), Lewis Silkin (mid), Bristows (pharma-experienced). Recommend ~£1k scope (single-tier metabolic, GLP-1 spine only). Mandatory before noindex flips." },
+      { "id": "affiliate_applications", "label": "Affiliate programme applications", "status": "TBD", "owner": "Claude", "note": "Numan (£100 published), Voy, Manual, Juniper (high-touch). Phlo, Pharmacy2U, SimplyMeds, Boots Online Doctor, Asda Online Doctor (low-touch). Apply parallel in week 1." },
+      { "id": "cf_pages_project", "label": "Cloudflare Pages project", "status": "TBD", "owner": "Claude", "note": "rank4ai account (CF_TOKEN_RANK4AI). ukmetabolic.pages.dev to start. Custom domain bind once preLaunch flips." }
+    ]
   }
 ]
