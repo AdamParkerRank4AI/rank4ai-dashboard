@@ -671,6 +671,55 @@ def section_new_pages(site_id, np_data, np_mtime):
     return (note + "\n\n" if note else "") + body
 
 
+def section_indexing_status(site_id, is_data, is_mtime):
+    """Google's URL Inspection API view: indexed / not-indexed / 404 / redirect / blocked."""
+    if not is_data:
+        return "_no GSC URL Inspection data — run scripts/fetch_url_inspection.py_"
+    site = (is_data.get("per_site") or {}).get(site_id, {})
+    if not site:
+        return "_no inspection data for this site_"
+    if site.get("error"):
+        return f"_inspection failed: {site['error']}_"
+    note = staleness_note(is_mtime, "URL Inspection")
+    indexed = site.get("indexed_count", 0)
+    not_idx = site.get("not_indexed_count", 0)
+    broken = site.get("broken_404_count", 0)
+    redirects = site.get("redirects_count", 0)
+    blocked = site.get("blocked_count", 0)
+    inspected = site.get("total_inspected", 0)
+    in_sitemap = site.get("total_in_sitemap", 0)
+    sample = site.get("sample_capped", False)
+    rate = round(indexed / inspected * 100, 1) if inspected else 0
+    lines = [
+        f"**Inspected {inspected}/{in_sitemap} sitemap URLs** {'(capped at daily quota — full coverage in 1-2 days)' if sample else ''}",
+        f"**Index rate:** {indexed} indexed ({rate}%) · {not_idx} not indexed · {broken} 404 · {redirects} redirects · {blocked} blocked",
+    ]
+    by_state = site.get("by_coverage_state") or {}
+    if by_state:
+        lines.append("")
+        lines.append("**Coverage state breakdown:**")
+        for state, count in sorted(by_state.items(), key=lambda x: -x[1]):
+            lines.append(f"- {state}: {count}")
+    broken_urls = site.get("broken_404_urls") or []
+    if broken_urls:
+        lines.append("")
+        lines.append(f"**🔴 Broken (404) URLs Google has on file ({len(broken_urls)}):**")
+        for u in broken_urls[:10]:
+            lines.append(f"- {u}")
+        if len(broken_urls) > 10:
+            lines.append(f"  …and {len(broken_urls) - 10} more")
+    not_idx_urls = site.get("not_indexed_urls") or []
+    if not_idx_urls:
+        lines.append("")
+        lines.append("**Not-indexed URLs (top 10 — paste into URL Inspection → Request Indexing):**")
+        for item in not_idx_urls[:10]:
+            url = item.get("url", "?") if isinstance(item, dict) else item
+            state = item.get("state", "") if isinstance(item, dict) else ""
+            lines.append(f"- {url} _({state})_")
+    body = "\n".join(lines)
+    return (note + "\n\n" if note else "") + body
+
+
 def section_indexing_health(site_id, ih_data, ih_mtime):
     """Per-URL ground-truth indexing rollup (today + 7d) + GSC coverage if available."""
     if not ih_data:
@@ -686,7 +735,8 @@ def section_indexing_health(site_id, ih_data, ih_mtime):
     today_rate = today.get("success_rate")
     rate_str = f"{today_rate}%" if today_rate is not None else "—"
     lines = [
-        f"**Status:** {flag} {status.upper()} · today {today.get('ok', 0)}/{today.get('submitted', 0)} ({rate_str}) · 7d {last_7d.get('ok', 0)}/{last_7d.get('submitted', 0)}"
+        f"**API submissions today:** {today.get('ok', 0)}/{today.get('submitted', 0)} returned 200 · 7d {last_7d.get('ok', 0)}/{last_7d.get('submitted', 0)}",
+        "_⚠ Caveat: Indexing API publish() returning 200 does NOT mean Google indexed the page. The API is officially restricted to JobPosting + BroadcastEvent schema. For other URLs the call is accepted but `urlNotifications.getMetadata` returns 404, suggesting Google does not preserve the request. Treat this as a weak free signal, not a guaranteed indexing trigger. Real indexing status is in the URL Inspection section above._"
     ]
     for reason in (site.get("status_reasons") or []):
         lines.append(f"- ⚠ {reason}")
@@ -848,7 +898,8 @@ def build_brief(site_id, recs_data, recs_mtime, gsc_data, gsc_mtime, gsc_prev,
                 ec_data, ec_mtime, lv_data, lv_mtime,
                 ao_data, ao_mtime, bing_data, bing_mtime,
                 np_data, np_mtime, ga4_data, ga4_mtime,
-                ah_data, ah_mtime, ih_data, ih_mtime):
+                ah_data, ah_mtime, ih_data, ih_mtime,
+                is_data, is_mtime):
     display, _, domain = SITES[site_id]
     actions_md, top_actions = section_actions(site_id, recs_data, recs_mtime)
     parts = [
@@ -884,7 +935,11 @@ def build_brief(site_id, recs_data, recs_mtime, gsc_data, gsc_mtime, gsc_prev,
         "",
         section_aeo(site_id, aeo_data, aeo_mtime),
         "",
-        "## Indexing health (Google Indexing API per-URL ground truth)",
+        "## Indexing status (Google's view via URL Inspection API)",
+        "",
+        section_indexing_status(site_id, is_data, is_mtime),
+        "",
+        "## Indexing API submissions (weak signal, see caveat)",
         "",
         section_indexing_health(site_id, ih_data, ih_mtime),
         "",
@@ -1055,6 +1110,7 @@ def main(dry_run=False):
     ga4_data, ga4_mtime = load_json("ga4.json")
     ah_data, ah_mtime = load_json("daily_audit_history.json")
     ih_data, ih_mtime = load_json("indexing_health.json")
+    is_data, is_mtime = load_json("indexing_status.json")
 
     inbox_entries = []
     print(f"push_to_fleet.py — {TODAY}")
@@ -1075,6 +1131,7 @@ def main(dry_run=False):
             ao_data, ao_mtime, bing_data, bing_mtime,
             np_data, np_mtime, ga4_data, ga4_mtime,
             ah_data, ah_mtime, ih_data, ih_mtime,
+            is_data, is_mtime,
         )
         if dry_run:
             out_dir = Path("/tmp/fleet_dry_run")
