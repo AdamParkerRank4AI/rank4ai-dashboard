@@ -102,6 +102,11 @@ def main():
         ("fetch_ga4.py", 60),
         ("fetch_gsc.py", 60),
         ("fetch_bing.py", 30),
+        # Pull fresh daily audit JSON from iCloud → dashboard live data.
+        # run_daily_site_audit.py writes to iCloud at 7am via com.rank4ai.site-audit;
+        # this fetcher mirrors it into the dashboard. Was missing from refresh_all,
+        # so dashboard's daily_audit_*.json had been stale since 26 Apr.
+        ("fetch_daily_audit.py", 30),
         ("fetch_crawl_activity.py", 30),
         ("fetch_bot_hits.py", 30),
         ("fetch_cf_ai_crawls.py", 60),
