@@ -832,6 +832,142 @@ def section_indexing_health(site_id, ih_data, ih_mtime):
     return (note + "\n\n" if note else "") + body
 
 
+def section_link_health(site_id, is_data):
+    """Cross-reference internal linking (from crawl) with GSC indexing.
+
+    Surfaces:
+    - Orphans (0 inbound internal links): top fixes
+    - Weakly linked (1-2 inbound): count + top 10
+    - 🔥 Critical: pages 'unknown to Google' AND with <2 inbound — zero signal anywhere
+    - Indexed but orphan: Google found these via sitemap/external; we don't link to them
+    """
+    crawl, _ = load_json(f"crawl_{site_id}.json")
+    if not crawl:
+        return "_no crawl data for link analysis_"
+    pages = crawl.get("pages", []) or []
+    if not pages:
+        return "_crawl has no pages_"
+    # Build lookup of page → inbound count
+    inbound = {p["url"]: p.get("internal_links_in", 0) for p in pages if p.get("url")}
+    total = len(pages)
+    orphans = [p for p in pages if p.get("internal_links_in", 0) == 0 and p.get("path") != "/"]
+    weakly_linked = [p for p in pages if 0 < p.get("internal_links_in", 0) <= 2]
+    well_linked = [p for p in pages if p.get("internal_links_in", 0) >= 5]
+
+    # GSC index status reconciliation
+    gsc_unknown = set()
+    gsc_indexed = set()
+    if is_data:
+        site = (is_data.get("per_site") or {}).get(site_id, {})
+        for u in site.get("unknown_urls") or []:
+            gsc_unknown.add(u)
+        for u in (site.get("by_coverage_state") or {}):
+            pass
+        # Indexed list isn't directly stored; infer from raw_results if present
+        for r in site.get("raw_results") or []:
+            cov = (r.get("coverage_state") or "").lower()
+            if "indexed" in cov and "not indexed" not in cov:
+                gsc_indexed.add(r.get("url"))
+
+    # Critical: unknown to Google AND linked weakly (≤2)
+    critical = [p for p in pages
+                if p.get("url") in gsc_unknown
+                and p.get("internal_links_in", 0) <= 2]
+    # Indexed but orphan (Google found despite us not linking)
+    indexed_orphans = [p for p in pages
+                       if p.get("url") in gsc_indexed
+                       and p.get("internal_links_in", 0) == 0
+                       and p.get("path") != "/"]
+
+    lines = [
+        f"**Link health summary** (across {total} sitemap pages):",
+        f"- 🔴 **{len(orphans)} orphans** — 0 inbound internal links",
+        f"- 🟡 **{len(weakly_linked)} weakly linked** — only 1-2 inbound",
+        f"- 🟢 **{len(well_linked)} well linked** — 5+ inbound",
+    ]
+    if critical:
+        lines.append(f"- 🚨 **{len(critical)} critical** — Google has never seen them AND fewer than 3 inbound links. Zero discovery signal. Fix internal linking first.")
+    if indexed_orphans:
+        lines.append(f"- ⚠ **{len(indexed_orphans)} indexed orphans** — Google found these without us linking; add internal links to keep them indexed long-term.")
+
+    if critical:
+        lines.append("")
+        lines.append("**🚨 Critical (unknown + weakly-linked) — top 10 to add internal links to:**")
+        critical.sort(key=lambda p: (p.get("internal_links_in", 0), p.get("path", "")))
+        for p in critical[:10]:
+            inb = p.get("internal_links_in", 0)
+            wc = p.get("word_count", 0)
+            lines.append(f"- {p.get('url')} _({inb} inbound, {wc}w)_")
+
+    if orphans and not critical:
+        # Only show orphans if no critical — to keep brief short
+        lines.append("")
+        lines.append("**Orphan pages (top 10 to add inbound links):**")
+        orphans.sort(key=lambda p: -p.get("word_count", 0))
+        for p in orphans[:10]:
+            lines.append(f"- {p.get('url')} _(0 inbound, {p.get('word_count', 0)}w)_")
+
+    if indexed_orphans:
+        lines.append("")
+        lines.append("**Indexed orphans (Google found despite no internal link — add links to retain):**")
+        for p in indexed_orphans[:5]:
+            lines.append(f"- {p.get('url')}")
+
+    return "\n".join(lines)
+
+
+def section_sitemap_reconciliation(site_id, is_data, gd_data):
+    """The 'where do my pages live' view — sitemap vs GSC vs missing.
+
+    Three buckets we care about:
+    A. In sitemap, indexed by Google → working
+    B. In sitemap, NOT indexed → discovery / quality problem
+    C. Google has it, NOT in sitemap → orphan in Google's view (often 404s)
+    """
+    crawl, _ = load_json(f"crawl_{site_id}.json")
+    if not crawl:
+        return "_no crawl_"
+    sitemap_urls = {p.get("url") for p in (crawl.get("pages") or []) if p.get("url")}
+
+    # GSC's view of what URLs they have
+    gsc_known = set()
+    gsc_indexed_count = 0
+    gsc_unknown_count = 0
+    if is_data:
+        site = (is_data.get("per_site") or {}).get(site_id, {})
+        gsc_indexed_count = site.get("indexed_count", 0)
+        gsc_unknown_count = site.get("unknown_to_google_count", 0)
+        for r in site.get("raw_results") or []:
+            url = r.get("url")
+            cov = (r.get("coverage_state") or "").lower()
+            if url and "unknown to google" not in cov:
+                gsc_known.add(url)
+
+    # Drilldown adds URLs Google has on file (404, not indexed, etc.) that may NOT be in sitemap
+    drilldown_urls = set()
+    if gd_data:
+        site_dd = gd_data.get(site_id, {})
+        for issue, d in (site_dd.get("issues") or {}).items():
+            for u in d.get("urls") or []:
+                url = u.get("url") if isinstance(u, dict) else u
+                if url:
+                    drilldown_urls.add(url)
+
+    in_sitemap = len(sitemap_urls)
+    in_sitemap_known_to_gsc = len(sitemap_urls & gsc_known)
+    in_sitemap_unknown = len(sitemap_urls) - in_sitemap_known_to_gsc if gsc_known else None
+    in_gsc_not_sitemap = len(drilldown_urls - sitemap_urls) if drilldown_urls else 0
+
+    lines = [
+        f"**Sitemap ↔ Google reconciliation:**",
+        f"- **{in_sitemap}** URLs in our sitemap (from latest crawl)",
+        f"- **{gsc_indexed_count}** indexed by Google" if is_data else "",
+        f"- **{gsc_unknown_count}** in our sitemap but Google has never seen" if is_data else "",
+        f"- **{in_gsc_not_sitemap}** URLs Google has that aren't in our sitemap (404s, old URLs, external mentions — see GSC drilldown above for the list)" if drilldown_urls else "",
+    ]
+    return "\n".join([l for l in lines if l])
+
+
 def section_thin_pages_broken(site_id):
     """Per-page thin (<300 words) + broken (status>=400) + orphan + issue counts from crawl_<site>.json."""
     crawl, mtime = load_json(f"crawl_{site_id}.json")
@@ -1008,6 +1144,14 @@ def build_brief(site_id, recs_data, recs_mtime, gsc_data, gsc_mtime, gsc_prev,
         "## GSC Coverage drilldown (per-issue URL lists from XLSX exports)",
         "",
         section_gsc_drilldown(site_id, gd_data, gd_mtime),
+        "",
+        "## Sitemap ↔ Google reconciliation",
+        "",
+        section_sitemap_reconciliation(site_id, is_data, gd_data),
+        "",
+        "## Internal link health (orphans, weak linking, critical gaps)",
+        "",
+        section_link_health(site_id, is_data),
         "",
         "## Indexing status (Google's view via URL Inspection API)",
         "",
