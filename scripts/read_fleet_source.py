@@ -161,9 +161,31 @@ def page_record_from_html(url: str, path: str, html: str) -> dict:
     }
 
 
+def load_sitemap_urls(dist_dir: Path) -> set[str] | None:
+    """Read built sitemap-*.xml from dist/ to get the canonical indexable URL
+    set. Returns None if no sitemap found (caller falls back to all dist/*.html).
+    Honours the astro.config.mjs sitemap filter — pages excluded from the
+    sitemap (admin, preview, redirect targets) are excluded from the dashboard
+    view too. That way 'pages' in the dashboard = 'pages Google should index'."""
+    if not dist_dir.exists():
+        return None
+    sitemap_urls: set[str] = set()
+    for sm in dist_dir.glob("sitemap-*.xml"):
+        try:
+            text = sm.read_text(errors="ignore")
+        except Exception:
+            continue
+        for match in re.finditer(r"<loc>([^<]+)</loc>", text):
+            url = match.group(1).strip()
+            # Normalise — strip trailing slash variants are kept as-is from sitemap
+            sitemap_urls.add(url.split("#")[0].split("?")[0])
+    return sitemap_urls or None
+
+
 def collect_dist_pages(dist_dir: Path, site_url: str) -> list[dict]:
     if not dist_dir.exists():
         return []
+    sitemap_urls = load_sitemap_urls(dist_dir)
     pages = []
     for html_file in dist_dir.rglob("*.html"):
         rel = html_file.relative_to(dist_dir)
@@ -173,6 +195,12 @@ def collect_dist_pages(dist_dir: Path, site_url: str) -> list[dict]:
         if path == "//":
             path = "/"
         url = site_url + path
+        # Honour sitemap filter: if site has a sitemap and this URL isn't in it,
+        # skip — it's an admin / preview / redirect-target page that shouldn't
+        # be in the dashboard's 'indexable pages' view.
+        if sitemap_urls is not None:
+            if url not in sitemap_urls and url.rstrip("/") not in sitemap_urls and url + "/" not in sitemap_urls:
+                continue
         try:
             html = html_file.read_text(errors="ignore")
         except Exception:
