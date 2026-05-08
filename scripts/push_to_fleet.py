@@ -671,6 +671,68 @@ def section_new_pages(site_id, np_data, np_mtime):
     return (note + "\n\n" if note else "") + body
 
 
+def section_gsc_drilldown(site_id, gd_data, gd_mtime):
+    """GSC Coverage Drilldown XLSX exports — actionable issue breakdown."""
+    if not gd_data:
+        return "_no GSC drilldown imports — export from Search Console → Indexing → Pages → Why pages aren't indexed → click an issue → Export, then run scripts/ingest_gsc_drilldown.py_"
+    site = gd_data.get(site_id, {})
+    if not site or not site.get("issues"):
+        return "_no GSC drilldown for this site — export from Search Console_"
+    note = staleness_note(gd_mtime, "GSC drilldown")
+    issues = site.get("issues") or {}
+
+    # Classify: actionable vs intentional
+    ACTION_REQUIRED = {"Not found (404)", "Soft 404", "Duplicate without user-selected canonical", "Blocked due to other 4xx issue", "Server errors (5xx)"}
+    CONTENT_GATE = {"Crawled - currently not indexed", "Discovered - currently not indexed"}
+    INTENTIONAL = {"Excluded by ‘noindex’ tag", "Excluded by 'noindex' tag", "Page with redirect", "Alternate page with proper canonical tag"}
+
+    action_total = sum(d["url_count"] for k, d in issues.items() if k in ACTION_REQUIRED)
+    content_total = sum(d["url_count"] for k, d in issues.items() if k in CONTENT_GATE)
+    intentional_total = sum(d["url_count"] for k, d in issues.items() if k in INTENTIONAL)
+
+    lines = [
+        f"**{action_total} URLs need a fix · {content_total} URLs blocked by content quality · {intentional_total} URLs intentionally excluded**",
+    ]
+
+    # Issue table
+    rows = []
+    for label, d in sorted(issues.items(), key=lambda x: -x[1]["url_count"]):
+        bucket = "fix" if label in ACTION_REQUIRED else ("content" if label in CONTENT_GATE else "intentional")
+        rows.append((label, d["url_count"], d["exported_at"], bucket))
+    lines.append("")
+    lines.append(md_table(["Issue", "URLs", "Last export", "Bucket"], rows))
+
+    # Surface actionable URLs explicitly
+    for label in ["Not found (404)", "Soft 404", "Duplicate without user-selected canonical", "Blocked due to other 4xx issue"]:
+        d = issues.get(label)
+        if not d:
+            continue
+        urls = d.get("urls") or []
+        if not urls:
+            continue
+        lines.append("")
+        lines.append(f"**🔴 {label} ({len(urls)}) — fix or redirect:**")
+        for u in urls[:15]:
+            url = u.get("url") if isinstance(u, dict) else u
+            last = u.get("last_crawled", "?") if isinstance(u, dict) else "?"
+            lines.append(f"- {url} _(last crawled {last})_")
+        if len(urls) > 15:
+            lines.append(f"  …and {len(urls) - 15} more")
+
+    # Top "Discovered not indexed" — these are the priority Request-Indexing candidates
+    d = issues.get("Discovered - currently not indexed") or issues.get("Discovered – currently not indexed")
+    if d and d.get("urls"):
+        urls = d["urls"]
+        lines.append("")
+        lines.append(f"**📌 'Discovered – currently not indexed' ({len(urls)}) — top 10 to Request Indexing manually:**")
+        for u in urls[:10]:
+            url = u.get("url") if isinstance(u, dict) else u
+            lines.append(f"- {url}")
+
+    body = "\n".join(lines)
+    return (note + "\n\n" if note else "") + body
+
+
 def section_indexing_status(site_id, is_data, is_mtime):
     """Google's URL Inspection API view: indexed / not-indexed / 404 / redirect / blocked."""
     if not is_data:
@@ -907,7 +969,7 @@ def build_brief(site_id, recs_data, recs_mtime, gsc_data, gsc_mtime, gsc_prev,
                 ao_data, ao_mtime, bing_data, bing_mtime,
                 np_data, np_mtime, ga4_data, ga4_mtime,
                 ah_data, ah_mtime, ih_data, ih_mtime,
-                is_data, is_mtime):
+                is_data, is_mtime, gd_data, gd_mtime):
     display, _, domain = SITES[site_id]
     actions_md, top_actions = section_actions(site_id, recs_data, recs_mtime)
     parts = [
@@ -942,6 +1004,10 @@ def build_brief(site_id, recs_data, recs_mtime, gsc_data, gsc_mtime, gsc_prev,
         "## AEO scorecard gaps",
         "",
         section_aeo(site_id, aeo_data, aeo_mtime),
+        "",
+        "## GSC Coverage drilldown (per-issue URL lists from XLSX exports)",
+        "",
+        section_gsc_drilldown(site_id, gd_data, gd_mtime),
         "",
         "## Indexing status (Google's view via URL Inspection API)",
         "",
@@ -1119,6 +1185,7 @@ def main(dry_run=False):
     ah_data, ah_mtime = load_json("daily_audit_history.json")
     ih_data, ih_mtime = load_json("indexing_health.json")
     is_data, is_mtime = load_json("indexing_status.json")
+    gd_data, gd_mtime = load_json("gsc_coverage_drilldown.json")
 
     inbox_entries = []
     print(f"push_to_fleet.py — {TODAY}")
@@ -1139,7 +1206,7 @@ def main(dry_run=False):
             ao_data, ao_mtime, bing_data, bing_mtime,
             np_data, np_mtime, ga4_data, ga4_mtime,
             ah_data, ah_mtime, ih_data, ih_mtime,
-            is_data, is_mtime,
+            is_data, is_mtime, gd_data, gd_mtime,
         )
         if dry_run:
             out_dir = Path("/tmp/fleet_dry_run")
