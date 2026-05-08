@@ -148,11 +148,11 @@
     "id": "bestbusinessloans",
     "name": "Best Business Loans",
     "domain": "bestbusinessloans.pages.dev",
-    "liveDomain": "bestbusinessloans.co.uk",
+    "liveDomain": "bestbusinessloans.ai",
     "logo": "",
     "flavour": "leadgen",
     "clientCode": "BBL",
-    "notes": "Pre-launch. Local scaffold at ~/bestbusinessloans (Astro 6, Tailwind 4). GitHub repo private. CF Pages project not yet created. Daily-audit/CWV/Bing fetchers should skip until liveDomain is reachable.",
+    "notes": "Pre-launch. CF Pages project: bestbusinessloans (RANK4AI account). Custom domain bestbusinessloans.ai attached 8 May 2026, SSL provisioning. Daily fetchers skip until pre_launch:false flip + GSC verified.",
     "clientViewSections": [
       "site-structure",
       "site-manager",
@@ -191,7 +191,7 @@
     "logo": "",
     "flavour": "leadgen",
     "clientCode": "FUNDBIZ",
-    "notes": "Pre-launch. Local scaffold at ~/fundbiz. GitHub repo private. CF Pages project not yet created. Specialty + post-decline matcher.",
+    "notes": "Pre-launch. CF Pages project: fundbiz (RANK4AI account). Custom domain fundbiz.co.uk attached 8 May 2026, SSL provisioning. Daily fetchers skip until pre_launch:false flip + GSC verified.",
     "clientViewSections": [
       "site-structure",
       "site-manager",
@@ -385,7 +385,7 @@
     "logo": "",
     "flavour": "leadgen",
     "clientCode": "UKMETABOLIC",
-    "notes": "Pre-launch. Local scaffold at ~/ukmetabolic (Astro 6, Tailwind 4, fleet-core v0.6.0). Domain not yet purchased. GitHub repo not yet created. CF Pages project not yet created. Brand: UK metabolic and longevity health. Spine: GLP-1 (Mounjaro/Wegovy/tirzepatide). Operating company at scaffold: Best Business Loans Ltd (16833937). Migrate to clean health SPV at v0.2 cutover. Daily-audit / CWV / Bing fetchers should skip until liveDomain is reachable.",
+    "notes": "Pre-launch. Local scaffold at ~/ukmetabolic (Astro 6, Tailwind 4, fleet-core v0.6.0). Domain not yet purchased (working name only). GitHub repo not yet created. CF Pages project not yet created. Brand: broad UK peptides hub covering cosmetic peptide skincare + ingestible collagen + research peptides + GLP-1 prescription routes. All editorial / affiliate, no own retail, no GMC byline, no medicines lawyer. Operating company: Best Business Loans Ltd (16833937). 37 pages built clean. Daily-audit / CWV / Bing fetchers should skip until liveDomain is reachable.",
     "clientViewSections": [
       "site-structure",
       "site-manager",
@@ -416,14 +416,69 @@
     "sections": [],
     "pre_launch": true,
     "pending_decisions": [
-      { "id": "domain_purchase", "label": "Buy ukmetabolic.co.uk", "status": "TBD", "owner": "Adam", "note": "Confirmed available 2026-05-07. 123-reg or Cloudflare Registrar." },
-      { "id": "lead_destination", "label": "Where do leads route to?", "status": "TBD", "owner": "Adam", "note": "Currently: hello@ukmetabolic.co.uk via FormSubmit. Decide: add Supabase like MI, or keep email-only for v0.1." },
-      { "id": "lead_category", "label": "Lead category in CRM?", "status": "TBD", "owner": "Adam", "note": "Suggested categories: nhs-eligibility / private-clinic-intro / pharmacy-direct / aftercare / partnership. Pick or extend." },
-      { "id": "named_gp", "label": "Named GMC-registered prescriber for byline", "status": "TBD", "owner": "Adam", "note": "Mandatory before /side-effects-when-to-see-gp-or-ae/ and /eligibility-calculator/ go live. Either retainer (£X/mo + clinic-introducer bonus) or per-page (~£300-500 each)." },
-      { "id": "spv_migration", "label": "Migrate from BBL Ltd to clean health SPV", "status": "TBD", "owner": "Adam", "note": "Liability isolation. Not a launch blocker. Target v0.2 cutover (~week 4)." },
-      { "id": "prelaunch_lawyer", "label": "Pre-launch legal review", "status": "TBD", "owner": "Adam", "note": "Brabners (cheapest), Lewis Silkin (mid), Bristows (pharma-experienced). Recommend ~£1k scope (single-tier metabolic, GLP-1 spine only). Mandatory before noindex flips." },
-      { "id": "affiliate_applications", "label": "Affiliate programme applications", "status": "TBD", "owner": "Claude", "note": "Numan (£100 published), Voy, Manual, Juniper (high-touch). Phlo, Pharmacy2U, SimplyMeds, Boots Online Doctor, Asda Online Doctor (low-touch). Apply parallel in week 1." },
-      { "id": "cf_pages_project", "label": "Cloudflare Pages project", "status": "TBD", "owner": "Claude", "note": "rank4ai account (CF_TOKEN_RANK4AI). ukmetabolic.pages.dev to start. Custom domain bind once preLaunch flips." }
+      {
+        "id": "domain_purchase",
+        "label": "Buy a domain (ukmetabolic.co.uk or alternative)",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "Working name only. Adam will pick when buying. Site runs on *.pages.dev until then. Rename takes 5 minutes."
+      },
+      {
+        "id": "lead_destination",
+        "label": "Where do form leads route?",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "Currently FormSubmit to hello@ukmetabolic.co.uk. Decide: keep email-only for v0.1 or add Supabase row capture like MI."
+      },
+      {
+        "id": "lead_category",
+        "label": "Lead category taxonomy",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "Suggested: cosmetic-peptide-enquiry / collagen-enquiry / research-peptide-enquiry / glp1-clinic-enquiry / partnership / general. Pick or extend."
+      },
+      {
+        "id": "spv_migration",
+        "label": "Migrate from BBL Ltd to clean health SPV",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "Liability isolation across the fleet. Not a launch blocker. Target v0.2 cutover (~week 4)."
+      },
+      {
+        "id": "affiliate_applications_skincare",
+        "label": "Cosmetic peptide affiliate apps",
+        "status": "TBD",
+        "owner": "Claude",
+        "note": "Awin: Cult Beauty, LookFantastic, Boots, Holland and Barrett. Impact: Beauty Pie, Space NK. Apply parallel week 1."
+      },
+      {
+        "id": "affiliate_applications_collagen",
+        "label": "Collagen affiliate apps",
+        "status": "TBD",
+        "owner": "Claude",
+        "note": "Awin: Holland and Barrett, Boots. Direct: Bare Biology, Ancient + Brave, Vital Proteins via Cult Beauty."
+      },
+      {
+        "id": "affiliate_applications_research_peptides",
+        "label": "Research peptide retailer affiliate apps",
+        "status": "TBD",
+        "owner": "Claude",
+        "note": "my-peptides, Pure Peptides UK, Direct Sarms, Aquila Peptides, Pinnacle Peptides, Nooku. Direct outreach (most do not run on networks)."
+      },
+      {
+        "id": "affiliate_applications_glp1",
+        "label": "GLP-1 clinic + pharmacy affiliate apps",
+        "status": "TBD",
+        "owner": "Claude",
+        "note": "Numan (\u00a3100 published), Voy, Manual, Juniper (high-touch clinics). Phlo, Pharmacy2U, SimplyMeds, Boots Online Doctor, Asda Online Doctor (low-touch pharmacies)."
+      },
+      {
+        "id": "cf_pages_project",
+        "label": "Cloudflare Pages project + first deploy",
+        "status": "TBD",
+        "owner": "Claude",
+        "note": "rank4ai account (CF_TOKEN_RANK4AI). Project name follows working slug (ukmetabolic.pages.dev) for now. Custom domain bind once Adam buys and confirms."
+      }
     ]
   }
 ]
