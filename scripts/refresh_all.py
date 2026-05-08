@@ -125,6 +125,9 @@ def main():
         # URL Inspection API: ground-truth indexed/not-indexed/404 per URL.
         # ~5 min for fleet (1500 calls/site cap, 0.4s sleep between).
         ("fetch_url_inspection.py", 1800),
+        # GSC Coverage drilldown XLSX ingester — picks up any new exports
+        # Adam drops in ~/Downloads (per-issue URL lists from Search Console).
+        ("ingest_gsc_drilldown.py", 60),
         ("entity_class_classifier.py", 120),
         ("compute_content_freshness.py", 30),
         ("compute_syndication.py", 30),
