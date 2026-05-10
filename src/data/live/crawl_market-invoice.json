@@ -1,20 +1,20 @@
 {
   "site_id": "market-invoice",
   "domain": "marketinvoice.co.uk",
-  "crawled_at": "2026-05-10T15:29:38.573541+00:00",
+  "crawled_at": "2026-05-10T15:44:49.601213+00:00",
   "source": "fleet-source-reader",
-  "pages_crawled": 518,
+  "pages_crawled": 545,
   "total_issues": 0,
-  "orphan_pages": 27,
-  "avg_depth": 1.9266409266409266,
-  "avg_word_count": 3083,
-  "pages_with_schema": 518,
+  "orphan_pages": 28,
+  "avg_depth": 1.9302752293577983,
+  "avg_word_count": 3130,
+  "pages_with_schema": 545,
   "pages_with_multimodal": 0,
-  "pages_with_comparison_table": 230,
+  "pages_with_comparison_table": 243,
   "pages_with_video": 0,
-  "pages_over_2000_words": 517,
+  "pages_over_2000_words": 544,
   "images_missing_alt": 0,
-  "pages_with_date": 518,
+  "pages_with_date": 545,
   "crawler_access": {
     "GPTBot": true,
     "ClaudeBot": true,
@@ -50,7 +50,7 @@
     },
     "tools": {
       "hub": "/tools/",
-      "page_count": 10
+      "page_count": 11
     },
     "compare-invoice-finance-providers-uk": {
       "hub": "/compare-invoice-finance-providers-uk/",
@@ -106,7 +106,7 @@
     },
     "best": {
       "hub": "/best/",
-      "page_count": 41
+      "page_count": 51
     },
     "about": {
       "hub": "/about/",
@@ -138,7 +138,7 @@
     },
     "guides": {
       "hub": "/guides/",
-      "page_count": 38
+      "page_count": 49
     },
     "editorial-policy": {
       "hub": "/editorial-policy/",
@@ -154,7 +154,7 @@
     },
     "compare": {
       "hub": "/compare/",
-      "page_count": 18
+      "page_count": 23
     },
     "working-capital": {
       "hub": "/working-capital/",
@@ -179,25 +179,25 @@
   },
   "topic_cluster_count": 38,
   "term_consistency": {
-    "invoice": 1299,
-    "finance": 1280,
-    "2026": 443,
-    "providers": 252,
-    "businesses": 185,
+    "invoice": 1374,
+    "finance": 1373,
+    "2026": 496,
+    "providers": 264,
+    "businesses": 192,
     "market": 159,
     "review": 157,
-    "factoring": 151,
-    "provider": 119,
+    "factoring": 152,
+    "provider": 121,
     "compare": 119,
-    "invoices": 117,
-    "rates": 111,
-    "payment": 92,
-    "best": 87,
+    "invoices": 119,
+    "rates": 112,
+    "best": 103,
+    "payment": 97,
     "turnover": 78
   },
   "content_freshness": {
-    "pages_with_dates": 518,
-    "fresh_30_days": 518,
+    "pages_with_dates": 545,
+    "fresh_30_days": 545,
     "fresh_90_days": 0,
     "stale": 0
   },
@@ -242,7 +242,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 518,
+      "internal_links_in": 545,
       "depth": 1
     },
     {
@@ -365,7 +365,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 518,
+      "internal_links_in": 545,
       "depth": 1
     },
     {
@@ -1266,7 +1266,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 518,
+      "internal_links_in": 545,
       "depth": 1
     },
     {
@@ -1306,7 +1306,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 8,
+      "internal_links_in": 9,
       "depth": 1
     },
     {
@@ -1590,6 +1590,47 @@
       "depth": 2
     },
     {
+      "url": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "path": "/tools/lifetime-cost-calculator/",
+      "title": "UK Invoice Finance Lifetime Cost Calculator (2026)",
+      "h1": "UK Invoice Finance Lifetime Cost Calculator",
+      "meta_desc": "Free UK invoice finance lifetime cost calculator. Project total cost over 12 to 36 months including service charge, discount charge, minimum monthly fees, and exit fees. Compares against your alternative (overdraft, term loan, equity dilution).",
+      "word_count": 4045,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 39,
+      "external_links_out": -33,
+      "canonical": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 6,
+      "last_modified": "2026-04-13",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 0,
+      "depth": 2
+    },
+    {
       "url": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
       "path": "/tools/invoice-age-vs-advance/",
       "title": "Invoice Age vs Advance Calculator UK",
@@ -1750,7 +1791,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 518,
+      "internal_links_in": 545,
       "depth": 1
     },
     {
@@ -1789,7 +1830,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 518,
+      "internal_links_in": 545,
       "depth": 1
     },
     {
@@ -1828,7 +1869,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 518,
+      "internal_links_in": 545,
       "depth": 1
     },
     {
@@ -1868,7 +1909,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 518,
+      "internal_links_in": 545,
       "depth": 1
     },
     {
@@ -1908,7 +1949,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 479,
+      "internal_links_in": 506,
       "depth": 2
     },
     {
@@ -1947,7 +1988,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 518,
+      "internal_links_in": 545,
       "depth": 1
     },
     {
@@ -2232,7 +2273,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 518,
+      "internal_links_in": 545,
       "depth": 1
     },
     {
@@ -2314,7 +2355,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 518,
+      "internal_links_in": 545,
       "depth": 1
     },
     {
@@ -2980,7 +3021,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 20,
+      "internal_links_in": 24,
       "depth": 2
     },
     {
@@ -3900,7 +3941,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 166,
+      "internal_links_in": 179,
       "depth": 2
     },
     {
@@ -4064,7 +4105,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 518,
+      "internal_links_in": 545,
       "depth": 2
     },
     {
@@ -4606,7 +4647,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 71,
+      "internal_links_in": 82,
       "depth": 2
     },
     {
@@ -5029,7 +5070,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 27,
+      "internal_links_in": 38,
       "depth": 2
     },
     {
@@ -5151,7 +5192,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 109,
+      "internal_links_in": 119,
       "depth": 2
     },
     {
@@ -5317,7 +5358,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 120,
+      "internal_links_in": 127,
       "depth": 2
     },
     {
@@ -5825,7 +5866,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 16,
+      "internal_links_in": 19,
       "depth": 2
     },
     {
@@ -6110,7 +6151,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 518,
+      "internal_links_in": 545,
       "depth": 1
     },
     {
@@ -6151,7 +6192,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 518,
+      "internal_links_in": 545,
       "depth": 1
     },
     {
@@ -7718,7 +7759,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 22,
+      "internal_links_in": 32,
       "depth": 1
     },
     {
@@ -7727,7 +7768,7 @@
       "title": "Cheapest Invoice Finance UK 2026 - Lowest Fees Compared",
       "h1": "Cheapest Invoice Finance UK 2026",
       "meta_desc": "The cheapest and most affordable invoice finance in the UK starts at 0.5% from Close Brothers and Skipton. 85 providers compared and ranked by total cost.",
-      "word_count": 3283,
+      "word_count": 3275,
       "status": 200,
       "schemas": [
         "Person",
@@ -7761,7 +7802,48 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 518,
+      "internal_links_in": 545,
+      "depth": 2
+    },
+    {
+      "url": "https://marketinvoice.co.uk/best/architecture-practice-finance/",
+      "path": "/best/architecture-practice-finance/",
+      "title": "Best Architecture Practice Invoice Finance UK 2026",
+      "h1": "Architecture Practice Invoice Finance UK 2026",
+      "meta_desc": "UK architecture practices fund the gap between RIBA work stage delivery and 30-90 day client payment terms. RIBA Plan of Work-aware invoice finance providers compared.",
+      "word_count": 3862,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 50,
+      "external_links_out": -44,
+      "canonical": "https://marketinvoice.co.uk/best/architecture-practice-finance/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 1,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 8,
+      "last_modified": "2026-04-13",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 6,
       "depth": 2
     },
     {
@@ -7770,7 +7852,7 @@
       "title": "Best Invoice Finance for Ecommerce UK 2026: B2B Sellers, Wholesalers, D2C",
       "h1": "Best Invoice Finance for Ecommerce UK 2026",
       "meta_desc": "Specialist UK invoice finance for ecommerce businesses with B2B receivables: wholesalers selling to retailers, D2C brands invoicing distributors, marketplace sellers with B2B accounts. Stripe and PayPal payouts also accepted by some specialist lenders.",
-      "word_count": 4052,
+      "word_count": 4047,
       "status": 200,
       "schemas": [
         "Person",
@@ -7802,7 +7884,89 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 4,
+      "internal_links_in": 5,
+      "depth": 2
+    },
+    {
+      "url": "https://marketinvoice.co.uk/best/saas-receivables-finance/",
+      "path": "/best/saas-receivables-finance/",
+      "title": "Best UK SaaS and Recurring Revenue Receivables Finance 2026",
+      "h1": "SaaS Receivables Finance UK 2026",
+      "meta_desc": "UK SaaS businesses can finance MRR/ARR contracts via specialist recurring revenue lenders or traditional invoice finance for annual upfront-billed contracts. Pipe, Capchase, Re:cap and traditional invoice finance compared.",
+      "word_count": 4047,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 49,
+      "external_links_out": -43,
+      "canonical": "https://marketinvoice.co.uk/best/saas-receivables-finance/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 1,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 8,
+      "last_modified": "2026-04-13",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 7,
+      "depth": 2
+    },
+    {
+      "url": "https://marketinvoice.co.uk/best/franchise-business-finance/",
+      "path": "/best/franchise-business-finance/",
+      "title": "Franchise Business Invoice Finance UK 2026: Funding Franchisees and Multi-Site Operators",
+      "h1": "Franchise Business Invoice Finance UK 2026",
+      "meta_desc": "UK franchisees and multi-site franchise operators access specialist invoice finance for B2B revenue (catering, cleaning, courier franchises). Franchise-aware lenders compared.",
+      "word_count": 3921,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 49,
+      "external_links_out": -43,
+      "canonical": "https://marketinvoice.co.uk/best/franchise-business-finance/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 1,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 8,
+      "last_modified": "2026-04-13",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 6,
       "depth": 2
     },
     {
@@ -7852,7 +8016,7 @@
       "title": "Best Invoice Finance for \u00a31m-\u00a35m Turnover Businesses, UK 2026",
       "h1": "Best Invoice Finance for \u00a31m-\u00a35m Turnover Businesses, UK 2026",
       "meta_desc": "UK businesses with \u00a31m-\u00a35m turnover are the largest segment of the UK invoice finance market and have the broadest provider choice. The full panel of high street banks (HSBC, Lloyds, NatWest, Barclays, Santander), challenger banks (Aldermore, Metro, Allica), independents (Close Brothers, Bibby, Skip",
-      "word_count": 4163,
+      "word_count": 4158,
       "status": 200,
       "schemas": [
         "Person",
@@ -7884,7 +8048,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 9,
+      "internal_links_in": 12,
       "depth": 2
     },
     {
@@ -7925,7 +8089,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 14,
+      "internal_links_in": 13,
       "depth": 2
     },
     {
@@ -7934,7 +8098,7 @@
       "title": "Invoice Finance for Hospitality UK 2026: Restaurants, Hotels, Catering, Pubs",
       "h1": "Invoice Finance for Hospitality UK 2026",
       "meta_desc": "UK hospitality businesses (restaurants, hotels, catering, pubs) usually need merchant cash advances for card revenue plus B2B invoice finance for wholesale supply. Specialist providers compared.",
-      "word_count": 4098,
+      "word_count": 4093,
       "status": 200,
       "schemas": [
         "Person",
@@ -7975,7 +8139,7 @@
       "title": "Best Export Invoice Finance UK 2026",
       "h1": "Best Export Invoice Finance UK 2026",
       "meta_desc": "The best export invoice finance is Bibby (80+ countries, FCI member, multi-currency) or HSBC (62 countries, strongest for Asia-Pacific). We ranked every.",
-      "word_count": 3269,
+      "word_count": 3266,
       "status": 200,
       "schemas": [
         "Person",
@@ -8008,7 +8172,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 11,
+      "internal_links_in": 9,
       "depth": 2
     },
     {
@@ -8050,7 +8214,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 12,
+      "internal_links_in": 10,
       "depth": 2
     },
     {
@@ -8059,7 +8223,7 @@
       "title": "Invoice Finance With No Minimum Turnover UK 2026",
       "h1": "Invoice Finance With No Minimum Turnover",
       "meta_desc": "Selective invoice finance and spot factoring have no minimum turnover requirement. Sonovate, Triver, and selective providers accept very small businesses.",
-      "word_count": 3009,
+      "word_count": 3006,
       "status": 200,
       "schemas": [
         "Person",
@@ -8092,7 +8256,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 5,
+      "internal_links_in": 2,
       "depth": 2
     },
     {
@@ -8101,7 +8265,7 @@
       "title": "Best Invoice Finance for Recruitment Agencies UK 2026 - Top 4 Compared",
       "h1": "Best Invoice Finance for Recruitment Agencies 2026",
       "meta_desc": "The best invoice finance for recruitment agencies is Bibby (full back-office, day-one startups, 80+ country export) or Ultimate Finance (95% advance.",
-      "word_count": 3052,
+      "word_count": 3050,
       "status": 200,
       "schemas": [
         "Person",
@@ -8134,7 +8298,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 13,
+      "internal_links_in": 14,
       "depth": 2
     },
     {
@@ -8175,7 +8339,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 7,
+      "internal_links_in": 8,
       "depth": 2
     },
     {
@@ -8216,7 +8380,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 12,
+      "internal_links_in": 13,
       "depth": 2
     },
     {
@@ -8257,7 +8421,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 5,
+      "internal_links_in": 7,
       "depth": 2
     },
     {
@@ -8266,7 +8430,7 @@
       "title": "Best Invoice Finance for Manufacturers UK 2026",
       "h1": "Best Invoice Finance for Manufacturers 2026",
       "meta_desc": "The best invoice finance for manufacturers is Bibby (export to 80+ countries, combined asset finance) or Close Brothers (lowest rate at 0.5%, dedicated.",
-      "word_count": 3307,
+      "word_count": 3306,
       "status": 200,
       "schemas": [
         "Person",
@@ -8299,7 +8463,48 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 8,
+      "internal_links_in": 7,
+      "depth": 2
+    },
+    {
+      "url": "https://marketinvoice.co.uk/best/education-training-provider-finance/",
+      "path": "/best/education-training-provider-finance/",
+      "title": "Best Education and Training Provider Invoice Finance UK 2026",
+      "h1": "Best Education and Training Provider Invoice Finance UK 2026",
+      "meta_desc": "UK education and training providers (apprenticeship providers, ESFA-funded training, corporate L&#38;D, university partners) fund the gap between course delivery and 60-120 day funding body payment terms.",
+      "word_count": 3791,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 50,
+      "external_links_out": -44,
+      "canonical": "https://marketinvoice.co.uk/best/education-training-provider-finance/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 1,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 8,
+      "last_modified": "2026-04-13",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 4,
       "depth": 2
     },
     {
@@ -8308,7 +8513,7 @@
       "title": "Invoice Finance for UK Local Authority Suppliers 2026: Best Rates Available",
       "h1": "Invoice Finance for Local Authority Suppliers UK 2026",
       "meta_desc": "Local authority and council suppliers get the best invoice finance rates in the UK because councils are zero-default debtors. 90% advance rates, 0.5-1% fees, but 30-90 day payment terms. Best providers compared.",
-      "word_count": 4194,
+      "word_count": 4188,
       "status": 200,
       "schemas": [
         "Person",
@@ -8340,7 +8545,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 4,
+      "internal_links_in": 5,
       "depth": 2
     },
     {
@@ -8349,7 +8554,7 @@
       "title": "Best Invoice Finance With Xero &amp; QuickBooks Integration (2026)",
       "h1": "Best Invoice Finance With Xero & QuickBooks Integration",
       "meta_desc": "Hydr, Satago, Triver, and Kriya integrate directly with Xero and QuickBooks for automatic invoice submission and real-time funding. Compare all integrated.",
-      "word_count": 2957,
+      "word_count": 2955,
       "status": 200,
       "schemas": [
         "Person",
@@ -8361,8 +8566,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 43,
-      "external_links_out": -37,
+      "internal_links_out": 44,
+      "external_links_out": -38,
       "canonical": "https://marketinvoice.co.uk/best/best-with-xero-integration/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -8382,7 +8587,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 9,
+      "internal_links_in": 11,
       "depth": 2
     },
     {
@@ -8391,7 +8596,7 @@
       "title": "Invoice Finance With No Personal Guarantee UK 2026 - Which Providers?",
       "h1": "Invoice Finance With No Personal Guarantee",
       "meta_desc": "Some invoice finance providers don",
-      "word_count": 2784,
+      "word_count": 2783,
       "status": 200,
       "schemas": [
         "Person",
@@ -8423,7 +8628,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 10,
+      "internal_links_in": 12,
       "depth": 2
     },
     {
@@ -8465,7 +8670,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 5,
+      "internal_links_in": 6,
       "depth": 2
     },
     {
@@ -8506,7 +8711,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 5,
+      "internal_links_in": 2,
       "depth": 2
     },
     {
@@ -8515,7 +8720,7 @@
       "title": "Invoice Finance for Care Homes and Domiciliary Care UK 2026: NHS, Local Authority and Private Receivables",
       "h1": "Invoice Finance for Care Homes and Domiciliary Care UK 2026",
       "meta_desc": "UK care home and domiciliary care businesses fund the gap between weekly care delivery and 30-90 day NHS, local authority or private payor invoices. Best invoice finance providers compared.",
-      "word_count": 4157,
+      "word_count": 4156,
       "status": 200,
       "schemas": [
         "Person",
@@ -8556,7 +8761,7 @@
       "title": "Invoice Finance for UK Logistics and Haulage 2026: Fuel Cards + Invoice Finance Combined",
       "h1": "Invoice Finance for Logistics and Haulage UK 2026",
       "meta_desc": "UK haulage and logistics businesses combine fuel card credit, invoice finance and asset finance to manage the brutal cashflow gap between weekly fuel costs and 30-90 day customer payments. Best providers compared.",
-      "word_count": 4151,
+      "word_count": 4149,
       "status": 200,
       "schemas": [
         "Person",
@@ -8567,8 +8772,8 @@
         "Article",
         "FAQPage"
       ],
-      "internal_links_out": 49,
-      "external_links_out": -43,
+      "internal_links_out": 50,
+      "external_links_out": -44,
       "canonical": "https://marketinvoice.co.uk/best/invoice-finance-for-logistics-haulage/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -8588,7 +8793,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 3,
+      "internal_links_in": 4,
       "depth": 2
     },
     {
@@ -8597,7 +8802,7 @@
       "title": "Best Invoice Finance for Government Contractors UK 2026",
       "h1": "Best Invoice Finance for Government Contractors 2026",
       "meta_desc": "Government, council, and NHS debtors are the lowest risk in invoice finance - meaning the best rates. Close Brothers and Skipton offer 0.5%. All providers.",
-      "word_count": 3028,
+      "word_count": 3023,
       "status": 200,
       "schemas": [
         "Person",
@@ -8671,7 +8876,48 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 5,
+      "internal_links_in": 4,
+      "depth": 2
+    },
+    {
+      "url": "https://marketinvoice.co.uk/best/engineering-consultancy-finance/",
+      "path": "/best/engineering-consultancy-finance/",
+      "title": "Best Engineering Consultancy Invoice Finance UK 2026",
+      "h1": "Engineering Consultancy Invoice Finance UK 2026",
+      "meta_desc": "UK engineering consultancies (civil, structural, mechanical, electrical, environmental) fund the gap between project delivery and 30-90 day client payment. Best invoice finance providers compared.",
+      "word_count": 3720,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 49,
+      "external_links_out": -43,
+      "canonical": "https://marketinvoice.co.uk/best/engineering-consultancy-finance/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 1,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 8,
+      "last_modified": "2026-04-13",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 6,
       "depth": 2
     },
     {
@@ -8680,7 +8926,7 @@
       "title": "Best Invoice Finance for Sole Traders UK 2026",
       "h1": "Best Invoice Finance for Sole Traders 2026",
       "meta_desc": "Invoice finance for sole traders is harder but possible. IGF, Ultimate Finance, and selective factoring providers consider sole traders. Plus: why.",
-      "word_count": 2981,
+      "word_count": 2980,
       "status": 200,
       "schemas": [
         "Person",
@@ -8713,7 +8959,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 9,
+      "internal_links_in": 6,
       "depth": 2
     },
     {
@@ -8722,7 +8968,7 @@
       "title": "Invoice Finance for MOD Defence Contractors UK 2026: Premium Rates for Premium Debtors",
       "h1": "Invoice Finance for MOD and Defence Contractors UK 2026",
       "meta_desc": "UK Ministry of Defence and defence prime contractor suppliers get premium invoice finance rates: 90-95% advance, 0.5% fees, multi-currency support, security clearance compatibility. Best providers compared.",
-      "word_count": 4126,
+      "word_count": 4125,
       "status": 200,
       "schemas": [
         "Person",
@@ -8754,7 +9000,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 6,
+      "internal_links_in": 5,
       "depth": 2
     },
     {
@@ -8763,7 +9009,7 @@
       "title": "Best Invoice Finance for Large Businesses UK 2026 - \u00a31m+ Turnover",
       "h1": "Best Invoice Finance for Large Businesses 2026",
       "meta_desc": "The best invoice finance for large businesses is Lloyds (lowest rates from 0.3%, largest UK book) or HSBC (global trade finance integration). For \u00a31m+.",
-      "word_count": 3854,
+      "word_count": 3851,
       "status": 200,
       "schemas": [
         "Person",
@@ -8796,7 +9042,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 5,
+      "internal_links_in": 6,
       "depth": 2
     },
     {
@@ -8805,7 +9051,7 @@
       "title": "Best UK Invoice Finance with No Minimum Turnover 2026",
       "h1": "Best UK Invoice Finance with No Minimum Turnover 2026",
       "meta_desc": "UK invoice finance with no minimum turnover is available from at least 5 specialist providers. Sonovate, Kriya (Allica Bank), Hydr, Triver and Pulse Finance accept individual invoices from businesses with no minimum annual turnover, requiring only that each funded invoice meets credit and concentrat",
-      "word_count": 4347,
+      "word_count": 4344,
       "status": 200,
       "schemas": [
         "Person",
@@ -8837,7 +9083,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 6,
+      "internal_links_in": 5,
       "depth": 2
     },
     {
@@ -8846,7 +9092,7 @@
       "title": "Best Invoice Finance for Bad Credit UK 2026",
       "h1": "Best Invoice Finance for Bad Credit 2026",
       "meta_desc": "Ultimate Finance, Bibby, and IGF all accept businesses with CCJs and poor credit history. Compare which providers accept bad credit and how to get approved.",
-      "word_count": 2952,
+      "word_count": 2953,
       "status": 200,
       "schemas": [
         "Person",
@@ -8879,7 +9125,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 7,
+      "internal_links_in": 10,
       "depth": 2
     },
     {
@@ -8921,7 +9167,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 9,
+      "internal_links_in": 12,
       "depth": 2
     },
     {
@@ -8930,7 +9176,7 @@
       "title": "Invoice Finance for UK Marketing Agencies 2026: Retainer + Project Cashflow",
       "h1": "Invoice Finance for Marketing Agencies UK 2026",
       "meta_desc": "UK marketing, PR and digital agencies fund the gap between monthly client retainer invoicing and 30-90 day client payment terms. Best invoice finance providers for agency working capital plus tips on freelancer payroll handling.",
-      "word_count": 4123,
+      "word_count": 4120,
       "status": 200,
       "schemas": [
         "Person",
@@ -8962,7 +9208,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 5,
+      "internal_links_in": 8,
       "depth": 2
     },
     {
@@ -9045,7 +9291,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 9,
+      "internal_links_in": 6,
       "depth": 2
     },
     {
@@ -9054,7 +9300,7 @@
       "title": "Best Invoice Finance for NHS Suppliers UK 2026",
       "h1": "Best Invoice Finance for NHS Suppliers 2026",
       "meta_desc": "NHS invoices have zero default risk, meaning the best rates (0.5-1%) and highest advances (90-95%). Close Brothers, Bibby, and Sonovate are the top.",
-      "word_count": 3086,
+      "word_count": 3084,
       "status": 200,
       "schemas": [
         "Person",
@@ -9066,8 +9312,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 45,
-      "external_links_out": -39,
+      "internal_links_out": 46,
+      "external_links_out": -40,
       "canonical": "https://marketinvoice.co.uk/best/best-for-nhs-suppliers/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -9091,12 +9337,94 @@
       "depth": 2
     },
     {
+      "url": "https://marketinvoice.co.uk/best/cic-invoice-finance/",
+      "path": "/best/cic-invoice-finance/",
+      "title": "CIC (Community Interest Company) Invoice Finance UK 2026",
+      "h1": "CIC (Community Interest Company) Invoice Finance UK 2026",
+      "meta_desc": "UK Community Interest Companies (CICs) can access mainstream invoice finance on their B2B receivables. Asset lock and dividend cap implications, specialist vs mainstream lender comparison.",
+      "word_count": 3881,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 50,
+      "external_links_out": -44,
+      "canonical": "https://marketinvoice.co.uk/best/cic-invoice-finance/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 1,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 8,
+      "last_modified": "2026-04-13",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 7,
+      "depth": 2
+    },
+    {
+      "url": "https://marketinvoice.co.uk/best/charity-invoice-finance/",
+      "path": "/best/charity-invoice-finance/",
+      "title": "Charity and Non-Profit Invoice Finance UK 2026: Funding Cashflow Gaps Without Compromising Mission",
+      "h1": "Charity and Non-Profit Invoice Finance UK 2026",
+      "meta_desc": "UK registered charities and non-profits with grant or contract receivables can use invoice finance to bridge cashflow gaps without compromising charitable status. Trustee considerations, Charity Commission implications, and specialist lenders compared.",
+      "word_count": 4025,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 49,
+      "external_links_out": -43,
+      "canonical": "https://marketinvoice.co.uk/best/charity-invoice-finance/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 1,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 8,
+      "last_modified": "2026-04-13",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 6,
+      "depth": 2
+    },
+    {
       "url": "https://marketinvoice.co.uk/best/invoice-finance-for-10m-plus-turnover/",
       "path": "/best/invoice-finance-for-10m-plus-turnover/",
       "title": "Best Invoice Finance for \u00a310m+ Turnover Businesses, UK 2026",
       "h1": "Best Invoice Finance for \u00a310m+ Turnover Businesses, UK 2026",
       "meta_desc": "UK businesses with \u00a310m+ turnover sit in the corporate / large mid-market segment where invoice finance becomes one tool in a broader working capital strategy alongside asset-based lending, supply chain finance, trade finance and committed credit lines. HSBC Invoice Finance, Lloyds Commercial Financ",
-      "word_count": 4256,
+      "word_count": 4253,
       "status": 200,
       "schemas": [
         "Person",
@@ -9128,7 +9456,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 8,
+      "internal_links_in": 7,
       "depth": 2
     },
     {
@@ -9169,7 +9497,48 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 5,
+      "internal_links_in": 4,
+      "depth": 2
+    },
+    {
+      "url": "https://marketinvoice.co.uk/best/print-signage-finance/",
+      "path": "/best/print-signage-finance/",
+      "title": "Best Print and Signage Invoice Finance UK 2026",
+      "h1": "Best Print and Signage Invoice Finance UK 2026",
+      "meta_desc": "UK commercial print, large-format and signage businesses fund the gap between large material/equipment outlay and 30-90 day customer payment cycles. Best invoice finance providers compared.",
+      "word_count": 3793,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 49,
+      "external_links_out": -43,
+      "canonical": "https://marketinvoice.co.uk/best/print-signage-finance/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 1,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 8,
+      "last_modified": "2026-04-13",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 6,
       "depth": 2
     },
     {
@@ -9178,7 +9547,7 @@
       "title": "Best Invoice Finance for Startups UK 2026",
       "h1": "Best Invoice Finance for Startups UK 2026",
       "meta_desc": "The best invoice finance for startups is Ultimate Finance (day-one trading, 95% advance, \u00a350k min turnover), IGF (startups accepted, flexible terms), or.",
-      "word_count": 4080,
+      "word_count": 4079,
       "status": 200,
       "schemas": [
         "Person",
@@ -9252,7 +9621,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 3,
+      "internal_links_in": 4,
       "depth": 2
     },
     {
@@ -9261,7 +9630,7 @@
       "title": "Best UK Invoice Finance for Startups (No Trading History)",
       "h1": "Best UK Invoice Finance for Startups (No Trading History)",
       "meta_desc": "UK startups with no trading history can access invoice finance from at least 6 specialist providers. Sonovate, Kriya (formerly MarketInvoice, now part of Allica Bank), Hydr, Triver, Pulse Finance and Ultimate Finance all underwrite businesses from day one of incorporation provided they have B2B invo",
-      "word_count": 4334,
+      "word_count": 4332,
       "status": 200,
       "schemas": [
         "Person",
@@ -9293,7 +9662,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 8,
+      "internal_links_in": 4,
       "depth": 2
     },
     {
@@ -9334,7 +9703,48 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 9,
+      "internal_links_in": 12,
+      "depth": 2
+    },
+    {
+      "url": "https://marketinvoice.co.uk/best/crowdfunded-business-finance/",
+      "path": "/best/crowdfunded-business-finance/",
+      "title": "Crowdfunded Business Invoice Finance UK 2026: Working Capital After Crowdcube/Seedrs",
+      "h1": "Crowdfunded Business Invoice Finance UK 2026",
+      "meta_desc": "UK businesses that have raised on Crowdcube or Seedrs need working capital finance between equity rounds. Invoice finance, RBF, and how crowdfunded businesses get the best rates explained.",
+      "word_count": 4023,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 50,
+      "external_links_out": -44,
+      "canonical": "https://marketinvoice.co.uk/best/crowdfunded-business-finance/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 1,
+      "list_count": 4,
+      "question_h2s": 1,
+      "h2_count": 8,
+      "last_modified": "2026-04-13",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 3,
       "depth": 2
     },
     {
@@ -9376,7 +9786,48 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 518,
+      "internal_links_in": 545,
+      "depth": 2
+    },
+    {
+      "url": "https://marketinvoice.co.uk/best/legal-llp-invoice-finance/",
+      "path": "/best/legal-llp-invoice-finance/",
+      "title": "Best UK Legal Practice (LLP) Invoice Finance 2026",
+      "h1": "Legal Practice (LLP) Invoice Finance UK 2026",
+      "meta_desc": "UK law firms and LLPs fund the gap between client work delivery and 30-90 day client payment terms. SRA-regulated providers preferred. Best invoice finance providers for legal practices compared.",
+      "word_count": 3912,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 50,
+      "external_links_out": -44,
+      "canonical": "https://marketinvoice.co.uk/best/legal-llp-invoice-finance/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 1,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 8,
+      "last_modified": "2026-04-13",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 4,
       "depth": 2
     },
     {
@@ -9416,7 +9867,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 518,
+      "internal_links_in": 545,
       "depth": 1
     },
     {
@@ -9540,7 +9991,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 518,
+      "internal_links_in": 545,
       "depth": 1
     },
     {
@@ -11099,7 +11550,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 518,
+      "internal_links_in": 545,
       "depth": 1
     },
     {
@@ -11181,8 +11632,49 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 518,
+      "internal_links_in": 545,
       "depth": 1
+    },
+    {
+      "url": "https://marketinvoice.co.uk/guides/bbl-refinance-via-invoice-finance/",
+      "path": "/guides/bbl-refinance-via-invoice-finance/",
+      "title": "Bounce Back Loan Refinance via Invoice Finance UK 2026: Pay Off Your BBL Faster",
+      "h1": "Bounce Back Loan Refinance via Invoice Finance UK 2026",
+      "meta_desc": "UK businesses with Bounce Back Loans (BBLs) approaching the end of the interest holiday or facing repayment pressure can refinance via invoice finance to free up working capital. Process, pros, cons, and best providers explained.",
+      "word_count": 4306,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 48,
+      "external_links_out": -42,
+      "canonical": "https://marketinvoice.co.uk/guides/bbl-refinance-via-invoice-finance/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 1,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 8,
+      "last_modified": "2026-04-13",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 5,
+      "depth": 2
     },
     {
       "url": "https://marketinvoice.co.uk/guides/how-to-apply/",
@@ -11203,8 +11695,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 46,
-      "external_links_out": -40,
+      "internal_links_out": 47,
+      "external_links_out": -41,
       "canonical": "https://marketinvoice.co.uk/guides/how-to-apply/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -11224,7 +11716,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 13,
+      "internal_links_in": 14,
       "depth": 2
     },
     {
@@ -11233,7 +11725,7 @@
       "title": "Invoice Factoring vs Invoice Discounting: How to Choose the Right Option for Your Business | Market Invoice",
       "h1": "Invoice Factoring vs Invoice Discounting: How to Choose the Right Option for Your Business",
       "meta_desc": "Invoice factoring and invoice discounting both release cash tied up in unpaid invoices, but they work differently. With factoring, the lender manages your ",
-      "word_count": 3861,
+      "word_count": 3863,
       "status": 200,
       "schemas": [
         "Person",
@@ -11265,7 +11757,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 6,
+      "internal_links_in": 5,
       "depth": 2
     },
     {
@@ -11306,7 +11798,48 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 518,
+      "internal_links_in": 545,
+      "depth": 2
+    },
+    {
+      "url": "https://marketinvoice.co.uk/guides/cifas-impact/",
+      "path": "/guides/cifas-impact/",
+      "title": "CIFAS Register Impact on UK Invoice Finance Applications 2026",
+      "h1": "CIFAS Register Impact on Invoice Finance Applications UK 2026",
+      "meta_desc": "How CIFAS register entries affect UK invoice finance applications. Director CIFAS markers, business CIFAS markers, dispute process, and which lenders are more or less stringent.",
+      "word_count": 3939,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 44,
+      "external_links_out": -38,
+      "canonical": "https://marketinvoice.co.uk/guides/cifas-impact/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 7,
+      "last_modified": "2026-04-13",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 7,
       "depth": 2
     },
     {
@@ -11347,7 +11880,48 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 4,
+      "internal_links_in": 6,
+      "depth": 2
+    },
+    {
+      "url": "https://marketinvoice.co.uk/guides/phoenix-company-restrictions/",
+      "path": "/guides/phoenix-company-restrictions/",
+      "title": "Phoenix Company Restrictions UK 2026: How They Affect Invoice Finance Applications",
+      "h1": "Phoenix Company Restrictions and Invoice Finance UK 2026",
+      "meta_desc": "UK phoenix companies (where directors of an insolvent company start a new company in similar trade) face restrictions under section 216 of the Insolvency Act 1986. How phoenix-status affects invoice finance applications and what to disclose.",
+      "word_count": 4219,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 43,
+      "external_links_out": -37,
+      "canonical": "https://marketinvoice.co.uk/guides/phoenix-company-restrictions/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 7,
+      "last_modified": "2026-04-13",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 5,
       "depth": 2
     },
     {
@@ -11388,7 +11962,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 9,
+      "internal_links_in": 8,
       "depth": 2
     },
     {
@@ -11409,8 +11983,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 46,
-      "external_links_out": -40,
+      "internal_links_out": 47,
+      "external_links_out": -41,
       "canonical": "https://marketinvoice.co.uk/guides/debt-factoring/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -11430,7 +12004,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 13,
+      "internal_links_in": 11,
       "depth": 2
     },
     {
@@ -11439,7 +12013,7 @@
       "title": "Asset Based Lending UK 2026 - What It Is and How Invoice Finance Fits",
       "h1": "Asset Based Lending - The Bigger Picture Behind Invoice Finance",
       "meta_desc": "Asset based lending (ABL) is a funding package that combines invoice finance with lending against stock, machinery, and property. Invoice finance is the.",
-      "word_count": 4466,
+      "word_count": 4467,
       "status": 200,
       "schemas": [
         "Person",
@@ -11481,7 +12055,7 @@
       "title": "Invoice Fraud Detection UK 2026: Fake Invoices, Mandate Fraud, and Finance-Facility Misuse",
       "h1": "Invoice Fraud Detection UK 2026: Spotting Fake Invoices and Mandate Fraud",
       "meta_desc": "How UK businesses spot fake invoices, mandate fraud (CEO impersonation, supplier bank-detail switching), and invoice finance facility misuse. Detection signals, response playbook, and how providers protect themselves and clients post-Greensill.",
-      "word_count": 4577,
+      "word_count": 4583,
       "status": 200,
       "schemas": [
         "Person",
@@ -11513,7 +12087,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 6,
+      "internal_links_in": 4,
       "depth": 2
     },
     {
@@ -11554,7 +12128,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 63,
+      "internal_links_in": 64,
       "depth": 2
     },
     {
@@ -11595,7 +12169,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 5,
+      "internal_links_in": 6,
       "depth": 2
     },
     {
@@ -11636,7 +12210,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 5,
+      "internal_links_in": 3,
       "depth": 2
     },
     {
@@ -11645,7 +12219,7 @@
       "title": "Release Cash Tied Up in Invoices - How It Works (2026)",
       "h1": "Your Money Is Trapped in Unpaid Invoices. Here Is How to Release It.",
       "meta_desc": "UK businesses have over \u00a323 billion trapped in unpaid invoices. Invoice finance releases 70-95% of that cash within 24 hours, without waiting for your.",
-      "word_count": 2830,
+      "word_count": 2827,
       "status": 200,
       "schemas": [
         "Person",
@@ -11677,7 +12251,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 8,
+      "internal_links_in": 9,
       "depth": 2
     },
     {
@@ -11686,7 +12260,7 @@
       "title": "Recruitment Invoice Finance UK 2026 - Fund Payroll from Timesheets",
       "h1": "Recruitment Invoice Finance",
       "meta_desc": "Recruitment invoice finance funds weekly contractor payroll from outstanding timesheets. The UK recruitment sector used \u00a38.2 billion of invoice finance in.",
-      "word_count": 2931,
+      "word_count": 2932,
       "status": 200,
       "schemas": [
         "Person",
@@ -11718,7 +12292,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 57,
+      "internal_links_in": 58,
       "depth": 2
     },
     {
@@ -11727,7 +12301,7 @@
       "title": "Export Invoice Finance UK 2026 - Finance International Invoices",
       "h1": "Export Invoice Finance",
       "meta_desc": "Export invoice finance advances up to 85% of your international invoices within 48 hours. Covers currency risk, overseas credit checks, and collections.",
-      "word_count": 2777,
+      "word_count": 2778,
       "status": 200,
       "schemas": [
         "Person",
@@ -11760,6 +12334,47 @@
       "has_breadcrumbs": true,
       "has_viewport": true,
       "internal_links_in": 12,
+      "depth": 2
+    },
+    {
+      "url": "https://marketinvoice.co.uk/guides/pre-pack-administration/",
+      "path": "/guides/pre-pack-administration/",
+      "title": "Pre-Pack Administration UK 2026: Buyer Finance and Invoice Finance Implications",
+      "h1": "Pre-Pack Administration and Buyer Finance UK 2026",
+      "meta_desc": "UK pre-pack administration sales (where the business is sold to a new owner immediately on appointment of administrators) need fast working capital. Invoice finance often provides Day 1 funding to the buyer. Process, regulator scrutiny, and finance options.",
+      "word_count": 4196,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 44,
+      "external_links_out": -38,
+      "canonical": "https://marketinvoice.co.uk/guides/pre-pack-administration/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 7,
+      "last_modified": "2026-04-13",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 2,
       "depth": 2
     },
     {
@@ -11801,7 +12416,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 9,
+      "internal_links_in": 11,
       "depth": 2
     },
     {
@@ -11810,7 +12425,7 @@
       "title": "Confidential Invoice Discounting UK 2026",
       "h1": "Confidential Invoice Discounting UK 2026",
       "meta_desc": "Confidential invoice discounting lets UK businesses access up to 90% of invoice value without customers knowing. Available from \u00a3500k turnover. Service charges from 0.3%.",
-      "word_count": 5347,
+      "word_count": 5346,
       "status": 200,
       "schemas": [
         "Person",
@@ -11821,8 +12436,8 @@
         "Article",
         "FAQPage"
       ],
-      "internal_links_out": 48,
-      "external_links_out": -42,
+      "internal_links_out": 50,
+      "external_links_out": -44,
       "canonical": "https://marketinvoice.co.uk/guides/confidential-invoice-discounting/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -11843,6 +12458,47 @@
       "has_breadcrumbs": true,
       "has_viewport": true,
       "internal_links_in": 17,
+      "depth": 2
+    },
+    {
+      "url": "https://marketinvoice.co.uk/guides/rd-tax-credit-advance/",
+      "path": "/guides/rd-tax-credit-advance/",
+      "title": "R&amp;D Tax Credit Advance Funding UK 2026: Get Cash Now Against Your Pending HMRC Claim",
+      "h1": "R&D Tax Credit Advance Funding UK 2026",
+      "meta_desc": "UK R&#38;D tax credit claims often take 4-12 weeks for HMRC processing. Specialist R&#38;D credit advance lenders bridge the gap with 70-90% of expected claim value, advanced within 24-48 hours. Best providers and costs compared.",
+      "word_count": 4147,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 47,
+      "external_links_out": -41,
+      "canonical": "https://marketinvoice.co.uk/guides/rd-tax-credit-advance/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 1,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 8,
+      "last_modified": "2026-04-13",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 5,
       "depth": 2
     },
     {
@@ -11884,7 +12540,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 518,
+      "internal_links_in": 545,
       "depth": 2
     },
     {
@@ -11893,7 +12549,7 @@
       "title": "Selective Invoice Finance UK 2026 - Finance Individual Invoices",
       "h1": "Selective Invoice Finance UK 2026",
       "meta_desc": "Selective invoice finance lets UK businesses choose which invoices to fund without committing to a full facility. No minimum turnover, no long contracts. Costs 1-5% per invoice.",
-      "word_count": 4542,
+      "word_count": 4538,
       "status": 200,
       "schemas": [
         "Person",
@@ -11925,7 +12581,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 15,
+      "internal_links_in": 16,
       "depth": 2
     },
     {
@@ -11934,7 +12590,7 @@
       "title": "How to Choose an Invoice Finance Provider - 6 Things to Check (2026)",
       "h1": "How to Choose an Invoice Finance Provider",
       "meta_desc": "Don",
-      "word_count": 4245,
+      "word_count": 4241,
       "status": 200,
       "schemas": [
         "Person",
@@ -11977,7 +12633,7 @@
       "title": "How Invoice Finance Works in the UK 2026: Step-by-Step Process",
       "h1": "How Invoice Finance Works in the UK 2026",
       "meta_desc": "Invoice finance releases 70-95% of unpaid invoice value within 24 hours. Step-by-step explanation of factoring vs discounting, real costs, and how to apply. Updated April 2026.",
-      "word_count": 5869,
+      "word_count": 5868,
       "status": 200,
       "schemas": [
         "Person",
@@ -12009,7 +12665,48 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 518,
+      "internal_links_in": 545,
+      "depth": 2
+    },
+    {
+      "url": "https://marketinvoice.co.uk/guides/cbils-rls-refinance/",
+      "path": "/guides/cbils-rls-refinance/",
+      "title": "CBILS / Recovery Loan Scheme Refinance via Invoice Finance UK 2026",
+      "h1": "CBILS / RLS Refinance via Invoice Finance UK 2026",
+      "meta_desc": "UK businesses with CBILS or Recovery Loan Scheme (RLS) loans facing tight repayment cycles can use invoice finance to free up working capital and accelerate or restructure scheme loan repayment. Process, lender priority, and providers compared.",
+      "word_count": 4168,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 49,
+      "external_links_out": -43,
+      "canonical": "https://marketinvoice.co.uk/guides/cbils-rls-refinance/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 1,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 8,
+      "last_modified": "2026-04-13",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 5,
       "depth": 2
     },
     {
@@ -12050,7 +12747,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 6,
+      "internal_links_in": 7,
       "depth": 2
     },
     {
@@ -12091,7 +12788,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 8,
+      "internal_links_in": 9,
       "depth": 2
     },
     {
@@ -12100,7 +12797,7 @@
       "title": "How to Calculate the True APR on Invoice Factoring: A Complete Guide for UK SMEs | Market Invoice",
       "h1": "How to Calculate the True APR on Invoice Factoring: A Complete Guide for UK SMEs",
       "meta_desc": "Invoice factoring costs are quoted in multiple ways, making direct comparison difficult. To find the true annual percentage rate, you must combine the disc",
-      "word_count": 4155,
+      "word_count": 4156,
       "status": 200,
       "schemas": [
         "Person",
@@ -12132,7 +12829,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 6,
+      "internal_links_in": 7,
       "depth": 2
     },
     {
@@ -12141,7 +12838,7 @@
       "title": "Personal Guarantee Insurance UK 2026: Cover for Director PGs on Invoice Finance and Loans",
       "h1": "Personal Guarantee Insurance UK 2026",
       "meta_desc": "Personal Guarantee Insurance protects UK directors who",
-      "word_count": 4099,
+      "word_count": 4102,
       "status": 200,
       "schemas": [
         "Person",
@@ -12173,7 +12870,48 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 2,
+      "internal_links_in": 3,
+      "depth": 2
+    },
+    {
+      "url": "https://marketinvoice.co.uk/guides/acquisition-finance-debtor-book/",
+      "path": "/guides/acquisition-finance-debtor-book/",
+      "title": "Acquisition Finance Using Debtor Book UK 2026: Funding Buyouts via Receivables",
+      "h1": "Acquisition Finance Using the Debtor Book UK 2026",
+      "meta_desc": "UK business acquisitions can use the target",
+      "word_count": 4019,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 43,
+      "external_links_out": -37,
+      "canonical": "https://marketinvoice.co.uk/guides/acquisition-finance-debtor-book/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 7,
+      "last_modified": "2026-04-13",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 6,
       "depth": 2
     },
     {
@@ -12215,7 +12953,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 12,
+      "internal_links_in": 10,
       "depth": 2
     },
     {
@@ -12224,7 +12962,7 @@
       "title": "How to Switch Invoice Finance Provider: A Complete Guide for UK SMEs | Market Invoice",
       "h1": "How to Switch Invoice Finance Provider: A Complete Guide for UK SMEs",
       "meta_desc": "Switching invoice finance provider is straightforward if you plan ahead. Most UK businesses can move to a new facility within four to eight weeks. Key step",
-      "word_count": 4177,
+      "word_count": 4175,
       "status": 200,
       "schemas": [
         "Person",
@@ -12256,7 +12994,48 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 8,
+      "internal_links_in": 10,
+      "depth": 2
+    },
+    {
+      "url": "https://marketinvoice.co.uk/guides/mbo-invoice-finance/",
+      "path": "/guides/mbo-invoice-finance/",
+      "title": "MBO Invoice Finance UK 2026: Funding Management Buyouts via the Debtor Book",
+      "h1": "MBO Invoice Finance UK 2026",
+      "meta_desc": "UK management buyouts (MBOs) often use invoice finance as part of the funding stack alongside private equity, vendor finance and bank debt. The debtor book provides 70-90% of receivable value as Day 1 cash. Best providers compared.",
+      "word_count": 4100,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 44,
+      "external_links_out": -38,
+      "canonical": "https://marketinvoice.co.uk/guides/mbo-invoice-finance/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 7,
+      "last_modified": "2026-04-13",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 5,
       "depth": 2
     },
     {
@@ -12265,7 +13044,7 @@
       "title": "Receivables Finance UK - What Banks Call Invoice Finance",
       "h1": "Receivables Finance - The Bank Jargon Version of Invoice Finance",
       "meta_desc": "Receivables finance is the corporate and banking term for invoice finance. Same product, different language. Banks, large corporates, and accountants use.",
-      "word_count": 2722,
+      "word_count": 2723,
       "status": 200,
       "schemas": [
         "Person",
@@ -12297,7 +13076,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 6,
+      "internal_links_in": 9,
       "depth": 2
     },
     {
@@ -12306,7 +13085,7 @@
       "title": "Who Should Use Invoice Finance - And Who Should Avoid It?",
       "h1": "Who Should Use Invoice Finance - And Who Should Avoid It?",
       "meta_desc": "Invoice finance is ideal for B2B businesses with slow-paying customers, growing businesses outgrowing their cash, and recruitment/construction/transport.",
-      "word_count": 2797,
+      "word_count": 2794,
       "status": 200,
       "schemas": [
         "Person",
@@ -12338,6 +13117,47 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
+      "internal_links_in": 6,
+      "depth": 2
+    },
+    {
+      "url": "https://marketinvoice.co.uk/guides/multi-currency-invoice-finance/",
+      "path": "/guides/multi-currency-invoice-finance/",
+      "title": "Multi-Currency Invoice Finance UK 2026: Funding USD, EUR and Other Foreign Currency Invoices",
+      "h1": "Multi-Currency Invoice Finance UK 2026 (USD, EUR)",
+      "meta_desc": "UK businesses invoicing in USD, EUR or other foreign currencies use multi-currency invoice finance to fund international receivables. Best providers (Aldermore, Bibby, HSBC Trade Bank), forward contracts, and FX risk management.",
+      "word_count": 4109,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 44,
+      "external_links_out": -38,
+      "canonical": "https://marketinvoice.co.uk/guides/multi-currency-invoice-finance/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 7,
+      "last_modified": "2026-04-13",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
       "internal_links_in": 5,
       "depth": 2
     },
@@ -12347,7 +13167,7 @@
       "title": "Invoice Finance Glossary - Every Term Explained | Market Invoice",
       "h1": "Invoice Finance Glossary",
       "meta_desc": "Plain English definitions of every invoice finance term: factoring, discounting, advance rate, service charge, discount charge, debenture, recourse.",
-      "word_count": 2756,
+      "word_count": 2753,
       "status": 200,
       "schemas": [
         "Person",
@@ -12378,7 +13198,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 13,
+      "internal_links_in": 11,
       "depth": 2
     },
     {
@@ -12387,7 +13207,7 @@
       "title": "Get an Advance on Your Invoices - Same Day Cash for UK Businesses",
       "h1": "Get an Advance on Your Invoices",
       "meta_desc": "Invoice advances release 70-95% of your unpaid invoice value within 24 hours. Typical cost is 0.5-3%. Available to UK businesses with \u00a350k+ annual.",
-      "word_count": 2811,
+      "word_count": 2810,
       "status": 200,
       "schemas": [
         "Person",
@@ -12419,7 +13239,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 6,
+      "internal_links_in": 8,
       "depth": 2
     },
     {
@@ -12460,7 +13280,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 9,
+      "internal_links_in": 10,
       "depth": 2
     },
     {
@@ -12469,7 +13289,7 @@
       "title": "How to Switch Invoice Finance Providers - Without Getting Stung (2026)",
       "h1": "How to Switch Invoice Finance Providers",
       "meta_desc": "Switching invoice finance providers takes 4-8 weeks and requires careful timing around notice periods, debenture release, and the overlap between old and.",
-      "word_count": 4623,
+      "word_count": 4622,
       "status": 200,
       "schemas": [
         "Person",
@@ -12482,8 +13302,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 46,
-      "external_links_out": -40,
+      "internal_links_out": 47,
+      "external_links_out": -41,
       "canonical": "https://marketinvoice.co.uk/guides/switching-providers/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -12504,6 +13324,47 @@
       "has_breadcrumbs": true,
       "has_viewport": true,
       "internal_links_in": 10,
+      "depth": 2
+    },
+    {
+      "url": "https://marketinvoice.co.uk/guides/new-limited-company-under-12-months/",
+      "path": "/guides/new-limited-company-under-12-months/",
+      "title": "Invoice Finance for New UK Limited Company Under 12 Months Trading 2026",
+      "h1": "Invoice Finance for New Limited Company (Under 12 Months Trading) UK 2026",
+      "meta_desc": "UK limited companies under 12 months old can access invoice finance through specialist lenders that look at director track record and individual debtor quality. Hydr, Triver, IGF and Sonovate compared.",
+      "word_count": 4136,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 44,
+      "external_links_out": -38,
+      "canonical": "https://marketinvoice.co.uk/guides/new-limited-company-under-12-months/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 7,
+      "last_modified": "2026-04-13",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 7,
       "depth": 2
     },
     {
@@ -12544,7 +13405,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 9,
+      "internal_links_in": 8,
       "depth": 2
     },
     {
@@ -12553,7 +13414,7 @@
       "title": "Invoice Finance Explained Simply - No Jargon, Plain English (2026)",
       "h1": "Invoice Finance Explained Simply",
       "meta_desc": "Invoice finance means getting paid for your invoices before your customer pays you. A provider gives you 70-95% of the money within 24 hours. When your.",
-      "word_count": 2748,
+      "word_count": 2746,
       "status": 200,
       "schemas": [
         "Person",
@@ -12626,7 +13487,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 5,
+      "internal_links_in": 8,
       "depth": 2
     },
     {
@@ -12635,7 +13496,7 @@
       "title": "Invoice Finance Bad Debt Protection UK 2026",
       "h1": "Invoice Finance Bad Debt Protection UK 2026",
       "meta_desc": "Bad debt protection on UK invoice finance is the option to insure your sales ledger against customer default or insolvency, typically costing 0.1-0.4% of insured turnover on top of base service charge. Aldermore, Bibby Financial Services, HSBC Invoice Finance, Lloyds Commercial Finance and most majo",
-      "word_count": 4465,
+      "word_count": 4464,
       "status": 200,
       "schemas": [
         "Person",
@@ -12646,8 +13507,8 @@
         "Article",
         "FAQPage"
       ],
-      "internal_links_out": 49,
-      "external_links_out": -43,
+      "internal_links_out": 50,
+      "external_links_out": -44,
       "canonical": "https://marketinvoice.co.uk/guides/invoice-finance-bad-debt-protection/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -12667,7 +13528,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 5,
+      "internal_links_in": 3,
       "depth": 2
     },
     {
@@ -12676,7 +13537,7 @@
       "title": "UK Invoice Finance Market Overview 2026 - Size, Growth and Key Trends",
       "h1": "UK Invoice Finance Market Overview 2026",
       "meta_desc": "The UK invoice finance market reached \u00a322.7 billion in 2025 with over 40,000 businesses using it. 85 active providers serve the market. Growth is driven.",
-      "word_count": 3132,
+      "word_count": 3138,
       "status": 200,
       "schemas": [
         "Person",
@@ -12708,7 +13569,48 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 7,
+      "internal_links_in": 8,
+      "depth": 2
+    },
+    {
+      "url": "https://marketinvoice.co.uk/guides/group-parent-guarantee/",
+      "path": "/guides/group-parent-guarantee/",
+      "title": "Group Company / Parent Guarantee Invoice Finance UK 2026",
+      "h1": "Group Company and Parent Guarantee Invoice Finance UK 2026",
+      "meta_desc": "UK group company invoice finance: how subsidiaries access invoice finance with parent guarantee instead of director PG, intra-group invoice exclusions, and consolidated group facilities.",
+      "word_count": 3990,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 44,
+      "external_links_out": -38,
+      "canonical": "https://marketinvoice.co.uk/guides/group-parent-guarantee/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 7,
+      "last_modified": "2026-04-13",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 5,
       "depth": 2
     },
     {
@@ -12747,7 +13649,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 518,
+      "internal_links_in": 545,
       "depth": 1
     },
     {
@@ -15469,8 +16371,49 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 518,
+      "internal_links_in": 545,
       "depth": 1
+    },
+    {
+      "url": "https://marketinvoice.co.uk/compare/invoice-finance-vs-revenue-based-finance/",
+      "path": "/compare/invoice-finance-vs-revenue-based-finance/",
+      "title": "Invoice Finance vs Revenue-Based Finance UK 2026: When Each Wins",
+      "h1": "Invoice Finance vs Revenue-Based Finance UK 2026",
+      "meta_desc": "Invoice finance funds specific B2B invoices; revenue-based finance (RBF) advances cash against future revenue regardless of source. Pipe, Capchase, Liberis, Iwoca compared with traditional invoice finance.",
+      "word_count": 4048,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 44,
+      "external_links_out": -38,
+      "canonical": "https://marketinvoice.co.uk/compare/invoice-finance-vs-revenue-based-finance/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 7,
+      "last_modified": "2026-04-13",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 6,
+      "depth": 2
     },
     {
       "url": "https://marketinvoice.co.uk/compare/invoice-finance-vs-overdraft/",
@@ -15520,7 +16463,7 @@
       "title": "Invoice Factoring vs Asset Finance - Which Is Right? (2026 Comparison)",
       "h1": "Invoice Factoring vs Asset Finance",
       "meta_desc": "Invoice factoring releases cash from unpaid invoices. Asset finance funds equipment purchases. They solve different problems and can be used together.",
-      "word_count": 2974,
+      "word_count": 2978,
       "status": 200,
       "schemas": [
         "Person",
@@ -15553,7 +16496,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 6,
+      "internal_links_in": 7,
       "depth": 2
     },
     {
@@ -15604,7 +16547,7 @@
       "title": "HSBC vs Lloyds Invoice Finance: Head-to-Head 2026",
       "h1": "HSBC Invoice Finance vs Lloyds Bank Commercial Finance",
       "meta_desc": "HSBC Invoice Finance vs Lloyds Bank Commercial Finance compared: rates, advance, setup speed, minimum turnover, sector expertise. Both target \u00a3500k+ turnover.",
-      "word_count": 3292,
+      "word_count": 3294,
       "status": 200,
       "schemas": [
         "Person",
@@ -15637,7 +16580,89 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 4,
+      "internal_links_in": 5,
+      "depth": 2
+    },
+    {
+      "url": "https://marketinvoice.co.uk/compare/invoice-finance-vs-b2b-bnpl/",
+      "path": "/compare/invoice-finance-vs-b2b-bnpl/",
+      "title": "Invoice Finance vs B2B Buy Now Pay Later UK 2026",
+      "h1": "Invoice Finance vs B2B BNPL UK 2026",
+      "meta_desc": "Comparison of invoice finance and B2B Buy Now Pay Later (BNPL) products like Hokodo, Two, Mondu and Treyd. Different sides of the same trade-credit problem; cost, mechanism, and when to use each.",
+      "word_count": 4201,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 44,
+      "external_links_out": -38,
+      "canonical": "https://marketinvoice.co.uk/compare/invoice-finance-vs-b2b-bnpl/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 4,
+      "question_h2s": 1,
+      "h2_count": 7,
+      "last_modified": "2026-04-13",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 7,
+      "depth": 2
+    },
+    {
+      "url": "https://marketinvoice.co.uk/compare/invoice-finance-vs-supply-chain-finance/",
+      "path": "/compare/invoice-finance-vs-supply-chain-finance/",
+      "title": "Invoice Finance vs Supply Chain Finance UK 2026: Initiated by Seller vs Buyer",
+      "h1": "Invoice Finance vs Supply Chain Finance UK 2026",
+      "meta_desc": "Invoice finance is initiated by the seller. Supply chain finance (reverse factoring) is initiated by the buyer. Same underlying receivable, different mechanism, different cost. Post-Greensill considerations.",
+      "word_count": 4161,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 44,
+      "external_links_out": -38,
+      "canonical": "https://marketinvoice.co.uk/compare/invoice-finance-vs-supply-chain-finance/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 7,
+      "last_modified": "2026-04-13",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 3,
       "depth": 2
     },
     {
@@ -15679,7 +16704,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 9,
+      "internal_links_in": 5,
       "depth": 2
     },
     {
@@ -15688,7 +16713,7 @@
       "title": "Invoice Finance vs Equity Funding - Which Is Right? (2026)",
       "h1": "Invoice Finance vs Equity Funding",
       "meta_desc": "Invoice finance releases cash from invoices with no dilution. Equity funding gives a lump sum but dilutes ownership. Compare costs, speed, control, and.",
-      "word_count": 2940,
+      "word_count": 2943,
       "status": 200,
       "schemas": [
         "Person",
@@ -15721,7 +16746,48 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 7,
+      "internal_links_in": 8,
+      "depth": 2
+    },
+    {
+      "url": "https://marketinvoice.co.uk/compare/invoice-finance-vs-asset-finance/",
+      "path": "/compare/invoice-finance-vs-asset-finance/",
+      "title": "Invoice Finance vs Asset Finance UK 2026: Different Products, Often Used Together",
+      "h1": "Invoice Finance vs Asset Finance UK 2026",
+      "meta_desc": "Invoice finance funds receivables; asset finance funds equipment. Different products, often used together by UK SMEs. Comparison of cost, term, security, and when each is the right choice.",
+      "word_count": 4132,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 43,
+      "external_links_out": -37,
+      "canonical": "https://marketinvoice.co.uk/compare/invoice-finance-vs-asset-finance/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 7,
+      "last_modified": "2026-04-13",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 3,
       "depth": 2
     },
     {
@@ -15730,7 +16796,7 @@
       "title": "Invoice Finance vs R&amp;D Tax Credit Advance - Which Should You Choose?",
       "h1": "Invoice Finance vs R&D Tax Credit Advance",
       "meta_desc": "Invoice finance releases cash from unpaid invoices. R&#38;D tax credit advance releases cash from pending HMRC claims. Different products that can work.",
-      "word_count": 3014,
+      "word_count": 3016,
       "status": 200,
       "schemas": [
         "Person",
@@ -15763,7 +16829,48 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 7,
+      "internal_links_in": 8,
+      "depth": 2
+    },
+    {
+      "url": "https://marketinvoice.co.uk/compare/invoice-finance-vs-director-loan/",
+      "path": "/compare/invoice-finance-vs-director-loan/",
+      "title": "Invoice Finance vs Director&#39;s Loan UK 2026: Which Funds Working Capital Better",
+      "h1": "Invoice Finance vs Director's Loan UK 2026",
+      "meta_desc": "Comparison of invoice finance and director",
+      "word_count": 4228,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 43,
+      "external_links_out": -37,
+      "canonical": "https://marketinvoice.co.uk/compare/invoice-finance-vs-director-loan/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 7,
+      "last_modified": "2026-04-13",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 2,
       "depth": 2
     },
     {
@@ -15772,7 +16879,7 @@
       "title": "Bibby vs Ultimate Finance - Which Independent Is Better? (2026)",
       "h1": "Bibby vs Ultimate Finance",
       "meta_desc": "Bibby charges from 0.75% with 90% advance and exports to 80+ countries. Ultimate Finance charges 0.8% with 95% advance and 3-day setup. Full independent.",
-      "word_count": 2801,
+      "word_count": 2803,
       "status": 200,
       "schemas": [
         "Person",
@@ -15805,7 +16912,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 9,
+      "internal_links_in": 11,
       "depth": 2
     },
     {
@@ -15814,7 +16921,7 @@
       "title": "Barclays vs NatWest Invoice Finance: Head-to-Head 2026",
       "h1": "Barclays vs NatWest Invoice Finance",
       "meta_desc": "Barclays exited factoring in 2021 and now refers; NatWest Invoice Finance remains active. Full comparison, alternatives, and what to use instead.",
-      "word_count": 3240,
+      "word_count": 3243,
       "status": 200,
       "schemas": [
         "Person",
@@ -15856,7 +16963,7 @@
       "title": "Recourse vs Non-Recourse Factoring - What&#39;s the Difference? (2026)",
       "h1": "Recourse vs Non-Recourse Factoring",
       "meta_desc": "With recourse factoring, you repay the advance if your customer doesn",
-      "word_count": 3055,
+      "word_count": 3057,
       "status": 200,
       "schemas": [
         "Person",
@@ -15889,7 +16996,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 9,
+      "internal_links_in": 10,
       "depth": 2
     },
     {
@@ -15898,7 +17005,7 @@
       "title": "Aldermore vs Skipton Invoice Finance - Head-to-Head 2026",
       "h1": "Aldermore vs Skipton Business Finance",
       "meta_desc": "Aldermore requires \u00a3250k turnover and offers confidential discounting as standard. Skipton requires \u00a3100k with the joint-lowest rate at 0.5%. Full.",
-      "word_count": 2839,
+      "word_count": 2843,
       "status": 200,
       "schemas": [
         "Person",
@@ -15931,7 +17038,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 9,
+      "internal_links_in": 11,
       "depth": 2
     },
     {
@@ -15940,7 +17047,7 @@
       "title": "Ultimate Finance vs IGF - Which Independent Is Better? (2026)",
       "h1": "Ultimate Finance vs IGF",
       "meta_desc": "Ultimate Finance offers 95% advance rate and 3-day setup. IGF offers maximum flexibility on difficult cases. Both accept \u00a350k turnover and startups.",
-      "word_count": 2880,
+      "word_count": 2882,
       "status": 200,
       "schemas": [
         "Person",
@@ -15952,8 +17059,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 45,
-      "external_links_out": -39,
+      "internal_links_out": 46,
+      "external_links_out": -40,
       "canonical": "https://marketinvoice.co.uk/compare/ultimate-vs-igf/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -15973,7 +17080,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 6,
+      "internal_links_in": 8,
       "depth": 2
     },
     {
@@ -15982,7 +17089,7 @@
       "title": "Close Brothers vs Skipton - Lowest Cost Compared (2026)",
       "h1": "Close Brothers vs Skipton",
       "meta_desc": "Close Brothers and Skipton both start from 0.5% - the joint cheapest invoice finance in the UK. Close Brothers accepts \u00a350k turnover; Skipton requires.",
-      "word_count": 2853,
+      "word_count": 2857,
       "status": 200,
       "schemas": [
         "Person",
@@ -16015,7 +17122,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 10,
+      "internal_links_in": 13,
       "depth": 2
     },
     {
@@ -16057,7 +17164,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 518,
+      "internal_links_in": 545,
       "depth": 2
     },
     {
@@ -16066,7 +17173,7 @@
       "title": "Invoice Finance vs Crowdfunding - Which Is Better for Cash Flow?",
       "h1": "Invoice Finance vs Crowdfunding",
       "meta_desc": "Invoice finance releases cash in 24 hours at 0.5-3% cost. Crowdfunding takes weeks or months and requires a public campaign. Compare both options for UK.",
-      "word_count": 2901,
+      "word_count": 2904,
       "status": 200,
       "schemas": [
         "Person",
@@ -16099,7 +17206,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 8,
+      "internal_links_in": 9,
       "depth": 2
     },
     {
@@ -16120,8 +17227,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 43,
-      "external_links_out": -37,
+      "internal_links_out": 44,
+      "external_links_out": -38,
       "canonical": "https://marketinvoice.co.uk/compare/hsbc-vs-close-brothers/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -16183,7 +17290,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 7,
+      "internal_links_in": 5,
       "depth": 2
     },
     {
@@ -16224,7 +17331,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 518,
+      "internal_links_in": 545,
       "depth": 1
     },
     {
@@ -16593,7 +17700,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 518,
+      "internal_links_in": 545,
       "depth": 1
     },
     {
@@ -16633,7 +17740,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 518,
+      "internal_links_in": 545,
       "depth": 1
     },
     {
@@ -16920,7 +18027,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 518,
+      "internal_links_in": 545,
       "depth": 1
     },
     {
@@ -33229,6 +34336,286 @@
       "type": "internal"
     },
     {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/favicon-32x32.png",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/favicon-16x16.png",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/apple-touch-icon.png",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/site.webmanifest",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/_astro/404.DJ5jgb9L.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/providers/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/industries/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/questions/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/blog/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/compare/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/providers/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/industries/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/questions/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/blog/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/working-capital/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/compare/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/authors/oliver-mackman/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/providers/directory/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/blog/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/industries/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/questions/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/stats/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/research/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/invoice-finance-quote/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/compare/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/guides/how-invoice-finance-works/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/guides/costs/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/working-capital/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/guides/factoring-vs-discounting/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/compare/invoice-finance-vs-business-loan/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/best/invoice-finance-for-small-business/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/best/cheapest-invoice-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/cookie-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/complaints/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/accessibility/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/compare/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
+      "to": "https://marketinvoice.co.uk/cookie-policy/",
+      "type": "internal"
+    },
+    {
       "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
       "to": "https://marketinvoice.co.uk/favicon.ico",
       "type": "internal"
@@ -46382,286 +47769,6 @@
       "from": "https://marketinvoice.co.uk/providers/investly/",
       "to": "https://marketinvoice.co.uk/industries/",
       "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investly/",
-      "to": "https://marketinvoice.co.uk/questions/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investly/",
-      "to": "https://marketinvoice.co.uk/calculator/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investly/",
-      "to": "https://marketinvoice.co.uk/stats/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investly/",
-      "to": "https://marketinvoice.co.uk/research/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investly/",
-      "to": "https://marketinvoice.co.uk/invoice-finance-quote/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investly/",
-      "to": "https://marketinvoice.co.uk/compare/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investly/",
-      "to": "https://marketinvoice.co.uk/guides/how-invoice-finance-works/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investly/",
-      "to": "https://marketinvoice.co.uk/guides/costs/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investly/",
-      "to": "https://marketinvoice.co.uk/working-capital/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investly/",
-      "to": "https://marketinvoice.co.uk/guides/factoring-vs-discounting/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investly/",
-      "to": "https://marketinvoice.co.uk/compare/invoice-finance-vs-business-loan/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investly/",
-      "to": "https://marketinvoice.co.uk/best/invoice-finance-for-small-business/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investly/",
-      "to": "https://marketinvoice.co.uk/best/cheapest-invoice-finance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investly/",
-      "to": "https://marketinvoice.co.uk/about/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investly/",
-      "to": "https://marketinvoice.co.uk/authors/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investly/",
-      "to": "https://marketinvoice.co.uk/editorial-policy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investly/",
-      "to": "https://marketinvoice.co.uk/how-we-are-funded/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investly/",
-      "to": "https://marketinvoice.co.uk/contact/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investly/",
-      "to": "https://marketinvoice.co.uk/privacy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investly/",
-      "to": "https://marketinvoice.co.uk/cookie-policy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investly/",
-      "to": "https://marketinvoice.co.uk/terms/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investly/",
-      "to": "https://marketinvoice.co.uk/disclaimer/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investly/",
-      "to": "https://marketinvoice.co.uk/complaints/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investly/",
-      "to": "https://marketinvoice.co.uk/accessibility/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investly/",
-      "to": "https://marketinvoice.co.uk/compare/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investly/",
-      "to": "https://marketinvoice.co.uk/cookie-policy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investec/",
-      "to": "https://marketinvoice.co.uk/favicon.ico",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investec/",
-      "to": "https://marketinvoice.co.uk/favicon.svg",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investec/",
-      "to": "https://marketinvoice.co.uk/favicon-32x32.png",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investec/",
-      "to": "https://marketinvoice.co.uk/favicon-16x16.png",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investec/",
-      "to": "https://marketinvoice.co.uk/apple-touch-icon.png",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investec/",
-      "to": "https://marketinvoice.co.uk/site.webmanifest",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investec/",
-      "to": "https://marketinvoice.co.uk/_astro/404.DJ5jgb9L.css",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investec/",
-      "to": "https://marketinvoice.co.uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investec/",
-      "to": "https://marketinvoice.co.uk/providers/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investec/",
-      "to": "https://marketinvoice.co.uk/industries/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investec/",
-      "to": "https://marketinvoice.co.uk/guides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investec/",
-      "to": "https://marketinvoice.co.uk/questions/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investec/",
-      "to": "https://marketinvoice.co.uk/blog/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investec/",
-      "to": "https://marketinvoice.co.uk/calculator/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investec/",
-      "to": "https://marketinvoice.co.uk/compare/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investec/",
-      "to": "https://marketinvoice.co.uk/providers/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investec/",
-      "to": "https://marketinvoice.co.uk/industries/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investec/",
-      "to": "https://marketinvoice.co.uk/guides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investec/",
-      "to": "https://marketinvoice.co.uk/questions/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investec/",
-      "to": "https://marketinvoice.co.uk/blog/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investec/",
-      "to": "https://marketinvoice.co.uk/working-capital/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investec/",
-      "to": "https://marketinvoice.co.uk/calculator/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investec/",
-      "to": "https://marketinvoice.co.uk/compare/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investec/",
-      "to": "https://marketinvoice.co.uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investec/",
-      "to": "https://marketinvoice.co.uk/providers/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investec/",
-      "to": "https://marketinvoice.co.uk/authors/oliver-mackman/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investec/",
-      "to": "https://marketinvoice.co.uk/privacy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investec/",
-      "to": "https://marketinvoice.co.uk/providers/jardine-norton/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investec/",
-      "to": "https://marketinvoice.co.uk/providers/ecapital/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/providers/investec/",
-      "to": "https://marketinvoice.co.uk/providers/aldermore/",
-      "type": "internal"
     }
   ],
   "issues": [],
@@ -46669,6 +47776,10 @@
     {
       "path": "/pre-shipment-finance/",
       "url": "https://marketinvoice.co.uk/pre-shipment-finance/"
+    },
+    {
+      "path": "/tools/lifetime-cost-calculator/",
+      "url": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/"
     },
     {
       "path": "/recruitment-finance/temp-agency-finance/",
@@ -46947,6 +48058,11 @@
           {
             "name": "eligibility-checker",
             "path": "/tools/eligibility-checker/",
+            "children": []
+          },
+          {
+            "name": "lifetime-cost-calculator",
+            "path": "/tools/lifetime-cost-calculator/",
             "children": []
           },
           {
@@ -47700,8 +48816,23 @@
             "children": []
           },
           {
+            "name": "architecture-practice-finance",
+            "path": "/best/architecture-practice-finance/",
+            "children": []
+          },
+          {
             "name": "invoice-finance-for-ecommerce",
             "path": "/best/invoice-finance-for-ecommerce/",
+            "children": []
+          },
+          {
+            "name": "saas-receivables-finance",
+            "path": "/best/saas-receivables-finance/",
+            "children": []
+          },
+          {
+            "name": "franchise-business-finance",
+            "path": "/best/franchise-business-finance/",
             "children": []
           },
           {
@@ -47765,6 +48896,11 @@
             "children": []
           },
           {
+            "name": "education-training-provider-finance",
+            "path": "/best/education-training-provider-finance/",
+            "children": []
+          },
+          {
             "name": "invoice-finance-for-local-authority-suppliers",
             "path": "/best/invoice-finance-for-local-authority-suppliers/",
             "children": []
@@ -47807,6 +48943,11 @@
           {
             "name": "invoice-finance-for-50k-100k-turnover",
             "path": "/best/invoice-finance-for-50k-100k-turnover/",
+            "children": []
+          },
+          {
+            "name": "engineering-consultancy-finance",
+            "path": "/best/engineering-consultancy-finance/",
             "children": []
           },
           {
@@ -47860,6 +49001,16 @@
             "children": []
           },
           {
+            "name": "cic-invoice-finance",
+            "path": "/best/cic-invoice-finance/",
+            "children": []
+          },
+          {
+            "name": "charity-invoice-finance",
+            "path": "/best/charity-invoice-finance/",
+            "children": []
+          },
+          {
             "name": "invoice-finance-for-10m-plus-turnover",
             "path": "/best/invoice-finance-for-10m-plus-turnover/",
             "children": []
@@ -47867,6 +49018,11 @@
           {
             "name": "invoice-finance-for-stripe-paypal-merchants",
             "path": "/best/invoice-finance-for-stripe-paypal-merchants/",
+            "children": []
+          },
+          {
+            "name": "print-signage-finance",
+            "path": "/best/print-signage-finance/",
             "children": []
           },
           {
@@ -47890,8 +49046,18 @@
             "children": []
           },
           {
+            "name": "crowdfunded-business-finance",
+            "path": "/best/crowdfunded-business-finance/",
+            "children": []
+          },
+          {
             "name": "invoice-finance-for-small-business",
             "path": "/best/invoice-finance-for-small-business/",
+            "children": []
+          },
+          {
+            "name": "legal-llp-invoice-finance",
+            "path": "/best/legal-llp-invoice-finance/",
             "children": []
           }
         ]
@@ -48118,6 +49284,11 @@
         "path": "/guides/",
         "children": [
           {
+            "name": "bbl-refinance-via-invoice-finance",
+            "path": "/guides/bbl-refinance-via-invoice-finance/",
+            "children": []
+          },
+          {
             "name": "how-to-apply",
             "path": "/guides/how-to-apply/",
             "children": []
@@ -48133,8 +49304,18 @@
             "children": []
           },
           {
+            "name": "cifas-impact",
+            "path": "/guides/cifas-impact/",
+            "children": []
+          },
+          {
             "name": "personal-guarantee-invoice-finance-uk",
             "path": "/guides/personal-guarantee-invoice-finance-uk/",
+            "children": []
+          },
+          {
+            "name": "phoenix-company-restrictions",
+            "path": "/guides/phoenix-company-restrictions/",
             "children": []
           },
           {
@@ -48188,6 +49369,11 @@
             "children": []
           },
           {
+            "name": "pre-pack-administration",
+            "path": "/guides/pre-pack-administration/",
+            "children": []
+          },
+          {
             "name": "documents-needed",
             "path": "/guides/documents-needed/",
             "children": []
@@ -48195,6 +49381,11 @@
           {
             "name": "confidential-invoice-discounting",
             "path": "/guides/confidential-invoice-discounting/",
+            "children": []
+          },
+          {
+            "name": "rd-tax-credit-advance",
+            "path": "/guides/rd-tax-credit-advance/",
             "children": []
           },
           {
@@ -48218,6 +49409,11 @@
             "children": []
           },
           {
+            "name": "cbils-rls-refinance",
+            "path": "/guides/cbils-rls-refinance/",
+            "children": []
+          },
+          {
             "name": "invoice-finance-for-staffing-agencies",
             "path": "/guides/invoice-finance-for-staffing-agencies/",
             "children": []
@@ -48238,6 +49434,11 @@
             "children": []
           },
           {
+            "name": "acquisition-finance-debtor-book",
+            "path": "/guides/acquisition-finance-debtor-book/",
+            "children": []
+          },
+          {
             "name": "what-happens-during-underwriting",
             "path": "/guides/what-happens-during-underwriting/",
             "children": []
@@ -48248,6 +49449,11 @@
             "children": []
           },
           {
+            "name": "mbo-invoice-finance",
+            "path": "/guides/mbo-invoice-finance/",
+            "children": []
+          },
+          {
             "name": "receivables-finance",
             "path": "/guides/receivables-finance/",
             "children": []
@@ -48255,6 +49461,11 @@
           {
             "name": "who-should-and-shouldnt-use-invoice-finance",
             "path": "/guides/who-should-and-shouldnt-use-invoice-finance/",
+            "children": []
+          },
+          {
+            "name": "multi-currency-invoice-finance",
+            "path": "/guides/multi-currency-invoice-finance/",
             "children": []
           },
           {
@@ -48275,6 +49486,11 @@
           {
             "name": "switching-providers",
             "path": "/guides/switching-providers/",
+            "children": []
+          },
+          {
+            "name": "new-limited-company-under-12-months",
+            "path": "/guides/new-limited-company-under-12-months/",
             "children": []
           },
           {
@@ -48300,6 +49516,11 @@
           {
             "name": "invoice-finance-market-overview-2026",
             "path": "/guides/invoice-finance-market-overview-2026/",
+            "children": []
+          },
+          {
+            "name": "group-parent-guarantee",
+            "path": "/guides/group-parent-guarantee/",
             "children": []
           }
         ]
@@ -48631,6 +49852,11 @@
         "path": "/compare/",
         "children": [
           {
+            "name": "invoice-finance-vs-revenue-based-finance",
+            "path": "/compare/invoice-finance-vs-revenue-based-finance/",
+            "children": []
+          },
+          {
             "name": "invoice-finance-vs-overdraft",
             "path": "/compare/invoice-finance-vs-overdraft/",
             "children": []
@@ -48651,6 +49877,16 @@
             "children": []
           },
           {
+            "name": "invoice-finance-vs-b2b-bnpl",
+            "path": "/compare/invoice-finance-vs-b2b-bnpl/",
+            "children": []
+          },
+          {
+            "name": "invoice-finance-vs-supply-chain-finance",
+            "path": "/compare/invoice-finance-vs-supply-chain-finance/",
+            "children": []
+          },
+          {
             "name": "lloyds-vs-aldermore",
             "path": "/compare/lloyds-vs-aldermore/",
             "children": []
@@ -48661,8 +49897,18 @@
             "children": []
           },
           {
+            "name": "invoice-finance-vs-asset-finance",
+            "path": "/compare/invoice-finance-vs-asset-finance/",
+            "children": []
+          },
+          {
             "name": "invoice-finance-vs-rd-tax-credits",
             "path": "/compare/invoice-finance-vs-rd-tax-credits/",
+            "children": []
+          },
+          {
+            "name": "invoice-finance-vs-director-loan",
+            "path": "/compare/invoice-finance-vs-director-loan/",
             "children": []
           },
           {
@@ -49757,6 +51003,17 @@
       "signals": [
         "OG",
         "Schema:6",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/tools/lifetime-cost-calculator/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:7",
         "Author",
         "Substantive",
         "Breadcrumbs"
@@ -51402,7 +52659,40 @@
       ]
     },
     {
+      "path": "/best/architecture-practice-finance/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:7",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
       "path": "/best/invoice-finance-for-ecommerce/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:7",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/best/saas-receivables-finance/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:7",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/best/franchise-business-finance/",
       "score": 5,
       "signals": [
         "OG",
@@ -51535,50 +52825,6 @@
     },
     {
       "path": "/best/best-for-manufacturing/",
-      "score": 5,
-      "signals": [
-        "OG",
-        "Schema:8",
-        "Author",
-        "Substantive",
-        "Breadcrumbs"
-      ]
-    },
-    {
-      "path": "/best/invoice-finance-for-local-authority-suppliers/",
-      "score": 5,
-      "signals": [
-        "OG",
-        "Schema:7",
-        "Author",
-        "Substantive",
-        "Breadcrumbs"
-      ]
-    },
-    {
-      "path": "/best/best-with-xero-integration/",
-      "score": 5,
-      "signals": [
-        "OG",
-        "Schema:8",
-        "Author",
-        "Substantive",
-        "Breadcrumbs"
-      ]
-    },
-    {
-      "path": "/best/no-personal-guarantee/",
-      "score": 5,
-      "signals": [
-        "OG",
-        "Schema:7",
-        "Author",
-        "Substantive",
-        "Breadcrumbs"
-      ]
-    },
-    {
-      "path": "/best/best-for-transport/",
       "score": 5,
       "signals": [
         "OG",
