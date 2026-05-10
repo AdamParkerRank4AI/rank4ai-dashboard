@@ -1,20 +1,20 @@
 {
   "site_id": "cardmachines",
   "domain": "cardmachines.pages.dev",
-  "crawled_at": "2026-05-10T16:00:07.111239+00:00",
+  "crawled_at": "2026-05-10T16:15:30.082962+00:00",
   "source": "fleet-source-reader",
-  "pages_crawled": 147,
+  "pages_crawled": 160,
   "total_issues": 0,
-  "orphan_pages": 2,
-  "avg_depth": 1.8095238095238095,
-  "avg_word_count": 1898,
-  "pages_with_schema": 147,
+  "orphan_pages": 4,
+  "avg_depth": 1.81875,
+  "avg_word_count": 1945,
+  "pages_with_schema": 160,
   "pages_with_multimodal": 0,
-  "pages_with_comparison_table": 33,
+  "pages_with_comparison_table": 41,
   "pages_with_video": 0,
-  "pages_over_2000_words": 59,
+  "pages_over_2000_words": 68,
   "images_missing_alt": 0,
-  "pages_with_date": 147,
+  "pages_with_date": 160,
   "crawler_access": {
     "GPTBot": false,
     "ClaudeBot": false,
@@ -39,6 +39,10 @@
     "learn": {
       "hub": "/learn/",
       "page_count": 3
+    },
+    "tools": {
+      "hub": "/tools/",
+      "page_count": 1
     },
     "privacy": {
       "hub": "/privacy/",
@@ -80,6 +84,10 @@
       "hub": "/methodology/",
       "page_count": 1
     },
+    "which-card-machine": {
+      "hub": "/which-card-machine/",
+      "page_count": 1
+    },
     "features": {
       "hub": "/features/",
       "page_count": 6
@@ -118,7 +126,7 @@
     },
     "switch": {
       "hub": "/switch/",
-      "page_count": 6
+      "page_count": 11
     },
     "tap-to-pay-android": {
       "hub": "/tap-to-pay-android/",
@@ -134,7 +142,7 @@
     },
     "help": {
       "hub": "/help/",
-      "page_count": 3
+      "page_count": 4
     },
     "questions": {
       "hub": "/questions/",
@@ -142,30 +150,30 @@
     },
     "reviews": {
       "hub": "/reviews/",
-      "page_count": 14
+      "page_count": 19
     }
   },
-  "topic_cluster_count": 30,
+  "topic_cluster_count": 32,
   "term_consistency": {
-    "card": 257,
-    "2026": 137,
+    "card": 268,
+    "2026": 145,
     "best": 106,
-    "machine": 89,
-    "terminals": 78,
-    "terminal": 71,
-    "takecardpayments": 58,
-    "reader": 47,
-    "review": 43,
+    "machine": 92,
+    "terminals": 80,
+    "terminal": 75,
+    "takecardpayments": 63,
+    "review": 58,
+    "reader": 57,
+    "stripe": 41,
+    "rate": 40,
+    "mobile": 40,
     "merchant": 39,
-    "mobile": 36,
     "compared": 35,
-    "rate": 33,
-    "acquirers": 32,
-    "accounts": 32
+    "acquirers": 33
   },
   "content_freshness": {
-    "pages_with_dates": 147,
-    "fresh_30_days": 147,
+    "pages_with_dates": 160,
+    "fresh_30_days": 160,
     "fresh_90_days": 0,
     "stale": 0
   },
@@ -206,7 +214,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 147,
+      "internal_links_in": 160,
       "depth": 1
     },
     {
@@ -244,7 +252,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 147,
+      "internal_links_in": 160,
       "depth": 1
     },
     {
@@ -701,7 +709,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 147,
+      "internal_links_in": 160,
       "depth": 1
     },
     {
@@ -824,6 +832,49 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
+      "internal_links_in": 2,
+      "depth": 2
+    },
+    {
+      "url": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "path": "/tools/total-cost-of-acquiring-calculator/",
+      "title": "Total Cost of Acquiring (TCA) Calculator: UK Card Machines (2026)",
+      "h1": "Total Cost of Acquiring calculator",
+      "meta_desc": "Blended UK card-machine cost calculator: MSC, monthly fee, per-transaction rate, chargeback fee, scheme fee, refund handling. Worked examples per acquirer. Compare Dojo, SumUp, Square, Stripe, Adyen.",
+      "word_count": 4096,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "FAQPage",
+        "SoftwareApplication",
+        "HowTo",
+        "Article"
+      ],
+      "internal_links_out": 27,
+      "external_links_out": -22,
+      "canonical": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 3,
+      "list_count": 8,
+      "question_h2s": 0,
+      "h2_count": 10,
+      "last_modified": "2026-05-10",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
       "internal_links_in": 1,
       "depth": 2
     },
@@ -862,7 +913,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 147,
+      "internal_links_in": 160,
       "depth": 1
     },
     {
@@ -900,7 +951,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 147,
+      "internal_links_in": 160,
       "depth": 1
     },
     {
@@ -938,7 +989,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 147,
+      "internal_links_in": 160,
       "depth": 1
     },
     {
@@ -1057,7 +1108,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 69,
+      "internal_links_in": 82,
       "depth": 2
     },
     {
@@ -1133,7 +1184,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 147,
+      "internal_links_in": 160,
       "depth": 1
     },
     {
@@ -1703,7 +1754,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 147,
+      "internal_links_in": 160,
       "depth": 2
     },
     {
@@ -1779,7 +1830,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 147,
+      "internal_links_in": 160,
       "depth": 2
     },
     {
@@ -2577,7 +2628,49 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 147,
+      "internal_links_in": 160,
+      "depth": 1
+    },
+    {
+      "url": "https://takecardpayments.co.uk/which-card-machine/",
+      "path": "/which-card-machine/",
+      "title": "Which Card Machine Is Right for My Business? UK Decision Tool (2026)",
+      "h1": "Which card machine is right for my business?",
+      "meta_desc": "Pick the right UK card terminal in 90 seconds. Decision tree by business type (retail, hospitality, mobile, B2B, e-comm), ticket size band and priority axis. 14 terminals matched against 60+ business shapes.",
+      "word_count": 4012,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "FAQPage",
+        "HowTo",
+        "Article"
+      ],
+      "internal_links_out": 35,
+      "external_links_out": -31,
+      "canonical": "https://takecardpayments.co.uk/which-card-machine/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 3,
+      "list_count": 12,
+      "question_h2s": 1,
+      "h2_count": 10,
+      "last_modified": "2026-05-10",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 0,
       "depth": 1
     },
     {
@@ -2843,7 +2936,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 147,
+      "internal_links_in": 160,
       "depth": 1
     },
     {
@@ -3223,7 +3316,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 147,
+      "internal_links_in": 160,
       "depth": 1
     },
     {
@@ -3831,7 +3924,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 147,
+      "internal_links_in": 160,
       "depth": 1
     },
     {
@@ -4411,7 +4504,7 @@
       "title": "Switching Card Payment Providers UK, TakeCardPayments",
       "h1": "Switching card payment providers",
       "meta_desc": "How to leave Worldpay, Barclaycard, Elavon and Paymentsense in the UK. Notice periods, exit fees, terminal returns, and the alternatives most merchants move to.",
-      "word_count": 1377,
+      "word_count": 1607,
       "status": 200,
       "schemas": [
         "Person",
@@ -4419,8 +4512,8 @@
         "WebSite",
         "WebPage"
       ],
-      "internal_links_out": 29,
-      "external_links_out": -25,
+      "internal_links_out": 34,
+      "external_links_out": -30,
       "canonical": "https://takecardpayments.co.uk/switch/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -4431,7 +4524,7 @@
       "table_count": 0,
       "list_count": 3,
       "question_h2s": 0,
-      "h2_count": 5,
+      "h2_count": 10,
       "last_modified": "2026-04-26",
       "has_answer_capsule": true,
       "has_og_tags": true,
@@ -4440,16 +4533,16 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 147,
+      "internal_links_in": 160,
       "depth": 1
     },
     {
-      "url": "https://takecardpayments.co.uk/switch/leave-takepayments/",
-      "path": "/switch/leave-takepayments/",
-      "title": "How to leave Take Payments",
-      "h1": "How to leave Take Payments",
-      "meta_desc": "Take Payments is a UK SMB acquirer / broker with significant sector content marketing. Exit specifics are similar to Paymentsense, depends on whether you s",
-      "word_count": 1355,
+      "url": "https://takecardpayments.co.uk/switch/leave-stripe/",
+      "path": "/switch/leave-stripe/",
+      "title": "How to leave Stripe",
+      "h1": "How to leave Stripe",
+      "meta_desc": "Stripe Terminal is run on a no-fixed-contract pay-as-you-go basis in the UK, so leaving is mechanically simple. The harder work is migrating the underlying",
+      "word_count": 1524,
       "status": 200,
       "schemas": [
         "Person",
@@ -4457,8 +4550,46 @@
         "WebSite",
         "WebPage"
       ],
-      "internal_links_out": 30,
-      "external_links_out": -26,
+      "internal_links_out": 32,
+      "external_links_out": -28,
+      "canonical": "https://takecardpayments.co.uk/switch/leave-stripe/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 5,
+      "question_h2s": 0,
+      "h2_count": 5,
+      "last_modified": "2026-05-10",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": true,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 4,
+      "depth": 2
+    },
+    {
+      "url": "https://takecardpayments.co.uk/switch/leave-takepayments/",
+      "path": "/switch/leave-takepayments/",
+      "title": "How to leave Take Payments",
+      "h1": "How to leave Take Payments",
+      "meta_desc": "Take Payments is a UK SMB acquirer / broker with significant sector content marketing. Exit specifics are similar to Paymentsense, depends on whether you s",
+      "word_count": 1363,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage"
+      ],
+      "internal_links_out": 32,
+      "external_links_out": -28,
       "canonical": "https://takecardpayments.co.uk/switch/leave-takepayments/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -4478,7 +4609,45 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 5,
+      "internal_links_in": 7,
+      "depth": 2
+    },
+    {
+      "url": "https://takecardpayments.co.uk/switch/leave-mypos/",
+      "path": "/switch/leave-mypos/",
+      "title": "How to leave myPOS",
+      "h1": "How to leave myPOS",
+      "meta_desc": "myPOS is a Bulgarian-headquartered card-acceptance provider with significant UK SMB share, particularly in mobile and high-risk-adjacent verticals. Hardwar",
+      "word_count": 1530,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage"
+      ],
+      "internal_links_out": 32,
+      "external_links_out": -28,
+      "canonical": "https://takecardpayments.co.uk/switch/leave-mypos/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 5,
+      "question_h2s": 0,
+      "h2_count": 5,
+      "last_modified": "2026-05-10",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": true,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 8,
       "depth": 2
     },
     {
@@ -4487,7 +4656,7 @@
       "title": "How to leave Barclaycard Payments",
       "h1": "How to leave Barclaycard Payments",
       "meta_desc": "Barclaycard Payments (the merchant-acquiring arm of Barclays) covers many UK SMBs through banking-bundled deals. Exits are usually less painful than Worldp",
-      "word_count": 1377,
+      "word_count": 1385,
       "status": 200,
       "schemas": [
         "Person",
@@ -4495,8 +4664,8 @@
         "WebSite",
         "WebPage"
       ],
-      "internal_links_out": 30,
-      "external_links_out": -26,
+      "internal_links_out": 32,
+      "external_links_out": -28,
       "canonical": "https://takecardpayments.co.uk/switch/leave-barclaycard/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -4516,7 +4685,83 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 5,
+      "internal_links_in": 8,
+      "depth": 2
+    },
+    {
+      "url": "https://takecardpayments.co.uk/switch/leave-square/",
+      "path": "/switch/leave-square/",
+      "title": "How to leave Square",
+      "h1": "How to leave Square",
+      "meta_desc": "Square is no-contract pay-as-you-go in the UK. Leaving the payments side is straightforward; the harder bit is exporting POS data, customer directory, loya",
+      "word_count": 1464,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage"
+      ],
+      "internal_links_out": 32,
+      "external_links_out": -28,
+      "canonical": "https://takecardpayments.co.uk/switch/leave-square/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 5,
+      "question_h2s": 0,
+      "h2_count": 5,
+      "last_modified": "2026-05-10",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": true,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 8,
+      "depth": 2
+    },
+    {
+      "url": "https://takecardpayments.co.uk/switch/leave-sumup/",
+      "path": "/switch/leave-sumup/",
+      "title": "How to leave SumUp",
+      "h1": "How to leave SumUp",
+      "meta_desc": "SumUp is no-contract pay-as-you-go in the UK. Leaving is mechanically simple. The most common reasons to leave are higher card volumes that make 1.69% unco",
+      "word_count": 1494,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage"
+      ],
+      "internal_links_out": 32,
+      "external_links_out": -28,
+      "canonical": "https://takecardpayments.co.uk/switch/leave-sumup/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 5,
+      "question_h2s": 0,
+      "h2_count": 5,
+      "last_modified": "2026-05-10",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": true,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 7,
       "depth": 2
     },
     {
@@ -4525,7 +4770,7 @@
       "title": "How to leave Paymentsense",
       "h1": "How to leave Paymentsense",
       "meta_desc": "Paymentsense is a UK-focused acquirer / ISO with strong sector specialisms. Contracts can be on Paymentsense paper or on the underlying acquirer paper (oft",
-      "word_count": 1364,
+      "word_count": 1374,
       "status": 200,
       "schemas": [
         "Person",
@@ -4533,8 +4778,8 @@
         "WebSite",
         "WebPage"
       ],
-      "internal_links_out": 30,
-      "external_links_out": -26,
+      "internal_links_out": 32,
+      "external_links_out": -28,
       "canonical": "https://takecardpayments.co.uk/switch/leave-paymentsense/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -4554,7 +4799,45 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 5,
+      "internal_links_in": 6,
+      "depth": 2
+    },
+    {
+      "url": "https://takecardpayments.co.uk/switch/leave-tide/",
+      "path": "/switch/leave-tide/",
+      "title": "How to leave Tide Card Reader",
+      "h1": "How to leave Tide Card Reader",
+      "meta_desc": "Tide Card Reader is a no-contract product bundled with the Tide Business banking relationship. Leaving the card-reader side is simple; the question is whet",
+      "word_count": 1522,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage"
+      ],
+      "internal_links_out": 32,
+      "external_links_out": -28,
+      "canonical": "https://takecardpayments.co.uk/switch/leave-tide/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 5,
+      "question_h2s": 0,
+      "h2_count": 5,
+      "last_modified": "2026-05-10",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": true,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 7,
       "depth": 2
     },
     {
@@ -4563,7 +4846,7 @@
       "title": "How to leave Elavon",
       "h1": "How to leave Elavon",
       "meta_desc": "Elavon is a US-owned acquirer with significant UK SMB share, particularly via reseller deals. Exit specifics depend heavily on whether you signed direct or",
-      "word_count": 1403,
+      "word_count": 1410,
       "status": 200,
       "schemas": [
         "Person",
@@ -4571,8 +4854,8 @@
         "WebSite",
         "WebPage"
       ],
-      "internal_links_out": 30,
-      "external_links_out": -26,
+      "internal_links_out": 32,
+      "external_links_out": -28,
       "canonical": "https://takecardpayments.co.uk/switch/leave-elavon/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -4592,7 +4875,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 5,
+      "internal_links_in": 9,
       "depth": 2
     },
     {
@@ -4601,7 +4884,7 @@
       "title": "How to leave Worldpay",
       "h1": "How to leave Worldpay",
       "meta_desc": "Worldpay (now part of GTCR / FIS) is the UK",
-      "word_count": 1430,
+      "word_count": 1439,
       "status": 200,
       "schemas": [
         "Person",
@@ -4609,8 +4892,8 @@
         "WebSite",
         "WebPage"
       ],
-      "internal_links_out": 30,
-      "external_links_out": -26,
+      "internal_links_out": 32,
+      "external_links_out": -28,
       "canonical": "https://takecardpayments.co.uk/switch/leave-worldpay/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -4630,7 +4913,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 5,
+      "internal_links_in": 6,
       "depth": 2
     },
     {
@@ -5064,7 +5347,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 147,
+      "internal_links_in": 160,
       "depth": 1
     },
     {
@@ -5103,8 +5386,50 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 2,
+      "internal_links_in": 3,
       "depth": 1
+    },
+    {
+      "url": "https://takecardpayments.co.uk/help/chargeback-notification-uk/",
+      "path": "/help/chargeback-notification-uk/",
+      "title": "Chargeback Notification UK: 7-14 Day Response Runbook (2026)",
+      "h1": "UK chargeback notification: response runbook",
+      "meta_desc": "You have just received a UK chargeback notification. Step-by-step response runbook: 7-14 day response window, evidence pack template, dispute flow, win-rate by reason code.",
+      "word_count": 3872,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "FAQPage",
+        "HowTo",
+        "Article"
+      ],
+      "internal_links_out": 29,
+      "external_links_out": -25,
+      "canonical": "https://takecardpayments.co.uk/help/chargeback-notification-uk/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 2,
+      "list_count": 9,
+      "question_h2s": 1,
+      "h2_count": 10,
+      "last_modified": "2026-05-10",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 0,
+      "depth": 2
     },
     {
       "url": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
@@ -5144,7 +5469,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1,
+      "internal_links_in": 2,
       "depth": 2
     },
     {
@@ -5225,7 +5550,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 147,
+      "internal_links_in": 160,
       "depth": 1
     },
     {
@@ -5275,7 +5600,7 @@
       "title": "UK Card Terminal Reviews, TakeCardPayments",
       "h1": "UK card terminal reviews",
       "meta_desc": "Hands-on reviews of UK card terminals: Dojo Go, SumUp Solo, Zettle Reader 2, Square Terminal, Stripe Reader S700, plus Tap to Pay on iPhone. Tested with real transactions.",
-      "word_count": 1909,
+      "word_count": 2223,
       "status": 200,
       "schemas": [
         "Person",
@@ -5283,8 +5608,8 @@
         "WebSite",
         "WebPage"
       ],
-      "internal_links_out": 37,
-      "external_links_out": -33,
+      "internal_links_out": 42,
+      "external_links_out": -38,
       "canonical": "https://takecardpayments.co.uk/reviews/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -5295,7 +5620,7 @@
       "table_count": 0,
       "list_count": 3,
       "question_h2s": 0,
-      "h2_count": 13,
+      "h2_count": 18,
       "last_modified": "2026-04-26",
       "has_answer_capsule": true,
       "has_og_tags": true,
@@ -5304,7 +5629,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 147,
+      "internal_links_in": 160,
       "depth": 1
     },
     {
@@ -5351,7 +5676,7 @@
       "title": "BBPOS WisePOS E review (2026), UK rate, fees and verdict",
       "h1": "BBPOS WisePOS E review",
       "meta_desc": "Hands-on BBPOS WisePOS E review by TakeCardPayments. BBPOS WisePOS E is the hardware behind Stripe Terminal and many white-label acquirer terminals. Soli...",
-      "word_count": 2259,
+      "word_count": 2255,
       "status": 200,
       "schemas": [
         "Person",
@@ -5381,6 +5706,44 @@
       "has_breadcrumbs": true,
       "has_viewport": true,
       "internal_links_in": 9,
+      "depth": 2
+    },
+    {
+      "url": "https://takecardpayments.co.uk/reviews/ingenico-iwl250-move-5000/",
+      "path": "/reviews/ingenico-iwl250-move-5000/",
+      "title": "Ingenico iWL250 / Move 5000 review (2026), UK rate, fees and verdict",
+      "h1": "Ingenico iWL250 / Move 5000 review",
+      "meta_desc": "Hands-on Ingenico iWL250 / Move 5000 review by TakeCardPayments. Ingenico iWL250 is the long-tail portable terminal across UK retail and hospitality; Move 5000 is th...",
+      "word_count": 2519,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage"
+      ],
+      "internal_links_out": 32,
+      "external_links_out": -28,
+      "canonical": "https://takecardpayments.co.uk/reviews/ingenico-iwl250-move-5000/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 1,
+      "list_count": 8,
+      "question_h2s": 0,
+      "h2_count": 10,
+      "last_modified": "2026-05-10",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": true,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 6,
       "depth": 2
     },
     {
@@ -5418,7 +5781,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 9,
+      "internal_links_in": 7,
       "depth": 2
     },
     {
@@ -5427,7 +5790,7 @@
       "title": "Adyen for Platforms review (2026), UK rate, fees and verdict",
       "h1": "Adyen for Platforms review",
       "meta_desc": "Hands-on Adyen for Platforms review by TakeCardPayments. Adyen is the enterprise-grade acquirer used by larger UK merchants and platforms (Just Eat, Delivero...",
-      "word_count": 2225,
+      "word_count": 2222,
       "status": 200,
       "schemas": [
         "Person",
@@ -5456,7 +5819,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 14,
+      "internal_links_in": 13,
       "depth": 2
     },
     {
@@ -5465,7 +5828,7 @@
       "title": "SumUp Solo review (2026), UK rate, fees and verdict",
       "h1": "SumUp Solo review",
       "meta_desc": "Hands-on SumUp Solo review by TakeCardPayments. SumUp Solo is the strongest no-contract UK terminal for sole traders, mobile businesses and low-to-m...",
-      "word_count": 2224,
+      "word_count": 2223,
       "status": 200,
       "schemas": [
         "Person",
@@ -5494,7 +5857,45 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 34,
+      "internal_links_in": 37,
+      "depth": 2
+    },
+    {
+      "url": "https://takecardpayments.co.uk/reviews/stripe-reader-m2/",
+      "path": "/reviews/stripe-reader-m2/",
+      "title": "Stripe Reader M2 review (2026), UK rate, fees and verdict",
+      "h1": "Stripe Reader M2 review",
+      "meta_desc": "Hands-on Stripe Reader M2 review by TakeCardPayments. Stripe Reader M2 is the smaller mobile reader in Stripe",
+      "word_count": 2287,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage"
+      ],
+      "internal_links_out": 32,
+      "external_links_out": -28,
+      "canonical": "https://takecardpayments.co.uk/reviews/stripe-reader-m2/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 1,
+      "list_count": 8,
+      "question_h2s": 0,
+      "h2_count": 10,
+      "last_modified": "2026-05-10",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": true,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 7,
       "depth": 2
     },
     {
@@ -5532,7 +5933,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 17,
+      "internal_links_in": 19,
       "depth": 2
     },
     {
@@ -5608,7 +6009,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 16,
+      "internal_links_in": 15,
       "depth": 2
     },
     {
@@ -5617,7 +6018,7 @@
       "title": "Tide Card Reader review (2026), UK rate, fees and verdict",
       "h1": "Tide Card Reader review",
       "meta_desc": "Hands-on Tide Card Reader review by TakeCardPayments. Tide Card Reader is the in-app card-acceptance product for Tide Business banking customers. Cheapest...",
-      "word_count": 2252,
+      "word_count": 2253,
       "status": 200,
       "schemas": [
         "Person",
@@ -5647,6 +6048,44 @@
       "has_breadcrumbs": true,
       "has_viewport": true,
       "internal_links_in": 21,
+      "depth": 2
+    },
+    {
+      "url": "https://takecardpayments.co.uk/reviews/bbpos-wisepad-3/",
+      "path": "/reviews/bbpos-wisepad-3/",
+      "title": "BBPOS WisePad 3 review (2026), UK rate, fees and verdict",
+      "h1": "BBPOS WisePad 3 review",
+      "meta_desc": "Hands-on BBPOS WisePad 3 review by TakeCardPayments. BBPOS WisePad 3 is the smaller mobile-first reader in the BBPOS family, white-labelled by Stripe and...",
+      "word_count": 2374,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage"
+      ],
+      "internal_links_out": 32,
+      "external_links_out": -28,
+      "canonical": "https://takecardpayments.co.uk/reviews/bbpos-wisepad-3/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 1,
+      "list_count": 8,
+      "question_h2s": 0,
+      "h2_count": 10,
+      "last_modified": "2026-05-10",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": true,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 9,
       "depth": 2
     },
     {
@@ -5684,7 +6123,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 15,
+      "internal_links_in": 13,
       "depth": 2
     },
     {
@@ -5693,7 +6132,7 @@
       "title": "Dojo Go review (2026), UK rate, fees and verdict",
       "h1": "Dojo Go review",
       "meta_desc": "Hands-on Dojo Go review by TakeCardPayments. Dojo Go is the strongest UK card terminal for hospitality and retail in 2026. Same-next-day settleme...",
-      "word_count": 2223,
+      "word_count": 2222,
       "status": 200,
       "schemas": [
         "Person",
@@ -5722,7 +6161,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 26,
+      "internal_links_in": 30,
       "depth": 2
     },
     {
@@ -5760,7 +6199,45 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 11,
+      "internal_links_in": 10,
+      "depth": 2
+    },
+    {
+      "url": "https://takecardpayments.co.uk/reviews/verifone-v200c-v400m/",
+      "path": "/reviews/verifone-v200c-v400m/",
+      "title": "Verifone V200c / V400m review (2026), UK rate, fees and verdict",
+      "h1": "Verifone V200c / V400m review",
+      "meta_desc": "Hands-on Verifone V200c / V400m review by TakeCardPayments. Verifone V200c and V400m are workhorse UK terminals deployed by traditional acquirers across hospita...",
+      "word_count": 2476,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage"
+      ],
+      "internal_links_out": 32,
+      "external_links_out": -28,
+      "canonical": "https://takecardpayments.co.uk/reviews/verifone-v200c-v400m/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 1,
+      "list_count": 8,
+      "question_h2s": 0,
+      "h2_count": 10,
+      "last_modified": "2026-05-10",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": true,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 9,
       "depth": 2
     },
     {
@@ -5798,7 +6275,45 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 26,
+      "internal_links_in": 28,
+      "depth": 2
+    },
+    {
+      "url": "https://takecardpayments.co.uk/reviews/pax-a77/",
+      "path": "/reviews/pax-a77/",
+      "title": "PAX A77 review (2026), UK rate, fees and verdict",
+      "h1": "PAX A77 review",
+      "meta_desc": "Hands-on PAX A77 review by TakeCardPayments. PAX A77 is the smaller, printer-less Android smart terminal in the PAX line-up, sitting below the A9...",
+      "word_count": 2441,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage"
+      ],
+      "internal_links_out": 32,
+      "external_links_out": -28,
+      "canonical": "https://takecardpayments.co.uk/reviews/pax-a77/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 1,
+      "list_count": 8,
+      "question_h2s": 0,
+      "h2_count": 10,
+      "last_modified": "2026-05-10",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": true,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 6,
       "depth": 2
     }
   ],
@@ -10440,6 +10955,231 @@
     },
     {
       "from": "https://takecardpayments.co.uk/learn/match-list-tmf-uk/",
+      "to": "https://takecardpayments.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/_astro/404.BapVqsmU.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/terminals/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/high-risk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/switch/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/trade/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/questions/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/get-quotes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/terminals/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/merchant-accounts/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/high-risk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/switch/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/trade/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/questions/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/get-quotes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/get-quotes/?context=tca-calculator",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/authors/oliver-mackman/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/terminals/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/merchant-accounts/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/high-risk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/switch/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/questions/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/hospitality/restaurant/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/hospitality/pub/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/trade/hairdresser-salon/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/trade/mobile-mechanic/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/retail/vape-shop/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/trade/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/get-quotes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "to": "https://takecardpayments.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
       "to": "https://takecardpayments.co.uk/disclaimer/",
       "type": "internal"
     },
@@ -21754,6 +22494,301 @@
       "type": "internal"
     },
     {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/_astro/404.BapVqsmU.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/terminals/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/high-risk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/switch/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/trade/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/questions/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/get-quotes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/terminals/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/merchant-accounts/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/high-risk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/switch/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/trade/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/questions/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/get-quotes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/reviews/sumup-solo/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/reviews/square-terminal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/reviews/dojo-go/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/reviews/square-terminal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/reviews/adyen/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/reviews/stripe-reader-s700/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/reviews/square-terminal/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/reviews/dojo-go/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/reviews/adyen/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/learn/contactless-cap-removal-2026/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/reviews/sumup-solo/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/reviews/zettle-reader-2/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/help/surcharging-uk-b2b-vs-b2c/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/tools/total-cost-of-acquiring-calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/get-quotes/?context=which-card-machine",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/authors/oliver-mackman/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/terminals/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/merchant-accounts/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/high-risk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/switch/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/questions/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/hospitality/restaurant/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/hospitality/pub/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/trade/hairdresser-salon/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/trade/mobile-mechanic/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/retail/vape-shop/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/trade/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/get-quotes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://takecardpayments.co.uk/which-card-machine/",
+      "to": "https://takecardpayments.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
       "from": "https://takecardpayments.co.uk/features/",
       "to": "https://takecardpayments.co.uk/favicon.svg",
       "type": "internal"
@@ -30282,526 +31317,6 @@
       "from": "https://takecardpayments.co.uk/compare/square-terminal-vs-stripe-reader-s700/",
       "to": "https://takecardpayments.co.uk/get-quotes/",
       "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/square-terminal-vs-stripe-reader-s700/",
-      "to": "https://takecardpayments.co.uk/authors/oliver-mackman/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/square-terminal-vs-stripe-reader-s700/",
-      "to": "https://takecardpayments.co.uk/compare/zettle-reader-2-vs-sumup-solo/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/square-terminal-vs-stripe-reader-s700/",
-      "to": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/square-terminal-vs-stripe-reader-s700/",
-      "to": "https://takecardpayments.co.uk/compare/tap-to-pay-iphone-vs-sumup-solo/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/square-terminal-vs-stripe-reader-s700/",
-      "to": "https://takecardpayments.co.uk/compare/stripe-reader-s700-vs-adyen/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/square-terminal-vs-stripe-reader-s700/",
-      "to": "https://takecardpayments.co.uk/compare/square-terminal-vs-dojo-go/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/square-terminal-vs-stripe-reader-s700/",
-      "to": "https://takecardpayments.co.uk/compare/pax-a920-pro-vs-bbpos-wisepos-e/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/square-terminal-vs-stripe-reader-s700/",
-      "to": "https://takecardpayments.co.uk/terminals/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/square-terminal-vs-stripe-reader-s700/",
-      "to": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/square-terminal-vs-stripe-reader-s700/",
-      "to": "https://takecardpayments.co.uk/merchant-accounts/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/square-terminal-vs-stripe-reader-s700/",
-      "to": "https://takecardpayments.co.uk/high-risk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/square-terminal-vs-stripe-reader-s700/",
-      "to": "https://takecardpayments.co.uk/switch/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/square-terminal-vs-stripe-reader-s700/",
-      "to": "https://takecardpayments.co.uk/reviews/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/square-terminal-vs-stripe-reader-s700/",
-      "to": "https://takecardpayments.co.uk/questions/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/square-terminal-vs-stripe-reader-s700/",
-      "to": "https://takecardpayments.co.uk/hospitality/restaurant/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/square-terminal-vs-stripe-reader-s700/",
-      "to": "https://takecardpayments.co.uk/hospitality/pub/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/square-terminal-vs-stripe-reader-s700/",
-      "to": "https://takecardpayments.co.uk/trade/hairdresser-salon/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/square-terminal-vs-stripe-reader-s700/",
-      "to": "https://takecardpayments.co.uk/trade/mobile-mechanic/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/square-terminal-vs-stripe-reader-s700/",
-      "to": "https://takecardpayments.co.uk/retail/vape-shop/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/square-terminal-vs-stripe-reader-s700/",
-      "to": "https://takecardpayments.co.uk/trade/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/square-terminal-vs-stripe-reader-s700/",
-      "to": "https://takecardpayments.co.uk/about/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/square-terminal-vs-stripe-reader-s700/",
-      "to": "https://takecardpayments.co.uk/methodology/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/square-terminal-vs-stripe-reader-s700/",
-      "to": "https://takecardpayments.co.uk/get-quotes/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/square-terminal-vs-stripe-reader-s700/",
-      "to": "https://takecardpayments.co.uk/contact/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/square-terminal-vs-stripe-reader-s700/",
-      "to": "https://takecardpayments.co.uk/privacy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/square-terminal-vs-stripe-reader-s700/",
-      "to": "https://takecardpayments.co.uk/terms/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/square-terminal-vs-stripe-reader-s700/",
-      "to": "https://takecardpayments.co.uk/disclaimer/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/favicon.svg",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/favicon.ico",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/_astro/404.BapVqsmU.css",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/terminals/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/high-risk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/switch/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/trade/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/questions/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/get-quotes/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/terminals/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/merchant-accounts/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/high-risk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/switch/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/trade/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/questions/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/reviews/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/get-quotes/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/about/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/get-quotes/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/authors/oliver-mackman/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/compare/dojo-go-vs-zettle-reader-2/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/compare/tyl-by-natwest-vs-dojo-go/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/compare/tap-to-pay-iphone-vs-sumup-solo/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/compare/adyen-vs-stripe-reader-s700/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/compare/pax-a920-pro-vs-bbpos-wisepos-e/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/compare/worldpay-vs-dojo/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/terminals/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/merchant-accounts/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/high-risk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/switch/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/reviews/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/questions/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/hospitality/restaurant/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/hospitality/pub/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/trade/hairdresser-salon/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/trade/mobile-mechanic/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/retail/vape-shop/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/trade/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/about/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/methodology/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/get-quotes/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/contact/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/privacy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/terms/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/sumup-vs-square/",
-      "to": "https://takecardpayments.co.uk/disclaimer/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/tap-to-pay-iphone-vs-sumup-solo/",
-      "to": "https://takecardpayments.co.uk/favicon.svg",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/tap-to-pay-iphone-vs-sumup-solo/",
-      "to": "https://takecardpayments.co.uk/favicon.ico",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/tap-to-pay-iphone-vs-sumup-solo/",
-      "to": "https://takecardpayments.co.uk/_astro/404.BapVqsmU.css",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/tap-to-pay-iphone-vs-sumup-solo/",
-      "to": "https://takecardpayments.co.uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/tap-to-pay-iphone-vs-sumup-solo/",
-      "to": "https://takecardpayments.co.uk/terminals/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/tap-to-pay-iphone-vs-sumup-solo/",
-      "to": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/tap-to-pay-iphone-vs-sumup-solo/",
-      "to": "https://takecardpayments.co.uk/high-risk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/tap-to-pay-iphone-vs-sumup-solo/",
-      "to": "https://takecardpayments.co.uk/switch/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/tap-to-pay-iphone-vs-sumup-solo/",
-      "to": "https://takecardpayments.co.uk/trade/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/tap-to-pay-iphone-vs-sumup-solo/",
-      "to": "https://takecardpayments.co.uk/questions/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/tap-to-pay-iphone-vs-sumup-solo/",
-      "to": "https://takecardpayments.co.uk/get-quotes/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/tap-to-pay-iphone-vs-sumup-solo/",
-      "to": "https://takecardpayments.co.uk/terminals/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/tap-to-pay-iphone-vs-sumup-solo/",
-      "to": "https://takecardpayments.co.uk/tap-to-pay-iphone/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/tap-to-pay-iphone-vs-sumup-solo/",
-      "to": "https://takecardpayments.co.uk/merchant-accounts/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/tap-to-pay-iphone-vs-sumup-solo/",
-      "to": "https://takecardpayments.co.uk/high-risk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/tap-to-pay-iphone-vs-sumup-solo/",
-      "to": "https://takecardpayments.co.uk/switch/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/tap-to-pay-iphone-vs-sumup-solo/",
-      "to": "https://takecardpayments.co.uk/trade/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/tap-to-pay-iphone-vs-sumup-solo/",
-      "to": "https://takecardpayments.co.uk/questions/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/tap-to-pay-iphone-vs-sumup-solo/",
-      "to": "https://takecardpayments.co.uk/reviews/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/tap-to-pay-iphone-vs-sumup-solo/",
-      "to": "https://takecardpayments.co.uk/get-quotes/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/tap-to-pay-iphone-vs-sumup-solo/",
-      "to": "https://takecardpayments.co.uk/about/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/tap-to-pay-iphone-vs-sumup-solo/",
-      "to": "https://takecardpayments.co.uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/tap-to-pay-iphone-vs-sumup-solo/",
-      "to": "https://takecardpayments.co.uk/get-quotes/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/tap-to-pay-iphone-vs-sumup-solo/",
-      "to": "https://takecardpayments.co.uk/authors/oliver-mackman/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/tap-to-pay-iphone-vs-sumup-solo/",
-      "to": "https://takecardpayments.co.uk/compare/revolut-card-reader-vs-tide-card-reader/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/tap-to-pay-iphone-vs-sumup-solo/",
-      "to": "https://takecardpayments.co.uk/compare/stripe-reader-s700-vs-adyen/",
-      "type": "internal"
-    },
-    {
-      "from": "https://takecardpayments.co.uk/compare/tap-to-pay-iphone-vs-sumup-solo/",
-      "to": "https://takecardpayments.co.uk/compare/tide-card-reader-vs-sumup-solo/",
-      "type": "internal"
     }
   ],
   "issues": [],
@@ -30811,8 +31326,16 @@
       "url": "https://takecardpayments.co.uk/fees-calculator/"
     },
     {
+      "path": "/which-card-machine/",
+      "url": "https://takecardpayments.co.uk/which-card-machine/"
+    },
+    {
       "path": "/tap-to-pay-android/",
       "url": "https://takecardpayments.co.uk/tap-to-pay-android/"
+    },
+    {
+      "path": "/help/chargeback-notification-uk/",
+      "url": "https://takecardpayments.co.uk/help/chargeback-notification-uk/"
     }
   ],
   "tree": {
@@ -30902,6 +31425,17 @@
           {
             "name": "match-list-tmf-uk",
             "path": "/learn/match-list-tmf-uk/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "tools",
+        "path": "/tools/",
+        "children": [
+          {
+            "name": "total-cost-of-acquiring-calculator",
+            "path": "/tools/total-cost-of-acquiring-calculator/",
             "children": []
           }
         ]
@@ -31143,6 +31677,11 @@
       {
         "name": "methodology",
         "path": "/methodology/",
+        "children": []
+      },
+      {
+        "name": "which-card-machine",
+        "path": "/which-card-machine/",
         "children": []
       },
       {
@@ -31400,8 +31939,18 @@
         "path": "/switch/",
         "children": [
           {
+            "name": "leave-stripe",
+            "path": "/switch/leave-stripe/",
+            "children": []
+          },
+          {
             "name": "leave-takepayments",
             "path": "/switch/leave-takepayments/",
+            "children": []
+          },
+          {
+            "name": "leave-mypos",
+            "path": "/switch/leave-mypos/",
             "children": []
           },
           {
@@ -31410,8 +31959,23 @@
             "children": []
           },
           {
+            "name": "leave-square",
+            "path": "/switch/leave-square/",
+            "children": []
+          },
+          {
+            "name": "leave-sumup",
+            "path": "/switch/leave-sumup/",
+            "children": []
+          },
+          {
             "name": "leave-paymentsense",
             "path": "/switch/leave-paymentsense/",
+            "children": []
+          },
+          {
+            "name": "leave-tide",
+            "path": "/switch/leave-tide/",
             "children": []
           },
           {
@@ -31487,6 +32051,11 @@
         "path": "/help/",
         "children": [
           {
+            "name": "chargeback-notification-uk",
+            "path": "/help/chargeback-notification-uk/",
+            "children": []
+          },
+          {
             "name": "surcharging-uk-b2b-vs-b2c",
             "path": "/help/surcharging-uk-b2b-vs-b2c/",
             "children": []
@@ -31524,6 +32093,11 @@
             "children": []
           },
           {
+            "name": "ingenico-iwl250-move-5000",
+            "path": "/reviews/ingenico-iwl250-move-5000/",
+            "children": []
+          },
+          {
             "name": "worldpay-terminal",
             "path": "/reviews/worldpay-terminal/",
             "children": []
@@ -31536,6 +32110,11 @@
           {
             "name": "sumup-solo",
             "path": "/reviews/sumup-solo/",
+            "children": []
+          },
+          {
+            "name": "stripe-reader-m2",
+            "path": "/reviews/stripe-reader-m2/",
             "children": []
           },
           {
@@ -31559,6 +32138,11 @@
             "children": []
           },
           {
+            "name": "bbpos-wisepad-3",
+            "path": "/reviews/bbpos-wisepad-3/",
+            "children": []
+          },
+          {
             "name": "revolut-card-reader",
             "path": "/reviews/revolut-card-reader/",
             "children": []
@@ -31574,8 +32158,18 @@
             "children": []
           },
           {
+            "name": "verifone-v200c-v400m",
+            "path": "/reviews/verifone-v200c-v400m/",
+            "children": []
+          },
+          {
             "name": "square-terminal",
             "path": "/reviews/square-terminal/",
+            "children": []
+          },
+          {
+            "name": "pax-a77",
+            "path": "/reviews/pax-a77/",
             "children": []
           }
         ]
@@ -31753,6 +32347,17 @@
       "signals": [
         "OG",
         "Schema:8",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/tools/total-cost-of-acquiring-calculator/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:9",
         "Author",
         "Substantive",
         "Breadcrumbs"
@@ -32232,6 +32837,17 @@
       "signals": [
         "OG",
         "Schema:4",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/which-card-machine/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:8",
         "Author",
         "Substantive",
         "Breadcrumbs"
@@ -32763,7 +33379,29 @@
       ]
     },
     {
+      "path": "/switch/leave-stripe/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:4",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
       "path": "/switch/leave-takepayments/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:4",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/switch/leave-mypos/",
       "score": 5,
       "signals": [
         "OG",
@@ -32785,7 +33423,40 @@
       ]
     },
     {
+      "path": "/switch/leave-square/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:4",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/switch/leave-sumup/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:4",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
       "path": "/switch/leave-paymentsense/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:4",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/switch/leave-tide/",
       "score": 5,
       "signals": [
         "OG",
@@ -32944,6 +33615,17 @@
       ]
     },
     {
+      "path": "/help/chargeback-notification-uk/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:8",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
       "path": "/help/surcharging-uk-b2b-vs-b2c/",
       "score": 5,
       "signals": [
@@ -33019,6 +33701,17 @@
       ]
     },
     {
+      "path": "/reviews/ingenico-iwl250-move-5000/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:4",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
       "path": "/reviews/worldpay-terminal/",
       "score": 5,
       "signals": [
@@ -33042,6 +33735,17 @@
     },
     {
       "path": "/reviews/sumup-solo/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:4",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/reviews/stripe-reader-m2/",
       "score": 5,
       "signals": [
         "OG",
@@ -33096,6 +33800,17 @@
       ]
     },
     {
+      "path": "/reviews/bbpos-wisepad-3/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:4",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
       "path": "/reviews/revolut-card-reader/",
       "score": 5,
       "signals": [
@@ -33129,7 +33844,29 @@
       ]
     },
     {
+      "path": "/reviews/verifone-v200c-v400m/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:4",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
       "path": "/reviews/square-terminal/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:4",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/reviews/pax-a77/",
       "score": 5,
       "signals": [
         "OG",
