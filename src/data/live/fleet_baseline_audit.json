@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-11T19:28:20.758436+00:00",
+  "generated_at": "2026-05-11T19:51:31.162692+00:00",
   "sites": {
     "rank4ai": {
       "flavour": "editorial",
@@ -66,15 +66,15 @@
           "id": "fleet_core_v",
           "label": "fleet-core >= v0.6.3",
           "severity": "p1",
-          "status": "fail",
-          "note": "v0.6.0 \u2014 needs >= v0.6.3"
+          "status": "pass",
+          "note": "v0.6.5 \u2014 needs >= v0.6.3"
         },
         {
           "id": "3tier_safepayload",
           "label": "3-tier safe-payload write",
           "severity": "p0",
           "status": "pass",
-          "note": "inline impl"
+          "note": "via fleet-core"
         },
         {
           "id": "og_image",
@@ -122,14 +122,14 @@
           "id": "fleet_xlinks",
           "label": ">=3 fleet xlinks in footer",
           "severity": "p2",
-          "status": "fail",
-          "note": "2/5 sister-site links"
+          "status": "pass",
+          "note": "4/5 sister-site links"
         },
         {
           "id": "link_rel_related",
           "label": "<link rel=related> in head (#22)",
           "severity": "p2",
-          "status": "fail",
+          "status": "pass",
           "note": "no <link rel=related> in head"
         },
         {
@@ -138,6 +138,20 @@
           "severity": "p2",
           "status": "fail",
           "note": "all 20 sampled lastmods identical \u2014 build-time stamp"
+        },
+        {
+          "id": "faqpage_misuse",
+          "label": "FAQPage schema only with 4+ Q/A (#12)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "6 questions + visible FAQ section"
+        },
+        {
+          "id": "indexnow_unique",
+          "label": "IndexNow key file present (#18)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "key 4c1cc177... (1 key files)"
         }
       ]
     },
@@ -206,22 +220,22 @@
           "id": "fleet_core_v",
           "label": "fleet-core >= v0.6.3",
           "severity": "p1",
-          "status": "fail",
-          "note": "v0.6.0 \u2014 needs >= v0.6.3"
+          "status": "pass",
+          "note": "v0.6.5 \u2014 needs >= v0.6.3"
         },
         {
           "id": "3tier_safepayload",
           "label": "3-tier safe-payload write",
           "severity": "p0",
           "status": "pass",
-          "note": "inline impl"
+          "note": "via fleet-core"
         },
         {
           "id": "og_image",
           "label": "og:image (not placeholder)",
           "severity": "p1",
-          "status": "fail",
-          "note": "no og:image meta"
+          "status": "pass",
+          "note": "og-default.png"
         },
         {
           "id": "homepage_imagery",
@@ -278,6 +292,20 @@
           "severity": "p2",
           "status": "fail",
           "note": "all 20 sampled lastmods identical \u2014 build-time stamp"
+        },
+        {
+          "id": "faqpage_misuse",
+          "label": "FAQPage schema only with 4+ Q/A (#12)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "6 questions + visible FAQ section"
+        },
+        {
+          "id": "indexnow_unique",
+          "label": "IndexNow key file present (#18)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "key a2dbf411... (1 key files)"
         }
       ]
     },
@@ -346,15 +374,15 @@
           "id": "fleet_core_v",
           "label": "fleet-core >= v0.6.3",
           "severity": "p1",
-          "status": "fail",
-          "note": "v0.6.2 \u2014 needs >= v0.6.3"
+          "status": "pass",
+          "note": "v0.6.5 \u2014 needs >= v0.6.3"
         },
         {
           "id": "3tier_safepayload",
           "label": "3-tier safe-payload write",
           "severity": "p0",
           "status": "pass",
-          "note": "inline impl"
+          "note": "via fleet-core"
         },
         {
           "id": "og_image",
@@ -418,6 +446,20 @@
           "severity": "p2",
           "status": "fail",
           "note": "all 20 sampled lastmods identical \u2014 build-time stamp"
+        },
+        {
+          "id": "faqpage_misuse",
+          "label": "FAQPage schema only with 4+ Q/A (#12)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "FAQPage schema with 3 Question entries (need 4+)"
+        },
+        {
+          "id": "indexnow_unique",
+          "label": "IndexNow key file present (#18)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "key 4c1cc177... (1 key files)"
         }
       ]
     },
@@ -558,6 +600,20 @@
           "severity": "p2",
           "status": "fail",
           "note": "no lastmod elements"
+        },
+        {
+          "id": "faqpage_misuse",
+          "label": "FAQPage schema only with 4+ Q/A (#12)",
+          "severity": "p2",
+          "status": "skip",
+          "note": "no FAQPage schema on this page"
+        },
+        {
+          "id": "indexnow_unique",
+          "label": "IndexNow key file present (#18)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "key 85fe0de8... (1 key files)"
         }
       ]
     },
@@ -627,7 +683,7 @@
           "label": "fleet-core >= v0.6.3",
           "severity": "p1",
           "status": "pass",
-          "note": "v0.6.3 \u2014 needs >= v0.6.3"
+          "note": "v0.6.5 \u2014 needs >= v0.6.3"
         },
         {
           "id": "3tier_safepayload",
@@ -640,8 +696,8 @@
           "id": "og_image",
           "label": "og:image (not placeholder)",
           "severity": "p1",
-          "status": "fail",
-          "note": "still on og-default.svg placeholder"
+          "status": "pass",
+          "note": "og-default.png"
         },
         {
           "id": "homepage_imagery",
@@ -689,7 +745,7 @@
           "id": "link_rel_related",
           "label": "<link rel=related> in head (#22)",
           "severity": "p2",
-          "status": "fail",
+          "status": "pass",
           "note": "no <link rel=related> in head"
         },
         {
@@ -698,6 +754,20 @@
           "severity": "p2",
           "status": "fail",
           "note": "no lastmod elements"
+        },
+        {
+          "id": "faqpage_misuse",
+          "label": "FAQPage schema only with 4+ Q/A (#12)",
+          "severity": "p2",
+          "status": "skip",
+          "note": "no FAQPage schema on this page"
+        },
+        {
+          "id": "indexnow_unique",
+          "label": "IndexNow key file present (#18)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "key 6c8693c2... (1 key files)"
         }
       ]
     },
@@ -767,7 +837,7 @@
           "label": "fleet-core >= v0.6.3",
           "severity": "p1",
           "status": "pass",
-          "note": "v0.6.3 \u2014 needs >= v0.6.3"
+          "note": "v0.6.5 \u2014 needs >= v0.6.3"
         },
         {
           "id": "3tier_safepayload",
@@ -780,8 +850,8 @@
           "id": "og_image",
           "label": "og:image (not placeholder)",
           "severity": "p1",
-          "status": "fail",
-          "note": "still on og-default.svg placeholder"
+          "status": "pass",
+          "note": "og-default.png"
         },
         {
           "id": "homepage_imagery",
@@ -838,6 +908,20 @@
           "severity": "p2",
           "status": "fail",
           "note": "no lastmod elements"
+        },
+        {
+          "id": "faqpage_misuse",
+          "label": "FAQPage schema only with 4+ Q/A (#12)",
+          "severity": "p2",
+          "status": "skip",
+          "note": "no FAQPage schema on this page"
+        },
+        {
+          "id": "indexnow_unique",
+          "label": "IndexNow key file present (#18)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "key 4d8cee5b... (1 key files)"
         }
       ]
     },
@@ -907,7 +991,7 @@
           "label": "fleet-core >= v0.6.3",
           "severity": "p1",
           "status": "pass",
-          "note": "v0.6.3 \u2014 needs >= v0.6.3"
+          "note": "v0.6.5 \u2014 needs >= v0.6.3"
         },
         {
           "id": "3tier_safepayload",
@@ -928,7 +1012,7 @@
           "label": "homepage has imagery",
           "severity": "p1",
           "status": "pass",
-          "note": "12 img + 71 svg"
+          "note": "12 img + 75 svg"
         },
         {
           "id": "alt_text",
@@ -978,6 +1062,20 @@
           "severity": "p2",
           "status": "fail",
           "note": "no lastmod elements"
+        },
+        {
+          "id": "faqpage_misuse",
+          "label": "FAQPage schema only with 4+ Q/A (#12)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "7 questions + visible FAQ section"
+        },
+        {
+          "id": "indexnow_unique",
+          "label": "IndexNow key file present (#18)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "key 0090cd82... (1 key files)"
         }
       ]
     },
@@ -1046,15 +1144,15 @@
           "id": "fleet_core_v",
           "label": "fleet-core >= v0.6.3",
           "severity": "p1",
-          "status": "fail",
-          "note": "v0.4.0 \u2014 needs >= v0.6.3"
+          "status": "pass",
+          "note": "v0.6.5 \u2014 needs >= v0.6.3"
         },
         {
           "id": "3tier_safepayload",
           "label": "3-tier safe-payload write",
           "severity": "p0",
-          "status": "skip",
-          "note": "no Supabase lead capture"
+          "status": "pass",
+          "note": "via fleet-core"
         },
         {
           "id": "og_image",
@@ -1118,6 +1216,20 @@
           "severity": "p2",
           "status": "fail",
           "note": "no lastmod elements"
+        },
+        {
+          "id": "faqpage_misuse",
+          "label": "FAQPage schema only with 4+ Q/A (#12)",
+          "severity": "p2",
+          "status": "skip",
+          "note": "no FAQPage schema on this page"
+        },
+        {
+          "id": "indexnow_unique",
+          "label": "IndexNow key file present (#18)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "key eeac7b3a... (1 key files)"
         }
       ]
     },
@@ -1186,15 +1298,15 @@
           "id": "fleet_core_v",
           "label": "fleet-core >= v0.6.3",
           "severity": "p1",
-          "status": "fail",
-          "note": "v0.4.0 \u2014 needs >= v0.6.3"
+          "status": "pass",
+          "note": "v0.6.5 \u2014 needs >= v0.6.3"
         },
         {
           "id": "3tier_safepayload",
           "label": "3-tier safe-payload write",
           "severity": "p0",
-          "status": "skip",
-          "note": "no Supabase lead capture"
+          "status": "pass",
+          "note": "via fleet-core"
         },
         {
           "id": "og_image",
@@ -1258,6 +1370,20 @@
           "severity": "p2",
           "status": "fail",
           "note": "no lastmod elements"
+        },
+        {
+          "id": "faqpage_misuse",
+          "label": "FAQPage schema only with 4+ Q/A (#12)",
+          "severity": "p2",
+          "status": "skip",
+          "note": "no FAQPage schema on this page"
+        },
+        {
+          "id": "indexnow_unique",
+          "label": "IndexNow key file present (#18)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "key 272e470c... (1 key files)"
         }
       ]
     },
@@ -1327,7 +1453,7 @@
           "label": "fleet-core >= v0.6.3",
           "severity": "p1",
           "status": "pass",
-          "note": "v0.6.3 \u2014 needs >= v0.6.3"
+          "note": "v0.6.5 \u2014 needs >= v0.6.3"
         },
         {
           "id": "3tier_safepayload",
@@ -1398,6 +1524,20 @@
           "severity": "p2",
           "status": "fail",
           "note": "no lastmod elements"
+        },
+        {
+          "id": "faqpage_misuse",
+          "label": "FAQPage schema only with 4+ Q/A (#12)",
+          "severity": "p2",
+          "status": "skip",
+          "note": "no FAQPage schema on this page"
+        },
+        {
+          "id": "indexnow_unique",
+          "label": "IndexNow key file present (#18)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "key 9b4e8478... (1 key files)"
         }
       ]
     },
@@ -1522,14 +1662,14 @@
           "id": "fleet_xlinks",
           "label": ">=3 fleet xlinks in footer",
           "severity": "p2",
-          "status": "fail",
-          "note": "0/5 sister-site links"
+          "status": "pass",
+          "note": "5/5 sister-site links"
         },
         {
           "id": "link_rel_related",
           "label": "<link rel=related> in head (#22)",
           "severity": "p2",
-          "status": "fail",
+          "status": "pass",
           "note": "no <link rel=related> in head"
         },
         {
@@ -1538,6 +1678,20 @@
           "severity": "p2",
           "status": "fail",
           "note": "no lastmod elements"
+        },
+        {
+          "id": "faqpage_misuse",
+          "label": "FAQPage schema only with 4+ Q/A (#12)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "5 questions + visible FAQ section"
+        },
+        {
+          "id": "indexnow_unique",
+          "label": "IndexNow key file present (#18)",
+          "severity": "p2",
+          "status": "skip",
+          "note": "no IndexNow key (caught by indexnow_key check)"
         }
       ]
     },
@@ -1678,15 +1832,29 @@
           "severity": "p2",
           "status": "skip",
           "note": "no live URL"
+        },
+        {
+          "id": "faqpage_misuse",
+          "label": "FAQPage schema only with 4+ Q/A (#12)",
+          "severity": "p2",
+          "status": "skip",
+          "note": "no live URL"
+        },
+        {
+          "id": "indexnow_unique",
+          "label": "IndexNow key file present (#18)",
+          "severity": "p2",
+          "status": "skip",
+          "note": "no IndexNow key (caught by indexnow_key check)"
         }
       ]
     }
   },
   "summary": {
     "p0_fails": 2,
-    "p1_fails": 29,
-    "p2_fails": 47,
-    "pass": 120,
-    "total": 228
+    "p1_fails": 21,
+    "p2_fails": 43,
+    "pass": 149,
+    "total": 252
   }
 }

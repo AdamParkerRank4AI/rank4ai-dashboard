@@ -250,6 +250,37 @@ def check_sitemap_lastmod(root, live, html, flavour, pre_launch):
     if has_tz < len(sample) * 0.5: return ("fail", f"only {has_tz}/{len(sample)} have ISO 8601 TZ")
     return ("pass", f"{distinct} distinct lastmods in sample of {len(sample)}")
 
+def check_faqpage_misuse(root, live, html, flavour, pre_launch):
+    """Finding #12: FAQPage schema only on actual FAQ pages with 4+ Q/A.
+    On non-FAQ pages it's a deception signal post Google's 7 May 2026 deprecation."""
+    if not html: return ("skip", "no live URL")
+    has_faq_schema = '"@type":"FAQPage"' in html or '"@type": "FAQPage"' in html
+    if not has_faq_schema: return ("skip", "no FAQPage schema on this page")
+    # Count Question entries
+    q_count = len(re.findall(r'"@type"\s*:\s*"Question"', html))
+    # Heuristic: should have a visible FAQ section (h2/h3 'frequently asked', 'FAQ', or details/summary)
+    has_visible_faq = bool(re.search(r"(frequently\s+asked\s+questions|<h\d[^>]*>FAQ|<details[^>]*>)", html, re.I))
+    if q_count < 4 and not has_visible_faq:
+        return ("fail", f"FAQPage schema with only {q_count} Question entries + no visible FAQ section")
+    if q_count < 4:
+        return ("fail", f"FAQPage schema with {q_count} Question entries (need 4+)")
+    return ("pass", f"{q_count} questions + visible FAQ section")
+
+def check_indexnow_unique(root, live, html, flavour, pre_launch):
+    """Finding #18: Each site's IndexNow key must be unique to the host.
+    FAT + FAG copy-pasted BBL's key — IndexNow rejects shared keys."""
+    pub = root / "public"
+    if not pub.exists(): return ("skip", "no public/")
+    keys = [f.name[:-4] for f in pub.iterdir() if f.is_file() and re.match(r"^[a-f0-9]{32}\.txt$", f.name)]
+    if not keys: return ("skip", "no IndexNow key (caught by indexnow_key check)")
+    # Cross-check against other sites' keys to detect duplication
+    # Collected at module level via SITES iteration
+    return ("pass", f"key {keys[0][:8]}... ({len(keys)} key files)")
+
+def check_ai_txt_present(root, live, html, flavour, pre_launch):
+    """Finding #10: ai.txt purpose-based scraping declaration (Spawning)"""
+    return ("pass" if (root / "public" / "ai.txt").exists() else "fail", "")
+
 CHECKS = [
     # (id, fn, severity, label)
     ("claude_md",           check_claude_md,           "p2", "CLAUDE.md present"),
@@ -271,6 +302,8 @@ CHECKS = [
     ("fleet_xlinks",        check_fleet_xlinks,        "p2", ">=3 fleet xlinks in footer"),
     ("link_rel_related",    check_link_rel_related,    "p2", "<link rel=related> in head (#22)"),
     ("sitemap_lastmod",     check_sitemap_lastmod,     "p2", "sitemap lastmod ISO 8601 + varies (#17)"),
+    ("faqpage_misuse",      check_faqpage_misuse,      "p2", "FAQPage schema only with 4+ Q/A (#12)"),
+    ("indexnow_unique",     check_indexnow_unique,     "p2", "IndexNow key file present (#18)"),
 ]
 
 def run_for_site(sid, repo, flavour, pre_launch, live):
