@@ -1,0 +1,335 @@
+#!/usr/bin/env python3
+"""Fleet baseline conformance audit.
+
+Source of truth: ~/Library/Mobile Documents/com~apple~CloudDocs/claude/astro/FLEET/BASELINE_CHECKLIST.md
+Probes each fleet site (repo + live URL) and writes results to
+src/data/live/fleet_baseline_audit.json for dashboard surface.
+
+Runs locally or in CI. Exit non-zero on any P1 gap on a live site
+(safe to wire into deploy gates).
+
+Usage:
+  python3 fleet_baseline_audit.py           # full fleet
+  python3 fleet_baseline_audit.py rank4ai   # one site
+  python3 fleet_baseline_audit.py --json    # raw JSON, no human output
+  python3 fleet_baseline_audit.py --strict  # exit 1 if any P1 fails
+
+Built 2026-05-11 to close the recurring-gap class (Amy-Knight pattern,
+BBL/FundBiz silent-loss pattern, FAT/FAG scaffold residue pattern).
+"""
+from __future__ import annotations
+import json, os, re, sys, urllib.request, ssl, pathlib
+from datetime import datetime, timezone
+from typing import Any
+
+ROOT = pathlib.Path.home()
+OUT = ROOT / "rank4ai-dashboard/src/data/live/fleet_baseline_audit.json"
+
+SITES = [
+    # (id, local_dir, flavour, pre_launch, live_url)
+    ("rank4ai",          "rank4ai-site",            "editorial", False, "https://www.rank4ai.co.uk/"),
+    ("market-invoice",   "compare-invoice-finance", "leadgen",   False, "https://marketinvoice.co.uk/"),
+    ("seocompare",       "compareaiseo",            "editorial", False, "https://seocompare.co.uk/"),
+    ("rochellemarashi",  "rochellemarashi",         "client",    False, "https://rochellemarashi.pages.dev/"),
+    ("bestbusinessloans","bestbusinessloans",       "leadgen",   False, "https://bestbusinessloans.ai/"),
+    ("fundbiz",          "fundbiz",                 "leadgen",   False, "https://fundbiz.co.uk/"),
+    ("cardmachines",     "cardmachines",            "leadgen",   True,  "https://cardmachines.pages.dev/"),
+    ("findatradey",      "findatradey",             "leadgen",   True,  "https://findatradey.pages.dev/"),
+    ("findagym",         "findagym",                "leadgen",   True,  "https://findagym.pages.dev/"),
+    ("ukmetabolic",      "ukmetabolic",             "leadgen",   True,  "https://ukmetabolic.pages.dev/"),
+    ("builderweb",       "lovinlovable",            "saas",      False, "https://lovinlovable.dawn-field-3d16.workers.dev/"),
+    ("resiliencebuilder","steve-site",              "client",    False, None),
+]
+
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
+
+def fetch(url: str, timeout: int = 10) -> str | None:
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "fleet-baseline-audit/1.0"})
+        with urllib.request.urlopen(req, timeout=timeout, context=ctx) as r:
+            return r.read().decode("utf-8", errors="ignore")
+    except Exception:
+        return None
+
+def grep_repo(root: pathlib.Path, pattern: str, exts=(".astro",".ts",".tsx",".js",".html",".md"), max_files=600) -> bool:
+    if not root.exists():
+        return False
+    rx = re.compile(pattern)
+    files = 0
+    for fp in root.rglob("*"):
+        if files > max_files: break
+        if fp.is_dir(): continue
+        if any(seg in str(fp) for seg in ("/node_modules/", "/.git/", "/dist/", "/.astro/", "/.wrangler/")):
+            continue
+        if fp.suffix not in exts: continue
+        files += 1
+        try:
+            if rx.search(fp.read_text(errors="ignore")):
+                return True
+        except Exception:
+            pass
+    return False
+
+# ---------------------------------------------------------------------------
+# Check definitions. Each returns ("pass"/"fail"/"skip", note).
+# severity: "p0" (silent-loss class), "p1" (production gap), "p2" (best practice)
+# ---------------------------------------------------------------------------
+
+def check_claude_md(root, live, html, flavour, pre_launch):
+    ok = (root / "CLAUDE.md").exists()
+    return ("pass" if ok else "fail", "")
+
+def check_robots_txt(root, live, html, flavour, pre_launch):
+    p = root / "public/robots.txt"
+    if not p.exists(): return ("fail", "missing public/robots.txt")
+    txt = p.read_text(errors="ignore").lower()
+    if pre_launch:
+        ok = "disallow: /" in txt or "noindex" in txt
+        return ("pass" if ok else "fail", "pre-launch should block-all")
+    if "user-agent: *" in txt and "disallow: /" in txt:
+        return ("fail", "still on block-all but site is LIVE — robots flip missed")
+    has_ai = any(b in txt for b in ("gptbot", "oai-searchbot", "perplexitybot", "claudebot", "claude-user"))
+    return ("pass" if has_ai else "fail", "AI crawlers not explicitly named")
+
+def check_llms_txt(root, live, html, flavour, pre_launch):
+    p = root / "public/llms.txt"
+    return ("pass" if p.exists() else "fail", "")
+
+def check_llms_full_txt(root, live, html, flavour, pre_launch):
+    p = root / "public/llms-full.txt"
+    return ("pass" if p.exists() else "fail", "")
+
+def check_llms_instructions(root, live, html, flavour, pre_launch):
+    """Finding #9: Stripe-style ## Instructions section in llms.txt"""
+    p = root / "public/llms.txt"
+    if not p.exists(): return ("skip", "no llms.txt")
+    txt = p.read_text(errors="ignore")
+    has = re.search(r"^##\s*Instructions", txt, re.M) is not None
+    return ("pass" if has else "fail", "no `## Instructions` section per Stripe pattern")
+
+def check_ai_txt(root, live, html, flavour, pre_launch):
+    """Finding #10: Spawning ai.txt purpose-based scraping declaration"""
+    p = root / "public/ai.txt"
+    return ("pass" if p.exists() else "fail", "no public/ai.txt")
+
+def check_indexnow_key(root, live, html, flavour, pre_launch):
+    pub = root / "public"
+    if not pub.exists(): return ("fail", "no public/")
+    keys = [f for f in pub.iterdir() if f.is_file() and re.match(r"^[a-f0-9]{32}\.txt$", f.name)]
+    if not keys: return ("fail", "no IndexNow key file in public/")
+    # Cross-check: deploy.cjs INDEXNOW_KEY matches
+    dep = root / "scripts/deploy.cjs"
+    if dep.exists():
+        m = re.search(r"const INDEXNOW_KEY\s*=\s*['\"]([a-f0-9]{32})['\"]", dep.read_text(errors="ignore"))
+        if m and not (pub / f"{m.group(1)}.txt").exists():
+            return ("fail", f"deploy.cjs INDEXNOW_KEY={m.group(1)[:8]}... but no matching txt file")
+    return ("pass", f"{keys[0].name}")
+
+def check_deploy_site_host(root, live, html, flavour, pre_launch):
+    """Catch scaffold-from-template residue (FAT/FAG had BBL.co.uk as SITE_URL).
+    Pre-launch sites legitimately have SITE_HOST set to the future custom domain
+    while live URL is *.pages.dev. So skip pre-launch."""
+    if pre_launch: return ("skip", "pre-launch: SITE_HOST may legitimately differ from pages.dev URL")
+    dep = root / "scripts/deploy.cjs"
+    if not dep.exists(): return ("skip", "no deploy.cjs")
+    if not live: return ("skip", "no live URL")
+    t = dep.read_text(errors="ignore")
+    m_host = re.search(r"const SITE_HOST\s*=\s*['\"]([^'\"]+)['\"]", t)
+    if not m_host: return ("skip", "no SITE_HOST in deploy.cjs")
+    host = m_host.group(1)
+    live_host = re.sub(r"^https?://", "", live).rstrip("/").split("/")[0]
+    live_host = live_host.replace("www.", "")
+    if host == live_host or live_host.endswith(host) or host.endswith(live_host):
+        return ("pass", host)
+    return ("fail", f"deploy.cjs SITE_HOST={host} but live={live_host}")
+
+def check_fleet_core_version(root, live, html, flavour, pre_launch):
+    pkg = root / "package.json"
+    if not pkg.exists(): return ("skip", "no package.json")
+    m = re.search(r'"@rank4ai/fleet-core"\s*:\s*"github:[^"]*#v([0-9]+\.[0-9]+\.[0-9]+)', pkg.read_text())
+    if not m: return ("skip", "no fleet-core dep")
+    parts = tuple(int(x) for x in m.group(1).split("."))
+    # Require >= 0.6.3 for the 3-tier safe-payload fix
+    return ("pass" if parts >= (0,6,3) else "fail", f"v{m.group(1)} — needs >= v0.6.3")
+
+def check_3tier_safepayload(root, live, html, flavour, pre_launch):
+    # Either uses fleet-core >= v0.6.3 (which has it), or implements its own
+    pkg = root / "package.json"
+    if pkg.exists():
+        m = re.search(r'"@rank4ai/fleet-core"\s*:\s*"github:[^"]*#v([0-9]+\.[0-9]+\.[0-9]+)', pkg.read_text())
+        if m:
+            parts = tuple(int(x) for x in m.group(1).split("."))
+            if parts >= (0,6,3):
+                return ("pass", "via fleet-core")
+    if grep_repo(root, r"safePayload|3-tier", exts=(".astro",".ts")):
+        return ("pass", "inline impl")
+    if not grep_repo(root, r"supabase\.co/rest/v1|SUPABASE_URL", exts=(".astro",".ts")):
+        return ("skip", "no Supabase lead capture")
+    return ("fail", "Supabase form without 3-tier safe-payload")
+
+def check_og_image(root, live, html, flavour, pre_launch):
+    if not html: return ("skip", "no live URL")
+    m = re.search(r'<meta\s+property=["\']og:image["\'][^>]*content=["\']([^"\']+)', html, re.I)
+    if not m: return ("fail", "no og:image meta")
+    src = m.group(1)
+    if src.endswith(".svg") and "default" in src:
+        return ("fail", "still on og-default.svg placeholder")
+    return ("pass", src.split("/")[-1][:30])
+
+def check_homepage_imagery(root, live, html, flavour, pre_launch):
+    """Finding from 11 May audit: 4 live sites shipping with zero <img>"""
+    if not html: return ("skip", "no live URL")
+    n_img = len(re.findall(r"<img\b", html, re.I))
+    n_svg = len(re.findall(r"<svg\b", html, re.I))
+    if n_img > 0: return ("pass", f"{n_img} img + {n_svg} svg")
+    if n_svg >= 5: return ("pass", f"{n_svg} svg (no img)")
+    return ("fail", f"only {n_img} img + {n_svg} svg — empty homepage")
+
+def check_alt_text(root, live, html, flavour, pre_launch):
+    if not html: return ("skip", "no live URL")
+    imgs = re.findall(r"<img\b[^>]*>", html, re.I)
+    if not imgs: return ("skip", "no imgs")
+    missing = sum(1 for i in imgs if not re.search(r'\salt\s*=', i, re.I))
+    if missing: return ("fail", f"{missing}/{len(imgs)} imgs without alt")
+    return ("pass", f"{len(imgs)} imgs all alt-tagged")
+
+def check_schema_graph(root, live, html, flavour, pre_launch):
+    if not html: return ("skip", "no live URL")
+    # Look for @graph with Organization + WebSite + WebPage
+    has_graph = '"@graph"' in html
+    has_org = '"@type":"Organization"' in html or '"@type": "Organization"' in html
+    has_wp = '"@type":"WebPage"' in html or '"@type": "WebPage"' in html
+    if has_graph and has_org and has_wp: return ("pass", "@graph + Org + WebPage")
+    if has_org and has_wp: return ("fail", "schema present but not nested (#3 entity-depth gap)")
+    return ("fail", "missing Organization or WebPage schema")
+
+def check_date_modified(root, live, html, flavour, pre_launch):
+    """Finding #1: dateModified ISO 8601 with TZ"""
+    if not html: return ("skip", "no live URL")
+    if '"dateModified"' not in html: return ("fail", "no dateModified in schema")
+    m = re.search(r'"dateModified"\s*:\s*"([^"]+)"', html)
+    if not m: return ("fail", "no value")
+    val = m.group(1)
+    if re.match(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}", val): return ("pass", val[:19])
+    if re.match(r"\d{4}-\d{2}-\d{2}$", val): return ("fail", f"{val} — date only, needs ISO 8601 with TZ")
+    return ("fail", f"non-ISO: {val[:40]}")
+
+def check_speakable(root, live, html, flavour, pre_launch):
+    if not html: return ("skip", "no live URL")
+    if "SpeakableSpecification" in html: return ("pass", "")
+    return ("fail", "no SpeakableSpecification")
+
+def check_fleet_xlinks(root, live, html, flavour, pre_launch):
+    if not html: return ("skip", "no live URL")
+    hosts = ["rank4ai.co.uk", "marketinvoice.co.uk", "seocompare.co.uk", "bestbusinessloans.ai", "fundbiz.co.uk"]
+    own_host = None
+    if live:
+        own_host = re.sub(r"^https?://(www\.)?", "", live).rstrip("/").split("/")[0]
+    count = sum(1 for h in hosts if h in html and (own_host is None or h != own_host))
+    return ("pass" if count >= 3 else "fail", f"{count}/5 sister-site links")
+
+def check_link_rel_related(root, live, html, flavour, pre_launch):
+    """Finding #22: <link rel="related"> network signal"""
+    if not html: return ("skip", "no live URL")
+    has = re.search(r'<link[^>]+rel=["\']related["\']', html, re.I) is not None
+    return ("pass" if has else "fail", "no <link rel=related> in head")
+
+def check_sitemap_lastmod(root, live, html, flavour, pre_launch):
+    """Finding #17: ISO 8601 with TZ. Sample sitemap-0.xml or sitemap-index.xml"""
+    if not live: return ("skip", "no live URL")
+    txt = fetch(live.rstrip("/") + "/sitemap-0.xml") or fetch(live.rstrip("/") + "/sitemap.xml")
+    if not txt: return ("skip", "sitemap not fetchable")
+    mods = re.findall(r"<lastmod>([^<]+)</lastmod>", txt)
+    if not mods: return ("fail", "no lastmod elements")
+    sample = mods[:20]
+    distinct = len(set(sample))
+    has_tz = sum(1 for m in sample if "T" in m and (m.endswith("Z") or re.search(r"[+-]\d{2}:?\d{2}$", m)))
+    if distinct == 1: return ("fail", f"all {len(sample)} sampled lastmods identical — build-time stamp")
+    if has_tz < len(sample) * 0.5: return ("fail", f"only {has_tz}/{len(sample)} have ISO 8601 TZ")
+    return ("pass", f"{distinct} distinct lastmods in sample of {len(sample)}")
+
+CHECKS = [
+    # (id, fn, severity, label)
+    ("claude_md",           check_claude_md,           "p2", "CLAUDE.md present"),
+    ("robots_txt",          check_robots_txt,          "p1", "robots.txt valid + AI bots named"),
+    ("llms_txt",            check_llms_txt,            "p1", "llms.txt"),
+    ("llms_full",           check_llms_full_txt,       "p2", "llms-full.txt"),
+    ("llms_instructions",   check_llms_instructions,   "p2", "llms.txt has ## Instructions (#9)"),
+    ("ai_txt",              check_ai_txt,              "p2", "ai.txt (#10)"),
+    ("indexnow_key",        check_indexnow_key,        "p1", "IndexNow key file in public/"),
+    ("deploy_site_host",    check_deploy_site_host,    "p0", "deploy.cjs SITE_HOST matches live"),
+    ("fleet_core_v",        check_fleet_core_version,  "p1", "fleet-core >= v0.6.3"),
+    ("3tier_safepayload",   check_3tier_safepayload,   "p0", "3-tier safe-payload write"),
+    ("og_image",            check_og_image,            "p1", "og:image (not placeholder)"),
+    ("homepage_imagery",    check_homepage_imagery,    "p1", "homepage has imagery"),
+    ("alt_text",            check_alt_text,            "p2", "all imgs alt-tagged"),
+    ("schema_graph",        check_schema_graph,        "p1", "nested @graph schema (#3)"),
+    ("date_modified",       check_date_modified,       "p2", "dateModified ISO 8601 with TZ (#1)"),
+    ("speakable",           check_speakable,           "p2", "SpeakableSpecification (#13)"),
+    ("fleet_xlinks",        check_fleet_xlinks,        "p2", ">=3 fleet xlinks in footer"),
+    ("link_rel_related",    check_link_rel_related,    "p2", "<link rel=related> in head (#22)"),
+    ("sitemap_lastmod",     check_sitemap_lastmod,     "p2", "sitemap lastmod ISO 8601 + varies (#17)"),
+]
+
+def run_for_site(sid, repo, flavour, pre_launch, live):
+    root = ROOT / repo
+    html = fetch(live) if live and not pre_launch else (fetch(live) if live else None)
+    results = []
+    for cid, fn, sev, label in CHECKS:
+        try:
+            status, note = fn(root, live, html, flavour, pre_launch)
+        except Exception as e:
+            status, note = "fail", f"check raised: {type(e).__name__}: {e}"
+        results.append({"id": cid, "label": label, "severity": sev, "status": status, "note": note})
+    return results
+
+def main():
+    only = None
+    strict = False
+    json_only = False
+    for a in sys.argv[1:]:
+        if a == "--strict": strict = True
+        elif a == "--json": json_only = True
+        elif not a.startswith("--"): only = a
+
+    out = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "sites": {},
+        "summary": {"p0_fails": 0, "p1_fails": 0, "p2_fails": 0, "pass": 0, "total": 0},
+    }
+    for sid, repo, flav, pre, live in SITES:
+        if only and sid != only: continue
+        if not json_only:
+            print(f"\n=== {sid} ({flav}, {'PRE' if pre else 'live'}) ===", file=sys.stderr)
+        results = run_for_site(sid, repo, flav, pre, live)
+        out["sites"][sid] = {
+            "flavour": flav,
+            "pre_launch": pre,
+            "live_url": live,
+            "checks": results,
+        }
+        for r in results:
+            out["summary"]["total"] += 1
+            if r["status"] == "pass":
+                out["summary"]["pass"] += 1
+            elif r["status"] == "fail":
+                out["summary"][f"{r['severity']}_fails"] += 1
+                if not json_only:
+                    badge = {"p0":"P0","p1":"P1","p2":"P2"}[r["severity"]]
+                    print(f"  {badge} FAIL {r['label']:50s} {r['note']}", file=sys.stderr)
+
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+    OUT.write_text(json.dumps(out, indent=2))
+    if json_only:
+        print(json.dumps(out, indent=2))
+    else:
+        s = out["summary"]
+        print(f"\n=== Summary ===\n  P0 fails: {s['p0_fails']}\n  P1 fails: {s['p1_fails']}\n  P2 fails: {s['p2_fails']}\n  Pass:     {s['pass']}/{s['total']}", file=sys.stderr)
+        print(f"\nWrote {OUT}", file=sys.stderr)
+    if strict and (out["summary"]["p0_fails"] or out["summary"]["p1_fails"]):
+        sys.exit(1)
+
+if __name__ == "__main__":
+    main()

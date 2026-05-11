@@ -1,0 +1,1692 @@
+{
+  "generated_at": "2026-05-11T19:28:20.758436+00:00",
+  "sites": {
+    "rank4ai": {
+      "flavour": "editorial",
+      "pre_launch": false,
+      "live_url": "https://www.rank4ai.co.uk/",
+      "checks": [
+        {
+          "id": "claude_md",
+          "label": "CLAUDE.md present",
+          "severity": "p2",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "robots_txt",
+          "label": "robots.txt valid + AI bots named",
+          "severity": "p1",
+          "status": "pass",
+          "note": "AI crawlers not explicitly named"
+        },
+        {
+          "id": "llms_txt",
+          "label": "llms.txt",
+          "severity": "p1",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "llms_full",
+          "label": "llms-full.txt",
+          "severity": "p2",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "llms_instructions",
+          "label": "llms.txt has ## Instructions (#9)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "no `## Instructions` section per Stripe pattern"
+        },
+        {
+          "id": "ai_txt",
+          "label": "ai.txt (#10)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "no public/ai.txt"
+        },
+        {
+          "id": "indexnow_key",
+          "label": "IndexNow key file in public/",
+          "severity": "p1",
+          "status": "pass",
+          "note": "4c1cc17752ab451887a14b719906f527.txt"
+        },
+        {
+          "id": "deploy_site_host",
+          "label": "deploy.cjs SITE_HOST matches live",
+          "severity": "p0",
+          "status": "pass",
+          "note": "www.rank4ai.co.uk"
+        },
+        {
+          "id": "fleet_core_v",
+          "label": "fleet-core >= v0.6.3",
+          "severity": "p1",
+          "status": "fail",
+          "note": "v0.6.0 \u2014 needs >= v0.6.3"
+        },
+        {
+          "id": "3tier_safepayload",
+          "label": "3-tier safe-payload write",
+          "severity": "p0",
+          "status": "pass",
+          "note": "inline impl"
+        },
+        {
+          "id": "og_image",
+          "label": "og:image (not placeholder)",
+          "severity": "p1",
+          "status": "pass",
+          "note": "og-image.svg"
+        },
+        {
+          "id": "homepage_imagery",
+          "label": "homepage has imagery",
+          "severity": "p1",
+          "status": "pass",
+          "note": "82 img + 17 svg"
+        },
+        {
+          "id": "alt_text",
+          "label": "all imgs alt-tagged",
+          "severity": "p2",
+          "status": "pass",
+          "note": "82 imgs all alt-tagged"
+        },
+        {
+          "id": "schema_graph",
+          "label": "nested @graph schema (#3)",
+          "severity": "p1",
+          "status": "fail",
+          "note": "missing Organization or WebPage schema"
+        },
+        {
+          "id": "date_modified",
+          "label": "dateModified ISO 8601 with TZ (#1)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "no dateModified in schema"
+        },
+        {
+          "id": "speakable",
+          "label": "SpeakableSpecification (#13)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "no SpeakableSpecification"
+        },
+        {
+          "id": "fleet_xlinks",
+          "label": ">=3 fleet xlinks in footer",
+          "severity": "p2",
+          "status": "fail",
+          "note": "2/5 sister-site links"
+        },
+        {
+          "id": "link_rel_related",
+          "label": "<link rel=related> in head (#22)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "no <link rel=related> in head"
+        },
+        {
+          "id": "sitemap_lastmod",
+          "label": "sitemap lastmod ISO 8601 + varies (#17)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "all 20 sampled lastmods identical \u2014 build-time stamp"
+        }
+      ]
+    },
+    "market-invoice": {
+      "flavour": "leadgen",
+      "pre_launch": false,
+      "live_url": "https://marketinvoice.co.uk/",
+      "checks": [
+        {
+          "id": "claude_md",
+          "label": "CLAUDE.md present",
+          "severity": "p2",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "robots_txt",
+          "label": "robots.txt valid + AI bots named",
+          "severity": "p1",
+          "status": "pass",
+          "note": "AI crawlers not explicitly named"
+        },
+        {
+          "id": "llms_txt",
+          "label": "llms.txt",
+          "severity": "p1",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "llms_full",
+          "label": "llms-full.txt",
+          "severity": "p2",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "llms_instructions",
+          "label": "llms.txt has ## Instructions (#9)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "no `## Instructions` section per Stripe pattern"
+        },
+        {
+          "id": "ai_txt",
+          "label": "ai.txt (#10)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "no public/ai.txt"
+        },
+        {
+          "id": "indexnow_key",
+          "label": "IndexNow key file in public/",
+          "severity": "p1",
+          "status": "pass",
+          "note": "a2dbf411f85049958a10a31d0eea8ab9.txt"
+        },
+        {
+          "id": "deploy_site_host",
+          "label": "deploy.cjs SITE_HOST matches live",
+          "severity": "p0",
+          "status": "pass",
+          "note": "marketinvoice.co.uk"
+        },
+        {
+          "id": "fleet_core_v",
+          "label": "fleet-core >= v0.6.3",
+          "severity": "p1",
+          "status": "fail",
+          "note": "v0.6.0 \u2014 needs >= v0.6.3"
+        },
+        {
+          "id": "3tier_safepayload",
+          "label": "3-tier safe-payload write",
+          "severity": "p0",
+          "status": "pass",
+          "note": "inline impl"
+        },
+        {
+          "id": "og_image",
+          "label": "og:image (not placeholder)",
+          "severity": "p1",
+          "status": "fail",
+          "note": "no og:image meta"
+        },
+        {
+          "id": "homepage_imagery",
+          "label": "homepage has imagery",
+          "severity": "p1",
+          "status": "pass",
+          "note": "15 svg (no img)"
+        },
+        {
+          "id": "alt_text",
+          "label": "all imgs alt-tagged",
+          "severity": "p2",
+          "status": "skip",
+          "note": "no imgs"
+        },
+        {
+          "id": "schema_graph",
+          "label": "nested @graph schema (#3)",
+          "severity": "p1",
+          "status": "pass",
+          "note": "@graph + Org + WebPage"
+        },
+        {
+          "id": "date_modified",
+          "label": "dateModified ISO 8601 with TZ (#1)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "2026-04-13 \u2014 date only, needs ISO 8601 with TZ"
+        },
+        {
+          "id": "speakable",
+          "label": "SpeakableSpecification (#13)",
+          "severity": "p2",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "fleet_xlinks",
+          "label": ">=3 fleet xlinks in footer",
+          "severity": "p2",
+          "status": "pass",
+          "note": "4/5 sister-site links"
+        },
+        {
+          "id": "link_rel_related",
+          "label": "<link rel=related> in head (#22)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "no <link rel=related> in head"
+        },
+        {
+          "id": "sitemap_lastmod",
+          "label": "sitemap lastmod ISO 8601 + varies (#17)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "all 20 sampled lastmods identical \u2014 build-time stamp"
+        }
+      ]
+    },
+    "seocompare": {
+      "flavour": "editorial",
+      "pre_launch": false,
+      "live_url": "https://seocompare.co.uk/",
+      "checks": [
+        {
+          "id": "claude_md",
+          "label": "CLAUDE.md present",
+          "severity": "p2",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "robots_txt",
+          "label": "robots.txt valid + AI bots named",
+          "severity": "p1",
+          "status": "pass",
+          "note": "AI crawlers not explicitly named"
+        },
+        {
+          "id": "llms_txt",
+          "label": "llms.txt",
+          "severity": "p1",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "llms_full",
+          "label": "llms-full.txt",
+          "severity": "p2",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "llms_instructions",
+          "label": "llms.txt has ## Instructions (#9)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "no `## Instructions` section per Stripe pattern"
+        },
+        {
+          "id": "ai_txt",
+          "label": "ai.txt (#10)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "no public/ai.txt"
+        },
+        {
+          "id": "indexnow_key",
+          "label": "IndexNow key file in public/",
+          "severity": "p1",
+          "status": "pass",
+          "note": "4c1cc17752ab451887a14b719906f527.txt"
+        },
+        {
+          "id": "deploy_site_host",
+          "label": "deploy.cjs SITE_HOST matches live",
+          "severity": "p0",
+          "status": "pass",
+          "note": "seocompare.co.uk"
+        },
+        {
+          "id": "fleet_core_v",
+          "label": "fleet-core >= v0.6.3",
+          "severity": "p1",
+          "status": "fail",
+          "note": "v0.6.2 \u2014 needs >= v0.6.3"
+        },
+        {
+          "id": "3tier_safepayload",
+          "label": "3-tier safe-payload write",
+          "severity": "p0",
+          "status": "pass",
+          "note": "inline impl"
+        },
+        {
+          "id": "og_image",
+          "label": "og:image (not placeholder)",
+          "severity": "p1",
+          "status": "fail",
+          "note": "still on og-default.svg placeholder"
+        },
+        {
+          "id": "homepage_imagery",
+          "label": "homepage has imagery",
+          "severity": "p1",
+          "status": "pass",
+          "note": "1 img + 64 svg"
+        },
+        {
+          "id": "alt_text",
+          "label": "all imgs alt-tagged",
+          "severity": "p2",
+          "status": "pass",
+          "note": "1 imgs all alt-tagged"
+        },
+        {
+          "id": "schema_graph",
+          "label": "nested @graph schema (#3)",
+          "severity": "p1",
+          "status": "pass",
+          "note": "@graph + Org + WebPage"
+        },
+        {
+          "id": "date_modified",
+          "label": "dateModified ISO 8601 with TZ (#1)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "no dateModified in schema"
+        },
+        {
+          "id": "speakable",
+          "label": "SpeakableSpecification (#13)",
+          "severity": "p2",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "fleet_xlinks",
+          "label": ">=3 fleet xlinks in footer",
+          "severity": "p2",
+          "status": "pass",
+          "note": "4/5 sister-site links"
+        },
+        {
+          "id": "link_rel_related",
+          "label": "<link rel=related> in head (#22)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "no <link rel=related> in head"
+        },
+        {
+          "id": "sitemap_lastmod",
+          "label": "sitemap lastmod ISO 8601 + varies (#17)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "all 20 sampled lastmods identical \u2014 build-time stamp"
+        }
+      ]
+    },
+    "rochellemarashi": {
+      "flavour": "client",
+      "pre_launch": false,
+      "live_url": "https://rochellemarashi.pages.dev/",
+      "checks": [
+        {
+          "id": "claude_md",
+          "label": "CLAUDE.md present",
+          "severity": "p2",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "robots_txt",
+          "label": "robots.txt valid + AI bots named",
+          "severity": "p1",
+          "status": "pass",
+          "note": "AI crawlers not explicitly named"
+        },
+        {
+          "id": "llms_txt",
+          "label": "llms.txt",
+          "severity": "p1",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "llms_full",
+          "label": "llms-full.txt",
+          "severity": "p2",
+          "status": "fail",
+          "note": ""
+        },
+        {
+          "id": "llms_instructions",
+          "label": "llms.txt has ## Instructions (#9)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "no `## Instructions` section per Stripe pattern"
+        },
+        {
+          "id": "ai_txt",
+          "label": "ai.txt (#10)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "no public/ai.txt"
+        },
+        {
+          "id": "indexnow_key",
+          "label": "IndexNow key file in public/",
+          "severity": "p1",
+          "status": "pass",
+          "note": "85fe0de8773c422a9a8dd2e23b5ee66f.txt"
+        },
+        {
+          "id": "deploy_site_host",
+          "label": "deploy.cjs SITE_HOST matches live",
+          "severity": "p0",
+          "status": "skip",
+          "note": "no SITE_HOST in deploy.cjs"
+        },
+        {
+          "id": "fleet_core_v",
+          "label": "fleet-core >= v0.6.3",
+          "severity": "p1",
+          "status": "skip",
+          "note": "no fleet-core dep"
+        },
+        {
+          "id": "3tier_safepayload",
+          "label": "3-tier safe-payload write",
+          "severity": "p0",
+          "status": "fail",
+          "note": "Supabase form without 3-tier safe-payload"
+        },
+        {
+          "id": "og_image",
+          "label": "og:image (not placeholder)",
+          "severity": "p1",
+          "status": "pass",
+          "note": "og-default.png"
+        },
+        {
+          "id": "homepage_imagery",
+          "label": "homepage has imagery",
+          "severity": "p1",
+          "status": "pass",
+          "note": "4 img + 7 svg"
+        },
+        {
+          "id": "alt_text",
+          "label": "all imgs alt-tagged",
+          "severity": "p2",
+          "status": "pass",
+          "note": "4 imgs all alt-tagged"
+        },
+        {
+          "id": "schema_graph",
+          "label": "nested @graph schema (#3)",
+          "severity": "p1",
+          "status": "fail",
+          "note": "missing Organization or WebPage schema"
+        },
+        {
+          "id": "date_modified",
+          "label": "dateModified ISO 8601 with TZ (#1)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "no dateModified in schema"
+        },
+        {
+          "id": "speakable",
+          "label": "SpeakableSpecification (#13)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "no SpeakableSpecification"
+        },
+        {
+          "id": "fleet_xlinks",
+          "label": ">=3 fleet xlinks in footer",
+          "severity": "p2",
+          "status": "fail",
+          "note": "0/5 sister-site links"
+        },
+        {
+          "id": "link_rel_related",
+          "label": "<link rel=related> in head (#22)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "no <link rel=related> in head"
+        },
+        {
+          "id": "sitemap_lastmod",
+          "label": "sitemap lastmod ISO 8601 + varies (#17)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "no lastmod elements"
+        }
+      ]
+    },
+    "bestbusinessloans": {
+      "flavour": "leadgen",
+      "pre_launch": false,
+      "live_url": "https://bestbusinessloans.ai/",
+      "checks": [
+        {
+          "id": "claude_md",
+          "label": "CLAUDE.md present",
+          "severity": "p2",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "robots_txt",
+          "label": "robots.txt valid + AI bots named",
+          "severity": "p1",
+          "status": "fail",
+          "note": "AI crawlers not explicitly named"
+        },
+        {
+          "id": "llms_txt",
+          "label": "llms.txt",
+          "severity": "p1",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "llms_full",
+          "label": "llms-full.txt",
+          "severity": "p2",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "llms_instructions",
+          "label": "llms.txt has ## Instructions (#9)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "no `## Instructions` section per Stripe pattern"
+        },
+        {
+          "id": "ai_txt",
+          "label": "ai.txt (#10)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "no public/ai.txt"
+        },
+        {
+          "id": "indexnow_key",
+          "label": "IndexNow key file in public/",
+          "severity": "p1",
+          "status": "pass",
+          "note": "6c8693c2af63422098320cf1a132e7d2.txt"
+        },
+        {
+          "id": "deploy_site_host",
+          "label": "deploy.cjs SITE_HOST matches live",
+          "severity": "p0",
+          "status": "pass",
+          "note": "bestbusinessloans.ai"
+        },
+        {
+          "id": "fleet_core_v",
+          "label": "fleet-core >= v0.6.3",
+          "severity": "p1",
+          "status": "pass",
+          "note": "v0.6.3 \u2014 needs >= v0.6.3"
+        },
+        {
+          "id": "3tier_safepayload",
+          "label": "3-tier safe-payload write",
+          "severity": "p0",
+          "status": "pass",
+          "note": "via fleet-core"
+        },
+        {
+          "id": "og_image",
+          "label": "og:image (not placeholder)",
+          "severity": "p1",
+          "status": "fail",
+          "note": "still on og-default.svg placeholder"
+        },
+        {
+          "id": "homepage_imagery",
+          "label": "homepage has imagery",
+          "severity": "p1",
+          "status": "fail",
+          "note": "only 0 img + 2 svg \u2014 empty homepage"
+        },
+        {
+          "id": "alt_text",
+          "label": "all imgs alt-tagged",
+          "severity": "p2",
+          "status": "skip",
+          "note": "no imgs"
+        },
+        {
+          "id": "schema_graph",
+          "label": "nested @graph schema (#3)",
+          "severity": "p1",
+          "status": "pass",
+          "note": "@graph + Org + WebPage"
+        },
+        {
+          "id": "date_modified",
+          "label": "dateModified ISO 8601 with TZ (#1)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "2026-04-26 \u2014 date only, needs ISO 8601 with TZ"
+        },
+        {
+          "id": "speakable",
+          "label": "SpeakableSpecification (#13)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "no SpeakableSpecification"
+        },
+        {
+          "id": "fleet_xlinks",
+          "label": ">=3 fleet xlinks in footer",
+          "severity": "p2",
+          "status": "pass",
+          "note": "4/5 sister-site links"
+        },
+        {
+          "id": "link_rel_related",
+          "label": "<link rel=related> in head (#22)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "no <link rel=related> in head"
+        },
+        {
+          "id": "sitemap_lastmod",
+          "label": "sitemap lastmod ISO 8601 + varies (#17)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "no lastmod elements"
+        }
+      ]
+    },
+    "fundbiz": {
+      "flavour": "leadgen",
+      "pre_launch": false,
+      "live_url": "https://fundbiz.co.uk/",
+      "checks": [
+        {
+          "id": "claude_md",
+          "label": "CLAUDE.md present",
+          "severity": "p2",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "robots_txt",
+          "label": "robots.txt valid + AI bots named",
+          "severity": "p1",
+          "status": "fail",
+          "note": "AI crawlers not explicitly named"
+        },
+        {
+          "id": "llms_txt",
+          "label": "llms.txt",
+          "severity": "p1",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "llms_full",
+          "label": "llms-full.txt",
+          "severity": "p2",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "llms_instructions",
+          "label": "llms.txt has ## Instructions (#9)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "no `## Instructions` section per Stripe pattern"
+        },
+        {
+          "id": "ai_txt",
+          "label": "ai.txt (#10)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "no public/ai.txt"
+        },
+        {
+          "id": "indexnow_key",
+          "label": "IndexNow key file in public/",
+          "severity": "p1",
+          "status": "pass",
+          "note": "4d8cee5b9f8249d8848a5305264ca1cc.txt"
+        },
+        {
+          "id": "deploy_site_host",
+          "label": "deploy.cjs SITE_HOST matches live",
+          "severity": "p0",
+          "status": "pass",
+          "note": "fundbiz.co.uk"
+        },
+        {
+          "id": "fleet_core_v",
+          "label": "fleet-core >= v0.6.3",
+          "severity": "p1",
+          "status": "pass",
+          "note": "v0.6.3 \u2014 needs >= v0.6.3"
+        },
+        {
+          "id": "3tier_safepayload",
+          "label": "3-tier safe-payload write",
+          "severity": "p0",
+          "status": "pass",
+          "note": "via fleet-core"
+        },
+        {
+          "id": "og_image",
+          "label": "og:image (not placeholder)",
+          "severity": "p1",
+          "status": "fail",
+          "note": "still on og-default.svg placeholder"
+        },
+        {
+          "id": "homepage_imagery",
+          "label": "homepage has imagery",
+          "severity": "p1",
+          "status": "fail",
+          "note": "only 0 img + 2 svg \u2014 empty homepage"
+        },
+        {
+          "id": "alt_text",
+          "label": "all imgs alt-tagged",
+          "severity": "p2",
+          "status": "skip",
+          "note": "no imgs"
+        },
+        {
+          "id": "schema_graph",
+          "label": "nested @graph schema (#3)",
+          "severity": "p1",
+          "status": "pass",
+          "note": "@graph + Org + WebPage"
+        },
+        {
+          "id": "date_modified",
+          "label": "dateModified ISO 8601 with TZ (#1)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "2026-04-26 \u2014 date only, needs ISO 8601 with TZ"
+        },
+        {
+          "id": "speakable",
+          "label": "SpeakableSpecification (#13)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "no SpeakableSpecification"
+        },
+        {
+          "id": "fleet_xlinks",
+          "label": ">=3 fleet xlinks in footer",
+          "severity": "p2",
+          "status": "pass",
+          "note": "4/5 sister-site links"
+        },
+        {
+          "id": "link_rel_related",
+          "label": "<link rel=related> in head (#22)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "no <link rel=related> in head"
+        },
+        {
+          "id": "sitemap_lastmod",
+          "label": "sitemap lastmod ISO 8601 + varies (#17)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "no lastmod elements"
+        }
+      ]
+    },
+    "cardmachines": {
+      "flavour": "leadgen",
+      "pre_launch": true,
+      "live_url": "https://cardmachines.pages.dev/",
+      "checks": [
+        {
+          "id": "claude_md",
+          "label": "CLAUDE.md present",
+          "severity": "p2",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "robots_txt",
+          "label": "robots.txt valid + AI bots named",
+          "severity": "p1",
+          "status": "pass",
+          "note": "pre-launch should block-all"
+        },
+        {
+          "id": "llms_txt",
+          "label": "llms.txt",
+          "severity": "p1",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "llms_full",
+          "label": "llms-full.txt",
+          "severity": "p2",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "llms_instructions",
+          "label": "llms.txt has ## Instructions (#9)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "no `## Instructions` section per Stripe pattern"
+        },
+        {
+          "id": "ai_txt",
+          "label": "ai.txt (#10)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "no public/ai.txt"
+        },
+        {
+          "id": "indexnow_key",
+          "label": "IndexNow key file in public/",
+          "severity": "p1",
+          "status": "pass",
+          "note": "0090cd828ef442e38aa2c00baca23c6d.txt"
+        },
+        {
+          "id": "deploy_site_host",
+          "label": "deploy.cjs SITE_HOST matches live",
+          "severity": "p0",
+          "status": "skip",
+          "note": "pre-launch: SITE_HOST may legitimately differ from pages.dev URL"
+        },
+        {
+          "id": "fleet_core_v",
+          "label": "fleet-core >= v0.6.3",
+          "severity": "p1",
+          "status": "pass",
+          "note": "v0.6.3 \u2014 needs >= v0.6.3"
+        },
+        {
+          "id": "3tier_safepayload",
+          "label": "3-tier safe-payload write",
+          "severity": "p0",
+          "status": "pass",
+          "note": "via fleet-core"
+        },
+        {
+          "id": "og_image",
+          "label": "og:image (not placeholder)",
+          "severity": "p1",
+          "status": "fail",
+          "note": "still on og-default.svg placeholder"
+        },
+        {
+          "id": "homepage_imagery",
+          "label": "homepage has imagery",
+          "severity": "p1",
+          "status": "pass",
+          "note": "12 img + 71 svg"
+        },
+        {
+          "id": "alt_text",
+          "label": "all imgs alt-tagged",
+          "severity": "p2",
+          "status": "pass",
+          "note": "12 imgs all alt-tagged"
+        },
+        {
+          "id": "schema_graph",
+          "label": "nested @graph schema (#3)",
+          "severity": "p1",
+          "status": "pass",
+          "note": "@graph + Org + WebPage"
+        },
+        {
+          "id": "date_modified",
+          "label": "dateModified ISO 8601 with TZ (#1)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "2026-04-26 \u2014 date only, needs ISO 8601 with TZ"
+        },
+        {
+          "id": "speakable",
+          "label": "SpeakableSpecification (#13)",
+          "severity": "p2",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "fleet_xlinks",
+          "label": ">=3 fleet xlinks in footer",
+          "severity": "p2",
+          "status": "pass",
+          "note": "5/5 sister-site links"
+        },
+        {
+          "id": "link_rel_related",
+          "label": "<link rel=related> in head (#22)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "no <link rel=related> in head"
+        },
+        {
+          "id": "sitemap_lastmod",
+          "label": "sitemap lastmod ISO 8601 + varies (#17)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "no lastmod elements"
+        }
+      ]
+    },
+    "findatradey": {
+      "flavour": "leadgen",
+      "pre_launch": true,
+      "live_url": "https://findatradey.pages.dev/",
+      "checks": [
+        {
+          "id": "claude_md",
+          "label": "CLAUDE.md present",
+          "severity": "p2",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "robots_txt",
+          "label": "robots.txt valid + AI bots named",
+          "severity": "p1",
+          "status": "pass",
+          "note": "pre-launch should block-all"
+        },
+        {
+          "id": "llms_txt",
+          "label": "llms.txt",
+          "severity": "p1",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "llms_full",
+          "label": "llms-full.txt",
+          "severity": "p2",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "llms_instructions",
+          "label": "llms.txt has ## Instructions (#9)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "no `## Instructions` section per Stripe pattern"
+        },
+        {
+          "id": "ai_txt",
+          "label": "ai.txt (#10)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "no public/ai.txt"
+        },
+        {
+          "id": "indexnow_key",
+          "label": "IndexNow key file in public/",
+          "severity": "p1",
+          "status": "pass",
+          "note": "eeac7b3a49d740fa9e22b65c0a018138.txt"
+        },
+        {
+          "id": "deploy_site_host",
+          "label": "deploy.cjs SITE_HOST matches live",
+          "severity": "p0",
+          "status": "skip",
+          "note": "pre-launch: SITE_HOST may legitimately differ from pages.dev URL"
+        },
+        {
+          "id": "fleet_core_v",
+          "label": "fleet-core >= v0.6.3",
+          "severity": "p1",
+          "status": "fail",
+          "note": "v0.4.0 \u2014 needs >= v0.6.3"
+        },
+        {
+          "id": "3tier_safepayload",
+          "label": "3-tier safe-payload write",
+          "severity": "p0",
+          "status": "skip",
+          "note": "no Supabase lead capture"
+        },
+        {
+          "id": "og_image",
+          "label": "og:image (not placeholder)",
+          "severity": "p1",
+          "status": "fail",
+          "note": "still on og-default.svg placeholder"
+        },
+        {
+          "id": "homepage_imagery",
+          "label": "homepage has imagery",
+          "severity": "p1",
+          "status": "fail",
+          "note": "only 0 img + 0 svg \u2014 empty homepage"
+        },
+        {
+          "id": "alt_text",
+          "label": "all imgs alt-tagged",
+          "severity": "p2",
+          "status": "skip",
+          "note": "no imgs"
+        },
+        {
+          "id": "schema_graph",
+          "label": "nested @graph schema (#3)",
+          "severity": "p1",
+          "status": "pass",
+          "note": "@graph + Org + WebPage"
+        },
+        {
+          "id": "date_modified",
+          "label": "dateModified ISO 8601 with TZ (#1)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "2026-05-05 \u2014 date only, needs ISO 8601 with TZ"
+        },
+        {
+          "id": "speakable",
+          "label": "SpeakableSpecification (#13)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "no SpeakableSpecification"
+        },
+        {
+          "id": "fleet_xlinks",
+          "label": ">=3 fleet xlinks in footer",
+          "severity": "p2",
+          "status": "fail",
+          "note": "0/5 sister-site links"
+        },
+        {
+          "id": "link_rel_related",
+          "label": "<link rel=related> in head (#22)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "no <link rel=related> in head"
+        },
+        {
+          "id": "sitemap_lastmod",
+          "label": "sitemap lastmod ISO 8601 + varies (#17)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "no lastmod elements"
+        }
+      ]
+    },
+    "findagym": {
+      "flavour": "leadgen",
+      "pre_launch": true,
+      "live_url": "https://findagym.pages.dev/",
+      "checks": [
+        {
+          "id": "claude_md",
+          "label": "CLAUDE.md present",
+          "severity": "p2",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "robots_txt",
+          "label": "robots.txt valid + AI bots named",
+          "severity": "p1",
+          "status": "pass",
+          "note": "pre-launch should block-all"
+        },
+        {
+          "id": "llms_txt",
+          "label": "llms.txt",
+          "severity": "p1",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "llms_full",
+          "label": "llms-full.txt",
+          "severity": "p2",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "llms_instructions",
+          "label": "llms.txt has ## Instructions (#9)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "no `## Instructions` section per Stripe pattern"
+        },
+        {
+          "id": "ai_txt",
+          "label": "ai.txt (#10)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "no public/ai.txt"
+        },
+        {
+          "id": "indexnow_key",
+          "label": "IndexNow key file in public/",
+          "severity": "p1",
+          "status": "pass",
+          "note": "272e470c752d4b61b68599f3991e95c3.txt"
+        },
+        {
+          "id": "deploy_site_host",
+          "label": "deploy.cjs SITE_HOST matches live",
+          "severity": "p0",
+          "status": "skip",
+          "note": "pre-launch: SITE_HOST may legitimately differ from pages.dev URL"
+        },
+        {
+          "id": "fleet_core_v",
+          "label": "fleet-core >= v0.6.3",
+          "severity": "p1",
+          "status": "fail",
+          "note": "v0.4.0 \u2014 needs >= v0.6.3"
+        },
+        {
+          "id": "3tier_safepayload",
+          "label": "3-tier safe-payload write",
+          "severity": "p0",
+          "status": "skip",
+          "note": "no Supabase lead capture"
+        },
+        {
+          "id": "og_image",
+          "label": "og:image (not placeholder)",
+          "severity": "p1",
+          "status": "fail",
+          "note": "still on og-default.svg placeholder"
+        },
+        {
+          "id": "homepage_imagery",
+          "label": "homepage has imagery",
+          "severity": "p1",
+          "status": "fail",
+          "note": "only 0 img + 0 svg \u2014 empty homepage"
+        },
+        {
+          "id": "alt_text",
+          "label": "all imgs alt-tagged",
+          "severity": "p2",
+          "status": "skip",
+          "note": "no imgs"
+        },
+        {
+          "id": "schema_graph",
+          "label": "nested @graph schema (#3)",
+          "severity": "p1",
+          "status": "pass",
+          "note": "@graph + Org + WebPage"
+        },
+        {
+          "id": "date_modified",
+          "label": "dateModified ISO 8601 with TZ (#1)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "2026-05-06 \u2014 date only, needs ISO 8601 with TZ"
+        },
+        {
+          "id": "speakable",
+          "label": "SpeakableSpecification (#13)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "no SpeakableSpecification"
+        },
+        {
+          "id": "fleet_xlinks",
+          "label": ">=3 fleet xlinks in footer",
+          "severity": "p2",
+          "status": "fail",
+          "note": "0/5 sister-site links"
+        },
+        {
+          "id": "link_rel_related",
+          "label": "<link rel=related> in head (#22)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "no <link rel=related> in head"
+        },
+        {
+          "id": "sitemap_lastmod",
+          "label": "sitemap lastmod ISO 8601 + varies (#17)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "no lastmod elements"
+        }
+      ]
+    },
+    "ukmetabolic": {
+      "flavour": "leadgen",
+      "pre_launch": true,
+      "live_url": "https://ukmetabolic.pages.dev/",
+      "checks": [
+        {
+          "id": "claude_md",
+          "label": "CLAUDE.md present",
+          "severity": "p2",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "robots_txt",
+          "label": "robots.txt valid + AI bots named",
+          "severity": "p1",
+          "status": "pass",
+          "note": "pre-launch should block-all"
+        },
+        {
+          "id": "llms_txt",
+          "label": "llms.txt",
+          "severity": "p1",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "llms_full",
+          "label": "llms-full.txt",
+          "severity": "p2",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "llms_instructions",
+          "label": "llms.txt has ## Instructions (#9)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "no `## Instructions` section per Stripe pattern"
+        },
+        {
+          "id": "ai_txt",
+          "label": "ai.txt (#10)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "no public/ai.txt"
+        },
+        {
+          "id": "indexnow_key",
+          "label": "IndexNow key file in public/",
+          "severity": "p1",
+          "status": "pass",
+          "note": "9b4e84786bf3482db8081609777b3811.txt"
+        },
+        {
+          "id": "deploy_site_host",
+          "label": "deploy.cjs SITE_HOST matches live",
+          "severity": "p0",
+          "status": "skip",
+          "note": "pre-launch: SITE_HOST may legitimately differ from pages.dev URL"
+        },
+        {
+          "id": "fleet_core_v",
+          "label": "fleet-core >= v0.6.3",
+          "severity": "p1",
+          "status": "pass",
+          "note": "v0.6.3 \u2014 needs >= v0.6.3"
+        },
+        {
+          "id": "3tier_safepayload",
+          "label": "3-tier safe-payload write",
+          "severity": "p0",
+          "status": "pass",
+          "note": "via fleet-core"
+        },
+        {
+          "id": "og_image",
+          "label": "og:image (not placeholder)",
+          "severity": "p1",
+          "status": "fail",
+          "note": "still on og-default.svg placeholder"
+        },
+        {
+          "id": "homepage_imagery",
+          "label": "homepage has imagery",
+          "severity": "p1",
+          "status": "fail",
+          "note": "only 0 img + 0 svg \u2014 empty homepage"
+        },
+        {
+          "id": "alt_text",
+          "label": "all imgs alt-tagged",
+          "severity": "p2",
+          "status": "skip",
+          "note": "no imgs"
+        },
+        {
+          "id": "schema_graph",
+          "label": "nested @graph schema (#3)",
+          "severity": "p1",
+          "status": "pass",
+          "note": "@graph + Org + WebPage"
+        },
+        {
+          "id": "date_modified",
+          "label": "dateModified ISO 8601 with TZ (#1)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "2026-05-07 \u2014 date only, needs ISO 8601 with TZ"
+        },
+        {
+          "id": "speakable",
+          "label": "SpeakableSpecification (#13)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "no SpeakableSpecification"
+        },
+        {
+          "id": "fleet_xlinks",
+          "label": ">=3 fleet xlinks in footer",
+          "severity": "p2",
+          "status": "fail",
+          "note": "0/5 sister-site links"
+        },
+        {
+          "id": "link_rel_related",
+          "label": "<link rel=related> in head (#22)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "no <link rel=related> in head"
+        },
+        {
+          "id": "sitemap_lastmod",
+          "label": "sitemap lastmod ISO 8601 + varies (#17)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "no lastmod elements"
+        }
+      ]
+    },
+    "builderweb": {
+      "flavour": "saas",
+      "pre_launch": false,
+      "live_url": "https://lovinlovable.dawn-field-3d16.workers.dev/",
+      "checks": [
+        {
+          "id": "claude_md",
+          "label": "CLAUDE.md present",
+          "severity": "p2",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "robots_txt",
+          "label": "robots.txt valid + AI bots named",
+          "severity": "p1",
+          "status": "fail",
+          "note": "still on block-all but site is LIVE \u2014 robots flip missed"
+        },
+        {
+          "id": "llms_txt",
+          "label": "llms.txt",
+          "severity": "p1",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "llms_full",
+          "label": "llms-full.txt",
+          "severity": "p2",
+          "status": "fail",
+          "note": ""
+        },
+        {
+          "id": "llms_instructions",
+          "label": "llms.txt has ## Instructions (#9)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "no `## Instructions` section per Stripe pattern"
+        },
+        {
+          "id": "ai_txt",
+          "label": "ai.txt (#10)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "no public/ai.txt"
+        },
+        {
+          "id": "indexnow_key",
+          "label": "IndexNow key file in public/",
+          "severity": "p1",
+          "status": "fail",
+          "note": "no IndexNow key file in public/"
+        },
+        {
+          "id": "deploy_site_host",
+          "label": "deploy.cjs SITE_HOST matches live",
+          "severity": "p0",
+          "status": "skip",
+          "note": "no deploy.cjs"
+        },
+        {
+          "id": "fleet_core_v",
+          "label": "fleet-core >= v0.6.3",
+          "severity": "p1",
+          "status": "skip",
+          "note": "no fleet-core dep"
+        },
+        {
+          "id": "3tier_safepayload",
+          "label": "3-tier safe-payload write",
+          "severity": "p0",
+          "status": "fail",
+          "note": "Supabase form without 3-tier safe-payload"
+        },
+        {
+          "id": "og_image",
+          "label": "og:image (not placeholder)",
+          "severity": "p1",
+          "status": "fail",
+          "note": "no og:image meta"
+        },
+        {
+          "id": "homepage_imagery",
+          "label": "homepage has imagery",
+          "severity": "p1",
+          "status": "pass",
+          "note": "5 svg (no img)"
+        },
+        {
+          "id": "alt_text",
+          "label": "all imgs alt-tagged",
+          "severity": "p2",
+          "status": "skip",
+          "note": "no imgs"
+        },
+        {
+          "id": "schema_graph",
+          "label": "nested @graph schema (#3)",
+          "severity": "p1",
+          "status": "fail",
+          "note": "missing Organization or WebPage schema"
+        },
+        {
+          "id": "date_modified",
+          "label": "dateModified ISO 8601 with TZ (#1)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "no dateModified in schema"
+        },
+        {
+          "id": "speakable",
+          "label": "SpeakableSpecification (#13)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "no SpeakableSpecification"
+        },
+        {
+          "id": "fleet_xlinks",
+          "label": ">=3 fleet xlinks in footer",
+          "severity": "p2",
+          "status": "fail",
+          "note": "0/5 sister-site links"
+        },
+        {
+          "id": "link_rel_related",
+          "label": "<link rel=related> in head (#22)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "no <link rel=related> in head"
+        },
+        {
+          "id": "sitemap_lastmod",
+          "label": "sitemap lastmod ISO 8601 + varies (#17)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "no lastmod elements"
+        }
+      ]
+    },
+    "resiliencebuilder": {
+      "flavour": "client",
+      "pre_launch": false,
+      "live_url": null,
+      "checks": [
+        {
+          "id": "claude_md",
+          "label": "CLAUDE.md present",
+          "severity": "p2",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "robots_txt",
+          "label": "robots.txt valid + AI bots named",
+          "severity": "p1",
+          "status": "fail",
+          "note": "missing public/robots.txt"
+        },
+        {
+          "id": "llms_txt",
+          "label": "llms.txt",
+          "severity": "p1",
+          "status": "fail",
+          "note": ""
+        },
+        {
+          "id": "llms_full",
+          "label": "llms-full.txt",
+          "severity": "p2",
+          "status": "fail",
+          "note": ""
+        },
+        {
+          "id": "llms_instructions",
+          "label": "llms.txt has ## Instructions (#9)",
+          "severity": "p2",
+          "status": "skip",
+          "note": "no llms.txt"
+        },
+        {
+          "id": "ai_txt",
+          "label": "ai.txt (#10)",
+          "severity": "p2",
+          "status": "fail",
+          "note": "no public/ai.txt"
+        },
+        {
+          "id": "indexnow_key",
+          "label": "IndexNow key file in public/",
+          "severity": "p1",
+          "status": "fail",
+          "note": "no IndexNow key file in public/"
+        },
+        {
+          "id": "deploy_site_host",
+          "label": "deploy.cjs SITE_HOST matches live",
+          "severity": "p0",
+          "status": "skip",
+          "note": "no deploy.cjs"
+        },
+        {
+          "id": "fleet_core_v",
+          "label": "fleet-core >= v0.6.3",
+          "severity": "p1",
+          "status": "skip",
+          "note": "no fleet-core dep"
+        },
+        {
+          "id": "3tier_safepayload",
+          "label": "3-tier safe-payload write",
+          "severity": "p0",
+          "status": "skip",
+          "note": "no Supabase lead capture"
+        },
+        {
+          "id": "og_image",
+          "label": "og:image (not placeholder)",
+          "severity": "p1",
+          "status": "skip",
+          "note": "no live URL"
+        },
+        {
+          "id": "homepage_imagery",
+          "label": "homepage has imagery",
+          "severity": "p1",
+          "status": "skip",
+          "note": "no live URL"
+        },
+        {
+          "id": "alt_text",
+          "label": "all imgs alt-tagged",
+          "severity": "p2",
+          "status": "skip",
+          "note": "no live URL"
+        },
+        {
+          "id": "schema_graph",
+          "label": "nested @graph schema (#3)",
+          "severity": "p1",
+          "status": "skip",
+          "note": "no live URL"
+        },
+        {
+          "id": "date_modified",
+          "label": "dateModified ISO 8601 with TZ (#1)",
+          "severity": "p2",
+          "status": "skip",
+          "note": "no live URL"
+        },
+        {
+          "id": "speakable",
+          "label": "SpeakableSpecification (#13)",
+          "severity": "p2",
+          "status": "skip",
+          "note": "no live URL"
+        },
+        {
+          "id": "fleet_xlinks",
+          "label": ">=3 fleet xlinks in footer",
+          "severity": "p2",
+          "status": "skip",
+          "note": "no live URL"
+        },
+        {
+          "id": "link_rel_related",
+          "label": "<link rel=related> in head (#22)",
+          "severity": "p2",
+          "status": "skip",
+          "note": "no live URL"
+        },
+        {
+          "id": "sitemap_lastmod",
+          "label": "sitemap lastmod ISO 8601 + varies (#17)",
+          "severity": "p2",
+          "status": "skip",
+          "note": "no live URL"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "p0_fails": 2,
+    "p1_fails": 29,
+    "p2_fails": 47,
+    "pass": 120,
+    "total": 228
+  }
+}
