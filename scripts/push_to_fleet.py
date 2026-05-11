@@ -41,9 +41,9 @@ SITES = {
     "rank4ai":           ("R4",  Path.home() / "rank4ai-site",            "rank4ai.co.uk"),
     "market-invoice":    ("MI",  Path.home() / "compare-invoice-finance", "marketinvoice.co.uk"),
     "seocompare":        ("SC",  Path.home() / "compareaiseo",            "seocompare.co.uk"),
-    "bestbusinessloans": ("BBL", Path.home() / "bestbusinessloans",       "bestbusinessloans.co.uk"),
+    "bestbusinessloans": ("BBL", Path.home() / "bestbusinessloans",       "bestbusinessloans.ai"),
     "fundbiz":           ("FB",  Path.home() / "fundbiz",                 "fundbiz.co.uk"),
-    "cardmachines":      ("CT",  Path.home() / "cardmachines",            "cardmachines.co.uk"),
+    "cardmachines":      ("CT",  Path.home() / "cardmachines",            "cardmachines.pages.dev"),
 }
 
 
