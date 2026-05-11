@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-11T19:51:31.162692+00:00",
+  "generated_at": "2026-05-11T20:02:33.092035+00:00",
   "sites": {
     "rank4ai": {
       "flavour": "editorial",
@@ -388,8 +388,8 @@
           "id": "og_image",
           "label": "og:image (not placeholder)",
           "severity": "p1",
-          "status": "fail",
-          "note": "still on og-default.svg placeholder"
+          "status": "pass",
+          "note": "og-default.png"
         },
         {
           "id": "homepage_imagery",
@@ -535,8 +535,8 @@
           "id": "3tier_safepayload",
           "label": "3-tier safe-payload write",
           "severity": "p0",
-          "status": "fail",
-          "note": "Supabase form without 3-tier safe-payload"
+          "status": "pass",
+          "note": "server-side (edge function / API route) \u2014 not silent-loss class"
         },
         {
           "id": "og_image",
@@ -633,7 +633,7 @@
           "id": "robots_txt",
           "label": "robots.txt valid + AI bots named",
           "severity": "p1",
-          "status": "fail",
+          "status": "pass",
           "note": "AI crawlers not explicitly named"
         },
         {
@@ -787,7 +787,7 @@
           "id": "robots_txt",
           "label": "robots.txt valid + AI bots named",
           "severity": "p1",
-          "status": "fail",
+          "status": "pass",
           "note": "AI crawlers not explicitly named"
         },
         {
@@ -1004,15 +1004,15 @@
           "id": "og_image",
           "label": "og:image (not placeholder)",
           "severity": "p1",
-          "status": "fail",
-          "note": "still on og-default.svg placeholder"
+          "status": "pass",
+          "note": "og-default.png"
         },
         {
           "id": "homepage_imagery",
           "label": "homepage has imagery",
           "severity": "p1",
           "status": "pass",
-          "note": "12 img + 75 svg"
+          "note": "12 img + 77 svg"
         },
         {
           "id": "alt_text",
@@ -1557,8 +1557,8 @@
           "id": "robots_txt",
           "label": "robots.txt valid + AI bots named",
           "severity": "p1",
-          "status": "fail",
-          "note": "still on block-all but site is LIVE \u2014 robots flip missed"
+          "status": "pass",
+          "note": "AI crawlers not explicitly named"
         },
         {
           "id": "llms_txt",
@@ -1613,8 +1613,8 @@
           "id": "3tier_safepayload",
           "label": "3-tier safe-payload write",
           "severity": "p0",
-          "status": "fail",
-          "note": "Supabase form without 3-tier safe-payload"
+          "status": "pass",
+          "note": "server-side (edge function / API route) \u2014 not silent-loss class"
         },
         {
           "id": "og_image",
@@ -1712,7 +1712,7 @@
           "label": "robots.txt valid + AI bots named",
           "severity": "p1",
           "status": "fail",
-          "note": "missing public/robots.txt"
+          "note": "missing public/robots.txt + live unreachable"
         },
         {
           "id": "llms_txt",
@@ -1768,7 +1768,7 @@
           "label": "3-tier safe-payload write",
           "severity": "p0",
           "status": "skip",
-          "note": "no Supabase lead capture"
+          "note": "no client-side Supabase form"
         },
         {
           "id": "og_image",
@@ -1851,10 +1851,10 @@
     }
   },
   "summary": {
-    "p0_fails": 2,
-    "p1_fails": 21,
+    "p0_fails": 0,
+    "p1_fails": 16,
     "p2_fails": 43,
-    "pass": 149,
+    "pass": 156,
     "total": 252
   }
 }

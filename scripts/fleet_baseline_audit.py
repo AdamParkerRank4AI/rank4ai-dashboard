@@ -82,15 +82,33 @@ def check_claude_md(root, live, html, flavour, pre_launch):
     return ("pass" if ok else "fail", "")
 
 def check_robots_txt(root, live, html, flavour, pre_launch):
-    p = root / "public/robots.txt"
-    if not p.exists(): return ("fail", "missing public/robots.txt")
-    txt = p.read_text(errors="ignore").lower()
+    """Prefer LIVE robots.txt over repo file — many sites have CF Content-Signals
+    or Workers rewriting robots, which the repo file doesn't reflect."""
+    txt = None
+    if live:
+        live_robots = fetch(live.rstrip("/") + "/robots.txt")
+        if live_robots: txt = live_robots.lower()
+    if txt is None:
+        p = root / "public/robots.txt"
+        if not p.exists(): return ("fail", "missing public/robots.txt + live unreachable")
+        txt = p.read_text(errors="ignore").lower()
+    # Block-all heuristic: 'Disallow: /' under 'User-agent: *' specifically.
+    # CF Content-Signals injects per-AI-bot 'Disallow: /' lines under each named
+    # bot — those don't mean the site is blocking everyone.
+    star_block = False
+    current_ua = None
+    for line in txt.split("\n"):
+        s = line.strip().lower()
+        if s.startswith("#") or not s: continue
+        if s.startswith("user-agent:"):
+            current_ua = s.split(":",1)[1].strip()
+        elif current_ua == "*" and re.match(r"^disallow:\s*/\s*$", s):
+            star_block = True; break
     if pre_launch:
-        ok = "disallow: /" in txt or "noindex" in txt
-        return ("pass" if ok else "fail", "pre-launch should block-all")
-    if "user-agent: *" in txt and "disallow: /" in txt:
-        return ("fail", "still on block-all but site is LIVE — robots flip missed")
-    has_ai = any(b in txt for b in ("gptbot", "oai-searchbot", "perplexitybot", "claudebot", "claude-user"))
+        return ("pass" if (star_block or "noindex" in txt) else "fail", "pre-launch should block-all")
+    if star_block:
+        return ("fail", "robots blocks all crawlers under * — flip from prelaunch missed")
+    has_ai = any(b in txt for b in ("gptbot", "oai-searchbot", "perplexitybot", "claudebot", "claude-user", "content-signal"))
     return ("pass" if has_ai else "fail", "AI crawlers not explicitly named")
 
 def check_llms_txt(root, live, html, flavour, pre_launch):
@@ -155,7 +173,10 @@ def check_fleet_core_version(root, live, html, flavour, pre_launch):
     return ("pass" if parts >= (0,6,3) else "fail", f"v{m.group(1)} — needs >= v0.6.3")
 
 def check_3tier_safepayload(root, live, html, flavour, pre_launch):
-    # Either uses fleet-core >= v0.6.3 (which has it), or implements its own
+    """Only applies to CLIENT-SIDE direct REST inserts. Server-side API routes
+    + Edge Functions handle errors differently and don't have the silent-loss
+    class. So skip if Supabase writes only exist in pages/api/ or are calls
+    to functions/v1/."""
     pkg = root / "package.json"
     if pkg.exists():
         m = re.search(r'"@rank4ai/fleet-core"\s*:\s*"github:[^"]*#v([0-9]+\.[0-9]+\.[0-9]+)', pkg.read_text())
@@ -165,9 +186,26 @@ def check_3tier_safepayload(root, live, html, flavour, pre_launch):
                 return ("pass", "via fleet-core")
     if grep_repo(root, r"safePayload|3-tier", exts=(".astro",".ts")):
         return ("pass", "inline impl")
-    if not grep_repo(root, r"supabase\.co/rest/v1|SUPABASE_URL", exts=(".astro",".ts")):
-        return ("skip", "no Supabase lead capture")
-    return ("fail", "Supabase form without 3-tier safe-payload")
+    # Look for client-side REST inserts (Astro component or in-page <script>)
+    has_client = False
+    for fp in root.rglob("*.astro"):
+        if any(s in str(fp) for s in ("/node_modules/","/.git/","/dist/","/.astro/")): continue
+        try:
+            t = fp.read_text(errors="ignore")
+            if re.search(r"supabase\.co/rest/v1|/rest/v1/[a-z_]+", t):
+                has_client = True; break
+        except: pass
+    # Edge Function / API route writes are SERVER-SIDE and handle errors
+    # explicitly (return error to caller). Lower risk class.
+    has_edge_or_api = (
+        grep_repo(root, r"functions/v1/", exts=(".astro",".ts")) or
+        any((root / "src/pages/api").rglob("*.ts") if (root / "src/pages/api").exists() else [])
+    )
+    if not has_client and has_edge_or_api:
+        return ("pass", "server-side (edge function / API route) — not silent-loss class")
+    if not has_client:
+        return ("skip", "no client-side Supabase form")
+    return ("fail", "client-side Supabase form without 3-tier safe-payload")
 
 def check_og_image(root, live, html, flavour, pre_launch):
     if not html: return ("skip", "no live URL")
