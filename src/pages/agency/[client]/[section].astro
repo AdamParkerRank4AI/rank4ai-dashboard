@@ -55,6 +55,7 @@ const citByTypeAll = loadJson('citations_by_type.json');
 const auditAll = loadJson('ai_audit.json');
 const pagespeedAll = loadJson('pagespeed.json');
 const crawlActivityAll = loadJson('crawl_activity.json');
+const vernacularData = loadJson(`vernacular_${clientId}.json`);
 const kgAll = loadJson('knowledge_graph.json');
 const nlpAll = loadJson('nlp_entities.json');
 const aioSerpAll = loadJson('ai_overview_serp.json');
@@ -2270,6 +2271,88 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
     </div>
   )}
 
+  <!-- VERNACULAR CONTENT -->
+  {sectionId === 'vernacular' && vernacularData && (
+    <div data-copy-tile="Vernacular Content">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{vernacularData.totalPages}</div>
+          <div class="text-xs text-gray-500">Total Pages</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-white">{vernacularData.languages}</div>
+          <div class="text-xs text-gray-500">Languages</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-emerald-400">{vernacularData.byStatus?.draft || 0}</div>
+          <div class="text-xs text-gray-500">Drafts (visible)</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-yellow-400">{vernacularData.byStatus?.brief || 0}</div>
+          <div class="text-xs text-gray-500">Briefs (pending)</div>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        {Object.entries(vernacularData.byLanguage).map(([langCode, langData]: any) => (
+          <div class="bg-gray-900 border border-gray-800 rounded-lg p-5">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-lg font-semibold text-white">
+                {langData.name} <span class="text-xs text-gray-500 font-normal">({langCode})</span>
+              </h3>
+              <span class="text-xs text-gray-500">{langData.count} page{langData.count === 1 ? '' : 's'}</span>
+            </div>
+            <div class="space-y-2">
+              {langData.pages.map((page: any) => {
+                const previewUrl = `https://multilingual-hi-mr.cardmachines.pages.dev${page.url}`;
+                const statusClasses = {
+                  brief: 'bg-yellow-900/40 text-yellow-300 border-yellow-700/40',
+                  draft: 'bg-emerald-900/40 text-emerald-300 border-emerald-700/40',
+                  native_review: 'bg-blue-900/40 text-blue-300 border-blue-700/40',
+                  published: 'bg-purple-900/40 text-purple-300 border-purple-700/40',
+                }[page.status] || 'bg-gray-800 text-gray-400 border-gray-700';
+                return (
+                  <div class="flex items-start justify-between gap-3 p-3 bg-gray-950 border border-gray-800 rounded">
+                    <div class="flex-1 min-w-0">
+                      <div class="flex items-center gap-2 mb-1">
+                        <a
+                          href={page.status === 'draft' || page.status === 'published' ? previewUrl : '#'}
+                          target="_blank"
+                          rel="noopener"
+                          class={`text-sm font-medium ${page.status === 'draft' || page.status === 'published' ? 'text-white hover:text-blue-400' : 'text-gray-400 cursor-default'}`}
+                        >
+                          {page.title || page.slug}
+                        </a>
+                        <span class={`text-[10px] uppercase tracking-wider border px-1.5 py-0.5 rounded ${statusClasses}`}>
+                          {page.status}
+                        </span>
+                      </div>
+                      <div class="text-xs text-gray-500 font-mono">
+                        {page.url}
+                      </div>
+                      {page.sourceEnglishSlug && (
+                        <div class="text-xs text-gray-400 mt-1">
+                          (English target: <a href={`https://multilingual-hi-mr.cardmachines.pages.dev${page.sourceEnglishSlug}`} target="_blank" rel="noopener" class="text-blue-400 hover:underline">{page.englishTitle}</a> <span class="text-gray-600">{page.sourceEnglishSlug}</span>)
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+
+  {sectionId === 'vernacular' && !vernacularData && (
+    <div class="bg-gray-900 border border-gray-800 rounded-lg p-8 text-center">
+      <p class="text-gray-400">No vernacular data file found for this client.</p>
+      <p class="text-xs text-gray-600 mt-2">Run the generator to create <code>src/data/live/vernacular_{clientId}.json</code></p>
+    </div>
+  )}
+
   <!-- AI READINESS -->
   {sectionId === 'ai-readiness' && audit && (
     <div data-copy-tile="AI Readiness">
@@ -3991,6 +4074,39 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
     </div>
     );
   })()}
+
+  <!-- PENDING DECISIONS (pre-launch sites surface launch-blocking decisions in the sitemap area) -->
+  {sectionId === 'site-tree' && (client as any).pending_decisions && Array.isArray((client as any).pending_decisions) && (client as any).pending_decisions.length > 0 && (
+    <div data-copy-tile="Pending Decisions" class="mb-6">
+      <div class="bg-amber-900/20 border-2 border-amber-500/50 rounded-lg p-6">
+        <div class="flex items-start gap-3 mb-4">
+          <div class="w-8 h-8 rounded-full bg-amber-500 text-amber-950 font-bold flex items-center justify-center flex-shrink-0">!</div>
+          <div>
+            <h3 class="text-base font-bold text-amber-300 mb-1">Pending decisions before launch</h3>
+            <p class="text-xs text-amber-200/80">{(client as any).pending_decisions.filter((d: any) => d.status !== 'done' && d.status !== 'resolved').length} of {(client as any).pending_decisions.length} unresolved. These block the noindex flip.</p>
+          </div>
+        </div>
+        <ul class="space-y-2.5">
+          {(client as any).pending_decisions.map((d: any) => (
+            <li class={`rounded-md border p-3 ${d.status === 'done' || d.status === 'resolved' ? 'bg-emerald-900/20 border-emerald-700/40' : 'bg-amber-950/30 border-amber-700/40'}`}>
+              <div class="flex items-start gap-3">
+                <div class={`w-5 h-5 rounded flex-shrink-0 mt-0.5 flex items-center justify-center text-[10px] font-bold ${d.status === 'done' || d.status === 'resolved' ? 'bg-emerald-500 text-emerald-950' : 'bg-amber-600/70 text-amber-100'}`}>
+                  {d.status === 'done' || d.status === 'resolved' ? '✓' : '?'}
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="text-sm font-semibold text-white">{d.label}</span>
+                    {d.owner && <span class="text-[10px] uppercase tracking-wider text-gray-400">owner: {d.owner}</span>}
+                  </div>
+                  {d.note && <p class="text-xs text-gray-400 leading-relaxed">{d.note}</p>}
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  )}
 
   <!-- SITE TREE -->
   {sectionId === 'site-tree' && crawlData?.tree && (

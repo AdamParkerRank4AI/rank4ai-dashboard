@@ -39,6 +39,7 @@ const citResults = loadJson('citation_results.json');
 const uptimeData = loadJson('uptime.json');
 const recsData = loadJson('recommendations.json');
 const pagespeedData = loadJson('pagespeed.json');
+const vernacularData = loadJson(`vernacular_${clientId}.json`);
 
 const ga4 = ga4Data?.[clientId];
 const audit = auditData?.[clientId];
@@ -104,6 +105,12 @@ const sectionStatus: Record<string, any> = {
     metricLabel: 'Pages with schema',
   } : { status: 'pending', statusText: 'Setting up', metric: '--', metricLabel: '' },
   'recommendations': { status: 'pending', statusText: 'Setting up', metric: '--', metricLabel: '' },
+  'vernacular': vernacularData ? {
+    status: vernacularData.byStatus?.draft > 0 ? 'healthy' : 'warning',
+    statusText: `${vernacularData.languages} langs · ${vernacularData.byStatus?.draft || 0} drafts · ${vernacularData.byStatus?.brief || 0} briefs`,
+    metric: `${vernacularData.totalPages}`,
+    metricLabel: 'Vernacular pages',
+  } : { status: 'pending', statusText: 'Setting up', metric: '--', metricLabel: '' },
 };
 // Passcode gate. If `clientCode` is present on the client record, the page
 // renders behind a localStorage-based passcode form (same pattern as 49k).
