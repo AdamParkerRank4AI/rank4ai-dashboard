@@ -43,6 +43,25 @@ const entityCoherence = loadJson('entity_coherence.json') || null;
 const contentFreshness = loadJson('content_freshness.json') || null;
 const syndication = loadJson('syndication.json') || null;
 const llmsValidation = loadJson('llms_validation.json') || null;
+const baselineAudit = loadJson('fleet_baseline_audit.json') || null;
+
+let baselineSummary: { sites: number; p1Fail: number; p2Fail: number; p0Fail: number; bySite: Array<{ id: string; preLaunch: boolean; fails: Array<{ severity: string; label: string; note: string }> }> } | null = null;
+if (baselineAudit?.sites) {
+  let p0Fail = 0, p1Fail = 0, p2Fail = 0;
+  const bySite: any[] = [];
+  for (const [id, data] of Object.entries(baselineAudit.sites)) {
+    const d = data as any;
+    const fails = (d.checks || []).filter((c: any) => c.status === 'fail').map((c: any) => ({ severity: c.severity, label: c.label, note: c.note || '' }));
+    for (const f of fails) {
+      if (f.severity === 'p0') p0Fail++;
+      else if (f.severity === 'p1') p1Fail++;
+      else if (f.severity === 'p2') p2Fail++;
+    }
+    bySite.push({ id, preLaunch: !!d.pre_launch, fails });
+  }
+  bySite.sort((a, b) => b.fails.filter((f: any) => f.severity === 'p0' || f.severity === 'p1').length - a.fails.filter((f: any) => f.severity === 'p0' || f.severity === 'p1').length);
+  baselineSummary = { sites: bySite.length, p0Fail, p1Fail, p2Fail, bySite };
+}
 
 // Compute real AI Overview numbers across all sites (home tile was showing
 // totalRecs mislabelled as "AI Overview fixes" — not the same thing)
@@ -200,6 +219,61 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
                 ))}
               </tbody>
             </table>
+          </div>
+        </details>
+      </div>
+    </div>
+  )}
+
+  {baselineSummary && (
+    <div data-copy-tile="Fleet Baseline" class={`rounded-lg px-4 py-2 mb-3 border ${
+      baselineSummary.p0Fail > 0 ? 'bg-red-900/40 border-red-700'
+      : baselineSummary.p1Fail > 0 ? 'bg-red-900/30 border-red-800'
+      : baselineSummary.p2Fail > 0 ? 'bg-yellow-900/30 border-yellow-800'
+      : 'bg-gray-900 border-gray-700'
+    }`}>
+      <div class="flex items-center justify-between flex-wrap gap-2">
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Fleet baseline</span>
+          {baselineSummary.p0Fail === 0 && baselineSummary.p1Fail === 0 && baselineSummary.p2Fail === 0
+            ? <span class="text-xs text-green-400">✓ all {baselineSummary.sites} sites pass</span>
+            : <>
+                {baselineSummary.p0Fail > 0 && <span class="text-xs text-red-300 font-semibold">⚠ {baselineSummary.p0Fail} P0 silent-loss</span>}
+                {baselineSummary.p1Fail > 0 && <span class="text-xs text-red-400">⚠ {baselineSummary.p1Fail} P1 production gap</span>}
+                {baselineSummary.p2Fail > 0 && <span class="text-xs text-yellow-400">{baselineSummary.p2Fail} P2 best-practice</span>}
+                <span class="text-[10px] text-gray-500">across {baselineSummary.bySite.filter((s) => s.fails.length > 0).length}/{baselineSummary.sites} sites</span>
+              </>
+          }
+          {baselineAudit?.generated_at && (
+            <span class="text-[10px] text-gray-500">checked {baselineAudit.generated_at.slice(11, 16)}</span>
+          )}
+        </div>
+        <details class="text-xs">
+          <summary class="cursor-pointer text-gray-400 hover:text-white">details</summary>
+          <div class="absolute right-8 mt-2 bg-gray-800 border border-gray-700 rounded-lg p-3 shadow-xl z-50 min-w-[520px] max-h-[500px] overflow-y-auto">
+            {baselineSummary.bySite.filter((s) => s.fails.length > 0).length === 0 ? (
+              <div class="text-xs text-green-400">✓ All sites conform to baseline checklist.</div>
+            ) : (
+              baselineSummary.bySite.filter((s) => s.fails.length > 0).map((site) => (
+                <div class="mb-3">
+                  <div class="text-xs font-semibold text-white mb-1">
+                    {site.id}{site.preLaunch && <span class="text-[10px] text-blue-400 font-normal ml-2">pre-launch</span>}
+                  </div>
+                  {site.fails.map((f) => (
+                    <div class="text-[11px] text-gray-300 pl-3 flex items-start gap-2">
+                      <span class={`text-[10px] font-semibold uppercase shrink-0 mt-0.5 ${
+                        f.severity === 'p0' ? 'text-red-300' : f.severity === 'p1' ? 'text-red-400' : 'text-yellow-400'
+                      }`}>{f.severity}</span>
+                      <span class="flex-1">
+                        {f.label}
+                        {f.note && <span class="text-gray-500 block text-[10px]">{f.note}</span>}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              ))
+            )}
+            <div class="mt-2 pt-2 border-t border-gray-700 text-[10px] text-gray-500">Source: ~/Library/Mobile Documents/com~apple~CloudDocs/claude/astro/FLEET/BASELINE_CHECKLIST.md · runs nightly 06:45 BST via com.rank4ai.fleet-baseline-audit</div>
           </div>
         </details>
       </div>
