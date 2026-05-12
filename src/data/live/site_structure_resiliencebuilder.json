@@ -2,9 +2,9 @@
   "generated_at": "2026-05-12T10:30:00+01:00",
   "source": "Live RB site inventory (12 May 2026) + Steve's v4/v4a build in ~/steve-site + site-rebuild-plan-2026-04-14.md",
   "totals": {
-    "total_rows": 70,
-    "live": 28,
-    "not_started": 42,
+    "total_rows": 71,
+    "live": 30,
+    "not_started": 41,
     "slots": {
       "facet-page": { "filled": 0, "empty": 5 },
       "case-study": { "filled": 0, "empty": 3 },
@@ -14,13 +14,16 @@
       "blog-post": { "filled": 39, "empty": 0 }
     }
   },
+  "gsc_data_pulled": "2026-05-12 (last 28 days)",
+  "gsc_totals": { "clicks": 76, "impressions": 20313, "avg_position": 24.0 },
+  "traffic_protection_rule": "Live URLs with >100 impressions stay. Rewrite in place with distinct keyword angles. Merges only for 0-3 impression pages (legacy homes, elementor-test). All other 'merge' actions from earlier plan have been downgraded to 'upgrade-in-place'.",
   "strategy_summary": {
     "clusters": [
-      "Enterprise (5 overlapping pages → consolidate to 1 canonical)",
-      "Individuals (3-4 overlapping pages → consolidate to 1-2)",
-      "Coaches & Certification (1 page → expand to 3)",
-      "The 5-Facet Model (currently 0 dedicated pages, 1 cross-reference on /teams)",
-      "Evidence & Proof (currently 0 pages, only a gated campaign LP)"
+      "Enterprise (5 pages KEPT alive, each owns a distinct keyword cluster)",
+      "Individuals (3 pages KEPT alive, distinct angles)",
+      "Coaches & Certification (3 existing URLs preserved + expanded)",
+      "The 5-Facet Model (currently 0 dedicated pages — pure greenfield, no traffic risk)",
+      "Evidence & Proof (currently 0 pages — greenfield, no traffic risk)"
     ],
     "authority_pillars": [
       "The ResilienceBuilder Assessment",
@@ -47,7 +50,19 @@
     "urgent_actions": [
       "noindex /coaches IMMEDIATELY — WordPress login page is publicly indexed (leak)",
       "Remove Lorem Ipsum testimonials still live on /home-new-design and /home-new-design-v2",
-      "Decide on blog: restart cadence (39 posts, dormant since Jan 2025) or wind it down cleanly"
+      "Decide on blog: 12+ posts earn 200–1,400 imp each. Restart cadence + migrate, or proxy from WP — DO NOT bin"
+    ],
+    "traffic_protected_urls": [
+      "/ (685 imp, 20 clicks)",
+      "/resilience-coach (1,069 imp, 10 clicks)",
+      "/resilience-workshops (1,837 imp, 5 clicks)",
+      "/coaching-for-stress-management (1,772 imp, 4 clicks)",
+      "/resilience-coach-qualification (721 imp, 4 clicks)",
+      "/about (299 imp, 14 clicks)",
+      "/resilience-characteristics (2,245 imp, 2 clicks, pos 3.4 for '5 characteristics of a resilient person')",
+      "/workplace-resilience-training (3,185 imp — highest impression page on the site)",
+      "/resilience-program (2,962 imp)",
+      "/corporate-wellness-consultant (1,274 imp, ranks pos 11.7 for 'corporate wellness consultant')"
     ]
   },
   "tree": [
@@ -153,10 +168,10 @@
           "action": "upgrade",
           "note": "CANONICAL after consolidation. Currently ~2,100 words, the strongest of the 5 overlapping enterprise pages. UPGRADE to be the cluster anchor. Pulls in workshops, programmes, consulting under one URL. Consider rename to /for-business/ if Steve prefers.",
           "children": [
-            { "id": "merge-workplace-wellbeing", "page_number": "7.1", "page_name": "/workplace-wellbeing-consultants-and-training", "url_path": "/workplace-wellbeing-consultants-and-training", "page_type": "Service", "status": "live", "action": "merge", "note": "~1,200 words. 'Elevate Your Workplace Wellbeing'. Heavy overlap. MERGE → /workplace-resilience-training, 301." },
-            { "id": "merge-corporate-wellness", "page_number": "7.2", "page_name": "/corporate-wellness-consultant", "url_path": "/corporate-wellness-consultant", "page_type": "Service", "status": "live", "action": "merge", "note": "~1,200 words. Heavy overlap. MERGE → /workplace-resilience-training, 301. (Or keep as separate /consulting/ if Steve wants to split 'consulting' from 'training'.)" },
-            { "id": "merge-employees-wellness", "page_number": "7.3", "page_name": "/employees-wellness-program", "url_path": "/employees-wellness-program", "page_type": "Service", "status": "live", "action": "merge", "note": "~1,100 words. Heavy overlap. MERGE → /workplace-resilience-training, 301." },
-            { "id": "merge-training-employees", "page_number": "7.4", "page_name": "/resilience-training-for-employees", "url_path": "/resilience-training-for-employees", "page_type": "Service", "status": "live", "action": "merge", "note": "~1,100 words. Direct overlap. MERGE → /workplace-resilience-training, 301." },
+            { "id": "wellbeing-consultants", "page_number": "7.1", "page_name": "/workplace-wellbeing-consultants-and-training", "url_path": "/workplace-wellbeing-consultants-and-training", "page_type": "Service", "status": "live", "action": "upgrade", "note": "GSC: 840 imp, pos 37.2, 0 clicks. KEEP — earns impressions on 'workplace wellbeing consultants'. Rewrite as the WELLBEING-BUYER entry point: positions resilience as the protective factor, then routes to /workplace-resilience-training for delivery. Distinct angle preserves the keyword." },
+            { "id": "corporate-wellness", "page_number": "7.2", "page_name": "/corporate-wellness-consultant", "url_path": "/corporate-wellness-consultant", "page_type": "Service", "status": "live", "action": "upgrade", "note": "GSC: 1,274 imp, pos 11.7 for 'corporate wellness consultant' (325 imp on that one query). KEEP — strong keyword ranking. Rewrite as ADVISORY/CONSULTING angle (diagnosis + plan, distinct from delivered training). Don't merge — risk to a near-page-1 ranking." },
+            { "id": "employees-wellness", "page_number": "7.3", "page_name": "/employees-wellness-program", "url_path": "/employees-wellness-program", "page_type": "Service", "status": "live", "action": "upgrade", "note": "GSC: 261 imp, pos 34.5, 0 clicks. KEEP — own the 'employees wellness program' keyword. Rewrite as PROGRAMME-BUYER angle (HR/People director language)." },
+            { "id": "training-employees", "page_number": "7.4", "page_name": "/resilience-training-for-employees", "url_path": "/resilience-training-for-employees", "page_type": "Service", "status": "live", "action": "upgrade", "note": "GSC: 489 imp, pos 69.3, 0 clicks. KEEP — earns impressions on 'resilience training for employees'. Rewrite as L&D-BUYER angle (training procurement language)." },
             { "id": "resilience-program", "page_number": "7.5", "page_name": "Resilience programme (multi-session)", "url_path": "/resilience-program", "page_type": "Service", "status": "live", "action": "upgrade", "note": "~1,200 words. KEEP as a sub-page of /workplace-resilience-training. Flagship multi-session programme. Specific enough to survive consolidation." },
             { "id": "workshops", "page_number": "7.6", "page_name": "Workshops (delivery format)", "url_path": "/resilience-workshops", "page_type": "Service", "status": "live", "action": "upgrade", "note": "~1,100 words. KEEP as delivery-format sub-page (1-day / 2-day / half-day). Differentiated from programme by format." },
             { "id": "teams", "page_number": "7.7", "page_name": "Team workshops (with 5-driver model)", "url_path": "/teams", "page_type": "Service", "status": "live", "action": "upgrade", "note": "~1,300 words. H1 'Your Teams Deserve More Than Just a Wellness Tick-Box'. KEEP — only page with 5-driver framework. Becomes the link out to /the-model." }
@@ -179,9 +194,9 @@
           "action": "upgrade",
           "note": "CANONICAL after consolidation. ~1,200 words. H1 'Build the Strength to Overcome Life's Challenges'. UPGRADE: become the canonical individuals page. Consider rename to /for-individuals/ if cleaner.",
           "children": [
-            { "id": "merge-my-resilience", "page_number": "8.1", "page_name": "/my-resilience (direct duplicate)", "url_path": "/my-resilience", "page_type": "Service", "status": "live", "action": "merge", "note": "~1,300 words. NEAR-DUPLICATE of /personal-resilience-training. Same title pattern, same intent. MERGE → /personal-resilience-training, 301." },
-            { "id": "coaching-stress", "page_number": "8.2", "page_name": "1:1 stress-management coaching", "url_path": "/coaching-for-stress-management", "page_type": "Service", "status": "live", "action": "upgrade", "note": "~1,100 words. KEEP as a differentiated sub-page only if rewritten for stress-specific intent. Otherwise merge." },
-            { "id": "mental-training", "page_number": "8.3", "page_name": "Mental resilience / toughness", "url_path": "/mental-resilience-training", "page_type": "Service", "status": "live", "action": "upgrade", "note": "~1,300 words. KEEP only if rewritten with mental-toughness differentiator (currently overlaps too much). Otherwise merge." }
+            { "id": "my-resilience", "page_number": "8.1", "page_name": "/my-resilience", "url_path": "/my-resilience", "page_type": "Service", "status": "live", "action": "merge", "note": "GSC: 162 imp, 1 click, pos 19.0. Near-duplicate of /personal-resilience-training (279 imp). Both low. Decision: 301 → /personal-resilience-training and absorb the H1 'Developing Resilience' as a section heading on the canonical to preserve the keyword anchor. Lower risk than the enterprise cluster — only 1 click at stake." },
+            { "id": "coaching-stress", "page_number": "8.2", "page_name": "1:1 stress-management coaching", "url_path": "/coaching-for-stress-management", "page_type": "Service", "status": "live", "action": "upgrade", "note": "GSC: 1,772 imp, pos 22.4, 4 CLICKS. Ranks for 'stress coach' (227 imp, pos 24.3) — earning real traffic. KEEP — rewrite as STRESS-SPECIFIC differentiator (leans on Physical Stamina + Emotional Intelligence + Social Support facets). DO NOT MERGE." },
+            { "id": "mental-training", "page_number": "8.3", "page_name": "Mental resilience training", "url_path": "/mental-resilience-training", "page_type": "Service", "status": "live", "action": "upgrade", "note": "GSC: 816 imp, pos 18.2, 1 click. KEEP — rewrite with MENTAL-TOUGHNESS differentiator (Mental Strength + Purpose facets). DO NOT MERGE." }
           ]
         }
       ]
@@ -201,9 +216,10 @@
           "action": "new",
           "note": "NEW single dual-GTM entry. Branches to: independent coach vs in-house L&D. Critical for the coach network growth lever per strategy doc.",
           "children": [
-            { "id": "resilience-coach", "page_number": "9.1", "page_name": "Resilience Coach (existing certification page)", "url_path": "/resilience-coach", "page_type": "Service", "status": "live", "action": "upgrade", "note": "~1,200 words. H1 'Become a Resilience Coach'. Only B2B2C page on site. UPGRADE: split into entity-definition (what is a resilience coach) + certification programme." },
-            { "id": "coach-certification", "page_number": "9.2", "page_name": "Coach certification — programme detail", "url_path": "/coach-certification", "page_type": "Service", "status": "not_started", "action": "new", "note": "NEW. Curriculum, cohort dates, pricing (Open decision #7), accreditation. The article cluster (~24 of 39 posts) targets this audience; finally give them a destination." },
-            { "id": "coaches-directory", "page_number": "9.3", "page_name": "Certified coach directory", "url_path": "/coaches-directory", "page_type": "Hub", "status": "not_started", "action": "new", "note": "NEW. List of certified coaches with Person schema. Note: existing /coaches URL is the WordPress login page (see L10 — URGENT noindex)." }
+            { "id": "resilience-coach", "page_number": "9.1", "page_name": "What is a resilience coach (definition)", "url_path": "/resilience-coach", "page_type": "Authority", "status": "live", "action": "upgrade", "note": "GSC: 1,069 imp, 10 CLICKS, pos 36.0 — the biggest clicks-earner after the homepage. KEEP URL — entity-definition page. Rewrite for AI-citation: 'A resilience coach is …' answer-capsule. Don't risk the ranking." },
+            { "id": "resilience-coach-qualification", "page_number": "9.2", "page_name": "Resilience coach qualification (existing page)", "url_path": "/resilience-coach-qualification", "page_type": "Service", "status": "live", "action": "upgrade", "note": "GSC: 721 imp, 4 CLICKS, pos 21.1. URL EXISTS already — earns clicks on 'resilience coach qualification' / 'resilience coach training UK'. KEEP URL — upgrade content. Pair with /coach-certification below." },
+            { "id": "coach-certification", "page_number": "9.3", "page_name": "Coach certification — programme detail", "url_path": "/coach-certification", "page_type": "Service", "status": "not_started", "action": "new", "note": "NEW. Curriculum, cohort dates, pricing (Open decision #7), accreditation. The article cluster (~24 of 39 posts) targets this audience; finally give them a destination. Cross-link from /resilience-coach-qualification." },
+            { "id": "coaches-directory", "page_number": "9.4", "page_name": "Certified coach directory", "url_path": "/coaches-directory", "page_type": "Hub", "status": "not_started", "action": "new", "note": "NEW URL. The existing /coaches is the WordPress login leak — gets 410'd (don't 301 to here, the login URL has no SEO value). Directory at /coaches-directory/." }
           ]
         }
       ]
@@ -276,12 +292,12 @@
           "id": "characteristics",
           "page_number": "14",
           "page_name": "Characteristics of resilient people",
-          "url_path": "/characteristics",
+          "url_path": "/resilience-characteristics",
           "layer": "L6",
           "page_type": "Authority",
-          "status": "not_started",
-          "action": "new",
-          "note": "NEW. 6-trait block parked from v4 homepage (8 May 2026). Data lives in site.ts as `characteristics`. Build dedicated page once Steve approves IA.",
+          "status": "live",
+          "action": "upgrade",
+          "note": "GSC: 2,245 imp, 2 clicks, pos 14.1. Ranks pos 3.4 for '5 characteristics of a resilient person', pos 16.2 for 'characteristics of resilient people'. URL EXISTS ALREADY — original plan had this as /characteristics/ which would have lost the ranking. KEEP /resilience-characteristics URL, upgrade content using the 6-trait block from v4 homepage's site.ts.",
           "children": []
         },
         {

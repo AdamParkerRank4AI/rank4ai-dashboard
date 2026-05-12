@@ -16,6 +16,7 @@ SITES = {
     "rank4ai": "sc-domain:rank4ai.co.uk",
     "market-invoice": "sc-domain:marketinvoice.co.uk",
     "seocompare": "sc-domain:seocompare.co.uk",
+    "resiliencebuilder": "sc-domain:resiliencebuilder.co.uk",
 }
 
 # Fallback URL-prefix formats if domain property doesn't work
@@ -23,6 +24,7 @@ SITES_FALLBACK = {
     "rank4ai": "https://www.rank4ai.co.uk/",
     "market-invoice": "https://www.marketinvoice.co.uk/",
     "seocompare": "https://www.seocompare.co.uk/",
+    "resiliencebuilder": "https://resiliencebuilder.co.uk/",
 }
 
 
