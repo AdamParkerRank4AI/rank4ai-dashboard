@@ -235,13 +235,18 @@ def check_alt_text(root, live, html, flavour, pre_launch):
 
 def check_schema_graph(root, live, html, flavour, pre_launch):
     if not html: return ("skip", "no live URL")
-    # Look for @graph with Organization + WebSite + WebPage
     has_graph = '"@graph"' in html
-    has_org = '"@type":"Organization"' in html or '"@type": "Organization"' in html
-    has_wp = '"@type":"WebPage"' in html or '"@type": "WebPage"' in html
-    if has_graph and has_org and has_wp: return ("pass", "@graph + Org + WebPage")
+    # Accept Organization or any LocalBusiness/Service subclass — they all inherit
+    # from Organization and serve the same entity-disambiguation role.
+    org_subclasses = ("Organization", "ProfessionalService", "LocalBusiness",
+                       "MedicalBusiness", "FinancialService", "LegalService",
+                       "Store", "Restaurant", "Dentist", "MedicalClinic")
+    has_org = any(f'"@type":"{c}"' in html or f'"@type": "{c}"' in html for c in org_subclasses)
+    # WebPage is sometimes implicit via WebSite mainEntity; accept either.
+    has_wp = any(f'"@type":"{c}"' in html or f'"@type": "{c}"' in html for c in ("WebPage", "WebSite", "Article", "BlogPosting"))
+    if has_graph and has_org and has_wp: return ("pass", "@graph + Org-class + WebPage-class")
     if has_org and has_wp: return ("fail", "schema present but not nested (#3 entity-depth gap)")
-    return ("fail", "missing Organization or WebPage schema")
+    return ("fail", "missing Organization or WebPage class")
 
 def check_date_modified(root, live, html, flavour, pre_launch):
     """Finding #1: dateModified ISO 8601 with TZ"""
