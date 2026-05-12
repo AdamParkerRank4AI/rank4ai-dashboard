@@ -1,7 +1,7 @@
 {
   "site_id": "cardmachines",
   "domain": "cardmachines.pages.dev",
-  "crawled_at": "2026-05-12T14:33:57.806067+00:00",
+  "crawled_at": "2026-05-12T14:52:59.305352+00:00",
   "source": "fleet-source-reader",
   "pages_crawled": 709,
   "total_issues": 0,
@@ -35,10 +35,6 @@
     "pl": {
       "hub": "/pl/",
       "page_count": 5
-    },
-    "chargebacks-help": {
-      "hub": "/chargebacks-help/",
-      "page_count": 1
     },
     "contact": {
       "hub": "/contact/",
@@ -215,6 +211,10 @@
     "get-quotes": {
       "hub": "/get-quotes/",
       "page_count": 2
+    },
+    "chargebacks": {
+      "hub": "/chargebacks/",
+      "page_count": 1
     },
     "help": {
       "hub": "/help/",
@@ -975,49 +975,6 @@
       "has_viewport": true,
       "internal_links_in": 1,
       "depth": 2
-    },
-    {
-      "url": "https://acceptcard.co.uk/chargebacks-help/",
-      "path": "/chargebacks-help/",
-      "title": "Chargeback and dispute help: AcceptCard drafts and escalates on your behalf",
-      "h1": "Chargeback and dispute help",
-      "meta_desc": "UK chargebacks cost \u00a315 to \u00a335 per case and 60-80% are friendly fraud you can win. AcceptCard drafts the response, gathers the evidence and escalates where your acquirer drags its feet. Included free with every introduction.",
-      "word_count": 4465,
-      "status": 200,
-      "schemas": [
-        "Person",
-        "Organization",
-        "WebSite",
-        "WebPage",
-        "Article",
-        "WebSite",
-        "FAQPage",
-        "BreadcrumbList",
-        "Article"
-      ],
-      "internal_links_out": 38,
-      "external_links_out": -23,
-      "canonical": "https://acceptcard.co.uk/chargebacks-help/",
-      "response_time_ms": 0,
-      "image_count": 0,
-      "images_with_alt": 0,
-      "video_count": 0,
-      "has_multimodal": false,
-      "has_comparison_table": false,
-      "table_count": 0,
-      "list_count": 6,
-      "question_h2s": 0,
-      "h2_count": 5,
-      "last_modified": "2026-05-11",
-      "has_answer_capsule": true,
-      "has_og_tags": true,
-      "has_author": true,
-      "has_definition": false,
-      "has_cta": true,
-      "has_breadcrumbs": true,
-      "has_viewport": true,
-      "internal_links_in": 709,
-      "depth": 1
     },
     {
       "url": "https://acceptcard.co.uk/contact/",
@@ -27909,7 +27866,7 @@
       "title": "Card Payment Systems for UK Faith Institutions, AcceptCard",
       "h1": "Card payment systems for UK faith institutions",
       "meta_desc": "Editorial guides to digital donation systems for UK mosques, churches, gurdwaras, temples and synagogues. Gift Aid, festival-day surges, multi-currency for diaspora donors, contactless kiosks vs portable terminals.",
-      "word_count": 3401,
+      "word_count": 3393,
       "status": 200,
       "schemas": [
         "Person",
@@ -27920,8 +27877,8 @@
         "WebSite",
         "Article"
       ],
-      "internal_links_out": 42,
-      "external_links_out": -27,
+      "internal_links_out": 41,
+      "external_links_out": -26,
       "canonical": "https://acceptcard.co.uk/faith/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -28355,6 +28312,49 @@
       "has_viewport": true,
       "internal_links_in": 0,
       "depth": 2
+    },
+    {
+      "url": "https://acceptcard.co.uk/chargebacks/",
+      "path": "/chargebacks/",
+      "title": "Chargeback and dispute help: AcceptCard drafts and escalates on your behalf",
+      "h1": "Chargeback and dispute help",
+      "meta_desc": "UK chargebacks cost \u00a315 to \u00a335 per case and 60-80% are friendly fraud you can win. AcceptCard drafts the response, gathers the evidence and escalates where your acquirer drags its feet. Included free with every introduction.",
+      "word_count": 4459,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "WebSite",
+        "FAQPage",
+        "BreadcrumbList",
+        "Article"
+      ],
+      "internal_links_out": 38,
+      "external_links_out": -23,
+      "canonical": "https://acceptcard.co.uk/chargebacks/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 6,
+      "question_h2s": 0,
+      "h2_count": 5,
+      "last_modified": "2026-05-11",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 709,
+      "depth": 1
     },
     {
       "url": "https://acceptcard.co.uk/help/",
@@ -30059,7 +30059,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/./",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -30369,7 +30369,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/404/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -30669,7 +30669,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/tap-to-pay-iphone/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -31019,7 +31019,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/high-risk/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -31374,7 +31374,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/high-risk/supplements/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -31729,7 +31729,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/high-risk/crypto/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -32084,7 +32084,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/high-risk/pawnbroker/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -32439,7 +32439,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/high-risk/gambling/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -32794,7 +32794,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/high-risk/vape/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -33149,7 +33149,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/high-risk/cbd/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -33504,7 +33504,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/high-risk/subscription/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -33859,7 +33859,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/high-risk/firearms/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -34214,7 +34214,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/high-risk/adult/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -34569,7 +34569,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/high-risk/dating/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -34924,7 +34924,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/high-risk/travel/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -35254,7 +35254,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/pl/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -35564,7 +35564,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/pl/terminal-platniczy-dla-budowlanca/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -35874,7 +35874,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/pl/tap-to-pay-iphone-pl/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -36184,7 +36184,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/pl/terminal-dla-restauracji/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -36494,7 +36494,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/pl/terminal-dla-salonu-piekna/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -36529,357 +36529,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/favicon.svg",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/favicon.ico",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/_astro/404.BrdtZXm3.css",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/reviews/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/online-payments/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/tap-to-pay-iphone/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/high-risk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/switch/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/trade/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/how-we-work/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/get-quotes/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/how-we-work/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/support/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/rate-reviews/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/what-is-a-card-machine/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/reviews/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/online-payments/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/tap-to-pay-iphone/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/merchant-accounts/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/high-risk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/switch/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/trade/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/locations/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/languages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/questions/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/get-quotes/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/about/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/get-quotes/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/get-quotes/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/get-quotes/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/learn/chargebacks-uk-2026/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/learn/sca-3ds2-uk-merchants/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/how-we-work/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/support/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/get-quotes/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/methodology/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/how-we-are-funded/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/authors/oliver-mackman/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/how-we-work/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/get-quotes/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/get-quotes/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/terminals/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/online-payments/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/tap-to-pay-iphone/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/merchant-accounts/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/high-risk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/switch/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/reviews/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/tools/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/languages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/questions/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/trade/restaurant/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/trade/pub/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/trade/hairdresser-salon/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/trade/mobile-mechanic/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/trade/vape-shop/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/trade/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/about/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/methodology/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/how-we-work/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/support/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/rate-reviews/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/switching-help/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/get-quotes/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/contact/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/privacy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/terms/",
-      "type": "internal"
-    },
-    {
-      "from": "https://acceptcard.co.uk/chargebacks-help/",
-      "to": "https://acceptcard.co.uk/disclaimer/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -37154,7 +36804,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/contact/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -37519,7 +37169,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/learn/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -37844,7 +37494,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/learn/sca-3ds2-uk-merchants/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -38154,7 +37804,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/learn/cross-border-interchange-uk-2026/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -38469,7 +38119,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/learn/match-list-tmf-uk/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -38794,7 +38444,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/learn/visa-mastercard-cross-border-update-2026/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -39114,7 +38764,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/learn/pci-dss-v4-uk-small-merchant/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -39439,7 +39089,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/learn/chargebacks-uk-2026/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -39764,7 +39414,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/learn/uk-card-interchange-2026/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -40089,7 +39739,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/learn/settlement-schedules-explained/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -40404,7 +40054,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/learn/contactless-cap-removal-2026/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -40744,7 +40394,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/learn/interchange-plus-vs-blended/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -41069,7 +40719,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/tools/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -41379,7 +41029,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/tools/total-cost-of-acquiring-calculator/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -41674,7 +41324,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/privacy/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -41974,7 +41624,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/disclaimer/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -42384,7 +42034,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/online-payments/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -42719,7 +42369,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/online-payments/square-online/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -43054,7 +42704,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/online-payments/opayo/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -43389,7 +43039,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/online-payments/stripe-checkout/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -43724,7 +43374,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/online-payments/paypal-checkout/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -44059,7 +43709,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/online-payments/shopify-payments/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -44394,7 +44044,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/online-payments/mollie/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -44729,7 +44379,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/online-payments/adyen-web/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -45064,7 +44714,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/online-payments/gocardless/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -45379,7 +45029,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/terminals/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -45689,7 +45339,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/halal/merchant-account-index/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -46014,7 +45664,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/mr/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -46334,7 +45984,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/mr/ganpati-mandap-donation-mr/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -46659,7 +46309,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/mr/marathi-restaurant-card-machine-mr/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -46984,7 +46634,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/mr/tap-to-pay-iphone-mr/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -47304,7 +46954,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/gu/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -47619,7 +47269,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/gu/wembley-card-machine-gu/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -47934,7 +47584,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/gu/leicester-card-machine-gu/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -48289,7 +47939,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/switching-help/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -48589,7 +48239,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/authors/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -48904,7 +48554,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/authors/oliver-mackman/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -49209,7 +48859,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/fees-calculator/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -49654,7 +49304,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/trade/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -50019,7 +49669,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/trade/vet/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -50384,7 +50034,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/trade/soft-play/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -50749,7 +50399,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/trade/pharmacy/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -51114,7 +50764,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/trade/restaurant/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -51479,7 +51129,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/trade/jeweller/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -51844,7 +51494,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/trade/florist/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -52209,7 +51859,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/trade/beauty-clinic/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -52574,7 +52224,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/trade/electrician/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -52939,7 +52589,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/trade/gardener/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -53304,7 +52954,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/trade/hotel/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -53669,7 +53319,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/trade/b-and-b-airbnb/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -54034,7 +53684,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/trade/gym-fitness/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -54399,7 +54049,7 @@
     },
     {
       "from": "https://acceptcard.co.uk/trade/vape-shop/",
-      "to": "https://acceptcard.co.uk/chargebacks-help/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
       "type": "internal"
     },
     {
@@ -54596,6 +54246,356 @@
       "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
       "to": "https://acceptcard.co.uk/get-quotes/?trade=tattoo-piercing",
       "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/how-we-work/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/get-quotes/?trade=tattoo-piercing",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/trade/restaurant/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/trade/pet-shop/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/trade/gardener/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/trade/caterer/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/trade/pharmacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/trade/butcher/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/get-quotes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/terminals/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/online-payments/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/tap-to-pay-iphone/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/merchant-accounts/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/high-risk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/switch/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/languages/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/questions/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/trade/restaurant/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/trade/pub/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/trade/hairdresser-salon/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/trade/mobile-mechanic/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/trade/vape-shop/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/trade/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/how-we-work/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/support/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/rate-reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/chargebacks/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/switching-help/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/get-quotes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/tattoo-piercing/",
+      "to": "https://acceptcard.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/pet-shop/",
+      "to": "https://acceptcard.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/pet-shop/",
+      "to": "https://acceptcard.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/pet-shop/",
+      "to": "https://acceptcard.co.uk/_astro/404.BrdtZXm3.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/pet-shop/",
+      "to": "https://acceptcard.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/pet-shop/",
+      "to": "https://acceptcard.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/pet-shop/",
+      "to": "https://acceptcard.co.uk/online-payments/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/pet-shop/",
+      "to": "https://acceptcard.co.uk/tap-to-pay-iphone/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/pet-shop/",
+      "to": "https://acceptcard.co.uk/high-risk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/pet-shop/",
+      "to": "https://acceptcard.co.uk/switch/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/pet-shop/",
+      "to": "https://acceptcard.co.uk/trade/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/pet-shop/",
+      "to": "https://acceptcard.co.uk/how-we-work/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/pet-shop/",
+      "to": "https://acceptcard.co.uk/get-quotes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/pet-shop/",
+      "to": "https://acceptcard.co.uk/how-we-work/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/pet-shop/",
+      "to": "https://acceptcard.co.uk/support/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/pet-shop/",
+      "to": "https://acceptcard.co.uk/rate-reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/pet-shop/",
+      "to": "https://acceptcard.co.uk/what-is-a-card-machine/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/pet-shop/",
+      "to": "https://acceptcard.co.uk/reviews/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/pet-shop/",
+      "to": "https://acceptcard.co.uk/online-payments/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/pet-shop/",
+      "to": "https://acceptcard.co.uk/tap-to-pay-iphone/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/pet-shop/",
+      "to": "https://acceptcard.co.uk/merchant-accounts/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/pet-shop/",
+      "to": "https://acceptcard.co.uk/high-risk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/pet-shop/",
+      "to": "https://acceptcard.co.uk/switch/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/pet-shop/",
+      "to": "https://acceptcard.co.uk/trade/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/pet-shop/",
+      "to": "https://acceptcard.co.uk/locations/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/pet-shop/",
+      "to": "https://acceptcard.co.uk/languages/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/pet-shop/",
+      "to": "https://acceptcard.co.uk/questions/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/pet-shop/",
+      "to": "https://acceptcard.co.uk/get-quotes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/pet-shop/",
+      "to": "https://acceptcard.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/pet-shop/",
+      "to": "https://acceptcard.co.uk/get-quotes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://acceptcard.co.uk/trade/pet-shop/",
+      "to": "https://acceptcard.co.uk/",
+      "type": "internal"
     }
   ],
   "issues": [],
@@ -54724,11 +54724,6 @@
             "children": []
           }
         ]
-      },
-      {
-        "name": "chargebacks-help",
-        "path": "/chargebacks-help/",
-        "children": []
       },
       {
         "name": "contact",
@@ -58066,6 +58061,11 @@
         ]
       },
       {
+        "name": "chargebacks",
+        "path": "/chargebacks/",
+        "children": []
+      },
+      {
         "name": "help",
         "path": "/help/",
         "children": [
@@ -58412,17 +58412,6 @@
         "Schema:6",
         "Author",
         "Substantive"
-      ]
-    },
-    {
-      "path": "/chargebacks-help/",
-      "score": 5,
-      "signals": [
-        "OG",
-        "Schema:9",
-        "Author",
-        "Substantive",
-        "Breadcrumbs"
       ]
     },
     {
@@ -60400,6 +60389,17 @@
     },
     {
       "path": "/best/by-trade-and-city/market-stall-in-birmingham-handsworth/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:8",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/best/by-trade-and-city/restaurant-in-leicester/",
       "score": 5,
       "signals": [
         "OG",
