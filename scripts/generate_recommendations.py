@@ -184,7 +184,12 @@ def generate_for_client(client_id):
     # ============================================================
     if crawl and crawl.get("orphan_pages", 0) > 0:
         orphan_paths = crawl.get("orphans", [])
-        orphan_short = [urlparse(u).path for u in orphan_paths[:15]]
+        # crawl fetcher emits orphans as either strings or {path, url} dicts
+        def _orphan_path(o):
+            if isinstance(o, dict):
+                return o.get("path") or urlparse(o.get("url", "")).path
+            return urlparse(o).path
+        orphan_short = [_orphan_path(o) for o in orphan_paths[:15]]
         recs.append({
             "priority": "medium" if len(orphan_paths) < 20 else "high",
             "category": "Internal Links",

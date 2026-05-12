@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-11T20:02:33.092035+00:00",
+  "generated_at": "2026-05-12T08:53:58.157477+00:00",
   "sites": {
     "rank4ai": {
       "flavour": "editorial",
@@ -102,7 +102,7 @@
           "label": "nested @graph schema (#3)",
           "severity": "p1",
           "status": "fail",
-          "note": "missing Organization or WebPage schema"
+          "note": "missing Organization or WebPage class"
         },
         {
           "id": "date_modified",
@@ -256,14 +256,14 @@
           "label": "nested @graph schema (#3)",
           "severity": "p1",
           "status": "pass",
-          "note": "@graph + Org + WebPage"
+          "note": "@graph + Org-class + WebPage-class"
         },
         {
           "id": "date_modified",
           "label": "dateModified ISO 8601 with TZ (#1)",
           "severity": "p2",
-          "status": "fail",
-          "note": "2026-04-13 \u2014 date only, needs ISO 8601 with TZ"
+          "status": "pass",
+          "note": "2026-05-12T00:00:00"
         },
         {
           "id": "speakable",
@@ -410,7 +410,7 @@
           "label": "nested @graph schema (#3)",
           "severity": "p1",
           "status": "pass",
-          "note": "@graph + Org + WebPage"
+          "note": "@graph + Org-class + WebPage-class"
         },
         {
           "id": "date_modified",
@@ -563,8 +563,8 @@
           "id": "schema_graph",
           "label": "nested @graph schema (#3)",
           "severity": "p1",
-          "status": "fail",
-          "note": "missing Organization or WebPage schema"
+          "status": "pass",
+          "note": "@graph + Org-class + WebPage-class"
         },
         {
           "id": "date_modified",
@@ -718,7 +718,7 @@
           "label": "nested @graph schema (#3)",
           "severity": "p1",
           "status": "pass",
-          "note": "@graph + Org + WebPage"
+          "note": "@graph + Org-class + WebPage-class"
         },
         {
           "id": "date_modified",
@@ -731,8 +731,8 @@
           "id": "speakable",
           "label": "SpeakableSpecification (#13)",
           "severity": "p2",
-          "status": "fail",
-          "note": "no SpeakableSpecification"
+          "status": "pass",
+          "note": ""
         },
         {
           "id": "fleet_xlinks",
@@ -872,7 +872,7 @@
           "label": "nested @graph schema (#3)",
           "severity": "p1",
           "status": "pass",
-          "note": "@graph + Org + WebPage"
+          "note": "@graph + Org-class + WebPage-class"
         },
         {
           "id": "date_modified",
@@ -885,8 +885,8 @@
           "id": "speakable",
           "label": "SpeakableSpecification (#13)",
           "severity": "p2",
-          "status": "fail",
-          "note": "no SpeakableSpecification"
+          "status": "pass",
+          "note": ""
         },
         {
           "id": "fleet_xlinks",
@@ -927,8 +927,8 @@
     },
     "cardmachines": {
       "flavour": "leadgen",
-      "pre_launch": true,
-      "live_url": "https://cardmachines.pages.dev/",
+      "pre_launch": false,
+      "live_url": "https://acceptcard.co.uk/",
       "checks": [
         {
           "id": "claude_md",
@@ -941,8 +941,8 @@
           "id": "robots_txt",
           "label": "robots.txt valid + AI bots named",
           "severity": "p1",
-          "status": "pass",
-          "note": "pre-launch should block-all"
+          "status": "fail",
+          "note": "robots blocks all crawlers under * \u2014 flip from prelaunch missed"
         },
         {
           "id": "llms_txt",
@@ -983,8 +983,8 @@
           "id": "deploy_site_host",
           "label": "deploy.cjs SITE_HOST matches live",
           "severity": "p0",
-          "status": "skip",
-          "note": "pre-launch: SITE_HOST may legitimately differ from pages.dev URL"
+          "status": "pass",
+          "note": "acceptcard.co.uk"
         },
         {
           "id": "fleet_core_v",
@@ -1012,21 +1012,21 @@
           "label": "homepage has imagery",
           "severity": "p1",
           "status": "pass",
-          "note": "12 img + 77 svg"
+          "note": "17 img + 78 svg"
         },
         {
           "id": "alt_text",
           "label": "all imgs alt-tagged",
           "severity": "p2",
           "status": "pass",
-          "note": "12 imgs all alt-tagged"
+          "note": "17 imgs all alt-tagged"
         },
         {
           "id": "schema_graph",
           "label": "nested @graph schema (#3)",
           "severity": "p1",
           "status": "pass",
-          "note": "@graph + Org + WebPage"
+          "note": "@graph + Org-class + WebPage-class"
         },
         {
           "id": "date_modified",
@@ -1180,7 +1180,7 @@
           "label": "nested @graph schema (#3)",
           "severity": "p1",
           "status": "pass",
-          "note": "@graph + Org + WebPage"
+          "note": "@graph + Org-class + WebPage-class"
         },
         {
           "id": "date_modified",
@@ -1334,7 +1334,7 @@
           "label": "nested @graph schema (#3)",
           "severity": "p1",
           "status": "pass",
-          "note": "@graph + Org + WebPage"
+          "note": "@graph + Org-class + WebPage-class"
         },
         {
           "id": "date_modified",
@@ -1488,7 +1488,7 @@
           "label": "nested @graph schema (#3)",
           "severity": "p1",
           "status": "pass",
-          "note": "@graph + Org + WebPage"
+          "note": "@graph + Org-class + WebPage-class"
         },
         {
           "id": "date_modified",
@@ -1592,8 +1592,8 @@
           "id": "indexnow_key",
           "label": "IndexNow key file in public/",
           "severity": "p1",
-          "status": "fail",
-          "note": "no IndexNow key file in public/"
+          "status": "pass",
+          "note": "84d34748bec247e98bc3b2e66303c363.txt"
         },
         {
           "id": "deploy_site_host",
@@ -1620,8 +1620,8 @@
           "id": "og_image",
           "label": "og:image (not placeholder)",
           "severity": "p1",
-          "status": "fail",
-          "note": "no og:image meta"
+          "status": "pass",
+          "note": "og-default.png"
         },
         {
           "id": "homepage_imagery",
@@ -1641,8 +1641,8 @@
           "id": "schema_graph",
           "label": "nested @graph schema (#3)",
           "severity": "p1",
-          "status": "fail",
-          "note": "missing Organization or WebPage schema"
+          "status": "pass",
+          "note": "@graph + Org-class + WebPage-class"
         },
         {
           "id": "date_modified",
@@ -1690,8 +1690,8 @@
           "id": "indexnow_unique",
           "label": "IndexNow key file present (#18)",
           "severity": "p2",
-          "status": "skip",
-          "note": "no IndexNow key (caught by indexnow_key check)"
+          "status": "pass",
+          "note": "key 84d34748... (1 key files)"
         }
       ]
     },
@@ -1852,9 +1852,9 @@
   },
   "summary": {
     "p0_fails": 0,
-    "p1_fails": 16,
-    "p2_fails": 43,
-    "pass": 156,
+    "p1_fails": 13,
+    "p2_fails": 40,
+    "pass": 164,
     "total": 252
   }
 }

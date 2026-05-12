@@ -1,11 +1,11 @@
 {
-  "computed_at": "2026-04-26T06:05:40.408813",
+  "computed_at": "2026-05-12T09:39:00.124127",
   "per_site": {
     "market-invoice": {
       "site_id": "market-invoice",
       "pages_scanned": 12,
       "assertions_checked": 4,
-      "drift_count": 1,
+      "drift_count": 0,
       "findings": [
         {
           "id": "boe-base-rate",
@@ -14,17 +14,8 @@
           "relevant_pages": 11,
           "expected_hits": 11,
           "missing_pages": [],
-          "alternate_hits": [
-            {
-              "url": "https://marketinvoice.co.uk/best/",
-              "value": "4.50%"
-            },
-            {
-              "url": "https://marketinvoice.co.uk/compare/",
-              "value": "4.50%"
-            }
-          ],
-          "drift_detected": true,
+          "alternate_hits": [],
+          "drift_detected": false,
           "coverage_pct": 100.0
         },
         {
@@ -32,22 +23,14 @@
           "label": "Company entity",
           "expected": "Best Business Loans Ltd",
           "relevant_pages": 12,
-          "expected_hits": 1,
+          "expected_hits": 10,
           "missing_pages": [
-            "https://marketinvoice.co.uk/",
-            "https://marketinvoice.co.uk/best/",
-            "https://marketinvoice.co.uk/disclaimer/",
-            "https://marketinvoice.co.uk/blog/",
-            "https://marketinvoice.co.uk/research/",
-            "https://marketinvoice.co.uk/compare/",
-            "https://marketinvoice.co.uk/questions/",
-            "https://marketinvoice.co.uk/calculator/",
-            "https://marketinvoice.co.uk/industries/",
-            "https://marketinvoice.co.uk/providers/"
+            "https://marketinvoice.co.uk/pre-shipment-finance/",
+            "https://marketinvoice.co.uk/calculator/"
           ],
           "alternate_hits": [],
           "drift_detected": false,
-          "coverage_pct": 8.3
+          "coverage_pct": 83.3
         },
         {
           "id": "company-number",
@@ -65,21 +48,13 @@
           "label": "Director / author",
           "expected": "Oliver Mackman",
           "relevant_pages": 12,
-          "expected_hits": 3,
+          "expected_hits": 11,
           "missing_pages": [
-            "https://marketinvoice.co.uk/",
-            "https://marketinvoice.co.uk/disclaimer/",
-            "https://marketinvoice.co.uk/blog/",
-            "https://marketinvoice.co.uk/compare/",
-            "https://marketinvoice.co.uk/questions/",
-            "https://marketinvoice.co.uk/calculator/",
-            "https://marketinvoice.co.uk/industries/",
-            "https://marketinvoice.co.uk/providers/",
-            "https://marketinvoice.co.uk/guides/"
+            "https://marketinvoice.co.uk/calculator/"
           ],
           "alternate_hits": [],
           "drift_detected": false,
-          "coverage_pct": 25.0
+          "coverage_pct": 91.7
         }
       ]
     },
@@ -104,15 +79,16 @@
           "id": "founder",
           "label": "Founder",
           "expected": "Adam Parker",
-          "relevant_pages": 9,
-          "expected_hits": 7,
+          "relevant_pages": 7,
+          "expected_hits": 4,
           "missing_pages": [
-            "https://www.rank4ai.co.uk/",
-            "https://www.rank4ai.co.uk/learn/questions/"
+            "https://www.rank4ai.co.uk/ecosystem/",
+            "https://www.rank4ai.co.uk/ai-seo-company/",
+            "https://www.rank4ai.co.uk/ai-seo/"
           ],
           "alternate_hits": [],
           "drift_detected": false,
-          "coverage_pct": 77.8
+          "coverage_pct": 57.1
         }
       ]
     },
@@ -136,5 +112,5 @@
       ]
     }
   },
-  "fleet_drift_count": 1
+  "fleet_drift_count": 0
 }

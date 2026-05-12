@@ -1,99 +1,238 @@
 {
   "rank4ai": {
-    "checked_at": "2026-04-26T06:27:09.286755",
-    "commits_7d": 136,
-    "commits_24h": 1,
-    "files_changed_24h": 16,
-    "new_pages_24h": 15,
+    "checked_at": "2026-05-11T10:31:26.431477",
+    "commits_7d": 158,
+    "commits_24h": 2,
+    "files_changed_24h": 19,
+    "new_pages_24h": 16,
     "recent_commits": [
       {
-        "hash": "b2fb46a2",
-        "date": "2026-04-25 14:07:51",
-        "message": "Enrich 15 /who-we-help/ sector pages: +sector considerations + 5 FAQs each"
+        "hash": "fd68c1e8",
+        "date": "2026-05-10 22:25:35",
+        "message": "R4 audit fixes: SpeakableSchema date prop + /uk/ orphan hub + llms.txt"
       },
       {
-        "hash": "14a76186",
-        "date": "2026-04-24 17:45:14",
-        "message": "Signature market report page (LLM-quotable)"
+        "hash": "dfca894d",
+        "date": "2026-05-10 12:12:57",
+        "message": "Add 15 city x industry AI search audit pages under /uk/<city>/<industry>/"
       },
       {
-        "hash": "ad99a0a5",
-        "date": "2026-04-24 17:23:12",
-        "message": "Orphan elimination: 15 \u2192 0"
+        "hash": "01767737",
+        "date": "2026-05-08 13:49:26",
+        "message": "AutoRelated: surface sibling links for knowledge-library sections"
       },
       {
-        "hash": "ac81a65c",
-        "date": "2026-04-24 17:18:38",
-        "message": "Wire hub indexes to list all child pages (orphan fix: 143 \u2192 15)"
+        "hash": "66e412fc",
+        "date": "2026-05-08 09:42:26",
+        "message": "Add 35 redirects for URLs Google has on file as 404"
       },
       {
-        "hash": "044313d9",
-        "date": "2026-04-24 17:00:22",
-        "message": "Platform services + editorial policy"
+        "hash": "dbcac602",
+        "date": "2026-05-07 16:23:59",
+        "message": "Person schema: complete sameAs for Adam, Jimmy, Oliver"
       },
       {
-        "hash": "125c362d",
-        "date": "2026-04-24 16:54:59",
-        "message": "Cannibal fix + robots.txt rewrite + CTR rewrites"
+        "hash": "07cbeda5",
+        "date": "2026-05-07 14:43:18",
+        "message": "Sister Sites cross-link: footer + llms.txt"
       },
       {
-        "hash": "e3e01513",
-        "date": "2026-04-24 15:23:54",
-        "message": "Wire build-page-dates as prebuild step; add google-index + page-dates npm scripts"
+        "hash": "b27b2f45",
+        "date": "2026-05-07 10:09:44",
+        "message": "R4 question pages: add VideoObject schema for AI Overviews extraction"
       },
       {
-        "hash": "39ff0d1a",
-        "date": "2026-04-24 15:03:30",
-        "message": "Refresh CLAUDE.md: remove stale \"Known Gaps\" (deploy scripts exist)"
+        "hash": "1fd8a21c",
+        "date": "2026-05-07 09:12:23",
+        "message": "Full lead attribution rebuild: localStorage + journey + geo + Telegram"
       },
       {
-        "hash": "7d5a6cc2",
-        "date": "2026-04-24 14:52:43",
-        "message": "Fleet scripts + /learn/questions/ SEO + broken-link redirects"
+        "hash": "3a95edcf",
+        "date": "2026-05-06 15:21:58",
+        "message": "Auto-sync fleet-structure.json (2026-05-06T15:21:58)"
       },
       {
-        "hash": "455fe5d4",
-        "date": "2026-04-24 06:03:17",
-        "message": "chore: rebuild trigger 2026-04-24T05:03:16.793Z"
+        "hash": "d59e9cda",
+        "date": "2026-05-06 15:17:26",
+        "message": "Add /site-structure/ page showing all 6 fleet sites side-by-side (3 editorial + 3 leadgen, tier-grouped). Drives off shared src/data/fleet-structure.json regenerated from each site's sitemap-0.xml."
       }
     ],
     "changed_files": [
-      "src/pages/who-we-help/technology.astro",
-      "src/pages/who-we-help/financial-advisors.astro",
+      "src/pages/uk/manchester/law-firms.astro",
+      "src/pages/uk/bristol/accountants.astro",
+      "src/pages/uk/birmingham/law-firms.astro",
       "src/data/page-dates.json",
-      "src/pages/who-we-help/property.astro",
-      "src/pages/who-we-help/recruitment.astro",
-      "src/pages/who-we-help/architects.astro",
-      "src/pages/who-we-help/restaurants.astro",
-      "src/pages/who-we-help/healthcare.astro",
-      "src/pages/who-we-help/marketing-agencies.astro",
-      "src/pages/who-we-help/tradespeople.astro",
-      "src/pages/who-we-help/solicitors.astro",
-      "src/pages/who-we-help/hospitality.astro",
-      "src/pages/who-we-help/estate-agents.astro",
-      "src/pages/who-we-help/education.astro",
-      "src/pages/who-we-help/accountants.astro",
-      "src/pages/who-we-help/dentists.astro"
+      "src/pages/uk/bristol/dentists.astro",
+      "src/pages/uk/bristol/law-firms.astro",
+      "src/pages/uk/leeds/accountants.astro",
+      "src/pages/uk/manchester/dentists.astro",
+      "src/pages/uk/birmingham/accountants.astro",
+      "src/pages/uk/london/dentists.astro",
+      "src/pages/uk/leeds/law-firms.astro",
+      "public/llms.txt",
+      "src/pages/uk/london/accountants.astro",
+      "src/pages/uk/birmingham/dentists.astro",
+      "src/pages/uk/manchester/accountants.astro",
+      "src/pages/uk/index.astro",
+      "src/pages/uk/london/law-firms.astro",
+      "src/pages/uk/leeds/dentists.astro",
+      "src/components/SpeakableSchema.astro"
     ],
     "new_page_files": [
-      "src/pages/who-we-help/technology.astro",
-      "src/pages/who-we-help/financial-advisors.astro",
-      "src/pages/who-we-help/property.astro",
-      "src/pages/who-we-help/recruitment.astro",
-      "src/pages/who-we-help/architects.astro",
-      "src/pages/who-we-help/restaurants.astro",
-      "src/pages/who-we-help/healthcare.astro",
-      "src/pages/who-we-help/marketing-agencies.astro",
-      "src/pages/who-we-help/tradespeople.astro",
-      "src/pages/who-we-help/solicitors.astro",
-      "src/pages/who-we-help/hospitality.astro",
-      "src/pages/who-we-help/estate-agents.astro",
-      "src/pages/who-we-help/education.astro",
-      "src/pages/who-we-help/accountants.astro",
-      "src/pages/who-we-help/dentists.astro"
+      "src/pages/uk/manchester/law-firms.astro",
+      "src/pages/uk/bristol/accountants.astro",
+      "src/pages/uk/birmingham/law-firms.astro",
+      "src/pages/uk/bristol/dentists.astro",
+      "src/pages/uk/bristol/law-firms.astro",
+      "src/pages/uk/leeds/accountants.astro",
+      "src/pages/uk/manchester/dentists.astro",
+      "src/pages/uk/birmingham/accountants.astro",
+      "src/pages/uk/london/dentists.astro",
+      "src/pages/uk/leeds/law-firms.astro",
+      "src/pages/uk/london/accountants.astro",
+      "src/pages/uk/birmingham/dentists.astro",
+      "src/pages/uk/manchester/accountants.astro",
+      "src/pages/uk/index.astro",
+      "src/pages/uk/london/law-firms.astro",
+      "src/pages/uk/leeds/dentists.astro"
     ],
     "crawl_status": "ok",
     "all_commits": [
+      {
+        "hash": "fd68c1e8",
+        "date": "2026-05-10 22:25:35",
+        "message": "R4 audit fixes: SpeakableSchema date prop + /uk/ orphan hub + llms.txt"
+      },
+      {
+        "hash": "dfca894d",
+        "date": "2026-05-10 12:12:57",
+        "message": "Add 15 city x industry AI search audit pages under /uk/<city>/<industry>/"
+      },
+      {
+        "hash": "01767737",
+        "date": "2026-05-08 13:49:26",
+        "message": "AutoRelated: surface sibling links for knowledge-library sections"
+      },
+      {
+        "hash": "66e412fc",
+        "date": "2026-05-08 09:42:26",
+        "message": "Add 35 redirects for URLs Google has on file as 404"
+      },
+      {
+        "hash": "dbcac602",
+        "date": "2026-05-07 16:23:59",
+        "message": "Person schema: complete sameAs for Adam, Jimmy, Oliver"
+      },
+      {
+        "hash": "07cbeda5",
+        "date": "2026-05-07 14:43:18",
+        "message": "Sister Sites cross-link: footer + llms.txt"
+      },
+      {
+        "hash": "b27b2f45",
+        "date": "2026-05-07 10:09:44",
+        "message": "R4 question pages: add VideoObject schema for AI Overviews extraction"
+      },
+      {
+        "hash": "1fd8a21c",
+        "date": "2026-05-07 09:12:23",
+        "message": "Full lead attribution rebuild: localStorage + journey + geo + Telegram"
+      },
+      {
+        "hash": "3a95edcf",
+        "date": "2026-05-06 15:21:58",
+        "message": "Auto-sync fleet-structure.json (2026-05-06T15:21:58)"
+      },
+      {
+        "hash": "d59e9cda",
+        "date": "2026-05-06 15:17:26",
+        "message": "Add /site-structure/ page showing all 6 fleet sites side-by-side (3 editorial + 3 leadgen, tier-grouped). Drives off shared src/data/fleet-structure.json regenerated from each site's sitemap-0.xml."
+      },
+      {
+        "hash": "314dbe8e",
+        "date": "2026-05-05 18:55:40",
+        "message": "Batch E: harmonise robots.txt with fleet canonical AI crawler list"
+      },
+      {
+        "hash": "4eb85e79",
+        "date": "2026-05-05 11:44:18",
+        "message": "AuditForm: full lead attribution (UTM + first-touch + channel inference)"
+      },
+      {
+        "hash": "8de3740a",
+        "date": "2026-05-04 21:42:11",
+        "message": "Bump fleet-core to v0.3.0 (full module catalog)"
+      },
+      {
+        "hash": "a52ab0c3",
+        "date": "2026-05-04 21:31:51",
+        "message": "R4 mobile UX polish: shorten hero CTA + dismissible sticky bar"
+      },
+      {
+        "hash": "fcc9b925",
+        "date": "2026-05-04 21:31:51",
+        "message": "R4 mobile UX polish: shorten hero CTA + dismissible sticky bar"
+      },
+      {
+        "hash": "645d1d39",
+        "date": "2026-05-04 21:26:54",
+        "message": "Complete R4 migration to fleet-core SchemaGraph (v0.2.1)"
+      },
+      {
+        "hash": "1799b533",
+        "date": "2026-05-04 21:20:48",
+        "message": "Sitemap: add per-URL lastmod + priority + changefreq for Bing crawl budget"
+      },
+      {
+        "hash": "bd13361e",
+        "date": "2026-05-04 21:20:48",
+        "message": "Sitemap: add per-URL lastmod + priority + changefreq for Bing crawl budget"
+      },
+      {
+        "hash": "76e667d0",
+        "date": "2026-05-04 21:03:21",
+        "message": "Refresh DAILY_BRIEF with v2 sections"
+      },
+      {
+        "hash": "99252457",
+        "date": "2026-05-04 20:57:01",
+        "message": "Adopt fleet-core dependency + R4 site manifest"
+      },
+      {
+        "hash": "4492576e",
+        "date": "2026-05-04 20:56:03",
+        "message": "Add CI: llms.txt validator + weekly GEO audit (Batch 7)"
+      },
+      {
+        "hash": "9d8f7efb",
+        "date": "2026-05-04 20:56:03",
+        "message": "Add CI: llms.txt validator + weekly GEO audit (Batch 7)"
+      },
+      {
+        "hash": "4faf4103",
+        "date": "2026-05-04 20:41:30",
+        "message": "Consolidate 3 AI-SEO cannibal pages \u2192 /ai-seo/ canonical"
+      },
+      {
+        "hash": "4bf0753e",
+        "date": "2026-05-04 20:31:35",
+        "message": "Add Person schema for Jimmy Connoley and Oliver Mackman"
+      },
+      {
+        "hash": "aa73499e",
+        "date": "2026-05-04 20:11:11",
+        "message": "Fix favicon: proper multi-size .ico + missing PNG sizes + webmanifest"
+      },
+      {
+        "hash": "c4825925",
+        "date": "2026-05-04 20:08:45",
+        "message": "Lead with the entity-function sentence on home + in defaults"
+      },
+      {
+        "hash": "46c083f1",
+        "date": "2026-05-04 19:46:27",
+        "message": "Add /uk/ Mapbox location hub + nav link"
+      },
       {
         "hash": "b2fb46a2",
         "date": "2026-04-25 14:07:51",
@@ -252,88 +391,394 @@
     ]
   },
   "market-invoice": {
-    "checked_at": "2026-04-26T06:27:10.366290",
-    "commits_7d": 91,
-    "commits_24h": 3,
-    "files_changed_24h": 11,
-    "new_pages_24h": 8,
+    "checked_at": "2026-05-11T10:31:27.447236",
+    "commits_7d": 172,
+    "commits_24h": 19,
+    "files_changed_24h": 91,
+    "new_pages_24h": 85,
     "recent_commits": [
       {
-        "hash": "a32c92f8",
-        "date": "2026-04-25 23:13:03",
-        "message": "Brand disambiguation + CTR fixes + citation tables"
+        "hash": "48d9dbcf",
+        "date": "2026-05-11 10:17:51",
+        "message": "Auto-sync fleet-structure.json (2026-05-11T10:17:51)"
       },
       {
-        "hash": "c6c8f394",
-        "date": "2026-04-25 13:39:09",
-        "message": "Auto: daily guide content 2026-04-25"
+        "hash": "e64998ae",
+        "date": "2026-05-11 10:02:35",
+        "message": "Auto-sync fleet-structure.json (2026-05-11T10:02:35)"
       },
       {
-        "hash": "56a806d6",
-        "date": "2026-04-25 13:01:31",
-        "message": "Auto: daily guide content 2026-04-25"
+        "hash": "99bd8229",
+        "date": "2026-05-11 09:47:15",
+        "message": "Auto-sync fleet-structure.json (2026-05-11T09:47:15)"
       },
       {
-        "hash": "1b68ec05",
-        "date": "2026-04-24 17:36:09",
-        "message": "New industry pages: Startups + SaaS (content-gap fills)"
+        "hash": "e0eb4e00",
+        "date": "2026-05-11 09:39:11",
+        "message": "Auto: daily guide content 2026-05-11"
       },
       {
-        "hash": "3e5f9624",
-        "date": "2026-04-24 16:54:43",
-        "message": "CTR + trust + AI-crawler polish"
+        "hash": "6ec8378a",
+        "date": "2026-05-11 09:02:37",
+        "message": "Auto: daily guide content 2026-05-11"
       },
       {
-        "hash": "0f6a93b5",
-        "date": "2026-04-24 15:20:38",
-        "message": "Wire build-page-dates as prebuild step; add indexnow + google-index npm scripts"
+        "hash": "403e859b",
+        "date": "2026-05-11 08:57:50",
+        "message": "Auto: daily guide content 2026-05-11"
       },
       {
-        "hash": "66437c99",
-        "date": "2026-04-24 12:38:22",
-        "message": "Fleet scripts + QA enrichment + auto-generated guide"
+        "hash": "c4bc5e44",
+        "date": "2026-05-10 22:25:18",
+        "message": "Auto-sync fleet-structure.json (2026-05-10T22:25:18)"
       },
       {
-        "hash": "d7e13af5",
-        "date": "2026-04-24 12:15:25",
-        "message": "MI mix auto-publisher: rotate qa/blog/stat/guide via Claude API"
+        "hash": "27e68310",
+        "date": "2026-05-10 22:23:02",
+        "message": "MI audit URGENT fixes: stale BoE rate + broken links + LeadForms + sister-site llms"
       },
       {
-        "hash": "b159e5e8",
-        "date": "2026-04-24 07:00:12",
-        "message": "Auto: daily Q&A content 2026-04-24"
+        "hash": "c308801e",
+        "date": "2026-05-10 17:53:14",
+        "message": "Auto-sync fleet-structure.json (2026-05-10T17:53:13)"
       },
       {
-        "hash": "9b88ad2e",
-        "date": "2026-04-23 21:11:06",
-        "message": "Add Step 4 cache-purge to deploy pipeline"
+        "hash": "93a85721",
+        "date": "2026-05-10 17:33:18",
+        "message": "Auto-sync fleet-structure.json (2026-05-10T17:33:16)"
       }
     ],
     "changed_files": [
-      "src/pages/guides/how-to-switch-invoice-finance-provider.astro",
+      "src/pages/best/charity-invoice-finance/index.astro",
+      "src/pages/guides/new-limited-company-under-12-months/index.astro",
+      "src/pages/compare/invoice-finance-vs-revenue-based-finance/index.astro",
       "src/data/page-dates.json",
-      "src/layouts/BaseLayout.astro",
+      "src/pages/regions/north-west-england.astro",
+      "src/pages/guides/rd-tax-credit-advance/index.astro",
+      "src/pages/guides/invoice-finance-for-facilities-management.astro",
       "src/pages/guides/index.astro",
-      "src/pages/compare.astro",
-      "src/pages/best/index.astro",
-      "src/pages/index.astro",
-      "scripts/.published_guide_titles.txt",
+      "src/pages/guides/how-to-calculate-true-apr-on-invoice-factoring.astro",
+      "src/pages/guides/cbils-rls-refinance/index.astro",
+      "src/pages/construction-finance/cis-payroll-finance/index.astro",
+      "src/pages/guides/debt-factoring.astro",
+      "src/pages/guides/invoice-finance-for-cleaning-contractors.astro",
+      "src/pages/compare/invoice-finance-vs-b2b-bnpl/index.astro",
+      "src/pages/export-finance/index.astro",
+      "src/pages/guides/invoice-finance-for-staffing-agencies.astro",
+      "src/pages/best/architecture-practice-finance/index.astro",
+      "src/pages/guides/mbo-invoice-finance/index.astro",
+      "src/pages/guides/glossary.astro",
+      "src/pages/blog/construction-invoice-finance-retention-release-stage-payments.astro",
+      "src/pages/working-capital/late-payment-uk.astro",
+      "src/pages/best/cic-invoice-finance/index.astro",
+      "src/pages/recruitment-finance/weekly-payroll/index.astro",
+      "src/pages/blog/switching-invoice-finance-provider-guide.astro",
+      "src/pages/guides/invoice-finance-for-haulage-and-logistics.astro",
+      "src/pages/best/invoice-finance-for-logistics-haulage/index.astro",
+      "src/pages/blog/late-payment-regulations-2026-invoice-finance-sme-impact.astro",
+      "src/pages/guides/phoenix-company-restrictions/index.astro",
+      "src/pages/best/invoice-finance-for-local-authority-suppliers/index.astro",
+      "src/pages/regions/west-midlands.astro",
       "src/pages/guides/invoice-factoring-vs-invoice-discounting.astro",
-      "src/pages/calculator.astro",
-      "src/pages/about.astro"
+      "src/pages/best/crowdfunded-business-finance/index.astro",
+      "src/pages/guides/bbl-refinance-via-invoice-finance/index.astro",
+      "src/pages/regions/m4-corridor.astro",
+      "src/pages/construction-finance/stage-payment-finance/index.astro",
+      "public/llms.txt",
+      "src/layouts/BaseLayout.astro",
+      "src/pages/construction-finance/retentions-release-finance/index.astro",
+      "src/pages/questions/index.astro",
+      "src/pages/guides/how-to-switch-invoice-finance-provider.astro",
+      "src/pages/construction-finance/nec4-contract-finance/index.astro",
+      "src/pages/regions/yorkshire-and-the-humber.astro",
+      "src/pages/regions/north-east-england.astro",
+      "src/pages/compare/invoice-finance-vs-director-loan/index.astro",
+      "src/pages/guides/acquisition-finance-debtor-book/index.astro",
+      "src/pages/compare/invoice-finance-vs-supply-chain-finance/index.astro",
+      "src/pages/best/engineering-consultancy-finance/index.astro",
+      "src/pages/pre-shipment-finance/index.astro",
+      "src/pages/guides/pre-pack-administration/index.astro",
+      "src/pages/regions/south-west-england.astro"
     ],
     "new_page_files": [
-      "src/pages/guides/how-to-switch-invoice-finance-provider.astro",
+      "src/pages/best/charity-invoice-finance/index.astro",
+      "src/pages/guides/new-limited-company-under-12-months/index.astro",
+      "src/pages/compare/invoice-finance-vs-revenue-based-finance/index.astro",
+      "src/pages/regions/north-west-england.astro",
+      "src/pages/guides/rd-tax-credit-advance/index.astro",
+      "src/pages/guides/invoice-finance-for-facilities-management.astro",
       "src/pages/guides/index.astro",
-      "src/pages/compare.astro",
-      "src/pages/best/index.astro",
-      "src/pages/index.astro",
-      "src/pages/guides/invoice-factoring-vs-invoice-discounting.astro",
-      "src/pages/calculator.astro",
-      "src/pages/about.astro"
+      "src/pages/guides/how-to-calculate-true-apr-on-invoice-factoring.astro",
+      "src/pages/guides/cbils-rls-refinance/index.astro",
+      "src/pages/construction-finance/cis-payroll-finance/index.astro",
+      "src/pages/guides/debt-factoring.astro",
+      "src/pages/guides/invoice-finance-for-cleaning-contractors.astro",
+      "src/pages/compare/invoice-finance-vs-b2b-bnpl/index.astro",
+      "src/pages/export-finance/index.astro",
+      "src/pages/guides/invoice-finance-for-staffing-agencies.astro",
+      "src/pages/best/architecture-practice-finance/index.astro",
+      "src/pages/guides/mbo-invoice-finance/index.astro",
+      "src/pages/guides/glossary.astro",
+      "src/pages/blog/construction-invoice-finance-retention-release-stage-payments.astro",
+      "src/pages/working-capital/late-payment-uk.astro"
     ],
     "crawl_status": "ok",
     "all_commits": [
+      {
+        "hash": "48d9dbcf",
+        "date": "2026-05-11 10:17:51",
+        "message": "Auto-sync fleet-structure.json (2026-05-11T10:17:51)"
+      },
+      {
+        "hash": "e64998ae",
+        "date": "2026-05-11 10:02:35",
+        "message": "Auto-sync fleet-structure.json (2026-05-11T10:02:35)"
+      },
+      {
+        "hash": "99bd8229",
+        "date": "2026-05-11 09:47:15",
+        "message": "Auto-sync fleet-structure.json (2026-05-11T09:47:15)"
+      },
+      {
+        "hash": "e0eb4e00",
+        "date": "2026-05-11 09:39:11",
+        "message": "Auto: daily guide content 2026-05-11"
+      },
+      {
+        "hash": "6ec8378a",
+        "date": "2026-05-11 09:02:37",
+        "message": "Auto: daily guide content 2026-05-11"
+      },
+      {
+        "hash": "403e859b",
+        "date": "2026-05-11 08:57:50",
+        "message": "Auto: daily guide content 2026-05-11"
+      },
+      {
+        "hash": "c4bc5e44",
+        "date": "2026-05-10 22:25:18",
+        "message": "Auto-sync fleet-structure.json (2026-05-10T22:25:18)"
+      },
+      {
+        "hash": "27e68310",
+        "date": "2026-05-10 22:23:02",
+        "message": "MI audit URGENT fixes: stale BoE rate + broken links + LeadForms + sister-site llms"
+      },
+      {
+        "hash": "c308801e",
+        "date": "2026-05-10 17:53:14",
+        "message": "Auto-sync fleet-structure.json (2026-05-10T17:53:13)"
+      },
+      {
+        "hash": "93a85721",
+        "date": "2026-05-10 17:33:18",
+        "message": "Auto-sync fleet-structure.json (2026-05-10T17:33:16)"
+      },
+      {
+        "hash": "64ef88fd",
+        "date": "2026-05-10 07:05:37",
+        "message": "Auto-sync fleet-structure.json (2026-05-10T07:05:37)"
+      },
+      {
+        "hash": "6362babf",
+        "date": "2026-05-10 07:01:48",
+        "message": "Auto: daily stat content 2026-05-10"
+      },
+      {
+        "hash": "6113b75c",
+        "date": "2026-05-09 11:21:47",
+        "message": "Auto-sync fleet-structure.json (2026-05-09T11:21:47)"
+      },
+      {
+        "hash": "f4332a1a",
+        "date": "2026-05-09 11:06:33",
+        "message": "Auto-sync fleet-structure.json (2026-05-09T11:06:33)"
+      },
+      {
+        "hash": "5483801b",
+        "date": "2026-05-09 11:04:43",
+        "message": "Mega-batch A: 10 MI industry vertical /best/ pages"
+      },
+      {
+        "hash": "884528a6",
+        "date": "2026-05-09 08:03:34",
+        "message": "Auto-sync fleet-structure.json (2026-05-09T08:03:34)"
+      },
+      {
+        "hash": "b3db69ab",
+        "date": "2026-05-09 07:53:35",
+        "message": "Auto: daily blog content 2026-05-09"
+      },
+      {
+        "hash": "6323d2de",
+        "date": "2026-05-08 23:02:57",
+        "message": "Auto-sync fleet-structure.json (2026-05-08T23:02:57)"
+      },
+      {
+        "hash": "53ab2394",
+        "date": "2026-05-08 22:54:52",
+        "message": "Top-7 high-intent gap pages from gap-finder report"
+      },
+      {
+        "hash": "bb3576c4",
+        "date": "2026-05-08 16:47:45",
+        "message": "4 adjacent-niche clusters (28 pages) + bulletproof LeadForm"
+      },
+      {
+        "hash": "7e91c61b",
+        "date": "2026-05-08 14:01:59",
+        "message": "MI Batch 3: 8 interactive tools + tools index"
+      },
+      {
+        "hash": "60c43af0",
+        "date": "2026-05-08 13:55:47",
+        "message": "MI Batch 5: 20 UK region pages + region index hub"
+      },
+      {
+        "hash": "86fa294e",
+        "date": "2026-05-08 13:49:24",
+        "message": "MI Batch 4: 8 citation-target pages for zero-visibility queries"
+      },
+      {
+        "hash": "580b90d3",
+        "date": "2026-05-08 12:58:32",
+        "message": "Cross-link city pages: each /locations/<city>/ now links to 8 nearby"
+      },
+      {
+        "hash": "f51d66b1",
+        "date": "2026-05-08 12:55:15",
+        "message": "MI Batch 1: 6 turnover-band landing pages (5/day target push)"
+      },
+      {
+        "hash": "6394e033",
+        "date": "2026-05-08 08:55:40",
+        "message": "Auto-sync fleet-structure.json (2026-05-08T08:55:40)"
+      },
+      {
+        "hash": "c0fd2380",
+        "date": "2026-05-08 08:55:29",
+        "message": "Auto: daily qa content 2026-05-08"
+      },
+      {
+        "hash": "e5fe9a6b",
+        "date": "2026-05-07 15:34:04",
+        "message": "Sister Sites cross-link: footer + llms.txt"
+      },
+      {
+        "hash": "20244451",
+        "date": "2026-05-07 11:05:22",
+        "message": "Auto-sync fleet-structure.json (2026-05-07T11:05:22)"
+      },
+      {
+        "hash": "967a90c0",
+        "date": "2026-05-07 10:50:00",
+        "message": "Auto-sync fleet-structure.json (2026-05-07T10:50:00)"
+      },
+      {
+        "hash": "c83b8eb9",
+        "date": "2026-05-07 07:09:40",
+        "message": "Auto-sync fleet-structure.json (2026-05-07T07:09:40)"
+      },
+      {
+        "hash": "db6769ad",
+        "date": "2026-05-07 07:01:56",
+        "message": "Auto: daily guide content 2026-05-07"
+      },
+      {
+        "hash": "03e10df4",
+        "date": "2026-05-06 15:22:00",
+        "message": "Auto-sync fleet-structure.json (2026-05-06T15:22:00)"
+      },
+      {
+        "hash": "1f3f5289",
+        "date": "2026-05-06 15:17:20",
+        "message": "Add /site-structure/ page showing all 6 fleet sites side-by-side (3 editorial + 3 leadgen, tier-grouped). Drives off shared src/data/fleet-structure.json regenerated from each site's sitemap-0.xml."
+      },
+      {
+        "hash": "4f404d03",
+        "date": "2026-05-06 09:46:57",
+        "message": "Add attribution to MI lead-form email payload (surgical patch \u2014 preserves live form behaviour, adds lead_source / UTM / click IDs / referrer / landing_path / applied_from to FormSubmit data)"
+      },
+      {
+        "hash": "212eb023",
+        "date": "2026-05-06 07:01:33",
+        "message": "Auto: daily stat content 2026-05-06"
+      },
+      {
+        "hash": "f3df7751",
+        "date": "2026-05-05 20:01:21",
+        "message": "compare-invoice-finance-providers-uk: replace pulse-cashflow with time-finance"
+      },
+      {
+        "hash": "30961b7e",
+        "date": "2026-05-05 18:55:57",
+        "message": "Batch E: harmonise robots.txt with fleet canonical AI crawler list"
+      },
+      {
+        "hash": "fa434b0a",
+        "date": "2026-05-05 12:41:38",
+        "message": "Batch C4: /compare/ flowchart hub consolidates 17 comparison pages"
+      },
+      {
+        "hash": "69b5e877",
+        "date": "2026-05-05 12:26:24",
+        "message": "Batch C3: /guides/whole-book-vs-selective/ flagship guide"
+      },
+      {
+        "hash": "b47e8a05",
+        "date": "2026-05-05 11:10:00",
+        "message": "Batch C2: Deepen 6 flagship lender pages"
+      },
+      {
+        "hash": "660eb47f",
+        "date": "2026-05-05 09:58:12",
+        "message": "Batch C1: Sector expansion 28 \u2192 36 (8 new UK industries)"
+      },
+      {
+        "hash": "4431ae30",
+        "date": "2026-05-05 09:48:54",
+        "message": "Batch B: 6 landing pages targeting MI's zero-visibility queries"
+      },
+      {
+        "hash": "60aade7d",
+        "date": "2026-05-05 07:01:48",
+        "message": "Auto: daily blog content 2026-05-05"
+      },
+      {
+        "hash": "7ac6d587",
+        "date": "2026-05-04 21:42:56",
+        "message": "Add /invoice-finance-for-small-business-uk/ flagship landing page"
+      },
+      {
+        "hash": "84f5eec9",
+        "date": "2026-05-04 21:35:19",
+        "message": "MI-4 + MI-1#2: fix CoH URL + small-business landing page upgrade"
+      },
+      {
+        "hash": "90295558",
+        "date": "2026-05-04 20:56:55",
+        "message": "Add CI: llms.txt validator + weekly GEO audit (Batch 7)"
+      },
+      {
+        "hash": "4feffb13",
+        "date": "2026-05-04 20:34:02",
+        "message": "Strengthen /best/ flagship for \"best invoice finance UK\" query"
+      },
+      {
+        "hash": "24f70928",
+        "date": "2026-05-04 20:21:30",
+        "message": "Favicon parity fix: proper multi-size .ico + missing PNG sizes + webmanifest"
+      },
+      {
+        "hash": "0dc5a768",
+        "date": "2026-05-04 20:08:54",
+        "message": "Lead with the entity-function sentence on home page"
+      },
+      {
+        "hash": "db406839",
+        "date": "2026-05-04 20:04:56",
+        "message": "Add /industries/construction/ \u2014 sector hub for the UK's third-largest sector by GVA"
+      },
       {
         "hash": "a32c92f8",
         "date": "2026-04-25 23:13:03",
@@ -562,130 +1007,297 @@
     ]
   },
   "seocompare": {
-    "checked_at": "2026-04-26T06:27:11.364974",
-    "commits_7d": 98,
+    "checked_at": "2026-05-11T10:31:28.347037",
+    "commits_7d": 144,
     "commits_24h": 5,
-    "files_changed_24h": 41,
-    "new_pages_24h": 38,
+    "files_changed_24h": 20,
+    "new_pages_24h": 13,
     "recent_commits": [
       {
-        "hash": "9952d6c4",
-        "date": "2026-04-26 06:00:56",
-        "message": "Auto: new Guide page - AI SEO for Hotels and Accommodation: UK Guide 2026"
+        "hash": "3b3b1a0f",
+        "date": "2026-05-11 10:02:37",
+        "message": "Auto-sync fleet-structure.json (2026-05-11T10:02:37)"
       },
       {
-        "hash": "089f1925",
-        "date": "2026-04-25 23:13:05",
-        "message": "Add 5 LLM-citation Q&A pages for zero-competitor SEO-agency queries"
+        "hash": "c0d7ff3d",
+        "date": "2026-05-11 09:47:17",
+        "message": "Auto-sync fleet-structure.json (2026-05-11T09:47:17)"
       },
       {
-        "hash": "8e58bf80",
-        "date": "2026-04-25 16:57:07",
-        "message": "Punch list batch: fix broken links, bulk thin pages, obfuscate emails"
+        "hash": "39b250ca",
+        "date": "2026-05-11 09:34:47",
+        "message": "Auto: new Q&A page - How Do AI Search Platforms Understand User Intent?"
       },
       {
-        "hash": "6b7f2fa2",
-        "date": "2026-04-25 13:58:55",
-        "message": "Expand 20 city audit pages: 2 \u2192 6 FAQs + local-entity context"
+        "hash": "36869023",
+        "date": "2026-05-11 08:53:33",
+        "message": "Auto: new Q&A page - What metrics should I track for AI search performance?"
       },
       {
-        "hash": "1ccb5e57",
-        "date": "2026-04-25 13:47:26",
-        "message": "SC cannibal cluster resolution"
+        "hash": "0122afc6",
+        "date": "2026-05-10 18:05:09",
+        "message": "SC audit fixes: CLAUDE.md violations + author hub + em dashes"
       },
       {
-        "hash": "91102916",
-        "date": "2026-04-25 06:00:52",
-        "message": "Auto: new Q&A page - How to Stop AI Summarising Your Content Incorrectly"
+        "hash": "24652496",
+        "date": "2026-05-10 07:05:39",
+        "message": "Auto-sync fleet-structure.json (2026-05-10T07:05:39)"
       },
       {
-        "hash": "c022a117",
-        "date": "2026-04-24 17:42:33",
-        "message": "Signature market-benchmarks page (LLM-quotable)"
+        "hash": "f3e6e858",
+        "date": "2026-05-10 06:01:02",
+        "message": "Auto: new Guide page - AI SEO for Manufacturing: Complete UK Industry Guide"
       },
       {
-        "hash": "f1c82bab",
-        "date": "2026-04-24 16:53:54",
-        "message": "robots.txt: add Claude-User + Meta-ExternalAgent + DuckAssistBot + MistralAI-User"
+        "hash": "b34edd70",
+        "date": "2026-05-09 08:03:38",
+        "message": "Auto-sync fleet-structure.json (2026-05-09T08:03:38)"
       },
       {
-        "hash": "886e43ea",
-        "date": "2026-04-24 15:04:48",
-        "message": "Fix /blog/blog/ doubled path in blog index"
+        "hash": "487af045",
+        "date": "2026-05-09 07:52:17",
+        "message": "Auto: new Q&A page - How to know if AI SEO is working: Key metrics to track"
       },
       {
-        "hash": "98946e7d",
-        "date": "2026-04-24 09:31:03",
-        "message": "Fix Added/Updated dates: filter out stylistic commits + manual override"
+        "hash": "e52193fe",
+        "date": "2026-05-08 11:05:05",
+        "message": "Matrix page: surface all 66 head-to-head /compare/[pair] links"
       }
     ],
     "changed_files": [
-      "src/pages/questions/what-to-look-for-seo-agency/index.astro",
-      "src/pages/guides/index.astro",
-      "src/pages/ai-seo-audit-nottingham/index.astro",
-      "src/pages/ai-seo-audit-southampton/index.astro",
-      "src/pages/ai-seo-hotels-accommodation/index.astro",
-      "src/pages/ai-seo-audit-newcastle/index.astro",
-      "src/pages/ai-seo-audit-edinburgh/index.astro",
-      "src/pages/ai-seo-audit-oxford/index.astro",
-      "src/pages/ai-search-agencies-saas/index.astro",
-      "src/pages/ai-seo-audit-birmingham/index.astro",
-      "src/pages/questions/how-to-choose-an-seo-agency-uk/index.astro",
-      "src/pages/ai-seo-audit-sheffield/index.astro",
-      "src/pages/agency-matcher/index.astro",
+      "src/pages/questions/what-metrics-should-i-track-for-ai-search/index.astro",
+      "src/pages/authors/oliver-mackman/index.astro",
       "src/pages/ai-search-questions/index.astro",
-      "src/pages/questions/freelance-seo-vs-agency/index.astro",
-      "src/pages/ai-seo-audit-reading/index.astro",
-      "src/pages/find-an-agency/index.astro",
+      "src/pages/best/ai-seo-agencies-for-perplexity/index.astro",
+      "src/pages/site-structure.astro",
+      "src/pages/best/ai-seo-agencies-for-llm-citations/index.astro",
+      "src/pages/questions/how-to-compare-seo-companies/index.astro",
       "src/data/page-dates.json",
-      "src/pages/stats/index.astro",
-      "src/pages/ai-search-agencies-uk/index.astro",
-      "src/pages/ai-seo-audit-colchester/index.astro",
-      "src/pages/ai-seo-audit-norwich/index.astro",
-      "src/pages/free-ai-visibility-audit/index.astro",
-      "src/pages/ai-seo-audit-bristol/index.astro",
-      "src/pages/index.astro",
-      "src/pages/ai-seo-audit-chelmsford/index.astro",
-      "src/pages/ai-seo-audit-leeds/index.astro",
-      "public/_redirects",
-      "src/pages/20-best-ai-seo-agencies/index.astro",
-      "src/components/QuickQuoteForm.astro",
-      "src/pages/ai-seo-audit-cambridge/index.astro",
-      "src/pages/ai-seo-audit-manchester/index.astro",
-      "src/pages/affordable-ai-seo-uk/index.astro",
-      "src/pages/ai-seo-audit-london/index.astro",
-      "src/pages/ai-seo-audit-liverpool/index.astro",
-      "src/pages/ai-seo-audit-cardiff/index.astro",
-      "src/pages/ai-seo-audit-brighton/index.astro",
-      "src/pages/best/index.astro",
-      "src/pages/ai-seo-audit-glasgow/index.astro",
-      "src/pages/questions/compare-seo-agencies-uk/index.astro",
-      "src/pages/questions/how-to-compare-seo-companies/index.astro"
+      "src/pages/research/uk-seo-agency-ai-readiness-2026/index.astro",
+      "src/pages/ai-citation-gaps/index.astro",
+      "public/llms.txt",
+      "src/data/fleet-structure.json",
+      "src/layouts/BaseLayout.astro",
+      "DAILY_BRIEF.md",
+      "package.json",
+      "src/pages/questions/ai-search-user-intent-signals/index.astro",
+      "src/pages/best/ai-seo-agencies-for-google-ai-overviews/index.astro",
+      "package-lock.json",
+      "src/pages/best/ai-seo-agencies-for-chatgpt/index.astro",
+      "src/pages/best/ai-seo-agencies-for-gemini/index.astro"
     ],
     "new_page_files": [
-      "src/pages/questions/what-to-look-for-seo-agency/index.astro",
-      "src/pages/guides/index.astro",
-      "src/pages/ai-seo-audit-nottingham/index.astro",
-      "src/pages/ai-seo-audit-southampton/index.astro",
-      "src/pages/ai-seo-hotels-accommodation/index.astro",
-      "src/pages/ai-seo-audit-newcastle/index.astro",
-      "src/pages/ai-seo-audit-edinburgh/index.astro",
-      "src/pages/ai-seo-audit-oxford/index.astro",
-      "src/pages/ai-search-agencies-saas/index.astro",
-      "src/pages/ai-seo-audit-birmingham/index.astro",
-      "src/pages/questions/how-to-choose-an-seo-agency-uk/index.astro",
-      "src/pages/ai-seo-audit-sheffield/index.astro",
-      "src/pages/agency-matcher/index.astro",
+      "src/pages/questions/what-metrics-should-i-track-for-ai-search/index.astro",
+      "src/pages/authors/oliver-mackman/index.astro",
       "src/pages/ai-search-questions/index.astro",
-      "src/pages/questions/freelance-seo-vs-agency/index.astro",
-      "src/pages/ai-seo-audit-reading/index.astro",
-      "src/pages/find-an-agency/index.astro",
-      "src/pages/stats/index.astro",
-      "src/pages/ai-search-agencies-uk/index.astro",
-      "src/pages/ai-seo-audit-colchester/index.astro"
+      "src/pages/best/ai-seo-agencies-for-perplexity/index.astro",
+      "src/pages/site-structure.astro",
+      "src/pages/best/ai-seo-agencies-for-llm-citations/index.astro",
+      "src/pages/questions/how-to-compare-seo-companies/index.astro",
+      "src/pages/research/uk-seo-agency-ai-readiness-2026/index.astro",
+      "src/pages/ai-citation-gaps/index.astro",
+      "src/pages/questions/ai-search-user-intent-signals/index.astro",
+      "src/pages/best/ai-seo-agencies-for-google-ai-overviews/index.astro",
+      "src/pages/best/ai-seo-agencies-for-chatgpt/index.astro",
+      "src/pages/best/ai-seo-agencies-for-gemini/index.astro"
     ],
     "crawl_status": "ok",
     "all_commits": [
+      {
+        "hash": "3b3b1a0f",
+        "date": "2026-05-11 10:02:37",
+        "message": "Auto-sync fleet-structure.json (2026-05-11T10:02:37)"
+      },
+      {
+        "hash": "c0d7ff3d",
+        "date": "2026-05-11 09:47:17",
+        "message": "Auto-sync fleet-structure.json (2026-05-11T09:47:17)"
+      },
+      {
+        "hash": "39b250ca",
+        "date": "2026-05-11 09:34:47",
+        "message": "Auto: new Q&A page - How Do AI Search Platforms Understand User Intent?"
+      },
+      {
+        "hash": "36869023",
+        "date": "2026-05-11 08:53:33",
+        "message": "Auto: new Q&A page - What metrics should I track for AI search performance?"
+      },
+      {
+        "hash": "0122afc6",
+        "date": "2026-05-10 18:05:09",
+        "message": "SC audit fixes: CLAUDE.md violations + author hub + em dashes"
+      },
+      {
+        "hash": "24652496",
+        "date": "2026-05-10 07:05:39",
+        "message": "Auto-sync fleet-structure.json (2026-05-10T07:05:39)"
+      },
+      {
+        "hash": "f3e6e858",
+        "date": "2026-05-10 06:01:02",
+        "message": "Auto: new Guide page - AI SEO for Manufacturing: Complete UK Industry Guide"
+      },
+      {
+        "hash": "b34edd70",
+        "date": "2026-05-09 08:03:38",
+        "message": "Auto-sync fleet-structure.json (2026-05-09T08:03:38)"
+      },
+      {
+        "hash": "487af045",
+        "date": "2026-05-09 07:52:17",
+        "message": "Auto: new Q&A page - How to know if AI SEO is working: Key metrics to track"
+      },
+      {
+        "hash": "e52193fe",
+        "date": "2026-05-08 11:05:05",
+        "message": "Matrix page: surface all 66 head-to-head /compare/[pair] links"
+      },
+      {
+        "hash": "dfba0a6e",
+        "date": "2026-05-08 10:10:19",
+        "message": "Sitemap: exclude admin / 404 / site-structure / GSC verification"
+      },
+      {
+        "hash": "71d43ca9",
+        "date": "2026-05-07 17:20:51",
+        "message": "Bump fleet-core v0.3.0 -> v0.6.0 (parity with rest of fleet)"
+      },
+      {
+        "hash": "f8d891a6",
+        "date": "2026-05-07 15:34:10",
+        "message": "Sister Sites cross-link: footer + llms.txt"
+      },
+      {
+        "hash": "a52d3656",
+        "date": "2026-05-07 07:09:42",
+        "message": "Auto-sync fleet-structure.json (2026-05-07T07:09:42)"
+      },
+      {
+        "hash": "0d4f54a4",
+        "date": "2026-05-07 06:00:49",
+        "message": "Auto: new Stat page - AI Platform Response Speed vs Citation Quality: The 3.2x Gap"
+      },
+      {
+        "hash": "564fef8c",
+        "date": "2026-05-06 15:22:01",
+        "message": "Auto-sync fleet-structure.json (2026-05-06T15:22:01)"
+      },
+      {
+        "hash": "b11f176c",
+        "date": "2026-05-06 15:17:24",
+        "message": "Add /site-structure/ page showing all 6 fleet sites side-by-side (3 editorial + 3 leadgen, tier-grouped). Drives off shared src/data/fleet-structure.json regenerated from each site's sitemap-0.xml."
+      },
+      {
+        "hash": "22f18cef",
+        "date": "2026-05-06 14:18:48",
+        "message": "SC: kill orphan compare pages + 2 builders variants"
+      },
+      {
+        "hash": "70c0ea13",
+        "date": "2026-05-06 09:17:59",
+        "message": "SC: new /best-ai-search-website-builders-uk/ flagship + builders.json data"
+      },
+      {
+        "hash": "8fc7be51",
+        "date": "2026-05-06 06:00:41",
+        "message": "Auto: new Q&A page - How to Get Into Google AI Overviews (2026 Guide)"
+      },
+      {
+        "hash": "f8da6972",
+        "date": "2026-05-05 20:01:32",
+        "message": "SC: full-fleet attribution on remaining 2 forms + 132 compare redirects"
+      },
+      {
+        "hash": "8355a157",
+        "date": "2026-05-05 19:17:20",
+        "message": "free-ai-visibility-audit: full attribution wiring (4th SC form)"
+      },
+      {
+        "hash": "62aee3d5",
+        "date": "2026-05-05 18:56:01",
+        "message": "Batch E: harmonise robots.txt with fleet canonical AI crawler list"
+      },
+      {
+        "hash": "1a5ac67a",
+        "date": "2026-05-05 16:07:53",
+        "message": "Batch D: /best-seo-agencies-uk-2026/ citation-target page"
+      },
+      {
+        "hash": "a281c27d",
+        "date": "2026-05-05 11:44:52",
+        "message": "QuickQuoteForm: full lead attribution (mirror MI / R4 pattern)"
+      },
+      {
+        "hash": "0d136c0e",
+        "date": "2026-05-05 09:11:46",
+        "message": "SC-4: Remove broken youtube.com/@seocompare from sameAs (fleet-core-pilot mirror)"
+      },
+      {
+        "hash": "88267f02",
+        "date": "2026-05-05 06:00:51",
+        "message": "Auto: new Blog page - AI Search Results Now Appearing in Facebook: What UK Businesses Need to Know"
+      },
+      {
+        "hash": "274864d0",
+        "date": "2026-05-04 21:41:04",
+        "message": "Bump fleet-core to v0.3.0 (full module catalog)"
+      },
+      {
+        "hash": "9635d5d5",
+        "date": "2026-05-04 21:40:24",
+        "message": "Add /agency-comparison-matrix/ \u2014 12 UK agencies \u00d7 12 criteria, filterable + CSV export"
+      },
+      {
+        "hash": "70db2b29",
+        "date": "2026-05-04 21:40:14",
+        "message": "SC-4: Remove broken youtube.com/@seocompare from sameAs"
+      },
+      {
+        "hash": "095b7f95",
+        "date": "2026-05-04 21:30:30",
+        "message": "Cut SC homepage CLS: width/height on logo + non-blocking Google Fonts"
+      },
+      {
+        "hash": "08372e72",
+        "date": "2026-05-04 21:30:30",
+        "message": "Cut SC homepage CLS: width/height on logo + non-blocking Google Fonts"
+      },
+      {
+        "hash": "f7ee8330",
+        "date": "2026-05-04 21:30:13",
+        "message": "Bump fleet-core to v0.2.1"
+      },
+      {
+        "hash": "ee530e84",
+        "date": "2026-05-04 21:21:13",
+        "message": "Sitemap: add per-URL lastmod + priority + changefreq for Bing crawl budget"
+      },
+      {
+        "hash": "c8f72afb",
+        "date": "2026-05-04 21:03:24",
+        "message": "Refresh DAILY_BRIEF with v2 sections"
+      },
+      {
+        "hash": "45c60e41",
+        "date": "2026-05-04 20:58:00",
+        "message": "Add CI: llms.txt validator + weekly GEO audit (Batch 7)"
+      },
+      {
+        "hash": "9a71b4a3",
+        "date": "2026-05-04 20:51:01",
+        "message": "Migrate SC BaseLayout to fleet-core SchemaGraph"
+      },
+      {
+        "hash": "3d87f63c",
+        "date": "2026-05-04 20:30:33",
+        "message": "Fix 11 broken internal links surfaced by today's audit"
+      },
+      {
+        "hash": "2c8e55ec",
+        "date": "2026-05-04 20:22:17",
+        "message": "Favicon parity fix: proper multi-size .ico + missing PNG sizes + webmanifest"
+      },
       {
         "hash": "9952d6c4",
         "date": "2026-04-26 06:00:56",
@@ -964,7 +1576,7 @@
     ]
   },
   "rochellemarashi": {
-    "checked_at": "2026-04-26T06:27:12.309933",
+    "checked_at": "2026-05-11T10:31:29.199595",
     "commits_7d": 2,
     "commits_24h": 0,
     "files_changed_24h": 0,
@@ -998,122 +1610,434 @@
     ]
   },
   "rank4ai-dashboard": {
-    "checked_at": "2026-04-26T06:27:12.856382",
-    "commits_7d": 123,
-    "commits_24h": 5,
-    "files_changed_24h": 60,
-    "new_pages_24h": 3,
+    "checked_at": "2026-05-11T10:31:29.766675",
+    "commits_7d": 634,
+    "commits_24h": 63,
+    "files_changed_24h": 13,
+    "new_pages_24h": 2,
     "recent_commits": [
       {
-        "hash": "566e966d",
-        "date": "2026-04-25 23:26:06",
-        "message": "Refresh live data (auto-cron snapshot 25 Apr)"
+        "hash": "58b73139",
+        "date": "2026-05-11 10:17:49",
+        "message": "Fleet sync: source-reader refresh (2026-05-11T10:17:49+01:00)"
       },
       {
-        "hash": "c0c8c1bc",
-        "date": "2026-04-25 23:25:53",
-        "message": "Bot tracker: forward to centralized Worker + add R4 routes"
+        "hash": "63ef9cb1",
+        "date": "2026-05-11 10:02:33",
+        "message": "Fleet sync: source-reader refresh (2026-05-11T10:02:33+01:00)"
       },
       {
-        "hash": "5d1dc09a",
-        "date": "2026-04-25 23:25:34",
-        "message": "Indexing log consolidation: tracker + indexnow_log \u2192 indexing_activity"
+        "hash": "19ed588a",
+        "date": "2026-05-11 09:47:11",
+        "message": "Fleet sync: source-reader refresh (2026-05-11T09:47:11+01:00)"
       },
       {
-        "hash": "cff953f7",
-        "date": "2026-04-25 22:57:06",
-        "message": "Existing-fetcher improvements: token health, GSC normalisation, Perplexity, expanded query lists"
+        "hash": "37e69e56",
+        "date": "2026-05-11 09:28:31",
+        "message": "Fleet sync: source-reader refresh (2026-05-11T09:28:31+01:00)"
       },
       {
-        "hash": "f9a8b4f4",
-        "date": "2026-04-25 22:56:43",
-        "message": "Add 4 new daily fetchers + dashboard tiles"
+        "hash": "6b556671",
+        "date": "2026-05-11 09:21:55",
+        "message": "Add Vernacular Content section to dashboard (TCP first)"
       },
       {
-        "hash": "ff668e9a",
-        "date": "2026-04-24 16:47:04",
-        "message": "Client drill-down iframe: force-hide admin chrome via runtime CSS (Astro is static)"
+        "hash": "96d213cb",
+        "date": "2026-05-11 09:13:13",
+        "message": "Fleet sync: source-reader refresh (2026-05-11T09:13:13+01:00)"
       },
       {
-        "hash": "c4daec5f",
-        "date": "2026-04-24 16:31:44",
-        "message": "Mobile responsive: sidebar collapses to hamburger drawer, padding tightens"
+        "hash": "e0e320c2",
+        "date": "2026-05-11 08:57:52",
+        "message": "Fleet sync: source-reader refresh (2026-05-11T08:57:52+01:00)"
       },
       {
-        "hash": "2ad8dbcb",
-        "date": "2026-04-24 16:27:30",
-        "message": "Hide admin sidebar + top-nav when agency page is embedded from client drill-down"
+        "hash": "c86787ec",
+        "date": "2026-05-11 01:11:11",
+        "message": "Fleet sync: source-reader refresh (2026-05-11T01:11:11+01:00)"
       },
       {
-        "hash": "fe1518fb",
-        "date": "2026-04-24 16:22:53",
-        "message": "Client-side drill-down + hidden sidebar on client view"
+        "hash": "32f2e08e",
+        "date": "2026-05-11 00:55:58",
+        "message": "Fleet sync: source-reader refresh (2026-05-11T00:55:58+01:00)"
       },
       {
-        "hash": "88fe8c77",
-        "date": "2026-04-24 16:02:56",
-        "message": "Persist edit token in localStorage \u2014 no more repeated prompts on edit/toggle"
+        "hash": "4df07342",
+        "date": "2026-05-11 00:40:30",
+        "message": "Fleet sync: source-reader refresh (2026-05-11T00:40:30+01:00)"
       }
     ],
     "changed_files": [
-      "scripts/build_manual_indexing_queue.py",
-      "tracker/worker.js",
-      "src/data/live/cf_ai_crawls.json",
-      "src/data/live/citation_prompts.json",
-      "src/data/live/site_changelog.json",
-      "src/data/live/google_indexing_log.json",
-      "src/data/live/manual_indexing_queue.json",
-      "src/data/clients.json",
-      "src/data/live/full_changelog.json",
-      "tracker/bot-logger/wrangler.toml",
-      "src/data/live/ai_overview_serp.json",
-      "src/data/live/bing.json",
-      "scripts/check_citations_by_type.py",
-      "src/data/live/crawl_rochellemarashi.json",
-      "src/data/live/rec_snapshots/recommendations_2026-04-25.json",
-      "src/data/live/indexing_activity.json",
+      "src/data/live/crawl_bestbusinessloans.json",
       "src/data/live/crawl_market-invoice.json",
-      "scripts/fetch_cf_ai_crawls.py",
-      "src/data/live/wins_this_week.json",
-      "scripts/run_citation_baseline.py",
-      "scripts/submit_google_indexing.py",
-      "src/data/live/knowledge_graph.json",
-      "tracker/bot-logger/worker.js",
-      "src/pages/add-client.astro",
-      "scripts/fetch_gsc.py",
-      "scripts/check_drift.py",
-      "src/data/live/indexing_tracker.json",
-      "src/pages/agency/[client]/[section].astro",
-      "src/data/live/serp_data.json",
-      "src/data/live/deploy_parity.json",
-      "src/data/sections.json",
-      "src/data/live/gsc.json",
-      "src/data/live/uptime.json",
-      "scripts/fetch_trends.py",
-      "src/data/live/gsc_previous.json",
-      "src/pages/index.astro",
-      "src/data/live/ai_audit.json",
-      "src/data/live/indexnow_log.json",
-      "scripts/check_guardrails.py",
-      "scripts/fetch_dataforseo.py",
-      "src/data/live/nlp_entities.json",
+      "src/data/live/crawl_cardmachines.json",
+      "src/pages/client/[client].astro",
       "src/data/live/crawl_activity.json",
-      "src/data/live/upcoming_pages.json",
+      "src/data/live/crawl_rochellemarashi.json",
+      "src/pages/agency/[client]/[section].astro",
+      "src/data/live/crawl_fundbiz.json",
+      "src/data/clients.json",
       "src/data/live/crawl_rank4ai.json",
-      "src/data/live/competitor_serp.json",
-      "src/data/live/uptime_history.json",
-      "src/data/live/bot_hits.json",
-      "src/data/live/knowledge_graph_analysis.json",
-      "src/data/live/mi_leads.json",
-      "scripts/fetch_ga4.py"
+      "src/data/live/vernacular_cardmachines.json",
+      "src/data/live/crawl_seocompare.json",
+      "src/data/sections.json"
     ],
     "new_page_files": [
-      "src/pages/add-client.astro",
-      "src/pages/agency/[client]/[section].astro",
-      "src/pages/index.astro"
+      "src/pages/client/[client].astro",
+      "src/pages/agency/[client]/[section].astro"
     ],
     "crawl_status": "ok",
     "all_commits": [
+      {
+        "hash": "58b73139",
+        "date": "2026-05-11 10:17:49",
+        "message": "Fleet sync: source-reader refresh (2026-05-11T10:17:49+01:00)"
+      },
+      {
+        "hash": "63ef9cb1",
+        "date": "2026-05-11 10:02:33",
+        "message": "Fleet sync: source-reader refresh (2026-05-11T10:02:33+01:00)"
+      },
+      {
+        "hash": "19ed588a",
+        "date": "2026-05-11 09:47:11",
+        "message": "Fleet sync: source-reader refresh (2026-05-11T09:47:11+01:00)"
+      },
+      {
+        "hash": "37e69e56",
+        "date": "2026-05-11 09:28:31",
+        "message": "Fleet sync: source-reader refresh (2026-05-11T09:28:31+01:00)"
+      },
+      {
+        "hash": "6b556671",
+        "date": "2026-05-11 09:21:55",
+        "message": "Add Vernacular Content section to dashboard (TCP first)"
+      },
+      {
+        "hash": "96d213cb",
+        "date": "2026-05-11 09:13:13",
+        "message": "Fleet sync: source-reader refresh (2026-05-11T09:13:13+01:00)"
+      },
+      {
+        "hash": "e0e320c2",
+        "date": "2026-05-11 08:57:52",
+        "message": "Fleet sync: source-reader refresh (2026-05-11T08:57:52+01:00)"
+      },
+      {
+        "hash": "c86787ec",
+        "date": "2026-05-11 01:11:11",
+        "message": "Fleet sync: source-reader refresh (2026-05-11T01:11:11+01:00)"
+      },
+      {
+        "hash": "32f2e08e",
+        "date": "2026-05-11 00:55:58",
+        "message": "Fleet sync: source-reader refresh (2026-05-11T00:55:58+01:00)"
+      },
+      {
+        "hash": "4df07342",
+        "date": "2026-05-11 00:40:30",
+        "message": "Fleet sync: source-reader refresh (2026-05-11T00:40:30+01:00)"
+      },
+      {
+        "hash": "0db24c82",
+        "date": "2026-05-10 09:37:32",
+        "message": "Fleet sync: source-reader refresh (2026-05-10T09:37:32+01:00)"
+      },
+      {
+        "hash": "e0d312c9",
+        "date": "2026-05-10 09:22:19",
+        "message": "Fleet sync: source-reader refresh (2026-05-10T09:22:19+01:00)"
+      },
+      {
+        "hash": "e07b595f",
+        "date": "2026-05-10 09:07:09",
+        "message": "Fleet sync: source-reader refresh (2026-05-10T09:07:09+01:00)"
+      },
+      {
+        "hash": "b55b8ec2",
+        "date": "2026-05-10 08:51:55",
+        "message": "Fleet sync: source-reader refresh (2026-05-10T08:51:55+01:00)"
+      },
+      {
+        "hash": "4ae92cf6",
+        "date": "2026-05-10 08:36:45",
+        "message": "Fleet sync: source-reader refresh (2026-05-10T08:36:45+01:00)"
+      },
+      {
+        "hash": "a943e902",
+        "date": "2026-05-10 08:21:34",
+        "message": "Fleet sync: source-reader refresh (2026-05-10T08:21:34+01:00)"
+      },
+      {
+        "hash": "ce622c89",
+        "date": "2026-05-10 08:06:23",
+        "message": "Fleet sync: source-reader refresh (2026-05-10T08:06:23+01:00)"
+      },
+      {
+        "hash": "999383e3",
+        "date": "2026-05-10 07:51:12",
+        "message": "Fleet sync: source-reader refresh (2026-05-10T07:51:12+01:00)"
+      },
+      {
+        "hash": "3c35ad75",
+        "date": "2026-05-10 07:36:01",
+        "message": "Fleet sync: source-reader refresh (2026-05-10T07:36:01+01:00)"
+      },
+      {
+        "hash": "cb53f231",
+        "date": "2026-05-10 07:20:50",
+        "message": "Fleet sync: source-reader refresh (2026-05-10T07:20:50+01:00)"
+      },
+      {
+        "hash": "ea07d5c9",
+        "date": "2026-05-09 09:50:07",
+        "message": "Fleet sync: source-reader refresh (2026-05-09T09:50:07+01:00)"
+      },
+      {
+        "hash": "676d65ff",
+        "date": "2026-05-09 09:34:55",
+        "message": "Fleet sync: source-reader refresh (2026-05-09T09:34:55+01:00)"
+      },
+      {
+        "hash": "79824514",
+        "date": "2026-05-09 09:19:43",
+        "message": "Fleet sync: source-reader refresh (2026-05-09T09:19:43+01:00)"
+      },
+      {
+        "hash": "e70ed8a6",
+        "date": "2026-05-09 09:04:30",
+        "message": "Fleet sync: source-reader refresh (2026-05-09T09:04:30+01:00)"
+      },
+      {
+        "hash": "71266889",
+        "date": "2026-05-09 08:49:18",
+        "message": "Fleet sync: source-reader refresh (2026-05-09T08:49:18+01:00)"
+      },
+      {
+        "hash": "e4ac04b5",
+        "date": "2026-05-09 08:34:05",
+        "message": "Fleet sync: source-reader refresh (2026-05-09T08:34:05+01:00)"
+      },
+      {
+        "hash": "6008aaa5",
+        "date": "2026-05-09 08:18:53",
+        "message": "Fleet sync: source-reader refresh (2026-05-09T08:18:53+01:00)"
+      },
+      {
+        "hash": "9e325c18",
+        "date": "2026-05-09 08:03:30",
+        "message": "Fleet sync: source-reader refresh (2026-05-09T08:03:29+01:00)"
+      },
+      {
+        "hash": "86f484ee",
+        "date": "2026-05-09 05:38:31",
+        "message": "Fleet sync: source-reader refresh (2026-05-09T05:38:31+01:00)"
+      },
+      {
+        "hash": "6d3e4a6e",
+        "date": "2026-05-09 05:23:18",
+        "message": "Fleet sync: source-reader refresh (2026-05-09T05:23:18+01:00)"
+      },
+      {
+        "hash": "bdd5c25e",
+        "date": "2026-05-08 09:56:42",
+        "message": "Fleet sync: source-reader refresh (2026-05-08T09:56:42+01:00)"
+      },
+      {
+        "hash": "c7d9b5b6",
+        "date": "2026-05-08 09:52:37",
+        "message": "Update BBL/FB liveDomain + notes (BBL.ai + custom domains attached 8 May)"
+      },
+      {
+        "hash": "3206fe4b",
+        "date": "2026-05-08 09:47:49",
+        "message": "Brief: link health + sitemap\u2194Google reconciliation per site"
+      },
+      {
+        "hash": "0509e391",
+        "date": "2026-05-08 09:41:22",
+        "message": "Fleet sync: source-reader refresh (2026-05-08T09:41:22+01:00)"
+      },
+      {
+        "hash": "028c86da",
+        "date": "2026-05-08 09:37:02",
+        "message": "Auto-ingest GSC drilldown XLSX + refresh MI 4-issue picture"
+      },
+      {
+        "hash": "f092d05b",
+        "date": "2026-05-08 09:26:07",
+        "message": "Fleet sync: source-reader refresh (2026-05-08T09:26:07+01:00)"
+      },
+      {
+        "hash": "49980f1b",
+        "date": "2026-05-08 09:10:52",
+        "message": "Fleet sync: source-reader refresh (2026-05-08T09:10:52+01:00)"
+      },
+      {
+        "hash": "12362ee2",
+        "date": "2026-05-08 09:04:37",
+        "message": "GSC drilldown ingester + brief section for actionable URLs"
+      },
+      {
+        "hash": "41e79481",
+        "date": "2026-05-08 08:55:36",
+        "message": "Fleet sync: source-reader refresh (2026-05-08T08:55:36+01:00)"
+      },
+      {
+        "hash": "b8aa2a20",
+        "date": "2026-05-08 03:51:31",
+        "message": "Fleet sync: source-reader refresh (2026-05-08T03:51:31+01:00)"
+      },
+      {
+        "hash": "51eeaf92",
+        "date": "2026-05-06 14:22:50",
+        "message": "Extend push_to_fleet SITES dict with leadgen (BBL/FB/CT), gated by pre_launch flag"
+      },
+      {
+        "hash": "15475bf9",
+        "date": "2026-05-06 14:19:00",
+        "message": "Add pre_launch:true flag for bestbusinessloans/fundbiz/cardmachines so daily-audit fetchers skip until live"
+      },
+      {
+        "hash": "16bfab32",
+        "date": "2026-05-06 14:14:54",
+        "message": "Fleet sync: source-reader refresh (2026-05-06T14:14:54+01:00)"
+      },
+      {
+        "hash": "828cdca2",
+        "date": "2026-05-06 13:59:43",
+        "message": "Fleet sync: source-reader refresh (2026-05-06T13:59:43+01:00)"
+      },
+      {
+        "hash": "03aeb7de",
+        "date": "2026-05-06 13:44:34",
+        "message": "Fleet sync: source-reader refresh (2026-05-06T13:44:34+01:00)"
+      },
+      {
+        "hash": "8e0a7c55",
+        "date": "2026-05-06 13:29:24",
+        "message": "Fleet sync: source-reader refresh (2026-05-06T13:29:24+01:00)"
+      },
+      {
+        "hash": "65935bb5",
+        "date": "2026-05-06 13:14:13",
+        "message": "Fleet sync: source-reader refresh (2026-05-06T13:14:13+01:00)"
+      },
+      {
+        "hash": "ddd1a189",
+        "date": "2026-05-06 12:59:04",
+        "message": "Fleet sync: source-reader refresh (2026-05-06T12:59:04+01:00)"
+      },
+      {
+        "hash": "56e675e8",
+        "date": "2026-05-06 12:43:30",
+        "message": "Fleet sync: source-reader refresh (2026-05-06T12:43:30+01:00)"
+      },
+      {
+        "hash": "98e4210f",
+        "date": "2026-05-06 12:28:21",
+        "message": "Fleet sync: source-reader refresh (2026-05-06T12:28:21+01:00)"
+      },
+      {
+        "hash": "3f8f591d",
+        "date": "2026-05-06 06:04:14",
+        "message": "Fleet sync: source-reader refresh (2026-05-06T06:04:14+01:00)"
+      },
+      {
+        "hash": "0f6abf7b",
+        "date": "2026-05-06 05:49:05",
+        "message": "Fleet sync: source-reader refresh (2026-05-06T05:49:05+01:00)"
+      },
+      {
+        "hash": "e81ea0f4",
+        "date": "2026-05-06 05:33:56",
+        "message": "Fleet sync: source-reader refresh (2026-05-06T05:33:56+01:00)"
+      },
+      {
+        "hash": "aa721b66",
+        "date": "2026-05-06 05:18:21",
+        "message": "Fleet sync: source-reader refresh (2026-05-06T05:18:21+01:00)"
+      },
+      {
+        "hash": "e703086f",
+        "date": "2026-05-06 05:03:12",
+        "message": "Fleet sync: source-reader refresh (2026-05-06T05:03:12+01:00)"
+      },
+      {
+        "hash": "5d156342",
+        "date": "2026-05-06 04:48:02",
+        "message": "Fleet sync: source-reader refresh (2026-05-06T04:48:02+01:00)"
+      },
+      {
+        "hash": "1b8b3dd6",
+        "date": "2026-05-06 04:32:53",
+        "message": "Fleet sync: source-reader refresh (2026-05-06T04:32:53+01:00)"
+      },
+      {
+        "hash": "45aca8e4",
+        "date": "2026-05-06 04:17:44",
+        "message": "Fleet sync: source-reader refresh (2026-05-06T04:17:44+01:00)"
+      },
+      {
+        "hash": "5eb2c666",
+        "date": "2026-05-06 04:02:34",
+        "message": "Fleet sync: source-reader refresh (2026-05-06T04:02:34+01:00)"
+      },
+      {
+        "hash": "67a72ee1",
+        "date": "2026-05-06 03:47:21",
+        "message": "Fleet sync: source-reader refresh (2026-05-06T03:47:21+01:00)"
+      },
+      {
+        "hash": "6a8fedb7",
+        "date": "2026-05-04 21:23:10",
+        "message": "Batches 8 + 9 + 10 + 4 May playbook audit consolidation"
+      },
+      {
+        "hash": "96fd86da",
+        "date": "2026-05-04 21:01:17",
+        "message": "push_to_fleet v2: 6 new sections in daily brief"
+      },
+      {
+        "hash": "671f45c8",
+        "date": "2026-05-04 20:48:49",
+        "message": "Batch 5 + 6: entity coherence + content freshness tiles"
+      },
+      {
+        "hash": "9e344579",
+        "date": "2026-05-04 20:22:20",
+        "message": "Push next-actions queue: copy-ready Claude prompts per site"
+      },
+      {
+        "hash": "486df1df",
+        "date": "2026-04-26 21:17:29",
+        "message": "Wire 3 leadgen tiles to live .pages.dev URLs (deployed with noindex robots.txt)"
+      },
+      {
+        "hash": "eb457c3b",
+        "date": "2026-04-26 20:56:07",
+        "message": "Empty domain field for pre-launch leadgen tiles so fetchers skip them"
+      },
+      {
+        "hash": "2de5678c",
+        "date": "2026-04-26 20:50:13",
+        "message": "Add bestbusinessloans, fundbiz, cardmachines as pre-launch leadgen tiles (mirrors Rochelle pattern)"
+      },
+      {
+        "hash": "709b144a",
+        "date": "2026-04-26 20:25:39",
+        "message": "Update deploy_parity.json"
+      },
+      {
+        "hash": "b0c9e736",
+        "date": "2026-04-26 18:04:30",
+        "message": "Workflow deploy step: shell out to wrangler directly with safe quoting"
+      },
+      {
+        "hash": "b4da7762",
+        "date": "2026-04-26 18:01:11",
+        "message": "Workflow node version bump to 22 (Astro requirement)"
+      },
       {
         "hash": "566e966d",
         "date": "2026-04-25 23:26:06",

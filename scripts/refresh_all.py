@@ -107,6 +107,11 @@ def main():
         # this fetcher mirrors it into the dashboard. Was missing from refresh_all,
         # so dashboard's daily_audit_*.json had been stale since 26 Apr.
         ("fetch_daily_audit.py", 30),
+        # Pull per-site content plan markdown from iCloud.
+        # Was a standalone 7:10am launchd job (com.rank4ai.dashboard-content-plans-fetch)
+        # but launchd context lacks Full Disk Access for iCloud — moved here so it
+        # inherits FDA from the dashboard-refresh launchd grant.
+        ("fetch_content_plans.py", 30),
         ("fetch_crawl_activity.py", 30),
         ("fetch_bot_hits.py", 30),
         ("fetch_cf_ai_crawls.py", 60),

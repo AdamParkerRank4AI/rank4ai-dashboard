@@ -1,15 +1,15 @@
 {
   "rank4ai": {
     "site_url": "https://www.rank4ai.co.uk",
-    "fetched_at": "2026-05-04T19:39:56.911958+00:00",
+    "fetched_at": "2026-05-11T09:14:05.099452+00:00",
     "person_links": [
       {
-        "url": "https://www.linkedin.com/in/adamparker-rank4ai",
+        "url": "https://www.linkedin.com/in/adamparkerrank4ai/",
         "status": 999,
         "ok": false,
         "verdict": "bot_blocked",
         "redirect_to": null,
-        "final_url": "https://www.linkedin.com/in/adamparker-rank4ai",
+        "final_url": "https://www.linkedin.com/in/adamparkerrank4ai/",
         "error": "HTTP 999",
         "entity_name": "Adam Parker",
         "entity_role": "person"
@@ -22,6 +22,28 @@
         "redirect_to": null,
         "final_url": "https://x.com/rank4ai",
         "error": "HTTP 403",
+        "entity_name": "Adam Parker",
+        "entity_role": "person"
+      },
+      {
+        "url": "https://github.com/AdamParkerRank4AI",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://github.com/AdamParkerRank4AI",
+        "error": null,
+        "entity_name": "Adam Parker",
+        "entity_role": "person"
+      },
+      {
+        "url": "https://www.muswellrose.com/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://www.muswellrose.com/",
+        "error": null,
         "entity_name": "Adam Parker",
         "entity_role": "person"
       }
@@ -128,8 +150,8 @@
       }
     ],
     "summary": {
-      "total": 11,
-      "ok": 7,
+      "total": 13,
+      "ok": 9,
       "broken": 0,
       "bot_blocked": 4,
       "error": 0,
@@ -139,16 +161,16 @@
   },
   "market-invoice": {
     "site_url": "https://marketinvoice.co.uk",
-    "fetched_at": "2026-05-04T19:39:58.816507+00:00",
+    "fetched_at": "2026-05-11T09:14:06.508300+00:00",
     "person_links": [
       {
-        "url": "https://find-and-update.company-information.service.gov.uk/officers/dKHZEH-n1H5BVmR2rILJcCJbzY4/appointments",
-        "status": 404,
-        "ok": false,
-        "verdict": "broken",
+        "url": "https://find-and-update.company-information.service.gov.uk/officers/nJ1GY_zmn5UQ2aUceZRHppgZLpQ/appointments",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
         "redirect_to": null,
-        "final_url": "https://find-and-update.company-information.service.gov.uk/officers/dKHZEH-n1H5BVmR2rILJcCJbzY4/appointments",
-        "error": "HTTP 404",
+        "final_url": "https://find-and-update.company-information.service.gov.uk/officers/nJ1GY_zmn5UQ2aUceZRHppgZLpQ/appointments",
+        "error": null,
         "entity_name": "Oliver Mackman",
         "entity_role": "person"
       }
@@ -168,26 +190,17 @@
     ],
     "summary": {
       "total": 2,
-      "ok": 1,
-      "broken": 1,
+      "ok": 2,
+      "broken": 0,
       "bot_blocked": 0,
       "error": 0,
-      "score": 50
+      "score": 100
     },
-    "broken_detail": [
-      {
-        "url": "https://find-and-update.company-information.service.gov.uk/officers/dKHZEH-n1H5BVmR2rILJcCJbzY4/appointments",
-        "status": 404,
-        "error": "HTTP 404",
-        "verdict": "broken",
-        "from_entity": "Oliver Mackman",
-        "from_role": "person"
-      }
-    ]
+    "broken_detail": []
   },
   "seocompare": {
     "site_url": "https://seocompare.co.uk",
-    "fetched_at": "2026-05-04T19:40:01.584728+00:00",
+    "fetched_at": "2026-05-11T09:14:08.459468+00:00",
     "person_links": [],
     "organization_links": [
       {
@@ -202,39 +215,30 @@
         "entity_role": "organization"
       },
       {
-        "url": "https://www.youtube.com/@seocompare",
-        "status": 404,
-        "ok": false,
-        "verdict": "broken",
-        "redirect_to": null,
-        "final_url": "https://www.youtube.com/@seocompare",
-        "error": "HTTP 404",
+        "url": "https://www.youtube.com/@compareseo1",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": "https://www.youtube.com/@compareseo1?cbrd=1&ucbcb=1",
+        "final_url": "https://www.youtube.com/@compareseo1?cbrd=1&ucbcb=1",
+        "error": null,
         "entity_name": "SEOCompare",
         "entity_role": "organization"
       }
     ],
     "summary": {
       "total": 2,
-      "ok": 1,
-      "broken": 1,
+      "ok": 2,
+      "broken": 0,
       "bot_blocked": 0,
       "error": 0,
-      "score": 50
+      "score": 100
     },
-    "broken_detail": [
-      {
-        "url": "https://www.youtube.com/@seocompare",
-        "status": 404,
-        "error": "HTTP 404",
-        "verdict": "broken",
-        "from_entity": "SEOCompare",
-        "from_role": "organization"
-      }
-    ]
+    "broken_detail": []
   },
   "rochellemarashi": {
     "site_url": "https://rochellemarashi.pages.dev",
-    "fetched_at": "2026-05-04T19:40:07.939561+00:00",
+    "fetched_at": "2026-05-11T09:14:16.643988+00:00",
     "person_links": [
       {
         "url": "https://www.linkedin.com/in/rmarashi/",
@@ -377,12 +381,12 @@
     ]
   },
   "fleet_summary": {
-    "total": 25,
-    "ok": 13,
-    "broken": 4,
+    "total": 27,
+    "ok": 17,
+    "broken": 2,
     "bot_blocked": 8,
     "error": 0,
-    "score": 76,
-    "fetched_at": "2026-05-04T19:40:07.939695+00:00"
+    "score": 89,
+    "fetched_at": "2026-05-11T09:14:16.644169+00:00"
   }
 }
