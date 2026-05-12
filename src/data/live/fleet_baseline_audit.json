@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-12T08:53:58.157477+00:00",
+  "generated_at": "2026-05-12T13:49:58.599314+00:00",
   "sites": {
     "rank4ai": {
       "flavour": "editorial",
@@ -67,7 +67,7 @@
           "label": "fleet-core >= v0.6.3",
           "severity": "p1",
           "status": "pass",
-          "note": "v0.6.5 \u2014 needs >= v0.6.3"
+          "note": "v0.6.6 \u2014 needs >= v0.6.3"
         },
         {
           "id": "3tier_safepayload",
@@ -101,8 +101,8 @@
           "id": "schema_graph",
           "label": "nested @graph schema (#3)",
           "severity": "p1",
-          "status": "fail",
-          "note": "missing Organization or WebPage class"
+          "status": "pass",
+          "note": "@graph + Org-class + WebPage-class"
         },
         {
           "id": "date_modified",
@@ -221,7 +221,7 @@
           "label": "fleet-core >= v0.6.3",
           "severity": "p1",
           "status": "pass",
-          "note": "v0.6.5 \u2014 needs >= v0.6.3"
+          "note": "v0.6.6 \u2014 needs >= v0.6.3"
         },
         {
           "id": "3tier_safepayload",
@@ -242,14 +242,14 @@
           "label": "homepage has imagery",
           "severity": "p1",
           "status": "pass",
-          "note": "15 svg (no img)"
+          "note": "1 img + 15 svg"
         },
         {
           "id": "alt_text",
           "label": "all imgs alt-tagged",
           "severity": "p2",
-          "status": "skip",
-          "note": "no imgs"
+          "status": "pass",
+          "note": "1 imgs all alt-tagged"
         },
         {
           "id": "schema_graph",
@@ -375,7 +375,7 @@
           "label": "fleet-core >= v0.6.3",
           "severity": "p1",
           "status": "pass",
-          "note": "v0.6.5 \u2014 needs >= v0.6.3"
+          "note": "v0.6.6 \u2014 needs >= v0.6.3"
         },
         {
           "id": "3tier_safepayload",
@@ -683,7 +683,7 @@
           "label": "fleet-core >= v0.6.3",
           "severity": "p1",
           "status": "pass",
-          "note": "v0.6.5 \u2014 needs >= v0.6.3"
+          "note": "v0.6.7 \u2014 needs >= v0.6.3"
         },
         {
           "id": "3tier_safepayload",
@@ -703,15 +703,15 @@
           "id": "homepage_imagery",
           "label": "homepage has imagery",
           "severity": "p1",
-          "status": "fail",
-          "note": "only 0 img + 2 svg \u2014 empty homepage"
+          "status": "pass",
+          "note": "1 img + 2 svg"
         },
         {
           "id": "alt_text",
           "label": "all imgs alt-tagged",
           "severity": "p2",
-          "status": "skip",
-          "note": "no imgs"
+          "status": "pass",
+          "note": "1 imgs all alt-tagged"
         },
         {
           "id": "schema_graph",
@@ -724,8 +724,8 @@
           "id": "date_modified",
           "label": "dateModified ISO 8601 with TZ (#1)",
           "severity": "p2",
-          "status": "fail",
-          "note": "2026-04-26 \u2014 date only, needs ISO 8601 with TZ"
+          "status": "pass",
+          "note": "2026-04-26T00:00:00"
         },
         {
           "id": "speakable",
@@ -837,7 +837,7 @@
           "label": "fleet-core >= v0.6.3",
           "severity": "p1",
           "status": "pass",
-          "note": "v0.6.5 \u2014 needs >= v0.6.3"
+          "note": "v0.6.7 \u2014 needs >= v0.6.3"
         },
         {
           "id": "3tier_safepayload",
@@ -857,15 +857,15 @@
           "id": "homepage_imagery",
           "label": "homepage has imagery",
           "severity": "p1",
-          "status": "fail",
-          "note": "only 0 img + 2 svg \u2014 empty homepage"
+          "status": "pass",
+          "note": "1 img + 2 svg"
         },
         {
           "id": "alt_text",
           "label": "all imgs alt-tagged",
           "severity": "p2",
-          "status": "skip",
-          "note": "no imgs"
+          "status": "pass",
+          "note": "1 imgs all alt-tagged"
         },
         {
           "id": "schema_graph",
@@ -878,8 +878,8 @@
           "id": "date_modified",
           "label": "dateModified ISO 8601 with TZ (#1)",
           "severity": "p2",
-          "status": "fail",
-          "note": "2026-04-26 \u2014 date only, needs ISO 8601 with TZ"
+          "status": "pass",
+          "note": "2026-04-26T00:00:00"
         },
         {
           "id": "speakable",
@@ -941,8 +941,8 @@
           "id": "robots_txt",
           "label": "robots.txt valid + AI bots named",
           "severity": "p1",
-          "status": "fail",
-          "note": "robots blocks all crawlers under * \u2014 flip from prelaunch missed"
+          "status": "pass",
+          "note": "AI crawlers not explicitly named"
         },
         {
           "id": "llms_txt",
@@ -991,7 +991,7 @@
           "label": "fleet-core >= v0.6.3",
           "severity": "p1",
           "status": "pass",
-          "note": "v0.6.5 \u2014 needs >= v0.6.3"
+          "note": "v0.6.7 \u2014 needs >= v0.6.3"
         },
         {
           "id": "3tier_safepayload",
@@ -1145,7 +1145,7 @@
           "label": "fleet-core >= v0.6.3",
           "severity": "p1",
           "status": "pass",
-          "note": "v0.6.5 \u2014 needs >= v0.6.3"
+          "note": "v0.6.7 \u2014 needs >= v0.6.3"
         },
         {
           "id": "3tier_safepayload",
@@ -1158,22 +1158,22 @@
           "id": "og_image",
           "label": "og:image (not placeholder)",
           "severity": "p1",
-          "status": "fail",
-          "note": "still on og-default.svg placeholder"
+          "status": "pass",
+          "note": "og-default.png"
         },
         {
           "id": "homepage_imagery",
           "label": "homepage has imagery",
           "severity": "p1",
-          "status": "fail",
-          "note": "only 0 img + 0 svg \u2014 empty homepage"
+          "status": "pass",
+          "note": "1 img + 0 svg"
         },
         {
           "id": "alt_text",
           "label": "all imgs alt-tagged",
           "severity": "p2",
-          "status": "skip",
-          "note": "no imgs"
+          "status": "pass",
+          "note": "1 imgs all alt-tagged"
         },
         {
           "id": "schema_graph",
@@ -1186,28 +1186,28 @@
           "id": "date_modified",
           "label": "dateModified ISO 8601 with TZ (#1)",
           "severity": "p2",
-          "status": "fail",
-          "note": "2026-05-05 \u2014 date only, needs ISO 8601 with TZ"
+          "status": "pass",
+          "note": "2026-05-05T00:00:00"
         },
         {
           "id": "speakable",
           "label": "SpeakableSpecification (#13)",
           "severity": "p2",
-          "status": "fail",
-          "note": "no SpeakableSpecification"
+          "status": "pass",
+          "note": ""
         },
         {
           "id": "fleet_xlinks",
           "label": ">=3 fleet xlinks in footer",
           "severity": "p2",
-          "status": "fail",
-          "note": "0/5 sister-site links"
+          "status": "pass",
+          "note": "5/5 sister-site links"
         },
         {
           "id": "link_rel_related",
           "label": "<link rel=related> in head (#22)",
           "severity": "p2",
-          "status": "fail",
+          "status": "pass",
           "note": "no <link rel=related> in head"
         },
         {
@@ -1299,7 +1299,7 @@
           "label": "fleet-core >= v0.6.3",
           "severity": "p1",
           "status": "pass",
-          "note": "v0.6.5 \u2014 needs >= v0.6.3"
+          "note": "v0.6.7 \u2014 needs >= v0.6.3"
         },
         {
           "id": "3tier_safepayload",
@@ -1312,22 +1312,22 @@
           "id": "og_image",
           "label": "og:image (not placeholder)",
           "severity": "p1",
-          "status": "fail",
-          "note": "still on og-default.svg placeholder"
+          "status": "pass",
+          "note": "og-default.png"
         },
         {
           "id": "homepage_imagery",
           "label": "homepage has imagery",
           "severity": "p1",
-          "status": "fail",
-          "note": "only 0 img + 0 svg \u2014 empty homepage"
+          "status": "pass",
+          "note": "1 img + 0 svg"
         },
         {
           "id": "alt_text",
           "label": "all imgs alt-tagged",
           "severity": "p2",
-          "status": "skip",
-          "note": "no imgs"
+          "status": "pass",
+          "note": "1 imgs all alt-tagged"
         },
         {
           "id": "schema_graph",
@@ -1340,28 +1340,28 @@
           "id": "date_modified",
           "label": "dateModified ISO 8601 with TZ (#1)",
           "severity": "p2",
-          "status": "fail",
-          "note": "2026-05-06 \u2014 date only, needs ISO 8601 with TZ"
+          "status": "pass",
+          "note": "2026-05-06T00:00:00"
         },
         {
           "id": "speakable",
           "label": "SpeakableSpecification (#13)",
           "severity": "p2",
-          "status": "fail",
-          "note": "no SpeakableSpecification"
+          "status": "pass",
+          "note": ""
         },
         {
           "id": "fleet_xlinks",
           "label": ">=3 fleet xlinks in footer",
           "severity": "p2",
-          "status": "fail",
-          "note": "0/5 sister-site links"
+          "status": "pass",
+          "note": "5/5 sister-site links"
         },
         {
           "id": "link_rel_related",
           "label": "<link rel=related> in head (#22)",
           "severity": "p2",
-          "status": "fail",
+          "status": "pass",
           "note": "no <link rel=related> in head"
         },
         {
@@ -1453,7 +1453,7 @@
           "label": "fleet-core >= v0.6.3",
           "severity": "p1",
           "status": "pass",
-          "note": "v0.6.5 \u2014 needs >= v0.6.3"
+          "note": "v0.6.7 \u2014 needs >= v0.6.3"
         },
         {
           "id": "3tier_safepayload",
@@ -1466,22 +1466,22 @@
           "id": "og_image",
           "label": "og:image (not placeholder)",
           "severity": "p1",
-          "status": "fail",
-          "note": "still on og-default.svg placeholder"
+          "status": "pass",
+          "note": "og-default.png"
         },
         {
           "id": "homepage_imagery",
           "label": "homepage has imagery",
           "severity": "p1",
-          "status": "fail",
-          "note": "only 0 img + 0 svg \u2014 empty homepage"
+          "status": "pass",
+          "note": "1 img + 0 svg"
         },
         {
           "id": "alt_text",
           "label": "all imgs alt-tagged",
           "severity": "p2",
-          "status": "skip",
-          "note": "no imgs"
+          "status": "pass",
+          "note": "1 imgs all alt-tagged"
         },
         {
           "id": "schema_graph",
@@ -1494,28 +1494,28 @@
           "id": "date_modified",
           "label": "dateModified ISO 8601 with TZ (#1)",
           "severity": "p2",
-          "status": "fail",
-          "note": "2026-05-07 \u2014 date only, needs ISO 8601 with TZ"
+          "status": "pass",
+          "note": "2026-05-07T00:00:00"
         },
         {
           "id": "speakable",
           "label": "SpeakableSpecification (#13)",
           "severity": "p2",
-          "status": "fail",
-          "note": "no SpeakableSpecification"
+          "status": "pass",
+          "note": ""
         },
         {
           "id": "fleet_xlinks",
           "label": ">=3 fleet xlinks in footer",
           "severity": "p2",
-          "status": "fail",
-          "note": "0/5 sister-site links"
+          "status": "pass",
+          "note": "5/5 sister-site links"
         },
         {
           "id": "link_rel_related",
           "label": "<link rel=related> in head (#22)",
           "severity": "p2",
-          "status": "fail",
+          "status": "pass",
           "note": "no <link rel=related> in head"
         },
         {
@@ -1852,9 +1852,9 @@
   },
   "summary": {
     "p0_fails": 0,
-    "p1_fails": 13,
-    "p2_fails": 40,
-    "pass": 164,
+    "p1_fails": 3,
+    "p2_fails": 26,
+    "pass": 194,
     "total": 252
   }
 }

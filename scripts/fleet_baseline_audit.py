@@ -238,12 +238,22 @@ def check_schema_graph(root, live, html, flavour, pre_launch):
     has_graph = '"@graph"' in html
     # Accept Organization or any LocalBusiness/Service subclass — they all inherit
     # from Organization and serve the same entity-disambiguation role.
+    # Also accept array-typed @type (e.g. ["LocalBusiness","ProfessionalService"])
+    # via regex.
     org_subclasses = ("Organization", "ProfessionalService", "LocalBusiness",
                        "MedicalBusiness", "FinancialService", "LegalService",
                        "Store", "Restaurant", "Dentist", "MedicalClinic")
-    has_org = any(f'"@type":"{c}"' in html or f'"@type": "{c}"' in html for c in org_subclasses)
-    # WebPage is sometimes implicit via WebSite mainEntity; accept either.
-    has_wp = any(f'"@type":"{c}"' in html or f'"@type": "{c}"' in html for c in ("WebPage", "WebSite", "Article", "BlogPosting"))
+    wp_classes = ("WebPage", "WebSite", "Article", "BlogPosting")
+    def has_type(cls_list):
+        for c in cls_list:
+            if f'"@type":"{c}"' in html or f'"@type": "{c}"' in html:
+                return True
+            # array form: "@type":["X","Y","Z"]
+            if re.search(rf'"@type"\s*:\s*\[[^\]]*"{c}"[^\]]*\]', html):
+                return True
+        return False
+    has_org = has_type(org_subclasses)
+    has_wp = has_type(wp_classes)
     if has_graph and has_org and has_wp: return ("pass", "@graph + Org-class + WebPage-class")
     if has_org and has_wp: return ("fail", "schema present but not nested (#3 entity-depth gap)")
     return ("fail", "missing Organization or WebPage class")
