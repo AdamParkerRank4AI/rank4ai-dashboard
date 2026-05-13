@@ -56,6 +56,31 @@ FLEET = {
         "domain": "www.rank4ai.co.uk",
         "live": "www.rank4ai.co.uk",
     },
+    "builderweb": {
+        "repo": "~/builderweb-marketing",
+        "domain": "builderweb.online",
+        "live": "builderweb.online",
+    },
+    "ukmetabolic": {
+        "repo": "~/ukmetabolic",
+        "domain": "ukmetabolic.pages.dev",
+        "live": "ukmetabolic.co.uk",
+    },
+    "findatradey": {
+        "repo": "~/findatradey",
+        "domain": "findatradey.pages.dev",
+        "live": "findatradey.co.uk",
+    },
+    "findagym": {
+        "repo": "~/findagym",
+        "domain": "findagym.pages.dev",
+        "live": "findagym.co.uk",
+    },
+    "takecardpayments": {
+        "repo": "~/takecardpayments",
+        "domain": "takecardpayments.co.uk",
+        "live": "takecardpayments.co.uk",
+    },
 }
 
 WORD_RE = re.compile(r"\b\w+\b")
