@@ -1,26 +1,41 @@
 #!/usr/bin/env python3
-"""Fetch Market Invoice lead submissions from Supabase.
+"""Fetch lead submissions from Supabase across all 4 commercial sites.
 
-Produces src/data/live/mi_leads.json:
+Tables (all on same Supabase project tsscscjcxbzhicuuhter):
+  market_invoice_leads  → mi_leads.json
+  bestbusinessloans_leads → bbl_leads.json
+  fundbiz_leads         → fundbiz_leads.json
+  cardterminals_leads   → cardmachines_leads.json
+
+Per-site payload:
   {
     "fetched_at": ISO-8601,
-    "count_7d": int, "count_30d": int, "count_total": int,
-    "funnel_7d": {"form_view": int, "step_1_complete": int, "form_submit": int},
+    "count_7d" / "count_30d" / "count_total": int,
+    "funnel_7d": {"step_1_complete": int, "form_submit": int, "conversion_pct": float},
     "sources_30d": [{"source": str, "count": int}, ...],
-    "recent_leads": [{...}]  # 20 most recent rows (submit first)
+    "recent_leads": [{...}]
   }
 
-Free to run frequently, no API cost. Run daily via refresh_all.py.
+Free to run frequently, no API cost. Daily via refresh_all.py.
 """
 import json
 import os
 import urllib.request
 import urllib.parse
+from collections import Counter
 from datetime import datetime, timedelta, timezone
 
 SUPABASE_URL = "https://tsscscjcxbzhicuuhter.supabase.co"
 SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzc2NzY2pjeGJ6aGljdXVodGVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwMzU1NDEsImV4cCI6MjA5MTYxMTU0MX0.Q4z8-zHq0RAjZ1Vnv339JwAY36aq5TvnDBwE7OvUNOM"
-OUTPUT = os.path.expanduser("~/rank4ai-dashboard/src/data/live/mi_leads.json")
+OUTPUT_DIR = os.path.expanduser("~/rank4ai-dashboard/src/data/live")
+
+# Map dashboard site_id → (Supabase table, output filename)
+SITE_TABLES = {
+    "market-invoice":    ("market_invoice_leads",    "mi_leads.json"),
+    "bestbusinessloans": ("bestbusinessloans_leads", "bbl_leads.json"),
+    "fundbiz":           ("fundbiz_leads",           "fundbiz_leads.json"),
+    "cardmachines":      ("cardterminals_leads",     "cardmachines_leads.json"),
+}
 
 
 def fetch(path: str, params: dict):
@@ -37,29 +52,9 @@ def fetch(path: str, params: dict):
         return json.loads(r.read().decode())
 
 
-def main():
-    now = datetime.now(timezone.utc)
-    week_ago = (now - timedelta(days=7)).isoformat()
-    month_ago = (now - timedelta(days=30)).isoformat()
-
-    # All leads from last 30 days (will re-use for sources + funnel)
-    recent = fetch(
-        "market_invoice_leads",
-        {
-            "select": "*",
-            "created_at": f"gte.{month_ago}",
-            "order": "created_at.desc",
-            "limit": 500,
-        },
-    )
-
-    # Totals
-    total_7d = sum(1 for r in recent if r["created_at"] >= week_ago)
-    total_30d = len(recent)
-
-    # All-time count via count header
+def head_count(table: str) -> int:
     req = urllib.request.Request(
-        f"{SUPABASE_URL}/rest/v1/market_invoice_leads?select=id",
+        f"{SUPABASE_URL}/rest/v1/{table}?select=id",
         headers={
             "apikey": SUPABASE_KEY,
             "Authorization": f"Bearer {SUPABASE_KEY}",
@@ -70,13 +65,28 @@ def main():
     )
     try:
         with urllib.request.urlopen(req, timeout=30) as r:
-            cr = r.headers.get("Content-Range", "")  # like "0-0/123"
-            total_all = int(cr.rsplit("/", 1)[-1]) if "/" in cr else total_30d
+            cr = r.headers.get("Content-Range", "")
+            return int(cr.rsplit("/", 1)[-1]) if "/" in cr else 0
     except Exception:
-        total_all = total_30d
+        return 0
 
-    # Funnel (7d): form_view count via GA4 we don't have here; we use submit/step1 for Supabase funnel
-    # step_1_complete (anyone who hit "Next") and form_submit (full lead)
+
+def build_payload(site_id: str, table: str, now: datetime, week_ago: str, month_ago: str) -> dict:
+    try:
+        recent = fetch(table, {
+            "select": "*",
+            "created_at": f"gte.{month_ago}",
+            "order": "created_at.desc",
+            "limit": 500,
+        })
+    except Exception as e:
+        print(f"  {site_id}: fetch failed ({e}) — table may not exist yet, writing empty payload")
+        recent = []
+
+    total_7d = sum(1 for r in recent if r["created_at"] >= week_ago)
+    total_30d = len(recent)
+    total_all = head_count(table) if recent else 0
+
     step1_7d = sum(
         1 for r in recent
         if r["created_at"] >= week_ago and r.get("event_type") == "step_1_complete"
@@ -85,13 +95,8 @@ def main():
         1 for r in recent
         if r["created_at"] >= week_ago and r.get("event_type") == "form_submit"
     )
-    # "test" and other event types excluded
-
-    # Conversion % (submit / step_1_complete)
     conv_pct = round(100 * submit_7d / step1_7d, 1) if step1_7d > 0 else 0.0
 
-    # Source breakdown (30d, submit + step_1_complete only, deduplicated by session-like key)
-    from collections import Counter
     sources_counter = Counter()
     for r in recent:
         if r.get("event_type") in ("form_submit", "step_1_complete"):
@@ -99,14 +104,15 @@ def main():
             sources_counter[src] += 1
     sources = [{"source": k, "count": v} for k, v in sources_counter.most_common(10)]
 
-    # Recent 20 rows: prefer submits, then step 1
     def sort_key(r):
         kind_rank = {"form_submit": 0, "step_1_complete": 1}.get(r.get("event_type"), 2)
         return (kind_rank, r["created_at"])
     recent_display = sorted(recent, key=sort_key)[:20]
 
-    payload = {
+    return {
         "fetched_at": now.isoformat(),
+        "site_id": site_id,
+        "table": table,
         "count_total": total_all,
         "count_30d": total_30d,
         "count_7d": total_7d,
@@ -119,10 +125,19 @@ def main():
         "recent_leads": recent_display,
     }
 
-    os.makedirs(os.path.dirname(OUTPUT), exist_ok=True)
-    with open(OUTPUT, "w") as f:
-        json.dump(payload, f, indent=2)
-    print(f"Wrote {OUTPUT}: total={total_all}, 30d={total_30d}, 7d={total_7d}, submit_7d={submit_7d}, step1_7d={step1_7d}")
+
+def main():
+    now = datetime.now(timezone.utc)
+    week_ago = (now - timedelta(days=7)).isoformat()
+    month_ago = (now - timedelta(days=30)).isoformat()
+
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    for site_id, (table, fname) in SITE_TABLES.items():
+        payload = build_payload(site_id, table, now, week_ago, month_ago)
+        out = os.path.join(OUTPUT_DIR, fname)
+        with open(out, "w") as f:
+            json.dump(payload, f, indent=2)
+        print(f"  {site_id}: total={payload['count_total']}, 30d={payload['count_30d']}, 7d={payload['count_7d']}, submit_7d={payload['funnel_7d']['form_submit']}")
 
 
 if __name__ == "__main__":

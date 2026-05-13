@@ -22,6 +22,15 @@ CLIENTS = {
     "seocompare": {
         "queries": ["SEO Compare", "seocompare.co.uk"],
     },
+    "bestbusinessloans": {
+        "queries": ["Best Business Loans", "bestbusinessloans.ai", "Best Business Loans UK"],
+    },
+    "fundbiz": {
+        "queries": ["FundBiz", "fundbiz.co.uk", "FundBiz UK"],
+    },
+    "cardmachines": {
+        "queries": ["AcceptCard", "acceptcard.co.uk", "AcceptCard UK"],
+    },
 }
 
 KG_URL = "https://kgsearch.googleapis.com/v1/entities:search"

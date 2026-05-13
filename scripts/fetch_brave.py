@@ -46,6 +46,39 @@ CLIENTS = {
             "how to choose an SEO agency",
         ],
     },
+    "bestbusinessloans": {
+        "brand": "Best Business Loans",
+        "domain": "bestbusinessloans.ai",
+        "queries": [
+            "best business loans UK",
+            "compare UK business loans",
+            "unsecured business loan UK",
+            "small business loan UK",
+            "fast business funding UK",
+        ],
+    },
+    "fundbiz": {
+        "brand": "FundBiz",
+        "domain": "fundbiz.co.uk",
+        "queries": [
+            "specialty business finance UK",
+            "HMRC VAT loan UK",
+            "asset refinance UK",
+            "PAYE arrears finance UK",
+            "alternative business finance UK",
+        ],
+    },
+    "cardmachines": {
+        "brand": "AcceptCard",
+        "domain": "acceptcard.co.uk",
+        "queries": [
+            "best card machine UK",
+            "compare card terminals UK",
+            "merchant account UK",
+            "tap to pay iPhone UK",
+            "card payment provider UK",
+        ],
+    },
 }
 
 BRAVE_URL = "https://api.search.brave.com/res/v1/web/search"

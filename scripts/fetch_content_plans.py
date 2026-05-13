@@ -32,6 +32,15 @@ SITE_PLAN_DIRS = {
     "rochellemarashi": [
         f"{ICLOUD}/Clients/Therapy Site",
     ],
+    "bestbusinessloans": [
+        f"{ICLOUD}/astro/plan",
+    ],
+    "fundbiz": [
+        f"{ICLOUD}/astro/plan",
+    ],
+    "cardmachines": [
+        f"{ICLOUD}/astro/plan",
+    ],
 }
 
 PLAN_FILE_PATTERNS = [

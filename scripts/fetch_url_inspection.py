@@ -27,9 +27,12 @@ LIVE = PROJECT_DIR / "src" / "data" / "live"
 TOKEN_FILE = PROJECT_DIR / "scripts" / "ga4_token.json"
 
 SITES = {
-    "rank4ai":        ("sc-domain:rank4ai.co.uk",        "rank4ai.co.uk"),
-    "market-invoice": ("sc-domain:marketinvoice.co.uk", "marketinvoice.co.uk"),
-    "seocompare":     ("sc-domain:seocompare.co.uk",    "seocompare.co.uk"),
+    "rank4ai":           ("sc-domain:rank4ai.co.uk",          "rank4ai.co.uk"),
+    "market-invoice":    ("sc-domain:marketinvoice.co.uk",    "marketinvoice.co.uk"),
+    "seocompare":        ("sc-domain:seocompare.co.uk",       "seocompare.co.uk"),
+    "bestbusinessloans": ("sc-domain:bestbusinessloans.ai",   "bestbusinessloans.ai"),
+    "fundbiz":           ("sc-domain:fundbiz.co.uk",          "fundbiz.co.uk"),
+    "cardmachines":      ("sc-domain:acceptcard.co.uk",       "acceptcard.co.uk"),
 }
 
 # Per-site cap. URL Inspection API runs ~6.6s per call (Google's rate). 500 URLs ≈ 55 min.

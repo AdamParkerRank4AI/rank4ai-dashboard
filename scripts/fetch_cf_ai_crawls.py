@@ -32,9 +32,12 @@ LIVE = os.path.expanduser("~/rank4ai-dashboard/src/data/live")
 OUTPUT = os.path.join(LIVE, "cf_ai_crawls.json")
 
 ZONES = {
-    "rank4ai":        {"zone": "0f96cd18076e983f2ead742c0b454836", "token_env": "CF_TOKEN_RANK4AI"},
-    "market-invoice": {"zone": "a087fb8362314266147dcbf72cec5932", "token_env": "CF_TOKEN_RANK4AI"},
-    "seocompare":     {"zone": "464d0139c2f9c598664ec89a731a3e87", "token_env": "CF_TOKEN_MUSWELLROSE"},
+    "rank4ai":           {"zone": "0f96cd18076e983f2ead742c0b454836", "token_env": "CF_TOKEN_RANK4AI"},
+    "market-invoice":    {"zone": "a087fb8362314266147dcbf72cec5932", "token_env": "CF_TOKEN_RANK4AI"},
+    "seocompare":        {"zone": "464d0139c2f9c598664ec89a731a3e87", "token_env": "CF_TOKEN_MUSWELLROSE"},
+    "bestbusinessloans": {"zone": "649994cd427b2d06058a547e3c60506b", "token_env": "CF_TOKEN_RANK4AI"},
+    "fundbiz":           {"zone": "3291eada7963421b0d53e02ea513d635", "token_env": "CF_TOKEN_RANK4AI"},
+    "cardmachines":      {"zone": "b49dfd54c982812ae16f52f6af5cfbf3", "token_env": "CF_TOKEN_RANK4AI"},
 }
 
 AI_BOT_PATTERNS = [

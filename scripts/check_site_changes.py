@@ -37,6 +37,24 @@ REPOS = {
         "local": os.path.expanduser("~/rochellemarashi"),
         "crawl_file": "crawl_rochellemarashi.json",
     },
+    "bestbusinessloans": {
+        "owner": "AdamParkerRank4AI",
+        "repo": "bestbusinessloans",
+        "local": os.path.expanduser("~/bestbusinessloans"),
+        "crawl_file": "crawl_bestbusinessloans.json",
+    },
+    "fundbiz": {
+        "owner": "AdamParkerRank4AI",
+        "repo": "fundbiz",
+        "local": os.path.expanduser("~/fundbiz"),
+        "crawl_file": "crawl_fundbiz.json",
+    },
+    "cardmachines": {
+        "owner": "AdamParkerRank4AI",
+        "repo": "cardmachines",
+        "local": os.path.expanduser("~/cardmachines"),
+        "crawl_file": "crawl_cardmachines.json",
+    },
     "rank4ai-dashboard": {
         "owner": "AdamParkerRank4AI",
         "repo": "rank4ai-dashboard",

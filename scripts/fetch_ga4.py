@@ -19,6 +19,12 @@ PROPERTIES = {
     "rank4ai": "526657151",
     "market-invoice": "531285218",
     "seocompare": "532266658",
+    # Set to a numeric property ID once Adam creates the GA4 property and
+    # the GA4 measurement ID is wired into each site's BaseLayout.
+    # AcceptCard has measurement ID G-9Q5QGGE1ZP live in BaseLayout, needs the matching property ID.
+    "bestbusinessloans": None,
+    "fundbiz": None,
+    "cardmachines": None,
 }
 
 
@@ -171,6 +177,9 @@ def main():
 
     all_data = {}
     for site_id, property_id in PROPERTIES.items():
+        if not property_id:
+            print(f"Skipping GA4 data for {site_id} (no property ID set yet).")
+            continue
         print(f"Fetching GA4 data for {site_id} (property {property_id})...")
         try:
             data = fetch_property(client, property_id, site_id)

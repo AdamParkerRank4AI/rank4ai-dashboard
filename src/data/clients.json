@@ -190,7 +190,7 @@
     "logo": "",
     "flavour": "leadgen",
     "clientCode": "BBL",
-    "notes": "Pre-launch. CF Pages project: bestbusinessloans (RANK4AI account). Custom domain bestbusinessloans.ai attached 8 May 2026, SSL provisioning. Daily fetchers skip until pre_launch:false flip + GSC verified.",
+    "notes": "LIVE since 8 May 2026 (custom domain bestbusinessloans.ai on CF Pages, RANK4AI account). Indexing API service account added as Owner 8 May. GSC verified. Daily fetchers can run.",
     "clientViewSections": [
       "site-structure",
       "site-manager",
@@ -229,7 +229,7 @@
     "logo": "",
     "flavour": "leadgen",
     "clientCode": "FUNDBIZ",
-    "notes": "Pre-launch. CF Pages project: fundbiz (RANK4AI account). Custom domain fundbiz.co.uk attached 8 May 2026, SSL provisioning. Daily fetchers skip until pre_launch:false flip + GSC verified.",
+    "notes": "LIVE since 8 May 2026 (custom domain fundbiz.co.uk on CF Pages, RANK4AI account). GSC service-account Owner status still pending (Adam action). Daily fetchers can run, Indexing API blocked until ownership added.",
     "clientViewSections": [
       "site-structure",
       "site-manager",
@@ -262,13 +262,13 @@
   },
   {
     "id": "cardmachines",
-    "name": "TakeCardPayments",
-    "domain": "cardmachines.pages.dev",
-    "liveDomain": "takecardpayments.co.uk",
+    "name": "AcceptCard",
+    "domain": "acceptcard.co.uk",
+    "liveDomain": "acceptcard.co.uk",
     "logo": "",
     "flavour": "leadgen",
     "clientCode": "CARDMACHINES",
-    "notes": "Pre-launch. Local scaffold at ~/cardmachines. GitHub repo private. CF Pages project not yet created. Terminals + high-risk verticals.",
+    "notes": "LIVE since 12 May 2026 as acceptcard.co.uk (was working name TakeCardPayments / CardMachines). Local at ~/cardmachines, repo AdamParkerRank4AI/cardmachines. CF Pages project: cardmachines (RANK4AI account), custom domain acceptcard.co.uk. ~400 pages including terminals, trade pages, high-risk verticals, faith institutions, vernacular bolt-ons.",
     "clientViewSections": [
       "site-structure",
       "site-manager",
@@ -299,7 +299,7 @@
       "daily-audit"
     ],
     "sections": [],
-    "pre_launch": true
+    "pre_launch": false
   },
   {
     "id": "findatradey",

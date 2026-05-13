@@ -16,6 +16,9 @@ SITES = {
     "rank4ai": "https://www.rank4ai.co.uk/",
     "market-invoice": "https://www.marketinvoice.co.uk/",
     "seocompare": "https://www.seocompare.co.uk/",
+    "bestbusinessloans": "https://bestbusinessloans.ai/",
+    "fundbiz": "https://fundbiz.co.uk/",
+    "cardmachines": "https://acceptcard.co.uk/",
 }
 
 

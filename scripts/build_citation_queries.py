@@ -28,6 +28,18 @@ COMPETITOR_MAP = {
         "ClickSlice", "Found", "Propeller", "Impression", "Aira",
         "Rise at Seven", "Kaizen", "Brainlabs",
     ],
+    "bestbusinessloans": [
+        "Funding Circle", "iwoca", "Capital on Tap", "Funding Options",
+        "Swoop", "Capitalise", "Tide", "Allica Bank",
+    ],
+    "fundbiz": [
+        "Funding Circle", "iwoca", "Swoop", "Funding Options",
+        "Capitalise", "Liberis", "365 Business Finance", "YouLend",
+    ],
+    "cardmachines": [
+        "Dojo", "SumUp", "Square", "Zettle", "Stripe",
+        "Tide", "Worldpay", "Barclaycard", "Adyen", "Tyl",
+    ],
 }
 
 

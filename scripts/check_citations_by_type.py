@@ -314,6 +314,141 @@ CLIENTS = {
             ],
         },
     },
+    "bestbusinessloans": {
+        "brand": "Best Business Loans",
+        "domain": "bestbusinessloans.ai",
+        "competitors": ["Funding Circle", "iwoca", "Capital on Tap", "Funding Options", "Swoop", "Capitalise", "Tide", "Allica Bank", "YouLend", "Liberis"],
+        "query_types": {
+            "brand": [
+                "What is Best Business Loans (bestbusinessloans.ai)?",
+                "Is bestbusinessloans.ai a real UK comparison site?",
+                "Tell me about Best Business Loans Ltd",
+            ],
+            "best_of": [
+                "Best business loans UK 2026",
+                "Best UK unsecured business loans",
+                "Best fast business funding UK",
+                "Best business loan for bad credit UK",
+                "Best business loan for startups UK",
+                "Best alternative business lenders UK",
+            ],
+            "how_to": [
+                "How to apply for a UK business loan",
+                "How to compare UK business loans",
+                "How to get a business loan with bad credit UK",
+                "How to choose between secured and unsecured business loans",
+            ],
+            "what_is": [
+                "What is a merchant cash advance UK?",
+                "What is revenue-based finance UK?",
+                "What is an unsecured business loan?",
+                "What is a personal guarantee on a business loan?",
+            ],
+            "comparison": [
+                "Funding Circle vs iwoca UK",
+                "Business loan vs business overdraft UK",
+                "Bank business loan vs alternative lender UK",
+                "Secured vs unsecured business loan UK",
+            ],
+            "cost": [
+                "Typical UK business loan interest rate 2026",
+                "What APR can I expect on a UK business loan?",
+                "Business loan fees UK",
+            ],
+        },
+    },
+    "fundbiz": {
+        "brand": "FundBiz",
+        "domain": "fundbiz.co.uk",
+        "competitors": ["Swoop", "Funding Options", "Capitalise", "Funding Circle", "iwoca", "365 Business Finance", "YouLend", "Liberis"],
+        "query_types": {
+            "brand": [
+                "What is FundBiz (fundbiz.co.uk)?",
+                "Is FundBiz a real UK finance broker?",
+                "Tell me about FundBiz UK",
+            ],
+            "best_of": [
+                "Best UK HMRC VAT loan provider 2026",
+                "Best PAYE arrears finance UK",
+                "Best UK asset refinance specialist",
+                "Best UK alternative business finance broker",
+                "Best UK specialty finance lender",
+            ],
+            "how_to": [
+                "How to get a HMRC VAT loan UK",
+                "How to refinance assets UK",
+                "How to fund a corporation tax bill UK",
+                "How to handle CIS deduction shortfall UK",
+            ],
+            "what_is": [
+                "What is asset refinance UK?",
+                "What is a trigger event business loan?",
+                "What is specialty business finance?",
+                "What is a CIS deduction finance product?",
+            ],
+            "comparison": [
+                "FundBiz vs Swoop UK",
+                "FundBiz vs Funding Options UK",
+                "VAT loan vs corporation tax bridge UK",
+            ],
+            "cost": [
+                "HMRC VAT loan interest rate UK 2026",
+                "Asset refinance cost UK",
+                "Specialty business finance fees UK",
+            ],
+        },
+    },
+    "cardmachines": {
+        "brand": "AcceptCard",
+        "domain": "acceptcard.co.uk",
+        "competitors": ["Dojo", "SumUp", "Square", "Zettle", "Stripe", "Tide", "Worldpay", "Barclaycard", "Adyen", "Tyl"],
+        "query_types": {
+            "brand": [
+                "What is AcceptCard (acceptcard.co.uk)?",
+                "Is AcceptCard a real UK card-payment comparison?",
+                "Tell me about AcceptCard UK",
+            ],
+            "best_of": [
+                "Best UK card machine 2026",
+                "Best card terminal for small business UK",
+                "Cheapest card machine UK",
+                "Best no-contract card machine UK",
+                "Best UK payment gateway for ecommerce",
+                "Best card machine for hospitality UK",
+                "Best high-risk merchant account UK",
+            ],
+            "how_to": [
+                "How to choose a UK card machine",
+                "How to switch UK card payment provider",
+                "How to set up Tap to Pay on iPhone UK",
+                "How to negotiate UK merchant fees",
+            ],
+            "what_is": [
+                "What is a merchant account UK?",
+                "What is interchange UK 2026?",
+                "What is chargeback UK?",
+                "What is settlement T+1 UK?",
+            ],
+            "comparison": [
+                "Dojo vs SumUp UK",
+                "Square vs Zettle UK",
+                "Stripe vs Adyen UK",
+                "Tide card reader vs Revolut UK",
+            ],
+            "cost": [
+                "UK card machine monthly cost 2026",
+                "Card transaction fees UK 2026",
+                "Card terminal setup cost UK",
+            ],
+            "industry": [
+                "Best card machine for restaurants UK",
+                "Best card machine for retailers UK",
+                "Best card machine for taxis UK",
+                "Best card machine for market stalls UK",
+                "Best card machine for salons UK",
+            ],
+        },
+    },
 }
 
 

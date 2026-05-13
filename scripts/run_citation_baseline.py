@@ -130,8 +130,8 @@ def check_cited(text, brand, domain):
 
 
 def run_client(client_id, config):
-    brand = {"rank4ai": "Rank4AI", "market-invoice": "Market Invoice", "seocompare": "SEO Compare"}.get(client_id, client_id)
-    domain = {"rank4ai": "rank4ai.co.uk", "market-invoice": "marketinvoice.co.uk", "seocompare": "seocompare.co.uk"}.get(client_id, "")
+    brand = {"rank4ai": "Rank4AI", "market-invoice": "Market Invoice", "seocompare": "SEO Compare", "bestbusinessloans": "Best Business Loans", "fundbiz": "FundBiz", "cardmachines": "AcceptCard"}.get(client_id, client_id)
+    domain = {"rank4ai": "rank4ai.co.uk", "market-invoice": "marketinvoice.co.uk", "seocompare": "seocompare.co.uk", "bestbusinessloans": "bestbusinessloans.ai", "fundbiz": "fundbiz.co.uk", "cardmachines": "acceptcard.co.uk"}.get(client_id, "")
 
     # Collect all prompts by category
     all_prompts = []
@@ -276,7 +276,7 @@ def main():
     else:
         existing = {}
 
-    for client_id in ["rank4ai", "market-invoice", "seocompare"]:
+    for client_id in ["rank4ai", "market-invoice", "seocompare", "bestbusinessloans", "fundbiz", "cardmachines"]:
         config = prompts.get(client_id, {})
         if not config:
             continue

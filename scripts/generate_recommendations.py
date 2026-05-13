@@ -491,7 +491,7 @@ def generate_for_client(client_id):
 def main():
     all_recs = {}
 
-    for client_id in ["rank4ai", "market-invoice", "seocompare", "rochellemarashi"]:
+    for client_id in ["rank4ai", "market-invoice", "seocompare", "rochellemarashi", "bestbusinessloans", "fundbiz", "cardmachines"]:
         recs = generate_for_client(client_id)
         all_recs[client_id] = {
             "generated_at": datetime.now().isoformat(),

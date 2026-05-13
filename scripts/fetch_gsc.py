@@ -17,6 +17,9 @@ SITES = {
     "market-invoice": "sc-domain:marketinvoice.co.uk",
     "seocompare": "sc-domain:seocompare.co.uk",
     "resiliencebuilder": "sc-domain:resiliencebuilder.co.uk",
+    "bestbusinessloans": "sc-domain:bestbusinessloans.ai",
+    "fundbiz": "sc-domain:fundbiz.co.uk",
+    "cardmachines": "sc-domain:acceptcard.co.uk",
 }
 
 # Fallback URL-prefix formats if domain property doesn't work
@@ -25,6 +28,9 @@ SITES_FALLBACK = {
     "market-invoice": "https://www.marketinvoice.co.uk/",
     "seocompare": "https://www.seocompare.co.uk/",
     "resiliencebuilder": "https://resiliencebuilder.co.uk/",
+    "bestbusinessloans": "https://bestbusinessloans.ai/",
+    "fundbiz": "https://fundbiz.co.uk/",
+    "cardmachines": "https://acceptcard.co.uk/",
 }
 
 

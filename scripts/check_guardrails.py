@@ -16,7 +16,7 @@ LOG_FILE = "/tmp/rank4ai_guardrails.log"
 sys.path.insert(0, SCRIPTS_DIR)
 from notify import send_failure_alert
 
-CLIENTS = ["rank4ai", "market-invoice", "seocompare"]
+CLIENTS = ["rank4ai", "market-invoice", "seocompare", "bestbusinessloans", "fundbiz", "cardmachines"]
 
 
 def load(filename):
@@ -179,6 +179,9 @@ def main():
         "rank4ai": "https://www.rank4ai.co.uk/sitemap-0.xml",
         "market-invoice": "https://marketinvoice.co.uk/sitemap-0.xml",
         "seocompare": "https://seocompare.co.uk/sitemap-0.xml",
+        "bestbusinessloans": "https://bestbusinessloans.ai/sitemap-0.xml",
+        "fundbiz": "https://fundbiz.co.uk/sitemap-0.xml",
+        "cardmachines": "https://acceptcard.co.uk/sitemap-0.xml",
     }
     for c, sitemap_url in SITEMAP_URLS.items():
         try:

@@ -48,6 +48,36 @@ CLIENTS = {
             "Best SEO companies UK 2026",
         ],
     },
+    "bestbusinessloans": {
+        "brand": "Best Business Loans",
+        "domain": "bestbusinessloans.ai",
+        "queries": [
+            "Best business loans UK 2026",
+            "Compare UK business loans",
+            "Fast business funding UK",
+            "Unsecured business loan UK",
+        ],
+    },
+    "fundbiz": {
+        "brand": "FundBiz",
+        "domain": "fundbiz.co.uk",
+        "queries": [
+            "Best specialty business finance UK",
+            "HMRC VAT loan UK",
+            "Asset refinance UK",
+            "PAYE arrears finance UK",
+        ],
+    },
+    "cardmachines": {
+        "brand": "AcceptCard",
+        "domain": "acceptcard.co.uk",
+        "queries": [
+            "Best card machine UK 2026",
+            "Compare card terminals UK",
+            "Card payment provider UK small business",
+            "Tap to Pay iPhone UK",
+        ],
+    },
 }
 
 

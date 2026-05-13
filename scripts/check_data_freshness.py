@@ -40,6 +40,9 @@ FEEDS = [
     ("crawl_market-invoice.json",30, "MI site crawl",           ["crawled_at"]),
     ("crawl_seocompare.json",    30, "SC site crawl",           ["crawled_at"]),
     ("mi_leads.json",            30, "MI leads (Supabase)",     ["fetched_at"]),
+    ("bbl_leads.json",           30, "BBL leads (Supabase)",    ["fetched_at"]),
+    ("fundbiz_leads.json",       30, "FundBiz leads (Supabase)",["fetched_at"]),
+    ("cardmachines_leads.json",  30, "AcceptCard leads (Supabase)", ["fetched_at"]),
     ("daily_audit_summary.json", 30, "Daily site audit",        ["generated_at"]),
 
     # Weekly

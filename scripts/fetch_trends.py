@@ -50,6 +50,36 @@ CLIENTS = {
             "geo agency",
         ],
     },
+    "bestbusinessloans": {
+        "brand": "business loans UK",
+        "keywords": [
+            "compare business loans",
+            "unsecured business loan",
+            "small business finance UK",
+            "business funding",
+            "alternative business lender",
+        ],
+    },
+    "fundbiz": {
+        "brand": "specialty business finance",
+        "keywords": [
+            "HMRC VAT loan",
+            "asset refinance UK",
+            "PAYE arrears finance",
+            "corporation tax loan",
+            "trigger event business finance",
+        ],
+    },
+    "cardmachines": {
+        "brand": "card machine UK",
+        "keywords": [
+            "card terminal UK",
+            "merchant account UK",
+            "tap to pay iPhone",
+            "card payment provider",
+            "compare card machines",
+        ],
+    },
 }
 
 

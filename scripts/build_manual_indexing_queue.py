@@ -40,6 +40,21 @@ SITES = {
         "gsc_property": "sc-domain:seocompare.co.uk",
         "money_paths": ["/", "/tools", "/agencies", "/guides", "/about", "/contact"],
     },
+    "bestbusinessloans": {
+        "sitemap": "https://bestbusinessloans.ai/sitemap-0.xml",
+        "gsc_property": "sc-domain:bestbusinessloans.ai",
+        "money_paths": ["/", "/compare", "/tools", "/get-quotes", "/about", "/contact"],
+    },
+    "fundbiz": {
+        "sitemap": "https://fundbiz.co.uk/sitemap-0.xml",
+        "gsc_property": "sc-domain:fundbiz.co.uk",
+        "money_paths": ["/", "/asset-refinance", "/hmrc", "/triggered", "/get-quotes", "/about"],
+    },
+    "cardmachines": {
+        "sitemap": "https://acceptcard.co.uk/sitemap-0.xml",
+        "gsc_property": "sc-domain:acceptcard.co.uk",
+        "money_paths": ["/", "/online-payments", "/get-quotes", "/locations", "/learn", "/about"],
+    },
 }
 
 TOP_N = 10

@@ -27,6 +27,9 @@ SITES = {
     "market-invoice": "https://marketinvoice.co.uk",
     "seocompare":     "https://seocompare.co.uk",
     "rochellemarashi": "https://rochellemarashi.pages.dev",
+    "bestbusinessloans": "https://bestbusinessloans.ai",
+    "fundbiz":           "https://fundbiz.co.uk",
+    "cardmachines":      "https://acceptcard.co.uk",
 }
 
 

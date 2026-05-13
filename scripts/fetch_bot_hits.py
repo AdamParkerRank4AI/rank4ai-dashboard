@@ -13,6 +13,9 @@ SITES = {
     "rank4ai": "https://rank4ai-tracker.dawn-field-3d16.workers.dev/api/bot-hits",
     "market-invoice": "https://rank4ai-tracker.dawn-field-3d16.workers.dev/api/bot-hits",
     "seocompare": "https://www.seocompare.co.uk/_bot-api/hits",
+    "bestbusinessloans": "https://rank4ai-tracker.dawn-field-3d16.workers.dev/api/bot-hits",
+    "fundbiz": "https://rank4ai-tracker.dawn-field-3d16.workers.dev/api/bot-hits",
+    "cardmachines": "https://rank4ai-tracker.dawn-field-3d16.workers.dev/api/bot-hits",
 }
 DAYS = 30
 

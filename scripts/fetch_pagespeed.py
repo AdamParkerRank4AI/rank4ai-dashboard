@@ -34,6 +34,24 @@ SITES = {
         "https://rochellemarashi.pages.dev/research/",
         "https://rochellemarashi.pages.dev/about/",
     ],
+    "bestbusinessloans": [
+        "https://bestbusinessloans.ai/",
+        "https://bestbusinessloans.ai/compare/",
+        "https://bestbusinessloans.ai/tools/",
+        "https://bestbusinessloans.ai/get-quotes/",
+    ],
+    "fundbiz": [
+        "https://fundbiz.co.uk/",
+        "https://fundbiz.co.uk/asset-refinance/",
+        "https://fundbiz.co.uk/hmrc/",
+        "https://fundbiz.co.uk/get-quotes/",
+    ],
+    "cardmachines": [
+        "https://acceptcard.co.uk/",
+        "https://acceptcard.co.uk/online-payments/",
+        "https://acceptcard.co.uk/get-quotes/",
+        "https://acceptcard.co.uk/locations/",
+    ],
 }
 
 API_URL = "https://www.googleapis.com/pagespeedonline/v5/runPagespeed"

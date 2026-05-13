@@ -70,8 +70,13 @@ const contentPlansData = loadJson(`content_plan_${clientId}.json`);
 const contentPlans = contentPlansData?.plans || [];
 const siteStructure = loadJson(`site_structure_${clientId}.json`);
 
-// Lead tracking (Market Invoice only for now — other sites can be wired later)
-const leadsData = clientId === 'market-invoice' ? loadJson('mi_leads.json') : null;
+const LEADS_FILE: Record<string, string> = {
+  'market-invoice': 'mi_leads.json',
+  'bestbusinessloans': 'bbl_leads.json',
+  'fundbiz': 'fundbiz_leads.json',
+  'cardmachines': 'cardmachines_leads.json',
+};
+const leadsData = LEADS_FILE[clientId] ? loadJson(LEADS_FILE[clientId]) : null;
 const aeoScorecardAll = loadJson('aeo_scorecard.json');
 const aeoScore = aeoScorecardAll?.[clientId];
 const winsData = loadJson('wins_this_week.json');

@@ -65,6 +65,58 @@ CLIENTS = {
             "SEO agency comparison",
         ],
     },
+    "bestbusinessloans": {
+        "domain": "bestbusinessloans.ai",
+        "competitor_domains": [
+            "fundingcircle.com", "iwoca.co.uk", "capitalontap.com",
+            "funding-options.com", "swoopfunding.com", "capitalise.com",
+            "yourbusinessfinance.co.uk", "businessfinance.co.uk",
+        ],
+        "queries": [
+            "best business loans UK",
+            "compare UK business loans",
+            "small business loan UK",
+            "unsecured business loan UK",
+            "fast business funding UK",
+            "business loan with bad credit UK",
+            "UK business loans 2026",
+            "compare business finance UK",
+        ],
+    },
+    "fundbiz": {
+        "domain": "fundbiz.co.uk",
+        "competitor_domains": [
+            "fundingcircle.com", "iwoca.co.uk", "swoopfunding.com",
+            "funding-options.com", "capitalise.com", "yourbusinessfinance.co.uk",
+        ],
+        "queries": [
+            "specialty business finance UK",
+            "HMRC VAT loan UK",
+            "asset refinance UK",
+            "PAYE arrears finance UK",
+            "corporation tax loan UK",
+            "trigger event business finance UK",
+            "UK business funding emergency",
+            "alternative business finance UK",
+        ],
+    },
+    "cardmachines": {
+        "domain": "acceptcard.co.uk",
+        "competitor_domains": [
+            "dojo.tech", "sumup.co.uk", "squareup.com", "zettle.com",
+            "stripe.com", "tide.co", "worldpay.com", "barclaycard.co.uk",
+        ],
+        "queries": [
+            "best card machine UK",
+            "compare UK card machines 2026",
+            "card terminal for small business UK",
+            "cheapest card machine UK",
+            "merchant account UK",
+            "card payment provider UK",
+            "tap to pay iPhone UK",
+            "card machine for hospitality UK",
+        ],
+    },
 }
 
 
