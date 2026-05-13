@@ -119,7 +119,7 @@ def main():
         # ("fetch_pagespeed.py", 120),
         ("extract_entities.py", 30),
         ("fetch_knowledge_graph.py", 30),
-        ("fetch_dataforseo.py", 300),
+        ("fetch_dataforseo.py", 600),
         ("fetch_serp.py", 120),
         ("fetch_competitor_serp.py", 120),
         ("generate_recommendations.py", 30),
