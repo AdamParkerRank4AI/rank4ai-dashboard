@@ -27,14 +27,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: 'npm'
 
-      - name: Install dependencies
+      - name: Install dependencies (clean, no cache)
         # npm install (not npm ci) so platform-specific rollup optional binary
         # gets resolved on Linux runners. npm ci respects lockfile-only and
         # hits https://github.com/npm/cli/issues/4828 ("Cannot find module
         # @rollup/rollup-linux-x64-gnu") on fresh checkouts.
-        run: npm install --no-audit --no-fund
+        run: |
+          rm -rf node_modules package-lock.json
+          npm install --no-audit --no-fund
 
       - name: Build
         run: npm run build
