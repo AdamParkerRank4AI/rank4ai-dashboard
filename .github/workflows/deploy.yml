@@ -33,9 +33,7 @@ jobs:
         # gets resolved on Linux runners. npm ci respects lockfile-only and
         # hits https://github.com/npm/cli/issues/4828 ("Cannot find module
         # @rollup/rollup-linux-x64-gnu") on fresh checkouts.
-        run: |
-          rm -rf node_modules package-lock.json
-          npm install --no-audit --no-fund
+        run: npm install --no-audit --no-fund
 
       - name: Build
         run: npm run build
