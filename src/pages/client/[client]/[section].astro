@@ -8,7 +8,7 @@
 // /client/<id> only for now; this route inherits the client layout but we still
 // need to gate access. Kept with the same per-client localStorage passcode.
 import DashboardLayout from '../../../layouts/DashboardLayout.astro';
-import clients from '../../../data/clients.json';
+import clients from '../../../utils/dashboardClients';
 import sections from '../../../data/sections.json';
 
 export function getStaticPaths() {

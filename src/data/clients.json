@@ -5,6 +5,7 @@
     "domain": "rank4ai.co.uk",
     "logo": "",
     "flavour": "editorial",
+    "dashboard": "current",
     "clientViewSections": [
       "ai-readiness",
       "ai-citations",
@@ -35,11 +36,51 @@
     "sections": []
   },
   {
+    "id": "resiliencebuilder",
+    "name": "ResilienceBuilder",
+    "domain": "resiliencebuilder.co.uk",
+    "liveDomain": "resiliencebuilder.co.uk",
+    "logo": "",
+    "flavour": "client",
+    "dashboard": "current",
+    "clientCode": "STEVE",
+    "notes": "Steve Howe's resilience consultancy. Current WordPress site at resiliencebuilder.co.uk. New Astro build in ~/steve-site (3 candidate designs K1/K2/K3 + v4 refactor live at 49k.co.uk/demos/resiliencebuilder/). Domain not yet cut over. Siteplan focused on upgrades to existing pages + new pages we need to talk about (5-facet model, coach certification, case studies, governance).",
+    "clientViewSections": [
+      "site-structure",
+      "site-manager",
+      "page-compliance",
+      "ai-readiness",
+      "uptime",
+      "indexing"
+    ],
+    "allSections": [
+      "overview",
+      "site-structure",
+      "ai-readiness",
+      "ai-citations",
+      "site-manager",
+      "page-compliance",
+      "traffic",
+      "search-performance",
+      "indexing",
+      "competitors",
+      "site-tree",
+      "uptime",
+      "site-speed",
+      "crawl-activity",
+      "recommendations",
+      "content-plan",
+      "daily-audit"
+    ],
+    "sections": []
+  },
+  {
     "id": "market-invoice",
     "name": "Market Invoice",
     "domain": "marketinvoice.co.uk",
     "logo": "",
     "flavour": "leadgen",
+    "dashboard": "fleet",
     "clientViewSections": [
       "ai-readiness",
       "ai-citations",
@@ -77,6 +118,7 @@
     "domain": "seocompare.co.uk",
     "logo": "",
     "flavour": "editorial",
+    "dashboard": "fleet",
     "clientViewSections": [
       "ai-readiness",
       "ai-citations",
@@ -88,82 +130,6 @@
     ],
     "allSections": [
       "overview",
-      "ai-readiness",
-      "ai-citations",
-      "site-manager",
-      "page-compliance",
-      "traffic",
-      "search-performance",
-      "indexing",
-      "competitors",
-      "site-tree",
-      "uptime",
-      "site-speed",
-      "crawl-activity",
-      "recommendations",
-      "content-plan",
-      "daily-audit"
-    ],
-    "sections": []
-  },
-  {
-    "id": "rochellemarashi",
-    "name": "Rochelle Marashi Therapy",
-    "domain": "rochellemarashi.pages.dev",
-    "liveDomain": "rochellemarashi.com",
-    "logo": "",
-    "flavour": "client",
-    "clientCode": "ROCHELLE",
-    "notes": "Migration in progress. New Astro build at rochellemarashi.pages.dev (muswellrose Cloudflare). Live site rochellemarashi.com still on Lovable until DNS cutover.",
-    "clientViewSections": [
-      "site-structure",
-      "site-manager",
-      "page-compliance",
-      "ai-readiness",
-      "uptime",
-      "indexing"
-    ],
-    "allSections": [
-      "overview",
-      "site-structure",
-      "ai-readiness",
-      "ai-citations",
-      "site-manager",
-      "page-compliance",
-      "traffic",
-      "search-performance",
-      "indexing",
-      "competitors",
-      "site-tree",
-      "uptime",
-      "site-speed",
-      "crawl-activity",
-      "recommendations",
-      "content-plan",
-      "daily-audit"
-    ],
-    "sections": []
-  },
-  {
-    "id": "resiliencebuilder",
-    "name": "ResilienceBuilder",
-    "domain": "resiliencebuilder.co.uk",
-    "liveDomain": "resiliencebuilder.co.uk",
-    "logo": "",
-    "flavour": "client",
-    "clientCode": "STEVE",
-    "notes": "Steve Howe's resilience consultancy. Current WordPress site at resiliencebuilder.co.uk. New Astro build in ~/steve-site (3 candidate designs K1/K2/K3 + v4 refactor live at 49k.co.uk/demos/resiliencebuilder/). Domain not yet cut over. Siteplan focused on upgrades to existing pages + new pages we need to talk about (5-facet model, coach certification, case studies, governance).",
-    "clientViewSections": [
-      "site-structure",
-      "site-manager",
-      "page-compliance",
-      "ai-readiness",
-      "uptime",
-      "indexing"
-    ],
-    "allSections": [
-      "overview",
-      "site-structure",
       "ai-readiness",
       "ai-citations",
       "site-manager",
@@ -189,6 +155,7 @@
     "liveDomain": "bestbusinessloans.ai",
     "logo": "",
     "flavour": "leadgen",
+    "dashboard": "fleet",
     "clientCode": "BBL",
     "notes": "LIVE since 8 May 2026 (custom domain bestbusinessloans.ai on CF Pages, RANK4AI account). Indexing API service account added as Owner 8 May. GSC verified. Daily fetchers can run.",
     "clientViewSections": [
@@ -197,12 +164,14 @@
       "page-compliance",
       "ai-readiness",
       "uptime",
+      "leads",
       "indexing"
     ],
     "allSections": [
       "overview",
       "site-structure",
       "ai-readiness",
+      "leads",
       "ai-citations",
       "site-manager",
       "page-compliance",
@@ -228,6 +197,7 @@
     "liveDomain": "fundbiz.co.uk",
     "logo": "",
     "flavour": "leadgen",
+    "dashboard": "fleet",
     "clientCode": "FUNDBIZ",
     "notes": "LIVE since 8 May 2026 (custom domain fundbiz.co.uk on CF Pages, RANK4AI account). GSC service-account Owner status still pending (Adam action). Daily fetchers can run, Indexing API blocked until ownership added.",
     "clientViewSections": [
@@ -236,12 +206,14 @@
       "page-compliance",
       "ai-readiness",
       "uptime",
+      "leads",
       "indexing"
     ],
     "allSections": [
       "overview",
       "site-structure",
       "ai-readiness",
+      "leads",
       "ai-citations",
       "site-manager",
       "page-compliance",
@@ -267,6 +239,7 @@
     "liveDomain": "acceptcard.co.uk",
     "logo": "",
     "flavour": "leadgen",
+    "dashboard": "fleet",
     "clientCode": "CARDMACHINES",
     "notes": "LIVE since 12 May 2026 as acceptcard.co.uk (was working name TakeCardPayments / CardMachines). Local at ~/cardmachines, repo AdamParkerRank4AI/cardmachines. CF Pages project: cardmachines (RANK4AI account), custom domain acceptcard.co.uk. ~400 pages including terminals, trade pages, high-risk verticals, faith institutions, vernacular bolt-ons.",
     "clientViewSections": [
@@ -276,12 +249,14 @@
       "ai-readiness",
       "vernacular",
       "uptime",
+      "leads",
       "indexing"
     ],
     "allSections": [
       "overview",
       "site-structure",
       "ai-readiness",
+      "leads",
       "ai-citations",
       "site-manager",
       "page-compliance",
@@ -308,6 +283,7 @@
     "liveDomain": "takecardpayments.co.uk",
     "logo": "",
     "flavour": "leadgen",
+    "dashboard": "fleet",
     "clientCode": "TCP",
     "pre_launch": true,
     "notes": "Pre-launch (scaffolded 13 May 2026). Local at ~/takecardpayments. Vernacular-first UK SME card-payments platform, Polish + Romanian phase 1. Astro fleet pattern + fleet-core v0.7.0 + i18n config. 11 production content pages + 13 research reports + 3-pass translation workflow validated. Domain not yet purchased; no CF Pages deploy; no GitHub repo. Daily fetchers skip until preLaunch flips.",
@@ -348,6 +324,7 @@
     "liveDomain": "findatradey.co.uk",
     "logo": "",
     "flavour": "leadgen",
+    "dashboard": "fleet",
     "clientCode": "FAT",
     "pre_launch": true,
     "notes": "Pre-launch. Local at ~/findatradey, repo AdamParkerRank4AI/findatradey. CF Pages live at findatradey.pages.dev. UK trade lead matching by Best Business Loans Ltd. 8 districts, 3 trades, 11 intents = 88 dynamic + 21 static = 109 URLs. Daily-audit/CWV fetchers should skip until preLaunch flips.",
@@ -387,6 +364,7 @@
     "liveDomain": "findagym.co.uk",
     "logo": "",
     "flavour": "leadgen",
+    "dashboard": "fleet",
     "clientCode": "FAG",
     "pre_launch": true,
     "notes": "Pre-launch. Local at ~/findagym, repo AdamParkerRank4AI/findagym. CF Pages live at findagym.pages.dev. UK gym + fitness reviews by Best Business Loans Ltd. Colchester pilot, 35 URLs + 10 foundation. Differentiator: honest verdict + worst-for section on every review. Daily-audit/CWV fetchers should skip until preLaunch flips.",
@@ -426,8 +404,9 @@
     "liveDomain": "builderweb.online",
     "logo": "",
     "flavour": "saas",
+    "dashboard": "fleet",
     "clientCode": "BUILDERWEB",
-    "notes": "Self-serve AI website builder. Marketing at /, app at /build. Cloudflare Workers (not Pages). Repo AdamParkerRank4AI/lovinlovable. Local ~/lovinlovable. Author Oliver Mackman.",
+    "notes": "Self-serve AI website builder. Marketing repo ~/builderweb-marketing (Adam-owned, builderweb.online). App repo ~/builderweb-app (Oliver-owned, app.builderweb.online). Old ~/lovinlovable repo is DORMANT.",
     "clientViewSections": [
       "site-structure",
       "site-manager",
@@ -464,6 +443,7 @@
     "liveDomain": "ukmetabolic.co.uk",
     "logo": "",
     "flavour": "leadgen",
+    "dashboard": "fleet",
     "clientCode": "UKMETABOLIC",
     "notes": "Pre-launch. Local scaffold at ~/ukmetabolic (Astro 6, Tailwind 4, fleet-core v0.6.0). Domain not yet purchased (working name only). GitHub repo not yet created. CF Pages project not yet created. Brand: broad UK peptides hub covering cosmetic peptide skincare + ingestible collagen + research peptides + GLP-1 prescription routes. All editorial / affiliate, no own retail, no GMC byline, no medicines lawyer. Operating company: Best Business Loans Ltd (16833937). 37 pages built clean. Daily-audit / CWV / Bing fetchers should skip until liveDomain is reachable.",
     "clientViewSections": [
@@ -550,7 +530,7 @@
         "label": "GLP-1 clinic + pharmacy affiliate apps",
         "status": "TBD",
         "owner": "Claude",
-        "note": "Numan (\u00a3100 published), Voy, Manual, Juniper (high-touch clinics). Phlo, Pharmacy2U, SimplyMeds, Boots Online Doctor, Asda Online Doctor (low-touch pharmacies)."
+        "note": "Numan (£100 published), Voy, Manual, Juniper (high-touch clinics). Phlo, Pharmacy2U, SimplyMeds, Boots Online Doctor, Asda Online Doctor (low-touch pharmacies)."
       },
       {
         "id": "cf_pages_project",
@@ -560,5 +540,45 @@
         "note": "rank4ai account (CF_TOKEN_RANK4AI). Project name follows working slug (ukmetabolic.pages.dev) for now. Custom domain bind once Adam buys and confirms."
       }
     ]
+  },
+  {
+    "id": "nordiccentre",
+    "name": "Nordic Centre",
+    "domain": "nordiccentre.co.uk",
+    "liveDomain": "nordiccentre.co.uk",
+    "logo": "",
+    "flavour": "client",
+    "dashboard": "fleet",
+    "clientCode": "NORDIC",
+    "pre_launch": true,
+    "notes": "Osteopath client build (Michelle + Chris). 8 full homepage designs live at 49k.co.uk/nordiccentre/designs/ with 3-way copy toggle (Michelle's words / Pain Relief / Move Better). Domain not yet purchased. Pre-launch: real logo from Lee, Michelle GOsC reg #, Chris's preferred public name, decision on Salisbury reviews import, pro photos, and web/email setup all outstanding.",
+    "clientViewSections": [
+      "site-structure",
+      "site-manager",
+      "page-compliance",
+      "ai-readiness",
+      "uptime",
+      "indexing"
+    ],
+    "allSections": [
+      "overview",
+      "site-structure",
+      "ai-readiness",
+      "ai-citations",
+      "site-manager",
+      "page-compliance",
+      "traffic",
+      "search-performance",
+      "indexing",
+      "competitors",
+      "site-tree",
+      "uptime",
+      "site-speed",
+      "crawl-activity",
+      "recommendations",
+      "content-plan",
+      "daily-audit"
+    ],
+    "sections": []
   }
 ]
