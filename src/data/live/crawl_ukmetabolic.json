@@ -1,20 +1,20 @@
 {
   "site_id": "ukmetabolic",
   "domain": "ukmetabolic.pages.dev",
-  "crawled_at": "2026-05-18T14:28:00.320176+00:00",
+  "crawled_at": "2026-05-18T14:44:08.574918+00:00",
   "source": "fleet-source-reader",
-  "pages_crawled": 240,
+  "pages_crawled": 246,
   "total_issues": 0,
-  "orphan_pages": 62,
-  "avg_depth": 1.9708333333333334,
-  "avg_word_count": 1476,
-  "pages_with_schema": 240,
+  "orphan_pages": 65,
+  "avg_depth": 1.9471544715447155,
+  "avg_word_count": 1497,
+  "pages_with_schema": 246,
   "pages_with_multimodal": 0,
   "pages_with_comparison_table": 48,
   "pages_with_video": 0,
-  "pages_over_2000_words": 5,
+  "pages_over_2000_words": 10,
   "images_missing_alt": 0,
-  "pages_with_date": 240,
+  "pages_with_date": 246,
   "crawler_access": {
     "GPTBot": false,
     "ClaudeBot": false,
@@ -24,6 +24,10 @@
   },
   "social_links": {},
   "topic_clusters": {
+    "gh-secretagogues": {
+      "hub": "/gh-secretagogues/",
+      "page_count": 1
+    },
     "vs": {
       "hub": "/vs/",
       "page_count": 22
@@ -50,6 +54,10 @@
     },
     "disclaimer": {
       "hub": "/disclaimer/",
+      "page_count": 1
+    },
+    "longevity-peptides": {
+      "hub": "/longevity-peptides/",
       "page_count": 1
     },
     "authors": {
@@ -124,6 +132,14 @@
       "hub": "/glp1-and-protein/",
       "page_count": 1
     },
+    "sexual-health-peptides": {
+      "hub": "/sexual-health-peptides/",
+      "page_count": 1
+    },
+    "injury-recovery": {
+      "hub": "/injury-recovery/",
+      "page_count": 1
+    },
     "cost-and-supply": {
       "hub": "/cost-and-supply/",
       "page_count": 6
@@ -171,34 +187,83 @@
     "retailer": {
       "hub": "/retailer/",
       "page_count": 29
+    },
+    "metabolic-peptides": {
+      "hub": "/metabolic-peptides/",
+      "page_count": 1
+    },
+    "nootropic-peptides": {
+      "hub": "/nootropic-peptides/",
+      "page_count": 1
     }
   },
-  "topic_cluster_count": 37,
+  "topic_cluster_count": 43,
   "term_consistency": {
     "2026": 191,
-    "research": 123,
-    "peptides": 122,
-    "peptide": 115,
+    "research": 140,
+    "peptides": 139,
+    "peptide": 118,
     "mounjaro": 112,
     "access": 101,
     "routes": 96,
     "cohort": 94,
     "rollout": 92,
+    "editorial": 91,
+    "weight": 90,
     "june": 89,
     "wegovy": 88,
-    "weight": 88,
     "collagen": 87,
-    "editorial": 85,
     "2025": 56
   },
   "content_freshness": {
-    "pages_with_dates": 240,
-    "fresh_30_days": 239,
+    "pages_with_dates": 246,
+    "fresh_30_days": 245,
     "fresh_90_days": 0,
     "stale": 1
   },
   "redirect_stubs": 0,
   "pages": [
+    {
+      "url": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "path": "/gh-secretagogues/",
+      "title": "GH secretagogues UK: Ipamorelin, Sermorelin, Tesamorelin, GHRP research",
+      "h1": "Growth-hormone-releasing peptides (UK research overview)",
+      "meta_desc": "UK editorial overview of growth-hormone-releasing peptides. Ipamorelin, Sermorelin, Tesamorelin, GHRP-2 and 6, CJC-1295. Class explanation, research evidence, UK retailers with CoA tier.",
+      "word_count": 2388,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 32,
+      "external_links_out": -13,
+      "canonical": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 5,
+      "last_modified": "2026-05-07",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": false,
+      "has_viewport": true,
+      "internal_links_in": 0,
+      "depth": 1
+    },
     {
       "url": "https://ukmetabolic.co.uk/vs/ipamorelin-vs-sermorelin/",
       "path": "/vs/ipamorelin-vs-sermorelin/",
@@ -1093,7 +1158,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 6,
+      "internal_links_in": 7,
       "depth": 1
     },
     {
@@ -1132,7 +1197,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 240,
+      "internal_links_in": 246,
       "depth": 1
     },
     {
@@ -1171,7 +1236,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 239,
+      "internal_links_in": 245,
       "depth": 2
     },
     {
@@ -1210,7 +1275,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 239,
+      "internal_links_in": 245,
       "depth": 2
     },
     {
@@ -1249,7 +1314,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 240,
+      "internal_links_in": 246,
       "depth": 1
     },
     {
@@ -1288,7 +1353,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 240,
+      "internal_links_in": 246,
       "depth": 1
     },
     {
@@ -1486,7 +1551,48 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 240,
+      "internal_links_in": 246,
+      "depth": 1
+    },
+    {
+      "url": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "path": "/longevity-peptides/",
+      "title": "Longevity peptides UK: Epitalon, MOTS-c, GHK-Cu, 5-Amino-1MQ research",
+      "h1": "Longevity-research peptides (UK overview)",
+      "meta_desc": "UK editorial overview of peptides in the longevity research lane. Epitalon, MOTS-c, GHK-Cu, 5-Amino-1MQ, SS-31. Mechanism class, research evidence, UK retailers with CoA tier.",
+      "word_count": 2429,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 32,
+      "external_links_out": -13,
+      "canonical": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 5,
+      "last_modified": "2026-05-07",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": false,
+      "has_viewport": true,
+      "internal_links_in": 0,
       "depth": 1
     },
     {
@@ -4245,7 +4351,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 2,
+      "internal_links_in": 3,
       "depth": 1
     },
     {
@@ -4284,7 +4390,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 240,
+      "internal_links_in": 246,
       "depth": 1
     },
     {
@@ -4324,7 +4430,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 8,
+      "internal_links_in": 9,
       "depth": 1
     },
     {
@@ -4363,7 +4469,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 240,
+      "internal_links_in": 246,
       "depth": 1
     },
     {
@@ -4402,7 +4508,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 239,
+      "internal_links_in": 245,
       "depth": 2
     },
     {
@@ -4441,7 +4547,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 239,
+      "internal_links_in": 245,
       "depth": 2
     },
     {
@@ -4480,7 +4586,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 240,
+      "internal_links_in": 246,
       "depth": 1
     },
     {
@@ -4714,7 +4820,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 240,
+      "internal_links_in": 246,
       "depth": 1
     },
     {
@@ -4753,7 +4859,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 3,
+      "internal_links_in": 4,
       "depth": 2
     },
     {
@@ -4792,7 +4898,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 3,
+      "internal_links_in": 4,
       "depth": 2
     },
     {
@@ -4831,7 +4937,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 1,
+      "internal_links_in": 2,
       "depth": 2
     },
     {
@@ -4870,7 +4976,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 36,
+      "internal_links_in": 37,
       "depth": 2
     },
     {
@@ -4948,7 +5054,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 0,
+      "internal_links_in": 1,
       "depth": 2
     },
     {
@@ -4987,7 +5093,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 3,
+      "internal_links_in": 6,
       "depth": 2
     },
     {
@@ -5026,7 +5132,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 4,
+      "internal_links_in": 5,
       "depth": 2
     },
     {
@@ -5065,7 +5171,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 3,
+      "internal_links_in": 4,
       "depth": 2
     },
     {
@@ -5104,7 +5210,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 0,
+      "internal_links_in": 1,
       "depth": 2
     },
     {
@@ -5143,7 +5249,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 240,
+      "internal_links_in": 246,
       "depth": 1
     },
     {
@@ -5182,7 +5288,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 45,
+      "internal_links_in": 46,
       "depth": 1
     },
     {
@@ -5221,7 +5327,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 240,
+      "internal_links_in": 246,
       "depth": 1
     },
     {
@@ -7483,7 +7589,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 1,
+      "internal_links_in": 2,
       "depth": 1
     },
     {
@@ -7523,7 +7629,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 48,
+      "internal_links_in": 49,
       "depth": 1
     },
     {
@@ -7563,7 +7669,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 240,
+      "internal_links_in": 246,
       "depth": 1
     },
     {
@@ -7602,7 +7708,89 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 4,
+      "internal_links_in": 5,
+      "depth": 1
+    },
+    {
+      "url": "https://ukmetabolic.co.uk/sexual-health-peptides/",
+      "path": "/sexual-health-peptides/",
+      "title": "Sexual health peptides UK: PT-141, Kisspeptin research",
+      "h1": "Sexual-health peptides (UK research overview)",
+      "meta_desc": "UK editorial overview of peptides studied in sexual health and arousal. PT-141 (Bremelanotide), Kisspeptin. Mechanism class, regulatory status, UK retailers with CoA tier.",
+      "word_count": 1881,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 25,
+      "external_links_out": -9,
+      "canonical": "https://ukmetabolic.co.uk/sexual-health-peptides/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 5,
+      "last_modified": "2026-05-07",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": false,
+      "has_viewport": true,
+      "internal_links_in": 0,
+      "depth": 1
+    },
+    {
+      "url": "https://ukmetabolic.co.uk/injury-recovery/",
+      "path": "/injury-recovery/",
+      "title": "Injury recovery peptides UK: BPC-157, TB-500 research and retailers",
+      "h1": "Peptides studied for injury recovery (UK research overview)",
+      "meta_desc": "UK editorial overview of peptides studied in injury recovery and tissue regeneration. BPC-157, TB-500. Animal-model evidence base, UK research peptide retailers with CoA tier badges.",
+      "word_count": 2483,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 31,
+      "external_links_out": -12,
+      "canonical": "https://ukmetabolic.co.uk/injury-recovery/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 5,
+      "last_modified": "2026-05-07",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": false,
+      "has_viewport": true,
+      "internal_links_in": 0,
       "depth": 1
     },
     {
@@ -7875,7 +8063,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 240,
+      "internal_links_in": 246,
       "depth": 1
     },
     {
@@ -7914,7 +8102,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 240,
+      "internal_links_in": 246,
       "depth": 1
     },
     {
@@ -8032,7 +8220,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 1,
+      "internal_links_in": 2,
       "depth": 1
     },
     {
@@ -8072,7 +8260,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 240,
+      "internal_links_in": 246,
       "depth": 1
     },
     {
@@ -8191,7 +8379,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 0,
+      "internal_links_in": 22,
       "depth": 1
     },
     {
@@ -8551,7 +8739,7 @@
       "title": "Peptide Labs UK review (UK): Research peptide retailer",
       "h1": "Peptide Labs UK",
       "meta_desc": "UK editorial review of Peptide Labs UK. Anti-counterfeit-framed UK research peptide retailer leaning hard on Fat Loss as primary nav category (Tirzepatide, Retatrutide, Mazdutide) alongside the broader catalogue. Above 99 percent HPLC and mass-spec verified purity claim. CoA gated by email request. ",
-      "word_count": 1421,
+      "word_count": 1433,
       "status": 200,
       "schemas": [
         "Person",
@@ -8560,8 +8748,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 23,
-      "external_links_out": -5,
+      "internal_links_out": 24,
+      "external_links_out": -6,
       "canonical": "https://ukmetabolic.co.uk/retailer/peptide-labs-uk/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -8581,7 +8769,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 2,
+      "internal_links_in": 3,
       "depth": 2
     },
     {
@@ -8590,7 +8778,7 @@
       "title": "UK Peptides review (UK): Research peptide retailer",
       "h1": "UK Peptides",
       "meta_desc": "UK editorial review of UK Peptides. 14 years trading from Middlesbrough. The deepest classic-peptide plus Russian-bioregulator catalogue in the UK (Bronchogen, Cartalax, Pinealon, Thymalin, Vilon, Crystagen). Open volume-tier pricing on every PDP with rotating monthly site-wide promo. Publishes a co",
-      "word_count": 1453,
+      "word_count": 1464,
       "status": 200,
       "schemas": [
         "Person",
@@ -8599,8 +8787,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 23,
-      "external_links_out": -4,
+      "internal_links_out": 24,
+      "external_links_out": -5,
       "canonical": "https://ukmetabolic.co.uk/retailer/uk-peptides/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -8620,7 +8808,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 2,
+      "internal_links_in": 3,
       "depth": 2
     },
     {
@@ -8659,7 +8847,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 4,
+      "internal_links_in": 5,
       "depth": 2
     },
     {
@@ -8707,7 +8895,7 @@
       "title": "Peptides UK review (UK): Research peptide retailer",
       "h1": "Peptides UK",
       "meta_desc": "UK editorial review of Peptides UK. Long-trading UK research peptide retailer (2012). Heavy on classic compounds (BPC-157, TB-500, GHK-Cu, CJC-1295, Ipamorelin, MOTS-c). No GLP-1, no cosmetic line. CoA gated via on-site contact form (request lab report per product). On-site CusRev reviews 5.0 averag",
-      "word_count": 1390,
+      "word_count": 1401,
       "status": 200,
       "schemas": [
         "Person",
@@ -8716,8 +8904,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 23,
-      "external_links_out": -4,
+      "internal_links_out": 24,
+      "external_links_out": -5,
       "canonical": "https://ukmetabolic.co.uk/retailer/peptides-uk/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -8737,7 +8925,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 2,
+      "internal_links_in": 6,
       "depth": 2
     },
     {
@@ -8746,7 +8934,7 @@
       "title": "Direct Sarms review (UK): Research peptide retailer (peptides + SARMs)",
       "h1": "Direct Sarms",
       "meta_desc": "UK editorial review of Direct Sarms. UK-shipping retailer with research peptides alongside SARMs. Crypto payment option for EU customers in addition to cards. Last reviewed 2026-05-10.",
-      "word_count": 1264,
+      "word_count": 1275,
       "status": 200,
       "schemas": [
         "Person",
@@ -8755,8 +8943,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 23,
-      "external_links_out": -6,
+      "internal_links_out": 24,
+      "external_links_out": -7,
       "canonical": "https://ukmetabolic.co.uk/retailer/direct-sarms/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -8785,7 +8973,7 @@
       "title": "Imperial Peptides review (UK): Research peptide retailer",
       "h1": "Imperial Peptides",
       "meta_desc": "UK editorial review of Imperial Peptides. UK research peptide retailer with third-party HPLC plus transparent batch documentation. Plays the credibility lane alongside Pure Peptides UK and Tide Labs. Last reviewed 2026-05-18.",
-      "word_count": 1266,
+      "word_count": 1277,
       "status": 200,
       "schemas": [
         "Person",
@@ -8794,8 +8982,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 23,
-      "external_links_out": -6,
+      "internal_links_out": 24,
+      "external_links_out": -7,
       "canonical": "https://ukmetabolic.co.uk/retailer/imperial-peptides/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -8815,7 +9003,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 2,
+      "internal_links_in": 5,
       "depth": 2
     },
     {
@@ -8824,7 +9012,7 @@
       "title": "my-peptides review (UK): Research peptide retailer",
       "h1": "my-peptides",
       "meta_desc": "UK editorial review of my-peptides. UK research peptide retailer with HPLC-verified purity claims and CoAs included on orders. Operates under research-use-only framing. Last reviewed 2026-05-10.",
-      "word_count": 1274,
+      "word_count": 1285,
       "status": 200,
       "schemas": [
         "Person",
@@ -8833,8 +9021,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 23,
-      "external_links_out": -6,
+      "internal_links_out": 24,
+      "external_links_out": -7,
       "canonical": "https://ukmetabolic.co.uk/retailer/my-peptides/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -8863,7 +9051,7 @@
       "title": "Peptagenix review (UK): Research peptide retailer",
       "h1": "Peptagenix",
       "meta_desc": "UK editorial review of Peptagenix. UK research peptide retailer (Peptagenix UK Ltd, October 2024). Lead category is GLP-1 / Semaglutide. Inline reconstitution dose calculator on homepage. Mail-forwarding Covent Garden address. Athlete-facing framing alongside scientists and labs. Last reviewed 2026-",
-      "word_count": 1315,
+      "word_count": 1325,
       "status": 200,
       "schemas": [
         "Person",
@@ -8872,8 +9060,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 23,
-      "external_links_out": -6,
+      "internal_links_out": 24,
+      "external_links_out": -7,
       "canonical": "https://ukmetabolic.co.uk/retailer/peptagenix/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -8902,7 +9090,7 @@
       "title": "XL Peptides review (UK): Research peptide retailer",
       "h1": "XL Peptides",
       "meta_desc": "UK editorial review of XL Peptides. Nottingham-based research peptide retailer (Bio Research Ltd, since 2024). Bundles and stacks are the hero SKU (Wolverine BPC-157 + TB-500, Tesamorelin + Ipamorelin 3:1, KLOW, Glow). Janoshik third-party CoAs published per batch with QR-code verification. 10-vial ",
-      "word_count": 1413,
+      "word_count": 1424,
       "status": 200,
       "schemas": [
         "Person",
@@ -8911,8 +9099,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 23,
-      "external_links_out": -5,
+      "internal_links_out": 24,
+      "external_links_out": -6,
       "canonical": "https://ukmetabolic.co.uk/retailer/xl-peptides/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -8932,7 +9120,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 2,
+      "internal_links_in": 6,
       "depth": 2
     },
     {
@@ -8941,7 +9129,7 @@
       "title": "Peptide Lab UK review (UK): Research peptide retailer",
       "h1": "Peptide Lab UK",
       "meta_desc": "UK editorial review of Peptide Lab UK. Brand-new (February 2026) UK research peptide retailer. GLP-1-led catalogue (Retatrutide, Tirzepatide, Tesamorelin) alongside classic stack. CoA available via email request only. Minimal lead-gen plumbing, no Trustpilot, no Companies House number on site. Last ",
-      "word_count": 1359,
+      "word_count": 1371,
       "status": 200,
       "schemas": [
         "Person",
@@ -8950,8 +9138,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 23,
-      "external_links_out": -4,
+      "internal_links_out": 24,
+      "external_links_out": -5,
       "canonical": "https://ukmetabolic.co.uk/retailer/peptide-lab-uk/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -8980,7 +9168,7 @@
       "title": "Tide Labs review (UK): Research peptide retailer",
       "h1": "Tide Labs",
       "meta_desc": "UK editorial review of Tide Labs. UK research peptide retailer leaning on UKAS-verified HPLC as the sole-in-UK trust claim. Narrower catalogue than UKPeptides or Pure Peptides UK but the lab-verification angle is the loudest in the segment. Last reviewed 2026-05-18.",
-      "word_count": 1306,
+      "word_count": 1317,
       "status": 200,
       "schemas": [
         "Person",
@@ -8989,8 +9177,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 23,
-      "external_links_out": -6,
+      "internal_links_out": 24,
+      "external_links_out": -7,
       "canonical": "https://ukmetabolic.co.uk/retailer/tide-labs/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -9010,7 +9198,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 2,
+      "internal_links_in": 5,
       "depth": 2
     },
     {
@@ -9049,7 +9237,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 3,
+      "internal_links_in": 4,
       "depth": 2
     },
     {
@@ -9088,7 +9276,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 3,
+      "internal_links_in": 4,
       "depth": 2
     },
     {
@@ -9166,7 +9354,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 4,
+      "internal_links_in": 5,
       "depth": 2
     },
     {
@@ -9175,7 +9363,7 @@
       "title": "BIOLAB Shop review (UK): Research peptides + SARMs + supplements supermarket",
       "h1": "BIOLAB Shop",
       "meta_desc": "UK editorial review of BIOLAB Shop. UK arm of Polish operator biolabshop.pl. Broader than peptides: peptides, SARMs, nootropics, supplements, skincare across 400+ products. Dedicated /peptides-calculator/ tool page. SHOPONLINEB LTD UK shell (2025) over the Polish parent. ProtonMail-only contact. Las",
-      "word_count": 1367,
+      "word_count": 1378,
       "status": 200,
       "schemas": [
         "Person",
@@ -9184,8 +9372,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 23,
-      "external_links_out": -6,
+      "internal_links_out": 24,
+      "external_links_out": -7,
       "canonical": "https://ukmetabolic.co.uk/retailer/biolab-shop/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -9214,7 +9402,7 @@
       "title": "Vitality Peptides review (UK): Research peptide retailer",
       "h1": "Vitality Peptides",
       "meta_desc": "UK editorial review of Vitality Peptides. Young UK research peptide retailer (October 2025 domain). GLP-1-led (Tirzepatide, Retatrutide, BPC-157, TB-500). Three-channel support (Email, Telegram, WhatsApp). Distinctive third-party retest policy: send your vial for testing, receive store credit refund",
-      "word_count": 1364,
+      "word_count": 1375,
       "status": 200,
       "schemas": [
         "Person",
@@ -9223,8 +9411,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 23,
-      "external_links_out": -6,
+      "internal_links_out": 24,
+      "external_links_out": -7,
       "canonical": "https://ukmetabolic.co.uk/retailer/vitality-peptides/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -9283,7 +9471,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 5,
+      "internal_links_in": 6,
       "depth": 2
     },
     {
@@ -9370,7 +9558,7 @@
       "title": "Direct Peptides UK review (UK): Research peptide retailer (US parent, UK subdomain)",
       "h1": "Direct Peptides UK",
       "meta_desc": "UK editorial review of Direct Peptides UK. UK-localised subdomain of US-headquartered Direct Peptides (trademark held by Aspire Labs, Texas). Broadest format coverage in the UK segment: lyophilised vials, pre-mixed pens, nasal-spray stacks, capsules, topical cosmetic peptides. 8 years trading (since",
-      "word_count": 1462,
+      "word_count": 1474,
       "status": 200,
       "schemas": [
         "Person",
@@ -9379,8 +9567,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 23,
-      "external_links_out": -4,
+      "internal_links_out": 24,
+      "external_links_out": -5,
       "canonical": "https://ukmetabolic.co.uk/retailer/direct-peptides-uk/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -9400,7 +9588,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 2,
+      "internal_links_in": 4,
       "depth": 2
     },
     {
@@ -9409,7 +9597,7 @@
       "title": "BioPlex Peptides review (UK): Research peptide retailer (peptides + SARMs)",
       "h1": "BioPlex Peptides",
       "meta_desc": "UK editorial review of BioPlex Peptides. UK research peptide retailer + SARMs + Peptide Sets (dual-research blends). Founded (claimed) 2012, but trading entity Prime-Physique Ltd was incorporated August 2025. Bristol University biochemistry founders named (Charles Baron, Harry Watts). Weekly rotatin",
-      "word_count": 1410,
+      "word_count": 1421,
       "status": 200,
       "schemas": [
         "Person",
@@ -9418,8 +9606,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 23,
-      "external_links_out": -6,
+      "internal_links_out": 24,
+      "external_links_out": -7,
       "canonical": "https://ukmetabolic.co.uk/retailer/bioplex-peptides/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -9487,7 +9675,7 @@
       "title": "Pure Peptides UK review (UK): Research peptide retailer",
       "h1": "Pure Peptides UK",
       "meta_desc": "UK editorial review of Pure Peptides UK. Long-established UK research peptide supplier. 12 years trading, 15,000+ customers. Operates a public CoA subdomain (coa.purepeptidesuk.com) with downloadable per-batch certificates linked from every PDP. Dual-tier purity (Standard vs Premium with endotoxin L",
-      "word_count": 1398,
+      "word_count": 1410,
       "status": 200,
       "schemas": [
         "Person",
@@ -9496,8 +9684,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 23,
-      "external_links_out": -4,
+      "internal_links_out": 24,
+      "external_links_out": -5,
       "canonical": "https://ukmetabolic.co.uk/retailer/pure-peptides-uk/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -9517,7 +9705,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 6,
+      "internal_links_in": 9,
       "depth": 2
     },
     {
@@ -9526,7 +9714,7 @@
       "title": "Dr Peptides review (UK): Research peptide retailer",
       "h1": "Dr Peptides",
       "meta_desc": "UK editorial review of Dr Peptides. Family-run Newcastle research peptide retailer (Rian, Victoria, Leah Redman). Owner-fronted WhatsApp on every page. CoAs photographed into the product gallery (COA in image) rather than gated. Heavy on named-stack bundles (Wolverine, Hulk, Ultimate Bundle). Crisp ",
-      "word_count": 1448,
+      "word_count": 1459,
       "status": 200,
       "schemas": [
         "Person",
@@ -9535,8 +9723,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 23,
-      "external_links_out": -4,
+      "internal_links_out": 24,
+      "external_links_out": -5,
       "canonical": "https://ukmetabolic.co.uk/retailer/dr-peptides/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -9556,7 +9744,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 2,
+      "internal_links_in": 3,
       "depth": 2
     },
     {
@@ -9565,7 +9753,7 @@
       "title": "Research Peptides UK review (UK): Research peptide retailer (operator status unclear)",
       "h1": "Research Peptides UK",
       "meta_desc": "UK editorial review of Research Peptides UK. Narrow classic research-peptide catalogue (~19 SKUs). Trustpilot 2.2 of 5 across 42 reviews. UK Research Peptides Ltd (11246963) was dissolved 2021-03-30 but the site continues to trade \u2014 current operator unclear from public records. Last reviewed 2026-05",
-      "word_count": 1352,
+      "word_count": 1364,
       "status": 200,
       "schemas": [
         "Person",
@@ -9574,8 +9762,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 23,
-      "external_links_out": -6,
+      "internal_links_out": 24,
+      "external_links_out": -7,
       "canonical": "https://ukmetabolic.co.uk/retailer/research-peptides-uk/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -9597,6 +9785,88 @@
       "has_viewport": true,
       "internal_links_in": 2,
       "depth": 2
+    },
+    {
+      "url": "https://ukmetabolic.co.uk/metabolic-peptides/",
+      "path": "/metabolic-peptides/",
+      "title": "Metabolic peptides UK: GLP-1 medications, AOD-9604, Cagrilintide, MOTS-c",
+      "h1": "Metabolic and weight-management peptides (UK overview)",
+      "meta_desc": "UK editorial overview of the metabolic peptide landscape. Licensed GLP-1 weight-loss medications, research peptides with metabolic interest (AOD-9604, Cagrilintide, Retatrutide, MOTS-c). UK clinics and pharmacies with CoA tier where relevant.",
+      "word_count": 2380,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 35,
+      "external_links_out": -16,
+      "canonical": "https://ukmetabolic.co.uk/metabolic-peptides/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 5,
+      "last_modified": "2026-05-07",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": false,
+      "has_viewport": true,
+      "internal_links_in": 0,
+      "depth": 1
+    },
+    {
+      "url": "https://ukmetabolic.co.uk/nootropic-peptides/",
+      "path": "/nootropic-peptides/",
+      "title": "Nootropic peptides UK: Semax, Selank, Cerebrolysin research",
+      "h1": "Nootropic peptides (UK research overview)",
+      "meta_desc": "UK editorial overview of peptides studied for cognition and anxiety. Semax, Selank, Cerebrolysin. Russian research lineage, mechanism class, UK research peptide retailers.",
+      "word_count": 2232,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 29,
+      "external_links_out": -10,
+      "canonical": "https://ukmetabolic.co.uk/nootropic-peptides/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 5,
+      "last_modified": "2026-05-07",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": false,
+      "has_viewport": true,
+      "internal_links_in": 0,
+      "depth": 1
     }
   ],
   "links": [
@@ -9612,7 +9882,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/./",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -9842,7 +10112,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/404/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -9996,6 +10266,226 @@
       "type": "internal"
     },
     {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/cosmetic-peptides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/collagen/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/research-peptides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/clinics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/shop/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/glossary/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/shop/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/research-peptides/ipamorelin/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/research-peptides/sermorelin/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/research-peptides/tesamorelin/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/research-peptides/ghrp/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/coa-trust-index/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/retailer/xl-peptides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/retailer/pure-peptides-uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/retailer/imperial-peptides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/retailer/tide-labs/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/retailer/peptides-uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/research-peptides/ipamorelin/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/coa-trust-index/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/cosmetic-peptides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/cosmetic-peptides/copper-peptides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/cosmetic-peptides/matrixyl/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/collagen/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/collagen/types/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/collagen/marine-bovine-vegan/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/cosmetic-peptides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/collagen/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/research-peptides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/clinics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/shop/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/glossary/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/gh-secretagogues/",
+      "to": "https://ukmetabolic.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
       "from": "https://ukmetabolic.co.uk/vs/ipamorelin-vs-sermorelin/",
       "to": "https://ukmetabolic.co.uk/favicon.svg",
       "type": "internal"
@@ -10007,7 +10497,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/vs/ipamorelin-vs-sermorelin/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -10182,7 +10672,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/vs/my-peptides-vs-direct-sarms/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -10362,7 +10852,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/vs/phlo-vs-pharmacy2u/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -10537,7 +11027,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/vs/numan-vs-voy/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -10712,7 +11202,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/vs/bpc-157-vs-tb-500/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -10887,7 +11377,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/vs/hooke-vs-echelon/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -11062,7 +11552,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/vs/phlo-vs-simplymeds/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -11237,7 +11727,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/vs/manual-vs-numan/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -11412,7 +11902,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/vs/numan-vs-phlo/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -11587,7 +12077,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/vs/my-peptides-vs-pure-peptides-uk/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -11767,7 +12257,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/vs/numan-vs-juniper/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -11942,7 +12432,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/vs/wegovy-vs-saxenda/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -12112,7 +12602,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/vs/ghk-cu-vs-matrixyl/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -12287,7 +12777,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/vs/type-i-vs-type-ii-collagen/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -12457,7 +12947,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/vs/tesamorelin-vs-sermorelin/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -12627,7 +13117,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/vs/mounjaro-vs-wegovy/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -12817,7 +13307,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/vs/cjc-1295-vs-sermorelin/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -12992,7 +13482,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/vs/bare-biology-vs-vital-proteins/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -13167,7 +13657,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/vs/hydrolysed-vs-native-collagen/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -13337,7 +13827,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/vs/juniper-vs-voy/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -13512,7 +14002,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/vs/marine-vs-bovine-collagen/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -13687,7 +14177,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/vs/manual-vs-juniper/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -13862,7 +14352,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/longevity-clinics/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -14027,7 +14517,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/cosmetic-peptides/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -14202,7 +14692,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/cosmetic-peptides/matrixyl/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -14367,7 +14857,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/cosmetic-peptides/copper-peptides/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -14532,7 +15022,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/contact/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -14692,7 +15182,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/privacy/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -14847,7 +15337,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/medications/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -15067,7 +15557,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/medications/mounjaro/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -15302,7 +15792,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/medications/saxenda/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -15482,7 +15972,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/medications/wegovy/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -15697,7 +16187,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/disclaimer/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -15841,6 +16331,231 @@
       "type": "internal"
     },
     {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/cosmetic-peptides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/collagen/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/research-peptides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/clinics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/shop/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/glossary/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/shop/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/research-peptides/mots-c/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/research-peptides/epitalon/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/research-peptides/ghk-cu/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/coa-trust-index/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/retailer/xl-peptides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/retailer/pure-peptides-uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/retailer/imperial-peptides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/retailer/tide-labs/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/retailer/peptides-uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/research-peptides/mots-c/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/research-peptides/epitalon/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/longevity-clinics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/coa-trust-index/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/cosmetic-peptides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/cosmetic-peptides/copper-peptides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/cosmetic-peptides/matrixyl/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/collagen/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/collagen/types/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/collagen/marine-bovine-vegan/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/cosmetic-peptides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/collagen/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/research-peptides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/clinics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/shop/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/glossary/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ukmetabolic.co.uk/longevity-peptides/",
+      "to": "https://ukmetabolic.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
       "from": "https://ukmetabolic.co.uk/authors/oliver-mackman/",
       "to": "https://ukmetabolic.co.uk/favicon.svg",
       "type": "internal"
@@ -15852,7 +16567,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/authors/oliver-mackman/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -16027,7 +16742,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/faq/glp1/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -16182,7 +16897,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/faq/glp1/will-i-regain-after-stopping-mounjaro/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -16357,7 +17072,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/faq/glp1/mounjaro-missed-dose/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -16527,7 +17242,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/faq/glp1/mounjaro-contraception/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -16697,7 +17412,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/faq/glp1/glp1-during-pregnancy/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -16867,7 +17582,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/faq/glp1/how-to-get-mounjaro-on-nhs/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -17047,7 +17762,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/faq/glp1/switching-wegovy-to-mounjaro/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -17217,7 +17932,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/faq/cosmetic-peptides/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -17372,7 +18087,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/faq/cosmetic-peptides/argireline-explained/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -17547,7 +18262,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/faq/cosmetic-peptides/peptide-vitamin-c-stacking/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -17722,7 +18437,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/faq/cosmetic-peptides/inci-position-meaning/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -17897,7 +18612,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/faq/cosmetic-peptides/what-is-ghk-cu/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -18077,7 +18792,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/faq/cosmetic-peptides/matrixyl-3000-explained/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -18252,7 +18967,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/faq/cosmetic-peptides/copper-peptide-packaging/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -18427,7 +19142,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/faq/collagen/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -18582,7 +19297,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/faq/collagen/vegan-collagen-real-or-not/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -18757,7 +19472,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/faq/collagen/best-time-to-take-collagen/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -18937,7 +19652,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/faq/collagen/collagen-and-vitamin-c/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -19112,7 +19827,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/faq/collagen/type-i-vs-type-ii-collagen/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -19292,7 +20007,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/faq/collagen/how-much-collagen-per-day/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -19472,7 +20187,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/faq/collagen/marine-vs-bovine-collagen/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -19652,7 +20367,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/faq/research-peptides/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -19807,7 +20522,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/faq/research-peptides/wada-prohibited/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -19972,7 +20687,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/faq/research-peptides/hplc-purity-meaning/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -20142,7 +20857,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/faq/research-peptides/storage-handling/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -20307,7 +21022,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/faq/research-peptides/what-is-bpc-157/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -20482,7 +21197,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/faq/research-peptides/research-use-only-meaning/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -20652,7 +21367,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/faq/research-peptides/uk-legal-status/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -20822,7 +21537,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -21172,7 +21887,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/mhra-medicines-classification/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -21337,7 +22052,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/nice-ta1026/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -21507,7 +22222,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/nhs-glp1-access/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -21682,7 +22397,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/cgm-continuous-glucose-monitor/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -21847,7 +22562,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/specialist-weight-management-service/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -22017,7 +22732,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/sleep-apnoea-comorbidity/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -22182,7 +22897,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/asa-weight-loss-rules/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -22347,7 +23062,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/muscle-preservation-glp1/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -22517,7 +23232,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/kda-collagen/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -22682,7 +23397,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/peptide-storage-handling/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -22847,7 +23562,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/oral-tolerance-collagen/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -23012,7 +23727,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/hba1c/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -23177,7 +23892,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/protein-on-glp1/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -23347,7 +24062,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/visceral-adipose-tissue/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -23517,7 +24232,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/glp1-starting-dose/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -23682,7 +24397,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/pickart-hypothesis/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -23847,7 +24562,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/cold-chain-glp1/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -24012,7 +24727,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/coa-certificate-of-analysis/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -24177,7 +24892,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/ethnicity-adjusted-bmi/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -24342,7 +25057,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/dxa-body-composition/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -24512,7 +25227,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/hypertension-comorbidity/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -24677,7 +25392,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/vo2-max/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -24847,7 +25562,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/glp1-vs-gip/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -25012,7 +25727,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/bariatric-vs-glp1/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -25177,7 +25892,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/wada-prohibited-list-peptides/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -25342,7 +26057,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/resting-metabolic-rate/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -25512,7 +26227,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/research-use-only/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -25677,7 +26392,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/compounded-vs-licensed-glp1/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -25847,7 +26562,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/tier-3-tier-4-services/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -26012,7 +26727,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/alcohol-and-glp1/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -26177,7 +26892,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/apob-testing/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -26342,7 +27057,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/peptide-half-life/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -26507,7 +27222,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/sarcopenia-and-glp1/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -26677,7 +27392,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/patient-information-leaflet/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -26842,7 +27557,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/pen-vs-vial-glp1/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -27007,7 +27722,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/peptide-synthesis-spps/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -27172,7 +27887,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/lp-a/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -27337,7 +28052,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/mhra-yellow-card/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -27502,7 +28217,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/explained/hplc-purity/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -27667,7 +28382,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/perimenopause-and-glp1/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -27852,7 +28567,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/how-we-are-funded/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -28027,7 +28742,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/aftercare/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -28197,7 +28912,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/collagen/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -28372,7 +29087,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/collagen/types/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -28537,7 +29252,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/collagen/marine-bovine-vegan/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -28702,7 +29417,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/methodology/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -28867,7 +29582,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/methodology/longevity-clinics/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -29032,7 +29747,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/methodology/cosmetic-peptides/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -29202,7 +29917,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/methodology/collagen-brands/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -29372,7 +30087,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/methodology/research-peptides/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -29542,7 +30257,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/methodology/glp1-clinics/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -29712,7 +30427,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/research-peptides/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -29897,7 +30612,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/research-peptides/ipamorelin/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -30062,7 +30777,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/research-peptides/sermorelin/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -30232,7 +30947,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/research-peptides/tb-500/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -30407,7 +31122,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/research-peptides/uk-retailers/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -30572,7 +31287,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/research-peptides/melanotan/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -30737,7 +31452,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/research-peptides/epitalon/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -30907,7 +31622,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/research-peptides/mots-c/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -31077,7 +31792,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/research-peptides/bpc-157/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -31247,7 +31962,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/research-peptides/tesamorelin/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -31417,7 +32132,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/research-peptides/ghk-cu/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -31587,7 +32302,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/shop/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -31777,7 +32492,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/icb-rollout-tracker/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -31947,7 +32662,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/terms/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -32107,7 +32822,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/icb/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -32477,7 +33192,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/icb/shropshire-telford-wrekin/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -32697,7 +33412,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/icb/hertfordshire-west-essex/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -32927,7 +33642,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/icb/south-west-london/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -33152,7 +33867,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/icb/somerset/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -33372,7 +34087,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/icb/cornwall-isles-of-scilly/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -33577,7 +34292,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/icb/hampshire-isle-of-wight/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -33807,7 +34522,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/icb/surrey-heartlands/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -34032,7 +34747,7 @@
     },
     {
       "from": "https://ukmetabolic.co.uk/icb/west-yorkshire/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
+      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.ByutOLDl.css",
       "type": "internal"
     },
     {
@@ -34154,455 +34869,14 @@
       "from": "https://ukmetabolic.co.uk/icb/west-yorkshire/",
       "to": "https://ukmetabolic.co.uk/cosmetic-peptides/",
       "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/west-yorkshire/",
-      "to": "https://ukmetabolic.co.uk/cosmetic-peptides/copper-peptides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/west-yorkshire/",
-      "to": "https://ukmetabolic.co.uk/cosmetic-peptides/matrixyl/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/west-yorkshire/",
-      "to": "https://ukmetabolic.co.uk/collagen/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/west-yorkshire/",
-      "to": "https://ukmetabolic.co.uk/collagen/types/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/west-yorkshire/",
-      "to": "https://ukmetabolic.co.uk/collagen/marine-bovine-vegan/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/west-yorkshire/",
-      "to": "https://ukmetabolic.co.uk/cosmetic-peptides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/west-yorkshire/",
-      "to": "https://ukmetabolic.co.uk/collagen/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/west-yorkshire/",
-      "to": "https://ukmetabolic.co.uk/research-peptides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/west-yorkshire/",
-      "to": "https://ukmetabolic.co.uk/clinics/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/west-yorkshire/",
-      "to": "https://ukmetabolic.co.uk/shop/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/west-yorkshire/",
-      "to": "https://ukmetabolic.co.uk/glossary/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/west-yorkshire/",
-      "to": "https://ukmetabolic.co.uk/about/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/west-yorkshire/",
-      "to": "https://ukmetabolic.co.uk/methodology/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/west-yorkshire/",
-      "to": "https://ukmetabolic.co.uk/editorial-policy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/west-yorkshire/",
-      "to": "https://ukmetabolic.co.uk/how-we-are-funded/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/west-yorkshire/",
-      "to": "https://ukmetabolic.co.uk/contact/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/west-yorkshire/",
-      "to": "https://ukmetabolic.co.uk/privacy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/west-yorkshire/",
-      "to": "https://ukmetabolic.co.uk/terms/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/west-yorkshire/",
-      "to": "https://ukmetabolic.co.uk/disclaimer/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/favicon.svg",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/favicon.ico",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/cosmetic-peptides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/collagen/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/research-peptides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/clinics/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/shop/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/glossary/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/shop/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/icb-rollout-tracker/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/clinics/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/pharmacies/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/icb/north-central-london/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/icb/south-west-london/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/icb/frimley/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/icb/buckinghamshire-oxfordshire-berkshire-west/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/explained/nhs-glp1-access/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/explained/nice-ta1026/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/explained/ethnicity-adjusted-bmi/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/icb-rollout-tracker/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/icb/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/nhs-access/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/cosmetic-peptides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/cosmetic-peptides/copper-peptides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/cosmetic-peptides/matrixyl/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/collagen/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/collagen/types/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/collagen/marine-bovine-vegan/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/cosmetic-peptides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/collagen/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/research-peptides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/clinics/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/shop/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/glossary/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/about/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/methodology/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/editorial-policy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/how-we-are-funded/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/contact/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/privacy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/terms/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/north-west-london/",
-      "to": "https://ukmetabolic.co.uk/disclaimer/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/leicester-leicestershire-rutland/",
-      "to": "https://ukmetabolic.co.uk/favicon.svg",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/leicester-leicestershire-rutland/",
-      "to": "https://ukmetabolic.co.uk/favicon.ico",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/leicester-leicestershire-rutland/",
-      "to": "https://ukmetabolic.co.uk/_astro/BaseLayout.WfI7c0Aj.css",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/leicester-leicestershire-rutland/",
-      "to": "https://ukmetabolic.co.uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/leicester-leicestershire-rutland/",
-      "to": "https://ukmetabolic.co.uk/cosmetic-peptides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/leicester-leicestershire-rutland/",
-      "to": "https://ukmetabolic.co.uk/collagen/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/leicester-leicestershire-rutland/",
-      "to": "https://ukmetabolic.co.uk/research-peptides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/leicester-leicestershire-rutland/",
-      "to": "https://ukmetabolic.co.uk/clinics/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/leicester-leicestershire-rutland/",
-      "to": "https://ukmetabolic.co.uk/shop/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/leicester-leicestershire-rutland/",
-      "to": "https://ukmetabolic.co.uk/glossary/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/leicester-leicestershire-rutland/",
-      "to": "https://ukmetabolic.co.uk/shop/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/leicester-leicestershire-rutland/",
-      "to": "https://ukmetabolic.co.uk/icb-rollout-tracker/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/leicester-leicestershire-rutland/",
-      "to": "https://ukmetabolic.co.uk/clinics/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/leicester-leicestershire-rutland/",
-      "to": "https://ukmetabolic.co.uk/pharmacies/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/leicester-leicestershire-rutland/",
-      "to": "https://ukmetabolic.co.uk/icb/derby-derbyshire/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/leicester-leicestershire-rutland/",
-      "to": "https://ukmetabolic.co.uk/icb/nottingham-nottinghamshire/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/leicester-leicestershire-rutland/",
-      "to": "https://ukmetabolic.co.uk/icb/northamptonshire/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/leicester-leicestershire-rutland/",
-      "to": "https://ukmetabolic.co.uk/icb/coventry-warwickshire/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/leicester-leicestershire-rutland/",
-      "to": "https://ukmetabolic.co.uk/icb/lincolnshire/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/leicester-leicestershire-rutland/",
-      "to": "https://ukmetabolic.co.uk/icb/cambridgeshire-peterborough/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/leicester-leicestershire-rutland/",
-      "to": "https://ukmetabolic.co.uk/explained/nhs-glp1-access/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/leicester-leicestershire-rutland/",
-      "to": "https://ukmetabolic.co.uk/explained/nice-ta1026/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/leicester-leicestershire-rutland/",
-      "to": "https://ukmetabolic.co.uk/explained/ethnicity-adjusted-bmi/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/leicester-leicestershire-rutland/",
-      "to": "https://ukmetabolic.co.uk/icb-rollout-tracker/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/leicester-leicestershire-rutland/",
-      "to": "https://ukmetabolic.co.uk/icb/",
-      "type": "internal"
-    },
-    {
-      "from": "https://ukmetabolic.co.uk/icb/leicester-leicestershire-rutland/",
-      "to": "https://ukmetabolic.co.uk/nhs-access/",
-      "type": "internal"
     }
   ],
   "issues": [],
   "orphans": [
+    {
+      "path": "/gh-secretagogues/",
+      "url": "https://ukmetabolic.co.uk/gh-secretagogues/"
+    },
     {
       "path": "/vs/ipamorelin-vs-sermorelin/",
       "url": "https://ukmetabolic.co.uk/vs/ipamorelin-vs-sermorelin/"
@@ -34666,6 +34940,10 @@
     {
       "path": "/medications/",
       "url": "https://ukmetabolic.co.uk/medications/"
+    },
+    {
+      "path": "/longevity-peptides/",
+      "url": "https://ukmetabolic.co.uk/longevity-peptides/"
     },
     {
       "path": "/faq/glp1/",
@@ -34788,14 +35066,6 @@
       "url": "https://ukmetabolic.co.uk/research-peptides/melanotan/"
     },
     {
-      "path": "/research-peptides/epitalon/",
-      "url": "https://ukmetabolic.co.uk/research-peptides/epitalon/"
-    },
-    {
-      "path": "/research-peptides/ghk-cu/",
-      "url": "https://ukmetabolic.co.uk/research-peptides/ghk-cu/"
-    },
-    {
       "path": "/best/tb-500-uk/",
       "url": "https://ukmetabolic.co.uk/best/tb-500-uk/"
     },
@@ -34808,6 +35078,11 @@
     "name": "/",
     "path": "/",
     "children": [
+      {
+        "name": "gh-secretagogues",
+        "path": "/gh-secretagogues/",
+        "children": []
+      },
       {
         "name": "vs",
         "path": "/vs/",
@@ -34979,6 +35254,11 @@
       {
         "name": "disclaimer",
         "path": "/disclaimer/",
+        "children": []
+      },
+      {
+        "name": "longevity-peptides",
+        "path": "/longevity-peptides/",
         "children": []
       },
       {
@@ -35789,6 +36069,16 @@
         "children": []
       },
       {
+        "name": "sexual-health-peptides",
+        "path": "/sexual-health-peptides/",
+        "children": []
+      },
+      {
+        "name": "injury-recovery",
+        "path": "/injury-recovery/",
+        "children": []
+      },
+      {
         "name": "cost-and-supply",
         "path": "/cost-and-supply/",
         "children": [
@@ -36056,10 +36346,30 @@
             "children": []
           }
         ]
+      },
+      {
+        "name": "metabolic-peptides",
+        "path": "/metabolic-peptides/",
+        "children": []
+      },
+      {
+        "name": "nootropic-peptides",
+        "path": "/nootropic-peptides/",
+        "children": []
       }
     ]
   },
   "positive_signals": [
+    {
+      "path": "/gh-secretagogues/",
+      "score": 4,
+      "signals": [
+        "OG",
+        "Schema:7",
+        "Author",
+        "Substantive"
+      ]
+    },
     {
       "path": "/vs/ipamorelin-vs-sermorelin/",
       "score": 4,
@@ -36386,6 +36696,16 @@
       "signals": [
         "OG",
         "Schema:5",
+        "Author",
+        "Substantive"
+      ]
+    },
+    {
+      "path": "/longevity-peptides/",
+      "score": 4,
+      "signals": [
+        "OG",
+        "Schema:7",
         "Author",
         "Substantive"
       ]
@@ -37951,6 +38271,26 @@
       ]
     },
     {
+      "path": "/sexual-health-peptides/",
+      "score": 4,
+      "signals": [
+        "OG",
+        "Schema:7",
+        "Author",
+        "Substantive"
+      ]
+    },
+    {
+      "path": "/injury-recovery/",
+      "score": 4,
+      "signals": [
+        "OG",
+        "Schema:7",
+        "Author",
+        "Substantive"
+      ]
+    },
+    {
       "path": "/cost-and-supply/",
       "score": 4,
       "signals": [
@@ -38012,46 +38352,6 @@
     },
     {
       "path": "/clinics/",
-      "score": 4,
-      "signals": [
-        "OG",
-        "Schema:5",
-        "Author",
-        "Substantive"
-      ]
-    },
-    {
-      "path": "/editorial-policy/",
-      "score": 4,
-      "signals": [
-        "OG",
-        "Schema:5",
-        "Author",
-        "Substantive"
-      ]
-    },
-    {
-      "path": "/calculators/glp1-protein/",
-      "score": 4,
-      "signals": [
-        "OG",
-        "Schema:5",
-        "Author",
-        "Substantive"
-      ]
-    },
-    {
-      "path": "/calculators/collagen-dose/",
-      "score": 4,
-      "signals": [
-        "OG",
-        "Schema:6",
-        "Author",
-        "Substantive"
-      ]
-    },
-    {
-      "path": "/glp1-face/",
       "score": 4,
       "signals": [
         "OG",
