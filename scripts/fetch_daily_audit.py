@@ -30,6 +30,10 @@ SITE_ID_MAP = {
     "Best Business Loans": "bestbusinessloans",
     "FundBiz": "fundbiz",
     "AcceptCard": "cardmachines",
+    # Added 18 May 2026 — fleet expanded with MerchantHQ rebrand + 2 new sites.
+    "MerchantHQ": "merchanthq",
+    "PeptideClear": "peptideclear",
+    "Kartapay": "kartapay",
 }
 
 
