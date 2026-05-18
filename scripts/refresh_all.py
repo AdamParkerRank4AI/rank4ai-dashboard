@@ -143,6 +143,7 @@ def main():
         ("compute_syndication.py", 30),
         ("check_llms_txt.py", 120),
         ("check_drift.py", 240),
+        ("check_title_truncation.py", 30),
         ("push_to_fleet.py", 60),
     ]
 

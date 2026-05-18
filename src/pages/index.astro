@@ -53,6 +53,7 @@ const contentFreshness = loadJson('content_freshness.json') || null;
 const syndication = loadJson('syndication.json') || null;
 const llmsValidation = loadJson('llms_validation.json') || null;
 const baselineAudit = loadJson('fleet_baseline_audit.json') || null;
+const titleLint = loadJson('title_lint.json') || null;
 
 let baselineSummary: { sites: number; p1Fail: number; p2Fail: number; p0Fail: number; bySite: Array<{ id: string; preLaunch: boolean; fails: Array<{ severity: string; label: string; note: string }> }> } | null = null;
 if (baselineAudit?.sites) {
@@ -458,6 +459,45 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
       });
     });
   </script>
+
+  {/* Title truncation detector — catches the MI linter cut-mid-word bug fleet-wide */}
+  {titleLint && (() => {
+    const perSite = Object.entries(titleLint.sites || {})
+      .filter(inDash)
+      .filter(([_, d]: [string, any]) => (d.flagged_count || 0) > 0)
+      .sort((a: any, b: any) => b[1].flagged_count - a[1].flagged_count) as Array<[string, any]>;
+    const totalFlagged = perSite.reduce((acc, [_, d]) => acc + (d.flagged_count || 0), 0);
+    if (perSite.length === 0) return null;
+    return (
+      <div data-copy-tile="Title truncation" class="rounded-lg px-4 py-2 mb-4 border bg-rose-950/30 border-rose-800/50">
+        <div class="flex items-center justify-between flex-wrap gap-3">
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-semibold text-rose-300 uppercase tracking-wider">Title truncation</span>
+            <span class="text-sm text-rose-400 font-semibold">{totalFlagged} title{totalFlagged === 1 ? '' : 's'} look mid-word cut at ≤62 chars</span>
+            <span class="text-[10px] text-gray-500">{perSite.length} site{perSite.length === 1 ? '' : 's'} affected</span>
+          </div>
+          <details class="text-xs">
+            <summary class="cursor-pointer text-rose-400 hover:text-rose-300">details</summary>
+            <div class="absolute right-8 mt-2 bg-gray-800 border border-gray-700 rounded-lg p-3 shadow-xl z-50 min-w-[520px] max-h-[420px] overflow-y-auto">
+              {perSite.map(([sid, d]: [string, any]) => (
+                <div class="mb-3 last:mb-0">
+                  <div class="text-xs font-semibold text-white mb-1">{sid} <span class="text-gray-500 font-normal">({d.flagged_count})</span></div>
+                  {d.flagged.slice(0, 10).map((p: any) => (
+                    <div class="text-[11px] mb-1 text-gray-400">
+                      <span class="text-rose-400">L={p.length}</span> · <span class="text-gray-300">{p.title}</span>
+                      {p.url && <div class="text-[10px] text-gray-600 ml-3">{p.url.replace(/^https?:\/\/(www\.)?/, '').slice(0, 80)}</div>}
+                    </div>
+                  ))}
+                  {d.flagged_count > 10 && <div class="text-[10px] text-gray-500 mt-1">+{d.flagged_count - 10} more</div>}
+                </div>
+              ))}
+              <div class="text-[10px] text-gray-500 mt-3 pt-2 border-t border-gray-700">Detects titles 55-62 chars ending on a stopword/preposition/article — likely cut mid-sentence by a length linter. Source: scripts/check_title_truncation.py</div>
+            </div>
+          </details>
+        </div>
+      </div>
+    );
+  })()}
 
   {/* Drift detector — CLAUDE.md assertions vs live DOM */}
   {driftReport && (
