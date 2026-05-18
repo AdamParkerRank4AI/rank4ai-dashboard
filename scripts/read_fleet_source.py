@@ -61,10 +61,10 @@ FLEET = {
         "domain": "builderweb.online",
         "live": "builderweb.online",
     },
-    "ukmetabolic": {
+    "peptideclear": {
         "repo": "~/ukmetabolic",
-        "domain": "ukmetabolic.pages.dev",
-        "live": "ukmetabolic.co.uk",
+        "domain": "peptideclear.co.uk",
+        "live": "peptideclear.co.uk",
     },
     "findatradey": {
         "repo": "~/findatradey",

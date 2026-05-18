@@ -37,7 +37,7 @@ SITES = [
     ("kartapay",         "kartapay",                "leadgen",   False, "https://kartapay.co.uk/"),
     ("findatradey",      "findatradey",             "leadgen",   True,  "https://findatradey.pages.dev/"),
     ("findagym",         "findagym",                "leadgen",   True,  "https://findagym.pages.dev/"),
-    ("ukmetabolic",      "ukmetabolic",             "leadgen",   True,  "https://ukmetabolic.pages.dev/"),
+    ("peptideclear",     "ukmetabolic",             "leadgen",   False, "https://peptideclear.co.uk/"),
     ("builderweb",       "lovinlovable",            "saas",      False, "https://lovinlovable.dawn-field-3d16.workers.dev/"),
     ("resiliencebuilder","steve-site",              "client",    False, None),
 ]
