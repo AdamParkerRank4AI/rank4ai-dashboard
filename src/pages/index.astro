@@ -4,6 +4,9 @@ import clients from '../utils/dashboardClients';
 import fs from 'node:fs';
 import path from 'node:path';
 
+const clientIds = new Set((clients as any[]).map((c) => c.id));
+const inDash = ([id]: [string, any]) => clientIds.has(id);
+
 function loadJson(filename: string) {
   try {
     const filePath = path.join(process.cwd(), 'src', 'data', 'live', filename);
@@ -49,7 +52,7 @@ let baselineSummary: { sites: number; p1Fail: number; p2Fail: number; p0Fail: nu
 if (baselineAudit?.sites) {
   let p0Fail = 0, p1Fail = 0, p2Fail = 0;
   const bySite: any[] = [];
-  for (const [id, data] of Object.entries(baselineAudit.sites)) {
+  for (const [id, data] of Object.entries(baselineAudit.sites).filter(inDash)) {
     const d = data as any;
     const fails = (d.checks || []).filter((c: any) => c.status === 'fail').map((c: any) => ({ severity: c.severity, label: c.label, note: c.note || '' }));
     for (const f of fails) {
@@ -177,7 +180,9 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
         <div class="text-xs text-green-400/80">{BUILD_LABEL} · {BUILD_TIMESTAMP}</div>
       </div>
     </div>
-    <a href="/agency/rank4ai/daily-audit" class="text-xs text-green-300 hover:text-green-100 underline">View Daily Audit →</a>
+    {clientIds.has('rank4ai') && (
+      <a href="/agency/rank4ai/daily-audit" class="text-xs text-green-300 hover:text-green-100 underline">View Daily Audit →</a>
+    )}
   </div>
 
   {deployParity && (
@@ -336,9 +341,11 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
       <button id="refresh-btn" class="px-3 py-1.5 bg-blue-600 text-white rounded text-sm hover:bg-blue-500 transition">
         Refresh All Data
       </button>
-      <a href="/crm" class="px-3 py-1.5 bg-gray-800 text-gray-300 rounded text-sm hover:bg-gray-700 transition">
-        CRM Pipeline
-      </a>
+      {clientIds.has('rank4ai') && (
+        <a href="/crm" class="px-3 py-1.5 bg-gray-800 text-gray-300 rounded text-sm hover:bg-gray-700 transition">
+          CRM Pipeline
+        </a>
+      )}
     </div>
   </div>
 
@@ -364,7 +371,7 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
         <details class="text-xs">
           <summary class="cursor-pointer text-emerald-400 hover:text-emerald-300">what changed</summary>
           <div class="absolute right-8 mt-2 bg-gray-800 border border-gray-700 rounded-lg p-3 shadow-xl z-50 min-w-[520px] max-h-[500px] overflow-y-auto">
-            {Object.entries(wins.per_site || {}).map(([site, d]: [string, any]) => (
+            {Object.entries(wins.per_site || {}).filter(inDash).map(([site, d]: [string, any]) => (
               <div class="mb-3">
                 <div class="text-xs font-semibold text-white mb-1">{site}</div>
                 {d.cleared_today?.length > 0 && (
@@ -401,7 +408,7 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
         <span class="text-[10px] text-gray-500">~30 URLs total today · {new Date(manualQueue.generated_at).toLocaleDateString('en-GB', { day: '2-digit', month: 'short' })}</span>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-        {Object.entries(manualQueue.per_site || {}).map(([siteId, data]: [string, any]) => (
+        {Object.entries(manualQueue.per_site || {}).filter(inDash).map(([siteId, data]: [string, any]) => (
           <div data-copy-subtile={`Manual GSC — ${siteId}`} class="bg-gray-900/60 border border-gray-800 rounded p-2.5">
             <div class="flex items-center justify-between mb-1.5">
               <div class="text-[11px] font-semibold text-white">{siteId}</div>
@@ -456,12 +463,12 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
             ? <span class="text-sm text-amber-400 font-semibold">{driftReport.fleet_drift_count} assertion{driftReport.fleet_drift_count === 1 ? '' : 's'} drifted vs CLAUDE.md</span>
             : <span class="text-sm text-gray-400">All assertions match CLAUDE.md</span>
           }
-          <span class="text-[10px] text-gray-500">{Object.keys(driftReport.per_site || {}).length} sites checked</span>
+          <span class="text-[10px] text-gray-500">{Object.entries(driftReport.per_site || {}).filter(inDash).length} sites checked</span>
         </div>
         <details class="text-xs">
           <summary class="cursor-pointer text-amber-400 hover:text-amber-300">details</summary>
           <div class="absolute right-8 mt-2 bg-gray-800 border border-gray-700 rounded-lg p-3 shadow-xl z-50 min-w-[480px] max-h-[420px] overflow-y-auto">
-            {Object.entries(driftReport.per_site || {}).map(([sid, d]: [string, any]) => (
+            {Object.entries(driftReport.per_site || {}).filter(inDash).map(([sid, d]: [string, any]) => (
               <div class="mb-3 last:mb-0">
                 <div class="text-xs font-semibold text-white mb-1">{sid}</div>
                 {d.error && <div class="text-[10px] text-red-400">{d.error}</div>}
@@ -509,7 +516,7 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
         <details class="text-xs">
           <summary class="cursor-pointer text-fuchsia-400 hover:text-fuchsia-300">details</summary>
           <div class="absolute right-8 mt-2 bg-gray-800 border border-gray-700 rounded-lg p-3 shadow-xl z-50 min-w-[520px] max-h-[420px] overflow-y-auto">
-            {Object.entries(entityCoherence).filter(([k]) => k !== 'fleet_summary').map(([sid, d]: [string, any]) => (
+            {Object.entries(entityCoherence).filter(([k]) => k !== 'fleet_summary').filter(inDash).map(([sid, d]: [string, any]) => (
               <div class="mb-3 last:mb-0 pb-2 border-b border-gray-700 last:border-0">
                 <div class="text-xs font-semibold text-white mb-1">{sid} <span class="text-[10px] text-gray-500 ml-2">{d.summary?.ok}/{d.summary?.total} OK · {d.summary?.score}%</span></div>
                 {d.broken_detail?.length > 0 && d.broken_detail.map((b: any) => (
@@ -549,7 +556,7 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
         <details class="text-xs">
           <summary class="cursor-pointer text-cyan-400 hover:text-cyan-300">refresh pile</summary>
           <div class="absolute right-8 mt-2 bg-gray-800 border border-gray-700 rounded-lg p-3 shadow-xl z-50 min-w-[560px] max-h-[460px] overflow-y-auto">
-            {Object.entries(contentFreshness).filter(([k]) => k !== 'fleet_summary').map(([sid, d]: [string, any]) => (
+            {Object.entries(contentFreshness).filter(([k]) => k !== 'fleet_summary').filter(inDash).map(([sid, d]: [string, any]) => (
               <div class="mb-3 last:mb-0 pb-2 border-b border-gray-700 last:border-0">
                 <div class="text-xs font-semibold text-white mb-1">
                   {sid} <span class="text-[10px] text-gray-500 ml-2">median age {d.median_age_days ?? '—'}d</span>
@@ -585,7 +592,7 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
         <details class="text-xs">
           <summary class="cursor-pointer text-blue-400 hover:text-blue-300">per-site</summary>
           <div class="absolute right-8 mt-2 bg-gray-800 border border-gray-700 rounded-lg p-3 shadow-xl z-50 min-w-[480px] max-h-[420px] overflow-y-auto">
-            {Object.entries(llmsValidation).filter(([k]) => k !== 'fleet_summary').map(([sid, d]: [string, any]) => (
+            {Object.entries(llmsValidation).filter(([k]) => k !== 'fleet_summary').filter(inDash).map(([sid, d]: [string, any]) => (
               <div class="mb-3 last:mb-0 pb-2 border-b border-gray-700 last:border-0">
                 <div class="text-xs font-semibold text-white mb-1">
                   {sid}
@@ -625,7 +632,7 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
           <details class="text-xs">
             <summary class="cursor-pointer text-purple-400 hover:text-purple-300">under-distributed</summary>
             <div class="absolute right-8 mt-2 bg-gray-800 border border-gray-700 rounded-lg p-3 shadow-xl z-50 min-w-[520px] max-h-[420px] overflow-y-auto">
-              {Object.entries(syndication).filter(([k]) => k !== 'fleet_summary').map(([sid, d]: [string, any]) => (
+              {Object.entries(syndication).filter(([k]) => k !== 'fleet_summary').filter(inDash).map(([sid, d]: [string, any]) => (
                 <div class="mb-3 last:mb-0 pb-2 border-b border-gray-700 last:border-0">
                   <div class="text-xs font-semibold text-white mb-1">{sid} <span class="text-[10px] text-gray-500 ml-2">median {d.median_distribution}%</span></div>
                   {(d.under_distributed || []).slice(0, 5).map((p: any) => (
@@ -654,7 +661,7 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
         <span class="text-[10px] text-gray-500">Fetched {cfCrawls.fetched_at ? new Date(cfCrawls.fetched_at).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }) : '—'}</span>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-        {Object.entries(cfCrawls.per_site || {}).map(([siteId, data]: [string, any]) => (
+        {Object.entries(cfCrawls.per_site || {}).filter(inDash).map(([siteId, data]: [string, any]) => (
           <div data-copy-subtile={`CF AI Crawls — ${siteId}`} class="bg-gray-900/60 border border-gray-800 rounded p-2.5">
             <div class="text-[11px] font-semibold text-white mb-1.5">{siteId}</div>
             {data.error ? (
@@ -1061,7 +1068,9 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
       <div class="mt-6 pt-4 border-t border-gray-800">
         <h3 class="text-sm font-semibold text-gray-400 mb-2">Quick Links</h3>
         <div class="flex flex-wrap gap-2">
-          <a href="/crm" class="text-[10px] px-2 py-1 rounded bg-gray-800 text-gray-400 hover:text-white">CRM Pipeline</a>
+          {clientIds.has('rank4ai') && (
+            <a href="/crm" class="text-[10px] px-2 py-1 rounded bg-gray-800 text-gray-400 hover:text-white">CRM Pipeline</a>
+          )}
           <a href="/add-client" class="text-[10px] px-2 py-1 rounded bg-gray-800 text-green-400 hover:text-green-300">+ Add Client</a>
         </div>
       </div>

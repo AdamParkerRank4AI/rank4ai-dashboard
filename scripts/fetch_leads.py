@@ -29,6 +29,10 @@ SUPABASE_URL = "https://tsscscjcxbzhicuuhter.supabase.co"
 SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzc2NzY2pjeGJ6aGljdXVodGVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwMzU1NDEsImV4cCI6MjA5MTYxMTU0MX0.Q4z8-zHq0RAjZ1Vnv339JwAY36aq5TvnDBwE7OvUNOM"
 OUTPUT_DIR = os.path.expanduser("~/rank4ai-dashboard/src/data/live")
 
+# Hold-back window: ignore step_1_complete rows newer than this. The user might
+# still submit, so counting a fresh step-1 row inflates the abandon number.
+STEP1_HOLDBACK_MINUTES = 5
+
 # Map dashboard site_id → (Supabase table, output filename)
 SITE_TABLES = {
     "market-invoice":    ("market_invoice_leads",    "mi_leads.json"),
@@ -82,6 +86,12 @@ def build_payload(site_id: str, table: str, now: datetime, week_ago: str, month_
     except Exception as e:
         print(f"  {site_id}: fetch failed ({e}) — table may not exist yet, writing empty payload")
         recent = []
+
+    holdback_cutoff = (now - timedelta(minutes=STEP1_HOLDBACK_MINUTES)).isoformat()
+    recent = [
+        r for r in recent
+        if not (r.get("event_type") == "step_1_complete" and r["created_at"] >= holdback_cutoff)
+    ]
 
     total_7d = sum(1 for r in recent if r["created_at"] >= week_ago)
     total_30d = len(recent)

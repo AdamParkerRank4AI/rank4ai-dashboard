@@ -1,0 +1,283 @@
+---
+import DashboardLayout from '../layouts/DashboardLayout.astro';
+import clients from '../utils/dashboardClients';
+import fs from 'node:fs';
+import path from 'node:path';
+
+const LEADS_FILE: Record<string, string> = {
+  'market-invoice': 'mi_leads.json',
+  'bestbusinessloans': 'bbl_leads.json',
+  'fundbiz': 'fundbiz_leads.json',
+  'cardmachines': 'cardmachines_leads.json',
+};
+
+function loadJson(filename: string) {
+  try {
+    const filePath = path.join(process.cwd(), 'src', 'data', 'live', filename);
+    if (fs.existsSync(filePath)) {
+      return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    }
+  } catch {}
+  return null;
+}
+
+const clientIds = new Set((clients as any[]).map((c) => c.id));
+const dashboardLeadSites = Object.entries(LEADS_FILE).filter(([id]) => clientIds.has(id));
+
+if (dashboardLeadSites.length === 0) {
+  return Astro.redirect('/');
+}
+
+type Site = { id: string; name: string; data: any };
+const sites: Site[] = dashboardLeadSites
+  .map(([id, file]) => {
+    const c = (clients as any[]).find((x) => x.id === id);
+    return { id, name: c?.name || id, data: loadJson(file) };
+  })
+  .filter((s) => s.data);
+
+const total: number = sites.reduce((a, s) => a + (s.data.count_total || 0), 0);
+const total30 = sites.reduce((a, s) => a + (s.data.count_30d || 0), 0);
+const total7 = sites.reduce((a, s) => a + (s.data.count_7d || 0), 0);
+const step1_7 = sites.reduce((a, s) => a + (s.data.funnel_7d?.step_1_complete || 0), 0);
+const submit_7 = sites.reduce((a, s) => a + (s.data.funnel_7d?.form_submit || 0), 0);
+const conv_7 = step1_7 > 0 ? Math.round((submit_7 / step1_7) * 1000) / 10 : 0;
+
+// Combined source breakdown (30d)
+const sourceTotals: Record<string, number> = {};
+for (const s of sites) {
+  for (const src of (s.data.sources_30d || [])) {
+    sourceTotals[src.source] = (sourceTotals[src.source] || 0) + (src.count || 0);
+  }
+}
+const combinedSources = Object.entries(sourceTotals)
+  .map(([source, count]) => ({ source, count }))
+  .sort((a, b) => b.count - a.count);
+
+// Combined recent leads, tagged with site, sorted desc by created_at
+const recent: Array<any> = [];
+for (const s of sites) {
+  for (const l of (s.data.recent_leads || [])) {
+    recent.push({ ...l, _site_id: s.id, _site_name: s.name });
+  }
+}
+recent.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
+const recentTop = recent.slice(0, 30);
+
+const fetchedAts = sites.map((s) => s.data.fetched_at).filter(Boolean).sort();
+const oldestFetch = fetchedAts[0];
+
+const siteSlugForUrl = (id: string) => {
+  const c = (clients as any[]).find((x) => x.id === id);
+  return c?.liveDomain || c?.domain || '';
+};
+---
+
+<DashboardLayout title="Leads — Rank4AI" view="agency">
+  <div class="mb-4">
+    <h1 class="text-xl font-bold text-white">Leads</h1>
+    <p class="text-sm text-gray-500">Aggregated from {sites.length} site{sites.length === 1 ? '' : 's'} — Supabase pull at {oldestFetch ? new Date(oldestFetch).toLocaleString('en-GB', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }) : '—'}</p>
+  </div>
+
+  <!-- Top stat row -->
+  <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-6">
+    <div class="bg-gray-900 border border-gray-700 rounded-lg p-4 text-center">
+      <div class="text-2xl font-bold text-white">{total}</div>
+      <div class="text-[10px] text-gray-500 uppercase tracking-wider">All-time rows</div>
+    </div>
+    <div class="bg-gray-900 border border-gray-700 rounded-lg p-4 text-center">
+      <div class="text-2xl font-bold text-white">{total30}</div>
+      <div class="text-[10px] text-gray-500 uppercase tracking-wider">Last 30 days</div>
+    </div>
+    <div class="bg-gray-900 border border-gray-700 rounded-lg p-4 text-center">
+      <div class="text-2xl font-bold text-white">{total7}</div>
+      <div class="text-[10px] text-gray-500 uppercase tracking-wider">Last 7 days</div>
+    </div>
+    <div class="bg-gray-900 border border-emerald-800/40 rounded-lg p-4 text-center">
+      <div class="text-2xl font-bold text-emerald-400">{submit_7}</div>
+      <div class="text-[10px] text-emerald-400/80 uppercase tracking-wider">Submits 7d</div>
+    </div>
+    <div class="bg-gray-900 border border-gray-700 rounded-lg p-4 text-center">
+      <div class="text-2xl font-bold text-white">{conv_7}%</div>
+      <div class="text-[10px] text-gray-500 uppercase tracking-wider">Step1 → Submit</div>
+    </div>
+  </div>
+
+  <!-- Per-site breakdown -->
+  <div class="bg-gray-900 border border-gray-700 rounded-lg p-5 mb-6">
+    <h3 class="text-sm font-semibold text-white mb-3">Per-site breakdown</h3>
+    <div class="overflow-x-auto">
+      <table class="w-full text-xs">
+        <thead>
+          <tr class="text-left text-gray-500 border-b border-gray-800">
+            <th class="py-2 pr-2">Site</th>
+            <th class="py-2 pr-2 text-right">All-time</th>
+            <th class="py-2 pr-2 text-right">30d</th>
+            <th class="py-2 pr-2 text-right">7d</th>
+            <th class="py-2 pr-2 text-right">Step 1 (7d)</th>
+            <th class="py-2 pr-2 text-right">Submits (7d)</th>
+            <th class="py-2 pr-2 text-right">Conversion</th>
+          </tr>
+        </thead>
+        <tbody>
+          {sites.map((s) => (
+            <tr class="border-b border-gray-800/50">
+              <td class="py-2 pr-2 text-white">{s.name}</td>
+              <td class="py-2 pr-2 text-right text-gray-300">{s.data.count_total ?? 0}</td>
+              <td class="py-2 pr-2 text-right text-gray-300">{s.data.count_30d ?? 0}</td>
+              <td class="py-2 pr-2 text-right text-gray-300">{s.data.count_7d ?? 0}</td>
+              <td class="py-2 pr-2 text-right text-gray-400">{s.data.funnel_7d?.step_1_complete ?? 0}</td>
+              <td class="py-2 pr-2 text-right text-emerald-400">{s.data.funnel_7d?.form_submit ?? 0}</td>
+              <td class="py-2 pr-2 text-right text-gray-300">{s.data.funnel_7d?.conversion_pct ?? 0}%</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Combined 7-day funnel -->
+  <div class="bg-gray-900 border border-gray-700 rounded-lg p-5 mb-6">
+    <h3 class="text-sm font-semibold text-white mb-3">7-day funnel (combined across {sites.length} sites)</h3>
+    <div class="space-y-2">
+      <div class="flex items-center gap-3">
+        <span class="text-xs text-gray-400 w-32">Step 1 complete</span>
+        <div class="flex-1 bg-gray-800 rounded-full h-6 overflow-hidden">
+          <div class="h-full bg-blue-600 rounded-full" style="width: 100%"></div>
+        </div>
+        <span class="text-xs font-bold text-white w-10 text-right">{step1_7}</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-xs text-gray-400 w-32">Form submitted</span>
+        <div class="flex-1 bg-gray-800 rounded-full h-6 overflow-hidden">
+          <div class="h-full bg-emerald-600 rounded-full" style={`width: ${conv_7}%`}></div>
+        </div>
+        <span class="text-xs font-bold text-white w-10 text-right">{submit_7}</span>
+      </div>
+    </div>
+    <p class="text-[11px] text-gray-500 mt-3">Drop-off Step 1 → Submit: <span class="text-yellow-400">{Math.max(0, step1_7 - submit_7)}</span> people across all sites.</p>
+  </div>
+
+  <!-- Source breakdown -->
+  <div class="bg-gray-900 border border-gray-700 rounded-lg p-5 mb-6">
+    <h3 class="text-sm font-semibold text-white mb-3">Source breakdown (30 days, combined)</h3>
+    {combinedSources.length === 0 && (
+      <p class="text-xs text-gray-500">No source data yet.</p>
+    )}
+    {combinedSources.map((s: any) => (
+      <div class="flex items-center gap-3 mb-2">
+        <span class="text-xs text-gray-400 w-40 truncate">{s.source}</span>
+        <div class="flex-1 bg-gray-800 rounded-full h-5 overflow-hidden">
+          <div class="h-full bg-purple-600" style={`width: ${Math.min(100, (s.count / (combinedSources[0]?.count || 1)) * 100)}%`}></div>
+        </div>
+        <span class="text-xs font-bold text-white w-10 text-right">{s.count}</span>
+      </div>
+    ))}
+  </div>
+
+  <!-- Recent submissions (merged) -->
+  <div class="bg-gray-900 border border-gray-700 rounded-lg p-5">
+    <div class="flex items-center justify-between mb-3">
+      <h3 class="text-sm font-semibold text-white">Recent submissions (up to 30, across all sites)</h3>
+      <button id="leads-show-dismissed" type="button" class="text-[10px] text-gray-500 hover:text-gray-300" style="display:none">Show dismissed</button>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="w-full text-xs">
+        <thead>
+          <tr class="text-left text-gray-500 border-b border-gray-800">
+            <th class="py-2 pr-2 w-6"></th>
+            <th class="py-2 pr-2">When</th>
+            <th class="py-2 pr-2">Site</th>
+            <th class="py-2 pr-2">Type</th>
+            <th class="py-2 pr-2">Company</th>
+            <th class="py-2 pr-2">Contact</th>
+            <th class="py-2 pr-2">Source</th>
+            <th class="py-2 pr-2">Landing page</th>
+            <th class="py-2 pr-2">Finance</th>
+          </tr>
+        </thead>
+        <tbody id="leads-tbody">
+          {recentTop.map((l: any) => (
+            <tr class="border-b border-gray-800/50 lead-row" data-lead-id={l.id}>
+              <td class="py-2 pr-2">
+                <button type="button" class="lead-dismiss text-gray-600 hover:text-red-400 text-xs" title="Dismiss this lead">×</button>
+              </td>
+              <td class="py-2 pr-2 text-gray-400 whitespace-nowrap">{new Date(l.created_at).toLocaleString('en-GB', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' })}</td>
+              <td class="py-2 pr-2"><span class="px-1.5 py-0.5 rounded text-[10px] bg-gray-800 text-gray-300">{l._site_name}</span></td>
+              <td class="py-2 pr-2">
+                {l.event_type === 'form_submit' && <span class="px-1.5 py-0.5 rounded text-[10px] bg-emerald-900/60 text-emerald-300">submit</span>}
+                {l.event_type === 'step_1_complete' && <span class="px-1.5 py-0.5 rounded text-[10px] bg-blue-900/60 text-blue-300">step 1</span>}
+                {l.event_type !== 'form_submit' && l.event_type !== 'step_1_complete' && <span class="px-1.5 py-0.5 rounded text-[10px] bg-gray-800 text-gray-400">{l.event_type}</span>}
+              </td>
+              <td class="py-2 pr-2 text-white">{l.company_name || '—'}</td>
+              <td class="py-2 pr-2">
+                {l.contact_name && <div class="text-white">{l.contact_name}</div>}
+                {l.email && <div class="text-gray-500 text-[10px]">{l.email}</div>}
+                {l.phone && <div class="text-gray-500 text-[10px]">{l.phone}</div>}
+                {!l.contact_name && !l.email && <span class="text-gray-600">—</span>}
+              </td>
+              <td class="py-2 pr-2 text-gray-300">{l.source || <span class="text-gray-600">unknown</span>}</td>
+              <td class="py-2 pr-2 text-gray-400 text-[10px] max-w-[200px] truncate">{l.page_url ? l.page_url.replace(/^https?:\/\/[^/]+/, '') : '—'}</td>
+              <td class="py-2 pr-2 text-gray-400">
+                {l.finance_type && <div>{l.finance_type}</div>}
+                {(l.turnover || l.industry) && <div class="text-gray-600 text-[10px]">{[l.turnover, l.industry].filter(Boolean).join(' · ')}</div>}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    {recentTop.length === 0 && (
+      <p class="text-center text-gray-500 py-8">No leads in last 30 days across any site</p>
+    )}
+    <p class="text-[11px] text-gray-500 mt-3">× hides a lead for you in this browser (localStorage). Doesn't delete from Supabase.</p>
+  </div>
+
+  <script is:inline>
+    (function () {
+      const STORE = 'r4ai_dashboard_dismissed_leads_v1';
+      function loadDismissed() {
+        try { return new Set(JSON.parse(localStorage.getItem(STORE) || '[]')); } catch { return new Set(); }
+      }
+      function saveDismissed(set) {
+        localStorage.setItem(STORE, JSON.stringify(Array.from(set)));
+      }
+      function applyHidden() {
+        const dismissed = loadDismissed();
+        let anyHidden = false;
+        document.querySelectorAll('.lead-row').forEach(function (row) {
+          const id = row.getAttribute('data-lead-id');
+          if (id && dismissed.has(id)) {
+            row.style.display = 'none';
+            anyHidden = true;
+          } else {
+            row.style.display = '';
+          }
+        });
+        const showBtn = document.getElementById('leads-show-dismissed');
+        if (showBtn) showBtn.style.display = anyHidden ? '' : 'none';
+        if (showBtn) showBtn.textContent = anyHidden ? ('Show ' + dismissed.size + ' dismissed') : '';
+      }
+      document.querySelectorAll('.lead-dismiss').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const row = btn.closest('.lead-row');
+          const id = row && row.getAttribute('data-lead-id');
+          if (!id) return;
+          const d = loadDismissed();
+          d.add(id);
+          saveDismissed(d);
+          applyHidden();
+        });
+      });
+      const showBtn = document.getElementById('leads-show-dismissed');
+      if (showBtn) {
+        showBtn.addEventListener('click', function () {
+          if (!confirm('Clear all dismissed leads in this browser?')) return;
+          saveDismissed(new Set());
+          applyHidden();
+        });
+      }
+      applyHidden();
+    })();
+  </script>
+</DashboardLayout>

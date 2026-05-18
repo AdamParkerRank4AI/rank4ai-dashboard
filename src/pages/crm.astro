@@ -1,5 +1,10 @@
 ---
 import DashboardLayout from '../layouts/DashboardLayout.astro';
+import clients from '../utils/dashboardClients';
+
+if (!clients.some((c: any) => c.id === 'rank4ai')) {
+  return Astro.redirect('/');
+}
 ---
 
 <DashboardLayout title="CRM — Rank4AI" currentClient="rank4ai" view="agency">

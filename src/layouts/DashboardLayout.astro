@@ -21,6 +21,9 @@ const clientVisibleSections = !isAgency && currentClientObj
   ? (sections as any[]).filter((s) => (currentClientObj.clientViewSections || []).includes(s.id))
   : [];
 const clientCode: string | null = currentClientObj?.clientCode || null;
+const showCrmLink = (clients as any[]).some((c) => c.id === 'rank4ai');
+const LEAD_SITE_IDS = new Set(['market-invoice', 'bestbusinessloans', 'fundbiz', 'cardmachines']);
+const showLeadsLink = (clients as any[]).some((c) => LEAD_SITE_IDS.has(c.id));
 ---
 
 <html lang="en">
@@ -201,15 +204,28 @@ const clientCode: string | null = currentClientObj?.clientCode || null;
         <div class="mb-6">
           <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Tools</p>
           <ul class="space-y-1">
-            <li>
-              <a href="/crm" class={`block px-3 py-2 rounded text-sm transition ${
-                Astro.url.pathname === '/crm' || Astro.url.pathname === '/crm/'
-                  ? 'bg-blue-600 text-white'
-                  : 'text-gray-300 hover:bg-gray-800'
-              }`}>
-                CRM Pipeline
-              </a>
-            </li>
+            {showLeadsLink && (
+              <li>
+                <a href="/leads" class={`block px-3 py-2 rounded text-sm transition ${
+                  Astro.url.pathname === '/leads' || Astro.url.pathname === '/leads/'
+                    ? 'bg-blue-600 text-white'
+                    : 'text-gray-300 hover:bg-gray-800'
+                }`}>
+                  Leads
+                </a>
+              </li>
+            )}
+            {showCrmLink && (
+              <li>
+                <a href="/crm" class={`block px-3 py-2 rounded text-sm transition ${
+                  Astro.url.pathname === '/crm' || Astro.url.pathname === '/crm/'
+                    ? 'bg-blue-600 text-white'
+                    : 'text-gray-300 hover:bg-gray-800'
+                }`}>
+                  CRM Pipeline
+                </a>
+              </li>
+            )}
             <li>
               <a href="/run-audit" class={`block px-3 py-2 rounded text-sm transition ${
                 Astro.url.pathname === '/run-audit' || Astro.url.pathname === '/run-audit/'

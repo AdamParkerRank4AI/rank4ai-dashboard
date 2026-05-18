@@ -10,7 +10,9 @@ import path from 'node:path';
 export function getStaticPaths() {
   const paths: any[] = [];
   for (const c of clients) {
+    const allowed = new Set<string>((c.allSections || []).concat(c.clientViewSections || []));
     for (const s of sections) {
+      if (!allowed.has(s.id)) continue;
       paths.push({ params: { client: c.id, section: s.id } });
     }
   }
