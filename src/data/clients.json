@@ -254,16 +254,16 @@
     "pre_launch": false
   },
   {
-    "id": "takecardpayments",
-    "name": "TakeCardPayments",
-    "domain": "takecardpayments.co.uk",
-    "liveDomain": "takecardpayments.co.uk",
+    "id": "kartapay",
+    "name": "Kartapay",
+    "domain": "kartapay.co.uk",
+    "liveDomain": "kartapay.co.uk",
     "logo": "",
     "flavour": "leadgen",
     "dashboard": "fleet",
-    "clientCode": "TCP",
-    "pre_launch": true,
-    "notes": "Pre-launch (scaffolded 13 May 2026). Local at ~/takecardpayments. Vernacular-first UK SME card-payments platform, Polish + Romanian phase 1. Astro fleet pattern + fleet-core v0.7.0 + i18n config. 11 production content pages + 13 research reports + 3-pass translation workflow validated. Domain not yet purchased; no CF Pages deploy; no GitHub repo. Daily fetchers skip until preLaunch flips.",
+    "clientCode": "KP",
+    "pre_launch": false,
+    "notes": "LIVE 18 May 2026 at kartapay.co.uk (rebranded from working name TakeCardPayments). Local at ~/kartapay, repo AdamParkerRank4AI/kartapay. CF Pages project: kartapay (RANK4AI account), custom domain kartapay.co.uk + www. Vernacular-first UK SME card-payments + business-finance platform, Polish + Romanian phase 1. 53 pages live: English root + about + 6 bridge pages + 4 legal/404 + PL hub (6 content) + RO hub (5 content) + 16 PL+RO P2 brand reviews + 3 PL P1 comparisons. Adam-actions outstanding: Supabase migration paste, GSC verify, Bing + sitemap submit, Clarity ID.",
     "clientViewSections": [
       "site-structure",
       "site-manager",
