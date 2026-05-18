@@ -9,8 +9,23 @@ from datetime import datetime
 from google.oauth2.credentials import Credentials
 from google.analytics.data_v1beta import BetaAnalyticsDataClient
 from google.analytics.data_v1beta.types import (
-    RunReportRequest, DateRange, Metric, Dimension, OrderBy
+    RunReportRequest, DateRange, Metric, Dimension, OrderBy,
+    Filter, FilterExpression, FilterExpressionList,
 )
+
+# Per-handover: AI Assistant channel surfaces directly in GA4 since May 2026.
+# We also break out by sessionSource for explicit attribution.
+AI_HOSTS = [
+    "perplexity.ai",
+    "chat.openai.com",
+    "chatgpt.com",
+    "gemini.google.com",
+    "bard.google.com",
+    "claude.ai",
+    "copilot.microsoft.com",
+    "you.com",
+    "phind.com",
+]
 
 TOKEN_FILE = os.path.expanduser('~/rank4ai-dashboard/scripts/ga4_token.json')
 OUTPUT_DIR = os.path.expanduser('~/rank4ai-dashboard/src/data/live')
@@ -19,12 +34,9 @@ PROPERTIES = {
     "rank4ai": "526657151",
     "market-invoice": "531285218",
     "seocompare": "532266658",
-    # Set to a numeric property ID once Adam creates the GA4 property and
-    # the GA4 measurement ID is wired into each site's BaseLayout.
-    # AcceptCard has measurement ID G-9Q5QGGE1ZP live in BaseLayout, needs the matching property ID.
-    "bestbusinessloans": None,
-    "fundbiz": None,
-    "cardmachines": None,
+    "cardmachines": "537291192",        # AcceptCard, G-9Q5QGGE1ZP
+    "bestbusinessloans": "538202642",   # G-P7G336KY9C
+    "fundbiz": "538211877",             # G-9L5BSC5H1R
 }
 
 
@@ -157,6 +169,97 @@ def fetch_property(client, property_id, site_id):
             "users": int(row.metric_values[0].value),
         })
 
+    # --- AI traffic (new May 2026 GA4 capability) ---
+    # 1. AI Assistant channel total (last 7d + prior 7d for delta)
+    def ai_channel_count(start, end):
+        try:
+            r = client.run_report(RunReportRequest(
+                property=prop,
+                date_ranges=[DateRange(start_date=start, end_date=end)],
+                dimensions=[Dimension(name="sessionDefaultChannelGroup")],
+                metrics=[Metric(name="sessions"), Metric(name="activeUsers")],
+            ))
+            for row in r.rows:
+                ch = row.dimension_values[0].value
+                if ch == "AI Assistant" or ch == "AI Search":
+                    return {
+                        "channel_label": ch,
+                        "sessions": int(row.metric_values[0].value),
+                        "users": int(row.metric_values[1].value),
+                    }
+        except Exception as e:
+            return {"channel_label": None, "sessions": 0, "users": 0, "error": str(e)}
+        return {"channel_label": None, "sessions": 0, "users": 0}
+
+    ai_7d = ai_channel_count("7daysAgo", "today")
+    ai_prior_7d = ai_channel_count("14daysAgo", "8daysAgo")
+    delta_pct = None
+    if ai_prior_7d.get("sessions", 0) > 0:
+        delta_pct = round(
+            (ai_7d.get("sessions", 0) - ai_prior_7d.get("sessions", 0))
+            / ai_prior_7d.get("sessions", 1) * 100, 1
+        )
+
+    # 2. AI source breakdown (sessionSource matches AI hosts) — last 30 days
+    ai_sources = []
+    try:
+        ai_src_report = client.run_report(RunReportRequest(
+            property=prop,
+            date_ranges=[DateRange(start_date="30daysAgo", end_date="today")],
+            dimensions=[Dimension(name="sessionSource")],
+            metrics=[Metric(name="sessions"), Metric(name="activeUsers")],
+            dimension_filter=FilterExpression(
+                or_group=FilterExpressionList(expressions=[
+                    FilterExpression(filter=Filter(
+                        field_name="sessionSource",
+                        string_filter=Filter.StringFilter(
+                            match_type=Filter.StringFilter.MatchType.CONTAINS,
+                            value=host,
+                            case_sensitive=False,
+                        ),
+                    )) for host in AI_HOSTS
+                ]),
+            ),
+            order_bys=[OrderBy(metric=OrderBy.MetricOrderBy(metric_name="sessions"), desc=True)],
+            limit=15,
+        ))
+        for row in ai_src_report.rows:
+            ai_sources.append({
+                "source": row.dimension_values[0].value,
+                "sessions": int(row.metric_values[0].value),
+                "users": int(row.metric_values[1].value),
+            })
+    except Exception as e:
+        ai_sources = [{"error": str(e)}]
+
+    # 3. Top landing pages — filtered to AI Assistant channel (last 30 days)
+    top_ai_landing = []
+    try:
+        ai_landing_report = client.run_report(RunReportRequest(
+            property=prop,
+            date_ranges=[DateRange(start_date="30daysAgo", end_date="today")],
+            dimensions=[Dimension(name="landingPagePlusQueryString")],
+            metrics=[Metric(name="sessions"), Metric(name="activeUsers")],
+            dimension_filter=FilterExpression(filter=Filter(
+                field_name="sessionDefaultChannelGroup",
+                string_filter=Filter.StringFilter(
+                    match_type=Filter.StringFilter.MatchType.CONTAINS,
+                    value="AI",
+                    case_sensitive=False,
+                ),
+            )),
+            order_bys=[OrderBy(metric=OrderBy.MetricOrderBy(metric_name="sessions"), desc=True)],
+            limit=10,
+        ))
+        for row in ai_landing_report.rows:
+            top_ai_landing.append({
+                "path": row.dimension_values[0].value,
+                "sessions": int(row.metric_values[0].value),
+                "users": int(row.metric_values[1].value),
+            })
+    except Exception as e:
+        top_ai_landing = [{"error": str(e)}]
+
     return {
         "site_id": site_id,
         "property_id": property_id,
@@ -167,6 +270,13 @@ def fetch_property(client, property_id, site_id):
         "sources": sources,
         "daily": daily,
         "countries": countries,
+        "ai_assistant": {
+            "last_7d": ai_7d,
+            "prior_7d": ai_prior_7d,
+            "delta_pct": delta_pct,
+            "sources_30d": ai_sources,
+            "top_landing_pages_30d": top_ai_landing,
+        },
     }
 
 

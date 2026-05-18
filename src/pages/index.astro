@@ -499,6 +499,89 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
     );
   })()}
 
+  {/* AI Traffic — live referrals from ChatGPT / Perplexity / Gemini / Claude / Copilot */}
+  {ga4 && (() => {
+    const rows = Object.entries(ga4)
+      .filter(([sid]) => clientIds.has(sid))
+      .map(([sid, d]: [string, any]) => {
+        const ai = d?.ai_assistant || {};
+        const sources = (ai.sources_30d || []).filter((s: any) => !s?.error);
+        const aiSessions30d = sources.reduce((a: number, s: any) => a + (s.sessions || 0), 0);
+        const totalSessions30d = d?.overview?.sessions || 0;
+        const pct = totalSessions30d > 0 ? Math.round((aiSessions30d / totalSessions30d) * 1000) / 10 : 0;
+        const topSource = sources[0]?.source || '—';
+        return {
+          sid,
+          name: ((clients as any[]).find((c: any) => c.id === sid)?.name) || sid,
+          totalSessions30d,
+          aiSessions30d,
+          aiPct: pct,
+          topSource,
+          topSourceSessions: sources[0]?.sessions || 0,
+          sources,
+          topLanding: (ai.top_landing_pages_30d || []).filter((p: any) => !p?.error),
+          aiAssistant7d: ai.last_7d?.sessions || 0,
+          aiAssistant7dDelta: ai.delta_pct,
+        };
+      })
+      .filter((r) => r.totalSessions30d > 0 || r.aiSessions30d > 0)
+      .sort((a, b) => b.aiSessions30d - a.aiSessions30d);
+    if (rows.length === 0) return null;
+    const fleetAi = rows.reduce((a, r) => a + r.aiSessions30d, 0);
+    const fleetTotal = rows.reduce((a, r) => a + r.totalSessions30d, 0);
+    const fleetPct = fleetTotal > 0 ? Math.round((fleetAi / fleetTotal) * 1000) / 10 : 0;
+    return (
+      <div data-copy-tile="AI Traffic" class="rounded-lg px-4 py-3 mb-4 border bg-violet-950/30 border-violet-800/50">
+        <div class="flex items-center justify-between flex-wrap gap-3 mb-3">
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-semibold text-violet-300 uppercase tracking-wider">AI Traffic (30d)</span>
+            <span class="text-sm text-violet-400 font-semibold">{fleetAi} sessions from AI assistants</span>
+            <span class="text-[10px] text-gray-500">{fleetPct}% of {fleetTotal} fleet sessions</span>
+          </div>
+          <span class="text-[10px] text-gray-500">Source: GA4 sessionSource matching ChatGPT/Perplexity/Gemini/Claude/Copilot/You/Phind</span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-xs">
+            <thead>
+              <tr class="text-left text-gray-500 border-b border-gray-800">
+                <th class="py-1.5 pr-3">Site</th>
+                <th class="py-1.5 pr-3 text-right">30d sessions</th>
+                <th class="py-1.5 pr-3 text-right">AI 30d</th>
+                <th class="py-1.5 pr-3 text-right">AI %</th>
+                <th class="py-1.5 pr-3">Top AI source</th>
+                <th class="py-1.5 pr-3 text-right">AI 7d</th>
+                <th class="py-1.5">Δ vs prior</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((r) => (
+                <tr class="border-b border-gray-800/50">
+                  <td class="py-1.5 pr-3 text-white">{r.name}</td>
+                  <td class="py-1.5 pr-3 text-right text-gray-400">{r.totalSessions30d}</td>
+                  <td class="py-1.5 pr-3 text-right text-violet-400 font-semibold">{r.aiSessions30d}</td>
+                  <td class="py-1.5 pr-3 text-right text-gray-300">{r.aiPct}%</td>
+                  <td class="py-1.5 pr-3 text-gray-300">{r.topSource} {r.topSourceSessions > 0 && <span class="text-gray-600">({r.topSourceSessions})</span>}</td>
+                  <td class="py-1.5 pr-3 text-right text-gray-300">{r.aiAssistant7d}</td>
+                  <td class="py-1.5 text-gray-400">
+                    {r.aiAssistant7dDelta === null || r.aiAssistant7dDelta === undefined
+                      ? <span class="text-gray-600">—</span>
+                      : r.aiAssistant7dDelta >= 0
+                        ? <span class="text-emerald-400">+{r.aiAssistant7dDelta}%</span>
+                        : <span class="text-rose-400">{r.aiAssistant7dDelta}%</span>
+                    }
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="text-[10px] text-gray-500 mt-3 pt-2 border-t border-gray-800">
+          GA4 wired across all 6 fleet properties 18 May. AcceptCard live since 12 May; BBL/FundBiz since 18 May so will populate over coming days. "AI Assistant" channel (sessionDefaultChannelGroup) hasn't surfaced yet — once GA4 enables the new May 2026 grouping per-property, AI 7d + delta will populate. Until then, AI 30d via sessionSource is the leading number.
+        </p>
+      </div>
+    );
+  })()}
+
   {/* Drift detector — CLAUDE.md assertions vs live DOM */}
   {driftReport && (
     <div data-copy-tile="Drift Detector" class={`rounded-lg px-4 py-2 mb-4 border ${driftReport.fleet_drift_count > 0 ? 'bg-amber-950/30 border-amber-800/50' : 'bg-gray-900 border-gray-700'}`}>
