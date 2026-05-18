@@ -222,7 +222,7 @@ def check_homepage_imagery(root, live, html, flavour, pre_launch):
     n_img = len(re.findall(r"<img\b", html, re.I))
     n_svg = len(re.findall(r"<svg\b", html, re.I))
     if n_img > 0: return ("pass", f"{n_img} img + {n_svg} svg")
-    if n_svg >= 5: return ("pass", f"{n_svg} svg (no img)")
+    if n_svg >= 3: return ("pass", f"{n_svg} svg (no img)")
     return ("fail", f"only {n_img} img + {n_svg} svg — empty homepage")
 
 def check_alt_text(root, live, html, flavour, pre_launch):

@@ -23,7 +23,13 @@ const BUILD_TIMESTAMP = new Date().toLocaleString('en-GB', {
   day: '2-digit', month: 'short', year: 'numeric',
   hour: '2-digit', minute: '2-digit',
 });
-const BUILD_LABEL = 'Entity-Relationship Gap tile (Go Fish) + /entity-relationship-audit skill';
+// Auto-derived from latest git commit subject — stops drifting stale
+let BUILD_LABEL = 'dashboard';
+try {
+  const { execSync } = await import('node:child_process');
+  const subj = execSync('git log -1 --pretty=%s', { encoding: 'utf-8', cwd: process.cwd() }).trim();
+  if (subj) BUILD_LABEL = subj.slice(0, 100);
+} catch {}
 
 const ga4 = loadJson('ga4.json') || {};
 const gsc = loadJson('gsc.json') || {};
@@ -609,8 +615,8 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
     </div>
   )}
 
-  {/* Syndication tracker (Batch 8) — empty until syndication starts */}
-  {syndication && syndication.fleet_summary && (
+  {/* Syndication tracker — hidden until at least one post is tracked */}
+  {syndication && syndication.fleet_summary && (syndication.fleet_summary.post_count || 0) > 0 && (
     <div data-copy-tile="Syndication tracker" class="rounded-lg px-4 py-2 mb-4 border bg-gray-900 border-gray-700">
       <div class="flex items-center justify-between flex-wrap gap-3">
         <div class="flex items-center gap-3">
