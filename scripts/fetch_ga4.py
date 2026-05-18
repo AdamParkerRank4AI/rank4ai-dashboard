@@ -79,7 +79,13 @@ def fetch_property(client, property_id, site_id):
         ],
     ))
 
-    overview_data = {}
+    overview_data = {
+        "active_users": 0,
+        "sessions": 0,
+        "pageviews": 0,
+        "bounce_rate": 0.0,
+        "avg_session_duration": 0.0,
+    }
     if overview.rows:
         row = overview.rows[0]
         overview_data = {
