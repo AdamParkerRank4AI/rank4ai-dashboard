@@ -1,18 +1,18 @@
 {
   "site_id": "peptideclear",
   "domain": "peptideclear.co.uk",
-  "crawled_at": "2026-05-19T15:01:26.380745+00:00",
+  "crawled_at": "2026-05-19T15:17:01.055176+00:00",
   "source": "fleet-source-reader",
   "pages_crawled": 318,
   "total_issues": 0,
   "orphan_pages": 91,
   "avg_depth": 1.9937106918238994,
-  "avg_word_count": 1925,
+  "avg_word_count": 1939,
   "pages_with_schema": 318,
   "pages_with_multimodal": 0,
   "pages_with_comparison_table": 53,
   "pages_with_video": 0,
-  "pages_over_2000_words": 68,
+  "pages_over_2000_words": 78,
   "images_missing_alt": 0,
   "pages_with_date": 310,
   "crawler_access": {
@@ -211,21 +211,21 @@
   },
   "topic_cluster_count": 46,
   "term_consistency": {
-    "2026": 203,
-    "research": 196,
-    "peptide": 148,
+    "research": 195,
+    "2026": 191,
+    "peptide": 147,
     "peptides": 137,
-    "editorial": 123,
-    "mounjaro": 121,
-    "access": 101,
-    "weight": 96,
-    "wegovy": 94,
+    "editorial": 135,
+    "mounjaro": 109,
+    "access": 103,
+    "weight": 97,
+    "routes": 95,
     "rollout": 94,
-    "cohort": 93,
-    "routes": 92,
-    "june": 88,
+    "cohort": 92,
+    "june": 87,
     "collagen": 86,
-    "management": 60
+    "wegovy": 84,
+    "nice": 62
   },
   "content_freshness": {
     "pages_with_dates": 310,
@@ -720,10 +720,10 @@
     {
       "url": "https://peptideclear.co.uk/vs/wegovy-vs-saxenda/",
       "path": "/vs/wegovy-vs-saxenda/",
-      "title": "Wegovy vs Saxenda (UK): newer weekly vs older daily GLP-1",
-      "h1": "Wegovy vs Saxenda",
-      "meta_desc": "UK editorial comparison of Wegovy (semaglutide, weekly) and Saxenda (liraglutide, daily). Older vs newer Novo Nordisk GLP-1s.",
-      "word_count": 1508,
+      "title": "Semaglutide and liraglutide: STEP-1, SCALE and UK landscape",
+      "h1": "Semaglutide and liraglutide: what the published trial data and UK regulatory record report",
+      "meta_desc": "Editorial commentary on the STEP-1 and SCALE trials for semaglutide and liraglutide, plus NICE TA875, NICE TA664 and the UK regulatory record.",
+      "word_count": 2313,
       "status": 200,
       "schemas": [
         "Person",
@@ -733,8 +733,8 @@
         "Organization",
         "Article"
       ],
-      "internal_links_out": 25,
-      "external_links_out": -11,
+      "internal_links_out": 26,
+      "external_links_out": -12,
       "canonical": "https://peptideclear.co.uk/vs/wegovy-vs-saxenda/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -743,9 +743,9 @@
       "has_multimodal": false,
       "has_comparison_table": true,
       "table_count": 1,
-      "list_count": 3,
+      "list_count": 6,
       "question_h2s": 0,
-      "h2_count": 1,
+      "h2_count": 6,
       "last_modified": "2026-05-18",
       "has_answer_capsule": true,
       "has_og_tags": true,
@@ -754,7 +754,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 4,
+      "internal_links_in": 2,
       "depth": 2
     },
     {
@@ -880,10 +880,10 @@
     {
       "url": "https://peptideclear.co.uk/vs/mounjaro-vs-wegovy/",
       "path": "/vs/mounjaro-vs-wegovy/",
-      "title": "Mounjaro vs Wegovy (UK): how they differ and which",
-      "h1": "Mounjaro vs Wegovy",
-      "meta_desc": "UK editorial comparison of Mounjaro (tirzepatide) and Wegovy (semaglutide). Mechanism, dosing schedules, side effect profile, weight loss data, UK pricing, and.",
-      "word_count": 1724,
+      "title": "Tirzepatide and semaglutide: published trial data, UK landscape",
+      "h1": "Tirzepatide and semaglutide: what the published trial data and UK regulatory record report",
+      "meta_desc": "Editorial commentary on SURMOUNT-1 and STEP-1 trial outcomes for tirzepatide and semaglutide, plus the UK regulatory and NICE access framework.",
+      "word_count": 2333,
       "status": 200,
       "schemas": [
         "Person",
@@ -903,9 +903,9 @@
       "has_multimodal": false,
       "has_comparison_table": true,
       "table_count": 1,
-      "list_count": 5,
+      "list_count": 6,
       "question_h2s": 0,
-      "h2_count": 3,
+      "h2_count": 6,
       "last_modified": "2026-05-19",
       "has_answer_capsule": true,
       "has_og_tags": true,
@@ -914,7 +914,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 9,
+      "internal_links_in": 6,
       "depth": 2
     },
     {
@@ -2105,10 +2105,10 @@
     {
       "url": "https://peptideclear.co.uk/medications/",
       "path": "/medications/",
-      "title": "UK GLP-1 weight management medications: Mounjaro, Wegovy",
-      "h1": "UK GLP-1 weight management medications",
-      "meta_desc": "Editorial reference on the three GLP-1 medications licensed in the UK for weight management. Mechanism, dosing, evidence base, NHS and private access, cost.",
-      "word_count": 1527,
+      "title": "UK-licensed GLP-1 weight-management medicines: regulatory overview",
+      "h1": "UK-licensed GLP-1 weight-management medicines",
+      "meta_desc": "Editorial regulatory overview of the GLP-1 receptor agonists holding UK MHRA marketing authorisation for chronic weight management. SmPC and NICE references for each.",
+      "word_count": 1761,
       "status": 200,
       "schemas": [
         "Person",
@@ -2118,8 +2118,8 @@
         "Organization",
         "Article"
       ],
-      "internal_links_out": 30,
-      "external_links_out": -16,
+      "internal_links_out": 29,
+      "external_links_out": -15,
       "canonical": "https://peptideclear.co.uk/medications/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2130,7 +2130,7 @@
       "table_count": 0,
       "list_count": 4,
       "question_h2s": 0,
-      "h2_count": 5,
+      "h2_count": 6,
       "last_modified": "2026-05-18",
       "has_answer_capsule": true,
       "has_og_tags": true,
@@ -2145,10 +2145,10 @@
     {
       "url": "https://peptideclear.co.uk/medications/mounjaro/",
       "path": "/medications/mounjaro/",
-      "title": "Mounjaro (tirzepatide) UK reference (2026): mechanism",
-      "h1": "Mounjaro (tirzepatide)",
-      "meta_desc": "Comprehensive UK editorial reference for Mounjaro (tirzepatide). Dual GIP and GLP-1 mechanism, weekly KwikPen dosing, SURMOUNT trials evidence, NHS TA1026.",
-      "word_count": 2006,
+      "title": "Tirzepatide (Mounjaro) UK regulatory reference (2026)",
+      "h1": "Tirzepatide (Mounjaro): UK regulatory profile",
+      "meta_desc": "Editorial regulatory commentary on tirzepatide (Mounjaro): UK MHRA marketing authorisation, mechanism, published trial evidence, NICE TA1026, regulated dispensing routes.",
+      "word_count": 2143,
       "status": 200,
       "schemas": [
         "Person",
@@ -2159,8 +2159,8 @@
         "Article",
         "Drug"
       ],
-      "internal_links_out": 33,
-      "external_links_out": -18,
+      "internal_links_out": 27,
+      "external_links_out": -12,
       "canonical": "https://peptideclear.co.uk/medications/mounjaro/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2171,7 +2171,7 @@
       "table_count": 0,
       "list_count": 8,
       "question_h2s": 0,
-      "h2_count": 9,
+      "h2_count": 8,
       "last_modified": "2026-05-18",
       "has_answer_capsule": true,
       "has_og_tags": true,
@@ -2186,10 +2186,10 @@
     {
       "url": "https://peptideclear.co.uk/medications/saxenda/",
       "path": "/medications/saxenda/",
-      "title": "Saxenda (liraglutide) UK reference (2026): mechanism",
-      "h1": "Saxenda (liraglutide)",
-      "meta_desc": "Comprehensive UK editorial reference for Saxenda (liraglutide). Daily-injection GLP-1, largely superseded by Wegovy and Mounjaro.",
-      "word_count": 1910,
+      "title": "Liraglutide (Saxenda) UK regulatory reference (2026)",
+      "h1": "Liraglutide (Saxenda): UK regulatory profile",
+      "meta_desc": "Editorial regulatory commentary on liraglutide (Saxenda): UK MHRA marketing authorisation, mechanism, SCALE published trials, paediatric evidence base, regulated dispensing.",
+      "word_count": 2041,
       "status": 200,
       "schemas": [
         "Person",
@@ -2200,8 +2200,8 @@
         "Article",
         "Drug"
       ],
-      "internal_links_out": 23,
-      "external_links_out": -9,
+      "internal_links_out": 26,
+      "external_links_out": -11,
       "canonical": "https://peptideclear.co.uk/medications/saxenda/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2212,7 +2212,7 @@
       "table_count": 0,
       "list_count": 8,
       "question_h2s": 0,
-      "h2_count": 9,
+      "h2_count": 8,
       "last_modified": "2026-05-18",
       "has_answer_capsule": true,
       "has_og_tags": true,
@@ -2227,10 +2227,10 @@
     {
       "url": "https://peptideclear.co.uk/medications/wegovy/",
       "path": "/medications/wegovy/",
-      "title": "Wegovy (semaglutide) UK reference (2026): mechanism",
-      "h1": "Wegovy (semaglutide)",
-      "meta_desc": "Comprehensive UK editorial reference for Wegovy (semaglutide). GLP-1 mechanism, weekly pen dosing, STEP and SELECT trial evidence, cardiovascular indication.",
-      "word_count": 1983,
+      "title": "Semaglutide (Wegovy) UK regulatory reference (2026)",
+      "h1": "Semaglutide (Wegovy): UK regulatory profile",
+      "meta_desc": "Editorial regulatory commentary on semaglutide (Wegovy): UK MHRA marketing authorisation, mechanism, STEP and SELECT published trials, cardiovascular indication, regulated dispensing.",
+      "word_count": 2085,
       "status": 200,
       "schemas": [
         "Person",
@@ -2241,8 +2241,8 @@
         "Article",
         "Drug"
       ],
-      "internal_links_out": 29,
-      "external_links_out": -15,
+      "internal_links_out": 27,
+      "external_links_out": -12,
       "canonical": "https://peptideclear.co.uk/medications/wegovy/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2253,7 +2253,7 @@
       "table_count": 0,
       "list_count": 8,
       "question_h2s": 0,
-      "h2_count": 9,
+      "h2_count": 8,
       "last_modified": "2026-05-18",
       "has_answer_capsule": true,
       "has_og_tags": true,
@@ -2431,10 +2431,10 @@
     {
       "url": "https://peptideclear.co.uk/faq/glp1/will-i-regain-after-stopping-mounjaro/",
       "path": "/faq/glp1/will-i-regain-after-stopping-mounjaro/",
-      "title": "Will I regain the weight after stopping Mounjaro? (UK 2026)",
-      "h1": "Will I regain the weight after stopping Mounjaro?",
-      "meta_desc": "82 percent of patients regain at least 25 percent of lost weight within 12 months of stopping (Oxford analysis, January 2026). Without active maintenance protocols, partial regain is the rule rather than the exception. Resistance training and protein at 1.2 to 1.6 grams per kilogram of goal body wei",
-      "word_count": 1873,
+      "title": "Weight regain after stopping Mounjaro: what the evidence reports (UK 2026)",
+      "h1": "What does the published evidence report about weight regain after stopping Mounjaro?",
+      "meta_desc": "Editorial commentary on the published literature. Published trial data and observational cohort analyses report that a substantial proportion of patients regain weight after stopping GLP-1 medications, including tirzepatide. The SURMOUNT-4 trial reported significant weight regain in the cohort that ",
+      "word_count": 2199,
       "status": 200,
       "schemas": [
         "Person",
@@ -2446,131 +2446,8 @@
         "FAQPage"
       ],
       "internal_links_out": 27,
-      "external_links_out": -13,
+      "external_links_out": -12,
       "canonical": "https://peptideclear.co.uk/faq/glp1/will-i-regain-after-stopping-mounjaro/",
-      "response_time_ms": 0,
-      "image_count": 0,
-      "images_with_alt": 0,
-      "video_count": 0,
-      "has_multimodal": false,
-      "has_comparison_table": false,
-      "table_count": 0,
-      "list_count": 4,
-      "question_h2s": 0,
-      "h2_count": 4,
-      "last_modified": "2026-05-11",
-      "has_answer_capsule": true,
-      "has_og_tags": true,
-      "has_author": true,
-      "has_definition": false,
-      "has_cta": true,
-      "has_breadcrumbs": false,
-      "has_viewport": true,
-      "internal_links_in": 0,
-      "depth": 3
-    },
-    {
-      "url": "https://peptideclear.co.uk/faq/glp1/mounjaro-missed-dose/",
-      "path": "/faq/glp1/mounjaro-missed-dose/",
-      "title": "I missed a dose of Mounjaro, what should I do? (UK 2026)",
-      "h1": "I missed a dose of Mounjaro, what should I do?",
-      "meta_desc": "Mounjaro 4-day rule: if you remember within 4 days of the missed dose, take it as soon as possible and continue the original weekly schedule. If more than 4 days have passed, skip the missed dose entirely and take the next scheduled dose on the usual day. Never double up to compensate. The Wegovy eq",
-      "word_count": 1840,
-      "status": 200,
-      "schemas": [
-        "Person",
-        "Organization",
-        "WebSite",
-        "WebPage",
-        "Organization",
-        "Article",
-        "FAQPage"
-      ],
-      "internal_links_out": 27,
-      "external_links_out": -13,
-      "canonical": "https://peptideclear.co.uk/faq/glp1/mounjaro-missed-dose/",
-      "response_time_ms": 0,
-      "image_count": 0,
-      "images_with_alt": 0,
-      "video_count": 0,
-      "has_multimodal": false,
-      "has_comparison_table": false,
-      "table_count": 0,
-      "list_count": 3,
-      "question_h2s": 0,
-      "h2_count": 4,
-      "last_modified": "2026-05-11",
-      "has_answer_capsule": true,
-      "has_og_tags": true,
-      "has_author": true,
-      "has_definition": false,
-      "has_cta": true,
-      "has_breadcrumbs": false,
-      "has_viewport": true,
-      "internal_links_in": 0,
-      "depth": 3
-    },
-    {
-      "url": "https://peptideclear.co.uk/faq/glp1/mounjaro-contraception/",
-      "path": "/faq/glp1/mounjaro-contraception/",
-      "title": "Does Mounjaro affect contraception? (UK 2026)",
-      "h1": "Does Mounjaro affect contraception?",
-      "meta_desc": "Yes. Mounjaro can reduce the effectiveness of combined and progestogen-only oral contraceptive pills because tirzepatide slows gastric emptying, which delays and reduces absorption of the pill. The Lilly Patient Information Leaflet recommends adding a barrier method (condom or diaphragm) or switchin",
-      "word_count": 1883,
-      "status": 200,
-      "schemas": [
-        "Person",
-        "Organization",
-        "WebSite",
-        "WebPage",
-        "Organization",
-        "Article",
-        "FAQPage"
-      ],
-      "internal_links_out": 27,
-      "external_links_out": -13,
-      "canonical": "https://peptideclear.co.uk/faq/glp1/mounjaro-contraception/",
-      "response_time_ms": 0,
-      "image_count": 0,
-      "images_with_alt": 0,
-      "video_count": 0,
-      "has_multimodal": false,
-      "has_comparison_table": false,
-      "table_count": 0,
-      "list_count": 4,
-      "question_h2s": 0,
-      "h2_count": 5,
-      "last_modified": "2026-05-11",
-      "has_answer_capsule": true,
-      "has_og_tags": true,
-      "has_author": true,
-      "has_definition": false,
-      "has_cta": true,
-      "has_breadcrumbs": false,
-      "has_viewport": true,
-      "internal_links_in": 0,
-      "depth": 3
-    },
-    {
-      "url": "https://peptideclear.co.uk/faq/glp1/glp1-during-pregnancy/",
-      "path": "/faq/glp1/glp1-during-pregnancy/",
-      "title": "Can I take GLP-1 medications during pregnancy? (UK 2026)",
-      "h1": "Can I take GLP-1 medications during pregnancy?",
-      "meta_desc": "No. Mounjaro, Wegovy, and Saxenda are all contraindicated in pregnancy in the UK. The MHRA-approved Patient Information Leaflets advise stopping GLP-1 medication at least 2 months before trying to conceive. If you become pregnant unexpectedly while on a GLP-1, contact your prescriber the same day. B",
-      "word_count": 1893,
-      "status": 200,
-      "schemas": [
-        "Person",
-        "Organization",
-        "WebSite",
-        "WebPage",
-        "Organization",
-        "Article",
-        "FAQPage"
-      ],
-      "internal_links_out": 26,
-      "external_links_out": -11,
-      "canonical": "https://peptideclear.co.uk/faq/glp1/glp1-during-pregnancy/",
       "response_time_ms": 0,
       "image_count": 0,
       "images_with_alt": 0,
@@ -2593,12 +2470,135 @@
       "depth": 3
     },
     {
+      "url": "https://peptideclear.co.uk/faq/glp1/mounjaro-missed-dose/",
+      "path": "/faq/glp1/mounjaro-missed-dose/",
+      "title": "Mounjaro missed dose: what the PIL says (UK 2026)",
+      "h1": "What does the Mounjaro Patient Information Leaflet say about missed doses?",
+      "meta_desc": "Editorial commentary on the published Patient Information Leaflet. The MHRA-approved PIL for Mounjaro (tirzepatide) contains a missed-dose section describing what the manufacturer recommends if a weekly dose is missed, including a time window after which the missed dose should be skipped. PeptideCle",
+      "word_count": 2243,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Organization",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 27,
+      "external_links_out": -9,
+      "canonical": "https://peptideclear.co.uk/faq/glp1/mounjaro-missed-dose/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 6,
+      "last_modified": "2026-05-11",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": false,
+      "has_viewport": true,
+      "internal_links_in": 0,
+      "depth": 3
+    },
+    {
+      "url": "https://peptideclear.co.uk/faq/glp1/mounjaro-contraception/",
+      "path": "/faq/glp1/mounjaro-contraception/",
+      "title": "Mounjaro and contraception: what the PIL says (UK 2026)",
+      "h1": "What does the published guidance say about Mounjaro and contraception?",
+      "meta_desc": "Editorial commentary on the published Patient Information Leaflet and Summary of Product Characteristics. The MHRA-approved PIL for Mounjaro (tirzepatide) notes that tirzepatide slows gastric emptying, which may reduce the absorption of oral medicines including oral contraceptives. The PIL discusses",
+      "word_count": 2165,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Organization",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 27,
+      "external_links_out": -10,
+      "canonical": "https://peptideclear.co.uk/faq/glp1/mounjaro-contraception/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 6,
+      "last_modified": "2026-05-11",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": false,
+      "has_viewport": true,
+      "internal_links_in": 1,
+      "depth": 3
+    },
+    {
+      "url": "https://peptideclear.co.uk/faq/glp1/glp1-during-pregnancy/",
+      "path": "/faq/glp1/glp1-during-pregnancy/",
+      "title": "GLP-1 medications and pregnancy: what the SmPC says (UK 2026)",
+      "h1": "What does the published guidance say about GLP-1 medications, pregnancy, and contraception?",
+      "meta_desc": "Editorial commentary on the published Summaries of Product Characteristics, Patient Information Leaflets, and NHS contraception guidance. The MHRA-approved SmPCs and PILs for tirzepatide (Mounjaro), semaglutide (Wegovy), and liraglutide (Saxenda) state that these medications are contraindicated in p",
+      "word_count": 2418,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Organization",
+        "Article",
+        "FAQPage"
+      ],
+      "internal_links_out": 27,
+      "external_links_out": -7,
+      "canonical": "https://peptideclear.co.uk/faq/glp1/glp1-during-pregnancy/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 8,
+      "last_modified": "2026-05-11",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": false,
+      "has_viewport": true,
+      "internal_links_in": 0,
+      "depth": 3
+    },
+    {
       "url": "https://peptideclear.co.uk/faq/glp1/how-to-get-mounjaro-on-nhs/",
       "path": "/faq/glp1/how-to-get-mounjaro-on-nhs/",
-      "title": "How do I get Mounjaro on the NHS? (UK 2026)",
-      "h1": "How do I get Mounjaro on the NHS?",
-      "meta_desc": "NHS Mounjaro is available under NICE TA1026 in three phased cohorts. Cohort 1 (BMI 40+, 4+ comorbidities) has been live since June 2025. Cohort 2 launches 23 June 2026 (BMI 35+, 3+ comorbidities). Cohort 3 is expected April 2027 (BMI 30+, 2+ comorbidities). Ethnicity-adjusted thresholds are 2.5 kg/m",
-      "word_count": 1860,
+      "title": "How the NHS Mounjaro pathway works (UK 2026)",
+      "h1": "How does the NHS Mounjaro pathway work?",
+      "meta_desc": "Editorial commentary on published NICE guidance. NICE TA1026 sets the framework for NHS tirzepatide (Mounjaro) access in England, phased across three cohorts between 2025 and 2027. Cohort 1 (BMI 40+, four or more qualifying comorbidities) has been live since June 2025. Cohort 2 is scheduled for June",
+      "word_count": 2119,
       "status": 200,
       "schemas": [
         "Person",
@@ -2610,7 +2610,7 @@
         "FAQPage"
       ],
       "internal_links_out": 29,
-      "external_links_out": -15,
+      "external_links_out": -13,
       "canonical": "https://peptideclear.co.uk/faq/glp1/how-to-get-mounjaro-on-nhs/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2621,7 +2621,7 @@
       "table_count": 0,
       "list_count": 4,
       "question_h2s": 0,
-      "h2_count": 3,
+      "h2_count": 6,
       "last_modified": "2026-05-11",
       "has_answer_capsule": true,
       "has_og_tags": true,
@@ -2636,10 +2636,10 @@
     {
       "url": "https://peptideclear.co.uk/faq/glp1/switching-wegovy-to-mounjaro/",
       "path": "/faq/glp1/switching-wegovy-to-mounjaro/",
-      "title": "Can I switch from Wegovy to Mounjaro? (UK 2026)",
-      "h1": "Can I switch from Wegovy to Mounjaro?",
-      "meta_desc": "Yes. The typical UK protocol leaves a 7-day washout between the last Wegovy dose and the first Mounjaro dose. The first Mounjaro dose is 2.5 mg regardless of prior Wegovy maintenance dose; the patient then titrates monthly on the standard Mounjaro ladder (2.5 \u2192 5 \u2192 7.5 \u2192 10 \u2192 12.5 \u2192 15 mg). Some pre",
-      "word_count": 1866,
+      "title": "Switching between Wegovy and Mounjaro: editorial commentary (UK 2026)",
+      "h1": "What does the published guidance say about switching between Wegovy and Mounjaro?",
+      "meta_desc": "Editorial commentary on the published Summaries of Product Characteristics and UK prescribing practice. Both Wegovy (semaglutide) and Mounjaro (tirzepatide) are UK prescription-only medicines licensed for weight management within their respective MHRA-approved indications. A switch between the two i",
+      "word_count": 2170,
       "status": 200,
       "schemas": [
         "Person",
@@ -2651,7 +2651,7 @@
         "FAQPage"
       ],
       "internal_links_out": 27,
-      "external_links_out": -13,
+      "external_links_out": -11,
       "canonical": "https://peptideclear.co.uk/faq/glp1/switching-wegovy-to-mounjaro/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2662,7 +2662,7 @@
       "table_count": 0,
       "list_count": 4,
       "question_h2s": 0,
-      "h2_count": 5,
+      "h2_count": 6,
       "last_modified": "2026-05-11",
       "has_answer_capsule": true,
       "has_og_tags": true,
@@ -3652,7 +3652,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 51,
+      "internal_links_in": 50,
       "depth": 2
     },
     {
@@ -3692,7 +3692,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 51,
+      "internal_links_in": 49,
       "depth": 2
     },
     {
@@ -3812,7 +3812,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 3,
+      "internal_links_in": 2,
       "depth": 2
     },
     {
@@ -4092,7 +4092,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 6,
+      "internal_links_in": 4,
       "depth": 2
     },
     {
@@ -4172,7 +4172,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 3,
+      "internal_links_in": 1,
       "depth": 2
     },
     {
@@ -4252,7 +4252,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 6,
+      "internal_links_in": 4,
       "depth": 2
     },
     {
@@ -4332,7 +4332,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 47,
+      "internal_links_in": 46,
       "depth": 2
     },
     {
@@ -4492,7 +4492,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 7,
+      "internal_links_in": 5,
       "depth": 2
     },
     {
@@ -4532,7 +4532,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 3,
+      "internal_links_in": 2,
       "depth": 2
     },
     {
@@ -4892,7 +4892,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 7,
+      "internal_links_in": 5,
       "depth": 2
     },
     {
@@ -4972,7 +4972,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 4,
+      "internal_links_in": 3,
       "depth": 2
     },
     {
@@ -5172,7 +5172,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 54,
+      "internal_links_in": 58,
       "depth": 1
     },
     {
@@ -7033,7 +7033,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 46,
+      "internal_links_in": 45,
       "depth": 1
     },
     {
@@ -9313,7 +9313,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 52,
+      "internal_links_in": 56,
       "depth": 1
     },
     {
@@ -9354,7 +9354,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 98,
+      "internal_links_in": 102,
       "depth": 1
     },
     {
@@ -9435,7 +9435,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 54,
+      "internal_links_in": 58,
       "depth": 1
     },
     {
@@ -9559,7 +9559,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 2,
+      "internal_links_in": 4,
       "depth": 1
     },
     {
@@ -9599,7 +9599,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 2,
+      "internal_links_in": 1,
       "depth": 2
     },
     {
@@ -9639,7 +9639,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 2,
+      "internal_links_in": 1,
       "depth": 2
     },
     {
@@ -9679,7 +9679,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 4,
+      "internal_links_in": 3,
       "depth": 2
     },
     {
@@ -9719,7 +9719,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 4,
+      "internal_links_in": 2,
       "depth": 2
     },
     {
@@ -9759,7 +9759,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 3,
+      "internal_links_in": 2,
       "depth": 2
     },
     {
@@ -9800,7 +9800,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 1,
+      "internal_links_in": 0,
       "depth": 3
     },
     {
@@ -9929,10 +9929,10 @@
     {
       "url": "https://peptideclear.co.uk/lang/pl/mounjaro-uk/",
       "path": "/lang/pl/mounjaro-uk/",
-      "title": "Mounjaro w UK: gdzie kupi\u0107 legalnie i jak",
-      "h1": "Mounjaro w UK: gdzie kupi\u0107 legalnie i jak",
-      "meta_desc": "Mounjaro w Wielkiej Brytanii dla Polak\u00f3w: NHS, prywatne kliniki, apteki online. Por\u00f3wnanie cen, dost\u0119pno\u015b\u0107, zasady prywatnej recepty.",
-      "word_count": 2424,
+      "title": "Tirzepatyd (Mounjaro) w UK: krajobraz regulacyjny",
+      "h1": "Tirzepatyd (Mounjaro) w UK: krajobraz regulacyjny",
+      "meta_desc": "Komentarz redakcyjny po polsku o ramach regulacyjnych MHRA, NICE TA1026 i drogach wydawania tirzepatydu w Wielkiej Brytanii.",
+      "word_count": 2411,
       "status": 200,
       "schemas": [
         "Person",
@@ -9943,8 +9943,8 @@
         "Article",
         "Article"
       ],
-      "internal_links_out": 23,
-      "external_links_out": -9,
+      "internal_links_out": 22,
+      "external_links_out": -8,
       "canonical": "https://peptideclear.co.uk/lang/pl/mounjaro-uk/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -9953,9 +9953,9 @@
       "has_multimodal": false,
       "has_comparison_table": false,
       "table_count": 0,
-      "list_count": 3,
+      "list_count": 5,
       "question_h2s": 0,
-      "h2_count": 8,
+      "h2_count": 12,
       "last_modified": "2026-05-19",
       "has_answer_capsule": true,
       "has_og_tags": true,
@@ -10052,10 +10052,10 @@
     {
       "url": "https://peptideclear.co.uk/lang/ro/mounjaro-uk-farmacii/",
       "path": "/lang/ro/mounjaro-uk-farmacii/",
-      "title": "Mounjaro \u00een UK: farmacii \u00eenregistrate GPhC",
-      "h1": "Mounjaro \u00een UK: farmacii \u00eenregistrate GPhC",
-      "meta_desc": "Ghid pentru rom\u00e2nii reziden\u021bi \u00een UK. Cum ob\u021bii Mounjaro prin NHS (NICE TA1026), prin clinici private sau prin farmacii online \u00eenregistrate la GPhC.",
-      "word_count": 2532,
+      "title": "Tirzepatid\u0103 (Mounjaro) \u00een UK: cadru reglementar",
+      "h1": "Tirzepatid\u0103 (Mounjaro) \u00een UK: cadru reglementar",
+      "meta_desc": "Comentariu editorial \u00een limba rom\u00e2n\u0103 despre cadrul MHRA, NICE TA1026 \u0219i rutele autorizate de eliberare a tirzepatidei \u00een Marea Britanie.",
+      "word_count": 2481,
       "status": 200,
       "schemas": [
         "Person",
@@ -10076,9 +10076,9 @@
       "has_multimodal": false,
       "has_comparison_table": false,
       "table_count": 0,
-      "list_count": 11,
+      "list_count": 5,
       "question_h2s": 0,
-      "h2_count": 9,
+      "h2_count": 11,
       "last_modified": "2026-05-19",
       "has_answer_capsule": true,
       "has_og_tags": true,
@@ -10093,10 +10093,10 @@
     {
       "url": "https://peptideclear.co.uk/lang/ro/mounjaro-uk-vs-romania-pret-farmacii/",
       "path": "/lang/ro/mounjaro-uk-vs-romania-pret-farmacii/",
-      "title": "Mounjaro UK vs Rom\u00e2nia: pre\u021b \u0219i siguran\u021b\u0103",
-      "h1": "Mounjaro UK vs Rom\u00e2nia: pre\u021b \u0219i siguran\u021b\u0103",
-      "meta_desc": "Compara\u021bie \u00eentre Mounjaro cump\u0103rat \u00een UK \u0219i \u00een Rom\u00e2nia. Pre\u021b, disponibilitate, avertizarea ANMDM pentru produse contraf\u0103cute \u0219i de ce ruta UK r\u0103m\u00e2ne mai sigur\u0103.",
-      "word_count": 2946,
+      "title": "Tirzepatid\u0103 \u00een UK \u0219i Rom\u00e2nia: cadre reglementare",
+      "h1": "Tirzepatid\u0103 \u00een UK \u0219i Rom\u00e2nia: cadre reglementare",
+      "meta_desc": "Comentariu editorial \u00een limba rom\u00e2n\u0103 despre cadrele reglementare MHRA \u0219i ANMDM pentru tirzepatid\u0103 (Mounjaro) \u0219i avertismentele ANMDM despre produse falsificate.",
+      "word_count": 2603,
       "status": 200,
       "schemas": [
         "Person",
@@ -10117,9 +10117,9 @@
       "has_multimodal": false,
       "has_comparison_table": true,
       "table_count": 1,
-      "list_count": 9,
+      "list_count": 6,
       "question_h2s": 0,
-      "h2_count": 10,
+      "h2_count": 11,
       "last_modified": "2026-05-19",
       "has_answer_capsule": true,
       "has_og_tags": true,
@@ -10134,10 +10134,10 @@
     {
       "url": "https://peptideclear.co.uk/lang/ro/wegovy-unde-cumpar-uk/",
       "path": "/lang/ro/wegovy-unde-cumpar-uk/",
-      "title": "Wegovy \u00een UK: unde cump\u0103r legal \u00een 2026",
-      "h1": "Wegovy \u00een UK: unde cump\u0103r legal \u00een 2026",
-      "meta_desc": "Wegovy (semaglutid\u0103) \u00een UK: rute legale prin NHS, clinici private \u0219i farmacii GPhC. Pre\u021buri 2026 \u0219i diferen\u021bele fa\u021b\u0103 de Mounjaro.",
-      "word_count": 2330,
+      "title": "Semaglutid\u0103 (Wegovy) \u00een UK: cadru reglementar",
+      "h1": "Semaglutid\u0103 (Wegovy) \u00een UK: cadru reglementar",
+      "meta_desc": "Comentariu editorial \u00een limba rom\u00e2n\u0103 despre cadrul MHRA, evaluarea NICE \u0219i rutele autorizate de eliberare a semaglutidei (Wegovy) \u00een UK.",
+      "word_count": 2356,
       "status": 200,
       "schemas": [
         "Person",
@@ -10158,9 +10158,9 @@
       "has_multimodal": false,
       "has_comparison_table": false,
       "table_count": 0,
-      "list_count": 11,
+      "list_count": 5,
       "question_h2s": 0,
-      "h2_count": 10,
+      "h2_count": 12,
       "last_modified": "2026-05-19",
       "has_answer_capsule": true,
       "has_og_tags": true,
@@ -10257,10 +10257,10 @@
     {
       "url": "https://peptideclear.co.uk/lang/lt/wegovy-uk-kaina/",
       "path": "/lang/lt/wegovy-uk-kaina/",
-      "title": "Wegovy UK kaina: kur pirkti ir k\u0105 \u017einoti",
-      "h1": "Wegovy UK kaina: kur pirkti ir k\u0105 \u017einoti",
-      "meta_desc": "Wegovy kainos UK 2026 m.: NHS prieiga per NICE TA1026, priva\u010dios klinikos, internetin\u0117s vaistin\u0117s. Lietuviams JK suprantamai.",
-      "word_count": 2568,
+      "title": "Semaglutidas (Wegovy) UK: reguliacinis kontekstas",
+      "h1": "Semaglutidas (Wegovy) UK: reguliacinis kontekstas",
+      "meta_desc": "Redakcinis komentaras lietuvi\u0173 kalba apie MHRA, NICE TA875 ir autorizuotus semaglutido (Wegovy) tiekimo kelius Jungtin\u0117je Karalyst\u0117je.",
+      "word_count": 2346,
       "status": 200,
       "schemas": [
         "Person",
@@ -10271,8 +10271,8 @@
         "Article",
         "Article"
       ],
-      "internal_links_out": 22,
-      "external_links_out": -8,
+      "internal_links_out": 23,
+      "external_links_out": -9,
       "canonical": "https://peptideclear.co.uk/lang/lt/wegovy-uk-kaina/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -10281,9 +10281,9 @@
       "has_multimodal": false,
       "has_comparison_table": false,
       "table_count": 0,
-      "list_count": 8,
+      "list_count": 5,
       "question_h2s": 0,
-      "h2_count": 10,
+      "h2_count": 12,
       "last_modified": "2026-05-19",
       "has_answer_capsule": true,
       "has_og_tags": true,
@@ -10985,7 +10985,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 2,
+      "internal_links_in": 4,
       "depth": 1
     },
     {
@@ -11148,7 +11148,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 70,
+      "internal_links_in": 75,
       "depth": 1
     },
     {
@@ -11276,10 +11276,10 @@
     {
       "url": "https://peptideclear.co.uk/buy/tesamorelin-uk/",
       "path": "/buy/tesamorelin-uk/",
-      "title": "Where to buy Tesamorelin in the UK (2026)",
-      "h1": "Where to buy Tesamorelin in the UK",
-      "meta_desc": "UK retailers stocking Tesamorelin research peptide in 2026. Note: Tesamorelin is FDA-approved (EGRIFTA) for HIV-associated lipodystrophy but has no UK.",
-      "word_count": 1450,
+      "title": "Tesamorelin in the UK: regulatory status",
+      "h1": "Tesamorelin in the UK: regulatory status",
+      "meta_desc": "Editorial commentary on the UK regulatory status of tesamorelin. No UK marketing authorisation, narrow private-prescription use for HIV-associated lipodystrophy, and what that means in the UK landscape.",
+      "word_count": 1738,
       "status": 200,
       "schemas": [
         "Person",
@@ -11289,8 +11289,8 @@
         "Organization",
         "Article"
       ],
-      "internal_links_out": 28,
-      "external_links_out": -14,
+      "internal_links_out": 25,
+      "external_links_out": -11,
       "canonical": "https://peptideclear.co.uk/buy/tesamorelin-uk/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -11301,7 +11301,7 @@
       "table_count": 0,
       "list_count": 4,
       "question_h2s": 0,
-      "h2_count": 2,
+      "h2_count": 3,
       "last_modified": "2026-05-18",
       "has_answer_capsule": true,
       "has_og_tags": true,
@@ -11684,10 +11684,10 @@
     {
       "url": "https://peptideclear.co.uk/buy/wegovy-uk/",
       "path": "/buy/wegovy-uk/",
-      "title": "Where to buy Wegovy in the UK (2026): clinics, pharmacies",
-      "h1": "Where to buy Wegovy in the UK",
-      "meta_desc": "How to get Wegovy in the UK in 2026. NHS access via cardiovascular indication (April 2026). Private clinics and online pharmacies compared. Editorial.",
-      "word_count": 1532,
+      "title": "Semaglutide (Wegovy) in the UK: regulatory landscape",
+      "h1": "Semaglutide (Wegovy) in the UK: dispensing landscape",
+      "meta_desc": "Editorial commentary on the UK regulatory landscape for semaglutide (Wegovy). MHRA authorisation, the April 2026 cardiovascular indication, NHS access, and UK dispensing routes.",
+      "word_count": 1738,
       "status": 200,
       "schemas": [
         "Person",
@@ -11709,7 +11709,7 @@
       "table_count": 0,
       "list_count": 3,
       "question_h2s": 0,
-      "h2_count": 2,
+      "h2_count": 3,
       "last_modified": "2026-05-18",
       "has_answer_capsule": true,
       "has_og_tags": true,
@@ -11805,10 +11805,10 @@
     {
       "url": "https://peptideclear.co.uk/buy/mounjaro-uk/",
       "path": "/buy/mounjaro-uk/",
-      "title": "Where to buy Mounjaro in the UK (2026): NHS, clinic",
-      "h1": "Where to buy Mounjaro in the UK",
-      "meta_desc": "How to get Mounjaro in the UK in 2026. NHS Cohort 1 live, Cohort 2 from 23 June 2026. Private clinics (Numan, Voy, Manual, Juniper) and online pharmacies.",
-      "word_count": 1568,
+      "title": "Tirzepatide (Mounjaro) in the UK: regulatory landscape",
+      "h1": "Tirzepatide (Mounjaro) in the UK: dispensing landscape",
+      "meta_desc": "Editorial commentary on the UK regulatory landscape for tirzepatide (Mounjaro). MHRA authorisation, NICE TA1026, NHS access phasing, and the UK dispensing routes that exist in 2026.",
+      "word_count": 1765,
       "status": 200,
       "schemas": [
         "Person",
@@ -11830,7 +11830,7 @@
       "table_count": 0,
       "list_count": 4,
       "question_h2s": 0,
-      "h2_count": 2,
+      "h2_count": 3,
       "last_modified": "2026-05-19",
       "has_answer_capsule": true,
       "has_og_tags": true,
@@ -12159,7 +12159,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 7,
+      "internal_links_in": 6,
       "depth": 2
     },
     {
@@ -12239,7 +12239,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 9,
+      "internal_links_in": 8,
       "depth": 2
     },
     {
@@ -12919,7 +12919,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 39,
+      "internal_links_in": 38,
       "depth": 2
     },
     {
@@ -13105,7 +13105,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/./",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -13340,7 +13340,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/404/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -13510,7 +13510,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/gh-secretagogues/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -13760,7 +13760,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/ipamorelin-vs-sermorelin/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -13940,7 +13940,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/my-peptides-vs-direct-sarms/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -14125,7 +14125,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/phlo-vs-pharmacy2u/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -14305,7 +14305,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/numan-vs-voy/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -14485,7 +14485,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/bpc-157-vs-tb-500/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -14665,7 +14665,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/hooke-vs-echelon/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -14845,7 +14845,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/phlo-vs-simplymeds/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -15025,7 +15025,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/manual-vs-numan/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -15205,7 +15205,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/numan-vs-phlo/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -15385,7 +15385,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/my-peptides-vs-pure-peptides-uk/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -15570,7 +15570,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/numan-vs-juniper/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -15750,7 +15750,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/wegovy-vs-saxenda/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -15796,6 +15796,21 @@
     {
       "from": "https://peptideclear.co.uk/vs/wegovy-vs-saxenda/",
       "to": "https://peptideclear.co.uk/vs/mounjaro-vs-wegovy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/vs/wegovy-vs-saxenda/",
+      "to": "https://peptideclear.co.uk/clinics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/vs/wegovy-vs-saxenda/",
+      "to": "https://peptideclear.co.uk/pharmacies/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/vs/wegovy-vs-saxenda/",
+      "to": "https://peptideclear.co.uk/nhs-access/",
       "type": "internal"
     },
     {
@@ -15904,16 +15919,6 @@
       "type": "internal"
     },
     {
-      "from": "https://peptideclear.co.uk/vs/wegovy-vs-saxenda/",
-      "to": "https://peptideclear.co.uk/clinics/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/vs/wegovy-vs-saxenda/",
-      "to": "https://peptideclear.co.uk/shop/",
-      "type": "internal"
-    },
-    {
       "from": "https://peptideclear.co.uk/vs/ghk-cu-vs-matrixyl/",
       "to": "https://peptideclear.co.uk/favicon.svg",
       "type": "internal"
@@ -15925,7 +15930,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/ghk-cu-vs-matrixyl/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -16105,7 +16110,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/type-i-vs-type-ii-collagen/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -16280,7 +16285,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/tesamorelin-vs-sermorelin/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -16455,7 +16460,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/mounjaro-vs-wegovy/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -16496,11 +16501,6 @@
     {
       "from": "https://peptideclear.co.uk/vs/mounjaro-vs-wegovy/",
       "to": "https://peptideclear.co.uk/shop/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/vs/mounjaro-vs-wegovy/",
-      "to": "https://peptideclear.co.uk/clinics/",
       "type": "internal"
     },
     {
@@ -16624,16 +16624,6 @@
       "type": "internal"
     },
     {
-      "from": "https://peptideclear.co.uk/vs/mounjaro-vs-wegovy/",
-      "to": "https://peptideclear.co.uk/clinics/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/vs/mounjaro-vs-wegovy/",
-      "to": "https://peptideclear.co.uk/shop/",
-      "type": "internal"
-    },
-    {
       "from": "https://peptideclear.co.uk/vs/cjc-1295-vs-sermorelin/",
       "to": "https://peptideclear.co.uk/favicon.svg",
       "type": "internal"
@@ -16645,7 +16635,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/cjc-1295-vs-sermorelin/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -16825,7 +16815,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/bare-biology-vs-vital-proteins/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -17005,7 +16995,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/hydrolysed-vs-native-collagen/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -17180,7 +17170,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/juniper-vs-voy/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -17360,7 +17350,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/marine-vs-bovine-collagen/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -17540,7 +17530,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/manual-vs-juniper/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -17720,7 +17710,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/longevity-clinics/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -17890,7 +17880,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/cosmetic-peptides/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -18075,7 +18065,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/cosmetic-peptides/matrixyl/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -18250,7 +18240,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/cosmetic-peptides/copper-peptides/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -18425,7 +18415,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/contact/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -18590,7 +18580,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/tools/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -18775,7 +18765,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/tools/half-life-calculator/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -18935,7 +18925,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/tools/reconstitution-calculator/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -19095,7 +19085,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/tools/12-month-supply-cost/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -19260,7 +19250,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/stacks/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -19480,7 +19470,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/stacks/cognitive/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -19740,7 +19730,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/stacks/sleep/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -20000,7 +19990,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/stacks/gh-stack/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -20270,7 +20260,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/stacks/klow/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -20525,7 +20515,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/stacks/longevity/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -20790,7 +20780,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/stacks/recovery/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -21055,7 +21045,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/stacks/hulk/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -21315,7 +21305,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/stacks/wolverine/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -21575,7 +21565,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/stacks/glp1-companion/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -21835,7 +21825,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/stacks/sexual-health/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -22055,7 +22045,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/stacks/healing/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -22320,7 +22310,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/stacks/glow/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -22575,7 +22565,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/privacy/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -22735,7 +22725,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/medications/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -22795,32 +22785,32 @@
     },
     {
       "from": "https://peptideclear.co.uk/medications/",
-      "to": "https://peptideclear.co.uk/explained/nhs-glp1-access/",
+      "to": "https://peptideclear.co.uk/nhs-access/",
       "type": "internal"
     },
     {
       "from": "https://peptideclear.co.uk/medications/",
-      "to": "https://peptideclear.co.uk/explained/nice-ta1026/",
+      "to": "https://peptideclear.co.uk/aftercare/",
       "type": "internal"
     },
     {
       "from": "https://peptideclear.co.uk/medications/",
-      "to": "https://peptideclear.co.uk/explained/ethnicity-adjusted-bmi/",
+      "to": "https://peptideclear.co.uk/glp1-and-protein/",
       "type": "internal"
     },
     {
       "from": "https://peptideclear.co.uk/medications/",
-      "to": "https://peptideclear.co.uk/explained/glp1-vs-gip/",
+      "to": "https://peptideclear.co.uk/glp1-face/",
       "type": "internal"
     },
     {
       "from": "https://peptideclear.co.uk/medications/",
-      "to": "https://peptideclear.co.uk/cost-and-supply/",
+      "to": "https://peptideclear.co.uk/perimenopause-and-glp1/",
       "type": "internal"
     },
     {
       "from": "https://peptideclear.co.uk/medications/",
-      "to": "https://peptideclear.co.uk/icb/",
+      "to": "https://peptideclear.co.uk/pcos-and-glp1/",
       "type": "internal"
     },
     {
@@ -22939,16 +22929,6 @@
       "type": "internal"
     },
     {
-      "from": "https://peptideclear.co.uk/medications/",
-      "to": "https://peptideclear.co.uk/clinics/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/medications/",
-      "to": "https://peptideclear.co.uk/shop/",
-      "type": "internal"
-    },
-    {
       "from": "https://peptideclear.co.uk/medications/mounjaro/",
       "to": "https://peptideclear.co.uk/favicon.svg",
       "type": "internal"
@@ -22960,7 +22940,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/medications/mounjaro/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -23005,62 +22985,37 @@
     },
     {
       "from": "https://peptideclear.co.uk/medications/mounjaro/",
-      "to": "https://peptideclear.co.uk/explained/nhs-glp1-access/",
+      "to": "https://peptideclear.co.uk/nhs-access/",
       "type": "internal"
     },
     {
       "from": "https://peptideclear.co.uk/medications/mounjaro/",
-      "to": "https://peptideclear.co.uk/cost-and-supply/mounjaro-uk-2026/",
+      "to": "https://peptideclear.co.uk/clinics/",
       "type": "internal"
     },
     {
       "from": "https://peptideclear.co.uk/medications/mounjaro/",
-      "to": "https://peptideclear.co.uk/cost-and-supply/post-september-2025-price-shock/",
+      "to": "https://peptideclear.co.uk/pharmacies/",
       "type": "internal"
     },
     {
       "from": "https://peptideclear.co.uk/medications/mounjaro/",
-      "to": "https://peptideclear.co.uk/vs/mounjaro-vs-wegovy/",
+      "to": "https://peptideclear.co.uk/cost-and-supply/",
       "type": "internal"
     },
     {
       "from": "https://peptideclear.co.uk/medications/mounjaro/",
-      "to": "https://peptideclear.co.uk/cost-and-supply/private-vs-nhs/",
+      "to": "https://peptideclear.co.uk/nhs-access/",
       "type": "internal"
     },
     {
       "from": "https://peptideclear.co.uk/medications/mounjaro/",
-      "to": "https://peptideclear.co.uk/explained/bariatric-vs-glp1/",
+      "to": "https://peptideclear.co.uk/aftercare/",
       "type": "internal"
     },
     {
       "from": "https://peptideclear.co.uk/medications/mounjaro/",
-      "to": "https://peptideclear.co.uk/explained/glp1-starting-dose/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/medications/mounjaro/",
-      "to": "https://peptideclear.co.uk/explained/cold-chain-glp1/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/medications/mounjaro/",
-      "to": "https://peptideclear.co.uk/explained/pen-vs-vial-glp1/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/medications/mounjaro/",
-      "to": "https://peptideclear.co.uk/explained/protein-on-glp1/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/medications/mounjaro/",
-      "to": "https://peptideclear.co.uk/explained/sarcopenia-and-glp1/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/medications/mounjaro/",
-      "to": "https://peptideclear.co.uk/explained/sleep-apnoea-comorbidity/",
+      "to": "https://peptideclear.co.uk/glp1-and-protein/",
       "type": "internal"
     },
     {
@@ -23070,7 +23025,12 @@
     },
     {
       "from": "https://peptideclear.co.uk/medications/mounjaro/",
-      "to": "https://peptideclear.co.uk/aftercare/",
+      "to": "https://peptideclear.co.uk/perimenopause-and-glp1/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/medications/mounjaro/",
+      "to": "https://peptideclear.co.uk/pcos-and-glp1/",
       "type": "internal"
     },
     {
@@ -23179,16 +23139,6 @@
       "type": "internal"
     },
     {
-      "from": "https://peptideclear.co.uk/medications/mounjaro/",
-      "to": "https://peptideclear.co.uk/clinics/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/medications/mounjaro/",
-      "to": "https://peptideclear.co.uk/shop/",
-      "type": "internal"
-    },
-    {
       "from": "https://peptideclear.co.uk/medications/saxenda/",
       "to": "https://peptideclear.co.uk/favicon.svg",
       "type": "internal"
@@ -23200,7 +23150,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/medications/saxenda/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -23245,17 +23195,47 @@
     },
     {
       "from": "https://peptideclear.co.uk/medications/saxenda/",
-      "to": "https://peptideclear.co.uk/cost-and-supply/saxenda-uk-2026/",
+      "to": "https://peptideclear.co.uk/nhs-access/",
       "type": "internal"
     },
     {
       "from": "https://peptideclear.co.uk/medications/saxenda/",
-      "to": "https://peptideclear.co.uk/vs/wegovy-vs-saxenda/",
+      "to": "https://peptideclear.co.uk/clinics/",
       "type": "internal"
     },
     {
       "from": "https://peptideclear.co.uk/medications/saxenda/",
-      "to": "https://peptideclear.co.uk/vs/mounjaro-vs-wegovy/",
+      "to": "https://peptideclear.co.uk/pharmacies/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/medications/saxenda/",
+      "to": "https://peptideclear.co.uk/cost-and-supply/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/medications/saxenda/",
+      "to": "https://peptideclear.co.uk/nhs-access/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/medications/saxenda/",
+      "to": "https://peptideclear.co.uk/aftercare/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/medications/saxenda/",
+      "to": "https://peptideclear.co.uk/glp1-and-protein/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/medications/saxenda/",
+      "to": "https://peptideclear.co.uk/perimenopause-and-glp1/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/medications/saxenda/",
+      "to": "https://peptideclear.co.uk/pcos-and-glp1/",
       "type": "internal"
     },
     {
@@ -23364,16 +23344,6 @@
       "type": "internal"
     },
     {
-      "from": "https://peptideclear.co.uk/medications/saxenda/",
-      "to": "https://peptideclear.co.uk/clinics/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/medications/saxenda/",
-      "to": "https://peptideclear.co.uk/shop/",
-      "type": "internal"
-    },
-    {
       "from": "https://peptideclear.co.uk/medications/wegovy/",
       "to": "https://peptideclear.co.uk/favicon.svg",
       "type": "internal"
@@ -23385,7 +23355,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/medications/wegovy/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -23430,52 +23400,52 @@
     },
     {
       "from": "https://peptideclear.co.uk/medications/wegovy/",
-      "to": "https://peptideclear.co.uk/cost-and-supply/wegovy-uk-2026/",
+      "to": "https://peptideclear.co.uk/nhs-access/",
       "type": "internal"
     },
     {
       "from": "https://peptideclear.co.uk/medications/wegovy/",
-      "to": "https://peptideclear.co.uk/vs/mounjaro-vs-wegovy/",
+      "to": "https://peptideclear.co.uk/clinics/",
       "type": "internal"
     },
     {
       "from": "https://peptideclear.co.uk/medications/wegovy/",
-      "to": "https://peptideclear.co.uk/vs/wegovy-vs-saxenda/",
+      "to": "https://peptideclear.co.uk/pharmacies/",
       "type": "internal"
     },
     {
       "from": "https://peptideclear.co.uk/medications/wegovy/",
-      "to": "https://peptideclear.co.uk/cost-and-supply/private-vs-nhs/",
+      "to": "https://peptideclear.co.uk/cost-and-supply/",
       "type": "internal"
     },
     {
       "from": "https://peptideclear.co.uk/medications/wegovy/",
-      "to": "https://peptideclear.co.uk/explained/glp1-starting-dose/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/medications/wegovy/",
-      "to": "https://peptideclear.co.uk/explained/cold-chain-glp1/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/medications/wegovy/",
-      "to": "https://peptideclear.co.uk/explained/glp1-vs-gip/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/medications/wegovy/",
-      "to": "https://peptideclear.co.uk/explained/protein-on-glp1/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/medications/wegovy/",
-      "to": "https://peptideclear.co.uk/explained/sarcopenia-and-glp1/",
+      "to": "https://peptideclear.co.uk/nhs-access/",
       "type": "internal"
     },
     {
       "from": "https://peptideclear.co.uk/medications/wegovy/",
       "to": "https://peptideclear.co.uk/aftercare/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/medications/wegovy/",
+      "to": "https://peptideclear.co.uk/glp1-and-protein/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/medications/wegovy/",
+      "to": "https://peptideclear.co.uk/glp1-face/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/medications/wegovy/",
+      "to": "https://peptideclear.co.uk/perimenopause-and-glp1/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/medications/wegovy/",
+      "to": "https://peptideclear.co.uk/pcos-and-glp1/",
       "type": "internal"
     },
     {
@@ -23584,16 +23554,6 @@
       "type": "internal"
     },
     {
-      "from": "https://peptideclear.co.uk/medications/wegovy/",
-      "to": "https://peptideclear.co.uk/clinics/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/medications/wegovy/",
-      "to": "https://peptideclear.co.uk/shop/",
-      "type": "internal"
-    },
-    {
       "from": "https://peptideclear.co.uk/disclaimer/",
       "to": "https://peptideclear.co.uk/favicon.svg",
       "type": "internal"
@@ -23605,7 +23565,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/disclaimer/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -23765,7 +23725,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/longevity-peptides/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -24020,7 +23980,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/authors/oliver-mackman/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -24200,7 +24160,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/faq/glp1/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -24360,7 +24320,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/faq/glp1/will-i-regain-after-stopping-mounjaro/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -24540,7 +24500,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/faq/glp1/mounjaro-missed-dose/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -24715,7 +24675,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/faq/glp1/mounjaro-contraception/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -24890,7 +24850,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/faq/glp1/glp1-during-pregnancy/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -24935,7 +24895,17 @@
     },
     {
       "from": "https://peptideclear.co.uk/faq/glp1/glp1-during-pregnancy/",
+      "to": "https://peptideclear.co.uk/faq/glp1/mounjaro-contraception/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/faq/glp1/glp1-during-pregnancy/",
       "to": "https://peptideclear.co.uk/pcos-and-glp1/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/faq/glp1/glp1-during-pregnancy/",
+      "to": "https://peptideclear.co.uk/faq/glp1/mounjaro-contraception/",
       "type": "internal"
     },
     {
@@ -25065,7 +25035,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/faq/glp1/how-to-get-mounjaro-on-nhs/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -25106,6 +25076,11 @@
     {
       "from": "https://peptideclear.co.uk/faq/glp1/how-to-get-mounjaro-on-nhs/",
       "to": "https://peptideclear.co.uk/shop/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/faq/glp1/how-to-get-mounjaro-on-nhs/",
+      "to": "https://peptideclear.co.uk/icb/",
       "type": "internal"
     },
     {
@@ -25250,7 +25225,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/faq/glp1/switching-wegovy-to-mounjaro/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -25425,7 +25400,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/faq/cosmetic-peptides/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -25585,7 +25560,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/faq/cosmetic-peptides/argireline-explained/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -25765,7 +25740,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/faq/cosmetic-peptides/peptide-vitamin-c-stacking/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -25945,7 +25920,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/faq/cosmetic-peptides/inci-position-meaning/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -26125,7 +26100,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/faq/cosmetic-peptides/what-is-ghk-cu/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -26310,7 +26285,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/faq/cosmetic-peptides/matrixyl-3000-explained/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -26490,7 +26465,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/faq/cosmetic-peptides/copper-peptide-packaging/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -26670,7 +26645,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/faq/collagen/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -26830,7 +26805,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/faq/collagen/vegan-collagen-real-or-not/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -27010,7 +26985,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/faq/collagen/best-time-to-take-collagen/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -27195,7 +27170,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/faq/collagen/collagen-and-vitamin-c/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -27375,7 +27350,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/faq/collagen/type-i-vs-type-ii-collagen/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -27560,7 +27535,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/faq/collagen/how-much-collagen-per-day/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -27745,7 +27720,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/faq/collagen/marine-vs-bovine-collagen/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -27930,7 +27905,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/faq/research-peptides/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -28090,7 +28065,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/faq/research-peptides/wada-prohibited/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -28260,7 +28235,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/faq/research-peptides/hplc-purity-meaning/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -28435,7 +28410,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/faq/research-peptides/storage-handling/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -28605,7 +28580,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/faq/research-peptides/what-is-bpc-157/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -28785,7 +28760,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/faq/research-peptides/research-use-only-meaning/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -28960,7 +28935,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/faq/research-peptides/uk-legal-status/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -29135,7 +29110,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -29490,7 +29465,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/mhra-medicines-classification/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -29660,7 +29635,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/nice-ta1026/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -29835,7 +29810,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/nhs-glp1-access/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -30015,7 +29990,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/cgm-continuous-glucose-monitor/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -30185,7 +30160,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/specialist-weight-management-service/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -30360,7 +30335,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/sleep-apnoea-comorbidity/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -30530,7 +30505,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/asa-weight-loss-rules/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -30700,7 +30675,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/muscle-preservation-glp1/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -30875,7 +30850,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/kda-collagen/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -31045,7 +31020,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/peptide-storage-handling/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -31215,7 +31190,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/oral-tolerance-collagen/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -31385,7 +31360,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/hba1c/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -31555,7 +31530,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/protein-on-glp1/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -31730,7 +31705,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/visceral-adipose-tissue/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -31905,7 +31880,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/glp1-starting-dose/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -32075,7 +32050,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/pickart-hypothesis/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -32245,7 +32220,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/cold-chain-glp1/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -32415,7 +32390,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/coa-certificate-of-analysis/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -32585,7 +32560,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/ethnicity-adjusted-bmi/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -32755,7 +32730,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/dxa-body-composition/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -32930,7 +32905,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/hypertension-comorbidity/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -33100,7 +33075,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/vo2-max/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -33275,7 +33250,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/glp1-vs-gip/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -33445,7 +33420,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/bariatric-vs-glp1/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -33615,7 +33590,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/wada-prohibited-list-peptides/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -33785,7 +33760,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/resting-metabolic-rate/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -33960,7 +33935,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/research-use-only/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -34130,7 +34105,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/compounded-vs-licensed-glp1/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -34305,7 +34280,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/tier-3-tier-4-services/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -34475,7 +34450,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/alcohol-and-glp1/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -34645,7 +34620,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/apob-testing/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -34815,7 +34790,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/peptide-half-life/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -34985,7 +34960,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/sarcopenia-and-glp1/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -35160,7 +35135,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/patient-information-leaflet/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -35330,7 +35305,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/pen-vs-vial-glp1/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -35500,7 +35475,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/peptide-synthesis-spps/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -35670,7 +35645,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/lp-a/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -35840,7 +35815,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/mhra-yellow-card/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -36010,7 +35985,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/explained/hplc-purity/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -36180,7 +36155,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/perimenopause-and-glp1/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -36365,7 +36340,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/how-we-are-funded/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -36545,7 +36520,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/aftercare/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -36715,7 +36690,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/collagen/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -36900,7 +36875,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/collagen/types/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -37075,7 +37050,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/collagen/marine-bovine-vegan/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -37250,7 +37225,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/methodology/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -37450,7 +37425,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/methodology/longevity-clinics/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -37620,7 +37595,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/methodology/cosmetic-peptides/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -37795,7 +37770,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/methodology/collagen-brands/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -37970,7 +37945,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/methodology/research-peptides/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CugLHmTn.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.jfv7w-CK.css",
       "type": "internal"
     },
     {
@@ -38087,6 +38062,31 @@
       "from": "https://peptideclear.co.uk/methodology/research-peptides/",
       "to": "https://peptideclear.co.uk/shop/",
       "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/methodology/research-peptides/",
+      "to": "https://peptideclear.co.uk/glossary/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/methodology/research-peptides/",
+      "to": "https://peptideclear.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/methodology/research-peptides/",
+      "to": "https://peptideclear.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/methodology/research-peptides/",
+      "to": "https://peptideclear.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/methodology/research-peptides/",
+      "to": "https://peptideclear.co.uk/how-we-are-funded/",
+      "type": "internal"
     }
   ],
   "issues": [],
@@ -38166,10 +38166,6 @@
     {
       "path": "/faq/glp1/mounjaro-missed-dose/",
       "url": "https://peptideclear.co.uk/faq/glp1/mounjaro-missed-dose/"
-    },
-    {
-      "path": "/faq/glp1/mounjaro-contraception/",
-      "url": "https://peptideclear.co.uk/faq/glp1/mounjaro-contraception/"
     },
     {
       "path": "/faq/glp1/glp1-during-pregnancy/",
@@ -38290,6 +38286,10 @@
     {
       "path": "/research-peptides/hexarelin/",
       "url": "https://peptideclear.co.uk/research-peptides/hexarelin/"
+    },
+    {
+      "path": "/research-peptides/foxo4-dri/",
+      "url": "https://peptideclear.co.uk/research-peptides/foxo4-dri/"
     }
   ],
   "tree": {
