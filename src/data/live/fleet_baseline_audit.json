@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-12T13:49:58.599314+00:00",
+  "generated_at": "2026-05-20T05:53:17.958864+00:00",
   "sites": {
     "rank4ai": {
       "flavour": "editorial",
@@ -108,15 +108,15 @@
           "id": "date_modified",
           "label": "dateModified ISO 8601 with TZ (#1)",
           "severity": "p2",
-          "status": "fail",
-          "note": "no dateModified in schema"
+          "status": "pass",
+          "note": "2026-05-19T19:41:24"
         },
         {
           "id": "speakable",
           "label": "SpeakableSpecification (#13)",
           "severity": "p2",
-          "status": "fail",
-          "note": "no SpeakableSpecification"
+          "status": "pass",
+          "note": ""
         },
         {
           "id": "fleet_xlinks",
@@ -136,15 +136,15 @@
           "id": "sitemap_lastmod",
           "label": "sitemap lastmod ISO 8601 + varies (#17)",
           "severity": "p2",
-          "status": "fail",
-          "note": "all 20 sampled lastmods identical \u2014 build-time stamp"
+          "status": "pass",
+          "note": "6 distinct lastmods in sample of 20"
         },
         {
           "id": "faqpage_misuse",
           "label": "FAQPage schema only with 4+ Q/A (#12)",
           "severity": "p2",
-          "status": "pass",
-          "note": "6 questions + visible FAQ section"
+          "status": "skip",
+          "note": "no FAQPage schema on this page"
         },
         {
           "id": "indexnow_unique",
@@ -221,7 +221,7 @@
           "label": "fleet-core >= v0.6.3",
           "severity": "p1",
           "status": "pass",
-          "note": "v0.6.6 \u2014 needs >= v0.6.3"
+          "note": "v0.8.0 \u2014 needs >= v0.6.3"
         },
         {
           "id": "3tier_safepayload",
@@ -242,14 +242,14 @@
           "label": "homepage has imagery",
           "severity": "p1",
           "status": "pass",
-          "note": "1 img + 15 svg"
+          "note": "13 svg (no img)"
         },
         {
           "id": "alt_text",
           "label": "all imgs alt-tagged",
           "severity": "p2",
-          "status": "pass",
-          "note": "1 imgs all alt-tagged"
+          "status": "skip",
+          "note": "no imgs"
         },
         {
           "id": "schema_graph",
@@ -290,15 +290,15 @@
           "id": "sitemap_lastmod",
           "label": "sitemap lastmod ISO 8601 + varies (#17)",
           "severity": "p2",
-          "status": "fail",
-          "note": "all 20 sampled lastmods identical \u2014 build-time stamp"
+          "status": "pass",
+          "note": "8 distinct lastmods in sample of 20"
         },
         {
           "id": "faqpage_misuse",
           "label": "FAQPage schema only with 4+ Q/A (#12)",
           "severity": "p2",
-          "status": "pass",
-          "note": "6 questions + visible FAQ section"
+          "status": "skip",
+          "note": "no FAQPage schema on this page"
         },
         {
           "id": "indexnow_unique",
@@ -416,8 +416,8 @@
           "id": "date_modified",
           "label": "dateModified ISO 8601 with TZ (#1)",
           "severity": "p2",
-          "status": "fail",
-          "note": "no dateModified in schema"
+          "status": "pass",
+          "note": "2026-05-12T00:00:00"
         },
         {
           "id": "speakable",
@@ -444,15 +444,15 @@
           "id": "sitemap_lastmod",
           "label": "sitemap lastmod ISO 8601 + varies (#17)",
           "severity": "p2",
-          "status": "fail",
-          "note": "all 20 sampled lastmods identical \u2014 build-time stamp"
+          "status": "pass",
+          "note": "5 distinct lastmods in sample of 20"
         },
         {
           "id": "faqpage_misuse",
           "label": "FAQPage schema only with 4+ Q/A (#12)",
           "severity": "p2",
-          "status": "fail",
-          "note": "FAQPage schema with 3 Question entries (need 4+)"
+          "status": "skip",
+          "note": "no FAQPage schema on this page"
         },
         {
           "id": "indexnow_unique",
@@ -493,7 +493,7 @@
           "id": "llms_full",
           "label": "llms-full.txt",
           "severity": "p2",
-          "status": "fail",
+          "status": "pass",
           "note": ""
         },
         {
@@ -584,14 +584,14 @@
           "id": "fleet_xlinks",
           "label": ">=3 fleet xlinks in footer",
           "severity": "p2",
-          "status": "fail",
-          "note": "0/5 sister-site links"
+          "status": "pass",
+          "note": "5/5 sister-site links"
         },
         {
           "id": "link_rel_related",
           "label": "<link rel=related> in head (#22)",
           "severity": "p2",
-          "status": "fail",
+          "status": "pass",
           "note": "no <link rel=related> in head"
         },
         {
@@ -599,7 +599,7 @@
           "label": "sitemap lastmod ISO 8601 + varies (#17)",
           "severity": "p2",
           "status": "fail",
-          "note": "no lastmod elements"
+          "note": "all 20 sampled lastmods identical \u2014 build-time stamp"
         },
         {
           "id": "faqpage_misuse",
@@ -633,7 +633,7 @@
           "id": "robots_txt",
           "label": "robots.txt valid + AI bots named",
           "severity": "p1",
-          "status": "pass",
+          "status": "fail",
           "note": "AI crawlers not explicitly named"
         },
         {
@@ -683,7 +683,7 @@
           "label": "fleet-core >= v0.6.3",
           "severity": "p1",
           "status": "pass",
-          "note": "v0.6.7 \u2014 needs >= v0.6.3"
+          "note": "v0.8.0 \u2014 needs >= v0.6.3"
         },
         {
           "id": "3tier_safepayload",
@@ -704,14 +704,14 @@
           "label": "homepage has imagery",
           "severity": "p1",
           "status": "pass",
-          "note": "1 img + 2 svg"
+          "note": "4 svg (no img)"
         },
         {
           "id": "alt_text",
           "label": "all imgs alt-tagged",
           "severity": "p2",
-          "status": "pass",
-          "note": "1 imgs all alt-tagged"
+          "status": "skip",
+          "note": "no imgs"
         },
         {
           "id": "schema_graph",
@@ -752,8 +752,8 @@
           "id": "sitemap_lastmod",
           "label": "sitemap lastmod ISO 8601 + varies (#17)",
           "severity": "p2",
-          "status": "fail",
-          "note": "no lastmod elements"
+          "status": "pass",
+          "note": "6 distinct lastmods in sample of 20"
         },
         {
           "id": "faqpage_misuse",
@@ -837,7 +837,7 @@
           "label": "fleet-core >= v0.6.3",
           "severity": "p1",
           "status": "pass",
-          "note": "v0.6.7 \u2014 needs >= v0.6.3"
+          "note": "v0.8.0 \u2014 needs >= v0.6.3"
         },
         {
           "id": "3tier_safepayload",
@@ -858,14 +858,14 @@
           "label": "homepage has imagery",
           "severity": "p1",
           "status": "pass",
-          "note": "1 img + 2 svg"
+          "note": "4 svg (no img)"
         },
         {
           "id": "alt_text",
           "label": "all imgs alt-tagged",
           "severity": "p2",
-          "status": "pass",
-          "note": "1 imgs all alt-tagged"
+          "status": "skip",
+          "note": "no imgs"
         },
         {
           "id": "schema_graph",
@@ -906,8 +906,8 @@
           "id": "sitemap_lastmod",
           "label": "sitemap lastmod ISO 8601 + varies (#17)",
           "severity": "p2",
-          "status": "fail",
-          "note": "no lastmod elements"
+          "status": "pass",
+          "note": "7 distinct lastmods in sample of 20"
         },
         {
           "id": "faqpage_misuse",
@@ -928,7 +928,7 @@
     "cardmachines": {
       "flavour": "leadgen",
       "pre_launch": false,
-      "live_url": "https://acceptcard.co.uk/",
+      "live_url": "https://merchanthq.co.uk/",
       "checks": [
         {
           "id": "claude_md",
@@ -984,14 +984,14 @@
           "label": "deploy.cjs SITE_HOST matches live",
           "severity": "p0",
           "status": "pass",
-          "note": "acceptcard.co.uk"
+          "note": "merchanthq.co.uk"
         },
         {
           "id": "fleet_core_v",
           "label": "fleet-core >= v0.6.3",
           "severity": "p1",
           "status": "pass",
-          "note": "v0.6.7 \u2014 needs >= v0.6.3"
+          "note": "v0.8.0 \u2014 needs >= v0.6.3"
         },
         {
           "id": "3tier_safepayload",
@@ -1012,14 +1012,14 @@
           "label": "homepage has imagery",
           "severity": "p1",
           "status": "pass",
-          "note": "17 img + 78 svg"
+          "note": "5 img + 62 svg"
         },
         {
           "id": "alt_text",
           "label": "all imgs alt-tagged",
           "severity": "p2",
           "status": "pass",
-          "note": "17 imgs all alt-tagged"
+          "note": "5 imgs all alt-tagged"
         },
         {
           "id": "schema_graph",
@@ -1032,8 +1032,8 @@
           "id": "date_modified",
           "label": "dateModified ISO 8601 with TZ (#1)",
           "severity": "p2",
-          "status": "fail",
-          "note": "2026-04-26 \u2014 date only, needs ISO 8601 with TZ"
+          "status": "pass",
+          "note": "2026-05-12T00:00:00"
         },
         {
           "id": "speakable",
@@ -1060,15 +1060,15 @@
           "id": "sitemap_lastmod",
           "label": "sitemap lastmod ISO 8601 + varies (#17)",
           "severity": "p2",
-          "status": "fail",
-          "note": "no lastmod elements"
+          "status": "pass",
+          "note": "2 distinct lastmods in sample of 20"
         },
         {
           "id": "faqpage_misuse",
           "label": "FAQPage schema only with 4+ Q/A (#12)",
           "severity": "p2",
-          "status": "pass",
-          "note": "7 questions + visible FAQ section"
+          "status": "skip",
+          "note": "no FAQPage schema on this page"
         },
         {
           "id": "indexnow_unique",
@@ -1076,6 +1076,160 @@
           "severity": "p2",
           "status": "pass",
           "note": "key 0090cd82... (1 key files)"
+        }
+      ]
+    },
+    "kartapay": {
+      "flavour": "leadgen",
+      "pre_launch": false,
+      "live_url": "https://kartapay.co.uk/",
+      "checks": [
+        {
+          "id": "claude_md",
+          "label": "CLAUDE.md present",
+          "severity": "p2",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "robots_txt",
+          "label": "robots.txt valid + AI bots named",
+          "severity": "p1",
+          "status": "pass",
+          "note": "AI crawlers not explicitly named"
+        },
+        {
+          "id": "llms_txt",
+          "label": "llms.txt",
+          "severity": "p1",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "llms_full",
+          "label": "llms-full.txt",
+          "severity": "p2",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "llms_instructions",
+          "label": "llms.txt has ## Instructions (#9)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "no `## Instructions` section per Stripe pattern"
+        },
+        {
+          "id": "ai_txt",
+          "label": "ai.txt (#10)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "no public/ai.txt"
+        },
+        {
+          "id": "indexnow_key",
+          "label": "IndexNow key file in public/",
+          "severity": "p1",
+          "status": "pass",
+          "note": "e7ac3dd5700130fb675be39a3a0effc5.txt"
+        },
+        {
+          "id": "deploy_site_host",
+          "label": "deploy.cjs SITE_HOST matches live",
+          "severity": "p0",
+          "status": "pass",
+          "note": "kartapay.co.uk"
+        },
+        {
+          "id": "fleet_core_v",
+          "label": "fleet-core >= v0.6.3",
+          "severity": "p1",
+          "status": "pass",
+          "note": "v0.7.0 \u2014 needs >= v0.6.3"
+        },
+        {
+          "id": "3tier_safepayload",
+          "label": "3-tier safe-payload write",
+          "severity": "p0",
+          "status": "pass",
+          "note": "via fleet-core"
+        },
+        {
+          "id": "og_image",
+          "label": "og:image (not placeholder)",
+          "severity": "p1",
+          "status": "pass",
+          "note": "og-default.png"
+        },
+        {
+          "id": "homepage_imagery",
+          "label": "homepage has imagery",
+          "severity": "p1",
+          "status": "fail",
+          "note": "only 0 img + 2 svg \u2014 empty homepage"
+        },
+        {
+          "id": "alt_text",
+          "label": "all imgs alt-tagged",
+          "severity": "p2",
+          "status": "skip",
+          "note": "no imgs"
+        },
+        {
+          "id": "schema_graph",
+          "label": "nested @graph schema (#3)",
+          "severity": "p1",
+          "status": "pass",
+          "note": "@graph + Org-class + WebPage-class"
+        },
+        {
+          "id": "date_modified",
+          "label": "dateModified ISO 8601 with TZ (#1)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "2026-05-19T22:00:28"
+        },
+        {
+          "id": "speakable",
+          "label": "SpeakableSpecification (#13)",
+          "severity": "p2",
+          "status": "pass",
+          "note": ""
+        },
+        {
+          "id": "fleet_xlinks",
+          "label": ">=3 fleet xlinks in footer",
+          "severity": "p2",
+          "status": "pass",
+          "note": "5/5 sister-site links"
+        },
+        {
+          "id": "link_rel_related",
+          "label": "<link rel=related> in head (#22)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "no <link rel=related> in head"
+        },
+        {
+          "id": "sitemap_lastmod",
+          "label": "sitemap lastmod ISO 8601 + varies (#17)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "2 distinct lastmods in sample of 19"
+        },
+        {
+          "id": "faqpage_misuse",
+          "label": "FAQPage schema only with 4+ Q/A (#12)",
+          "severity": "p2",
+          "status": "skip",
+          "note": "no FAQPage schema on this page"
+        },
+        {
+          "id": "indexnow_unique",
+          "label": "IndexNow key file present (#18)",
+          "severity": "p2",
+          "status": "pass",
+          "note": "key e7ac3dd5... (1 key files)"
         }
       ]
     },
@@ -1214,8 +1368,8 @@
           "id": "sitemap_lastmod",
           "label": "sitemap lastmod ISO 8601 + varies (#17)",
           "severity": "p2",
-          "status": "fail",
-          "note": "no lastmod elements"
+          "status": "pass",
+          "note": "3 distinct lastmods in sample of 20"
         },
         {
           "id": "faqpage_misuse",
@@ -1368,8 +1522,8 @@
           "id": "sitemap_lastmod",
           "label": "sitemap lastmod ISO 8601 + varies (#17)",
           "severity": "p2",
-          "status": "fail",
-          "note": "no lastmod elements"
+          "status": "pass",
+          "note": "3 distinct lastmods in sample of 20"
         },
         {
           "id": "faqpage_misuse",
@@ -1387,10 +1541,10 @@
         }
       ]
     },
-    "ukmetabolic": {
+    "peptideclear": {
       "flavour": "leadgen",
-      "pre_launch": true,
-      "live_url": "https://ukmetabolic.pages.dev/",
+      "pre_launch": false,
+      "live_url": "https://peptideclear.co.uk/",
       "checks": [
         {
           "id": "claude_md",
@@ -1404,7 +1558,7 @@
           "label": "robots.txt valid + AI bots named",
           "severity": "p1",
           "status": "pass",
-          "note": "pre-launch should block-all"
+          "note": "AI crawlers not explicitly named"
         },
         {
           "id": "llms_txt",
@@ -1445,8 +1599,8 @@
           "id": "deploy_site_host",
           "label": "deploy.cjs SITE_HOST matches live",
           "severity": "p0",
-          "status": "skip",
-          "note": "pre-launch: SITE_HOST may legitimately differ from pages.dev URL"
+          "status": "pass",
+          "note": "peptideclear.co.uk"
         },
         {
           "id": "fleet_core_v",
@@ -1495,7 +1649,7 @@
           "label": "dateModified ISO 8601 with TZ (#1)",
           "severity": "p2",
           "status": "pass",
-          "note": "2026-05-07T00:00:00"
+          "note": "2026-05-19T00:00:00"
         },
         {
           "id": "speakable",
@@ -1522,8 +1676,8 @@
           "id": "sitemap_lastmod",
           "label": "sitemap lastmod ISO 8601 + varies (#17)",
           "severity": "p2",
-          "status": "fail",
-          "note": "no lastmod elements"
+          "status": "pass",
+          "note": "3 distinct lastmods in sample of 20"
         },
         {
           "id": "faqpage_misuse",
@@ -1571,7 +1725,7 @@
           "id": "llms_full",
           "label": "llms-full.txt",
           "severity": "p2",
-          "status": "fail",
+          "status": "pass",
           "note": ""
         },
         {
@@ -1648,15 +1802,15 @@
           "id": "date_modified",
           "label": "dateModified ISO 8601 with TZ (#1)",
           "severity": "p2",
-          "status": "fail",
-          "note": "no dateModified in schema"
+          "status": "pass",
+          "note": "2026-05-12T18:44:50"
         },
         {
           "id": "speakable",
           "label": "SpeakableSpecification (#13)",
           "severity": "p2",
-          "status": "fail",
-          "note": "no SpeakableSpecification"
+          "status": "pass",
+          "note": ""
         },
         {
           "id": "fleet_xlinks",
@@ -1676,8 +1830,8 @@
           "id": "sitemap_lastmod",
           "label": "sitemap lastmod ISO 8601 + varies (#17)",
           "severity": "p2",
-          "status": "fail",
-          "note": "no lastmod elements"
+          "status": "pass",
+          "note": "2 distinct lastmods in sample of 20"
         },
         {
           "id": "faqpage_misuse",
@@ -1852,9 +2006,9 @@
   },
   "summary": {
     "p0_fails": 0,
-    "p1_fails": 3,
-    "p2_fails": 26,
-    "pass": 194,
-    "total": 252
+    "p1_fails": 5,
+    "p2_fails": 5,
+    "pass": 226,
+    "total": 273
   }
 }

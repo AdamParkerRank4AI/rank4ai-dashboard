@@ -99,22 +99,22 @@ def main():
     # Run data collection scripts (order matters — crawl first, then analysis)
     scripts = [
         ("check_uptime.py", 30),
-        ("fetch_ga4.py", 60),
+        ("fetch_ga4.py", 240),  # 6 properties × ~7 reports each = 42 API calls; 60s too tight after 18 May fleet expansion
         ("fetch_gsc.py", 60),
-        ("fetch_bing.py", 30),
+        ("fetch_bing.py", 90),  # 6 properties; 30s too tight after fleet expansion
         # Pull fresh daily audit JSON from iCloud → dashboard live data.
         # run_daily_site_audit.py writes to iCloud at 7am via com.rank4ai.site-audit;
         # this fetcher mirrors it into the dashboard. Was missing from refresh_all,
         # so dashboard's daily_audit_*.json had been stale since 26 Apr.
-        ("fetch_daily_audit.py", 30),
+        ("fetch_daily_audit.py", 120),  # 13 sites; 30s too tight
         # Pull per-site content plan markdown from iCloud.
         # Was a standalone 7:10am launchd job (com.rank4ai.dashboard-content-plans-fetch)
         # but launchd context lacks Full Disk Access for iCloud — moved here so it
         # inherits FDA from the dashboard-refresh launchd grant.
-        ("fetch_content_plans.py", 30),
+        ("fetch_content_plans.py", 120),  # 13 sites; 30s too tight
         ("fetch_crawl_activity.py", 30),
         ("fetch_bot_hits.py", 30),
-        ("fetch_cf_ai_crawls.py", 60),
+        ("fetch_cf_ai_crawls.py", 180),  # 13 sites now; 60s too tight
         # PageSpeed — run weekly only (Sunday) to avoid rate limits
         # ("fetch_pagespeed.py", 120),
         ("extract_entities.py", 30),

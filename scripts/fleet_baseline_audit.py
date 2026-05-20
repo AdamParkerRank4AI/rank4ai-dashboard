@@ -33,7 +33,7 @@ SITES = [
     ("rochellemarashi",  "rochellemarashi",         "client",    False, "https://rochellemarashi.pages.dev/"),
     ("bestbusinessloans","bestbusinessloans",       "leadgen",   False, "https://bestbusinessloans.ai/"),
     ("fundbiz",          "fundbiz",                 "leadgen",   False, "https://fundbiz.co.uk/"),
-    ("cardmachines",     "cardmachines",            "leadgen",   False, "https://acceptcard.co.uk/"),
+    ("cardmachines",     "cardmachines",            "leadgen",   False, "https://merchanthq.co.uk/"),
     ("kartapay",         "kartapay",                "leadgen",   False, "https://kartapay.co.uk/"),
     ("findatradey",      "findatradey",             "leadgen",   True,  "https://findatradey.pages.dev/"),
     ("findagym",         "findagym",                "leadgen",   True,  "https://findagym.pages.dev/"),

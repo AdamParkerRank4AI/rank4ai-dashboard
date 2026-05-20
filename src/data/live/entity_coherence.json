@@ -1,16 +1,16 @@
 {
   "rank4ai": {
     "site_url": "https://www.rank4ai.co.uk",
-    "fetched_at": "2026-05-11T09:14:05.099452+00:00",
+    "fetched_at": "2026-05-18T08:47:55.350165+00:00",
     "person_links": [
       {
         "url": "https://www.linkedin.com/in/adamparkerrank4ai/",
-        "status": 999,
+        "status": 404,
         "ok": false,
-        "verdict": "bot_blocked",
+        "verdict": "broken",
         "redirect_to": null,
         "final_url": "https://www.linkedin.com/in/adamparkerrank4ai/",
-        "error": "HTTP 999",
+        "error": "HTTP 404",
         "entity_name": "Adam Parker",
         "entity_role": "person"
       },
@@ -152,16 +152,25 @@
     "summary": {
       "total": 13,
       "ok": 9,
-      "broken": 0,
-      "bot_blocked": 4,
+      "broken": 1,
+      "bot_blocked": 3,
       "error": 0,
-      "score": 100
+      "score": 90
     },
-    "broken_detail": []
+    "broken_detail": [
+      {
+        "url": "https://www.linkedin.com/in/adamparkerrank4ai/",
+        "status": 404,
+        "error": "HTTP 404",
+        "verdict": "broken",
+        "from_entity": "Adam Parker",
+        "from_role": "person"
+      }
+    ]
   },
   "market-invoice": {
     "site_url": "https://marketinvoice.co.uk",
-    "fetched_at": "2026-05-11T09:14:06.508300+00:00",
+    "fetched_at": "2026-05-18T08:47:56.778257+00:00",
     "person_links": [
       {
         "url": "https://find-and-update.company-information.service.gov.uk/officers/nJ1GY_zmn5UQ2aUceZRHppgZLpQ/appointments",
@@ -200,7 +209,7 @@
   },
   "seocompare": {
     "site_url": "https://seocompare.co.uk",
-    "fetched_at": "2026-05-11T09:14:08.459468+00:00",
+    "fetched_at": "2026-05-18T08:47:58.640080+00:00",
     "person_links": [],
     "organization_links": [
       {
@@ -238,7 +247,7 @@
   },
   "rochellemarashi": {
     "site_url": "https://rochellemarashi.pages.dev",
-    "fetched_at": "2026-05-11T09:14:16.643988+00:00",
+    "fetched_at": "2026-05-18T08:48:05.391503+00:00",
     "person_links": [
       {
         "url": "https://www.linkedin.com/in/rmarashi/",
@@ -383,10 +392,10 @@
   "fleet_summary": {
     "total": 27,
     "ok": 17,
-    "broken": 2,
-    "bot_blocked": 8,
+    "broken": 3,
+    "bot_blocked": 7,
     "error": 0,
-    "score": 89,
-    "fetched_at": "2026-05-11T09:14:16.644169+00:00"
+    "score": 85,
+    "fetched_at": "2026-05-18T08:48:05.395588+00:00"
   }
 }
