@@ -1,7 +1,7 @@
 {
   "site_id": "cardmachines",
   "domain": "cardmachines.pages.dev",
-  "crawled_at": "2026-05-20T08:22:00.669415+00:00",
+  "crawled_at": "2026-05-20T08:37:23.112543+00:00",
   "source": "fleet-source-reader",
   "pages_crawled": 1427,
   "total_issues": 0,
@@ -3470,14 +3470,17 @@
       "title": "Tap to Pay on iPhone UK: Setup, Fees, MerchantHQ",
       "h1": "Tap to Pay on iPhone UK",
       "meta_desc": "Tap to Pay on iPhone in the UK: which acquirers offer it, fees, setup, alternatives for Android, and which trades it suits. No separate terminal needed.",
-      "word_count": 3121,
+      "word_count": 3357,
       "status": 200,
       "schemas": [
         "Person",
         "Organization",
         "WebSite",
         "WebPage",
-        "Article"
+        "Article",
+        "ItemList",
+        "Service",
+        "BreadcrumbList"
       ],
       "internal_links_out": 48,
       "external_links_out": -29,
@@ -5339,14 +5342,17 @@
       "title": "UK Online Payment Gateways and Ecommerce Cards, MerchantHQ",
       "h1": "UK online card payments for websites and ecommerce",
       "meta_desc": "UK online card-payment editorial: Stripe Checkout, Adyen Web, Square Online, Shopify Payments.",
-      "word_count": 3844,
+      "word_count": 4097,
       "status": 200,
       "schemas": [
         "Person",
         "Organization",
         "WebSite",
         "WebPage",
-        "Article"
+        "Article",
+        "ItemList",
+        "Service",
+        "BreadcrumbList"
       ],
       "internal_links_out": 68,
       "external_links_out": -49,
@@ -53464,14 +53470,16 @@
       "title": "UK Merchant Accounts, MerchantHQ",
       "h1": "UK merchant accounts",
       "meta_desc": "UK merchant accounts: how they work, what they cost, the difference between merchant accounts and payment processors, and which UK acquirers offer them.",
-      "word_count": 2955,
+      "word_count": 3055,
       "status": 200,
       "schemas": [
         "Person",
         "Organization",
         "WebSite",
         "WebPage",
-        "Article"
+        "Article",
+        "Service",
+        "BreadcrumbList"
       ],
       "internal_links_out": 47,
       "external_links_out": -28,
@@ -55787,7 +55795,7 @@
       "title": "Chargeback and dispute help: MerchantHQ drafts and escalates",
       "h1": "Chargeback and dispute help",
       "meta_desc": "UK chargebacks cost \u00a315 to \u00a335 per case and 60-80% are friendly fraud you can win.",
-      "word_count": 3724,
+      "word_count": 4174,
       "status": 200,
       "schemas": [
         "Person",
@@ -55795,7 +55803,9 @@
         "WebSite",
         "WebPage",
         "Article",
-        "BreadcrumbList"
+        "BreadcrumbList",
+        "HowTo",
+        "Service"
       ],
       "internal_links_out": 51,
       "external_links_out": -32,
@@ -92614,7 +92624,7 @@
       "score": 5,
       "signals": [
         "OG",
-        "Schema:5",
+        "Schema:8",
         "Author",
         "Substantive",
         "Breadcrumbs"
@@ -93120,7 +93130,7 @@
       "score": 5,
       "signals": [
         "OG",
-        "Schema:5",
+        "Schema:8",
         "Author",
         "Substantive",
         "Breadcrumbs"
