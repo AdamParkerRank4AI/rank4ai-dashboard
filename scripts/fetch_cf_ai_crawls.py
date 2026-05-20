@@ -38,6 +38,9 @@ ZONES = {
     "bestbusinessloans": {"zone": "649994cd427b2d06058a547e3c60506b", "token_env": "CF_TOKEN_RANK4AI"},
     "fundbiz":           {"zone": "3291eada7963421b0d53e02ea513d635", "token_env": "CF_TOKEN_RANK4AI"},
     "cardmachines":      {"zone": "b49dfd54c982812ae16f52f6af5cfbf3", "token_env": "CF_TOKEN_RANK4AI"},
+    "kartapay":          {"zone": "dba48e86afba16f28cdecd873f58dbce", "token_env": "CF_TOKEN_RANK4AI"},
+    "peptideclear":      {"zone": "a849080f6d22a324d9604110dbf43a54", "token_env": "CF_TOKEN_RANK4AI"},
+    "builderweb":        {"zone": "b962563469d865db68fb5be0599f4416", "token_env": "CF_TOKEN_RANK4AI"},
 }
 
 AI_BOT_PATTERNS = [

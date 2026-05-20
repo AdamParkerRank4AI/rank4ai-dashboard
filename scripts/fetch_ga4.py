@@ -37,6 +37,9 @@ PROPERTIES = {
     "cardmachines": "537291192",        # AcceptCard, G-9Q5QGGE1ZP
     "bestbusinessloans": "538202642",   # G-P7G336KY9C
     "fundbiz": "538211877",             # G-9L5BSC5H1R
+    "kartapay": "538191589",            # karta12 account
+    "peptideclear": "538285241",        # peptidesa account
+    # builderweb: no GA4 property yet (20 May 2026). Add when Oliver wires it.
 }
 
 

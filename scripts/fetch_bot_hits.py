@@ -16,6 +16,9 @@ SITES = {
     "bestbusinessloans": "https://rank4ai-tracker.dawn-field-3d16.workers.dev/api/bot-hits",
     "fundbiz": "https://rank4ai-tracker.dawn-field-3d16.workers.dev/api/bot-hits",
     "cardmachines": "https://rank4ai-tracker.dawn-field-3d16.workers.dev/api/bot-hits",
+    "kartapay": "https://rank4ai-tracker.dawn-field-3d16.workers.dev/api/bot-hits",
+    "peptideclear": "https://rank4ai-tracker.dawn-field-3d16.workers.dev/api/bot-hits",
+    "builderweb": "https://rank4ai-tracker.dawn-field-3d16.workers.dev/api/bot-hits",
 }
 DAYS = 30
 
