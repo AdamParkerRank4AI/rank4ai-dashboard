@@ -19,7 +19,9 @@ SITES = {
     "resiliencebuilder": "sc-domain:resiliencebuilder.co.uk",
     "bestbusinessloans": "sc-domain:bestbusinessloans.ai",
     "fundbiz": "sc-domain:fundbiz.co.uk",
-    "cardmachines": "sc-domain:acceptcard.co.uk",
+    "cardmachines": "sc-domain:merchanthq.co.uk",
+    "kartapay": "sc-domain:kartapay.co.uk",
+    "peptideclear": "sc-domain:peptideclear.co.uk",
 }
 
 # Fallback URL-prefix formats if domain property doesn't work
@@ -30,7 +32,9 @@ SITES_FALLBACK = {
     "resiliencebuilder": "https://resiliencebuilder.co.uk/",
     "bestbusinessloans": "https://bestbusinessloans.ai/",
     "fundbiz": "https://fundbiz.co.uk/",
-    "cardmachines": "https://acceptcard.co.uk/",
+    "cardmachines": "https://merchanthq.co.uk/",
+    "kartapay": "https://kartapay.co.uk/",
+    "peptideclear": "https://peptideclear.co.uk/",
 }
 
 

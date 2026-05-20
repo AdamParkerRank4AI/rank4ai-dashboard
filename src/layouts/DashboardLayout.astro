@@ -87,25 +87,77 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
     >
       {isAgency && (
         <>
-          <div class="mb-6">
-            <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Clients</p>
-            <ul class="space-y-1">
-              {clients.filter((c) => !c.staging && c.id !== 'rank4ai').map((c) => (
-                <li>
-                  <a
-                    href={`/agency/${c.id}`}
-                    class={`block px-3 py-2 rounded text-sm transition ${
-                      currentClient === c.id
-                        ? 'bg-blue-600 text-white'
-                        : 'text-gray-300 hover:bg-gray-800'
-                    }`}
-                  >
-                    {c.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {(() => {
+            const fleetClients = (clients as any[]).filter((c) => !c.staging && c.id !== 'rank4ai');
+            const byStatus = (s: string) =>
+              fleetClients
+                .filter((c) => (c.siteStatus || 'live') === s)
+                .sort((a, b) => (a.sidebarOrder ?? 50) - (b.sidebarOrder ?? 50));
+            const live = byStatus('live');
+            const paused = byStatus('paused');
+            const needs = byStatus('needs');
+            return (
+              <>
+                <div class="mb-6">
+                  <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Clients</p>
+                  <ul class="space-y-1">
+                    {live.map((c: any) => (
+                      <li>
+                        <a
+                          href={`/agency/${c.id}`}
+                          class={`block px-3 py-2 rounded text-sm transition ${
+                            currentClient === c.id
+                              ? 'bg-blue-600 text-white'
+                              : 'text-emerald-300 hover:bg-gray-800'
+                          }`}
+                        >
+                          {c.name}
+                          <span class="ml-1 text-[9px] px-1.5 py-0.5 rounded bg-emerald-900/40 text-emerald-400 uppercase">Live</span>
+                        </a>
+                      </li>
+                    ))}
+                    {paused.map((c: any) => (
+                      <li>
+                        <a
+                          href={`/agency/${c.id}`}
+                          class={`block px-3 py-2 rounded text-sm transition ${
+                            currentClient === c.id
+                              ? 'bg-blue-600 text-white'
+                              : 'text-gray-500 hover:bg-gray-800'
+                          }`}
+                        >
+                          {c.name}
+                          <span class="ml-1 text-[9px] px-1.5 py-0.5 rounded bg-gray-800 text-gray-500 uppercase">Paused</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {needs.length > 0 && (
+                  <div class="mb-6">
+                    <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Needs</p>
+                    <ul class="space-y-1">
+                      {needs.map((c: any) => (
+                        <li>
+                          <a
+                            href={`/agency/${c.id}`}
+                            class={`block px-3 py-2 rounded text-sm transition ${
+                              currentClient === c.id
+                                ? 'bg-blue-600 text-white'
+                                : 'text-amber-300 hover:bg-gray-800'
+                            }`}
+                          >
+                            {c.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </>
+            );
+          })()}
 
           <div class="mb-6">
             <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Our Sites</p>
