@@ -229,18 +229,15 @@ def generate_for_client(client_id):
         # Note: training crawlers being blocked is correct practice, don't flag it
 
     # ============================================================
-    # AI CRAWLERS NOT MENTIONED (only flag search crawlers)
+    # AI CRAWLERS NOT MENTIONED — suppressed 2026-05-20
+    #
+    # Previously flagged when a search crawler wasn't named in robots.txt.
+    # robots.txt is permissive by default: `User-agent: * / Allow: /` (or no
+    # Disallow at all) already grants access to every bot, named or not.
+    # Recommending explicit Allow rules is over-engineering and produces
+    # daily false-positives on BBL/FundBiz/etc. Only "blocked" (real
+    # Disallow rules) is actionable, and that case is handled above.
     # ============================================================
-    if crawl_activity:
-        not_mentioned = [bot for bot, status in crawl_activity.get("ai_bot_access", {}).items() if status == "not_mentioned"]
-        search_not_mentioned = [b for b in not_mentioned if b in SEARCH_CRAWLERS]
-        if search_not_mentioned:
-            recs.append({
-                "priority": "medium", "category": "AI Readiness",
-                "title": f"{len(search_not_mentioned)} AI search crawlers not explicitly allowed in robots.txt",
-                "detail": f"These search crawlers are not mentioned: {', '.join(search_not_mentioned)}. Add explicit 'Allow' rules. Training crawlers not mentioned is fine.",
-                "impact": "medium", "pages": ["/robots.txt"],
-            })
 
     # ============================================================
     # MISSING SCHEMA TYPES
