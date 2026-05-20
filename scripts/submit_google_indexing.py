@@ -25,6 +25,11 @@ SITES = {
     "rank4ai": "https://www.rank4ai.co.uk",
     "market-invoice": "https://www.marketinvoice.co.uk",
     "seocompare": "https://www.seocompare.co.uk",
+    "bestbusinessloans": "https://bestbusinessloans.ai",
+    "fundbiz": "https://fundbiz.co.uk",
+    "merchanthq": "https://merchanthq.co.uk",
+    "kartapay": "https://kartapay.co.uk",
+    "peptideclear": "https://peptideclear.co.uk",
     "rank4ai-staging": "https://rank4ai-staging.pages.dev",
     "rank4ai-online": "https://www.rank4ai.online",
 }
