@@ -101,6 +101,7 @@ def main():
         ("check_uptime.py", 30),
         ("fetch_ga4.py", 240),  # 6 properties × ~7 reports each = 42 API calls; 60s too tight after 18 May fleet expansion
         ("fetch_gsc.py", 60),
+        ("fetch_gsc_indexed_history.py", 60),  # daily snapshot of submitted/indexed for change-over-time graphs
         ("fetch_bing.py", 90),  # 6 properties; 30s too tight after fleet expansion
         # Pull fresh daily audit JSON from iCloud → dashboard live data.
         # run_daily_site_audit.py writes to iCloud at 7am via com.rank4ai.site-audit;
