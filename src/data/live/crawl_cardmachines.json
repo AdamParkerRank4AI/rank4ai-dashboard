@@ -1,20 +1,20 @@
 {
   "site_id": "cardmachines",
   "domain": "cardmachines.pages.dev",
-  "crawled_at": "2026-05-20T10:10:20.200602+00:00",
+  "crawled_at": "2026-05-20T10:26:43.868778+00:00",
   "source": "fleet-source-reader",
-  "pages_crawled": 1427,
+  "pages_crawled": 1444,
   "total_issues": 0,
   "orphan_pages": 57,
-  "avg_depth": 2.621583742116328,
-  "avg_word_count": 3893,
-  "pages_with_schema": 1427,
+  "avg_depth": 2.6128808864265927,
+  "avg_word_count": 3900,
+  "pages_with_schema": 1444,
   "pages_with_multimodal": 0,
-  "pages_with_comparison_table": 198,
+  "pages_with_comparison_table": 205,
   "pages_with_video": 0,
-  "pages_over_2000_words": 1427,
+  "pages_over_2000_words": 1444,
   "images_missing_alt": 0,
-  "pages_with_date": 1427,
+  "pages_with_date": 1444,
   "crawler_access": {
     "GPTBot": true,
     "ClaudeBot": true,
@@ -35,6 +35,10 @@
     "high-risk": {
       "hub": "/high-risk/",
       "page_count": 28
+    },
+    "pl": {
+      "hub": "/pl/",
+      "page_count": 9
     },
     "contact": {
       "hub": "/contact/",
@@ -119,6 +123,10 @@
     "about": {
       "hub": "/about/",
       "page_count": 1
+    },
+    "ro": {
+      "hub": "/ro/",
+      "page_count": 8
     },
     "rate-reviews": {
       "hub": "/rate-reviews/",
@@ -217,27 +225,27 @@
       "page_count": 19
     }
   },
-  "topic_cluster_count": 48,
+  "topic_cluster_count": 50,
   "term_consistency": {
-    "card": 3903,
-    "machine": 3344,
-    "best": 3202,
+    "card": 3932,
+    "machine": 3351,
+    "best": 3206,
     "2026": 2444,
-    "merchanthq": 1098,
-    "square": 628,
-    "sumup": 522,
-    "dojo": 509,
-    "stripe": 501,
-    "terminal": 456,
+    "merchanthq": 1100,
+    "square": 644,
+    "sumup": 537,
+    "dojo": 517,
+    "stripe": 505,
+    "terminal": 489,
     "shops": 381,
     "reader": 379,
     "road": 336,
     "newham": 336,
-    "iphone": 317
+    "iphone": 327
   },
   "content_freshness": {
-    "pages_with_dates": 1427,
-    "fresh_30_days": 1427,
+    "pages_with_dates": 1444,
+    "fresh_30_days": 1444,
     "fresh_90_days": 0,
     "stale": 0
   },
@@ -279,7 +287,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -3470,7 +3478,7 @@
       "title": "Tap to Pay on iPhone UK: Setup, Fees, MerchantHQ",
       "h1": "Tap to Pay on iPhone UK",
       "meta_desc": "Tap to Pay on iPhone in the UK: which acquirers offer it, fees, setup, alternatives for Android, and which trades it suits. No separate terminal needed.",
-      "word_count": 3357,
+      "word_count": 3506,
       "status": 200,
       "schemas": [
         "Person",
@@ -3480,10 +3488,11 @@
         "Article",
         "ItemList",
         "Service",
+        "WebPage",
         "BreadcrumbList"
       ],
-      "internal_links_out": 48,
-      "external_links_out": -29,
+      "internal_links_out": 52,
+      "external_links_out": -33,
       "canonical": "https://merchanthq.co.uk/tap-to-pay-iphone/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -3492,7 +3501,7 @@
       "has_multimodal": false,
       "has_comparison_table": false,
       "table_count": 0,
-      "list_count": 8,
+      "list_count": 9,
       "question_h2s": 0,
       "h2_count": 7,
       "last_modified": "2026-04-26",
@@ -3503,7 +3512,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -3542,7 +3551,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -4652,6 +4661,389 @@
       "depth": 2
     },
     {
+      "url": "https://merchanthq.co.uk/pl/",
+      "path": "/pl/",
+      "title": "Polski, MerchantHQ UK Card Machines",
+      "h1": "Polski",
+      "meta_desc": "Por\u00f3wnanie terminali p\u0142atniczych, kont biznesowych i Tap to Pay dla firm w Wielkiej Brytanii. Dla polskich w\u0142a\u015bcicieli. UK card terminals, Tap to Pay, merchant accounts, switching providers. Editorial reviews by Oliver Mackman.",
+      "word_count": 3175,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article"
+      ],
+      "internal_links_out": 56,
+      "external_links_out": -31,
+      "canonical": "https://merchanthq.co.uk/pl/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 5,
+      "question_h2s": 0,
+      "h2_count": 9,
+      "last_modified": "2026-05-12",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": false,
+      "has_viewport": true,
+      "internal_links_in": 1444,
+      "depth": 1
+    },
+    {
+      "url": "https://merchanthq.co.uk/pl/terminal-platniczy-dla-budowlanca/",
+      "path": "/pl/terminal-platniczy-dla-budowlanca/",
+      "title": "Card terminal for a Polish tradesman in the UK, Tap to Pay, SumUp, Zettle",
+      "h1": "Card terminal for a Polish tradesman in the UK, Tap to Pay, SumUp, Zettle",
+      "meta_desc": "Polish electricians, plumbers, gas engineers and gardeners in the UK: which card terminal works best. Tap to Pay on iPhone, SumUp Solo, Zettle. No contract, no monthly fee. Polish guide.",
+      "word_count": 4607,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "WebPage",
+        "BreadcrumbList",
+        "Service",
+        "CreativeWork"
+      ],
+      "internal_links_out": 48,
+      "external_links_out": -23,
+      "canonical": "https://merchanthq.co.uk/pl/terminal-platniczy-dla-budowlanca/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 3,
+      "list_count": 8,
+      "question_h2s": 1,
+      "h2_count": 12,
+      "last_modified": "2026-05-18",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 2,
+      "depth": 2
+    },
+    {
+      "url": "https://merchanthq.co.uk/pl/polska-piekarnia-card-machine-pl/",
+      "path": "/pl/polska-piekarnia-card-machine-pl/",
+      "title": "Polska Piekarnia Card Machine UK, Terminal w Polskiej Piekarni",
+      "h1": "Polska piekarnia w UK \u2014 terminal kart, kt\u00f3ry nad\u0105\u017ca za porann\u0105 kolejk\u0105",
+      "meta_desc": "Polska piekarnia w UK: por\u00f3wnanie terminali. Ma\u0142e \u015brednie transakcje, kolejka poranna, dro\u017cd\u017c\u00f3wki + bochenki, tort na zam\u00f3wienie. SumUp, Square, Zettle, Stripe dla polskiej cukierni.",
+      "word_count": 4219,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "WebPage",
+        "BreadcrumbList",
+        "Service",
+        "CreativeWork"
+      ],
+      "internal_links_out": 48,
+      "external_links_out": -24,
+      "canonical": "https://merchanthq.co.uk/pl/polska-piekarnia-card-machine-pl/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 6,
+      "question_h2s": 0,
+      "h2_count": 9,
+      "last_modified": "2026-05-20",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 2,
+      "depth": 2
+    },
+    {
+      "url": "https://merchanthq.co.uk/pl/polski-warsztat-samochodowy-card-machine-pl/",
+      "path": "/pl/polski-warsztat-samochodowy-card-machine-pl/",
+      "title": "Polski Warsztat Samochodowy Card Machine UK, Terminal dla Mechanika",
+      "h1": "Polski warsztat samochodowy UK \u2014 terminal do warsztatu i faktur",
+      "meta_desc": "Polski warsztat samochodowy w UK: por\u00f3wnanie terminali. Mobilny mechanik, naprawa, opony, MOT. SumUp, Square, Zettle, Stripe. Faktury, link do zap\u0142aty, zaliczka i rozliczenie ko\u0144cowe.",
+      "word_count": 4352,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "WebPage",
+        "BreadcrumbList",
+        "Service",
+        "CreativeWork"
+      ],
+      "internal_links_out": 48,
+      "external_links_out": -23,
+      "canonical": "https://merchanthq.co.uk/pl/polski-warsztat-samochodowy-card-machine-pl/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 9,
+      "question_h2s": 0,
+      "h2_count": 9,
+      "last_modified": "2026-05-20",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 2,
+      "depth": 2
+    },
+    {
+      "url": "https://merchanthq.co.uk/pl/tap-to-pay-iphone-pl/",
+      "path": "/pl/tap-to-pay-iphone-pl/",
+      "title": "Tap to Pay on iPhone in the UK, Polish-language guide: setup, fees, who it suits",
+      "h1": "Tap to Pay on iPhone in the UK, Polish-language guide: setup, fees, who it suits",
+      "meta_desc": "Tap to Pay on iPhone in the UK for Polish-owned SMEs: SumUp 1.69%, Square 1.75%, Zettle, Stripe. 5-minute setup, no hardware, no contract. Limits and Android alternatives. Polish guide.",
+      "word_count": 4803,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "WebPage",
+        "BreadcrumbList",
+        "Service",
+        "CreativeWork"
+      ],
+      "internal_links_out": 48,
+      "external_links_out": -23,
+      "canonical": "https://merchanthq.co.uk/pl/tap-to-pay-iphone-pl/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 2,
+      "list_count": 9,
+      "question_h2s": 0,
+      "h2_count": 13,
+      "last_modified": "2026-05-18",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 2,
+      "depth": 2
+    },
+    {
+      "url": "https://merchanthq.co.uk/pl/terminal-dla-restauracji/",
+      "path": "/pl/terminal-dla-restauracji/",
+      "title": "Card terminal for a Polish restaurant in the UK, Dojo Go, Square, split-bill and tips",
+      "h1": "Card terminal for a Polish restaurant in the UK, Dojo Go, Square, split-bill and tips",
+      "meta_desc": "Polish restaurants, bars and cafes in the UK: which card terminal works best. Dojo Go for full service, Square for small operations, split-bill, table-side, tip handling and POS integrations. Polish guide.",
+      "word_count": 4917,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "WebPage",
+        "BreadcrumbList",
+        "Service",
+        "CreativeWork"
+      ],
+      "internal_links_out": 48,
+      "external_links_out": -23,
+      "canonical": "https://merchanthq.co.uk/pl/terminal-dla-restauracji/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 2,
+      "list_count": 8,
+      "question_h2s": 0,
+      "h2_count": 10,
+      "last_modified": "2026-05-18",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 2,
+      "depth": 2
+    },
+    {
+      "url": "https://merchanthq.co.uk/pl/polski-salon-fryzjerski-card-machine-pl/",
+      "path": "/pl/polski-salon-fryzjerski-card-machine-pl/",
+      "title": "Polski Salon Fryzjerski Card Machine UK, Terminal i Booksy",
+      "h1": "Polski salon fryzjerski w UK \u2014 terminal, Booksy i napiwek z karty",
+      "meta_desc": "Polski salon fryzjerski w UK: por\u00f3wnanie terminali. Booksy + Treatwell integracja, napiwek na karcie, depozyt rezerwacji, no-show fee. SumUp, Square, Zettle, Stripe.",
+      "word_count": 4349,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "WebPage",
+        "BreadcrumbList",
+        "Service",
+        "CreativeWork"
+      ],
+      "internal_links_out": 48,
+      "external_links_out": -24,
+      "canonical": "https://merchanthq.co.uk/pl/polski-salon-fryzjerski-card-machine-pl/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 7,
+      "question_h2s": 0,
+      "h2_count": 9,
+      "last_modified": "2026-05-20",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 2,
+      "depth": 2
+    },
+    {
+      "url": "https://merchanthq.co.uk/pl/terminal-dla-salonu-piekna/",
+      "path": "/pl/terminal-dla-salonu-piekna/",
+      "title": "Card terminal for a Polish beauty salon in the UK, Square, Dojo, SumUp",
+      "h1": "Card terminal for a Polish beauty salon in the UK, Square, Dojo, SumUp",
+      "meta_desc": "Polish hair, nails, beauty and aesthetic clinics in the UK: which card terminal to choose. Square Terminal, Dojo Go, integration with Treatwell and Fresha. Booking deposit + final payment flow. Polish guide.",
+      "word_count": 4719,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "WebPage",
+        "BreadcrumbList",
+        "Service",
+        "CreativeWork"
+      ],
+      "internal_links_out": 48,
+      "external_links_out": -23,
+      "canonical": "https://merchanthq.co.uk/pl/terminal-dla-salonu-piekna/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 2,
+      "list_count": 10,
+      "question_h2s": 0,
+      "h2_count": 11,
+      "last_modified": "2026-05-18",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 2,
+      "depth": 2
+    },
+    {
+      "url": "https://merchanthq.co.uk/pl/polski-sklep-card-machine-pl/",
+      "path": "/pl/polski-sklep-card-machine-pl/",
+      "title": "Polski Sklep Card Machine UK, Terminal P\u0142atniczy dla Delikates\u00f3w",
+      "h1": "Polski sklep w UK \u2014 kt\u00f3ry terminal p\u0142atniczy faktycznie si\u0119 op\u0142aca",
+      "meta_desc": "Polski sklep w UK: por\u00f3wnanie terminali p\u0142atniczych dla delikates\u00f3w i sklep\u00f3w osiedlowych. SumUp, Square, Zettle, Worldpay. Op\u0142aty, contactless limit \u00a3100, integracja z kas\u0105 fiskaln\u0105.",
+      "word_count": 4324,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "WebPage",
+        "BreadcrumbList",
+        "Service",
+        "CreativeWork"
+      ],
+      "internal_links_out": 48,
+      "external_links_out": -24,
+      "canonical": "https://merchanthq.co.uk/pl/polski-sklep-card-machine-pl/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 6,
+      "question_h2s": 0,
+      "h2_count": 9,
+      "last_modified": "2026-05-20",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 2,
+      "depth": 2
+    },
+    {
       "url": "https://merchanthq.co.uk/contact/",
       "path": "/contact/",
       "title": "Contact, MerchantHQ",
@@ -4688,7 +5080,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -5213,7 +5605,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -5294,7 +5686,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -5333,7 +5725,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -5375,7 +5767,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -5742,7 +6134,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -5863,7 +6255,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -6020,7 +6412,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -6281,7 +6673,7 @@
       "title": "Best Card Machines and Card Readers for Restaurants UK 2026",
       "h1": "Best card machine for restaurants",
       "meta_desc": "The best card machine for a UK restaurant in 2026 is Dojo Go, on the strength of same-next-day weekend settlement, peak-hour throughput, table-side split-b",
-      "word_count": 3763,
+      "word_count": 3817,
       "status": 200,
       "schemas": [
         "Person",
@@ -6294,8 +6686,8 @@
         "BreadcrumbList",
         "WebPage"
       ],
-      "internal_links_out": 79,
-      "external_links_out": -59,
+      "internal_links_out": 81,
+      "external_links_out": -61,
       "canonical": "https://merchanthq.co.uk/trade/restaurant/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -6534,7 +6926,7 @@
       "title": "Best Card Machines and Card Readers for Beauty clinics and aesthetic services UK 2026",
       "h1": "Best card machine for beauty clinics and aesthetic services",
       "meta_desc": "Aesthetic clinics, laser, injectable, semi-permanent makeup, advanced beauty. Higher-value transactions, deposit-on-booking, treatment-plan staged payments",
-      "word_count": 3614,
+      "word_count": 3667,
       "status": 200,
       "schemas": [
         "Person",
@@ -6544,10 +6936,11 @@
         "Article",
         "Product",
         "ItemList",
-        "BreadcrumbList"
+        "BreadcrumbList",
+        "WebPage"
       ],
-      "internal_links_out": 75,
-      "external_links_out": -55,
+      "internal_links_out": 76,
+      "external_links_out": -56,
       "canonical": "https://merchanthq.co.uk/trade/beauty-clinic/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -6556,7 +6949,7 @@
       "has_multimodal": false,
       "has_comparison_table": false,
       "table_count": 0,
-      "list_count": 9,
+      "list_count": 10,
       "question_h2s": 1,
       "h2_count": 10,
       "last_modified": "2026-04-26",
@@ -6618,7 +7011,7 @@
       "title": "Best Card Machines and Card Readers for Electricians, Plumbers and Gas Engineers UK 2026",
       "h1": "Best card machine for electricians, plumbers and gas engineers",
       "meta_desc": "Mobile trades, electricians, plumbers, gas engineers. Job-by-job payment, sometimes hours after completion. Contactless and Apple Pay common. Best card rea",
-      "word_count": 3588,
+      "word_count": 3664,
       "status": 200,
       "schemas": [
         "Person",
@@ -6628,10 +7021,11 @@
         "Article",
         "Product",
         "ItemList",
-        "BreadcrumbList"
+        "BreadcrumbList",
+        "WebPage"
       ],
-      "internal_links_out": 73,
-      "external_links_out": -53,
+      "internal_links_out": 75,
+      "external_links_out": -55,
       "canonical": "https://merchanthq.co.uk/trade/electrician/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -6640,7 +7034,7 @@
       "has_multimodal": false,
       "has_comparison_table": false,
       "table_count": 0,
-      "list_count": 8,
+      "list_count": 9,
       "question_h2s": 1,
       "h2_count": 9,
       "last_modified": "2026-04-26",
@@ -7332,7 +7726,7 @@
       "title": "Best Card Machines and Card Readers for Grocery stores and convenience retail UK 2026",
       "h1": "Best card machine for grocery stores and convenience retail",
       "meta_desc": "Independent grocery stores, convenience retail, off-licences, ethnic-food specialists. High transaction count, low-to-mid ticket. Strong contactless share.",
-      "word_count": 3749,
+      "word_count": 3778,
       "status": 200,
       "schemas": [
         "Person",
@@ -7345,8 +7739,8 @@
         "BreadcrumbList",
         "WebPage"
       ],
-      "internal_links_out": 78,
-      "external_links_out": -58,
+      "internal_links_out": 79,
+      "external_links_out": -59,
       "canonical": "https://merchanthq.co.uk/trade/grocery-store/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -7375,7 +7769,7 @@
       "title": "Best Card Machines and Card Readers for Salons and barbers UK 2026",
       "h1": "Best card machine for salons and barbers",
       "meta_desc": "The best card machine for a UK salon or barbershop in 2026 is Dojo Go for established multi-chair venues, or Square Terminal for independents and single-ch",
-      "word_count": 3687,
+      "word_count": 3773,
       "status": 200,
       "schemas": [
         "Person",
@@ -7385,10 +7779,11 @@
         "Article",
         "Product",
         "ItemList",
-        "BreadcrumbList"
+        "BreadcrumbList",
+        "WebPage"
       ],
-      "internal_links_out": 77,
-      "external_links_out": -57,
+      "internal_links_out": 79,
+      "external_links_out": -59,
       "canonical": "https://merchanthq.co.uk/trade/hairdresser-salon/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -7397,7 +7792,7 @@
       "has_multimodal": false,
       "has_comparison_table": false,
       "table_count": 0,
-      "list_count": 9,
+      "list_count": 10,
       "question_h2s": 1,
       "h2_count": 10,
       "last_modified": "2026-04-26",
@@ -7459,7 +7854,7 @@
       "title": "Best Card Machines and Card Readers for Mobile traders UK 2026",
       "h1": "Best card machine for mobile traders",
       "meta_desc": "Mobile mechanics, mobile groomers, market traders, pop-up retail. No fixed location, intermittent connectivity.",
-      "word_count": 3492,
+      "word_count": 3549,
       "status": 200,
       "schemas": [
         "Person",
@@ -7469,10 +7864,11 @@
         "Article",
         "Product",
         "ItemList",
-        "BreadcrumbList"
+        "BreadcrumbList",
+        "WebPage"
       ],
-      "internal_links_out": 73,
-      "external_links_out": -53,
+      "internal_links_out": 74,
+      "external_links_out": -54,
       "canonical": "https://merchanthq.co.uk/trade/mobile-mechanic/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -7481,7 +7877,7 @@
       "has_multimodal": false,
       "has_comparison_table": false,
       "table_count": 0,
-      "list_count": 8,
+      "list_count": 9,
       "question_h2s": 1,
       "h2_count": 9,
       "last_modified": "2026-04-26",
@@ -7669,7 +8065,7 @@
       "title": "Best Card Machines and Card Readers for Caf\u00e9s and coffee shops UK 2026",
       "h1": "Best card machine for caf\u00e9s and coffee shops",
       "meta_desc": "The best card machine for a UK caf\u00e9 or coffee shop in 2026 is Square Terminal for independents (no contract, built-in printer, caf\u00e9-style menu modifiers in",
-      "word_count": 3724,
+      "word_count": 3777,
       "status": 200,
       "schemas": [
         "Person",
@@ -7679,10 +8075,11 @@
         "Article",
         "Product",
         "ItemList",
-        "BreadcrumbList"
+        "BreadcrumbList",
+        "WebPage"
       ],
-      "internal_links_out": 75,
-      "external_links_out": -55,
+      "internal_links_out": 76,
+      "external_links_out": -56,
       "canonical": "https://merchanthq.co.uk/trade/cafe/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -7691,7 +8088,7 @@
       "has_multimodal": false,
       "has_comparison_table": false,
       "table_count": 0,
-      "list_count": 9,
+      "list_count": 10,
       "question_h2s": 1,
       "h2_count": 10,
       "last_modified": "2026-04-26",
@@ -7961,7 +8358,7 @@
       "title": "Best Card Machines and Card Readers for Taxis and private hire UK 2026",
       "h1": "Best card machine for taxis and private hire",
       "meta_desc": "The best card machine for a UK taxi or private-hire driver in 2026 is Tap to Pay on iPhone (zero hardware, choose any supported acquirer) or SumUp Solo wit",
-      "word_count": 3700,
+      "word_count": 3753,
       "status": 200,
       "schemas": [
         "Person",
@@ -7971,10 +8368,11 @@
         "Article",
         "Product",
         "ItemList",
-        "BreadcrumbList"
+        "BreadcrumbList",
+        "WebPage"
       ],
-      "internal_links_out": 73,
-      "external_links_out": -53,
+      "internal_links_out": 74,
+      "external_links_out": -54,
       "canonical": "https://merchanthq.co.uk/trade/taxi/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -7983,7 +8381,7 @@
       "has_multimodal": false,
       "has_comparison_table": false,
       "table_count": 0,
-      "list_count": 8,
+      "list_count": 9,
       "question_h2s": 1,
       "h2_count": 9,
       "last_modified": "2026-04-26",
@@ -8087,7 +8485,7 @@
       "title": "Best Card Machines and Card Readers for Mobile car wash and valeting UK 2026",
       "h1": "Best card machine for mobile car wash and valeting",
       "meta_desc": "Mobile car wash, hand-wash, mobile valeting and detailing. Historically cash-heavy, transitioning to card under HMRC reporting and customer demand.",
-      "word_count": 3596,
+      "word_count": 3653,
       "status": 200,
       "schemas": [
         "Person",
@@ -8097,10 +8495,11 @@
         "Article",
         "Product",
         "ItemList",
-        "BreadcrumbList"
+        "BreadcrumbList",
+        "WebPage"
       ],
-      "internal_links_out": 73,
-      "external_links_out": -53,
+      "internal_links_out": 74,
+      "external_links_out": -54,
       "canonical": "https://merchanthq.co.uk/trade/mobile-car-wash/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -8109,7 +8508,7 @@
       "has_multimodal": false,
       "has_comparison_table": false,
       "table_count": 0,
-      "list_count": 8,
+      "list_count": 9,
       "question_h2s": 1,
       "h2_count": 9,
       "last_modified": "2026-05-18",
@@ -8842,7 +9241,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1083,
+      "internal_links_in": 1100,
       "depth": 1
     },
     {
@@ -8884,7 +9283,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -8964,7 +9363,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -9357,7 +9756,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -9474,7 +9873,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 2
     },
     {
@@ -49242,7 +49641,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 2
     },
     {
@@ -51715,8 +52114,347 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
+    },
+    {
+      "url": "https://merchanthq.co.uk/ro/",
+      "path": "/ro/",
+      "title": "Rom\u00e2n\u0103, MerchantHQ UK Card Machines",
+      "h1": "Rom\u00e2n\u0103",
+      "meta_desc": "Compararea terminalelor de plat\u0103, conturilor de business \u0219i Tap to Pay pentru afaceri \u00een Marea Britanie. Pentru proprietari rom\u00e2ni. UK card terminals, Tap to Pay, merchant accounts, switching providers. Editorial reviews by Oliver Mackman.",
+      "word_count": 3150,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article"
+      ],
+      "internal_links_out": 55,
+      "external_links_out": -30,
+      "canonical": "https://merchanthq.co.uk/ro/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 5,
+      "question_h2s": 0,
+      "h2_count": 8,
+      "last_modified": "2026-05-12",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": false,
+      "has_viewport": true,
+      "internal_links_in": 1444,
+      "depth": 1
+    },
+    {
+      "url": "https://merchanthq.co.uk/ro/terminal-curatenie-ro/",
+      "path": "/ro/terminal-curatenie-ro/",
+      "title": "Card terminal for a cleaning company in the UK, Romanian-language guide",
+      "h1": "Card terminal for a cleaning company in the UK, Romanian-language guide",
+      "meta_desc": "Which is the best card terminal for a domestic or end-of-tenancy cleaning company in the UK? SumUp, Square, Tap to Pay on iPhone, fees and contracts explained for Romanian cleaners. Romanian guide.",
+      "word_count": 4675,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "internal_links_out": 48,
+      "external_links_out": -25,
+      "canonical": "https://merchanthq.co.uk/ro/terminal-curatenie-ro/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 2,
+      "list_count": 9,
+      "question_h2s": 0,
+      "h2_count": 11,
+      "last_modified": "2026-05-18",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 1,
+      "depth": 2
+    },
+    {
+      "url": "https://merchanthq.co.uk/ro/terminal-constructii-ro/",
+      "path": "/ro/terminal-constructii-ro/",
+      "title": "Card terminal for construction trades in the UK, Romanian guide",
+      "h1": "Card terminal for construction trades in the UK, Romanian guide",
+      "meta_desc": "Electricians, plumbers, builders: what",
+      "word_count": 4796,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "WebPage",
+        "BreadcrumbList",
+        "Service",
+        "CreativeWork"
+      ],
+      "internal_links_out": 48,
+      "external_links_out": -23,
+      "canonical": "https://merchanthq.co.uk/ro/terminal-constructii-ro/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 3,
+      "list_count": 5,
+      "question_h2s": 0,
+      "h2_count": 14,
+      "last_modified": "2026-05-18",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 2,
+      "depth": 2
+    },
+    {
+      "url": "https://merchanthq.co.uk/ro/restaurant-romanesc-card-machine-ro/",
+      "path": "/ro/restaurant-romanesc-card-machine-ro/",
+      "title": "Restaurant Rom\u00e2nesc Card Machine UK, Terminal de Plat\u0103 pentru Restaurant Rom\u00e2nesc",
+      "h1": "Restaurant rom\u00e2nesc UK \u2014 terminal cu bac\u0219i\u0219, EPOS, depozit pentru grup mare",
+      "meta_desc": "Restaurant rom\u00e2nesc \u00een UK: terminal de plat\u0103, bac\u0219i\u0219 pe card, EPOS integrat, depozit rezervare grup mare, suprataxa interzis\u0103. SumUp, Square, Zettle, Worldpay, Dojo.",
+      "word_count": 4596,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "WebPage",
+        "BreadcrumbList",
+        "Service",
+        "CreativeWork"
+      ],
+      "internal_links_out": 48,
+      "external_links_out": -24,
+      "canonical": "https://merchanthq.co.uk/ro/restaurant-romanesc-card-machine-ro/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 9,
+      "question_h2s": 0,
+      "h2_count": 10,
+      "last_modified": "2026-05-20",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 2,
+      "depth": 2
+    },
+    {
+      "url": "https://merchanthq.co.uk/ro/spalatorie-auto-card-machine-ro/",
+      "path": "/ro/spalatorie-auto-card-machine-ro/",
+      "title": "Sp\u0103l\u0103torie Auto Card Machine UK, Terminal de Plat\u0103 pentru Car Wash Rom\u00e2nesc",
+      "h1": "Sp\u0103l\u0103torie auto rom\u00e2neasc\u0103 UK \u2014 care terminal merit\u0103 pentru volum mare",
+      "meta_desc": "Sp\u0103l\u0103torie auto de\u021binut\u0103 de rom\u00e2ni \u00een UK: compara\u021bie terminale de plat\u0103. SumUp, Square, Zettle, Dojo. Volum mare tranzac\u021bii mici, suprataxa interzis\u0103, abonament lunar pentru sp\u0103lare.",
+      "word_count": 4506,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "WebPage",
+        "BreadcrumbList",
+        "Service",
+        "CreativeWork"
+      ],
+      "internal_links_out": 48,
+      "external_links_out": -23,
+      "canonical": "https://merchanthq.co.uk/ro/spalatorie-auto-card-machine-ro/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 8,
+      "question_h2s": 0,
+      "h2_count": 10,
+      "last_modified": "2026-05-20",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 2,
+      "depth": 2
+    },
+    {
+      "url": "https://merchanthq.co.uk/ro/salon-romanesc-card-machine-ro/",
+      "path": "/ro/salon-romanesc-card-machine-ro/",
+      "title": "Salon Rom\u00e2nesc Card Machine UK, Terminal de Plat\u0103 pentru Coafur\u0103 \u0219i Manichiur\u0103",
+      "h1": "Salon rom\u00e2nesc UK \u2014 Booksy, terminal \u0219i bac\u0219i\u0219 pe card",
+      "meta_desc": "Salon rom\u00e2nesc de coafur\u0103 \u0219i manichiur\u0103 \u00een UK: terminal de plat\u0103. Booksy / Treatwell integrare, bac\u0219i\u0219 pe card, depozit la rezervare, no-show fee. SumUp, Square, Zettle.",
+      "word_count": 4513,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "WebPage",
+        "BreadcrumbList",
+        "Service",
+        "CreativeWork"
+      ],
+      "internal_links_out": 48,
+      "external_links_out": -23,
+      "canonical": "https://merchanthq.co.uk/ro/salon-romanesc-card-machine-ro/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 10,
+      "question_h2s": 0,
+      "h2_count": 9,
+      "last_modified": "2026-05-20",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 2,
+      "depth": 2
+    },
+    {
+      "url": "https://merchanthq.co.uk/ro/transport-romanesc-card-machine-ro/",
+      "path": "/ro/transport-romanesc-card-machine-ro/",
+      "title": "Transport Rom\u00e2nesc UK Card Payments, Terminal pentru \u0218ofer Uber Bolt PHV",
+      "h1": "Transport rom\u00e2nesc UK \u2014 Tap to Pay iPhone pentru \u0219ofer PHV",
+      "meta_desc": "\u0218ofer rom\u00e2n de PHV, Uber, Bolt, taxi sau transport marf\u0103 \u00een UK: terminal de plat\u0103. Tap to Pay iPhone, SumUp, Square. Accep\u021bi plat\u0103 direct, f\u0103r\u0103 hardware. Pre-settled status, Companies House Ltd.",
+      "word_count": 4606,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "WebPage",
+        "BreadcrumbList",
+        "Service",
+        "CreativeWork"
+      ],
+      "internal_links_out": 48,
+      "external_links_out": -22,
+      "canonical": "https://merchanthq.co.uk/ro/transport-romanesc-card-machine-ro/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 8,
+      "question_h2s": 0,
+      "h2_count": 9,
+      "last_modified": "2026-05-20",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 2,
+      "depth": 2
+    },
+    {
+      "url": "https://merchanthq.co.uk/ro/tap-to-pay-iphone-ro/",
+      "path": "/ro/tap-to-pay-iphone-ro/",
+      "title": "Tap to Pay on iPhone in the UK, Romanian-language guide for SME owners",
+      "h1": "Tap to Pay on iPhone in the UK, Romanian-language guide for SME owners",
+      "meta_desc": "How Tap to Pay on iPhone works in the UK for Romanians. Which acquirers support it, what commission you pay, which iPhones work, and the trades it suits best. Romanian guide.",
+      "word_count": 4776,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "WebPage",
+        "BreadcrumbList",
+        "Service",
+        "CreativeWork"
+      ],
+      "internal_links_out": 48,
+      "external_links_out": -22,
+      "canonical": "https://merchanthq.co.uk/ro/tap-to-pay-iphone-ro/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 1,
+      "list_count": 11,
+      "question_h2s": 1,
+      "h2_count": 12,
+      "last_modified": "2026-05-18",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 2,
+      "depth": 2
     },
     {
       "url": "https://merchanthq.co.uk/rate-reviews/",
@@ -51755,7 +52493,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -51796,7 +52534,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -52009,8 +52747,8 @@
       "path": "/languages/",
       "title": "Card Machines in Your Language, UK Diaspora Business Guides",
       "h1": "UK card-payment guides in your language",
-      "meta_desc": "UK card-payment editorial in 2 languages: Hindi, Marathi.",
-      "word_count": 2995,
+      "meta_desc": "UK card-payment editorial in 4 languages: Hindi, Marathi, Polish, Romanian.",
+      "word_count": 3043,
       "status": 200,
       "schemas": [
         "Person",
@@ -52031,7 +52769,7 @@
       "table_count": 0,
       "list_count": 3,
       "question_h2s": 0,
-      "h2_count": 3,
+      "h2_count": 5,
       "last_modified": "2026-05-11",
       "has_answer_capsule": true,
       "has_og_tags": true,
@@ -52040,7 +52778,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -52354,7 +53092,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -52394,7 +53132,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -52789,7 +53527,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -53502,7 +54240,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -53543,7 +54281,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -53582,7 +54320,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -54197,7 +54935,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -54238,7 +54976,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -54279,7 +55017,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -54319,7 +55057,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -55096,7 +55834,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -55187,7 +55925,7 @@
       "title": "Hindu temple donations and seva, UK Card Payment Guide, MerchantHQ",
       "h1": "Hindu temple donations and seva",
       "meta_desc": "UK Hindu temples (mandirs) digitalising donations for daily seva, festival days (Diwali, Navratri, Janmashtami), and dedicated puja sponsors",
-      "word_count": 3177,
+      "word_count": 3262,
       "status": 200,
       "schemas": [
         "Person",
@@ -55196,10 +55934,11 @@
         "WebPage",
         "Article",
         "Service",
-        "BreadcrumbList"
+        "BreadcrumbList",
+        "WebPage"
       ],
-      "internal_links_out": 54,
-      "external_links_out": -35,
+      "internal_links_out": 56,
+      "external_links_out": -37,
       "canonical": "https://merchanthq.co.uk/faith/temple-donations/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -55208,7 +55947,7 @@
       "has_multimodal": false,
       "has_comparison_table": false,
       "table_count": 0,
-      "list_count": 5,
+      "list_count": 6,
       "question_h2s": 0,
       "h2_count": 6,
       "last_modified": "2026-04-26",
@@ -55709,7 +56448,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -55786,7 +56525,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -55828,7 +56567,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -56235,7 +56974,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -58716,7 +59455,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1427,
+      "internal_links_in": 1444,
       "depth": 1
     },
     {
@@ -59435,7 +60174,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/./",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -59580,6 +60319,16 @@
     },
     {
       "from": "https://merchanthq.co.uk/./",
+      "to": "https://merchanthq.co.uk/pl/",
+      "type": "internal"
+    },
+    {
+      "from": "https://merchanthq.co.uk/./",
+      "to": "https://merchanthq.co.uk/ro/",
+      "type": "internal"
+    },
+    {
+      "from": "https://merchanthq.co.uk/./",
       "to": "https://merchanthq.co.uk/get-quotes/",
       "type": "internal"
     },
@@ -59686,6 +60435,16 @@
     {
       "from": "https://merchanthq.co.uk/./",
       "to": "https://merchanthq.co.uk/mr/",
+      "type": "internal"
+    },
+    {
+      "from": "https://merchanthq.co.uk/./",
+      "to": "https://merchanthq.co.uk/pl/",
+      "type": "internal"
+    },
+    {
+      "from": "https://merchanthq.co.uk/./",
+      "to": "https://merchanthq.co.uk/ro/",
       "type": "internal"
     },
     {
@@ -59950,7 +60709,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/404/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -60355,7 +61114,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -60820,7 +61579,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/square-terminal-vs-stripe-reader-m2/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -61235,7 +61994,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/adyen-vs-zettle-reader-2/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -61650,7 +62409,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/adyen-vs-sumup-solo/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -62065,7 +62824,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/bbpos-wisepad-3-vs-stripe-reader-s700/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -62480,7 +63239,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/dojo-go-vs-tap-to-pay-iphone/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -62895,7 +63654,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/square-terminal-vs-sumup-solo/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -63310,7 +64069,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/adyen-vs-tap-to-pay-iphone/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -63725,7 +64484,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/tap-to-pay-iphone-vs-zettle-reader-2/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -64140,7 +64899,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/bbpos-wisepos-e-vs-tide-card-reader/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -64555,7 +65314,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/adyen-vs-stripe-reader-m2/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -64970,7 +65729,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/stripe-reader-m2-vs-tide-card-reader/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -65385,7 +66144,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/square-terminal-vs-stripe-reader-s700/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -65800,7 +66559,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/bbpos-wisepos-e-vs-dojo-go/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -66215,7 +66974,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/stripe-reader-s700-vs-zettle-reader-2/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -66630,7 +67389,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/tide-card-reader-vs-tyl-by-natwest/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -67045,7 +67804,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/bbpos-wisepad-3-vs-tap-to-pay-iphone/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -67460,7 +68219,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/stripe-reader-m2-vs-sumup-solo/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -67875,7 +68634,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/dojo-go-vs-worldpay-terminal/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -68290,7 +69049,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/bbpos-wisepos-e-vs-sumup-solo/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -68705,7 +69464,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/adyen-vs-worldpay-terminal/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -69120,7 +69879,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/bbpos-wisepos-e-vs-square-terminal/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -69535,7 +70294,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/stripe-reader-s700-vs-sumup-solo/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -69950,7 +70709,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/stripe-reader-s700-vs-worldpay-terminal/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -70365,7 +71124,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/square-terminal-vs-tap-to-pay-iphone/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -70780,7 +71539,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/pax-a77-vs-pax-a920-pro/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -71195,7 +71954,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/stripe-reader-s700-vs-tide-card-reader/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -71610,7 +72369,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/sumup-solo-vs-zettle-reader-2/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -72025,7 +72784,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/pax-a920-pro-vs-stripe-reader-m2/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -72440,7 +73199,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/dojo-go-vs-zettle-reader-2/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -72855,7 +73614,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/adyen-vs-bbpos-wisepos-e/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -73270,7 +74029,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/bbpos-wisepad-3-vs-square-terminal/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -73685,7 +74444,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/pax-a920-pro-vs-zettle-reader-2/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -74100,7 +74859,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/pax-a920-pro-vs-sumup-solo/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -74515,7 +75274,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/bbpos-wisepad-3-vs-stripe-reader-m2/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -74930,7 +75689,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/stripe-reader-s700-vs-tap-to-pay-iphone/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -75345,7 +76104,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/revolut-card-reader-vs-tide-card-reader/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -75760,7 +76519,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/dojo-go-vs-tyl-by-natwest/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -76175,7 +76934,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/dojo-go-vs-stripe-reader-m2/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -76590,7 +77349,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/stripe-reader-m2-vs-tap-to-pay-iphone/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -77005,7 +77764,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/adyen-vs-pax-a920-pro/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -77420,7 +78179,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/pax-a920-pro-vs-tide-card-reader/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -77835,7 +78594,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/revolut-card-reader-vs-sumup-solo/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -78250,7 +79009,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/bbpos-wisepad-3-vs-bbpos-wisepos-e/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -78665,7 +79424,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/bbpos-wisepos-e-vs-zettle-reader-2/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -79080,7 +79839,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/bbpos-wisepos-e-vs-stripe-reader-s700/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -79495,7 +80254,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/adyen-vs-square-terminal/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -79910,7 +80669,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/sumup-solo-vs-tide-card-reader/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -80325,7 +81084,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/bbpos-wisepad-3-vs-pax-a920-pro/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -80740,7 +81499,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/bbpos-wisepad-3-vs-tide-card-reader/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -81155,7 +81914,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/dojo-go-vs-tide-card-reader/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -81570,7 +82329,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/stripe-reader-m2-vs-stripe-reader-s700/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -81985,7 +82744,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/sumup-solo-vs-tap-to-pay-iphone/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -82400,7 +83159,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/square-terminal-vs-tide-card-reader/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -82815,7 +83574,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/stripe-reader-m2-vs-zettle-reader-2/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -83230,7 +83989,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/bbpos-wisepad-3-vs-zettle-reader-2/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -83645,7 +84404,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/dojo-go-vs-stripe-reader-s700/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -84060,7 +84819,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/pax-a920-pro-vs-square-terminal/",
-      "to": "https://merchanthq.co.uk/_astro/404.8FMB5uFL.css",
+      "to": "https://merchanthq.co.uk/_astro/404.e5xutKhp.css",
       "type": "internal"
     },
     {
@@ -84401,26 +85160,6 @@
     {
       "from": "https://merchanthq.co.uk/vs/pax-a920-pro-vs-square-terminal/",
       "to": "https://merchanthq.co.uk/terms/",
-      "type": "internal"
-    },
-    {
-      "from": "https://merchanthq.co.uk/vs/pax-a920-pro-vs-square-terminal/",
-      "to": "https://merchanthq.co.uk/disclaimer/",
-      "type": "internal"
-    },
-    {
-      "from": "https://merchanthq.co.uk/vs/pax-a920-pro-vs-square-terminal/",
-      "to": "https://merchanthq.co.uk/glossary/",
-      "type": "internal"
-    },
-    {
-      "from": "https://merchanthq.co.uk/vs/pax-a920-pro-vs-square-terminal/",
-      "to": "https://merchanthq.co.uk/lp/",
-      "type": "internal"
-    },
-    {
-      "from": "https://merchanthq.co.uk/vs/pax-a920-pro-vs-square-terminal/",
-      "to": "https://merchanthq.co.uk/hi/",
       "type": "internal"
     }
   ],
@@ -85149,6 +85888,52 @@
           {
             "name": "travel",
             "path": "/high-risk/travel/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "pl",
+        "path": "/pl/",
+        "children": [
+          {
+            "name": "terminal-platniczy-dla-budowlanca",
+            "path": "/pl/terminal-platniczy-dla-budowlanca/",
+            "children": []
+          },
+          {
+            "name": "polska-piekarnia-card-machine-pl",
+            "path": "/pl/polska-piekarnia-card-machine-pl/",
+            "children": []
+          },
+          {
+            "name": "polski-warsztat-samochodowy-card-machine-pl",
+            "path": "/pl/polski-warsztat-samochodowy-card-machine-pl/",
+            "children": []
+          },
+          {
+            "name": "tap-to-pay-iphone-pl",
+            "path": "/pl/tap-to-pay-iphone-pl/",
+            "children": []
+          },
+          {
+            "name": "terminal-dla-restauracji",
+            "path": "/pl/terminal-dla-restauracji/",
+            "children": []
+          },
+          {
+            "name": "polski-salon-fryzjerski-card-machine-pl",
+            "path": "/pl/polski-salon-fryzjerski-card-machine-pl/",
+            "children": []
+          },
+          {
+            "name": "terminal-dla-salonu-piekna",
+            "path": "/pl/terminal-dla-salonu-piekna/",
+            "children": []
+          },
+          {
+            "name": "polski-sklep-card-machine-pl",
+            "path": "/pl/polski-sklep-card-machine-pl/",
             "children": []
           }
         ]
@@ -90826,6 +91611,47 @@
         "children": []
       },
       {
+        "name": "ro",
+        "path": "/ro/",
+        "children": [
+          {
+            "name": "terminal-curatenie-ro",
+            "path": "/ro/terminal-curatenie-ro/",
+            "children": []
+          },
+          {
+            "name": "terminal-constructii-ro",
+            "path": "/ro/terminal-constructii-ro/",
+            "children": []
+          },
+          {
+            "name": "restaurant-romanesc-card-machine-ro",
+            "path": "/ro/restaurant-romanesc-card-machine-ro/",
+            "children": []
+          },
+          {
+            "name": "spalatorie-auto-card-machine-ro",
+            "path": "/ro/spalatorie-auto-card-machine-ro/",
+            "children": []
+          },
+          {
+            "name": "salon-romanesc-card-machine-ro",
+            "path": "/ro/salon-romanesc-card-machine-ro/",
+            "children": []
+          },
+          {
+            "name": "transport-romanesc-card-machine-ro",
+            "path": "/ro/transport-romanesc-card-machine-ro/",
+            "children": []
+          },
+          {
+            "name": "tap-to-pay-iphone-ro",
+            "path": "/ro/tap-to-pay-iphone-ro/",
+            "children": []
+          }
+        ]
+      },
+      {
         "name": "rate-reviews",
         "path": "/rate-reviews/",
         "children": []
@@ -92624,7 +93450,7 @@
       "score": 5,
       "signals": [
         "OG",
-        "Schema:8",
+        "Schema:9",
         "Author",
         "Substantive",
         "Breadcrumbs"
@@ -92933,6 +93759,104 @@
       "signals": [
         "OG",
         "Schema:7",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/pl/",
+      "score": 4,
+      "signals": [
+        "OG",
+        "Schema:5",
+        "Author",
+        "Substantive"
+      ]
+    },
+    {
+      "path": "/pl/terminal-platniczy-dla-budowlanca/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:9",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/pl/polska-piekarnia-card-machine-pl/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:9",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/pl/polski-warsztat-samochodowy-card-machine-pl/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:9",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/pl/tap-to-pay-iphone-pl/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:9",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/pl/terminal-dla-restauracji/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:9",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/pl/polski-salon-fryzjerski-card-machine-pl/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:9",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/pl/terminal-dla-salonu-piekna/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:9",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/pl/polski-sklep-card-machine-pl/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:9",
         "Author",
         "Substantive",
         "Breadcrumbs"
@@ -93449,7 +94373,7 @@
       "score": 5,
       "signals": [
         "OG",
-        "Schema:8",
+        "Schema:9",
         "Author",
         "Substantive",
         "Breadcrumbs"
@@ -93471,7 +94395,7 @@
       "score": 5,
       "signals": [
         "OG",
-        "Schema:8",
+        "Schema:9",
         "Author",
         "Substantive",
         "Breadcrumbs"
@@ -93669,7 +94593,7 @@
       "score": 5,
       "signals": [
         "OG",
-        "Schema:8",
+        "Schema:9",
         "Author",
         "Substantive",
         "Breadcrumbs"
@@ -93691,7 +94615,7 @@
       "score": 5,
       "signals": [
         "OG",
-        "Schema:8",
+        "Schema:9",
         "Author",
         "Substantive",
         "Breadcrumbs"
@@ -93746,7 +94670,7 @@
       "score": 5,
       "signals": [
         "OG",
-        "Schema:8",
+        "Schema:9",
         "Author",
         "Substantive",
         "Breadcrumbs"
@@ -93823,7 +94747,7 @@
       "score": 5,
       "signals": [
         "OG",
-        "Schema:8",
+        "Schema:9",
         "Author",
         "Substantive",
         "Breadcrumbs"
@@ -93856,7 +94780,7 @@
       "score": 5,
       "signals": [
         "OG",
-        "Schema:8",
+        "Schema:9",
         "Author",
         "Substantive",
         "Breadcrumbs"
@@ -93890,105 +94814,6 @@
       "signals": [
         "OG",
         "Schema:8",
-        "Author",
-        "Substantive",
-        "Breadcrumbs"
-      ]
-    },
-    {
-      "path": "/trade/caterer/",
-      "score": 5,
-      "signals": [
-        "OG",
-        "Schema:8",
-        "Author",
-        "Substantive",
-        "Breadcrumbs"
-      ]
-    },
-    {
-      "path": "/trade/butcher/",
-      "score": 5,
-      "signals": [
-        "OG",
-        "Schema:8",
-        "Author",
-        "Substantive",
-        "Breadcrumbs"
-      ]
-    },
-    {
-      "path": "/trade/funeral-director/",
-      "score": 5,
-      "signals": [
-        "OG",
-        "Schema:8",
-        "Author",
-        "Substantive",
-        "Breadcrumbs"
-      ]
-    },
-    {
-      "path": "/by-sector/",
-      "score": 5,
-      "signals": [
-        "OG",
-        "Schema:5",
-        "Author",
-        "Substantive",
-        "Breadcrumbs"
-      ]
-    },
-    {
-      "path": "/by-sector/hospitality/",
-      "score": 5,
-      "signals": [
-        "OG",
-        "Schema:5",
-        "Author",
-        "Substantive",
-        "Breadcrumbs"
-      ]
-    },
-    {
-      "path": "/by-sector/market-traders/",
-      "score": 5,
-      "signals": [
-        "OG",
-        "Schema:5",
-        "Author",
-        "Substantive",
-        "Breadcrumbs"
-      ]
-    },
-    {
-      "path": "/by-sector/charities/",
-      "score": 5,
-      "signals": [
-        "OG",
-        "Schema:5",
-        "Author",
-        "Substantive",
-        "Breadcrumbs"
-      ]
-    },
-    {
-      "path": "/by-sector/pop-ups/",
-      "score": 5,
-      "signals": [
-        "OG",
-        "Schema:5",
-        "Author",
-        "Substantive",
-        "Breadcrumbs"
-      ]
-    },
-    {
-      "path": "/by-sector/healthcare/",
-      "score": 5,
-      "signals": [
-        "OG",
-        "Schema:5",
         "Author",
         "Substantive",
         "Breadcrumbs"
