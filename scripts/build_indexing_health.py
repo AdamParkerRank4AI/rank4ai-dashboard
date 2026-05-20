@@ -25,7 +25,7 @@ from pathlib import Path
 PROJECT_DIR = Path(__file__).resolve().parent.parent
 LIVE = PROJECT_DIR / "src" / "data" / "live"
 
-SITES = ["rank4ai", "market-invoice", "seocompare", "bestbusinessloans", "fundbiz", "cardmachines"]
+SITES = ["rank4ai", "market-invoice", "seocompare", "bestbusinessloans", "fundbiz", "cardmachines", "kartapay", "peptideclear"]
 
 NOW = datetime.now(timezone.utc)
 TODAY = NOW.date()
