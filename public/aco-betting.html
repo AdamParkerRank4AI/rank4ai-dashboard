@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ACO Betting</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  :root {
+    --bg: #0f1419;
+    --card: #1a212b;
+    --border: #2d3748;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --green: #10b981;
+    --red: #ef4444;
+    --blue: #3b82f6;
+    --amber: #f59e0b;
+    --purple: #a855f7;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0 auto;
+    padding: 24px;
+    max-width: 1400px;
+    font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  h1 { font-size: 24px; margin: 0 0 4px; }
+  h2 { font-size: 18px; margin: 28px 0 12px; color: var(--muted); font-weight: 600; }
+  .sub { color: var(--muted); margin-bottom: 24px; font-size: 13px; }
+  .grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+  .card .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+  .card .val { font-size: 22px; font-weight: 600; margin-top: 6px; }
+  .card .sub2 { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .pos { color: var(--green); }
+  .neg { color: var(--red); }
+  .pending { color: var(--amber); }
+  table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+  th, td { padding: 10px 8px; text-align: left; border-bottom: 1px solid var(--border); font-size: 13px; }
+  th { color: var(--muted); font-weight: 500; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .reserve {
+    background: linear-gradient(135deg, #1e3a5f 0%, #4c1d95 100%);
+    border: 1px solid var(--blue);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 16px 0 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px;
+    align-items: center;
+  }
+  .reserve .block .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #93c5fd; opacity: 0.85; }
+  .reserve .block .val { font-size: 28px; font-weight: 700; margin-top: 4px; color: #fff; }
+  .reserve .block .sub3 { font-size: 12px; color: #cbd5e1; margin-top: 4px; }
+  .day-tile {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 8px;
+    text-align: center;
+    font-size: 12px;
+  }
+  .day-tile.today {
+    background: linear-gradient(135deg, #1e3a5f 0%, #4c1d95 100%);
+    border-color: var(--blue);
+  }
+  .day-tile.empty { opacity: 0.45; }
+  .day-tile .day-label { color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .day-tile.today .day-label { color: #93c5fd; }
+  .day-tile .day-pnl { font-size: 20px; font-weight: 700; margin: 4px 0; }
+  .day-tile .day-meta { color: var(--muted); font-size: 10px; }
+  .day-tile.today .day-meta { color: #cbd5e1; }
+  .strategy { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-top: 12px; }
+  .strategy ul { margin: 6px 0; padding-left: 20px; }
+  .strategy li { margin: 4px 0; }
+  .strategy strong.green { color: var(--green); }
+  .strategy strong.red { color: var(--red); }
+  .strategy strong.amber { color: var(--amber); }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+  .b-won { background: #14532d; color: #86efac; }
+  .b-cashed_out { background: #4c1d95; color: #c4b5fd; }
+  .b-lost { background: #7f1d1d; color: #fca5a5; }
+  .b-pending { background: #78350f; color: #fcd34d; }
+  .note { font-size: 12px; color: var(--muted); font-style: italic; }
+  .bookie-tag { font-size: 10px; padding: 1px 6px; border-radius: 3px; background: var(--border); color: var(--muted); margin-left: 6px; }
+</style>
+</head>
+<body>
+
+<h1>ACO BETTING</h1>
+<div class="sub" id="last-updated">Last updated: Tue 19 May 2026 · Tracking since 17 May 2026 · Daily P&L from balance deltas.</div>
+
+<div id="reserve-banner"></div>
+
+<h2>Last 7 days</h2>
+<div id="week-strip" style="display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-bottom:16px;"></div>
+
+<h2>Account balances</h2>
+<div class="grid" id="bankroll-grid"></div>
+
+<h2>Today's P&L (settled)</h2>
+<div class="grid" id="pnl-grid"></div>
+
+<h2>Tuesday 19 May 2026 — picks &amp; outcomes</h2>
+<table id="picks-table">
+  <thead>
+    <tr>
+      <th>Match</th>
+      <th>Selection</th>
+      <th class="num">Odds</th>
+      <th>Score</th>
+      <th>Result</th>
+      <th class="num">Stake</th>
+      <th class="num">Returns</th>
+      <th class="num">P&amp;L</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<h2>Tuesday 19 May 2026 — accas</h2>
+<table id="accas-table">
+  <thead>
+    <tr>
+      <th>Bookie</th>
+      <th>Type</th>
+      <th>Legs</th>
+      <th class="num">Stake</th>
+      <th class="num">Returns</th>
+      <th>Result</th>
+      <th class="num">P&amp;L</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<h2>Strategy rules — current state</h2>
+<div class="strategy">
+  <ul>
+    <li><strong class="green">VALIDATED Tue: Betfair Boost Treble + cashout discipline</strong> — Ethiopian U1.5 × Genk BTTS No × Brann II BTTS No, Boost Treble cashed at £89.51 from £5 (+£84.51). All 3 legs would have settled at FT for ~£109. Cashout was the right call. <strong>Single biggest win of tracking period</strong>.</li>
+    <li><strong class="green">VALIDATED: Cashout timing on EPL match</strong> — Bournemouth U1.5 @ 7.00 cashed at £16.41 BEFORE 2nd goal (FT 1-1 = U1.5 lost). Bournemouth BTTS No also cashed at £6.37 before Bourne scored. Two cashouts saved ~£23.</li>
+    <li><strong class="red">FAILED Tue: BTTS No cell across the board</strong> — Maccabi 4-1, Westerlo 1-2, Charleroi 1-1, Bournemouth 1-1, Brann II 2-0 — ALL LOST. The dominant pick type bled −£25+ in stakes today across singles + multis + the Yankee.</li>
+    <li><strong class="red">FAILED Tue: Handicap layer on heavy favs</strong> — Genk 0-0, Bournemouth 1-1, UPDF 0-0 = all 3 draws killed Man City −1, Genk −1, UPDF −1 + their Handicap Treble. Need draw insurance or skip handicap on tight matches.</li>
+    <li><strong class="red">FAILED Tue: Brann II BuildABet (BTTS No × Over 3.5)</strong> — FT 2-0, Brann scored (BTTS No failed) and only 2 goals (Over 3.5 failed). The favourite-blowout pattern busted.</li>
+    <li><strong class="amber">WATCH: U1.5 cell hit variance</strong> — Noah 8-3 (11 goals!) killed singles + Treble + Trixie. Audit's +45% U1.5 cell was 10-tip sample. One Noah variance hit + Bournemouth FT 1-1 = U1.5 cell delivered Ethiopian only today.</li>
+    <li><strong class="green">VALIDATED Mon: Tight under-goals trebles</strong> — Mon Treble 1 (Tanjong U3.5 × Shirak BTTS No × Gandzasar U2.5) → £5 → £44.10 ★. Same shape on under-goals still strong long-term.</li>
+    <li><strong class="red">CONFIRMED AVOID: Bet365 lottery accas</strong> — Lucky 15, Six-Fold, mixed-market Trebles. Cost ~£62 on Sunday 17 May.</li>
+    <li><strong class="red">CONFIRMED AVOID: horse racing</strong> — out of scope.</li>
+    <li><strong>P&L tracked by balance delta</strong>, not bet-by-bet (avoids yesterday-stake-already-deducted trap).</li>
+  </ul>
+</div>
+
+<script>
+const DATA = {
+  capacity: 600,
+  day_label: "Tuesday 19 May 2026",
+  // Last 7 days — most recent first. P&L = null when no data (pre-tracking).
+  week: [
+    { date: "Tue 19 May", pnl: 17.45,  bets: 22, won: 2,  lost: 16, cashed: 4, today: true },
+    { date: "Mon 18 May", pnl: 83.84,  bets: 24, won: 12, lost: 9,  cashed: 2, today: false },
+    { date: "Sun 17 May", pnl: -67.00, bets: 22, won: 4,  lost: 11, cashed: 0, today: false },
+    { date: "Sat 16 May", pnl: null, note: "pre-tracking (reference data only)", today: false },
+    { date: "Fri 15 May", pnl: null, today: false },
+    { date: "Thu 14 May", pnl: null, today: false },
+    { date: "Wed 13 May", pnl: null, today: false },
+  ],
+  bookies: {
+    skybet:    { label: "SkyBet",       deposited: 100, current: 120,    yesterday: 185.55, today_pnl: -65.55, in_play: 10, classKey: "skybet", note: "BTTS No bled, Noah 8-3, handicaps all drew · £10 still in play tonight (Rosario + Fluminense)" },
+    paddy:     { label: "Paddy Power",  deposited: 150, current: 142,    yesterday: 150,    today_pnl: -8,     in_play: 0,  classKey: "paddy",  note: "Char + Maccabi BTTS lost, Sarp cashout +£4" },
+    betfair:   { label: "Betfair",      deposited: 50,  current: 138,    yesterday: 47,     today_pnl: 91,     in_play: 0,  classKey: "betfair", note: "★ Boost Treble cashout +£84" },
+    bet365:    { label: "Bet365",       deposited: 80,  current: 22,     yesterday: 22,     today_pnl: 0,      in_play: 0,  classKey: "bet365", note: "no bets Tue" }
+  },
+  picks: [
+    // TUESDAY 19 MAY 2026 — WINS
+    { match: "Ethiopian Medhin v Welayta Decha", sel: "Under 1.5",  odds: 2.40, score: "0-0", result: "won", stake: 5, returns: 12.00 },
+    { match: "UPDF v Calvary",                   sel: "Under 2.5",  odds: 2.00, score: "0-0", result: "won", stake: 6, returns: 12.00 },
+    // TUESDAY — CASHED OUT (sharp timing saved these)
+    { match: "Bournemouth v Man City",           sel: "Under 1.5 (cashed before 2nd goal — would have LOST 1-1) ★", odds: 7.00, score: "1-1", result: "cashed_out", stake: 3, returns: 16.41 },
+    { match: "Bournemouth v Man City",           sel: "BTTS No (cashed before Bourne scored — would have LOST 1-1)", odds: 2.70, score: "1-1", result: "cashed_out", stake: 3, returns: 6.37 },
+    { match: "Sarpsborg 08 II v Lyn II (Paddy)", sel: "1X2 Sarp II win (cashed early — Sarp won 6-3 would have settled)", odds: 1.75, score: "6-3", result: "cashed_out", stake: 6, returns: 10.53 },
+    { match: "Genk v Antwerp (Betfair)",         sel: "BTTS No (cashed — settled 0-0 would have WON £12.90)", odds: 2.15, score: "0-0", result: "cashed_out", stake: 6, returns: 10.11 },
+    // TUESDAY — LOSSES
+    { match: "Noah v Ararat Yerevan",            sel: "Under 2.5", odds: 3.60, score: "8-3 ★", result: "lost", stake: 6, returns: 0 },
+    { match: "Noah v Ararat Yerevan",            sel: "Under 1.5", odds: 9.50, score: "8-3", result: "lost", stake: 3, returns: 0 },
+    { match: "Qingdao v Beijing Guoan",          sel: "BTTS No",   odds: 2.25, score: "1-1", result: "lost", stake: 6, returns: 0 },
+    { match: "Westerlo v Standard",              sel: "BTTS No",   odds: 2.40, score: "1-2", result: "lost", stake: 6, returns: 0 },
+    { match: "Sarpsborg 08 II v Lyn II",         sel: "BTTS No",   odds: 3.75, score: "6-3", result: "lost", stake: 4, returns: 0 },
+    { match: "Brann II v Sogndal IL II",         sel: "BuildABet (BTTS No + Over 3.5)", odds: 16.29, score: "2-0", result: "lost", stake: 4, returns: 0 },
+    { match: "Charleroi v Leuven (Paddy)",       sel: "BTTS No",   odds: 2.40, score: "1-1", result: "lost", stake: 6, returns: 0 },
+    { match: "Maccabi Haifa v Hapoel TA (Paddy)", sel: "BTTS No",  odds: 2.40, score: "4-1", result: "lost", stake: 6, returns: 0 },
+    { match: "Bournemouth v Man City",           sel: "Man City −1", odds: 2.63, score: "1-1", result: "lost", stake: 4, returns: 0 },
+    { match: "Genk v Antwerp",                   sel: "Genk −1",   odds: 2.50, score: "0-0", result: "lost", stake: 4, returns: 0 },
+    { match: "UPDF v Calvary",                   sel: "UPDF −1",   odds: 2.38, score: "0-0", result: "lost", stake: 4, returns: 0 },
+    // PENDING — tonight
+    { match: "Rosario Central v Universidad",    sel: "Under 1.5", odds: 5.50, score: "23:00 KO", result: "pending", stake: 3, returns: null },
+    { match: "Rosario Central v Universidad",    sel: "Under 2.5 ★ (research-led safer substitution from U1.5)", odds: 2.40, score: "23:00 KO", result: "pending", stake: 4, returns: null },
+    { match: "Fluminense v Bolívar",             sel: "Fluminense -1.5 (substituted from BTTS Yes — expert call)", odds: 1.70, score: "23:00 KO", result: "pending", stake: 3, returns: null },
+  ],
+  accas: [
+    { bookie: "betfair", type: "Boost Treble (cashed) ★", legs: "Ethiopian U1.5 × Genk BTTS No × Brann II BTTS No — cashed £89.51 (would have settled ~£109 at FT)", stake: 5, result: "cashed_out", returns: 89.51 },
+    { bookie: "betfair", type: "Double (cashed)", legs: "Sarpsborg II 1X2 × Bournemouth BTTS No — cashed before Bourne 2nd goal", stake: 5, result: "cashed_out", returns: 12.46 },
+    { bookie: "skybet",  type: "U/Goal Treble", legs: "Ethiopian U1.5 × UPDF U2.5 × Noah U2.5 — Noah's 11 goals killed it", stake: 4, result: "lost", returns: 0 },
+    { bookie: "skybet",  type: "Handicap Treble", legs: "Man City −1 × Genk −1 × UPDF −1 — all 3 draws", stake: 4, result: "lost", returns: 0 },
+    { bookie: "skybet",  type: "BTTS No Treble", legs: "Maccabi × Bournemouth × Charleroi — all 3 BTTS Yes ❌", stake: 5, result: "lost", returns: 0 },
+    { bookie: "skybet",  type: "Double", legs: "Qingdao BTTS No × Genk BTTS No — Qingdao 1-1 killed it", stake: 7, result: "lost", returns: 0 },
+    { bookie: "skybet",  type: "Double", legs: "Westerlo BTTS No × Charleroi BTTS No — both lost", stake: 7, result: "lost", returns: 0 },
+    { bookie: "skybet",  type: "U1.5 Treble", legs: "Bournemouth × Rosario × Noah U1.5 — Noah's 11 goals", stake: 2, result: "lost", returns: 0 },
+    { bookie: "skybet",  type: "U1.5 Trixie (4 lines)", legs: "B U1.5 × R U1.5 × Noah U1.5 — all 4 lines dead", stake: 4, result: "lost", returns: 0 },
+    { bookie: "skybet",  type: "BTTS Yankee (11 lines)", legs: "Bourne BTTS × West BTTS × Char BTTS × Genk −1 — all 4 dead", stake: 8.25, result: "lost", returns: 0 },
+    { bookie: "betfair", type: "4-Fold Boost", legs: "Sarpsborg 1X2 × Bourne BTTS × Genk BTTS × UPDF U2.5 — Bourne BTTS killed it", stake: 5, result: "lost", returns: 0 },
+  ]
+};
+
+const fmtPos = (n) => "£" + n.toFixed(2);
+const fmt = (n) => (n >= 0 ? "+" : "−") + "£" + Math.abs(n).toFixed(2);
+const cls = (n) => n > 0 ? "pos" : n < 0 ? "neg" : "";
+
+function renderReserve() {
+  const totalDeposited = Object.values(DATA.bookies).reduce((s, b) => s + b.deposited, 0);
+  const totalCurrent = Object.values(DATA.bookies).reduce((s, b) => s + b.current, 0);
+  const totalInPlay = Object.values(DATA.bookies).reduce((s, b) => s + b.in_play, 0);
+  const todayPnL = Object.values(DATA.bookies).reduce((s, b) => s + (b.today_pnl ?? 0), 0);
+  const totalPnL = totalCurrent - totalDeposited;
+  const reserve = DATA.capacity - totalDeposited;
+  const banner = document.getElementById("reserve-banner");
+  banner.className = "reserve";
+  banner.innerHTML = `
+    <div class="block"><div class="lbl">Reserve · not yet deposited</div><div class="val">£${reserve.toFixed(2)}</div><div class="sub3">of £${DATA.capacity.toFixed(2)} capacity</div></div>
+    <div class="block"><div class="lbl">Current balance</div><div class="val">£${totalCurrent.toFixed(2)}</div><div class="sub3">From £${totalDeposited.toFixed(2)} deposited · £${totalInPlay.toFixed(2)} in play</div></div>
+    <div class="block"><div class="lbl">Today's P&L</div><div class="val ${cls(todayPnL)}">${fmt(todayPnL)}</div><div class="sub3">${todayPnL < 0 ? "down on the day" : todayPnL > 0 ? "up on the day" : "flat"}</div></div>
+    <div class="block"><div class="lbl">Tracking total</div><div class="val ${cls(totalPnL)}">${fmt(totalPnL)}</div><div class="sub3">since 17 May 2026</div></div>
+  `;
+}
+
+function renderBankroll() {
+  const grid = document.getElementById("bankroll-grid");
+  for (const k of Object.keys(DATA.bookies)) {
+    const b = DATA.bookies[k];
+    const todayPnL = b.today_pnl != null ? b.today_pnl : (b.current - (b.yesterday ?? b.deposited));
+    const totalPnL = b.current - b.deposited;
+    const arrow = todayPnL > 0 ? "↑" : todayPnL < 0 ? "↓" : "→";
+    const arrowColour = todayPnL > 0 ? "var(--green)" : todayPnL < 0 ? "var(--red)" : "var(--muted)";
+    const div = document.createElement("div");
+    div.className = "card";
+    div.innerHTML = `
+      <div class="label">${b.label}</div>
+      <div class="val">£${b.current.toFixed(2)} <span style="font-size:18px;color:${arrowColour};">${arrow}</span></div>
+      <div class="sub2"><strong>Today: <span class="${cls(todayPnL)}">${fmt(todayPnL)}</span></strong> · since deposit <span class="${cls(totalPnL)}">${fmt(totalPnL)}</span><br>${b.note || ""}</div>
+    `;
+    grid.appendChild(div);
+  }
+}
+
+function renderDayPnL() {
+  const grid = document.getElementById("pnl-grid");
+  const settled = DATA.picks.filter(p => p.result !== "pending");
+  const won = settled.filter(p => p.result === "won").length;
+  const cashed = settled.filter(p => p.result === "cashed_out").length;
+  const lost = settled.filter(p => p.result === "lost").length;
+  const wr = settled.length ? ((won + cashed) / settled.length * 100).toFixed(1) : "0";
+  const todayPnL = Object.values(DATA.bookies).reduce((s, b) => s + (b.today_pnl ?? 0), 0);
+  const pending = DATA.picks.filter(p => p.result === "pending").length;
+  const accaPending = DATA.accas.filter(a => a.result === "pending").length;
+  const stats = [
+    { lbl: "Picks settled", val: `${settled.length}`, sub: `${won} won + ${cashed} cashed / ${lost} lost · ${wr}% hit rate` },
+    { lbl: "Picks still in play", val: `${pending}`, sub: `${accaPending} acca${accaPending !== 1 ? "s" : ""} also pending` },
+    { lbl: "Today's P&L", val: `<span class="${cls(todayPnL)}">${fmt(todayPnL)}</span>`, sub: "balance-delta across all 4 books" },
+    { lbl: "Betfair Boost saved day", val: "+£84.51", sub: "Boost Treble cashout carried it" },
+  ];
+  for (const s of stats) {
+    const div = document.createElement("div");
+    div.className = "card";
+    div.innerHTML = `<div class="label">${s.lbl}</div><div class="val">${s.val}</div><div class="sub2">${s.sub}</div>`;
+    grid.appendChild(div);
+  }
+}
+
+function renderPicks() {
+  const tbody = document.querySelector("#picks-table tbody");
+  // Sort: won first, then cashed_out (partial wins), then lost, then pending
+  const order = { won: 0, cashed_out: 1, lost: 2, pending: 3 };
+  const sorted = [...DATA.picks].sort((a, b) => (order[a.result] ?? 99) - (order[b.result] ?? 99));
+  for (const p of sorted) {
+    const badge = p.result === "won" ? `<span class="badge b-won">WON</span>`
+                : p.result === "lost" ? `<span class="badge b-lost">LOST</span>`
+                : p.result === "cashed_out" ? `<span class="badge b-cashed_out">CASHED</span>`
+                : `<span class="badge b-pending">LIVE</span>`;
+    const stake = p.stake != null ? `£${p.stake.toFixed(2)}` : "—";
+    const returns = p.returns != null ? `£${p.returns.toFixed(2)}` : "—";
+    const pnlVal = (p.stake != null && p.returns != null) ? (p.returns - p.stake) : null;
+    const pnlCell = pnlVal == null ? "—" : `<span class="${cls(pnlVal)}">${fmt(pnlVal)}</span>`;
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${p.match}</td>
+      <td>${p.sel}</td>
+      <td class="num">${p.odds.toFixed(2)}</td>
+      <td>${p.score}</td>
+      <td>${badge}</td>
+      <td class="num">${stake}</td>
+      <td class="num">${returns}</td>
+      <td class="num">${pnlCell}</td>
+    `;
+    tbody.appendChild(tr);
+  }
+}
+
+function renderAccas() {
+  const tbody = document.querySelector("#accas-table tbody");
+  for (const a of DATA.accas) {
+    const badge = a.result === "won" ? `<span class="badge b-won">WON</span>`
+                : a.result === "lost" ? `<span class="badge b-lost">LOST</span>`
+                : a.result === "cashed_out" ? `<span class="badge b-cashed_out">CASHED</span>`
+                : `<span class="badge b-pending">PENDING</span>`;
+    const returnsVal = a.returns || 0;
+    const pnlVal = returnsVal - a.stake;
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${DATA.bookies[a.bookie]?.label || a.bookie}</td>
+      <td>${a.type}</td>
+      <td>${a.legs}</td>
+      <td class="num">£${a.stake.toFixed(2)}</td>
+      <td class="num">£${returnsVal.toFixed(2)}</td>
+      <td>${badge}</td>
+      <td class="num"><span class="${cls(pnlVal)}">${fmt(pnlVal)}</span></td>
+    `;
+    tbody.appendChild(tr);
+  }
+}
+
+function renderShadowAccas() {
+  const tbody = document.getElementById("shadow-accas-body");
+  if (!tbody || !DATA.shadow_accas) return;
+  let totalStake = 0, totalReturns = 0;
+  for (const a of DATA.shadow_accas) {
+    const pnl = (a.returns || 0) - a.stake;
+    const badge = a.result === "won" ? `<span class="badge b-won">WON</span>`
+                : a.result === "lost" ? `<span class="badge b-lost">LOST</span>`
+                : `<span class="badge b-pending">PENDING</span>`;
+    totalStake += a.stake;
+    totalReturns += a.returns || 0;
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td style="opacity:0.8;">${a.date}</td>
+      <td style="opacity:0.8;font-size:11px;">${a.legs}</td>
+      <td class="num">${a.odds.toFixed(2)}</td>
+      <td class="num">£${a.stake.toFixed(2)}</td>
+      <td>${badge}</td>
+      <td class="num"><span class="${cls(pnl)}">${fmt(pnl)}</span></td>
+    `;
+    tbody.appendChild(tr);
+  }
+  // Totals row
+  const totalPnL = totalReturns - totalStake;
+  const tr = document.createElement("tr");
+  tr.style.borderTop = "2px solid var(--border)";
+  tr.innerHTML = `
+    <td colspan="3" style="text-align:right;font-weight:600;">Shadow running total:</td>
+    <td class="num"><strong>£${totalStake.toFixed(2)}</strong></td>
+    <td>—</td>
+    <td class="num"><strong class="${cls(totalPnL)}">${fmt(totalPnL)}</strong></td>
+  `;
+  tbody.appendChild(tr);
+}
+
+function renderWeekStrip() {
+  const grid = document.getElementById("week-strip");
+  for (const d of DATA.week) {
+    const cls = d.today ? "day-tile today" : (d.pnl == null ? "day-tile empty" : "day-tile");
+    let body;
+    if (d.pnl == null) {
+      body = `<div class="day-pnl" style="color:#475569;">—</div><div class="day-meta">${d.note || "no data"}</div>`;
+    } else {
+      const pnlClass = d.pnl > 0 ? "pos" : d.pnl < 0 ? "neg" : "";
+      body = `<div class="day-pnl ${pnlClass}">${d.pnl >= 0 ? "+" : "−"}£${Math.abs(d.pnl).toFixed(2)}</div>
+              <div class="day-meta">${d.bets || 0} bets · ${d.won || 0}W / ${d.lost || 0}L${d.cashed ? ` · ${d.cashed} CO` : ""}</div>`;
+    }
+    const div = document.createElement("div");
+    div.className = cls;
+    div.innerHTML = `<div class="day-label">${d.date}</div>${body}`;
+    grid.appendChild(div);
+  }
+}
+
+renderReserve();
+renderWeekStrip();
+renderBankroll();
+renderDayPnL();
+renderPicks();
+renderAccas();
+</script>
+</body>
+</html>
