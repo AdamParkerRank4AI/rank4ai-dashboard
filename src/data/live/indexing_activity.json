@@ -1,6 +1,75 @@
 {
   "history": [
     {
+      "run_at": "2026-05-20T11:47:45.490Z",
+      "per_site": {
+        "merchanthq": {
+          "sitemap_url_count": 1428,
+          "batch_size": 50,
+          "success": 0,
+          "failed": 1,
+          "quota_hit": true,
+          "total_ever_submitted": 100
+        },
+        "rank4ai": {
+          "sitemap_url_count": 768,
+          "batch_size": 40,
+          "success": 0,
+          "failed": 0,
+          "quota_hit": false,
+          "total_ever_submitted": 768
+        },
+        "market-invoice": {
+          "sitemap_url_count": 0,
+          "batch_size": 0,
+          "success": 0,
+          "failed": 0,
+          "quota_hit": false,
+          "total_ever_submitted": 0
+        },
+        "seocompare": {
+          "sitemap_url_count": 0,
+          "batch_size": 0,
+          "success": 0,
+          "failed": 0,
+          "quota_hit": false,
+          "total_ever_submitted": 0
+        },
+        "bestbusinessloans": {
+          "sitemap_url_count": 442,
+          "batch_size": 40,
+          "success": 0,
+          "failed": 0,
+          "quota_hit": false,
+          "total_ever_submitted": 378
+        },
+        "fundbiz": {
+          "sitemap_url_count": 255,
+          "batch_size": 30,
+          "success": 0,
+          "failed": 0,
+          "quota_hit": false,
+          "total_ever_submitted": 116
+        },
+        "kartapay": {
+          "sitemap_url_count": 19,
+          "batch_size": 0,
+          "success": 0,
+          "failed": 0,
+          "quota_hit": false,
+          "total_ever_submitted": 19
+        },
+        "peptideclear": {
+          "sitemap_url_count": 309,
+          "batch_size": 30,
+          "success": 0,
+          "failed": 0,
+          "quota_hit": false,
+          "total_ever_submitted": 0
+        }
+      }
+    },
+    {
       "run_at": "2026-05-20T08:00:07.749Z",
       "per_site": {
         "merchanthq": {
@@ -1013,20 +1082,20 @@
     }
   ],
   "last_run": {
-    "run_at": "2026-05-20T08:00:07.749Z",
+    "run_at": "2026-05-20T11:47:45.490Z",
     "per_site": {
       "merchanthq": {
         "sitemap_url_count": 1428,
         "batch_size": 50,
-        "success": 50,
-        "failed": 0,
-        "quota_hit": false,
+        "success": 0,
+        "failed": 1,
+        "quota_hit": true,
         "total_ever_submitted": 100
       },
       "rank4ai": {
         "sitemap_url_count": 768,
         "batch_size": 40,
-        "success": 40,
+        "success": 0,
         "failed": 0,
         "quota_hit": false,
         "total_ever_submitted": 768
@@ -1048,28 +1117,36 @@
         "total_ever_submitted": 0
       },
       "bestbusinessloans": {
-        "sitemap_url_count": 378,
-        "batch_size": 0,
+        "sitemap_url_count": 442,
+        "batch_size": 40,
         "success": 0,
         "failed": 0,
         "quota_hit": false,
         "total_ever_submitted": 378
       },
       "fundbiz": {
-        "sitemap_url_count": 198,
+        "sitemap_url_count": 255,
         "batch_size": 30,
-        "success": 30,
+        "success": 0,
         "failed": 0,
         "quota_hit": false,
         "total_ever_submitted": 116
       },
       "kartapay": {
         "sitemap_url_count": 19,
-        "batch_size": 19,
-        "success": 19,
+        "batch_size": 0,
+        "success": 0,
         "failed": 0,
         "quota_hit": false,
         "total_ever_submitted": 19
+      },
+      "peptideclear": {
+        "sitemap_url_count": 309,
+        "batch_size": 30,
+        "success": 0,
+        "failed": 0,
+        "quota_hit": false,
+        "total_ever_submitted": 0
       }
     }
   }
