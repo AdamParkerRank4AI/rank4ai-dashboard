@@ -1,20 +1,20 @@
 {
   "site_id": "market-invoice",
   "domain": "marketinvoice.co.uk",
-  "crawled_at": "2026-05-22T12:58:44.531615+00:00",
+  "crawled_at": "2026-05-22T13:14:20.226410+00:00",
   "source": "fleet-source-reader",
-  "pages_crawled": 630,
+  "pages_crawled": 635,
   "total_issues": 0,
   "orphan_pages": 1,
-  "avg_depth": 1.9317460317460318,
-  "avg_word_count": 5884,
-  "pages_with_schema": 630,
+  "avg_depth": 1.9291338582677164,
+  "avg_word_count": 5886,
+  "pages_with_schema": 635,
   "pages_with_multimodal": 0,
-  "pages_with_comparison_table": 362,
+  "pages_with_comparison_table": 365,
   "pages_with_video": 0,
-  "pages_over_2000_words": 630,
+  "pages_over_2000_words": 635,
   "images_missing_alt": 0,
-  "pages_with_date": 630,
+  "pages_with_date": 635,
   "crawler_access": {
     "GPTBot": true,
     "ClaudeBot": true,
@@ -34,7 +34,7 @@
     },
     "vs": {
       "hub": "/vs/",
-      "page_count": 32
+      "page_count": 34
     },
     "specialty-finance": {
       "hub": "/specialty-finance/",
@@ -112,6 +112,10 @@
       "hub": "/providers/",
       "page_count": 91
     },
+    "single-invoice-finance": {
+      "hub": "/single-invoice-finance/",
+      "page_count": 1
+    },
     "terms": {
       "hub": "/terms/",
       "page_count": 1
@@ -122,7 +126,7 @@
     },
     "best": {
       "hub": "/best/",
-      "page_count": 72
+      "page_count": 73
     },
     "about": {
       "hub": "/about/",
@@ -143,6 +147,10 @@
     "construction-finance": {
       "hub": "/construction-finance/",
       "page_count": 10
+    },
+    "compare-invoice-finance": {
+      "hub": "/compare-invoice-finance/",
+      "page_count": 1
     },
     "invoice-finance-quote": {
       "hub": "/invoice-finance-quote/",
@@ -197,27 +205,27 @@
       "page_count": 119
     }
   },
-  "topic_cluster_count": 43,
+  "topic_cluster_count": 45,
   "term_consistency": {
-    "finance": 1697,
-    "invoice": 1488,
-    "2026": 411,
-    "providers": 201,
-    "businesses": 192,
-    "factoring": 178,
+    "finance": 1710,
+    "invoice": 1503,
+    "2026": 423,
+    "providers": 203,
+    "businesses": 193,
+    "factoring": 179,
     "review": 171,
     "invoices": 119,
-    "provider": 112,
-    "business": 105,
-    "advance": 105,
-    "rates": 104,
-    "compare": 103,
+    "provider": 113,
+    "business": 106,
+    "advance": 106,
+    "compare": 106,
+    "rates": 105,
     "bank": 93,
-    "payment": 90
+    "best": 90
   },
   "content_freshness": {
-    "pages_with_dates": 630,
-    "fresh_30_days": 630,
+    "pages_with_dates": 635,
+    "fresh_30_days": 635,
     "fresh_90_days": 0,
     "stale": 0
   },
@@ -261,7 +269,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -341,7 +349,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 31,
+      "internal_links_in": 33,
       "depth": 1
     },
     {
@@ -428,6 +436,49 @@
       "has_breadcrumbs": true,
       "has_viewport": true,
       "internal_links_in": 4,
+      "depth": 2
+    },
+    {
+      "url": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "path": "/vs/capitalise-vs-marketinvoice/",
+      "title": "Capitalise vs MarketInvoice: UK Invoice Finance Comparison 2026",
+      "h1": "Capitalise vs MarketInvoice",
+      "meta_desc": "Capitalise vs MarketInvoice 2026: both are UK invoice finance comparison and matching services. How the two operating models differ on panel, advisor model and fees.",
+      "word_count": 6055,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "BreadcrumbList",
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internal_links_out": 52,
+      "external_links_out": -37,
+      "canonical": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 1,
+      "list_count": 6,
+      "question_h2s": 0,
+      "h2_count": 6,
+      "last_modified": "2026-05-22",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 2,
       "depth": 2
     },
     {
@@ -764,6 +815,49 @@
       "question_h2s": 0,
       "h2_count": 6,
       "last_modified": "2026-05-12",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 2,
+      "depth": 2
+    },
+    {
+      "url": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "path": "/vs/bibby-financial-services-vs-marketinvoice/",
+      "title": "Bibby Financial Services vs MarketInvoice: UK Invoice Finance Compared 2026",
+      "h1": "Bibby Financial Services vs MarketInvoice",
+      "meta_desc": "Bibby vs MarketInvoice 2026: Bibby is a UK invoice finance lender, MarketInvoice is a whole-of-market comparison and routing service. Which fits your business?",
+      "word_count": 6043,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "BreadcrumbList",
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internal_links_out": 53,
+      "external_links_out": -40,
+      "canonical": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 1,
+      "list_count": 6,
+      "question_h2s": 0,
+      "h2_count": 5,
+      "last_modified": "2026-05-22",
       "has_answer_capsule": true,
       "has_og_tags": true,
       "has_author": true,
@@ -1715,7 +1809,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -1755,7 +1849,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -1836,7 +1930,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -2717,7 +2811,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -3239,7 +3333,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -3278,7 +3372,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -3356,7 +3450,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -3396,7 +3490,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -3436,7 +3530,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 575,
+      "internal_links_in": 580,
       "depth": 2
     },
     {
@@ -3475,7 +3569,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -3515,7 +3609,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -3754,7 +3848,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -3794,7 +3888,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -3834,7 +3928,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -4205,7 +4299,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 150,
+      "internal_links_in": 151,
       "depth": 2
     },
     {
@@ -4245,7 +4339,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 131,
+      "internal_links_in": 132,
       "depth": 2
     },
     {
@@ -4497,7 +4591,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 24,
+      "internal_links_in": 27,
       "depth": 2
     },
     {
@@ -4999,7 +5093,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 8,
+      "internal_links_in": 9,
       "depth": 2
     },
     {
@@ -5580,7 +5674,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 2
     },
     {
@@ -5620,7 +5714,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 28,
+      "internal_links_in": 29,
       "depth": 2
     },
     {
@@ -6827,7 +6921,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 127,
+      "internal_links_in": 128,
       "depth": 2
     },
     {
@@ -7583,6 +7677,51 @@
       "depth": 2
     },
     {
+      "url": "https://marketinvoice.co.uk/single-invoice-finance/",
+      "path": "/single-invoice-finance/",
+      "title": "Single Invoice Finance UK 2026: Fund One Invoice, No Ledger Lock-In",
+      "h1": "Single Invoice Finance UK 2026",
+      "meta_desc": "Single invoice finance UK 2026: fund one invoice at a time, no whole-book commitment, no minimum term. Compared with selective invoicing and spot factoring.",
+      "word_count": 6449,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "BreadcrumbList",
+        "DefinedTerm",
+        "DefinedTerm",
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internal_links_out": 52,
+      "external_links_out": -39,
+      "canonical": "https://marketinvoice.co.uk/single-invoice-finance/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 8,
+      "question_h2s": 0,
+      "h2_count": 6,
+      "last_modified": "2026-05-22",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 2,
+      "depth": 1
+    },
+    {
       "url": "https://marketinvoice.co.uk/terms/",
       "path": "/terms/",
       "title": "Terms of Use - Market Invoice",
@@ -7618,7 +7757,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -7658,7 +7797,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -9181,7 +9320,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 54,
+      "internal_links_in": 56,
       "depth": 1
     },
     {
@@ -9223,7 +9362,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 2
     },
     {
@@ -9427,6 +9566,49 @@
       "depth": 2
     },
     {
+      "url": "https://marketinvoice.co.uk/best/invoice-finance-aberdeen/",
+      "path": "/best/invoice-finance-aberdeen/",
+      "title": "Best Invoice Finance Aberdeen 2026: Oil, Gas, Marine, Recruitment",
+      "h1": "Best Invoice Finance for Aberdeen Businesses 2026",
+      "meta_desc": "Aberdeen invoice finance compared 2026: providers with North Sea oil and gas, subsea, marine and oilfield recruitment underwriting. Bibby leads on sector depth.",
+      "word_count": 6289,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "BreadcrumbList",
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internal_links_out": 60,
+      "external_links_out": -47,
+      "canonical": "https://marketinvoice.co.uk/best/invoice-finance-aberdeen/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 7,
+      "question_h2s": 0,
+      "h2_count": 5,
+      "last_modified": "2026-05-22",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 2,
+      "depth": 2
+    },
+    {
       "url": "https://marketinvoice.co.uk/best/invoice-finance-for-1m-5m-turnover/",
       "path": "/best/invoice-finance-for-1m-5m-turnover/",
       "title": "Best Invoice Finance for \u00a31m-\u00a35m Turnover Businesses UK",
@@ -9586,7 +9768,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 2,
+      "internal_links_in": 3,
       "depth": 2
     },
     {
@@ -10039,7 +10221,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 5,
+      "internal_links_in": 6,
       "depth": 2
     },
     {
@@ -10202,7 +10384,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 4,
+      "internal_links_in": 3,
       "depth": 2
     },
     {
@@ -10367,7 +10549,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 7,
+      "internal_links_in": 8,
       "depth": 2
     },
     {
@@ -10537,7 +10719,7 @@
       "title": "Best Invoice Finance for \u00a350k-\u00a3100k Turnover Businesses",
       "h1": "Best Invoice Finance for \u00a350k-\u00a3100k Turnover Businesses, UK 2026",
       "meta_desc": "Invoice finance is available for UK businesses turning over \u00a350,000-\u00a3100,000 annually with several specialist providers.",
-      "word_count": 6488,
+      "word_count": 6485,
       "status": 200,
       "schemas": [
         "Person",
@@ -10896,7 +11078,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 3,
+      "internal_links_in": 2,
       "depth": 2
     },
     {
@@ -11018,7 +11200,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 8,
+      "internal_links_in": 9,
       "depth": 2
     },
     {
@@ -11344,7 +11526,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 5,
+      "internal_links_in": 6,
       "depth": 2
     },
     {
@@ -11631,7 +11813,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 4,
+      "internal_links_in": 5,
       "depth": 2
     },
     {
@@ -11722,7 +11904,7 @@
       "title": "Invoice Finance for UK Energy Suppliers and Utilities",
       "h1": "Invoice Finance for Energy Suppliers UK 2026",
       "meta_desc": "UK energy supply chain and utilities contractors (renewables installers, smart meter rollouts, EV charging, grid maintenance) use specialist invoice.",
-      "word_count": 6413,
+      "word_count": 6410,
       "status": 200,
       "schemas": [
         "Person",
@@ -11960,7 +12142,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 2
     },
     {
@@ -12123,7 +12305,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -12163,7 +12345,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -12204,7 +12386,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -12244,7 +12426,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -13514,7 +13696,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -13878,6 +14060,50 @@
       "depth": 2
     },
     {
+      "url": "https://marketinvoice.co.uk/compare-invoice-finance/",
+      "path": "/compare-invoice-finance/",
+      "title": "Compare Invoice Finance UK 2026: Providers Compared",
+      "h1": "Compare Invoice Finance UK 2026",
+      "meta_desc": "Compare every UK invoice finance provider in one place. Bibby, Close Brothers, Kriya, Optimum, Ultimate, Skipton: rates, advance, setup speed and best-fit.",
+      "word_count": 6315,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "ItemList",
+        "BreadcrumbList",
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internal_links_out": 65,
+      "external_links_out": -52,
+      "canonical": "https://marketinvoice.co.uk/compare-invoice-finance/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 1,
+      "list_count": 7,
+      "question_h2s": 0,
+      "h2_count": 5,
+      "last_modified": "2026-05-22",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 4,
+      "depth": 1
+    },
+    {
       "url": "https://marketinvoice.co.uk/invoice-finance-quote/",
       "path": "/invoice-finance-quote/",
       "title": "Get 3 Free Invoice Finance Quotes UK (in 24 hours)",
@@ -13915,7 +14141,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 54,
+      "internal_links_in": 55,
       "depth": 1
     },
     {
@@ -13955,7 +14181,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -13995,7 +14221,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -14199,7 +14425,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 2
     },
     {
@@ -14966,7 +15192,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 2
     },
     {
@@ -15088,7 +15314,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 2
     },
     {
@@ -16184,7 +16410,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -16223,7 +16449,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 53,
+      "internal_links_in": 54,
       "depth": 1
     },
     {
@@ -18363,7 +18589,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -18843,7 +19069,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -19617,7 +19843,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 2
     },
     {
@@ -20419,7 +20645,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -20746,7 +20972,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -20785,7 +21011,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -20825,7 +21051,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -21234,7 +21460,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 630,
+      "internal_links_in": 635,
       "depth": 1
     },
     {
@@ -26128,7 +26354,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/./",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -26698,7 +26924,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/404/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -27013,7 +27239,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/research/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -27333,7 +27559,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/trust-and-verification/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -27653,7 +27879,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -28013,7 +28239,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/skipton-business-finance-vs-ultimate-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -28348,7 +28574,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/hsbc-invoice-finance-vs-natwest-invoice-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -28647,6 +28873,346 @@
       "type": "internal"
     },
     {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/favicon-32x32.png",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/favicon-16x16.png",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/apple-touch-icon.png",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/site.webmanifest",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/fonts/plus-jakarta-sans-latin.woff2",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/providers/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/industries/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/questions/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/blog/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/working-capital/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/providers/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/industries/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/questions/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/blog/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/working-capital/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/vs/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/authors/oliver-mackman/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/compare-invoice-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/providers/kriya/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/providers/directory/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/blog/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/industries/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/questions/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/stats/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/research/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/compare/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/guides/how-invoice-finance-works/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/guides/costs/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/working-capital/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/guides/factoring-vs-discounting/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/compare/invoice-finance-vs-business-loan/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/best/invoice-finance-for-small-business/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/best/cheapest-invoice-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/cookie-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/complaints/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/accessibility/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/specialty-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/construction-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/recruitment-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/contract-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/import-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/pre-shipment-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/purchase-order-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/unpaid-invoices/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/invoice-finance-for-small-business-uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/trade-credit-vs-invoice-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/cookie-policy/",
+      "type": "internal"
+    },
+    {
       "from": "https://marketinvoice.co.uk/vs/aldermore-invoice-finance-vs-igf/",
       "to": "https://marketinvoice.co.uk/favicon.ico",
       "type": "internal"
@@ -28683,7 +29249,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/aldermore-invoice-finance-vs-igf/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -29018,7 +29584,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/close-brothers-invoice-finance-vs-novuna-business-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -29353,7 +29919,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/lloyds-commercial-finance-vs-santander-invoice-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -29688,7 +30254,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/igf-vs-skipton-business-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -30023,7 +30589,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/novuna-business-finance-vs-time-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -30358,7 +30924,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/barclays-invoice-finance-vs-santander-invoice-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -30693,7 +31259,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/hsbc-invoice-finance-vs-santander-invoice-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -31028,7 +31594,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/aldermore-invoice-finance-vs-time-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -31327,6 +31893,346 @@
       "type": "internal"
     },
     {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/favicon-32x32.png",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/favicon-16x16.png",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/apple-touch-icon.png",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/site.webmanifest",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/fonts/plus-jakarta-sans-latin.woff2",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/providers/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/industries/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/questions/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/blog/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/working-capital/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/providers/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/industries/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/questions/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/blog/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/working-capital/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/vs/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/authors/oliver-mackman/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/providers/bibby-financial-services/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/compare-invoice-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/best/best-for-construction-with-bibby.astro",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/vs/capitalise-vs-marketinvoice/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/providers/directory/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/blog/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/industries/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/questions/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/stats/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/research/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/compare/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/guides/how-invoice-finance-works/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/guides/costs/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/working-capital/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/guides/factoring-vs-discounting/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/compare/invoice-finance-vs-business-loan/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/best/invoice-finance-for-small-business/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/best/cheapest-invoice-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/cookie-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/complaints/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/accessibility/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/specialty-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/construction-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/recruitment-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/contract-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/import-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/pre-shipment-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/purchase-order-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/unpaid-invoices/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/invoice-finance-for-small-business-uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/trade-credit-vs-invoice-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-marketinvoice/",
+      "to": "https://marketinvoice.co.uk/cookie-policy/",
+      "type": "internal"
+    },
+    {
       "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-skipton-business-finance/",
       "to": "https://marketinvoice.co.uk/favicon.ico",
       "type": "internal"
@@ -31363,7 +32269,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-skipton-business-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -31698,7 +32604,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/novuna-business-finance-vs-ultimate-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -32033,7 +32939,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-novuna-business-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -32368,7 +33274,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/lloyds-commercial-finance-vs-natwest-invoice-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -32703,7 +33609,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/time-finance-vs-ultimate-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -33038,7 +33944,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/novuna-business-finance-vs-skipton-business-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -33373,7 +34279,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/igf-vs-time-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -33708,7 +34614,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/aldermore-invoice-finance-vs-novuna-business-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -34043,7 +34949,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/skipton-business-finance-vs-time-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -34378,7 +35284,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/barclays-invoice-finance-vs-lloyds-commercial-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -34713,7 +35619,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/natwest-invoice-finance-vs-santander-invoice-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -35048,7 +35954,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-igf/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -35383,7 +36289,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/close-brothers-invoice-finance-vs-time-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -35718,7 +36624,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/aldermore-invoice-finance-vs-close-brothers-invoice-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -36053,7 +36959,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/bibby-financial-services-vs-time-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -36388,7 +37294,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/aldermore-invoice-finance-vs-ultimate-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -36723,7 +37629,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/aldermore-invoice-finance-vs-bibby-financial-services/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -37058,7 +37964,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/close-brothers-invoice-finance-vs-ultimate-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -37393,7 +38299,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/igf-vs-novuna-business-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -37728,7 +38634,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/close-brothers-invoice-finance-vs-igf/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -38063,7 +38969,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/vs/barclays-invoice-finance-vs-hsbc-invoice-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -38398,7 +39304,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/specialty-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -38718,7 +39624,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/pre-shipment-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -39098,7 +40004,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/why-use-a-broker/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -39453,7 +40359,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/complaints/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -39753,7 +40659,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/regions/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -40158,7 +41064,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/regions/thames-valley/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -40513,7 +41419,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/regions/west-midlands/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -40883,7 +41789,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/regions/east-midlands/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -41253,7 +42159,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/regions/wales/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -41613,7 +42519,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/regions/home-counties/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -41968,7 +42874,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/regions/the-midlands/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -42348,7 +43254,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/regions/northern-ireland/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -42703,7 +43609,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/regions/the-north-of-england/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -43083,7 +43989,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/regions/north-east-england/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -43448,7 +44354,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/regions/north-west-england/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -43818,7 +44724,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/regions/cornwall/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -44168,7 +45074,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/regions/east-of-england/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -44548,7 +45454,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/regions/scotland/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -44918,7 +45824,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/regions/the-scottish-highlands/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -45268,7 +46174,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/regions/london/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -45618,7 +46524,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/regions/south-west-england/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -45988,7 +46894,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/regions/east-anglia/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -46353,7 +47259,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/regions/yorkshire-and-the-humber/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -46723,7 +47629,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/regions/south-east-england/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -47098,7 +48004,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/regions/m4-corridor/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -47458,7 +48364,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/contact/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -47763,7 +48669,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/tools/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -48118,7 +49024,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/tools/selective-vs-whole-book-cost/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -48433,7 +49339,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/tools/approval-likelihood-checker/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -48748,7 +49654,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/tools/apr-equivalent-calculator/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -49063,7 +49969,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/tools/cost-of-not-using-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -49378,7 +50284,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/tools/affordability-calculator/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -49693,7 +50599,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/tools/early-payment-discount-vs-invoice-finance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -50008,7 +50914,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/tools/eligibility-checker/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -50333,7 +51239,7 @@
     },
     {
       "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
+      "to": "https://marketinvoice.co.uk/_astro/404.DR57qKl-.css",
       "type": "internal"
     },
     {
@@ -50409,686 +51315,6 @@
     {
       "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
       "to": "https://marketinvoice.co.uk/calculator/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/tools/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/authors/oliver-mackman/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/privacy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/providers/directory/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/blog/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/industries/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/questions/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/calculator/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/stats/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/research/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/compare/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/guides/how-invoice-finance-works/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/guides/costs/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/working-capital/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/guides/factoring-vs-discounting/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/compare/invoice-finance-vs-business-loan/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/best/invoice-finance-for-small-business/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/best/cheapest-invoice-finance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/about/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/authors/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/editorial-policy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/how-we-are-funded/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/contact/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/privacy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/cookie-policy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/terms/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/disclaimer/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/complaints/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/accessibility/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/specialty-finance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/construction-finance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/recruitment-finance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/contract-finance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/import-finance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/pre-shipment-finance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/purchase-order-finance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/unpaid-invoices/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/invoice-finance-for-small-business-uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/trade-credit-vs-invoice-finance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/lifetime-cost-calculator/",
-      "to": "https://marketinvoice.co.uk/cookie-policy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/favicon.ico",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/favicon.svg",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/favicon-32x32.png",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/favicon-16x16.png",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/apple-touch-icon.png",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/site.webmanifest",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/fonts/plus-jakarta-sans-latin.woff2",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/providers/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/industries/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/guides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/questions/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/blog/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/working-capital/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/calculator/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/providers/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/industries/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/guides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/questions/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/blog/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/working-capital/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/calculator/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/tools/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/privacy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/providers/directory/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/blog/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/industries/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/questions/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/calculator/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/stats/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/research/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/compare/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/guides/how-invoice-finance-works/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/guides/costs/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/working-capital/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/guides/factoring-vs-discounting/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/compare/invoice-finance-vs-business-loan/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/best/invoice-finance-for-small-business/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/best/cheapest-invoice-finance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/about/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/authors/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/editorial-policy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/how-we-are-funded/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/contact/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/privacy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/cookie-policy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/terms/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/disclaimer/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/complaints/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/accessibility/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/specialty-finance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/construction-finance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/recruitment-finance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/contract-finance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/import-finance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/pre-shipment-finance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/purchase-order-finance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/unpaid-invoices/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/invoice-finance-for-small-business-uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/trade-credit-vs-invoice-finance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/invoice-age-vs-advance/",
-      "to": "https://marketinvoice.co.uk/cookie-policy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/favicon.ico",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/favicon.svg",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/favicon-32x32.png",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/favicon-16x16.png",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/apple-touch-icon.png",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/site.webmanifest",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/fonts/plus-jakarta-sans-latin.woff2",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/_astro/404.BOWwsp4O.css",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/providers/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/industries/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/guides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/questions/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/blog/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/working-capital/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/calculator/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/providers/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/industries/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/guides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/questions/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/blog/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/working-capital/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/calculator/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/tools/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/privacy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/providers/directory/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/blog/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/industries/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/questions/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/calculator/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/tools/debtor-concentration-checker/",
-      "to": "https://marketinvoice.co.uk/stats/",
       "type": "internal"
     }
   ],
@@ -51125,6 +51351,11 @@
           {
             "name": "hsbc-invoice-finance-vs-natwest-invoice-finance",
             "path": "/vs/hsbc-invoice-finance-vs-natwest-invoice-finance/",
+            "children": []
+          },
+          {
+            "name": "capitalise-vs-marketinvoice",
+            "path": "/vs/capitalise-vs-marketinvoice/",
             "children": []
           },
           {
@@ -51165,6 +51396,11 @@
           {
             "name": "aldermore-invoice-finance-vs-time-finance",
             "path": "/vs/aldermore-invoice-finance-vs-time-finance/",
+            "children": []
+          },
+          {
+            "name": "bibby-financial-services-vs-marketinvoice",
+            "path": "/vs/bibby-financial-services-vs-marketinvoice/",
             "children": []
           },
           {
@@ -52000,6 +52236,11 @@
         ]
       },
       {
+        "name": "single-invoice-finance",
+        "path": "/single-invoice-finance/",
+        "children": []
+      },
+      {
         "name": "terms",
         "path": "/terms/",
         "children": []
@@ -52222,6 +52463,11 @@
           {
             "name": "no-personal-guarantee-invoice-finance-uk",
             "path": "/best/no-personal-guarantee-invoice-finance-uk/",
+            "children": []
+          },
+          {
+            "name": "invoice-finance-aberdeen",
+            "path": "/best/invoice-finance-aberdeen/",
             "children": []
           },
           {
@@ -52772,6 +53018,11 @@
             "children": []
           }
         ]
+      },
+      {
+        "name": "compare-invoice-finance",
+        "path": "/compare-invoice-finance/",
+        "children": []
       },
       {
         "name": "invoice-finance-quote",
@@ -54330,6 +54581,17 @@
       ]
     },
     {
+      "path": "/vs/capitalise-vs-marketinvoice/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:9",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
       "path": "/vs/aldermore-invoice-finance-vs-igf/",
       "score": 5,
       "signals": [
@@ -54408,6 +54670,17 @@
     },
     {
       "path": "/vs/aldermore-invoice-finance-vs-time-finance/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:9",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/vs/bibby-financial-services-vs-marketinvoice/",
       "score": 5,
       "signals": [
         "OG",
@@ -56233,6 +56506,17 @@
       ]
     },
     {
+      "path": "/single-invoice-finance/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:11",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
       "path": "/terms/",
       "score": 5,
       "signals": [
@@ -56432,39 +56716,6 @@
     },
     {
       "path": "/industries/manufacturing/",
-      "score": 5,
-      "signals": [
-        "OG",
-        "Schema:7",
-        "Author",
-        "Substantive",
-        "Breadcrumbs"
-      ]
-    },
-    {
-      "path": "/industries/landscaping/",
-      "score": 5,
-      "signals": [
-        "OG",
-        "Schema:7",
-        "Author",
-        "Substantive",
-        "Breadcrumbs"
-      ]
-    },
-    {
-      "path": "/industries/architecture/",
-      "score": 5,
-      "signals": [
-        "OG",
-        "Schema:7",
-        "Author",
-        "Substantive",
-        "Breadcrumbs"
-      ]
-    },
-    {
-      "path": "/industries/professional-services/",
       "score": 5,
       "signals": [
         "OG",
