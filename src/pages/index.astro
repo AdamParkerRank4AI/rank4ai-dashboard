@@ -1,5 +1,6 @@
 ---
 import DashboardLayout from '../layouts/DashboardLayout.astro';
+import YouTubeTile from '../components/YouTubeTile.astro';
 import clients from '../utils/dashboardClients';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -175,6 +176,11 @@ const totalCritical = Object.values(healthData).reduce((sum: number, d: any) => 
 const totalImpressions = Object.values(healthData).reduce((sum: number, d: any) => sum + d.impressions, 0);
 const totalClicks = Object.values(healthData).reduce((sum: number, d: any) => sum + d.clicks, 0);
 const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: number, c: any) => sum + (healthData[c.id]?.citRate || 0), 0) / clientSites.length * 10) / 10 : 0;
+
+// YouTubeTile is fleet-only (covers PC, MHQ, Kartapay channels). Rank
+// dashboard (R4 + RB) isn't in YT tracking scope yet, so gate the render.
+// Mirrors the isFleet pattern in src/layouts/DashboardLayout.astro:27.
+const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
 ---
 
 <DashboardLayout title="Dashboard">
@@ -960,6 +966,13 @@ const avgCitRate = clientSites.length > 0 ? Math.round(clientSites.reduce((sum: 
       </div>
     </div>
   </div>
+
+  <!-- YouTube · AI citations (Perplexity/ChatGPT/Gemini/Claude referrers to fleet videos) -->
+  {isFleet && (
+    <div data-copy-tile="YouTube AI citations" class="mb-6">
+      <YouTubeTile />
+    </div>
+  )}
 
   <!-- Client Sites -->
   <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Client Sites</h2>
