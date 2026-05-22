@@ -1,13 +1,13 @@
 {
   "site_id": "cardmachines",
   "domain": "cardmachines.pages.dev",
-  "crawled_at": "2026-05-22T14:17:01.659459+00:00",
+  "crawled_at": "2026-05-22T14:33:31.647748+00:00",
   "source": "fleet-source-reader",
   "pages_crawled": 1486,
   "total_issues": 0,
-  "orphan_pages": 100,
-  "avg_depth": 2.595558546433378,
-  "avg_word_count": 3979,
+  "orphan_pages": 101,
+  "avg_depth": 2.594885598923284,
+  "avg_word_count": 3978,
   "pages_with_schema": 1486,
   "pages_with_multimodal": 0,
   "pages_with_comparison_table": 205,
@@ -46,7 +46,7 @@
     },
     "learn": {
       "hub": "/learn/",
-      "page_count": 12
+      "page_count": 11
     },
     "tools": {
       "hub": "/tools/",
@@ -192,6 +192,10 @@
       "hub": "/what-is-a-card-machine/",
       "page_count": 1
     },
+    "pci-dss": {
+      "hub": "/pci-dss/",
+      "page_count": 1
+    },
     "tap-to-pay-android": {
       "hub": "/tap-to-pay-android/",
       "page_count": 1
@@ -229,7 +233,7 @@
       "page_count": 19
     }
   },
-  "topic_cluster_count": 51,
+  "topic_cluster_count": 52,
   "term_consistency": {
     "card": 3934,
     "machine": 3351,
@@ -5239,7 +5243,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 11,
+      "internal_links_in": 10,
       "depth": 1
     },
     {
@@ -5407,48 +5411,6 @@
       "has_breadcrumbs": true,
       "has_viewport": true,
       "internal_links_in": 2,
-      "depth": 2
-    },
-    {
-      "url": "https://merchanthq.co.uk/learn/pci-dss-v4-uk-small-merchant/",
-      "path": "/learn/pci-dss-v4-uk-small-merchant/",
-      "title": "PCI DSS v4.0.1 for UK Small Merchants: SAQ-A and SAQ-D Guide",
-      "h1": "PCI DSS v4.0.1 for UK small merchants",
-      "meta_desc": "PCI DSS v4.0.1 has been mandatory in the UK since 1 April 2025. Plain-English guide for UK small merchants: SAQ levels, SAQ-A and SAQ-D walkthroughs, key.",
-      "word_count": 5171,
-      "status": 200,
-      "schemas": [
-        "Person",
-        "Organization",
-        "WebSite",
-        "WebPage",
-        "Organization",
-        "Article",
-        "BreadcrumbList",
-        "HowTo"
-      ],
-      "internal_links_out": 52,
-      "external_links_out": -33,
-      "canonical": "https://merchanthq.co.uk/learn/pci-dss-v4-uk-small-merchant/",
-      "response_time_ms": 0,
-      "image_count": 0,
-      "images_with_alt": 0,
-      "video_count": 0,
-      "has_multimodal": false,
-      "has_comparison_table": true,
-      "table_count": 2,
-      "list_count": 10,
-      "question_h2s": 2,
-      "h2_count": 12,
-      "last_modified": "2026-05-10",
-      "has_answer_capsule": true,
-      "has_og_tags": true,
-      "has_author": true,
-      "has_definition": false,
-      "has_cta": true,
-      "has_breadcrumbs": true,
-      "has_viewport": true,
-      "internal_links_in": 1,
       "depth": 2
     },
     {
@@ -58102,6 +58064,49 @@
       "depth": 1
     },
     {
+      "url": "https://merchanthq.co.uk/pci-dss/",
+      "path": "/pci-dss/",
+      "title": "PCI DSS v4.0.1 for UK Small Merchants: SAQ-A, SAQ-D and Tap to Pay",
+      "h1": "PCI DSS v4.0.1 for UK small merchants",
+      "meta_desc": "PCI DSS v4.0.1 mandatory for UK merchants since 1 April 2025. Plain-English SAQ walkthrough for UK SMBs: SAQ-A vs SAQ-D, Tap to Pay scope, costs, gaps.",
+      "word_count": 4549,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Organization",
+        "Article",
+        "HowTo",
+        "BreadcrumbList",
+        "BreadcrumbList"
+      ],
+      "internal_links_out": 51,
+      "external_links_out": -31,
+      "canonical": "https://merchanthq.co.uk/pci-dss/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 2,
+      "list_count": 10,
+      "question_h2s": 2,
+      "h2_count": 11,
+      "last_modified": "2026-05-22",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 0,
+      "depth": 1
+    },
+    {
       "url": "https://merchanthq.co.uk/tap-to-pay-android/",
       "path": "/tap-to-pay-android/",
       "title": "Tap to Pay on Android UK: Acquirers, Fees, Phones, Setup",
@@ -58174,7 +58179,7 @@
       "list_count": 4,
       "question_h2s": 1,
       "h2_count": 3,
-      "last_modified": "2026-05-11",
+      "last_modified": "2026-05-22",
       "has_answer_capsule": true,
       "has_og_tags": true,
       "has_author": true,
@@ -63424,7 +63429,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/./",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -63994,7 +63999,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/404/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -64399,7 +64404,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -64864,7 +64869,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/square-terminal-vs-stripe-reader-m2/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -65309,7 +65314,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/adyen-vs-zettle-reader-2/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -65749,7 +65754,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/adyen-vs-sumup-solo/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -66199,7 +66204,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/bbpos-wisepad-3-vs-stripe-reader-s700/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -66639,7 +66644,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/dojo-go-vs-tap-to-pay-iphone/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -67089,7 +67094,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/square-terminal-vs-sumup-solo/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -67539,7 +67544,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/adyen-vs-tap-to-pay-iphone/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -67984,7 +67989,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/tap-to-pay-iphone-vs-zettle-reader-2/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -68419,7 +68424,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/bbpos-wisepos-e-vs-tide-card-reader/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -68854,7 +68859,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/adyen-vs-stripe-reader-m2/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -69289,7 +69294,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/stripe-reader-m2-vs-tide-card-reader/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -69724,7 +69729,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/square-terminal-vs-stripe-reader-s700/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -70169,7 +70174,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/bbpos-wisepos-e-vs-dojo-go/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -70614,7 +70619,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/stripe-reader-s700-vs-zettle-reader-2/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -71059,7 +71064,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/tide-card-reader-vs-tyl-by-natwest/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -71489,7 +71494,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/bbpos-wisepad-3-vs-tap-to-pay-iphone/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -71929,7 +71934,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/stripe-reader-m2-vs-sumup-solo/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -72379,7 +72384,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/dojo-go-vs-worldpay-terminal/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -72824,7 +72829,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/bbpos-wisepos-e-vs-sumup-solo/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -73274,7 +73279,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/adyen-vs-worldpay-terminal/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -73709,7 +73714,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/bbpos-wisepos-e-vs-square-terminal/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -74154,7 +74159,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/stripe-reader-s700-vs-sumup-solo/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -74604,7 +74609,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/stripe-reader-s700-vs-worldpay-terminal/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -75044,7 +75049,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/square-terminal-vs-tap-to-pay-iphone/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -75489,7 +75494,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/pax-a77-vs-pax-a920-pro/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -75914,7 +75919,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/stripe-reader-s700-vs-tide-card-reader/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -76359,7 +76364,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/sumup-solo-vs-zettle-reader-2/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -76804,7 +76809,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/pax-a920-pro-vs-stripe-reader-m2/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -77239,7 +77244,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/dojo-go-vs-zettle-reader-2/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -77689,7 +77694,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/adyen-vs-bbpos-wisepos-e/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -78124,7 +78129,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/bbpos-wisepad-3-vs-square-terminal/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -78569,7 +78574,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/pax-a920-pro-vs-zettle-reader-2/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -79009,7 +79014,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/pax-a920-pro-vs-sumup-solo/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -79459,7 +79464,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/bbpos-wisepad-3-vs-stripe-reader-m2/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -79879,7 +79884,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/stripe-reader-s700-vs-tap-to-pay-iphone/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -80329,7 +80334,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/revolut-card-reader-vs-tide-card-reader/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -80759,7 +80764,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/dojo-go-vs-tyl-by-natwest/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -81199,7 +81204,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/dojo-go-vs-stripe-reader-m2/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -81644,7 +81649,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/stripe-reader-m2-vs-tap-to-pay-iphone/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -82084,7 +82089,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/adyen-vs-pax-a920-pro/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -82524,7 +82529,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/pax-a920-pro-vs-tide-card-reader/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -82964,7 +82969,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/revolut-card-reader-vs-sumup-solo/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -83409,7 +83414,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/bbpos-wisepad-3-vs-bbpos-wisepos-e/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -83839,7 +83844,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/bbpos-wisepos-e-vs-zettle-reader-2/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -84274,7 +84279,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/bbpos-wisepos-e-vs-stripe-reader-s700/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -84714,7 +84719,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/adyen-vs-square-terminal/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -85164,7 +85169,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/sumup-solo-vs-tide-card-reader/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -85614,7 +85619,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/bbpos-wisepad-3-vs-pax-a920-pro/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -86049,7 +86054,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/bbpos-wisepad-3-vs-tide-card-reader/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -86484,7 +86489,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/dojo-go-vs-tide-card-reader/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -86934,7 +86939,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/stripe-reader-m2-vs-stripe-reader-s700/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -87374,7 +87379,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/sumup-solo-vs-tap-to-pay-iphone/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -87824,7 +87829,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/square-terminal-vs-tide-card-reader/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -88274,7 +88279,7 @@
     },
     {
       "from": "https://merchanthq.co.uk/vs/stripe-reader-m2-vs-zettle-reader-2/",
-      "to": "https://merchanthq.co.uk/_astro/404.PiQfxi_g.css",
+      "to": "https://merchanthq.co.uk/_astro/404.BXq4-Vfi.css",
       "type": "internal"
     },
     {
@@ -89215,11 +89220,6 @@
           {
             "name": "visa-mastercard-cross-border-update-2026",
             "path": "/learn/visa-mastercard-cross-border-update-2026/",
-            "children": []
-          },
-          {
-            "name": "pci-dss-v4-uk-small-merchant",
-            "path": "/learn/pci-dss-v4-uk-small-merchant/",
             "children": []
           },
           {
@@ -95433,6 +95433,11 @@
         "children": []
       },
       {
+        "name": "pci-dss",
+        "path": "/pci-dss/",
+        "children": []
+      },
+      {
         "name": "tap-to-pay-android",
         "path": "/tap-to-pay-android/",
         "children": []
@@ -97395,17 +97400,6 @@
       ]
     },
     {
-      "path": "/learn/pci-dss-v4-uk-small-merchant/",
-      "score": 5,
-      "signals": [
-        "OG",
-        "Schema:8",
-        "Author",
-        "Substantive",
-        "Breadcrumbs"
-      ]
-    },
-    {
       "path": "/learn/chargebacks-uk-2026/",
       "score": 5,
       "signals": [
@@ -98275,6 +98269,17 @@
     },
     {
       "path": "/trade/record-shop/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:9",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/trade/dog-grooming/",
       "score": 5,
       "signals": [
         "OG",
