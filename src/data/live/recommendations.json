@@ -1,10 +1,10 @@
 {
   "rank4ai": {
-    "generated_at": "2026-05-20T09:12:00.883138",
-    "total": 13,
+    "generated_at": "2026-05-22T09:30:59.723413",
+    "total": 15,
     "critical": 1,
-    "high": 2,
-    "medium": 10,
+    "high": 3,
+    "medium": 11,
     "low": 0,
     "recommendations": [
       {
@@ -25,11 +25,35 @@
       },
       {
         "priority": "high",
+        "category": "Search Visibility",
+        "title": "4 target queries stuck on page 2 \u2014 biggest lift opportunity",
+        "detail": "Queries Google already associates with you, ranking positions 11-20: \"ai overview optimisation agency\", \"ai overviews optimisation company\", \"ai marketing agency oxford\", \"affordable ai search optimization service packages for small businesses\". Each one only needs a few rank positions to land page 1 and start earning clicks. Actions per query: 1) Verify the ranking page actually targets the query (title + H1 + first para) 2) Add a focused answer section in the first 200 words 3) Add internal links from 3-5 related pages 4) Acquire 1-2 quality external links.",
+        "impact": "high",
+        "pages": [
+          "ai overview optimisation agency",
+          "ai overviews optimisation company",
+          "ai marketing agency oxford",
+          "affordable ai search optimization service packages for small businesses"
+        ]
+      },
+      {
+        "priority": "high",
         "category": "Entity",
         "title": "Not listed on Wikidata",
         "detail": "Wikidata feeds Google Knowledge Graph and AI models. Create a Wikidata entry with: company name, type (Q4830453 = business), founding date, website, industry, founders. This is free and takes 10 minutes.",
         "impact": "high",
         "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Search Visibility",
+        "title": "2 URL pattern(s) have 0 GSC impressions",
+        "detail": "These content patterns exist on the site but Google isn't crawling/showing them for any query: /guides/ (23 pages), /services/ (15 pages). Actions: 1) Add each pattern's index page to the main nav OR footer 2) Internal-link from the homepage to the pattern hub 3) Submit pattern pages to GSC URL Inspection 4) Re-check robots.txt isn't crawl-blocking the path.",
+        "impact": "medium",
+        "pages": [
+          "/guides/",
+          "/services/"
+        ]
       },
       {
         "priority": "medium",
@@ -46,15 +70,15 @@
         "priority": "medium",
         "category": "Schema",
         "title": "Schema gaps: No Organization or LocalBusiness schema \u2014 AI can't identify who you are",
-        "detail": "Currently using: LocalBusiness ProfessionalService Organization, Article, BreadcrumbList, VideoObject, WebSite, Person, WebPage, FAQPage, Service, HowTo. No Organization or LocalBusiness schema \u2014 AI can't identify who you are. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
+        "detail": "Currently using: Service, HowTo, WebSite, Person, LocalBusiness ProfessionalService Organization, FAQPage, BreadcrumbList, Article, WebPage, VideoObject. No Organization or LocalBusiness schema \u2014 AI can't identify who you are. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Traffic",
-        "title": "High bounce rate: 79.0%",
-        "detail": "Bounce rate is 79.0% \u2014 over 60% suggests visitors aren't finding what they need. Improve: 1) Page load speed 2) Content relevance to search queries 3) Clear CTAs and navigation 4) Mobile experience 5) Internal linking to related content.",
+        "title": "High bounce rate: 80.9%",
+        "detail": "Bounce rate is 80.9% \u2014 over 60% suggests visitors aren't finding what they need. Improve: 1) Page load speed 2) Content relevance to search queries 3) Clear CTAs and navigation 4) Mobile experience 5) Internal linking to related content.",
         "impact": "medium",
         "pages": []
       },
@@ -78,40 +102,40 @@
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'ai search agency' \u2014 421 impressions, 0% CTR",
-        "detail": "This query gets 421 impressions but only 0 clicks (CTR: 0%). Position: 28.6. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'ai overview optimisation agency' \u2014 142 impressions, 0% CTR",
+        "detail": "This query gets 142 impressions but only 0 clicks (CTR: 0%). Position: 17.0. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'ai overview optimisation agency' \u2014 127 impressions, 0% CTR",
-        "detail": "This query gets 127 impressions but only 0 clicks (CTR: 0%). Position: 16.4. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'what is ai seo' \u2014 75 impressions, 1.33% CTR",
+        "detail": "This query gets 75 impressions but only 1 clicks (CTR: 1.33%). Position: 45.9. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'what is ai seo' \u2014 74 impressions, 1.35% CTR",
-        "detail": "This query gets 74 impressions but only 1 clicks (CTR: 1.35%). Position: 45.9. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'ai recruitment agency uk' \u2014 59 impressions, 0% CTR",
+        "detail": "This query gets 59 impressions but only 0 clicks (CTR: 0%). Position: 66.5. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'ai recruitment agency uk' \u2014 51 impressions, 0% CTR",
-        "detail": "This query gets 51 impressions but only 0 clicks (CTR: 0%). Position: 66.5. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'ai marketing services accountants' \u2014 53 impressions, 0% CTR",
+        "detail": "This query gets 53 impressions but only 0 clicks (CTR: 0%). Position: 22.0. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'ai marketing services accountants' \u2014 49 impressions, 0% CTR",
-        "detail": "This query gets 49 impressions but only 0 clicks (CTR: 0%). Position: 22.5. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'ai recruitment agency' \u2014 53 impressions, 0% CTR",
+        "detail": "This query gets 53 impressions but only 0 clicks (CTR: 0%). Position: 78.8. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
@@ -126,11 +150,11 @@
     ]
   },
   "market-invoice": {
-    "generated_at": "2026-05-20T09:12:00.917753",
+    "generated_at": "2026-05-22T09:30:59.750300",
     "total": 14,
-    "critical": 2,
+    "critical": 1,
     "high": 3,
-    "medium": 9,
+    "medium": 10,
     "low": 0,
     "recommendations": [
       {
@@ -142,29 +166,24 @@
         "pages": []
       },
       {
-        "priority": "critical",
-        "category": "Search Visibility",
-        "title": "0% Google visibility \u2014 not ranking for any target queries",
-        "detail": "Not in Google top 20 for any of 8 target queries. Top competitors: smeinvoicefinance.co.uk (75.0%), bibbyfinancialservices.com (62.5%), timefinance.com (50.0%). Actions: 1) Create dedicated landing pages for each target query 2) Build topical authority with supporting content 3) Acquire backlinks to key pages 4) Improve internal linking to target pages.",
-        "impact": "high",
-        "pages": [
-          "invoice finance UK",
-          "best invoice factoring companies UK",
-          "compare invoice finance providers UK",
-          "invoice finance for small business UK",
-          "how does invoice finance work",
-          "confidential invoice discounting UK",
-          "invoice finance costs UK",
-          "best construction invoice finance UK"
-        ]
-      },
-      {
         "priority": "high",
         "category": "AI Citations",
         "title": "Low AI citation rate (4.3%) \u2014 only brand queries cited",
         "detail": "AI knows the brand exists but doesn't recommend it for industry queries. The gap is in topical authority \u2014 AI doesn't associate this brand with the industry. Fix by creating definitive content that AI can quote: statistics, clear definitions, comparison tables, step-by-step guides.",
         "impact": "high",
         "pages": []
+      },
+      {
+        "priority": "high",
+        "category": "Search Visibility",
+        "title": "3 target queries stuck on page 2 \u2014 biggest lift opportunity",
+        "detail": "Queries Google already associates with you, ranking positions 11-20: \"barclays invoice finance\", \"barclays invoice financing\", \"can you recommend reliable providers for same-day invoice factoring?\". Each one only needs a few rank positions to land page 1 and start earning clicks. Actions per query: 1) Verify the ranking page actually targets the query (title + H1 + first para) 2) Add a focused answer section in the first 200 words 3) Add internal links from 3-5 related pages 4) Acquire 1-2 quality external links.",
+        "impact": "high",
+        "pages": [
+          "barclays invoice finance",
+          "barclays invoice financing",
+          "can you recommend reliable providers for same-day invoice factoring?"
+        ]
       },
       {
         "priority": "high",
@@ -175,47 +194,28 @@
         "pages": []
       },
       {
-        "priority": "high",
-        "category": "Search Visibility",
-        "title": "Not ranking in Google top 10 for any of 10 tested queries",
-        "detail": "Queries tested: invoice finance UK, best invoice factoring companies UK, compare invoice finance providers UK, how does invoice finance work, invoice finance for small business UK. Create dedicated, in-depth pages for each query. Target 1,500+ words with FAQ schema, comparison tables, and internal links.",
-        "impact": "high",
+        "priority": "medium",
+        "category": "Internal Links",
+        "title": "1 orphan pages with no internal links pointing to them",
+        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /thank-you/",
+        "impact": "medium",
         "pages": [
-          "invoice finance UK",
-          "best invoice factoring companies UK",
-          "compare invoice finance providers UK",
-          "how does invoice finance work",
-          "invoice finance for small business UK",
-          "confidential invoice discounting UK",
-          "invoice finance costs UK",
-          "best construction invoice finance UK",
-          "invoice finance vs business loan",
-          "selective invoice finance UK"
+          "/thank-you/"
         ]
       },
       {
         "priority": "medium",
-        "category": "Internal Links",
-        "title": "9 orphan pages with no internal links pointing to them",
-        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /vs/skipton-business-finance-vs-ultimate-finance/, /vs/close-brothers-invoice-finance-vs-novuna-business-finance/, /vs/igf-vs-skipton-business-finance/, /vs/bibby-financial-services-vs-novuna-business-finance/, /vs/skipton-business-finance-vs-time-finance/, /vs/close-brothers-invoice-finance-vs-time-finance/, /vs/bibby-financial-services-vs-time-finance/, /vs/close-brothers-invoice-finance-vs-ultimate-finance/...",
+        "category": "Schema",
+        "title": "Schema gaps: Missing content schema types: FAQPage",
+        "detail": "Currently using: Report, WebApplication, Service, HowTo, WebSite, QAPage, Person, Product, Organization, ContactPage, ProfilePage, Article, BreadcrumbList, WebPage, CollectionPage, ItemList, FinancialProduct. Missing content schema types: FAQPage. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
         "impact": "medium",
-        "pages": [
-          "/vs/skipton-business-finance-vs-ultimate-finance/",
-          "/vs/close-brothers-invoice-finance-vs-novuna-business-finance/",
-          "/vs/igf-vs-skipton-business-finance/",
-          "/vs/bibby-financial-services-vs-novuna-business-finance/",
-          "/vs/skipton-business-finance-vs-time-finance/",
-          "/vs/close-brothers-invoice-finance-vs-time-finance/",
-          "/vs/bibby-financial-services-vs-time-finance/",
-          "/vs/close-brothers-invoice-finance-vs-ultimate-finance/",
-          "/vs/close-brothers-invoice-finance-vs-igf/"
-        ]
+        "pages": []
       },
       {
         "priority": "medium",
         "category": "Traffic",
-        "title": "High bounce rate: 61.1%",
-        "detail": "Bounce rate is 61.1% \u2014 over 60% suggests visitors aren't finding what they need. Improve: 1) Page load speed 2) Content relevance to search queries 3) Clear CTAs and navigation 4) Mobile experience 5) Internal linking to related content.",
+        "title": "High bounce rate: 60.8%",
+        "detail": "Bounce rate is 60.8% \u2014 over 60% suggests visitors aren't finding what they need. Improve: 1) Page load speed 2) Content relevance to search queries 3) Clear CTAs and navigation 4) Mobile experience 5) Internal linking to related content.",
         "impact": "medium",
         "pages": []
       },
@@ -232,40 +232,40 @@
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'barclays invoice finance' \u2014 24 impressions, 0% CTR",
-        "detail": "This query gets 24 impressions but only 0 clicks (CTR: 0%). Position: 12.0. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'barclays invoice finance' \u2014 26 impressions, 0% CTR",
+        "detail": "This query gets 26 impressions but only 0 clicks (CTR: 0%). Position: 12.3. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'best invoice finance providers uk 2026' \u2014 24 impressions, 0% CTR",
-        "detail": "This query gets 24 impressions but only 0 clicks (CTR: 0%). Position: 7.9. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'\"bibby financial services\" -site:reddit.com -site:twitter.com -site:x.com -site:wykop.pl -site:tripadvisor.com -site:youtube.com -site:yelp.com -site:booking.com -site:facebook.com -site:instagram.com -site:tiktok.com' \u2014 25 impressions, 0% CTR",
+        "detail": "This query gets 25 impressions but only 0 clicks (CTR: 0%). Position: 3.9. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'\"bibby financial services\" -site:reddit.com -site:twitter.com -site:x.com -site:wykop.pl -site:tripadvisor.com -site:youtube.com -site:yelp.com -site:booking.com -site:facebook.com -site:instagram.com -site:tiktok.com' \u2014 20 impressions, 0% CTR",
-        "detail": "This query gets 20 impressions but only 0 clicks (CTR: 0%). Position: 4.5. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'compare invoice finance' \u2014 24 impressions, 0% CTR",
+        "detail": "This query gets 24 impressions but only 0 clicks (CTR: 0%). Position: 73.5. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'compare invoice finance' \u2014 19 impressions, 0% CTR",
-        "detail": "This query gets 19 impressions but only 0 clicks (CTR: 0%). Position: 76.1. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'best invoice finance providers uk 2026' \u2014 23 impressions, 0% CTR",
+        "detail": "This query gets 23 impressions but only 0 clicks (CTR: 0%). Position: 7.8. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'financing for contractor invoices when enterprise clients have 30-60-90-day terms' \u2014 14 impressions, 0% CTR",
-        "detail": "This query gets 14 impressions but only 0 clicks (CTR: 0%). Position: 6.9. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'best invoice finance provider' \u2014 16 impressions, 0% CTR",
+        "detail": "This query gets 16 impressions but only 0 clicks (CTR: 0%). Position: 59.9. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
@@ -280,11 +280,11 @@
     ]
   },
   "seocompare": {
-    "generated_at": "2026-05-20T09:12:00.936976",
+    "generated_at": "2026-05-22T09:30:59.766945",
     "total": 14,
     "critical": 2,
-    "high": 3,
-    "medium": 9,
+    "high": 2,
+    "medium": 10,
     "low": 0,
     "recommendations": [
       {
@@ -298,15 +298,24 @@
       {
         "priority": "critical",
         "category": "Search Visibility",
-        "title": "0% Google visibility \u2014 not ranking for any target queries",
-        "detail": "Not in Google top 20 for any of 5 target queries. Top competitors: clickslice.co.uk (60.0%). Actions: 1) Create dedicated landing pages for each target query 2) Build topical authority with supporting content 3) Acquire backlinks to key pages 4) Improve internal linking to target pages.",
+        "title": "0 of 14 target queries on page 1",
+        "detail": "Google associates 14 non-branded queries with this site but none rank top-10. Top non-page-1 targets: \"ai seo agency\" (pos 83), \"best ai seo agency\" (pos 79), \"ai seo company\" (pos 74), \"ai search agency\" (pos 69), \"ai seo agency services\" (pos 87). Actions: 1) Pick the 5 highest-impression page-2 queries and rewrite their title/meta + add a dedicated answer section above the fold 2) Add 3-5 internal links into each target page from /blog/, /guides/, homepage 3) Earn 1-2 external links per target 4) Check the page actually answers the search intent (read the SERP, copy the top-3 angles).",
         "impact": "high",
         "pages": [
-          "compare SEO agencies UK",
-          "best SEO companies UK 2026",
-          "how to choose an SEO agency UK",
-          "top rated SEO services UK",
-          "SEO agency comparison"
+          "ai seo agency",
+          "best ai seo agency",
+          "ai seo company",
+          "ai search agency",
+          "ai seo agency services",
+          "ai seo firm",
+          "ai seo services",
+          "best ai seo agencies",
+          "best ai search agency",
+          "ai seo optimisation agency",
+          "ai search optimisation company for law firms",
+          "ai seo agencies",
+          "ai seo digital agency",
+          "best ai seo company"
         ]
       },
       {
@@ -326,17 +335,14 @@
         "pages": []
       },
       {
-        "priority": "high",
+        "priority": "medium",
         "category": "Search Visibility",
-        "title": "Not ranking in Google top 10 for any of 5 tested queries",
-        "detail": "Queries tested: compare SEO agencies UK, best SEO companies UK 2026, SEO agency comparison tool, how to choose an SEO agency UK, top rated SEO services UK. Create dedicated, in-depth pages for each query. Target 1,500+ words with FAQ schema, comparison tables, and internal links.",
-        "impact": "high",
+        "title": "2 URL pattern(s) have 0 GSC impressions",
+        "detail": "These content patterns exist on the site but Google isn't crawling/showing them for any query: /compare/ (74 pages), /alternatives/ (13 pages). Actions: 1) Add each pattern's index page to the main nav OR footer 2) Internal-link from the homepage to the pattern hub 3) Submit pattern pages to GSC URL Inspection 4) Re-check robots.txt isn't crawl-blocking the path.",
+        "impact": "medium",
         "pages": [
-          "compare SEO agencies UK",
-          "best SEO companies UK 2026",
-          "SEO agency comparison tool",
-          "how to choose an SEO agency UK",
-          "top rated SEO services UK"
+          "/compare/",
+          "/alternatives/"
         ]
       },
       {
@@ -358,8 +364,8 @@
       {
         "priority": "medium",
         "category": "Traffic",
-        "title": "High bounce rate: 90.3%",
-        "detail": "Bounce rate is 90.3% \u2014 over 60% suggests visitors aren't finding what they need. Improve: 1) Page load speed 2) Content relevance to search queries 3) Clear CTAs and navigation 4) Mobile experience 5) Internal linking to related content.",
+        "title": "High bounce rate: 90.7%",
+        "detail": "Bounce rate is 90.7% \u2014 over 60% suggests visitors aren't finding what they need. Improve: 1) Page load speed 2) Content relevance to search queries 3) Clear CTAs and navigation 4) Mobile experience 5) Internal linking to related content.",
         "impact": "medium",
         "pages": []
       },
@@ -376,40 +382,40 @@
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'ai seo agency' \u2014 207 impressions, 0% CTR",
-        "detail": "This query gets 207 impressions but only 0 clicks (CTR: 0%). Position: 83.3. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'ai seo agency' \u2014 132 impressions, 0% CTR",
+        "detail": "This query gets 132 impressions but only 0 clicks (CTR: 0%). Position: 82.6. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'best ai seo agency' \u2014 70 impressions, 0% CTR",
-        "detail": "This query gets 70 impressions but only 0 clicks (CTR: 0%). Position: 80.7. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'best ai seo agency' \u2014 49 impressions, 0% CTR",
+        "detail": "This query gets 49 impressions but only 0 clicks (CTR: 0%). Position: 79.2. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'ai seo company' \u2014 51 impressions, 0% CTR",
-        "detail": "This query gets 51 impressions but only 0 clicks (CTR: 0%). Position: 72.2. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'ai seo company' \u2014 32 impressions, 0% CTR",
+        "detail": "This query gets 32 impressions but only 0 clicks (CTR: 0%). Position: 73.9. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'ai seo services' \u2014 45 impressions, 0% CTR",
-        "detail": "This query gets 45 impressions but only 0 clicks (CTR: 0%). Position: 89.7. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'ai search agency' \u2014 21 impressions, 0% CTR",
+        "detail": "This query gets 21 impressions but only 0 clicks (CTR: 0%). Position: 68.8. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'ai seo agency services' \u2014 32 impressions, 0% CTR",
-        "detail": "This query gets 32 impressions but only 0 clicks (CTR: 0%). Position: 84.3. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'ai seo agency services' \u2014 19 impressions, 0% CTR",
+        "detail": "This query gets 19 impressions but only 0 clicks (CTR: 0%). Position: 86.6. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
@@ -424,55 +430,65 @@
     ]
   },
   "rochellemarashi": {
-    "generated_at": "2026-05-20T09:12:00.946319",
-    "total": 5,
+    "generated_at": "2026-05-22T09:30:59.776306",
+    "total": 6,
     "critical": 0,
     "high": 1,
-    "medium": 3,
+    "medium": 4,
     "low": 1,
     "recommendations": [
       {
         "priority": "high",
         "category": "SEO Health",
         "title": "4 pages with missing h1",
-        "detail": "These pages have no H1 tag. Add a clear, descriptive H1 to each page. AI models use H1s to understand page topics. Affected pages: /blog/surviving-stalking/, /blog/lifting-the-veil-of-invisibility/, /blog/dont-bite-your-tongue/, /blog/just-feelings-wont-keep-clients-safe/",
+        "detail": "These pages have no H1 tag. Add a clear, descriptive H1 to each page. AI models use H1s to understand page topics. Affected pages: /blog/surviving-stalking/, /blog/lifting-the-veil-of-invisibility/, /blog/just-feelings-wont-keep-clients-safe/, /blog/dont-bite-your-tongue/",
         "impact": "medium",
         "pages": [
           "/blog/surviving-stalking/",
           "/blog/lifting-the-veil-of-invisibility/",
-          "/blog/dont-bite-your-tongue/",
-          "/blog/just-feelings-wont-keep-clients-safe/"
+          "/blog/just-feelings-wont-keep-clients-safe/",
+          "/blog/dont-bite-your-tongue/"
+        ]
+      },
+      {
+        "priority": "medium",
+        "category": "Search Visibility",
+        "title": "1 URL pattern(s) have 0 GSC impressions",
+        "detail": "These content patterns exist on the site but Google isn't crawling/showing them for any query: /guides/ (5 pages). Actions: 1) Add each pattern's index page to the main nav OR footer 2) Internal-link from the homepage to the pattern hub 3) Submit pattern pages to GSC URL Inspection 4) Re-check robots.txt isn't crawl-blocking the path.",
+        "impact": "medium",
+        "pages": [
+          "/guides/"
         ]
       },
       {
         "priority": "medium",
         "category": "SEO Health",
         "title": "8 pages with thin content",
-        "detail": "These pages have fewer than 200 words. Expand with detailed, authoritative content. AI models prefer pages with 500+ words. Affected pages: /blog/surviving-stalking/, /videos/, /blog/lifting-the-veil-of-invisibility/, /blog/dont-bite-your-tongue/, /podcast/, /blog/just-feelings-wont-keep-clients-safe/, /contact/, /whitepapers/",
+        "detail": "These pages have fewer than 200 words. Expand with detailed, authoritative content. AI models prefer pages with 500+ words. Affected pages: /blog/surviving-stalking/, /whitepapers/, /blog/lifting-the-veil-of-invisibility/, /contact/, /podcast/, /videos/, /blog/just-feelings-wont-keep-clients-safe/, /blog/dont-bite-your-tongue/",
         "impact": "medium",
         "pages": [
           "/blog/surviving-stalking/",
-          "/videos/",
+          "/whitepapers/",
           "/blog/lifting-the-veil-of-invisibility/",
-          "/blog/dont-bite-your-tongue/",
-          "/podcast/",
-          "/blog/just-feelings-wont-keep-clients-safe/",
           "/contact/",
-          "/whitepapers/"
+          "/podcast/",
+          "/videos/",
+          "/blog/just-feelings-wont-keep-clients-safe/",
+          "/blog/dont-bite-your-tongue/"
         ]
       },
       {
         "priority": "medium",
         "category": "Internal Links",
         "title": "5 orphan pages with no internal links pointing to them",
-        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /relationship-difficulties/, /anxiety/, /work-related-stress/, /gaslighting/, /bullying/",
+        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /anxiety/, /bullying/, /relationship-difficulties/, /gaslighting/, /work-related-stress/",
         "impact": "medium",
         "pages": [
-          "/relationship-difficulties/",
           "/anxiety/",
-          "/work-related-stress/",
+          "/bullying/",
+          "/relationship-difficulties/",
           "/gaslighting/",
-          "/bullying/"
+          "/work-related-stress/"
         ]
       },
       {
@@ -494,11 +510,11 @@
     ]
   },
   "bestbusinessloans": {
-    "generated_at": "2026-05-20T09:12:00.960947",
-    "total": 8,
+    "generated_at": "2026-05-22T09:30:59.794637",
+    "total": 6,
     "critical": 2,
-    "high": 1,
-    "medium": 5,
+    "high": 0,
+    "medium": 4,
     "low": 0,
     "recommendations": [
       {
@@ -512,75 +528,42 @@
       {
         "priority": "critical",
         "category": "Search Visibility",
-        "title": "0% Google visibility \u2014 not ranking for any target queries",
-        "detail": "Not in Google top 20 for any of 8 target queries. Top competitors: iwoca.co.uk (62.5%), fundingcircle.com (50.0%), capitalise.com (12.5%). Actions: 1) Create dedicated landing pages for each target query 2) Build topical authority with supporting content 3) Acquire backlinks to key pages 4) Improve internal linking to target pages.",
+        "title": "0 of 1 target queries on page 1",
+        "detail": "Google associates 1 non-branded queries with this site but none rank top-10. Top non-page-1 targets: \"hospitality business loans\" (pos 96). Actions: 1) Pick the 5 highest-impression page-2 queries and rewrite their title/meta + add a dedicated answer section above the fold 2) Add 3-5 internal links into each target page from /blog/, /guides/, homepage 3) Earn 1-2 external links per target 4) Check the page actually answers the search intent (read the SERP, copy the top-3 angles).",
         "impact": "high",
         "pages": [
-          "best business loans UK",
-          "compare UK business loans",
-          "small business loan UK",
-          "unsecured business loan UK",
-          "fast business funding UK",
-          "business loan with bad credit UK",
-          "UK business loans 2026",
-          "compare business finance UK"
+          "hospitality business loans"
         ]
       },
       {
-        "priority": "high",
+        "priority": "medium",
+        "category": "Search Visibility",
+        "title": "4 URL pattern(s) have 0 GSC impressions",
+        "detail": "These content patterns exist on the site but Google isn't crawling/showing them for any query: /reviews/ (111 pages), /vs/ (83 pages), /alternatives/ (13 pages). Actions: 1) Add each pattern's index page to the main nav OR footer 2) Internal-link from the homepage to the pattern hub 3) Submit pattern pages to GSC URL Inspection 4) Re-check robots.txt isn't crawl-blocking the path.",
+        "impact": "medium",
+        "pages": [
+          "/reviews/",
+          "/vs/",
+          "/alternatives/",
+          "/compare/"
+        ]
+      },
+      {
+        "priority": "medium",
         "category": "Internal Links",
-        "title": "50 orphan pages with no internal links pointing to them",
-        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /vs/funding-circle-vs-propel/, /vs/funding-circle-vs-got-capital/, /vs/got-capital-vs-sonovate/, /vs/close-brothers-vs-iwoca/, /vs/capital-on-tap-vs-close-brothers/, /vs/investec-vs-kuflink/, /vs/allica-bank-vs-haydock-finance/, /vs/investec-vs-iwoca/...",
+        "title": "2 orphan pages with no internal links pointing to them",
+        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /thank-you/, /preview-form/",
         "impact": "medium",
         "pages": [
-          "/vs/funding-circle-vs-propel/",
-          "/vs/funding-circle-vs-got-capital/",
-          "/vs/got-capital-vs-sonovate/",
-          "/vs/close-brothers-vs-iwoca/",
-          "/vs/capital-on-tap-vs-close-brothers/",
-          "/vs/investec-vs-kuflink/",
-          "/vs/allica-bank-vs-haydock-finance/",
-          "/vs/investec-vs-iwoca/",
-          "/vs/capital-on-tap-vs-iwoca/",
-          "/vs/iwoca-vs-starling-bank/",
-          "/vs/got-capital-vs-propel/",
-          "/vs/capital-on-tap-vs-funding-circle/",
-          "/vs/haydock-finance-vs-investec/",
-          "/vs/propel-vs-starling-bank/",
-          "/vs/allica-bank-vs-kuflink/"
+          "/thank-you/",
+          "/preview-form/"
         ]
       },
       {
         "priority": "medium",
-        "category": "AI Readiness",
-        "title": "5 AI search crawlers not explicitly allowed in robots.txt",
-        "detail": "These search crawlers are not mentioned: GPTBot, Google-Extended, GoogleOther, PerplexityBot, Bingbot. Add explicit 'Allow' rules. Training crawlers not mentioned is fine.",
-        "impact": "medium",
-        "pages": [
-          "/robots.txt"
-        ]
-      },
-      {
-        "priority": "medium",
-        "category": "Traffic",
-        "title": "High bounce rate: 100.0%",
-        "detail": "Bounce rate is 100.0% \u2014 over 60% suggests visitors aren't finding what they need. Improve: 1) Page load speed 2) Content relevance to search queries 3) Clear CTAs and navigation 4) Mobile experience 5) Internal linking to related content.",
-        "impact": "medium",
-        "pages": []
-      },
-      {
-        "priority": "medium",
         "category": "Content Gap",
-        "title": "'hospitality business loans' \u2014 23 impressions, 0% CTR",
-        "detail": "This query gets 23 impressions but only 0 clicks (CTR: 0%). Position: 95. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
-        "impact": "medium",
-        "pages": []
-      },
-      {
-        "priority": "medium",
-        "category": "Content Gap",
-        "title": "'engineering business loan' \u2014 10 impressions, 0% CTR",
-        "detail": "This query gets 10 impressions but only 0 clicks (CTR: 0%). Position: 71.9. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'hospitality business loans' \u2014 17 impressions, 0% CTR",
+        "detail": "This query gets 17 impressions but only 0 clicks (CTR: 0%). Position: 96.2. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
@@ -595,7 +578,7 @@
     ]
   },
   "fundbiz": {
-    "generated_at": "2026-05-20T09:12:00.970713",
+    "generated_at": "2026-05-22T09:30:59.807013",
     "total": 13,
     "critical": 2,
     "high": 2,
@@ -613,24 +596,24 @@
       {
         "priority": "critical",
         "category": "Search Visibility",
-        "title": "0% Google visibility \u2014 not ranking for any target queries",
-        "detail": "Not in Google top 20 for any of 8 target queries. Top competitors: iwoca.co.uk (50.0%), fundingcircle.com (12.5%), swoopfunding.com (12.5%). Actions: 1) Create dedicated landing pages for each target query 2) Build topical authority with supporting content 3) Acquire backlinks to key pages 4) Improve internal linking to target pages.",
+        "title": "0 of 8 target queries on page 1",
+        "detail": "Google associates 8 non-branded queries with this site but none rank top-10. Top non-page-1 targets: \"ecommerce business funding\" (pos 38), \"ecommerce business loans\" (pos 33), \"business loans for online sellers\" (pos 27), \"e commerce small business loans\" (pos 28), \"online seller loans\" (pos 29). Actions: 1) Pick the 5 highest-impression page-2 queries and rewrite their title/meta + add a dedicated answer section above the fold 2) Add 3-5 internal links into each target page from /blog/, /guides/, homepage 3) Earn 1-2 external links per target 4) Check the page actually answers the search intent (read the SERP, copy the top-3 angles).",
         "impact": "high",
         "pages": [
-          "specialty business finance UK",
-          "HMRC VAT loan UK",
-          "asset refinance UK",
-          "PAYE arrears finance UK",
-          "corporation tax loan UK",
-          "trigger event business finance UK",
-          "UK business funding emergency",
-          "alternative business finance UK"
+          "ecommerce business funding",
+          "ecommerce business loans",
+          "business loans for online sellers",
+          "e commerce small business loans",
+          "online seller loans",
+          "small business loan for online store",
+          "ecommerce small business loans",
+          "ecommerce loans"
         ]
       },
       {
         "priority": "high",
         "category": "Internal Links",
-        "title": "39 orphan pages with no internal links pointing to them",
+        "title": "41 orphan pages with no internal links pointing to them",
         "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /vs/capify-vs-oaknorth/, /vs/365-business-finance-vs-allica-bank/, /vs/funding-circle-vs-time-finance/, /vs/iwoca-vs-youlend/, /vs/aldermore-vs-liberis/, /vs/start-up-loans-company-vs-time-finance/, /vs/allica-bank-vs-jpm-capital/, /vs/365-business-finance-vs-aldermore/...",
         "impact": "medium",
         "pages": [
@@ -663,12 +646,13 @@
       },
       {
         "priority": "medium",
-        "category": "AI Readiness",
-        "title": "3 AI search crawlers not explicitly allowed in robots.txt",
-        "detail": "These search crawlers are not mentioned: GoogleOther, PerplexityBot, Bingbot. Add explicit 'Allow' rules. Training crawlers not mentioned is fine.",
+        "category": "Search Visibility",
+        "title": "2 URL pattern(s) have 0 GSC impressions",
+        "detail": "These content patterns exist on the site but Google isn't crawling/showing them for any query: /vs/ (70 pages), /alternatives/ (14 pages). Actions: 1) Add each pattern's index page to the main nav OR footer 2) Internal-link from the homepage to the pattern hub 3) Submit pattern pages to GSC URL Inspection 4) Re-check robots.txt isn't crawl-blocking the path.",
         "impact": "medium",
         "pages": [
-          "/robots.txt"
+          "/vs/",
+          "/alternatives/"
         ]
       },
       {
@@ -682,40 +666,40 @@
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'ecommerce business funding' \u2014 34 impressions, 0% CTR",
-        "detail": "This query gets 34 impressions but only 0 clicks (CTR: 0%). Position: 37.0. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'ecommerce business funding' \u2014 38 impressions, 0% CTR",
+        "detail": "This query gets 38 impressions but only 0 clicks (CTR: 0%). Position: 37.9. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'ecommerce business loans' \u2014 29 impressions, 0% CTR",
-        "detail": "This query gets 29 impressions but only 0 clicks (CTR: 0%). Position: 32.2. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'ecommerce business loans' \u2014 38 impressions, 0% CTR",
+        "detail": "This query gets 38 impressions but only 0 clicks (CTR: 0%). Position: 32.9. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'online seller loans' \u2014 16 impressions, 0% CTR",
-        "detail": "This query gets 16 impressions but only 0 clicks (CTR: 0%). Position: 27.8. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'business loans for online sellers' \u2014 25 impressions, 0% CTR",
+        "detail": "This query gets 25 impressions but only 0 clicks (CTR: 0%). Position: 26.8. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'business loans for online sellers' \u2014 15 impressions, 0% CTR",
-        "detail": "This query gets 15 impressions but only 0 clicks (CTR: 0%). Position: 26.8. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'e commerce small business loans' \u2014 20 impressions, 0% CTR",
+        "detail": "This query gets 20 impressions but only 0 clicks (CTR: 0%). Position: 27.6. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'e commerce small business loans' \u2014 15 impressions, 0% CTR",
-        "detail": "This query gets 15 impressions but only 0 clicks (CTR: 0%). Position: 26.5. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'online seller loans' \u2014 20 impressions, 0% CTR",
+        "detail": "This query gets 20 impressions but only 0 clicks (CTR: 0%). Position: 29.2. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
@@ -730,7 +714,7 @@
       {
         "priority": "low",
         "category": "Indexing",
-        "title": "Only 17/253 pages indexed in Bing",
+        "title": "Only 17/257 pages indexed in Bing",
         "detail": "Bing feeds Copilot. If URLs were recently submitted via IndexNow, allow 7-14 days for propagation. Re-check after that period. Submit: python3 scripts/submit_indexnow.py fundbiz",
         "impact": "medium",
         "pages": []
@@ -738,11 +722,11 @@
     ]
   },
   "cardmachines": {
-    "generated_at": "2026-05-20T09:12:00.991535",
-    "total": 6,
+    "generated_at": "2026-05-22T09:30:59.834628",
+    "total": 7,
     "critical": 2,
     "high": 1,
-    "medium": 2,
+    "medium": 3,
     "low": 1,
     "recommendations": [
       {
@@ -756,18 +740,25 @@
       {
         "priority": "critical",
         "category": "Search Visibility",
-        "title": "0% Google visibility \u2014 not ranking for any target queries",
-        "detail": "Not in Google top 20 for any of 8 target queries. Top competitors: squareup.com (25.0%), stripe.com (12.5%), worldpay.com (12.5%). Actions: 1) Create dedicated landing pages for each target query 2) Build topical authority with supporting content 3) Acquire backlinks to key pages 4) Improve internal linking to target pages.",
+        "title": "1137 target pages built but Google sees you for 0 queries",
+        "detail": "You've built 1137 pages on real target patterns (/vs/, /best/, /alternatives/ etc) but GSC reports 0 non-branded query impressions \u226510 per query. This means Google has crawled but not indexed-with-intent. Actions: 1) Submit sitemap + IndexNow for these patterns 2) Add internal links from homepage to the strongest 5-10 pages 3) Earn 2-3 backlinks to anchor the pattern hub 4) Verify pages aren't blocked in robots.txt / canonical-stripped / noindexed.",
         "impact": "high",
         "pages": [
-          "best card machine UK",
-          "compare UK card machines 2026",
-          "card terminal for small business UK",
-          "cheapest card machine UK",
-          "merchant account UK",
-          "card payment provider UK",
-          "tap to pay iPhone UK",
-          "card machine for hospitality UK"
+          "/vs/",
+          "/vs/square-terminal-vs-stripe-reader-m2/",
+          "/vs/adyen-vs-zettle-reader-2/",
+          "/vs/adyen-vs-sumup-solo/",
+          "/vs/bbpos-wisepad-3-vs-stripe-reader-s700/",
+          "/vs/dojo-go-vs-tap-to-pay-iphone/",
+          "/vs/square-terminal-vs-sumup-solo/",
+          "/vs/adyen-vs-tap-to-pay-iphone/",
+          "/vs/tap-to-pay-iphone-vs-zettle-reader-2/",
+          "/vs/bbpos-wisepos-e-vs-tide-card-reader/",
+          "/vs/adyen-vs-stripe-reader-m2/",
+          "/vs/stripe-reader-m2-vs-tide-card-reader/",
+          "/vs/square-terminal-vs-stripe-reader-s700/",
+          "/vs/bbpos-wisepos-e-vs-dojo-go/",
+          "/vs/stripe-reader-s700-vs-zettle-reader-2/"
         ]
       },
       {
@@ -796,6 +787,20 @@
       },
       {
         "priority": "medium",
+        "category": "Search Visibility",
+        "title": "5 URL pattern(s) have 0 GSC impressions",
+        "detail": "These content patterns exist on the site but Google isn't crawling/showing them for any query: /best/ (1016 pages), /vs/ (75 pages), /alternatives/ (19 pages). Actions: 1) Add each pattern's index page to the main nav OR footer 2) Internal-link from the homepage to the pattern hub 3) Submit pattern pages to GSC URL Inspection 4) Re-check robots.txt isn't crawl-blocking the path.",
+        "impact": "medium",
+        "pages": [
+          "/best/",
+          "/vs/",
+          "/alternatives/",
+          "/reviews/",
+          "/guides/"
+        ]
+      },
+      {
+        "priority": "medium",
         "category": "Indexing",
         "title": "No Bing crawl activity detected",
         "detail": "Bing has not crawled any pages. Bing feeds Copilot (Microsoft's AI). Submit sitemap at bing.com/webmasters and run IndexNow submission: python3 scripts/submit_indexnow.py cardmachines",
@@ -813,7 +818,7 @@
       {
         "priority": "low",
         "category": "Indexing",
-        "title": "Only 0/1427 pages indexed in Bing",
+        "title": "Only 0/1444 pages indexed in Bing",
         "detail": "Bing feeds Copilot. If URLs were recently submitted via IndexNow, allow 7-14 days for propagation. Re-check after that period. Submit: python3 scripts/submit_indexnow.py cardmachines",
         "impact": "medium",
         "pages": []
@@ -821,7 +826,7 @@
     ]
   },
   "merchanthq": {
-    "generated_at": "2026-05-20T09:12:00.994022",
+    "generated_at": "2026-05-22T09:30:59.840765",
     "total": 0,
     "critical": 0,
     "high": 0,
@@ -830,13 +835,37 @@
     "recommendations": []
   },
   "peptideclear": {
-    "generated_at": "2026-05-20T09:12:01.003352",
-    "total": 2,
-    "critical": 0,
+    "generated_at": "2026-05-22T09:30:59.857207",
+    "total": 6,
+    "critical": 1,
     "high": 1,
-    "medium": 1,
-    "low": 0,
+    "medium": 3,
+    "low": 1,
     "recommendations": [
+      {
+        "priority": "critical",
+        "category": "Search Visibility",
+        "title": "39 target pages built but Google sees you for 0 queries",
+        "detail": "You've built 39 pages on real target patterns (/vs/, /best/, /alternatives/ etc) but GSC reports 0 non-branded query impressions \u226510 per query. This means Google has crawled but not indexed-with-intent. Actions: 1) Submit sitemap + IndexNow for these patterns 2) Add internal links from homepage to the strongest 5-10 pages 3) Earn 2-3 backlinks to anchor the pattern hub 4) Verify pages aren't blocked in robots.txt / canonical-stripped / noindexed.",
+        "impact": "high",
+        "pages": [
+          "/vs/ipamorelin-vs-sermorelin/",
+          "/vs/my-peptides-vs-direct-sarms/",
+          "/vs/phlo-vs-pharmacy2u/",
+          "/vs/numan-vs-voy/",
+          "/vs/bpc-157-vs-tb-500/",
+          "/vs/hooke-vs-echelon/",
+          "/vs/phlo-vs-simplymeds/",
+          "/vs/manual-vs-numan/",
+          "/vs/numan-vs-phlo/",
+          "/vs/my-peptides-vs-pure-peptides-uk/",
+          "/vs/numan-vs-juniper/",
+          "/vs/ghk-cu-vs-matrixyl/",
+          "/vs/type-i-vs-type-ii-collagen/",
+          "/vs/tesamorelin-vs-sermorelin/",
+          "/vs/cjc-1295-vs-sermorelin/"
+        ]
+      },
       {
         "priority": "high",
         "category": "Internal Links",
@@ -857,9 +886,28 @@
           "/vs/bare-biology-vs-vital-proteins/",
           "/vs/juniper-vs-voy/",
           "/vs/manual-vs-juniper/",
-          "/tools/",
-          "/medications/"
+          "/medications/",
+          "/faq/glp1/"
         ]
+      },
+      {
+        "priority": "medium",
+        "category": "Search Visibility",
+        "title": "2 URL pattern(s) have 0 GSC impressions",
+        "detail": "These content patterns exist on the site but Google isn't crawling/showing them for any query: /vs/ (20 pages), /best/ (14 pages). Actions: 1) Add each pattern's index page to the main nav OR footer 2) Internal-link from the homepage to the pattern hub 3) Submit pattern pages to GSC URL Inspection 4) Re-check robots.txt isn't crawl-blocking the path.",
+        "impact": "medium",
+        "pages": [
+          "/vs/",
+          "/best/"
+        ]
+      },
+      {
+        "priority": "medium",
+        "category": "Traffic",
+        "title": "High bounce rate: 71.4%",
+        "detail": "Bounce rate is 71.4% \u2014 over 60% suggests visitors aren't finding what they need. Improve: 1) Page load speed 2) Content relevance to search queries 3) Clear CTAs and navigation 4) Mobile experience 5) Internal linking to related content.",
+        "impact": "medium",
+        "pages": []
       },
       {
         "priority": "medium",
@@ -868,11 +916,19 @@
         "detail": "Pages with images AND video get 156-317% more AI citations. Add charts, infographics, and short videos to key pillar pages. Note: inline SVG graphics may not be detected by this check.",
         "impact": "high",
         "pages": []
+      },
+      {
+        "priority": "low",
+        "category": "Accessibility",
+        "title": "325 images missing alt text",
+        "detail": "Alt text helps search engines and AI understand images. Add descriptive alt text to all images.",
+        "impact": "low",
+        "pages": []
       }
     ]
   },
   "kartapay": {
-    "generated_at": "2026-05-20T09:12:01.005978",
+    "generated_at": "2026-05-22T09:30:59.863991",
     "total": 0,
     "critical": 0,
     "high": 0,

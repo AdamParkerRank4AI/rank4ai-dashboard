@@ -32,6 +32,7 @@ def generate_for_client(client_id):
     crawl_activity = load("crawl_activity.json").get(client_id, {})
     entities = load("nlp_entities.json").get(client_id, {})
     serp = load("serp_data.json").get(client_id, {})
+    target_queries = load("target_queries.json").get(client_id, {})
 
     recs = []
 
@@ -92,18 +93,71 @@ def generate_for_client(client_id):
         # This data is surfaced in the Competitors section of the dashboard instead
 
     # ============================================================
-    # GOOGLE VISIBILITY
+    # GOOGLE VISIBILITY — benchmarked against THIS SITE'S REAL TARGETS
+    # (derived from its own /vs/, /best/, /alternatives/, /providers/ etc
+    # URL patterns + GSC-evidenced queries — not arbitrary head terms)
     # ============================================================
-    if competitors:
-        if competitors.get("client_visibility_pct", 0) == 0:
-            top_comps = competitors.get("competitors", [])[:3]
-            comp_detail = ", ".join([f"{c['domain']} ({c['visibility_pct']}%)" for c in top_comps])
+    if target_queries.get("merged_top"):
+        merged = target_queries["merged_top"]
+        gsc_targets = [q for q in merged if q.get("source") == "gsc"]
+        content_targets = [q for q in merged if q.get("source") == "content"]
+        on_page1 = [q for q in gsc_targets if 0 < q.get("position", 0) <= 10]
+        on_page2 = [q for q in gsc_targets if 10 < q.get("position", 0) <= 20]
+        beyond_p2 = [q for q in gsc_targets if q.get("position", 0) > 20]
+
+        content_total = target_queries.get("from_content_total", 0)
+        gsc_total = target_queries.get("from_gsc_total", 0)
+
+        # Critical only if site has built target content but Google doesn't show it for any of it
+        if gsc_total == 0 and content_total >= 20:
             recs.append({
                 "priority": "critical", "category": "Search Visibility",
-                "title": f"0% Google visibility — not ranking for any target queries",
-                "detail": f"Not in Google top 20 for any of {competitors.get('total_queries', 0)} target queries. Top competitors: {comp_detail}. Actions: 1) Create dedicated landing pages for each target query 2) Build topical authority with supporting content 3) Acquire backlinks to key pages 4) Improve internal linking to target pages.",
+                "title": f"{content_total} target pages built but Google sees you for 0 queries",
+                "detail": f"You've built {content_total} pages on real target patterns (/vs/, /best/, /alternatives/ etc) but GSC reports 0 non-branded query impressions ≥10 per query. This means Google has crawled but not indexed-with-intent. Actions: 1) Submit sitemap + IndexNow for these patterns 2) Add internal links from homepage to the strongest 5-10 pages 3) Earn 2-3 backlinks to anchor the pattern hub 4) Verify pages aren't blocked in robots.txt / canonical-stripped / noindexed.",
                 "impact": "high",
-                "pages": [qr.get("query", "") for qr in competitors.get("query_results", []) if not qr.get("rankings", {}).get(competitors.get("domain", ""))],
+                "pages": [q.get("path", "") for q in content_targets[:15] if q.get("path")],
+            })
+        elif gsc_total > 0 and len(on_page1) == 0:
+            sample = ", ".join([f'"{q["query"]}" (pos {q["position"]:.0f})' for q in (on_page2 + beyond_p2)[:5]])
+            recs.append({
+                "priority": "critical", "category": "Search Visibility",
+                "title": f"0 of {gsc_total} target queries on page 1",
+                "detail": f"Google associates {gsc_total} non-branded queries with this site but none rank top-10. Top non-page-1 targets: {sample}. Actions: 1) Pick the 5 highest-impression page-2 queries and rewrite their title/meta + add a dedicated answer section above the fold 2) Add 3-5 internal links into each target page from /blog/, /guides/, homepage 3) Earn 1-2 external links per target 4) Check the page actually answers the search intent (read the SERP, copy the top-3 angles).",
+                "impact": "high",
+                "pages": [q["query"] for q in (on_page2 + beyond_p2)[:15]],
+            })
+
+        # Page-2 lift opportunity (high priority — closest wins)
+        if len(on_page2) >= 3:
+            sample = ", ".join([f'"{q["query"]}"' for q in on_page2[:5]])
+            recs.append({
+                "priority": "high", "category": "Search Visibility",
+                "title": f"{len(on_page2)} target queries stuck on page 2 — biggest lift opportunity",
+                "detail": f"Queries Google already associates with you, ranking positions 11-20: {sample}. Each one only needs a few rank positions to land page 1 and start earning clicks. Actions per query: 1) Verify the ranking page actually targets the query (title + H1 + first para) 2) Add a focused answer section in the first 200 words 3) Add internal links from 3-5 related pages 4) Acquire 1-2 quality external links.",
+                "impact": "high",
+                "pages": [q["query"] for q in on_page2[:15]],
+            })
+
+        # Content-pattern coverage gap (medium — when content exists but no GSC overlap yet)
+        unseen_patterns = []
+        for pat, items in (target_queries.get("by_pattern") or {}).items():
+            if not items:
+                continue
+            # Are any of these paths in GSC top_pages?
+            gsc_pages = set((gsc.get("top_pages") or []) and [(p.get("page") or "").lower() for p in gsc.get("top_pages") or []])
+            seen = sum(1 for it in items if any(((it.get("path") or "").lower() in gp) or (gp in (it.get("path") or "").lower()) for gp in gsc_pages))
+            if seen == 0 and len(items) >= 5:
+                unseen_patterns.append((pat, len(items)))
+        if unseen_patterns:
+            unseen_patterns.sort(key=lambda x: -x[1])
+            top = unseen_patterns[:3]
+            detail_patterns = ", ".join([f"{p[0]} ({p[1]} pages)" for p in top])
+            recs.append({
+                "priority": "medium", "category": "Search Visibility",
+                "title": f"{len(unseen_patterns)} URL pattern(s) have 0 GSC impressions",
+                "detail": f"These content patterns exist on the site but Google isn't crawling/showing them for any query: {detail_patterns}. Actions: 1) Add each pattern's index page to the main nav OR footer 2) Internal-link from the homepage to the pattern hub 3) Submit pattern pages to GSC URL Inspection 4) Re-check robots.txt isn't crawl-blocking the path.",
+                "impact": "medium",
+                "pages": [p[0] for p in unseen_patterns],
             })
 
     # ============================================================
@@ -465,18 +519,11 @@ def generate_for_client(client_id):
                 "impact": "medium", "pages": [],
             })
 
-    # ============================================================
-    # SERP — not ranking for any queries
-    # ============================================================
-    if serp and serp.get("organic_rate", 0) == 0 and serp.get("total_queries", 0) > 0:
-        queries = [r["query"] for r in serp.get("results", []) if not r.get("brand_organic_position")]
-        recs.append({
-            "priority": "high", "category": "Search Visibility",
-            "title": f"Not ranking in Google top 10 for any of {len(queries)} tested queries",
-            "detail": f"Queries tested: {', '.join(queries[:5])}. Create dedicated, in-depth pages for each query. Target 1,500+ words with FAQ schema, comparison tables, and internal links.",
-            "impact": "high",
-            "pages": queries,
-        })
+    # SERP head-term check removed 21 May 2026 — serp_data.json used the same
+    # head-term list as competitor_serp.json (e.g. "invoice finance UK") which
+    # didn't reflect the fleet sites' actual targeting (/vs/, /best/, named-
+    # provider queries). The new GOOGLE VISIBILITY block above benchmarks
+    # against each site's real targets derived from its own content + GSC.
 
     # Sort by priority
     priority_order = {"critical": 0, "high": 1, "medium": 2, "low": 3}

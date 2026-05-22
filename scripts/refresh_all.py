@@ -123,6 +123,7 @@ def main():
         ("fetch_dataforseo.py", 600),
         ("fetch_serp.py", 120),
         ("fetch_competitor_serp.py", 120),
+        ("build_target_queries.py", 30),  # derive each site's REAL target queries from content + GSC; consumed by generate_recommendations + dashboard UI
         ("generate_recommendations.py", 30),
         ("track_new_pages.py", 30),
         ("save_daily_metrics.py", 30),

@@ -28,6 +28,7 @@ SITES = {
     "bestbusinessloans": "https://bestbusinessloans.ai",
     "fundbiz": "https://fundbiz.co.uk",
     "merchanthq": "https://merchanthq.co.uk",
+    "cardmachines": "https://merchanthq.co.uk",  # legacy alias; crawl_cardmachines.json is canonical
     "kartapay": "https://kartapay.co.uk",
     "peptideclear": "https://peptideclear.co.uk",
     "rank4ai-staging": "https://rank4ai-staging.pages.dev",

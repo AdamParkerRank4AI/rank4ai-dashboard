@@ -19,7 +19,9 @@ SITES = {
     "rochellemarashi": "https://rochellemarashi.pages.dev",
     "bestbusinessloans": "https://bestbusinessloans.ai",
     "fundbiz": "https://fundbiz.co.uk",
-    "cardmachines": "https://acceptcard.co.uk",
+    "cardmachines": "https://merchanthq.co.uk",
+    "peptideclear": "https://peptideclear.co.uk",
+    "kartapay": "https://kartapay.co.uk",
 }
 
 HEADERS = {

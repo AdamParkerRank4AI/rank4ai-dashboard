@@ -17,11 +17,13 @@ SITES = {
     "market-invoice": "sc-domain:marketinvoice.co.uk",
     "seocompare": "sc-domain:seocompare.co.uk",
     "resiliencebuilder": "sc-domain:resiliencebuilder.co.uk",
-    "bestbusinessloans": "sc-domain:bestbusinessloans.ai",
-    "fundbiz": "sc-domain:fundbiz.co.uk",
-    "cardmachines": "sc-domain:merchanthq.co.uk",
-    "kartapay": "sc-domain:kartapay.co.uk",
-    "peptideclear": "sc-domain:peptideclear.co.uk",
+    # These 5 are URL-prefix properties in adam@muswellrose.com (not sc-domain).
+    # Confirmed via sites().list() on 2026-05-21 — siteOwner permission set.
+    "bestbusinessloans": "https://bestbusinessloans.ai/",
+    "fundbiz": "https://fundbiz.co.uk/",
+    "cardmachines": "https://merchanthq.co.uk/",
+    "kartapay": "https://kartapay.co.uk/",
+    "peptideclear": "https://peptideclear.co.uk/",
 }
 
 # Fallback URL-prefix formats if domain property doesn't work
@@ -155,41 +157,72 @@ def fetch_site(service, site_url, site_id):
             "position": round(row.get("position", 0), 1),
         }
 
-    # AI Overview appearances (searchAppearance filter)
-    ai_overview_data = {}
+    # Search appearance breakdown (AIO/rich results/etc). Pulling all
+    # appearances at once avoids the AI_OVERVIEW expression-filter that
+    # 400s on most domain properties.
+    appearance_breakdown = []
     try:
-        aio_resp = service.searchanalytics().query(
+        appr_resp = service.searchanalytics().query(
             siteUrl=site_url,
             body={
                 "startDate": start_date.strftime("%Y-%m-%d"),
                 "endDate": end_date.strftime("%Y-%m-%d"),
-                "dimensions": ["query"],
-                "dimensionFilterGroups": [{
-                    "filters": [{
-                        "dimension": "searchAppearance",
-                        "expression": "AI_OVERVIEW"
-                    }]
-                }],
+                "dimensions": ["searchAppearance"],
                 "rowLimit": 25,
                 "type": "web",
             }
         ).execute()
-
-        aio_queries = []
-        for row in aio_resp.get("rows", []):
-            aio_queries.append({
-                "query": row["keys"][0],
+        for row in appr_resp.get("rows", []):
+            appearance_breakdown.append({
+                "appearance": row["keys"][0],
                 "clicks": row.get("clicks", 0),
                 "impressions": row.get("impressions", 0),
+                "ctr": round(row.get("ctr", 0) * 100, 2),
+                "position": round(row.get("position", 0), 1),
             })
-
-        ai_overview_data = {
-            "total_impressions": sum(q["impressions"] for q in aio_queries),
-            "total_clicks": sum(q["clicks"] for q in aio_queries),
-            "queries": aio_queries,
-        }
     except Exception as e:
-        ai_overview_data = {"error": str(e)[:100], "queries": []}
+        appearance_breakdown = [{"error": str(e)[:100]}]
+
+    aio_row = next((a for a in appearance_breakdown if a.get("appearance") == "AI_OVERVIEW"), None)
+    ai_overview_data = {
+        "total_impressions": aio_row["impressions"] if aio_row else 0,
+        "total_clicks": aio_row["clicks"] if aio_row else 0,
+        "ctr": aio_row["ctr"] if aio_row else 0,
+        "position": aio_row["position"] if aio_row else 0,
+        "available": aio_row is not None,
+    }
+
+    # Country breakdown (target area)
+    countries = []
+    try:
+        country_resp = service.searchanalytics().query(
+            siteUrl=site_url,
+            body={
+                "startDate": start_date.strftime("%Y-%m-%d"),
+                "endDate": end_date.strftime("%Y-%m-%d"),
+                "dimensions": ["country"],
+                "rowLimit": 25,
+                "type": "web",
+            }
+        ).execute()
+        for row in country_resp.get("rows", []):
+            countries.append({
+                "country": row["keys"][0],
+                "clicks": row.get("clicks", 0),
+                "impressions": row.get("impressions", 0),
+                "ctr": round(row.get("ctr", 0) * 100, 2),
+                "position": round(row.get("position", 0), 1),
+            })
+    except Exception as e:
+        countries = [{"error": str(e)[:100]}]
+
+    # Quick wins: position 5-20, ≥30 impressions, CTR < 5%
+    # Closer than content_gaps (which uses ctr<2 only) — these are page-1/2 near-misses
+    quick_wins = [
+        q for q in top_queries
+        if 5 <= q["position"] <= 20 and q["impressions"] >= 30 and q["ctr"] < 5.0
+    ]
+    quick_wins.sort(key=lambda x: -x["impressions"])
 
     return {
         "site_id": site_id,
@@ -200,6 +233,9 @@ def fetch_site(service, site_url, site_id):
         "top_queries": top_queries,
         "top_pages": top_pages,
         "content_gaps": gaps[:15],
+        "quick_wins": quick_wins[:20],
+        "countries": countries,
+        "appearance_breakdown": appearance_breakdown,
         "ai_overviews": ai_overview_data,
     }
 
