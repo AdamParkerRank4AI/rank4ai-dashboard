@@ -147,6 +147,24 @@ def check_indexing_queue():
     return out
 
 
+def check_fleet_baseline():
+    """Returns list of (site, msg) for any failed baseline checks
+    (from fleet_baseline_check.py daily run)."""
+    data = load_json("fleet_baseline.json", {})
+    out = []
+    for site_id, site_data in (data.get("sites") or {}).items():
+        for cname, c in (site_data.get("checks") or {}).items():
+            if not c.get("pass"):
+                # Don't double-flag Clarity since it's already covered by check_tracking().
+                if cname == "clarity_firing":
+                    continue
+                # GA4 already covered too.
+                if cname == "ga4_firing":
+                    continue
+                out.append((site_id, f"{cname}: {c.get('detail','')}"))
+    return out
+
+
 def check_freshness():
     """Returns alert per data file that's >36h stale (subset of important ones)."""
     out = []
@@ -180,6 +198,8 @@ def build_items():
         items.append(("P1", site, msg, f"Open fleet-dashboard-1nt.pages.dev/agency/{site}/recommendations"))
     for site, msg in check_indexing_queue():
         items.append(("P2", site, msg, "Run `python3 ~/rank4ai-dashboard/scripts/submit_google_indexing.py`"))
+    for site, msg in check_fleet_baseline():
+        items.append(("P1", site, f"Baseline: {msg}", "Open BASELINE_CHECKLIST.md + the failing item; fix in the repo + redeploy. Daily check at fleet_baseline_check.py"))
     for site, msg in check_freshness():
         items.append(("P1", site, msg, "Run `python3 ~/rank4ai-dashboard/scripts/refresh_all.py` and check /tmp/rank4ai_dashboard_refresh.log"))
     return items
