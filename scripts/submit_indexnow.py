@@ -31,6 +31,21 @@ SITES = {
 
 INDEXNOW_URL = "https://api.indexnow.org/indexnow"
 
+# Per-site IndexNow keys — each registered in its own repo's public/<key>.txt.
+# Falling back to BING_API_KEY (above) for sites not in this map.
+# The single shared key 403'd as "UserForbiddedToAccessSite" because Bing
+# associates each IndexNow key with the BWT account that originally claimed it.
+SITE_KEYS = {
+    "rank4ai":           "4c1cc17752ab451887a14b719906f527",
+    "market-invoice":    "a2dbf411f85049958a10a31d0eea8ab9",
+    "seocompare":        "4c1cc17752ab451887a14b719906f527",
+    "bestbusinessloans": "6c8693c2af63422098320cf1a132e7d2",
+    "fundbiz":           "4d8cee5b9f8249d8848a5305264ca1cc",
+    "cardmachines":      "0090cd828ef442e38aa2c00baca23c6d",
+    "peptideclear":      "9b4e84786bf3482db8081609777b3811",
+    "kartapay":          "e7ac3dd5700130fb675be39a3a0effc5",
+}
+
 
 def get_urls_from_crawl(client_id):
     """Get all URLs from the latest crawl."""
@@ -49,6 +64,9 @@ def submit_urls(client_id, urls):
         print(f"  Unknown client: {client_id}")
         return
 
+    # Per-site key (each registered with its own BWT account), fallback to shared.
+    key = SITE_KEYS.get(client_id, BING_API_KEY)
+
     # IndexNow accepts batch submissions
     batch_size = 100
     total_submitted = 0
@@ -58,7 +76,7 @@ def submit_urls(client_id, urls):
 
         payload = {
             "host": host,
-            "key": BING_API_KEY,
+            "key": key,
             "urlList": batch,
         }
 
