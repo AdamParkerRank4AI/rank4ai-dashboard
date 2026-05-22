@@ -198,6 +198,136 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
     )}
   </div>
 
+  {/* FLEET QUICK VIEW — one row per site, all key signals at a glance, click site name to expand details */}
+  <section class="mb-6">
+    <div class="flex items-baseline justify-between mb-3">
+      <h2 class="text-sm font-bold text-white uppercase tracking-wider">Fleet quick view</h2>
+      <span class="text-[10px] text-gray-500">all sites · 30-day signals · click ▸ for detail</span>
+    </div>
+    <div class="overflow-x-auto rounded-lg border border-gray-800 bg-gray-900">
+      <table class="w-full text-xs">
+        <thead>
+          <tr class="text-gray-400 border-b border-gray-800 bg-gray-950/50">
+            <th class="text-left py-2 px-3"></th>
+            <th class="text-left py-2 px-3">Site</th>
+            <th class="text-right py-2 px-3">Users</th>
+            <th class="text-right py-2 px-3">Sessions</th>
+            <th class="text-right py-2 px-3">Clicks</th>
+            <th class="text-right py-2 px-3">Impr</th>
+            <th class="text-right py-2 px-3">Pos</th>
+            <th class="text-right py-2 px-3">AI %</th>
+            <th class="text-right py-2 px-3">AI Bots</th>
+            <th class="text-right py-2 px-3">AIO</th>
+            <th class="text-right py-2 px-3">Pages</th>
+            <th class="text-right py-2 px-3">Issues</th>
+            <th class="text-right py-2 px-3">Up%</th>
+            <th class="text-right py-2 px-3">Crit/High</th>
+          </tr>
+        </thead>
+        <tbody>
+          {[...clientIds].sort().map((siteId: string) => {
+            const ga = (ga4 as any)[siteId] || {};
+            const ov = ga.overview || {};
+            const g = (gsc as any)[siteId] || {};
+            const totals = g.totals || {};
+            const cit = (citations as any)[siteId]?.summary || {};
+            const aiRate = Math.max(
+              cit.claude?.rate ?? 0,
+              cit.chatgpt?.rate ?? 0,
+              cit.gemini?.rate ?? 0,
+              cit.perplexity?.rate ?? 0,
+            );
+            const bh = (botHits as any)[siteId]?.by_type || {};
+            const aiBots = bh.ai || 0;
+            const aios = (aioSerp as any)[siteId] || {};
+            const aioCount = aios.ai_overviews_detected || 0;
+            const up = (uptime as any)[siteId] || {};
+            const upPct = up.uptime_pct;
+            const r = (recs as any)[siteId] || {};
+            const ch = (r.critical || 0) + (r.high || 0);
+            const crawl = loadJson(`crawl_${siteId}.json`) || {};
+            const pages = crawl.pages_crawled || 0;
+            const issues = crawl.total_issues || 0;
+            const schemaPct = pages ? Math.round((crawl.pages_with_schema || 0) / pages * 100) : 0;
+            const topRecs = (r.recommendations || []).filter((rec: any) => rec.priority === 'critical' || rec.priority === 'high').slice(0, 5);
+            const topQueries = (g.top_queries || []).slice(0, 5);
+            const topPages = (g.top_pages || []).slice(0, 5);
+            return (
+              <>
+                <tr class="border-b border-gray-800/50 hover:bg-gray-800/30 transition group cursor-pointer" onclick={`document.getElementById('fqv-${siteId}').classList.toggle('hidden')`}>
+                  <td class="py-2 px-3 text-gray-500">▸</td>
+                  <td class="py-2 px-3"><a href={`/agency/${siteId}`} class="font-semibold text-indigo-400 hover:text-indigo-300">{siteId}</a></td>
+                  <td class="py-2 px-3 text-right text-white">{(ov.active_users ?? 0).toLocaleString()}</td>
+                  <td class="py-2 px-3 text-right text-white">{(ov.sessions ?? 0).toLocaleString()}</td>
+                  <td class="py-2 px-3 text-right text-emerald-400">{(totals.clicks ?? 0).toLocaleString()}</td>
+                  <td class="py-2 px-3 text-right text-white">{(totals.impressions ?? 0).toLocaleString()}</td>
+                  <td class="py-2 px-3 text-right text-gray-400">{totals.position?.toFixed(1) ?? '—'}</td>
+                  <td class={`py-2 px-3 text-right ${aiRate > 0 ? 'text-emerald-400' : 'text-gray-500'}`}>{aiRate ? `${aiRate}%` : '0%'}</td>
+                  <td class="py-2 px-3 text-right text-amber-400">{aiBots.toLocaleString()}</td>
+                  <td class={`py-2 px-3 text-right ${aioCount > 0 ? 'text-purple-400' : 'text-gray-500'}`}>{aioCount}</td>
+                  <td class="py-2 px-3 text-right text-gray-300">{pages.toLocaleString()}</td>
+                  <td class={`py-2 px-3 text-right ${issues > 30 ? 'text-red-400' : issues > 10 ? 'text-amber-400' : 'text-emerald-400'}`}>{issues}</td>
+                  <td class={`py-2 px-3 text-right ${upPct >= 99 ? 'text-emerald-400' : upPct >= 95 ? 'text-amber-400' : 'text-gray-500'}`}>{upPct ? `${upPct}%` : '—'}</td>
+                  <td class={`py-2 px-3 text-right font-semibold ${ch > 3 ? 'text-red-400' : ch > 0 ? 'text-amber-400' : 'text-emerald-400'}`}>{ch}</td>
+                </tr>
+                <tr id={`fqv-${siteId}`} class="hidden">
+                  <td colspan="14" class="bg-gray-950/70 px-6 py-4 border-b border-gray-800">
+                    <div class="grid md:grid-cols-3 gap-6">
+                      <div>
+                        <h4 class="text-[11px] uppercase tracking-wider text-gray-500 mb-2 font-semibold">SEO health</h4>
+                        <ul class="space-y-1 text-[12px] text-gray-300">
+                          <li>Pages crawled: <span class="text-white">{pages.toLocaleString()}</span></li>
+                          <li>With schema: <span class="text-white">{crawl.pages_with_schema || 0} ({schemaPct}%)</span></li>
+                          <li>2000+ words: <span class="text-white">{crawl.pages_over_2000_words || 0}</span></li>
+                          <li>Comparison tables: <span class="text-white">{crawl.pages_with_comparison_table || 0}</span></li>
+                          <li>Multi-modal: <span class="text-white">{crawl.pages_with_multimodal || 0}</span></li>
+                          <li>Total issues: <span class={issues > 30 ? 'text-red-400' : issues > 10 ? 'text-amber-400' : 'text-emerald-400'}>{issues}</span></li>
+                          <li>Orphan pages: <span class={(crawl.orphan_pages || 0) > 30 ? 'text-amber-400' : 'text-gray-300'}>{crawl.orphan_pages || 0}</span></li>
+                          <li>Images missing alt: <span class="text-gray-300">{crawl.images_missing_alt || 0}</span></li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 class="text-[11px] uppercase tracking-wider text-gray-500 mb-2 font-semibold">Top Crit/High recs ({ch})</h4>
+                        {topRecs.length > 0 ? (
+                          <ol class="space-y-1.5 text-[12px] text-gray-300 list-decimal list-inside">
+                            {topRecs.map((rec: any) => (
+                              <li>
+                                <span class={`text-[10px] font-bold uppercase mr-1 ${rec.priority === 'critical' ? 'text-red-400' : 'text-amber-400'}`}>{rec.priority?.slice(0,4)}</span>
+                                {rec.title}
+                              </li>
+                            ))}
+                          </ol>
+                        ) : (
+                          <p class="text-[12px] text-emerald-400">No critical or high recs.</p>
+                        )}
+                        <a href={`/agency/${siteId}/recommendations`} class="text-[11px] text-indigo-400 hover:text-indigo-300 underline mt-2 inline-block">All recommendations →</a>
+                      </div>
+                      <div>
+                        <h4 class="text-[11px] uppercase tracking-wider text-gray-500 mb-2 font-semibold">Top GSC queries / pages</h4>
+                        {topQueries.length > 0 ? (
+                          <ul class="space-y-1 text-[12px] text-gray-300">
+                            {topQueries.map((q: any) => (
+                              <li class="flex justify-between gap-2"><span class="truncate">{q.query}</span><span class="text-gray-500 shrink-0">{q.impressions} imp · pos {q.position?.toFixed?.(0)}</span></li>
+                            ))}
+                          </ul>
+                        ) : (
+                          <p class="text-[12px] text-gray-500">No GSC data yet.</p>
+                        )}
+                        {topPages.length > 0 && (
+                          <a href={`/agency/${siteId}/search-performance`} class="text-[11px] text-indigo-400 hover:text-indigo-300 underline mt-2 inline-block">Search Performance →</a>
+                        )}
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
   {deployParity && (
     <div data-copy-tile="Deploy Parity" class={`rounded-lg px-4 py-2 mb-3 border ${deployParity.any_drift ? 'bg-red-900/30 border-red-800' : 'bg-gray-900 border-gray-700'}`}>
       <div class="flex items-center justify-between flex-wrap gap-2">
