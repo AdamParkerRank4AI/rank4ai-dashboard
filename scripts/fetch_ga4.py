@@ -141,6 +141,29 @@ def fetch_property(client, property_id, site_id):
             "users": int(row.metric_values[1].value),
         })
 
+    # Source / medium dimension — surfaces "facebook / cpc", "google / organic",
+    # "newsletter / email" etc. Catches paid-social ad clicks that the
+    # channel-grouping dimension above collapses into "Unassigned".
+    source_medium = []
+    try:
+        sm_report = client.run_report(RunReportRequest(
+            property=prop,
+            date_ranges=[DateRange(start_date="30daysAgo", end_date="today")],
+            dimensions=[Dimension(name="sessionSource"), Dimension(name="sessionMedium")],
+            metrics=[Metric(name="sessions"), Metric(name="activeUsers")],
+            order_bys=[OrderBy(metric=OrderBy.MetricOrderBy(metric_name="sessions"), desc=True)],
+            limit=25,
+        ))
+        for row in sm_report.rows:
+            source_medium.append({
+                "source": row.dimension_values[0].value,
+                "medium": row.dimension_values[1].value,
+                "sessions": int(row.metric_values[0].value),
+                "users": int(row.metric_values[1].value),
+            })
+    except Exception as e:
+        source_medium = [{"error": str(e)[:100]}]
+
     # Daily traffic (last 30 days)
     daily_report = client.run_report(RunReportRequest(
         property=prop,
@@ -277,6 +300,7 @@ def fetch_property(client, property_id, site_id):
         "overview": overview_data,
         "top_pages": top_pages,
         "sources": sources,
+        "source_medium": source_medium,
         "daily": daily,
         "countries": countries,
         "ai_assistant": {
