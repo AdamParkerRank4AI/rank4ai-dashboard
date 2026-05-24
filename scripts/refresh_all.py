@@ -124,7 +124,9 @@ def main():
         ("fetch_serp.py", 120),
         ("fetch_competitor_serp.py", 120),
         ("build_target_queries.py", 30),  # derive each site's REAL target queries from content + GSC; consumed by generate_recommendations + dashboard UI
+        ("classify_queries.py", 30),      # split GSC queries by intent (branded-competitor/transactional/etc) -> intent_split.json -> dashboard Intent Split panel
         ("fleet_baseline_check.py", 120),  # daily live-HTML audit vs BASELINE_CHECKLIST.md; consumed by urgent_alert + dashboard tile
+        ("youtube_ai_tracking.py", 300),   # daily AI citation probe for fleet YT channels + branded phrases (EN + foreign); output → youtube_ai_citations.json
         ("generate_recommendations.py", 30),
         ("track_new_pages.py", 30),
         ("save_daily_metrics.py", 30),

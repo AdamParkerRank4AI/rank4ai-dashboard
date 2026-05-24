@@ -40,6 +40,7 @@ function loadJson(filename: string) {
 const ga4All = loadJson('ga4.json');
 const gscAll = loadJson('gsc.json');
 const targetQueriesAll = loadJson('target_queries.json');
+const intentSplitAll = loadJson('intent_split.json');
 const bingAll = loadJson('bing.json');
 const serpAll = loadJson('serp_data.json');
 const competitorAll = loadJson('competitor_serp.json');
@@ -104,6 +105,7 @@ const siteRepo = SITE_REPOS[clientId];
 const ga4 = ga4All?.[clientId];
 const gsc = gscAll?.[clientId];
 const targetQueries = targetQueriesAll?.[clientId];
+const intentSplit = intentSplitAll?.sites?.[clientId];
 const bing = bingAll?.[clientId];
 const serp = serpAll?.[clientId];
 const competitors = competitorAll?.[clientId];
@@ -2853,6 +2855,89 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
           </div>
         </div>
       )}
+
+      {/* INTENT SPLIT — what kind of queries are landing impressions, and what's actionable */}
+      {intentSplit && (() => {
+        const b = intentSplit.buckets || {};
+        const order = [
+          { key: 'branded_competitor', label: 'Branded — competitor', colour: 'text-red-400', action: 'Build /alternatives/<brand>/ page' },
+          { key: 'transactional', label: 'Transactional', colour: 'text-amber-400', action: 'Add calculator/quote tool + sharpen title' },
+          { key: 'branded_own', label: 'Branded — own', colour: 'text-emerald-400', action: 'Defend (already capturing)' },
+          { key: 'location', label: 'Location-bound', colour: 'text-sky-400', action: 'Build /locations/<city>/ page' },
+          { key: 'informational', label: 'Informational', colour: 'text-purple-400', action: 'Deepen content + add definition schema' },
+          { key: 'other', label: 'Other / long-tail', colour: 'text-gray-400', action: 'Manual triage' },
+        ];
+        return (
+          <div class="bg-gray-900 border border-fuchsia-800/30 rounded-lg p-6 mt-6">
+            <h3 class="text-sm font-semibold text-fuchsia-400 mb-1">Query Intent Split</h3>
+            <p class="text-[11px] text-gray-500 mb-4">
+              Every GSC query for this site categorised by buyer intent. Branded-competitor queries are capture opportunities (build /alternatives/<brand>/). Transactional queries with 0 clicks need click-magnet titles + tools.
+            </p>
+            <div class="overflow-x-auto">
+              <table class="w-full text-xs">
+                <thead>
+                  <tr class="text-gray-500 border-b border-gray-800">
+                    <th class="text-left py-2 px-3">Intent</th>
+                    <th class="text-right py-2 px-3">Queries</th>
+                    <th class="text-right py-2 px-3">Impressions</th>
+                    <th class="text-right py-2 px-3">Clicks</th>
+                    <th class="text-right py-2 px-3">CTR</th>
+                    <th class="text-left py-2 px-3">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {order.map((row: any) => {
+                    const bb = b[row.key] || { count: 0, total_impressions: 0, total_clicks: 0, ctr: 0, top: [] };
+                    if (bb.count === 0) return null;
+                    return (
+                      <tr class="border-b border-gray-800/50 align-top">
+                        <td class={`py-2 px-3 ${row.colour} font-semibold`}>{row.label}</td>
+                        <td class="py-2 px-3 text-right text-white">{bb.count}</td>
+                        <td class="py-2 px-3 text-right text-white">{bb.total_impressions.toLocaleString()}</td>
+                        <td class={`py-2 px-3 text-right ${bb.total_clicks > 0 ? 'text-emerald-400' : 'text-gray-500'}`}>{bb.total_clicks}</td>
+                        <td class={`py-2 px-3 text-right ${bb.ctr === 0 && bb.total_impressions > 10 ? 'text-red-400' : 'text-gray-400'}`}>{bb.ctr}%</td>
+                        <td class="py-2 px-3 text-gray-400 text-[11px]">{row.action}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Sample queries for the two biggest gap buckets */}
+            {(b.branded_competitor?.top?.length > 0 || b.transactional?.top?.length > 0) && (
+              <div class="grid md:grid-cols-2 gap-4 mt-4 pt-4 border-t border-gray-800">
+                {b.branded_competitor?.top?.length > 0 && (
+                  <div>
+                    <h4 class="text-[11px] font-semibold text-red-400 uppercase mb-2">Competitor queries leaking (top 5)</h4>
+                    <ul class="space-y-1 text-[11px]">
+                      {b.branded_competitor.top.slice(0, 5).map((q: any) => (
+                        <li class="text-gray-300">
+                          <span class="text-white">{q.query}</span>
+                          <span class="text-gray-500"> · {q.impressions} imp · pos {q.position?.toFixed?.(0) ?? '?'}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {b.transactional?.top?.length > 0 && (
+                  <div>
+                    <h4 class="text-[11px] font-semibold text-amber-400 uppercase mb-2">Transactional queries leaking (top 5)</h4>
+                    <ul class="space-y-1 text-[11px]">
+                      {b.transactional.top.slice(0, 5).map((q: any) => (
+                        <li class="text-gray-300">
+                          <span class="text-white">{q.query}</span>
+                          <span class="text-gray-500"> · {q.impressions} imp · pos {q.position?.toFixed?.(0) ?? '?'}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        );
+      })()}
 
       {/* QUICK WINS — page-2 keywords that need a small lift to reach page 1 */}
       {gsc?.quick_wins?.length > 0 && (
