@@ -197,35 +197,47 @@ def run_client(client_id, config):
 
         all_results.append(result)
 
-        # Aggregate by category
+        # Aggregate by category (track errors separately so a failed API call
+        # is NOT counted as "tested and not cited")
         if cat not in category_results:
-            category_results[cat] = {"total": 0, "claude": 0, "chatgpt": 0, "gemini": 0, "perplexity": 0}
+            category_results[cat] = {"total": 0}
+            for m in ("claude", "chatgpt", "gemini", "perplexity"):
+                category_results[cat][m] = 0
+                category_results[cat][m + "_err"] = 0
         category_results[cat]["total"] += 1
-        if result["claude"]["cited"]:
-            category_results[cat]["claude"] += 1
-        if result["chatgpt"]["cited"]:
-            category_results[cat]["chatgpt"] += 1
-        if result["gemini"]["cited"]:
-            category_results[cat]["gemini"] += 1
-        if result["perplexity"]["cited"]:
-            category_results[cat]["perplexity"] += 1
+        for m in ("claude", "chatgpt", "gemini", "perplexity"):
+            if result[m].get("error"):
+                category_results[cat][m + "_err"] += 1
+            elif result[m]["cited"]:
+                category_results[cat][m] += 1
 
         time.sleep(0.5)
 
-    # Calculate rates
+    # Calculate rates. Denominator excludes errored probes; rate is None
+    # ("not measured") when every probe for a model/category errored, so a
+    # missing/invalid API key shows as n/a rather than a misleading 0%.
     for cat, data in category_results.items():
-        t = max(data["total"], 1)
-        data["claude_rate"] = round(data["claude"] / t * 100, 1)
-        data["chatgpt_rate"] = round(data["chatgpt"] / t * 100, 1)
-        data["gemini_rate"] = round(data["gemini"] / t * 100, 1)
-        data["perplexity_rate"] = round(data["perplexity"] / t * 100, 1)
+        for m in ("claude", "chatgpt", "gemini", "perplexity"):
+            tested = data["total"] - data[m + "_err"]
+            data[m + "_rate"] = round(data[m] / tested * 100, 1) if tested > 0 else None
 
-    # Overall
+    # Overall (errors excluded from each model's denominator)
     total = len(all_results)
-    claude_cited = sum(1 for r in all_results if r["claude"]["cited"])
-    chatgpt_cited = sum(1 for r in all_results if r["chatgpt"]["cited"])
-    gemini_cited = sum(1 for r in all_results if r["gemini"]["cited"])
-    perplexity_cited = sum(1 for r in all_results if r["perplexity"]["cited"])
+
+    def model_summary(model):
+        errors = sum(1 for r in all_results if r[model].get("error"))
+        cited = sum(1 for r in all_results if not r[model].get("error") and r[model]["cited"])
+        tested = total - errors
+        return {
+            "cited": cited,
+            "tested": tested,
+            "total": total,
+            "errors": errors,
+            "measured": tested > 0,
+            "rate": round(cited / tested * 100, 1) if tested > 0 else None,
+        }
+
+    summaries = {m: model_summary(m) for m in ("claude", "chatgpt", "gemini", "perplexity")}
 
     # Aggregate competitor citations across all prompts and models
     competitor_counter = Counter()
@@ -242,12 +254,7 @@ def run_client(client_id, config):
         "tested_at": datetime.now().isoformat(),
         "total_prompts": total,
         "competitor_citations": competitor_citations,
-        "summary": {
-            "claude": {"cited": claude_cited, "total": total, "rate": round(claude_cited / max(total, 1) * 100, 1)},
-            "chatgpt": {"cited": chatgpt_cited, "total": total, "rate": round(chatgpt_cited / max(total, 1) * 100, 1)},
-            "gemini": {"cited": gemini_cited, "total": total, "rate": round(gemini_cited / max(total, 1) * 100, 1)},
-            "perplexity": {"cited": perplexity_cited, "total": total, "rate": round(perplexity_cited / max(total, 1) * 100, 1)},
-        },
+        "summary": summaries,
         "by_category": category_results,
         "results": all_results,
     }
@@ -290,10 +297,12 @@ def main():
         all_data[client_id] = result
 
         print(f"\n  Summary:")
-        print(f"    Claude: {result['summary']['claude']['rate']}%")
-        print(f"    ChatGPT: {result['summary']['chatgpt']['rate']}%")
-        print(f"    Gemini: {result['summary']['gemini']['rate']}%")
-        print(f"    Perplexity: {result['summary']['perplexity']['rate']}%")
+        for m in ("claude", "chatgpt", "gemini", "perplexity"):
+            s = result["summary"][m]
+            if s["measured"]:
+                print(f"    {m.title()}: {s['rate']}% ({s['cited']}/{s['tested']})")
+            else:
+                print(f"    {m.title()}: not measured ({s['errors']} probe errors, check API key)")
 
     with open(OUTPUT, "w") as f:
         json.dump(all_data, f, indent=2)
