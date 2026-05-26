@@ -13,12 +13,21 @@ from datetime import datetime
 import anthropic
 import requests
 
+# Load keys from the scripts/.env so the probes work under cron (the env was
+# not loaded before, which is why ChatGPT/Gemini reported as 0% errors).
+try:
+    from dotenv import load_dotenv
+    load_dotenv(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env"))
+except Exception:
+    pass
+
 LIVE_DIR = os.path.expanduser("~/rank4ai-dashboard/src/data/live")
 OUTPUT = os.path.join(LIVE_DIR, "citation_results.json")
 
 ANTHROPIC_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 OPENAI_KEY = os.environ.get("OPENAI_API_KEY", "")
-GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "")
+# Gemini key lives under GOOGLE_API_KEY in .env; accept either name.
+GEMINI_KEY = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY", "")
 PERPLEXITY_KEY = os.environ.get("PERPLEXITY_API_KEY", "")
 
 CATEGORIES = ["brand", "industry", "best_of", "how_to", "what_is", "comparison", "cost", "local", "question", "review", "problem", "recommendation"]
