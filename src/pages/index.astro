@@ -1,6 +1,7 @@
 ---
 import DashboardLayout from '../layouts/DashboardLayout.astro';
 import YouTubeTile from '../components/YouTubeTile.astro';
+import ClusterDecisionsTile from '../components/ClusterDecisionsTile.astro';
 import clients from '../utils/dashboardClients';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -201,7 +202,7 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
   {/* FLEET QUICK VIEW — one row per site, all key signals at a glance, click site name to expand details */}
   <section class="mb-6">
     <div class="flex items-baseline justify-between mb-3">
-      <h2 class="text-sm font-bold text-white uppercase tracking-wider">Fleet quick view</h2>
+      <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Fleet quick view</h2>
       <span class="text-[10px] text-gray-500">all sites · 30-day signals · click ▸ for detail</span>
     </div>
     <div class="overflow-x-auto rounded-lg border border-gray-800 bg-gray-900">
@@ -226,6 +227,8 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
         </thead>
         <tbody>
           {[...clientIds].sort().map((siteId: string) => {
+            const clientMeta = (clients as any[]).find((c) => c.id === siteId) || {};
+            const displayName = clientMeta.name || siteId;
             const ga = (ga4 as any)[siteId] || {};
             const ov = ga.overview || {};
             const g = (gsc as any)[siteId] || {};
@@ -256,7 +259,7 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
               <>
                 <tr class="border-b border-gray-800/50 hover:bg-gray-800/30 transition group cursor-pointer" onclick={`document.getElementById('fqv-${siteId}').classList.toggle('hidden')`}>
                   <td class="py-2 px-3 text-gray-500">▸</td>
-                  <td class="py-2 px-3"><a href={`/agency/${siteId}`} class="font-semibold text-indigo-400 hover:text-indigo-300">{siteId}</a></td>
+                  <td class="py-2 px-3"><a href={`/agency/${siteId}`} class="font-semibold text-indigo-400 hover:text-indigo-300">{displayName}</a></td>
                   <td class="py-2 px-3 text-right text-white">{(ov.active_users ?? 0).toLocaleString()}</td>
                   <td class="py-2 px-3 text-right text-white">{(ov.sessions ?? 0).toLocaleString()}</td>
                   <td class="py-2 px-3 text-right text-emerald-400">{(totals.clicks ?? 0).toLocaleString()}</td>
@@ -1101,6 +1104,13 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
   {isFleet && (
     <div data-copy-tile="YouTube AI citations" class="mb-6">
       <YouTubeTile />
+    </div>
+  )}
+
+  <!-- SERP cluster decisions (the join layer: group URLs by shared searches → one call per cluster) -->
+  {isFleet && (
+    <div data-copy-tile="SERP cluster decisions" class="mb-6">
+      <ClusterDecisionsTile />
     </div>
   )}
 
