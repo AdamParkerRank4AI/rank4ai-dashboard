@@ -1,0 +1,131 @@
+---
+/**
+ * ClarityDropoffTile — behavioural drop-off / friction signals per fleet site.
+ *
+ * Surfaces Microsoft Clarity's aggregate friction metrics (scroll depth, dead
+ * clicks, rage clicks, quick-backs, JS errors) so "where/why people drop off"
+ * is visible on the dashboard instead of buried in six separate Clarity logins.
+ *
+ * Reads src/data/live/clarity.json (written by scripts/fetch_clarity.py).
+ * If no API tokens are configured yet it renders a "connect" state with deep
+ * links to each project — the data is already being recorded in Clarity, this
+ * tile just makes it watchable in one place once tokens exist.
+ */
+import fs from 'node:fs';
+import path from 'node:path';
+import clients from '../utils/dashboardClients';
+
+function loadJson(filename: string) {
+  try {
+    const filePath = path.join(process.cwd(), 'src', 'data', 'live', filename);
+    if (fs.existsSync(filePath)) {
+      return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    }
+  } catch {}
+  return null;
+}
+
+const data = loadJson('clarity.json') || { sites: {}, missing_tokens: [], fetched_at: null };
+const nameById = new Map((clients as any[]).map((c) => [c.id, c.name]));
+const clientIds = new Set((clients as any[]).map((c) => c.id));
+
+const sites = Object.entries(data.sites || {})
+  .filter(([id]: [string, any]) => clientIds.has(id))
+  .map(([id, s]: [string, any]) => ({ id, name: nameById.get(id) || id, ...s }));
+
+const missing = (data.missing_tokens || []).filter((id: string) => clientIds.has(id));
+const haveData = sites.some((s: any) => s.sessions != null || s.avg_scroll_depth != null);
+
+const fetchedAt = data.fetched_at
+  ? new Date(data.fetched_at).toLocaleString('en-GB', {
+      timeZone: 'Europe/London', day: '2-digit', month: 'short',
+      hour: '2-digit', minute: '2-digit',
+    })
+  : null;
+
+const pct = (v: any) => (v == null ? '—' : `${Number(v).toFixed(1)}%`);
+const num = (v: any) => (v == null ? '—' : Math.round(Number(v)).toLocaleString('en-GB'));
+
+// Friction thresholds → colour. Higher rage/dead/quickback = worse; lower scroll = worse.
+const bad = (v: any, hi: number) => v != null && Number(v) >= hi;
+const lowScroll = (v: any) => v != null && Number(v) < 40;
+---
+
+<div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+  <div class="flex items-baseline justify-between mb-1">
+    <h2 class="text-lg font-semibold text-gray-900">Behavioural drop-off (Clarity)</h2>
+    {fetchedAt && <span class="text-xs text-gray-400">{fetchedAt} · last {data.num_days || 3}d</span>}
+  </div>
+  <p class="text-xs text-gray-500 mb-4">
+    Session friction per site — rage / dead clicks, quick-backs and shallow scroll
+    flag where visitors struggle or bail. Click a site to watch the actual session
+    recordings + heatmaps in Clarity.
+  </p>
+
+  {!haveData && (
+    <div class="rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900">
+      <p class="font-medium mb-1">Recording, not yet readable here.</p>
+      <p class="mb-2">
+        Clarity is already capturing sessions on every site. To pull the numbers
+        into this tile, generate a Data Export API token per project
+        (clarity.microsoft.com → <strong>Settings → Data Export → Generate new API token</strong>)
+        and drop them in <code class="bg-amber-100 px-1 rounded">~/.clarity-tokens.json</code>.
+      </p>
+      <ul class="space-y-0.5">
+        {sites.map((s: any) => s.clarity_url && (
+          <li>
+            <a href={s.clarity_url} target="_blank" rel="noopener"
+               class="text-amber-800 underline hover:text-amber-950">{s.name} → open Clarity</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
+
+  {haveData && (
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-left text-xs uppercase tracking-wide text-gray-400 border-b border-gray-100">
+            <th class="py-2 pr-3 font-medium">Site</th>
+            <th class="py-2 px-2 font-medium text-right">Sessions</th>
+            <th class="py-2 px-2 font-medium text-right">Scroll</th>
+            <th class="py-2 px-2 font-medium text-right">Rage</th>
+            <th class="py-2 px-2 font-medium text-right">Dead</th>
+            <th class="py-2 px-2 font-medium text-right">Quick-back</th>
+            <th class="py-2 pl-2 font-medium text-right">JS errs</th>
+          </tr>
+        </thead>
+        <tbody>
+          {sites.map((s: any) => (
+            <tr class="border-b border-gray-50 align-top">
+              <td class="py-2 pr-3">
+                {s.clarity_url
+                  ? <a href={s.clarity_url} target="_blank" rel="noopener"
+                       class="font-medium text-gray-900 underline decoration-gray-300 hover:decoration-gray-900">{s.name}</a>
+                  : <span class="font-medium text-gray-900">{s.name}</span>}
+                {s.error && <div class="text-xs text-red-500">{s.error}</div>}
+                {s.worst_pages && s.worst_pages.length > 0 && (
+                  <div class="text-xs text-gray-400 mt-0.5">
+                    worst: {s.worst_pages[0].url.replace(/^https?:\/\/(www\.)?[^/]+/, '') || '/'}
+                  </div>
+                )}
+              </td>
+              <td class="py-2 px-2 text-right tabular-nums">{num(s.sessions)}</td>
+              <td class={`py-2 px-2 text-right tabular-nums ${lowScroll(s.avg_scroll_depth) ? 'text-red-600 font-medium' : 'text-gray-700'}`}>{pct(s.avg_scroll_depth)}</td>
+              <td class={`py-2 px-2 text-right tabular-nums ${bad(s.rage_clicks_pct, 3) ? 'text-red-600 font-medium' : 'text-gray-700'}`}>{pct(s.rage_clicks_pct)}</td>
+              <td class={`py-2 px-2 text-right tabular-nums ${bad(s.dead_clicks_pct, 6) ? 'text-amber-600 font-medium' : 'text-gray-700'}`}>{pct(s.dead_clicks_pct)}</td>
+              <td class={`py-2 px-2 text-right tabular-nums ${bad(s.quickback_pct, 15) ? 'text-amber-600 font-medium' : 'text-gray-700'}`}>{pct(s.quickback_pct)}</td>
+              <td class="py-2 pl-2 text-right tabular-nums text-gray-700">{num(s.script_errors)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      {missing.length > 0 && (
+        <p class="text-xs text-gray-400 mt-3">
+          Awaiting API token: {missing.map((id: string) => nameById.get(id) || id).join(', ')}
+        </p>
+      )}
+    </div>
+  )}
+</div>
