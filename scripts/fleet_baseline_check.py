@@ -117,13 +117,15 @@ def check_site(site_id, base_url):
     clarity = "clarity.ms/tag" in home_html or "window.clarity" in home_html
     out["checks"]["clarity_firing"] = {"pass": bool(clarity), "detail": "Clarity in HTML" if clarity else "Clarity missing"}
 
-    # llms.txt
-    _, c = fetch(base_url + "/llms.txt", timeout=5)
-    out["checks"]["llms_txt"] = {"pass": c == 200, "detail": f"HTTP {c}"}
-
-    # llms-full.txt
-    _, c = fetch(base_url + "/llms-full.txt", timeout=5)
-    out["checks"]["llms_full_txt"] = {"pass": c == 200, "detail": f"HTTP {c}"}
+    # llms.txt + llms-full.txt checks removed 2026-05-26.
+    # Fleet decision 21 May 2026 (ai-search-platform-audit + reference_ai_search_platform_audit_21may
+    # memory) was to STOP serving these files. Cloudflare's own 500M-visit data
+    # showed only ~408 hits to /llms.txt across the fleet in a billing period;
+    # no production AI engine consumes the format. SC + BBL had their files
+    # removed in the 22 May baseline pass; the daily audit was still flagging
+    # the deletion as a regression. Checks now pass-through.
+    out["checks"]["llms_txt"] = {"pass": True, "detail": "skipped (fleet rejected llms.txt 21 May 2026)"}
+    out["checks"]["llms_full_txt"] = {"pass": True, "detail": "skipped (fleet rejected llms.txt 21 May 2026)"}
 
     # ai.txt
     _, c = fetch(base_url + "/ai.txt", timeout=5)
