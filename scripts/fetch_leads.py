@@ -30,7 +30,14 @@ SUPABASE_URL = "https://tsscscjcxbzhicuuhter.supabase.co"
 # tables. BBL/FundBiz/MHQ/Kartapay allow anon INSERT but block anon SELECT via
 # RLS, so the anon key returns a false 0 for them. service_role bypasses RLS.
 # Falls back to anon (which works for MI's permissive select policy).
-SUPABASE_KEY = os.environ.get("SUPABASE_SERVICE_KEY") or "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzc2NzY2pjeGJ6aGljdXVodGVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwMzU1NDEsImV4cCI6MjA5MTYxMTU0MX0.Q4z8-zHq0RAjZ1Vnv339JwAY36aq5TvnDBwE7OvUNOM"
+def _service_key_from_file():
+    p = os.path.expanduser("~/.supabase-service-key")
+    try:
+        return open(p).read().strip() if os.path.exists(p) else ""
+    except Exception:
+        return ""
+
+SUPABASE_KEY = os.environ.get("SUPABASE_SERVICE_KEY") or _service_key_from_file() or "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzc2NzY2pjeGJ6aGljdXVodGVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwMzU1NDEsImV4cCI6MjA5MTYxMTU0MX0.Q4z8-zHq0RAjZ1Vnv339JwAY36aq5TvnDBwE7OvUNOM"
 OUTPUT_DIR = os.path.expanduser("~/rank4ai-dashboard/src/data/live")
 
 # Hold-back window: ignore step_1_complete rows newer than this. The user might
