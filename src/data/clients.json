@@ -433,7 +433,7 @@
     "flavour": "leadgen",
     "dashboard": "fleet",
     "clientCode": "PEPTIDECLEAR",
-    "notes": "LIVE 2026-05-18 at https://peptideclear.co.uk. Renamed from working name UK Metabolic. GitHub repo: AdamParkerRank4AI/peptideclear. CF Pages project: ukmetabolic (rename pending \u2014 Pages projects cannot be renamed via API). 268 pages. Brand: broad UK peptides hub covering cosmetic peptide skincare + ingestible collagen + research peptides + GLP-1 prescription routes. Editorial / affiliate, no own retail, single byline (Oliver Mackman), no clinical advice. CoA Trust Index is the moat. Operating company: Best Business Loans Ltd (16833937).",
+    "notes": "LIVE 2026-05-18 at https://peptideclear.co.uk. Renamed from working name UK Metabolic. GitHub repo: AdamParkerRank4AI/peptideclear. CF Pages project: ukmetabolic (rename pending — Pages projects cannot be renamed via API). 268 pages. Brand: broad UK peptides hub covering cosmetic peptide skincare + ingestible collagen + research peptides + GLP-1 prescription routes. Editorial / affiliate, no own retail, single byline (Oliver Mackman), no clinical advice. CoA Trust Index is the moat. Operating company: Best Business Loans Ltd (16833937).",
     "clientViewSections": [
       "site-structure",
       "site-manager",
@@ -474,7 +474,7 @@
         "label": "Toggle off CF Managed robots.txt (AI Audit)",
         "status": "TBD",
         "owner": "Adam",
-        "note": "CF injects Disallow rules for GPTBot/ClaudeBot/Google-Extended/CCBot above our Allow rules. CF Dashboard \u2192 Security \u2192 Settings \u2192 AI Audit. Critical for AI search indexability."
+        "note": "CF injects Disallow rules for GPTBot/ClaudeBot/Google-Extended/CCBot above our Allow rules. CF Dashboard → Security → Settings → AI Audit. Critical for AI search indexability."
       },
       {
         "id": "lead_destination",
@@ -485,7 +485,7 @@
       },
       {
         "id": "cf_pages_rename",
-        "label": "CF Pages project rename ukmetabolic \u2192 peptideclear",
+        "label": "CF Pages project rename ukmetabolic → peptideclear",
         "status": "deferred",
         "owner": "Claude",
         "note": "Pages projects cannot be renamed via API. Migrate (new project + bind domains + delete old) OR keep ukmetabolic as the internal .pages.dev URL since public traffic is on peptideclear.co.uk."
@@ -516,14 +516,14 @@
         "label": "Research peptide retailer affiliate apps",
         "status": "TBD",
         "owner": "Claude",
-        "note": "28 retailers in retailers.json. Priority: green-tier first (pure-peptides-uk, xl-peptides, imperial-peptides). Most don't run on affiliate networks \u2014 direct outreach."
+        "note": "28 retailers in retailers.json. Priority: green-tier first (pure-peptides-uk, xl-peptides, imperial-peptides). Most don't run on affiliate networks — direct outreach."
       },
       {
         "id": "affiliate_applications_glp1",
         "label": "GLP-1 clinic + pharmacy affiliate apps",
         "status": "TBD",
         "owner": "Claude",
-        "note": "Numan (\u00a3100 published), Voy, Manual, Juniper (high-touch clinics). Phlo, Pharmacy2U, SimplyMeds, Boots Online Doctor, Asda Online Doctor (low-touch pharmacies)."
+        "note": "Numan (£100 published), Voy, Manual, Juniper (high-touch clinics). Phlo, Pharmacy2U, SimplyMeds, Boots Online Doctor, Asda Online Doctor (low-touch pharmacies)."
       }
     ],
     "siteStatus": "live",
@@ -567,5 +567,26 @@
     ],
     "sections": [],
     "siteStatus": "needs"
+  },
+  {
+    "id": "legal-leadgen",
+    "name": "Legal Lead-Gen (UK)",
+    "domain": "49k.co.uk/legal-leadgen",
+    "logo": "",
+    "flavour": "leadgen",
+    "dashboard": "fleet",
+    "clientViewSections": [
+      "overview",
+      "site-tree",
+      "content-plan",
+      "recommendations"
+    ],
+    "allSections": [
+      "overview",
+      "site-tree",
+      "content-plan",
+      "recommendations"
+    ],
+    "sections": []
   }
 ]
