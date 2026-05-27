@@ -1,0 +1,97 @@
+---
+/**
+ * FeatureCoverageTile — headline "Fleet Feature Coverage" grid.
+ *
+ * Rows = each fleet site, columns = each high-end fleet feature, cells = ✓/✗.
+ * At a glance, see which site is missing what. Reads
+ * src/data/live/feature_coverage.json (written by scripts/build_feature_coverage.py,
+ * which scans each fleet repo ON DISK). Defensive against missing data.
+ *
+ * Mirrors the dark-card inline tile style used in index.astro (e.g. Data Feeds).
+ */
+import fs from 'node:fs';
+import path from 'node:path';
+import clients from '../utils/dashboardClients';
+
+function loadJson(filename: string) {
+  try {
+    const filePath = path.join(process.cwd(), 'src', 'data', 'live', filename);
+    if (fs.existsSync(filePath)) {
+      return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    }
+  } catch {}
+  return null;
+}
+
+const data = loadJson('feature_coverage.json');
+
+const nameById = new Map((clients as any[]).map((c) => [c.id, c.name]));
+const friendly = (id: string) => nameById.get(id) || id;
+
+const checksOrder: string[] = data?.checks_order || [];
+const labels: Record<string, string> = data?.check_labels || {};
+const summary = data?.summary || { total_sites: 0, fully_covered: 0 };
+
+// worst-covered first so gaps are top-visible
+const sites = Object.values(data?.sites || {}).sort(
+  (a: any, b: any) => (a.summary?.pass_rate ?? 0) - (b.summary?.pass_rate ?? 0)
+) as any[];
+
+const checkedAt = data?.checked_at
+  ? new Date(data.checked_at).toLocaleDateString('en-GB', {
+      timeZone: 'Europe/London', day: '2-digit', month: 'short',
+    })
+  : null;
+---
+
+<div data-copy-tile="Fleet feature coverage" class="rounded-lg px-4 py-3 mb-4 border bg-gray-900 border-gray-700">
+  <div class="flex items-baseline justify-between flex-wrap gap-2 mb-3">
+    <h2 class="text-sm font-semibold text-gray-300 uppercase tracking-wider">Fleet feature coverage</h2>
+    {data && (
+      <span class="text-xs text-gray-500">
+        {summary.fully_covered}/{summary.total_sites} sites fully covered
+        {checkedAt && <> · checked {checkedAt}</>}
+      </span>
+    )}
+  </div>
+
+  {!data ? (
+    <p class="text-sm text-gray-400">No coverage data — run <code class="text-gray-300">scripts/build_feature_coverage.py</code>.</p>
+  ) : (
+    <div class="overflow-x-auto">
+      <table class="w-full text-xs border-collapse">
+        <thead>
+          <tr class="text-left text-gray-500 border-b border-gray-700">
+            <th class="py-1 pr-3 sticky left-0 bg-gray-900 font-semibold">Site</th>
+            {checksOrder.map((c) => (
+              <th class="py-1 px-2 text-center whitespace-nowrap font-medium">{labels[c] || c}</th>
+            ))}
+            <th class="py-1 pl-2 text-center font-medium">%</th>
+          </tr>
+        </thead>
+        <tbody>
+          {sites.map((s: any) => (
+            <tr class="border-b border-gray-800/50">
+              <td class="py-1 pr-3 text-gray-200 whitespace-nowrap sticky left-0 bg-gray-900 font-medium">{friendly(s.site)}</td>
+              {checksOrder.map((c) => {
+                const cell = s.checks?.[c] || { pass: false, detail: 'n/a' };
+                return (
+                  <td class="py-1 px-2 text-center" title={cell.detail}>
+                    {cell.pass
+                      ? <span class="text-green-400">✓</span>
+                      : <span class="text-red-400">✗</span>}
+                  </td>
+                );
+              })}
+              <td class={`py-1 pl-2 text-center font-mono ${
+                (s.summary?.pass_rate ?? 0) === 100 ? 'text-green-400'
+                : (s.summary?.pass_rate ?? 0) >= 80 ? 'text-yellow-400'
+                : 'text-red-400'
+              }`}>{Math.round(s.summary?.pass_rate ?? 0)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )}
+</div>

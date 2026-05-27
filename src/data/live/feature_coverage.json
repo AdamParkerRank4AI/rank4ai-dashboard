@@ -1,0 +1,469 @@
+{
+  "checked_at": "2026-05-27T09:29:47.902897+00:00",
+  "summary": {
+    "total_sites": 8,
+    "fully_covered": 5,
+    "total_checks": 88,
+    "failed_checks": 6
+  },
+  "checks_order": [
+    "strict_lint_gate",
+    "fleetcore_sha_pin",
+    "llms_txt",
+    "llms_full_txt",
+    "ai_txt",
+    "answer_capsules",
+    "graph_sameas",
+    "agent_data_layer",
+    "dataset_schema",
+    "og_png",
+    "claude_md"
+  ],
+  "check_labels": {
+    "strict_lint_gate": "Lint gate",
+    "fleetcore_sha_pin": "FC SHA pin",
+    "llms_txt": "llms.txt",
+    "llms_full_txt": "llms-full",
+    "ai_txt": "ai.txt",
+    "answer_capsules": "Answer caps",
+    "graph_sameas": "sameAs",
+    "agent_data_layer": "Agent API",
+    "dataset_schema": "Dataset",
+    "og_png": "OG PNG",
+    "claude_md": "CLAUDE.md"
+  },
+  "sites": {
+    "rank4ai": {
+      "site": "rank4ai",
+      "checks": {
+        "strict_lint_gate": {
+          "pass": true,
+          "detail": "fleet-lint.cjs + strict postbuild"
+        },
+        "fleetcore_sha_pin": {
+          "pass": true,
+          "detail": "pinned #e191be5"
+        },
+        "llms_txt": {
+          "pass": true,
+          "detail": "present"
+        },
+        "llms_full_txt": {
+          "pass": true,
+          "detail": "present"
+        },
+        "ai_txt": {
+          "pass": true,
+          "detail": "present"
+        },
+        "answer_capsules": {
+          "pass": true,
+          "detail": "in components/SpeakableSchema.astro"
+        },
+        "graph_sameas": {
+          "pass": true,
+          "detail": "in layouts/Layout.astro"
+        },
+        "agent_data_layer": {
+          "pass": false,
+          "detail": "no openapi/mcp/functions-api"
+        },
+        "dataset_schema": {
+          "pass": false,
+          "detail": "Dataset not found"
+        },
+        "og_png": {
+          "pass": true,
+          "detail": "og-image.png 38KB"
+        },
+        "claude_md": {
+          "pass": true,
+          "detail": "present"
+        }
+      },
+      "summary": {
+        "checks": 11,
+        "failed": 2,
+        "pass_rate": 81.8
+      }
+    },
+    "market-invoice": {
+      "site": "market-invoice",
+      "checks": {
+        "strict_lint_gate": {
+          "pass": true,
+          "detail": "fleet-lint.cjs + strict postbuild"
+        },
+        "fleetcore_sha_pin": {
+          "pass": true,
+          "detail": "pinned #e191be5"
+        },
+        "llms_txt": {
+          "pass": true,
+          "detail": "present"
+        },
+        "llms_full_txt": {
+          "pass": true,
+          "detail": "present"
+        },
+        "ai_txt": {
+          "pass": true,
+          "detail": "present"
+        },
+        "answer_capsules": {
+          "pass": true,
+          "detail": "in components/SpeakableSchema.astro"
+        },
+        "graph_sameas": {
+          "pass": true,
+          "detail": "in layouts/BaseLayout.astro"
+        },
+        "agent_data_layer": {
+          "pass": true,
+          "detail": "public/openapi.json, functions/mcp.ts, public/.well-known/mcp.json, functions/api/"
+        },
+        "dataset_schema": {
+          "pass": true,
+          "detail": "in pages/data/uk-invoice-finance-rate-index.astro"
+        },
+        "og_png": {
+          "pass": true,
+          "detail": "og-default.png 29KB"
+        },
+        "claude_md": {
+          "pass": true,
+          "detail": "present"
+        }
+      },
+      "summary": {
+        "checks": 11,
+        "failed": 0,
+        "pass_rate": 100.0
+      }
+    },
+    "seocompare": {
+      "site": "seocompare",
+      "checks": {
+        "strict_lint_gate": {
+          "pass": true,
+          "detail": "fleet-lint.cjs + strict postbuild"
+        },
+        "fleetcore_sha_pin": {
+          "pass": true,
+          "detail": "pinned #e191be5"
+        },
+        "llms_txt": {
+          "pass": false,
+          "detail": "llms.txt missing"
+        },
+        "llms_full_txt": {
+          "pass": false,
+          "detail": "llms-full.txt missing"
+        },
+        "ai_txt": {
+          "pass": true,
+          "detail": "present"
+        },
+        "answer_capsules": {
+          "pass": true,
+          "detail": "in content/blog/how-to-optimise-content-for-ai-overviews-2026.md"
+        },
+        "graph_sameas": {
+          "pass": true,
+          "detail": "in layouts/BaseLayout.astro"
+        },
+        "agent_data_layer": {
+          "pass": false,
+          "detail": "no openapi/mcp/functions-api"
+        },
+        "dataset_schema": {
+          "pass": true,
+          "detail": "in pages/research/uk-seo-agency-ai-readiness-2026/index.astro"
+        },
+        "og_png": {
+          "pass": true,
+          "detail": "og-default.png 34KB"
+        },
+        "claude_md": {
+          "pass": true,
+          "detail": "present"
+        }
+      },
+      "summary": {
+        "checks": 11,
+        "failed": 3,
+        "pass_rate": 72.7
+      }
+    },
+    "bestbusinessloans": {
+      "site": "bestbusinessloans",
+      "checks": {
+        "strict_lint_gate": {
+          "pass": true,
+          "detail": "fleet-lint.cjs + strict postbuild"
+        },
+        "fleetcore_sha_pin": {
+          "pass": true,
+          "detail": "pinned #e191be5"
+        },
+        "llms_txt": {
+          "pass": true,
+          "detail": "present"
+        },
+        "llms_full_txt": {
+          "pass": false,
+          "detail": "llms-full.txt missing"
+        },
+        "ai_txt": {
+          "pass": true,
+          "detail": "present"
+        },
+        "answer_capsules": {
+          "pass": true,
+          "detail": "in content/blog/business-loan-rates-2026-uk.md"
+        },
+        "graph_sameas": {
+          "pass": true,
+          "detail": "in layouts/BaseLayout.astro"
+        },
+        "agent_data_layer": {
+          "pass": true,
+          "detail": "public/openapi.json, functions/mcp.ts, public/.well-known/mcp.json, functions/api/"
+        },
+        "dataset_schema": {
+          "pass": true,
+          "detail": "in pages/compare/lender-criteria/index.astro"
+        },
+        "og_png": {
+          "pass": true,
+          "detail": "og-default.png 97KB"
+        },
+        "claude_md": {
+          "pass": true,
+          "detail": "present"
+        }
+      },
+      "summary": {
+        "checks": 11,
+        "failed": 1,
+        "pass_rate": 90.9
+      }
+    },
+    "fundbiz": {
+      "site": "fundbiz",
+      "checks": {
+        "strict_lint_gate": {
+          "pass": true,
+          "detail": "fleet-lint.cjs + strict postbuild"
+        },
+        "fleetcore_sha_pin": {
+          "pass": true,
+          "detail": "pinned #e191be5"
+        },
+        "llms_txt": {
+          "pass": true,
+          "detail": "present"
+        },
+        "llms_full_txt": {
+          "pass": true,
+          "detail": "present"
+        },
+        "ai_txt": {
+          "pass": true,
+          "detail": "present"
+        },
+        "answer_capsules": {
+          "pass": true,
+          "detail": "in components/SpeakableSchema.astro"
+        },
+        "graph_sameas": {
+          "pass": true,
+          "detail": "in layouts/BaseLayout.astro"
+        },
+        "agent_data_layer": {
+          "pass": true,
+          "detail": "public/openapi.json, functions/mcp.ts, public/.well-known/mcp.json, functions/api/"
+        },
+        "dataset_schema": {
+          "pass": true,
+          "detail": "in pages/data/uk-business-finance-lender-index.astro"
+        },
+        "og_png": {
+          "pass": true,
+          "detail": "og-default.png 83KB"
+        },
+        "claude_md": {
+          "pass": true,
+          "detail": "present"
+        }
+      },
+      "summary": {
+        "checks": 11,
+        "failed": 0,
+        "pass_rate": 100.0
+      }
+    },
+    "cardmachines": {
+      "site": "cardmachines",
+      "checks": {
+        "strict_lint_gate": {
+          "pass": true,
+          "detail": "fleet-lint.cjs + strict postbuild"
+        },
+        "fleetcore_sha_pin": {
+          "pass": true,
+          "detail": "pinned #e191be5"
+        },
+        "llms_txt": {
+          "pass": true,
+          "detail": "present"
+        },
+        "llms_full_txt": {
+          "pass": true,
+          "detail": "present"
+        },
+        "ai_txt": {
+          "pass": true,
+          "detail": "present"
+        },
+        "answer_capsules": {
+          "pass": true,
+          "detail": "in content/blog/2026-uk-card-processing-rate-benchmarks.mdx"
+        },
+        "graph_sameas": {
+          "pass": true,
+          "detail": "in layouts/BaseLayout.astro"
+        },
+        "agent_data_layer": {
+          "pass": true,
+          "detail": "public/openapi.json, functions/mcp.ts, public/.well-known/mcp.json, functions/api/"
+        },
+        "dataset_schema": {
+          "pass": true,
+          "detail": "in pages/learn/match-list-tmf-uk.astro"
+        },
+        "og_png": {
+          "pass": true,
+          "detail": "og-default.png 128KB"
+        },
+        "claude_md": {
+          "pass": true,
+          "detail": "present"
+        }
+      },
+      "summary": {
+        "checks": 11,
+        "failed": 0,
+        "pass_rate": 100.0
+      }
+    },
+    "kartapay": {
+      "site": "kartapay",
+      "checks": {
+        "strict_lint_gate": {
+          "pass": true,
+          "detail": "fleet-lint.cjs + strict postbuild"
+        },
+        "fleetcore_sha_pin": {
+          "pass": true,
+          "detail": "pinned #e191be5"
+        },
+        "llms_txt": {
+          "pass": true,
+          "detail": "present"
+        },
+        "llms_full_txt": {
+          "pass": true,
+          "detail": "present"
+        },
+        "ai_txt": {
+          "pass": true,
+          "detail": "present"
+        },
+        "answer_capsules": {
+          "pass": true,
+          "detail": "in content/pl/finansowanie-dla-polskiej-firmy-uk/faktoring-vs-finansowanie-faktur.md"
+        },
+        "graph_sameas": {
+          "pass": true,
+          "detail": "in layouts/BaseLayout.astro"
+        },
+        "agent_data_layer": {
+          "pass": true,
+          "detail": "public/openapi.json, functions/mcp.ts, public/.well-known/mcp.json, functions/api/"
+        },
+        "dataset_schema": {
+          "pass": true,
+          "detail": "in pages/data/uk-card-acquirer-index.astro"
+        },
+        "og_png": {
+          "pass": true,
+          "detail": "og-default.png 74KB"
+        },
+        "claude_md": {
+          "pass": true,
+          "detail": "present"
+        }
+      },
+      "summary": {
+        "checks": 11,
+        "failed": 0,
+        "pass_rate": 100.0
+      }
+    },
+    "peptideclear": {
+      "site": "peptideclear",
+      "checks": {
+        "strict_lint_gate": {
+          "pass": true,
+          "detail": "fleet-lint.cjs + strict postbuild"
+        },
+        "fleetcore_sha_pin": {
+          "pass": true,
+          "detail": "pinned #e191be5"
+        },
+        "llms_txt": {
+          "pass": true,
+          "detail": "present"
+        },
+        "llms_full_txt": {
+          "pass": true,
+          "detail": "present"
+        },
+        "ai_txt": {
+          "pass": true,
+          "detail": "present"
+        },
+        "answer_capsules": {
+          "pass": true,
+          "detail": "in components/QuickSummary.astro"
+        },
+        "graph_sameas": {
+          "pass": true,
+          "detail": "in layouts/BaseLayout.astro"
+        },
+        "agent_data_layer": {
+          "pass": true,
+          "detail": "public/openapi.json, functions/mcp.ts, public/.well-known/mcp.json, functions/api/"
+        },
+        "dataset_schema": {
+          "pass": true,
+          "detail": "in pages/coa-trust-index.astro"
+        },
+        "og_png": {
+          "pass": true,
+          "detail": "og-default.png 47KB"
+        },
+        "claude_md": {
+          "pass": true,
+          "detail": "present"
+        }
+      },
+      "summary": {
+        "checks": 11,
+        "failed": 0,
+        "pass_rate": 100.0
+      }
+    }
+  }
+}

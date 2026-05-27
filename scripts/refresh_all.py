@@ -98,6 +98,7 @@ def main():
 
     # Run data collection scripts (order matters — crawl first, then analysis)
     scripts = [
+        ("build_feature_coverage.py", 60),  # scan each fleet repo on disk -> feature_coverage.json (which site has which high-end feature); no upstream deps
         ("check_uptime.py", 30),
         ("fetch_ga4.py", 240),  # 6 properties × ~7 reports each = 42 API calls; 60s too tight after 18 May fleet expansion
         ("fetch_gsc.py", 60),

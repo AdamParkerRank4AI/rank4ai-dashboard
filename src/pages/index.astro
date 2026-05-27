@@ -3,6 +3,7 @@ import DashboardLayout from '../layouts/DashboardLayout.astro';
 import YouTubeTile from '../components/YouTubeTile.astro';
 import ClusterDecisionsTile from '../components/ClusterDecisionsTile.astro';
 import ClarityDropoffTile from '../components/ClarityDropoffTile.astro';
+import FeatureCoverageTile from '../components/FeatureCoverageTile.astro';
 import clients from '../utils/dashboardClients';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -331,6 +332,13 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
       </table>
     </div>
   </section>
+
+  {/* Fleet Feature Coverage — headline grid: which site has which high-end fleet feature */}
+  {isFleet && (
+    <div data-copy-tile="Fleet feature coverage" class="mb-6">
+      <FeatureCoverageTile />
+    </div>
+  )}
 
   {deployParity && (
     <div data-copy-tile="Deploy Parity" class={`rounded-lg px-4 py-2 mb-3 border ${deployParity.any_drift ? 'bg-red-900/30 border-red-800' : 'bg-gray-900 border-gray-700'}`}>
