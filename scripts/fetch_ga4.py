@@ -272,14 +272,18 @@ def fetch_property(client, property_id, site_id):
             date_ranges=[DateRange(start_date="30daysAgo", end_date="today")],
             dimensions=[Dimension(name="landingPagePlusQueryString")],
             metrics=[Metric(name="sessions"), Metric(name="activeUsers")],
-            dimension_filter=FilterExpression(filter=Filter(
-                field_name="sessionDefaultChannelGroup",
-                string_filter=Filter.StringFilter(
-                    match_type=Filter.StringFilter.MatchType.CONTAINS,
-                    value="AI",
-                    case_sensitive=False,
-                ),
-            )),
+            dimension_filter=FilterExpression(
+                or_group=FilterExpressionList(expressions=[
+                    FilterExpression(filter=Filter(
+                        field_name="sessionSource",
+                        string_filter=Filter.StringFilter(
+                            match_type=Filter.StringFilter.MatchType.CONTAINS,
+                            value=host,
+                            case_sensitive=False,
+                        ),
+                    )) for host in AI_HOSTS
+                ]),
+            ),
             order_bys=[OrderBy(metric=OrderBy.MetricOrderBy(metric_name="sessions"), desc=True)],
             limit=10,
         ))

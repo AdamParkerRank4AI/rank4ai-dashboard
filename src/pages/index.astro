@@ -723,8 +723,31 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
             </tbody>
           </table>
         </div>
+        {rows.some((r) => r.topLanding.length > 0) && (
+          <div class="mt-4 pt-3 border-t border-gray-800">
+            <div class="text-[10px] font-semibold text-violet-300 uppercase tracking-wider mb-2">Pages AI is citing (30d landing pages from AI sources)</div>
+            <div class="flex flex-wrap gap-3">
+              {rows.filter((r) => r.topLanding.length > 0).map((r) => (
+                <div class="min-w-[220px] flex-1 rounded border border-violet-900/40 bg-violet-950/20 px-3 py-2">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-xs font-semibold text-white">{r.name}</span>
+                    <span class="text-[10px] text-violet-400">{r.sources.map((s: any) => `${s.source.replace(/\.(com|ai|google\.com|microsoft\.com)$/, '')} ${s.sessions}`).join(' · ')}</span>
+                  </div>
+                  <ul class="space-y-0.5">
+                    {r.topLanding.slice(0, 6).filter((p: any) => p.path && p.path !== '(not set)').map((p: any) => (
+                      <li class="flex items-center justify-between gap-2 text-[11px]">
+                        <span class="text-gray-300 truncate">{p.path === '/' ? '/ (home)' : p.path}</span>
+                        <span class="text-violet-400 shrink-0">{p.sessions}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
         <p class="text-[10px] text-gray-500 mt-3 pt-2 border-t border-gray-800">
-          GA4 wired across all 6 fleet properties 18 May. AcceptCard live since 12 May; BBL/FundBiz since 18 May so will populate over coming days. "AI Assistant" channel (sessionDefaultChannelGroup) hasn't surfaced yet — once GA4 enables the new May 2026 grouping per-property, AI 7d + delta will populate. Until then, AI 30d via sessionSource is the leading number.
+          GA4 wired across all fleet properties. AI 30d (via sessionSource matching the AI hosts) is the leading number and is independent of GA4 config. A native "AI Assistants" channel group is being added per-property in GA4 Admin, which will also populate AI 7d + delta. "Pages AI is citing" shows the landing pages that AI-referred sessions hit, the clearest signal of which content is being cited.
         </p>
       </div>
     );
