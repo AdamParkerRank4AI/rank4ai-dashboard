@@ -39,6 +39,8 @@ SITE_TABLES = {
     "bestbusinessloans": ("bestbusinessloans_leads", "bbl_leads.json"),
     "fundbiz":           ("fundbiz_leads",           "fundbiz_leads.json"),
     "cardmachines":      ("cardterminals_leads",     "cardmachines_leads.json"),
+    "kartapay":          ("kartapay_leads",          "kartapay_leads.json"),
+    "peptideclear":      ("peptideclear_leads",      "peptideclear_leads.json"),
 }
 
 
