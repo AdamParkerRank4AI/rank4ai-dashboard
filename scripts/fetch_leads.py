@@ -106,6 +106,17 @@ def build_payload(site_id: str, table: str, now: datetime, week_ago: str, month_
         if not (r.get("event_type") == "step_1_complete" and r["created_at"] >= holdback_cutoff)
     ]
 
+    # Submit-shaped event types across the fleet. 2026-05-28: added
+    # form_submit_serverside (MI/MHQ server-side capture) and quote_request
+    # (MHQ bespoke form). Null event_type with email+phone is also treated
+    # as a submit (some sites' forms don't set event_type explicitly).
+    SUBMIT_TYPES = {"form_submit", "form_submit_serverside", "quote_request", "submit"}
+    def is_submit(r):
+        et = (r.get("event_type") or "").strip()
+        if et in SUBMIT_TYPES:
+            return True
+        return (not et) and bool(r.get("email")) and bool(r.get("phone"))
+
     total_7d = sum(1 for r in recent if r["created_at"] >= week_ago)
     total_30d = len(recent)
     total_all = head_count(table) if recent else 0
@@ -114,23 +125,27 @@ def build_payload(site_id: str, table: str, now: datetime, week_ago: str, month_
         1 for r in recent
         if r["created_at"] >= week_ago and r.get("event_type") == "step_1_complete"
     )
-    submit_7d = sum(
-        1 for r in recent
-        if r["created_at"] >= week_ago and r.get("event_type") == "form_submit"
-    )
+    submit_7d = sum(1 for r in recent if r["created_at"] >= week_ago and is_submit(r))
     conv_pct = round(100 * submit_7d / step1_7d, 1) if step1_7d > 0 else 0.0
 
     sources_counter = Counter()
     for r in recent:
-        if r.get("event_type") in ("form_submit", "step_1_complete"):
+        if is_submit(r) or r.get("event_type") == "step_1_complete":
             src = r.get("source") or "unknown"
             sources_counter[src] += 1
     sources = [{"source": k, "count": v} for k, v in sources_counter.most_common(10)]
 
-    def sort_key(r):
-        kind_rank = {"form_submit": 0, "step_1_complete": 1}.get(r.get("event_type"), 2)
-        return (kind_rank, r["created_at"])
-    recent_display = sorted(recent, key=sort_key)[:20]
+    # Newest submits first, then newest step_1 partials, then everything else.
+    # Done as a two-stage stable sort: first by created_at desc, then by rank
+    # asc (stable sort preserves relative order within equal-rank items).
+    def _rank(r):
+        if is_submit(r):
+            return 0
+        if r.get("event_type") == "step_1_complete":
+            return 1
+        return 2
+    by_time_desc = sorted(recent, key=lambda r: r["created_at"], reverse=True)
+    recent_display = sorted(by_time_desc, key=_rank)[:20]
 
     return {
         "fetched_at": now.isoformat(),
