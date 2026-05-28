@@ -272,6 +272,21 @@ def send_email(items):
 
 
 def main():
+    # Refresh fleet_baseline.json against LIVE HTML before reading it. Otherwise
+    # we email stale "Clarity/GA4 missing" alerts for sites that were already
+    # redeployed since the last refresh — exactly the false-alarm pattern that
+    # showed up on 28 May. Soft-fail: if the probe errors, fall through to the
+    # last-good JSON rather than blocking the alert run.
+    try:
+        here = os.path.dirname(os.path.abspath(__file__))
+        subprocess.run(
+            ["python3", os.path.join(here, "fleet_baseline_check.py")],
+            cwd=os.path.dirname(here), timeout=120,
+            capture_output=True, text=True,
+        )
+    except Exception as e:
+        print(f"[urgent_alert] baseline refresh skipped: {e}")
+
     items = build_items()
     if not items:
         print(f"[urgent_alert] No urgent items at {NOW.isoformat()} — silent")
