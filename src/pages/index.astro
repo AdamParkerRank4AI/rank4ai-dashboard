@@ -213,13 +213,14 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
           <tr class="text-gray-400 border-b border-gray-800 bg-gray-950/50">
             <th class="text-left py-2 px-3"></th>
             <th class="text-left py-2 px-3">Site</th>
-            <th class="text-right py-2 px-3">Users</th>
-            <th class="text-right py-2 px-3">Sessions</th>
-            <th class="text-right py-2 px-3">Clicks</th>
-            <th class="text-right py-2 px-3">Impr</th>
-            <th class="text-right py-2 px-3">Pos</th>
-            <th class="text-right py-2 px-3">AI %</th>
-            <th class="text-right py-2 px-3">AI Bots</th>
+            <th class="text-right py-2 px-3" title="GA4 sessions — total visits from ALL sources (search, direct, AI, social), last 30 days">Users</th>
+            <th class="text-right py-2 px-3" title="GA4 sessions — total visits from ALL sources (search, direct, AI, social), last 30 days">Sessions</th>
+            <th class="text-right py-2 px-3" title="GSC clicks — clicks from Google search results only, last 30 days">Clicks</th>
+            <th class="text-right py-2 px-3" title="GSC impressions — times the site appeared in Google search results">Impr</th>
+            <th class="text-right py-2 px-3" title="GA4 sessions referred by AI assistants (ChatGPT / Perplexity / Gemini / Claude / Copilot), last 30 days">AI visits</th>
+            <th class="text-right py-2 px-3" title="Average Google ranking position for clicked queries">Pos</th>
+            <th class="text-right py-2 px-3" title="AI citation rate — how often the brand is cited when we probe Claude / ChatGPT / Gemini / Perplexity (NOT traffic)">Cited %</th>
+            <th class="text-right py-2 px-3" title="Hits from AI crawler bots (GPTBot, ClaudeBot, etc.)">AI Bots</th>
             <th class="text-right py-2 px-3">AIO</th>
             <th class="text-right py-2 px-3">Pages</th>
             <th class="text-right py-2 px-3">Issues</th>
@@ -228,11 +229,19 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
           </tr>
         </thead>
         <tbody>
-          {[...clientIds].sort().map((siteId: string) => {
-            const clientMeta = (clients as any[]).find((c) => c.id === siteId) || {};
+          {(clients as any[])
+            .filter((c) => clientIds.has(c.id))
+            // Live sites only — drop pre-launch / paused builds (FindAGym, FindATradey, BuilderWeb, Nordic, legal-leadgen)
+            .filter((c) => c.siteStatus === 'live' || (c.dashboard === 'current' && c.pre_launch !== true && c.siteStatus !== 'paused' && c.siteStatus !== 'needs'))
+            // Latest launched at the top (sidebarOrder ascends with launch order)
+            .sort((a, b) => (b.sidebarOrder ?? 0) - (a.sidebarOrder ?? 0))
+            .map((clientMeta: any) => {
+            const siteId = clientMeta.id;
             const displayName = clientMeta.name || siteId;
             const ga = (ga4 as any)[siteId] || {};
             const ov = ga.overview || {};
+            const aiSrc = ((ga.ai_assistant || {}).sources_30d || []).filter((s: any) => !s?.error);
+            const aiVisits = aiSrc.reduce((sum: number, s: any) => sum + (s.sessions || 0), 0);
             const g = (gsc as any)[siteId] || {};
             const totals = g.totals || {};
             const cit = (citations as any)[siteId]?.summary || {};
@@ -266,6 +275,7 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
                   <td class="py-2 px-3 text-right text-white">{(ov.sessions ?? 0).toLocaleString()}</td>
                   <td class="py-2 px-3 text-right text-emerald-400">{(totals.clicks ?? 0).toLocaleString()}</td>
                   <td class="py-2 px-3 text-right text-white">{(totals.impressions ?? 0).toLocaleString()}</td>
+                  <td class={`py-2 px-3 text-right font-semibold ${aiVisits > 0 ? 'text-violet-400' : 'text-gray-500'}`}>{aiVisits.toLocaleString()}</td>
                   <td class="py-2 px-3 text-right text-gray-400">{totals.position?.toFixed(1) ?? '—'}</td>
                   <td class={`py-2 px-3 text-right ${aiRate > 0 ? 'text-emerald-400' : 'text-gray-500'}`}>{aiRate ? `${aiRate}%` : '0%'}</td>
                   <td class="py-2 px-3 text-right text-amber-400">{aiBots.toLocaleString()}</td>
@@ -276,7 +286,7 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
                   <td class={`py-2 px-3 text-right font-semibold ${ch > 3 ? 'text-red-400' : ch > 0 ? 'text-amber-400' : 'text-emerald-400'}`}>{ch}</td>
                 </tr>
                 <tr id={`fqv-${siteId}`} class="hidden">
-                  <td colspan="14" class="bg-gray-950/70 px-6 py-4 border-b border-gray-800">
+                  <td colspan="15" class="bg-gray-950/70 px-6 py-4 border-b border-gray-800">
                     <div class="grid md:grid-cols-3 gap-6">
                       <div>
                         <h4 class="text-[11px] uppercase tracking-wider text-gray-500 mb-2 font-semibold">SEO health</h4>
@@ -552,61 +562,7 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
     </div>
   )}
 
-  {/* Manual GSC submissions — daily queue for "Request indexing" button */}
-  {manualQueue && (
-    <div data-copy-tile="Manual GSC Submissions" class="rounded-lg px-4 py-3 mb-4 border bg-indigo-950/30 border-indigo-800/50">
-      <div class="flex items-center justify-between flex-wrap gap-3 mb-2">
-        <div class="flex items-center gap-3">
-          <span class="text-xs font-semibold text-indigo-300 uppercase tracking-wider">Today's Manual GSC Submissions</span>
-          <span class="text-[11px] text-gray-400">Paste into GSC URL Inspection → click "Request Indexing"</span>
-        </div>
-        <span class="text-[10px] text-gray-500">~30 URLs total today · {new Date(manualQueue.generated_at).toLocaleDateString('en-GB', { day: '2-digit', month: 'short' })}</span>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-        {Object.entries(manualQueue.per_site || {}).filter(inDash).map(([siteId, data]: [string, any]) => (
-          <div data-copy-subtile={`Manual GSC — ${siteId}`} class="bg-gray-900/60 border border-gray-800 rounded p-2.5">
-            <div class="flex items-center justify-between mb-1.5">
-              <div class="text-[11px] font-semibold text-white">{siteId}</div>
-              <a href={data.gsc_inspect_url} target="_blank" rel="noopener" class="text-[10px] text-indigo-400 hover:text-indigo-300">Open GSC →</a>
-            </div>
-            <div class="text-[10px] text-gray-500 mb-1.5">{data.never_api_submitted} of {data.sitemap_url_count} not yet API-submitted</div>
-            {data.top?.length ? (
-              <ol class="space-y-1">
-                {data.top.slice(0, 10).map((item: any, i: number) => (
-                  <li class="flex items-start gap-1.5 group">
-                    <span class="text-[10px] text-gray-600 w-4 shrink-0 pt-0.5">{i + 1}.</span>
-                    <button
-                      class="text-[10px] text-gray-300 hover:text-white text-left break-all flex-1 transition manual-copy-btn"
-                      data-url={item.url}
-                      title="Click to copy"
-                    >
-                      {item.url.replace(/^https?:\/\/(www\.)?/, '')}
-                    </button>
-                  </li>
-                ))}
-              </ol>
-            ) : (
-              <div class="text-[10px] text-gray-500 italic">queue empty — all submitted</div>
-            )}
-          </div>
-        ))}
-      </div>
-    </div>
-  )}
-
-  <script is:inline>
-    document.addEventListener('click', (e) => {
-      const btn = e.target.closest('.manual-copy-btn');
-      if (!btn) return;
-      const url = btn.dataset.url;
-      navigator.clipboard.writeText(url).then(() => {
-        const original = btn.textContent;
-        btn.textContent = '✓ copied';
-        btn.classList.add('text-emerald-400');
-        setTimeout(() => { btn.textContent = original; btn.classList.remove('text-emerald-400'); }, 1200);
-      });
-    });
-  </script>
+  {/* Manual GSC submissions tile removed 28 May 2026 — Indexing API + IndexNow now do this automatically; daily-paste workflow obsolete */}
 
   {/* Title truncation detector — catches the MI linter cut-mid-word bug fleet-wide */}
   {titleLint && (() => {
