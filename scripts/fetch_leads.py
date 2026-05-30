@@ -117,6 +117,35 @@ def build_payload(site_id: str, table: str, now: datetime, week_ago: str, month_
             return True
         return (not et) and bool(r.get("email")) and bool(r.get("phone"))
 
+    # Dedup near-duplicate submits 2026-05-30: the defense-in-depth pattern
+    # writes BOTH form_submit (client-side direct write from fleet-core) AND
+    # form_submit_serverside (server-side from /api/<site>-lead-submit) for
+    # every real submit, often <100ms apart. Without dedup the funnel reports
+    # 200% conversion. Group by email within a 2-min window — counts each
+    # unique submit once.
+    def dedup_submits(rows):
+        seen = {}
+        kept_ids = set()
+        from datetime import datetime as dt
+        for r in sorted(rows, key=lambda x: x["created_at"]):
+            if not is_submit(r):
+                continue
+            email = (r.get("email") or "").lower().strip()
+            if not email:
+                kept_ids.add(r["id"])
+                continue
+            try:
+                ts = dt.fromisoformat(r["created_at"].replace("Z", "+00:00")).timestamp()
+            except Exception:
+                ts = 0
+            key = email
+            prev_ts = seen.get(key)
+            if prev_ts is None or (ts - prev_ts) > 120:  # >2 min apart = different submit
+                kept_ids.add(r["id"])
+                seen[key] = ts
+        return kept_ids
+    deduped_submit_ids = dedup_submits(recent)
+
     total_7d = sum(1 for r in recent if r["created_at"] >= week_ago)
     total_30d = len(recent)
     total_all = head_count(table) if recent else 0
@@ -125,7 +154,8 @@ def build_payload(site_id: str, table: str, now: datetime, week_ago: str, month_
         1 for r in recent
         if r["created_at"] >= week_ago and r.get("event_type") == "step_1_complete"
     )
-    submit_7d = sum(1 for r in recent if r["created_at"] >= week_ago and is_submit(r))
+    # Use deduped set so client+server pair counts as 1
+    submit_7d = sum(1 for r in recent if r["created_at"] >= week_ago and r["id"] in deduped_submit_ids)
     conv_pct = round(100 * submit_7d / step1_7d, 1) if step1_7d > 0 else 0.0
 
     sources_counter = Counter()
