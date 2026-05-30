@@ -116,6 +116,8 @@ def main():
         ("fetch_content_plans.py", 120),  # 13 sites; 30s too tight
         ("fetch_crawl_activity.py", 30),
         ("fetch_bot_hits.py", 30),
+        ("fetch_fleet_bot_hits.py", 45),  # AI-bot intelligence from Supabase fleet_bot_hits (per-site middleware logger) -> fleet_bot_hits.json
+
         ("fetch_cf_ai_crawls.py", 180),  # 13 sites now; 60s too tight
         # PageSpeed — run weekly only (Sunday) to avoid rate limits
         # ("fetch_pagespeed.py", 120),

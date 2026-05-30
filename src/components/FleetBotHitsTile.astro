@@ -1,0 +1,143 @@
+---
+/**
+ * FleetBotHitsTile — "AI Bot Intelligence" headline tile.
+ *
+ * Shows which AI crawlers actually fetch our fleet and our AI files
+ * (/llms.txt, /ai.txt, /ai-instructions, /mcp), what they look like (ASN/org,
+ * country) and how often. Reads src/data/live/fleet_bot_hits.json, written by
+ * scripts/fetch_fleet_bot_hits.py from the Supabase fleet_bot_hits table that
+ * the per-site Cloudflare Pages middleware logger populates (30 May 2026).
+ * Defensive against missing data. Dark-card inline style like sibling tiles.
+ */
+import fs from 'node:fs';
+import path from 'node:path';
+
+function loadJson(filename: string) {
+  try {
+    const fp = path.join(process.cwd(), 'src', 'data', 'live', filename);
+    if (fs.existsSync(fp)) return JSON.parse(fs.readFileSync(fp, 'utf-8'));
+  } catch {}
+  return null;
+}
+
+const d = loadJson('fleet_bot_hits.json');
+const totals = d?.fleet_totals ?? { hits: 0, ai_bot_hits: 0, asset_hits: 0, distinct_bots: 0 };
+const byBot = (d?.by_bot ?? []).slice(0, 12);
+const bySite = d?.by_site ?? [];
+const assetReaders = d?.ai_asset_readers ?? [];
+const recent = (d?.recent ?? []).slice(0, 12);
+const win = d?.window_days ?? 30;
+
+const catColour: Record<string, string> = {
+  'ai-training': 'text-emerald-300',
+  'ai-search': 'text-sky-300',
+  'ai-user': 'text-violet-300',
+  'search-engine': 'text-amber-300',
+  'seo-tool': 'text-slate-400',
+};
+const fmt = (s: string | null) => {
+  if (!s) return '';
+  try { return new Date(s).toLocaleDateString('en-GB', { day: '2-digit', month: 'short' }); } catch { return ''; }
+};
+---
+<section class="rounded-xl bg-slate-900 text-slate-100 p-6 my-6 border border-slate-800">
+  <div class="flex items-baseline justify-between flex-wrap gap-2 mb-1">
+    <h2 class="text-lg font-bold">AI Bot Intelligence</h2>
+    <span class="text-xs text-slate-400">Last {win} days · who fetches our pages and AI files</span>
+  </div>
+
+  {!d || totals.hits === 0 ? (
+    <p class="text-sm text-slate-400 mt-3">No bot hits logged yet. The per-site middleware logger writes to Supabase <code>fleet_bot_hits</code>; run <code>scripts/fetch_fleet_bot_hits.py</code> after traffic lands.</p>
+  ) : (
+    <>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 my-4">
+        <div class="bg-slate-800/60 rounded-lg p-3">
+          <div class="text-2xl font-bold">{totals.hits}</div>
+          <div class="text-xs text-slate-400">total bot hits</div>
+        </div>
+        <div class="bg-slate-800/60 rounded-lg p-3">
+          <div class="text-2xl font-bold text-emerald-300">{totals.ai_bot_hits}</div>
+          <div class="text-xs text-slate-400">AI crawler hits</div>
+        </div>
+        <div class="bg-slate-800/60 rounded-lg p-3">
+          <div class="text-2xl font-bold text-sky-300">{totals.asset_hits}</div>
+          <div class="text-xs text-slate-400">hits on AI files</div>
+        </div>
+        <div class="bg-slate-800/60 rounded-lg p-3">
+          <div class="text-2xl font-bold">{totals.distinct_bots}</div>
+          <div class="text-xs text-slate-400">distinct bots</div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-4">
+        <div>
+          <h3 class="text-sm font-semibold text-slate-300 mb-2">Top bots</h3>
+          <table class="w-full text-xs">
+            <thead class="text-slate-500">
+              <tr class="text-left"><th class="py-1">Bot</th><th>Type</th><th class="text-right">Hits</th><th class="text-right">Sites</th><th class="text-right">AI files</th></tr>
+            </thead>
+            <tbody>
+              {byBot.map((b: any) => (
+                <tr class="border-t border-slate-800">
+                  <td class="py-1 font-medium">{b.bot}</td>
+                  <td class={catColour[b.category] ?? 'text-slate-400'}>{b.category}</td>
+                  <td class="text-right tabular-nums">{b.hits}</td>
+                  <td class="text-right tabular-nums">{b.site_count}</td>
+                  <td class="text-right tabular-nums">{b.asset_hits || ''}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h3 class="text-sm font-semibold text-slate-300 mb-2">Who fetches our AI files</h3>
+          {assetReaders.length === 0 ? (
+            <p class="text-xs text-slate-500">No hits on /llms.txt, /ai.txt, /ai-instructions or /mcp yet.</p>
+          ) : (
+            <ul class="space-y-1.5 text-xs">
+              {assetReaders.map((a: any) => (
+                <li class="flex items-start gap-2">
+                  <code class="text-sky-300 shrink-0">{a.path}</code>
+                  <span class="text-slate-400">{a.total} ·</span>
+                  <span class="text-slate-300">{Object.keys(a.bots).slice(0, 4).join(', ')}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+
+          <h3 class="text-sm font-semibold text-slate-300 mb-2 mt-5">By site</h3>
+          <div class="flex flex-wrap gap-2">
+            {bySite.map((s: any) => (
+              <span class="bg-slate-800/60 rounded px-2 py-1 text-xs">
+                {s.site} <span class="text-emerald-300 tabular-nums">{s.ai_bot_hits}</span>
+                {s.top_bot ? <span class="text-slate-500"> · {s.top_bot}</span> : null}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <details class="mt-5">
+        <summary class="text-sm font-semibold text-slate-300 cursor-pointer">Recent hits (fingerprint)</summary>
+        <table class="w-full text-xs mt-2">
+          <thead class="text-slate-500">
+            <tr class="text-left"><th class="py-1">When</th><th>Site</th><th>Bot</th><th>Path</th><th>Network</th><th>Geo</th></tr>
+          </thead>
+          <tbody>
+            {recent.map((r: any) => (
+              <tr class="border-t border-slate-800">
+                <td class="py-1 text-slate-400">{fmt(r.created_at)}</td>
+                <td>{r.site}</td>
+                <td class="font-medium">{r.bot_name ?? '-'}</td>
+                <td class="text-slate-400 max-w-[220px] truncate">{r.path}</td>
+                <td class="text-slate-400 max-w-[160px] truncate">{r.asn_org ?? ''}</td>
+                <td class="text-slate-400">{r.country ?? ''}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </details>
+    </>
+  )}
+</section>
