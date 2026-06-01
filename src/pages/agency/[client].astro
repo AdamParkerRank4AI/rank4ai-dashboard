@@ -116,6 +116,11 @@ const aiBotWindow = loadJson('fleet_bot_hits.json')?.window_days || 30;
 // count EVERYONE including cookie-decliners (unlike GA4). Null/0 until the
 // middleware change is deployed and data accumulates.
 const firstPartyVisits = botRow?.human_hits ?? null;
+// Real humans arriving FROM an AI assistant (ChatGPT/Perplexity/Gemini/etc.),
+// detected by referer in the first-party log. The "clicks from ChatGPT" metric.
+const aiReferralVisits = botRow?.ai_referral_hits ?? 0;
+const aiReferrers = botRow?.ai_referrers || {};
+const aiReferrerLabel = Object.keys(aiReferrers).slice(0, 3).join(', ');
 // AI citation rate: best measured rate across engines (probe, not traffic)
 const citSummary = citRes?.summary || {};
 const citRates = Object.values(citSummary)
@@ -548,7 +553,7 @@ function daysUntil(dateStr: string): number {
         <div class="text-[10px] text-gray-500 mt-1">Google + Bing organic, counted by the engines (cookie banners don't affect it).</div>
       </div>
       <!-- Per-channel breakdown -->
-      <div class="flex-1 grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div class="flex-1 grid grid-cols-2 sm:grid-cols-5 gap-3">
         <div class="bg-gray-800 border border-gray-700 rounded-lg p-3">
           <div class="text-xl font-bold text-blue-400">{googleClicks.toLocaleString()}</div>
           <div class="text-[10px] text-gray-300 mt-0.5">Google clicks</div>
@@ -565,6 +570,11 @@ function daysUntil(dateStr: string): number {
           {firstPartyVisits
             ? <div class="text-[9px] text-emerald-500/80">first-party · {aiBotWindow}d · counts everyone{ga4Users !== null ? ` (GA4: ${ga4Users})` : ''}</div>
             : <div class="text-[9px] text-amber-500/80">GA4 · 30d · cookie-consented{firstPartyVisits === 0 ? ' · first-party collecting' : ''}</div>}
+        </div>
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-3">
+          <div class="text-xl font-bold text-fuchsia-400">{aiReferralVisits ? aiReferralVisits.toLocaleString() : '0'}</div>
+          <div class="text-[10px] text-gray-300 mt-0.5">AI visits</div>
+          <div class="text-[9px] text-gray-500">from ChatGPT/Perplexity/etc{aiReferrerLabel ? ` · ${aiReferrerLabel}` : ' · none yet'}</div>
         </div>
         <div class="bg-gray-800 border border-gray-700 rounded-lg p-3">
           <div class="text-xl font-bold text-purple-400">{aiBotHits === null ? '—' : aiBotHits.toLocaleString()}</div>

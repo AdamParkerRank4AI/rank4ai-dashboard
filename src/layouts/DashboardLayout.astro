@@ -87,6 +87,13 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
     >
       {isAgency && (
         <>
+          {/* Home link — quick nav back to dashboard front page */}
+          <div class="mb-4 pb-4 border-b border-gray-800">
+            <a href="/" class={`flex items-center gap-2 px-3 py-2 rounded text-sm font-semibold transition ${!currentClient ? 'bg-blue-600 text-white' : 'text-gray-200 hover:bg-gray-800'}`}>
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              Home
+            </a>
+          </div>
           {(() => {
             const fleetClients = (clients as any[]).filter((c) => !c.staging && c.id !== 'rank4ai');
             const byStatus = (s: string) =>
@@ -96,41 +103,43 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
             const live = byStatus('live');
             const paused = byStatus('paused');
             const needs = byStatus('needs');
+            const subSections = [
+              { label: 'Overview', section: '' },
+              { label: 'Pages', section: 'site-manager' },
+              { label: 'Content', section: 'content-plan' },
+              { label: 'SEO Health', section: 'seo-health' },
+              { label: 'Recommendations', section: 'recommendations' },
+            ];
+            // Sites with a lead-capture form get a per-client Leads tab (scoped
+            // to that site only). Mirrors LEADS_FILE in agency/[client]/[section].astro.
+            const LEAD_CLIENTS = new Set(['market-invoice','bestbusinessloans','fundbiz','cardmachines','kartapay','peptideclear']);
+            const renderClientTab = (c: any, baseColour: string, statusBadge?: any) => (
+              <li>
+                <details open={currentClient === c.id} class="group">
+                  <summary class={`flex items-center justify-between cursor-pointer list-none px-3 py-2 rounded text-sm transition select-none ${currentClient === c.id ? 'bg-blue-600 text-white' : `${baseColour} hover:bg-gray-800`}`}>
+                    <span class="flex items-center gap-1.5">
+                      {c.name}
+                      {statusBadge}
+                    </span>
+                    <svg class="w-3 h-3 transition-transform group-open:rotate-90 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                  </summary>
+                  <ul class="mt-1 ml-3 pl-2 border-l border-gray-800 space-y-0.5">
+                    {[...subSections, ...(LEAD_CLIENTS.has(c.id) ? [{ label: 'Leads', section: 'leads' }] : [])].map((s) => (
+                      <li>
+                        <a href={s.section ? `/agency/${c.id}/${s.section}` : `/agency/${c.id}`} class="block px-2 py-1 rounded text-[12px] text-gray-400 hover:text-white hover:bg-gray-800 transition">{s.label}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              </li>
+            );
             return (
               <>
                 <div class="mb-6">
                   <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Clients</p>
                   <ul class="space-y-1">
-                    {live.map((c: any) => (
-                      <li>
-                        <a
-                          href={`/agency/${c.id}`}
-                          class={`block px-3 py-2 rounded text-sm transition ${
-                            currentClient === c.id
-                              ? 'bg-blue-600 text-white'
-                              : 'text-emerald-300 hover:bg-gray-800'
-                          }`}
-                        >
-                          {c.name}
-                          <span class="ml-1 text-[9px] px-1.5 py-0.5 rounded bg-emerald-900/40 text-emerald-400 uppercase">Live</span>
-                        </a>
-                      </li>
-                    ))}
-                    {paused.map((c: any) => (
-                      <li>
-                        <a
-                          href={`/agency/${c.id}`}
-                          class={`block px-3 py-2 rounded text-sm transition ${
-                            currentClient === c.id
-                              ? 'bg-blue-600 text-white'
-                              : 'text-gray-500 hover:bg-gray-800'
-                          }`}
-                        >
-                          {c.name}
-                          <span class="ml-1 text-[9px] px-1.5 py-0.5 rounded bg-gray-800 text-gray-500 uppercase">Paused</span>
-                        </a>
-                      </li>
-                    ))}
+                    {live.map((c: any) => renderClientTab(c, 'text-emerald-300', <span class="ml-1 text-[9px] px-1.5 py-0.5 rounded bg-emerald-900/40 text-emerald-400 uppercase">Live</span>))}
+                    {paused.map((c: any) => renderClientTab(c, 'text-gray-500', <span class="ml-1 text-[9px] px-1.5 py-0.5 rounded bg-gray-800 text-gray-500 uppercase">Paused</span>))}
                   </ul>
                 </div>
 
@@ -138,20 +147,7 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
                   <div class="mb-6">
                     <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Needs</p>
                     <ul class="space-y-1">
-                      {needs.map((c: any) => (
-                        <li>
-                          <a
-                            href={`/agency/${c.id}`}
-                            class={`block px-3 py-2 rounded text-sm transition ${
-                              currentClient === c.id
-                                ? 'bg-blue-600 text-white'
-                                : 'text-amber-300 hover:bg-gray-800'
-                            }`}
-                          >
-                            {c.name}
-                          </a>
-                        </li>
-                      ))}
+                      {needs.map((c: any) => renderClientTab(c, 'text-amber-300'))}
                     </ul>
                   </div>
                 )}
@@ -164,17 +160,24 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
             <ul class="space-y-1">
               {clients.filter((c) => c.staging || c.id === 'rank4ai').map((c) => (
                 <li>
-                  <a
-                    href={`/agency/${c.id}`}
-                    class={`block px-3 py-2 rounded text-sm transition ${
-                      currentClient === c.id
-                        ? 'bg-blue-600 text-white'
-                        : 'text-gray-500 hover:bg-gray-800'
-                    }`}
-                  >
-                    {c.name}
-                    {c.staging && <span class="ml-1 text-[9px] px-1.5 py-0.5 rounded bg-yellow-900/50 text-yellow-400 uppercase">Staging</span>}
-                  </a>
+                  <details open={currentClient === c.id} class="group">
+                    <summary class={`flex items-center justify-between cursor-pointer list-none px-3 py-2 rounded text-sm transition select-none ${
+                      currentClient === c.id ? 'bg-blue-600 text-white' : 'text-gray-300 hover:bg-gray-800'
+                    }`}>
+                      <span class="flex items-center gap-1.5">
+                        {c.name}
+                        {c.staging && <span class="ml-1 text-[9px] px-1.5 py-0.5 rounded bg-yellow-900/50 text-yellow-400 uppercase">Staging</span>}
+                      </span>
+                      <svg class="w-3 h-3 transition-transform group-open:rotate-90 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </summary>
+                    <ul class="mt-1 ml-3 pl-2 border-l border-gray-800 space-y-0.5">
+                      <li><a href={`/agency/${c.id}`} class="block px-2 py-1 rounded text-[12px] text-gray-400 hover:text-white hover:bg-gray-800 transition">Overview</a></li>
+                      <li><a href={`/agency/${c.id}/site-manager`} class="block px-2 py-1 rounded text-[12px] text-gray-400 hover:text-white hover:bg-gray-800 transition">Pages</a></li>
+                      <li><a href={`/agency/${c.id}/content-plan`} class="block px-2 py-1 rounded text-[12px] text-gray-400 hover:text-white hover:bg-gray-800 transition">Content</a></li>
+                      <li><a href={`/agency/${c.id}/seo-health`} class="block px-2 py-1 rounded text-[12px] text-gray-400 hover:text-white hover:bg-gray-800 transition">SEO Health</a></li>
+                      <li><a href={`/agency/${c.id}/recommendations`} class="block px-2 py-1 rounded text-[12px] text-gray-400 hover:text-white hover:bg-gray-800 transition">Recommendations</a></li>
+                    </ul>
+                  </details>
                 </li>
               ))}
             </ul>

@@ -36,7 +36,7 @@ def service_key():
 
 def fetch_rows(key):
     since = (datetime.now(timezone.utc) - timedelta(days=WINDOW_DAYS)).strftime("%Y-%m-%dT%H:%M:%SZ")
-    cols = ("site,bot_name,bot_category,is_ai_bot,is_ai_asset,path,method,"
+    cols = ("site,bot_name,bot_category,is_ai_bot,is_ai_asset,path,method,referer,"
             "asn,asn_org,country,city,tls_version,http_protocol,user_agent,created_at")
     url = (f"{SUPABASE_URL}/rest/v1/fleet_bot_hits?select={cols}"
            f"&created_at=gte.{since}&order=created_at.desc&limit={ROW_CAP}")
@@ -46,6 +46,29 @@ def fetch_rows(key):
     }, timeout=30)
     r.raise_for_status()
     return r.json()
+
+
+# Human visits arriving FROM an AI assistant (real referral traffic, i.e. the
+# "clicks from ChatGPT" Adam wants). Matched on the referer host.
+AI_REFERRERS = [
+    ("chatgpt.com", "ChatGPT"), ("chat.openai.com", "ChatGPT"), ("openai.com", "ChatGPT"),
+    ("perplexity.ai", "Perplexity"),
+    ("gemini.google.com", "Gemini"), ("bard.google.com", "Gemini"),
+    ("copilot.microsoft.com", "Copilot"), ("bing.com/chat", "Copilot"),
+    ("claude.ai", "Claude"),
+    ("you.com", "You.com"), ("poe.com", "Poe"), ("phind.com", "Phind"),
+    ("duckduckgo.com/?q", "DuckAssist"),
+]
+
+
+def classify_ai_referer(referer: str):
+    if not referer:
+        return None
+    r = referer.lower()
+    for needle, name in AI_REFERRERS:
+        if needle in r:
+            return name
+    return None
 
 
 def main():
@@ -64,12 +87,15 @@ def main():
         "hits": 0, "asset_hits": 0, "sites": set(), "category": None,
         "first_seen": None, "last_seen": None, "asn_org": None, "country": None,
     })
-    by_site = defaultdict(lambda: {"hits": 0, "ai_bot_hits": 0, "asset_hits": 0, "human_hits": 0, "bots": defaultdict(int)})
+    by_site = defaultdict(lambda: {"hits": 0, "ai_bot_hits": 0, "asset_hits": 0, "human_hits": 0,
+                                   "ai_referral_hits": 0, "ai_referrers": defaultdict(int), "bots": defaultdict(int)})
     asset_readers = defaultdict(lambda: defaultdict(int))
     cat_totals = defaultdict(int)
     ai_bot_hits = 0
     asset_hits_total = 0
     human_hits_total = 0
+    ai_referral_total = 0
+    ai_referrers_fleet = defaultdict(int)
 
     for row in rows:
         name = row.get("bot_name") or "Unknown / unmatched"
@@ -83,6 +109,12 @@ def main():
         if cat == "human":
             by_site[site]["human_hits"] += 1
             human_hits_total += 1
+            ai_src = classify_ai_referer(row.get("referer"))
+            if ai_src:
+                by_site[site]["ai_referral_hits"] += 1
+                by_site[site]["ai_referrers"][ai_src] += 1
+                ai_referral_total += 1
+                ai_referrers_fleet[ai_src] += 1
             continue
         is_asset = bool(row.get("is_ai_asset"))
         is_ai = bool(row.get("is_ai_bot"))
@@ -127,6 +159,8 @@ def main():
         [{
             "site": s, "hits": v["hits"], "ai_bot_hits": v["ai_bot_hits"],
             "asset_hits": v["asset_hits"], "human_hits": v["human_hits"],
+            "ai_referral_hits": v["ai_referral_hits"],
+            "ai_referrers": dict(sorted(v["ai_referrers"].items(), key=lambda kv: kv[1], reverse=True)),
             "top_bot": max(v["bots"].items(), key=lambda kv: kv[1])[0] if v["bots"] else None,
         } for s, v in by_site.items()],
         key=lambda x: x["hits"], reverse=True,
@@ -156,8 +190,10 @@ def main():
             "ai_bot_hits": ai_bot_hits,
             "asset_hits": asset_hits_total,
             "human_hits": human_hits_total,
+            "ai_referral_hits": ai_referral_total,
             "distinct_bots": len(by_bot),
         },
+        "ai_referrers": dict(sorted(ai_referrers_fleet.items(), key=lambda kv: kv[1], reverse=True)),
         "by_category": dict(sorted(cat_totals.items(), key=lambda kv: kv[1], reverse=True)),
         "by_bot": by_bot_list,
         "by_site": by_site_list,
