@@ -112,6 +112,10 @@ const botHitsArr = (loadJson('fleet_bot_hits.json')?.by_site || []) as any[];
 const botRow = botHitsArr.find((r: any) => r.site === clientId);
 const aiBotHits = botRow?.ai_bot_hits ?? null;            // AI crawlers (bots)
 const aiBotWindow = loadJson('fleet_bot_hits.json')?.window_days || 30;
+// First-party human visits: logged server-side by the middleware, so they
+// count EVERYONE including cookie-decliners (unlike GA4). Null/0 until the
+// middleware change is deployed and data accumulates.
+const firstPartyVisits = botRow?.human_hits ?? null;
 // AI citation rate: best measured rate across engines (probe, not traffic)
 const citSummary = citRes?.summary || {};
 const citRates = Object.values(citSummary)
@@ -556,9 +560,11 @@ function daysUntil(dateStr: string): number {
           <div class="text-[9px] text-gray-500">Webmaster Tools · {bingWindowDays || 7}d</div>
         </div>
         <div class="bg-gray-800 border border-gray-700 rounded-lg p-3">
-          <div class="text-xl font-bold text-white">{ga4Users === null ? '—' : ga4Users.toLocaleString()}</div>
+          <div class="text-xl font-bold text-white">{firstPartyVisits ? firstPartyVisits.toLocaleString() : (ga4Users === null ? '—' : ga4Users.toLocaleString())}</div>
           <div class="text-[10px] text-gray-300 mt-0.5">Site visits</div>
-          <div class="text-[9px] text-amber-500/80">GA4 · 30d · cookie-consented only</div>
+          {firstPartyVisits
+            ? <div class="text-[9px] text-emerald-500/80">first-party · {aiBotWindow}d · counts everyone{ga4Users !== null ? ` (GA4: ${ga4Users})` : ''}</div>
+            : <div class="text-[9px] text-amber-500/80">GA4 · 30d · cookie-consented{firstPartyVisits === 0 ? ' · first-party collecting' : ''}</div>}
         </div>
         <div class="bg-gray-800 border border-gray-700 rounded-lg p-3">
           <div class="text-xl font-bold text-purple-400">{aiBotHits === null ? '—' : aiBotHits.toLocaleString()}</div>
@@ -568,7 +574,7 @@ function daysUntil(dateStr: string): number {
       </div>
     </div>
     <p class="text-[11px] text-gray-500 mt-3">
-      Google and Bing clicks are counted by the search engines themselves, so they are complete and unaffected by cookie consent. <span class="text-amber-500/90">Site visits (GA4) only count visitors who accept the analytics cookie</span>, so anyone who declines is missed and real traffic is higher. A search click and a site visit are the same person arriving, so they sit side by side and are never added together. AI crawler hits are bots fetching pages, not human visits.
+      Google and Bing clicks are counted by the search engines themselves, so they are complete and unaffected by cookie consent. <span class="text-emerald-500/90">Site visits are now logged first-party in our own middleware (server-side), so they count everyone, including anyone who declines the cookie banner</span> (GA4, shown in brackets, only sees consented visitors and undercounts). Until first-party data builds up the tile falls back to GA4. A search click and a site visit are the same person arriving, so they sit side by side and are never added together. AI crawler hits are bots fetching pages, not human visits.
     </p>
   </div>
 

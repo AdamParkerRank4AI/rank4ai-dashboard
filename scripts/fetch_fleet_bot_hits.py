@@ -64,17 +64,26 @@ def main():
         "hits": 0, "asset_hits": 0, "sites": set(), "category": None,
         "first_seen": None, "last_seen": None, "asn_org": None, "country": None,
     })
-    by_site = defaultdict(lambda: {"hits": 0, "ai_bot_hits": 0, "asset_hits": 0, "bots": defaultdict(int)})
+    by_site = defaultdict(lambda: {"hits": 0, "ai_bot_hits": 0, "asset_hits": 0, "human_hits": 0, "bots": defaultdict(int)})
     asset_readers = defaultdict(lambda: defaultdict(int))
     cat_totals = defaultdict(int)
     ai_bot_hits = 0
     asset_hits_total = 0
+    human_hits_total = 0
 
     for row in rows:
         name = row.get("bot_name") or "Unknown / unmatched"
         site = row.get("site") or "?"
         cat = row.get("bot_category") or "other"
         ts = row.get("created_at")
+
+        # First-party human page views (logged by the middleware, server-side,
+        # cookie-independent). Counted on their own; never mixed into the bot
+        # intelligence (by_bot / categories / ai_bot_hits).
+        if cat == "human":
+            by_site[site]["human_hits"] += 1
+            human_hits_total += 1
+            continue
         is_asset = bool(row.get("is_ai_asset"))
         is_ai = bool(row.get("is_ai_bot"))
 
@@ -117,7 +126,7 @@ def main():
     by_site_list = sorted(
         [{
             "site": s, "hits": v["hits"], "ai_bot_hits": v["ai_bot_hits"],
-            "asset_hits": v["asset_hits"],
+            "asset_hits": v["asset_hits"], "human_hits": v["human_hits"],
             "top_bot": max(v["bots"].items(), key=lambda kv: kv[1])[0] if v["bots"] else None,
         } for s, v in by_site.items()],
         key=lambda x: x["hits"], reverse=True,
@@ -143,9 +152,10 @@ def main():
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "window_days": WINDOW_DAYS,
         "fleet_totals": {
-            "hits": len(rows),
+            "hits": len(rows) - human_hits_total,
             "ai_bot_hits": ai_bot_hits,
             "asset_hits": asset_hits_total,
+            "human_hits": human_hits_total,
             "distinct_bots": len(by_bot),
         },
         "by_category": dict(sorted(cat_totals.items(), key=lambda kv: kv[1], reverse=True)),
