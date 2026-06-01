@@ -588,5 +588,108 @@
       "recommendations"
     ],
     "sections": []
+  },
+  {
+    "id": "womenshealth",
+    "name": "Women's Health",
+    "domain": "womens-health-1pt.pages.dev",
+    "liveDomain": "womens-health-1pt.pages.dev",
+    "logo": "",
+    "flavour": "editorial",
+    "dashboard": "fleet",
+    "clientCode": "WH",
+    "notes": "Working name 'Women's Health' (placeholder — .com/.co.uk are Hearst-owned via the US magazine; expect rename before launch). UK women's life-stage health AFFILIATE AUTHORITY site (Wirecutter-shape). No own SKUs at launch — curates + reviews existing branded supplements (MyProtein / Bulk / Wild Nutrition / H&B / Boots / Form / Innermost / Vital Proteins / Ancient + Brave / Trinny London) via Amazon Associates + Awin + direct programs. 6 life-stage pillars (TTC -> prenatal -> postnatal -> perimenopause -> menopause -> senior) + 6 cross-stage SKU pillars (protein / creatine / pre-workout / magnesium / collagen / ashwagandha-ayurveda). The brand wedge: named UK RD + GP + strength coach + quarterly heavy-metals lab + annual UK perimenopause survey + the life-stage quiz. ~400-500k+/mo addressable UK. Sister to PeptideClear (men's athletic-longevity + peptide therapeutics). GitHub: AdamParkerRank4AI/womens-health. CF Pages project: womens-health (account 927d3dd61a9375f0c8185df7b2a1764e adam@muswellrose.com). Live at https://womens-health-1pt.pages.dev (scaffold only, June 2026). Research pack: iCloud/.../niche-attack-supplements-2026-05-29/. 49k research-presentation demo at 49k.co.uk/demos/perimenopause-stack/.",
+    "clientViewSections": [
+      "overview",
+      "site-tree",
+      "content-plan",
+      "recommendations",
+      "ai-readiness",
+      "page-compliance"
+    ],
+    "allSections": [
+      "overview",
+      "ai-readiness",
+      "ai-citations",
+      "site-manager",
+      "page-compliance",
+      "traffic",
+      "search-performance",
+      "competitors",
+      "site-tree",
+      "uptime",
+      "site-speed",
+      "crawl-activity",
+      "recommendations",
+      "content-plan",
+      "daily-audit"
+    ],
+    "sections": [],
+    "pre_launch": true,
+    "pending_decisions": [
+      {
+        "id": "final_brand_name",
+        "label": "Pick final brand name (working name 'Women's Health' is Hearst-owned)",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "Working name placeholder throughout the build pack. Hearst owns womenshealthmag.com / womenshealth.co.uk via the US magazine. Need an original name + matching .co.uk + .com domain check."
+      },
+      {
+        "id": "domain_register",
+        "label": "Register the brand domain (after name decided)",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "Once brand name picked, register .co.uk + .com. Then attach as custom domain to the CF Pages project."
+      },
+      {
+        "id": "github_cf_pages_link",
+        "label": "Connect GitHub auto-deploy on CF Pages project",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "Created as Direct Upload project via API (CF GitHub App may not have repo access). To enable auto-deploy on git push, go to CF Pages dashboard -> womens-health -> Settings -> Builds & deployments -> Connect to Git -> grant the CF GitHub App access to AdamParkerRank4AI/womens-health."
+      },
+      {
+        "id": "astro_install",
+        "label": "Install Astro into the repo (currently bare scaffold)",
+        "status": "TBD",
+        "owner": "Adam or Claude",
+        "note": "npm create astro@latest . (minimal preset). Will replace the placeholder dist/index.html with a real build pipeline."
+      },
+      {
+        "id": "editorial_trio_recruit",
+        "label": "Recruit named UK RD + menopause-specialist GP + Level-4 strength coach (freelance per-page)",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "AfN-registered RD (£100-200/page) + BMS-affiliated GP NOT Louise Newson (£200-400/page) + CIMSPA Level-4 coach (£100-200/page). Editorial team brief in 49k demo at /demos/perimenopause-stack/manufacturer-brief.html (page is titled 'Editorial Team Brief' despite the filename). Y1 budget £6-17k."
+      },
+      {
+        "id": "affiliate_signups",
+        "label": "Sign up to affiliate programs (Day 1)",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "Amazon Associates UK + Awin (12+ UK supplement brands in one network) + direct: Ancient + Brave / Trinny London / Pure Encapsulations / BetterYou / Solgar. Awin takes 5-10 days — apply first."
+      },
+      {
+        "id": "tier1_product_buy",
+        "label": "Buy Tier-1 product test batch (£550-850, 20-25 SKUs)",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "Full SKU list in iCloud/.../niche-attack-supplements-2026-05-29/PRODUCT-LIST-TO-TEST.md. Buy via our own affiliate links once approved (earns back ~£30-60 cashback)."
+      },
+      {
+        "id": "first_uk_perimenopause_survey",
+        "label": "Commission first UK perimenopause supplement use survey (Month 3-4)",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "n=500-1,000 via OnePoll or Censuswide (£3-5k). Becomes the original-data citation asset; published as the annual reference URL."
+      },
+      {
+        "id": "keyword_earmark_pickup",
+        "label": "Absorb 10 keywords from PC keyword list (5 outright + 5 dual-publish)",
+        "status": "TBD",
+        "owner": "Claude",
+        "note": "Held in womens-health/KEYWORD-EARMARK-FROM-PC.md. Collagen peptides / silk peptides / peptide serum / anti-ageing injection / collagen peptide injection (outright). GHK-Cu / skin peptides / skin rejuvenation peptide / anti-ageing peptides / Glow Stack peptide (dual-publish with PC, reciprocal cross-link)."
+      }
+    ]
   }
 ]
