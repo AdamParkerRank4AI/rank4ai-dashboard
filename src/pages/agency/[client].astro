@@ -89,9 +89,35 @@ const providerSummary = Object.entries(citationProviders)
   .map(([name, s]: [string, any]) => `${name}: ${(s as any).rate}%`)
   .join(' · ') || 'Not tested';
 
-// Bing stats
+// Bing stats. Clicks/impressions MUST come from traffic_stats[] (one row per
+// day, the true totals), NOT top_queries — top_queries caps at 25 rows and has
+// per-day duplicates, which understates clicks and double-counts impressions.
+const bingTraffic = Array.isArray(bing?.traffic_stats) ? bing.traffic_stats : [];
+const bingClicks = bingTraffic.reduce((s: number, r: any) => s + (r.Clicks || 0), 0);
+const bingImpressions = bingTraffic.reduce((s: number, r: any) => s + (r.Impressions || 0), 0);
 const bingQueries = bing?.top_queries?.length || 0;
-const bingImpressions = bing?.top_queries?.reduce((sum: number, q: any) => sum + (q.Impressions || 0), 0) || 0;
+const bingWindowDays = bingTraffic.length || 0;
+
+// ---- Combined "Search & AI visibility" panel ----------------------------
+// One easy headline (search clicks, engine-counted, no cookies, no overlap)
+// with an honest per-channel breakdown beneath. A Google/Bing click and a GA4
+// visit are the SAME journey, so GA4 is shown alongside for reference, never
+// added into the search-clicks total (that would double-count).
+const googleClicks = gsc?.totals?.clicks || 0;
+const googleImpr = gsc?.totals?.impressions || 0;
+const searchClicks = googleClicks + bingClicks;           // headline total
+const ga4Users = ga4?.overview?.active_users ?? null;     // cookie-consented only
+const ga4Sessions = ga4?.overview?.sessions ?? null;
+const botHitsArr = (loadJson('fleet_bot_hits.json')?.by_site || []) as any[];
+const botRow = botHitsArr.find((r: any) => r.site === clientId);
+const aiBotHits = botRow?.ai_bot_hits ?? null;            // AI crawlers (bots)
+const aiBotWindow = loadJson('fleet_bot_hits.json')?.window_days || 30;
+// AI citation rate: best measured rate across engines (probe, not traffic)
+const citSummary = citRes?.summary || {};
+const citRates = Object.values(citSummary)
+  .filter((s: any) => s && s.measured && typeof s.rate === 'number')
+  .map((s: any) => s.rate as number);
+const aiCitationRate = citRates.length ? Math.max(...citRates) : null;
 
 // Build section status from live data
 const sectionStatus: Record<string, any> = {
@@ -502,6 +528,48 @@ function daysUntil(dateStr: string): number {
         </a>
       </div>
     </div>
+  </div>
+
+  <!-- Combined Search & AI visibility (at a glance) -->
+  <div class="bg-gray-900 border border-gray-700 rounded-lg p-5 mb-4">
+    <div class="flex items-center justify-between mb-3">
+      <h3 class="text-sm font-semibold text-white">Search &amp; AI visibility, at a glance</h3>
+      <span class="text-[10px] text-gray-500">how people reach {client.name}</span>
+    </div>
+    <div class="flex flex-col md:flex-row gap-4">
+      <!-- Headline total -->
+      <div class="md:w-56 bg-gray-800 border border-emerald-800/40 rounded-lg p-4 flex flex-col justify-center">
+        <div class="text-3xl font-bold text-emerald-400">{searchClicks.toLocaleString()}</div>
+        <div class="text-[11px] text-emerald-400/80 uppercase tracking-wider mt-1">Search clicks</div>
+        <div class="text-[10px] text-gray-500 mt-1">Google + Bing organic, counted by the engines (cookie banners don't affect it).</div>
+      </div>
+      <!-- Per-channel breakdown -->
+      <div class="flex-1 grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-3">
+          <div class="text-xl font-bold text-blue-400">{googleClicks.toLocaleString()}</div>
+          <div class="text-[10px] text-gray-300 mt-0.5">Google clicks</div>
+          <div class="text-[9px] text-gray-500">Search Console · {gsc?.period || '28d'}</div>
+        </div>
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-3">
+          <div class="text-xl font-bold text-cyan-400">{bingClicks.toLocaleString()}</div>
+          <div class="text-[10px] text-gray-300 mt-0.5">Bing clicks</div>
+          <div class="text-[9px] text-gray-500">Webmaster Tools · {bingWindowDays || 7}d</div>
+        </div>
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-3">
+          <div class="text-xl font-bold text-white">{ga4Users === null ? '—' : ga4Users.toLocaleString()}</div>
+          <div class="text-[10px] text-gray-300 mt-0.5">Site visits</div>
+          <div class="text-[9px] text-amber-500/80">GA4 · 30d · cookie-consented only</div>
+        </div>
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-3">
+          <div class="text-xl font-bold text-purple-400">{aiBotHits === null ? '—' : aiBotHits.toLocaleString()}</div>
+          <div class="text-[10px] text-gray-300 mt-0.5">AI crawler hits</div>
+          <div class="text-[9px] text-gray-500">server logs · {aiBotWindow}d{aiCitationRate !== null ? ` · cited ${aiCitationRate}%` : ''}</div>
+        </div>
+      </div>
+    </div>
+    <p class="text-[11px] text-gray-500 mt-3">
+      Google and Bing clicks are counted by the search engines themselves, so they are complete and unaffected by cookie consent. <span class="text-amber-500/90">Site visits (GA4) only count visitors who accept the analytics cookie</span>, so anyone who declines is missed and real traffic is higher. A search click and a site visit are the same person arriving, so they sit side by side and are never added together. AI crawler hits are bots fetching pages, not human visits.
+    </p>
   </div>
 
   <!-- Three Channel Overview -->
