@@ -1,20 +1,20 @@
 {
   "site_id": "market-invoice",
   "domain": "marketinvoice.co.uk",
-  "crawled_at": "2026-06-01T16:04:09.197683+00:00",
+  "crawled_at": "2026-06-01T16:20:08.223172+00:00",
   "source": "fleet-source-reader",
-  "pages_crawled": 745,
+  "pages_crawled": 751,
   "total_issues": 0,
-  "orphan_pages": 1,
-  "avg_depth": 1.9355704697986578,
-  "avg_word_count": 6804,
-  "pages_with_schema": 745,
+  "orphan_pages": 4,
+  "avg_depth": 1.929427430093209,
+  "avg_word_count": 6811,
+  "pages_with_schema": 751,
   "pages_with_multimodal": 0,
-  "pages_with_comparison_table": 447,
+  "pages_with_comparison_table": 451,
   "pages_with_video": 0,
-  "pages_over_2000_words": 745,
+  "pages_over_2000_words": 751,
   "images_missing_alt": 0,
-  "pages_with_date": 745,
+  "pages_with_date": 751,
   "crawler_access": {
     "GPTBot": true,
     "ClaudeBot": true,
@@ -27,6 +27,10 @@
     "research": {
       "hub": "/research/",
       "page_count": 2
+    },
+    "business-loans-uk": {
+      "hub": "/business-loans-uk/",
+      "page_count": 1
     },
     "trust-and-verification": {
       "hub": "/trust-and-verification/",
@@ -104,6 +108,10 @@
       "hub": "/export-finance/",
       "page_count": 1
     },
+    "vat-loan": {
+      "hub": "/vat-loan/",
+      "page_count": 1
+    },
     "how-we-are-funded": {
       "hub": "/how-we-are-funded/",
       "page_count": 1
@@ -114,7 +122,7 @@
     },
     "providers": {
       "hub": "/providers/",
-      "page_count": 91
+      "page_count": 92
     },
     "single-invoice-finance": {
       "hub": "/single-invoice-finance/",
@@ -164,8 +172,16 @@
       "hub": "/compare-invoice-finance/",
       "page_count": 1
     },
+    "commercial-finance-broker": {
+      "hub": "/commercial-finance-broker/",
+      "page_count": 1
+    },
     "invoice-finance-quote": {
       "hub": "/invoice-finance-quote/",
+      "page_count": 1
+    },
+    "reverse-factoring": {
+      "hub": "/reverse-factoring/",
       "page_count": 1
     },
     "purchase-order-finance": {
@@ -196,6 +212,10 @@
       "hub": "/compare/",
       "page_count": 23
     },
+    "invoice-finance-solutions": {
+      "hub": "/invoice-finance-solutions/",
+      "page_count": 1
+    },
     "alternatives": {
       "hub": "/alternatives/",
       "page_count": 29
@@ -225,27 +245,27 @@
       "page_count": 128
     }
   },
-  "topic_cluster_count": 50,
+  "topic_cluster_count": 55,
   "term_consistency": {
-    "finance": 2067,
-    "invoice": 1766,
-    "2026": 550,
-    "factoring": 237,
+    "finance": 2089,
+    "invoice": 1783,
+    "2026": 561,
+    "factoring": 245,
     "providers": 212,
-    "businesses": 196,
-    "advance": 177,
-    "review": 173,
+    "businesses": 197,
+    "advance": 178,
+    "review": 175,
     "rate": 149,
-    "business": 138,
+    "business": 143,
     "compared": 137,
-    "invoices": 131,
+    "invoices": 133,
     "best": 122,
-    "provider": 118,
+    "provider": 120,
     "contract": 118
   },
   "content_freshness": {
-    "pages_with_dates": 745,
-    "fresh_30_days": 739,
+    "pages_with_dates": 751,
+    "fresh_30_days": 745,
     "fresh_90_days": 6,
     "stale": 0
   },
@@ -289,7 +309,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -332,6 +352,49 @@
       "has_viewport": true,
       "internal_links_in": 1,
       "depth": 2
+    },
+    {
+      "url": "https://marketinvoice.co.uk/business-loans-uk/",
+      "path": "/business-loans-uk/",
+      "title": "Business Loans UK 2026: When Invoice Finance Wins Instead",
+      "h1": "Business Loans UK 2026: When Invoice Finance Wins Instead",
+      "meta_desc": "UK business loan or invoice finance? Business loans are lump-sum, fixed-term, repaid in instalments. Invoice finance advances 80-95% of unpaid B2B invoices as you raise them, no fixed repayments. Most UK SMEs with B2B invoices and a cashflow gap need invoice finance, not a loan.",
+      "word_count": 7690,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "BreadcrumbList",
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internal_links_out": 51,
+      "external_links_out": -38,
+      "canonical": "https://marketinvoice.co.uk/business-loans-uk/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 1,
+      "list_count": 7,
+      "question_h2s": 2,
+      "h2_count": 8,
+      "last_modified": "2026-06-01",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 1,
+      "depth": 1
     },
     {
       "url": "https://marketinvoice.co.uk/trust-and-verification/",
@@ -4321,7 +4384,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -4361,7 +4424,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -4442,7 +4505,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -5323,7 +5386,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -5894,7 +5957,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -5933,7 +5996,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -6011,7 +6074,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -6133,7 +6196,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -6175,7 +6238,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 702,
+      "internal_links_in": 708,
       "depth": 2
     },
     {
@@ -6214,7 +6277,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -6254,7 +6317,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -6458,6 +6521,49 @@
       "depth": 1
     },
     {
+      "url": "https://marketinvoice.co.uk/vat-loan/",
+      "path": "/vat-loan/",
+      "title": "VAT Loan UK 2026: When You Need One, and When Invoice Finance Beats It",
+      "h1": "VAT Loan UK 2026",
+      "meta_desc": "A UK VAT loan is a short-term loan (\u00a35k to \u00a3250k, 3 to 12 months, 1-3% per month) to fund a quarterly HMRC VAT bill. Suits businesses with a one-off VAT gap. Invoice finance often beats it: with VAT in the advance you receive the VAT cash on day one of invoicing, no separate VAT loan needed.",
+      "word_count": 7551,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "BreadcrumbList",
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internal_links_out": 53,
+      "external_links_out": -40,
+      "canonical": "https://marketinvoice.co.uk/vat-loan/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 1,
+      "list_count": 6,
+      "question_h2s": 0,
+      "h2_count": 6,
+      "last_modified": "2026-06-01",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 0,
+      "depth": 1
+    },
+    {
       "url": "https://marketinvoice.co.uk/how-we-are-funded/",
       "path": "/how-we-are-funded/",
       "title": "How We Are Funded - Market Invoice",
@@ -6493,7 +6599,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -6533,7 +6639,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -6573,8 +6679,52 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
+    },
+    {
+      "url": "https://marketinvoice.co.uk/providers/select-invoice-finance/",
+      "path": "/providers/select-invoice-finance/",
+      "title": "Select Invoice Finance Review (UK 2026): Provider Profile",
+      "h1": "Select Invoice Finance Review",
+      "meta_desc": "Select Invoice Finance is a UK independent invoice finance provider offering whole-turnover and selective facilities to SMEs from around \u00a3100k turnover. Less well-known than Bibby or Close Brothers but a sensible mid-tier independent alternative.",
+      "word_count": 7259,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "Product FinancialService",
+        "BreadcrumbList",
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internal_links_out": 66,
+      "external_links_out": -53,
+      "canonical": "https://marketinvoice.co.uk/providers/select-invoice-finance/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 8,
+      "question_h2s": 0,
+      "h2_count": 5,
+      "last_modified": "2026-06-01",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 2,
+      "depth": 2
     },
     {
       "url": "https://marketinvoice.co.uk/providers/key-factors/",
@@ -6615,7 +6765,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 8,
+      "internal_links_in": 9,
       "depth": 2
     },
     {
@@ -6665,7 +6815,7 @@
       "title": "Principal Business Finance Review 2026 - Rates &amp; Features",
       "h1": "Principal Business Finance Review",
       "meta_desc": "Principal Business Finance is an independent invoice finance provider with facilities from \u00a3100k. Factoring and discounting for UK businesses. Full review.",
-      "word_count": 7927,
+      "word_count": 7928,
       "status": 200,
       "schemas": [
         "Person",
@@ -6944,7 +7094,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 186,
+      "internal_links_in": 188,
       "depth": 2
     },
     {
@@ -6984,7 +7134,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 180,
+      "internal_links_in": 182,
       "depth": 2
     },
     {
@@ -7236,7 +7386,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 70,
+      "internal_links_in": 71,
       "depth": 2
     },
     {
@@ -7696,7 +7846,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 6,
+      "internal_links_in": 7,
       "depth": 2
     },
     {
@@ -7822,7 +7972,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 7,
+      "internal_links_in": 6,
       "depth": 2
     },
     {
@@ -8155,7 +8305,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 216,
+      "internal_links_in": 218,
       "depth": 2
     },
     {
@@ -8319,7 +8469,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 2
     },
     {
@@ -8569,7 +8719,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 10,
+      "internal_links_in": 11,
       "depth": 2
     },
     {
@@ -8611,7 +8761,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 5,
+      "internal_links_in": 6,
       "depth": 2
     },
     {
@@ -8694,7 +8844,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 7,
+      "internal_links_in": 8,
       "depth": 2
     },
     {
@@ -8859,7 +9009,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 126,
+      "internal_links_in": 128,
       "depth": 2
     },
     {
@@ -8910,7 +9060,7 @@
       "title": "Aria Invoice Finance Review 2026 - Rates, Fees &amp; Features",
       "h1": "Aria Invoice Finance Review",
       "meta_desc": "Aria is an independent invoice finance provider offering flexible factoring and discounting facilities. Full independent review for 2026.",
-      "word_count": 7831,
+      "word_count": 7832,
       "status": 200,
       "schemas": [
         "Person",
@@ -8952,7 +9102,7 @@
       "title": "HSBC Invoice Finance Review 2026: UK&#39;s Largest Bank-Owned",
       "h1": "HSBC Invoice Finance Review",
       "meta_desc": "HSBC Invoice Finance offers factoring and discounting with advance rates up to 90% for UK businesses from \u00a3500,000 turnover.",
-      "word_count": 8146,
+      "word_count": 8261,
       "status": 200,
       "schemas": [
         "Person",
@@ -8983,7 +9133,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 46,
+      "internal_links_in": 48,
       "depth": 2
     },
     {
@@ -9067,7 +9217,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 64,
+      "internal_links_in": 65,
       "depth": 2
     },
     {
@@ -9277,7 +9427,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 54,
+      "internal_links_in": 56,
       "depth": 2
     },
     {
@@ -9400,7 +9550,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 129,
+      "internal_links_in": 130,
       "depth": 2
     },
     {
@@ -9566,7 +9716,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 138,
+      "internal_links_in": 139,
       "depth": 2
     },
     {
@@ -9650,7 +9800,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 8,
+      "internal_links_in": 9,
       "depth": 2
     },
     {
@@ -10070,7 +10220,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 34,
+      "internal_links_in": 36,
       "depth": 2
     },
     {
@@ -10120,7 +10270,7 @@
       "title": "Lloyds Commercial Finance Review 2026, Lloyds Banking Group",
       "h1": "Lloyds Commercial Finance Review",
       "meta_desc": "Lloyds Commercial Finance for UK invoice finance and asset-based lending. Part of Lloyds Banking Group (FTSE 100), broad UK regional reach, sector.",
-      "word_count": 7481,
+      "word_count": 7664,
       "status": 200,
       "schemas": [
         "Person",
@@ -10153,7 +10303,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 28,
+      "internal_links_in": 30,
       "depth": 2
     },
     {
@@ -10578,7 +10728,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -10618,7 +10768,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -12183,7 +12333,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 2
     },
     {
@@ -14963,7 +15113,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 2
     },
     {
@@ -15167,7 +15317,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -15207,7 +15357,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -15287,7 +15437,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -15328,7 +15478,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -15368,7 +15518,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -16966,7 +17116,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -17374,6 +17524,49 @@
       "depth": 1
     },
     {
+      "url": "https://marketinvoice.co.uk/commercial-finance-broker/",
+      "path": "/commercial-finance-broker/",
+      "title": "Commercial Finance Broker UK 2026: How They Work and How to Pick One",
+      "h1": "Commercial Finance Broker UK 2026",
+      "meta_desc": "A commercial finance broker is a UK introducer who matches SMEs to invoice finance, asset finance, business loans, commercial mortgages and bridging. Paid by the lender on commission (typically 1-2% of facility). This page covers what brokers do, the questions to ask before using one, and how Market",
+      "word_count": 7631,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "BreadcrumbList",
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internal_links_out": 51,
+      "external_links_out": -38,
+      "canonical": "https://marketinvoice.co.uk/commercial-finance-broker/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 1,
+      "list_count": 7,
+      "question_h2s": 1,
+      "h2_count": 7,
+      "last_modified": "2026-06-01",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 0,
+      "depth": 1
+    },
+    {
       "url": "https://marketinvoice.co.uk/invoice-finance-quote/",
       "path": "/invoice-finance-quote/",
       "title": "Get 3 Free Invoice Finance Quotes UK (in 24 hours)",
@@ -17415,6 +17608,49 @@
       "depth": 1
     },
     {
+      "url": "https://marketinvoice.co.uk/reverse-factoring/",
+      "path": "/reverse-factoring/",
+      "title": "Reverse Factoring UK 2026: How It Works for Suppliers and Buyers",
+      "h1": "Reverse Factoring (UK)",
+      "meta_desc": "Reverse factoring (also called supply chain finance or buyer-initiated payments) is set up by a large UK corporate buyer to pay its suppliers early. The buyers bank pays the supplier on day 5 to 10; the buyer pays the bank on day 60 to 90. Different from invoice finance: in reverse factoring the buy",
+      "word_count": 7666,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "BreadcrumbList",
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internal_links_out": 51,
+      "external_links_out": -38,
+      "canonical": "https://marketinvoice.co.uk/reverse-factoring/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 1,
+      "list_count": 6,
+      "question_h2s": 3,
+      "h2_count": 7,
+      "last_modified": "2026-06-01",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 1,
+      "depth": 1
+    },
+    {
       "url": "https://marketinvoice.co.uk/purchase-order-finance/",
       "path": "/purchase-order-finance/",
       "title": "Purchase Order Finance UK: Fund Orders Before You Deliver",
@@ -17451,7 +17687,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -17491,7 +17727,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -17531,7 +17767,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -17735,7 +17971,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 2
     },
     {
@@ -18543,7 +18779,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 2
     },
     {
@@ -18665,7 +18901,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 2
     },
     {
@@ -19844,7 +20080,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -22023,7 +22259,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -22503,7 +22739,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -23277,7 +23513,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 2
     },
     {
@@ -23402,6 +23638,50 @@
       "has_viewport": true,
       "internal_links_in": 5,
       "depth": 2
+    },
+    {
+      "url": "https://marketinvoice.co.uk/invoice-finance-solutions/",
+      "path": "/invoice-finance-solutions/",
+      "title": "Invoice Finance Solutions UK 2026: The 7 Types and Which You Need",
+      "h1": "Invoice Finance Solutions UK 2026: The 7 Types and Which You Need",
+      "meta_desc": "Invoice finance solutions UK 2026. The 7 main solution types: whole-turnover factoring, confidential invoice discounting, selective or spot factoring, export factoring, construction-specific, recruitment-specific, supply chain finance (reverse factoring). Picking the right solution depends on turnov",
+      "word_count": 7654,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "Service",
+        "WebPage",
+        "Article",
+        "ItemList",
+        "BreadcrumbList",
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internal_links_out": 66,
+      "external_links_out": -53,
+      "canonical": "https://marketinvoice.co.uk/invoice-finance-solutions/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 6,
+      "question_h2s": 0,
+      "h2_count": 4,
+      "last_modified": "2026-06-01",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 0,
+      "depth": 1
     },
     {
       "url": "https://marketinvoice.co.uk/alternatives/",
@@ -24599,7 +24879,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -24804,7 +25084,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 9,
+      "internal_links_in": 10,
       "depth": 2
     },
     {
@@ -24926,7 +25206,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -24965,7 +25245,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -25048,7 +25328,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 2
     },
     {
@@ -25088,7 +25368,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -25743,7 +26023,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 745,
+      "internal_links_in": 751,
       "depth": 1
     },
     {
@@ -32601,6 +32881,351 @@
     },
     {
       "from": "https://marketinvoice.co.uk/research/uk-invoice-finance-market-structure-2026/",
+      "to": "https://marketinvoice.co.uk/cookie-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/favicon-32x32.png",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/favicon-16x16.png",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/apple-touch-icon.png",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/site.webmanifest",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/fonts/plus-jakarta-sans-latin.woff2",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/_astro/404.CU8Bjx4Q.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/providers/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/industries/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/questions/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/blog/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/working-capital/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/data/uk-invoice-finance-rate-index/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/providers/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/industries/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/questions/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/blog/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/working-capital/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/data/uk-invoice-finance-rate-index/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/authors/oliver-mackman/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/compare/invoice-finance-vs-business-loan/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/providers/directory/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/blog/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/industries/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/questions/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/stats/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/data/uk-invoice-finance-rate-index/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/research/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/books/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/compare/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/guides/how-invoice-finance-works/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/guides/costs/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/working-capital/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/guides/factoring-vs-discounting/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/compare/invoice-finance-vs-business-loan/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/best/invoice-finance-for-small-business/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/best/cheapest-invoice-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/cookie-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/complaints/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/accessibility/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/ai-instructions/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/specialty-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/construction-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/recruitment-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/contract-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/import-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/pre-shipment-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/purchase-order-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/unpaid-invoices/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/invoice-finance-for-small-business-uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
+      "to": "https://marketinvoice.co.uk/trade-credit-vs-invoice-finance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://marketinvoice.co.uk/business-loans-uk/",
       "to": "https://marketinvoice.co.uk/cookie-policy/",
       "type": "internal"
     },
@@ -55623,351 +56248,6 @@
       "from": "https://marketinvoice.co.uk/vs/skipton-business-finance-vs-time-finance/",
       "to": "https://marketinvoice.co.uk/contact/",
       "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/skipton-business-finance-vs-time-finance/",
-      "to": "https://marketinvoice.co.uk/privacy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/skipton-business-finance-vs-time-finance/",
-      "to": "https://marketinvoice.co.uk/cookie-policy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/skipton-business-finance-vs-time-finance/",
-      "to": "https://marketinvoice.co.uk/terms/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/skipton-business-finance-vs-time-finance/",
-      "to": "https://marketinvoice.co.uk/disclaimer/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/skipton-business-finance-vs-time-finance/",
-      "to": "https://marketinvoice.co.uk/complaints/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/skipton-business-finance-vs-time-finance/",
-      "to": "https://marketinvoice.co.uk/accessibility/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/skipton-business-finance-vs-time-finance/",
-      "to": "https://marketinvoice.co.uk/ai-instructions/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/skipton-business-finance-vs-time-finance/",
-      "to": "https://marketinvoice.co.uk/specialty-finance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/skipton-business-finance-vs-time-finance/",
-      "to": "https://marketinvoice.co.uk/construction-finance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/skipton-business-finance-vs-time-finance/",
-      "to": "https://marketinvoice.co.uk/recruitment-finance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/skipton-business-finance-vs-time-finance/",
-      "to": "https://marketinvoice.co.uk/contract-finance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/skipton-business-finance-vs-time-finance/",
-      "to": "https://marketinvoice.co.uk/import-finance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/skipton-business-finance-vs-time-finance/",
-      "to": "https://marketinvoice.co.uk/pre-shipment-finance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/skipton-business-finance-vs-time-finance/",
-      "to": "https://marketinvoice.co.uk/purchase-order-finance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/skipton-business-finance-vs-time-finance/",
-      "to": "https://marketinvoice.co.uk/unpaid-invoices/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/skipton-business-finance-vs-time-finance/",
-      "to": "https://marketinvoice.co.uk/invoice-finance-for-small-business-uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/skipton-business-finance-vs-time-finance/",
-      "to": "https://marketinvoice.co.uk/trade-credit-vs-invoice-finance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/skipton-business-finance-vs-time-finance/",
-      "to": "https://marketinvoice.co.uk/cookie-policy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/favicon.ico",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/favicon.svg",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/favicon-32x32.png",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/favicon-16x16.png",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/apple-touch-icon.png",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/site.webmanifest",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/fonts/plus-jakarta-sans-latin.woff2",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/_astro/404.CU8Bjx4Q.css",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/providers/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/industries/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/guides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/questions/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/blog/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/working-capital/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/calculator/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/data/uk-invoice-finance-rate-index/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/providers/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/industries/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/guides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/questions/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/blog/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/working-capital/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/calculator/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/data/uk-invoice-finance-rate-index/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/vs/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/providers/ecapital/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/providers/igf/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/vs/close-brothers-invoice-finance-vs-ultimate-finance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/vs/aldermore-invoice-finance-vs-close-brothers-invoice-finance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/vs/allianz-trade-vs-close-brothers-invoice-finance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/vs/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/providers/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/regions/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/authors/oliver-mackman/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/providers/directory/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/blog/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/industries/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/questions/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/calculator/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/stats/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/data/uk-invoice-finance-rate-index/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/research/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/books/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/compare/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/guides/how-invoice-finance-works/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/guides/costs/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/working-capital/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/guides/factoring-vs-discounting/",
-      "type": "internal"
-    },
-    {
-      "from": "https://marketinvoice.co.uk/vs/ecapital-vs-igf/",
-      "to": "https://marketinvoice.co.uk/compare/invoice-finance-vs-business-loan/",
-      "type": "internal"
     }
   ],
   "issues": [],
@@ -55975,6 +56255,18 @@
     {
       "path": "/thank-you/",
       "url": "https://marketinvoice.co.uk/thank-you/"
+    },
+    {
+      "path": "/vat-loan/",
+      "url": "https://marketinvoice.co.uk/vat-loan/"
+    },
+    {
+      "path": "/commercial-finance-broker/",
+      "url": "https://marketinvoice.co.uk/commercial-finance-broker/"
+    },
+    {
+      "path": "/invoice-finance-solutions/",
+      "url": "https://marketinvoice.co.uk/invoice-finance-solutions/"
     }
   ],
   "tree": {
@@ -55991,6 +56283,11 @@
             "children": []
           }
         ]
+      },
+      {
+        "name": "business-loans-uk",
+        "path": "/business-loans-uk/",
+        "children": []
       },
       {
         "name": "trust-and-verification",
@@ -56729,6 +57026,11 @@
         "children": []
       },
       {
+        "name": "vat-loan",
+        "path": "/vat-loan/",
+        "children": []
+      },
+      {
         "name": "how-we-are-funded",
         "path": "/how-we-are-funded/",
         "children": []
@@ -56742,6 +57044,11 @@
         "name": "providers",
         "path": "/providers/",
         "children": [
+          {
+            "name": "select-invoice-finance",
+            "path": "/providers/select-invoice-finance/",
+            "children": []
+          },
           {
             "name": "key-factors",
             "path": "/providers/key-factors/",
@@ -58066,8 +58373,18 @@
         "children": []
       },
       {
+        "name": "commercial-finance-broker",
+        "path": "/commercial-finance-broker/",
+        "children": []
+      },
+      {
         "name": "invoice-finance-quote",
         "path": "/invoice-finance-quote/",
+        "children": []
+      },
+      {
+        "name": "reverse-factoring",
+        "path": "/reverse-factoring/",
         "children": []
       },
       {
@@ -58803,6 +59120,11 @@
             "children": []
           }
         ]
+      },
+      {
+        "name": "invoice-finance-solutions",
+        "path": "/invoice-finance-solutions/",
+        "children": []
       },
       {
         "name": "alternatives",
@@ -59759,6 +60081,17 @@
       "signals": [
         "OG",
         "Schema:7",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/business-loans-uk/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:9",
         "Author",
         "Substantive",
         "Breadcrumbs"
@@ -61371,6 +61704,17 @@
       ]
     },
     {
+      "path": "/vat-loan/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:9",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
       "path": "/how-we-are-funded/",
       "score": 5,
       "signals": [
@@ -61398,6 +61742,17 @@
       "signals": [
         "OG",
         "Schema:6",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/providers/select-invoice-finance/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:10",
         "Author",
         "Substantive",
         "Breadcrumbs"
@@ -61900,39 +62255,6 @@
     },
     {
       "path": "/providers/redd-factors/",
-      "score": 5,
-      "signals": [
-        "OG",
-        "Schema:8",
-        "Author",
-        "Substantive",
-        "Breadcrumbs"
-      ]
-    },
-    {
-      "path": "/providers/accident-credit-group/",
-      "score": 5,
-      "signals": [
-        "OG",
-        "Schema:8",
-        "Author",
-        "Substantive",
-        "Breadcrumbs"
-      ]
-    },
-    {
-      "path": "/providers/bnp-paribas/",
-      "score": 5,
-      "signals": [
-        "OG",
-        "Schema:8",
-        "Author",
-        "Substantive",
-        "Breadcrumbs"
-      ]
-    },
-    {
-      "path": "/providers/quba/",
       "score": 5,
       "signals": [
         "OG",
