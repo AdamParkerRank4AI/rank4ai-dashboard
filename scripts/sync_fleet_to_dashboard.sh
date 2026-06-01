@@ -20,16 +20,21 @@ echo "=== $(date -Iseconds) — fleet sync start ===" >> "$LOG"
 # Step 1: Read source, update crawl_*.json
 python3 scripts/read_fleet_source.py >> "$LOG" 2>&1
 
-# Commit + push the crawl files if changed
-CHANGED=$(git status --porcelain src/data/live/crawl_*.json | wc -l | tr -d ' ')
+# Commit + push the crawl files AND any refreshed lead JSONs if changed.
+# Lead JSONs (refreshed by fetch_leads.py via dashboard-refresh) were
+# previously left uncommitted, so deployed lead data lagged behind Supabase.
+CHANGED=$(git status --porcelain src/data/live/crawl_*.json src/data/live/*_leads.json | wc -l | tr -d ' ')
 if [ "$CHANGED" != "0" ]; then
-    echo "  $CHANGED crawl files changed, committing dashboard" >> "$LOG"
-    git add src/data/live/crawl_*.json
+    echo "  $CHANGED data files changed, committing dashboard" >> "$LOG"
+    git add src/data/live/crawl_*.json src/data/live/*_leads.json
     git commit -m "Fleet sync: source-reader refresh ($(date -Iseconds))" >> "$LOG" 2>&1
+    # Self-heal: rebase onto any out-of-band origin commits BEFORE pushing, so
+    # a single direct push to main can't permanently stall the auto-sync.
+    git pull --rebase -X theirs origin main >> "$LOG" 2>&1 || git rebase --abort >> "$LOG" 2>&1
     git push origin main >> "$LOG" 2>&1
     echo "  dashboard pushed" >> "$LOG"
 else
-    echo "  no crawl-file changes (dashboard unchanged)" >> "$LOG"
+    echo "  no data-file changes (dashboard unchanged)" >> "$LOG"
 fi
 
 # Step 2: Regenerate fleet-structure.json across all 6 site repos
