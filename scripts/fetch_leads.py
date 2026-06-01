@@ -165,17 +165,53 @@ def build_payload(site_id: str, table: str, now: datetime, week_ago: str, month_
             sources_counter[src] += 1
     sources = [{"source": k, "count": v} for k, v in sources_counter.most_common(10)]
 
-    # Newest submits first, then newest step_1 partials, then everything else.
-    # Done as a two-stage stable sort: first by created_at desc, then by rank
-    # asc (stable sort preserves relative order within equal-rank items).
-    def _rank(r):
+    # Collapse the funnel into ONE row per real lead. A single person produces
+    # up to 4 rows (step_1_complete, step_2_complete, form_submit AND
+    # form_submit_serverside) — showing them all reads as duplicates. Group by
+    # company_name, else email, else phone (the step rows carry company_name
+    # even when email/phone are still null), keep the furthest stage reached,
+    # and merge the most complete field values across the group.
+    def _stage_rank(r):
         if is_submit(r):
-            return 0
-        if r.get("event_type") == "step_1_complete":
+            return 3
+        et = (r.get("event_type") or "")
+        if et == "step_2_complete":
+            return 2
+        if et == "step_1_complete":
             return 1
-        return 2
-    by_time_desc = sorted(recent, key=lambda r: r["created_at"], reverse=True)
-    recent_display = sorted(by_time_desc, key=_rank)[:20]
+        return 0
+
+    STAGE_LABEL = {3: "submit", 2: "step 2", 1: "step 1", 0: "other"}
+
+    def _group_key(r):
+        for f in ("company_name", "email", "phone"):
+            v = (r.get(f) or "").strip().lower()
+            if v:
+                return f + ":" + v
+        return "id:" + str(r.get("id"))  # ungroupable (e.g. empty diagnostic row)
+
+    groups = {}
+    for r in recent:
+        groups.setdefault(_group_key(r), []).append(r)
+
+    collapsed = []
+    for rows in groups.values():
+        rep = max(rows, key=lambda r: (_stage_rank(r), r["created_at"]))
+        merged = dict(rep)
+        # Fill any blank field on the representative from the other rows.
+        for r in rows:
+            for k, v in r.items():
+                if (merged.get(k) in (None, "")) and v not in (None, ""):
+                    merged[k] = v
+        merged["created_at"] = max(r["created_at"] for r in rows)
+        stages = sorted({_stage_rank(r) for r in rows}, reverse=True)
+        merged["stages"] = [STAGE_LABEL[s] for s in stages]
+        merged["_event_count"] = len(rows)
+        collapsed.append(merged)
+
+    # Furthest-stage leads first, then newest.
+    collapsed.sort(key=lambda r: (_stage_rank(r), r["created_at"]), reverse=True)
+    recent_display = collapsed[:20]
 
     return {
         "fetched_at": now.isoformat(),

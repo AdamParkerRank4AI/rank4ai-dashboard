@@ -241,20 +241,11 @@ const siteSlugForUrl = (id: string) => {
     {recentTop.length === 0 && (
       <p class="text-center text-gray-500 py-8">No leads in last 30 days across any site</p>
     )}
-    <p class="text-[11px] text-gray-500 mt-3">× permanently deletes the lead from Supabase (asks for confirmation + your edit token). It will not reappear on the next pull.</p>
+    <p class="text-[11px] text-gray-500 mt-3">× permanently deletes the lead from Supabase (one click, asks for confirmation only). It will not reappear on the next pull.</p>
   </div>
 
   <script is:inline>
     (function () {
-      const TOKEN_KEY = 'r4ai_edit_token';
-      function getToken() {
-        let t = sessionStorage.getItem(TOKEN_KEY);
-        if (!t) {
-          t = prompt('Paste EDIT_SECRET (same as editor token, saved in this tab only).') || '';
-          if (t) sessionStorage.setItem(TOKEN_KEY, t);
-        }
-        return t;
-      }
       document.querySelectorAll('.lead-dismiss').forEach(function (btn) {
         btn.addEventListener('click', async function () {
           const row = btn.closest('.lead-row');
@@ -262,20 +253,17 @@ const siteSlugForUrl = (id: string) => {
           const siteId = row && row.getAttribute('data-site-id');
           if (!id || !siteId) return;
           if (!confirm('Permanently delete this lead from Supabase? This cannot be undone.')) return;
-          const token = getToken();
-          if (!token) return;
           btn.disabled = true; btn.textContent = '…';
           try {
             const r = await fetch('/api/delete-lead', {
               method: 'POST',
-              headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+              headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ site_id: siteId, id: id }),
             });
             if (r.ok) {
               row.remove();
             } else {
               const msg = (await r.json().catch(function () { return {}; })).error || ('HTTP ' + r.status);
-              if (r.status === 401) sessionStorage.removeItem(TOKEN_KEY);
               alert('Delete failed: ' + msg);
               btn.disabled = false; btn.textContent = '×';
             }

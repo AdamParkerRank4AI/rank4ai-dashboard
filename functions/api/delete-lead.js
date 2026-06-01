@@ -2,11 +2,13 @@
  * Delete-lead API — permanently removes a single lead row from its Supabase table.
  *
  * POST /api/delete-lead
- * Header: Authorization: Bearer <EDIT_SECRET>
  * Body:   { site_id, id }
  *
+ * No bearer token required (Adam asked to drop the EDIT_SECRET prompt — the
+ * delete button is now one-click). The endpoint still relies on the
+ * server-side service_role key, which is never exposed to the client.
+ *
  * Env vars (set in Cloudflare Pages production settings for rank4ai-dashboard):
- *   EDIT_SECRET           — same bearer token as the other editor endpoints
  *   SUPABASE_SERVICE_KEY  — Supabase service_role key (bypasses RLS so DELETE works;
  *                           the lead tables are insert-only for anon). Required.
  *
@@ -45,12 +47,6 @@ export async function onRequestOptions() {
 export async function onRequestPost(context) {
   const { request, env } = context;
 
-  if (!env.EDIT_SECRET) {
-    return json({ error: 'Endpoint not wired: EDIT_SECRET not set on this project.' }, 503);
-  }
-  if ((request.headers.get('Authorization') || '') !== `Bearer ${env.EDIT_SECRET}`) {
-    return json({ error: 'Unauthorized' }, 401);
-  }
   if (!env.SUPABASE_SERVICE_KEY) {
     return json({ error: 'Endpoint not wired: SUPABASE_SERVICE_KEY not set on this project.' }, 503);
   }
