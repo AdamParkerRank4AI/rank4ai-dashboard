@@ -691,5 +691,134 @@
         "note": "Held in womens-health/KEYWORD-EARMARK-FROM-PC.md. Collagen peptides / silk peptides / peptide serum / anti-ageing injection / collagen peptide injection (outright). GHK-Cu / skin peptides / skin rejuvenation peptide / anti-ageing peptides / Glow Stack peptide (dual-publish with PC, reciprocal cross-link)."
       }
     ]
+  },
+  {
+    "id": "equityrelease",
+    "name": "Equity Release (UK)",
+    "domain": "TBD",
+    "logo": "",
+    "flavour": "leadgen",
+    "dashboard": "fleet",
+    "clientCode": "EQREL",
+    "notes": "BANKED 26 May 2026 (research-stage only, no build yet). UK equity release lead-gen / authority site. Lead-sells qualified enquiries to FCA-authorised equity release advisers at ~£90-150 CPL (RMT Direct / LeadCrowd benchmarks). Scored 20/25 on the niche-attack scorecard. Organic mere-introducer model (RAO Art.33) + Introducer Appointed Representative (IAR) under an authorised principal for the 'find an adviser' CTA (FSMA s.21 approver gateway, since 7 Feb 2024). Sibling: RIO/later-life lending (the can-service-interest alternative within the same advisory lane). On-site upsell clusters (Kevin Bacon run): Care-fees funding (release equity vs immediate-needs annuity) + Gifted deposit / Bank of Mum & Dad (release equity to gift kids a deposit). Spin-out option: pension-income (annuity 5,400 + drawdown 4,400 = 10k+/mo combined). Research files: iCloud/.../niche-discovery-2026-05-26/09-equity-release-leadgen-brief.md + KEVIN-BACON-equity-release.md.",
+    "clientViewSections": [
+      "overview",
+      "site-tree",
+      "content-plan",
+      "recommendations"
+    ],
+    "allSections": [
+      "overview",
+      "site-tree",
+      "content-plan",
+      "recommendations"
+    ],
+    "sections": [],
+    "pre_launch": true,
+    "pending_decisions": [
+      {
+        "id": "brand_name_domain",
+        "label": "Pick brand name + register .co.uk domain",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "Working name TBD. Domain shortlist when ready."
+      },
+      {
+        "id": "iar_principal_setup",
+        "label": "Identify + sign with FCA-authorised principal for IAR appointment",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "Equity-release adviser network. Principal notifies FCA 30 days before appointment. Cost: network fee (few hundred to few thousand pounds/year) + referral split. Compliance consultant can broker. IAR keeps us inside RAO Art.33 (introducing to authorised firm) AND lets us run an FCA-approved 'find an adviser' CTA under FSMA s.21."
+      },
+      {
+        "id": "adviser_panel",
+        "label": "Build the ERC-member adviser panel (lead destinations)",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "Must refer to Equity Release Council members (major lenders only accept ERC-member advisers). 4-6 panel firms minimum for geographic coverage."
+      },
+      {
+        "id": "payment_structure",
+        "label": "Decide payment structure with adviser panel (flat fee vs commission)",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "Flat referral fee is SAFER than commission per completed case (commission strengthens an argument that we're 'arranging', which would need authorisation). Discuss with principal."
+      },
+      {
+        "id": "gdpr_consent_flow",
+        "label": "GDPR/PECR consent flow with named recipient(s)",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "Data controller; explicit consent naming the recipient(s) (generic 'we may share with partners' is NOT enough). PECR opt-in if advisers will phone/email. Data-sharing agreement with each adviser firm. Clear privacy policy."
+      },
+      {
+        "id": "vulnerable_customers_framework",
+        "label": "Vulnerability framework: equity release audience is largely elderly",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "FCA vulnerability framework applies. No pressure tactics/urgency, accessible design, signpost it's a major long-term decision, suggest discussing with family/solicitor."
+      }
+    ]
+  },
+  {
+    "id": "evchargers",
+    "name": "EV Chargers (UK)",
+    "domain": "TBD",
+    "logo": "",
+    "flavour": "leadgen",
+    "dashboard": "fleet",
+    "clientCode": "EVCHG",
+    "notes": "BANKED 26 May 2026 (research-stage only, no build yet). UK EV charger compatibility + installer lead-gen site. Dual-model: (a) own-product compatibility tool (which charger fits my car / my home / my use-case), (b) installer leads sold to OZEV-approved installers. Scored 19/25. Fully unregulated (no FCA/ASA wall beyond standard advertising rules). Grant-driven demand (OZEV EV chargepoint grant for flats/rental ~£350; Workplace Charging Scheme up to £350 per socket; Homeowners-with-driveways grant ended Mar 2022 but flat/rental + workplace still live). Working name placeholder evmatch.co.uk per research. Research files: iCloud/.../niche-discovery-2026-05-26/10-deepdive-ev-charger.md.",
+    "clientViewSections": [
+      "overview",
+      "site-tree",
+      "content-plan",
+      "recommendations"
+    ],
+    "allSections": [
+      "overview",
+      "site-tree",
+      "content-plan",
+      "recommendations"
+    ],
+    "sections": [],
+    "pre_launch": true,
+    "pending_decisions": [
+      {
+        "id": "brand_name_domain",
+        "label": "Pick brand name + register .co.uk domain (working: evmatch.co.uk)",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "Working name from research: evmatch.co.uk. Verify availability + alternatives."
+      },
+      {
+        "id": "compatibility_data_source",
+        "label": "Source EV charger × EV car compatibility dataset",
+        "status": "TBD",
+        "owner": "Adam or Claude",
+        "note": "Connector types (Type 2 / CCS / CHAdeMO), kW ratings, smart-charging compatibility, V2H/V2G support. Data sources: ZapMap, EV Database (ev-database.org), manufacturer datasheets, OCPP standards. The compatibility tool is the brand differentiator."
+      },
+      {
+        "id": "installer_panel",
+        "label": "Build OZEV-approved installer panel (lead destinations)",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "OZEV-approved installer list is public (gov.uk). Target: 20-50 installer firms across UK regions for geographic coverage."
+      },
+      {
+        "id": "grant_data_feed",
+        "label": "Live OZEV grant eligibility checker + amounts",
+        "status": "TBD",
+        "owner": "Claude",
+        "note": "Workplace Charging Scheme + EV chargepoint grant for flat/rental occupants. Eligibility flow on-site. Drives lead capture."
+      },
+      {
+        "id": "lead_capture_routing",
+        "label": "Lead capture form + routing to installer panel (round-robin or geo-match)",
+        "status": "TBD",
+        "owner": "Claude",
+        "note": "Standard fleet pattern: Astro form → Supabase capture → API routing to installer panel. Same shape as MerchantHQ / FundBiz."
+      }
+    ]
   }
 ]
