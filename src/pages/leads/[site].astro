@@ -1,0 +1,180 @@
+---
+import DashboardLayout from '../../layouts/DashboardLayout.astro';
+import clients from '../../utils/dashboardClients';
+import fs from 'node:fs';
+import path from 'node:path';
+
+export function getStaticPaths() {
+  const LEADS_FILE: Record<string, string> = {
+    'market-invoice': 'mi_leads.json',
+    'bestbusinessloans': 'bbl_leads.json',
+    'fundbiz': 'fundbiz_leads.json',
+    'cardmachines': 'cardmachines_leads.json',
+    'kartapay': 'kartapay_leads.json',
+    'peptideclear': 'peptideclear_leads.json',
+  };
+  return Object.keys(LEADS_FILE).map((site) => ({ params: { site } }));
+}
+
+const LEADS_FILE: Record<string, string> = {
+  'market-invoice': 'mi_leads.json',
+  'bestbusinessloans': 'bbl_leads.json',
+  'fundbiz': 'fundbiz_leads.json',
+  'cardmachines': 'cardmachines_leads.json',
+  'kartapay': 'kartapay_leads.json',
+  'peptideclear': 'peptideclear_leads.json',
+};
+
+const { site } = Astro.params;
+const file = LEADS_FILE[site as string];
+if (!file) return Astro.redirect('/leads/');
+
+const c = (clients as any[]).find((x) => x.id === site);
+const siteName = c?.name || site;
+
+function loadJson(filename: string) {
+  try {
+    const filePath = path.join(process.cwd(), 'src', 'data', 'live', filename);
+    if (fs.existsSync(filePath)) return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+  } catch {}
+  return null;
+}
+
+const data = loadJson(file);
+if (!data) return Astro.redirect('/leads/');
+
+const recentLeads = data.recent_leads || [];
+const sources30 = data.sources_30d || [];
+const funnel = data.funnel_7d || {};
+const fetchedAt = data.fetched_at;
+const liveDomain = c?.liveDomain || c?.domain;
+---
+
+<DashboardLayout title={`${siteName} leads — Rank4AI`} view="agency">
+  <div class="mb-4">
+    <a href="/leads/" class="text-sm text-gray-400 hover:text-emerald-400">← All fleet leads</a>
+    <h1 class="text-xl font-bold text-white mt-1">{siteName} leads</h1>
+    {liveDomain && (
+      <p class="text-sm text-gray-500">
+        <a href={`https://${liveDomain}`} target="_blank" class="hover:text-gray-300">{liveDomain} →</a>
+        {fetchedAt && (<span class="ml-2">Refreshed {new Date(fetchedAt).toLocaleString('en-GB', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' })}</span>)}
+      </p>
+    )}
+  </div>
+
+  <!-- Headline counters -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+    <div class="bg-gray-900 border border-gray-700 rounded-lg p-4">
+      <div class="text-2xl font-bold text-white">{data.count_total ?? 0}</div>
+      <div class="text-xs text-gray-400 mt-1">Total leads</div>
+    </div>
+    <div class="bg-gray-900 border border-gray-700 rounded-lg p-4">
+      <div class="text-2xl font-bold text-white">{data.count_30d ?? 0}</div>
+      <div class="text-xs text-gray-400 mt-1">Last 30 days</div>
+    </div>
+    <div class="bg-gray-900 border border-gray-700 rounded-lg p-4">
+      <div class="text-2xl font-bold text-emerald-400">{funnel.form_submit ?? 0}</div>
+      <div class="text-xs text-gray-400 mt-1">Submits (7d)</div>
+    </div>
+    <div class="bg-gray-900 border border-gray-700 rounded-lg p-4">
+      <div class="text-2xl font-bold text-white">{funnel.conversion_pct ?? 0}%</div>
+      <div class="text-xs text-gray-400 mt-1">Step 1 → Submit (7d)</div>
+    </div>
+  </div>
+
+  <!-- Funnel -->
+  <div class="bg-gray-900 border border-gray-700 rounded-lg p-5 mb-6">
+    <h3 class="text-sm font-semibold text-white mb-3">7-day funnel</h3>
+    <div class="space-y-2">
+      <div class="flex items-center gap-3">
+        <span class="text-xs text-gray-400 w-32">Step 1 complete</span>
+        <div class="flex-1 bg-gray-800 rounded-full h-6 overflow-hidden">
+          <div class="h-full bg-blue-600 rounded-full" style="width: 100%"></div>
+        </div>
+        <span class="text-xs font-bold text-white w-10 text-right">{funnel.step_1_complete ?? 0}</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-xs text-gray-400 w-32">Form submitted</span>
+        <div class="flex-1 bg-gray-800 rounded-full h-6 overflow-hidden">
+          <div class="h-full bg-emerald-600 rounded-full" style={`width: ${funnel.conversion_pct ?? 0}%`}></div>
+        </div>
+        <span class="text-xs font-bold text-white w-10 text-right">{funnel.form_submit ?? 0}</span>
+      </div>
+    </div>
+    <p class="text-[11px] text-gray-500 mt-3">Drop-off Step 1 → Submit: <span class="text-yellow-400">{Math.max(0, (funnel.step_1_complete ?? 0) - (funnel.form_submit ?? 0))}</span> people.</p>
+  </div>
+
+  <!-- Recent leads -->
+  <div class="bg-gray-900 border border-gray-700 rounded-lg p-5 mb-6">
+    <h3 class="text-sm font-semibold text-white mb-3">Recent leads</h3>
+    {recentLeads.length === 0 ? (
+      <p class="text-xs text-gray-500">No leads yet. The first real submit will appear here.</p>
+    ) : (
+      <div class="overflow-x-auto">
+        <table class="w-full text-xs">
+          <thead class="border-b border-gray-700">
+            <tr class="text-left text-gray-400">
+              <th class="py-2 pr-2">When</th>
+              <th class="py-2 pr-2">Status</th>
+              <th class="py-2 pr-2">Company</th>
+              <th class="py-2 pr-2">Contact</th>
+              <th class="py-2 pr-2">Email / Phone</th>
+              <th class="py-2 pr-2 text-right">Amount</th>
+              <th class="py-2 pr-2 text-right">Turnover</th>
+              <th class="py-2 pr-2">Finance type</th>
+              <th class="py-2 pr-2">Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            {recentLeads.map((l: any) => (
+              <tr class="border-b border-gray-800/50">
+                <td class="py-2 pr-2 text-gray-300 whitespace-nowrap">{l.created_at ? new Date(l.created_at).toLocaleString('en-GB', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }) : '—'}</td>
+                <td class="py-2 pr-2">
+                  {(['form_submit', 'form_submit_serverside', 'quote_request', 'submit'].includes(l.event_type) ||
+                    (!l.event_type && l.email && l.phone)) && (
+                    <span class="px-1.5 py-0.5 rounded text-[10px] bg-emerald-900/60 text-emerald-300">submit</span>
+                  )}
+                  {l.event_type === 'step_1_complete' && <span class="px-1.5 py-0.5 rounded text-[10px] bg-blue-900/60 text-blue-300">step 1</span>}
+                  {l.event_type === 'step_2_complete' && <span class="px-1.5 py-0.5 rounded text-[10px] bg-blue-900/60 text-blue-300">step 2</span>}
+                  {l.event_type === 'form_abandon' && <span class="px-1.5 py-0.5 rounded text-[10px] bg-amber-900/60 text-amber-300">abandon</span>}
+                  {l.event_type === 'partial_lead' && <span class="px-1.5 py-0.5 rounded text-[10px] bg-amber-900/60 text-amber-300">partial</span>}
+                  {l.event_type && !['form_submit', 'form_submit_serverside', 'quote_request', 'submit', 'step_1_complete', 'step_2_complete', 'form_abandon', 'partial_lead'].includes(l.event_type) && (
+                    <span class="px-1.5 py-0.5 rounded text-[10px] bg-gray-800 text-gray-400">{l.event_type}</span>
+                  )}
+                </td>
+                <td class="py-2 pr-2 text-white">{l.company_name || '—'}</td>
+                <td class="py-2 pr-2 text-gray-300">{l.contact_name || '—'}</td>
+                <td class="py-2 pr-2 text-gray-300">
+                  {l.email && (<div>{l.email}</div>)}
+                  {l.phone && (<div class="text-gray-500">{l.phone}</div>)}
+                  {!l.email && !l.phone && '—'}
+                </td>
+                <td class="py-2 pr-2 text-right text-gray-300">{l.amount || '—'}</td>
+                <td class="py-2 pr-2 text-right text-gray-300">{l.turnover || '—'}</td>
+                <td class="py-2 pr-2 text-gray-300">{l.finance_type || '—'}</td>
+                <td class="py-2 pr-2 text-gray-500">{l.source || '—'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    )}
+  </div>
+
+  <!-- Sources -->
+  {sources30.length > 0 && (
+    <div class="bg-gray-900 border border-gray-700 rounded-lg p-5">
+      <h3 class="text-sm font-semibold text-white mb-3">Sources (30 days)</h3>
+      <table class="text-xs">
+        <tbody>
+          {sources30.slice(0, 10).map((src: any) => (
+            <tr>
+              <td class="py-1 pr-4 text-gray-300">{src.source || 'unknown'}</td>
+              <td class="py-1 text-right text-white font-semibold">{src.count}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )}
+</DashboardLayout>

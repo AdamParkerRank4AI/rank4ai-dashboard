@@ -1,13 +1,13 @@
 {
-  "fetched_at": "2026-05-29T07:56:38.001718+00:00",
+  "fetched_at": "2026-06-01T08:15:26.101095+00:00",
   "site_id": "bestbusinessloans",
   "table": "bestbusinessloans_leads",
-  "count_total": 4,
-  "count_30d": 4,
-  "count_7d": 1,
+  "count_total": 3,
+  "count_30d": 3,
+  "count_7d": 0,
   "funnel_7d": {
     "step_1_complete": 0,
-    "form_submit": 1,
+    "form_submit": 0,
     "conversion_pct": 0.0
   },
   "sources_30d": [
@@ -16,44 +16,11 @@
       "count": 2
     },
     {
-      "source": "claude-diagnostic",
-      "count": 1
-    },
-    {
       "source": "test",
       "count": 1
     }
   ],
   "recent_leads": [
-    {
-      "id": "11101e8a-8bfc-4488-b434-fba5310eb5c9",
-      "created_at": "2026-05-27T17:34:36.731265+00:00",
-      "event_type": "form_submit",
-      "turnover": null,
-      "industry": null,
-      "finance_type": null,
-      "company_name": "ZZZ TEST LEAD - CLAUDE PIPE CHECK - DO NOT ACTION",
-      "company_number": null,
-      "business_postcode": null,
-      "contact_name": "ZZZ TEST LEAD - CLAUDE PIPE CHECK - DO NOT ACTION",
-      "email": "pipe-test+bestbusinessloans@claude.test",
-      "phone": "07000000002",
-      "page_url": null,
-      "applied_from": null,
-      "user_agent": null,
-      "source": "claude-diagnostic",
-      "landing_path": null,
-      "referrer": null,
-      "referrer_host": null,
-      "utm_source": null,
-      "utm_medium": null,
-      "utm_campaign": null,
-      "utm_term": null,
-      "utm_content": null,
-      "gclid": null,
-      "fbclid": null,
-      "msclkid": null
-    },
     {
       "id": "aa309d28-1c32-4829-be12-ed4d98839a04",
       "created_at": "2026-05-21T11:39:14.081694+00:00",
@@ -81,7 +48,15 @@
       "utm_content": null,
       "gclid": null,
       "fbclid": null,
-      "msclkid": null
+      "msclkid": null,
+      "amount": null,
+      "entity_type": null,
+      "ip": null,
+      "country": null,
+      "device_type": null,
+      "returning_visitor": null,
+      "visit_count": null,
+      "asn_org": null
     },
     {
       "id": "bef0fd68-c735-4acb-ab10-48f40bf468b2",
@@ -110,7 +85,15 @@
       "utm_content": null,
       "gclid": null,
       "fbclid": null,
-      "msclkid": null
+      "msclkid": null,
+      "amount": null,
+      "entity_type": null,
+      "ip": null,
+      "country": null,
+      "device_type": null,
+      "returning_visitor": null,
+      "visit_count": null,
+      "asn_org": null
     },
     {
       "id": "052560ee-8e23-44ca-a69c-9f804730f234",
@@ -139,7 +122,15 @@
       "utm_content": null,
       "gclid": null,
       "fbclid": null,
-      "msclkid": null
+      "msclkid": null,
+      "amount": null,
+      "entity_type": null,
+      "ip": null,
+      "country": null,
+      "device_type": null,
+      "returning_visitor": null,
+      "visit_count": null,
+      "asn_org": null
     }
   ]
 }

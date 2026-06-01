@@ -123,8 +123,10 @@ const siteSlugForUrl = (id: string) => {
         </thead>
         <tbody>
           {sites.map((s) => (
-            <tr class="border-b border-gray-800/50">
-              <td class="py-2 pr-2 text-white">{s.name}</td>
+            <tr class="border-b border-gray-800/50 hover:bg-gray-800/40">
+              <td class="py-2 pr-2">
+                <a href={`/leads/${s.id}/`} class="text-white hover:text-emerald-400 underline-offset-2 hover:underline">{s.name} →</a>
+              </td>
               <td class="py-2 pr-2 text-right text-gray-300">{s.data.count_total ?? 0}</td>
               <td class="py-2 pr-2 text-right text-gray-300">{s.data.count_30d ?? 0}</td>
               <td class="py-2 pr-2 text-right text-gray-300">{s.data.count_7d ?? 0}</td>
