@@ -1,20 +1,20 @@
 {
   "site_id": "peptideclear",
   "domain": "peptideclear.co.uk",
-  "crawled_at": "2026-06-01T12:07:03.056381+00:00",
+  "crawled_at": "2026-06-01T12:22:30.847907+00:00",
   "source": "fleet-source-reader",
-  "pages_crawled": 436,
+  "pages_crawled": 439,
   "total_issues": 0,
-  "orphan_pages": 41,
-  "avg_depth": 1.9587155963302751,
-  "avg_word_count": 4360,
-  "pages_with_schema": 436,
+  "orphan_pages": 42,
+  "avg_depth": 1.9544419134396356,
+  "avg_word_count": 4367,
+  "pages_with_schema": 439,
   "pages_with_multimodal": 0,
-  "pages_with_comparison_table": 70,
+  "pages_with_comparison_table": 71,
   "pages_with_video": 0,
-  "pages_over_2000_words": 436,
+  "pages_over_2000_words": 439,
   "images_missing_alt": 0,
-  "pages_with_date": 428,
+  "pages_with_date": 431,
   "crawler_access": {
     "GPTBot": true,
     "ClaudeBot": true,
@@ -34,7 +34,7 @@
     },
     "glp1": {
       "hub": "/glp1/",
-      "page_count": 1
+      "page_count": 2
     },
     "cosmetic-peptides": {
       "hub": "/cosmetic-peptides/",
@@ -246,7 +246,11 @@
     },
     "pharmacies": {
       "hub": "/pharmacies/",
-      "page_count": 2
+      "page_count": 3
+    },
+    "peptides": {
+      "hub": "/peptides/",
+      "page_count": 1
     },
     "accessibility": {
       "hub": "/accessibility/",
@@ -285,27 +289,27 @@
       "page_count": 1
     }
   },
-  "topic_cluster_count": 65,
+  "topic_cluster_count": 66,
   "term_consistency": {
-    "editorial": 248,
+    "editorial": 249,
     "2026": 236,
-    "research": 200,
+    "research": 201,
     "access": 177,
-    "peptide": 162,
+    "peptide": 163,
     "mounjaro": 162,
-    "peptides": 152,
-    "routes": 140,
-    "route": 117,
+    "peptides": 155,
+    "routes": 143,
+    "route": 119,
     "weight": 116,
     "regulatory": 111,
     "clinical": 105,
     "evidence": 98,
     "nice": 98,
-    "collagen": 93
+    "collagen": 94
   },
   "content_freshness": {
-    "pages_with_dates": 428,
-    "fresh_30_days": 427,
+    "pages_with_dates": 431,
+    "fresh_30_days": 430,
     "fresh_90_days": 0,
     "stale": 1
   },
@@ -391,7 +395,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 1
     },
     {
@@ -1215,6 +1219,49 @@
       "depth": 2
     },
     {
+      "url": "https://peptideclear.co.uk/glp1/",
+      "path": "/glp1/",
+      "title": "GLP-1 in the UK: medications, routes and how the category works",
+      "h1": "GLP-1 in the UK: medications, routes and how the category works",
+      "meta_desc": "Encyclopedic umbrella on GLP-1 receptor agonist medication in the UK. What GLP-1 means, which medications are licensed, which routes dispense them, and where each brand sits.",
+      "word_count": 5874,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Organization",
+        "Article",
+        "Article",
+        "ItemList",
+        "BreadcrumbList"
+      ],
+      "internal_links_out": 60,
+      "external_links_out": -47,
+      "canonical": "https://peptideclear.co.uk/glp1/",
+      "response_time_ms": 0,
+      "image_count": 3,
+      "images_with_alt": 3,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 8,
+      "question_h2s": 0,
+      "h2_count": 10,
+      "last_modified": "2026-06-01",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": true,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 0,
+      "depth": 1
+    },
+    {
       "url": "https://peptideclear.co.uk/glp1/best-uk/",
       "path": "/glp1/best-uk/",
       "title": "UK GLP-1 weight-loss routes: NHS, private, pharmacy compared",
@@ -1254,7 +1301,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 2,
+      "internal_links_in": 3,
       "depth": 2
     },
     {
@@ -1295,7 +1342,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 1
     },
     {
@@ -1418,7 +1465,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 1
     },
     {
@@ -1459,7 +1506,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 1
     },
     {
@@ -2259,7 +2306,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 1
     },
     {
@@ -3653,7 +3700,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 1
     },
     {
@@ -3861,7 +3908,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 1
     },
     {
@@ -3987,7 +4034,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 2
     },
     {
@@ -4028,7 +4075,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 2
     },
     {
@@ -4363,7 +4410,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 2
     },
     {
@@ -4656,7 +4703,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 2
     },
     {
@@ -4949,7 +4996,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 2
     },
     {
@@ -5243,7 +5290,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 1
     },
     {
@@ -6230,7 +6277,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 1
     },
     {
@@ -7009,7 +7056,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 0,
+      "internal_links_in": 1,
       "depth": 2
     },
     {
@@ -7624,7 +7671,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 2,
+      "internal_links_in": 3,
       "depth": 2
     },
     {
@@ -7788,7 +7835,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1,
+      "internal_links_in": 2,
       "depth": 2
     },
     {
@@ -8120,7 +8167,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 1
     },
     {
@@ -8161,7 +8208,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 1
     },
     {
@@ -8245,7 +8292,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 1
     },
     {
@@ -8368,7 +8415,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 1
     },
     {
@@ -8614,7 +8661,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 1
     },
     {
@@ -9158,7 +9205,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 3,
+      "internal_links_in": 4,
       "depth": 2
     },
     {
@@ -9782,7 +9829,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 88,
+      "internal_links_in": 91,
       "depth": 2
     },
     {
@@ -10032,7 +10079,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 1
     },
     {
@@ -10245,7 +10292,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 5,
+      "internal_links_in": 7,
       "depth": 2
     },
     {
@@ -10585,7 +10632,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 93,
+      "internal_links_in": 96,
       "depth": 2
     },
     {
@@ -10710,7 +10757,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 5,
+      "internal_links_in": 7,
       "depth": 2
     },
     {
@@ -10793,7 +10840,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 1
     },
     {
@@ -12597,7 +12644,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 1
     },
     {
@@ -13058,7 +13105,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 221,
+      "internal_links_in": 222,
       "depth": 2
     },
     {
@@ -13275,7 +13322,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 78,
+      "internal_links_in": 81,
       "depth": 2
     },
     {
@@ -13698,7 +13745,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 116,
+      "internal_links_in": 118,
       "depth": 1
     },
     {
@@ -13739,7 +13786,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 1
     },
     {
@@ -13950,7 +13997,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 1
     },
     {
@@ -14118,7 +14165,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 1
     },
     {
@@ -14820,7 +14867,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 1
     },
     {
@@ -15394,7 +15441,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 1
     },
     {
@@ -15437,7 +15484,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 0,
+      "internal_links_in": 1,
       "depth": 1
     },
     {
@@ -15601,7 +15648,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 1
     },
     {
@@ -15725,7 +15772,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 1
     },
     {
@@ -15971,7 +16018,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 1
     },
     {
@@ -16223,7 +16270,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 34,
+      "internal_links_in": 35,
       "depth": 2
     },
     {
@@ -16265,7 +16312,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 80,
+      "internal_links_in": 81,
       "depth": 2
     },
     {
@@ -16307,7 +16354,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 93,
+      "internal_links_in": 94,
       "depth": 2
     },
     {
@@ -16433,7 +16480,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 251,
+      "internal_links_in": 252,
       "depth": 2
     },
     {
@@ -16598,7 +16645,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 1
     },
     {
@@ -16726,7 +16773,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 1
     },
     {
@@ -16767,7 +16814,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 101,
+      "internal_links_in": 103,
       "depth": 1
     },
     {
@@ -16810,8 +16857,93 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1,
+      "internal_links_in": 3,
       "depth": 2
+    },
+    {
+      "url": "https://peptideclear.co.uk/pharmacies/simplymeds/",
+      "path": "/pharmacies/simplymeds/",
+      "title": "SimplyMeds UK: online pharmacy route explained",
+      "h1": "SimplyMeds UK: the online pharmacy route",
+      "meta_desc": "Editorial overview of SimplyMeds as a UK-licensed online pharmacy. GPhC registration, prescriber model, how it sits alongside Boots Online Doctor, Pharmacy2U, Phlo and Asda Online Doctor.",
+      "word_count": 4574,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Organization",
+        "Article",
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internal_links_out": 49,
+      "external_links_out": -36,
+      "canonical": "https://peptideclear.co.uk/pharmacies/simplymeds/",
+      "response_time_ms": 0,
+      "image_count": 3,
+      "images_with_alt": 3,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 7,
+      "question_h2s": 0,
+      "h2_count": 8,
+      "last_modified": "2026-06-01",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 0,
+      "depth": 2
+    },
+    {
+      "url": "https://peptideclear.co.uk/peptides/",
+      "path": "/peptides/",
+      "title": "Peptides UK: the four categories and how PeptideClear covers them",
+      "h1": "Peptides UK: the four categories and how PeptideClear covers them",
+      "meta_desc": "Encyclopedic UK peptide umbrella. What peptides are, the four UK categories (cosmetic, collagen, research, GLP-1), how each is regulated, and where each lives on PeptideClear.",
+      "word_count": 5421,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Organization",
+        "Article",
+        "Article",
+        "ItemList",
+        "BreadcrumbList"
+      ],
+      "internal_links_out": 46,
+      "external_links_out": -33,
+      "canonical": "https://peptideclear.co.uk/peptides/",
+      "response_time_ms": 0,
+      "image_count": 3,
+      "images_with_alt": 3,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 1,
+      "list_count": 8,
+      "question_h2s": 0,
+      "h2_count": 9,
+      "last_modified": "2026-06-01",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 0,
+      "depth": 1
     },
     {
       "url": "https://peptideclear.co.uk/accessibility/",
@@ -16851,7 +16983,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 1
     },
     {
@@ -16893,7 +17025,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 2
     },
     {
@@ -16934,7 +17066,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 436,
+      "internal_links_in": 439,
       "depth": 1
     },
     {
@@ -18277,7 +18409,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 87,
+      "internal_links_in": 88,
       "depth": 1
     },
     {
@@ -18467,7 +18599,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/./",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -18977,7 +19109,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/404/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -19357,7 +19489,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/gh-secretagogues/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -19797,7 +19929,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -20297,7 +20429,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/ipamorelin-vs-sermorelin/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -20687,7 +20819,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/my-peptides-vs-direct-sarms/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -21082,7 +21214,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/phlo-vs-pharmacy2u/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -21462,7 +21594,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/numan-vs-voy/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -21852,7 +21984,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/bpc-157-vs-tb-500/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -22242,7 +22374,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/hooke-vs-echelon/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -22632,7 +22764,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/phlo-vs-simplymeds/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -23022,7 +23154,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/manual-vs-numan/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -23412,7 +23544,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/numan-vs-phlo/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -23802,7 +23934,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/my-peptides-vs-pure-peptides-uk/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -24197,7 +24329,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/numan-vs-juniper/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -24587,7 +24719,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/ghk-cu-vs-matrixyl/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -24977,7 +25109,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/type-i-vs-type-ii-collagen/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -25362,7 +25494,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/tesamorelin-vs-sermorelin/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -25747,7 +25879,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/cjc-1295-vs-sermorelin/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -26137,7 +26269,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/bare-biology-vs-vital-proteins/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -26527,7 +26659,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/hydrolysed-vs-native-collagen/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -26912,7 +27044,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/juniper-vs-voy/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -27302,7 +27434,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/marine-vs-bovine-collagen/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -27692,7 +27824,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/vs/manual-vs-juniper/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -28066,6 +28198,531 @@
       "type": "internal"
     },
     {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/rss.xml",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/coa-trust-index/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/conditions/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/shop/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/clinics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/pillars/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/research-peptides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/collagen/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/cosmetic-peptides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/conditions/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/shop/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/clinics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/pillars/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/research-peptides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/collagen/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/cosmetic-peptides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/authors/oliver-mackman/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/glp1/best-uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/shop/mounjaro/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/shop/wegovy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/explained/ozempic-vs-mounjaro-brand-confusion/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/explained/semaglutide-liraglutide-licensing/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/research-peptides/retatrutide/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/nhs-access/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/clinics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/pharmacies/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/supermarkets/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/glp1/best-uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/clinics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/pharmacies/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/pharmacies/boots/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/nhs-access/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/faq/glp1/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/explained/ozempic-vs-mounjaro-brand-confusion/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/explained/semaglutide-tirzepatide-licensing/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/explained/semaglutide-liraglutide-licensing/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/research-peptides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/collagen/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/cosmetic-peptides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/research-peptides/bpc-157/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/best/collagen-uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/clinics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/coa-trust-index/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/shop/bpc-157/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/clinics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/pharmacies/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/clinics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/pharmacies/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/metabolic-peptides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/pillars/body-recomposition/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/pillars/glp1-cost-and-supply/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/pillars/glp1-face-phenomenon/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/faq/glp1/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/vs/mounjaro-vs-wegovy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/authors/oliver-mackman/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/cosmetic-peptides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/collagen/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/research-peptides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/clinics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/shop/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/glossary/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/compounds/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/explained/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/conditions/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/vs/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/faq/research-peptides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/faq/glp1/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/faq/collagen/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/faq/cosmetic-peptides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/regulatory/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/lang/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/start-here/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/ai-instructions/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/trust-review/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/safety/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/authors/oliver-mackman/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/coa-trust-index/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/data/api/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/rss.xml",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/cookies/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/accessibility/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/cookies/",
+      "type": "internal"
+    },
+    {
+      "from": "https://peptideclear.co.uk/glp1/",
+      "to": "https://peptideclear.co.uk/pagefind/pagefind-ui.css",
+      "type": "internal"
+    },
+    {
       "from": "https://peptideclear.co.uk/glp1/best-uk/",
       "to": "https://peptideclear.co.uk/favicon.svg",
       "type": "internal"
@@ -28082,7 +28739,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/glp1/best-uk/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -28592,7 +29249,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/cosmetic-peptides/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -29032,7 +29689,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/cosmetic-peptides/matrixyl/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -29412,7 +30069,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/cosmetic-peptides/copper-peptides/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -29792,7 +30449,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/contact/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -30147,7 +30804,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/tools/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -30517,7 +31174,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/tools/half-life-calculator/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -30872,7 +31529,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/tools/12-month-supply-cost/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -31232,7 +31889,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/stacks/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -31667,7 +32324,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/stacks/fat-loss/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -32117,7 +32774,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/stacks/cognitive/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -32587,7 +33244,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/stacks/joint-recovery/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -33042,7 +33699,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/stacks/sleep/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -33472,7 +34129,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/stacks/cognition/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -33907,7 +34564,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/stacks/gh-stack/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -34387,7 +35044,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/stacks/klow/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -34852,7 +35509,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/stacks/longevity/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -35292,7 +35949,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/stacks/recovery/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -35767,7 +36424,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/stacks/hulk/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -36237,7 +36894,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/stacks/wolverine/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -36707,7 +37364,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/stacks/glp1-companion/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -37157,7 +37814,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/stacks/sexual-health/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -37587,7 +38244,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/stacks/healing/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -38062,7 +38719,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/stacks/glow/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -38527,7 +39184,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/trust-review/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -38907,7 +39564,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/mounjaro/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -39442,7 +40099,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/mounjaro/reading/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -39892,7 +40549,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/mounjaro/norwich/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -40342,7 +40999,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/mounjaro/milton-keynes/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -40792,7 +41449,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/mounjaro/birmingham/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -41242,7 +41899,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/mounjaro/stoke-on-trent/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -41692,7 +42349,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/mounjaro/swindon/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -42142,7 +42799,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/mounjaro/newcastle/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -42592,7 +43249,7 @@
     },
     {
       "from": "https://peptideclear.co.uk/mounjaro/sheffield/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
+      "to": "https://peptideclear.co.uk/_astro/BaseLayout.DM6HpTwu.css",
       "type": "internal"
     },
     {
@@ -42923,536 +43580,15 @@
     {
       "from": "https://peptideclear.co.uk/mounjaro/sheffield/",
       "to": "https://peptideclear.co.uk/start-here/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/sheffield/",
-      "to": "https://peptideclear.co.uk/about/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/sheffield/",
-      "to": "https://peptideclear.co.uk/ai-instructions/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/sheffield/",
-      "to": "https://peptideclear.co.uk/methodology/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/sheffield/",
-      "to": "https://peptideclear.co.uk/trust-review/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/sheffield/",
-      "to": "https://peptideclear.co.uk/safety/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/sheffield/",
-      "to": "https://peptideclear.co.uk/editorial-policy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/sheffield/",
-      "to": "https://peptideclear.co.uk/how-we-are-funded/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/sheffield/",
-      "to": "https://peptideclear.co.uk/authors/oliver-mackman/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/sheffield/",
-      "to": "https://peptideclear.co.uk/coa-trust-index/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/sheffield/",
-      "to": "https://peptideclear.co.uk/data/api/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/sheffield/",
-      "to": "https://peptideclear.co.uk/tools/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/sheffield/",
-      "to": "https://peptideclear.co.uk/rss.xml",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/sheffield/",
-      "to": "https://peptideclear.co.uk/contact/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/sheffield/",
-      "to": "https://peptideclear.co.uk/privacy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/sheffield/",
-      "to": "https://peptideclear.co.uk/terms/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/sheffield/",
-      "to": "https://peptideclear.co.uk/disclaimer/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/sheffield/",
-      "to": "https://peptideclear.co.uk/cookies/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/sheffield/",
-      "to": "https://peptideclear.co.uk/accessibility/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/sheffield/",
-      "to": "https://peptideclear.co.uk/cookies/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/sheffield/",
-      "to": "https://peptideclear.co.uk/pagefind/pagefind-ui.css",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/favicon.svg",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/favicon.ico",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/rss.xml",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/_astro/BaseLayout.CajRVgrK.css",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/coa-trust-index/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/conditions/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/shop/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/clinics/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/pillars/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/research-peptides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/collagen/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/cosmetic-peptides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/methodology/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/privacy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/how-we-are-funded/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/conditions/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/shop/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/clinics/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/pillars/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/research-peptides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/collagen/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/cosmetic-peptides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/mounjaro/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/authors/oliver-mackman/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/icb/cambridgeshire-peterborough/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/clinics/numan/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/clinics/voy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/clinics/juniper/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/clinics/manual/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/clinics/boots-online-doctor/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/clinics/asda-online-doctor/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/clinics/morrisons-clinic/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/clinics/superdrug-online-doctor/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/clinics/pharmacy2u/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/clinics/phlo/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/cost-and-supply/how-much-is-mounjaro-uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/icb/cambridgeshire-peterborough/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/nhs-access/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/explained/nice-ta1026/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/explained/ethnicity-adjusted-bmi/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/cost-and-supply/how-much-is-mounjaro-uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/clinics/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/metabolic-peptides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/pillars/glp1-cost-and-supply/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/pillars/glp1-face-phenomenon/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/pillars/icb-rollout-tracker/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/faq/glp1/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/vs/mounjaro-vs-wegovy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/authors/oliver-mackman/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/how-we-are-funded/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/cosmetic-peptides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/collagen/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/research-peptides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/clinics/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/shop/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/glossary/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/compounds/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/explained/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/conditions/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/vs/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/faq/research-peptides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/faq/glp1/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/faq/collagen/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/faq/cosmetic-peptides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/regulatory/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/lang/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/start-here/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/about/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/ai-instructions/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/methodology/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/trust-review/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/safety/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/editorial-policy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/how-we-are-funded/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/authors/oliver-mackman/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/coa-trust-index/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/data/api/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/tools/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/rss.xml",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/contact/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/privacy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://peptideclear.co.uk/mounjaro/cambridge/",
-      "to": "https://peptideclear.co.uk/terms/",
       "type": "internal"
     }
   ],
   "issues": [],
   "orphans": [
+    {
+      "path": "/glp1/",
+      "url": "https://peptideclear.co.uk/glp1/"
+    },
     {
       "path": "/faq/glp1/will-i-regain-after-stopping-mounjaro/",
       "url": "https://peptideclear.co.uk/faq/glp1/will-i-regain-after-stopping-mounjaro/"
@@ -43534,10 +43670,6 @@
       "url": "https://peptideclear.co.uk/faq/research-peptides/uk-legal-status/"
     },
     {
-      "path": "/explained/semaglutide-liraglutide-licensing/",
-      "url": "https://peptideclear.co.uk/explained/semaglutide-liraglutide-licensing/"
-    },
-    {
       "path": "/research-peptides/nad-plus/",
       "url": "https://peptideclear.co.uk/research-peptides/nad-plus/"
     },
@@ -43586,10 +43718,6 @@
       "url": "https://peptideclear.co.uk/best/collagen-menopause-uk/"
     },
     {
-      "path": "/supermarkets/",
-      "url": "https://peptideclear.co.uk/supermarkets/"
-    },
-    {
       "path": "/guides/how-to-choose-a-uk-glp1-clinic/",
       "url": "https://peptideclear.co.uk/guides/how-to-choose-a-uk-glp1-clinic/"
     },
@@ -43608,6 +43736,14 @@
     {
       "path": "/compare/semaglutide-vs-liraglutide/",
       "url": "https://peptideclear.co.uk/compare/semaglutide-vs-liraglutide/"
+    },
+    {
+      "path": "/pharmacies/simplymeds/",
+      "url": "https://peptideclear.co.uk/pharmacies/simplymeds/"
+    },
+    {
+      "path": "/peptides/",
+      "url": "https://peptideclear.co.uk/peptides/"
     },
     {
       "path": "/questions/",
@@ -45696,8 +45832,18 @@
             "name": "boots",
             "path": "/pharmacies/boots/",
             "children": []
+          },
+          {
+            "name": "simplymeds",
+            "path": "/pharmacies/simplymeds/",
+            "children": []
           }
         ]
+      },
+      {
+        "name": "peptides",
+        "path": "/peptides/",
+        "children": []
       },
       {
         "name": "accessibility",
@@ -46141,6 +46287,17 @@
       "signals": [
         "OG",
         "Schema:7",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/glp1/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:9",
         "Author",
         "Substantive",
         "Breadcrumbs"
@@ -48084,17 +48241,6 @@
     },
     {
       "path": "/methodology/glp1-clinics/",
-      "score": 5,
-      "signals": [
-        "OG",
-        "Schema:7",
-        "Author",
-        "Substantive",
-        "Breadcrumbs"
-      ]
-    },
-    {
-      "path": "/research-peptides/",
       "score": 5,
       "signals": [
         "OG",
