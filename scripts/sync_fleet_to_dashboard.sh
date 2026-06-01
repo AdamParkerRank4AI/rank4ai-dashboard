@@ -30,7 +30,10 @@ if [ "$CHANGED" != "0" ]; then
     git commit -m "Fleet sync: source-reader refresh ($(date -Iseconds))" >> "$LOG" 2>&1
     # Self-heal: rebase onto any out-of-band origin commits BEFORE pushing, so
     # a single direct push to main can't permanently stall the auto-sync.
-    git pull --rebase -X theirs origin main >> "$LOG" 2>&1 || git rebase --abort >> "$LOG" 2>&1
+    # --autostash is REQUIRED: this repo always has uncommitted live-data churn
+    # (ga4/gsc/bot_hits/etc. rewritten by other fetchers), and plain pull
+    # --rebase refuses to run on a dirty tree, which silently defeated the heal.
+    git pull --rebase --autostash -X theirs origin main >> "$LOG" 2>&1 || git rebase --abort >> "$LOG" 2>&1
     git push origin main >> "$LOG" 2>&1
     echo "  dashboard pushed" >> "$LOG"
 else
