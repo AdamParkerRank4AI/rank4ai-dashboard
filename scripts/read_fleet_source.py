@@ -29,7 +29,7 @@ FLEET = {
     "bestbusinessloans": {
         "repo": "~/bestbusinessloans",
         "domain": "bestbusinessloans.pages.dev",
-        "live": "bestbusinessloans.co.uk",
+        "live": "bestbusinessloans.ai",
     },
     "fundbiz": {
         "repo": "~/fundbiz",

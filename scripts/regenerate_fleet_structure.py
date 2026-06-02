@@ -33,7 +33,7 @@ FLEET = [
     ("rank4ai",          "Rank4AI",          "R4",  "AI search agency",                           "editorial", Path.home() / "rank4ai-site",            "rank4ai.co.uk"),
     ("market-invoice",   "Market Invoice",   "MI",  "UK invoice finance comparison",              "editorial", Path.home() / "compare-invoice-finance", "marketinvoice.co.uk"),
     ("seocompare",       "SEOCompare",       "SC",  "AI search optimisation comparison",          "editorial", Path.home() / "compareaiseo",            "seocompare.co.uk"),
-    ("bestbusinessloans","BestBusinessLoans","BBL", "Business loan editorial and lead capture",   "leadgen",   Path.home() / "bestbusinessloans",       "bestbusinessloans.co.uk"),
+    ("bestbusinessloans","BestBusinessLoans","BBL", "Business loan editorial and lead capture",   "leadgen",   Path.home() / "bestbusinessloans",       "bestbusinessloans.ai"),
     ("fundbiz",          "FundBiz",          "FB",  "Specialty UK SMB finance broker",            "leadgen",   Path.home() / "fundbiz",                 "fundbiz.co.uk"),
     ("cardmachines",     "CardTerminals",    "CT",  "Card machines and merchant accounts",        "product",   Path.home() / "cardmachines",            "cardmachines.co.uk"),
 ]
