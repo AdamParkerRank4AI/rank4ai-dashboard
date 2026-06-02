@@ -438,7 +438,7 @@
     "flavour": "leadgen",
     "dashboard": "fleet",
     "clientCode": "PEPTIDECLEAR",
-    "notes": "LIVE 2026-05-18 at https://peptideclear.co.uk. Renamed from working name UK Metabolic. GitHub repo: AdamParkerRank4AI/peptideclear. CF Pages project: ukmetabolic (rename pending \u2014 Pages projects cannot be renamed via API). 268 pages. Brand: broad UK peptides hub covering cosmetic peptide skincare + ingestible collagen + research peptides + GLP-1 prescription routes. Editorial / affiliate, no own retail, single byline (Oliver Mackman), no clinical advice. CoA Trust Index is the moat. Operating company: Best Business Loans Ltd (16833937).",
+    "notes": "LIVE 2026-05-18 at https://peptideclear.co.uk. Renamed from working name UK Metabolic. GitHub repo: AdamParkerRank4AI/peptideclear. CF Pages project: ukmetabolic (rename pending — Pages projects cannot be renamed via API). 268 pages. Brand: broad UK peptides hub covering cosmetic peptide skincare + ingestible collagen + research peptides + GLP-1 prescription routes. Editorial / affiliate, no own retail, single byline (Oliver Mackman), no clinical advice. CoA Trust Index is the moat. Operating company: Best Business Loans Ltd (16833937).",
     "clientViewSections": [
       "site-structure",
       "site-manager",
@@ -480,7 +480,7 @@
         "label": "Toggle off CF Managed robots.txt (AI Audit)",
         "status": "TBD",
         "owner": "Adam",
-        "note": "CF injects Disallow rules for GPTBot/ClaudeBot/Google-Extended/CCBot above our Allow rules. CF Dashboard \u2192 Security \u2192 Settings \u2192 AI Audit. Critical for AI search indexability."
+        "note": "CF injects Disallow rules for GPTBot/ClaudeBot/Google-Extended/CCBot above our Allow rules. CF Dashboard → Security → Settings → AI Audit. Critical for AI search indexability."
       },
       {
         "id": "lead_destination",
@@ -491,7 +491,7 @@
       },
       {
         "id": "cf_pages_rename",
-        "label": "CF Pages project rename ukmetabolic \u2192 peptideclear",
+        "label": "CF Pages project rename ukmetabolic → peptideclear",
         "status": "deferred",
         "owner": "Claude",
         "note": "Pages projects cannot be renamed via API. Migrate (new project + bind domains + delete old) OR keep ukmetabolic as the internal .pages.dev URL since public traffic is on peptideclear.co.uk."
@@ -522,14 +522,14 @@
         "label": "Research peptide retailer affiliate apps",
         "status": "TBD",
         "owner": "Claude",
-        "note": "28 retailers in retailers.json. Priority: green-tier first (pure-peptides-uk, xl-peptides, imperial-peptides). Most don't run on affiliate networks \u2014 direct outreach."
+        "note": "28 retailers in retailers.json. Priority: green-tier first (pure-peptides-uk, xl-peptides, imperial-peptides). Most don't run on affiliate networks — direct outreach."
       },
       {
         "id": "affiliate_applications_glp1",
         "label": "GLP-1 clinic + pharmacy affiliate apps",
         "status": "TBD",
         "owner": "Claude",
-        "note": "Numan (\u00a3100 published), Voy, Manual, Juniper (high-touch clinics). Phlo, Pharmacy2U, SimplyMeds, Boots Online Doctor, Asda Online Doctor (low-touch pharmacies)."
+        "note": "Numan (£100 published), Voy, Manual, Juniper (high-touch clinics). Phlo, Pharmacy2U, SimplyMeds, Boots Online Doctor, Asda Online Doctor (low-touch pharmacies)."
       }
     ],
     "siteStatus": "live",
@@ -604,7 +604,7 @@
     "flavour": "editorial",
     "dashboard": "fleet",
     "clientCode": "WH",
-    "notes": "Working name 'Women's Health' (placeholder \u2014 .com/.co.uk are Hearst-owned via the US magazine; expect rename before launch). UK women's life-stage health AFFILIATE AUTHORITY site (Wirecutter-shape). No own SKUs at launch \u2014 curates + reviews existing branded supplements (MyProtein / Bulk / Wild Nutrition / H&B / Boots / Form / Innermost / Vital Proteins / Ancient + Brave / Trinny London) via Amazon Associates + Awin + direct programs. 6 life-stage pillars (TTC -> prenatal -> postnatal -> perimenopause -> menopause -> senior) + 6 cross-stage SKU pillars (protein / creatine / pre-workout / magnesium / collagen / ashwagandha-ayurveda). The brand wedge: named UK RD + GP + strength coach + quarterly heavy-metals lab + annual UK perimenopause survey + the life-stage quiz. ~400-500k+/mo addressable UK. Sister to PeptideClear (men's athletic-longevity + peptide therapeutics). GitHub: AdamParkerRank4AI/womens-health. CF Pages project: womens-health (account 927d3dd61a9375f0c8185df7b2a1764e adam@muswellrose.com). Live at https://womens-health-1pt.pages.dev (scaffold only, June 2026). Research pack: iCloud/.../niche-attack-supplements-2026-05-29/. 49k research-presentation demo at 49k.co.uk/demos/perimenopause-stack/.",
+    "notes": "Working name 'Women's Health' (placeholder — .com/.co.uk are Hearst-owned via the US magazine; expect rename before launch). UK women's life-stage health AFFILIATE AUTHORITY site (Wirecutter-shape). No own SKUs at launch — curates + reviews existing branded supplements (MyProtein / Bulk / Wild Nutrition / H&B / Boots / Form / Innermost / Vital Proteins / Ancient + Brave / Trinny London) via Amazon Associates + Awin + direct programs. 6 life-stage pillars (TTC -> prenatal -> postnatal -> perimenopause -> menopause -> senior) + 6 cross-stage SKU pillars (protein / creatine / pre-workout / magnesium / collagen / ashwagandha-ayurveda). The brand wedge: named UK RD + GP + strength coach + quarterly heavy-metals lab + annual UK perimenopause survey + the life-stage quiz. ~400-500k+/mo addressable UK. Sister to PeptideClear (men's athletic-longevity + peptide therapeutics). GitHub: AdamParkerRank4AI/womens-health. CF Pages project: womens-health (account 927d3dd61a9375f0c8185df7b2a1764e adam@muswellrose.com). Live at https://womens-health-1pt.pages.dev (scaffold only, June 2026). Research pack: iCloud/.../niche-attack-supplements-2026-05-29/. 49k research-presentation demo at 49k.co.uk/demos/perimenopause-stack/.",
     "clientViewSections": [
       "overview",
       "site-tree",
@@ -666,28 +666,28 @@
         "label": "Recruit named UK RD + menopause-specialist GP + Level-4 strength coach (freelance per-page)",
         "status": "TBD",
         "owner": "Adam",
-        "note": "AfN-registered RD (\u00a3100-200/page) + BMS-affiliated GP NOT Louise Newson (\u00a3200-400/page) + CIMSPA Level-4 coach (\u00a3100-200/page). Editorial team brief in 49k demo at /demos/perimenopause-stack/manufacturer-brief.html (page is titled 'Editorial Team Brief' despite the filename). Y1 budget \u00a36-17k."
+        "note": "AfN-registered RD (£100-200/page) + BMS-affiliated GP NOT Louise Newson (£200-400/page) + CIMSPA Level-4 coach (£100-200/page). Editorial team brief in 49k demo at /demos/perimenopause-stack/manufacturer-brief.html (page is titled 'Editorial Team Brief' despite the filename). Y1 budget £6-17k."
       },
       {
         "id": "affiliate_signups",
         "label": "Sign up to affiliate programs (Day 1)",
         "status": "TBD",
         "owner": "Adam",
-        "note": "Amazon Associates UK + Awin (12+ UK supplement brands in one network) + direct: Ancient + Brave / Trinny London / Pure Encapsulations / BetterYou / Solgar. Awin takes 5-10 days \u2014 apply first."
+        "note": "Amazon Associates UK + Awin (12+ UK supplement brands in one network) + direct: Ancient + Brave / Trinny London / Pure Encapsulations / BetterYou / Solgar. Awin takes 5-10 days — apply first."
       },
       {
         "id": "tier1_product_buy",
-        "label": "Buy Tier-1 product test batch (\u00a3550-850, 20-25 SKUs)",
+        "label": "Buy Tier-1 product test batch (£550-850, 20-25 SKUs)",
         "status": "TBD",
         "owner": "Adam",
-        "note": "Full SKU list in iCloud/.../niche-attack-supplements-2026-05-29/PRODUCT-LIST-TO-TEST.md. Buy via our own affiliate links once approved (earns back ~\u00a330-60 cashback)."
+        "note": "Full SKU list in iCloud/.../niche-attack-supplements-2026-05-29/PRODUCT-LIST-TO-TEST.md. Buy via our own affiliate links once approved (earns back ~£30-60 cashback)."
       },
       {
         "id": "first_uk_perimenopause_survey",
         "label": "Commission first UK perimenopause supplement use survey (Month 3-4)",
         "status": "TBD",
         "owner": "Adam",
-        "note": "n=500-1,000 via OnePoll or Censuswide (\u00a33-5k). Becomes the original-data citation asset; published as the annual reference URL."
+        "note": "n=500-1,000 via OnePoll or Censuswide (£3-5k). Becomes the original-data citation asset; published as the annual reference URL."
       },
       {
         "id": "keyword_earmark_pickup",
@@ -706,7 +706,7 @@
     "flavour": "leadgen",
     "dashboard": "fleet",
     "clientCode": "EQREL",
-    "notes": "Scaffold live at https://equity-release.pages.dev (placeholder + /plan/ hub) as of 1 Jun 2026. BANKED 26 May 2026 (research-stage only, no build yet). UK equity release lead-gen / authority site. Lead-sells qualified enquiries to FCA-authorised equity release advisers at ~\u00a390-150 CPL (RMT Direct / LeadCrowd benchmarks). Scored 20/25 on the niche-attack scorecard. Organic mere-introducer model (RAO Art.33) + Introducer Appointed Representative (IAR) under an authorised principal for the 'find an adviser' CTA (FSMA s.21 approver gateway, since 7 Feb 2024). Sibling: RIO/later-life lending (the can-service-interest alternative within the same advisory lane). On-site upsell clusters (Kevin Bacon run): Care-fees funding (release equity vs immediate-needs annuity) + Gifted deposit / Bank of Mum & Dad (release equity to gift kids a deposit). Spin-out option: pension-income (annuity 5,400 + drawdown 4,400 = 10k+/mo combined). Research files: iCloud/.../niche-discovery-2026-05-26/09-equity-release-leadgen-brief.md + KEVIN-BACON-equity-release.md.",
+    "notes": "Scaffold live at https://equity-release.pages.dev (placeholder + /plan/ hub) as of 1 Jun 2026. BANKED 26 May 2026 (research-stage only, no build yet). UK equity release lead-gen / authority site. Lead-sells qualified enquiries to FCA-authorised equity release advisers at ~£90-150 CPL (RMT Direct / LeadCrowd benchmarks). Scored 20/25 on the niche-attack scorecard. Organic mere-introducer model (RAO Art.33) + Introducer Appointed Representative (IAR) under an authorised principal for the 'find an adviser' CTA (FSMA s.21 approver gateway, since 7 Feb 2024). Sibling: RIO/later-life lending (the can-service-interest alternative within the same advisory lane). On-site upsell clusters (Kevin Bacon run): Care-fees funding (release equity vs immediate-needs annuity) + Gifted deposit / Bank of Mum & Dad (release equity to gift kids a deposit). Spin-out option: pension-income (annuity 5,400 + drawdown 4,400 = 10k+/mo combined). Research files: iCloud/.../niche-discovery-2026-05-26/09-equity-release-leadgen-brief.md + KEVIN-BACON-equity-release.md.",
     "clientViewSections": [
       "overview",
       "site-tree",
@@ -775,7 +775,7 @@
     "flavour": "leadgen",
     "dashboard": "fleet",
     "clientCode": "EVCHG",
-    "notes": "Scaffold live at https://ev-chargers-3dy.pages.dev (placeholder + /plan/ hub) as of 1 Jun 2026. BANKED 26 May 2026 (research-stage only, no build yet). UK EV charger compatibility + installer lead-gen site. Dual-model: (a) own-product compatibility tool (which charger fits my car / my home / my use-case), (b) installer leads sold to OZEV-approved installers. Scored 19/25. Fully unregulated (no FCA/ASA wall beyond standard advertising rules). Grant-driven demand (OZEV EV chargepoint grant for flats/rental ~\u00a3350; Workplace Charging Scheme up to \u00a3350 per socket; Homeowners-with-driveways grant ended Mar 2022 but flat/rental + workplace still live). Working name placeholder evmatch.co.uk per research. Research files: iCloud/.../niche-discovery-2026-05-26/10-deepdive-ev-charger.md.",
+    "notes": "Scaffold live at https://ev-chargers-3dy.pages.dev (placeholder + /plan/ hub) as of 1 Jun 2026. BANKED 26 May 2026 (research-stage only, no build yet). UK EV charger compatibility + installer lead-gen site. Dual-model: (a) own-product compatibility tool (which charger fits my car / my home / my use-case), (b) installer leads sold to OZEV-approved installers. Scored 19/25. Fully unregulated (no FCA/ASA wall beyond standard advertising rules). Grant-driven demand (OZEV EV chargepoint grant for flats/rental ~£350; Workplace Charging Scheme up to £350 per socket; Homeowners-with-driveways grant ended Mar 2022 but flat/rental + workplace still live). Working name placeholder evmatch.co.uk per research. Research files: iCloud/.../niche-discovery-2026-05-26/10-deepdive-ev-charger.md.",
     "clientViewSections": [
       "overview",
       "site-tree",
@@ -800,7 +800,7 @@
       },
       {
         "id": "compatibility_data_source",
-        "label": "Source EV charger \u00d7 EV car compatibility dataset",
+        "label": "Source EV charger × EV car compatibility dataset",
         "status": "TBD",
         "owner": "Adam or Claude",
         "note": "Connector types (Type 2 / CCS / CHAdeMO), kW ratings, smart-charging compatibility, V2H/V2G support. Data sources: ZapMap, EV Database (ev-database.org), manufacturer datasheets, OCPP standards. The compatibility tool is the brand differentiator."
@@ -824,9 +824,91 @@
         "label": "Lead capture form + routing to installer panel (round-robin or geo-match)",
         "status": "TBD",
         "owner": "Claude",
-        "note": "Standard fleet pattern: Astro form \u2192 Supabase capture \u2192 API routing to installer panel. Same shape as MerchantHQ / FundBiz."
+        "note": "Standard fleet pattern: Astro form → Supabase capture → API routing to installer panel. Same shape as MerchantHQ / FundBiz."
       }
     ],
     "liveDomain": "ev-chargers-3dy.pages.dev"
+  },
+  {
+    "id": "golftech",
+    "name": "Golf Tech",
+    "domain": "golf-tech.pages.dev",
+    "liveDomain": "golf-tech.pages.dev",
+    "logo": "",
+    "flavour": "editorial",
+    "dashboard": "fleet",
+    "clientCode": "GOLF",
+    "notes": "Working name 'Golf Tech' (placeholder, not final). Owner legal entity TBC. UK golf-tech COMPARISON / AFFILIATE authority. Hero product = Shot Scope LM1 launch monitor: Adam owns the sales side (his own stock + checkout + Meta ads); the site features it as hero and drives to that channel. Everything else = affiliate or white-label (Awin: Scottsdale Golf / Golf Gear Direct / Affordable Golf; Amazon Associates UK; American Golf via Partnerize). Structure: Tier 1 launch-monitor comparison hub + GPS watches + rangefinders + 'best under X' guides; Tier 2 home-sim/nets/mats winter cluster (counter-seasonal); Tier 3 golf balls + used clubs. Live UK volumes: golf launch monitor 3,600/mo, golf simulator home 3,600, golf gps watch 2,400, best golf rangefinder 1,300; LM1-exact terms tiny (low hundreds) which is why it is a hub not a one-SKU page. Outtabounds.co.uk proves a UK affiliate site can break the SERP; win on comparison + best-under-X + live-UK-price intent. GitHub: AdamParkerRank4AI/golf-tech. CF Pages project: golf-tech (account 927d3dd61a9375f0c8185df7b2a1764e adam@muswellrose.com). Live at https://golf-tech.pages.dev (scaffold only, 2 June 2026). Research pack: iCloud/claude/Research/golf-launch-monitor-2026-06-02/RESEARCH.md.",
+    "clientViewSections": [
+      "overview",
+      "site-tree",
+      "content-plan",
+      "recommendations",
+      "ai-readiness",
+      "page-compliance"
+    ],
+    "allSections": [
+      "overview",
+      "ai-readiness",
+      "ai-citations",
+      "site-manager",
+      "page-compliance",
+      "traffic",
+      "search-performance",
+      "competitors",
+      "site-tree",
+      "uptime",
+      "site-speed",
+      "crawl-activity",
+      "recommendations",
+      "content-plan",
+      "daily-audit"
+    ],
+    "sections": [],
+    "pre_launch": true,
+    "pending_decisions": [
+      {
+        "id": "final_brand_name",
+        "label": "Pick final brand name + domain (working name 'Golf Tech')",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "Working placeholder. Check .co.uk + .com availability for the chosen golf-tech brand."
+      },
+      {
+        "id": "owner_entity",
+        "label": "Confirm owning legal entity (TBC)",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "Used as placeholder in schema/footer. Sets the LM1 VAT/sales legal entity too."
+      },
+      {
+        "id": "github_cf_pages_link",
+        "label": "Connect GitHub auto-deploy on CF Pages project",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "Created as Direct Upload project via API. To auto-deploy on git push: CF Pages dashboard -> golf-tech -> Settings -> Builds & deployments -> Connect to Git -> grant the CF GitHub App access to AdamParkerRank4AI/golf-tech."
+      },
+      {
+        "id": "affiliate_signups",
+        "label": "Sign up to affiliate programs",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "Awin (Scottsdale Golf, Golf Gear Direct, Affordable Golf) + Amazon Associates UK + American Golf via Partnerize. Awin approval takes days, apply first."
+      },
+      {
+        "id": "lm1_sales_link",
+        "label": "Provide the LM1 sales channel URL to link the hero to",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "Site features the LM1 as hero and drives to Adam's own checkout/sales page. Need that destination URL."
+      },
+      {
+        "id": "content_build",
+        "label": "Build Tier 1 comparison content (launch monitors, GPS, rangefinders, best-under-X)",
+        "status": "TBD",
+        "owner": "Claude",
+        "note": "Scaffold only currently. Tier 1 is the ranking engine. Add agent-data layer when content goes live."
+      }
+    ]
   }
 ]
