@@ -1,0 +1,87 @@
+{
+  "_about": "Entity Stack: per-brand off-site entity & trust profiles for Oliver to set up. brand_block fields are the canonical copy used VERBATIM across every platform (NAP rule). Each platform row maps to which brand_block form it uses, the instruction, whether Oliver must send a URL back, and the captured URL. Source of truth: iCloud/claude/astro/FLEET/OLLIE_OFFSITE_ENTITY_CHECKLIST.md (Entity Stack).",
+  "_parent_entity": {
+    "_note": "ONE shared Wikidata item for the legal company. Every brand's Wikidata item points to this via 'parent organisation' (P749). Build this item first.",
+    "label": "Best Business Loans Ltd",
+    "description": "British financial services company",
+    "fields": {
+      "instance_of": "business",
+      "country": "United Kingdom",
+      "official_name": "Best Business Loans Ltd",
+      "inception": "5 November 2025",
+      "companies_house_id": "16833937",
+      "opencorporates_id": "gb/16833937",
+      "registered_address": "Cust Hall, Toppesfield, Halstead, England, CO9 4EB",
+      "website": "TODO — does BBL Ltd have its own site, or leave blank?",
+      "wikidata_q": "TODO — Q-number once created"
+    }
+  },
+  "cardmachines": {
+    "brand": "MerchantHQ",
+    "domain": "merchanthq.co.uk",
+    "updated": "2026-06-01",
+    "status": "pilot — brand block filled from Companies House; phone/VAT/ICO still TODO",
+    "brand_block": {
+      "name": "MerchantHQ",
+      "legal_name": "Best Business Loans Ltd",
+      "company_number": "16833937",
+      "registered_address": "Cust Hall, Toppesfield, Halstead, England, CO9 4EB",
+      "phone": "TODO — one consistent public number",
+      "email": "info@merchanthq.co.uk",
+      "website": "https://merchanthq.co.uk",
+      "founded": "2025",
+      "vat": "TODO or n/a",
+      "ico": "TODO — ICO registration number",
+      "sic": "62020 (Information technology consultancy activities)",
+      "category": "Payment services broker (NOT an acquirer/lender)",
+      "industries": "Financial Services, FinTech, Payments, Comparison Shopping",
+      "named_person": "Brand-only (no founder; fleet rule, R4 is the only exception)",
+      "short": "MerchantHQ is a UK card payments brokerage. We match businesses, including high-risk sectors, with the right card machine, payment gateway and acquirer.",
+      "medium": "MerchantHQ is a UK card payments brokerage operated by Best Business Loans Ltd. We match businesses, including high-risk and hard-to-place sectors, with the right card machine, payment gateway and acquiring bank, then give every client a dedicated account team for the life of the account. MerchantHQ is a broker, not an acquirer.",
+      "long": "MerchantHQ (merchanthq.co.uk) is a UK card payments brokerage operated by Best Business Loans Ltd (Companies House 16833937), based in Halstead, Essex. MerchantHQ helps UK businesses compare and arrange card machines, payment gateways and merchant accounts, with particular expertise in high-risk and hard-to-place sectors that mainstream providers decline. Rather than acting as an acquirer or lender, MerchantHQ works as an independent broker: it matches each business to suitable acquiring banks and payment providers, manages the application, and gives every client a dedicated account team for the life of the account. Editorial focus is on transparent pricing, honest provider comparison, and helping merchants who have been declined elsewhere find a workable route to taking payments."
+    },
+    "wikidata": {
+      "_note": "The BRAND item. Its official name is the brand (MerchantHQ), NOT the Ltd. Best Business Loans Ltd appears ONLY in 'parent organisation'.",
+      "label": "MerchantHQ",
+      "description": "British card payments brokerage",
+      "fields": {
+        "instance_of": "brand (trading name of Best Business Loans Ltd)",
+        "official_name": "MerchantHQ",
+        "country": "United Kingdom",
+        "website": "https://merchanthq.co.uk",
+        "inception": "2025",
+        "parent_organisation": "Best Business Loans Ltd",
+        "twitter_handle": "TODO",
+        "linkedin": "merchanthq",
+        "wikidata_q": "TODO — Q-number once created"
+      }
+    },
+    "platforms": [
+      { "place": "Wikidata Q-item", "priority": "P1", "send": true, "form": "short (description property)", "instruction": "Create a Q-item. Fill P31 (instance of: business), P17 (country: United Kingdom), P749 (parent org → parent entity Q-item), P1448 (official name = legal name), P856 (official website), P571 (inception = founded year), P2622 (Companies House ID = company number), P1320 (OpenCorporates ID), P2002/P4264 (X / LinkedIn). NOTE: Companies House property is P2622, not P5285.", "status": "open", "url": "" },
+      { "place": "Crunchbase", "priority": "P1", "send": true, "form": "medium (short desc) + long (full desc)", "instruction": "Add a company (free tier OK). Name = brand, Legal name = legal entity, founded year, HQ address, website, industries. Operating status: Active. Type: For-Profit.", "status": "open", "url": "" },
+      { "place": "Trustpilot", "priority": "P1", "send": true, "form": "medium", "instruction": "Claim the business at uk.trustpilot.com → search the domain. Country: United Kingdom. Industry: Money & Insurance > Financial Service. You get a profile URL even at zero reviews.", "status": "open", "url": "" },
+      { "place": "great.gov.uk business profile", "priority": "P1", "send": true, "form": "medium", "instruction": "Create a Dept for Business & Trade business profile. Free, official .gov.uk entity node.", "status": "open", "url": "" },
+      { "place": "D&B DUNS Number", "priority": "P1", "send": true, "form": "n/a (returns 9-digit number)", "instruction": "Request a free DUNS number from Dun & Bradstreet. Global ID used by Google/Apple/gov. Send back the 9-digit number.", "status": "open", "url": "" },
+      { "place": "LinkedIn Company Page", "priority": "P1", "send": true, "form": "medium (About)", "instruction": "Claim + fill the Company Page. About = medium form verbatim. Link to parent entity. NEXT: paste the medium bio into the About section.", "status": "done", "url": "https://www.linkedin.com/company/merchanthq" },
+      { "place": "Apple Business Connect", "priority": "P1", "send": true, "form": "medium", "instruction": "businessconnect.apple.com. Category: Professional Services > Financial Services. Hours 24/7 (online). Feeds Apple Intelligence / Siri / Maps.", "status": "open", "url": "" },
+      { "place": "Bing Places for Business", "priority": "P1", "send": true, "form": "medium", "instruction": "bingplaces.com — use the Microsoft account already verified in Bing Webmaster Tools. Category: Financial Service. Tick 'online business only' if offered.", "status": "open", "url": "" },
+      { "place": "Google Business Profile", "priority": "P1", "send": true, "form": "medium", "instruction": "Set up GBP where service-area applicable. Send the profile URL or place ID.", "status": "open", "url": "" },
+      { "place": "OpenCorporates", "priority": "P1", "send": false, "form": "n/a (Claude derives)", "instruction": "Auto-pulls from Companies House. Claude derives the URL from the company number and verifies NAP consistency. No signup needed.", "status": "open", "url": "" },
+      { "place": "Foursquare", "priority": "P2", "send": true, "form": "medium", "instruction": "Create a business listing. Feeds Apple Maps + Uber + downstream apps.", "status": "done", "url": "https://foursquare.com/v/6a1da233ec35c029010398ef" },
+      { "place": "X / Twitter", "priority": "P2", "send": true, "form": "short (bio)", "instruction": "Claim + brand the handle. Bio = short form (truncate to 160).", "status": "open", "url": "" },
+      { "place": "Facebook Business Page", "priority": "P2", "send": true, "form": "medium", "instruction": "Create the Page. NAP must match. About = medium form.", "status": "open", "url": "" },
+      { "place": "Endole + Company Check", "priority": "P2", "send": false, "form": "n/a (verify)", "instruction": "UK company-data sites that auto-pull from Companies House. Verify NAP consistency; claim only if a profile is editable.", "status": "open", "url": "" },
+      { "place": "YouTube channel", "priority": "P2", "send": true, "form": "medium (About)", "instruction": "Claim + brand the channel. About = medium form. (Adam may do directly.)", "status": "done", "url": "https://www.youtube.com/@MerchantHQuk" },
+      { "place": "Yell.com", "priority": "P2", "send": true, "form": "medium", "instruction": "The general UK directory Google genuinely trusts. Create the free listing.", "status": "open", "url": "" },
+      { "place": "Medium publication", "priority": "P2", "send": true, "form": "n/a", "instruction": "Create a publication for RSS-import syndication echo (no originals). Send the publication URL.", "status": "open", "url": "" },
+      { "place": "Capterra / G2 / GetApp", "priority": "P2", "send": true, "form": "medium", "instruction": "MHQ-specific: list under the EPOS/payments software angle in the software DBs AI cites for payments tooling. Send URL per directory.", "status": "open", "url": "" },
+      { "place": "Free dofollow directory set", "priority": "P3", "send": true, "form": "short + medium", "instruction": "FreeIndex, Cylex UK, UK Small Business Directory, iBegin, Lacartes, Brownbook, Hotfrog. Citation-consistency only. Send profile URLs.", "status": "open", "url": "" },
+      { "place": "Instagram / Pinterest / TikTok", "priority": "P3", "send": true, "form": "short (bio)", "instruction": "Brand-protect the handles + NAP. Send URLs.", "status": "open", "url": "" },
+      { "place": "Quora", "priority": "P3", "send": true, "form": "short", "instruction": "Branded/editor account to answer real buyer questions. Send profile URL.", "status": "done", "url": "https://www.quora.com/profile/Merchant-HQ" },
+      { "place": "Glassdoor + Indeed", "priority": "P3", "send": true, "form": "medium", "instruction": "Company profiles = employer entity-consistency signal. Send URLs.", "status": "open", "url": "" },
+      { "place": "Owler + Kompass", "priority": "P3", "send": false, "form": "n/a", "instruction": "B2B company-profile DBs. Claim if editable; otherwise verify consistency.", "status": "open", "url": "" },
+      { "place": "Reddit (organic, MHQ subs)", "priority": "P3", "send": false, "form": "n/a (no URL)", "instruction": "Light authentic participation in r/smallbusinessuk, r/UKPersonalFinance, r/UKsmallbusiness. Ongoing, no URL to forward.", "status": "open", "url": "" },
+      { "place": "Long-list general directories", "priority": "P3", "send": true, "form": "n/a", "instruction": "Completist batch (citation only): Thomson Local, Scoot, 192.com, Yelp UK, Misterwhat, Tupalo, Manta, Cybo, Tuugo, Opendi, Infobel, Storeboard, Searchme4, Applegate. Lowest priority.", "status": "open", "url": "" }
+    ]
+  }
+}
