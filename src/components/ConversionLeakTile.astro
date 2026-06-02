@@ -1,0 +1,114 @@
+---
+/**
+ * ConversionLeakTile — "Conversion Leaks" tile.
+ *
+ * Joins Clarity per-page behaviour (scroll, active time, traffic, dead clicks,
+ * quickbacks) with the lead landing-page attribution we capture in Supabase,
+ * to classify each page so you can see which pages convert vs which just burn
+ * attention. Reads src/data/live/conversion_leaks.json, written by
+ * scripts/analyze_conversion_leaks.py (runs in refresh_all after fetch_clarity
+ * + fetch_leads). Defensive against missing data. Dark-card style like siblings.
+ *
+ *   CONVERTER   - on a real lead's landing/journey path
+ *   DEAD_WEIGHT - real traffic + engagement, never on a lead (CRO target)
+ *   LEAK        - frustration signal (dead clicks / quickbacks) on a trafficked page
+ *   BOUNCE      - instant exit (low scroll + low active): fold/intent mismatch
+ */
+import fs from 'node:fs';
+import path from 'node:path';
+
+function loadJson(filename: string) {
+  try {
+    const fp = path.join(process.cwd(), 'src', 'data', 'live', filename);
+    if (fs.existsSync(fp)) return JSON.parse(fs.readFileSync(fp, 'utf-8'));
+  } catch {}
+  return null;
+}
+
+const d = loadJson('conversion_leaks.json');
+const sites = d?.sites ?? {};
+
+const classMeta: Record<string, { label: string; colour: string }> = {
+  DEAD_WEIGHT: { label: 'Dead weight', colour: 'text-amber-300' },
+  LEAK:        { label: 'Leak',        colour: 'text-rose-300' },
+  BOUNCE:      { label: 'Bounce',      colour: 'text-orange-300' },
+  CONVERTER:   { label: 'Converter',   colour: 'text-emerald-300' },
+};
+const ACTION = ['DEAD_WEIGHT', 'LEAK', 'BOUNCE']; // the pages worth fixing
+
+// Flatten to actionable rows across sites, plus per-site converter counts.
+type Row = { site: string; path: string; humans: number; scroll: number; active_s: number; dead_clicks: number; quickbacks: number; class: string };
+const actionable: Row[] = [];
+const summary: { site: string; converters: number; actionable: number; leads: number }[] = [];
+for (const [site, blk] of Object.entries<any>(sites)) {
+  const pages = blk?.pages ?? [];
+  const act = pages.filter((p: Row) => ACTION.includes(p.class));
+  act.forEach((p: Row) => actionable.push({ ...p, site }));
+  summary.push({
+    site,
+    converters: pages.filter((p: Row) => p.class === 'CONVERTER').length,
+    actionable: act.length,
+    leads: blk?.lead_count ?? 0,
+  });
+}
+const rank: Record<string, number> = { DEAD_WEIGHT: 0, LEAK: 1, BOUNCE: 2 };
+actionable.sort((a, b) => (rank[a.class] - rank[b.class]) || (b.humans - a.humans));
+const hasData = actionable.length > 0 || summary.some(s => s.converters > 0);
+---
+<section class="rounded-xl bg-slate-900 text-slate-100 p-6 my-6 border border-slate-800">
+  <div class="flex items-baseline justify-between flex-wrap gap-2 mb-1">
+    <h2 class="text-lg font-bold">Conversion Leaks</h2>
+    <span class="text-xs text-slate-400">Clarity behaviour × lead attribution · last 3 days</span>
+  </div>
+
+  {!hasData ? (
+    <p class="text-sm text-slate-400 mt-3">No conversion-leak data yet. <code>analyze_conversion_leaks.py</code> joins <code>clarity_pages.json</code> with the per-site <code>*_leads.json</code>; it runs in <code>refresh_all</code> after <code>fetch_clarity</code> + <code>fetch_leads</code>.</p>
+  ) : (
+    <>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 my-4">
+        {summary.map(s => (
+          <div class="bg-slate-800/60 rounded-lg p-3">
+            <div class="text-sm font-semibold">{s.site}</div>
+            <div class="text-xs text-slate-400 mt-1">
+              <span class="text-emerald-300">{s.converters}</span> converters ·
+              <span class="text-amber-300"> {s.actionable}</span> to fix · {s.leads} leads
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <p class="text-xs text-slate-400 mb-2">Pages with traffic that aren't converting (fix these first):</p>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="text-left text-xs text-slate-500 border-b border-slate-800">
+              <th class="py-1 pr-3">Page</th>
+              <th class="py-1 pr-3">Site</th>
+              <th class="py-1 pr-3">Class</th>
+              <th class="py-1 pr-3 text-right">Humans</th>
+              <th class="py-1 pr-3 text-right">Scroll</th>
+              <th class="py-1 pr-3 text-right">Active</th>
+              <th class="py-1 pr-3 text-right">Dead</th>
+              <th class="py-1 pr-3 text-right">QB</th>
+            </tr>
+          </thead>
+          <tbody>
+            {actionable.slice(0, 20).map(r => (
+              <tr class="border-b border-slate-800/50">
+                <td class="py-1 pr-3 font-mono text-xs">{r.path}</td>
+                <td class="py-1 pr-3 text-slate-400 text-xs">{r.site}</td>
+                <td class={`py-1 pr-3 text-xs font-semibold ${classMeta[r.class]?.colour ?? ''}`}>{classMeta[r.class]?.label ?? r.class}</td>
+                <td class="py-1 pr-3 text-right">{r.humans}</td>
+                <td class="py-1 pr-3 text-right">{Math.round(r.scroll)}%</td>
+                <td class="py-1 pr-3 text-right">{Math.round(r.active_s)}s</td>
+                <td class={`py-1 pr-3 text-right ${r.dead_clicks ? 'text-rose-300' : 'text-slate-500'}`}>{r.dead_clicks}</td>
+                <td class={`py-1 pr-3 text-right ${r.quickbacks ? 'text-orange-300' : 'text-slate-500'}`}>{r.quickbacks}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-[11px] text-slate-500 mt-3">Dead weight = engaged but never on a lead journey. Leak = frustration signal on a trafficked page. Bounce = instant exit (fold/intent mismatch).</p>
+    </>
+  )}
+</section>

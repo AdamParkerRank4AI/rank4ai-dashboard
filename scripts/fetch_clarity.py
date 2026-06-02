@@ -130,14 +130,65 @@ def parse_worst_pages(payload, limit=5) -> list:
     return ranked[:limit]
 
 
+def _norm_path(url: str) -> str:
+    """Normalise a URL to a comparable path (strip host, query, fragment, www, trailing /)."""
+    if not url:
+        return ""
+    p = url.strip()
+    for pre in ("https://", "http://"):
+        if p.startswith(pre):
+            rest = p[len(pre):]
+            p = "/" + (rest.split("/", 1)[1] if "/" in rest else "")
+            break
+    p = p.split("?")[0].split("#")[0]
+    if p.startswith("www."):
+        p = p[4:]
+    if len(p) > 1 and p.endswith("/"):
+        p = p[:-1]
+    return p or "/"
+
+
+def parse_all_pages(payload) -> dict:
+    """Full per-URL metrics (not just worst): {path: {humans, scroll, active, dead, quick}}.
+
+    Reuses the same dimension=URL payload already fetched for worst_pages, so it
+    costs no extra API calls. Consumed by analyze_conversion_leaks.py.
+    """
+    pages = {}
+    for metric in payload or []:
+        name = (metric.get("metricName") or "")
+        for row in metric.get("information") or []:
+            url = row.get("Url") or row.get("URL") or row.get("url")
+            if not url:
+                continue
+            p = pages.setdefault(_norm_path(url), {})
+            if name == "Traffic":
+                p["sessions"] = int(_num(row, "totalSessionCount", "sessionCount") or 0)
+                p["bots"] = int(_num(row, "totalBotSessionCount") or 0)
+            elif name == "ScrollDepth":
+                p["scroll"] = round(_num(row, "averageScrollDepth") or 0, 1)
+            elif name == "EngagementTime":
+                p["active"] = round(_num(row, "activeTime") or 0, 1)
+            elif name == "DeadClickCount":
+                p["dead"] = int(_num(row, "subTotal") or 0)
+            elif name == "QuickbackClick":
+                p["quick"] = int(_num(row, "subTotal") or 0)
+    for p in pages.values():
+        p["humans"] = max(0, p.get("sessions", 0) - p.get("bots", 0))
+    return pages
+
+
 def main():
     tokens = load_tokens()
+    fetched_at = datetime.now(timezone.utc).isoformat()
     out = {
-        "fetched_at": datetime.now(timezone.utc).isoformat(),
+        "fetched_at": fetched_at,
         "num_days": NUM_DAYS,
         "sites": {},
         "missing_tokens": [],
     }
+    # Full per-page metrics (all pages, not just worst) for the conversion-leak join.
+    pages_out = {"fetched_at": fetched_at, "num_days": NUM_DAYS, "sites": {}}
 
     for site_id, project_id in PROJECT_IDS.items():
         token = tokens.get(site_id)
@@ -156,7 +207,9 @@ def main():
             site["error"] = str(e)
         else:
             try:
-                site["worst_pages"] = parse_worst_pages(call(token, "URL"))
+                url_payload = call(token, "URL")  # single call, reused below
+                site["worst_pages"] = parse_worst_pages(url_payload)
+                pages_out["sites"][site_id] = parse_all_pages(url_payload)
             except Exception:
                 site["worst_pages"] = []  # URL breakdown optional; don't fail the site
         out["sites"][site_id] = site
@@ -165,6 +218,8 @@ def main():
     path = os.path.join(OUTPUT_DIR, "clarity.json")
     with open(path, "w") as f:
         json.dump(out, f, indent=2)
+    with open(os.path.join(OUTPUT_DIR, "clarity_pages.json"), "w") as f:
+        json.dump(pages_out, f, indent=2)
     have = len(out["sites"])
     print(f"Wrote {path}: {have} site(s) fetched, "
           f"{len(out['missing_tokens'])} awaiting tokens "

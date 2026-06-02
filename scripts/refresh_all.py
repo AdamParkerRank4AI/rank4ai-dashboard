@@ -141,6 +141,7 @@ def main():
         ("generate_prompts_from_pages.py", 60),
         ("fetch_leads.py", 30),
         ("fetch_clarity.py", 60),
+        ("analyze_conversion_leaks.py", 30),  # join Clarity per-page behaviour x lead landing attribution -> conversion_leaks.json (needs leads + clarity above)
         ("sync_upcoming_pages.py", 30),
         ("compute_aeo_score.py", 60),
         ("compute_wins.py", 30),
