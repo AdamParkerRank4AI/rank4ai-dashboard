@@ -291,6 +291,15 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
                 Run Audit
               </a>
             </li>
+            <li>
+              <a href="/ops" class={`block px-3 py-2 rounded text-sm transition ${
+                Astro.url.pathname === '/ops' || Astro.url.pathname === '/ops/'
+                  ? 'bg-blue-600 text-white'
+                  : 'text-gray-300 hover:bg-gray-800'
+              }`}>
+                Ops / Health
+              </a>
+            </li>
             {isFleet && (
             <li>
               <a href="/aco-betting.html" class="block px-3 py-2 rounded text-sm text-gray-300 hover:bg-gray-800 transition">

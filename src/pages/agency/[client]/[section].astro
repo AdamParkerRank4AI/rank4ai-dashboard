@@ -2604,6 +2604,82 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
   <!-- SEARCH PERFORMANCE (Google + Bing) -->
   {sectionId === 'search-performance' && (gsc || bing) && (
     <div data-copy-tile="Search Performance">
+      {/* KEYWORD SPOTLIGHT — the three views Adam wants front-and-centre:
+          1) top non-brand keywords, 2) keywords gaining traction (demand, climbing),
+          3) high-volume keywords breaking into page 1 & 2. All from GSC top_queries. */}
+      {gsc?.top_queries?.length > 0 && (() => {
+        const brand = (client.name || '').toLowerCase().replace(/\s+/g, '');
+        const brandAlt = (client.domain || '').replace(/\.(co\.uk|ai|com|uk)$/i, '').toLowerCase();
+        const brandTokens = Array.from(new Set([brand, brandAlt, brand.replace(/[^a-z0-9]/g, '')].filter(Boolean)));
+        const isBranded = (q: string) => {
+          const norm = (q || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+          return brandTokens.some((t) => t && norm.includes(t));
+        };
+        const nonBrand = (gsc.top_queries || []).filter((q: any) => q?.query && !isBranded(q.query));
+        // 1) Top non-brand by clicks (what's actually pulling traffic)
+        const topNonBrand = [...nonBrand].sort((a: any, b: any) => (b.clicks - a.clicks) || (b.impressions - a.impressions)).slice(0, 20);
+        // 2) Gaining traction: real demand (impressions) but not yet won — position 4–30, climbing
+        const gaining = [...nonBrand].filter((q: any) => q.position > 3 && 30 >= q.position).sort((a: any, b: any) => b.impressions - a.impressions).slice(0, 20);
+        // 3) High-volume terms breaking into page 1 & 2 (position in top 20), ranked by impressions
+        const breaking = [...nonBrand].filter((q: any) => 20 >= q.position).sort((a: any, b: any) => b.impressions - a.impressions).slice(0, 20);
+        const posCell = (p: number) => {
+          const cls = p > 20 ? 'text-gray-400' : p > 10 ? 'text-amber-400' : 'text-emerald-400';
+          return <span class={cls}>{p != null ? Number(p).toFixed(1) : '—'}</span>;
+        };
+        const pagePill = (p: number) => p > 10
+          ? <span class="text-[9px] px-1.5 py-0.5 rounded bg-amber-900/40 text-amber-300 uppercase">P2</span>
+          : <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-900/40 text-emerald-400 uppercase">P1</span>;
+        const card = (title: string, sub: string, rows: any[], opts: { showClicks?: boolean; showPage?: boolean } = {}) => (
+          <div data-copy-subtile={title} class="bg-gray-900 border border-gray-800 rounded-lg p-4 flex-1 min-w-[300px]">
+            <h4 class="text-sm font-semibold text-white">{title}</h4>
+            <p class="text-[11px] text-gray-500 mb-2">{sub}</p>
+            {rows.length === 0 ? (
+              <p class="text-[11px] text-gray-600 py-3">No non-brand queries match yet.</p>
+            ) : (
+              <div class="overflow-y-auto max-h-[420px]">
+                <table class="w-full text-xs">
+                  <thead class="sticky top-0 bg-gray-900">
+                    <tr class="text-left text-gray-500 border-b border-gray-800">
+                      <th class="py-1.5 pr-2">#</th>
+                      <th class="py-1.5 pr-2">Query</th>
+                      {opts.showPage && <th class="py-1.5 pr-1 text-center">Pg</th>}
+                      <th class="py-1.5 pr-2 text-right">Impr</th>
+                      {opts.showClicks && <th class="py-1.5 pr-2 text-right">Clk</th>}
+                      <th class="py-1.5 text-right">Pos</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {rows.map((q: any, i: number) => (
+                      <tr class="border-b border-gray-800/40 hover:bg-gray-800/30">
+                        <td class="py-1.5 pr-2 text-gray-600">{i + 1}</td>
+                        <td class="py-1.5 pr-2 text-gray-300">{q.query}</td>
+                        {opts.showPage && <td class="py-1.5 pr-1 text-center">{pagePill(q.position)}</td>}
+                        <td class="py-1.5 pr-2 text-right text-white">{(q.impressions || 0).toLocaleString()}</td>
+                        {opts.showClicks && <td class="py-1.5 pr-2 text-right text-emerald-400">{q.clicks || 0}</td>}
+                        <td class="py-1.5 text-right">{posCell(q.position)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </div>
+        );
+        return (
+          <div data-copy-tile="Keyword spotlight" class="mb-6">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-sm font-semibold text-white">Keyword Spotlight</h3>
+              <span class="text-[11px] text-gray-500">non-brand only · GSC {gsc.period || 'last 28d'}</span>
+            </div>
+            <div class="flex flex-wrap gap-4">
+              {card('Top 20 non-brand keywords', 'Most clicks from non-brand search. The traffic you actually own.', topNonBrand, { showClicks: true })}
+              {card('Gaining traction', 'Real demand (impressions), position 4–30 — climbing but not won yet. Push these.', gaining, {})}
+              {card('Breaking into page 1 & 2', 'High-impression non-brand terms now ranking in the top 20. Within striking distance.', breaking, { showPage: true })}
+            </div>
+          </div>
+        );
+      })()}
+
       {/* Manual GSC submission queue — top URLs to push via URL Inspection */}
       {manualQueue && manualQueue.top?.length > 0 && (
         <div class="bg-indigo-950/20 border border-indigo-900/40 rounded-lg p-5 mb-6">

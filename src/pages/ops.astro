@@ -1,0 +1,453 @@
+---
+// Fleet Ops / Health — the system-plumbing tiles that used to clutter the
+// brand overview. Deploy parity, data freshness, baseline compliance, QA
+// linters, drift, entity coherence, llms.txt, and per-site connectivity.
+// Phase 1 of the dashboard redesign (see docs/DASHBOARD_REDESIGN_SPEC.md).
+import DashboardLayout from '../layouts/DashboardLayout.astro';
+import clients from '../utils/dashboardClients';
+import fs from 'node:fs';
+import path from 'node:path';
+
+const clientIds = new Set((clients as any[]).map((c) => c.id));
+const inDash = ([id]: [string, any]) => clientIds.has(id);
+
+function loadJson(filename: string) {
+  try {
+    const filePath = path.join(process.cwd(), 'src', 'data', 'live', filename);
+    if (fs.existsSync(filePath)) {
+      return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    }
+  } catch {}
+  return null;
+}
+
+// Build stamp so Adam can verify a fresh deploy is live
+const BUILD_TIMESTAMP = new Date().toLocaleString('en-GB', {
+  timeZone: 'Europe/London',
+  day: '2-digit', month: 'short', year: 'numeric',
+  hour: '2-digit', minute: '2-digit',
+});
+let BUILD_LABEL = 'dashboard';
+try {
+  const { execSync } = await import('node:child_process');
+  const subj = execSync('git log -1 --pretty=%s', { encoding: 'utf-8', cwd: process.cwd() }).trim();
+  if (subj) BUILD_LABEL = subj.slice(0, 100);
+} catch {}
+
+const deployParity = loadJson('deploy_parity.json') || null;
+const freshness = loadJson('data_freshness.json') || null;
+const driftReport = loadJson('drift_report.json') || null;
+const entityCoherence = loadJson('entity_coherence.json') || null;
+const llmsValidation = loadJson('llms_validation.json') || null;
+const baselineAudit = loadJson('fleet_baseline_audit.json') || null;
+const titleLint = loadJson('title_lint.json') || null;
+
+// Per-site connectivity (lite healthData — only the fields System Status needs)
+const ga4 = loadJson('ga4.json') || {};
+const gsc = loadJson('gsc.json') || {};
+const recs = loadJson('recommendations.json') || {};
+const uptime = loadJson('uptime.json') || {};
+const audit = loadJson('ai_audit.json') || {};
+const botHits = loadJson('bot_hits.json') || {};
+
+const healthData: Record<string, any> = {};
+for (const c of clients) {
+  const crawl = loadJson(`crawl_${c.id}.json`);
+  const g = ga4[c.id] || {};
+  const u = uptime[c.id] || {};
+  const a = audit[c.id] || {};
+  const r = recs[c.id] || {};
+  const bh = botHits[c.id] || {};
+  const botTotal = (bh.days || []).reduce((sum: number, d: any) => sum + (d.total || 0), 0);
+  healthData[c.id] = {
+    pages: crawl?.pages_crawled || 0,
+    users: g.overview?.active_users || 0,
+    impressions: gsc[c.id]?.totals?.impressions || 0,
+    aiScore: a.overall_score ?? null,
+    recsTotal: r.total || 0,
+    upStatus: u.status || null,
+    botHits: botTotal,
+  };
+}
+
+let baselineSummary: { sites: number; p1Fail: number; p2Fail: number; p0Fail: number; bySite: Array<{ id: string; preLaunch: boolean; fails: Array<{ severity: string; label: string; note: string }> }> } | null = null;
+if (baselineAudit?.sites) {
+  let p0Fail = 0, p1Fail = 0, p2Fail = 0;
+  const bySite: any[] = [];
+  for (const [id, data] of Object.entries(baselineAudit.sites).filter(inDash)) {
+    const d = data as any;
+    const fails = (d.checks || []).filter((c: any) => c.status === 'fail').map((c: any) => ({ severity: c.severity, label: c.label, note: c.note || '' }));
+    for (const f of fails) {
+      if (f.severity === 'p0') p0Fail++;
+      else if (f.severity === 'p1') p1Fail++;
+      else if (f.severity === 'p2') p2Fail++;
+    }
+    bySite.push({ id, preLaunch: !!d.pre_launch, fails });
+  }
+  bySite.sort((a, b) => b.fails.filter((f: any) => f.severity === 'p0' || f.severity === 'p1').length - a.fails.filter((f: any) => f.severity === 'p0' || f.severity === 'p1').length);
+  baselineSummary = { sites: bySite.length, p0Fail, p1Fail, p2Fail, bySite };
+}
+---
+
+<DashboardLayout title="Fleet Ops / Health">
+  <div class="mb-6">
+    <div class="flex items-center justify-between flex-wrap gap-3">
+      <div>
+        <h1 class="text-xl font-bold text-white">Fleet Ops / Health</h1>
+        <p class="text-xs text-gray-500">Deploy, data pipeline, baseline compliance and QA. The plumbing behind the brand numbers. <a href="/" class="text-indigo-400 hover:text-indigo-300 underline">← back to overview</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Build verification banner — visible deploy stamp -->
+  <div class="bg-green-900/30 border border-green-700 rounded-lg px-4 py-2 mb-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <span class="text-2xl">✓</span>
+      <div>
+        <div class="text-sm font-semibold text-green-200">Build live</div>
+        <div class="text-xs text-green-400/80">{BUILD_LABEL} · {BUILD_TIMESTAMP}</div>
+      </div>
+    </div>
+    {clientIds.has('rank4ai') && (
+      <a href="/agency/rank4ai/daily-audit" class="text-xs text-green-300 hover:text-green-100 underline">View Daily Audit →</a>
+    )}
+  </div>
+
+  {deployParity && (
+    <div data-copy-tile="Deploy Parity" class={`rounded-lg px-4 py-2 mb-3 border ${deployParity.any_drift ? 'bg-red-900/30 border-red-800' : 'bg-gray-900 border-gray-700'}`}>
+      <div class="flex items-center justify-between flex-wrap gap-2">
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Deploy parity</span>
+          {deployParity.any_drift
+            ? <span class="text-xs text-red-400">⚠ drift detected — git HEAD does not match live deploy on {(deployParity.projects || []).filter((p: any) => p.status === 'drift').length} project(s)</span>
+            : <span class="text-xs text-green-400">✓ all 4 projects in sync (git HEAD = live deploy)</span>
+          }
+          <span class="text-[10px] text-gray-500">checked {deployParity.checked_at?.slice(11, 16)}</span>
+        </div>
+        <details class="text-xs">
+          <summary class="cursor-pointer text-gray-400 hover:text-white">details</summary>
+          <div class="absolute right-8 mt-2 bg-gray-800 border border-gray-700 rounded-lg p-3 shadow-xl z-50 min-w-[460px]">
+            <table class="w-full text-xs">
+              <thead>
+                <tr class="text-left text-gray-500 border-b border-gray-700">
+                  <th class="py-1 pr-2">Project</th>
+                  <th class="py-1 pr-2">git HEAD</th>
+                  <th class="py-1 pr-2">live deploy</th>
+                  <th class="py-1">status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {deployParity.projects?.map((p: any) => (
+                  <tr class="border-b border-gray-800/50">
+                    <td class="py-1 pr-2 text-gray-300">{p.project}</td>
+                    <td class="py-1 pr-2 text-gray-400 font-mono">{(p.git_sha || 'n/a').slice(0, 7)}</td>
+                    <td class="py-1 pr-2 text-gray-400 font-mono">{(p.deploy_sha || 'n/a').slice(0, 7)}</td>
+                    <td class="py-1">
+                      {p.status === 'in_sync' && <span class="text-green-400">✓ in sync</span>}
+                      {p.status === 'drift' && <span class="text-red-400">⚠ drift</span>}
+                      {p.status === 'no_token' && <span class="text-gray-500">? no token</span>}
+                      {p.status === 'api_error' && <span class="text-yellow-400">! api error</span>}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+    </div>
+  )}
+
+  {baselineSummary && (
+    <div data-copy-tile="Fleet Baseline" class={`rounded-lg px-4 py-2 mb-3 border ${
+      baselineSummary.p0Fail > 0 ? 'bg-red-900/40 border-red-700'
+      : baselineSummary.p1Fail > 0 ? 'bg-red-900/30 border-red-800'
+      : baselineSummary.p2Fail > 0 ? 'bg-yellow-900/30 border-yellow-800'
+      : 'bg-gray-900 border-gray-700'
+    }`}>
+      <div class="flex items-center justify-between flex-wrap gap-2">
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Fleet baseline</span>
+          {baselineSummary.p0Fail === 0 && baselineSummary.p1Fail === 0 && baselineSummary.p2Fail === 0
+            ? <span class="text-xs text-green-400">✓ all {baselineSummary.sites} sites pass</span>
+            : <>
+                {baselineSummary.p0Fail > 0 && <span class="text-xs text-red-300 font-semibold">⚠ {baselineSummary.p0Fail} P0 silent-loss</span>}
+                {baselineSummary.p1Fail > 0 && <span class="text-xs text-red-400">⚠ {baselineSummary.p1Fail} P1 production gap</span>}
+                {baselineSummary.p2Fail > 0 && <span class="text-xs text-yellow-400">{baselineSummary.p2Fail} P2 best-practice</span>}
+                <span class="text-[10px] text-gray-500">across {baselineSummary.bySite.filter((s) => s.fails.length > 0).length}/{baselineSummary.sites} sites</span>
+              </>
+          }
+          {baselineAudit?.generated_at && (
+            <span class="text-[10px] text-gray-500">checked {baselineAudit.generated_at.slice(11, 16)}</span>
+          )}
+        </div>
+        <details class="text-xs">
+          <summary class="cursor-pointer text-gray-400 hover:text-white">details</summary>
+          <div class="absolute right-8 mt-2 bg-gray-800 border border-gray-700 rounded-lg p-3 shadow-xl z-50 min-w-[520px] max-h-[500px] overflow-y-auto">
+            {baselineSummary.bySite.filter((s) => s.fails.length > 0).length === 0 ? (
+              <div class="text-xs text-green-400">✓ All sites conform to baseline checklist.</div>
+            ) : (
+              baselineSummary.bySite.filter((s) => s.fails.length > 0).map((site) => (
+                <div class="mb-3">
+                  <div class="text-xs font-semibold text-white mb-1">
+                    {site.id}{site.preLaunch && <span class="text-[10px] text-blue-400 font-normal ml-2">pre-launch</span>}
+                  </div>
+                  {site.fails.map((f) => (
+                    <div class="text-[11px] text-gray-300 pl-3 flex items-start gap-2">
+                      <span class={`text-[10px] font-semibold uppercase shrink-0 mt-0.5 ${
+                        f.severity === 'p0' ? 'text-red-300' : f.severity === 'p1' ? 'text-red-400' : 'text-yellow-400'
+                      }`}>{f.severity}</span>
+                      <span class="flex-1">
+                        {f.label}
+                        {f.note && <span class="text-gray-500 block text-[10px]">{f.note}</span>}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              ))
+            )}
+            <div class="mt-2 pt-2 border-t border-gray-700 text-[10px] text-gray-500">Source: ~/Library/Mobile Documents/com~apple~CloudDocs/claude/astro/FLEET/BASELINE_CHECKLIST.md · runs nightly 06:45 BST via com.rank4ai.fleet-baseline-audit</div>
+          </div>
+        </details>
+      </div>
+    </div>
+  )}
+
+  {freshness && (
+    <div data-copy-tile="Data Feeds" class={`rounded-lg px-4 py-2 mb-4 border ${
+      (freshness.summary?.very_stale || freshness.summary?.missing) ? 'bg-red-900/30 border-red-800'
+      : freshness.summary?.stale ? 'bg-yellow-900/30 border-yellow-800'
+      : 'bg-gray-900 border-gray-700'
+    }`}>
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Data feeds</span>
+          <span class="text-xs text-green-400">{freshness.summary?.fresh || 0} fresh</span>
+          {freshness.summary?.stale ? <span class="text-xs text-yellow-400">· {freshness.summary.stale} stale</span> : null}
+          {freshness.summary?.very_stale ? <span class="text-xs text-red-400">· {freshness.summary.very_stale} very stale</span> : null}
+          {freshness.summary?.missing ? <span class="text-xs text-red-500">· {freshness.summary.missing} missing</span> : null}
+        </div>
+        <details class="text-xs">
+          <summary class="cursor-pointer text-gray-400 hover:text-white">Details</summary>
+          <div class="absolute right-8 mt-2 bg-gray-800 border border-gray-700 rounded-lg p-3 shadow-xl z-50 min-w-[400px] max-h-[400px] overflow-y-auto">
+            <table class="w-full text-xs">
+              <thead>
+                <tr class="text-left text-gray-500 border-b border-gray-700">
+                  <th class="py-1 pr-2">Feed</th>
+                  <th class="py-1 pr-2">Age</th>
+                  <th class="py-1">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {freshness.feeds?.map((f: any) => (
+                  <tr class="border-b border-gray-800/50">
+                    <td class="py-1 pr-2 text-gray-300">{f.label}</td>
+                    <td class="py-1 pr-2 text-gray-400 whitespace-nowrap">{f.age_hours !== null ? `${f.age_hours}h` : 'n/a'}</td>
+                    <td class="py-1">
+                      {f.status === 'fresh' && <span class="text-green-400">✓ fresh</span>}
+                      {f.status === 'stale' && <span class="text-yellow-400">◐ stale</span>}
+                      {f.status === 'very_stale' && <span class="text-red-400">⚠ very stale</span>}
+                      {f.status === 'missing' && <span class="text-red-500">✗ missing</span>}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+    </div>
+  )}
+
+  {/* Title truncation detector — catches the MI linter cut-mid-word bug fleet-wide */}
+  {titleLint && (() => {
+    const perSite = Object.entries(titleLint.sites || {})
+      .filter(inDash)
+      .filter(([_, d]: [string, any]) => (d.flagged_count || 0) > 0)
+      .sort((a: any, b: any) => b[1].flagged_count - a[1].flagged_count) as Array<[string, any]>;
+    const totalFlagged = perSite.reduce((acc, [_, d]) => acc + (d.flagged_count || 0), 0);
+    if (perSite.length === 0) return null;
+    return (
+      <div data-copy-tile="Title truncation" class="rounded-lg px-4 py-2 mb-4 border bg-rose-950/30 border-rose-800/50">
+        <div class="flex items-center justify-between flex-wrap gap-3">
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-semibold text-rose-300 uppercase tracking-wider">Title truncation</span>
+            <span class="text-sm text-rose-400 font-semibold">{totalFlagged} title{totalFlagged === 1 ? '' : 's'} look mid-word cut at ≤62 chars</span>
+            <span class="text-[10px] text-gray-500">{perSite.length} site{perSite.length === 1 ? '' : 's'} affected</span>
+          </div>
+          <details class="text-xs">
+            <summary class="cursor-pointer text-rose-400 hover:text-rose-300">details</summary>
+            <div class="absolute right-8 mt-2 bg-gray-800 border border-gray-700 rounded-lg p-3 shadow-xl z-50 min-w-[520px] max-h-[420px] overflow-y-auto">
+              {perSite.map(([sid, d]: [string, any]) => (
+                <div class="mb-3 last:mb-0">
+                  <div class="text-xs font-semibold text-white mb-1">{sid} <span class="text-gray-500 font-normal">({d.flagged_count})</span></div>
+                  {d.flagged.slice(0, 10).map((p: any) => (
+                    <div class="text-[11px] mb-1 text-gray-400">
+                      <span class="text-rose-400">L={p.length}</span> · <span class="text-gray-300">{p.title}</span>
+                      {p.url && <div class="text-[10px] text-gray-600 ml-3">{p.url.replace(/^https?:\/\/(www\.)?/, '').slice(0, 80)}</div>}
+                    </div>
+                  ))}
+                  {d.flagged_count > 10 && <div class="text-[10px] text-gray-500 mt-1">+{d.flagged_count - 10} more</div>}
+                </div>
+              ))}
+              <div class="text-[10px] text-gray-500 mt-3 pt-2 border-t border-gray-700">Detects titles 55-62 chars ending on a stopword/preposition/article — likely cut mid-sentence by a length linter. Source: scripts/check_title_truncation.py</div>
+            </div>
+          </details>
+        </div>
+      </div>
+    );
+  })()}
+
+  {/* Drift detector — CLAUDE.md assertions vs live DOM */}
+  {driftReport && (
+    <div data-copy-tile="Drift Detector" class={`rounded-lg px-4 py-2 mb-4 border ${driftReport.fleet_drift_count > 0 ? 'bg-amber-950/30 border-amber-800/50' : 'bg-gray-900 border-gray-700'}`}>
+      <div class="flex items-center justify-between flex-wrap gap-3">
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-semibold text-amber-300 uppercase tracking-wider">Drift detector</span>
+          {driftReport.fleet_drift_count > 0
+            ? <span class="text-sm text-amber-400 font-semibold">{driftReport.fleet_drift_count} assertion{driftReport.fleet_drift_count === 1 ? '' : 's'} drifted vs CLAUDE.md</span>
+            : <span class="text-sm text-gray-400">All assertions match CLAUDE.md</span>
+          }
+          <span class="text-[10px] text-gray-500">{Object.entries(driftReport.per_site || {}).filter(inDash).length} sites checked</span>
+        </div>
+        <details class="text-xs">
+          <summary class="cursor-pointer text-amber-400 hover:text-amber-300">details</summary>
+          <div class="absolute right-8 mt-2 bg-gray-800 border border-gray-700 rounded-lg p-3 shadow-xl z-50 min-w-[480px] max-h-[420px] overflow-y-auto">
+            {Object.entries(driftReport.per_site || {}).filter(inDash).map(([sid, d]: [string, any]) => (
+              <div class="mb-3 last:mb-0">
+                <div class="text-xs font-semibold text-white mb-1">{sid}</div>
+                {d.error && <div class="text-[10px] text-red-400">{d.error}</div>}
+                {d.findings?.map((f: any) => (
+                  <div class="text-[11px] mb-1.5">
+                    <span class={f.drift_detected ? 'text-amber-400' : 'text-gray-500'}>
+                      {f.drift_detected ? '⚠' : '✓'}
+                    </span>
+                    <span class="text-gray-300 ml-1">{f.label}</span>
+                    <span class="text-gray-500"> — {f.expected_hits}/{f.relevant_pages} pages have "{f.expected}" ({f.coverage_pct}%)</span>
+                    {f.alternate_hits?.length > 0 && (
+                      <div class="pl-3 mt-0.5 text-[10px] text-amber-400">
+                        Found alternate values:
+                        {f.alternate_hits.slice(0, 3).map((ah: any) => (
+                          <div class="text-gray-400">{ah.value} at {ah.url.replace(/^https?:\/\/(www\.)?/, '')}</div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </details>
+      </div>
+    </div>
+  )}
+
+  {/* Entity coherence — sameAs URL liveness check (Batch 5, weekly) */}
+  {entityCoherence && entityCoherence.fleet_summary && (
+    <div data-copy-tile="Entity Coherence" class={`rounded-lg px-4 py-2 mb-4 border ${entityCoherence.fleet_summary.broken > 0 ? 'bg-red-950/30 border-red-800/50' : 'bg-gray-900 border-gray-700'}`}>
+      <div class="flex items-center justify-between flex-wrap gap-3">
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-semibold text-fuchsia-300 uppercase tracking-wider">Entity coherence</span>
+          <span class="text-sm font-semibold" style={`color: ${entityCoherence.fleet_summary.broken > 0 ? '#f87171' : '#10b981'}`}>
+            {entityCoherence.fleet_summary.ok}/{entityCoherence.fleet_summary.total} sameAs OK ({entityCoherence.fleet_summary.score}%)
+          </span>
+          {entityCoherence.fleet_summary.broken > 0 && (
+            <span class="text-xs text-red-400 font-semibold">⚠ {entityCoherence.fleet_summary.broken} broken</span>
+          )}
+          {entityCoherence.fleet_summary.bot_blocked > 0 && (
+            <span class="text-[10px] text-gray-500">{entityCoherence.fleet_summary.bot_blocked} bot-blocked (LinkedIn, X, etc.)</span>
+          )}
+        </div>
+        <details class="text-xs">
+          <summary class="cursor-pointer text-fuchsia-400 hover:text-fuchsia-300">details</summary>
+          <div class="absolute right-8 mt-2 bg-gray-800 border border-gray-700 rounded-lg p-3 shadow-xl z-50 min-w-[520px] max-h-[420px] overflow-y-auto">
+            {Object.entries(entityCoherence).filter(([k]) => k !== 'fleet_summary').filter(inDash).map(([sid, d]: [string, any]) => (
+              <div class="mb-3 last:mb-0 pb-2 border-b border-gray-700 last:border-0">
+                <div class="text-xs font-semibold text-white mb-1">{sid} <span class="text-[10px] text-gray-500 ml-2">{d.summary?.ok}/{d.summary?.total} OK · {d.summary?.score}%</span></div>
+                {d.broken_detail?.length > 0 && d.broken_detail.map((b: any) => (
+                  <div class="text-[11px] mb-1">
+                    <span class="text-red-400">⚠ {b.status}</span>
+                    <span class="text-gray-300 ml-2">{b.from_role}:{b.from_entity}</span>
+                    <div class="text-[10px] text-gray-500 pl-4 break-all">{b.url}</div>
+                  </div>
+                ))}
+                {(!d.broken_detail || d.broken_detail.length === 0) && (
+                  <div class="text-[10px] text-emerald-400 pl-2">All sameAs URLs working</div>
+                )}
+              </div>
+            ))}
+            <div class="text-[10px] text-gray-500 mt-2 pt-2 border-t border-gray-700">Bot-blocked = HTTP 403/429/999 from LinkedIn/X/Medium etc — URL is probably valid, anti-bot rules just block automated checks. Last checked: {entityCoherence.fleet_summary?.fetched_at?.split('T')[0]}</div>
+          </div>
+        </details>
+      </div>
+    </div>
+  )}
+
+  {/* llms.txt validator (Batch 9, daily) */}
+  {llmsValidation && llmsValidation.fleet_summary && (
+    <div data-copy-tile="llms.txt validator" class={`rounded-lg px-4 py-2 mb-4 border ${llmsValidation.fleet_summary.avg_score < 70 ? 'bg-amber-950/30 border-amber-800/50' : 'bg-gray-900 border-gray-700'}`}>
+      <div class="flex items-center justify-between flex-wrap gap-3">
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-semibold text-blue-300 uppercase tracking-wider">llms.txt</span>
+          <span class="text-sm" style={`color: ${llmsValidation.fleet_summary.avg_score >= 80 ? '#10b981' : llmsValidation.fleet_summary.avg_score >= 60 ? '#f59e0b' : '#f87171'}`}>
+            fleet avg {llmsValidation.fleet_summary.avg_score}/100
+          </span>
+          <span class="text-[10px] text-gray-500">{llmsValidation.fleet_summary.accessible}/{llmsValidation.fleet_summary.total} accessible</span>
+        </div>
+        <details class="text-xs">
+          <summary class="cursor-pointer text-blue-400 hover:text-blue-300">per-site</summary>
+          <div class="absolute right-8 mt-2 bg-gray-800 border border-gray-700 rounded-lg p-3 shadow-xl z-50 min-w-[480px] max-h-[420px] overflow-y-auto">
+            {Object.entries(llmsValidation).filter(([k]) => k !== 'fleet_summary').filter(inDash).map(([sid, d]: [string, any]) => (
+              <div class="mb-3 last:mb-0 pb-2 border-b border-gray-700 last:border-0">
+                <div class="text-xs font-semibold text-white mb-1">
+                  {sid}
+                  <span class="text-[10px] text-gray-400 ml-2">llms.txt {d.llms_txt?.score}/100 · llms-full.txt {d.llms_full_txt?.score}/100</span>
+                </div>
+                {d.llms_txt?.missing?.length > 0 && (
+                  <div class="text-[10px] text-amber-300 pl-2">missing: {d.llms_txt.missing.slice(0, 3).join(' · ')}</div>
+                )}
+              </div>
+            ))}
+          </div>
+        </details>
+      </div>
+    </div>
+  )}
+
+  {/* Per-site connectivity — which data feeds are wired per brand */}
+  <div data-copy-tile="System Status" class="bg-gray-800 border border-gray-700 rounded-lg p-5 mt-6">
+    <h3 class="text-sm font-semibold text-gray-400 mb-4">Per-site connectivity</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
+      {clients.filter((c: any) => !c.staging).map((client: any) => {
+        const h = healthData[client.id];
+        const checks = [
+          { label: 'GA4', ok: h.users > 0 },
+          { label: 'GSC', ok: h.impressions > 0 },
+          { label: 'Crawl', ok: h.pages > 0 },
+          { label: 'AI Audit', ok: h.aiScore !== null },
+          { label: 'Recs', ok: h.recsTotal >= 0 },
+          { label: 'Uptime', ok: h.upStatus === 200 },
+          { label: 'Bots', ok: h.botHits > 0 },
+        ];
+        return (
+          <div class="border-b border-gray-800/50 pb-2">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-sm text-white">{client.name}</span>
+              <span class="text-[10px] text-gray-500">{checks.filter(c => c.ok).length}/{checks.length} connected</span>
+            </div>
+            <div class="flex flex-wrap gap-1">
+              {checks.map(c => (
+                <span class={`text-[9px] px-1.5 py-0.5 rounded ${c.ok ? 'bg-green-900/50 text-green-400' : 'bg-red-900/50 text-red-400'}`}>{c.label}</span>
+              ))}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+    <h3 class="text-sm font-semibold text-gray-400 mt-6 mb-3">Automated Tasks</h3>
+    <div class="text-xs text-gray-400 space-y-1" id="task-status">
+      <p class="text-gray-600">Checking...</p>
+    </div>
+  </div>
+</DashboardLayout>
