@@ -2,109 +2,134 @@
   {
     "id": "overview",
     "label": "Overview",
-    "description": "High-level summary \u2014 pages, issues, scores, status",
-    "icon": "grid"
+    "description": "High-level summary — pages, issues, scores, status",
+    "icon": "grid",
+    "group": "Overview"
   },
   {
     "id": "ai-readiness",
     "label": "AI Readiness",
-    "description": "AI citation readiness score \u2014 schema, E-E-A-T, content structure, llms.txt",
-    "icon": "zap"
+    "description": "AI citation readiness score — schema, E-E-A-T, content structure, llms.txt",
+    "icon": "zap",
+    "group": "AI Search"
   },
   {
     "id": "ai-citations",
     "label": "AI Citations",
-    "description": "LLM mention tracking \u2014 ChatGPT, Claude, Gemini",
-    "icon": "brain"
+    "description": "LLM mention tracking — ChatGPT, Claude, Gemini",
+    "icon": "brain",
+    "group": "AI Search"
   },
   {
     "id": "page-compliance",
     "label": "Page Compliance",
     "description": "Per-page H1, meta, schema, OG, canonical, author, capsule checklist. Click any row to expand full details.",
-    "icon": "check-square"
+    "icon": "check-square",
+    "group": "The Site"
   },
   {
     "id": "site-manager",
     "label": "Site Manager",
     "description": "Browse pages, edit meta tags, add new content, manage site structure",
-    "icon": "edit"
+    "icon": "edit",
+    "group": "The Site"
   },
   {
     "id": "leads",
     "label": "Leads",
     "icon": "bar-chart",
-    "description": "Lead submissions for this site only \u2014 funnel, sources, and recent contacts. Pulled from Supabase."
+    "description": "Lead submissions for this site only — funnel, sources, and recent contacts. Pulled from Supabase.",
+    "group": "Performance"
   },
   {
     "id": "site-structure",
     "label": "Site Structure",
     "description": "Full content hierarchy by layer, parent/child tree, live vs planned. Shows where new blogs, questions, and guides should go.",
-    "icon": "layers"
+    "icon": "layers",
+    "group": "The Site"
   },
   {
     "id": "traffic",
     "label": "Traffic",
     "description": "GA4 visitors, pageviews, sources, countries",
-    "icon": "bar-chart"
+    "icon": "bar-chart",
+    "group": "Performance"
   },
   {
     "id": "search-performance",
     "label": "Search Performance",
-    "description": "Google + Bing \u2014 clicks, impressions, queries, positions",
-    "icon": "search"
+    "description": "Google + Bing — clicks, impressions, queries, positions",
+    "icon": "search",
+    "group": "Performance"
   },
   {
     "id": "competitors",
     "label": "Competitors",
-    "description": "Who ranks where \u2014 your position vs competitors for key queries",
-    "icon": "users"
+    "description": "Who ranks where — your position vs competitors for key queries",
+    "icon": "users",
+    "group": "Recommendations"
   },
   {
     "id": "site-tree",
     "label": "Site Tree",
     "description": "Visual page hierarchy and URL structure",
-    "icon": "sitemap"
+    "icon": "sitemap",
+    "group": "The Site"
   },
   {
     "id": "site-speed",
     "label": "Site Speed",
     "description": "Core Web Vitals, Lighthouse scores, performance, accessibility, SEO",
-    "icon": "gauge"
+    "icon": "gauge",
+    "group": "Health"
   },
   {
     "id": "uptime",
     "label": "Uptime",
     "description": "Site status, response times, uptime percentage",
-    "icon": "activity"
+    "icon": "activity",
+    "group": "Health"
   },
   {
     "id": "crawl-activity",
     "label": "Crawl Activity",
     "description": "Bot crawls over time, indexed pages, AI crawler access",
-    "icon": "bot"
+    "icon": "bot",
+    "group": "Health"
   },
   {
     "id": "recommendations",
     "label": "Recommendations",
     "description": "Prioritised actions to improve AI search visibility",
-    "icon": "clipboard"
+    "icon": "clipboard",
+    "group": "Recommendations"
   },
   {
     "id": "content-plan",
     "label": "Content & Keywords",
     "description": "Content calendar, posting stats, keyword rank tracking, gap analysis",
-    "icon": "calendar"
+    "icon": "calendar",
+    "group": "Recommendations"
   },
   {
     "id": "vernacular",
     "label": "Vernacular Content",
-    "description": "Multilingual page tracker \u2014 per-language briefs and drafts, with English-equivalent target page",
-    "icon": "globe"
+    "description": "Multilingual page tracker — per-language briefs and drafts, with English-equivalent target page",
+    "icon": "globe",
+    "group": "The Site"
   },
   {
     "id": "daily-audit",
     "label": "Daily Audit",
-    "description": "Daily 7am cross-page audit \u2014 issues per page, history trend, push live action",
-    "icon": "shield"
+    "description": "Daily 7am cross-page audit — issues per page, history trend, push live action",
+    "icon": "shield",
+    "group": "Health"
+  },
+  {
+    "id": "ecosystem",
+    "label": "Ecosystem",
+    "description": "Off-site entity profiles — cross-checks the entity stack against on-site schema.org sameAs. Flags profiles in the stack but missing from sameAs, and sameAs links that are dead.",
+    "icon": "share-2",
+    "group": "Ecosystem"
   }
 ]

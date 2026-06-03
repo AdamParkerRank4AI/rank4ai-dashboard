@@ -323,7 +323,11 @@ def main():
     client = BetaAnalyticsDataClient(credentials=creds)
 
     all_data = {}
+    import sys as _sys, os as _os; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+    from site_status import skip as _skip
     for site_id, property_id in PROPERTIES.items():
+        if _skip(site_id):
+            print(f"  skip {site_id} (paused/pre-launch)"); continue
         if not property_id:
             print(f"Skipping GA4 data for {site_id} (no property ID set yet).")
             continue

@@ -566,7 +566,11 @@ def calculate_depth(pages, links, start_url):
 def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
+    import sys as _sys, os as _os; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+    from site_status import skip as _skip
     for site_id, config in SITES.items():
+        if _skip(site_id):
+            print(f"  skip {site_id} (paused/pre-launch)"); continue
         try:
             result = crawl_site(site_id, config)
             output_file = os.path.join(OUTPUT_DIR, f"crawl_{site_id}.json")

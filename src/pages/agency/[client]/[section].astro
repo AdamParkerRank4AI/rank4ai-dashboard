@@ -109,6 +109,8 @@ const intentSplit = intentSplitAll?.sites?.[clientId];
 const bing = bingAll?.[clientId];
 const serp = serpAll?.[clientId];
 const competitors = competitorAll?.[clientId];
+const entityCoherenceAll = loadJson('entity_coherence.json');
+const ecosystem = entityCoherenceAll?.[clientId]?.ecosystem;
 const recs = recsAll?.[clientId];
 const newPagesDetail = newPagesAll?.[clientId];
 const citResults = citationResults?.[clientId];
@@ -5257,6 +5259,70 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
       <a href={`/agency/${clientId}`} class="text-sm text-blue-400 hover:text-blue-300 mt-2 inline-block">Back to dashboard</a>
     </div>
   )}
+  {sectionId === 'ecosystem' && (
+    <div data-copy-tile="Ecosystem">
+      {!ecosystem && (
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-8 text-center">
+          <p class="text-gray-400">No ecosystem data yet.</p>
+          <p class="text-xs text-gray-500 mt-2">Runs Mondays via <code class="text-gray-400">check_entity_coherence.py</code>. Needs profile URLs in <code class="text-gray-400">src/data/entity_stack.json</code> and a live schema.org <code>sameAs</code> array on the homepage.</p>
+        </div>
+      )}
+      {ecosystem && (
+        <>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+            <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+              <div class="text-2xl font-bold text-white">{ecosystem.summary.matched}</div>
+              <div class="text-xs text-gray-500">In stack &amp; sameAs</div>
+            </div>
+            <div class={`bg-gray-900 border rounded-lg p-4 text-center ${ecosystem.summary.missing_from_sameas > 0 ? 'border-amber-700' : 'border-gray-800'}`}>
+              <div class={`text-2xl font-bold ${ecosystem.summary.missing_from_sameas > 0 ? 'text-amber-400' : 'text-white'}`}>{ecosystem.summary.missing_from_sameas}</div>
+              <div class="text-xs text-gray-500">In stack, missing from sameAs</div>
+            </div>
+            <div class={`bg-gray-900 border rounded-lg p-4 text-center ${ecosystem.summary.dead_in_sameas > 0 ? 'border-red-700' : 'border-gray-800'}`}>
+              <div class={`text-2xl font-bold ${ecosystem.summary.dead_in_sameas > 0 ? 'text-red-400' : 'text-white'}`}>{ecosystem.summary.dead_in_sameas}</div>
+              <div class="text-xs text-gray-500">Dead in sameAs</div>
+            </div>
+            <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+              <div class="text-2xl font-bold text-white">{ecosystem.summary.sameas_total}</div>
+              <div class="text-xs text-gray-500">sameAs links on site</div>
+            </div>
+          </div>
+          <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 overflow-x-auto">
+            <h3 class="text-sm font-semibold text-gray-400 mb-1">Profiles</h3>
+            <p class="text-[11px] text-gray-500 mb-4">Each off-site profile in the entity stack, cross-checked against the homepage schema.org <code>sameAs</code> array. "Add to sameAs" = claimed but not yet linked from the site. "Dead link" = in sameAs but unreachable.</p>
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="text-left text-gray-500 border-b border-gray-800">
+                  <th class="py-2 px-2">Profile</th>
+                  <th class="py-2 px-2">Platform</th>
+                  <th class="py-2 px-2 text-center">Live</th>
+                  <th class="py-2 px-2 text-center">In sameAs</th>
+                  <th class="py-2 px-2">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {ecosystem.profiles.map((p: any) => (
+                  <tr class="border-b border-gray-800/30">
+                    <td class="py-1.5 px-2 max-w-[320px] truncate"><a href={p.url} target="_blank" rel="noopener" class="text-blue-400 hover:underline">{p.url}</a></td>
+                    <td class="py-1.5 px-2 text-gray-400">{p.place || '—'}</td>
+                    <td class="py-1.5 px-2 text-center">{p.live ? <span class="text-green-400">✓</span> : <span class="text-red-400">✗ {p.http_status}</span>}</td>
+                    <td class="py-1.5 px-2 text-center">{p.in_sameas ? <span class="text-green-400">✓</span> : <span class="text-gray-600">✗</span>}</td>
+                    <td class="py-1.5 px-2">
+                      {p.verdict === 'ok' && <span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-900/60 text-emerald-300">ok</span>}
+                      {p.verdict === 'missing_from_sameas' && <span class="text-[10px] px-1.5 py-0.5 rounded bg-amber-900/60 text-amber-300">add to sameAs</span>}
+                      {p.verdict === 'dead' && <span class="text-[10px] px-1.5 py-0.5 rounded bg-red-900/60 text-red-300">dead link</span>}
+                      {p.verdict === 'in_sameas_not_stack' && <span class="text-[10px] px-1.5 py-0.5 rounded bg-gray-800 text-gray-400">not in stack</span>}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </>
+      )}
+    </div>
+  )}
+
 </DashboardLayout>
 
 <!-- Chart scripts -->

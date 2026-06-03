@@ -7,6 +7,7 @@ import ConversionLeakTile from '../components/ConversionLeakTile.astro';
 import FeatureCoverageTile from '../components/FeatureCoverageTile.astro';
 import FleetBotHitsTile from '../components/FleetBotHitsTile.astro';
 import clients from '../utils/dashboardClients';
+import { statusOf, STATUS_RANK, STATUS_PILL, STATUS_LABEL } from '../utils/siteStatus';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -747,17 +748,7 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
   </div>
   <div data-copy-tile="All sites" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
     {(() => {
-      const statusOf = (c) => c.staging ? 'staging' : c.siteStatus === 'paused' ? 'paused' : c.siteStatus === 'needs' ? 'needs' : c.pre_launch === true ? 'prelaunch' : 'live';
-      const rank = { live: 0, prelaunch: 1, needs: 2, paused: 3, staging: 4 };
-      const pillClass = {
-        live: 'bg-emerald-900/40 text-emerald-400',
-        prelaunch: 'bg-blue-900/40 text-blue-300',
-        needs: 'bg-amber-900/40 text-amber-300',
-        paused: 'bg-gray-800 text-gray-400',
-        staging: 'bg-yellow-900/50 text-yellow-400',
-      };
-      const pillLabel = { live: 'Live', prelaunch: 'Pre-launch', needs: 'Needs setup', paused: 'Paused', staging: 'Staging' };
-      const sorted = [...clients].sort((a, b) => (rank[statusOf(a)] - rank[statusOf(b)]) || ((a.sidebarOrder ?? 50) - (b.sidebarOrder ?? 50)));
+      const sorted = [...clients].sort((a, b) => (STATUS_RANK[statusOf(a)] - STATUS_RANK[statusOf(b)]) || ((a.sidebarOrder ?? 50) - (b.sidebarOrder ?? 50)));
       return sorted.map((client) => {
         const h = healthData[client.id];
         const st = statusOf(client);
@@ -772,7 +763,7 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
                   <h3 class="text-gray-300 font-semibold group-hover:text-white transition text-sm">{client.name}</h3>
                   <p class="text-[10px] text-gray-600">{client.domain}</p>
                 </div>
-                <span class={`text-[9px] px-1.5 py-0.5 rounded uppercase ${pillClass[st]}`}>{pillLabel[st]}</span>
+                <span class={`text-[9px] px-1.5 py-0.5 rounded uppercase ${STATUS_PILL[st]}`}>{STATUS_LABEL[st]}</span>
               </div>
               <div class="flex gap-4 text-[10px] text-gray-500">
                 <span>{h.pages} pages</span>
@@ -790,7 +781,7 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
               <p class="text-xs text-gray-400">{client.domain} · {h.pages} pages</p>
             </div>
             <div class="flex items-center gap-2">
-              <span class={`text-[9px] px-1.5 py-0.5 rounded uppercase ${pillClass[st]}`}>{pillLabel[st]}</span>
+              <span class={`text-[9px] px-1.5 py-0.5 rounded uppercase ${STATUS_PILL[st]}`}>{STATUS_LABEL[st]}</span>
               {h.recsCritical > 0 && <span class="text-[9px] px-1.5 py-0.5 rounded bg-red-900 text-red-300">{h.recsCritical} critical</span>}
               {h.recsTotal > 0 && !h.recsCritical && <span class="text-[9px] px-1.5 py-0.5 rounded bg-yellow-900 text-yellow-300">{h.recsTotal} fixes</span>}
               <span class={`w-2.5 h-2.5 rounded-full ${statusColor}`}></span>

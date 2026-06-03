@@ -3,6 +3,7 @@ import DashboardLayout from '../../../layouts/DashboardLayout.astro';
 import ToggleSwitch from '../../../components/ToggleSwitch.astro';
 import clients from '../../../utils/dashboardClients';
 import sections from '../../../data/sections.json';
+import { statusOf, STATUS_LABEL } from '../../../utils/siteStatus';
 
 export function getStaticPaths() {
   return clients.map((c) => ({ params: { client: c.id } }));
@@ -17,6 +18,8 @@ if (!client) {
 
 // Filter out 'overview' — that's agency-only
 const toggleableSections = sections.filter((s) => s.id !== 'overview');
+const currentStatus = statusOf(client);
+const STATUS_OPTIONS = ['live', 'prelaunch', 'paused', 'needs'];
 ---
 
 <DashboardLayout title={`${client.name} — Settings`} currentClient={clientId} view="agency">
@@ -33,6 +36,21 @@ const toggleableSections = sections.filter((s) => s.id !== 'overview');
       Toggle which sections are visible in the client's dashboard view.
       Changes update the client view at <code class="text-blue-400">/client/{clientId}</code>
     </p>
+
+    <div class="mb-8 p-4 rounded-lg bg-gray-800 border border-gray-700">
+      <div class="flex items-center justify-between gap-4 flex-wrap">
+        <div>
+          <p class="text-sm font-semibold text-gray-200">Site lifecycle status</p>
+          <p class="text-xs text-gray-500 mt-1 max-w-md">Controls the status pill on the overview and whether the data fetchers run for this site. Only <span class="text-emerald-400">Live</span> sites are fetched; pre-launch / paused / needs are skipped to save API quota.</p>
+        </div>
+        <select id="site-status-select" data-current={currentStatus} class="bg-gray-900 border border-gray-700 text-white text-sm rounded px-3 py-2 min-w-[150px]">
+          {STATUS_OPTIONS.map((s) => (
+            <option value={s} selected={s === currentStatus}>{STATUS_LABEL[s]}</option>
+          ))}
+        </select>
+      </div>
+      <p id="status-msg" class="text-xs mt-3"></p>
+    </div>
 
     <div class="space-y-3">
       {toggleableSections.map((section) => (
@@ -79,6 +97,47 @@ const toggleableSections = sections.filter((s) => s.id !== 'overview');
       }
       function setToken(t) { try { if (t) localStorage.setItem(TOKEN_KEY, t); else localStorage.removeItem(TOKEN_KEY); } catch {} }
       var status = document.getElementById('settings-status');
+
+      // Site lifecycle status selector
+      var sel = document.getElementById('site-status-select');
+      var smsg = document.getElementById('status-msg');
+      if (sel) {
+        sel.addEventListener('change', async function() {
+          var newStatus = sel.value;
+          var prev = sel.dataset.current;
+          var token = getToken();
+          if (!token) {
+            var t = prompt('Paste EDIT_SECRET (saved in this tab only).');
+            if (!t) { sel.value = prev; return; }
+            setToken(t.trim());
+            token = getToken();
+          }
+          smsg.textContent = 'Saving status…';
+          smsg.style.color = '#facc15';
+          try {
+            var r = await fetch('/api/set-site-status', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+              body: JSON.stringify({ clientId: clientId, status: newStatus }),
+            });
+            var data = await r.json();
+            if (!r.ok || !data.ok) {
+              smsg.textContent = '✗ ' + (data.error || 'HTTP ' + r.status);
+              smsg.style.color = '#f87171';
+              if (r.status === 401) setToken('');
+              sel.value = prev;
+              return;
+            }
+            sel.dataset.current = newStatus;
+            smsg.innerHTML = '✓ status → ' + newStatus + ' · <a target="_blank" class="underline text-emerald-400" href="' + (data.commitUrl || '#') + '">' + (data.commit || '').slice(0, 7) + '</a> · deploy in 1-2 min';
+            smsg.style.color = '#34d399';
+          } catch (err) {
+            smsg.textContent = '✗ ' + (err.message || 'Network error');
+            smsg.style.color = '#f87171';
+            sel.value = prev;
+          }
+        });
+      }
 
       document.querySelectorAll('[data-section-id]').forEach(function(input) {
         input.addEventListener('change', async function(e) {

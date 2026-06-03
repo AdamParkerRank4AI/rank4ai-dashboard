@@ -31,15 +31,130 @@ from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
-LIVE = Path(__file__).resolve().parent.parent / "src" / "data" / "live"
+DATA = Path(__file__).resolve().parent.parent / "src" / "data"
+LIVE = DATA / "live"
 OUT = LIVE / "entity_coherence.json"
+CLIENTS = DATA / "clients.json"
+ENTITY_STACK = DATA / "entity_stack.json"
 
+# Homepages that differ from "https://<domain>" (www, scheme, sub-path).
+URL_OVERRIDES = {
+    "rank4ai": "https://www.rank4ai.co.uk",
+    "rochellemarashi": "https://rochellemarashi.pages.dev",
+}
+
+# Fallback if clients.json can't be read.
 SITES = [
     {"id": "rank4ai", "url": "https://www.rank4ai.co.uk"},
     {"id": "market-invoice", "url": "https://marketinvoice.co.uk"},
     {"id": "seocompare", "url": "https://seocompare.co.uk"},
     {"id": "rochellemarashi", "url": "https://rochellemarashi.pages.dev"},
 ]
+
+
+def build_sites():
+    """Derive the site list (id + homepage) from clients.json, keeping overrides."""
+    try:
+        clients = json.load(open(CLIENTS))
+    except Exception as e:
+        print(f"  clients.json unreadable ({e}); using fallback SITES")
+        return SITES
+    sites, seen = [], set()
+    for c in clients:
+        cid = c.get("id")
+        domain = (c.get("liveDomain") or c.get("domain") or "").strip()
+        if not cid or not domain:
+            continue
+        url = URL_OVERRIDES.get(cid) or ("https://" + domain.split("/")[0])
+        sites.append({"id": cid, "url": url})
+        seen.add(cid)
+    if "rochellemarashi" not in seen:
+        sites.append({"id": "rochellemarashi", "url": URL_OVERRIDES["rochellemarashi"]})
+    return sites
+
+
+def load_entity_stack():
+    """Return {client_id: [ {place, url, priority, status}, ... ]} for rows with a URL."""
+    try:
+        raw = json.load(open(ENTITY_STACK))
+    except Exception:
+        return {}
+    out = {}
+    for key, brand in raw.items():
+        if key.startswith("_") or not isinstance(brand, dict):
+            continue
+        rows = []
+        for p in brand.get("platforms", []):
+            u = (p.get("url") or "").strip()
+            if u:
+                rows.append({"place": p.get("place"), "url": u,
+                             "priority": p.get("priority"), "status": p.get("status")})
+        out[key] = rows
+    return out
+
+
+def norm_url(u):
+    if not u:
+        return ""
+    u = u.strip().lower()
+    u = re.sub(r"^https?://", "", u)
+    u = re.sub(r"^www\.", "", u)
+    return u.rstrip("/")
+
+
+def _orig_from_entities(n, entities):
+    for role in ("person", "organization"):
+        for e in entities.get(role, []):
+            for s in e.get("sameAs", []):
+                if norm_url(s) == n:
+                    return s
+    return n
+
+
+def build_ecosystem(entities, stack_rows, live_lookup):
+    """Cross-check entity_stack profile URLs against on-site schema.org sameAs.
+    Emits per-URL {url, place, in_stack, in_sameas, live, http_status, verdict}."""
+    sameas = set()
+    for role in ("person", "organization"):
+        for e in entities.get(role, []):
+            for s in e.get("sameAs", []):
+                sameas.add(norm_url(s))
+
+    stack_by_norm = {norm_url(r["url"]): r for r in stack_rows}
+    profiles = []
+    for n in sorted(set(stack_by_norm) | sameas):
+        in_stack = n in stack_by_norm
+        in_sameas = n in sameas
+        url = stack_by_norm[n]["url"] if in_stack else _orig_from_entities(n, entities)
+        res = live_lookup.get(n)
+        if res is None:
+            res = head_check(url)
+            live_lookup[n] = res
+        live = res["verdict"] in ("ok", "bot_blocked")  # bot_blocked = presumed live
+        if in_sameas and not live:
+            verdict = "dead"
+        elif in_stack and not in_sameas:
+            verdict = "missing_from_sameas"
+        elif in_sameas and not in_stack:
+            verdict = "in_sameas_not_stack"
+        else:
+            verdict = "ok"
+        profiles.append({
+            "url": url, "place": stack_by_norm.get(n, {}).get("place"),
+            "in_stack": in_stack, "in_sameas": in_sameas, "live": live,
+            "http_status": res["status"], "verdict": verdict,
+        })
+
+    return {
+        "profiles": profiles,
+        "summary": {
+            "stack_total": len(stack_rows),
+            "sameas_total": len(sameas),
+            "matched": sum(1 for p in profiles if p["in_stack"] and p["in_sameas"]),
+            "missing_from_sameas": sum(1 for p in profiles if p["verdict"] == "missing_from_sameas"),
+            "dead_in_sameas": sum(1 for p in profiles if p["verdict"] == "dead" and p["in_sameas"]),
+        },
+    }
 
 USER_AGENT = "Rank4AI-EntityCoherenceChecker/1.0 (+https://rank4ai.co.uk)"
 TIMEOUT = 15
@@ -63,7 +178,7 @@ def fetch_html(url):
 # These are reported as "bot_blocked" (warning, not broken).
 BOT_BLOCKED_HOSTS = (
     "linkedin.com", "x.com", "twitter.com", "medium.com",
-    "instagram.com", "facebook.com", "tiktok.com",
+    "instagram.com", "facebook.com", "tiktok.com", "quora.com",
     "counselling-directory.org.uk", "psychologytoday.com",
 )
 
@@ -155,7 +270,8 @@ def collect_entities(blocks: list) -> dict:
     return out
 
 
-def check_site(site: dict) -> dict:
+def check_site(site: dict, stack_rows: list = None) -> dict:
+    stack_rows = stack_rows or []
     url = site["url"]
     print(f"\n→ {site['id']} ({url})")
     html = fetch_html(url)
@@ -168,6 +284,7 @@ def check_site(site: dict) -> dict:
             "organization_links": [],
             "summary": {"total": 0, "ok": 0, "broken": 0, "rate_limited": 0, "score": 0},
             "broken_detail": [],
+            "ecosystem": build_ecosystem({}, stack_rows, {}),
         }
 
     blocks = extract_jsonld_blocks(html)
@@ -206,6 +323,12 @@ def check_site(site: dict) -> dict:
     verifiable = total - counts["bot_blocked"]
     score = 100 if verifiable == 0 else round(100 * counts["ok"] / verifiable)
 
+    # Reuse the sameAs HEAD results so stack∩sameAs URLs aren't fetched twice.
+    live_lookup = {}
+    for lst in (person_links, organization_links):
+        for r in lst:
+            live_lookup[norm_url(r["url"])] = r
+
     return {
         "site_url": url,
         "fetched_at": datetime.now(timezone.utc).isoformat(),
@@ -220,14 +343,16 @@ def check_site(site: dict) -> dict:
             "score": score,
         },
         "broken_detail": broken_detail,
+        "ecosystem": build_ecosystem(entities, stack_rows, live_lookup),
     }
 
 
 def main() -> int:
     out = {}
+    stack = load_entity_stack()
     fleet = {"total": 0, "ok": 0, "broken": 0, "bot_blocked": 0, "error": 0}
-    for site in SITES:
-        result = check_site(site)
+    for site in build_sites():
+        result = check_site(site, stack.get(site["id"], []))
         out[site["id"]] = result
         s = result.get("summary") or {}
         for k in ("total", "ok", "broken", "bot_blocked", "error"):

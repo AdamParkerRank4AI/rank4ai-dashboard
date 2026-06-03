@@ -1,19 +1,8 @@
 {
   "rank4ai": {
     "site_url": "https://www.rank4ai.co.uk",
-    "fetched_at": "2026-05-18T08:47:55.350165+00:00",
+    "fetched_at": "2026-06-03T20:07:46.349754+00:00",
     "person_links": [
-      {
-        "url": "https://www.linkedin.com/in/adamparkerrank4ai/",
-        "status": 404,
-        "ok": false,
-        "verdict": "broken",
-        "redirect_to": null,
-        "final_url": "https://www.linkedin.com/in/adamparkerrank4ai/",
-        "error": "HTTP 404",
-        "entity_name": "Adam Parker",
-        "entity_role": "person"
-      },
       {
         "url": "https://x.com/rank4ai",
         "status": 403,
@@ -45,6 +34,17 @@
         "final_url": "https://www.muswellrose.com/",
         "error": null,
         "entity_name": "Adam Parker",
+        "entity_role": "person"
+      },
+      {
+        "url": "https://www.linkedin.com/in/oliver-mackman-0b412b231/",
+        "status": 999,
+        "ok": false,
+        "verdict": "bot_blocked",
+        "redirect_to": null,
+        "final_url": "https://www.linkedin.com/in/oliver-mackman-0b412b231/",
+        "error": "HTTP 999",
+        "entity_name": "Oliver Mackman",
         "entity_role": "person"
       }
     ],
@@ -147,30 +147,378 @@
         "error": null,
         "entity_name": "Rank4AI",
         "entity_role": "organization"
+      },
+      {
+        "url": "https://opencorporates.com/companies/gb/16584507",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://opencorporates.com/companies/gb/16584507",
+        "error": null,
+        "entity_name": "Rank4AI",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://www.rank4ai.co.uk/data/uk-ai-search-visibility-stat-index/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://www.rank4ai.co.uk/data/uk-ai-search-visibility-stat-index/",
+        "error": null,
+        "entity_name": "Rank4AI",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://www.rank4ai.co.uk/data/api/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://www.rank4ai.co.uk/data/api/",
+        "error": null,
+        "entity_name": "Rank4AI",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://marketinvoice.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://marketinvoice.co.uk/",
+        "error": null,
+        "entity_name": "Rank4AI",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://seocompare.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://seocompare.co.uk/",
+        "error": null,
+        "entity_name": "Rank4AI",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://bestbusinessloans.ai/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://bestbusinessloans.ai/",
+        "error": null,
+        "entity_name": "Rank4AI",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://fundbiz.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://fundbiz.co.uk/",
+        "error": null,
+        "entity_name": "Rank4AI",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://merchanthq.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://merchanthq.co.uk/",
+        "error": null,
+        "entity_name": "Rank4AI",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://kartapay.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://kartapay.co.uk/",
+        "error": null,
+        "entity_name": "Rank4AI",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://peptideclear.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://peptideclear.co.uk/",
+        "error": null,
+        "entity_name": "Rank4AI",
+        "entity_role": "organization"
       }
     ],
     "summary": {
-      "total": 13,
-      "ok": 9,
-      "broken": 1,
-      "bot_blocked": 3,
+      "total": 23,
+      "ok": 19,
+      "broken": 0,
+      "bot_blocked": 4,
       "error": 0,
-      "score": 90
+      "score": 100
     },
-    "broken_detail": [
-      {
-        "url": "https://www.linkedin.com/in/adamparkerrank4ai/",
-        "status": 404,
-        "error": "HTTP 404",
-        "verdict": "broken",
-        "from_entity": "Adam Parker",
-        "from_role": "person"
+    "broken_detail": [],
+    "ecosystem": {
+      "profiles": [
+        {
+          "url": "https://bestbusinessloans.ai/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.facebook.com/rank4ai",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/16584507",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://fundbiz.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://github.com/AdamParkerRank4AI",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.instagram.com/rank4ai",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://kartapay.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.linkedin.com/company/rank4ai",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.linkedin.com/in/oliver-mackman-0b412b231/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 999,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://marketinvoice.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://medium.com/@info_98087",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 403,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://merchanthq.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.muswellrose.com/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://opencorporates.com/companies/gb/16584507",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://peptideclear.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.rank4ai.co.uk/data/api/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.rank4ai.co.uk/data/uk-ai-search-visibility-stat-index/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://seocompare.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://substack.com/@rank4aiuk",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://x.com/rank4ai",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 403,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.youtube.com/@Rank4AI",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        }
+      ],
+      "summary": {
+        "stack_total": 0,
+        "sameas_total": 21,
+        "matched": 0,
+        "missing_from_sameas": 0,
+        "dead_in_sameas": 0
       }
-    ]
+    }
+  },
+  "resiliencebuilder": {
+    "site_url": "https://resiliencebuilder.co.uk",
+    "fetched_at": "2026-06-03T20:07:50.945247+00:00",
+    "person_links": [
+      {
+        "url": "http://resiliencebuilder.co.uk",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": "https://resiliencebuilder.co.uk/",
+        "final_url": "https://resiliencebuilder.co.uk/",
+        "error": null,
+        "entity_name": "Sarah",
+        "entity_role": "person"
+      }
+    ],
+    "organization_links": [],
+    "summary": {
+      "total": 1,
+      "ok": 1,
+      "broken": 0,
+      "bot_blocked": 0,
+      "error": 0,
+      "score": 100
+    },
+    "broken_detail": [],
+    "ecosystem": {
+      "profiles": [
+        {
+          "url": "http://resiliencebuilder.co.uk",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        }
+      ],
+      "summary": {
+        "stack_total": 0,
+        "sameas_total": 1,
+        "matched": 0,
+        "missing_from_sameas": 0,
+        "dead_in_sameas": 0
+      }
+    }
   },
   "market-invoice": {
     "site_url": "https://marketinvoice.co.uk",
-    "fetched_at": "2026-05-18T08:47:56.778257+00:00",
+    "fetched_at": "2026-06-03T20:08:10.954677+00:00",
     "person_links": [
       {
         "url": "https://find-and-update.company-information.service.gov.uk/officers/nJ1GY_zmn5UQ2aUceZRHppgZLpQ/appointments",
@@ -180,6 +528,17 @@
         "redirect_to": null,
         "final_url": "https://find-and-update.company-information.service.gov.uk/officers/nJ1GY_zmn5UQ2aUceZRHppgZLpQ/appointments",
         "error": null,
+        "entity_name": "Oliver Mackman",
+        "entity_role": "person"
+      },
+      {
+        "url": "https://www.linkedin.com/in/oliver-mackman-0b412b231/",
+        "status": 999,
+        "ok": false,
+        "verdict": "bot_blocked",
+        "redirect_to": null,
+        "final_url": "https://www.linkedin.com/in/oliver-mackman-0b412b231/",
+        "error": "HTTP 999",
         "entity_name": "Oliver Mackman",
         "entity_role": "person"
       }
@@ -195,21 +554,310 @@
         "error": null,
         "entity_name": "Market Invoice",
         "entity_role": "organization"
+      },
+      {
+        "url": "https://opencorporates.com/companies/gb/16833937",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://opencorporates.com/companies/gb/16833937",
+        "error": null,
+        "entity_name": "Market Invoice",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://find-and-update.company-information.service.gov.uk/officers/nJ1GY_zmn5UQ2aUceZRHppgZLpQ/appointments",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://find-and-update.company-information.service.gov.uk/officers/nJ1GY_zmn5UQ2aUceZRHppgZLpQ/appointments",
+        "error": null,
+        "entity_name": "Market Invoice",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://www.linkedin.com/company/marketinvoiceuk",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://www.linkedin.com/company/marketinvoiceuk",
+        "error": null,
+        "entity_name": "Market Invoice",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://www.youtube.com/@Marketinvoice2026",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": "https://www.youtube.com/@Marketinvoice2026?cbrd=1&ucbcb=1",
+        "final_url": "https://www.youtube.com/@Marketinvoice2026?cbrd=1&ucbcb=1",
+        "error": null,
+        "entity_name": "Market Invoice",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://marketinvoice.co.uk/data/uk-invoice-finance-rate-index/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://marketinvoice.co.uk/data/uk-invoice-finance-rate-index/",
+        "error": null,
+        "entity_name": "Market Invoice",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://marketinvoice.co.uk/data/uk-invoice-finance-market-activity/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://marketinvoice.co.uk/data/uk-invoice-finance-market-activity/",
+        "error": null,
+        "entity_name": "Market Invoice",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://marketinvoice.co.uk/data/api/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://marketinvoice.co.uk/data/api/",
+        "error": null,
+        "entity_name": "Market Invoice",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://bestbusinessloans.ai/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://bestbusinessloans.ai/",
+        "error": null,
+        "entity_name": "Market Invoice",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://fundbiz.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://fundbiz.co.uk/",
+        "error": null,
+        "entity_name": "Market Invoice",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://merchanthq.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://merchanthq.co.uk/",
+        "error": null,
+        "entity_name": "Market Invoice",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://kartapay.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://kartapay.co.uk/",
+        "error": null,
+        "entity_name": "Market Invoice",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://www.rank4ai.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://www.rank4ai.co.uk/",
+        "error": null,
+        "entity_name": "Market Invoice",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://seocompare.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://seocompare.co.uk/",
+        "error": null,
+        "entity_name": "Market Invoice",
+        "entity_role": "organization"
       }
     ],
     "summary": {
-      "total": 2,
-      "ok": 2,
+      "total": 16,
+      "ok": 15,
       "broken": 0,
-      "bot_blocked": 0,
+      "bot_blocked": 1,
       "error": 0,
       "score": 100
     },
-    "broken_detail": []
+    "broken_detail": [],
+    "ecosystem": {
+      "profiles": [
+        {
+          "url": "https://bestbusinessloans.ai/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/16833937",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/officers/nJ1GY_zmn5UQ2aUceZRHppgZLpQ/appointments",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://fundbiz.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://kartapay.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.linkedin.com/company/marketinvoiceuk",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.linkedin.com/in/oliver-mackman-0b412b231/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 999,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://marketinvoice.co.uk/data/api/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://marketinvoice.co.uk/data/uk-invoice-finance-market-activity/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://marketinvoice.co.uk/data/uk-invoice-finance-rate-index/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://merchanthq.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://opencorporates.com/companies/gb/16833937",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.rank4ai.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://seocompare.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.youtube.com/@Marketinvoice2026",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        }
+      ],
+      "summary": {
+        "stack_total": 0,
+        "sameas_total": 15,
+        "matched": 0,
+        "missing_from_sameas": 0,
+        "dead_in_sameas": 0
+      }
+    }
   },
   "seocompare": {
     "site_url": "https://seocompare.co.uk",
-    "fetched_at": "2026-05-18T08:47:58.640080+00:00",
+    "fetched_at": "2026-06-03T20:08:25.547297+00:00",
     "person_links": [],
     "organization_links": [
       {
@@ -233,21 +881,2268 @@
         "error": null,
         "entity_name": "SEOCompare",
         "entity_role": "organization"
+      },
+      {
+        "url": "https://find-and-update.company-information.service.gov.uk/company/16427276",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://find-and-update.company-information.service.gov.uk/company/16427276",
+        "error": null,
+        "entity_name": "SEOCompare",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://opencorporates.com/companies/gb/16427276",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://opencorporates.com/companies/gb/16427276",
+        "error": null,
+        "entity_name": "SEOCompare",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://www.rank4ai.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://www.rank4ai.co.uk/",
+        "error": null,
+        "entity_name": "SEOCompare",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://marketinvoice.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://marketinvoice.co.uk/",
+        "error": null,
+        "entity_name": "SEOCompare",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://peptideclear.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://peptideclear.co.uk/",
+        "error": null,
+        "entity_name": "SEOCompare",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://bestbusinessloans.ai/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://bestbusinessloans.ai/",
+        "error": null,
+        "entity_name": "SEOCompare",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://fundbiz.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://fundbiz.co.uk/",
+        "error": null,
+        "entity_name": "SEOCompare",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://merchanthq.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://merchanthq.co.uk/",
+        "error": null,
+        "entity_name": "SEOCompare",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://kartapay.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://kartapay.co.uk/",
+        "error": null,
+        "entity_name": "SEOCompare",
+        "entity_role": "organization"
       }
     ],
     "summary": {
-      "total": 2,
-      "ok": 2,
+      "total": 11,
+      "ok": 11,
       "broken": 0,
       "bot_blocked": 0,
       "error": 0,
       "score": 100
     },
-    "broken_detail": []
+    "broken_detail": [],
+    "ecosystem": {
+      "profiles": [
+        {
+          "url": "https://bestbusinessloans.ai/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/16427276",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://fundbiz.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.instagram.com/seocompare/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://kartapay.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://marketinvoice.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://merchanthq.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://opencorporates.com/companies/gb/16427276",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://peptideclear.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.rank4ai.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.youtube.com/@compareseo1",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        }
+      ],
+      "summary": {
+        "stack_total": 0,
+        "sameas_total": 11,
+        "matched": 0,
+        "missing_from_sameas": 0,
+        "dead_in_sameas": 0
+      }
+    }
+  },
+  "bestbusinessloans": {
+    "site_url": "https://bestbusinessloans.ai",
+    "fetched_at": "2026-06-03T20:08:47.942615+00:00",
+    "person_links": [
+      {
+        "url": "https://find-and-update.company-information.service.gov.uk/officers/dKHZEH-n1H5BVmR2rILJcCJbzY4/appointments",
+        "status": 404,
+        "ok": false,
+        "verdict": "broken",
+        "redirect_to": null,
+        "final_url": "https://find-and-update.company-information.service.gov.uk/officers/dKHZEH-n1H5BVmR2rILJcCJbzY4/appointments",
+        "error": "HTTP 404",
+        "entity_name": "Oliver Mackman",
+        "entity_role": "person"
+      },
+      {
+        "url": "https://www.linkedin.com/in/oliver-mackman-0b412b231/",
+        "status": 999,
+        "ok": false,
+        "verdict": "bot_blocked",
+        "redirect_to": null,
+        "final_url": "https://www.linkedin.com/in/oliver-mackman-0b412b231/",
+        "error": "HTTP 999",
+        "entity_name": "Oliver Mackman",
+        "entity_role": "person"
+      }
+    ],
+    "organization_links": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q140044618",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://www.wikidata.org/wiki/Q140044618",
+        "error": null,
+        "entity_name": "BestBusinessLoans",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://find-and-update.company-information.service.gov.uk/company/16833937",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://find-and-update.company-information.service.gov.uk/company/16833937",
+        "error": null,
+        "entity_name": "BestBusinessLoans",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://opencorporates.com/companies/gb/16833937",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://opencorporates.com/companies/gb/16833937",
+        "error": null,
+        "entity_name": "BestBusinessLoans",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://www.rank4ai.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://www.rank4ai.co.uk/",
+        "error": null,
+        "entity_name": "BestBusinessLoans",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://marketinvoice.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://marketinvoice.co.uk/",
+        "error": null,
+        "entity_name": "BestBusinessLoans",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://seocompare.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://seocompare.co.uk/",
+        "error": null,
+        "entity_name": "BestBusinessLoans",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://fundbiz.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://fundbiz.co.uk/",
+        "error": null,
+        "entity_name": "BestBusinessLoans",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://merchanthq.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://merchanthq.co.uk/",
+        "error": null,
+        "entity_name": "BestBusinessLoans",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://kartapay.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://kartapay.co.uk/",
+        "error": null,
+        "entity_name": "BestBusinessLoans",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://peptideclear.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://peptideclear.co.uk/",
+        "error": null,
+        "entity_name": "BestBusinessLoans",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://bestbusinessloans.ai/data/uk-business-loan-lender-index/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://bestbusinessloans.ai/data/uk-business-loan-lender-index/",
+        "error": null,
+        "entity_name": "BestBusinessLoans",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://bestbusinessloans.ai/data/api/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://bestbusinessloans.ai/data/api/",
+        "error": null,
+        "entity_name": "BestBusinessLoans",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://bestbusinessloans.ai/data/uk-business-loan-lender-index/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://bestbusinessloans.ai/data/uk-business-loan-lender-index/",
+        "error": null,
+        "entity_name": "",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://bestbusinessloans.ai/data/api/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://bestbusinessloans.ai/data/api/",
+        "error": null,
+        "entity_name": "",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://find-and-update.company-information.service.gov.uk/company/16833937",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://find-and-update.company-information.service.gov.uk/company/16833937",
+        "error": null,
+        "entity_name": "",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://opencorporates.com/companies/gb/16833937",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://opencorporates.com/companies/gb/16833937",
+        "error": null,
+        "entity_name": "",
+        "entity_role": "organization"
+      }
+    ],
+    "summary": {
+      "total": 18,
+      "ok": 16,
+      "broken": 1,
+      "bot_blocked": 1,
+      "error": 0,
+      "score": 94
+    },
+    "broken_detail": [
+      {
+        "url": "https://find-and-update.company-information.service.gov.uk/officers/dKHZEH-n1H5BVmR2rILJcCJbzY4/appointments",
+        "status": 404,
+        "error": "HTTP 404",
+        "verdict": "broken",
+        "from_entity": "Oliver Mackman",
+        "from_role": "person"
+      }
+    ],
+    "ecosystem": {
+      "profiles": [
+        {
+          "url": "https://bestbusinessloans.ai/data/api/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://bestbusinessloans.ai/data/uk-business-loan-lender-index/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/16833937",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/officers/dKHZEH-n1H5BVmR2rILJcCJbzY4/appointments",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": false,
+          "http_status": 404,
+          "verdict": "dead"
+        },
+        {
+          "url": "https://fundbiz.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://kartapay.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.linkedin.com/in/oliver-mackman-0b412b231/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 999,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://marketinvoice.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://merchanthq.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://opencorporates.com/companies/gb/16833937",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://peptideclear.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.rank4ai.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://seocompare.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q140044618",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        }
+      ],
+      "summary": {
+        "stack_total": 0,
+        "sameas_total": 14,
+        "matched": 0,
+        "missing_from_sameas": 0,
+        "dead_in_sameas": 1
+      }
+    }
+  },
+  "fundbiz": {
+    "site_url": "https://fundbiz.co.uk",
+    "fetched_at": "2026-06-03T20:09:05.790748+00:00",
+    "person_links": [
+      {
+        "url": "https://find-and-update.company-information.service.gov.uk/officers/dKHZEH-n1H5BVmR2rILJcCJbzY4/appointments",
+        "status": 404,
+        "ok": false,
+        "verdict": "broken",
+        "redirect_to": null,
+        "final_url": "https://find-and-update.company-information.service.gov.uk/officers/dKHZEH-n1H5BVmR2rILJcCJbzY4/appointments",
+        "error": "HTTP 404",
+        "entity_name": "Oliver Mackman",
+        "entity_role": "person"
+      },
+      {
+        "url": "https://www.linkedin.com/in/oliver-mackman-0b412b231/",
+        "status": 999,
+        "ok": false,
+        "verdict": "bot_blocked",
+        "redirect_to": null,
+        "final_url": "https://www.linkedin.com/in/oliver-mackman-0b412b231/",
+        "error": "HTTP 999",
+        "entity_name": "Oliver Mackman",
+        "entity_role": "person"
+      }
+    ],
+    "organization_links": [
+      {
+        "url": "https://find-and-update.company-information.service.gov.uk/company/16833937",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://find-and-update.company-information.service.gov.uk/company/16833937",
+        "error": null,
+        "entity_name": "FundBiz",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://opencorporates.com/companies/gb/16833937",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://opencorporates.com/companies/gb/16833937",
+        "error": null,
+        "entity_name": "FundBiz",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://fundbiz.co.uk/data/uk-business-finance-lender-index/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://fundbiz.co.uk/data/uk-business-finance-lender-index/",
+        "error": null,
+        "entity_name": "FundBiz",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://fundbiz.co.uk/data/api/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://fundbiz.co.uk/data/api/",
+        "error": null,
+        "entity_name": "FundBiz",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://www.rank4ai.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://www.rank4ai.co.uk/",
+        "error": null,
+        "entity_name": "FundBiz",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://marketinvoice.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://marketinvoice.co.uk/",
+        "error": null,
+        "entity_name": "FundBiz",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://seocompare.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://seocompare.co.uk/",
+        "error": null,
+        "entity_name": "FundBiz",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://bestbusinessloans.ai/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://bestbusinessloans.ai/",
+        "error": null,
+        "entity_name": "FundBiz",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://merchanthq.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://merchanthq.co.uk/",
+        "error": null,
+        "entity_name": "FundBiz",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://kartapay.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://kartapay.co.uk/",
+        "error": null,
+        "entity_name": "FundBiz",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://peptideclear.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://peptideclear.co.uk/",
+        "error": null,
+        "entity_name": "FundBiz",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://fundbiz.co.uk/data/uk-business-finance-lender-index/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://fundbiz.co.uk/data/uk-business-finance-lender-index/",
+        "error": null,
+        "entity_name": "",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://fundbiz.co.uk/data/api/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://fundbiz.co.uk/data/api/",
+        "error": null,
+        "entity_name": "",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://find-and-update.company-information.service.gov.uk/company/16833937",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://find-and-update.company-information.service.gov.uk/company/16833937",
+        "error": null,
+        "entity_name": "",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://opencorporates.com/companies/gb/16833937",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://opencorporates.com/companies/gb/16833937",
+        "error": null,
+        "entity_name": "",
+        "entity_role": "organization"
+      }
+    ],
+    "summary": {
+      "total": 17,
+      "ok": 15,
+      "broken": 1,
+      "bot_blocked": 1,
+      "error": 0,
+      "score": 94
+    },
+    "broken_detail": [
+      {
+        "url": "https://find-and-update.company-information.service.gov.uk/officers/dKHZEH-n1H5BVmR2rILJcCJbzY4/appointments",
+        "status": 404,
+        "error": "HTTP 404",
+        "verdict": "broken",
+        "from_entity": "Oliver Mackman",
+        "from_role": "person"
+      }
+    ],
+    "ecosystem": {
+      "profiles": [
+        {
+          "url": "https://bestbusinessloans.ai/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/16833937",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/officers/dKHZEH-n1H5BVmR2rILJcCJbzY4/appointments",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": false,
+          "http_status": 404,
+          "verdict": "dead"
+        },
+        {
+          "url": "https://fundbiz.co.uk/data/api/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://fundbiz.co.uk/data/uk-business-finance-lender-index/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://kartapay.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.linkedin.com/in/oliver-mackman-0b412b231/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 999,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://marketinvoice.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://merchanthq.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://opencorporates.com/companies/gb/16833937",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://peptideclear.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.rank4ai.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://seocompare.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        }
+      ],
+      "summary": {
+        "stack_total": 0,
+        "sameas_total": 13,
+        "matched": 0,
+        "missing_from_sameas": 0,
+        "dead_in_sameas": 1
+      }
+    }
+  },
+  "cardmachines": {
+    "site_url": "https://merchanthq.co.uk",
+    "fetched_at": "2026-06-03T20:09:31.968357+00:00",
+    "person_links": [
+      {
+        "url": "https://find-and-update.company-information.service.gov.uk/officers/dKHZEH-n1H5BVmR2rILJcCJbzY4/appointments",
+        "status": 404,
+        "ok": false,
+        "verdict": "broken",
+        "redirect_to": null,
+        "final_url": "https://find-and-update.company-information.service.gov.uk/officers/dKHZEH-n1H5BVmR2rILJcCJbzY4/appointments",
+        "error": "HTTP 404",
+        "entity_name": "Oliver Mackman",
+        "entity_role": "person"
+      },
+      {
+        "url": "https://www.linkedin.com/in/oliver-mackman-0b412b231/",
+        "status": 999,
+        "ok": false,
+        "verdict": "bot_blocked",
+        "redirect_to": null,
+        "final_url": "https://www.linkedin.com/in/oliver-mackman-0b412b231/",
+        "error": "HTTP 999",
+        "entity_name": "Oliver Mackman",
+        "entity_role": "person"
+      }
+    ],
+    "organization_links": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q140044645",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://www.wikidata.org/wiki/Q140044645",
+        "error": null,
+        "entity_name": "MerchantHQ",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://find-and-update.company-information.service.gov.uk/company/16833937",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://find-and-update.company-information.service.gov.uk/company/16833937",
+        "error": null,
+        "entity_name": "MerchantHQ",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://opencorporates.com/companies/gb/16833937",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://opencorporates.com/companies/gb/16833937",
+        "error": null,
+        "entity_name": "MerchantHQ",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://bestbusinessloans.ai/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://bestbusinessloans.ai/",
+        "error": null,
+        "entity_name": "MerchantHQ",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://fundbiz.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://fundbiz.co.uk/",
+        "error": null,
+        "entity_name": "MerchantHQ",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://marketinvoice.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://marketinvoice.co.uk/",
+        "error": null,
+        "entity_name": "MerchantHQ",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://kartapay.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://kartapay.co.uk/",
+        "error": null,
+        "entity_name": "MerchantHQ",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://www.rank4ai.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://www.rank4ai.co.uk/",
+        "error": null,
+        "entity_name": "MerchantHQ",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://seocompare.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://seocompare.co.uk/",
+        "error": null,
+        "entity_name": "MerchantHQ",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://peptideclear.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://peptideclear.co.uk/",
+        "error": null,
+        "entity_name": "MerchantHQ",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://merchanthq.co.uk/data/uk-card-acquirer-index/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://merchanthq.co.uk/data/uk-card-acquirer-index/",
+        "error": null,
+        "entity_name": "MerchantHQ",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://merchanthq.co.uk/data/api/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://merchanthq.co.uk/data/api/",
+        "error": null,
+        "entity_name": "MerchantHQ",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://merchanthq.co.uk/data/uk-card-acquirer-index/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://merchanthq.co.uk/data/uk-card-acquirer-index/",
+        "error": null,
+        "entity_name": "",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://merchanthq.co.uk/data/api/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://merchanthq.co.uk/data/api/",
+        "error": null,
+        "entity_name": "",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://www.linkedin.com/company/merchanthq",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://www.linkedin.com/company/merchanthq",
+        "error": null,
+        "entity_name": "",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://www.youtube.com/@MerchantHQuk",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": "https://www.youtube.com/@MerchantHQuk?cbrd=1&ucbcb=1",
+        "final_url": "https://www.youtube.com/@MerchantHQuk?cbrd=1&ucbcb=1",
+        "error": null,
+        "entity_name": "",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://substack.com/@merchanthq",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://substack.com/@merchanthq",
+        "error": null,
+        "entity_name": "",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://www.quora.com/profile/Merchant-HQ",
+        "status": 403,
+        "ok": false,
+        "verdict": "broken",
+        "redirect_to": null,
+        "final_url": "https://www.quora.com/profile/Merchant-HQ",
+        "error": "HTTP 403",
+        "entity_name": "",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://www.blogger.com/profile/08302812864864506556",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://www.blogger.com/profile/08302812864864506556",
+        "error": null,
+        "entity_name": "",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://foursquare.com/v/6a1da233ec35c029010398ef",
+        "status": 308,
+        "ok": false,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://foursquare.com/v/6a1da233ec35c029010398ef",
+        "error": "HTTP 308",
+        "entity_name": "",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://bestbusinessloans.ai/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://bestbusinessloans.ai/",
+        "error": null,
+        "entity_name": "",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://fundbiz.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://fundbiz.co.uk/",
+        "error": null,
+        "entity_name": "",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://marketinvoice.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://marketinvoice.co.uk/",
+        "error": null,
+        "entity_name": "",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://kartapay.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://kartapay.co.uk/",
+        "error": null,
+        "entity_name": "",
+        "entity_role": "organization"
+      }
+    ],
+    "summary": {
+      "total": 26,
+      "ok": 23,
+      "broken": 2,
+      "bot_blocked": 1,
+      "error": 0,
+      "score": 92
+    },
+    "broken_detail": [
+      {
+        "url": "https://find-and-update.company-information.service.gov.uk/officers/dKHZEH-n1H5BVmR2rILJcCJbzY4/appointments",
+        "status": 404,
+        "error": "HTTP 404",
+        "verdict": "broken",
+        "from_entity": "Oliver Mackman",
+        "from_role": "person"
+      },
+      {
+        "url": "https://www.quora.com/profile/Merchant-HQ",
+        "status": 403,
+        "error": "HTTP 403",
+        "verdict": "broken",
+        "from_entity": "",
+        "from_role": "organization"
+      }
+    ],
+    "ecosystem": {
+      "profiles": [
+        {
+          "url": "https://bestbusinessloans.ai/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.blogger.com/profile/08302812864864506556",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/16833937",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/officers/dKHZEH-n1H5BVmR2rILJcCJbzY4/appointments",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": false,
+          "http_status": 404,
+          "verdict": "dead"
+        },
+        {
+          "url": "https://foursquare.com/v/6a1da233ec35c029010398ef",
+          "place": "Foursquare",
+          "in_stack": true,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 308,
+          "verdict": "ok"
+        },
+        {
+          "url": "https://fundbiz.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://kartapay.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.linkedin.com/company/merchanthq",
+          "place": "LinkedIn Company Page",
+          "in_stack": true,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "ok"
+        },
+        {
+          "url": "https://www.linkedin.com/in/oliver-mackman-0b412b231/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 999,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://marketinvoice.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://merchanthq.co.uk/data/api/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://merchanthq.co.uk/data/uk-card-acquirer-index/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://opencorporates.com/companies/gb/16833937",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://peptideclear.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.quora.com/profile/Merchant-HQ",
+          "place": "Quora",
+          "in_stack": true,
+          "in_sameas": true,
+          "live": false,
+          "http_status": 403,
+          "verdict": "dead"
+        },
+        {
+          "url": "https://www.rank4ai.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://seocompare.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://substack.com/@merchanthq",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q140044645",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.youtube.com/@MerchantHQuk",
+          "place": "YouTube channel",
+          "in_stack": true,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "ok"
+        }
+      ],
+      "summary": {
+        "stack_total": 4,
+        "sameas_total": 20,
+        "matched": 4,
+        "missing_from_sameas": 0,
+        "dead_in_sameas": 2
+      }
+    }
+  },
+  "kartapay": {
+    "site_url": "https://kartapay.co.uk",
+    "fetched_at": "2026-06-03T20:09:44.861813+00:00",
+    "person_links": [
+      {
+        "url": "https://find-and-update.company-information.service.gov.uk/company/16833937/officers",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://find-and-update.company-information.service.gov.uk/company/16833937/officers",
+        "error": null,
+        "entity_name": "Oliver Mackman",
+        "entity_role": "person"
+      }
+    ],
+    "organization_links": [
+      {
+        "url": "https://find-and-update.company-information.service.gov.uk/company/16833937",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://find-and-update.company-information.service.gov.uk/company/16833937",
+        "error": null,
+        "entity_name": "Kartapay",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://opencorporates.com/companies/gb/16833937",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://opencorporates.com/companies/gb/16833937",
+        "error": null,
+        "entity_name": "Kartapay",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://merchanthq.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://merchanthq.co.uk/",
+        "error": null,
+        "entity_name": "Kartapay",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://bestbusinessloans.ai/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://bestbusinessloans.ai/",
+        "error": null,
+        "entity_name": "Kartapay",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://fundbiz.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://fundbiz.co.uk/",
+        "error": null,
+        "entity_name": "Kartapay",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://marketinvoice.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://marketinvoice.co.uk/",
+        "error": null,
+        "entity_name": "Kartapay",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://www.rank4ai.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://www.rank4ai.co.uk/",
+        "error": null,
+        "entity_name": "Kartapay",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://seocompare.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://seocompare.co.uk/",
+        "error": null,
+        "entity_name": "Kartapay",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://kartapay.co.uk/data/uk-card-acquirer-index/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://kartapay.co.uk/data/uk-card-acquirer-index/",
+        "error": null,
+        "entity_name": "Kartapay",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://kartapay.co.uk/data/api/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://kartapay.co.uk/data/api/",
+        "error": null,
+        "entity_name": "Kartapay",
+        "entity_role": "organization"
+      }
+    ],
+    "summary": {
+      "total": 11,
+      "ok": 11,
+      "broken": 0,
+      "bot_blocked": 0,
+      "error": 0,
+      "score": 100
+    },
+    "broken_detail": [],
+    "ecosystem": {
+      "profiles": [
+        {
+          "url": "https://bestbusinessloans.ai/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/16833937",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/16833937/officers",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://fundbiz.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://kartapay.co.uk/data/api/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://kartapay.co.uk/data/uk-card-acquirer-index/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://marketinvoice.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://merchanthq.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://opencorporates.com/companies/gb/16833937",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.rank4ai.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://seocompare.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        }
+      ],
+      "summary": {
+        "stack_total": 0,
+        "sameas_total": 11,
+        "matched": 0,
+        "missing_from_sameas": 0,
+        "dead_in_sameas": 0
+      }
+    }
+  },
+  "findatradey": {
+    "site_url": "https://findatradey.co.uk",
+    "fetched_at": "2026-06-03T20:09:44.913508+00:00",
+    "error": "could not fetch homepage",
+    "person_links": [],
+    "organization_links": [],
+    "summary": {
+      "total": 0,
+      "ok": 0,
+      "broken": 0,
+      "rate_limited": 0,
+      "score": 0
+    },
+    "broken_detail": [],
+    "ecosystem": {
+      "profiles": [],
+      "summary": {
+        "stack_total": 0,
+        "sameas_total": 0,
+        "matched": 0,
+        "missing_from_sameas": 0,
+        "dead_in_sameas": 0
+      }
+    }
+  },
+  "findagym": {
+    "site_url": "https://findagym.co.uk",
+    "fetched_at": "2026-06-03T20:09:45.268427+00:00",
+    "person_links": [],
+    "organization_links": [],
+    "summary": {
+      "total": 0,
+      "ok": 0,
+      "broken": 0,
+      "bot_blocked": 0,
+      "error": 0,
+      "score": 100
+    },
+    "broken_detail": [],
+    "ecosystem": {
+      "profiles": [],
+      "summary": {
+        "stack_total": 0,
+        "sameas_total": 0,
+        "matched": 0,
+        "missing_from_sameas": 0,
+        "dead_in_sameas": 0
+      }
+    }
+  },
+  "builderweb": {
+    "site_url": "https://builderweb.online",
+    "fetched_at": "2026-06-03T20:09:46.317818+00:00",
+    "person_links": [],
+    "organization_links": [
+      {
+        "url": "https://github.com/AdamParkerRank4AI",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://github.com/AdamParkerRank4AI",
+        "error": null,
+        "entity_name": "BuilderWeb",
+        "entity_role": "organization"
+      }
+    ],
+    "summary": {
+      "total": 1,
+      "ok": 1,
+      "broken": 0,
+      "bot_blocked": 0,
+      "error": 0,
+      "score": 100
+    },
+    "broken_detail": [],
+    "ecosystem": {
+      "profiles": [
+        {
+          "url": "https://github.com/AdamParkerRank4AI",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        }
+      ],
+      "summary": {
+        "stack_total": 0,
+        "sameas_total": 1,
+        "matched": 0,
+        "missing_from_sameas": 0,
+        "dead_in_sameas": 0
+      }
+    }
+  },
+  "peptideclear": {
+    "site_url": "https://peptideclear.co.uk",
+    "fetched_at": "2026-06-03T20:10:01.962026+00:00",
+    "person_links": [
+      {
+        "url": "https://www.linkedin.com/in/oliver-mackman-0b412b231/",
+        "status": 999,
+        "ok": false,
+        "verdict": "bot_blocked",
+        "redirect_to": null,
+        "final_url": "https://www.linkedin.com/in/oliver-mackman-0b412b231/",
+        "error": "HTTP 999",
+        "entity_name": "Oliver Mackman",
+        "entity_role": "person"
+      }
+    ],
+    "organization_links": [
+      {
+        "url": "https://peptideclear.co.uk/data/api/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://peptideclear.co.uk/data/api/",
+        "error": null,
+        "entity_name": "PeptideClear UK",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://peptideclear.co.uk/coa-trust-index/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://peptideclear.co.uk/coa-trust-index/",
+        "error": null,
+        "entity_name": "PeptideClear UK",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://find-and-update.company-information.service.gov.uk/company/16833937",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://find-and-update.company-information.service.gov.uk/company/16833937",
+        "error": null,
+        "entity_name": "PeptideClear UK",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://opencorporates.com/companies/gb/16833937",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://opencorporates.com/companies/gb/16833937",
+        "error": null,
+        "entity_name": "PeptideClear UK",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://www.youtube.com/channel/UCJ9AtfrSEkydOUdgky1bj0g",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": "https://www.youtube.com/channel/UCJ9AtfrSEkydOUdgky1bj0g?cbrd=1&ucbcb=1",
+        "final_url": "https://www.youtube.com/channel/UCJ9AtfrSEkydOUdgky1bj0g?cbrd=1&ucbcb=1",
+        "error": null,
+        "entity_name": "PeptideClear UK",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://foursquare.com/v/6a1fe38d508c5a1ac1dab7dc",
+        "status": 308,
+        "ok": false,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://foursquare.com/v/6a1fe38d508c5a1ac1dab7dc",
+        "error": "HTTP 308",
+        "entity_name": "PeptideClear UK",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://www.rank4ai.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://www.rank4ai.co.uk/",
+        "error": null,
+        "entity_name": "PeptideClear UK",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://marketinvoice.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://marketinvoice.co.uk/",
+        "error": null,
+        "entity_name": "PeptideClear UK",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://seocompare.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://seocompare.co.uk/",
+        "error": null,
+        "entity_name": "PeptideClear UK",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://bestbusinessloans.ai/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://bestbusinessloans.ai/",
+        "error": null,
+        "entity_name": "PeptideClear UK",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://fundbiz.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://fundbiz.co.uk/",
+        "error": null,
+        "entity_name": "PeptideClear UK",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://merchanthq.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://merchanthq.co.uk/",
+        "error": null,
+        "entity_name": "PeptideClear UK",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://kartapay.co.uk/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://kartapay.co.uk/",
+        "error": null,
+        "entity_name": "PeptideClear UK",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://peptideclear.co.uk/data/api/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://peptideclear.co.uk/data/api/",
+        "error": null,
+        "entity_name": "",
+        "entity_role": "organization"
+      },
+      {
+        "url": "https://peptideclear.co.uk/coa-trust-index/",
+        "status": 200,
+        "ok": true,
+        "verdict": "ok",
+        "redirect_to": null,
+        "final_url": "https://peptideclear.co.uk/coa-trust-index/",
+        "error": null,
+        "entity_name": "",
+        "entity_role": "organization"
+      }
+    ],
+    "summary": {
+      "total": 16,
+      "ok": 15,
+      "broken": 0,
+      "bot_blocked": 1,
+      "error": 0,
+      "score": 100
+    },
+    "broken_detail": [],
+    "ecosystem": {
+      "profiles": [
+        {
+          "url": "https://bestbusinessloans.ai/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/16833937",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://foursquare.com/v/6a1fe38d508c5a1ac1dab7dc",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 308,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://fundbiz.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://kartapay.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.linkedin.com/in/oliver-mackman-0b412b231/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 999,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://marketinvoice.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://merchanthq.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://opencorporates.com/companies/gb/16833937",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://peptideclear.co.uk/coa-trust-index/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://peptideclear.co.uk/data/api/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.rank4ai.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://seocompare.co.uk/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.youtube.com/channel/UCJ9AtfrSEkydOUdgky1bj0g",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        }
+      ],
+      "summary": {
+        "stack_total": 0,
+        "sameas_total": 14,
+        "matched": 0,
+        "missing_from_sameas": 0,
+        "dead_in_sameas": 0
+      }
+    }
+  },
+  "nordiccentre": {
+    "site_url": "https://nordiccentre.co.uk",
+    "fetched_at": "2026-06-03T20:10:03.290764+00:00",
+    "person_links": [],
+    "organization_links": [],
+    "summary": {
+      "total": 0,
+      "ok": 0,
+      "broken": 0,
+      "bot_blocked": 0,
+      "error": 0,
+      "score": 100
+    },
+    "broken_detail": [],
+    "ecosystem": {
+      "profiles": [],
+      "summary": {
+        "stack_total": 0,
+        "sameas_total": 0,
+        "matched": 0,
+        "missing_from_sameas": 0,
+        "dead_in_sameas": 0
+      }
+    }
+  },
+  "legal-leadgen": {
+    "site_url": "https://49k.co.uk",
+    "fetched_at": "2026-06-03T20:10:04.738269+00:00",
+    "person_links": [],
+    "organization_links": [],
+    "summary": {
+      "total": 0,
+      "ok": 0,
+      "broken": 0,
+      "bot_blocked": 0,
+      "error": 0,
+      "score": 100
+    },
+    "broken_detail": [],
+    "ecosystem": {
+      "profiles": [],
+      "summary": {
+        "stack_total": 0,
+        "sameas_total": 0,
+        "matched": 0,
+        "missing_from_sameas": 0,
+        "dead_in_sameas": 0
+      }
+    }
+  },
+  "womenshealth": {
+    "site_url": "https://womens-health-1pt.pages.dev",
+    "fetched_at": "2026-06-03T20:10:05.001029+00:00",
+    "person_links": [],
+    "organization_links": [],
+    "summary": {
+      "total": 0,
+      "ok": 0,
+      "broken": 0,
+      "bot_blocked": 0,
+      "error": 0,
+      "score": 100
+    },
+    "broken_detail": [],
+    "ecosystem": {
+      "profiles": [],
+      "summary": {
+        "stack_total": 0,
+        "sameas_total": 0,
+        "matched": 0,
+        "missing_from_sameas": 0,
+        "dead_in_sameas": 0
+      }
+    }
+  },
+  "equityrelease": {
+    "site_url": "https://equity-release.pages.dev",
+    "fetched_at": "2026-06-03T20:10:05.585262+00:00",
+    "person_links": [],
+    "organization_links": [],
+    "summary": {
+      "total": 0,
+      "ok": 0,
+      "broken": 0,
+      "bot_blocked": 0,
+      "error": 0,
+      "score": 100
+    },
+    "broken_detail": [],
+    "ecosystem": {
+      "profiles": [],
+      "summary": {
+        "stack_total": 0,
+        "sameas_total": 0,
+        "matched": 0,
+        "missing_from_sameas": 0,
+        "dead_in_sameas": 0
+      }
+    }
+  },
+  "evchargers": {
+    "site_url": "https://ev-chargers-3dy.pages.dev",
+    "fetched_at": "2026-06-03T20:10:05.999048+00:00",
+    "person_links": [],
+    "organization_links": [],
+    "summary": {
+      "total": 0,
+      "ok": 0,
+      "broken": 0,
+      "bot_blocked": 0,
+      "error": 0,
+      "score": 100
+    },
+    "broken_detail": [],
+    "ecosystem": {
+      "profiles": [],
+      "summary": {
+        "stack_total": 0,
+        "sameas_total": 0,
+        "matched": 0,
+        "missing_from_sameas": 0,
+        "dead_in_sameas": 0
+      }
+    }
+  },
+  "golftech": {
+    "site_url": "https://golf-tech.pages.dev",
+    "fetched_at": "2026-06-03T20:10:06.856086+00:00",
+    "person_links": [],
+    "organization_links": [],
+    "summary": {
+      "total": 0,
+      "ok": 0,
+      "broken": 0,
+      "bot_blocked": 0,
+      "error": 0,
+      "score": 100
+    },
+    "broken_detail": [],
+    "ecosystem": {
+      "profiles": [],
+      "summary": {
+        "stack_total": 0,
+        "sameas_total": 0,
+        "matched": 0,
+        "missing_from_sameas": 0,
+        "dead_in_sameas": 0
+      }
+    }
   },
   "rochellemarashi": {
     "site_url": "https://rochellemarashi.pages.dev",
-    "fetched_at": "2026-05-18T08:48:05.391503+00:00",
+    "fetched_at": "2026-06-03T20:10:14.740426+00:00",
     "person_links": [
       {
         "url": "https://www.linkedin.com/in/rmarashi/",
@@ -387,15 +3282,71 @@
         "from_entity": "Rochelle Marashi Therapy",
         "from_role": "organization"
       }
-    ]
+    ],
+    "ecosystem": {
+      "profiles": [
+        {
+          "url": "https://www.bacp.co.uk/profile/?StudentMembershipNumber=416139",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": false,
+          "http_status": 404,
+          "verdict": "dead"
+        },
+        {
+          "url": "https://www.counselling-directory.org.uk/counsellors/rochelle-marashi",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 403,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.instagram.com/rochellemarashi/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.linkedin.com/in/rmarashi/",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 999,
+          "verdict": "in_sameas_not_stack"
+        },
+        {
+          "url": "https://www.psychologytoday.com/gb/counselling/rochelle-marashi-london/1702385",
+          "place": null,
+          "in_stack": false,
+          "in_sameas": true,
+          "live": true,
+          "http_status": 200,
+          "verdict": "in_sameas_not_stack"
+        }
+      ],
+      "summary": {
+        "stack_total": 0,
+        "sameas_total": 5,
+        "matched": 0,
+        "missing_from_sameas": 0,
+        "dead_in_sameas": 1
+      }
+    }
   },
   "fleet_summary": {
-    "total": 27,
-    "ok": 17,
-    "broken": 3,
-    "bot_blocked": 7,
+    "total": 150,
+    "ok": 131,
+    "broken": 6,
+    "bot_blocked": 13,
     "error": 0,
-    "score": 85,
-    "fetched_at": "2026-05-18T08:48:05.395588+00:00"
+    "score": 96,
+    "fetched_at": "2026-06-03T20:10:14.740800+00:00"
   }
 }

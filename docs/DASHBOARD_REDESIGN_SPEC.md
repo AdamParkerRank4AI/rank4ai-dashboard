@@ -1,6 +1,11 @@
 # Dashboard Redesign Spec
 
-Status: AGREED, 3 Jun 2026. Decisions locked (see below). Nothing built yet.
+Status: SHIPPED, 3 Jun 2026. All four phases built + pushed to main.
+- Phase 1: overview/ops split + one All-sites grid + GSC keyword spotlight. ✓
+- Phase 2: 18 per-brand sections grouped into 6 (Performance / AI Search / Recommendations / The Site / Health / Ecosystem) via a `group` field in sections.json. ✓
+- Phase 3: `siteStatus` is the written source of truth; shared `siteStatus.ts` + `site_status.py` helpers; sidebar Pre-launch group; toggle UI in settings + `functions/api/set-site-status.js`; 7 core fetchers skip non-live sites. ✓
+- Phase 4: ecosystem sameAs loop — `check_entity_coherence.py` cross-checks entity_stack profile URLs vs on-site schema.org sameAs (live + present), new per-brand Ecosystem tab. ✓
+Follow-up debt: gate the remaining submit_*/url_inspection fetchers; migrate the duplicate pre_launch copy out of fleet_baseline_audit.py; populate entity_stack for brands beyond MerchantHQ.
 
 ## Decisions locked (3 Jun 2026)
 1. **AI Search is its own 6th per-brand group** (readiness + citations pulled out of Ecosystem).

@@ -134,7 +134,11 @@ def main():
 
     all_results = {}
 
+    import sys as _sys, os as _os; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+    from site_status import skip as _skip
     for site_id, urls in SITES.items():
+        if _skip(site_id):
+            print(f"  skip {site_id} (paused/pre-launch)"); continue
         print(f"\nFetching PageSpeed for {site_id}...")
         pages = []
 

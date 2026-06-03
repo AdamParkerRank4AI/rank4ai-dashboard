@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import clients from '../utils/dashboardClients';
 import sections from '../data/sections.json';
+import { statusOf } from '../utils/siteStatus';
 
 interface Props {
   title: string;
@@ -98,9 +99,10 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
             const fleetClients = (clients as any[]).filter((c) => !c.staging && c.id !== 'rank4ai');
             const byStatus = (s: string) =>
               fleetClients
-                .filter((c) => (c.siteStatus || 'live') === s)
+                .filter((c) => statusOf(c) === s)
                 .sort((a, b) => (a.sidebarOrder ?? 50) - (b.sidebarOrder ?? 50));
             const live = byStatus('live');
+            const prelaunch = byStatus('prelaunch');
             const paused = byStatus('paused');
             const needs = byStatus('needs');
             const subSections = [
@@ -139,6 +141,7 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
                   <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Clients</p>
                   <ul class="space-y-1">
                     {live.map((c: any) => renderClientTab(c, 'text-emerald-300', <span class="ml-1 text-[9px] px-1.5 py-0.5 rounded bg-emerald-900/40 text-emerald-400 uppercase">Live</span>))}
+                    {prelaunch.map((c: any) => renderClientTab(c, 'text-blue-300', <span class="ml-1 text-[9px] px-1.5 py-0.5 rounded bg-blue-900/40 text-blue-300 uppercase">Pre-launch</span>))}
                     {paused.map((c: any) => renderClientTab(c, 'text-gray-500', <span class="ml-1 text-[9px] px-1.5 py-0.5 rounded bg-gray-800 text-gray-500 uppercase">Paused</span>))}
                   </ul>
                 </div>
