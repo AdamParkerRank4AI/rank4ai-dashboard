@@ -44,7 +44,11 @@ def main():
     now = datetime.now(timezone.utc).isoformat()
     result = {}
 
+    import sys as _sys, os as _os; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+    from site_status import skip as _skip
     for site, api_url in SITES.items():
+        if _skip(site):
+            print(f"  skip {site} (paused/pre-launch)"); continue
         print(f"  {site}...")
         days = fetch_site(site, api_url)
         result[site] = {

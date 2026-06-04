@@ -150,10 +150,14 @@ def main():
     clients = list(SITES.keys()) if target == "all" else [target]
 
     results = {}
+    import sys as _sys2, os as _os2; _sys2.path.insert(0, _os2.path.dirname(_os2.path.abspath(__file__)))
+    from site_status import skip as _skip
     for client_id in clients:
         if client_id not in SITES:
             print(f"Unknown client: {client_id}")
             continue
+        if _skip(client_id):
+            print(f"  skip {client_id} (paused/pre-launch)"); continue
 
         # Prefer the live sitemap (always current, includes new pages); fall
         # back to crawl data only if the sitemap is unreachable.

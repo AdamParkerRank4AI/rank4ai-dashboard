@@ -278,7 +278,11 @@ def score_site(site_id, base_url):
 
 def main():
     results = {}
+    import sys as _sys, os as _os; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+    from site_status import skip as _skip
     for site_id, base_url in SITES.items():
+        if _skip(site_id):
+            print(f"  skip {site_id} (paused/pre-launch)"); continue
         print(f"Scoring {site_id}...")
         results[site_id] = score_site(site_id, base_url)
         print(f"  Total: {results[site_id]['total_score']}/60 ({results[site_id]['percentage']}%)")

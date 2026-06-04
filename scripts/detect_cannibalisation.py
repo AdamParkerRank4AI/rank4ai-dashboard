@@ -115,7 +115,11 @@ def main():
         return
 
     service = build("searchconsole", "v1", credentials=creds, cache_discovery=False)
+    import sys as _sys, os as _os; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+    from site_status import skip as _skip
     for site_id, url in SITES.items():
+        if _skip(site_id):
+            print(f"  skip {site_id} (paused/pre-launch)"); continue
         print(f"Cannibalisation pull → {site_id}...")
         rows = fetch_query_page(service, url)
         cannibals = detect_for_site(rows)

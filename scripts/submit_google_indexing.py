@@ -81,6 +81,10 @@ def main():
     if not base_url:
         print(f"Unknown client: {client_id}")
         return
+    import sys as _sys2, os as _os2; _sys2.path.insert(0, _os2.path.dirname(_os2.path.abspath(__file__)))
+    from site_status import skip as _skip
+    if _skip(client_id):
+        print(f"  skip {client_id} (paused/pre-launch)"); return
 
     creds = get_creds()
     service = build('indexing', 'v3', credentials=creds)

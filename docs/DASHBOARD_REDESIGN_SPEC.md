@@ -5,7 +5,10 @@ Status: SHIPPED, 3 Jun 2026. All four phases built + pushed to main.
 - Phase 2: 18 per-brand sections grouped into 6 (Performance / AI Search / Recommendations / The Site / Health / Ecosystem) via a `group` field in sections.json. ✓
 - Phase 3: `siteStatus` is the written source of truth; shared `siteStatus.ts` + `site_status.py` helpers; sidebar Pre-launch group; toggle UI in settings + `functions/api/set-site-status.js`; 7 core fetchers skip non-live sites. ✓
 - Phase 4: ecosystem sameAs loop — `check_entity_coherence.py` cross-checks entity_stack profile URLs vs on-site schema.org sameAs (live + present), new per-brand Ecosystem tab. ✓
-Follow-up debt: gate the remaining submit_*/url_inspection fetchers; migrate the duplicate pre_launch copy out of fleet_baseline_audit.py; populate entity_stack for brands beyond MerchantHQ.
+Follow-up debt (cleared 4 Jun 2026):
+- Gated all per-site API fetchers: now 16 scripts skip non-live sites (added run_ai_audit, compute_aeo_score, detect_cannibalisation, analyze_conversion_leaks, fetch_bot_hits, submit_indexnow, submit_google_indexing, fetch_url_inspection on top of the original 7). ✓
+- fleet_baseline_audit.py now derives pre_launch from clients.json via site_status (tuple value kept only as fallback for unknown ids) — no more duplicate source. ✓
+- entity_stack population beyond MerchantHQ: NOT fabricated. The Ecosystem tab already lights up fleet-wide from each site's on-site schema.org sameAs (e.g. rank4ai 21, MI 15, BBL 14 with 1 dead flagged). Adding claimed-profile tracking per brand is Oliver's off-site NAP data-entry work (tracked in the Entity Stack programme), not a code task.
 
 ## Decisions locked (3 Jun 2026)
 1. **AI Search is its own 6th per-brand group** (readiness + citations pulled out of Ecosystem).

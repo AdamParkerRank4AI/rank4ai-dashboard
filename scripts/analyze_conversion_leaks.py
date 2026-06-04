@@ -163,7 +163,11 @@ def classify(pg, is_converter):
 def main():
     out = {"sites": {}}
     rank = {"DEAD_WEIGHT": 0, "LEAK": 1, "BOUNCE": 2, "CONVERTER": 3, "OK": 4}
+    import sys as _sys, os as _os; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+    from site_status import skip as _skip
     for site_id, (key, leads_name) in SITES.items():
+        if _skip(site_id):
+            print(f"  skip {site_id} (paused/pre-launch)"); continue
         pages = load_clarity_full(site_id, key)
         if not pages:
             continue

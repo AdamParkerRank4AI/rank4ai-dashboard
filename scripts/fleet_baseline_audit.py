@@ -386,8 +386,18 @@ def main():
         "sites": {},
         "summary": {"p0_fails": 0, "p1_fails": 0, "p2_fails": 0, "pass": 0, "total": 0},
     }
+    import sys as _sys2, os as _os2; _sys2.path.insert(0, _os2.path.dirname(_os2.path.abspath(__file__)))
+    try:
+        from site_status import status_of as _status_of, load as _load_status
+        _known = _load_status()
+    except Exception:
+        _status_of, _known = (lambda s: None), {}
     for sid, repo, flav, pre, live in SITES:
         if only and sid != only: continue
+        # clients.json is the canonical source of pre-launch; fall back to the
+        # tuple value only for sites not present there (dedup, no drift).
+        if sid in _known:
+            pre = _status_of(sid) == "prelaunch"
         if not json_only:
             print(f"\n=== {sid} ({flav}, {'PRE' if pre else 'live'}) ===", file=sys.stderr)
         results = run_for_site(sid, repo, flav, pre, live)

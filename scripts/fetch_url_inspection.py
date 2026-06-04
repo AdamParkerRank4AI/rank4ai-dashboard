@@ -208,10 +208,14 @@ def main():
     out = {"computed_at": datetime.now(timezone.utc).isoformat(), "per_site": {}}
 
     target_sites = sys.argv[1:] or list(SITES.keys())
+    import sys as _sys2, os as _os2; _sys2.path.insert(0, _os2.path.dirname(_os2.path.abspath(__file__)))
+    from site_status import skip as _skip
     for site_id in target_sites:
         if site_id not in SITES:
             print(f"  skipping unknown {site_id}")
             continue
+        if _skip(site_id):
+            print(f"  skip {site_id} (paused/pre-launch)"); continue
         print(f"\n=== {site_id} ===")
         try:
             data = fetch_site(service, site_id)

@@ -254,7 +254,11 @@ def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     all_results = {}
+    import sys as _sys, os as _os; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+    from site_status import skip as _skip
     for site_id, url in SITES.items():
+        if _skip(site_id):
+            print(f"  skip {site_id} (paused/pre-launch)"); continue
         result = audit_site(site_id, url)
         all_results[site_id] = result
         print(f"\n  Overall: {result['overall_score']}/100 ({result['readiness']})")
