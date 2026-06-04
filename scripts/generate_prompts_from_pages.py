@@ -253,7 +253,11 @@ def main():
     else:
         all_prompts = {}
 
-    for client_id in ["rank4ai", "market-invoice", "seocompare"]:
+    # All fleet sites that have a crawl_<id>.json on disk. mhq/kartapay are
+    # absent until the fleet crawler covers them (then add here).
+    for client_id in ["rank4ai", "market-invoice", "seocompare",
+                      "bestbusinessloans", "fundbiz", "cardmachines",
+                      "peptideclear", "merchanthq", "kartapay"]:
         print(f"\n{client_id}:")
         result = generate_for_client(client_id)
         if result:

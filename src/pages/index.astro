@@ -1,6 +1,7 @@
 ---
 import DashboardLayout from '../layouts/DashboardLayout.astro';
 import YouTubeTile from '../components/YouTubeTile.astro';
+import PodcastTile from '../components/PodcastTile.astro';
 import ClusterDecisionsTile from '../components/ClusterDecisionsTile.astro';
 import ClarityDropoffTile from '../components/ClarityDropoffTile.astro';
 import ConversionLeakTile from '../components/ConversionLeakTile.astro';
@@ -719,6 +720,11 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
       <YouTubeTile />
     </div>
   )}
+
+  <!-- Podcast · Buzzsprout (rank4ai auto-generated AI-search episodes) -->
+  <div data-copy-tile="Podcast" class="mb-6">
+    <PodcastTile />
+  </div>
 
   <!-- SERP cluster decisions (the join layer: group URLs by shared searches → one call per cluster) -->
   {isFleet && (

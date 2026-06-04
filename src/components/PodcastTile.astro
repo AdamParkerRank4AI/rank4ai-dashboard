@@ -1,0 +1,113 @@
+---
+/**
+ * PodcastTile — surfaces the rank4ai Buzzsprout show on the dashboard.
+ *
+ * Reads src/data/live/podcast.json (written by scripts/fetch_podcast.py).
+ * Single-show today (rank4ai); structured as shows{} so other brands slot in
+ * later. Renders defensively against status='auth_pending' | 'error'.
+ */
+import fs from 'node:fs';
+import path from 'node:path';
+
+function loadJson(filename: string) {
+  try {
+    const filePath = path.join(process.cwd(), 'src', 'data', 'live', filename);
+    if (fs.existsSync(filePath)) {
+      return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    }
+  } catch {}
+  return null;
+}
+
+const data = loadJson('podcast.json') || { fetched_at: null, shows: {} };
+const shows = data.shows || {};
+const fetchedAt = data.fetched_at
+  ? new Date(data.fetched_at).toLocaleString('en-GB', {
+      timeZone: 'Europe/London',
+      day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit',
+    })
+  : '--';
+
+const keys = Object.keys(shows);
+
+function fmtDate(s: string | null | undefined): string {
+  if (!s) return '--';
+  try {
+    return new Date(s).toLocaleDateString('en-GB', { day: '2-digit', month: 'short' });
+  } catch { return '--'; }
+}
+function fmtDur(sec: number | null | undefined): string {
+  if (!sec) return '';
+  const m = Math.round(sec / 60);
+  return `${m}m`;
+}
+---
+
+<div class="rounded-lg border border-gray-700 bg-gray-800/60 p-5" data-tile="podcast">
+  <div class="flex items-start justify-between mb-4">
+    <div>
+      <h3 class="text-white font-semibold text-sm flex items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-purple-500"></span>
+        Podcast · Buzzsprout
+      </h3>
+      <p class="text-xs text-gray-400 mt-0.5">
+        Auto-generated AI-search episodes (script + TTS + publish), cross-linked to site pages
+      </p>
+    </div>
+    <span class="text-[10px] text-gray-500">Last fetched: {fetchedAt}</span>
+  </div>
+
+  {keys.length === 0 && (
+    <p class="text-sm text-gray-500">No podcast data yet.</p>
+  )}
+
+  {keys.map((key) => {
+    const s = shows[key] || {};
+    if (s.status !== 'ok') {
+      return (
+        <div class="mb-2">
+          <div class="text-sm text-white font-medium">{key}</div>
+          <div class="text-xs text-amber-400">{s.status === 'auth_pending' ? 'Buzzsprout token not set' : (s.reason || 'unavailable')}</div>
+        </div>
+      );
+    }
+    const recent = (s.recent || []) as any[];
+    return (
+      <div class="mb-1">
+        <div class="flex items-baseline justify-between mb-3">
+          <div class="text-sm text-white font-medium">
+            {key} <span class="text-gray-500 font-normal">· {s.site}</span>
+          </div>
+          <a href={`https://www.buzzsprout.com/${s.podcast_id}`} target="_blank" rel="noopener"
+             class="text-[10px] text-purple-300 hover:text-purple-200">Open show ↗</a>
+        </div>
+        <div class="grid grid-cols-3 gap-3 mb-4">
+          <div class="rounded bg-gray-900/50 px-3 py-2">
+            <div class="text-lg text-white font-semibold">{s.episode_count}</div>
+            <div class="text-[10px] text-gray-400">episodes</div>
+          </div>
+          <div class="rounded bg-gray-900/50 px-3 py-2">
+            <div class="text-lg text-white font-semibold">{(s.total_plays || 0).toLocaleString('en-GB')}</div>
+            <div class="text-[10px] text-gray-400">total plays</div>
+          </div>
+          <div class="rounded bg-gray-900/50 px-3 py-2">
+            <div class="text-lg text-white font-semibold">{fmtDate(s.latest_published_at)}</div>
+            <div class="text-[10px] text-gray-400">latest ep</div>
+          </div>
+        </div>
+        <div class="space-y-1">
+          {recent.slice(0, 5).map((e) => (
+            <div class="flex items-center justify-between text-xs border-t border-gray-700/50 py-1.5">
+              <span class="text-gray-300 truncate pr-2">
+                {e.number ? <span class="text-gray-500">#{e.number} </span> : null}{e.title}
+              </span>
+              <span class="text-gray-500 whitespace-nowrap">
+                {e.plays?.toLocaleString('en-GB')} plays{e.duration ? ` · ${fmtDur(e.duration)}` : ''} · {fmtDate(e.published_at)}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  })}
+</div>

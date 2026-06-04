@@ -135,6 +135,7 @@ def main():
         ("build_cluster_decisions.py", 30), # SERP-overlap clusters + Keep/Fix/Consolidate/Optimise/Prune decisions (needs cannibalisation + content_decay) -> cluster_decisions.json
         ("fleet_baseline_check.py", 120),  # daily live-HTML audit vs BASELINE_CHECKLIST.md; consumed by urgent_alert + dashboard tile
         ("youtube_ai_tracking.py", 300),   # daily AI citation probe for fleet YT channels + branded phrases (EN + foreign); output → youtube_ai_citations.json
+        ("fetch_podcast.py", 60),          # read-side: Buzzsprout show totals + recent episodes -> podcast.json (needs BUZZSPROUT_API_TOKEN env)
         ("generate_recommendations.py", 30),
         ("track_new_pages.py", 30),
         ("save_daily_metrics.py", 30),
