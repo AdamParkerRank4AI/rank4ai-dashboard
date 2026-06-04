@@ -18,7 +18,7 @@ Built 2026-05-11 to close the recurring-gap class (Amy-Knight pattern,
 BBL/FundBiz silent-loss pattern, FAT/FAG scaffold residue pattern).
 """
 from __future__ import annotations
-import json, os, re, sys, urllib.request, ssl, pathlib
+import json, os, re, sys, urllib.request, ssl, pathlib, subprocess
 from datetime import datetime, timezone
 from typing import Any
 
@@ -305,20 +305,13 @@ def check_sitemap_lastmod(root, live, html, flavour, pre_launch):
     return ("pass", f"{distinct} distinct lastmods in sample of {len(sample)}")
 
 def check_faqpage_misuse(root, live, html, flavour, pre_launch):
-    """Finding #12: FAQPage schema only on actual FAQ pages with 4+ Q/A.
-    On non-FAQ pages it's a deception signal post Google's 7 May 2026 deprecation."""
+    """FAQPage schema is BANNED fleet-wide (18 May 2026). Google fully deprecated FAQ rich
+    results (7 May 2026); ANY FAQPage emission now fails. BaseLayout strips it; this is the backstop."""
     if not html: return ("skip", "no live URL")
     has_faq_schema = '"@type":"FAQPage"' in html or '"@type": "FAQPage"' in html
-    if not has_faq_schema: return ("skip", "no FAQPage schema on this page")
-    # Count Question entries
+    if not has_faq_schema: return ("pass", "no FAQPage schema (correct)")
     q_count = len(re.findall(r'"@type"\s*:\s*"Question"', html))
-    # Heuristic: should have a visible FAQ section (h2/h3 'frequently asked', 'FAQ', or details/summary)
-    has_visible_faq = bool(re.search(r"(frequently\s+asked\s+questions|<h\d[^>]*>FAQ|<details[^>]*>)", html, re.I))
-    if q_count < 4 and not has_visible_faq:
-        return ("fail", f"FAQPage schema with only {q_count} Question entries + no visible FAQ section")
-    if q_count < 4:
-        return ("fail", f"FAQPage schema with {q_count} Question entries (need 4+)")
-    return ("pass", f"{q_count} questions + visible FAQ section")
+    return ("fail", f"FAQPage schema present ({q_count} Question entries) - banned fleet-wide, strip it")
 
 def check_indexnow_unique(root, live, html, flavour, pre_launch):
     """Finding #18: Each site's IndexNow key must be unique to the host.
@@ -334,6 +327,26 @@ def check_indexnow_unique(root, live, html, flavour, pre_launch):
 def check_ai_txt_present(root, live, html, flavour, pre_launch):
     """Finding #10: ai.txt purpose-based scraping declaration (Spawning)"""
     return ("pass" if (root / "public" / "ai.txt").exists() else "fail", "")
+
+def check_comparison_contract(root, live, html, flavour, pre_launch):
+    """Page-content contract for comparison/decision pages (capsule + visible FAQ + type-aware table).
+    Reuses the repo's OWN gate (scripts/check-comparison-pages.cjs) so there is ONE source of truth.
+    Skips if the site has no built dist/ or no gate script."""
+    script = root / "scripts" / "check-comparison-pages.cjs"
+    if not script.exists(): return ("skip", "no gate script")
+    if not (root / "dist").exists(): return ("skip", "no dist/ (build first)")
+    try:
+        out = subprocess.run(["node", str(script)], cwd=str(root),
+                             capture_output=True, text=True, timeout=180).stdout
+    except Exception as e:
+        return ("skip", f"gate did not run: {type(e).__name__}")
+    m = re.search(r"meet required elements \((\d+)%\)", out)
+    if not m: return ("skip", "gate output unparsed")
+    pct = int(m.group(1))
+    om = re.search(r"required missing: ([^\n]+)", out)
+    detail = om.group(1).strip() if om else ""
+    if pct >= 100: return ("pass", "all comparison pages meet the contract")
+    return ("fail", f"comparison contract {pct}% - missing: {detail}")
 
 CHECKS = [
     # (id, fn, severity, label)
@@ -356,7 +369,8 @@ CHECKS = [
     ("fleet_xlinks",        check_fleet_xlinks,        "p2", ">=3 fleet xlinks in footer"),
     ("link_rel_related",    check_link_rel_related,    "p2", "<link rel=related> in head (#22)"),
     ("sitemap_lastmod",     check_sitemap_lastmod,     "p2", "sitemap lastmod ISO 8601 + varies (#17)"),
-    ("faqpage_misuse",      check_faqpage_misuse,      "p2", "FAQPage schema only with 4+ Q/A (#12)"),
+    ("faqpage_misuse",      check_faqpage_misuse,      "p1", "NO FAQPage schema anywhere (#12, banned)"),
+    ("comparison_contract", check_comparison_contract, "p2", "comparison pages: capsule+FAQ+table by type"),
     ("indexnow_unique",     check_indexnow_unique,     "p2", "IndexNow key file present (#18)"),
 ]
 
