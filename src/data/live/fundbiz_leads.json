@@ -1,22 +1,65 @@
 {
-  "fetched_at": "2026-06-04T08:19:37.181207+00:00",
+  "fetched_at": "2026-06-05T07:34:05.936988+00:00",
   "site_id": "fundbiz",
   "table": "fundbiz_leads",
-  "count_total": 1,
-  "count_30d": 1,
-  "count_7d": 0,
+  "count_total": 4,
+  "count_30d": 4,
+  "count_7d": 3,
   "funnel_7d": {
-    "step_1_complete": 0,
-    "form_submit": 0,
-    "conversion_pct": 0.0
+    "step_1_complete": 1,
+    "form_submit": 1,
+    "conversion_pct": 100.0
   },
   "sources_30d": [
     {
       "source": "internal",
-      "count": 1
+      "count": 3
     }
   ],
   "recent_leads": [
+    {
+      "id": "875e5b28-b9c8-4ee8-a3b7-51046a5c426e",
+      "created_at": "2026-06-04T14:51:42.355241+00:00",
+      "event_type": "form_submit_serverside",
+      "turnover": "12,000",
+      "industry": null,
+      "finance_type": "working-capital",
+      "company_name": "TALENT THEORY LIMITED",
+      "company_number": "17164033",
+      "business_postcode": "WV8 1FP",
+      "contact_name": "ARBI, Mohammed",
+      "email": "rizaarbi1981@gmail.com",
+      "phone": "+447889872567",
+      "page_url": "https://fundbiz.co.uk/eligibility-checker/",
+      "applied_from": "/eligibility-checker/",
+      "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 26_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/148.0.7778.166 Mobile/15E148 Safari/604.1",
+      "source": "internal",
+      "landing_path": "/eligibility-checker/",
+      "referrer": "https://fundbiz.co.uk/",
+      "referrer_host": "fundbiz.co.uk",
+      "utm_source": null,
+      "utm_medium": null,
+      "utm_campaign": null,
+      "utm_term": null,
+      "utm_content": null,
+      "gclid": null,
+      "fbclid": null,
+      "msclkid": null,
+      "amount": null,
+      "entity_type": null,
+      "ip": "90.208.136.127",
+      "country": "GB",
+      "device_type": "mobile",
+      "returning_visitor": false,
+      "visit_count": 1,
+      "asn_org": "Sky UK Limited",
+      "stages": [
+        "submit",
+        "step 2",
+        "step 1"
+      ],
+      "_event_count": 3
+    },
     {
       "id": "a1685701-94e0-4b0d-b79a-d8dfc9ee1b13",
       "created_at": "2026-05-12T14:15:35.335279+00:00",
