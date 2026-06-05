@@ -7,6 +7,7 @@ import ClarityDropoffTile from '../components/ClarityDropoffTile.astro';
 import ConversionLeakTile from '../components/ConversionLeakTile.astro';
 import FeatureCoverageTile from '../components/FeatureCoverageTile.astro';
 import FleetBotHitsTile from '../components/FleetBotHitsTile.astro';
+import AiVisibilityTile from '../components/AiVisibilityTile.astro';
 import clients from '../utils/dashboardClients';
 import { statusOf, STATUS_RANK, STATUS_PILL, STATUS_LABEL } from '../utils/siteStatus';
 import fs from 'node:fs';
@@ -327,6 +328,13 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
   {isFleet && (
     <div data-copy-tile="AI bot intelligence" class="mb-6">
       <FleetBotHitsTile />
+    </div>
+  )}
+
+  {/* AI Visibility — AEO readiness vs actual citation rate per engine */}
+  {isFleet && (
+    <div data-copy-tile="AI visibility" class="mb-6">
+      <AiVisibilityTile />
     </div>
   )}
 

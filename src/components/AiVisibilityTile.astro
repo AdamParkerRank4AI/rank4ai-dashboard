@@ -1,0 +1,134 @@
+---
+/**
+ * AiVisibilityTile — "AI Visibility" scoreboard tile.
+ *
+ * The scoreboard for the AI-visibility programme. Joins two existing live feeds:
+ *   - aeo_scorecard.json  (compute_aeo_score.py): on-site AEO readiness % per
+ *     site, broken into crawlability / discoverability / readability /
+ *     citability / schema / technical layers.
+ *   - citation_results.json (run_citation_baseline.py): are we actually CITED,
+ *     per engine (Claude / ChatGPT / Gemini / Perplexity), as a rate %.
+ *
+ * AEO score = how ready the site is. Citation rate = whether it is landing.
+ * The gap between a high AEO score and a 0% citation rate is the work.
+ *
+ * Defensive against missing data / unmeasured engines (null rate). Dark-card
+ * style like its siblings. Excludes _meta and the rochelle client.
+ */
+import fs from 'node:fs';
+import path from 'node:path';
+
+function loadJson(filename: string) {
+  try {
+    const fp = path.join(process.cwd(), 'src', 'data', 'live', filename);
+    if (fs.existsSync(fp)) return JSON.parse(fs.readFileSync(fp, 'utf-8'));
+  } catch {}
+  return null;
+}
+
+const aeo = loadJson('aeo_scorecard.json') ?? {};
+const cit = loadJson('citation_results.json') ?? {};
+
+const EXCLUDE = new Set(['_meta', 'rochellemarashi']);
+const ENGINES = ['claude', 'chatgpt', 'gemini', 'perplexity'] as const;
+
+const siteIds = Array.from(
+  new Set([...Object.keys(aeo), ...Object.keys(cit)])
+).filter((s) => !EXCLUDE.has(s));
+
+type Row = {
+  id: string;
+  name: string;
+  aeoPct: number | null;
+  rates: Record<string, number | null>;
+  cited: boolean;
+};
+
+const rows: Row[] = siteIds.map((id) => {
+  const a = aeo[id] ?? {};
+  const c = cit[id] ?? {};
+  const summary = c.summary ?? {};
+  const rates: Record<string, number | null> = {};
+  let cited = false;
+  for (const e of ENGINES) {
+    const blk = summary[e];
+    const measured = blk && blk.measured !== false;
+    const rate = measured && typeof blk.rate === 'number' ? blk.rate : null;
+    rates[e] = rate;
+    if (rate && rate > 0) cited = true;
+  }
+  return {
+    id,
+    name: c.brand ?? a.site_id ?? id,
+    aeoPct: typeof a.percentage === 'number' ? a.percentage : null,
+    rates,
+    cited,
+  };
+});
+
+// Sort: not-yet-cited but high AEO first (the biggest opportunity gaps).
+rows.sort((x, y) => {
+  if (x.cited !== y.cited) return x.cited ? 1 : -1;
+  return (y.aeoPct ?? 0) - (x.aeoPct ?? 0);
+});
+
+const anyCited = rows.filter((r) => r.cited).length;
+const hasData = rows.length > 0;
+
+function rateCell(rate: number | null) {
+  if (rate === null) return { txt: '-', cls: 'text-slate-600' };
+  if (rate > 0) return { txt: rate + '%', cls: 'text-emerald-300 font-semibold' };
+  return { txt: '0%', cls: 'text-slate-500' };
+}
+function aeoCls(pct: number | null) {
+  if (pct === null) return 'text-slate-600';
+  if (pct >= 85) return 'text-emerald-300';
+  if (pct >= 70) return 'text-amber-300';
+  return 'text-rose-300';
+}
+---
+<section class="rounded-xl bg-slate-900 text-slate-100 p-6 my-6 border border-slate-800">
+  <div class="flex items-baseline justify-between flex-wrap gap-2 mb-1">
+    <h2 class="text-lg font-bold">AI Visibility</h2>
+    <span class="text-xs text-slate-400">
+      {hasData ? `${anyCited}/${rows.length} sites cited by at least one engine` : 'no data'}
+    </span>
+  </div>
+  <p class="text-xs text-slate-400 mb-4">
+    AEO = on-site readiness. The engine columns = whether we are actually cited (rate %).
+    A high AEO with 0% citations is the gap the AI-visibility work closes. A dash means that engine was not measured this run (missing key or error).
+  </p>
+
+  {!hasData && (
+    <p class="text-sm text-slate-400">No AEO or citation data found. Run compute_aeo_score.py and run_citation_baseline.py.</p>
+  )}
+
+  {hasData && (
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-left text-xs text-slate-400 border-b border-slate-800">
+            <th class="py-2 pr-3 font-medium">Site</th>
+            <th class="py-2 px-3 font-medium">AEO</th>
+            <th class="py-2 px-3 font-medium">Claude</th>
+            <th class="py-2 px-3 font-medium">ChatGPT</th>
+            <th class="py-2 px-3 font-medium">Gemini</th>
+            <th class="py-2 px-3 font-medium">Perplexity</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr class="border-b border-slate-800/60">
+              <td class="py-2 pr-3 font-medium">{r.name}</td>
+              <td class={`py-2 px-3 ${aeoCls(r.aeoPct)}`}>{r.aeoPct === null ? '-' : r.aeoPct + '%'}</td>
+              {ENGINES.map((e) => {
+                const c = rateCell(r.rates[e]);
+                return <td class={`py-2 px-3 ${c.cls}`}>{c.txt}</td>;
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )}
+</section>
