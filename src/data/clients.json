@@ -935,5 +935,75 @@
       }
     ],
     "siteStatus": "prelaunch"
+  },
+  {
+    "id": "homeandhedge",
+    "name": "HomeAndHedge",
+    "domain": "homeandhedge.pages.dev",
+    "liveDomain": "homeandhedge.pages.dev",
+    "logo": "",
+    "flavour": "editorial",
+    "dashboard": "fleet",
+    "clientCode": "HEDGE",
+    "notes": "UK 'Home & Garden Problem-Solver' DISPLAY-AD content authority (grew out of japanese knotweed). Model = traffic at scale -> ad RPM (lead-skim PARKED). Answers 'what is this / how serious / how to fix / who to call' across 5 clusters: pests (insects), invasive plants/weeds/tree disease, damp/mould/structural/rot, drainage/surfaces/lawn, wildlife intruders. Niche-attack 7 Jun (live DataForSEO, 5 cluster agents): ~3-4 MILLION searches/mo true universe; pests alone ~2-3M with AIO NOT firing yet (first-mover citation land-grab). Build: programmatic from problems.json (MHQ-style), ~85-90 problems -> ~500-900 pages; day1 ~40-60 cornerstone (>=1 strong page per topic, all clusters), week1 ~250, daily auto-add to 1,000+ in 6-8 weeks. Ad path: Ezoic day1 -> Mediavine 50k sessions -> Raptive 25k pageviews (~£15-30 RPM); dense clean display + sticky video, NO pop-unders. Moats: neutrality (incumbents sell the fix), no-AIO-on-pests, the 'what's legal' wildlife pillar, lookalike/ID hubs. Account: info@rank4ai. Domain homeandhedge.co.uk (Adam registering). Plan: iCloud/claude/Research/niche-discovery-restart-2026-06-07/HOMEANDHEDGE-BUILD-PLAN.md + NA-home-garden-MASTER.md. 49k card: /demos/home-garden-problems/.",
+    "clientViewSections": [
+      "overview",
+      "site-tree",
+      "content-plan",
+      "recommendations",
+      "ai-readiness",
+      "page-compliance"
+    ],
+    "allSections": [
+      "overview",
+      "ai-readiness",
+      "ai-citations",
+      "site-manager",
+      "page-compliance",
+      "traffic",
+      "search-performance",
+      "competitors",
+      "site-tree",
+      "uptime",
+      "site-speed",
+      "crawl-activity",
+      "recommendations",
+      "content-plan",
+      "daily-audit",
+      "ecosystem"
+    ],
+    "sections": [],
+    "pre_launch": true,
+    "pending_decisions": [
+      {
+        "id": "domain_register",
+        "label": "Register homeandhedge.co.uk + wire to CF Pages",
+        "status": "IN PROGRESS",
+        "owner": "Adam",
+        "note": ".co.uk available 7 Jun; Adam registering. Then connect custom domain to the CF Pages project on info@rank4ai."
+      },
+      {
+        "id": "content_build",
+        "label": "Build cornerstone pages (>=1 strong page per topic, all 5 clusters) then auto-add daily",
+        "status": "TBD",
+        "owner": "Claude",
+        "note": "Programmatic from problems.json. Quality-gated: cornerstone first, ramp publish rate (thin-content risk)."
+      },
+      {
+        "id": "ad_network",
+        "label": "Wire ad monetisation (Ezoic day1, Mediavine at 50k, Raptive at 25k pv)",
+        "status": "TBD",
+        "owner": "Adam/Claude",
+        "note": "Dense clean display + sticky video. NO pop-unders (AdSense/Mediavine/Raptive ban them + Google interstitial penalty). Revisit when closer to traffic thresholds."
+      },
+      {
+        "id": "leadskim_later",
+        "label": "Bolt the parked lead-skim back on once traffic exists",
+        "status": "PARKED",
+        "owner": "Adam",
+        "note": "Drainage/pest/survey/knotweed quote forms. Decided display-first 7 Jun; lead-skim costs nothing to leave for later."
+      }
+    ],
+    "siteStatus": "prelaunch"
   }
 ]
