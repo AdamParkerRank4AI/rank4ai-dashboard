@@ -1,0 +1,110 @@
+{
+  "generated_at": "2026-06-07T12:00:00+01:00",
+  "source": "Her Vitals (women's life-stage health) plan — perimenopause-stack 49k hub + niche-attack-supplements-2026-05-29",
+  "totals": {
+    "total_rows": 43,
+    "live": 0,
+    "not_started": 43,
+    "slots": {
+      "hub": { "filled": 0, "empty": 1 },
+      "life-stage-pillar": { "filled": 0, "empty": 6 },
+      "sku-pillar": { "filled": 0, "empty": 6 },
+      "review": { "filled": 0, "empty": 11 },
+      "quiz": { "filled": 0, "empty": 7 },
+      "research": { "filled": 0, "empty": 5 },
+      "trust": { "filled": 0, "empty": 7 }
+    }
+  },
+  "strategy_summary": {
+    "clusters": [
+      "6 life-stage pillars (TTC/pregnancy -> postnatal -> perimenopause [anchor] -> menopause -> senior + cross-stage /symptoms/) — audience entry, each routes to the right SKU recommendation",
+      "6 cross-stage SKU pillars (protein, creatine, pre-workout, magnesium, collagen, ashwagandha/ayurveda) — the conversion engines; each serves multiple life stages with per-page positioning",
+      "Find-your-stack quiz engine — 10Q, email-gated, life-stage-aware affiliate routing to a curated 3-5 product stack",
+      "/research/ data moat — quarterly heavy-metals lab + annual UK perimenopause survey + EFSA register guide = the citation reference URLs"
+    ],
+    "authority_pillars": [
+      "Named RD (AfN) + menopause-specialist GP (BMS, not Newson) + Level-4 strength coach E-E-A-T",
+      "Quarterly heavy-metals lab report on 10 popular UK brands",
+      "Annual UK perimenopause supplement-use survey (n=500-1k)",
+      "Find-your-stack quiz (life-stage-aware affiliate routing)",
+      "EFSA-claim anchored, brand-neutral, reviewedBy schema on every page"
+    ],
+    "slot_rules": {
+      "Life-stage pillar": "Hub page for an audience life stage; 40-60w answer capsule + symptom/decision spokes + routes into cross-stage SKU pillars + ends with a curated affiliate pick. Each expands to 6-20 spokes by month 12.",
+      "SKU pillar": "Cross-stage supplement-category hub; benefits/dose/safety/comparison spokes + per-life-stage positioning pages + a /reviews/ best-X output. Each expands to 10-30 spokes; AIO firing across the cluster.",
+      "Review": "Best-X-UK affiliate output page recommending 3-5 EXISTING branded products (Amazon Associates + Awin + direct programs); named-clinician reviewedBy + lab data where applicable. ~25-40 review pages at maturity.",
+      "Quiz": "find-your-stack engine + per-life-stage output variants + the two perimenopause-test capture pages; email-gated, routes to affiliate-linked stack.",
+      "Research": "First-party citable data + methodology (heavy-metals lab, UK survey, EFSA guide, testing rubric, exclusion criteria). The strongest AI-citation signals.",
+      "Trust": "Named-team Person-schema /about/ pages (RD/GP/coach/ayurvedic + process) and the glossary DefinedTerm set — the E-E-A-T entity moat."
+    }
+  },
+  "tree": [
+    {
+      "layer": "L1",
+      "label": "Layer 1 · Home & life-stage pillars",
+      "pages": [
+        { "id": "home", "page_number": "1", "page_name": "Homepage", "url_path": "/", "layer": "L1", "page_type": "hub", "status": "not_started", "action": "build", "note": "Her Vitals brand hub — the UK women's life-stage health authority. Routes to 6 life-stage pillars + the quiz. Wirecutter-shape, brand-neutral, named-clinician reviewed." },
+        { "id": "ls-pregnancy", "page_number": "2", "page_name": "Pregnancy & TTC hub", "url_path": "/pregnancy/", "layer": "L1", "page_type": "life-stage-pillar", "status": "not_started", "action": "build", "note": "Life-stage gateway (Agent 2). Spokes: ttc/, prenatal-vitamins-best-uk (Pregnacare displacement), supplements-by-trimester, what-to-take, pregnacare-alternatives-uk (21k brand cross-attack). ~30-40k cluster. Expands to many spokes." },
+        { "id": "ls-postnatal", "page_number": "3", "page_name": "Postnatal hub", "url_path": "/postnatal/", "layer": "L1", "page_type": "life-stage-pillar", "status": "not_started", "action": "build", "note": "Spokes: recovery-supplements, breastfeeding-vitamins, postnatal-protein-collagen, new-mum-stack (quiz-routable). Same customer continues from pregnancy. Expands across months." },
+        { "id": "ls-perimenopause", "page_number": "4", "page_name": "Perimenopause hub (ANCHOR)", "url_path": "/perimenopause/", "layer": "L1", "page_type": "life-stage-pillar", "status": "not_started", "action": "build", "note": "Anchor traffic pillar. best-supplements-uk (2.4k wedge, no-NHS), perimenopause-test (9.9k -> quiz), the-stack, supplements-uk, weight-loss, strength-training (citation gem), + cross-links to magnesium/ashwagandha. Expands to 18+ spokes incl. symptom routing." },
+        { "id": "ls-menopause", "page_number": "5", "page_name": "Menopause hub", "url_path": "/menopause/", "layer": "L1", "page_type": "life-stage-pillar", "status": "not_started", "action": "build", "note": "supplements-uk-guide (8.1k, NHSx2 contested + AIO), protein, weight-gain-supplements, davina-mccall-supplements (brand bait), creatine-for-menopause cross-link, hot-flushes-supplements (1.6k). Expands." },
+        { "id": "ls-senior", "page_number": "6", "page_name": "Senior hub", "url_path": "/senior/", "layer": "L1", "page_type": "life-stage-pillar", "status": "not_started", "action": "build", "note": "Month-6+ pillar (Agent 3, ~5k cluster, academic-only UK SERP). sarcopenia-supplements, muscle-building-over-50/over-60-women, protein-for-women-over-50, hmb-for-sarcopenia, senior-strength-stack. Expands." },
+        { "id": "ls-symptoms", "page_number": "7", "page_name": "Symptoms cross-stage hub", "url_path": "/symptoms/", "layer": "L1", "page_type": "life-stage-pillar", "status": "not_started", "action": "build", "note": "Top-of-funnel symptom universe (~60.5k perimenopause symptoms head + 80k cluster). Symptom-led entry pages — weight-gain, hair-loss, joint-pain, anxiety, brain-fog, insomnia, bloating, belly-fat, skin, libido, fatigue, acne — each routes to the right SKU pillar. Expands to ~12+ spokes." }
+      ]
+    },
+    {
+      "layer": "L2",
+      "label": "Layer 2 · SKU category pillars",
+      "pages": [
+        { "id": "sku-protein", "page_number": "8", "page_name": "Protein pillar", "url_path": "/protein/", "layer": "L2", "page_type": "sku-pillar", "status": "not_started", "action": "build", "note": "Original brief spine. THE GEM: how-much-do-i-need-uk-calculator (49.5k LOW). + side-effects, for-women (weight-loss/over-40/over-50), pregnancy-and-breastfeeding, beginners-guide, high-protein-recipes (~62k recipe cluster), for-glp-1-users (PeptideClear cross-link). Expands to ~16 spokes." },
+        { "id": "sku-creatine", "page_number": "9", "page_name": "Creatine pillar (PRIMARY)", "url_path": "/creatine/", "layer": "L2", "page_type": "sku-pillar", "status": "not_started", "action": "build", "note": "Brand-anchor. for-women (18.1k, UK brand vacuum) + benefits/side-effects/dose/weight-loss/best-uk spokes; menopause (1.6k), perimenopause, and-hrt (50/mo sleeper, max conv); side-effects (22.2k UK gap); when-to-take (12.1k wide-open), how-much-per-day (9.9k), does-it-cause-hair-loss (8.1k); brain/mood cluster. Expands to ~30 spokes." },
+        { "id": "sku-preworkout", "page_number": "10", "page_name": "Pre-workout pillar", "url_path": "/pre-workout/", "layer": "L2", "page_type": "sku-pillar", "status": "not_started", "action": "build", "note": "Original brief spine. is-it-safe, side-effects (720), stim-free-for-women (720+320), natural-no-caffeine, reviews. Expands to ~6 spokes." },
+        { "id": "sku-magnesium", "page_number": "11", "page_name": "Magnesium pillar", "url_path": "/magnesium/", "layer": "L2", "page_type": "sku-pillar", "status": "not_started", "action": "build", "note": "NEW (Agent 3, ~50k/mo, Healthspan only UK ranker). glycinate-benefits (14.8k AIO), glycinate-side-effects (8.1k), glycinate-vs-citrate (5.4k AIO), vs-bisglycinate (3.6k), how-much-per-day (8.1k), for-sleep/best (6.6k), for-perimenopause/best (110 hottest on-brand), citrate-uk, types-explained. Expands to ~14 spokes." },
+        { "id": "sku-collagen", "page_number": "12", "page_name": "Collagen pillar", "url_path": "/collagen/", "layer": "L2", "page_type": "sku-pillar", "status": "not_started", "action": "build", "note": "NEW (Agent 3, ~15k/mo, vendor/media listicle wall). best-for-women (9.9k), marine-vs-bovine (3.6k+3.6k AIO), for-menopause, for-perimenopause-skin, types-explained (type-I vs II), postnatal. Expands to ~10 spokes." },
+        { "id": "sku-ashwagandha", "page_number": "13", "page_name": "Ashwagandha / Ayurveda pillar", "url_path": "/ingredients/ashwagandha/", "layer": "L2", "page_type": "sku-pillar", "status": "not_started", "action": "build", "note": "NEW (Agent 1, ~10-21k/mo, wide-open ayurveda x perimenopause). uk-guide (165k head adjacency), for-women (480), for-menopause (590), for-perimenopause (210), ksm-66-vs-sensoril, reviews. Sibling sub-pillars /ingredients/shatavari/ (3.6k) + /triphala/. Expands to ~10 spokes." }
+      ]
+    },
+    {
+      "layer": "L3",
+      "label": "Layer 3 · Reviews & comparisons",
+      "pages": [
+        { "id": "rev-creatine-women", "page_number": "14", "page_name": "Best creatine for women UK", "url_path": "/reviews/best-creatine-for-women-uk/", "layer": "L3", "page_type": "review", "status": "not_started", "action": "build", "note": "Affiliate output: MyProtein Creapure + Bulk + Optimum + Naked. Named-RD reviewedBy + heavy-metals lab data. Representative of the creatine pillar's review spokes." },
+        { "id": "rev-magnesium", "page_number": "15", "page_name": "Best magnesium glycinate UK", "url_path": "/reviews/best-magnesium-glycinate-uk/", "layer": "L3", "page_type": "review", "status": "not_started", "action": "build", "note": "Affiliate: BetterYou + Pure Encapsulations + Solgar + Bulk. Sister page best-for-sleep. EFSA-anchored." },
+        { "id": "rev-collagen", "page_number": "16", "page_name": "Best collagen for women UK", "url_path": "/reviews/best-collagen-for-women-uk/", "layer": "L3", "page_type": "review", "status": "not_started", "action": "build", "note": "Affiliate: Vital Proteins + Ancient+Brave + Wild Nutrition + Trinny London. Premium AOV. Sister pages best-marine / best-bovine." },
+        { "id": "rev-perimenopause", "page_number": "17", "page_name": "Best perimenopause supplements UK", "url_path": "/reviews/best-perimenopause-supplements-uk/", "layer": "L3", "page_type": "review", "status": "not_started", "action": "build", "note": "Affiliate: Wild Nutrition + Health&Her + Vitabiotics + BetterYou. The wedge page's commercial output." },
+        { "id": "rev-protein-women", "page_number": "18", "page_name": "Best protein powder for women UK", "url_path": "/reviews/best-protein-powder-for-women-uk/", "layer": "L3", "page_type": "review", "status": "not_started", "action": "build", "note": "Affiliate: Wild Nutrition + Form + Innermost + MyProtein. Sister pages best-for-weight-loss / best-vegan." },
+        { "id": "rev-preworkout", "page_number": "19", "page_name": "Best stim-free pre-workout UK", "url_path": "/reviews/best-stim-free-pre-workout-uk/", "layer": "L3", "page_type": "review", "status": "not_started", "action": "build", "note": "Affiliate: Bulk + MyProtein + Naked. Stim-free / women's pre-workout angle." },
+        { "id": "rev-ashwagandha", "page_number": "20", "page_name": "Best ashwagandha UK", "url_path": "/reviews/best-ashwagandha-uk/", "layer": "L3", "page_type": "review", "status": "not_started", "action": "build", "note": "Affiliate: Pure Encapsulations + Solgar + Wild Nutrition Botanica + MyProtein KSM-66. Women's / ayurveda framing." },
+        { "id": "rev-prenatal", "page_number": "21", "page_name": "Best prenatal vitamins UK", "url_path": "/reviews/best-prenatal-vitamins-uk/", "layer": "L3", "page_type": "review", "status": "not_started", "action": "build", "note": "Affiliate: Wild Nutrition + Pregnacare + BetterYou + Bare Biology. The modern Pregnacare-alternative output." },
+        { "id": "rev-postnatal", "page_number": "22", "page_name": "Best postnatal supplements UK", "url_path": "/reviews/best-postnatal-supplements-uk/", "layer": "L3", "page_type": "review", "status": "not_started", "action": "build", "note": "Affiliate output for the postnatal life-stage pillar; breastfeeding-safe picks." },
+        { "id": "rev-vitd3k2", "page_number": "23", "page_name": "Best vitamin D3+K2 UK", "url_path": "/reviews/best-vitamin-d3-k2-uk/", "layer": "L3", "page_type": "review", "status": "not_started", "action": "build", "note": "Cross-stage add-on review; EFSA-anchored. Representative of the wider ~25-40 review pages at maturity." },
+        { "id": "rev-marine-vs-bovine", "page_number": "24", "page_name": "Marine vs bovine collagen (comparison)", "url_path": "/collagen/marine-vs-bovine/", "layer": "L3", "page_type": "review", "status": "not_started", "action": "build", "note": "Decision-help comparison (3.6k+3.6k, AIO firing). The which-type-for-me moment; pairs affiliate picks. Representative of vs/comparison spokes (magnesium glycinate-vs-citrate, ksm-66-vs-sensoril, etc.)." }
+      ]
+    },
+    {
+      "layer": "L4",
+      "label": "Layer 4 · Quiz, research & trust",
+      "pages": [
+        { "id": "quiz-find-your-stack", "page_number": "25", "page_name": "Find your stack (quiz engine)", "url_path": "/quiz/find-your-stack/", "layer": "L4", "page_type": "quiz", "status": "not_started", "action": "build", "note": "10Q, email-gated, life-stage-aware affiliate routing to a curated 3-5 product stack + RD/GP rationale. AI-citation hook for what-supplements-should-I-take (49.5k LOW). The conversion engine." },
+        { "id": "quiz-pregnancy", "page_number": "26", "page_name": "Quiz output · pregnancy stack", "url_path": "/quiz/pregnancy-stack/", "layer": "L4", "page_type": "quiz", "status": "not_started", "action": "build", "note": "Life-stage output variant of the quiz." },
+        { "id": "quiz-postnatal", "page_number": "27", "page_name": "Quiz output · postnatal stack", "url_path": "/quiz/postnatal-stack/", "layer": "L4", "page_type": "quiz", "status": "not_started", "action": "build", "note": "Life-stage output variant of the quiz." },
+        { "id": "quiz-perimenopause", "page_number": "28", "page_name": "Quiz output · perimenopause stack", "url_path": "/quiz/perimenopause-stack/", "layer": "L4", "page_type": "quiz", "status": "not_started", "action": "build", "note": "Life-stage output variant of the quiz (anchor stage)." },
+        { "id": "quiz-menopause", "page_number": "29", "page_name": "Quiz output · menopause stack", "url_path": "/quiz/menopause-stack/", "layer": "L4", "page_type": "quiz", "status": "not_started", "action": "build", "note": "Life-stage output variant of the quiz." },
+        { "id": "quiz-perimenopause-test", "page_number": "30", "page_name": "Perimenopause test / am-I-in-perimenopause", "url_path": "/quiz/perimenopause-test/", "layer": "L4", "page_type": "quiz", "status": "not_started", "action": "build", "note": "9,900/mo + 1,300/mo capture pages routing into find-your-stack. Senior-stack variant also planned." },
+        { "id": "quiz-senior", "page_number": "31", "page_name": "Quiz output · senior stack", "url_path": "/quiz/senior-stack/", "layer": "L4", "page_type": "quiz", "status": "not_started", "action": "build", "note": "Life-stage output variant of the quiz (Month-6+)." },
+        { "id": "research-heavy-metals", "page_number": "32", "page_name": "Heavy-metals lab report (quarterly)", "url_path": "/research/heavy-metals-lab-report/", "layer": "L4", "page_type": "research", "status": "not_started", "action": "build", "note": "Quarterly heavy-metals test on 10 popular UK brands (~£300-500/test). Raw data + methodology published per quarter. Strongest single AI-citation signal; becomes the reference URL across women's-health/menopause/fitness press." },
+        { "id": "research-survey", "page_number": "33", "page_name": "UK perimenopause supplement survey (annual)", "url_path": "/research/uk-perimenopause-supplement-survey/", "layer": "L4", "page_type": "research", "status": "not_started", "action": "build", "note": "Annual survey, n=500-1,000 UK women 40-55 (OnePoll/Censuswide). Published with charts; citable across menopause/fitness/lifestyle press. New dated edition each year." },
+        { "id": "research-efsa", "page_number": "34", "page_name": "EFSA claims register UK guide", "url_path": "/research/efsa-claims-register-uk-guide/", "layer": "L4", "page_type": "research", "status": "not_started", "action": "build", "note": "Citation magnet — the permitted-health-claims reference anchoring every product page." },
+        { "id": "research-rubric", "page_number": "35", "page_name": "Product testing rubric", "url_path": "/research/product-testing-rubric/", "layer": "L4", "page_type": "research", "status": "not_started", "action": "build", "note": "Our scoring methodology; the transparency asset behind every review." },
+        { "id": "research-exclusion", "page_number": "36", "page_name": "Exclusion criteria", "url_path": "/research/exclusion-criteria/", "layer": "L4", "page_type": "research", "status": "not_started", "action": "build", "note": "What we don't recommend and why — trust signal." },
+        { "id": "about-hub", "page_number": "37", "page_name": "About / team hub", "url_path": "/about/", "layer": "L4", "page_type": "trust", "status": "not_started", "action": "build", "note": "Brand + named-team hub. The E-E-A-T entity moat; Organization + team schema." },
+        { "id": "about-rd", "page_number": "38", "page_name": "Our Registered Nutritionist", "url_path": "/about/our-rd/", "layer": "L4", "page_type": "trust", "status": "not_started", "action": "build", "note": "Named UK AfN-registered RD (Editor-in-Chief). Person schema + sameAs AfN public register. Signs off all nutrition/supplement claims + the protein calculator." },
+        { "id": "about-gp", "page_number": "39", "page_name": "Our Medical Advisor (GP)", "url_path": "/about/our-medical-advisor/", "layer": "L4", "page_type": "trust", "status": "not_started", "action": "build", "note": "Named UK menopause-specialist GP, BMS-affiliated (NOT Louise Newson). Person + sameAs GMC + BMS. Signs off perimenopause symptom pages + the HRT-creatine interaction page." },
+        { "id": "about-coach", "page_number": "40", "page_name": "Our Strength Coach", "url_path": "/about/our-strength-coach/", "layer": "L4", "page_type": "trust", "status": "not_started", "action": "build", "note": "Named UK Level-4 strength coach. Person + sameAs CIMSPA/REPS. Signs off strength-training-perimenopause + muscle-building-over-50. The entity differentiator no other UK brand has." },
+        { "id": "about-ayurvedic", "page_number": "41", "page_name": "Our Ayurvedic Practitioner", "url_path": "/about/our-ayurvedic-practitioner/", "layer": "L4", "page_type": "trust", "status": "not_started", "action": "build", "note": "Named UK ayurvedic practitioner (women's-health focus). Person schema. Co-authors the ashwagandha/shatavari ayurveda x perimenopause pillar." },
+        { "id": "about-process", "page_number": "42", "page_name": "Our process", "url_path": "/about/our-process/", "layer": "L4", "page_type": "trust", "status": "not_started", "action": "build", "note": "The rubric + lab methodology + how reviews are produced; trust transparency." },
+        { "id": "glossary-hub", "page_number": "43", "page_name": "Glossary hub", "url_path": "/glossary/", "layer": "L4", "page_type": "trust", "status": "not_started", "action": "build", "note": "DefinedTerm schema, ~40 terms (creatine, perimenopause, efsa-claim, informed-sport, magnesium-glycinate, bisglycinate, collagen types, marine/bovine, ashwagandha, ksm-66, sensoril, ayurveda). Expands across terms." }
+      ]
+    }
+  ]
+}
