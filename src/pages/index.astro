@@ -121,6 +121,31 @@ const allCommits = fullChangelog;
 const totalRecs = Object.values(healthData).reduce((sum: number, d: any) => sum + d.recsTotal, 0);
 const totalCritical = Object.values(healthData).reduce((sum: number, d: any) => sum + d.recsCritical, 0);
 const totalClicks = Object.values(healthData).reduce((sum: number, d: any) => sum + d.clicks, 0);
+const totalImpressions = Object.values(healthData).reduce((sum: number, d: any) => sum + d.impressions, 0);
+
+// Per-period GSC aggregates for the Fleet Quick View toggle, summed from TRUE
+// per-calendar-day rows (gsc_daily.json, dimension=date). day = last day,
+// week = last 7 days, month = last 28 days. Position = impression-weighted avg.
+// (Do NOT use gsc_history.json here — that snapshots the rolling 28d total per day.)
+const gscDaily = loadJson('gsc_daily.json') || {};
+function windowAgg(siteId: string, days: number) {
+  const arr = ((gscDaily as any)[siteId]?.days || []) as any[];
+  let clicks = 0, impressions = 0, posW = 0;
+  for (const d of arr.slice(-days)) {
+    clicks += d.clicks || 0;
+    impressions += d.impressions || 0;
+    posW += (d.position || 0) * (d.impressions || 0);
+  }
+  return { clicks, impressions, position: impressions ? +(posW / impressions).toFixed(1) : null };
+}
+const periodData: Record<string, any> = {};
+for (const c of clients) {
+  periodData[c.id] = {
+    day: windowAgg(c.id, 1),
+    week: windowAgg(c.id, 7),
+    month: windowAgg(c.id, 28),
+  };
+}
 
 // Three search funnels at the top — Google clicks (GSC 28-30d) · Bing clicks (BWT 5-7d) · AI visits (GA4 30d)
 // Bing clicks sum the per-day traffic_stats rows (the real signal) instead of top_queries (which is capped at 25 + per-day).
@@ -143,8 +168,8 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
 ---
 
 <DashboardLayout title="Dashboard">
-  {/* SEARCH FUNNELS — the three click streams that bring real visitors, headlined */}
-  <section data-copy-tile="Search funnels" class="mb-6 grid grid-cols-1 md:grid-cols-3 gap-3">
+  {/* SEARCH FUNNELS — the click streams that bring real visitors, headlined */}
+  <section data-copy-tile="Search funnels" class="mb-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
     <div class="rounded-lg border border-emerald-800/50 bg-emerald-950/30 px-4 py-3">
       <div class="flex items-center justify-between">
         <span class="text-[10px] uppercase tracking-wider text-emerald-300 font-semibold">Google clicks</span>
@@ -152,6 +177,14 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
       </div>
       <div class="text-3xl font-bold text-white mt-1">{totalClicks.toLocaleString()}</div>
       <div class="text-[10px] text-gray-500 mt-1">Clicks from a google.com search-result page. Doesn't include Bing or AI tools.</div>
+    </div>
+    <div class="rounded-lg border border-amber-800/50 bg-amber-950/30 px-4 py-3">
+      <div class="flex items-center justify-between">
+        <span class="text-[10px] uppercase tracking-wider text-amber-300 font-semibold">Google impressions</span>
+        <span class="text-[9px] text-gray-500">GSC · 28–30d</span>
+      </div>
+      <div class="text-3xl font-bold text-white mt-1">{totalImpressions.toLocaleString()}</div>
+      <div class="text-[10px] text-gray-500 mt-1">Times the fleet appeared on a google.com results page — total search visibility, before any click.</div>
     </div>
     <div class="rounded-lg border border-blue-800/50 bg-blue-950/30 px-4 py-3">
       <div class="flex items-center justify-between">
@@ -173,9 +206,16 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
 
   {/* FLEET QUICK VIEW — one row per site, all key signals at a glance, click site name to expand details */}
   <section class="mb-6">
-    <div class="flex items-baseline justify-between mb-3">
+    <div class="flex items-baseline justify-between mb-3 flex-wrap gap-2">
       <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Fleet quick view</h2>
-      <span class="text-[10px] text-gray-500">all sites · 30-day signals · click ▸ for detail</span>
+      <div class="flex items-center gap-2">
+        <div id="fqv-period-toggle" class="inline-flex rounded-md border border-gray-700 overflow-hidden text-[11px]">
+          <button type="button" data-period="day" class="fqv-period px-2.5 py-1 text-gray-400 hover:text-white">Day</button>
+          <button type="button" data-period="week" class="fqv-period px-2.5 py-1 text-gray-400 hover:text-white border-l border-gray-700">Week</button>
+          <button type="button" data-period="month" class="fqv-period px-2.5 py-1 bg-indigo-600 text-white border-l border-gray-700">Month</button>
+        </div>
+        <span class="text-[10px] text-gray-500">Google clk/Impr/Pos by period · sorted by impressions · click ▸ for detail</span>
+      </div>
     </div>
     <div class="overflow-x-auto rounded-lg border border-gray-800 bg-gray-900">
       <table class="w-full text-xs">
@@ -199,13 +239,13 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
             <th class="text-right py-2 px-3">Crit/High</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="fqv-tbody">
           {(clients as any[])
             .filter((c) => clientIds.has(c.id))
             // Live sites only — drop pre-launch / paused builds (FindAGym, FindATradey, BuilderWeb, Nordic, legal-leadgen)
             .filter((c) => c.siteStatus === 'live' || (c.dashboard === 'current' && c.pre_launch !== true && c.siteStatus !== 'paused' && c.siteStatus !== 'needs'))
-            // Latest launched at the top (sidebarOrder ascends with launch order)
-            .sort((a, b) => (b.sidebarOrder ?? 0) - (a.sidebarOrder ?? 0))
+            // Top performers first — by Google impressions (month). Re-sorts client-side on period toggle.
+            .sort((a, b) => (periodData[b.id]?.month?.impressions ?? 0) - (periodData[a.id]?.month?.impressions ?? 0))
             .map((clientMeta: any) => {
             const siteId = clientMeta.id;
             const displayName = clientMeta.name || siteId;
@@ -239,18 +279,25 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
             const topRecs = (r.recommendations || []).filter((rec: any) => rec.priority === 'critical' || rec.priority === 'high').slice(0, 5);
             const topQueries = (g.top_queries || []).slice(0, 5);
             const topPages = (g.top_pages || []).slice(0, 5);
+            const pd = (periodData as any)[siteId] || { day: {}, week: {}, month: {} };
             return (
               <>
-                <tr class="border-b border-gray-800/50 hover:bg-gray-800/30 transition group cursor-pointer" onclick={`document.getElementById('fqv-${siteId}').classList.toggle('hidden')`}>
+                <tr
+                  class="border-b border-gray-800/50 hover:bg-gray-800/30 transition group cursor-pointer"
+                  data-site={siteId}
+                  data-cday={pd.day.clicks ?? 0} data-cweek={pd.week.clicks ?? 0} data-cmonth={pd.month.clicks ?? 0}
+                  data-iday={pd.day.impressions ?? 0} data-iweek={pd.week.impressions ?? 0} data-imonth={pd.month.impressions ?? 0}
+                  data-pday={pd.day.position ?? ''} data-pweek={pd.week.position ?? ''} data-pmonth={pd.month.position ?? ''}
+                  onclick={`document.getElementById('fqv-${siteId}').classList.toggle('hidden')`}>
                   <td class="py-2 px-3 text-gray-500">▸</td>
                   <td class="py-2 px-3"><a href={`/agency/${siteId}`} class="font-semibold text-indigo-400 hover:text-indigo-300">{displayName}</a></td>
                   <td class="py-2 px-3 text-right text-white">{(ov.active_users ?? 0).toLocaleString()}</td>
                   <td class="py-2 px-3 text-right text-white">{(ov.sessions ?? 0).toLocaleString()}</td>
-                  <td class="py-2 px-3 text-right text-emerald-400 font-semibold">{(totals.clicks ?? 0).toLocaleString()}</td>
+                  <td data-col="clicks" class="py-2 px-3 text-right text-emerald-400 font-semibold">{(totals.clicks ?? 0).toLocaleString()}</td>
                   <td class={`py-2 px-3 text-right font-semibold ${bingClicks > 0 ? 'text-blue-400' : 'text-gray-500'}`}>{bingClicks.toLocaleString()}</td>
                   <td class={`py-2 px-3 text-right font-semibold ${aiVisits > 0 ? 'text-violet-400' : 'text-gray-500'}`}>{aiVisits.toLocaleString()}</td>
-                  <td class="py-2 px-3 text-right text-white">{(totals.impressions ?? 0).toLocaleString()}</td>
-                  <td class="py-2 px-3 text-right text-gray-400">{totals.position?.toFixed(1) ?? '—'}</td>
+                  <td data-col="impr" class="py-2 px-3 text-right text-white">{(totals.impressions ?? 0).toLocaleString()}</td>
+                  <td data-col="pos" class="py-2 px-3 text-right text-gray-400">{totals.position?.toFixed(1) ?? '—'}</td>
                   <td class={`py-2 px-3 text-right ${aiRate > 0 ? 'text-emerald-400' : 'text-gray-500'}`}>{aiRate ? `${aiRate}%` : '0%'}</td>
                   <td class="py-2 px-3 text-right text-amber-400">{aiBots.toLocaleString()}</td>
                   <td class={`py-2 px-3 text-right ${aioCount > 0 ? 'text-purple-400' : 'text-gray-500'}`}>{aioCount}</td>
@@ -259,7 +306,7 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
                   <td class={`py-2 px-3 text-right ${upPct >= 99 ? 'text-emerald-400' : upPct >= 95 ? 'text-amber-400' : 'text-gray-500'}`}>{upPct ? `${upPct}%` : '—'}</td>
                   <td class={`py-2 px-3 text-right font-semibold ${ch > 3 ? 'text-red-400' : ch > 0 ? 'text-amber-400' : 'text-emerald-400'}`}>{ch}</td>
                 </tr>
-                <tr id={`fqv-${siteId}`} class="hidden">
+                <tr id={`fqv-${siteId}`} data-detail={siteId} class="hidden">
                   <td colspan="16" class="bg-gray-950/70 px-6 py-4 border-b border-gray-800">
                     <div class="grid md:grid-cols-3 gap-6">
                       <div>
@@ -986,5 +1033,48 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
         }, 5000);
       });
     });
+  </script>
+
+  <script>
+    // Fleet Quick View — Day/Week/Month toggle: swap Google clk / Impr / Pos per period and re-sort by impressions.
+    (function () {
+      var tbody = document.getElementById('fqv-tbody');
+      var toggle = document.getElementById('fqv-period-toggle');
+      if (!tbody || !toggle) return;
+      var nf = new Intl.NumberFormat('en-GB');
+      function apply(period) {
+        var rows = Array.prototype.slice.call(tbody.querySelectorAll('tr[data-site]'));
+        rows.forEach(function (r) {
+          var clk = r.getAttribute('data-c' + period);
+          var imp = r.getAttribute('data-i' + period);
+          var pos = r.getAttribute('data-p' + period);
+          var cC = r.querySelector('[data-col="clicks"]');
+          var cI = r.querySelector('[data-col="impr"]');
+          var cP = r.querySelector('[data-col="pos"]');
+          if (cC) cC.textContent = nf.format(Number(clk || 0));
+          if (cI) cI.textContent = nf.format(Number(imp || 0));
+          if (cP) cP.textContent = (pos === '' || pos == null) ? '—' : Number(pos).toFixed(1);
+        });
+        rows.sort(function (a, b) {
+          return Number(b.getAttribute('data-i' + period) || 0) - Number(a.getAttribute('data-i' + period) || 0);
+        });
+        rows.forEach(function (r) {
+          tbody.appendChild(r);
+          var det = tbody.querySelector('tr[data-detail="' + r.getAttribute('data-site') + '"]');
+          if (det) tbody.appendChild(det);
+        });
+      }
+      toggle.querySelectorAll('.fqv-period').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          toggle.querySelectorAll('.fqv-period').forEach(function (b) {
+            b.classList.remove('bg-indigo-600', 'text-white');
+            b.classList.add('text-gray-400');
+          });
+          btn.classList.add('bg-indigo-600', 'text-white');
+          btn.classList.remove('text-gray-400');
+          apply(btn.getAttribute('data-period'));
+        });
+      });
+    })();
   </script>
 </DashboardLayout>
