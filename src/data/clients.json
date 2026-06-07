@@ -614,14 +614,14 @@
   },
   {
     "id": "womenshealth",
-    "name": "Women's Health",
+    "name": "Her Vitals",
     "domain": "womens-health-1pt.pages.dev",
     "liveDomain": "womens-health-1pt.pages.dev",
     "logo": "",
     "flavour": "editorial",
     "dashboard": "fleet",
     "clientCode": "WH",
-    "notes": "Working name 'Women's Health' (placeholder — .com/.co.uk are Hearst-owned via the US magazine; expect rename before launch). UK women's life-stage health AFFILIATE AUTHORITY site (Wirecutter-shape). No own SKUs at launch — curates + reviews existing branded supplements (MyProtein / Bulk / Wild Nutrition / H&B / Boots / Form / Innermost / Vital Proteins / Ancient + Brave / Trinny London) via Amazon Associates + Awin + direct programs. 6 life-stage pillars (TTC -> prenatal -> postnatal -> perimenopause -> menopause -> senior) + 6 cross-stage SKU pillars (protein / creatine / pre-workout / magnesium / collagen / ashwagandha-ayurveda). The brand wedge: named UK RD + GP + strength coach + quarterly heavy-metals lab + annual UK perimenopause survey + the life-stage quiz. ~400-500k+/mo addressable UK. Sister to PeptideClear (men's athletic-longevity + peptide therapeutics). GitHub: AdamParkerRank4AI/womens-health. CF Pages project: womens-health (account 927d3dd61a9375f0c8185df7b2a1764e adam@muswellrose.com). Live at https://womens-health-1pt.pages.dev (scaffold only, June 2026). Research pack: iCloud/.../niche-attack-supplements-2026-05-29/. 49k research-presentation demo at 49k.co.uk/demos/perimenopause-stack/.",
+    "notes": "BRAND DECIDED 7 Jun 2026: 'Her Vitals' (domain hervitals.co.uk, available + trademark-clear; replaces the Hearst-owned 'Women's Health' working name). Working name 'Women's Health' (placeholder — .com/.co.uk are Hearst-owned via the US magazine; expect rename before launch). UK women's life-stage health AFFILIATE AUTHORITY site (Wirecutter-shape). No own SKUs at launch — curates + reviews existing branded supplements (MyProtein / Bulk / Wild Nutrition / H&B / Boots / Form / Innermost / Vital Proteins / Ancient + Brave / Trinny London) via Amazon Associates + Awin + direct programs. 6 life-stage pillars (TTC -> prenatal -> postnatal -> perimenopause -> menopause -> senior) + 6 cross-stage SKU pillars (protein / creatine / pre-workout / magnesium / collagen / ashwagandha-ayurveda). The brand wedge: named UK RD + GP + strength coach + quarterly heavy-metals lab + annual UK perimenopause survey + the life-stage quiz. ~400-500k+/mo addressable UK. Sister to PeptideClear (men's athletic-longevity + peptide therapeutics). GitHub: AdamParkerRank4AI/womens-health. CF Pages project: womens-health (account 927d3dd61a9375f0c8185df7b2a1764e adam@muswellrose.com). Live at https://womens-health-1pt.pages.dev (scaffold only, June 2026). Research pack: iCloud/.../niche-attack-supplements-2026-05-29/. 49k research-presentation demo at 49k.co.uk/demos/perimenopause-stack/.",
     "clientViewSections": [
       "overview",
       "site-tree",
@@ -653,17 +653,17 @@
     "pending_decisions": [
       {
         "id": "final_brand_name",
-        "label": "Pick final brand name (working name 'Women's Health' is Hearst-owned)",
-        "status": "TBD",
+        "label": "Final brand name: Her Vitals (hervitals.co.uk)",
+        "status": "DONE",
         "owner": "Adam",
-        "note": "Working name placeholder throughout the build pack. Hearst owns womenshealthmag.com / womenshealth.co.uk via the US magazine. Need an original name + matching .co.uk + .com domain check."
+        "note": "DECIDED 7 Jun. 'Her Vitals' chosen: trademark-clear (0 word marks UK/EU/WO), broad (covers all life stages + supplement categories), 'vitals' = vitamins + vital signs. Avoids Hearst 'Women's Health' mark (live in cl 16/41/9)."
       },
       {
         "id": "domain_register",
-        "label": "Register the brand domain (after name decided)",
-        "status": "TBD",
+        "label": "Register hervitals.co.uk (+ hervitals.uk) + wire to CF Pages",
+        "status": "IN PROGRESS",
         "owner": "Adam",
-        "note": "Once brand name picked, register .co.uk + .com. Then attach as custom domain to the CF Pages project."
+        "note": "hervitals.co.uk + hervitals.uk available 7 Jun; Adam buying. .com taken (irrelevant for UK). Attach as custom domain to the womens-health CF Pages project."
       },
       {
         "id": "github_cf_pages_link",
@@ -1002,6 +1002,69 @@
         "status": "PARKED",
         "owner": "Adam",
         "note": "Drainage/pest/survey/knotweed quote forms. Decided display-first 7 Jun; lead-skim costs nothing to leave for later."
+      }
+    ],
+    "siteStatus": "prelaunch"
+  },
+  {
+    "id": "adhdhelper",
+    "name": "ADHD Helper",
+    "domain": "adhdhelper.pages.dev",
+    "liveDomain": "adhdhelper.pages.dev",
+    "logo": "",
+    "flavour": "editorial",
+    "dashboard": "fleet",
+    "clientCode": "ADHD",
+    "notes": "BRAND: ADHD Helper (adhdhelper.co.uk, available + trademark-clear). UK ADHD authority stacking THREE money models on one audience: (1) lead-gen to private/Right-to-Choose assessment clinics (assessment £500-1,500, high CAC), (2) affiliate shop on products ADHD adults buy (magnesium glycinate, omega-3, L-theanine, weighted blankets, fidget/focus tools, planners) via Amazon Associates + Awin + direct, (3) own-brand supplement layered later (leverages PeptideClear sourcing). Neutral named-clinician hub = AI-citation wedge vs clinic-sold assessments. YMYL: needs medical reviewer, no treat-ADHD claims. Account: info@rank4ai. NOT deep-dived to full niche-attack yet (lead sizing + clinic-buyer map pending). 49k card: /demos/adhd-stack/. Plan pack: iCloud/.../Research/niche-discovery-restart-2026-06-07/.",
+    "clientViewSections": [
+      "overview",
+      "site-tree",
+      "content-plan",
+      "recommendations",
+      "ai-readiness",
+      "page-compliance"
+    ],
+    "allSections": [
+      "overview",
+      "ai-readiness",
+      "ai-citations",
+      "site-manager",
+      "page-compliance",
+      "traffic",
+      "search-performance",
+      "competitors",
+      "site-tree",
+      "uptime",
+      "site-speed",
+      "crawl-activity",
+      "recommendations",
+      "content-plan",
+      "daily-audit",
+      "ecosystem"
+    ],
+    "sections": [],
+    "pre_launch": true,
+    "pending_decisions": [
+      {
+        "id": "domain_register",
+        "label": "Register adhdhelper.co.uk (+ adhdhelper.uk) + wire to CF Pages",
+        "status": "IN PROGRESS",
+        "owner": "Adam",
+        "note": "adhdhelper.co.uk available + TM-clear 7 Jun; Adam buying. .com taken."
+      },
+      {
+        "id": "full_niche_attack",
+        "label": "Run full niche-attack (live volumes + SERP gap + clinic lead-buyer map + lead sizing)",
+        "status": "TBD",
+        "owner": "Claude",
+        "note": "Only discovery-level done. Confirm assessment-clinic buyers + £/lead before build."
+      },
+      {
+        "id": "ymyl_reviewer",
+        "label": "Line up named GP/psychiatrist + nutritionist reviewer",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "YMYL: claims-safe editorial policy, no treat-ADHD claims."
       }
     ],
     "siteStatus": "prelaunch"
