@@ -1,6 +1,7 @@
 ---
 import DashboardLayout from '../../layouts/DashboardLayout.astro';
 import SectionCard from '../../components/SectionCard.astro';
+import SearchVsAiTable from '../../components/SearchVsAiTable.astro';
 import clients from '../../utils/dashboardClients';
 import allSections from '../../data/sections.json';
 import fs from 'node:fs';
@@ -112,6 +113,16 @@ const sectionStatus: Record<string, any> = {
     metricLabel: 'Vernacular pages',
   } : { status: 'pending', statusText: 'Setting up', metric: '--', metricLabel: '' },
 };
+// Demo "Search vs AI Search" comparison table (Market Invoice only).
+const searchVsAiRows = clientId === 'market-invoice' ? [
+  { metric: 'Visibility', search: '63,100 Impressions', ai: '700+ Grounding Queries' },
+  { metric: 'Authority', search: '397 Ranking Keywords', ai: '19,000 Citations' },
+  { metric: 'Coverage', search: 'N/A', ai: '28 Cited Pages' },
+  { metric: 'Traffic', search: '473 Clicks', ai: '150 Visits' },
+  { metric: 'Conversion Rate', search: '8.03%', ai: '12.67%' },
+  { metric: 'Leads Generated', search: '38', ai: '19' },
+] : null;
+
 // Passcode gate. If `clientCode` is present on the client record, the page
 // renders behind a localStorage-based passcode form (same pattern as 49k).
 // Master code unlocks all client views for Adam.
@@ -155,6 +166,12 @@ const MASTER_CODE = "1210";
       <h1 class="text-2xl font-bold text-white">{client.name}</h1>
       <p class="text-sm text-gray-400 mt-1">Your AI search visibility dashboard</p>
     </div>
+
+    {searchVsAiRows && (
+      <div class="mb-6">
+        <SearchVsAiTable title="Search vs AI Search — performance snapshot" rows={searchVsAiRows} />
+      </div>
+    )}
 
     <!-- Top fixes for client -->
     {recs && recs.critical > 0 && (

@@ -2,6 +2,7 @@
 import DashboardLayout from '../../layouts/DashboardLayout.astro';
 import SectionCard from '../../components/SectionCard.astro';
 import AutomationCard from '../../components/AutomationCard.astro';
+import SearchVsAiTable from '../../components/SearchVsAiTable.astro';
 import clients from '../../utils/dashboardClients';
 import sections from '../../data/sections.json';
 import automations from '../../data/automations.json';
@@ -513,6 +514,16 @@ function daysUntil(dateStr: string): number {
   const now = new Date();
   return Math.ceil((d.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
 }
+
+// Demo "Search vs AI Search" comparison table (Market Invoice only).
+const searchVsAiRows = clientId === 'market-invoice' ? [
+  { metric: 'Visibility', search: '63,100 Impressions', ai: '700+ Grounding Queries' },
+  { metric: 'Authority', search: '397 Ranking Keywords', ai: '19,000 Citations' },
+  { metric: 'Coverage', search: 'N/A', ai: '28 Cited Pages' },
+  { metric: 'Traffic', search: '473 Clicks', ai: '150 Visits' },
+  { metric: 'Conversion Rate', search: '8.03%', ai: '12.67%' },
+  { metric: 'Leads Generated', search: '38', ai: '19' },
+] : null;
 ---
 
 <DashboardLayout title={client.name} currentClient={clientId} view="agency">
@@ -538,6 +549,12 @@ function daysUntil(dateStr: string): number {
       </div>
     </div>
   </div>
+
+  {searchVsAiRows && (
+    <div class="mb-4">
+      <SearchVsAiTable title="Search vs AI Search — performance snapshot" rows={searchVsAiRows} />
+    </div>
+  )}
 
   <!-- Combined Search & AI visibility (at a glance) -->
   <div class="bg-gray-900 border border-gray-700 rounded-lg p-5 mb-4">
