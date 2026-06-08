@@ -3,16 +3,37 @@
   "source": "Proper Toasty takeover plan — niche-attack-propertoasty-2026-06-08/RESEARCH_PROPERTOASTY.md + 49k board /demos/propertoasty/",
   "totals": {
     "total_rows": 30,
-    "live": 0,
+    "live": 1,
     "not_started": 30,
     "slots": {
-      "hub": { "filled": 0, "empty": 1 },
-      "router-tool": { "filled": 0, "empty": 2 },
-      "pillar": { "filled": 0, "empty": 7 },
-      "tool": { "filled": 0, "empty": 3 },
-      "comparison": { "filled": 0, "empty": 4 },
-      "programmatic": { "filled": 0, "empty": 6 },
-      "trust": { "filled": 0, "empty": 7 }
+      "hub": {
+        "filled": 0,
+        "empty": 1
+      },
+      "router-tool": {
+        "filled": 0,
+        "empty": 2
+      },
+      "pillar": {
+        "filled": 0,
+        "empty": 7
+      },
+      "tool": {
+        "filled": 0,
+        "empty": 3
+      },
+      "comparison": {
+        "filled": 0,
+        "empty": 4
+      },
+      "programmatic": {
+        "filled": 0,
+        "empty": 6
+      },
+      "trust": {
+        "filled": 0,
+        "empty": 7
+      }
     }
   },
   "strategy_summary": {
@@ -21,7 +42,9 @@
       "Two ROUTER TOOLS are the spine: grant-eligibility checker (EV/BUS/solar) + EPC-improvement tool. Both upstream of the buying decision, both wide-open, both AI-citable, both funnel into every pillar's lead form.",
       "Grant head terms are gov-locked but surging (solar grant +98%, EV grant +61%, BUS +24%); win via the checker + cited answer, not the head term.",
       "EV + heat-pump decision layers are wide-open; insulation (~48k/mo) is the one net-new pillar; air-con is a seasonal summer-spike build; solar stays but stops leading.",
-      "Spray-foam removal bolted on as the highest lead-value pillar (CPC £35.73, mortgage-blocker forced demand), per Adam."
+      "Spray-foam removal bolted on as the highest lead-value pillar (CPC £35.73, mortgage-blocker forced demand), per Adam.",
+      "KEEP the existing roof visualiser (postcode -> Google satellite/sky view of the actual roof): strong conversion+trust asset; reuse roof area across solar/battery sizing + the EPC tool so one postcode powers the whole journey.",
+      "LEAD-FORM BLOCKERS to fix: form currently demands an energy-bill upload + a floor plan. Drop the bill from step 1 (ask later, optional); auto-pull floor area from the EPC register public API instead of asking for a floor plan (build blocker until API coverage/licensing confirmed)."
     ],
     "authority_pillars": [
       "Entity stack FIRST (Phase 0): a different fleet Ltd (TBC name), named authors + ORCIDs, ICO + D-U-N-S, schema everywhere, sameAs loop. YMYL-adjacent so non-negotiable.",
@@ -44,44 +67,255 @@
       "layer": "L1",
       "label": "Layer 1 · Home + the two router tools (the spine)",
       "pages": [
-        { "id": "home", "page_number": "1", "page_name": "Homepage", "url_path": "/", "layer": "L1", "page_type": "hub", "status": "not_started", "action": "keep+rework", "note": "Keep the existing build; re-point the hero from solar to the home-electrification eligibility check. Routes to the two router tools + 7 pillars." },
-        { "id": "grant-checker", "page_number": "2", "page_name": "Grant-eligibility checker", "url_path": "/grants/eligibility-checker/", "layer": "L1", "page_type": "router-tool", "status": "not_started", "action": "build", "note": "THE WEDGE. Per-scheme checker (EV chargepoint / Boiler Upgrade £7,500 / solar). Post-Apr-2026 EV rule confusion (driveway owners now EXCLUDED, grant £500) = mass demand, no checker exists anywhere. Captures intent + AI-cited + lead gateway." },
-        { "id": "epc-tool", "page_number": "3", "page_name": "EPC-improvement tool", "url_path": "/epc/improvement/", "layer": "L1", "page_type": "router-tool", "status": "not_started", "action": "build", "note": "Enter your EPC -> what to upgrade (solar/heat pump/insulation) -> eligibility -> get quotes. The top-of-funnel router into every pillar. 'how to improve epc rating' + landlord MEES compliance angle." }
+        {
+          "id": "home",
+          "page_number": "1",
+          "page_name": "Homepage",
+          "url_path": "/",
+          "layer": "L1",
+          "page_type": "hub",
+          "status": "not_started",
+          "action": "keep+rework",
+          "note": "Keep the existing build; re-point the hero from solar to the home-electrification eligibility check. Routes to the two router tools + 7 pillars."
+        },
+        {
+          "id": "grant-checker",
+          "page_number": "2",
+          "page_name": "Grant-eligibility checker",
+          "url_path": "/grants/eligibility-checker/",
+          "layer": "L1",
+          "page_type": "router-tool",
+          "status": "not_started",
+          "action": "build",
+          "note": "THE WEDGE. Per-scheme checker (EV chargepoint / Boiler Upgrade £7,500 / solar). Post-Apr-2026 EV rule confusion (driveway owners now EXCLUDED, grant £500) = mass demand, no checker exists anywhere. Captures intent + AI-cited + lead gateway."
+        },
+        {
+          "id": "epc-tool",
+          "page_number": "3",
+          "page_name": "EPC-improvement tool",
+          "url_path": "/epc/improvement/",
+          "layer": "L1",
+          "page_type": "router-tool",
+          "status": "not_started",
+          "action": "build",
+          "note": "Enter your EPC -> what to upgrade (solar/heat pump/insulation) -> eligibility -> get quotes. The top-of-funnel router into every pillar. 'how to improve epc rating' + landlord MEES compliance angle."
+        },
+        {
+          "id": "roof-tool",
+          "page_number": "3b",
+          "page_name": "Roof visualiser (KEEP existing)",
+          "url_path": "/check/",
+          "layer": "L1",
+          "page_type": "router-tool",
+          "status": "live",
+          "action": "keep+reuse",
+          "note": "EXISTING strong asset: postcode -> Google satellite/sky view of the roof. Reuse roof area for solar/battery sizing + EPC tool. One postcode entry powers the eligibility journey. Fix the lead form: it currently demands an energy-bill upload + floor plan (drop bill from step 1; auto-pull floor area from EPC register API, not a user floor plan)."
+        }
       ]
     },
     {
       "layer": "L2",
       "label": "Layer 2 · The pillars",
       "pages": [
-        { "id": "battery", "page_number": "4", "page_name": "Home battery (LEAD pillar)", "url_path": "/battery/", "layer": "L2", "page_type": "pillar", "status": "not_started", "action": "build", "note": "WIDE-OPEN + SURGING (+87-97%). Spokes: home-battery-storage-cost (AIO fires), is-it-worth-it, without-solar (+250%), how-it-works, safety, vs-generator, tesla-powerwall. Go for Google #1." },
-        { "id": "battery-calc", "page_number": "5", "page_name": "Battery-sizing calculator", "url_path": "/battery/sizing-calculator/", "layer": "L2", "page_type": "tool", "status": "not_started", "action": "build", "note": "Conversion tool inside the battery pillar; payback/sizing -> lead form." },
-        { "id": "ev", "page_number": "6", "page_name": "EV charging pillar", "url_path": "/ev-charging/", "layer": "L2", "page_type": "pillar", "status": "not_started", "action": "build", "note": "Currently thin. Drop in the EV deepdive build map. best-home-ev-charger (wide-open, AIO), costs/consumer-unit-upgrade, tariffs/octopus-intelligent-go." },
-        { "id": "ev-compat", "page_number": "7", "page_name": "Car-to-charger compatibility tables", "url_path": "/ev-charging/compatibility/[make]/[model]/", "layer": "L2", "page_type": "programmatic", "status": "not_started", "action": "build", "note": "~70 programmatic make/model pages, Product+Dataset schema. AI loves entity-to-entity tables. No UK make/model-indexed dataset exists." },
-        { "id": "heatpump", "page_number": "8", "page_name": "Heat pump pillar", "url_path": "/heat-pumps/", "layer": "L2", "page_type": "pillar", "status": "not_started", "action": "deepen", "note": "Site already has this. Deepen: boiler-upgrade-scheme, payback-calculator (tool), underfloor-heating. Soft leads -> decision pages, not the gov-locked grant head term." },
-        { "id": "insulation", "page_number": "9", "page_name": "Insulation pillar (NEW)", "url_path": "/insulation/", "layer": "L2", "page_type": "pillar", "status": "not_started", "action": "build", "note": "The one genuinely net-new pillar. ~48k/mo (loft 33,100 +24% + cavity 14,800). 'Fabric first' = the step before a heat pump; same MCS installers + grants (ECO4/GBIS)." },
-        { "id": "aircon", "page_number": "10", "page_name": "Air-con pillar (NEW)", "url_path": "/air-con/", "layer": "L2", "page_type": "pillar", "status": "not_started", "action": "build", "note": "Build BEFORE summer (seasonal spike to ~22k). installation-cost, running-cost-uk, aircon-vs-air-to-air-heat-pump (grant-overlap angle)." },
-        { "id": "solar", "page_number": "11", "page_name": "Solar pillar (harvest)", "url_path": "/solar/", "layer": "L2", "page_type": "pillar", "status": "not_started", "action": "keep+repoint", "note": "Site is solar-heavy. Keep the programmatic postcode/installer pages but STOP leading with it; re-point at the grant (+98%) and cost angles. Most contested." },
-        { "id": "sprayfoam", "page_number": "12", "page_name": "Spray-foam removal (bolt-on)", "url_path": "/spray-foam/", "layer": "L2", "page_type": "pillar", "status": "not_started", "action": "build", "note": "HIGHEST LEAD VALUE (CPC £35.73, £40-100/lead). Mortgage-blocker: 50+ lenders refuse spray-foam roofs -> forced removal. removal, mortgage-and-spray-foam, survey, /spray-foam/[city]/. Positioned as a separate 'property problem' section so it does not blur the energy story." }
+        {
+          "id": "battery",
+          "page_number": "4",
+          "page_name": "Home battery (LEAD pillar)",
+          "url_path": "/battery/",
+          "layer": "L2",
+          "page_type": "pillar",
+          "status": "not_started",
+          "action": "build",
+          "note": "WIDE-OPEN + SURGING (+87-97%). Spokes: home-battery-storage-cost (AIO fires), is-it-worth-it, without-solar (+250%), how-it-works, safety, vs-generator, tesla-powerwall. Go for Google #1."
+        },
+        {
+          "id": "battery-calc",
+          "page_number": "5",
+          "page_name": "Battery-sizing calculator",
+          "url_path": "/battery/sizing-calculator/",
+          "layer": "L2",
+          "page_type": "tool",
+          "status": "not_started",
+          "action": "build",
+          "note": "Conversion tool inside the battery pillar; payback/sizing -> lead form."
+        },
+        {
+          "id": "ev",
+          "page_number": "6",
+          "page_name": "EV charging pillar",
+          "url_path": "/ev-charging/",
+          "layer": "L2",
+          "page_type": "pillar",
+          "status": "not_started",
+          "action": "build",
+          "note": "Currently thin. Drop in the EV deepdive build map. best-home-ev-charger (wide-open, AIO), costs/consumer-unit-upgrade, tariffs/octopus-intelligent-go."
+        },
+        {
+          "id": "ev-compat",
+          "page_number": "7",
+          "page_name": "Car-to-charger compatibility tables",
+          "url_path": "/ev-charging/compatibility/[make]/[model]/",
+          "layer": "L2",
+          "page_type": "programmatic",
+          "status": "not_started",
+          "action": "build",
+          "note": "~70 programmatic make/model pages, Product+Dataset schema. AI loves entity-to-entity tables. No UK make/model-indexed dataset exists."
+        },
+        {
+          "id": "heatpump",
+          "page_number": "8",
+          "page_name": "Heat pump pillar",
+          "url_path": "/heat-pumps/",
+          "layer": "L2",
+          "page_type": "pillar",
+          "status": "not_started",
+          "action": "deepen",
+          "note": "Site already has this. Deepen: boiler-upgrade-scheme, payback-calculator (tool), underfloor-heating. Soft leads -> decision pages, not the gov-locked grant head term."
+        },
+        {
+          "id": "insulation",
+          "page_number": "9",
+          "page_name": "Insulation pillar (NEW)",
+          "url_path": "/insulation/",
+          "layer": "L2",
+          "page_type": "pillar",
+          "status": "not_started",
+          "action": "build",
+          "note": "The one genuinely net-new pillar. ~48k/mo (loft 33,100 +24% + cavity 14,800). 'Fabric first' = the step before a heat pump; same MCS installers + grants (ECO4/GBIS)."
+        },
+        {
+          "id": "aircon",
+          "page_number": "10",
+          "page_name": "Air-con pillar (NEW)",
+          "url_path": "/air-con/",
+          "layer": "L2",
+          "page_type": "pillar",
+          "status": "not_started",
+          "action": "build",
+          "note": "Build BEFORE summer (seasonal spike to ~22k). installation-cost, running-cost-uk, aircon-vs-air-to-air-heat-pump (grant-overlap angle)."
+        },
+        {
+          "id": "solar",
+          "page_number": "11",
+          "page_name": "Solar pillar (harvest)",
+          "url_path": "/solar/",
+          "layer": "L2",
+          "page_type": "pillar",
+          "status": "not_started",
+          "action": "keep+repoint",
+          "note": "Site is solar-heavy. Keep the programmatic postcode/installer pages but STOP leading with it; re-point at the grant (+98%) and cost angles. Most contested."
+        },
+        {
+          "id": "sprayfoam",
+          "page_number": "12",
+          "page_name": "Spray-foam removal (bolt-on)",
+          "url_path": "/spray-foam/",
+          "layer": "L2",
+          "page_type": "pillar",
+          "status": "not_started",
+          "action": "build",
+          "note": "HIGHEST LEAD VALUE (CPC £35.73, £40-100/lead). Mortgage-blocker: 50+ lenders refuse spray-foam roofs -> forced removal. removal, mortgage-and-spray-foam, survey, /spray-foam/[city]/. Positioned as a separate 'property problem' section so it does not blur the energy story."
+        }
       ]
     },
     {
       "layer": "L3",
       "label": "Layer 3 · Decision layer + cross-sell",
       "pages": [
-        { "id": "cmp-hp-gas", "page_number": "13", "page_name": "Heat pump vs gas boiler", "url_path": "/compare/heat-pump-vs-gas-boiler/", "layer": "L3", "page_type": "comparison", "status": "not_started", "action": "build", "note": "Wide-open (reddit ranks #1), AIO fires. Displace with original data + named author." },
-        { "id": "cmp-battery-gen", "page_number": "14", "page_name": "Battery vs generator", "url_path": "/compare/home-battery-vs-generator/", "layer": "L3", "page_type": "comparison", "status": "not_started", "action": "build", "note": "Battery question-bank decision page (zero-vol, AI-search layer)." },
-        { "id": "cmp-a2a", "page_number": "15", "page_name": "Air-con vs air-to-air heat pump", "url_path": "/compare/aircon-vs-air-to-air-heat-pump/", "layer": "L3", "page_type": "comparison", "status": "not_started", "action": "build", "note": "Wide-open; the grant-overlap angle (an A2A unit can qualify where a plain AC does not)." },
-        { "id": "landlord", "page_number": "16", "page_name": "Landlord EPC / MEES compliance", "url_path": "/landlords/epc-compliance/", "layer": "L3", "page_type": "comparison", "status": "not_started", "action": "build", "note": "Forced-compliance angle (landlords must hit EPC C). High-LTV multi-property buyer; routes into insulation/heat-pump/solar." },
-        { "id": "finance", "page_number": "17", "page_name": "Green / home-improvement finance", "url_path": "/finance/", "layer": "L3", "page_type": "comparison", "status": "not_started", "action": "build", "note": "'How do I pay for it' light affiliate cross-sell (green-loan providers, CPC £10-16). Links to fleet finance sites." }
+        {
+          "id": "cmp-hp-gas",
+          "page_number": "13",
+          "page_name": "Heat pump vs gas boiler",
+          "url_path": "/compare/heat-pump-vs-gas-boiler/",
+          "layer": "L3",
+          "page_type": "comparison",
+          "status": "not_started",
+          "action": "build",
+          "note": "Wide-open (reddit ranks #1), AIO fires. Displace with original data + named author."
+        },
+        {
+          "id": "cmp-battery-gen",
+          "page_number": "14",
+          "page_name": "Battery vs generator",
+          "url_path": "/compare/home-battery-vs-generator/",
+          "layer": "L3",
+          "page_type": "comparison",
+          "status": "not_started",
+          "action": "build",
+          "note": "Battery question-bank decision page (zero-vol, AI-search layer)."
+        },
+        {
+          "id": "cmp-a2a",
+          "page_number": "15",
+          "page_name": "Air-con vs air-to-air heat pump",
+          "url_path": "/compare/aircon-vs-air-to-air-heat-pump/",
+          "layer": "L3",
+          "page_type": "comparison",
+          "status": "not_started",
+          "action": "build",
+          "note": "Wide-open; the grant-overlap angle (an A2A unit can qualify where a plain AC does not)."
+        },
+        {
+          "id": "landlord",
+          "page_number": "16",
+          "page_name": "Landlord EPC / MEES compliance",
+          "url_path": "/landlords/epc-compliance/",
+          "layer": "L3",
+          "page_type": "comparison",
+          "status": "not_started",
+          "action": "build",
+          "note": "Forced-compliance angle (landlords must hit EPC C). High-LTV multi-property buyer; routes into insulation/heat-pump/solar."
+        },
+        {
+          "id": "finance",
+          "page_number": "17",
+          "page_name": "Green / home-improvement finance",
+          "url_path": "/finance/",
+          "layer": "L3",
+          "page_type": "comparison",
+          "status": "not_started",
+          "action": "build",
+          "note": "'How do I pay for it' light affiliate cross-sell (green-loan providers, CPC £10-16). Links to fleet finance sites."
+        }
       ]
     },
     {
       "layer": "L4",
       "label": "Layer 4 · Entity stack + trust (Phase 0, build FIRST)",
       "pages": [
-        { "id": "authors", "page_number": "18", "page_name": "Authors (named experts + ORCIDs)", "url_path": "/authors/", "layer": "L4", "page_type": "trust", "status": "not_started", "action": "build", "note": "Person schema, ORCIDs, sameAs. Real named experts above the fold on every guide/tool. Site has an /authors/ stub already." },
-        { "id": "about", "page_number": "19", "page_name": "About + company entity", "url_path": "/about/", "layer": "L4", "page_type": "trust", "status": "not_started", "action": "build", "note": "Organization schema -> the operating Ltd (different fleet Ltd, name TBC). parentOrganization, Companies House number." },
-        { "id": "trust", "page_number": "20", "page_name": "Trust registrations (ICO + D-U-N-S)", "url_path": "/trust/", "layer": "L4", "page_type": "trust", "status": "not_started", "action": "build", "note": "Reusable fleet TrustRegistrations footer block: ICO ref + D-U-N-S + downloadable cert. 'Not a lender or broker' introducer disclosure." }
+        {
+          "id": "authors",
+          "page_number": "18",
+          "page_name": "Authors (named experts + ORCIDs)",
+          "url_path": "/authors/",
+          "layer": "L4",
+          "page_type": "trust",
+          "status": "not_started",
+          "action": "build",
+          "note": "Person schema, ORCIDs, sameAs. Real named experts above the fold on every guide/tool. Site has an /authors/ stub already."
+        },
+        {
+          "id": "about",
+          "page_number": "19",
+          "page_name": "About + company entity",
+          "url_path": "/about/",
+          "layer": "L4",
+          "page_type": "trust",
+          "status": "not_started",
+          "action": "build",
+          "note": "Organization schema -> the operating Ltd (different fleet Ltd, name TBC). parentOrganization, Companies House number."
+        },
+        {
+          "id": "trust",
+          "page_number": "20",
+          "page_name": "Trust registrations (ICO + D-U-N-S)",
+          "url_path": "/trust/",
+          "layer": "L4",
+          "page_type": "trust",
+          "status": "not_started",
+          "action": "build",
+          "note": "Reusable fleet TrustRegistrations footer block: ICO ref + D-U-N-S + downloadable cert. 'Not a lender or broker' introducer disclosure."
+        }
       ]
     }
   ]

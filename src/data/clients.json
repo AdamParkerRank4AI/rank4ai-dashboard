@@ -1135,6 +1135,13 @@
         "status": "TBD",
         "owner": "Claude",
         "note": "The two highest-leverage assets; convert traffic to leads + get AI-cited."
+      },
+      {
+        "id": "form_blockers",
+        "label": "Fix lead-form blockers: energy-bill upload + floor plan",
+        "status": "TBD",
+        "owner": "Claude",
+        "note": "Form currently demands an energy bill + a floor plan = kills conversion. Drop bill from step 1 (optional, post-enquiry). Floor plan: auto-pull floor area from the EPC register public API (gov.uk Open Data) instead of asking the user. BUILD BLOCKER until EPC API coverage + licensing confirmed. KEEP the existing roof visualiser (postcode->satellite roof view) and reuse it for sizing."
       }
     ],
     "siteStatus": "prelaunch"
