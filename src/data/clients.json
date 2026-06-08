@@ -796,7 +796,7 @@
     "flavour": "leadgen",
     "dashboard": "fleet",
     "clientCode": "EVCHG",
-    "notes": "Scaffold live at https://ev-chargers-3dy.pages.dev (placeholder + /plan/ hub) as of 1 Jun 2026. BANKED 26 May 2026 (research-stage only, no build yet). UK EV charger compatibility + installer lead-gen site. Dual-model: (a) own-product compatibility tool (which charger fits my car / my home / my use-case), (b) installer leads sold to OZEV-approved installers. Scored 19/25. Fully unregulated (no FCA/ASA wall beyond standard advertising rules). Grant-driven demand (OZEV EV chargepoint grant for flats/rental ~£350; Workplace Charging Scheme up to £350 per socket; Homeowners-with-driveways grant ended Mar 2022 but flat/rental + workplace still live). Working name placeholder evmatch.co.uk per research. Research files: iCloud/.../niche-discovery-2026-05-26/10-deepdive-ev-charger.md.",
+    "notes": "SUPERSEDED by 'propertoasty' (8 Jun 2026): the EV-charger deepdive is now one pillar inside the Proper Toasty takeover (whole home-electrification hub). Keep for the EV build-map research only. Scaffold live at https://ev-chargers-3dy.pages.dev (placeholder + /plan/ hub) as of 1 Jun 2026. BANKED 26 May 2026 (research-stage only, no build yet). UK EV charger compatibility + installer lead-gen site. Dual-model: (a) own-product compatibility tool (which charger fits my car / my home / my use-case), (b) installer leads sold to OZEV-approved installers. Scored 19/25. Fully unregulated (no FCA/ASA wall beyond standard advertising rules). Grant-driven demand (OZEV EV chargepoint grant for flats/rental ~£350; Workplace Charging Scheme up to £350 per socket; Homeowners-with-driveways grant ended Mar 2022 but flat/rental + workplace still live). Working name placeholder evmatch.co.uk per research. Research files: iCloud/.../niche-discovery-2026-05-26/10-deepdive-ev-charger.md.",
     "clientViewSections": [
       "overview",
       "site-tree",
@@ -850,7 +850,7 @@
       }
     ],
     "liveDomain": "ev-chargers-3dy.pages.dev",
-    "siteStatus": "prelaunch"
+    "siteStatus": "paused"
   },
   {
     "id": "golftech",
@@ -1065,6 +1065,76 @@
         "status": "TBD",
         "owner": "Adam",
         "note": "YMYL: claims-safe editorial policy, no treat-ADHD claims."
+      }
+    ],
+    "siteStatus": "prelaunch"
+  },
+  {
+    "id": "propertoasty",
+    "name": "Proper Toasty",
+    "domain": "propertoasty.com",
+    "liveDomain": "propertoasty.com",
+    "logo": "",
+    "flavour": "editorial",
+    "dashboard": "fleet",
+    "clientCode": "TOASTY",
+    "notes": "ENTITY DECIDED (8 Jun 2026): FLEET site under a NEW/DIFFERENT Ltd (name TBC). TAKEOVER PROSPECT (8 Jun 2026). Existing Next.js + Supabase home-energy lead-gen platform (heat pump / solar / battery / EV eligibility + MCS installer leads, 'not a lender or broker'). Currently invisible: 9 keywords all pos 76-110, ~16 visits/mo, no schema, no entity. PLAN = run as-is, layer the fleet stack. Strategy flip from live DataForSEO: lead with BATTERY (wide-open SERP, +87-97% YoY) not solar; build the GRANT-ELIGIBILITY CHECKER (EV/BUS/solar, gov-locked head terms but +24-98% surging, no checker exists) + EPC-IMPROVEMENT TOOL as the two router tools; add INSULATION (~48k/mo, fabric-first) + AIR-CON (seasonal) pillars; bolt on SPRAY-FOAM removal (highest lead value, £35.73 CPC) per Adam. Money: resell leads day one (Leads 2 Trade / Lead Pronto / Profitise) then installer retainers. Lead sizing: bad ~30/mo (£1.2k) m6, good ~175/mo (£9.6k) 12-18mo. Absorbs old 'evchargers' prospect. 49k board: 49k.co.uk/demos/propertoasty (code 1210). Research: iCloud/claude/Research/niche-attack-propertoasty-2026-06-08/RESEARCH_PROPERTOASTY.md.",
+    "clientViewSections": [
+      "overview",
+      "site-tree",
+      "content-plan",
+      "recommendations",
+      "ai-readiness",
+      "page-compliance"
+    ],
+    "allSections": [
+      "overview",
+      "ai-readiness",
+      "ai-citations",
+      "site-manager",
+      "page-compliance",
+      "traffic",
+      "search-performance",
+      "competitors",
+      "site-tree",
+      "uptime",
+      "site-speed",
+      "crawl-activity",
+      "recommendations",
+      "content-plan",
+      "daily-audit",
+      "ecosystem"
+    ],
+    "sections": [],
+    "pre_launch": true,
+    "pending_decisions": [
+      {
+        "id": "owner_entity",
+        "label": "Entity: run as a FLEET site under a NEW/DIFFERENT Ltd (name TBC)",
+        "status": "DECIDED",
+        "owner": "Adam",
+        "note": "Adam 8 Jun 2026: fleet site, most likely a different Ltd name (not an existing fleet company). Still need: pick + register the Ltd name -> drives Companies House number, ICO, D-U-N-S, named author."
+      },
+      {
+        "id": "acquire_site",
+        "label": "Complete the takeover of propertoasty.com (repo + Supabase + domain handover)",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "Price as a pre-revenue build (no traffic). Need repo, Supabase project, domain/DNS, and which CF account."
+      },
+      {
+        "id": "backlink_check",
+        "label": "Pull the existing backlink profile before committing",
+        "status": "TBD",
+        "owner": "Claude",
+        "note": "DataForSEO backlinks module is off; use Moz / Common Crawl / Majestic. A toxic profile is material."
+      },
+      {
+        "id": "router_tools",
+        "label": "Build the grant-eligibility checker + EPC-improvement tool",
+        "status": "TBD",
+        "owner": "Claude",
+        "note": "The two highest-leverage assets; convert traffic to leads + get AI-cited."
       }
     ],
     "siteStatus": "prelaunch"
