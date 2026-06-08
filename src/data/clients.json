@@ -615,13 +615,13 @@
   {
     "id": "womenshealth",
     "name": "Her Vitals",
-    "domain": "womens-health-1pt.pages.dev",
-    "liveDomain": "womens-health-1pt.pages.dev",
+    "domain": "hervitals.pages.dev",
+    "liveDomain": "hervitals.pages.dev",
     "logo": "",
     "flavour": "editorial",
     "dashboard": "fleet",
     "clientCode": "WH",
-    "notes": "BRAND DECIDED 7 Jun 2026: 'Her Vitals' (domain hervitals.co.uk, available + trademark-clear; replaces the Hearst-owned 'Women's Health' working name). Working name 'Women's Health' (placeholder — .com/.co.uk are Hearst-owned via the US magazine; expect rename before launch). UK women's life-stage health AFFILIATE AUTHORITY site (Wirecutter-shape). No own SKUs at launch — curates + reviews existing branded supplements (MyProtein / Bulk / Wild Nutrition / H&B / Boots / Form / Innermost / Vital Proteins / Ancient + Brave / Trinny London) via Amazon Associates + Awin + direct programs. 6 life-stage pillars (TTC -> prenatal -> postnatal -> perimenopause -> menopause -> senior) + 6 cross-stage SKU pillars (protein / creatine / pre-workout / magnesium / collagen / ashwagandha-ayurveda). The brand wedge: named UK RD + GP + strength coach + quarterly heavy-metals lab + annual UK perimenopause survey + the life-stage quiz. ~400-500k+/mo addressable UK. Sister to PeptideClear (men's athletic-longevity + peptide therapeutics). GitHub: AdamParkerRank4AI/womens-health. CF Pages project: womens-health (account 927d3dd61a9375f0c8185df7b2a1764e adam@muswellrose.com). Live at https://womens-health-1pt.pages.dev (scaffold only, June 2026). Research pack: iCloud/.../niche-attack-supplements-2026-05-29/. 49k research-presentation demo at 49k.co.uk/demos/perimenopause-stack/.",
+    "notes": "SCAFFOLDED + DEPLOYED 2026-06-08 to https://hervitals.pages.dev (info@rank4ai CF Pages, gate-green, patch-free fleet-core 95c9e3d0, BBL Ltd, Oliver byline, preLaunch noindex). GitHub: AdamParkerRank4AI/hervitals. BRAND DECIDED 7 Jun 2026: 'Her Vitals' (domain hervitals.co.uk, available + trademark-clear; replaces the Hearst-owned 'Women's Health' working name). Working name 'Women's Health' (placeholder — .com/.co.uk are Hearst-owned via the US magazine; expect rename before launch). UK women's life-stage health AFFILIATE AUTHORITY site (Wirecutter-shape). No own SKUs at launch — curates + reviews existing branded supplements (MyProtein / Bulk / Wild Nutrition / H&B / Boots / Form / Innermost / Vital Proteins / Ancient + Brave / Trinny London) via Amazon Associates + Awin + direct programs. 6 life-stage pillars (TTC -> prenatal -> postnatal -> perimenopause -> menopause -> senior) + 6 cross-stage SKU pillars (protein / creatine / pre-workout / magnesium / collagen / ashwagandha-ayurveda). The brand wedge: named UK RD + GP + strength coach + quarterly heavy-metals lab + annual UK perimenopause survey + the life-stage quiz. ~400-500k+/mo addressable UK. Sister to PeptideClear (men's athletic-longevity + peptide therapeutics). GitHub: AdamParkerRank4AI/womens-health. CF Pages project: womens-health (account 927d3dd61a9375f0c8185df7b2a1764e adam@muswellrose.com). Live at https://womens-health-1pt.pages.dev (scaffold only, June 2026). Research pack: iCloud/.../niche-attack-supplements-2026-05-29/. 49k research-presentation demo at 49k.co.uk/demos/perimenopause-stack/.",
     "clientViewSections": [
       "overview",
       "site-tree",
@@ -660,10 +660,10 @@
       },
       {
         "id": "domain_register",
-        "label": "Register hervitals.co.uk (+ hervitals.uk) + wire to CF Pages",
+        "label": "Add hervitals.co.uk zone to info@rank4ai CF + attach custom domain + AI Crawl Control OFF",
         "status": "IN PROGRESS",
         "owner": "Adam",
-        "note": "hervitals.co.uk + hervitals.uk available 7 Jun; Adam buying. .com taken (irrelevant for UK). Attach as custom domain to the womens-health CF Pages project."
+        "note": "Domain bought. Deployed to hervitals.pages.dev. NEXT (Adam): add the zone to the info@rank4ai Cloudflare account (point registrar nameservers to CF), then Claude attaches the custom domain to the Pages project + sets AI Crawl Control OFF."
       },
       {
         "id": "github_cf_pages_link",
@@ -945,7 +945,7 @@
     "flavour": "editorial",
     "dashboard": "fleet",
     "clientCode": "HEDGE",
-    "notes": "UK 'Home & Garden Problem-Solver' DISPLAY-AD content authority (grew out of japanese knotweed). Model = traffic at scale -> ad RPM (lead-skim PARKED). Answers 'what is this / how serious / how to fix / who to call' across 5 clusters: pests (insects), invasive plants/weeds/tree disease, damp/mould/structural/rot, drainage/surfaces/lawn, wildlife intruders. Niche-attack 7 Jun (live DataForSEO, 5 cluster agents): ~3-4 MILLION searches/mo true universe; pests alone ~2-3M with AIO NOT firing yet (first-mover citation land-grab). Build: programmatic from problems.json (MHQ-style), ~85-90 problems -> ~500-900 pages; day1 ~40-60 cornerstone (>=1 strong page per topic, all clusters), week1 ~250, daily auto-add to 1,000+ in 6-8 weeks. Ad path: Ezoic day1 -> Mediavine 50k sessions -> Raptive 25k pageviews (~£15-30 RPM); dense clean display + sticky video, NO pop-unders. Moats: neutrality (incumbents sell the fix), no-AIO-on-pests, the 'what's legal' wildlife pillar, lookalike/ID hubs. Account: info@rank4ai. Domain homeandhedge.co.uk (Adam registering). Plan: iCloud/claude/Research/niche-discovery-restart-2026-06-07/HOMEANDHEDGE-BUILD-PLAN.md + NA-home-garden-MASTER.md. 49k card: /demos/home-garden-problems/.",
+    "notes": "SCAFFOLDED + DEPLOYED 2026-06-08 to https://homeandhedge.pages.dev (info@rank4ai CF Pages, gate-green, patch-free fleet-core 95c9e3d0, BBL Ltd, Oliver byline, preLaunch noindex). GitHub: AdamParkerRank4AI/homeandhedge. UK 'Home & Garden Problem-Solver' DISPLAY-AD content authority (grew out of japanese knotweed). Model = traffic at scale -> ad RPM (lead-skim PARKED). Answers 'what is this / how serious / how to fix / who to call' across 5 clusters: pests (insects), invasive plants/weeds/tree disease, damp/mould/structural/rot, drainage/surfaces/lawn, wildlife intruders. Niche-attack 7 Jun (live DataForSEO, 5 cluster agents): ~3-4 MILLION searches/mo true universe; pests alone ~2-3M with AIO NOT firing yet (first-mover citation land-grab). Build: programmatic from problems.json (MHQ-style), ~85-90 problems -> ~500-900 pages; day1 ~40-60 cornerstone (>=1 strong page per topic, all clusters), week1 ~250, daily auto-add to 1,000+ in 6-8 weeks. Ad path: Ezoic day1 -> Mediavine 50k sessions -> Raptive 25k pageviews (~£15-30 RPM); dense clean display + sticky video, NO pop-unders. Moats: neutrality (incumbents sell the fix), no-AIO-on-pests, the 'what's legal' wildlife pillar, lookalike/ID hubs. Account: info@rank4ai. Domain homeandhedge.co.uk (Adam registering). Plan: iCloud/claude/Research/niche-discovery-restart-2026-06-07/HOMEANDHEDGE-BUILD-PLAN.md + NA-home-garden-MASTER.md. 49k card: /demos/home-garden-problems/.",
     "clientViewSections": [
       "overview",
       "site-tree",
@@ -977,10 +977,10 @@
     "pending_decisions": [
       {
         "id": "domain_register",
-        "label": "Register homeandhedge.co.uk + wire to CF Pages",
+        "label": "Add homeandhedge.co.uk zone to info@rank4ai CF + attach custom domain + AI Crawl Control OFF",
         "status": "IN PROGRESS",
         "owner": "Adam",
-        "note": ".co.uk available 7 Jun; Adam registering. Then connect custom domain to the CF Pages project on info@rank4ai."
+        "note": "Domain bought. Deployed to homeandhedge.pages.dev. NEXT (Adam): add the zone to the info@rank4ai Cloudflare account (point registrar nameservers to CF), then Claude attaches the custom domain to the Pages project + sets AI Crawl Control OFF."
       },
       {
         "id": "content_build",
@@ -1015,7 +1015,7 @@
     "flavour": "editorial",
     "dashboard": "fleet",
     "clientCode": "ADHD",
-    "notes": "BRAND: ADHD Helper (adhdhelper.co.uk, available + trademark-clear). UK ADHD authority stacking THREE money models on one audience: (1) lead-gen to private/Right-to-Choose assessment clinics (assessment £500-1,500, high CAC), (2) affiliate shop on products ADHD adults buy (magnesium glycinate, omega-3, L-theanine, weighted blankets, fidget/focus tools, planners) via Amazon Associates + Awin + direct, (3) own-brand supplement layered later (leverages PeptideClear sourcing). Neutral named-clinician hub = AI-citation wedge vs clinic-sold assessments. YMYL: needs medical reviewer, no treat-ADHD claims. Account: info@rank4ai. NOT deep-dived to full niche-attack yet (lead sizing + clinic-buyer map pending). 49k card: /demos/adhd-stack/. Plan pack: iCloud/.../Research/niche-discovery-restart-2026-06-07/.",
+    "notes": "SCAFFOLDED + DEPLOYED 2026-06-08 to https://adhdhelper.pages.dev (info@rank4ai CF Pages, gate-green, patch-free fleet-core 95c9e3d0, BBL Ltd, Oliver byline, preLaunch noindex). GitHub: AdamParkerRank4AI/adhdhelper. BRAND: ADHD Helper (adhdhelper.co.uk, available + trademark-clear). UK ADHD authority stacking THREE money models on one audience: (1) lead-gen to private/Right-to-Choose assessment clinics (assessment £500-1,500, high CAC), (2) affiliate shop on products ADHD adults buy (magnesium glycinate, omega-3, L-theanine, weighted blankets, fidget/focus tools, planners) via Amazon Associates + Awin + direct, (3) own-brand supplement layered later (leverages PeptideClear sourcing). Neutral named-clinician hub = AI-citation wedge vs clinic-sold assessments. YMYL: needs medical reviewer, no treat-ADHD claims. Account: info@rank4ai. NOT deep-dived to full niche-attack yet (lead sizing + clinic-buyer map pending). 49k card: /demos/adhd-stack/. Plan pack: iCloud/.../Research/niche-discovery-restart-2026-06-07/.",
     "clientViewSections": [
       "overview",
       "site-tree",
@@ -1047,10 +1047,10 @@
     "pending_decisions": [
       {
         "id": "domain_register",
-        "label": "Register adhdhelper.co.uk (+ adhdhelper.uk) + wire to CF Pages",
+        "label": "Add adhdhelper.co.uk zone to info@rank4ai CF + attach custom domain + AI Crawl Control OFF",
         "status": "IN PROGRESS",
         "owner": "Adam",
-        "note": "adhdhelper.co.uk available + TM-clear 7 Jun; Adam buying. .com taken."
+        "note": "Domain bought. Deployed to adhdhelper.pages.dev. NEXT (Adam): add the zone to the info@rank4ai Cloudflare account (point registrar nameservers to CF), then Claude attaches the custom domain to the Pages project + sets AI Crawl Control OFF."
       },
       {
         "id": "full_niche_attack",
