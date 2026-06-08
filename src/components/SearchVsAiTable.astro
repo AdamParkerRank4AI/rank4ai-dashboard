@@ -1,10 +1,10 @@
 ---
 /**
- * SearchVsAiTable — clean light "Search vs AI Search" metric comparison table.
+ * SearchVsAiTable — "Search vs AI Search" metric comparison table.
  *
- * Demo tile styled to match the supplied screenshot: white card, black text,
- * left-aligned metric label, right-aligned Search / AI Search value columns,
- * subtle row dividers. Data is passed in via `rows` so it can be reused per site.
+ * Styled to match the dashboard's own dark cards/tables (bg-gray-900 card,
+ * slate dividers, tabular-nums), NOT a white standalone table. Data is passed
+ * in via `rows` so it can be reused per site.
  */
 interface Row {
   metric: string;
@@ -15,73 +15,30 @@ interface Props {
   title?: string;
   rows: Row[];
 }
-const { title, rows } = Astro.props as Props;
+const { title = 'Search vs AI Search', rows } = Astro.props as Props;
 ---
 
-<div class="svai-card">
-  {title && <h3 class="svai-title">{title}</h3>}
-  <table class="svai-table">
-    <thead>
-      <tr>
-        <th class="svai-th svai-left">Metric</th>
-        <th class="svai-th svai-right">Search</th>
-        <th class="svai-th svai-right">AI Search</th>
+<div class="bg-gray-900 border border-gray-700 rounded-lg p-5">
+  <div class="flex items-center justify-between mb-3">
+    <h3 class="text-sm font-semibold text-white">{title}</h3>
+    <span class="text-[10px] text-gray-500">organic search vs AI / LLM surfaces</span>
+  </div>
+  <table class="w-full text-sm">
+    <thead class="text-slate-500">
+      <tr class="text-left">
+        <th class="py-2 font-medium">Metric</th>
+        <th class="py-2 text-right font-medium text-blue-400">Search</th>
+        <th class="py-2 text-right font-medium text-fuchsia-400">AI Search</th>
       </tr>
     </thead>
     <tbody>
       {rows.map((r) => (
-        <tr>
-          <td class="svai-td svai-left svai-metric">{r.metric}</td>
-          <td class="svai-td svai-right">{r.search}</td>
-          <td class="svai-td svai-right">{r.ai}</td>
+        <tr class="border-t border-slate-800">
+          <td class="py-3 text-gray-300">{r.metric}</td>
+          <td class="py-3 text-right tabular-nums text-white">{r.search}</td>
+          <td class="py-3 text-right tabular-nums text-white">{r.ai}</td>
         </tr>
       ))}
     </tbody>
   </table>
 </div>
-
-<style>
-  .svai-card {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    padding: 24px 28px;
-    color: #111827;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-  }
-  .svai-title {
-    font-size: 1rem;
-    font-weight: 600;
-    margin: 0 0 16px;
-    color: #111827;
-  }
-  .svai-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.95rem;
-  }
-  .svai-th {
-    font-weight: 700;
-    color: #111827;
-    padding: 0 0 14px;
-    border-bottom: 1px solid #e5e7eb;
-  }
-  .svai-td {
-    padding: 16px 0;
-    border-bottom: 1px solid #f0f1f3;
-    color: #1f2937;
-  }
-  tbody tr:last-child .svai-td {
-    border-bottom: none;
-  }
-  .svai-left {
-    text-align: left;
-  }
-  .svai-right {
-    text-align: right;
-    font-variant-numeric: tabular-nums;
-  }
-  .svai-metric {
-    color: #111827;
-  }
-</style>
