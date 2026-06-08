@@ -51,8 +51,8 @@ SITES = {
         "money_paths": ["/", "/asset-refinance", "/hmrc", "/triggered", "/get-quotes", "/about"],
     },
     "cardmachines": {
-        "sitemap": "https://acceptcard.co.uk/sitemap-0.xml",
-        "gsc_property": "sc-domain:acceptcard.co.uk",
+        "sitemap": "https://merchanthq.co.uk/sitemap-0.xml",
+        "gsc_property": "sc-domain:merchanthq.co.uk",
         "money_paths": ["/", "/online-payments", "/get-quotes", "/locations", "/learn", "/about"],
     },
 }

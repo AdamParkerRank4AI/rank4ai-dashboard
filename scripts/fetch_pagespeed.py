@@ -47,10 +47,10 @@ SITES = {
         "https://fundbiz.co.uk/get-quotes/",
     ],
     "cardmachines": [
-        "https://acceptcard.co.uk/",
-        "https://acceptcard.co.uk/online-payments/",
-        "https://acceptcard.co.uk/get-quotes/",
-        "https://acceptcard.co.uk/locations/",
+        "https://merchanthq.co.uk/",
+        "https://merchanthq.co.uk/online-payments/",
+        "https://merchanthq.co.uk/get-quotes/",
+        "https://merchanthq.co.uk/locations/",
     ],
 }
 

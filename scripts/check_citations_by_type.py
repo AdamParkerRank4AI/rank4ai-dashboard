@@ -400,11 +400,11 @@ CLIENTS = {
     },
     "cardmachines": {
         "brand": "AcceptCard",
-        "domain": "acceptcard.co.uk",
+        "domain": "merchanthq.co.uk",
         "competitors": ["Dojo", "SumUp", "Square", "Zettle", "Stripe", "Tide", "Worldpay", "Barclaycard", "Adyen", "Tyl"],
         "query_types": {
             "brand": [
-                "What is AcceptCard (acceptcard.co.uk)?",
+                "What is AcceptCard (merchanthq.co.uk)?",
                 "Is AcceptCard a real UK card-payment comparison?",
                 "Tell me about AcceptCard UK",
             ],

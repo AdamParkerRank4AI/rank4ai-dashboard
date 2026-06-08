@@ -101,7 +101,7 @@ CLIENTS = {
         ],
     },
     "cardmachines": {
-        "domain": "acceptcard.co.uk",
+        "domain": "merchanthq.co.uk",
         "competitor_domains": [
             "dojo.tech", "sumup.co.uk", "squareup.com", "zettle.com",
             "stripe.com", "tide.co", "worldpay.com", "barclaycard.co.uk",

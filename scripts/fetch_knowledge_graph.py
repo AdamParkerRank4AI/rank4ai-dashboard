@@ -29,7 +29,7 @@ CLIENTS = {
         "queries": ["FundBiz", "fundbiz.co.uk", "FundBiz UK"],
     },
     "cardmachines": {
-        "queries": ["AcceptCard", "acceptcard.co.uk", "AcceptCard UK"],
+        "queries": ["AcceptCard", "merchanthq.co.uk", "AcceptCard UK"],
     },
 }
 

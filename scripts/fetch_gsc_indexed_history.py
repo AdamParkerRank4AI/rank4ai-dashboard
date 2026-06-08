@@ -54,31 +54,50 @@ def get_creds():
     return creds
 
 
-def fetch_site_indexed(service, site_url, sitemap_url):
+def fetch_site_indexed(service, site_url, sitemap_url=None):
     """
     GSC sitemap.contents includes per-content-type submitted/indexed.
-    Returns dict: {submitted, indexed, errors, warnings, last_submitted, last_downloaded}.
+    If sitemap_url is not given, auto-discover the property's submitted
+    sitemaps and aggregate (prefer the child sitemaps over an index to avoid
+    double-counting). Returns dict: {submitted, indexed, errors, warnings, ...}.
     """
     try:
-        resp = service.sitemaps().get(siteUrl=site_url, feedpath=sitemap_url).execute()
+        if sitemap_url:
+            feeds = [sitemap_url]
+        else:
+            listing = service.sitemaps().list(siteUrl=site_url).execute()
+            sm = listing.get('sitemap', [])
+            if not sm:
+                return {"error": "no sitemaps submitted to GSC"}
+            non_index = [s for s in sm if not s.get('isSitemapsIndex')]
+            feeds = [s['path'] for s in (non_index if non_index else sm)]
+
+        submitted = indexed = errors = warnings = 0
+        last_submitted = last_downloaded = None
+        is_index = False
+        for feed in feeds:
+            resp = service.sitemaps().get(siteUrl=site_url, feedpath=feed).execute()
+            contents = resp.get('contents', [])
+            submitted += sum(int(c.get('submitted', 0)) for c in contents)
+            indexed += sum(int(c.get('indexed', 0)) for c in contents)
+            errors += int(resp.get('errors', 0))
+            warnings += int(resp.get('warnings', 0))
+            last_submitted = last_submitted or resp.get('lastSubmitted')
+            last_downloaded = last_downloaded or resp.get('lastDownloaded')
+            is_index = is_index or resp.get('isSitemapsIndex', False)
     except HttpError as e:
         return {"error": f"HTTP {e.resp.status}: {str(e)[:200]}"}
     except Exception as e:
         return {"error": str(e)[:200]}
 
-    contents = resp.get('contents', [])
-    submitted = sum(int(c.get('submitted', 0)) for c in contents)
-    indexed = sum(int(c.get('indexed', 0)) for c in contents)
-
     return {
         "submitted": submitted,
         "indexed": indexed,
-        "errors": int(resp.get('errors', 0)),
-        "warnings": int(resp.get('warnings', 0)),
-        "last_submitted": resp.get('lastSubmitted'),
-        "last_downloaded": resp.get('lastDownloaded'),
-        "is_pending": resp.get('isPending', False),
-        "is_sitemaps_index": resp.get('isSitemapsIndex', False),
+        "errors": errors,
+        "warnings": warnings,
+        "last_submitted": last_submitted,
+        "last_downloaded": last_downloaded,
+        "is_sitemaps_index": is_index,
     }
 
 
@@ -98,8 +117,8 @@ def main():
     history = load_history()
     history.setdefault('per_site_history', {})
 
-    for site_id, site_url, sitemap_url in SITES:
-        result = fetch_site_indexed(service, site_url, sitemap_url)
+    for site_id, site_url in SITES:
+        result = fetch_site_indexed(service, site_url)
         if 'error' in result:
             print(f"  {site_id}: {result['error']}")
             continue

@@ -32,7 +32,7 @@ SITES = {
     "seocompare":        ("sc-domain:seocompare.co.uk",       "seocompare.co.uk"),
     "bestbusinessloans": ("sc-domain:bestbusinessloans.ai",   "bestbusinessloans.ai"),
     "fundbiz":           ("sc-domain:fundbiz.co.uk",          "fundbiz.co.uk"),
-    "cardmachines":      ("sc-domain:acceptcard.co.uk",       "acceptcard.co.uk"),
+    "cardmachines":      ("sc-domain:merchanthq.co.uk",       "merchanthq.co.uk"),
 }
 
 # Per-site cap. URL Inspection API runs ~6.6s per call (Google's rate). 500 URLs ≈ 55 min.

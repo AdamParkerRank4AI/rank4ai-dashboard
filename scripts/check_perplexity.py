@@ -70,7 +70,7 @@ CLIENTS = {
     },
     "cardmachines": {
         "brand": "AcceptCard",
-        "domain": "acceptcard.co.uk",
+        "domain": "merchanthq.co.uk",
         "queries": [
             "Best card machine UK 2026",
             "Compare card terminals UK",

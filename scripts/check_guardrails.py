@@ -181,7 +181,7 @@ def main():
         "seocompare": "https://seocompare.co.uk/sitemap-0.xml",
         "bestbusinessloans": "https://bestbusinessloans.ai/sitemap-0.xml",
         "fundbiz": "https://fundbiz.co.uk/sitemap-0.xml",
-        "cardmachines": "https://acceptcard.co.uk/sitemap-0.xml",
+        "cardmachines": "https://merchanthq.co.uk/sitemap-0.xml",
     }
     for c, sitemap_url in SITEMAP_URLS.items():
         try:
