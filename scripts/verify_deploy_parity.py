@@ -85,6 +85,22 @@ def git_latest_main(repo_path):
         return None, f"git error: {e}"
 
 
+def all_ci_skip_since(repo_path, deploy_sha):
+    """True if EVERY commit on origin/main since deploy_sha carries [CI Skip].
+    The hourly market-activity charges capture commits with [CI Skip] so it does
+    NOT trigger a Cloudflare rebuild — so git HEAD legitimately sits ahead of the
+    deployed SHA. That is expected, not drift. Returns False on any error so the
+    caller falls back to treating a mismatch as real drift (safe default)."""
+    try:
+        out = subprocess.check_output(
+            ["git", "-C", repo_path, "log", f"{deploy_sha}..origin/main", "--format=%s"],
+            text=True, timeout=10, stderr=subprocess.DEVNULL).strip()
+        lines = [l for l in out.splitlines() if l.strip()]
+        return bool(lines) and all("[ci skip]" in l.lower() for l in lines)
+    except Exception:
+        return False
+
+
 def cf_canonical_deploy(account_id, project, token):
     url = f"https://api.cloudflare.com/client/v4/accounts/{account_id}/pages/projects/{project}"
     try:
@@ -172,6 +188,9 @@ def main():
                         entry["status"] = "in_sync"
                     elif sha.startswith(dep["commit_sha"]) or dep["commit_sha"].startswith(sha):
                         entry["status"] = "in_sync"
+                    elif all_ci_skip_since(local_path, dep["commit_sha"]):
+                        entry["status"] = "in_sync"
+                        entry["note"] = "ahead by [CI Skip]-only commits — no deploy expected"
                     else:
                         entry["status"] = "drift"
                         any_drift = True
