@@ -43,7 +43,17 @@ FLEET_SITES = {
     "kartapay":        "https://kartapay.co.uk",
 }
 
-INDEXNOW_KEY = "c129b8c91294404d96cca29e1cf613fe"
+# Per-site IndexNow keys (filename == key == content of public/<key>.txt)
+SITE_INDEXNOW_KEYS = {
+    "rank4ai":            "4c1cc17752ab451887a14b719906f527",
+    "market-invoice":     "a2dbf411f85049958a10a31d0eea8ab9",
+    "seocompare":         "4c1cc17752ab451887a14b719906f527",
+    "bestbusinessloans":  "6c8693c2af63422098320cf1a132e7d2",
+    "fundbiz":            "4d8cee5b9f8249d8848a5305264ca1cc",
+    "merchanthq":         "0090cd828ef442e38aa2c00baca23c6d",
+    "peptideclear":       "9b4e84786bf3482db8081609777b3811",
+    "kartapay":           "e7ac3dd5700130fb675be39a3a0effc5",
+}
 REQUIRED_AI_BOTS = ["GPTBot", "ClaudeBot", "PerplexityBot", "Google-Extended"]
 
 
@@ -131,9 +141,13 @@ def check_site(site_id, base_url):
     _, c = fetch(base_url + "/ai.txt", timeout=5)
     out["checks"]["ai_txt"] = {"pass": c == 200, "detail": f"HTTP {c}"}
 
-    # IndexNow key file
-    _, c = fetch(f"{base_url}/{INDEXNOW_KEY}.txt", timeout=5)
-    out["checks"]["indexnow_key"] = {"pass": c == 200, "detail": f"HTTP {c}"}
+    # IndexNow key file (per-site key — global INDEXNOW_KEY was wrong for every site)
+    site_key = SITE_INDEXNOW_KEYS.get(site_id, "")
+    if site_key:
+        _, c = fetch(f"{base_url}/{site_key}.txt", timeout=5)
+        out["checks"]["indexnow_key"] = {"pass": c == 200, "detail": f"HTTP {c}"}
+    else:
+        out["checks"]["indexnow_key"] = {"pass": False, "detail": "no key configured for this site"}
 
     # robots.txt AI bot allow
     robots, c = fetch(base_url + "/robots.txt", timeout=5)
