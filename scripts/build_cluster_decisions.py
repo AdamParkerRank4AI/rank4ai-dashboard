@@ -16,6 +16,18 @@ Output:
 """
 import json, os, datetime
 from collections import defaultdict
+from urllib.parse import urlparse
+
+# Evidence floors — below these a "cluster" is normal SERP behaviour, not a
+# fixable problem. Without them the engine flags healthy structures (homepage
+# + /contact both ranking for the brand) and incidental low-volume co-ranks.
+MIN_CLUSTER_IMP = 40        # need real shared demand before recommending action
+CORE_PATHS = {"", "/", "/contact", "/about", "/privacy", "/terms",
+              "/cookies", "/cookie-policy", "/disclaimer", "/accessibility"}
+
+
+def _path(u):
+    return urlparse(u).path.rstrip("/").lower()
 
 LIVE = os.path.join(os.path.dirname(__file__), "..", "src", "data", "live")
 
@@ -111,26 +123,40 @@ def main():
             n_q = len(queries)
             decaying = any(q["query"] in decayed_q for q in queries)
 
-            if n_urls >= 2 and concentration < 0.85:
+            # Guards against false positives:
+            #  - winner is the homepage: you never 301 deep pages into "/",
+            #    and the homepage co-ranking for brand/navigational queries
+            #    alongside deep pages is expected, not cannibalisation.
+            #  - the only losing URLs are core/utility pages (e.g. /contact
+            #    ranking for the brand term): healthy, never prune those.
+            #  - too little shared demand to act on.
+            winner_is_home = _path(winner) in ("", "/")
+            losers = [u for u in urls if u != winner]
+            losers_all_core = bool(losers) and all(_path(u) in CORE_PATHS for u in losers)
+            enough_signal = total_imp >= MIN_CLUSTER_IMP
+
+            if (n_urls >= 2 and concentration < 0.85 and n_q >= 2
+                    and enough_signal and not winner_is_home and not losers_all_core):
                 rec = "Consolidate"
                 reason = (f"{n_urls} pages split {total_imp} impressions across "
                           f"{n_q} shared quer{'y' if n_q == 1 else 'ies'}; one clear winner.")
-                conf = "high" if (concentration < 0.6 and total_imp >= 50) else "medium"
-            elif decaying:
+                conf = "high" if (concentration < 0.6 and total_imp >= 80) else "medium"
+            elif decaying and enough_signal:
                 rec = "Fix"
                 reason = "Cluster queries are decaying (position/impressions falling)."
                 conf = "medium"
-            elif best_pos > 10:
+            elif best_pos > 10 and enough_signal:
                 rec = "Optimise"
                 reason = f"Best position {best_pos:.0f} — stuck on page 2+, demand unrealised."
                 conf = "medium"
-            elif win_imp < 10:
+            elif win_imp < 5 and n_urls >= 2 and not winner_is_home and not losers_all_core:
                 rec = "Prune"
-                reason = "Negligible impressions — candidate to noindex/merge."
+                reason = "Negligible impressions on duplicate URLs — candidate to noindex/merge."
                 conf = "low"
             else:
                 rec = "Keep"
-                reason = "Single strong winner, no conflict."
+                reason = ("Single strong winner, no conflict." if enough_signal
+                          else f"Only {total_imp} shared impressions — below the action threshold; monitor.")
                 conf = "high"
 
             site_clusters.append({
