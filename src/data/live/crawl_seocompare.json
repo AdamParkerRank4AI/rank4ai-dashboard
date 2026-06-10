@@ -1,16 +1,16 @@
 {
   "site_id": "seocompare",
   "domain": "seocompare.co.uk",
-  "crawled_at": "2026-06-10T21:00:04.645647+00:00",
+  "crawled_at": "2026-06-10T21:16:07.363133+00:00",
   "source": "fleet-source-reader",
   "pages_crawled": 452,
   "total_issues": 0,
   "orphan_pages": 0,
   "avg_depth": 1.5265486725663717,
-  "avg_word_count": 3351,
+  "avg_word_count": 3353,
   "pages_with_schema": 452,
   "pages_with_multimodal": 0,
-  "pages_with_comparison_table": 304,
+  "pages_with_comparison_table": 305,
   "pages_with_video": 0,
   "pages_over_2000_words": 452,
   "images_missing_alt": 0,
@@ -2422,7 +2422,7 @@
       "title": "AI SEO ROI Calculator (Free, No Signup) | SEOCompare",
       "h1": "AI SEO ROI Calculator",
       "meta_desc": "Free AI SEO ROI calculator. Enter your traffic, conversion rate, AOV, and target uplift to estimate the 12-month revenue impact of AI search optimisation.",
-      "word_count": 2488,
+      "word_count": 3026,
       "status": 200,
       "schemas": [
         "WebApplication",
@@ -2431,18 +2431,19 @@
         "Organization",
         "WebSite",
         "WebPage",
-        "BreadcrumbList"
+        "BreadcrumbList",
+        "Quotation"
       ],
       "internal_links_out": 62,
-      "external_links_out": -41,
+      "external_links_out": -40,
       "canonical": "https://seocompare.co.uk/tools/ai-seo-roi-calculator/",
       "response_time_ms": 0,
       "image_count": 1,
       "images_with_alt": 1,
       "video_count": 0,
       "has_multimodal": false,
-      "has_comparison_table": false,
-      "table_count": 0,
+      "has_comparison_table": true,
+      "table_count": 1,
       "list_count": 6,
       "question_h2s": 0,
       "h2_count": 9,
@@ -15356,7 +15357,7 @@
       "title": "Zero-Click Search: Most Searches Now End Without a Click | SEOCompare",
       "h1": "Zero-Click Search: Most Searches Now End Without a Click",
       "meta_desc": "SparkToro found about 58.5% of US Google searches end without a click. Semrush found AI Overview queries average around 83% zero-click. What it means for businesses.",
-      "word_count": 3737,
+      "word_count": 4209,
       "status": 200,
       "schemas": [
         "Article",
@@ -15364,10 +15365,11 @@
         "Person",
         "Organization",
         "WebSite",
-        "WebPage"
+        "WebPage",
+        "Quotation"
       ],
       "internal_links_out": 69,
-      "external_links_out": -47,
+      "external_links_out": -46,
       "canonical": "https://seocompare.co.uk/stats/ai-search-zero-click-rates/",
       "response_time_ms": 0,
       "image_count": 1,
@@ -15375,7 +15377,7 @@
       "video_count": 0,
       "has_multimodal": false,
       "has_comparison_table": true,
-      "table_count": 1,
+      "table_count": 2,
       "list_count": 4,
       "question_h2s": 0,
       "h2_count": 13,
@@ -41037,6 +41039,11 @@
     },
     {
       "from": "https://seocompare.co.uk/tools/ai-seo-roi-calculator/",
+      "to": "https://seocompare.co.uk/authors/oliver-mackman/",
+      "type": "internal"
+    },
+    {
+      "from": "https://seocompare.co.uk/tools/ai-seo-roi-calculator/",
       "to": "https://seocompare.co.uk/questions/roi/",
       "type": "internal"
     },
@@ -44239,11 +44246,6 @@
       "from": "https://seocompare.co.uk/ai-search-agencies-cardiff/",
       "to": "https://seocompare.co.uk/ai-seo-audit-cardiff/",
       "type": "internal"
-    },
-    {
-      "from": "https://seocompare.co.uk/ai-search-agencies-cardiff/",
-      "to": "https://seocompare.co.uk/ai-search-agencies-uk/",
-      "type": "internal"
     }
   ],
   "issues": [],
@@ -46958,7 +46960,7 @@
       "score": 5,
       "signals": [
         "OG",
-        "Schema:7",
+        "Schema:8",
         "Author",
         "Substantive",
         "Breadcrumbs"
