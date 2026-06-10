@@ -24,32 +24,46 @@ def log(msg):
         f.write(line + "\n")
 
 
-def run_script(name, timeout=600):
-    """Run a data collection script."""
+def _real_error(stderr):
+    """Last few non-warning stderr lines — the actual exception, not the
+    'Traceback (most recent call last):' header that the old code logged."""
+    if not stderr:
+        return ""
+    lines = [l for l in stderr.splitlines()
+             if l.strip() and "Warning" not in l and "warnings.warn" not in l]
+    return " | ".join(lines[-4:])  # the bottom of a traceback is the cause
+
+
+def run_script(name, timeout=600, retries=1):
+    """Run a data collection script. Retries once on a non-zero/timeout exit to
+    absorb transient network blips (this machine's egress flaps). Logs the REAL
+    error (bottom of the traceback), not just the first line."""
     script_path = os.path.join(SCRIPTS_DIR, name)
     log(f"Running {name}...")
-    try:
-        result = subprocess.run(
-            [sys.executable, script_path],
-            capture_output=True, text=True, timeout=timeout,
-            cwd=PROJECT_DIR,
-            env={**os.environ},
-        )
-        if result.returncode == 0:
-            log(f"  OK — {name}")
-        else:
-            stderr = result.stderr[:200] if result.stderr else ""
-            # Filter out warnings
-            errors = [l for l in stderr.split("\n") if "Warning" not in l and "warnings" not in l and l.strip()]
-            if errors:
-                log(f"  WARN — {name}: {errors[0]}")
-        return result.returncode == 0
-    except subprocess.TimeoutExpired:
-        log(f"  TIMEOUT — {name} (>{timeout}s)")
-        return False
-    except Exception as e:
-        log(f"  ERROR — {name}: {e}")
-        return False
+    last_err = ""
+    for attempt in range(retries + 1):
+        try:
+            result = subprocess.run(
+                [sys.executable, script_path],
+                capture_output=True, text=True, timeout=timeout,
+                cwd=PROJECT_DIR,
+                env={**os.environ},
+            )
+            if result.returncode == 0:
+                if attempt:
+                    log(f"  OK — {name} (after retry)")
+                else:
+                    log(f"  OK — {name}")
+                return True
+            last_err = _real_error(result.stderr) or f"exit {result.returncode}"
+        except subprocess.TimeoutExpired:
+            last_err = f"TIMEOUT (>{timeout}s)"
+        except Exception as e:
+            last_err = str(e)
+        if attempt < retries:
+            log(f"  retry {name} ({last_err[:120]})")
+    log(f"  WARN — {name}: {last_err[:400]}")
+    return False
 
 
 def build_and_deploy():
@@ -292,17 +306,61 @@ def main():
     log("\nChecking deploy parity (git HEAD vs live deployment)...")
     run_script("verify_deploy_parity.py", 60)
 
+    # Silent-no-op gate — a script can exit 0 while writing nothing (transient
+    # API/network failure swallowed), so "succeeded" != "data is fresh". Scan
+    # every feed's fetched_at and treat anything >7 days old as stale, even if
+    # its fetcher reported OK. This is what let the pipeline rot unseen for ~3
+    # weeks in June 2026 while reporting 42/49 OK.
+    log("\nVerifying feeds actually advanced (fetched_at age)...")
+    import glob, json
+    from datetime import datetime, timezone
+    now = datetime.now(timezone.utc)
+    stale_feeds = []
+    for fp in sorted(glob.glob(os.path.join(live_dir, "*.json"))):
+        try:
+            data = json.load(open(fp))
+        except Exception:
+            continue
+        fa = None
+        if isinstance(data, dict):
+            fa = data.get("fetched_at") or data.get("computed_at") or data.get("generated_at")
+            if not fa:
+                sites = data.get("sites", data)
+                if isinstance(sites, dict) and sites:
+                    v = next(iter(sites.values()))
+                    if isinstance(v, dict):
+                        fa = v.get("fetched_at") or v.get("computed_at")
+        if not fa:
+            continue
+        try:
+            t = datetime.fromisoformat(str(fa).replace("Z", "+00:00"))
+            if t.tzinfo is None:
+                t = t.replace(tzinfo=timezone.utc)
+            age = (now - t).days
+            if age >= 7:
+                stale_feeds.append((age, os.path.basename(fp)))
+        except Exception:
+            continue
+    stale_feeds.sort(reverse=True)
+    if stale_feeds:
+        log(f"  STALE: {len(stale_feeds)} feed(s) >=7d old despite refresh:")
+        for age, nm in stale_feeds[:20]:
+            log(f"     {age}d  {nm}")
+
     # Summary
     passed = sum(1 for v in results.values() if v)
     total = len(results)
     failed_scripts = [k for k, v in results.items() if not v]
-    log(f"\nRefresh complete: {passed}/{total} scripts succeeded")
+    log(f"\nRefresh complete: {passed}/{total} scripts succeeded; "
+        f"{len(stale_feeds)} feed(s) stale (>=7d)")
 
-    # Email alert if anything failed
-    if failed_scripts:
+    # Email alert if anything failed OR any feed silently went stale
+    alert_lines = [f"{s} failed" for s in failed_scripts]
+    alert_lines += [f"STALE {age}d: {nm}" for age, nm in stale_feeds]
+    if alert_lines:
         send_failure_alert(
             "Dashboard Refresh",
-            [f"{s} failed" for s in failed_scripts],
+            alert_lines,
             log_file=LOG_FILE,
         )
 
