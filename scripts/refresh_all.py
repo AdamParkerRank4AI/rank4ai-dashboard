@@ -129,7 +129,7 @@ def main():
         # but launchd context lacks Full Disk Access for iCloud — moved here so it
         # inherits FDA from the dashboard-refresh launchd grant.
         ("fetch_content_plans.py", 120),  # 13 sites; 30s too tight
-        ("fetch_crawl_activity.py", 30),
+        ("fetch_crawl_activity.py", 120),  # was 30s — consistently timed out
         ("fetch_bot_hits.py", 30),
         ("fetch_fleet_bot_hits.py", 45),  # AI-bot intelligence from Supabase fleet_bot_hits (per-site middleware logger) -> fleet_bot_hits.json
 
@@ -169,7 +169,8 @@ def main():
         # GSC Coverage drilldown XLSX ingester — picks up any new exports
         # Adam drops in ~/Downloads (per-issue URL lists from Search Console).
         ("ingest_gsc_drilldown.py", 60),
-        ("entity_class_classifier.py", 120),
+        # entity_class_classifier.py removed 2026-06-10 — the file no longer
+        # exists; it had been failing "No such file" on every run.
         ("compute_content_freshness.py", 30),
         ("compute_syndication.py", 30),
         ("check_llms_txt.py", 120),
