@@ -1,0 +1,359 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>ResilienceBuilder — Rank4AI Dashboard</title><link rel="stylesheet" href="/_astro/DashboardLayout.DpK6VCDL.css"></head> <body class="bg-gray-950 text-gray-100 min-h-screen"> <!-- Top nav (hidden when embedded via client drill-down) --> <nav class="bg-gray-900 border-b border-gray-800 px-4 md:px-6 py-3 flex items-center justify-between gap-3" style> <button id="r4ai-sidebar-toggle" type="button" class="md:hidden text-gray-300 hover:text-white -ml-1 p-1" aria-label="Toggle menu"> <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg> </button> <div class="flex items-center gap-4"> <span class="text-lg font-bold text-white tracking-tight">ResilienceBuilder</span>  </div> <div class="flex items-center gap-2"> <button type="button" id="r4ai-copy-page-md" class="text-xs px-3 py-1.5 rounded bg-gray-800 text-gray-300 hover:bg-gray-700 transition" title="Copy entire page as markdown — for pasting into ChatGPT/Claude">
+📋 Copy page
+</button>  </div> </nav> <div class="flex relative"> <!-- Mobile sidebar backdrop --> <div id="r4ai-sidebar-backdrop" class="hidden fixed inset-0 bg-black/60 z-30 md:hidden" aria-hidden="true"></div> <!-- Sidebar: always visible on md+, slide-in drawer on mobile --> <aside id="r4ai-sidebar" class="w-56 bg-gray-900 border-r border-gray-800 min-h-[calc(100vh-52px)] p-4 fixed md:static top-[52px] md:top-auto left-0 z-40 md:z-auto -translate-x-full md:translate-x-0 transition-transform" style>  <div class="mb-6"> <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">ResilienceBuilder</p> <p class="text-[11px] text-gray-500 mb-3 truncate">resiliencebuilder.co.uk</p> <ul class="space-y-1"> <li> <a href="/client/resiliencebuilder" class="block px-3 py-2 rounded text-sm transition text-white bg-blue-600/40 hover:bg-blue-600/60">
+Overview
+</a> </li> <li> <a href="/client/resiliencebuilder/ai-readiness" class="block px-3 py-2 rounded text-sm transition text-gray-300 hover:bg-gray-800"> AI Readiness </a> </li><li> <a href="/client/resiliencebuilder/page-compliance" class="block px-3 py-2 rounded text-sm transition text-gray-300 hover:bg-gray-800"> Page Compliance </a> </li><li> <a href="/client/resiliencebuilder/site-manager" class="block px-3 py-2 rounded text-sm transition text-gray-300 hover:bg-gray-800"> Site Manager </a> </li><li> <a href="/client/resiliencebuilder/site-structure" class="block px-3 py-2 rounded text-sm transition text-gray-300 hover:bg-gray-800"> Site Structure </a> </li><li> <a href="/client/resiliencebuilder/uptime" class="block px-3 py-2 rounded text-sm transition text-gray-300 hover:bg-gray-800"> Uptime </a> </li> </ul> </div>   </aside> <!-- Main content --> <main class="flex-1 min-w-0 p-4 md:p-6 overflow-x-hidden" id="r4ai-main-content" style> <div id="client-gate" style="display:none; min-height:70vh; align-items:center; justify-content:center; padding:24px;"> <div style="width:100%; max-width:420px; text-align:center;"> <h2 class="text-xl font-semibold text-white mb-2">ResilienceBuilder</h2> <p class="text-sm text-gray-400 mb-6">Enter your access code to view the dashboard.</p> <form id="client-gate-form" class="flex flex-col gap-3"> <input id="client-code" type="text" placeholder="Access code" autocomplete="off" autocapitalize="characters" autofocus class="w-full px-4 py-3 rounded-md bg-gray-800 border border-gray-700 text-white text-center tracking-widest uppercase focus:outline-none focus:ring-2 focus:ring-blue-500"> <label class="flex items-center justify-center gap-2 text-xs text-gray-400 cursor-pointer"> <input type="checkbox" id="client-remember" checked class="accent-blue-500">
+Remember me for 7 days
+</label> <button type="submit" class="w-full px-4 py-3 rounded-md bg-blue-600 hover:bg-blue-500 text-white font-medium">
+Unlock
+</button> <p id="client-gate-err" class="text-sm text-red-400 min-h-[20px]"></p> </form> <p class="text-xs text-gray-500 mt-6">If you do not have a code, contact Adam at adam@muswellrose.com.</p> </div> </div><div id="client-content" style="display:none;"> <div class="mb-6"> <h1 class="text-2xl font-bold text-white">ResilienceBuilder</h1> <p class="text-sm text-gray-400 mt-1">Your AI search visibility dashboard</p> </div> <!-- Top fixes for client -->  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4"> <div class="rounded-lg border bg-gray-800 border-blue-600/40 text-blue-400 transition" data-section="ai-readiness"> <div class="p-5 cursor-pointer hover:brightness-125" data-card-toggle="ai-readiness" data-card-href="/client/resiliencebuilder/ai-readiness"> <div class="flex items-start justify-between mb-3"> <div class="flex items-start gap-2"> <div> <h3 class="text-white font-semibold text-sm">AI Readiness</h3> <p class="text-xs text-gray-300 mt-0.5 section-status-text" data-section-id="ai-readiness">AI citation readiness score — schema, E-E-A-T, content structure, llms.txt</p> </div> <button class="info-btn flex-shrink-0 w-4 h-4 rounded-full bg-gray-700 text-gray-400 text-[9px] hover:bg-gray-600 hover:text-white transition mt-0.5" data-tooltip="How ready your site is for AI citation. Scores schema markup, E-E-A-T signals, content structure, and citation potential. Pages with schema have 2.5x higher AI citation rates." onclick="event.stopPropagation(); const tip = this.nextElementSibling; tip.classList.toggle('hidden');">i</button> <div class="hidden absolute z-20 mt-6 ml-[-120px] w-64 p-3 rounded-lg bg-gray-800 border border-gray-700 text-xs text-gray-300 leading-relaxed shadow-xl"> How ready your site is for AI citation. Scores schema markup, E-E-A-T signals, content structure, and citation potential. Pages with schema have 2.5x higher AI citation rates. <div class="mt-2 text-[10px] text-gray-500 cursor-pointer" onclick="event.stopPropagation(); this.parentElement.classList.add('hidden');">Click to close</div> </div> </div> <div class="flex items-center gap-2">  <span class="w-2 h-2 rounded-full bg-blue-400"></span> </div> </div> <div class="mt-4"> <div class="flex items-end gap-3"> <p class="text-2xl font-bold text-white section-metric" data-section-id="ai-readiness">--</p>  </div>   </div>  </div>   </div> <script type="module">document.querySelectorAll("[data-card-toggle]").forEach(t=>{t.addEventListener("click",d=>{const a=t.getAttribute("data-card-toggle"),e=document.querySelector(`[data-chart-panel="${a}"]`),n=t.querySelector(".expand-label");e?(e.classList.toggle("hidden"),n&&(n.textContent=e.classList.contains("hidden")?"Click to expand":"Click to collapse"),!e.classList.contains("hidden")&&!e.dataset.rendered&&(e.dataset.rendered="true",e.dispatchEvent(new CustomEvent("render-chart",{detail:{id:a}})))):window.location.href=t.getAttribute("data-card-href")})});</script><div class="rounded-lg border bg-gray-800 border-blue-600/40 text-blue-400 transition" data-section="page-compliance"> <div class="p-5 cursor-pointer hover:brightness-125" data-card-toggle="page-compliance" data-card-href="/client/resiliencebuilder/page-compliance"> <div class="flex items-start justify-between mb-3"> <div class="flex items-start gap-2"> <div> <h3 class="text-white font-semibold text-sm">Page Compliance</h3> <p class="text-xs text-gray-300 mt-0.5 section-status-text" data-section-id="page-compliance">Per-page H1, meta, schema, OG, canonical, author, capsule checklist. Click any row to expand full details.</p> </div>   </div> <div class="flex items-center gap-2">  <span class="w-2 h-2 rounded-full bg-blue-400"></span> </div> </div> <div class="mt-4"> <div class="flex items-end gap-3"> <p class="text-2xl font-bold text-white section-metric" data-section-id="page-compliance">--</p>  </div>   </div>  </div>   </div> <div class="rounded-lg border bg-gray-800 border-blue-600/40 text-blue-400 transition" data-section="site-manager"> <div class="p-5 cursor-pointer hover:brightness-125" data-card-toggle="site-manager" data-card-href="/client/resiliencebuilder/site-manager"> <div class="flex items-start justify-between mb-3"> <div class="flex items-start gap-2"> <div> <h3 class="text-white font-semibold text-sm">Site Manager</h3> <p class="text-xs text-gray-300 mt-0.5 section-status-text" data-section-id="site-manager">Browse pages, edit meta tags, add new content, manage site structure</p> </div>   </div> <div class="flex items-center gap-2">  <span class="w-2 h-2 rounded-full bg-blue-400"></span> </div> </div> <div class="mt-4"> <div class="flex items-end gap-3"> <p class="text-2xl font-bold text-white section-metric" data-section-id="site-manager">--</p>  </div>   </div>  </div>   </div> <div class="rounded-lg border bg-gray-800 border-blue-600/40 text-blue-400 transition" data-section="site-structure"> <div class="p-5 cursor-pointer hover:brightness-125" data-card-toggle="site-structure" data-card-href="/client/resiliencebuilder/site-structure"> <div class="flex items-start justify-between mb-3"> <div class="flex items-start gap-2"> <div> <h3 class="text-white font-semibold text-sm">Site Structure</h3> <p class="text-xs text-gray-300 mt-0.5 section-status-text" data-section-id="site-structure">Full content hierarchy by layer, parent/child tree, live vs planned. Shows where new blogs, questions, and guides should go.</p> </div>   </div> <div class="flex items-center gap-2">  <span class="w-2 h-2 rounded-full bg-blue-400"></span> </div> </div> <div class="mt-4"> <div class="flex items-end gap-3"> <p class="text-2xl font-bold text-white section-metric" data-section-id="site-structure">--</p>  </div>   </div>  </div>   </div> <div class="rounded-lg border bg-gray-800 border-blue-600/40 text-blue-400 transition" data-section="uptime"> <div class="p-5 cursor-pointer hover:brightness-125" data-card-toggle="uptime" data-card-href="/client/resiliencebuilder/uptime"> <div class="flex items-start justify-between mb-3"> <div class="flex items-start gap-2"> <div> <h3 class="text-white font-semibold text-sm">Uptime</h3> <p class="text-xs text-gray-300 mt-0.5 section-status-text" data-section-id="uptime">Site status, response times, uptime percentage</p> </div> <button class="info-btn flex-shrink-0 w-4 h-4 rounded-full bg-gray-700 text-gray-400 text-[9px] hover:bg-gray-600 hover:text-white transition mt-0.5" data-tooltip="Whether your site is online and how fast it responds. Monitors response time and uptime percentage. Slow sites (over 2 seconds) get fewer AI citations." onclick="event.stopPropagation(); const tip = this.nextElementSibling; tip.classList.toggle('hidden');">i</button> <div class="hidden absolute z-20 mt-6 ml-[-120px] w-64 p-3 rounded-lg bg-gray-800 border border-gray-700 text-xs text-gray-300 leading-relaxed shadow-xl"> Whether your site is online and how fast it responds. Monitors response time and uptime percentage. Slow sites (over 2 seconds) get fewer AI citations. <div class="mt-2 text-[10px] text-gray-500 cursor-pointer" onclick="event.stopPropagation(); this.parentElement.classList.add('hidden');">Click to close</div> </div> </div> <div class="flex items-center gap-2">  <span class="w-2 h-2 rounded-full bg-blue-400"></span> </div> </div> <div class="mt-4"> <div class="flex items-end gap-3"> <p class="text-2xl font-bold text-white section-metric" data-section-id="uptime">--</p>  </div>   </div>  </div>   </div>  </div> </div> <script>(function(){const clientId = "resiliencebuilder";
+const CLIENT_CODE = "STEVE";
+const MASTER_CODE = "1210";
+
+      (function(){
+        const AUTH_KEY = "r4ai_client_auth_v1";
+        const TTL_MS = 7 * 24 * 60 * 60 * 1000;
+        function loadAuth(){ try { return JSON.parse(localStorage.getItem(AUTH_KEY) || "{}"); } catch(e){ return {}; } }
+        function setAuth(scope, remember){
+          const d = loadAuth();
+          d[scope] = { expires: remember ? Date.now() + TTL_MS : 0, created: Date.now() };
+          localStorage.setItem(AUTH_KEY, JSON.stringify(d));
+          if (!remember) sessionStorage.setItem("r4ai_" + scope, "1");
+        }
+        function hasAuth(scope){
+          const d = loadAuth();
+          const rec = d[scope];
+          if (rec && (rec.expires === 0 || rec.expires > Date.now())) return true;
+          return sessionStorage.getItem("r4ai_" + scope) === "1";
+        }
+
+        const gate = document.getElementById("client-gate");
+        const content = document.getElementById("client-content");
+
+        function unlock(){
+          if (gate) gate.style.display = "none";
+          if (content) content.style.display = "";
+        }
+
+        if (hasAuth("master") || hasAuth("client_" + clientId)) {
+          unlock();
+        } else {
+          if (gate) gate.style.display = "flex";
+          const form = document.getElementById("client-gate-form");
+          const input = document.getElementById("client-code");
+          const err = document.getElementById("client-gate-err");
+          const remember = document.getElementById("client-remember");
+          form.addEventListener("submit", function(e){
+            e.preventDefault();
+            const code = (input.value || "").trim().toUpperCase();
+            if (code === String(MASTER_CODE).toUpperCase()) {
+              setAuth("master", remember.checked);
+              unlock();
+            } else if (code === String(CLIENT_CODE).toUpperCase()) {
+              setAuth("client_" + clientId, remember.checked);
+              unlock();
+            } else {
+              err.textContent = "Invalid code. Please try again.";
+              input.value = "";
+              input.focus();
+            }
+          });
+        }
+      })();
+    })();</script> </main> </div> <!-- Client drill-down embed: hide all admin chrome via JS.
+       Astro is static, so ?view=client doesn't flow through Astro.url at
+       build time. Detect it here at runtime instead. --> <script>
+    (function(){
+      try {
+        var params = new URL(window.location.href).searchParams;
+        if (params.get('view') === 'client') {
+          document.documentElement.classList.add('r4ai-embedded');
+          var style = document.createElement('style');
+          style.textContent =
+            '.r4ai-embedded nav.bg-gray-900.border-b { display:none !important; }' +
+            '.r4ai-embedded aside#r4ai-sidebar { display:none !important; }' +
+            '.r4ai-embedded #r4ai-sidebar-backdrop { display:none !important; }' +
+            '.r4ai-embedded #r4ai-admin-gate { display:none !important; }' +
+            '.r4ai-embedded #r4ai-main-content { display:block !important; padding:16px !important; }' +
+            '.r4ai-embedded body { background:#030712; }';
+          document.head.appendChild(style);
+        }
+      } catch(e){}
+    })();
+  </script> <!-- Copy-as-markdown: page button + auto-injected tile/sub-tile buttons --> <style>
+    .r4ai-copy-btn {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      z-index: 5;
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: rgba(31, 41, 55, 0.7);
+      color: #9ca3af;
+      border: 1px solid rgba(75, 85, 99, 0.4);
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.15s, background 0.15s, color 0.15s;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      line-height: 1.3;
+    }
+    [data-copy-tile]:hover > .r4ai-copy-btn,
+    [data-copy-subtile]:hover > .r4ai-copy-btn,
+    .r4ai-copy-btn:focus,
+    .r4ai-copy-btn.r4ai-copied {
+      opacity: 1;
+    }
+    .r4ai-copy-btn:hover {
+      background: rgba(55, 65, 81, 0.95);
+      color: #f3f4f6;
+    }
+    .r4ai-copy-btn.r4ai-copied {
+      background: rgba(16, 185, 129, 0.2);
+      color: #34d399;
+      border-color: rgba(16, 185, 129, 0.4);
+    }
+    .r4ai-copy-btn[data-scope="subtile"] {
+      font-size: 9px;
+      padding: 1px 5px;
+      top: 4px;
+      right: 4px;
+    }
+  </style> <script>
+    (function(){
+      // ---- DOM-to-markdown extractor ----
+      function textOf(el) {
+        return (el.textContent || '').replace(/\s+/g, ' ').trim();
+      }
+      function isHidden(el) {
+        if (!el || el.nodeType !== 1) return false;
+        var s = window.getComputedStyle(el);
+        return s.display === 'none' || s.visibility === 'hidden';
+      }
+      function tableToMd(tbl) {
+        var rows = [];
+        tbl.querySelectorAll('tr').forEach(function(tr){
+          var cells = [];
+          tr.querySelectorAll('th, td').forEach(function(c){
+            cells.push(textOf(c).replace(/\|/g, '\\|'));
+          });
+          if (cells.length) rows.push(cells);
+        });
+        if (!rows.length) return '';
+        var head = rows[0];
+        var sep = head.map(function(){ return '---'; });
+        var body = rows.slice(1);
+        var out = ['| ' + head.join(' | ') + ' |', '| ' + sep.join(' | ') + ' |'];
+        body.forEach(function(r){ out.push('| ' + r.join(' | ') + ' |'); });
+        return out.join('\n');
+      }
+      // Heuristic: a "stat card" has one large-text value + one small grayed label
+      var BIG_RE = /\btext-(2xl|3xl|4xl|5xl|6xl|7xl)\b/;
+      var SMALL_GRAY_RE = /\btext-(xs|sm|\[10px\]|\[11px\])\b/;
+      var GRAY_RE = /\btext-gray-(400|500|600)\b/;
+      function asStatCard(el) {
+        if (!el || el.nodeType !== 1) return null;
+        var bigs = [], labels = [];
+        el.querySelectorAll('*').forEach(function(c){
+          if (isHidden(c)) return;
+          var cls = c.className && c.className.baseVal !== undefined ? c.className.baseVal : (c.className || '');
+          cls = String(cls);
+          var t = textOf(c);
+          if (!t || t.length > 80) return;
+          if (BIG_RE.test(cls) && bigs.length < 1) bigs.push(t);
+          else if (SMALL_GRAY_RE.test(cls) && GRAY_RE.test(cls) && labels.length < 1) labels.push(t);
+        });
+        if (bigs.length === 1 && labels.length === 1) return { value: bigs[0], label: labels[0] };
+        return null;
+      }
+      function elementToMd(root, opts) {
+        opts = opts || {};
+        var lines = [];
+        var seenStatChildren = new WeakSet();
+
+        function emit(s) { lines.push(s); }
+        function blank() { if (lines.length && lines[lines.length-1] !== '') lines.push(''); }
+
+        function walk(node) {
+          if (!node) return;
+          if (node.nodeType === 3) {
+            var t = (node.textContent || '').replace(/\s+/g, ' ').trim();
+            if (t) emit(t);
+            return;
+          }
+          if (node.nodeType !== 1) return;
+          if (isHidden(node)) return;
+          if (node.classList && node.classList.contains('r4ai-copy-btn')) return;
+          if (node.dataset && node.dataset.copySkip !== undefined) return;
+          var tag = node.tagName.toLowerCase();
+          if (tag === 'script' || tag === 'style' || tag === 'noscript' || tag === 'svg') return;
+          if (seenStatChildren.has(node)) return;
+
+          if (/^h[1-6]$/.test(tag)) {
+            var lvl = parseInt(tag[1], 10) + (opts.headingShift || 0);
+            if (lvl < 1) lvl = 1; if (lvl > 6) lvl = 6;
+            var ht = textOf(node);
+            if (ht) { blank(); emit(new Array(lvl + 1).join('#') + ' ' + ht); blank(); }
+            return;
+          }
+          if (tag === 'table') {
+            var md = tableToMd(node);
+            if (md) { blank(); emit(md); blank(); }
+            return;
+          }
+          if (tag === 'ul' || tag === 'ol') {
+            var ordered = tag === 'ol';
+            blank();
+            var idx = 0;
+            node.querySelectorAll(':scope > li').forEach(function(li){
+              if (isHidden(li)) return;
+              idx++;
+              var prefix = ordered ? (idx + '.') : '-';
+              var lt = textOf(li);
+              if (lt) emit(prefix + ' ' + lt);
+            });
+            blank();
+            return;
+          }
+          if (tag === 'br') { emit(''); return; }
+          if (tag === 'hr') { blank(); emit('---'); blank(); return; }
+
+          // Sub-tile boundary inside the scope -> emit as ### heading
+          if (node !== root && node.dataset && node.dataset.copySubtile !== undefined) {
+            blank();
+            emit('### ' + node.dataset.copySubtile);
+            blank();
+            // Walk children but treat this sub-tile as its own scope
+            for (var j = 0; j < node.childNodes.length; j++) walk(node.childNodes[j]);
+            blank();
+            return;
+          }
+
+          // Stat-card pattern -> emit one bullet line, skip children
+          var stat = asStatCard(node);
+          if (stat) {
+            emit('- **' + stat.label + ':** ' + stat.value);
+            // Mark all descendants as already-consumed
+            node.querySelectorAll('*').forEach(function(d){ seenStatChildren.add(d); });
+            return;
+          }
+
+          // Default: recurse into children
+          for (var i = 0; i < node.childNodes.length; i++) walk(node.childNodes[i]);
+        }
+
+        walk(root);
+        // Collapse triple-blank to double, trim
+        var out = lines.join('\n').replace(/\n{3,}/g, '\n\n').replace(/[ \t]+$/gm, '').trim();
+        return out;
+      }
+
+      function tileToMd(el) {
+        var heading = el.dataset.copyTile || el.dataset.copySubtile || '';
+        var level = el.dataset.copyTile !== undefined ? '## ' : '### ';
+        var body = elementToMd(el);
+        return (heading ? level + heading + '\n\n' : '') + body;
+      }
+
+      function pageToMd() {
+        var main = document.getElementById('r4ai-main-content') || document.querySelector('main') || document.body;
+        var pageTitle = (document.title || 'Dashboard').replace(/\s+—\s+Rank4AI Dashboard$/, '');
+        var siteHost = window.location.host;
+        var pathName = window.location.pathname;
+        var stamp = new Date().toISOString();
+        var header = '# ' + pageTitle + '\n\n_Source: ' + siteHost + pathName + ' · ' + stamp + '_\n\n---\n';
+        return header + elementToMd(main, { headingShift: 1 });
+      }
+
+      // ---- Copy + feedback ----
+      function flashCopied(btn) {
+        var orig = btn.textContent;
+        btn.classList.add('r4ai-copied');
+        btn.textContent = '✓ copied';
+        setTimeout(function(){
+          btn.classList.remove('r4ai-copied');
+          btn.textContent = orig;
+        }, 1400);
+      }
+      function copyText(text, btn) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function(){ flashCopied(btn); }).catch(function(){
+            fallback(text, btn);
+          });
+        } else {
+          fallback(text, btn);
+        }
+      }
+      function fallback(text, btn) {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); flashCopied(btn); } catch(e){}
+        document.body.removeChild(ta);
+      }
+
+      // ---- Auto-inject buttons on tiles + sub-tiles ----
+      function injectButtons() {
+        document.querySelectorAll('[data-copy-tile], [data-copy-subtile]').forEach(function(el){
+          if (el.querySelector(':scope > .r4ai-copy-btn')) return;
+          var pos = window.getComputedStyle(el).position;
+          if (pos === 'static') el.style.position = 'relative';
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'r4ai-copy-btn';
+          btn.dataset.scope = el.dataset.copyTile !== undefined ? 'tile' : 'subtile';
+          btn.title = 'Copy this ' + (btn.dataset.scope === 'tile' ? 'tile' : 'sub-tile') + ' as markdown';
+          btn.textContent = '📋 md';
+          btn.addEventListener('click', function(e){
+            e.preventDefault(); e.stopPropagation();
+            copyText(tileToMd(el), btn);
+          });
+          el.appendChild(btn);
+        });
+      }
+
+      function init() {
+        injectButtons();
+        var pageBtn = document.getElementById('r4ai-copy-page-md');
+        if (pageBtn) {
+          pageBtn.addEventListener('click', function(e){
+            e.preventDefault();
+            copyText(pageToMd(), pageBtn);
+          });
+        }
+        // Re-scan periodically to catch tiles added by client-side JS
+        setTimeout(injectButtons, 500);
+        setTimeout(injectButtons, 2000);
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script> <!-- Mobile sidebar toggle --> <script>
+    (function(){
+      var btn = document.getElementById('r4ai-sidebar-toggle');
+      var side = document.getElementById('r4ai-sidebar');
+      var back = document.getElementById('r4ai-sidebar-backdrop');
+      if (!btn || !side) return;
+      function open(){
+        side.classList.remove('-translate-x-full');
+        if (back) back.classList.remove('hidden');
+      }
+      function close(){
+        side.classList.add('-translate-x-full');
+        if (back) back.classList.add('hidden');
+      }
+      btn.addEventListener('click', function(){
+        if (side.classList.contains('-translate-x-full')) open(); else close();
+      });
+      if (back) back.addEventListener('click', close);
+      // Close when a link inside is clicked (navigation)
+      side.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', close);
+      });
+    })();
+  </script>   </body> </html>

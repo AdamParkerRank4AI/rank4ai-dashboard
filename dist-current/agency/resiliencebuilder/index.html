@@ -1,0 +1,649 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>ResilienceBuilder — Rank4AI Dashboard</title><link rel="stylesheet" href="/_astro/DashboardLayout.DpK6VCDL.css"></head> <body class="bg-gray-950 text-gray-100 min-h-screen"> <!-- Top nav (hidden when embedded via client drill-down) --> <nav class="bg-gray-900 border-b border-gray-800 px-4 md:px-6 py-3 flex items-center justify-between gap-3" style> <button id="r4ai-sidebar-toggle" type="button" class="md:hidden text-gray-300 hover:text-white -ml-1 p-1" aria-label="Toggle menu"> <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg> </button> <div class="flex items-center gap-4"> <a href="/" class="text-lg font-bold text-white tracking-tight">Rank4AI</a>  <span class="text-gray-500">|</span> <span class="text-sm text-gray-400">Agency View</span>  </div> <div class="flex items-center gap-2"> <button type="button" id="r4ai-copy-page-md" class="text-xs px-3 py-1.5 rounded bg-gray-800 text-gray-300 hover:bg-gray-700 transition" title="Copy entire page as markdown — for pasting into ChatGPT/Claude">
+📋 Copy page
+</button> <a href="/client/resiliencebuilder" class="text-xs px-3 py-1.5 rounded bg-gray-800 text-gray-300 hover:bg-gray-700 transition">
+Switch to Client View
+</a> </div> </nav> <div class="flex relative"> <!-- Mobile sidebar backdrop --> <div id="r4ai-sidebar-backdrop" class="hidden fixed inset-0 bg-black/60 z-30 md:hidden" aria-hidden="true"></div> <!-- Sidebar: always visible on md+, slide-in drawer on mobile --> <aside id="r4ai-sidebar" class="w-56 bg-gray-900 border-r border-gray-800 min-h-[calc(100vh-52px)] p-4 fixed md:static top-[52px] md:top-auto left-0 z-40 md:z-auto -translate-x-full md:translate-x-0 transition-transform" style>  <div class="mb-6"> <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Clients</p> <ul class="space-y-1"> <li> <a href="/agency/resiliencebuilder" class="block px-3 py-2 rounded text-sm transition bg-blue-600 text-white"> ResilienceBuilder </a> </li> </ul> </div> <div class="mb-6"> <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Our Sites</p> <ul class="space-y-1"> <li> <a href="/agency/rank4ai" class="block px-3 py-2 rounded text-sm transition text-gray-500 hover:bg-gray-800"> Rank4AI  </a> </li> </ul> </div>   <div class="mb-6"> <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Site Manager</p> <ul class="space-y-1"> <li> <a href="/agency/resiliencebuilder/site-manager" class="block px-3 py-2 rounded text-sm transition text-gray-300 hover:bg-gray-800">
+Pages & Content
+</a> </li> <li> <a href="/agency/resiliencebuilder/seo-health" class="block px-3 py-2 rounded text-sm transition text-gray-300 hover:bg-gray-800">
+SEO Health
+</a> </li> <li> <a href="/agency/resiliencebuilder/recommendations" class="block px-3 py-2 rounded text-sm transition text-gray-300 hover:bg-gray-800">
+Recommendations
+</a> </li> </ul> </div> <div class="mb-6"> <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Tools</p> <ul class="space-y-1">  <li> <a href="/crm" class="block px-3 py-2 rounded text-sm transition text-gray-300 hover:bg-gray-800">
+CRM Pipeline
+</a> </li> <li> <a href="/run-audit" class="block px-3 py-2 rounded text-sm transition text-gray-300 hover:bg-gray-800">
+Run Audit
+</a> </li> <li> <a href="/add-client" class="block px-3 py-2 rounded text-sm text-green-400 hover:bg-gray-800 transition">
++ Add Client
+</a> </li> </ul> </div> </aside> <!-- Main content --> <main class="flex-1 min-w-0 p-4 md:p-6 overflow-x-hidden" id="r4ai-main-content" style="display:none;">  <div class="mb-6"> <div class="flex items-center justify-between"> <div> <h1 class="text-2xl font-bold text-white">ResilienceBuilder</h1> <p class="text-sm text-gray-400 mt-1">resiliencebuilder.co.uk</p> </div> <div class="flex gap-2"> <a href="/agency/resiliencebuilder/settings" class="px-3 py-1.5 rounded bg-gray-800 text-gray-300 hover:bg-gray-700 text-xs transition">
+Client View Settings
+</a> <a href="/client/resiliencebuilder" class="px-3 py-1.5 rounded bg-blue-600 text-white hover:bg-blue-500 text-xs transition">
+Preview Client View
+</a> </div> </div> </div>  <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">  <a href="/agency/resiliencebuilder/search-performance" class="block bg-gray-800 border border-gray-700 rounded-lg p-5 hover:border-blue-500/50 transition"> <div class="flex items-center justify-between mb-3"> <h3 class="text-sm font-semibold text-white">Google SEO</h3> <span class="text-[8px] text-gray-500">Search Console</span> </div> <div class="grid grid-cols-3 gap-3 mb-3"> <div> <div class="text-2xl font-bold text-blue-400">20,416</div> <div class="text-[10px] text-gray-400">impressions</div> </div> <div> <div class="text-2xl font-bold text-white">75</div> <div class="text-[10px] text-gray-400">clicks</div> </div> <div> <div class="text-2xl font-bold text-white">24.8</div> <div class="text-[10px] text-gray-400">avg position</div> </div> </div> <canvas data-sparkline="impressions" height="40" class="w-full mb-2"></canvas> <div class="grid grid-cols-3 gap-3 pt-3 border-t border-gray-700"> <div> <div class="text-sm font-bold text-white">0</div> <div class="text-[10px] text-gray-400">users (30d)</div> </div> <div> <div class="text-sm font-bold text-white">0</div> <div class="text-[10px] text-gray-400">pageviews</div> </div> <div> <div class="text-sm font-bold text-white">0</div> <div class="text-[10px] text-gray-400">Bing queries</div> </div> </div> </a>  <a href="/agency/resiliencebuilder/ai-citations" class="block bg-gray-800 border border-purple-700/40 rounded-lg p-5 hover:border-purple-500/50 transition"> <div class="flex items-center justify-between mb-3"> <h3 class="text-sm font-semibold text-white">AI Search Citations</h3> <span class="text-[8px] text-gray-500">API testing</span> </div> <div class="grid grid-cols-3 gap-3 mb-3"> <div> <div class="text-2xl font-bold text-gray-500">0%</div> <div class="text-[10px] text-gray-400">Claude</div> </div> <div> <div class="text-2xl font-bold text-gray-500">0%</div> <div class="text-[10px] text-gray-400">ChatGPT</div> </div> <div> <div class="text-2xl font-bold text-gray-500">0%</div> <div class="text-[10px] text-gray-400">Gemini</div> </div> </div> <div class="grid grid-cols-2 gap-3 pt-3 border-t border-gray-700"> <div> <div class="text-sm font-bold text-purple-400">0%</div> <div class="text-[10px] text-gray-400">overall citation rate</div> </div> <div> <div class="text-sm font-bold text-white">0</div> <div class="text-[10px] text-gray-400">queries tested</div> </div> </div> <canvas data-sparkline="citations" height="40" class="w-full mt-2"></canvas> </a>  <a href="/agency/resiliencebuilder/search-performance" class="block bg-gray-800 border border-cyan-700/40 rounded-lg p-5 hover:border-cyan-500/50 transition"> <div class="flex items-center justify-between mb-3"> <h3 class="text-sm font-semibold text-white">Google AI Overviews</h3> <span class="text-[8px] text-gray-500">DataForSEO</span> </div> <div> <div class="grid grid-cols-3 gap-3 mb-3"> <div> <div class="text-2xl font-bold text-gray-500">0/0</div> <div class="text-[10px] text-gray-400">queries with AIO</div> </div> <div> <div class="text-2xl font-bold text-white">0</div> <div class="text-[10px] text-gray-400">pages crawled</div> </div> <div> <div class="text-2xl font-bold text-white">0</div> <div class="text-[10px] text-gray-400">with schema</div> </div> </div> <div class="grid grid-cols-3 gap-3 pt-3 border-t border-gray-700"> <div> <div class="text-sm font-bold text-white">0</div> <div class="text-[10px] text-gray-400">Bing indexed</div> </div> <div> <div class="text-sm font-bold text-white">0</div> <div class="text-[10px] text-gray-400">AI bots allowed</div> </div> <div> <div class="text-sm font-bold text-green-400">0</div> <div class="text-[10px] text-gray-400">AI bots blocked</div> </div> </div> <canvas data-sparkline="crawl" height="40" class="w-full mt-2"></canvas> </div> </a> </div>  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">   </div>    <div class="flex flex-wrap gap-3 mb-6 text-xs"> <div class="px-3 py-1.5 rounded-full bg-gray-800 text-gray-400"> 17 data sections
+</div> <div class="px-3 py-1.5 rounded-full bg-blue-900/50 text-blue-300"> 6 visible to client
+</div>   </div>   <div class="grid grid-cols-1 gap-4 mb-6"> <div class="rounded-lg border bg-gray-800 border-gray-600/40 text-gray-500 transition" data-section="recommendations"> <div class="p-5 "> <div class="flex items-start justify-between mb-3"> <div class="flex items-start gap-2"> <div> <h3 class="text-white font-semibold text-sm">Recommendations</h3> <p class="text-xs text-gray-300 mt-0.5 section-status-text" data-section-id="recommendations">Prioritised actions to improve AI search visibility</p> </div> <button class="info-btn flex-shrink-0 w-4 h-4 rounded-full bg-gray-700 text-gray-400 text-[9px] hover:bg-gray-600 hover:text-white transition mt-0.5" data-tooltip="Prioritised fixes to improve your AI search visibility. Generated from all data sources. Copy any fix to Claude Code to action it." onclick="event.stopPropagation(); const tip = this.nextElementSibling; tip.classList.toggle('hidden');">i</button> <div class="hidden absolute z-20 mt-6 ml-[-120px] w-64 p-3 rounded-lg bg-gray-800 border border-gray-700 text-xs text-gray-300 leading-relaxed shadow-xl"> Prioritised fixes to improve your AI search visibility. Generated from all data sources. Copy any fix to Claude Code to action it. <div class="mt-2 text-[10px] text-gray-500 cursor-pointer" onclick="event.stopPropagation(); this.parentElement.classList.add('hidden');">Click to close</div> </div> </div> <div class="flex items-center gap-2">  <span class="w-2 h-2 rounded-full bg-gray-600"></span> </div> </div> <div class="mt-4"> <div class="flex items-end gap-3"> <p class="text-2xl font-bold text-white section-metric" data-section-id="recommendations">--</p>  </div> <p class="text-xs text-gray-300 mt-1">Recommendations</p>  </div>  </div>   </div> <script type="module">document.querySelectorAll("[data-card-toggle]").forEach(t=>{t.addEventListener("click",d=>{const a=t.getAttribute("data-card-toggle"),e=document.querySelector(`[data-chart-panel="${a}"]`),n=t.querySelector(".expand-label");e?(e.classList.toggle("hidden"),n&&(n.textContent=e.classList.contains("hidden")?"Click to expand":"Click to collapse"),!e.classList.contains("hidden")&&!e.dataset.rendered&&(e.dataset.rendered="true",e.dispatchEvent(new CustomEvent("render-chart",{detail:{id:a}})))):window.location.href=t.getAttribute("data-card-href")})});</script> </div> <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+AI Search Visibility
+<span class="text-[10px] px-2 py-0.5 rounded-full bg-gray-800 text-gray-500 normal-case font-normal">Core metrics</span> </h2> <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8"> <div class="relative">  <div class="rounded-lg border bg-gray-800 border-green-600/40 text-green-400 transition" data-section="overview"> <div class="p-5 cursor-pointer hover:brightness-125" data-card-toggle="overview" data-card-href="/agency/resiliencebuilder/overview"> <div class="flex items-start justify-between mb-3"> <div class="flex items-start gap-2"> <div> <h3 class="text-white font-semibold text-sm">Overview</h3> <p class="text-xs text-gray-300 mt-0.5 section-status-text" data-section-id="overview">High-level summary — pages, issues, scores, status</p> </div> <button class="info-btn flex-shrink-0 w-4 h-4 rounded-full bg-gray-700 text-gray-400 text-[9px] hover:bg-gray-600 hover:text-white transition mt-0.5" data-tooltip="High-level summary of all metrics. Shows AI readiness, citation rate, traffic, and site health at a glance." onclick="event.stopPropagation(); const tip = this.nextElementSibling; tip.classList.toggle('hidden');">i</button> <div class="hidden absolute z-20 mt-6 ml-[-120px] w-64 p-3 rounded-lg bg-gray-800 border border-gray-700 text-xs text-gray-300 leading-relaxed shadow-xl"> High-level summary of all metrics. Shows AI readiness, citation rate, traffic, and site health at a glance. <div class="mt-2 text-[10px] text-gray-500 cursor-pointer" onclick="event.stopPropagation(); this.parentElement.classList.add('hidden');">Click to close</div> </div> </div> <div class="flex items-center gap-2">  <span class="w-2 h-2 rounded-full bg-green-400"></span> </div> </div> <div class="mt-4"> <div class="flex items-end gap-3"> <p class="text-2xl font-bold text-white section-metric" data-section-id="overview">--</p>  </div> <p class="text-xs text-gray-300 mt-1">Active monitoring</p>  </div>  </div>   </div>  </div><div class="relative"> <span class="absolute -top-2 -right-2 z-10 px-2 py-0.5 rounded-full bg-blue-600 text-white text-[10px]">
+Client visible
+</span> <div class="rounded-lg border bg-gray-800 border-gray-600/40 text-gray-500 transition" data-section="ai-readiness"> <div class="p-5 "> <div class="flex items-start justify-between mb-3"> <div class="flex items-start gap-2"> <div> <h3 class="text-white font-semibold text-sm">AI Readiness</h3> <p class="text-xs text-gray-300 mt-0.5 section-status-text" data-section-id="ai-readiness">AI citation readiness score — schema, E-E-A-T, content structure, llms.txt</p> </div> <button class="info-btn flex-shrink-0 w-4 h-4 rounded-full bg-gray-700 text-gray-400 text-[9px] hover:bg-gray-600 hover:text-white transition mt-0.5" data-tooltip="How ready your site is for AI citation. Scores schema markup, E-E-A-T signals, content structure, and citation potential. Pages with schema have 2.5x higher AI citation rates." onclick="event.stopPropagation(); const tip = this.nextElementSibling; tip.classList.toggle('hidden');">i</button> <div class="hidden absolute z-20 mt-6 ml-[-120px] w-64 p-3 rounded-lg bg-gray-800 border border-gray-700 text-xs text-gray-300 leading-relaxed shadow-xl"> How ready your site is for AI citation. Scores schema markup, E-E-A-T signals, content structure, and citation potential. Pages with schema have 2.5x higher AI citation rates. <div class="mt-2 text-[10px] text-gray-500 cursor-pointer" onclick="event.stopPropagation(); this.parentElement.classList.add('hidden');">Click to close</div> </div> </div> <div class="flex items-center gap-2">  <span class="w-2 h-2 rounded-full bg-gray-600"></span> </div> </div> <div class="mt-4"> <div class="flex items-end gap-3"> <p class="text-2xl font-bold text-white section-metric" data-section-id="ai-readiness">--</p>  </div> <p class="text-xs text-gray-300 mt-1">AI readiness score</p>  </div>  </div>   </div>  </div><div class="relative">  <div class="rounded-lg border bg-gray-800 border-gray-600/40 text-gray-500 transition" data-section="ai-citations"> <div class="p-5 "> <div class="flex items-start justify-between mb-3"> <div class="flex items-start gap-2"> <div> <h3 class="text-white font-semibold text-sm">AI Citations</h3> <p class="text-xs text-gray-300 mt-0.5 section-status-text" data-section-id="ai-citations">LLM mention tracking — ChatGPT, Claude, Gemini</p> </div> <button class="info-btn flex-shrink-0 w-4 h-4 rounded-full bg-gray-700 text-gray-400 text-[9px] hover:bg-gray-600 hover:text-white transition mt-0.5" data-tooltip="How often AI models mention your brand when asked industry questions. Tested across ChatGPT and Claude with real search queries. 0% means AI doesn't recommend you for any industry queries yet." onclick="event.stopPropagation(); const tip = this.nextElementSibling; tip.classList.toggle('hidden');">i</button> <div class="hidden absolute z-20 mt-6 ml-[-120px] w-64 p-3 rounded-lg bg-gray-800 border border-gray-700 text-xs text-gray-300 leading-relaxed shadow-xl"> How often AI models mention your brand when asked industry questions. Tested across ChatGPT and Claude with real search queries. 0% means AI doesn&#39;t recommend you for any industry queries yet. <div class="mt-2 text-[10px] text-gray-500 cursor-pointer" onclick="event.stopPropagation(); this.parentElement.classList.add('hidden');">Click to close</div> </div> </div> <div class="flex items-center gap-2">  <span class="w-2 h-2 rounded-full bg-gray-600"></span> </div> </div> <div class="mt-4"> <div class="flex items-end gap-3"> <p class="text-2xl font-bold text-white section-metric" data-section-id="ai-citations">--</p>  </div> <p class="text-xs text-gray-300 mt-1">Citation rate</p>  </div>  </div>   </div>  </div><div class="relative">  <div class="rounded-lg border bg-gray-800 border-gray-600/40 text-gray-500 transition" data-section="competitors"> <div class="p-5 "> <div class="flex items-start justify-between mb-3"> <div class="flex items-start gap-2"> <div> <h3 class="text-white font-semibold text-sm">Competitors</h3> <p class="text-xs text-gray-300 mt-0.5 section-status-text" data-section-id="competitors">Who ranks where — your position vs competitors for key queries</p> </div> <button class="info-btn flex-shrink-0 w-4 h-4 rounded-full bg-gray-700 text-gray-400 text-[9px] hover:bg-gray-600 hover:text-white transition mt-0.5" data-tooltip="Who ranks in Google for your target queries vs you. Shows visibility percentage and average position for each competitor." onclick="event.stopPropagation(); const tip = this.nextElementSibling; tip.classList.toggle('hidden');">i</button> <div class="hidden absolute z-20 mt-6 ml-[-120px] w-64 p-3 rounded-lg bg-gray-800 border border-gray-700 text-xs text-gray-300 leading-relaxed shadow-xl"> Who ranks in Google for your target queries vs you. Shows visibility percentage and average position for each competitor. <div class="mt-2 text-[10px] text-gray-500 cursor-pointer" onclick="event.stopPropagation(); this.parentElement.classList.add('hidden');">Click to close</div> </div> </div> <div class="flex items-center gap-2">  <span class="w-2 h-2 rounded-full bg-gray-600"></span> </div> </div> <div class="mt-4"> <div class="flex items-end gap-3"> <p class="text-2xl font-bold text-white section-metric" data-section-id="competitors">--</p>  </div> <p class="text-xs text-gray-300 mt-1">Competitor comparison</p>  </div>  </div>   </div>  </div> </div> <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+SEO & Content
+<span class="text-[10px] px-2 py-0.5 rounded-full bg-gray-800 text-gray-500 normal-case font-normal">Traditional SEO</span> </h2> <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8"> <div class="relative"> <span class="absolute -top-2 -right-2 z-10 px-2 py-0.5 rounded-full bg-blue-600 text-white text-[10px]">
+Client visible
+</span> <div class="rounded-lg border bg-gray-800 border-gray-600/40 text-gray-500 transition" data-section="site-manager"> <div class="p-5 "> <div class="flex items-start justify-between mb-3"> <div class="flex items-start gap-2"> <div> <h3 class="text-white font-semibold text-sm">Site Manager</h3> <p class="text-xs text-gray-300 mt-0.5 section-status-text" data-section-id="site-manager">Browse pages, edit meta tags, add new content, manage site structure</p> </div>   </div> <div class="flex items-center gap-2">  <span class="w-2 h-2 rounded-full bg-gray-600"></span> </div> </div> <div class="mt-4"> <div class="flex items-end gap-3"> <p class="text-2xl font-bold text-white section-metric" data-section-id="site-manager">--</p>  </div> <p class="text-xs text-gray-300 mt-1">Site management</p>  </div>  </div>   </div>  </div><div class="relative">  <div class="rounded-lg border bg-gray-800 border-gray-600/40 text-gray-500 transition" data-section="seo-health"> <div class="p-5 "> <div class="flex items-start justify-between mb-3"> <div class="flex items-start gap-2"> <div> <h3 class="text-white font-semibold text-sm">SEO Health</h3> <p class="text-xs text-gray-300 mt-0.5 section-status-text" data-section-id="seo-health">H1s, meta tags, schema, duplicate content, broken links</p> </div> <button class="info-btn flex-shrink-0 w-4 h-4 rounded-full bg-gray-700 text-gray-400 text-[9px] hover:bg-gray-600 hover:text-white transition mt-0.5" data-tooltip="Technical health of your site — missing H1 tags, meta descriptions, broken links, schema coverage. Issues here affect both traditional SEO and AI visibility." onclick="event.stopPropagation(); const tip = this.nextElementSibling; tip.classList.toggle('hidden');">i</button> <div class="hidden absolute z-20 mt-6 ml-[-120px] w-64 p-3 rounded-lg bg-gray-800 border border-gray-700 text-xs text-gray-300 leading-relaxed shadow-xl"> Technical health of your site — missing H1 tags, meta descriptions, broken links, schema coverage. Issues here affect both traditional SEO and AI visibility. <div class="mt-2 text-[10px] text-gray-500 cursor-pointer" onclick="event.stopPropagation(); this.parentElement.classList.add('hidden');">Click to close</div> </div> </div> <div class="flex items-center gap-2">  <span class="w-2 h-2 rounded-full bg-gray-600"></span> </div> </div> <div class="mt-4"> <div class="flex items-end gap-3"> <p class="text-2xl font-bold text-white section-metric" data-section-id="seo-health">--</p>  </div> <p class="text-xs text-gray-300 mt-1">Awaiting first crawl</p>  </div>  </div>   </div>  </div><div class="relative">  <div class="rounded-lg border bg-gray-800 border-gray-600/40 text-gray-500 transition" data-section="traffic"> <div class="p-5 "> <div class="flex items-start justify-between mb-3"> <div class="flex items-start gap-2"> <div> <h3 class="text-white font-semibold text-sm">Traffic</h3> <p class="text-xs text-gray-300 mt-0.5 section-status-text" data-section-id="traffic">GA4 visitors, pageviews, sources, countries</p> </div> <button class="info-btn flex-shrink-0 w-4 h-4 rounded-full bg-gray-700 text-gray-400 text-[9px] hover:bg-gray-600 hover:text-white transition mt-0.5" data-tooltip="Website visitors from Google Analytics over the last 30 days. Shows users, sessions, pageviews, bounce rate, top pages, and traffic sources." onclick="event.stopPropagation(); const tip = this.nextElementSibling; tip.classList.toggle('hidden');">i</button> <div class="hidden absolute z-20 mt-6 ml-[-120px] w-64 p-3 rounded-lg bg-gray-800 border border-gray-700 text-xs text-gray-300 leading-relaxed shadow-xl"> Website visitors from Google Analytics over the last 30 days. Shows users, sessions, pageviews, bounce rate, top pages, and traffic sources. <div class="mt-2 text-[10px] text-gray-500 cursor-pointer" onclick="event.stopPropagation(); this.parentElement.classList.add('hidden');">Click to close</div> </div> </div> <div class="flex items-center gap-2">  <span class="w-2 h-2 rounded-full bg-gray-600"></span> </div> </div> <div class="mt-4"> <div class="flex items-end gap-3"> <p class="text-2xl font-bold text-white section-metric" data-section-id="traffic">--</p>  </div> <p class="text-xs text-gray-300 mt-1">Monthly visitors</p>  </div>  </div>   </div>  </div><div class="relative">  <div class="rounded-lg border bg-gray-800 border-green-600/40 text-green-400 transition" data-section="search-performance"> <div class="p-5 cursor-pointer hover:brightness-125" data-card-toggle="search-performance" data-card-href="/agency/resiliencebuilder/search-performance"> <div class="flex items-start justify-between mb-3"> <div class="flex items-start gap-2"> <div> <h3 class="text-white font-semibold text-sm">Search Performance</h3> <p class="text-xs text-gray-300 mt-0.5 section-status-text" data-section-id="search-performance">Google + Bing — clicks, impressions, queries, positions</p> </div> <button class="info-btn flex-shrink-0 w-4 h-4 rounded-full bg-gray-700 text-gray-400 text-[9px] hover:bg-gray-600 hover:text-white transition mt-0.5" data-tooltip="Clicks and impressions from Google Search Console and Bing Webmaster Tools. Shows what queries bring people to your site and your average position." onclick="event.stopPropagation(); const tip = this.nextElementSibling; tip.classList.toggle('hidden');">i</button> <div class="hidden absolute z-20 mt-6 ml-[-120px] w-64 p-3 rounded-lg bg-gray-800 border border-gray-700 text-xs text-gray-300 leading-relaxed shadow-xl"> Clicks and impressions from Google Search Console and Bing Webmaster Tools. Shows what queries bring people to your site and your average position. <div class="mt-2 text-[10px] text-gray-500 cursor-pointer" onclick="event.stopPropagation(); this.parentElement.classList.add('hidden');">Click to close</div> </div> </div> <div class="flex items-center gap-2">  <span class="w-2 h-2 rounded-full bg-green-400"></span> </div> </div> <div class="mt-4"> <div class="flex items-end gap-3"> <p class="text-2xl font-bold text-white section-metric" data-section-id="search-performance">20416</p>  </div> <p class="text-xs text-gray-300 mt-1">Total impressions (Google + Bing)</p>  </div> <div class="flex items-center justify-between mt-3"> <p class="text-xs text-gray-400">Last updated: 18/05/2026</p> <div class="flex items-center gap-2"> <span class="text-xs text-gray-500 expand-label">Click to expand</span> <a href="/agency/resiliencebuilder/search-performance" class="text-xs text-gray-600 hover:text-gray-400" onclick="event.stopPropagation();">Full view →</a> </div> </div> </div>   </div>  </div><div class="relative">  <div class="rounded-lg border bg-gray-800 border-gray-600/40 text-gray-500 transition" data-section="site-tree"> <div class="p-5 "> <div class="flex items-start justify-between mb-3"> <div class="flex items-start gap-2"> <div> <h3 class="text-white font-semibold text-sm">Site Tree</h3> <p class="text-xs text-gray-300 mt-0.5 section-status-text" data-section-id="site-tree">Visual page hierarchy and URL structure</p> </div> <button class="info-btn flex-shrink-0 w-4 h-4 rounded-full bg-gray-700 text-gray-400 text-[9px] hover:bg-gray-600 hover:text-white transition mt-0.5" data-tooltip="Visual hierarchy of your site structure. Shows how pages are organised and how deep they are from the homepage. Shallow, well-structured sites are easier for AI to understand." onclick="event.stopPropagation(); const tip = this.nextElementSibling; tip.classList.toggle('hidden');">i</button> <div class="hidden absolute z-20 mt-6 ml-[-120px] w-64 p-3 rounded-lg bg-gray-800 border border-gray-700 text-xs text-gray-300 leading-relaxed shadow-xl"> Visual hierarchy of your site structure. Shows how pages are organised and how deep they are from the homepage. Shallow, well-structured sites are easier for AI to understand. <div class="mt-2 text-[10px] text-gray-500 cursor-pointer" onclick="event.stopPropagation(); this.parentElement.classList.add('hidden');">Click to close</div> </div> </div> <div class="flex items-center gap-2">  <span class="w-2 h-2 rounded-full bg-gray-600"></span> </div> </div> <div class="mt-4"> <div class="flex items-end gap-3"> <p class="text-2xl font-bold text-white section-metric" data-section-id="site-tree">--</p>  </div> <p class="text-xs text-gray-300 mt-1">Pages discovered</p>  </div>  </div>   </div>  </div><div class="relative">  <div class="rounded-lg border bg-gray-800 border-gray-600/40 text-gray-500 transition" data-section="internal-links"> <div class="p-5 "> <div class="flex items-start justify-between mb-3"> <div class="flex items-start gap-2"> <div> <h3 class="text-white font-semibold text-sm">Internal Links</h3> <p class="text-xs text-gray-300 mt-0.5 section-status-text" data-section-id="internal-links">Link graph, orphan pages, link depth analysis</p> </div> <button class="info-btn flex-shrink-0 w-4 h-4 rounded-full bg-gray-700 text-gray-400 text-[9px] hover:bg-gray-600 hover:text-white transition mt-0.5" data-tooltip="Map of how pages link to each other. Shows which pages get the most internal links (important pages) and orphan pages with no links pointing to them." onclick="event.stopPropagation(); const tip = this.nextElementSibling; tip.classList.toggle('hidden');">i</button> <div class="hidden absolute z-20 mt-6 ml-[-120px] w-64 p-3 rounded-lg bg-gray-800 border border-gray-700 text-xs text-gray-300 leading-relaxed shadow-xl"> Map of how pages link to each other. Shows which pages get the most internal links (important pages) and orphan pages with no links pointing to them. <div class="mt-2 text-[10px] text-gray-500 cursor-pointer" onclick="event.stopPropagation(); this.parentElement.classList.add('hidden');">Click to close</div> </div> </div> <div class="flex items-center gap-2">  <span class="w-2 h-2 rounded-full bg-gray-600"></span> </div> </div> <div class="mt-4"> <div class="flex items-end gap-3"> <p class="text-2xl font-bold text-white section-metric" data-section-id="internal-links">--</p>  </div> <p class="text-xs text-gray-300 mt-1">Internal links mapped</p>  </div>  </div>   </div>  </div><div class="relative">  <div class="rounded-lg border bg-gray-800 border-gray-600/40 text-gray-500 transition" data-section="crawl-activity"> <div class="p-5 "> <div class="flex items-start justify-between mb-3"> <div class="flex items-start gap-2"> <div> <h3 class="text-white font-semibold text-sm">Crawl Activity</h3> <p class="text-xs text-gray-300 mt-0.5 section-status-text" data-section-id="crawl-activity">Bot crawls over time, indexed pages, AI crawler access</p> </div> <button class="info-btn flex-shrink-0 w-4 h-4 rounded-full bg-gray-700 text-gray-400 text-[9px] hover:bg-gray-600 hover:text-white transition mt-0.5" data-tooltip="How often search engine and AI bots visit your site. Shows Bing crawl frequency, pages indexed, and which AI crawlers have access." onclick="event.stopPropagation(); const tip = this.nextElementSibling; tip.classList.toggle('hidden');">i</button> <div class="hidden absolute z-20 mt-6 ml-[-120px] w-64 p-3 rounded-lg bg-gray-800 border border-gray-700 text-xs text-gray-300 leading-relaxed shadow-xl"> How often search engine and AI bots visit your site. Shows Bing crawl frequency, pages indexed, and which AI crawlers have access. <div class="mt-2 text-[10px] text-gray-500 cursor-pointer" onclick="event.stopPropagation(); this.parentElement.classList.add('hidden');">Click to close</div> </div> </div> <div class="flex items-center gap-2">  <span class="w-2 h-2 rounded-full bg-gray-600"></span> </div> </div> <div class="mt-4"> <div class="flex items-end gap-3"> <p class="text-2xl font-bold text-white section-metric" data-section-id="crawl-activity">--</p>  </div> <p class="text-xs text-gray-300 mt-1">Bot crawl data</p>  </div>  </div>   </div>  </div><div class="relative">  <div class="rounded-lg border bg-gray-800 border-gray-600/40 text-gray-500 transition" data-section="new-pages"> <div class="p-5 "> <div class="flex items-start justify-between mb-3"> <div class="flex items-start gap-2"> <div> <h3 class="text-white font-semibold text-sm">New Pages</h3> <p class="text-xs text-gray-300 mt-0.5 section-status-text" data-section-id="new-pages">Pages added since baseline — by type (blog, question, guide, etc.)</p> </div> <button class="info-btn flex-shrink-0 w-4 h-4 rounded-full bg-gray-700 text-gray-400 text-[9px] hover:bg-gray-600 hover:text-white transition mt-0.5" data-tooltip="Content added since we started working together, categorised by type (blog, question, guide, etc.). Shows the content investment over time." onclick="event.stopPropagation(); const tip = this.nextElementSibling; tip.classList.toggle('hidden');">i</button> <div class="hidden absolute z-20 mt-6 ml-[-120px] w-64 p-3 rounded-lg bg-gray-800 border border-gray-700 text-xs text-gray-300 leading-relaxed shadow-xl"> Content added since we started working together, categorised by type (blog, question, guide, etc.). Shows the content investment over time. <div class="mt-2 text-[10px] text-gray-500 cursor-pointer" onclick="event.stopPropagation(); this.parentElement.classList.add('hidden');">Click to close</div> </div> </div> <div class="flex items-center gap-2">  <span class="w-2 h-2 rounded-full bg-gray-600"></span> </div> </div> <div class="mt-4"> <div class="flex items-end gap-3"> <p class="text-2xl font-bold text-white section-metric" data-section-id="new-pages">--</p>  </div> <p class="text-xs text-gray-300 mt-1">New pages added</p>  </div>  </div>   </div>  </div><div class="relative">  <div class="rounded-lg border bg-gray-800 border-blue-600/40 text-blue-400 transition" data-section="content-plan"> <div class="p-5 cursor-pointer hover:brightness-125" data-card-toggle="content-plan" data-card-href="/agency/resiliencebuilder/content-plan"> <div class="flex items-start justify-between mb-3"> <div class="flex items-start gap-2"> <div> <h3 class="text-white font-semibold text-sm">Content &amp; Keywords</h3> <p class="text-xs text-gray-300 mt-0.5 section-status-text" data-section-id="content-plan">Content calendar, posting stats, keyword rank tracking, gap analysis</p> </div>   </div> <div class="flex items-center gap-2">  <span class="w-2 h-2 rounded-full bg-blue-400"></span> </div> </div> <div class="mt-4"> <div class="flex items-end gap-3"> <p class="text-2xl font-bold text-white section-metric" data-section-id="content-plan">15 gaps</p>  </div> <p class="text-xs text-gray-300 mt-1">Trends data loading — refreshes weekly</p>  </div>  </div>   </div>  </div> </div> <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+Monitoring
+<span class="text-[10px] px-2 py-0.5 rounded-full bg-gray-800 text-gray-500 normal-case font-normal">Speed, uptime, crawlers</span> </h2> <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8"> <div class="relative">  <div class="rounded-lg border bg-gray-800 border-gray-600/40 text-gray-500 transition" data-section="site-speed"> <div class="p-5 "> <div class="flex items-start justify-between mb-3"> <div class="flex items-start gap-2"> <div> <h3 class="text-white font-semibold text-sm">Site Speed</h3> <p class="text-xs text-gray-300 mt-0.5 section-status-text" data-section-id="site-speed">Core Web Vitals, Lighthouse scores, performance, accessibility, SEO</p> </div> <button class="info-btn flex-shrink-0 w-4 h-4 rounded-full bg-gray-700 text-gray-400 text-[9px] hover:bg-gray-600 hover:text-white transition mt-0.5" data-tooltip="Google Lighthouse performance scores on mobile. Performance, SEO, accessibility, and best practices. Fast sites (under 0.4s FCP) get 3x more AI citations." onclick="event.stopPropagation(); const tip = this.nextElementSibling; tip.classList.toggle('hidden');">i</button> <div class="hidden absolute z-20 mt-6 ml-[-120px] w-64 p-3 rounded-lg bg-gray-800 border border-gray-700 text-xs text-gray-300 leading-relaxed shadow-xl"> Google Lighthouse performance scores on mobile. Performance, SEO, accessibility, and best practices. Fast sites (under 0.4s FCP) get 3x more AI citations. <div class="mt-2 text-[10px] text-gray-500 cursor-pointer" onclick="event.stopPropagation(); this.parentElement.classList.add('hidden');">Click to close</div> </div> </div> <div class="flex items-center gap-2">  <span class="w-2 h-2 rounded-full bg-gray-600"></span> </div> </div> <div class="mt-4"> <div class="flex items-end gap-3"> <p class="text-2xl font-bold text-white section-metric" data-section-id="site-speed">--</p>  </div> <p class="text-xs text-gray-300 mt-1">Lighthouse scores</p>  </div>  </div>   </div>  </div><div class="relative"> <span class="absolute -top-2 -right-2 z-10 px-2 py-0.5 rounded-full bg-blue-600 text-white text-[10px]">
+Client visible
+</span> <div class="rounded-lg border bg-gray-800 border-gray-600/40 text-gray-500 transition" data-section="uptime"> <div class="p-5 "> <div class="flex items-start justify-between mb-3"> <div class="flex items-start gap-2"> <div> <h3 class="text-white font-semibold text-sm">Uptime</h3> <p class="text-xs text-gray-300 mt-0.5 section-status-text" data-section-id="uptime">Site status, response times, uptime percentage</p> </div> <button class="info-btn flex-shrink-0 w-4 h-4 rounded-full bg-gray-700 text-gray-400 text-[9px] hover:bg-gray-600 hover:text-white transition mt-0.5" data-tooltip="Whether your site is online and how fast it responds. Monitors response time and uptime percentage. Slow sites (over 2 seconds) get fewer AI citations." onclick="event.stopPropagation(); const tip = this.nextElementSibling; tip.classList.toggle('hidden');">i</button> <div class="hidden absolute z-20 mt-6 ml-[-120px] w-64 p-3 rounded-lg bg-gray-800 border border-gray-700 text-xs text-gray-300 leading-relaxed shadow-xl"> Whether your site is online and how fast it responds. Monitors response time and uptime percentage. Slow sites (over 2 seconds) get fewer AI citations. <div class="mt-2 text-[10px] text-gray-500 cursor-pointer" onclick="event.stopPropagation(); this.parentElement.classList.add('hidden');">Click to close</div> </div> </div> <div class="flex items-center gap-2">  <span class="w-2 h-2 rounded-full bg-gray-600"></span> </div> </div> <div class="mt-4"> <div class="flex items-end gap-3"> <p class="text-2xl font-bold text-white section-metric" data-section-id="uptime">--</p>  </div> <p class="text-xs text-gray-300 mt-1">Uptime percentage</p>  </div>  </div>   </div>  </div> </div>  </main> </div> <!-- Client drill-down embed: hide all admin chrome via JS.
+       Astro is static, so ?view=client doesn't flow through Astro.url at
+       build time. Detect it here at runtime instead. --> <script>
+    (function(){
+      try {
+        var params = new URL(window.location.href).searchParams;
+        if (params.get('view') === 'client') {
+          document.documentElement.classList.add('r4ai-embedded');
+          var style = document.createElement('style');
+          style.textContent =
+            '.r4ai-embedded nav.bg-gray-900.border-b { display:none !important; }' +
+            '.r4ai-embedded aside#r4ai-sidebar { display:none !important; }' +
+            '.r4ai-embedded #r4ai-sidebar-backdrop { display:none !important; }' +
+            '.r4ai-embedded #r4ai-admin-gate { display:none !important; }' +
+            '.r4ai-embedded #r4ai-main-content { display:block !important; padding:16px !important; }' +
+            '.r4ai-embedded body { background:#030712; }';
+          document.head.appendChild(style);
+        }
+      } catch(e){}
+    })();
+  </script> <!-- Copy-as-markdown: page button + auto-injected tile/sub-tile buttons --> <style>
+    .r4ai-copy-btn {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      z-index: 5;
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: rgba(31, 41, 55, 0.7);
+      color: #9ca3af;
+      border: 1px solid rgba(75, 85, 99, 0.4);
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.15s, background 0.15s, color 0.15s;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      line-height: 1.3;
+    }
+    [data-copy-tile]:hover > .r4ai-copy-btn,
+    [data-copy-subtile]:hover > .r4ai-copy-btn,
+    .r4ai-copy-btn:focus,
+    .r4ai-copy-btn.r4ai-copied {
+      opacity: 1;
+    }
+    .r4ai-copy-btn:hover {
+      background: rgba(55, 65, 81, 0.95);
+      color: #f3f4f6;
+    }
+    .r4ai-copy-btn.r4ai-copied {
+      background: rgba(16, 185, 129, 0.2);
+      color: #34d399;
+      border-color: rgba(16, 185, 129, 0.4);
+    }
+    .r4ai-copy-btn[data-scope="subtile"] {
+      font-size: 9px;
+      padding: 1px 5px;
+      top: 4px;
+      right: 4px;
+    }
+  </style> <script>
+    (function(){
+      // ---- DOM-to-markdown extractor ----
+      function textOf(el) {
+        return (el.textContent || '').replace(/\s+/g, ' ').trim();
+      }
+      function isHidden(el) {
+        if (!el || el.nodeType !== 1) return false;
+        var s = window.getComputedStyle(el);
+        return s.display === 'none' || s.visibility === 'hidden';
+      }
+      function tableToMd(tbl) {
+        var rows = [];
+        tbl.querySelectorAll('tr').forEach(function(tr){
+          var cells = [];
+          tr.querySelectorAll('th, td').forEach(function(c){
+            cells.push(textOf(c).replace(/\|/g, '\\|'));
+          });
+          if (cells.length) rows.push(cells);
+        });
+        if (!rows.length) return '';
+        var head = rows[0];
+        var sep = head.map(function(){ return '---'; });
+        var body = rows.slice(1);
+        var out = ['| ' + head.join(' | ') + ' |', '| ' + sep.join(' | ') + ' |'];
+        body.forEach(function(r){ out.push('| ' + r.join(' | ') + ' |'); });
+        return out.join('\n');
+      }
+      // Heuristic: a "stat card" has one large-text value + one small grayed label
+      var BIG_RE = /\btext-(2xl|3xl|4xl|5xl|6xl|7xl)\b/;
+      var SMALL_GRAY_RE = /\btext-(xs|sm|\[10px\]|\[11px\])\b/;
+      var GRAY_RE = /\btext-gray-(400|500|600)\b/;
+      function asStatCard(el) {
+        if (!el || el.nodeType !== 1) return null;
+        var bigs = [], labels = [];
+        el.querySelectorAll('*').forEach(function(c){
+          if (isHidden(c)) return;
+          var cls = c.className && c.className.baseVal !== undefined ? c.className.baseVal : (c.className || '');
+          cls = String(cls);
+          var t = textOf(c);
+          if (!t || t.length > 80) return;
+          if (BIG_RE.test(cls) && bigs.length < 1) bigs.push(t);
+          else if (SMALL_GRAY_RE.test(cls) && GRAY_RE.test(cls) && labels.length < 1) labels.push(t);
+        });
+        if (bigs.length === 1 && labels.length === 1) return { value: bigs[0], label: labels[0] };
+        return null;
+      }
+      function elementToMd(root, opts) {
+        opts = opts || {};
+        var lines = [];
+        var seenStatChildren = new WeakSet();
+
+        function emit(s) { lines.push(s); }
+        function blank() { if (lines.length && lines[lines.length-1] !== '') lines.push(''); }
+
+        function walk(node) {
+          if (!node) return;
+          if (node.nodeType === 3) {
+            var t = (node.textContent || '').replace(/\s+/g, ' ').trim();
+            if (t) emit(t);
+            return;
+          }
+          if (node.nodeType !== 1) return;
+          if (isHidden(node)) return;
+          if (node.classList && node.classList.contains('r4ai-copy-btn')) return;
+          if (node.dataset && node.dataset.copySkip !== undefined) return;
+          var tag = node.tagName.toLowerCase();
+          if (tag === 'script' || tag === 'style' || tag === 'noscript' || tag === 'svg') return;
+          if (seenStatChildren.has(node)) return;
+
+          if (/^h[1-6]$/.test(tag)) {
+            var lvl = parseInt(tag[1], 10) + (opts.headingShift || 0);
+            if (lvl < 1) lvl = 1; if (lvl > 6) lvl = 6;
+            var ht = textOf(node);
+            if (ht) { blank(); emit(new Array(lvl + 1).join('#') + ' ' + ht); blank(); }
+            return;
+          }
+          if (tag === 'table') {
+            var md = tableToMd(node);
+            if (md) { blank(); emit(md); blank(); }
+            return;
+          }
+          if (tag === 'ul' || tag === 'ol') {
+            var ordered = tag === 'ol';
+            blank();
+            var idx = 0;
+            node.querySelectorAll(':scope > li').forEach(function(li){
+              if (isHidden(li)) return;
+              idx++;
+              var prefix = ordered ? (idx + '.') : '-';
+              var lt = textOf(li);
+              if (lt) emit(prefix + ' ' + lt);
+            });
+            blank();
+            return;
+          }
+          if (tag === 'br') { emit(''); return; }
+          if (tag === 'hr') { blank(); emit('---'); blank(); return; }
+
+          // Sub-tile boundary inside the scope -> emit as ### heading
+          if (node !== root && node.dataset && node.dataset.copySubtile !== undefined) {
+            blank();
+            emit('### ' + node.dataset.copySubtile);
+            blank();
+            // Walk children but treat this sub-tile as its own scope
+            for (var j = 0; j < node.childNodes.length; j++) walk(node.childNodes[j]);
+            blank();
+            return;
+          }
+
+          // Stat-card pattern -> emit one bullet line, skip children
+          var stat = asStatCard(node);
+          if (stat) {
+            emit('- **' + stat.label + ':** ' + stat.value);
+            // Mark all descendants as already-consumed
+            node.querySelectorAll('*').forEach(function(d){ seenStatChildren.add(d); });
+            return;
+          }
+
+          // Default: recurse into children
+          for (var i = 0; i < node.childNodes.length; i++) walk(node.childNodes[i]);
+        }
+
+        walk(root);
+        // Collapse triple-blank to double, trim
+        var out = lines.join('\n').replace(/\n{3,}/g, '\n\n').replace(/[ \t]+$/gm, '').trim();
+        return out;
+      }
+
+      function tileToMd(el) {
+        var heading = el.dataset.copyTile || el.dataset.copySubtile || '';
+        var level = el.dataset.copyTile !== undefined ? '## ' : '### ';
+        var body = elementToMd(el);
+        return (heading ? level + heading + '\n\n' : '') + body;
+      }
+
+      function pageToMd() {
+        var main = document.getElementById('r4ai-main-content') || document.querySelector('main') || document.body;
+        var pageTitle = (document.title || 'Dashboard').replace(/\s+—\s+Rank4AI Dashboard$/, '');
+        var siteHost = window.location.host;
+        var pathName = window.location.pathname;
+        var stamp = new Date().toISOString();
+        var header = '# ' + pageTitle + '\n\n_Source: ' + siteHost + pathName + ' · ' + stamp + '_\n\n---\n';
+        return header + elementToMd(main, { headingShift: 1 });
+      }
+
+      // ---- Copy + feedback ----
+      function flashCopied(btn) {
+        var orig = btn.textContent;
+        btn.classList.add('r4ai-copied');
+        btn.textContent = '✓ copied';
+        setTimeout(function(){
+          btn.classList.remove('r4ai-copied');
+          btn.textContent = orig;
+        }, 1400);
+      }
+      function copyText(text, btn) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function(){ flashCopied(btn); }).catch(function(){
+            fallback(text, btn);
+          });
+        } else {
+          fallback(text, btn);
+        }
+      }
+      function fallback(text, btn) {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); flashCopied(btn); } catch(e){}
+        document.body.removeChild(ta);
+      }
+
+      // ---- Auto-inject buttons on tiles + sub-tiles ----
+      function injectButtons() {
+        document.querySelectorAll('[data-copy-tile], [data-copy-subtile]').forEach(function(el){
+          if (el.querySelector(':scope > .r4ai-copy-btn')) return;
+          var pos = window.getComputedStyle(el).position;
+          if (pos === 'static') el.style.position = 'relative';
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'r4ai-copy-btn';
+          btn.dataset.scope = el.dataset.copyTile !== undefined ? 'tile' : 'subtile';
+          btn.title = 'Copy this ' + (btn.dataset.scope === 'tile' ? 'tile' : 'sub-tile') + ' as markdown';
+          btn.textContent = '📋 md';
+          btn.addEventListener('click', function(e){
+            e.preventDefault(); e.stopPropagation();
+            copyText(tileToMd(el), btn);
+          });
+          el.appendChild(btn);
+        });
+      }
+
+      function init() {
+        injectButtons();
+        var pageBtn = document.getElementById('r4ai-copy-page-md');
+        if (pageBtn) {
+          pageBtn.addEventListener('click', function(e){
+            e.preventDefault();
+            copyText(pageToMd(), pageBtn);
+          });
+        }
+        // Re-scan periodically to catch tiles added by client-side JS
+        setTimeout(injectButtons, 500);
+        setTimeout(injectButtons, 2000);
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script> <!-- Mobile sidebar toggle --> <script>
+    (function(){
+      var btn = document.getElementById('r4ai-sidebar-toggle');
+      var side = document.getElementById('r4ai-sidebar');
+      var back = document.getElementById('r4ai-sidebar-backdrop');
+      if (!btn || !side) return;
+      function open(){
+        side.classList.remove('-translate-x-full');
+        if (back) back.classList.remove('hidden');
+      }
+      function close(){
+        side.classList.add('-translate-x-full');
+        if (back) back.classList.add('hidden');
+      }
+      btn.addEventListener('click', function(){
+        if (side.classList.contains('-translate-x-full')) open(); else close();
+      });
+      if (back) back.addEventListener('click', close);
+      // Close when a link inside is clicked (navigation)
+      side.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', close);
+      });
+    })();
+  </script> <div id="r4ai-admin-gate" style="position:fixed; inset:0; background:#030712; display:flex; align-items:center; justify-content:center; z-index:9999; padding:24px;"> <div style="max-width:420px; width:100%; text-align:center;"> <h2 style="font-size:20px; font-weight:700; color:#f9fafb; margin-bottom:8px;">Rank4AI Dashboard</h2> <p style="font-size:14px; color:#9ca3af; margin-bottom:24px;">Admin view. Enter access code.</p> <form id="r4ai-admin-form" style="display:flex; flex-direction:column; gap:12px;"> <input id="r4ai-admin-code" type="text" placeholder="Master code" autocomplete="off" autocapitalize="characters" autofocus style="width:100%; padding:12px 16px; border-radius:6px; background:#1f2937; border:1px solid #374151; color:#f9fafb; text-align:center; letter-spacing:4px; text-transform:uppercase; font-size:16px;"> <label style="display:flex; align-items:center; justify-content:center; gap:8px; color:#9ca3af; font-size:12px; cursor:pointer;"> <input type="checkbox" id="r4ai-admin-remember" checked style="accent-color:#3b82f6;">
+Remember me for 30 days on this device
+</label> <button type="submit" style="width:100%; padding:12px; border-radius:6px; background:#2563eb; color:white; font-weight:500; border:none; cursor:pointer;">Unlock</button> <p id="r4ai-admin-err" style="font-size:13px; color:#ef4444; min-height:20px; margin:0;"></p> </form> </div> </div> <script>(function(){const gateClientId = "resiliencebuilder";
+
+      (function(){
+        var KEY = "r4ai_admin_auth_v1";
+        var TTL = 30 * 24 * 60 * 60 * 1000;
+        var MASTER = "1210";
+
+        // Accept auto-unlock when /agency/<id>/... is loaded from the client
+        // view with ?view=client&code=<clientcode>. Matches the passcode
+        // stored in localStorage under r4ai_client_auth_v1 for that client.
+        try {
+          var url = new URL(window.location.href);
+          var qView = url.searchParams.get('view');
+          var qCode = url.searchParams.get('code');
+          if (qView === 'client' && qCode && gateClientId) {
+            var clientAuth = {};
+            try { clientAuth = JSON.parse(localStorage.getItem('r4ai_client_auth_v1') || '{}'); } catch(e){}
+            var rec = clientAuth['client_' + gateClientId] || clientAuth['master'];
+            if (rec && (rec.expires === 0 || rec.expires > Date.now())) {
+              // Silent unlock: the client already passed their gate.
+              var g0 = document.getElementById("r4ai-admin-gate");
+              var m0 = document.getElementById("r4ai-main-content");
+              if (g0) g0.style.display = "none";
+              if (m0) m0.style.display = "";
+              return;
+            }
+          }
+        } catch(e){}
+
+        function has(){
+          try {
+            var d = JSON.parse(localStorage.getItem(KEY) || "null");
+            if (d && (d.expires === 0 || d.expires > Date.now())) return true;
+          } catch(e){}
+          return sessionStorage.getItem(KEY) === "1";
+        }
+        function set(remember){
+          if (remember) {
+            localStorage.setItem(KEY, JSON.stringify({ expires: Date.now() + TTL, created: Date.now() }));
+          } else {
+            sessionStorage.setItem(KEY, "1");
+          }
+        }
+        var gate = document.getElementById("r4ai-admin-gate");
+        var main = document.getElementById("r4ai-main-content");
+        function unlock(){
+          if (gate) gate.style.display = "none";
+          if (main) main.style.display = "";
+        }
+        if (has()) {
+          unlock();
+        } else {
+          var form = document.getElementById("r4ai-admin-form");
+          var input = document.getElementById("r4ai-admin-code");
+          var err = document.getElementById("r4ai-admin-err");
+          var remember = document.getElementById("r4ai-admin-remember");
+          form.addEventListener("submit", function(e){
+            e.preventDefault();
+            var code = (input.value || "").trim().toUpperCase();
+            if (code === MASTER.toUpperCase()) {
+              set(remember.checked);
+              unlock();
+            } else {
+              err.textContent = "Invalid code.";
+              input.value = "";
+              input.focus();
+            }
+          });
+        }
+      })();
+    })();</script> </body> </html> <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.js"></script> <script>(function(){const trafficDaily = "[]";
+const crawlDaily = "[]";
+const historyJson = "[]";
+
+  // Sparkline charts in channel tiles
+  var hist = JSON.parse(historyJson);
+  function cleanData(arr) {
+    // Remove zero values that are likely data gaps (token expiry etc)
+    // Keep zeros only if ALL values are zero
+    var nonZero = arr.filter(function(v) { return v > 0; });
+    if (nonZero.length === 0) return arr;
+    return arr.map(function(v) { return v > 0 ? v : null; });
+  }
+  function renderSparkline(selector, data, color) {
+    var canvas = document.querySelector('[data-sparkline="' + selector + '"]');
+    if (!canvas || !data.length || !window.Chart) return;
+    new window.Chart(canvas, {
+      type: 'line',
+      data: {
+        labels: data.map(function(_, i) { return ''; }),
+        datasets: [{
+          data: data,
+          borderColor: color,
+          backgroundColor: color.replace('rgb', 'rgba').replace(')', ', 0.08)'),
+          fill: true, tension: 0.4, pointRadius: 0, borderWidth: 1.5,
+          spanGaps: true,
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: true, aspectRatio: 6,
+        plugins: { legend: { display: false }, tooltip: { enabled: false } },
+        scales: { x: { display: false }, y: { display: false, beginAtZero: true } },
+        layout: { padding: 0 },
+      }
+    });
+  }
+  if (hist.length > 0) {
+    renderSparkline('impressions', cleanData(hist.map(function(d) { return d.gsc_impressions || 0; })), 'rgb(59, 130, 246)');
+    renderSparkline('citations', hist.map(function(d) { return d.citation_rate || 0; }), 'rgb(168, 85, 247)');
+    renderSparkline('crawl', cleanData(hist.map(function(d) { return d.pages_crawled || 0; })), 'rgb(6, 182, 212)');
+  }
+})();</script> <script>(function(){const trafficDaily = "[]";
+const crawlDaily = "[]";
+
+  // Always-visible trend charts
+  function renderTrendChart(canvasId, data, valueKey, color, label) {
+    var canvas = document.getElementById(canvasId);
+    if (!canvas || !data.length || !window.Chart) return;
+    var labels = data.map(function(d) {
+      if (!d.date) return '';
+      var ds = d.date.length === 8 ? d.date.slice(0,4)+'-'+d.date.slice(4,6)+'-'+d.date.slice(6,8) : d.date;
+      return new Date(ds).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+    });
+    new window.Chart(canvas, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: label,
+          data: data.map(function(d) { return d[valueKey] || 0; }),
+          borderColor: color,
+          backgroundColor: color.replace(')', ', 0.1)').replace('rgb', 'rgba'),
+          fill: true, tension: 0.3, pointRadius: 1, borderWidth: 2,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { ticks: { color: '#9ca3af', font: { size: 9 }, maxTicksLimit: 8 }, grid: { color: '#374151' } },
+          y: { ticks: { color: '#9ca3af', font: { size: 10 } }, grid: { color: '#374151' }, beginAtZero: true },
+        }
+      }
+    });
+  }
+  var td = JSON.parse(trafficDaily).filter(function(d) { return (d.users || 0) > 0; });
+  var cd = JSON.parse(crawlDaily);
+  renderTrendChart('trafficTrendChart', td, 'users', 'rgb(59, 130, 246)', 'Users');
+  renderTrendChart('crawlTrendChart', cd, 'crawled_pages', 'rgb(139, 92, 246)', 'Pages Crawled');
+})();</script> <script>(function(){const chartDataMap = {};
+
+  // Render inline charts when panels are expanded
+  document.querySelectorAll('[data-chart-panel]').forEach(function(panel) {
+    panel.addEventListener('render-chart', function(e) {
+      var id = e.detail.id;
+      var data;
+      try {
+        var raw = chartDataMap[id];
+        if (!raw) return;
+        data = typeof raw === 'string' ? JSON.parse(raw) : raw;
+      } catch(err) { return; }
+
+      if (!data || data.length === 0) return;
+
+      var canvas = panel.querySelector('[data-chart-canvas="' + id + '"]');
+      if (!canvas || !window.Chart) return;
+
+      var labels = data.map(function(d) {
+        if (!d.date) return '';
+        if (d.date.length === 8 && /^\d{8}$/.test(d.date)) {
+          var ds = d.date.slice(0,4) + '-' + d.date.slice(4,6) + '-' + d.date.slice(6,8);
+          return new Date(ds).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+        }
+        var parsed = new Date(d.date);
+        if (!isNaN(parsed.getTime()) && d.date.indexOf('-') >= 0) {
+          return parsed.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+        }
+        return d.date;
+      });
+
+      var colors = {
+        'traffic': { border: '#3b82f6', bg: 'rgba(59, 130, 246, 0.1)' },
+        'crawl-activity': { border: '#8b5cf6', bg: 'rgba(139, 92, 246, 0.1)' },
+        'crawl-status': { border: '#10b981', bg: 'rgba(16, 185, 129, 0.1)' },
+        'search-performance': { border: '#06b6d4', bg: 'rgba(6, 182, 212, 0.1)' },
+        'uptime': { border: '#f59e0b', bg: 'rgba(245, 158, 11, 0.1)' },
+      };
+      var color = colors[id] || { border: '#3b82f6', bg: 'rgba(59, 130, 246, 0.1)' };
+
+      new window.Chart(canvas, {
+        type: ['ai-readiness', 'site-speed'].indexOf(id) >= 0 ? 'bar' : 'line',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: id.replace(/-/g, ' '),
+            data: data.map(function(d) { return d.value; }),
+            borderColor: color.border,
+            backgroundColor: color.bg,
+            fill: true,
+            tension: 0.3,
+            pointRadius: 2,
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { ticks: { color: '#6b7280', font: { size: 9 }, maxTicksLimit: 10 }, grid: { color: '#1f2937' } },
+            y: { ticks: { color: '#6b7280', font: { size: 10 } }, grid: { color: '#1f2937' } },
+          }
+        }
+      });
+    });
+  });
+})();</script> <script>(function(){const clientId = "resiliencebuilder";
+const recSectionMap = "{}";
+const recsTotal = 0;
+const recsCritical = 0;
+const recsHigh = 0;
+const recsMedium = 0;
+const recsLow = 0;
+const recsJson = "[]";
+
+  // Adjust recommendation counts based on localStorage dismissals
+  // Try both with and without trailing slash since Cloudflare may add one
+  var recStorageKey = 'rec-state-/agency/' + clientId + '/recommendations';
+  var recState = {};
+  try { recState = JSON.parse(localStorage.getItem(recStorageKey) || '{}'); } catch(e) {}
+  // If empty, try with trailing slash
+  if (Object.keys(recState).length === 0) {
+    try { recState = JSON.parse(localStorage.getItem(recStorageKey + '/') || '{}'); } catch(e) {}
+  }
+  try {
+    var sectionMap = JSON.parse(recSectionMap);
+    var allRecs = JSON.parse(recsJson);
+    var dismissed = Object.keys(recState);
+
+    if (dismissed.length > 0) {
+      // Count dismissed per section and per priority
+      var sectionReductions = {};
+      var priorityReductions = { critical: 0, high: 0, medium: 0, low: 0 };
+      var totalDismissed = 0;
+
+      dismissed.forEach(function(idx) {
+        var section = sectionMap[idx];
+        if (section) {
+          sectionReductions[section] = (sectionReductions[section] || 0) + 1;
+        }
+        var rec = allRecs[parseInt(idx)];
+        if (rec) {
+          priorityReductions[rec.priority] = (priorityReductions[rec.priority] || 0) + 1;
+        }
+        totalDismissed++;
+      });
+
+      // Update recommendations card metric number
+      var recMetric = document.querySelector('.section-metric[data-section-id="recommendations"]');
+      if (recMetric) {
+        var adjustedTotal = recsTotal - totalDismissed;
+        recMetric.textContent = adjustedTotal > 0 ? adjustedTotal : '0';
+        if (adjustedTotal <= 0) recMetric.style.color = '#86efac';
+      }
+
+      // Update section card badges
+      document.querySelectorAll('.rec-badge').forEach(function(badge) {
+        var sectionId = badge.getAttribute('data-section-id');
+        var original = parseInt(badge.getAttribute('data-original-count') || '0');
+        var reduction = sectionReductions[sectionId] || 0;
+        var adjusted = original - reduction;
+        if (adjusted <= 0) {
+          badge.style.display = 'none';
+        } else {
+          badge.textContent = adjusted + ' fixes';
+        }
+      });
+
+      // Update fixes summary bar
+      var adjustedTotal = recsTotal - totalDismissed;
+      var fixesBar = document.querySelector('[data-fixes-bar]');
+      if (fixesBar) {
+        var totalEl = fixesBar.querySelector('[data-fixes-total]');
+        if (totalEl) {
+          if (adjustedTotal <= 0) {
+            totalEl.textContent = 'All fixes addressed';
+            totalEl.style.color = '#86efac';
+          } else {
+            totalEl.textContent = adjustedTotal + ' fixes needed';
+          }
+        }
+        var critEl = fixesBar.querySelector('[data-fixes-critical]');
+        if (critEl) {
+          var adjCrit = recsCritical - (priorityReductions.critical || 0);
+          if (adjCrit <= 0) critEl.style.display = 'none';
+          else critEl.textContent = adjCrit + ' critical';
+        }
+        var highEl = fixesBar.querySelector('[data-fixes-high]');
+        if (highEl) {
+          var adjHigh = recsHigh - (priorityReductions.high || 0);
+          if (adjHigh <= 0) highEl.style.display = 'none';
+          else highEl.textContent = adjHigh + ' high';
+        }
+        var medEl = fixesBar.querySelector('[data-fixes-medium]');
+        if (medEl) {
+          var adjMed = recsMedium - (priorityReductions.medium || 0);
+          if (adjMed <= 0) medEl.style.display = 'none';
+          else medEl.textContent = adjMed + ' medium';
+        }
+        var lowEl = fixesBar.querySelector('[data-fixes-low]');
+        if (lowEl) {
+          var adjLow = recsLow - (priorityReductions.low || 0);
+          if (adjLow <= 0) lowEl.style.display = 'none';
+          else lowEl.textContent = adjLow + ' low';
+        }
+      }
+    }
+  } catch(e) {}
+})();</script>

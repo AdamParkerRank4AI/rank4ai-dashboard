@@ -1,10 +1,10 @@
 {
-  "checked_at": "2026-05-27T09:29:47.902897+00:00",
+  "checked_at": "2026-06-10T10:42:46.576567+00:00",
   "summary": {
     "total_sites": 8,
-    "fully_covered": 5,
+    "fully_covered": 0,
     "total_checks": 88,
-    "failed_checks": 6
+    "failed_checks": 9
   },
   "checks_order": [
     "strict_lint_gate",
@@ -37,8 +37,8 @@
       "site": "rank4ai",
       "checks": {
         "strict_lint_gate": {
-          "pass": true,
-          "detail": "fleet-lint.cjs + strict postbuild"
+          "pass": false,
+          "detail": "postbuild not strict"
         },
         "fleetcore_sha_pin": {
           "pass": true,
@@ -65,12 +65,12 @@
           "detail": "in layouts/Layout.astro"
         },
         "agent_data_layer": {
-          "pass": false,
-          "detail": "no openapi/mcp/functions-api"
+          "pass": true,
+          "detail": "public/openapi.json, functions/mcp.ts, public/.well-known/mcp.json, functions/api/"
         },
         "dataset_schema": {
-          "pass": false,
-          "detail": "Dataset not found"
+          "pass": true,
+          "detail": "in pages/data/uk-ai-search-visibility-stat-index.astro"
         },
         "og_png": {
           "pass": true,
@@ -83,20 +83,20 @@
       },
       "summary": {
         "checks": 11,
-        "failed": 2,
-        "pass_rate": 81.8
+        "failed": 1,
+        "pass_rate": 90.9
       }
     },
     "market-invoice": {
       "site": "market-invoice",
       "checks": {
         "strict_lint_gate": {
-          "pass": true,
-          "detail": "fleet-lint.cjs + strict postbuild"
+          "pass": false,
+          "detail": "postbuild not strict"
         },
         "fleetcore_sha_pin": {
           "pass": true,
-          "detail": "pinned #e191be5"
+          "detail": "pinned #95c9e3d"
         },
         "llms_txt": {
           "pass": true,
@@ -112,11 +112,11 @@
         },
         "answer_capsules": {
           "pass": true,
-          "detail": "in components/SpeakableSchema.astro"
+          "detail": "in components/AccreditationsPage.astro"
         },
         "graph_sameas": {
           "pass": true,
-          "detail": "in layouts/BaseLayout.astro"
+          "detail": "in components/ProviderCitationSchema.astro"
         },
         "agent_data_layer": {
           "pass": true,
@@ -124,7 +124,7 @@
         },
         "dataset_schema": {
           "pass": true,
-          "detail": "in pages/data/uk-invoice-finance-rate-index.astro"
+          "detail": "in pages/research/uk-late-payment-index/index.astro"
         },
         "og_png": {
           "pass": true,
@@ -137,28 +137,28 @@
       },
       "summary": {
         "checks": 11,
-        "failed": 0,
-        "pass_rate": 100.0
+        "failed": 1,
+        "pass_rate": 90.9
       }
     },
     "seocompare": {
       "site": "seocompare",
       "checks": {
         "strict_lint_gate": {
-          "pass": true,
-          "detail": "fleet-lint.cjs + strict postbuild"
+          "pass": false,
+          "detail": "postbuild not strict"
         },
         "fleetcore_sha_pin": {
           "pass": true,
           "detail": "pinned #e191be5"
         },
         "llms_txt": {
-          "pass": false,
-          "detail": "llms.txt missing"
+          "pass": true,
+          "detail": "present"
         },
         "llms_full_txt": {
-          "pass": false,
-          "detail": "llms-full.txt missing"
+          "pass": true,
+          "detail": "present"
         },
         "ai_txt": {
           "pass": true,
@@ -191,28 +191,28 @@
       },
       "summary": {
         "checks": 11,
-        "failed": 3,
-        "pass_rate": 72.7
+        "failed": 2,
+        "pass_rate": 81.8
       }
     },
     "bestbusinessloans": {
       "site": "bestbusinessloans",
       "checks": {
         "strict_lint_gate": {
-          "pass": true,
-          "detail": "fleet-lint.cjs + strict postbuild"
+          "pass": false,
+          "detail": "postbuild not strict"
         },
         "fleetcore_sha_pin": {
           "pass": true,
-          "detail": "pinned #e191be5"
+          "detail": "pinned #3f6ac93"
         },
         "llms_txt": {
           "pass": true,
           "detail": "present"
         },
         "llms_full_txt": {
-          "pass": false,
-          "detail": "llms-full.txt missing"
+          "pass": true,
+          "detail": "present"
         },
         "ai_txt": {
           "pass": true,
@@ -232,7 +232,7 @@
         },
         "dataset_schema": {
           "pass": true,
-          "detail": "in pages/compare/lender-criteria/index.astro"
+          "detail": "in lib/statisticsSchema.ts"
         },
         "og_png": {
           "pass": true,
@@ -253,12 +253,12 @@
       "site": "fundbiz",
       "checks": {
         "strict_lint_gate": {
-          "pass": true,
-          "detail": "fleet-lint.cjs + strict postbuild"
+          "pass": false,
+          "detail": "postbuild not strict"
         },
         "fleetcore_sha_pin": {
           "pass": true,
-          "detail": "pinned #e191be5"
+          "detail": "pinned #3f6ac93"
         },
         "llms_txt": {
           "pass": true,
@@ -274,7 +274,7 @@
         },
         "answer_capsules": {
           "pass": true,
-          "detail": "in components/SpeakableSchema.astro"
+          "detail": "in components/AnswerCapsule.astro"
         },
         "graph_sameas": {
           "pass": true,
@@ -286,7 +286,7 @@
         },
         "dataset_schema": {
           "pass": true,
-          "detail": "in pages/data/uk-business-finance-lender-index.astro"
+          "detail": "in lib/statisticsSchema.ts"
         },
         "og_png": {
           "pass": true,
@@ -299,20 +299,20 @@
       },
       "summary": {
         "checks": 11,
-        "failed": 0,
-        "pass_rate": 100.0
+        "failed": 1,
+        "pass_rate": 90.9
       }
     },
     "cardmachines": {
       "site": "cardmachines",
       "checks": {
         "strict_lint_gate": {
-          "pass": true,
-          "detail": "fleet-lint.cjs + strict postbuild"
+          "pass": false,
+          "detail": "postbuild not strict"
         },
         "fleetcore_sha_pin": {
           "pass": true,
-          "detail": "pinned #e191be5"
+          "detail": "pinned #3f6ac93"
         },
         "llms_txt": {
           "pass": true,
@@ -332,7 +332,7 @@
         },
         "graph_sameas": {
           "pass": true,
-          "detail": "in layouts/BaseLayout.astro"
+          "detail": "in components/AcquirerCitationSchema.astro"
         },
         "agent_data_layer": {
           "pass": true,
@@ -340,7 +340,7 @@
         },
         "dataset_schema": {
           "pass": true,
-          "detail": "in pages/learn/match-list-tmf-uk.astro"
+          "detail": "in lib/statisticsSchema.ts"
         },
         "og_png": {
           "pass": true,
@@ -353,16 +353,16 @@
       },
       "summary": {
         "checks": 11,
-        "failed": 0,
-        "pass_rate": 100.0
+        "failed": 1,
+        "pass_rate": 90.9
       }
     },
     "kartapay": {
       "site": "kartapay",
       "checks": {
         "strict_lint_gate": {
-          "pass": true,
-          "detail": "fleet-lint.cjs + strict postbuild"
+          "pass": false,
+          "detail": "postbuild not strict"
         },
         "fleetcore_sha_pin": {
           "pass": true,
@@ -386,7 +386,7 @@
         },
         "graph_sameas": {
           "pass": true,
-          "detail": "in layouts/BaseLayout.astro"
+          "detail": "in components/AcquirerCitationSchema.astro"
         },
         "agent_data_layer": {
           "pass": true,
@@ -394,7 +394,7 @@
         },
         "dataset_schema": {
           "pass": true,
-          "detail": "in pages/data/uk-card-acquirer-index.astro"
+          "detail": "in lib/statisticsSchema.ts"
         },
         "og_png": {
           "pass": true,
@@ -407,16 +407,16 @@
       },
       "summary": {
         "checks": 11,
-        "failed": 0,
-        "pass_rate": 100.0
+        "failed": 1,
+        "pass_rate": 90.9
       }
     },
     "peptideclear": {
       "site": "peptideclear",
       "checks": {
         "strict_lint_gate": {
-          "pass": true,
-          "detail": "fleet-lint.cjs + strict postbuild"
+          "pass": false,
+          "detail": "postbuild not strict"
         },
         "fleetcore_sha_pin": {
           "pass": true,
@@ -436,7 +436,7 @@
         },
         "answer_capsules": {
           "pass": true,
-          "detail": "in components/QuickSummary.astro"
+          "detail": "in content/translations/pl/e-recepta-vs-uk-private-prescription.md"
         },
         "graph_sameas": {
           "pass": true,
@@ -448,7 +448,7 @@
         },
         "dataset_schema": {
           "pass": true,
-          "detail": "in pages/coa-trust-index.astro"
+          "detail": "in lib/statisticsSchema.ts"
         },
         "og_png": {
           "pass": true,
@@ -461,8 +461,8 @@
       },
       "summary": {
         "checks": 11,
-        "failed": 0,
-        "pass_rate": 100.0
+        "failed": 1,
+        "pass_rate": 90.9
       }
     }
   }

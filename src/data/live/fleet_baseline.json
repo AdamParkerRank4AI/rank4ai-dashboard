@@ -1,10 +1,10 @@
 {
-  "checked_at": "2026-05-22T12:03:53.486515+00:00",
+  "checked_at": "2026-06-10T10:47:23.440444+00:00",
   "summary": {
     "total_sites": 8,
-    "passing_sites": 3,
+    "passing_sites": 5,
     "total_checks": 120,
-    "failed_checks": 7
+    "failed_checks": 3
   },
   "sites": {
     "rank4ai": {
@@ -25,19 +25,19 @@
         },
         "llms_txt": {
           "pass": true,
-          "detail": "HTTP 200"
+          "detail": "skipped (fleet rejected llms.txt 21 May 2026)"
         },
         "llms_full_txt": {
           "pass": true,
-          "detail": "HTTP 200"
+          "detail": "skipped (fleet rejected llms.txt 21 May 2026)"
         },
         "ai_txt": {
           "pass": true,
           "detail": "HTTP 200"
         },
         "indexnow_key": {
-          "pass": false,
-          "detail": "HTTP 404"
+          "pass": true,
+          "detail": "HTTP 200"
         },
         "robots_ai_bots": {
           "pass": true,
@@ -56,8 +56,8 @@
           "detail": "FAQPage absent (correct)"
         },
         "og_image_png": {
-          "pass": false,
-          "detail": "og:image is SVG (https://www.rank4ai.co.uk/og-image.svg)"
+          "pass": true,
+          "detail": "og-image.png"
         },
         "sitemap": {
           "pass": true,
@@ -74,8 +74,8 @@
       },
       "summary": {
         "checks": 15,
-        "failed": 2,
-        "pass_rate": 86.7
+        "failed": 0,
+        "pass_rate": 100.0
       }
     },
     "market-invoice": {
@@ -96,153 +96,11 @@
         },
         "llms_txt": {
           "pass": true,
-          "detail": "HTTP 200"
+          "detail": "skipped (fleet rejected llms.txt 21 May 2026)"
         },
         "llms_full_txt": {
           "pass": true,
-          "detail": "HTTP 200"
-        },
-        "ai_txt": {
-          "pass": true,
-          "detail": "HTTP 200"
-        },
-        "indexnow_key": {
-          "pass": false,
-          "detail": "HTTP 404"
-        },
-        "robots_ai_bots": {
-          "pass": true,
-          "detail": "all 4 bots allowed"
-        },
-        "org_schema": {
-          "pass": true,
-          "detail": "Organization-like type present"
-        },
-        "website_schema": {
-          "pass": true,
-          "detail": "WebSite present"
-        },
-        "no_faqpage": {
-          "pass": true,
-          "detail": "FAQPage absent (correct)"
-        },
-        "og_image_png": {
-          "pass": true,
-          "detail": "og-default.png"
-        },
-        "sitemap": {
-          "pass": true,
-          "detail": "sitemap-index:200 sitemap:404"
-        },
-        "hsts": {
-          "pass": true,
-          "detail": "HSTS present"
-        },
-        "rel_related": {
-          "pass": true,
-          "detail": "rel=related found"
-        }
-      },
-      "summary": {
-        "checks": 15,
-        "failed": 1,
-        "pass_rate": 93.3
-      }
-    },
-    "seocompare": {
-      "site": "seocompare",
-      "url": "https://seocompare.co.uk",
-      "checks": {
-        "site_reachable": {
-          "pass": true,
-          "detail": "HTTP 200"
-        },
-        "ga4_firing": {
-          "pass": true,
-          "detail": "GA4 tag in HTML"
-        },
-        "clarity_firing": {
-          "pass": false,
-          "detail": "Clarity missing"
-        },
-        "llms_txt": {
-          "pass": true,
-          "detail": "HTTP 200"
-        },
-        "llms_full_txt": {
-          "pass": true,
-          "detail": "HTTP 200"
-        },
-        "ai_txt": {
-          "pass": true,
-          "detail": "HTTP 200"
-        },
-        "indexnow_key": {
-          "pass": false,
-          "detail": "HTTP 404"
-        },
-        "robots_ai_bots": {
-          "pass": true,
-          "detail": "all 4 bots allowed"
-        },
-        "org_schema": {
-          "pass": true,
-          "detail": "Organization-like type present"
-        },
-        "website_schema": {
-          "pass": true,
-          "detail": "WebSite present"
-        },
-        "no_faqpage": {
-          "pass": true,
-          "detail": "FAQPage absent (correct)"
-        },
-        "og_image_png": {
-          "pass": true,
-          "detail": "og-default.png"
-        },
-        "sitemap": {
-          "pass": true,
-          "detail": "sitemap-index:200 sitemap:404"
-        },
-        "hsts": {
-          "pass": true,
-          "detail": "HSTS present"
-        },
-        "rel_related": {
-          "pass": true,
-          "detail": "rel=related found"
-        }
-      },
-      "summary": {
-        "checks": 15,
-        "failed": 2,
-        "pass_rate": 86.7
-      }
-    },
-    "bestbusinessloans": {
-      "site": "bestbusinessloans",
-      "url": "https://bestbusinessloans.ai",
-      "checks": {
-        "site_reachable": {
-          "pass": true,
-          "detail": "HTTP 200"
-        },
-        "ga4_firing": {
-          "pass": true,
-          "detail": "GA4 tag in HTML"
-        },
-        "clarity_firing": {
-          "pass": true,
-          "detail": "Clarity in HTML"
-        },
-        "llms_txt": {
-          "pass": true,
-          "detail": "HTTP 200"
-        },
-        "llms_full_txt": {
-          "pass": true,
-          "detail": "HTTP 200"
+          "detail": "skipped (fleet rejected llms.txt 21 May 2026)"
         },
         "ai_txt": {
           "pass": true,
@@ -291,9 +149,9 @@
         "pass_rate": 100.0
       }
     },
-    "fundbiz": {
-      "site": "fundbiz",
-      "url": "https://fundbiz.co.uk",
+    "seocompare": {
+      "site": "seocompare",
+      "url": "https://seocompare.co.uk",
       "checks": {
         "site_reachable": {
           "pass": true,
@@ -304,24 +162,24 @@
           "detail": "GA4 tag in HTML"
         },
         "clarity_firing": {
-          "pass": true,
-          "detail": "Clarity in HTML"
+          "pass": false,
+          "detail": "Clarity missing"
         },
         "llms_txt": {
           "pass": true,
-          "detail": "HTTP 200"
+          "detail": "skipped (fleet rejected llms.txt 21 May 2026)"
         },
         "llms_full_txt": {
           "pass": true,
-          "detail": "HTTP 200"
+          "detail": "skipped (fleet rejected llms.txt 21 May 2026)"
         },
         "ai_txt": {
           "pass": true,
           "detail": "HTTP 200"
         },
         "indexnow_key": {
-          "pass": false,
-          "detail": "HTTP 404"
+          "pass": true,
+          "detail": "HTTP 200"
         },
         "robots_ai_bots": {
           "pass": true,
@@ -362,6 +220,148 @@
         "pass_rate": 93.3
       }
     },
+    "bestbusinessloans": {
+      "site": "bestbusinessloans",
+      "url": "https://bestbusinessloans.ai",
+      "checks": {
+        "site_reachable": {
+          "pass": true,
+          "detail": "HTTP 200"
+        },
+        "ga4_firing": {
+          "pass": true,
+          "detail": "GA4 tag in HTML"
+        },
+        "clarity_firing": {
+          "pass": true,
+          "detail": "Clarity in HTML"
+        },
+        "llms_txt": {
+          "pass": true,
+          "detail": "skipped (fleet rejected llms.txt 21 May 2026)"
+        },
+        "llms_full_txt": {
+          "pass": true,
+          "detail": "skipped (fleet rejected llms.txt 21 May 2026)"
+        },
+        "ai_txt": {
+          "pass": true,
+          "detail": "HTTP 200"
+        },
+        "indexnow_key": {
+          "pass": false,
+          "detail": "HTTP 0"
+        },
+        "robots_ai_bots": {
+          "pass": true,
+          "detail": "all 4 bots allowed"
+        },
+        "org_schema": {
+          "pass": true,
+          "detail": "Organization-like type present"
+        },
+        "website_schema": {
+          "pass": true,
+          "detail": "WebSite present"
+        },
+        "no_faqpage": {
+          "pass": true,
+          "detail": "FAQPage absent (correct)"
+        },
+        "og_image_png": {
+          "pass": true,
+          "detail": "og-default.png"
+        },
+        "sitemap": {
+          "pass": true,
+          "detail": "sitemap-index:200 sitemap:404"
+        },
+        "hsts": {
+          "pass": true,
+          "detail": "HSTS present"
+        },
+        "rel_related": {
+          "pass": true,
+          "detail": "rel=related found"
+        }
+      },
+      "summary": {
+        "checks": 15,
+        "failed": 1,
+        "pass_rate": 93.3
+      }
+    },
+    "fundbiz": {
+      "site": "fundbiz",
+      "url": "https://fundbiz.co.uk",
+      "checks": {
+        "site_reachable": {
+          "pass": true,
+          "detail": "HTTP 200"
+        },
+        "ga4_firing": {
+          "pass": true,
+          "detail": "GA4 tag in HTML"
+        },
+        "clarity_firing": {
+          "pass": true,
+          "detail": "Clarity in HTML"
+        },
+        "llms_txt": {
+          "pass": true,
+          "detail": "skipped (fleet rejected llms.txt 21 May 2026)"
+        },
+        "llms_full_txt": {
+          "pass": true,
+          "detail": "skipped (fleet rejected llms.txt 21 May 2026)"
+        },
+        "ai_txt": {
+          "pass": true,
+          "detail": "HTTP 200"
+        },
+        "indexnow_key": {
+          "pass": true,
+          "detail": "HTTP 200"
+        },
+        "robots_ai_bots": {
+          "pass": true,
+          "detail": "all 4 bots allowed"
+        },
+        "org_schema": {
+          "pass": true,
+          "detail": "Organization-like type present"
+        },
+        "website_schema": {
+          "pass": true,
+          "detail": "WebSite present"
+        },
+        "no_faqpage": {
+          "pass": true,
+          "detail": "FAQPage absent (correct)"
+        },
+        "og_image_png": {
+          "pass": true,
+          "detail": "og-default.png"
+        },
+        "sitemap": {
+          "pass": true,
+          "detail": "sitemap-index:200 sitemap:404"
+        },
+        "hsts": {
+          "pass": true,
+          "detail": "HSTS present"
+        },
+        "rel_related": {
+          "pass": true,
+          "detail": "rel=related found"
+        }
+      },
+      "summary": {
+        "checks": 15,
+        "failed": 0,
+        "pass_rate": 100.0
+      }
+    },
     "merchanthq": {
       "site": "merchanthq",
       "url": "https://merchanthq.co.uk",
@@ -380,11 +380,11 @@
         },
         "llms_txt": {
           "pass": true,
-          "detail": "HTTP 200"
+          "detail": "skipped (fleet rejected llms.txt 21 May 2026)"
         },
         "llms_full_txt": {
           "pass": true,
-          "detail": "HTTP 200"
+          "detail": "skipped (fleet rejected llms.txt 21 May 2026)"
         },
         "ai_txt": {
           "pass": true,
@@ -395,8 +395,8 @@
           "detail": "HTTP 200"
         },
         "robots_ai_bots": {
-          "pass": true,
-          "detail": "all 4 bots allowed"
+          "pass": false,
+          "detail": "robots.txt HTTP 0"
         },
         "org_schema": {
           "pass": true,
@@ -429,8 +429,8 @@
       },
       "summary": {
         "checks": 15,
-        "failed": 0,
-        "pass_rate": 100.0
+        "failed": 1,
+        "pass_rate": 93.3
       }
     },
     "peptideclear": {
@@ -451,11 +451,11 @@
         },
         "llms_txt": {
           "pass": true,
-          "detail": "HTTP 200"
+          "detail": "skipped (fleet rejected llms.txt 21 May 2026)"
         },
         "llms_full_txt": {
           "pass": true,
-          "detail": "HTTP 200"
+          "detail": "skipped (fleet rejected llms.txt 21 May 2026)"
         },
         "ai_txt": {
           "pass": true,
@@ -522,19 +522,19 @@
         },
         "llms_txt": {
           "pass": true,
-          "detail": "HTTP 200"
+          "detail": "skipped (fleet rejected llms.txt 21 May 2026)"
         },
         "llms_full_txt": {
           "pass": true,
-          "detail": "HTTP 200"
+          "detail": "skipped (fleet rejected llms.txt 21 May 2026)"
         },
         "ai_txt": {
           "pass": true,
           "detail": "HTTP 200"
         },
         "indexnow_key": {
-          "pass": false,
-          "detail": "HTTP 404"
+          "pass": true,
+          "detail": "HTTP 200"
         },
         "robots_ai_bots": {
           "pass": true,
@@ -571,8 +571,8 @@
       },
       "summary": {
         "checks": 15,
-        "failed": 1,
-        "pass_rate": 93.3
+        "failed": 0,
+        "pass_rate": 100.0
       }
     }
   }

@@ -1,263 +1,121 @@
 {
   "sites": {
     "market-invoice": {
-      "lead_count": 6,
+      "lead_count": 9,
       "converting_paths": [
         "/",
+        "/best/best-for-export",
+        "/best/invoice-finance-for-local-authority-suppliers",
         "/best/same-day-invoice-finance",
-        "/industries/scaffolding",
+        "/guides/spot-factoring-uk",
         "/invoice-finance-quote",
         "/providers",
         "/purchase-order-finance"
       ],
       "pages": [
         {
-          "path": "/working-capital",
-          "humans": 3,
-          "scroll": 54.5,
-          "active_s": 27.0,
-          "dead_clicks": 0,
-          "quickbacks": 0,
-          "class": "DEAD_WEIGHT"
-        },
-        {
-          "path": "/providers/regency-factors",
-          "humans": 3,
-          "scroll": 64.3,
-          "active_s": 52.0,
-          "dead_clicks": 0,
-          "quickbacks": 0,
-          "class": "DEAD_WEIGHT"
-        },
-        {
-          "path": "/compare",
-          "humans": 5,
-          "scroll": 63.6,
-          "active_s": 34.0,
+          "path": "/providers/qube",
+          "humans": 4,
+          "scroll": 13.4,
+          "active_s": 4.0,
           "dead_clicks": 1,
           "quickbacks": 0,
           "class": "LEAK"
         },
         {
-          "path": "/calculator",
-          "humans": 4,
-          "scroll": 20.5,
-          "active_s": 103.0,
-          "dead_clicks": 1,
-          "quickbacks": 0,
-          "class": "LEAK"
-        },
-        {
-          "path": "/guides/invoice-finance-market-overview-2026",
-          "humans": 4,
-          "scroll": 46.2,
-          "active_s": 33.0,
-          "dead_clicks": 3,
-          "quickbacks": 0,
-          "class": "LEAK"
-        },
-        {
-          "path": "/providers/bibby",
-          "humans": 4,
-          "scroll": 49.0,
-          "active_s": 44.0,
-          "dead_clicks": 4,
-          "quickbacks": 0,
-          "class": "LEAK"
-        },
-        {
-          "path": "/compare-invoice-finance-providers-uk",
-          "humans": 3,
-          "scroll": 62.7,
-          "active_s": 62.0,
-          "dead_clicks": 1,
-          "quickbacks": 0,
-          "class": "LEAK"
-        },
-        {
-          "path": "/providers/hsbc",
+          "path": "/best",
           "humans": 2,
-          "scroll": 35.0,
-          "active_s": 15.0,
-          "dead_clicks": 1,
-          "quickbacks": 0,
-          "class": "LEAK"
-        },
-        {
-          "path": "/providers/directory",
-          "humans": 2,
-          "scroll": 38.7,
-          "active_s": 103.0,
-          "dead_clicks": 2,
+          "scroll": 45.8,
+          "active_s": 23.0,
+          "dead_clicks": 0,
           "quickbacks": 2,
           "class": "LEAK"
         },
         {
-          "path": "/providers/wedo-finance",
+          "path": "/thank-you",
+          "humans": 2,
+          "scroll": 62.0,
+          "active_s": 4.0,
+          "dead_clicks": 0,
+          "quickbacks": 1,
+          "class": "LEAK"
+        },
+        {
+          "path": "/blog/invoice-finance-for-export-smes-managing-currency-risk-and-overseas-debtor-delays",
           "humans": 4,
-          "scroll": 14.6,
+          "scroll": 11.0,
+          "active_s": 1.0,
+          "dead_clicks": 0,
+          "quickbacks": 0,
+          "class": "BOUNCE"
+        },
+        {
+          "path": "/providers/flex-abl",
+          "humans": 3,
+          "scroll": 0,
+          "active_s": 0,
+          "dead_clicks": 0,
+          "quickbacks": 0,
+          "class": "BOUNCE"
+        },
+        {
+          "path": "/guides/invoice-finance-after-high-street-bank-exit",
+          "humans": 3,
+          "scroll": 24.0,
+          "active_s": 4.0,
+          "dead_clicks": 0,
+          "quickbacks": 0,
+          "class": "BOUNCE"
+        },
+        {
+          "path": "/stats/uk-invoice-finance-statistics-2026",
+          "humans": 2,
+          "scroll": 18.0,
           "active_s": 2.0,
           "dead_clicks": 0,
           "quickbacks": 0,
           "class": "BOUNCE"
         },
         {
-          "path": "/blog/whatever-happened-to-aldermore-invoice-finance",
+          "path": "/providers/wedo-finance",
           "humans": 2,
-          "scroll": 23.0,
-          "active_s": 0,
-          "dead_clicks": 0,
-          "quickbacks": 0,
-          "class": "BOUNCE"
-        },
-        {
-          "path": "/blog/hidden-costs-invoice-finance",
-          "humans": 2,
-          "scroll": 25.0,
-          "active_s": 0,
-          "dead_clicks": 0,
-          "quickbacks": 0,
-          "class": "BOUNCE"
-        },
-        {
-          "path": "/",
-          "humans": 15,
-          "scroll": 42.4,
-          "active_s": 18.0,
-          "dead_clicks": 2,
-          "quickbacks": 3,
-          "class": "CONVERTER"
-        },
-        {
-          "path": "/purchase-order-finance",
-          "humans": 5,
-          "scroll": 40.4,
-          "active_s": 160.0,
-          "dead_clicks": 2,
-          "quickbacks": 0,
-          "class": "CONVERTER"
-        },
-        {
-          "path": "/best/same-day-invoice-finance",
-          "humans": 4,
-          "scroll": 37.5,
-          "active_s": 3.0,
-          "dead_clicks": 0,
-          "quickbacks": 0,
-          "class": "CONVERTER"
-        },
-        {
-          "path": "/providers",
-          "humans": 3,
           "scroll": 12.0,
-          "active_s": 15.0,
+          "active_s": 0,
           "dead_clicks": 0,
           "quickbacks": 0,
-          "class": "CONVERTER"
+          "class": "BOUNCE"
         },
         {
-          "path": "/providers/growth-lending",
-          "humans": 4,
+          "path": "/providers/secure-trust",
+          "humans": 2,
+          "scroll": 13.0,
+          "active_s": 0,
+          "dead_clicks": 0,
+          "quickbacks": 0,
+          "class": "BOUNCE"
+        },
+        {
+          "path": "/best/best-for-recruitment",
+          "humans": 2,
           "scroll": 0,
-          "active_s": 21.0,
-          "dead_clicks": 0,
-          "quickbacks": 0,
-          "class": "OK"
-        },
-        {
-          "path": "/about",
-          "humans": 3,
-          "scroll": 68.3,
-          "active_s": 4.0,
-          "dead_clicks": 0,
-          "quickbacks": 0,
-          "class": "OK"
-        },
-        {
-          "path": "/blog/whatever-happened-to-hitachi-capital",
-          "humans": 2,
-          "scroll": 32.0,
           "active_s": 0,
           "dead_clicks": 0,
           "quickbacks": 0,
-          "class": "OK"
+          "class": "BOUNCE"
         },
         {
-          "path": "/disclaimer",
-          "humans": 2,
-          "scroll": 50.0,
-          "active_s": 3.0,
+          "path": "/working-capital",
+          "humans": 5,
+          "scroll": 16.0,
+          "active_s": 13.0,
           "dead_clicks": 0,
           "quickbacks": 0,
           "class": "OK"
         },
         {
-          "path": "/providers/leumi-abl",
+          "path": "/blog/whatever-happened-to-marketinvoice",
           "humans": 2,
-          "scroll": 53.5,
-          "active_s": 9.0,
-          "dead_clicks": 0,
-          "quickbacks": 0,
-          "class": "OK"
-        },
-        {
-          "path": "/guides/how-invoice-finance-works",
-          "humans": 2,
-          "scroll": 17.5,
-          "active_s": 10.0,
-          "dead_clicks": 0,
-          "quickbacks": 0,
-          "class": "OK"
-        },
-        {
-          "path": "/terms",
-          "humans": 2,
-          "scroll": 45.0,
-          "active_s": 0,
-          "dead_clicks": 0,
-          "quickbacks": 0,
-          "class": "OK"
-        },
-        {
-          "path": "/contact",
-          "humans": 2,
-          "scroll": 55.0,
-          "active_s": 0,
-          "dead_clicks": 0,
-          "quickbacks": 0,
-          "class": "OK"
-        },
-        {
-          "path": "/cookie-policy",
-          "humans": 2,
-          "scroll": 44.0,
-          "active_s": 0,
-          "dead_clicks": 0,
-          "quickbacks": 0,
-          "class": "OK"
-        },
-        {
-          "path": "/blog/manufacturing-cash-flow-2026",
-          "humans": 2,
-          "scroll": 26.0,
-          "active_s": 0,
-          "dead_clicks": 0,
-          "quickbacks": 0,
-          "class": "OK"
-        },
-        {
-          "path": "/privacy",
-          "humans": 2,
-          "scroll": 34.0,
-          "active_s": 0,
-          "dead_clicks": 0,
-          "quickbacks": 0,
-          "class": "OK"
-        },
-        {
-          "path": "/blog/bank-vs-independent-invoice-finance",
-          "humans": 2,
-          "scroll": 27.0,
+          "scroll": 48.0,
           "active_s": 0,
           "dead_clicks": 0,
           "quickbacks": 0,
@@ -272,73 +130,145 @@
       ],
       "pages": [
         {
-          "path": "/shop",
-          "humans": 7,
-          "scroll": 49.1,
-          "active_s": 40.0,
+          "path": "/clinics",
+          "humans": 2,
+          "scroll": 43.0,
+          "active_s": 25.0,
+          "dead_clicks": 0,
+          "quickbacks": 0,
+          "class": "DEAD_WEIGHT"
+        },
+        {
+          "path": "/explained/mhra-medicines-classification",
+          "humans": 2,
+          "scroll": 42.0,
+          "active_s": 69.0,
+          "dead_clicks": 0,
+          "quickbacks": 0,
+          "class": "DEAD_WEIGHT"
+        },
+        {
+          "path": "/icb/kent-medway",
+          "humans": 2,
+          "scroll": 49.0,
+          "active_s": 30.0,
+          "dead_clicks": 0,
+          "quickbacks": 0,
+          "class": "DEAD_WEIGHT"
+        },
+        {
+          "path": "/coa-trust-index",
+          "humans": 9,
+          "scroll": 15.2,
+          "active_s": 3.0,
           "dead_clicks": 1,
+          "quickbacks": 0,
+          "class": "LEAK"
+        },
+        {
+          "path": "/retailer",
+          "humans": 5,
+          "scroll": 39.3,
+          "active_s": 105.0,
+          "dead_clicks": 0,
           "quickbacks": 2,
           "class": "LEAK"
         },
         {
-          "path": "/best/collagen-uk",
-          "humans": 2,
-          "scroll": 19.0,
-          "active_s": 31.0,
-          "dead_clicks": 5,
+          "path": "/research-peptides/pt-141",
+          "humans": 3,
+          "scroll": 51.3,
+          "active_s": 35.0,
+          "dead_clicks": 1,
           "quickbacks": 1,
           "class": "LEAK"
         },
         {
-          "path": "/best/bpc-157-uk",
+          "path": "/retailer/xl-peptides",
           "humans": 3,
-          "scroll": 11.7,
+          "scroll": 30.8,
+          "active_s": 11.0,
+          "dead_clicks": 2,
+          "quickbacks": 0,
+          "class": "LEAK"
+        },
+        {
+          "path": "/research-peptides/uk-retailers",
+          "humans": 3,
+          "scroll": 19.3,
+          "active_s": 23.0,
+          "dead_clicks": 6,
+          "quickbacks": 0,
+          "class": "LEAK"
+        },
+        {
+          "path": "/shop/tesamorelin",
+          "humans": 2,
+          "scroll": 14.0,
+          "active_s": 10.0,
+          "dead_clicks": 0,
+          "quickbacks": 1,
+          "class": "LEAK"
+        },
+        {
+          "path": "/shop/pt-141",
+          "humans": 2,
+          "scroll": 51.0,
+          "active_s": 63.0,
+          "dead_clicks": 1,
+          "quickbacks": 0,
+          "class": "LEAK"
+        },
+        {
+          "path": "/compounds/semax",
+          "humans": 2,
+          "scroll": 20.0,
+          "active_s": 4.0,
+          "dead_clicks": 0,
+          "quickbacks": 0,
+          "class": "BOUNCE"
+        },
+        {
+          "path": "/disclaimer",
+          "humans": 2,
+          "scroll": 22.0,
           "active_s": 2.0,
           "dead_clicks": 0,
           "quickbacks": 0,
           "class": "BOUNCE"
         },
         {
-          "path": "/mounjaro/york",
-          "humans": 3,
-          "scroll": 41.3,
-          "active_s": 4.0,
-          "dead_clicks": 0,
-          "quickbacks": 0,
-          "class": "OK"
-        },
-        {
-          "path": "/shop/mots-c",
-          "humans": 3,
-          "scroll": 35.3,
-          "active_s": 6.0,
-          "dead_clicks": 0,
-          "quickbacks": 0,
-          "class": "OK"
-        },
-        {
-          "path": "/research-peptides",
+          "path": "/contact",
           "humans": 2,
-          "scroll": 21.5,
+          "scroll": 34.0,
+          "active_s": 2.0,
+          "dead_clicks": 0,
+          "quickbacks": 0,
+          "class": "CONVERTER"
+        },
+        {
+          "path": "/best/collagen-uk",
+          "humans": 3,
+          "scroll": 25.0,
+          "active_s": 165.0,
+          "dead_clicks": 0,
+          "quickbacks": 0,
+          "class": "OK"
+        },
+        {
+          "path": "/retailer/anglo-peptides",
+          "humans": 2,
+          "scroll": 56.5,
           "active_s": 17.0,
           "dead_clicks": 0,
           "quickbacks": 0,
           "class": "OK"
         },
         {
-          "path": "/icb/humber-north-yorkshire",
+          "path": "/shop",
           "humans": 2,
-          "scroll": 28.5,
-          "active_s": 12.0,
-          "dead_clicks": 0,
-          "quickbacks": 0,
-          "class": "OK"
-        },
-        {
-          "path": "/research-peptides/retatrutide",
-          "humans": 2,
-          "scroll": 31.3,
-          "active_s": 10.0,
+          "scroll": 70.0,
+          "active_s": 19.0,
           "dead_clicks": 0,
           "quickbacks": 0,
           "class": "OK"
@@ -346,9 +276,44 @@
       ]
     },
     "cardmachines": {
-      "lead_count": 4,
+      "lead_count": 14,
       "converting_paths": [
         "/get-quotes"
+      ],
+      "pages": [
+        {
+          "path": "/how-we-work",
+          "humans": 2,
+          "scroll": 69.0,
+          "active_s": 67.0,
+          "dead_clicks": 0,
+          "quickbacks": 0,
+          "class": "DEAD_WEIGHT"
+        },
+        {
+          "path": "/",
+          "humans": 4,
+          "scroll": 58.9,
+          "active_s": 33.0,
+          "dead_clicks": 0,
+          "quickbacks": 2,
+          "class": "LEAK"
+        },
+        {
+          "path": "/about",
+          "humans": 2,
+          "scroll": 42.4,
+          "active_s": 16.0,
+          "dead_clicks": 0,
+          "quickbacks": 1,
+          "class": "LEAK"
+        }
+      ]
+    },
+    "kartapay": {
+      "lead_count": 4,
+      "converting_paths": [
+        "/contact"
       ],
       "pages": []
     }

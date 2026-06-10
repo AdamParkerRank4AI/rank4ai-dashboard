@@ -1,0 +1,300 @@
+---
+/**
+ * Entity Stack — per-brand off-site entity & trust build sheet.
+ *
+ * For each brand: the canonical brand block (copy used verbatim everywhere) +
+ * a card per platform (place, priority, what to do, which form to paste, the
+ * URL Oliver sends back). Reads src/data/entity_stack.json.
+ *
+ * Pilot: MerchantHQ (id `cardmachines`). Scaling to other brands = add their
+ * key to entity_stack.json. Static paths are generated from the data keys so
+ * only populated brands render, regardless of the DASHBOARD env filter.
+ */
+import fs from 'node:fs';
+import path from 'node:path';
+import DashboardLayout from '../../layouts/DashboardLayout.astro';
+import { allClients } from '../../utils/dashboardClients';
+import entityStack from '../../data/entity_stack.json';
+
+// Credentials live in a GITIGNORED file (real passwords) — read at build time
+// only if present. Absent in CI/public deploys, so nothing leaks there.
+function loadCreds(): any {
+  try {
+    const p = path.join(process.cwd(), 'src', 'data', 'entity_stack_credentials.json');
+    if (fs.existsSync(p)) return JSON.parse(fs.readFileSync(p, 'utf-8'));
+  } catch {}
+  return null;
+}
+
+export function getStaticPaths() {
+  return Object.keys(entityStack)
+    .filter((k) => !k.startsWith('_'))
+    .map((id) => ({ params: { client: id } }));
+}
+
+const { client: clientId } = Astro.params;
+const data: any = (entityStack as any)[clientId as string];
+if (!data) return Astro.redirect('/');
+
+const credsAll = loadCreds();
+const accounts: any[] = credsAll?.[clientId as string]?.accounts || [];
+
+// Wikidata: shared parent entity (built once) + this brand's item
+const parentEntity: any = (entityStack as any)._parent_entity || null;
+const wd: any = data.wikidata || null;
+const WD_LABELS: Record<string, string> = {
+  instance_of: 'What it is · P31',
+  official_name: 'Official name · P1448',
+  country: 'Country · P17',
+  website: 'Website · P856',
+  inception: 'Year started · P571',
+  parent_organisation: 'Parent company · P749',
+  twitter_handle: 'X / Twitter · P2002',
+  linkedin: 'LinkedIn · P4264',
+  companies_house_id: 'Companies House · P2622',
+  opencorporates_id: 'OpenCorporates · P1320',
+  registered_address: 'Registered address',
+  wikidata_q: 'Wikidata Q-number',
+};
+function wdRows(fieldsObj: any) {
+  return Object.entries(fieldsObj || {}).map(([k, v]) => ({ label: WD_LABELS[k] || k, value: v as any }));
+}
+
+const friendly =
+  (allClients as any[]).find((c) => c.id === clientId)?.name || data.brand || clientId;
+
+const bb = data.brand_block || {};
+const platforms: any[] = data.platforms || [];
+
+const PRIO = ['P1', 'P2', 'P3'];
+const prioMeta: Record<string, { label: string; cls: string }> = {
+  P1: { label: 'P1 · do first', cls: 'bg-emerald-900/40 text-emerald-300 border-emerald-700' },
+  P2: { label: 'P2 · second pass', cls: 'bg-amber-900/40 text-amber-300 border-amber-700' },
+  P3: { label: 'P3 · completist', cls: 'bg-gray-800 text-gray-400 border-gray-700' },
+};
+const grouped = PRIO.map((p) => ({ p, items: platforms.filter((x) => x.priority === p) }));
+
+const sendCount = platforms.filter((x) => x.send).length;
+const doneCount = platforms.filter((x) => x.status === 'done' || x.url).length;
+
+// brand-block rows we show with copy buttons
+const blockRows: { key: string; label: string }[] = [
+  { key: 'name', label: 'Name' },
+  { key: 'legal_name', label: 'Legal name' },
+  { key: 'company_number', label: 'Companies House no.' },
+  { key: 'registered_address', label: 'Registered address' },
+  { key: 'phone', label: 'Phone' },
+  { key: 'email', label: 'Email' },
+  { key: 'website', label: 'Website' },
+  { key: 'founded', label: 'Founded' },
+  { key: 'vat', label: 'VAT' },
+  { key: 'ico', label: 'ICO no.' },
+  { key: 'category', label: 'Category' },
+  { key: 'industries', label: 'Industries' },
+];
+const bios: { key: string; label: string; hint: string }[] = [
+  { key: 'short', label: 'Short form (≤160 chars)', hint: 'Wikidata description · X bio · meta · directory short fields' },
+  { key: 'medium', label: 'Medium form (~50 words)', hint: 'GBP · Apple · Bing · LinkedIn · Crunchbase · Trustpilot · Facebook · YouTube' },
+  { key: 'long', label: 'Long form (~120 words)', hint: 'Crunchbase long · schema Organization.description' },
+];
+const isTodo = (v: any) => typeof v === 'string' && v.startsWith('TODO');
+---
+
+<DashboardLayout title={`Entity Stack — ${friendly}`} currentClient={clientId} view="client">
+  <main class="max-w-5xl mx-auto px-4 md:px-6 py-6 space-y-6">
+    <header class="flex flex-wrap items-end justify-between gap-3">
+      <div>
+        <h1 class="text-2xl font-semibold text-white">Entity Stack — {friendly}</h1>
+        <p class="text-sm text-gray-400 mt-1">
+          {data.domain} · off-site entity &amp; trust profiles. Oliver sets each up, sends the live URL back, Claude wires it into the site <code>sameAs</code> schema.
+        </p>
+      </div>
+      <div class="text-right text-sm text-gray-400">
+        <div><span class="text-white font-medium">{doneCount}</span> / {sendCount} URLs captured</div>
+        <div class="text-xs">{data.status}</div>
+      </div>
+    </header>
+
+    {data.status && data.status.includes('awaiting') && (
+      <div class="rounded-lg border border-amber-700 bg-amber-900/20 px-4 py-3 text-sm text-amber-200">
+        Brand block is stubbed — drop in the confirmed MerchantHQ facts and the <code>TODO</code> fields below fill the paste-copy for every platform.
+      </div>
+    )}
+
+    <!-- BRAND BLOCK -->
+    <section class="rounded-xl border border-gray-800 bg-gray-900/60 p-5">
+      <h2 class="text-lg font-semibold text-white mb-1">Canonical brand block</h2>
+      <p class="text-xs text-gray-500 mb-4">Use these EXACT strings on every platform. Identical phrasing across profiles is what boosts the entity signal — do not paraphrase.</p>
+
+      <div class="grid sm:grid-cols-2 gap-2 mb-5">
+        {blockRows.map((r) => (
+          <div class={`flex items-center justify-between gap-2 rounded-lg border px-3 py-2 ${isTodo(bb[r.key]) ? 'border-amber-800/60 bg-amber-950/20' : 'border-gray-800 bg-gray-950/40'}`}>
+            <div class="min-w-0">
+              <div class="text-[11px] uppercase tracking-wide text-gray-500">{r.label}</div>
+              <div class={`text-sm truncate ${isTodo(bb[r.key]) ? 'text-amber-400' : 'text-gray-100'}`}>{bb[r.key] || '—'}</div>
+            </div>
+            <button type="button" class="copy-btn shrink-0 text-xs px-2 py-1 rounded border border-gray-700 text-gray-300 hover:bg-gray-800" data-copy={bb[r.key] || ''}>Copy</button>
+          </div>
+        ))}
+      </div>
+
+      <div class="space-y-3">
+        {bios.map((b) => (
+          <div class={`rounded-lg border p-3 ${isTodo(bb[b.key]) ? 'border-amber-800/60 bg-amber-950/20' : 'border-gray-800 bg-gray-950/40'}`}>
+            <div class="flex items-center justify-between gap-2 mb-1">
+              <div class="text-sm font-medium text-gray-200">{b.label}</div>
+              <button type="button" class="copy-btn text-xs px-2 py-1 rounded border border-gray-700 text-gray-300 hover:bg-gray-800" data-copy={bb[b.key] || ''}>Copy</button>
+            </div>
+            <div class="text-[11px] text-gray-500 mb-1">Used on: {b.hint}</div>
+            <div class={`text-sm ${isTodo(bb[b.key]) ? 'text-amber-400' : 'text-gray-100'}`}>{bb[b.key] || '—'}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- WIKIDATA -->
+    {wd && (
+      <section class="rounded-xl border border-gray-800 bg-gray-900/60 p-5">
+        <h2 class="text-lg font-semibold text-white mb-1">Wikidata — the values to enter</h2>
+        <p class="text-xs text-gray-500 mb-4">
+          Two items: the shared parent company (built once), then this brand pointing up to it. The brand's official name is the BRAND, never the Ltd. The “· P…” after each label is just Wikidata's internal field name — you fill the value, not the code.
+        </p>
+
+        {parentEntity && (
+          <div class="rounded-lg border border-indigo-800/60 bg-indigo-950/20 p-4 mb-4">
+            <div class="flex items-center justify-between gap-2 mb-1">
+              <div class="text-sm font-semibold text-indigo-200">Parent company item · {parentEntity.label}</div>
+              <span class="text-[10px] uppercase tracking-wide px-1.5 py-0.5 rounded bg-indigo-900/50 text-indigo-300 border border-indigo-700">build first · shared by all brands</span>
+            </div>
+            <div class="text-[11px] text-gray-500 mb-3">Wikidata description: <span class="text-gray-300">{parentEntity.description}</span></div>
+            <div class="grid sm:grid-cols-2 gap-2">
+              {wdRows(parentEntity.fields).map((r) => (
+                <div class={`flex items-center justify-between gap-2 rounded border px-3 py-2 ${typeof r.value === 'string' && r.value.startsWith('TODO') ? 'border-amber-800/60 bg-amber-950/20' : 'border-gray-800 bg-gray-950/40'}`}>
+                  <div class="min-w-0">
+                    <div class="text-[11px] uppercase tracking-wide text-gray-500">{r.label}</div>
+                    <div class={`text-sm truncate ${typeof r.value === 'string' && r.value.startsWith('TODO') ? 'text-amber-400' : 'text-gray-100'}`}>{r.value || '—'}</div>
+                  </div>
+                  <button type="button" class="copy-btn shrink-0 text-xs px-2 py-1 rounded border border-gray-700 text-gray-300 hover:bg-gray-800" data-copy={r.value || ''}>Copy</button>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div class="rounded-lg border border-gray-800 bg-gray-950/40 p-4">
+          <div class="text-sm font-semibold text-gray-200 mb-1">Brand item · {wd.label}</div>
+          <div class="text-[11px] text-gray-500 mb-3">Wikidata description: <span class="text-gray-300">{wd.description}</span></div>
+          <div class="grid sm:grid-cols-2 gap-2">
+            {wdRows(wd.fields).map((r) => (
+              <div class={`flex items-center justify-between gap-2 rounded border px-3 py-2 ${typeof r.value === 'string' && r.value.startsWith('TODO') ? 'border-amber-800/60 bg-amber-950/20' : 'border-gray-800 bg-gray-950/40'}`}>
+                <div class="min-w-0">
+                  <div class="text-[11px] uppercase tracking-wide text-gray-500">{r.label}</div>
+                  <div class={`text-sm truncate ${typeof r.value === 'string' && r.value.startsWith('TODO') ? 'text-amber-400' : 'text-gray-100'}`}>{r.value || '—'}</div>
+                </div>
+                <button type="button" class="copy-btn shrink-0 text-xs px-2 py-1 rounded border border-gray-700 text-gray-300 hover:bg-gray-800" data-copy={r.value || ''}>Copy</button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- ACCOUNTS & CREDENTIALS -->
+    {accounts.length > 0 && (
+      <section class="rounded-xl border border-gray-800 bg-gray-900/60 p-5">
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+          <h2 class="text-lg font-semibold text-white">Accounts &amp; credentials</h2>
+          <button id="toggle-pw" type="button" class="text-xs px-2 py-1 rounded border border-gray-700 text-gray-300 hover:bg-gray-800">Hide passwords</button>
+        </div>
+        <p class="text-xs text-gray-500 mb-4">Real logins for each platform. This data is gitignored and only renders locally — it is never deployed. Public Link = the live profile (the <code>sameAs</code> link).</p>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm border-collapse">
+            <thead>
+              <tr class="text-left text-[11px] uppercase tracking-wide text-gray-500 border-b border-gray-800">
+                <th class="py-2 pr-3">Platform</th>
+                <th class="py-2 pr-3">Username</th>
+                <th class="py-2 pr-3">Password</th>
+                <th class="py-2 pr-3">Public Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              {accounts.map((a) => (
+                <tr class="border-b border-gray-800/60 align-top">
+                  <td class="py-2 pr-3 font-medium text-gray-100 whitespace-nowrap">{a.platform}</td>
+                  <td class="py-2 pr-3 text-gray-300">{a.username || <span class="text-gray-600">—</span>}</td>
+                  <td class="py-2 pr-3">
+                    {a.password
+                      ? <span class="pw font-mono text-gray-300" data-pw={a.password}>{a.password}</span>
+                      : <span class="text-gray-600">—</span>}
+                  </td>
+                  <td class="py-2 pr-3">
+                    {a.public_link
+                      ? <a href={a.public_link} class="text-emerald-400 underline break-all">{a.public_link}</a>
+                      : <span class="text-gray-600">not set up yet</span>}
+                    {a.note && <div class="text-[11px] text-amber-500 mt-0.5">{a.note}</div>}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    )}
+
+    <!-- PLATFORMS BY PRIORITY -->
+    {grouped.map((g) => g.items.length > 0 && (
+      <section>
+        <div class={`inline-block text-xs px-2 py-1 rounded border mb-3 ${prioMeta[g.p].cls}`}>{prioMeta[g.p].label}</div>
+        <div class="space-y-2">
+          {g.items.map((x) => (
+            <div class="rounded-lg border border-gray-800 bg-gray-900/60 p-4">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="text-base font-semibold text-white">{x.place}</span>
+                  {x.send
+                    ? <span class="text-[10px] uppercase tracking-wide px-1.5 py-0.5 rounded bg-blue-900/40 text-blue-300 border border-blue-800">send URL</span>
+                    : <span class="text-[10px] uppercase tracking-wide px-1.5 py-0.5 rounded bg-gray-800 text-gray-400 border border-gray-700">Claude handles</span>}
+                </div>
+                <span class="text-xs text-gray-500">paste: {x.form}</span>
+              </div>
+              <p class="text-sm text-gray-400 mt-2">{x.instruction}</p>
+              {x.send && (
+                <div class="mt-2 text-xs">
+                  {x.url
+                    ? <a href={x.url} class="text-emerald-400 underline break-all">{x.url}</a>
+                    : <span class="text-gray-600">URL back: not captured yet</span>}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+    ))}
+  </main>
+
+  <script is:inline>
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.copy-btn');
+      if (!btn) return;
+      const txt = btn.getAttribute('data-copy') || '';
+      navigator.clipboard.writeText(txt).then(() => {
+        const old = btn.textContent;
+        btn.textContent = 'Copied';
+        setTimeout(() => { btn.textContent = old; }, 1200);
+      });
+    });
+
+    // hide/show passwords (for screen-sharing)
+    const pwToggle = document.getElementById('toggle-pw');
+    if (pwToggle) {
+      let hidden = false;
+      pwToggle.addEventListener('click', () => {
+        hidden = !hidden;
+        document.querySelectorAll('.pw').forEach((el) => {
+          el.textContent = hidden ? '••••••••' : (el.getAttribute('data-pw') || '');
+        });
+        pwToggle.textContent = hidden ? 'Show passwords' : 'Hide passwords';
+      });
+    }
+  </script>
+</DashboardLayout>

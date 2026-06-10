@@ -1,0 +1,636 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Uptime — ResilienceBuilder — Rank4AI Dashboard</title><link rel="stylesheet" href="/_astro/DashboardLayout.DpK6VCDL.css"></head> <body class="bg-gray-950 text-gray-100 min-h-screen"> <!-- Top nav (hidden when embedded via client drill-down) --> <nav class="bg-gray-900 border-b border-gray-800 px-4 md:px-6 py-3 flex items-center justify-between gap-3" style> <button id="r4ai-sidebar-toggle" type="button" class="md:hidden text-gray-300 hover:text-white -ml-1 p-1" aria-label="Toggle menu"> <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg> </button> <div class="flex items-center gap-4"> <a href="/" class="text-lg font-bold text-white tracking-tight">Rank4AI</a>  <span class="text-gray-500">|</span> <span class="text-sm text-gray-400">Agency View</span>  </div> <div class="flex items-center gap-2"> <button type="button" id="r4ai-copy-page-md" class="text-xs px-3 py-1.5 rounded bg-gray-800 text-gray-300 hover:bg-gray-700 transition" title="Copy entire page as markdown — for pasting into ChatGPT/Claude">
+📋 Copy page
+</button> <a href="/client/resiliencebuilder" class="text-xs px-3 py-1.5 rounded bg-gray-800 text-gray-300 hover:bg-gray-700 transition">
+Switch to Client View
+</a> </div> </nav> <div class="flex relative"> <!-- Mobile sidebar backdrop --> <div id="r4ai-sidebar-backdrop" class="hidden fixed inset-0 bg-black/60 z-30 md:hidden" aria-hidden="true"></div> <!-- Sidebar: always visible on md+, slide-in drawer on mobile --> <aside id="r4ai-sidebar" class="w-56 bg-gray-900 border-r border-gray-800 min-h-[calc(100vh-52px)] p-4 fixed md:static top-[52px] md:top-auto left-0 z-40 md:z-auto -translate-x-full md:translate-x-0 transition-transform" style>  <div class="mb-6"> <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Clients</p> <ul class="space-y-1"> <li> <a href="/agency/resiliencebuilder" class="block px-3 py-2 rounded text-sm transition bg-blue-600 text-white"> ResilienceBuilder </a> </li> </ul> </div> <div class="mb-6"> <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Our Sites</p> <ul class="space-y-1"> <li> <a href="/agency/rank4ai" class="block px-3 py-2 rounded text-sm transition text-gray-500 hover:bg-gray-800"> Rank4AI  </a> </li> </ul> </div>   <div class="mb-6"> <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Site Manager</p> <ul class="space-y-1"> <li> <a href="/agency/resiliencebuilder/site-manager" class="block px-3 py-2 rounded text-sm transition text-gray-300 hover:bg-gray-800">
+Pages & Content
+</a> </li> <li> <a href="/agency/resiliencebuilder/seo-health" class="block px-3 py-2 rounded text-sm transition text-gray-300 hover:bg-gray-800">
+SEO Health
+</a> </li> <li> <a href="/agency/resiliencebuilder/recommendations" class="block px-3 py-2 rounded text-sm transition text-gray-300 hover:bg-gray-800">
+Recommendations
+</a> </li> </ul> </div> <div class="mb-6"> <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Tools</p> <ul class="space-y-1">  <li> <a href="/crm" class="block px-3 py-2 rounded text-sm transition text-gray-300 hover:bg-gray-800">
+CRM Pipeline
+</a> </li> <li> <a href="/run-audit" class="block px-3 py-2 rounded text-sm transition text-gray-300 hover:bg-gray-800">
+Run Audit
+</a> </li> <li> <a href="/add-client" class="block px-3 py-2 rounded text-sm text-green-400 hover:bg-gray-800 transition">
++ Add Client
+</a> </li> </ul> </div> </aside> <!-- Main content --> <main class="flex-1 min-w-0 p-4 md:p-6 overflow-x-hidden" id="r4ai-main-content" style="display:none;">  <div class="mb-6"> <a href="/agency/resiliencebuilder" class="text-sm text-gray-400 hover:text-gray-300 transition">
+&larr; Back to ResilienceBuilder </a> </div> <h1 class="text-2xl font-bold text-white mb-1">Uptime</h1> <p class="text-sm text-gray-400 mb-3">ResilienceBuilder — resiliencebuilder.co.uk</p>                        </main> </div> <!-- Client drill-down embed: hide all admin chrome via JS.
+       Astro is static, so ?view=client doesn't flow through Astro.url at
+       build time. Detect it here at runtime instead. --> <script>
+    (function(){
+      try {
+        var params = new URL(window.location.href).searchParams;
+        if (params.get('view') === 'client') {
+          document.documentElement.classList.add('r4ai-embedded');
+          var style = document.createElement('style');
+          style.textContent =
+            '.r4ai-embedded nav.bg-gray-900.border-b { display:none !important; }' +
+            '.r4ai-embedded aside#r4ai-sidebar { display:none !important; }' +
+            '.r4ai-embedded #r4ai-sidebar-backdrop { display:none !important; }' +
+            '.r4ai-embedded #r4ai-admin-gate { display:none !important; }' +
+            '.r4ai-embedded #r4ai-main-content { display:block !important; padding:16px !important; }' +
+            '.r4ai-embedded body { background:#030712; }';
+          document.head.appendChild(style);
+        }
+      } catch(e){}
+    })();
+  </script> <!-- Copy-as-markdown: page button + auto-injected tile/sub-tile buttons --> <style>
+    .r4ai-copy-btn {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      z-index: 5;
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: rgba(31, 41, 55, 0.7);
+      color: #9ca3af;
+      border: 1px solid rgba(75, 85, 99, 0.4);
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.15s, background 0.15s, color 0.15s;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      line-height: 1.3;
+    }
+    [data-copy-tile]:hover > .r4ai-copy-btn,
+    [data-copy-subtile]:hover > .r4ai-copy-btn,
+    .r4ai-copy-btn:focus,
+    .r4ai-copy-btn.r4ai-copied {
+      opacity: 1;
+    }
+    .r4ai-copy-btn:hover {
+      background: rgba(55, 65, 81, 0.95);
+      color: #f3f4f6;
+    }
+    .r4ai-copy-btn.r4ai-copied {
+      background: rgba(16, 185, 129, 0.2);
+      color: #34d399;
+      border-color: rgba(16, 185, 129, 0.4);
+    }
+    .r4ai-copy-btn[data-scope="subtile"] {
+      font-size: 9px;
+      padding: 1px 5px;
+      top: 4px;
+      right: 4px;
+    }
+  </style> <script>
+    (function(){
+      // ---- DOM-to-markdown extractor ----
+      function textOf(el) {
+        return (el.textContent || '').replace(/\s+/g, ' ').trim();
+      }
+      function isHidden(el) {
+        if (!el || el.nodeType !== 1) return false;
+        var s = window.getComputedStyle(el);
+        return s.display === 'none' || s.visibility === 'hidden';
+      }
+      function tableToMd(tbl) {
+        var rows = [];
+        tbl.querySelectorAll('tr').forEach(function(tr){
+          var cells = [];
+          tr.querySelectorAll('th, td').forEach(function(c){
+            cells.push(textOf(c).replace(/\|/g, '\\|'));
+          });
+          if (cells.length) rows.push(cells);
+        });
+        if (!rows.length) return '';
+        var head = rows[0];
+        var sep = head.map(function(){ return '---'; });
+        var body = rows.slice(1);
+        var out = ['| ' + head.join(' | ') + ' |', '| ' + sep.join(' | ') + ' |'];
+        body.forEach(function(r){ out.push('| ' + r.join(' | ') + ' |'); });
+        return out.join('\n');
+      }
+      // Heuristic: a "stat card" has one large-text value + one small grayed label
+      var BIG_RE = /\btext-(2xl|3xl|4xl|5xl|6xl|7xl)\b/;
+      var SMALL_GRAY_RE = /\btext-(xs|sm|\[10px\]|\[11px\])\b/;
+      var GRAY_RE = /\btext-gray-(400|500|600)\b/;
+      function asStatCard(el) {
+        if (!el || el.nodeType !== 1) return null;
+        var bigs = [], labels = [];
+        el.querySelectorAll('*').forEach(function(c){
+          if (isHidden(c)) return;
+          var cls = c.className && c.className.baseVal !== undefined ? c.className.baseVal : (c.className || '');
+          cls = String(cls);
+          var t = textOf(c);
+          if (!t || t.length > 80) return;
+          if (BIG_RE.test(cls) && bigs.length < 1) bigs.push(t);
+          else if (SMALL_GRAY_RE.test(cls) && GRAY_RE.test(cls) && labels.length < 1) labels.push(t);
+        });
+        if (bigs.length === 1 && labels.length === 1) return { value: bigs[0], label: labels[0] };
+        return null;
+      }
+      function elementToMd(root, opts) {
+        opts = opts || {};
+        var lines = [];
+        var seenStatChildren = new WeakSet();
+
+        function emit(s) { lines.push(s); }
+        function blank() { if (lines.length && lines[lines.length-1] !== '') lines.push(''); }
+
+        function walk(node) {
+          if (!node) return;
+          if (node.nodeType === 3) {
+            var t = (node.textContent || '').replace(/\s+/g, ' ').trim();
+            if (t) emit(t);
+            return;
+          }
+          if (node.nodeType !== 1) return;
+          if (isHidden(node)) return;
+          if (node.classList && node.classList.contains('r4ai-copy-btn')) return;
+          if (node.dataset && node.dataset.copySkip !== undefined) return;
+          var tag = node.tagName.toLowerCase();
+          if (tag === 'script' || tag === 'style' || tag === 'noscript' || tag === 'svg') return;
+          if (seenStatChildren.has(node)) return;
+
+          if (/^h[1-6]$/.test(tag)) {
+            var lvl = parseInt(tag[1], 10) + (opts.headingShift || 0);
+            if (lvl < 1) lvl = 1; if (lvl > 6) lvl = 6;
+            var ht = textOf(node);
+            if (ht) { blank(); emit(new Array(lvl + 1).join('#') + ' ' + ht); blank(); }
+            return;
+          }
+          if (tag === 'table') {
+            var md = tableToMd(node);
+            if (md) { blank(); emit(md); blank(); }
+            return;
+          }
+          if (tag === 'ul' || tag === 'ol') {
+            var ordered = tag === 'ol';
+            blank();
+            var idx = 0;
+            node.querySelectorAll(':scope > li').forEach(function(li){
+              if (isHidden(li)) return;
+              idx++;
+              var prefix = ordered ? (idx + '.') : '-';
+              var lt = textOf(li);
+              if (lt) emit(prefix + ' ' + lt);
+            });
+            blank();
+            return;
+          }
+          if (tag === 'br') { emit(''); return; }
+          if (tag === 'hr') { blank(); emit('---'); blank(); return; }
+
+          // Sub-tile boundary inside the scope -> emit as ### heading
+          if (node !== root && node.dataset && node.dataset.copySubtile !== undefined) {
+            blank();
+            emit('### ' + node.dataset.copySubtile);
+            blank();
+            // Walk children but treat this sub-tile as its own scope
+            for (var j = 0; j < node.childNodes.length; j++) walk(node.childNodes[j]);
+            blank();
+            return;
+          }
+
+          // Stat-card pattern -> emit one bullet line, skip children
+          var stat = asStatCard(node);
+          if (stat) {
+            emit('- **' + stat.label + ':** ' + stat.value);
+            // Mark all descendants as already-consumed
+            node.querySelectorAll('*').forEach(function(d){ seenStatChildren.add(d); });
+            return;
+          }
+
+          // Default: recurse into children
+          for (var i = 0; i < node.childNodes.length; i++) walk(node.childNodes[i]);
+        }
+
+        walk(root);
+        // Collapse triple-blank to double, trim
+        var out = lines.join('\n').replace(/\n{3,}/g, '\n\n').replace(/[ \t]+$/gm, '').trim();
+        return out;
+      }
+
+      function tileToMd(el) {
+        var heading = el.dataset.copyTile || el.dataset.copySubtile || '';
+        var level = el.dataset.copyTile !== undefined ? '## ' : '### ';
+        var body = elementToMd(el);
+        return (heading ? level + heading + '\n\n' : '') + body;
+      }
+
+      function pageToMd() {
+        var main = document.getElementById('r4ai-main-content') || document.querySelector('main') || document.body;
+        var pageTitle = (document.title || 'Dashboard').replace(/\s+—\s+Rank4AI Dashboard$/, '');
+        var siteHost = window.location.host;
+        var pathName = window.location.pathname;
+        var stamp = new Date().toISOString();
+        var header = '# ' + pageTitle + '\n\n_Source: ' + siteHost + pathName + ' · ' + stamp + '_\n\n---\n';
+        return header + elementToMd(main, { headingShift: 1 });
+      }
+
+      // ---- Copy + feedback ----
+      function flashCopied(btn) {
+        var orig = btn.textContent;
+        btn.classList.add('r4ai-copied');
+        btn.textContent = '✓ copied';
+        setTimeout(function(){
+          btn.classList.remove('r4ai-copied');
+          btn.textContent = orig;
+        }, 1400);
+      }
+      function copyText(text, btn) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function(){ flashCopied(btn); }).catch(function(){
+            fallback(text, btn);
+          });
+        } else {
+          fallback(text, btn);
+        }
+      }
+      function fallback(text, btn) {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); flashCopied(btn); } catch(e){}
+        document.body.removeChild(ta);
+      }
+
+      // ---- Auto-inject buttons on tiles + sub-tiles ----
+      function injectButtons() {
+        document.querySelectorAll('[data-copy-tile], [data-copy-subtile]').forEach(function(el){
+          if (el.querySelector(':scope > .r4ai-copy-btn')) return;
+          var pos = window.getComputedStyle(el).position;
+          if (pos === 'static') el.style.position = 'relative';
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'r4ai-copy-btn';
+          btn.dataset.scope = el.dataset.copyTile !== undefined ? 'tile' : 'subtile';
+          btn.title = 'Copy this ' + (btn.dataset.scope === 'tile' ? 'tile' : 'sub-tile') + ' as markdown';
+          btn.textContent = '📋 md';
+          btn.addEventListener('click', function(e){
+            e.preventDefault(); e.stopPropagation();
+            copyText(tileToMd(el), btn);
+          });
+          el.appendChild(btn);
+        });
+      }
+
+      function init() {
+        injectButtons();
+        var pageBtn = document.getElementById('r4ai-copy-page-md');
+        if (pageBtn) {
+          pageBtn.addEventListener('click', function(e){
+            e.preventDefault();
+            copyText(pageToMd(), pageBtn);
+          });
+        }
+        // Re-scan periodically to catch tiles added by client-side JS
+        setTimeout(injectButtons, 500);
+        setTimeout(injectButtons, 2000);
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script> <!-- Mobile sidebar toggle --> <script>
+    (function(){
+      var btn = document.getElementById('r4ai-sidebar-toggle');
+      var side = document.getElementById('r4ai-sidebar');
+      var back = document.getElementById('r4ai-sidebar-backdrop');
+      if (!btn || !side) return;
+      function open(){
+        side.classList.remove('-translate-x-full');
+        if (back) back.classList.remove('hidden');
+      }
+      function close(){
+        side.classList.add('-translate-x-full');
+        if (back) back.classList.add('hidden');
+      }
+      btn.addEventListener('click', function(){
+        if (side.classList.contains('-translate-x-full')) open(); else close();
+      });
+      if (back) back.addEventListener('click', close);
+      // Close when a link inside is clicked (navigation)
+      side.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', close);
+      });
+    })();
+  </script> <div id="r4ai-admin-gate" style="position:fixed; inset:0; background:#030712; display:flex; align-items:center; justify-content:center; z-index:9999; padding:24px;"> <div style="max-width:420px; width:100%; text-align:center;"> <h2 style="font-size:20px; font-weight:700; color:#f9fafb; margin-bottom:8px;">Rank4AI Dashboard</h2> <p style="font-size:14px; color:#9ca3af; margin-bottom:24px;">Admin view. Enter access code.</p> <form id="r4ai-admin-form" style="display:flex; flex-direction:column; gap:12px;"> <input id="r4ai-admin-code" type="text" placeholder="Master code" autocomplete="off" autocapitalize="characters" autofocus style="width:100%; padding:12px 16px; border-radius:6px; background:#1f2937; border:1px solid #374151; color:#f9fafb; text-align:center; letter-spacing:4px; text-transform:uppercase; font-size:16px;"> <label style="display:flex; align-items:center; justify-content:center; gap:8px; color:#9ca3af; font-size:12px; cursor:pointer;"> <input type="checkbox" id="r4ai-admin-remember" checked style="accent-color:#3b82f6;">
+Remember me for 30 days on this device
+</label> <button type="submit" style="width:100%; padding:12px; border-radius:6px; background:#2563eb; color:white; font-weight:500; border:none; cursor:pointer;">Unlock</button> <p id="r4ai-admin-err" style="font-size:13px; color:#ef4444; min-height:20px; margin:0;"></p> </form> </div> </div> <script>(function(){const gateClientId = "resiliencebuilder";
+
+      (function(){
+        var KEY = "r4ai_admin_auth_v1";
+        var TTL = 30 * 24 * 60 * 60 * 1000;
+        var MASTER = "1210";
+
+        // Accept auto-unlock when /agency/<id>/... is loaded from the client
+        // view with ?view=client&code=<clientcode>. Matches the passcode
+        // stored in localStorage under r4ai_client_auth_v1 for that client.
+        try {
+          var url = new URL(window.location.href);
+          var qView = url.searchParams.get('view');
+          var qCode = url.searchParams.get('code');
+          if (qView === 'client' && qCode && gateClientId) {
+            var clientAuth = {};
+            try { clientAuth = JSON.parse(localStorage.getItem('r4ai_client_auth_v1') || '{}'); } catch(e){}
+            var rec = clientAuth['client_' + gateClientId] || clientAuth['master'];
+            if (rec && (rec.expires === 0 || rec.expires > Date.now())) {
+              // Silent unlock: the client already passed their gate.
+              var g0 = document.getElementById("r4ai-admin-gate");
+              var m0 = document.getElementById("r4ai-main-content");
+              if (g0) g0.style.display = "none";
+              if (m0) m0.style.display = "";
+              return;
+            }
+          }
+        } catch(e){}
+
+        function has(){
+          try {
+            var d = JSON.parse(localStorage.getItem(KEY) || "null");
+            if (d && (d.expires === 0 || d.expires > Date.now())) return true;
+          } catch(e){}
+          return sessionStorage.getItem(KEY) === "1";
+        }
+        function set(remember){
+          if (remember) {
+            localStorage.setItem(KEY, JSON.stringify({ expires: Date.now() + TTL, created: Date.now() }));
+          } else {
+            sessionStorage.setItem(KEY, "1");
+          }
+        }
+        var gate = document.getElementById("r4ai-admin-gate");
+        var main = document.getElementById("r4ai-main-content");
+        function unlock(){
+          if (gate) gate.style.display = "none";
+          if (main) main.style.display = "";
+        }
+        if (has()) {
+          unlock();
+        } else {
+          var form = document.getElementById("r4ai-admin-form");
+          var input = document.getElementById("r4ai-admin-code");
+          var err = document.getElementById("r4ai-admin-err");
+          var remember = document.getElementById("r4ai-admin-remember");
+          form.addEventListener("submit", function(e){
+            e.preventDefault();
+            var code = (input.value || "").trim().toUpperCase();
+            if (code === MASTER.toUpperCase()) {
+              set(remember.checked);
+              unlock();
+            } else {
+              err.textContent = "Invalid code.";
+              input.value = "";
+              input.focus();
+            }
+          });
+        }
+      })();
+    })();</script> </body> </html> <!-- Chart scripts --> <script>(function(){const dailyTraffic = "[]";
+const uptimeChecks = "[]";
+const crawlDaily = "[]";
+const historyData = "[]";
+
+  const daily = JSON.parse(dailyTraffic);
+  const checks = JSON.parse(uptimeChecks);
+
+  async function renderCharts() {
+    const { Chart, registerables } = await import('https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.js');
+
+    // Traffic chart
+    const trafficEl = document.getElementById('trafficChart');
+    if (trafficEl && daily.length > 0) {
+      const labels = daily.map(d => {
+        const date = `${d.date.slice(0,4)}-${d.date.slice(4,6)}-${d.date.slice(6,8)}`;
+        return new Date(date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+      });
+      new Chart(trafficEl, {
+        type: 'line',
+        data: {
+          labels,
+          datasets: [{
+            label: 'Users',
+            data: daily.map(d => d.users),
+            borderColor: '#3b82f6',
+            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+            fill: true,
+            tension: 0.3,
+            pointRadius: 2,
+          }, {
+            label: 'Sessions',
+            data: daily.map(d => d.sessions),
+            borderColor: '#8b5cf6',
+            borderDash: [5, 5],
+            tension: 0.3,
+            pointRadius: 0,
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { labels: { color: '#9ca3af', font: { size: 11 } } } },
+          scales: {
+            x: { ticks: { color: '#6b7280', font: { size: 10 } }, grid: { color: '#1f2937' } },
+            y: { ticks: { color: '#6b7280', font: { size: 10 } }, grid: { color: '#1f2937' } },
+          }
+        }
+      });
+    }
+
+    // Uptime chart
+    const uptimeEl = document.getElementById('uptimeChart');
+    if (uptimeEl && checks.length > 0) {
+      const labels = checks.map(c => new Date(c.time).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }));
+      new Chart(uptimeEl, {
+        type: 'line',
+        data: {
+          labels,
+          datasets: [{
+            label: 'Response Time (ms)',
+            data: checks.map(c => c.ms),
+            borderColor: c => c.raw > 2000 ? '#ef4444' : '#10b981',
+            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+            fill: true,
+            tension: 0.3,
+            pointRadius: 3,
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { labels: { color: '#9ca3af', font: { size: 11 } } } },
+          scales: {
+            x: { ticks: { color: '#6b7280', font: { size: 10 } }, grid: { color: '#1f2937' } },
+            y: { ticks: { color: '#6b7280', font: { size: 10 } }, grid: { color: '#1f2937' } },
+          }
+        }
+      });
+    }
+
+    // Crawl activity chart — Bing bars + AI bot lines overlaid
+    const crawlData = JSON.parse(crawlDaily);
+    const botDays = JSON.parse(botHitsDaily);
+    const crawlEl = document.getElementById('crawlChart');
+    if (crawlEl && (crawlData.length > 0 || botDays.length > 0)) {
+      // Merge date axis: union of Bing + bot dates, sorted oldest → newest
+      const allDates = Array.from(new Set([
+        ...crawlData.map(d => d.date),
+        ...botDays.map(d => d.date),
+      ])).sort();
+      const bingByDate = Object.fromEntries(crawlData.map(d => [d.date, d.crawled_pages || 0]));
+      const botByDate = Object.fromEntries(botDays.map(d => [d.date, d]));
+      const fmt = (s) => new Date(s).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+      const series = {
+        'GPTBot': '#10b981',
+        'ChatGPT-User': '#14b8a6',
+        'OAI-SearchBot': '#06b6d4',
+        'ClaudeBot': '#8b5cf6',
+        'Claude-Web': '#a78bfa',
+        'PerplexityBot': '#ec4899',
+        'Googlebot': '#60a5fa',
+        'GoogleOther': '#93c5fd',
+      };
+      // Build line datasets only for bots that actually appear
+      const lineDatasets = [];
+      for (const [bot, color] of Object.entries(series)) {
+        const data = allDates.map(d => (botByDate[d]?.by_name?.[bot]) || 0);
+        if (data.some(v => v > 0)) {
+          lineDatasets.push({
+            type: 'line',
+            label: bot,
+            data,
+            borderColor: color,
+            backgroundColor: 'transparent',
+            tension: 0.3,
+            pointRadius: 2,
+            borderWidth: 2,
+            yAxisID: 'y1',
+          });
+        }
+      }
+      const datasets = [];
+      if (crawlData.length > 0) {
+        datasets.push({
+          type: 'bar',
+          label: 'Bing pages crawled',
+          data: allDates.map(d => bingByDate[d] || 0),
+          backgroundColor: 'rgba(59, 130, 246, 0.5)',
+          borderColor: '#3b82f6',
+          borderWidth: 1,
+          yAxisID: 'y',
+        });
+      }
+      datasets.push(...lineDatasets);
+      new Chart(crawlEl, {
+        data: { labels: allDates.map(fmt), datasets },
+        options: {
+          responsive: true,
+          plugins: { legend: { labels: { color: '#9ca3af', font: { size: 10 }, boxWidth: 12 } } },
+          scales: {
+            x: { ticks: { color: '#6b7280', font: { size: 9 }, maxRotation: 45 }, grid: { color: '#1f2937' } },
+            y: { type: 'linear', position: 'left', ticks: { color: '#6b7280', font: { size: 10 } }, grid: { color: '#1f2937' }, title: { display: true, text: 'Bing crawls', color: '#6b7280' } },
+            y1: { type: 'linear', position: 'right', ticks: { color: '#6b7280', font: { size: 10 } }, grid: { drawOnChartArea: false }, title: { display: true, text: 'AI bot hits', color: '#6b7280' } },
+          }
+        }
+      });
+    }
+
+    // Index growth chart
+    const indexEl = document.getElementById('indexChart');
+    if (indexEl && crawlData.length > 0) {
+      const labels = crawlData.map(d => {
+        const date = new Date(d.date);
+        return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+      });
+      new Chart(indexEl, {
+        type: 'line',
+        data: {
+          labels,
+          datasets: [{
+            label: 'Pages Indexed',
+            data: crawlData.map(d => d.in_index),
+            borderColor: '#10b981',
+            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+            fill: true,
+            tension: 0.3,
+            pointRadius: 2,
+          }, {
+            label: 'Inbound Links',
+            data: crawlData.map(d => d.in_links),
+            borderColor: '#8b5cf6',
+            borderDash: [5, 5],
+            tension: 0.3,
+            pointRadius: 0,
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { labels: { color: '#9ca3af', font: { size: 11 } } } },
+          scales: {
+            x: { ticks: { color: '#6b7280', font: { size: 9 }, maxRotation: 45 }, grid: { color: '#1f2937' } },
+            y: { ticks: { color: '#6b7280', font: { size: 10 } }, grid: { color: '#1f2937' } },
+          }
+        }
+      });
+    }
+  }
+
+    // Trend charts from daily history
+    const hist = JSON.parse(historyData);
+    if (hist.length > 1) {
+      const trendLabels = hist.map(h => {
+        const d = new Date(h.date);
+        return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+      });
+
+      const trendCharts = [
+        { id: 'trend-ai-score', data: hist.map(h => h.ai_score), color: '#8b5cf6', label: 'AI Score' },
+        { id: 'trend-citation', data: hist.map(h => h.citation_rate), color: '#ef4444', label: 'Citation %' },
+        { id: 'trend-users', data: hist.map(h => h.users), color: '#3b82f6', label: 'Users' },
+        { id: 'trend-indexed', data: hist.map(h => h.bing_indexed), color: '#10b981', label: 'Indexed' },
+      ];
+
+      for (const tc of trendCharts) {
+        const el = document.getElementById(tc.id);
+        if (el) {
+          new Chart(el, {
+            type: 'line',
+            data: {
+              labels: trendLabels,
+              datasets: [{
+                label: tc.label,
+                data: tc.data,
+                borderColor: tc.color,
+                backgroundColor: tc.color + '20',
+                fill: true,
+                tension: 0.3,
+                pointRadius: 3,
+              }]
+            },
+            options: {
+              responsive: true,
+              plugins: { legend: { display: false } },
+              scales: {
+                x: { ticks: { color: '#6b7280', font: { size: 9 } }, grid: { color: '#1f2937' } },
+                y: { ticks: { color: '#6b7280', font: { size: 10 } }, grid: { color: '#1f2937' } },
+              }
+            }
+          });
+        }
+      }
+    }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderCharts);
+  } else {
+    renderCharts();
+  }
+})();</script> <script>
+  // Manual GSC queue: click-to-copy URL
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.manual-copy-btn');
+    if (!btn) return;
+    const url = btn.dataset.url;
+    navigator.clipboard.writeText(url).then(() => {
+      const original = btn.textContent;
+      btn.textContent = '✓ copied';
+      btn.classList.add('text-emerald-400');
+      setTimeout(() => { btn.textContent = original; btn.classList.remove('text-emerald-400'); }, 1200);
+    });
+  });
+</script>
