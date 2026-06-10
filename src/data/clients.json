@@ -1070,6 +1070,83 @@
     "siteStatus": "prelaunch"
   },
   {
+    "id": "retiredborrowing",
+    "name": "Retired Borrowing",
+    "domain": "retiredborrowing.pages.dev",
+    "liveDomain": "retiredborrowing.pages.dev",
+    "logo": "",
+    "flavour": "editorial",
+    "dashboard": "fleet",
+    "clientCode": "RETB",
+    "notes": "SCAFFOLDED + DEPLOYED 2026-06-10 to https://retiredborrowing.pages.dev (info@rank4ai CF Pages, gate-green, patch-free fleet-core 95c9e3d0, BBL Ltd, Oliver byline, preLaunch noindex, YMYL+FCA boundary, NO lead capture). GitHub: AdamParkerRank4AI/retiredborrowing (push pending - transient GH timeout). UK later-life borrowing & equity release comparison/introducer authority (equity release, lifetime mortgage, RIO, later-life lending) for over-55s; mere-introducer exemption. Domain retiredborrowing.co.uk/.uk/.com all available + TM-clear (Adam buying). NICHE ANGLES to deep-dive (in repo NICHE-ANGLES.md): lease extensions (leasehold blocker), flats/leasehold equity release, returning expats (mainly Spain), divorce/'silver splitters', + interest-only shortfall/care/gifting/bereavement. Money SERP is an authority fortress (L&G/Aviva/Key/MoneyHelper/Unbiased) - win on lay-language + trigger/blocker layer + AI-citation, not head-on.",
+    "clientViewSections": [
+      "overview",
+      "site-tree",
+      "content-plan",
+      "recommendations",
+      "ai-readiness",
+      "page-compliance"
+    ],
+    "allSections": [
+      "overview",
+      "ai-readiness",
+      "ai-citations",
+      "site-manager",
+      "page-compliance",
+      "traffic",
+      "search-performance",
+      "competitors",
+      "site-tree",
+      "uptime",
+      "site-speed",
+      "crawl-activity",
+      "recommendations",
+      "content-plan",
+      "daily-audit",
+      "ecosystem"
+    ],
+    "sections": [],
+    "pre_launch": true,
+    "pending_decisions": [
+      {
+        "id": "domain_register",
+        "label": "Add retiredborrowing.co.uk zone to info@rank4ai CF + custom domain + AI Crawl Control OFF",
+        "status": "IN PROGRESS",
+        "owner": "Adam",
+        "note": ".co.uk/.uk/.com available + TM-clear; Adam buying. Deployed to retiredborrowing.pages.dev. Then attach custom domain + AI toggle."
+      },
+      {
+        "id": "fca_principal",
+        "label": "Secure an FCA-authorised principal / IAR before the adviser-introduction CTA goes live",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "Organic runs on the mere-introducer exemption; the CTA to introduce to advisers needs an FCA-authorised principal/IAR. Until then = editorial/information only."
+      },
+      {
+        "id": "niche_deep_dive",
+        "label": "Run full niche-attack on the equity-release angles",
+        "status": "TBD",
+        "owner": "Claude",
+        "note": "NICHE-ANGLES.md: lease extensions, flats/leasehold, returning Spain expats, divorce, interest-only shortfall, care, gifting, bereavement. Win on lay-language + trigger/blocker + AI-citation (fortress head SERP)."
+      },
+      {
+        "id": "leads_pattern",
+        "label": "Lead capture pending corrected central pattern",
+        "status": "PARKED",
+        "owner": "Adam",
+        "note": "Separate central workstream; no capture wired yet."
+      },
+      {
+        "id": "old_repo",
+        "label": "Archive/delete the old bare ~/equity-release stub repo",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "Superseded by retiredborrowing (was 1-page no-brand stub)."
+      }
+    ],
+    "siteStatus": "prelaunch"
+  },
+  {
     "id": "propertoasty",
     "name": "Proper Toasty",
     "domain": "propertoasty.com",
