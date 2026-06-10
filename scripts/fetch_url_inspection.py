@@ -40,6 +40,14 @@ SITES = {
 DAILY_CAP = 500
 SLEEP_BETWEEN = 0.2
 
+# Global wall-clock budget for the whole run. The per-site DAILY_CAP does NOT
+# bound TOTAL time across sites, so this script used to run ~55 min/site and
+# blow refresh_all's 1800s timeout every day (writing nothing). The 7-day
+# result cache already rotates coverage across days, so stopping early and
+# resuming tomorrow is safe — the merge-with-prior write preserves other sites.
+RUN_BUDGET_S = 1500          # stay under refresh_all's 1800s timeout
+_DEADLINE = None             # set in main() to monotonic start + RUN_BUDGET_S
+
 
 def get_creds():
     with open(TOKEN_FILE) as f:
@@ -180,6 +188,10 @@ def fetch_site(service, site_id, force=False):
         print(f"  {site_id}: capping at {DAILY_CAP}/run, remainder picks up tomorrow")
     results = []
     for i, url in enumerate(sample, 1):
+        if _DEADLINE is not None and time.monotonic() > _DEADLINE:
+            print(f"  {site_id}: run budget reached at {i-1}/{len(sample)}; "
+                  f"remainder resumes next run (cache rotates coverage)", flush=True)
+            break
         r = inspect_url(service, site_property, url)
         results.append(r)
         if i % 25 == 0:
@@ -203,6 +215,8 @@ def fetch_site(service, site_id, force=False):
 
 
 def main():
+    global _DEADLINE
+    _DEADLINE = time.monotonic() + RUN_BUDGET_S
     creds = get_creds()
     service = build("searchconsole", "v1", credentials=creds)
     out = {"computed_at": datetime.now(timezone.utc).isoformat(), "per_site": {}}
@@ -216,6 +230,9 @@ def main():
             continue
         if _skip(site_id):
             print(f"  skip {site_id} (paused/pre-launch)"); continue
+        if time.monotonic() > _DEADLINE:
+            print(f"  run budget reached; {site_id} and remaining sites resume next run")
+            break
         print(f"\n=== {site_id} ===")
         try:
             data = fetch_site(service, site_id)
