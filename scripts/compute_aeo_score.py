@@ -259,6 +259,50 @@ def score_site(site_id, base_url):
 
     total = crawl_score + disc_score + read_score + cit_score + schema_score + tech_score
 
+    # FRESHNESS (0-10) — separate from the 60-pt total so existing trend lines
+    # stay intact. Freshness is a 2026 AI-citation signal (Perplexity especially
+    # favours recent content) and the one axis the public AI auditors score that
+    # we previously didn't. Reads content_freshness.json (already computed) so no
+    # new crawl is needed. Surfaces the worst stale pages so rot is visible.
+    _fr = load("content_freshness.json")
+    fresh = (_fr.get("sites") or _fr).get(site_id, {})
+    fresh_score, fresh_notes, stale_pages = 0, [], []
+    fr_total = fresh.get("total_pages") or 0
+    if fr_total:
+        ratio90 = (fresh.get("fresh_90d") or 0) / fr_total
+        if ratio90 > 0.9:
+            fresh_score += 5; fresh_notes.append(f"{ratio90*100:.0f}% of pages refreshed <=90d (+5)")
+        elif ratio90 > 0.7:
+            fresh_score += 4
+        elif ratio90 > 0.5:
+            fresh_score += 3
+        elif ratio90 > 0.3:
+            fresh_score += 2
+        else:
+            fresh_score += 1
+        median = fresh.get("median_age_days")
+        if median is not None:
+            if median <= 30:
+                fresh_score += 3; fresh_notes.append(f"median page age {median}d (+3)")
+            elif median <= 90:
+                fresh_score += 2
+            elif median <= 180:
+                fresh_score += 1
+        stale12 = fresh.get("stale_12mo") or 0
+        if stale12 == 0:
+            fresh_score += 2; fresh_notes.append("0 pages stale >12mo (+2)")
+        elif stale12 <= 5:
+            fresh_score += 1
+        else:
+            fresh_notes.append(f"{stale12} pages stale >12mo (0)")
+        # surface the 5 oldest pages so the dashboard can show WHAT to refresh
+        for p in (fresh.get("oldest_pages") or [])[:5]:
+            if (p.get("age_days") or 0) >= 180:
+                stale_pages.append({"path": p.get("path"), "age_days": p.get("age_days")})
+    else:
+        fresh_notes.append("no freshness data")
+    fresh_score = min(fresh_score, 10)
+
     return {
         "site_id": site_id,
         "computed_at": datetime.now().isoformat(),
@@ -273,6 +317,9 @@ def score_site(site_id, base_url):
             "schema": {"score": schema_score, "max": 10, "notes": reasons["schema"]},
             "technical": {"score": tech_score, "max": 10, "notes": reasons["technical"]},
         },
+        # Informational, not part of the 60-pt total.
+        "freshness": {"score": fresh_score, "max": 10, "notes": fresh_notes,
+                      "stale_pages": stale_pages},
     }
 
 
