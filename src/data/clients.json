@@ -1366,5 +1366,55 @@
       }
     ],
     "siteStatus": "prelaunch"
+  },
+  {
+    "id": "company-rescue",
+    "name": "Company Rescue",
+    "domain": "company-rescue.pages.dev",
+    "liveDomain": "",
+    "logo": "",
+    "flavour": "leadgen",
+    "dashboard": "fleet",
+    "clientCode": "CRES",
+    "notes": "BUILT + DEPLOYED 2026-06-12 to https://company-rescue.pages.dev (info@rank4ai CF Pages, gate-green, lean standalone Astro NO fleet-core dep, BBL Ltd 16833937, preLaunch noindex + banner). GitHub: AdamParkerRank4AI/company-rescue (main). The Business Distress vertical of the distress-network research (Employment + Later-Life Legal went into legal-leadgen; Consumer Debt parked). ~90 pages: 35 clusters + 12 honest tools + UK Business Distress Nowcast + 9 data trackers + /statistics/ + /compare/ master table + /guides/ + /sectors/ (8) + /authors/ + /accreditations/. STAGGERED ROLLOUT (SITE.liveWaves; see ROLLOUT-PLAN.md). Working brand 'Company Rescue' swappable. Lead = introduce to a Licensed Insolvency Practitioner.",
+    "clientViewSections": [
+      "overview",
+      "site-tree",
+      "content-plan",
+      "recommendations",
+      "ai-readiness",
+      "page-compliance"
+    ],
+    "allSections": [
+      {
+        "id": "named_ip_reviewer",
+        "label": "Name the Licensed Insolvency Practitioner reviewer (YMYL dependency)",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "SITE.author.reviewer __TODO__. Needs sign-off on tools + crisis pages before flipping live."
+      },
+      {
+        "id": "brand_domain",
+        "label": "Finalise brand name + buy domain",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "Working brand 'Company Rescue' is a single swappable value (SITE.brand/domain/url)."
+      },
+      {
+        "id": "leads_pattern",
+        "label": "Lead capture pending corrected central pattern",
+        "status": "PARKED",
+        "owner": "Adam",
+        "note": "FormSubmit pre-launch; swap to Supabase + IP panel at launch."
+      },
+      {
+        "id": "flip_live",
+        "label": "Flip prelaunch=false + release waves",
+        "status": "TBD",
+        "owner": "Claude",
+        "note": "Set liveWaves:[1] first, then 2, then 3. Real OG image + agent-data layer also outstanding (logged in CLAUDE.md)."
+      }
+    ],
+    "siteStatus": "prelaunch"
   }
 ]

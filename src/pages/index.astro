@@ -168,6 +168,20 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
 ---
 
 <DashboardLayout title="Dashboard">
+  {/* FLEET PARITY NOTE — standing reminder to bring every site up to the completeness checklist */}
+  <section data-copy-tile="Fleet parity check" class="mb-6 rounded-lg border border-amber-700/50 bg-amber-950/30 px-4 py-3">
+    <div class="text-[10px] uppercase tracking-wider text-amber-300 font-semibold">Fleet parity check &middot; do this at some point</div>
+    <p class="text-sm text-amber-100/90 mt-1 leading-relaxed">
+      Bring <strong>every site into unity</strong> with the page-type &amp; asset completeness checklist
+      (<code class="text-amber-200">FLEET/SITE_PAGE_TYPE_COMPLETENESS.md</code>): <code>/statistics/</code>, <code>/compare/</code> + real tables,
+      <code>/guides/</code>, <code>/sectors/</code>, <code>/tools/</code>, <code>/authors/</code>, <code>/accreditations/</code>,
+      llms-full.txt, ai.txt, agent-data layer, no FAQPage.
+    </p>
+    <p class="text-[11px] text-amber-200/70 mt-1">
+      Reference builds (complete): Company Rescue, Invoice Finance. Known-thin (need bringing up): equity-release, womens-health, findagym, homesandhedge, steve-site.
+    </p>
+  </section>
+
   {/* SEARCH FUNNELS — the click streams that bring real visitors, headlined */}
   <section data-copy-tile="Search funnels" class="mb-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
     <div class="rounded-lg border border-emerald-800/50 bg-emerald-950/30 px-4 py-3">
