@@ -1,20 +1,20 @@
 {
   "site_id": "findagym",
   "domain": "findagym.pages.dev",
-  "crawled_at": "2026-06-12T18:24:16.219197+00:00",
+  "crawled_at": "2026-06-12T18:40:21.397658+00:00",
   "source": "fleet-source-reader",
-  "pages_crawled": 65,
+  "pages_crawled": 72,
   "total_issues": 0,
   "orphan_pages": 5,
-  "avg_depth": 1.0461538461538462,
-  "avg_word_count": 1506,
-  "pages_with_schema": 65,
+  "avg_depth": 1.0972222222222223,
+  "avg_word_count": 1525,
+  "pages_with_schema": 72,
   "pages_with_multimodal": 0,
-  "pages_with_comparison_table": 21,
+  "pages_with_comparison_table": 23,
   "pages_with_video": 0,
-  "pages_over_2000_words": 4,
+  "pages_over_2000_words": 6,
   "images_missing_alt": 0,
-  "pages_with_date": 65,
+  "pages_with_date": 72,
   "crawler_access": {
     "GPTBot": false,
     "ClaudeBot": false,
@@ -26,6 +26,10 @@
   "topic_clusters": {
     "leisure-world-colchester-review": {
       "hub": "/leisure-world-colchester-review/",
+      "page_count": 1
+    },
+    "statistics": {
+      "hub": "/statistics/",
       "page_count": 1
     },
     "anytime-fitness-vs-leisure-world-colchester": {
@@ -168,6 +172,10 @@
       "hub": "/david-lloyd-colchester-review/",
       "page_count": 1
     },
+    "guides": {
+      "hub": "/guides/",
+      "page_count": 5
+    },
     "cheap-gyms-colchester": {
       "hub": "/cheap-gyms-colchester/",
       "page_count": 1
@@ -194,6 +202,10 @@
     },
     "reformer-pilates-colchester": {
       "hub": "/reformer-pilates-colchester/",
+      "page_count": 1
+    },
+    "api": {
+      "hub": "/api/",
       "page_count": 1
     },
     "the-gym-group-vs-leisure-world-colchester": {
@@ -273,27 +285,27 @@
       "page_count": 1
     }
   },
-  "topic_cluster_count": 62,
+  "topic_cluster_count": 65,
   "term_consistency": {
     "colchester": 148,
-    "findagym": 78,
-    "2026": 58,
-    "honest": 50,
-    "gyms": 50,
+    "findagym": 81,
+    "2026": 73,
+    "gyms": 52,
+    "honest": 51,
     "review": 36,
-    "equipment": 33,
+    "equipment": 35,
     "best": 32,
-    "fitness": 26,
-    "leisure": 24,
+    "fitness": 29,
+    "leisure": 26,
     "month": 24,
+    "cost": 24,
     "world": 21,
     "anytime": 21,
-    "cost": 21,
     "group": 21
   },
   "content_freshness": {
-    "pages_with_dates": 65,
-    "fresh_30_days": 3,
+    "pages_with_dates": 72,
+    "fresh_30_days": 10,
     "fresh_90_days": 62,
     "stale": 0
   },
@@ -305,7 +317,7 @@
       "title": "Leisure World Colchester Review 2026 ,  Honest Take, Quiet Times, Equipment Audit | FindAGym",
       "h1": "Leisure World Colchester ,  Honest Review 2026",
       "meta_desc": "Honest review of Leisure World Colchester. Quiet times, demographic profile, real equipment audit, what it",
-      "word_count": 2024,
+      "word_count": 2029,
       "status": 200,
       "schemas": [
         "Person",
@@ -318,8 +330,8 @@
         "Place",
         "FAQPage"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -2,
+      "internal_links_out": 23,
+      "external_links_out": -5,
       "canonical": "https://findagym.co.uk/leisure-world-colchester-review/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -343,12 +355,54 @@
       "depth": 1
     },
     {
+      "url": "https://findagym.co.uk/statistics/",
+      "path": "/statistics/",
+      "title": "UK Gym and Fitness Statistics 2026",
+      "h1": "UK gym and fitness statistics 2026",
+      "meta_desc": "Key UK gym membership, fitness participation and physical activity statistics, each linked to its primary source (Sport England Active Lives, ukactive, Leisure DB). Updated June 2026.",
+      "word_count": 1974,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "Dataset",
+        "Person",
+        "BreadcrumbList"
+      ],
+      "internal_links_out": 24,
+      "external_links_out": 6,
+      "canonical": "https://findagym.co.uk/statistics/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 1,
+      "list_count": 3,
+      "question_h2s": 0,
+      "h2_count": 3,
+      "last_modified": "2026-06-12",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 72,
+      "depth": 1
+    },
+    {
       "url": "https://findagym.co.uk/anytime-fitness-vs-leisure-world-colchester/",
       "path": "/anytime-fitness-vs-leisure-world-colchester/",
       "title": "Anytime Fitness vs Leisure World in Colchester 2026 | FindAGym",
       "h1": "Anytime Fitness vs Leisure World in Colchester",
       "meta_desc": "Anytime Fitness vs Leisure World in Colchester: \u00a336 vs \u00a339/month. 24/7 mid-tier with global reciprocal access vs council leisure with pool. Similar cost, different products.",
-      "word_count": 1403,
+      "word_count": 1408,
       "status": 200,
       "schemas": [
         "Person",
@@ -357,8 +411,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 28,
-      "external_links_out": -11,
+      "internal_links_out": 31,
+      "external_links_out": -14,
       "canonical": "https://findagym.co.uk/anytime-fitness-vs-leisure-world-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -387,7 +441,7 @@
       "title": "Contact FindAGym",
       "h1": "Contact",
       "meta_desc": "Reach FindAGym: corrections, gym operator enquiries, press, premium listings. Operated by Best Business Loans Ltd.",
-      "word_count": 1030,
+      "word_count": 1035,
       "status": 200,
       "schemas": [
         "Person",
@@ -396,8 +450,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -3,
+      "internal_links_out": 23,
+      "external_links_out": -6,
       "canonical": "https://findagym.co.uk/contact/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -417,7 +471,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 65,
+      "internal_links_in": 72,
       "depth": 1
     },
     {
@@ -426,7 +480,7 @@
       "title": "Free Gym Cost Tools: True Cost and Cost-Per-Visit Calculators | FindAGym",
       "h1": "Gym cost tools",
       "meta_desc": "Free gym membership cost tools. Work out the real all-in cost of a membership including hidden fees, and what each visit actually costs you. Instant results, no email needed.",
-      "word_count": 1331,
+      "word_count": 1336,
       "status": 200,
       "schemas": [
         "Person",
@@ -436,8 +490,8 @@
         "Article",
         "BreadcrumbList"
       ],
-      "internal_links_out": 23,
-      "external_links_out": -7,
+      "internal_links_out": 26,
+      "external_links_out": -10,
       "canonical": "https://findagym.co.uk/tools/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -457,7 +511,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 65,
+      "internal_links_in": 72,
       "depth": 1
     },
     {
@@ -466,7 +520,7 @@
       "title": "Gym Membership True Cost Calculator: The Real All-In Price | FindAGym",
       "h1": "Gym membership true cost calculator",
       "meta_desc": "Free gym membership true-cost calculator. Adds the joining fee, admin fee, freeze fees and contract lock-in the price tile leaves out, and shows your real all-in annual cost per month. Instant result, no email needed.",
-      "word_count": 2740,
+      "word_count": 2745,
       "status": 200,
       "schemas": [
         "Person",
@@ -477,8 +531,8 @@
         "SoftwareApplication",
         "BreadcrumbList"
       ],
-      "internal_links_out": 22,
-      "external_links_out": -6,
+      "internal_links_out": 25,
+      "external_links_out": -9,
       "canonical": "https://findagym.co.uk/tools/gym-membership-true-cost-calculator/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -498,7 +552,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 2,
+      "internal_links_in": 4,
       "depth": 2
     },
     {
@@ -507,7 +561,7 @@
       "title": "Gym Cost-Per-Visit Calculator: Are You Using It Enough? | FindAGym",
       "h1": "Gym cost-per-visit calculator",
       "meta_desc": "Free cost-per-visit calculator. Divide what your gym membership really costs by how often you actually go, get a blunt verdict on whether it is worth keeping. Instant result, no email needed.",
-      "word_count": 2321,
+      "word_count": 2326,
       "status": 200,
       "schemas": [
         "Person",
@@ -518,8 +572,8 @@
         "SoftwareApplication",
         "BreadcrumbList"
       ],
-      "internal_links_out": 22,
-      "external_links_out": -6,
+      "internal_links_out": 25,
+      "external_links_out": -9,
       "canonical": "https://findagym.co.uk/tools/gym-cost-per-visit-calculator/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -539,7 +593,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 2,
+      "internal_links_in": 3,
       "depth": 2
     },
     {
@@ -548,7 +602,7 @@
       "title": "The Gym Group vs JD Gyms in Colchester 2026, Honest Comparison | FindAGym",
       "h1": "The Gym Group vs JD Gyms in Colchester",
       "meta_desc": "The Gym Group Cowdray vs JD Gyms Tollgate: same \u00a319.99/month, different location, different equipment, different crowd. Which Colchester budget gym suits which goal.",
-      "word_count": 1502,
+      "word_count": 1507,
       "status": 200,
       "schemas": [
         "Person",
@@ -557,8 +611,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 28,
-      "external_links_out": -11,
+      "internal_links_out": 31,
+      "external_links_out": -14,
       "canonical": "https://findagym.co.uk/the-gym-group-vs-jd-gyms-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -587,7 +641,7 @@
       "title": "Privacy policy \u00b7 FindAGym",
       "h1": "Privacy policy",
       "meta_desc": "How FindAGym collects, uses and protects reader data. Operated by Best Business Loans Ltd, ICO registered.",
-      "word_count": 1261,
+      "word_count": 1266,
       "status": 200,
       "schemas": [
         "Person",
@@ -596,8 +650,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -4,
+      "internal_links_out": 23,
+      "external_links_out": -7,
       "canonical": "https://findagym.co.uk/privacy/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -617,7 +671,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 65,
+      "internal_links_in": 72,
       "depth": 1
     },
     {
@@ -626,7 +680,7 @@
       "title": "Quietest Gyms in Colchester 2026 ,  When Each One Is Empty | FindAGym",
       "h1": "Quietest gyms in Colchester (when each one is empty)",
       "meta_desc": "Which Colchester gym is genuinely quiet ,  and when. Hour-by-hour breakdown for every chain. Avoid the queues for squat racks and treadmills.",
-      "word_count": 1635,
+      "word_count": 1640,
       "status": 200,
       "schemas": [
         "Person",
@@ -635,8 +689,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 33,
-      "external_links_out": -16,
+      "internal_links_out": 36,
+      "external_links_out": -19,
       "canonical": "https://findagym.co.uk/quietest-gyms-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -656,7 +710,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 65,
+      "internal_links_in": 72,
       "depth": 1
     },
     {
@@ -665,7 +719,7 @@
       "title": "Women&#39;s Gyms in Colchester 2026 ,  Female-Friendly | FindAGym",
       "h1": "Women&#39;s gyms in Colchester (genuinely female-friendly)",
       "meta_desc": "Female-friendly gyms in Colchester. Genuine demographic mix, women-only hours, atmosphere read ,  not marketing copy.",
-      "word_count": 1610,
+      "word_count": 1615,
       "status": 200,
       "schemas": [
         "Person",
@@ -674,8 +728,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 33,
-      "external_links_out": -16,
+      "internal_links_out": 36,
+      "external_links_out": -19,
       "canonical": "https://findagym.co.uk/womens-gym-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -704,7 +758,7 @@
       "title": "Disclaimer \u00b7 FindAGym",
       "h1": "Disclaimer",
       "meta_desc": "Limits on the information presented on FindAGym: reviews are accurate to visit date, demographic estimates are visual reads, popular-times data lags.",
-      "word_count": 1239,
+      "word_count": 1244,
       "status": 200,
       "schemas": [
         "Person",
@@ -713,8 +767,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -4,
+      "internal_links_out": 23,
+      "external_links_out": -7,
       "canonical": "https://findagym.co.uk/disclaimer/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -734,7 +788,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 65,
+      "internal_links_in": 72,
       "depth": 1
     },
     {
@@ -743,7 +797,7 @@
       "title": "David Lloyd vs Bannatyne in Colchester 2026, Honest Comparison | FindAGym",
       "h1": "David Lloyd vs Bannatyne in Colchester",
       "meta_desc": "David Lloyd vs Bannatyne in Colchester: \u00a3135 vs \u00a365/month. Pool, spa, racquet sports, family programming and location compared. Worth the extra \u00a370?",
-      "word_count": 1470,
+      "word_count": 1475,
       "status": 200,
       "schemas": [
         "Person",
@@ -752,8 +806,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 28,
-      "external_links_out": -11,
+      "internal_links_out": 31,
+      "external_links_out": -14,
       "canonical": "https://findagym.co.uk/david-lloyd-vs-bannatyne-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -782,7 +836,7 @@
       "title": "Student Gyms in Colchester 2026 ,  University of Essex | FindAGym",
       "h1": "Student gyms in Colchester (University of Essex)",
       "meta_desc": "Best student gyms in Colchester. Cheapest options, term-time deals, atmosphere reads. Made for University of Essex undergrads.",
-      "word_count": 1404,
+      "word_count": 1409,
       "status": 200,
       "schemas": [
         "Person",
@@ -791,8 +845,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 29,
-      "external_links_out": -12,
+      "internal_links_out": 32,
+      "external_links_out": -15,
       "canonical": "https://findagym.co.uk/student-gym-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -821,7 +875,7 @@
       "title": "Authors \u00b7 FindAGym",
       "h1": "Editorial team",
       "meta_desc": "The named authors editorially responsible for FindAGym. Operated by Best Business Loans Ltd.",
-      "word_count": 985,
+      "word_count": 990,
       "status": 200,
       "schemas": [
         "Person",
@@ -830,8 +884,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 21,
-      "external_links_out": -5,
+      "internal_links_out": 24,
+      "external_links_out": -8,
       "canonical": "https://findagym.co.uk/authors/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -860,7 +914,7 @@
       "title": "Oliver Mackman, named reviewer at FindAGym",
       "h1": "Oliver Mackman",
       "meta_desc": "Oliver Mackman is a director of Best Business Loans Ltd and the named author for FindAGym. He visits every gym in the pilot personally and signs every review.",
-      "word_count": 1222,
+      "word_count": 1227,
       "status": 200,
       "schemas": [
         "Person",
@@ -870,8 +924,8 @@
         "Article",
         "Person"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -3,
+      "internal_links_out": 23,
+      "external_links_out": -6,
       "canonical": "https://findagym.co.uk/authors/oliver-mackman/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -891,7 +945,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 4,
+      "internal_links_in": 9,
       "depth": 2
     },
     {
@@ -900,7 +954,7 @@
       "title": "PureGym vs Anytime Fitness in Colchester 2026, Honest Comparison | FindAGym",
       "h1": "PureGym vs Anytime Fitness in Colchester",
       "meta_desc": "PureGym vs Anytime Fitness in Colchester: cost, hours, equipment, crowd size and reciprocal access compared. Which suits which goal in 2026.",
-      "word_count": 1488,
+      "word_count": 1493,
       "status": 200,
       "schemas": [
         "Person",
@@ -909,8 +963,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 28,
-      "external_links_out": -11,
+      "internal_links_out": 31,
+      "external_links_out": -14,
       "canonical": "https://findagym.co.uk/puregym-vs-anytime-fitness-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -939,7 +993,7 @@
       "title": "Anytime Fitness vs JD Gyms in Colchester 2026, Honest Comparison | FindAGym",
       "h1": "Anytime Fitness vs JD Gyms in Colchester",
       "meta_desc": "Anytime Fitness vs JD Gyms in Colchester: \u00a336 vs \u00a319.99/month. 24/7 access, reciprocal-club rights, equipment ceiling and crowd size compared.",
-      "word_count": 1491,
+      "word_count": 1496,
       "status": 200,
       "schemas": [
         "Person",
@@ -948,8 +1002,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 28,
-      "external_links_out": -11,
+      "internal_links_out": 31,
+      "external_links_out": -14,
       "canonical": "https://findagym.co.uk/anytime-fitness-vs-jd-gyms-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -978,7 +1032,7 @@
       "title": "David Lloyd vs Leisure World in Colchester 2026, Honest Comparison | FindAGym",
       "h1": "David Lloyd vs Leisure World in Colchester",
       "meta_desc": "David Lloyd vs Leisure World in Colchester: \u00a3135 vs \u00a339/month. Pool, family programming, racquet sports and value compared. When is the \u00a396/month premium worth it?",
-      "word_count": 1523,
+      "word_count": 1528,
       "status": 200,
       "schemas": [
         "Person",
@@ -987,8 +1041,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 28,
-      "external_links_out": -11,
+      "internal_links_out": 31,
+      "external_links_out": -14,
       "canonical": "https://findagym.co.uk/david-lloyd-vs-leisure-world-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1017,7 +1071,7 @@
       "title": "How we are funded \u00b7 FindAGym",
       "h1": "How we are funded",
       "meta_desc": "FindAGym is free for readers. We earn from affiliate signups, paid premium listings (clearly labelled), and ancillary fitness affiliates in the sidebar.",
-      "word_count": 1268,
+      "word_count": 1273,
       "status": 200,
       "schemas": [
         "Person",
@@ -1026,8 +1080,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -4,
+      "internal_links_out": 23,
+      "external_links_out": -7,
       "canonical": "https://findagym.co.uk/how-we-are-funded/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1047,7 +1101,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 65,
+      "internal_links_in": 72,
       "depth": 1
     },
     {
@@ -1056,7 +1110,7 @@
       "title": "Methodology \u00b7 FindAGym",
       "h1": "Methodology",
       "meta_desc": "How FindAGym scores gyms, which data sources we use, and how often we refresh. Real visits, popular-times data, demographic reads, equipment audits.",
-      "word_count": 1458,
+      "word_count": 1463,
       "status": 200,
       "schemas": [
         "Person",
@@ -1065,8 +1119,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -4,
+      "internal_links_out": 23,
+      "external_links_out": -7,
       "canonical": "https://findagym.co.uk/methodology/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1086,7 +1140,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 65,
+      "internal_links_in": 72,
       "depth": 1
     },
     {
@@ -1095,7 +1149,7 @@
       "title": "JD Gyms vs Leisure World in Colchester 2026 | FindAGym",
       "h1": "JD Gyms vs Leisure World in Colchester",
       "meta_desc": "JD Gyms vs Leisure World in Colchester: \u00a319.99 vs \u00a339/month. Budget free-weights gym vs council leisure centre with pool. The choice turns on whether the pool is part of your routine.",
-      "word_count": 1423,
+      "word_count": 1428,
       "status": 200,
       "schemas": [
         "Person",
@@ -1104,8 +1158,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 28,
-      "external_links_out": -11,
+      "internal_links_out": 31,
+      "external_links_out": -14,
       "canonical": "https://findagym.co.uk/jd-gyms-vs-leisure-world-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1134,7 +1188,7 @@
       "title": "How We Rate Gyms | FindAGym Methodology",
       "h1": "How we rate gyms",
       "meta_desc": "FindAGym methodology: how we capture quiet times, demographic profile, equipment audit, and honest verdicts. The full process.",
-      "word_count": 1305,
+      "word_count": 1310,
       "status": 200,
       "schemas": [
         "Person",
@@ -1143,8 +1197,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -4,
+      "internal_links_out": 23,
+      "external_links_out": -7,
       "canonical": "https://findagym.co.uk/how-we-rate-gyms/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1164,7 +1218,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 65,
+      "internal_links_in": 72,
       "depth": 1
     },
     {
@@ -1173,7 +1227,7 @@
       "title": "For Gym Operators ,  Premium Listings | FindAGym",
       "h1": "Get found by people actively choosing a gym in your town",
       "meta_desc": "Operate a UK gym? Premium listings on FindAGym from \u00a399/year. Featured placement, claim your profile, get qualified enquiries from people choosing in your town.",
-      "word_count": 1086,
+      "word_count": 1091,
       "status": 200,
       "schemas": [
         "Person",
@@ -1182,8 +1236,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -4,
+      "internal_links_out": 23,
+      "external_links_out": -7,
       "canonical": "https://findagym.co.uk/for-gyms/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1212,7 +1266,7 @@
       "title": "Terms of service \u00b7 FindAGym",
       "h1": "Terms of service",
       "meta_desc": "Terms governing use of FindAGym. Operated by Best Business Loans Ltd.",
-      "word_count": 1276,
+      "word_count": 1281,
       "status": 200,
       "schemas": [
         "Person",
@@ -1221,8 +1275,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -4,
+      "internal_links_out": 23,
+      "external_links_out": -7,
       "canonical": "https://findagym.co.uk/terms/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1242,7 +1296,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 65,
+      "internal_links_in": 72,
       "depth": 1
     },
     {
@@ -1251,7 +1305,7 @@
       "title": "PureGym vs The Gym Group in Colchester 2026 ,  Honest Comparison | FindAGym",
       "h1": "PureGym vs The Gym Group in Colchester",
       "meta_desc": "PureGym vs The Gym Group in Colchester: head-to-head comparison on price, hours, equipment, classes, and crowd. Which is right for which goal?",
-      "word_count": 1482,
+      "word_count": 1487,
       "status": 200,
       "schemas": [
         "Person",
@@ -1260,8 +1314,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 28,
-      "external_links_out": -11,
+      "internal_links_out": 31,
+      "external_links_out": -14,
       "canonical": "https://findagym.co.uk/puregym-vs-the-gym-group-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1290,7 +1344,7 @@
       "title": "Best-Equipped Gym in Colchester 2026 ,  Real Equipment Audit | FindAGym",
       "h1": "Best-equipped gym in Colchester (real equipment audit)",
       "meta_desc": "Best-equipped Colchester gym? Real equipment audits ,  squat racks, deadlift platforms, dumbbell ceilings, recovery facilities ,  for every chain.",
-      "word_count": 1586,
+      "word_count": 1591,
       "status": 200,
       "schemas": [
         "Person",
@@ -1299,8 +1353,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 33,
-      "external_links_out": -16,
+      "internal_links_out": 36,
+      "external_links_out": -19,
       "canonical": "https://findagym.co.uk/best-equipped-gym-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1320,7 +1374,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 65,
+      "internal_links_in": 72,
       "depth": 1
     },
     {
@@ -1329,7 +1383,7 @@
       "title": "CrossFit in Colchester 2026 ,  Honest Review | FindAGym",
       "h1": "CrossFit in Colchester",
       "meta_desc": "CrossFit in Colchester. Functional fitness, timed WODs, community-led training. Honest review of cost, atmosphere, who attends, what it",
-      "word_count": 1255,
+      "word_count": 1260,
       "status": 200,
       "schemas": [
         "Person",
@@ -1338,8 +1392,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 26,
-      "external_links_out": -9,
+      "internal_links_out": 29,
+      "external_links_out": -12,
       "canonical": "https://findagym.co.uk/crossfit-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1368,7 +1422,7 @@
       "title": "Anytime Fitness Colchester Review 2026 ,  Honest Take, Quiet Times, Equipment Audit | FindAGym",
       "h1": "Anytime Fitness Colchester ,  Honest Review 2026",
       "meta_desc": "Honest review of Anytime Fitness Colchester. Quiet times, demographic profile, real equipment audit, what it",
-      "word_count": 1937,
+      "word_count": 1942,
       "status": 200,
       "schemas": [
         "Person",
@@ -1381,8 +1435,8 @@
         "Place",
         "FAQPage"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -2,
+      "internal_links_out": 23,
+      "external_links_out": -5,
       "canonical": "https://findagym.co.uk/anytime-fitness-colchester-review/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1411,7 +1465,7 @@
       "title": "Bannatyne vs JD Gyms in Colchester 2026 | FindAGym",
       "h1": "Bannatyne vs JD Gyms in Colchester",
       "meta_desc": "Bannatyne vs JD Gyms in Colchester: \u00a365 vs \u00a319.99/month. Pool-and-spa club vs budget free-weights gym. The decision is whether pool routine justifies the \u00a345/month premium.",
-      "word_count": 1418,
+      "word_count": 1423,
       "status": 200,
       "schemas": [
         "Person",
@@ -1420,8 +1474,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 28,
-      "external_links_out": -11,
+      "internal_links_out": 31,
+      "external_links_out": -14,
       "canonical": "https://findagym.co.uk/bannatyne-vs-jd-gyms-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1450,7 +1504,7 @@
       "title": "About FindAGym. Honest UK gym reviews by Best Business Loans Ltd",
       "h1": "About FindAGym",
       "meta_desc": "FindAGym is a UK gym and fitness review site by Best Business Loans Ltd. We visit gyms during peak and off-peak hours, capture the equipment audit, and call out worst-for use cases.",
-      "word_count": 1486,
+      "word_count": 1491,
       "status": 200,
       "schemas": [
         "Person",
@@ -1459,8 +1513,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 21,
-      "external_links_out": -5,
+      "internal_links_out": 24,
+      "external_links_out": -8,
       "canonical": "https://findagym.co.uk/about/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1480,7 +1534,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 65,
+      "internal_links_in": 72,
       "depth": 1
     },
     {
@@ -1489,7 +1543,7 @@
       "title": "Bannatyne vs The Gym Group in Colchester 2026 | FindAGym",
       "h1": "Bannatyne vs The Gym Group in Colchester",
       "meta_desc": "Bannatyne vs The Gym Group in Colchester: \u00a365 vs \u00a319.99/month. Premium pool-and-spa club vs budget 24/7 gym. Same area, different mission.",
-      "word_count": 1435,
+      "word_count": 1440,
       "status": 200,
       "schemas": [
         "Person",
@@ -1498,8 +1552,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 28,
-      "external_links_out": -11,
+      "internal_links_out": 31,
+      "external_links_out": -14,
       "canonical": "https://findagym.co.uk/bannatyne-vs-the-gym-group-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1528,7 +1582,7 @@
       "title": "The Gym Group vs Anytime Fitness in Colchester 2026 | FindAGym",
       "h1": "The Gym Group vs Anytime Fitness in Colchester",
       "meta_desc": "The Gym Group vs Anytime Fitness in Colchester: \u00a319.99 vs \u00a336/month. Crowd density, reciprocal-club access, equipment and 24/7 specifics compared.",
-      "word_count": 1513,
+      "word_count": 1518,
       "status": 200,
       "schemas": [
         "Person",
@@ -1537,8 +1591,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 28,
-      "external_links_out": -11,
+      "internal_links_out": 31,
+      "external_links_out": -14,
       "canonical": "https://findagym.co.uk/the-gym-group-vs-anytime-fitness-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1567,7 +1621,7 @@
       "title": "Luxury Gyms in Colchester 2026 ,  Premium &amp; Members-Only | FindAGym",
       "h1": "Luxury gyms in Colchester (premium tier)",
       "meta_desc": "Premium and members-only gym options in Colchester. Honest comparison of pool/sauna/steam, equipment, and what each is genuinely best for.",
-      "word_count": 1425,
+      "word_count": 1430,
       "status": 200,
       "schemas": [
         "Person",
@@ -1576,8 +1630,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 28,
-      "external_links_out": -11,
+      "internal_links_out": 31,
+      "external_links_out": -14,
       "canonical": "https://findagym.co.uk/luxury-gyms-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1597,7 +1651,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 1,
+      "internal_links_in": 2,
       "depth": 1
     },
     {
@@ -1606,7 +1660,7 @@
       "title": "Over-50s Gyms in Colchester 2026 ,  Active Retirement | FindAGym",
       "h1": "Over-50s gyms in Colchester",
       "meta_desc": "Best gyms in Colchester for the over-50s. Calm atmosphere, low intimidation, classes that suit active retirement.",
-      "word_count": 1583,
+      "word_count": 1588,
       "status": 200,
       "schemas": [
         "Person",
@@ -1615,8 +1669,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 33,
-      "external_links_out": -16,
+      "internal_links_out": 36,
+      "external_links_out": -19,
       "canonical": "https://findagym.co.uk/over-50s-gym-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1645,7 +1699,7 @@
       "title": "The Gym Group Colchester Review 2026 ,  Honest Take, Quiet Times, Equipment Audit | FindAGym",
       "h1": "The Gym Group Colchester ,  Honest Review 2026",
       "meta_desc": "Honest review of The Gym Group Colchester. Quiet times, demographic profile, real equipment audit, what it",
-      "word_count": 2000,
+      "word_count": 2005,
       "status": 200,
       "schemas": [
         "Person",
@@ -1658,8 +1712,8 @@
         "Place",
         "FAQPage"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -2,
+      "internal_links_out": 23,
+      "external_links_out": -5,
       "canonical": "https://findagym.co.uk/the-gym-group-colchester-review/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1688,7 +1742,7 @@
       "title": "Climbing wall in Colchester 2026 ,  Honest Review | FindAGym",
       "h1": "Climbing wall in Colchester",
       "meta_desc": "Climbing wall in Colchester. Bouldering and roped climbing for all skill levels. Honest review of cost, atmosphere, who attends, what it",
-      "word_count": 1318,
+      "word_count": 1323,
       "status": 200,
       "schemas": [
         "Person",
@@ -1697,8 +1751,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 26,
-      "external_links_out": -9,
+      "internal_links_out": 29,
+      "external_links_out": -12,
       "canonical": "https://findagym.co.uk/climbing-wall-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1727,7 +1781,7 @@
       "title": "Best Gym for Marathon Training in Colchester 2026 | FindAGym",
       "h1": "Best gym for marathon training in Colchester",
       "meta_desc": "Best gyms in Colchester for marathon and half-marathon training. Treadmill quality, ski erg / rower availability, recovery facilities.",
-      "word_count": 1401,
+      "word_count": 1406,
       "status": 200,
       "schemas": [
         "Person",
@@ -1736,8 +1790,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 29,
-      "external_links_out": -12,
+      "internal_links_out": 32,
+      "external_links_out": -15,
       "canonical": "https://findagym.co.uk/best-gym-marathon-training-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1766,7 +1820,7 @@
       "title": "Bannatyne Health Club Colchester Review 2026 ,  Honest Take, Quiet Times, Equipment Audit | FindAGym",
       "h1": "Bannatyne Health Club Colchester ,  Honest Review 2026",
       "meta_desc": "Honest review of Bannatyne Health Club Colchester. Quiet times, demographic profile, real equipment audit, what it",
-      "word_count": 2050,
+      "word_count": 2055,
       "status": 200,
       "schemas": [
         "Person",
@@ -1779,8 +1833,8 @@
         "Place",
         "FAQPage"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -2,
+      "internal_links_out": 23,
+      "external_links_out": -5,
       "canonical": "https://findagym.co.uk/bannatyne-colchester-review/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1809,7 +1863,7 @@
       "title": "David Lloyd Colchester Review 2026 ,  Honest Take, Quiet Times, Equipment Audit | FindAGym",
       "h1": "David Lloyd Colchester ,  Honest Review 2026",
       "meta_desc": "Honest review of David Lloyd Colchester. Quiet times, demographic profile, real equipment audit, what it",
-      "word_count": 1979,
+      "word_count": 1984,
       "status": 200,
       "schemas": [
         "Person",
@@ -1822,8 +1876,8 @@
         "Place",
         "FAQPage"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -2,
+      "internal_links_out": 23,
+      "external_links_out": -5,
       "canonical": "https://findagym.co.uk/david-lloyd-colchester-review/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1847,12 +1901,216 @@
       "depth": 1
     },
     {
+      "url": "https://findagym.co.uk/guides/",
+      "path": "/guides/",
+      "title": "UK gym guides 2026, FindAGym",
+      "h1": "UK gym guides",
+      "meta_desc": "Practical, source-backed guides to UK gyms in 2026: how to choose a gym, average gym costs, gym vs home workout, and how to cancel a membership the right way.",
+      "word_count": 1198,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "CollectionPage"
+      ],
+      "internal_links_out": 27,
+      "external_links_out": -11,
+      "canonical": "https://findagym.co.uk/guides/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 2,
+      "question_h2s": 0,
+      "h2_count": 4,
+      "last_modified": "2026-06-12",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 72,
+      "depth": 1
+    },
+    {
+      "url": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "path": "/guides/how-to-cancel-a-gym-membership/",
+      "title": "How to cancel a gym membership in the UK (2026)",
+      "h1": "How to cancel a gym membership in the UK",
+      "meta_desc": "How to cancel a UK gym membership in 2026: notice periods, contract vs rolling plans, cooling-off rights, and how to stop a Direct Debit the right way.",
+      "word_count": 1728,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internal_links_out": 24,
+      "external_links_out": -8,
+      "canonical": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 3,
+      "question_h2s": 0,
+      "h2_count": 7,
+      "last_modified": "2026-06-12",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 1,
+      "depth": 2
+    },
+    {
+      "url": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "path": "/guides/average-uk-gym-cost/",
+      "title": "Average UK gym cost in 2026: what you really pay",
+      "h1": "Average UK gym cost in 2026",
+      "meta_desc": "What a UK gym membership really costs in 2026, by tier, plus joining fees and the full first-year figure. Budget chains, mid-market, premium and leisure centres compared.",
+      "word_count": 1692,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internal_links_out": 26,
+      "external_links_out": -10,
+      "canonical": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 3,
+      "question_h2s": 0,
+      "h2_count": 7,
+      "last_modified": "2026-06-12",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 1,
+      "depth": 2
+    },
+    {
+      "url": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "path": "/guides/how-to-choose-a-gym/",
+      "title": "How to choose a gym: UK 2026 buyer guide",
+      "h1": "How to choose a gym in 2026",
+      "meta_desc": "A practical UK guide to choosing a gym in 2026. The six questions that decide which gym fits you, from busy times and equipment to contract terms and travel time.",
+      "word_count": 1856,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internal_links_out": 26,
+      "external_links_out": -10,
+      "canonical": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 3,
+      "question_h2s": 6,
+      "h2_count": 8,
+      "last_modified": "2026-06-12",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 1,
+      "depth": 2
+    },
+    {
+      "url": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "path": "/guides/gym-vs-home-workout/",
+      "title": "Gym vs home workout: which is right for you in 2026",
+      "h1": "Gym vs home workout",
+      "meta_desc": "Gym membership or a home setup in 2026? An honest cost, equipment and adherence comparison to help you decide which actually fits your goals and your space.",
+      "word_count": 1732,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internal_links_out": 25,
+      "external_links_out": -9,
+      "canonical": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 3,
+      "question_h2s": 0,
+      "h2_count": 7,
+      "last_modified": "2026-06-12",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 1,
+      "depth": 2
+    },
+    {
       "url": "https://findagym.co.uk/cheap-gyms-colchester/",
       "path": "/cheap-gyms-colchester/",
       "title": "Cheap Gyms in Colchester 2026 ,  Under \u00a325/month | FindAGym",
       "h1": "Cheap gyms in Colchester (under \u00a325/month)",
       "meta_desc": "The cheapest gyms in Colchester for under \u00a325/month. No-contract, 24/7 access, honest review of what each one is genuinely best for.",
-      "word_count": 1423,
+      "word_count": 1428,
       "status": 200,
       "schemas": [
         "Person",
@@ -1861,8 +2119,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 29,
-      "external_links_out": -12,
+      "internal_links_out": 32,
+      "external_links_out": -15,
       "canonical": "https://findagym.co.uk/cheap-gyms-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1882,7 +2140,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 65,
+      "internal_links_in": 72,
       "depth": 1
     },
     {
@@ -1891,7 +2149,7 @@
       "title": "Editorial policy \u00b7 FindAGym",
       "h1": "Editorial policy",
       "meta_desc": "How FindAGym writes reviews. Named author, real visits, honest verdict, worst-for sections, no paid placement on review pages.",
-      "word_count": 1434,
+      "word_count": 1439,
       "status": 200,
       "schemas": [
         "Person",
@@ -1900,8 +2158,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -4,
+      "internal_links_out": 23,
+      "external_links_out": -7,
       "canonical": "https://findagym.co.uk/editorial-policy/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1921,7 +2179,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 65,
+      "internal_links_in": 72,
       "depth": 1
     },
     {
@@ -1930,7 +2188,7 @@
       "title": "Gyms in Colchester (Essex) ,  Honest Reviews 2026 | FindAGym",
       "h1": "Gyms in Colchester",
       "meta_desc": "7 gyms reviewed in Colchester with quiet times, demographic profile, equipment audit, and what each gym is genuinely best (and worst) for.",
-      "word_count": 1517,
+      "word_count": 1522,
       "status": 200,
       "schemas": [
         "Person",
@@ -1939,8 +2197,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 39,
-      "external_links_out": -22,
+      "internal_links_out": 42,
+      "external_links_out": -25,
       "canonical": "https://findagym.co.uk/colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1960,7 +2218,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 65,
+      "internal_links_in": 72,
       "depth": 1
     },
     {
@@ -1969,7 +2227,7 @@
       "title": "David Lloyd vs JD Gyms in Colchester 2026 | FindAGym",
       "h1": "David Lloyd vs JD Gyms in Colchester",
       "meta_desc": "David Lloyd vs JD Gyms in Colchester: \u00a3135 vs \u00a319.99/month. Luxury family club vs budget free-weights specialist. Two distinct products.",
-      "word_count": 1449,
+      "word_count": 1454,
       "status": 200,
       "schemas": [
         "Person",
@@ -1978,8 +2236,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 28,
-      "external_links_out": -11,
+      "internal_links_out": 31,
+      "external_links_out": -14,
       "canonical": "https://findagym.co.uk/david-lloyd-vs-jd-gyms-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2008,7 +2266,7 @@
       "title": "Best Gym Classes in Colchester 2026 ,  Class Roster Compared | FindAGym",
       "h1": "Best gym classes in Colchester (compared by roster)",
       "meta_desc": "Which Colchester gym has the best classes? Compared by roster, named instructors and popularity. HIIT, spin, body pump, yoga.",
-      "word_count": 1588,
+      "word_count": 1593,
       "status": 200,
       "schemas": [
         "Person",
@@ -2017,8 +2275,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 33,
-      "external_links_out": -16,
+      "internal_links_out": 36,
+      "external_links_out": -19,
       "canonical": "https://findagym.co.uk/best-gym-classes-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2047,7 +2305,7 @@
       "title": "PureGym vs JD Gyms in Colchester 2026, Honest Comparison | FindAGym",
       "h1": "PureGym vs JD Gyms in Colchester",
       "meta_desc": "PureGym Stanway vs JD Gyms Tollgate: cost, hours, equipment, class schedule and location compared. Which Colchester budget gym suits which goal.",
-      "word_count": 1497,
+      "word_count": 1502,
       "status": 200,
       "schemas": [
         "Person",
@@ -2056,8 +2314,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 28,
-      "external_links_out": -11,
+      "internal_links_out": 31,
+      "external_links_out": -14,
       "canonical": "https://findagym.co.uk/puregym-vs-jd-gyms-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2086,7 +2344,7 @@
       "title": "Reformer pilates in Colchester 2026 ,  Honest Review | FindAGym",
       "h1": "Reformer pilates in Colchester",
       "meta_desc": "Reformer pilates in Colchester. Low-impact strength on the reformer machine, postnatal-friendly. Honest review of cost, atmosphere, who attends, what it",
-      "word_count": 1268,
+      "word_count": 1273,
       "status": 200,
       "schemas": [
         "Person",
@@ -2095,8 +2353,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 26,
-      "external_links_out": -9,
+      "internal_links_out": 29,
+      "external_links_out": -12,
       "canonical": "https://findagym.co.uk/reformer-pilates-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2120,12 +2378,52 @@
       "depth": 1
     },
     {
+      "url": "https://findagym.co.uk/api/",
+      "path": "/api/",
+      "title": "FindAGym Data API and MCP server",
+      "h1": "FindAGym Data API",
+      "meta_desc": "Read-only public data on UK gyms and specialism studios. REST endpoints, an OpenAPI 3.1 schema, and an MCP server for AI agents. CC BY 4.0, no authentication, no PII.",
+      "word_count": 1416,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "Dataset"
+      ],
+      "internal_links_out": 25,
+      "external_links_out": -8,
+      "canonical": "https://findagym.co.uk/api/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": true,
+      "table_count": 1,
+      "list_count": 2,
+      "question_h2s": 0,
+      "h2_count": 5,
+      "last_modified": "2026-06-12",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 72,
+      "depth": 1
+    },
+    {
       "url": "https://findagym.co.uk/the-gym-group-vs-leisure-world-colchester/",
       "path": "/the-gym-group-vs-leisure-world-colchester/",
       "title": "The Gym Group vs Leisure World in Colchester 2026 | FindAGym",
       "h1": "The Gym Group vs Leisure World in Colchester",
       "meta_desc": "The Gym Group vs Leisure World in Colchester: \u00a319.99 vs \u00a339/month. Budget 24/7 gym vs council leisure centre with pool. Different products at different price points.",
-      "word_count": 1448,
+      "word_count": 1453,
       "status": 200,
       "schemas": [
         "Person",
@@ -2134,8 +2432,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 28,
-      "external_links_out": -11,
+      "internal_links_out": 31,
+      "external_links_out": -14,
       "canonical": "https://findagym.co.uk/the-gym-group-vs-leisure-world-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2164,7 +2462,7 @@
       "title": "Boxing in Colchester 2026 ,  Honest Review | FindAGym",
       "h1": "Boxing in Colchester",
       "meta_desc": "Boxing in Colchester. White-collar, fitness boxing and competitive amateur boxing. Honest review of cost, atmosphere, who attends, what it",
-      "word_count": 1303,
+      "word_count": 1308,
       "status": 200,
       "schemas": [
         "Person",
@@ -2173,8 +2471,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 26,
-      "external_links_out": -9,
+      "internal_links_out": 29,
+      "external_links_out": -12,
       "canonical": "https://findagym.co.uk/boxing-gym-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2203,7 +2501,7 @@
       "title": "Best Gym for Postnatal Recovery in Colchester 2026 | FindAGym",
       "h1": "Best gym for postnatal recovery in Colchester",
       "meta_desc": "Best Colchester gym for postnatal recovery. Quiet midday hours, supportive atmosphere, classes appropriate for new mothers.",
-      "word_count": 1579,
+      "word_count": 1584,
       "status": 200,
       "schemas": [
         "Person",
@@ -2212,8 +2510,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 33,
-      "external_links_out": -16,
+      "internal_links_out": 36,
+      "external_links_out": -19,
       "canonical": "https://findagym.co.uk/best-gym-postnatal-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2242,7 +2540,7 @@
       "title": "Bannatyne vs Leisure World in Colchester 2026, Honest Comparison | FindAGym",
       "h1": "Bannatyne vs Leisure World in Colchester",
       "meta_desc": "Bannatyne vs Leisure World in Colchester: \u00a365 vs \u00a339/month. Pool, spa, class schedule, crowd density and value compared. Two routes to a pool-and-gym combo.",
-      "word_count": 1535,
+      "word_count": 1540,
       "status": 200,
       "schemas": [
         "Person",
@@ -2251,8 +2549,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 28,
-      "external_links_out": -11,
+      "internal_links_out": 31,
+      "external_links_out": -14,
       "canonical": "https://findagym.co.uk/bannatyne-vs-leisure-world-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2281,7 +2579,7 @@
       "title": "Thanks. Your gym match is on the way. \u00b7 FindAGym",
       "h1": "We are matching your gym now",
       "meta_desc": "We have your enquiry. We will match you with the Colchester gym that best fits your goal, schedule and budget within 24 hours.",
-      "word_count": 1036,
+      "word_count": 1041,
       "status": 200,
       "schemas": [
         "Person",
@@ -2290,8 +2588,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -4,
+      "internal_links_out": 23,
+      "external_links_out": -7,
       "canonical": "https://findagym.co.uk/thanks/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2320,7 +2618,7 @@
       "title": "Gym Day Passes in Colchester 2026 ,  No Contract | FindAGym",
       "h1": "Gym day passes in Colchester (drop-in)",
       "meta_desc": "Day passes and no-contract gym options in Colchester. Drop-in pricing, what each gym lets you in for the day, and which one suits visitors.",
-      "word_count": 1424,
+      "word_count": 1429,
       "status": 200,
       "schemas": [
         "Person",
@@ -2329,8 +2627,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 29,
-      "external_links_out": -12,
+      "internal_links_out": 32,
+      "external_links_out": -15,
       "canonical": "https://findagym.co.uk/gym-day-pass-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2359,7 +2657,7 @@
       "title": "Bannatyne vs Anytime Fitness in Colchester 2026 | FindAGym",
       "h1": "Bannatyne vs Anytime Fitness in Colchester",
       "meta_desc": "Bannatyne vs Anytime Fitness in Colchester: \u00a365 vs \u00a336/month. Premium pool-and-spa club vs 24/7 mid-tier with global reciprocal access.",
-      "word_count": 1435,
+      "word_count": 1440,
       "status": 200,
       "schemas": [
         "Person",
@@ -2368,8 +2666,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 28,
-      "external_links_out": -11,
+      "internal_links_out": 31,
+      "external_links_out": -14,
       "canonical": "https://findagym.co.uk/bannatyne-vs-anytime-fitness-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2398,7 +2696,7 @@
       "title": "PureGym Colchester Stanway Review 2026 ,  Honest Take, Quiet Times, Equipment Audit | FindAGym",
       "h1": "PureGym Colchester Stanway ,  Honest Review 2026",
       "meta_desc": "Honest review of PureGym Colchester Stanway. Quiet times, demographic profile, real equipment audit, what it",
-      "word_count": 1963,
+      "word_count": 1968,
       "status": 200,
       "schemas": [
         "Person",
@@ -2411,8 +2709,8 @@
         "Place",
         "FAQPage"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -2,
+      "internal_links_out": 23,
+      "external_links_out": -5,
       "canonical": "https://findagym.co.uk/puregym-colchester-review/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2441,7 +2739,7 @@
       "title": "Least Intimidating Gym in Colchester 2026 ,  For Absolute Beginners | FindAGym",
       "h1": "Least intimidating gym in Colchester (for absolute beginners)",
       "meta_desc": "Which Colchester gym is least intimidating for absolute beginners? Honest atmosphere reads, no peacocking, supportive crowd.",
-      "word_count": 1619,
+      "word_count": 1624,
       "status": 200,
       "schemas": [
         "Person",
@@ -2450,8 +2748,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 33,
-      "external_links_out": -16,
+      "internal_links_out": 36,
+      "external_links_out": -19,
       "canonical": "https://findagym.co.uk/least-intimidating-gym-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2471,7 +2769,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 1,
+      "internal_links_in": 2,
       "depth": 1
     },
     {
@@ -2480,7 +2778,7 @@
       "title": "David Lloyd vs PureGym in Colchester 2026 | FindAGym",
       "h1": "David Lloyd vs PureGym in Colchester",
       "meta_desc": "David Lloyd vs PureGym in Colchester: \u00a3135 vs \u00a321.99/month. Luxury family club vs budget 24/7 free-weights gym. Six-fold price gap, two different products.",
-      "word_count": 1403,
+      "word_count": 1408,
       "status": 200,
       "schemas": [
         "Person",
@@ -2489,8 +2787,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 28,
-      "external_links_out": -11,
+      "internal_links_out": 31,
+      "external_links_out": -14,
       "canonical": "https://findagym.co.uk/david-lloyd-vs-puregym-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2519,7 +2817,7 @@
       "title": "PureGym vs Bannatyne in Colchester 2026, Honest Comparison | FindAGym",
       "h1": "PureGym vs Bannatyne in Colchester",
       "meta_desc": "PureGym vs Bannatyne in Colchester: \u00a321.99 vs \u00a365/month. Pool, spa, equipment ceiling and crowd density compared. Worth the \u00a343 premium?",
-      "word_count": 1481,
+      "word_count": 1486,
       "status": 200,
       "schemas": [
         "Person",
@@ -2528,8 +2826,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 28,
-      "external_links_out": -11,
+      "internal_links_out": 31,
+      "external_links_out": -14,
       "canonical": "https://findagym.co.uk/puregym-vs-bannatyne-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2558,7 +2856,7 @@
       "title": "PureGym vs Leisure World in Colchester 2026, Honest Comparison | FindAGym",
       "h1": "PureGym vs Leisure World in Colchester",
       "meta_desc": "PureGym vs Leisure World in Colchester: \u00a321.99 vs \u00a339/month. Pool, equipment, hours and day-pass options compared. Which suits which profile.",
-      "word_count": 1503,
+      "word_count": 1508,
       "status": 200,
       "schemas": [
         "Person",
@@ -2567,8 +2865,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 28,
-      "external_links_out": -11,
+      "internal_links_out": 31,
+      "external_links_out": -14,
       "canonical": "https://findagym.co.uk/puregym-vs-leisure-world-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2597,7 +2895,7 @@
       "title": "Best Gym for Weight Loss in Colchester 2026 | FindAGym",
       "h1": "Best gym for weight loss in Colchester",
       "meta_desc": "Which Colchester gym is best for weight loss? Honest read on cardio capacity, classes, atmosphere ,  and which to avoid if you",
-      "word_count": 1456,
+      "word_count": 1461,
       "status": 200,
       "schemas": [
         "Person",
@@ -2606,8 +2904,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 30,
-      "external_links_out": -13,
+      "internal_links_out": 33,
+      "external_links_out": -16,
       "canonical": "https://findagym.co.uk/best-gym-weight-loss-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2636,7 +2934,7 @@
       "title": "Best Gyms in Colchester 2026 ,  Honest Review by FindAGym",
       "h1": "Best gyms in Colchester (2026)",
       "meta_desc": "The best gyms in Colchester ranked honestly across budget, equipment, hours, and crowd. Quiet times, demographic profile, equipment audit per gym.",
-      "word_count": 1586,
+      "word_count": 1591,
       "status": 200,
       "schemas": [
         "Person",
@@ -2645,8 +2943,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 33,
-      "external_links_out": -16,
+      "internal_links_out": 36,
+      "external_links_out": -19,
       "canonical": "https://findagym.co.uk/best-gyms-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2666,7 +2964,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 65,
+      "internal_links_in": 72,
       "depth": 1
     },
     {
@@ -2675,7 +2973,7 @@
       "title": "24-Hour Gyms in Colchester 2026 ,  Always Open | FindAGym",
       "h1": "24-hour gyms in Colchester",
       "meta_desc": "Every 24-hour gym in Colchester. When each is genuinely quiet at night, what equipment is left running, and which one is best for early-morning lifters.",
-      "word_count": 1407,
+      "word_count": 1412,
       "status": 200,
       "schemas": [
         "Person",
@@ -2684,8 +2982,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 29,
-      "external_links_out": -12,
+      "internal_links_out": 32,
+      "external_links_out": -15,
       "canonical": "https://findagym.co.uk/24-hour-gyms-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2705,7 +3003,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 65,
+      "internal_links_in": 72,
       "depth": 1
     },
     {
@@ -2714,7 +3012,7 @@
       "title": "David Lloyd vs Anytime Fitness in Colchester 2026 | FindAGym",
       "h1": "David Lloyd vs Anytime Fitness in Colchester",
       "meta_desc": "David Lloyd vs Anytime Fitness in Colchester: \u00a3135 vs \u00a336/month. Pool, family, racquet sports versus 24/7 access and global reciprocal rights compared.",
-      "word_count": 1455,
+      "word_count": 1460,
       "status": 200,
       "schemas": [
         "Person",
@@ -2723,8 +3021,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 28,
-      "external_links_out": -11,
+      "internal_links_out": 31,
+      "external_links_out": -14,
       "canonical": "https://findagym.co.uk/david-lloyd-vs-anytime-fitness-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2753,7 +3051,7 @@
       "title": "Hyrox prep in Colchester 2026 ,  Honest Review | FindAGym",
       "h1": "Hyrox prep in Colchester",
       "meta_desc": "Hyrox prep in Colchester. Compound conditioning for the fastest-growing fitness race in the UK. Honest review of cost, atmosphere, who attends, what it",
-      "word_count": 1354,
+      "word_count": 1359,
       "status": 200,
       "schemas": [
         "Person",
@@ -2762,8 +3060,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 26,
-      "external_links_out": -9,
+      "internal_links_out": 29,
+      "external_links_out": -12,
       "canonical": "https://findagym.co.uk/hyrox-prep-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2792,7 +3090,7 @@
       "title": "JD Gyms Colchester Tollgate Review 2026 ,  Honest Take, Quiet Times, Equipment Audit | FindAGym",
       "h1": "JD Gyms Colchester Tollgate ,  Honest Review 2026",
       "meta_desc": "Honest review of JD Gyms Colchester Tollgate. Quiet times, demographic profile, real equipment audit, what it",
-      "word_count": 1999,
+      "word_count": 2004,
       "status": 200,
       "schemas": [
         "Person",
@@ -2805,8 +3103,8 @@
         "Place",
         "FAQPage"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -2,
+      "internal_links_out": 23,
+      "external_links_out": -5,
       "canonical": "https://findagym.co.uk/jd-gyms-colchester-review/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2835,7 +3133,7 @@
       "title": "David Lloyd vs The Gym Group in Colchester 2026 | FindAGym",
       "h1": "David Lloyd vs The Gym Group in Colchester",
       "meta_desc": "David Lloyd vs The Gym Group in Colchester: \u00a3135 vs \u00a319.99/month. Luxury family club vs budget 24/7 gym. Seven-fold price gap with distinct missions.",
-      "word_count": 1425,
+      "word_count": 1430,
       "status": 200,
       "schemas": [
         "Person",
@@ -2844,8 +3142,8 @@
         "WebPage",
         "Article"
       ],
-      "internal_links_out": 28,
-      "external_links_out": -11,
+      "internal_links_out": 31,
+      "external_links_out": -14,
       "canonical": "https://findagym.co.uk/david-lloyd-vs-the-gym-group-colchester/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2882,7 +3180,7 @@
     },
     {
       "from": "https://findagym.co.uk/./",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -2912,7 +3210,12 @@
     },
     {
       "from": "https://findagym.co.uk/./",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/./",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -3082,7 +3385,22 @@
     },
     {
       "from": "https://findagym.co.uk/./",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/./",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/./",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/./",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -3142,7 +3460,7 @@
     },
     {
       "from": "https://findagym.co.uk/404/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -3172,7 +3490,12 @@
     },
     {
       "from": "https://findagym.co.uk/404/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/404/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -3222,7 +3545,22 @@
     },
     {
       "from": "https://findagym.co.uk/404/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/404/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/404/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/404/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -3282,7 +3620,7 @@
     },
     {
       "from": "https://findagym.co.uk/leisure-world-colchester-review/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -3312,7 +3650,12 @@
     },
     {
       "from": "https://findagym.co.uk/leisure-world-colchester-review/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/leisure-world-colchester-review/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -3357,7 +3700,22 @@
     },
     {
       "from": "https://findagym.co.uk/leisure-world-colchester-review/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/leisure-world-colchester-review/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/leisure-world-colchester-review/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/leisure-world-colchester-review/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -3406,6 +3764,161 @@
       "type": "internal"
     },
     {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/best-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/quietest-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/best-equipped-gym-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/best-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/authors/oliver-mackman/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/best-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/quietest-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/cheap-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/24-hour-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/api/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/statistics/",
+      "to": "https://findagym.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
       "from": "https://findagym.co.uk/anytime-fitness-vs-leisure-world-colchester/",
       "to": "https://findagym.co.uk/favicon.svg",
       "type": "internal"
@@ -3417,7 +3930,7 @@
     },
     {
       "from": "https://findagym.co.uk/anytime-fitness-vs-leisure-world-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -3447,7 +3960,12 @@
     },
     {
       "from": "https://findagym.co.uk/anytime-fitness-vs-leisure-world-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/anytime-fitness-vs-leisure-world-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -3522,7 +4040,22 @@
     },
     {
       "from": "https://findagym.co.uk/anytime-fitness-vs-leisure-world-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/anytime-fitness-vs-leisure-world-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/anytime-fitness-vs-leisure-world-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/anytime-fitness-vs-leisure-world-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -3582,7 +4115,7 @@
     },
     {
       "from": "https://findagym.co.uk/contact/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -3612,7 +4145,12 @@
     },
     {
       "from": "https://findagym.co.uk/contact/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/contact/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -3647,7 +4185,22 @@
     },
     {
       "from": "https://findagym.co.uk/contact/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/contact/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/contact/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/contact/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -3707,7 +4260,7 @@
     },
     {
       "from": "https://findagym.co.uk/tools/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -3737,7 +4290,12 @@
     },
     {
       "from": "https://findagym.co.uk/tools/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/tools/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -3802,7 +4360,22 @@
     },
     {
       "from": "https://findagym.co.uk/tools/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/tools/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/tools/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/tools/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -3862,7 +4435,7 @@
     },
     {
       "from": "https://findagym.co.uk/tools/gym-membership-true-cost-calculator/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -3892,7 +4465,12 @@
     },
     {
       "from": "https://findagym.co.uk/tools/gym-membership-true-cost-calculator/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/tools/gym-membership-true-cost-calculator/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -3952,7 +4530,22 @@
     },
     {
       "from": "https://findagym.co.uk/tools/gym-membership-true-cost-calculator/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/tools/gym-membership-true-cost-calculator/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/tools/gym-membership-true-cost-calculator/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/tools/gym-membership-true-cost-calculator/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -4012,7 +4605,7 @@
     },
     {
       "from": "https://findagym.co.uk/tools/gym-cost-per-visit-calculator/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -4042,7 +4635,12 @@
     },
     {
       "from": "https://findagym.co.uk/tools/gym-cost-per-visit-calculator/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/tools/gym-cost-per-visit-calculator/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -4112,7 +4710,22 @@
     },
     {
       "from": "https://findagym.co.uk/tools/gym-cost-per-visit-calculator/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/tools/gym-cost-per-visit-calculator/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/tools/gym-cost-per-visit-calculator/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/tools/gym-cost-per-visit-calculator/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -4172,7 +4785,7 @@
     },
     {
       "from": "https://findagym.co.uk/the-gym-group-vs-jd-gyms-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -4202,7 +4815,12 @@
     },
     {
       "from": "https://findagym.co.uk/the-gym-group-vs-jd-gyms-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/the-gym-group-vs-jd-gyms-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -4277,7 +4895,22 @@
     },
     {
       "from": "https://findagym.co.uk/the-gym-group-vs-jd-gyms-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/the-gym-group-vs-jd-gyms-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/the-gym-group-vs-jd-gyms-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/the-gym-group-vs-jd-gyms-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -4337,7 +4970,7 @@
     },
     {
       "from": "https://findagym.co.uk/privacy/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -4367,7 +5000,12 @@
     },
     {
       "from": "https://findagym.co.uk/privacy/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/privacy/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -4402,7 +5040,22 @@
     },
     {
       "from": "https://findagym.co.uk/privacy/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/privacy/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/privacy/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/privacy/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -4462,7 +5115,7 @@
     },
     {
       "from": "https://findagym.co.uk/quietest-gyms-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -4492,7 +5145,12 @@
     },
     {
       "from": "https://findagym.co.uk/quietest-gyms-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/quietest-gyms-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -4592,7 +5250,22 @@
     },
     {
       "from": "https://findagym.co.uk/quietest-gyms-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/quietest-gyms-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/quietest-gyms-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/quietest-gyms-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -4652,7 +5325,7 @@
     },
     {
       "from": "https://findagym.co.uk/womens-gym-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -4682,7 +5355,12 @@
     },
     {
       "from": "https://findagym.co.uk/womens-gym-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/womens-gym-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -4782,7 +5460,22 @@
     },
     {
       "from": "https://findagym.co.uk/womens-gym-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/womens-gym-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/womens-gym-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/womens-gym-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -4842,7 +5535,7 @@
     },
     {
       "from": "https://findagym.co.uk/disclaimer/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -4872,7 +5565,12 @@
     },
     {
       "from": "https://findagym.co.uk/disclaimer/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/disclaimer/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -4907,7 +5605,22 @@
     },
     {
       "from": "https://findagym.co.uk/disclaimer/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/disclaimer/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/disclaimer/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/disclaimer/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -4967,7 +5680,7 @@
     },
     {
       "from": "https://findagym.co.uk/david-lloyd-vs-bannatyne-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -4997,7 +5710,12 @@
     },
     {
       "from": "https://findagym.co.uk/david-lloyd-vs-bannatyne-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/david-lloyd-vs-bannatyne-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -5072,7 +5790,22 @@
     },
     {
       "from": "https://findagym.co.uk/david-lloyd-vs-bannatyne-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/david-lloyd-vs-bannatyne-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/david-lloyd-vs-bannatyne-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/david-lloyd-vs-bannatyne-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -5132,7 +5865,7 @@
     },
     {
       "from": "https://findagym.co.uk/student-gym-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -5162,7 +5895,12 @@
     },
     {
       "from": "https://findagym.co.uk/student-gym-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/student-gym-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -5242,7 +5980,22 @@
     },
     {
       "from": "https://findagym.co.uk/student-gym-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/student-gym-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/student-gym-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/student-gym-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -5302,7 +6055,7 @@
     },
     {
       "from": "https://findagym.co.uk/authors/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -5332,7 +6085,12 @@
     },
     {
       "from": "https://findagym.co.uk/authors/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/authors/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -5377,7 +6135,22 @@
     },
     {
       "from": "https://findagym.co.uk/authors/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/authors/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/authors/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/authors/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -5437,7 +6210,7 @@
     },
     {
       "from": "https://findagym.co.uk/authors/oliver-mackman/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -5467,7 +6240,12 @@
     },
     {
       "from": "https://findagym.co.uk/authors/oliver-mackman/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/authors/oliver-mackman/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -5512,7 +6290,22 @@
     },
     {
       "from": "https://findagym.co.uk/authors/oliver-mackman/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/authors/oliver-mackman/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/authors/oliver-mackman/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/authors/oliver-mackman/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -5572,7 +6365,7 @@
     },
     {
       "from": "https://findagym.co.uk/puregym-vs-anytime-fitness-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -5602,7 +6395,12 @@
     },
     {
       "from": "https://findagym.co.uk/puregym-vs-anytime-fitness-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/puregym-vs-anytime-fitness-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -5677,7 +6475,22 @@
     },
     {
       "from": "https://findagym.co.uk/puregym-vs-anytime-fitness-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/puregym-vs-anytime-fitness-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/puregym-vs-anytime-fitness-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/puregym-vs-anytime-fitness-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -5737,7 +6550,7 @@
     },
     {
       "from": "https://findagym.co.uk/anytime-fitness-vs-jd-gyms-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -5767,7 +6580,12 @@
     },
     {
       "from": "https://findagym.co.uk/anytime-fitness-vs-jd-gyms-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/anytime-fitness-vs-jd-gyms-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -5842,7 +6660,22 @@
     },
     {
       "from": "https://findagym.co.uk/anytime-fitness-vs-jd-gyms-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/anytime-fitness-vs-jd-gyms-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/anytime-fitness-vs-jd-gyms-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/anytime-fitness-vs-jd-gyms-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -5902,7 +6735,7 @@
     },
     {
       "from": "https://findagym.co.uk/david-lloyd-vs-leisure-world-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -5932,7 +6765,12 @@
     },
     {
       "from": "https://findagym.co.uk/david-lloyd-vs-leisure-world-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/david-lloyd-vs-leisure-world-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -6007,7 +6845,22 @@
     },
     {
       "from": "https://findagym.co.uk/david-lloyd-vs-leisure-world-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/david-lloyd-vs-leisure-world-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/david-lloyd-vs-leisure-world-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/david-lloyd-vs-leisure-world-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -6067,7 +6920,7 @@
     },
     {
       "from": "https://findagym.co.uk/how-we-are-funded/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -6097,7 +6950,12 @@
     },
     {
       "from": "https://findagym.co.uk/how-we-are-funded/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/how-we-are-funded/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -6132,7 +6990,22 @@
     },
     {
       "from": "https://findagym.co.uk/how-we-are-funded/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/how-we-are-funded/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/how-we-are-funded/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/how-we-are-funded/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -6192,7 +7065,7 @@
     },
     {
       "from": "https://findagym.co.uk/methodology/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -6222,7 +7095,12 @@
     },
     {
       "from": "https://findagym.co.uk/methodology/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/methodology/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -6262,7 +7140,22 @@
     },
     {
       "from": "https://findagym.co.uk/methodology/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/methodology/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/methodology/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/methodology/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -6322,7 +7215,7 @@
     },
     {
       "from": "https://findagym.co.uk/jd-gyms-vs-leisure-world-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -6352,7 +7245,12 @@
     },
     {
       "from": "https://findagym.co.uk/jd-gyms-vs-leisure-world-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/jd-gyms-vs-leisure-world-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -6427,7 +7325,22 @@
     },
     {
       "from": "https://findagym.co.uk/jd-gyms-vs-leisure-world-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/jd-gyms-vs-leisure-world-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/jd-gyms-vs-leisure-world-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/jd-gyms-vs-leisure-world-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -6487,7 +7400,7 @@
     },
     {
       "from": "https://findagym.co.uk/how-we-rate-gyms/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -6517,7 +7430,12 @@
     },
     {
       "from": "https://findagym.co.uk/how-we-rate-gyms/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -6557,7 +7475,22 @@
     },
     {
       "from": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/how-we-rate-gyms/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -6617,7 +7550,7 @@
     },
     {
       "from": "https://findagym.co.uk/for-gyms/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -6647,7 +7580,12 @@
     },
     {
       "from": "https://findagym.co.uk/for-gyms/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/for-gyms/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -6682,7 +7620,22 @@
     },
     {
       "from": "https://findagym.co.uk/for-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/for-gyms/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/for-gyms/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/for-gyms/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -6742,7 +7695,7 @@
     },
     {
       "from": "https://findagym.co.uk/terms/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -6772,7 +7725,12 @@
     },
     {
       "from": "https://findagym.co.uk/terms/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/terms/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -6817,7 +7775,22 @@
     },
     {
       "from": "https://findagym.co.uk/terms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/terms/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/terms/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/terms/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -6877,7 +7850,7 @@
     },
     {
       "from": "https://findagym.co.uk/puregym-vs-the-gym-group-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -6907,7 +7880,12 @@
     },
     {
       "from": "https://findagym.co.uk/puregym-vs-the-gym-group-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/puregym-vs-the-gym-group-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -6982,7 +7960,22 @@
     },
     {
       "from": "https://findagym.co.uk/puregym-vs-the-gym-group-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/puregym-vs-the-gym-group-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/puregym-vs-the-gym-group-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/puregym-vs-the-gym-group-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -7042,7 +8035,7 @@
     },
     {
       "from": "https://findagym.co.uk/best-equipped-gym-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -7072,7 +8065,12 @@
     },
     {
       "from": "https://findagym.co.uk/best-equipped-gym-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/best-equipped-gym-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -7172,7 +8170,22 @@
     },
     {
       "from": "https://findagym.co.uk/best-equipped-gym-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/best-equipped-gym-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/best-equipped-gym-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/best-equipped-gym-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -7232,7 +8245,7 @@
     },
     {
       "from": "https://findagym.co.uk/crossfit-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -7262,7 +8275,12 @@
     },
     {
       "from": "https://findagym.co.uk/crossfit-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/crossfit-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -7327,7 +8345,22 @@
     },
     {
       "from": "https://findagym.co.uk/crossfit-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/crossfit-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/crossfit-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/crossfit-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -7387,7 +8420,7 @@
     },
     {
       "from": "https://findagym.co.uk/anytime-fitness-colchester-review/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -7417,7 +8450,12 @@
     },
     {
       "from": "https://findagym.co.uk/anytime-fitness-colchester-review/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/anytime-fitness-colchester-review/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -7462,7 +8500,22 @@
     },
     {
       "from": "https://findagym.co.uk/anytime-fitness-colchester-review/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/anytime-fitness-colchester-review/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/anytime-fitness-colchester-review/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/anytime-fitness-colchester-review/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -7522,7 +8575,7 @@
     },
     {
       "from": "https://findagym.co.uk/bannatyne-vs-jd-gyms-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -7552,7 +8605,12 @@
     },
     {
       "from": "https://findagym.co.uk/bannatyne-vs-jd-gyms-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/bannatyne-vs-jd-gyms-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -7627,7 +8685,22 @@
     },
     {
       "from": "https://findagym.co.uk/bannatyne-vs-jd-gyms-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/bannatyne-vs-jd-gyms-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/bannatyne-vs-jd-gyms-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/bannatyne-vs-jd-gyms-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -7687,7 +8760,7 @@
     },
     {
       "from": "https://findagym.co.uk/about/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -7717,7 +8790,12 @@
     },
     {
       "from": "https://findagym.co.uk/about/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/about/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -7762,7 +8840,22 @@
     },
     {
       "from": "https://findagym.co.uk/about/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/about/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/about/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/about/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -7822,7 +8915,7 @@
     },
     {
       "from": "https://findagym.co.uk/bannatyne-vs-the-gym-group-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -7852,7 +8945,12 @@
     },
     {
       "from": "https://findagym.co.uk/bannatyne-vs-the-gym-group-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/bannatyne-vs-the-gym-group-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -7927,7 +9025,22 @@
     },
     {
       "from": "https://findagym.co.uk/bannatyne-vs-the-gym-group-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/bannatyne-vs-the-gym-group-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/bannatyne-vs-the-gym-group-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/bannatyne-vs-the-gym-group-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -7987,7 +9100,7 @@
     },
     {
       "from": "https://findagym.co.uk/the-gym-group-vs-anytime-fitness-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -8017,7 +9130,12 @@
     },
     {
       "from": "https://findagym.co.uk/the-gym-group-vs-anytime-fitness-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/the-gym-group-vs-anytime-fitness-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -8092,7 +9210,22 @@
     },
     {
       "from": "https://findagym.co.uk/the-gym-group-vs-anytime-fitness-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/the-gym-group-vs-anytime-fitness-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/the-gym-group-vs-anytime-fitness-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/the-gym-group-vs-anytime-fitness-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -8152,7 +9285,7 @@
     },
     {
       "from": "https://findagym.co.uk/luxury-gyms-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -8182,7 +9315,12 @@
     },
     {
       "from": "https://findagym.co.uk/luxury-gyms-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/luxury-gyms-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -8257,7 +9395,22 @@
     },
     {
       "from": "https://findagym.co.uk/luxury-gyms-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/luxury-gyms-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/luxury-gyms-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/luxury-gyms-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -8317,7 +9470,7 @@
     },
     {
       "from": "https://findagym.co.uk/over-50s-gym-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -8347,7 +9500,12 @@
     },
     {
       "from": "https://findagym.co.uk/over-50s-gym-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/over-50s-gym-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -8447,7 +9605,22 @@
     },
     {
       "from": "https://findagym.co.uk/over-50s-gym-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/over-50s-gym-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/over-50s-gym-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/over-50s-gym-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -8507,7 +9680,7 @@
     },
     {
       "from": "https://findagym.co.uk/the-gym-group-colchester-review/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -8537,7 +9710,12 @@
     },
     {
       "from": "https://findagym.co.uk/the-gym-group-colchester-review/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/the-gym-group-colchester-review/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -8582,7 +9760,22 @@
     },
     {
       "from": "https://findagym.co.uk/the-gym-group-colchester-review/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/the-gym-group-colchester-review/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/the-gym-group-colchester-review/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/the-gym-group-colchester-review/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -8642,7 +9835,7 @@
     },
     {
       "from": "https://findagym.co.uk/climbing-wall-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -8672,7 +9865,12 @@
     },
     {
       "from": "https://findagym.co.uk/climbing-wall-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/climbing-wall-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -8737,7 +9935,22 @@
     },
     {
       "from": "https://findagym.co.uk/climbing-wall-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/climbing-wall-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/climbing-wall-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/climbing-wall-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -8797,7 +10010,7 @@
     },
     {
       "from": "https://findagym.co.uk/best-gym-marathon-training-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -8827,7 +10040,12 @@
     },
     {
       "from": "https://findagym.co.uk/best-gym-marathon-training-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/best-gym-marathon-training-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -8907,7 +10125,22 @@
     },
     {
       "from": "https://findagym.co.uk/best-gym-marathon-training-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/best-gym-marathon-training-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/best-gym-marathon-training-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/best-gym-marathon-training-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -8967,7 +10200,7 @@
     },
     {
       "from": "https://findagym.co.uk/bannatyne-colchester-review/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -8997,7 +10230,12 @@
     },
     {
       "from": "https://findagym.co.uk/bannatyne-colchester-review/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/bannatyne-colchester-review/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -9042,7 +10280,22 @@
     },
     {
       "from": "https://findagym.co.uk/bannatyne-colchester-review/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/bannatyne-colchester-review/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/bannatyne-colchester-review/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/bannatyne-colchester-review/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -9102,7 +10355,7 @@
     },
     {
       "from": "https://findagym.co.uk/david-lloyd-colchester-review/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -9132,7 +10385,12 @@
     },
     {
       "from": "https://findagym.co.uk/david-lloyd-colchester-review/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/david-lloyd-colchester-review/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -9177,7 +10435,22 @@
     },
     {
       "from": "https://findagym.co.uk/david-lloyd-colchester-review/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/david-lloyd-colchester-review/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/david-lloyd-colchester-review/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/david-lloyd-colchester-review/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -9226,6 +10499,876 @@
       "type": "internal"
     },
     {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/best-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/quietest-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/best-equipped-gym-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/best-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/best-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/quietest-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/cheap-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/24-hour-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/api/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/",
+      "to": "https://findagym.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/best-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/quietest-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/best-equipped-gym-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/best-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/24-hour-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/best-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/authors/oliver-mackman/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/best-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/quietest-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/cheap-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/24-hour-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/api/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-cancel-a-gym-membership/",
+      "to": "https://findagym.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/best-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/quietest-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/best-equipped-gym-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/best-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/cheap-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/luxury-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/tools/gym-membership-true-cost-calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/authors/oliver-mackman/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/best-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/quietest-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/cheap-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/24-hour-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/api/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/average-uk-gym-cost/",
+      "to": "https://findagym.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/best-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/quietest-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/best-equipped-gym-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/best-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/quietest-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/least-intimidating-gym-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/tools/gym-membership-true-cost-calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/authors/oliver-mackman/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/best-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/quietest-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/cheap-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/24-hour-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/api/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/how-to-choose-a-gym/",
+      "to": "https://findagym.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/best-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/quietest-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/best-equipped-gym-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/best-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/best-equipped-gym-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/cheap-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/tools/gym-cost-per-visit-calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/authors/oliver-mackman/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/best-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/quietest-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/cheap-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/24-hour-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/api/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/guides/gym-vs-home-workout/",
+      "to": "https://findagym.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
       "from": "https://findagym.co.uk/cheap-gyms-colchester/",
       "to": "https://findagym.co.uk/favicon.svg",
       "type": "internal"
@@ -9237,7 +11380,7 @@
     },
     {
       "from": "https://findagym.co.uk/cheap-gyms-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -9267,7 +11410,12 @@
     },
     {
       "from": "https://findagym.co.uk/cheap-gyms-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/cheap-gyms-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -9347,7 +11495,22 @@
     },
     {
       "from": "https://findagym.co.uk/cheap-gyms-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/cheap-gyms-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/cheap-gyms-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/cheap-gyms-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -9407,7 +11570,7 @@
     },
     {
       "from": "https://findagym.co.uk/editorial-policy/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -9437,7 +11600,12 @@
     },
     {
       "from": "https://findagym.co.uk/editorial-policy/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/editorial-policy/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -9477,7 +11645,22 @@
     },
     {
       "from": "https://findagym.co.uk/editorial-policy/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/editorial-policy/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/editorial-policy/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/editorial-policy/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -9537,7 +11720,7 @@
     },
     {
       "from": "https://findagym.co.uk/colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -9567,7 +11750,12 @@
     },
     {
       "from": "https://findagym.co.uk/colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -9722,7 +11910,22 @@
     },
     {
       "from": "https://findagym.co.uk/colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -9782,7 +11985,7 @@
     },
     {
       "from": "https://findagym.co.uk/david-lloyd-vs-jd-gyms-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -9812,7 +12015,12 @@
     },
     {
       "from": "https://findagym.co.uk/david-lloyd-vs-jd-gyms-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/david-lloyd-vs-jd-gyms-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -9887,7 +12095,22 @@
     },
     {
       "from": "https://findagym.co.uk/david-lloyd-vs-jd-gyms-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/david-lloyd-vs-jd-gyms-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/david-lloyd-vs-jd-gyms-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/david-lloyd-vs-jd-gyms-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -9947,7 +12170,7 @@
     },
     {
       "from": "https://findagym.co.uk/best-gym-classes-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -9977,7 +12200,12 @@
     },
     {
       "from": "https://findagym.co.uk/best-gym-classes-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/best-gym-classes-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -10077,7 +12305,22 @@
     },
     {
       "from": "https://findagym.co.uk/best-gym-classes-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/best-gym-classes-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/best-gym-classes-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/best-gym-classes-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -10137,7 +12380,7 @@
     },
     {
       "from": "https://findagym.co.uk/puregym-vs-jd-gyms-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -10167,7 +12410,12 @@
     },
     {
       "from": "https://findagym.co.uk/puregym-vs-jd-gyms-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/puregym-vs-jd-gyms-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -10242,7 +12490,22 @@
     },
     {
       "from": "https://findagym.co.uk/puregym-vs-jd-gyms-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/puregym-vs-jd-gyms-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/puregym-vs-jd-gyms-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/puregym-vs-jd-gyms-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -10302,7 +12565,7 @@
     },
     {
       "from": "https://findagym.co.uk/reformer-pilates-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -10332,7 +12595,12 @@
     },
     {
       "from": "https://findagym.co.uk/reformer-pilates-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/reformer-pilates-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -10397,7 +12665,22 @@
     },
     {
       "from": "https://findagym.co.uk/reformer-pilates-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/reformer-pilates-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/reformer-pilates-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/reformer-pilates-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -10446,6 +12729,166 @@
       "type": "internal"
     },
     {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/best-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/quietest-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/best-equipped-gym-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/best-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/openapi.json",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/.well-known/mcp.json",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/best-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/quietest-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/cheap-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/24-hour-gyms-colchester/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/api/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/how-we-are-funded/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/methodology/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/api/",
+      "to": "https://findagym.co.uk/disclaimer/",
+      "type": "internal"
+    },
+    {
       "from": "https://findagym.co.uk/the-gym-group-vs-leisure-world-colchester/",
       "to": "https://findagym.co.uk/favicon.svg",
       "type": "internal"
@@ -10457,7 +12900,7 @@
     },
     {
       "from": "https://findagym.co.uk/the-gym-group-vs-leisure-world-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -10487,7 +12930,12 @@
     },
     {
       "from": "https://findagym.co.uk/the-gym-group-vs-leisure-world-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/the-gym-group-vs-leisure-world-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -10562,7 +13010,22 @@
     },
     {
       "from": "https://findagym.co.uk/the-gym-group-vs-leisure-world-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/the-gym-group-vs-leisure-world-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/the-gym-group-vs-leisure-world-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/the-gym-group-vs-leisure-world-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -10622,7 +13085,7 @@
     },
     {
       "from": "https://findagym.co.uk/boxing-gym-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -10652,7 +13115,12 @@
     },
     {
       "from": "https://findagym.co.uk/boxing-gym-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/boxing-gym-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -10717,7 +13185,22 @@
     },
     {
       "from": "https://findagym.co.uk/boxing-gym-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/boxing-gym-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/boxing-gym-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/boxing-gym-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -10777,7 +13260,7 @@
     },
     {
       "from": "https://findagym.co.uk/best-gym-postnatal-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -10807,7 +13290,12 @@
     },
     {
       "from": "https://findagym.co.uk/best-gym-postnatal-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/best-gym-postnatal-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -10907,7 +13395,22 @@
     },
     {
       "from": "https://findagym.co.uk/best-gym-postnatal-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/best-gym-postnatal-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/best-gym-postnatal-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/best-gym-postnatal-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -10967,7 +13470,7 @@
     },
     {
       "from": "https://findagym.co.uk/bannatyne-vs-leisure-world-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -10997,7 +13500,12 @@
     },
     {
       "from": "https://findagym.co.uk/bannatyne-vs-leisure-world-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/bannatyne-vs-leisure-world-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -11072,7 +13580,22 @@
     },
     {
       "from": "https://findagym.co.uk/bannatyne-vs-leisure-world-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/bannatyne-vs-leisure-world-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/bannatyne-vs-leisure-world-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/bannatyne-vs-leisure-world-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -11132,7 +13655,7 @@
     },
     {
       "from": "https://findagym.co.uk/thanks/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -11162,7 +13685,12 @@
     },
     {
       "from": "https://findagym.co.uk/thanks/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/thanks/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -11202,7 +13730,22 @@
     },
     {
       "from": "https://findagym.co.uk/thanks/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/thanks/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/thanks/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/thanks/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -11262,7 +13805,7 @@
     },
     {
       "from": "https://findagym.co.uk/gym-day-pass-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -11292,7 +13835,12 @@
     },
     {
       "from": "https://findagym.co.uk/gym-day-pass-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/gym-day-pass-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -11372,7 +13920,22 @@
     },
     {
       "from": "https://findagym.co.uk/gym-day-pass-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/gym-day-pass-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/gym-day-pass-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/gym-day-pass-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -11432,7 +13995,7 @@
     },
     {
       "from": "https://findagym.co.uk/bannatyne-vs-anytime-fitness-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -11462,7 +14025,12 @@
     },
     {
       "from": "https://findagym.co.uk/bannatyne-vs-anytime-fitness-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/bannatyne-vs-anytime-fitness-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -11537,7 +14105,22 @@
     },
     {
       "from": "https://findagym.co.uk/bannatyne-vs-anytime-fitness-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/bannatyne-vs-anytime-fitness-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/bannatyne-vs-anytime-fitness-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/bannatyne-vs-anytime-fitness-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -11597,7 +14180,7 @@
     },
     {
       "from": "https://findagym.co.uk/puregym-colchester-review/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -11627,7 +14210,12 @@
     },
     {
       "from": "https://findagym.co.uk/puregym-colchester-review/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/puregym-colchester-review/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -11672,7 +14260,22 @@
     },
     {
       "from": "https://findagym.co.uk/puregym-colchester-review/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/puregym-colchester-review/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/puregym-colchester-review/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/puregym-colchester-review/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -11732,7 +14335,7 @@
     },
     {
       "from": "https://findagym.co.uk/least-intimidating-gym-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -11762,7 +14365,12 @@
     },
     {
       "from": "https://findagym.co.uk/least-intimidating-gym-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/least-intimidating-gym-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -11862,7 +14470,22 @@
     },
     {
       "from": "https://findagym.co.uk/least-intimidating-gym-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/least-intimidating-gym-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/least-intimidating-gym-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/least-intimidating-gym-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -11922,7 +14545,7 @@
     },
     {
       "from": "https://findagym.co.uk/david-lloyd-vs-puregym-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -11952,7 +14575,12 @@
     },
     {
       "from": "https://findagym.co.uk/david-lloyd-vs-puregym-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/david-lloyd-vs-puregym-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -12027,7 +14655,22 @@
     },
     {
       "from": "https://findagym.co.uk/david-lloyd-vs-puregym-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/david-lloyd-vs-puregym-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/david-lloyd-vs-puregym-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/david-lloyd-vs-puregym-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -12087,7 +14730,7 @@
     },
     {
       "from": "https://findagym.co.uk/puregym-vs-bannatyne-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -12117,7 +14760,12 @@
     },
     {
       "from": "https://findagym.co.uk/puregym-vs-bannatyne-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/puregym-vs-bannatyne-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -12192,7 +14840,22 @@
     },
     {
       "from": "https://findagym.co.uk/puregym-vs-bannatyne-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/puregym-vs-bannatyne-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/puregym-vs-bannatyne-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/puregym-vs-bannatyne-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -12252,7 +14915,7 @@
     },
     {
       "from": "https://findagym.co.uk/puregym-vs-leisure-world-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -12282,7 +14945,12 @@
     },
     {
       "from": "https://findagym.co.uk/puregym-vs-leisure-world-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/puregym-vs-leisure-world-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -12357,7 +15025,22 @@
     },
     {
       "from": "https://findagym.co.uk/puregym-vs-leisure-world-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/puregym-vs-leisure-world-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/puregym-vs-leisure-world-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/puregym-vs-leisure-world-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -12417,7 +15100,7 @@
     },
     {
       "from": "https://findagym.co.uk/best-gym-weight-loss-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -12447,7 +15130,12 @@
     },
     {
       "from": "https://findagym.co.uk/best-gym-weight-loss-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/best-gym-weight-loss-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -12532,7 +15220,22 @@
     },
     {
       "from": "https://findagym.co.uk/best-gym-weight-loss-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/best-gym-weight-loss-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/best-gym-weight-loss-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/best-gym-weight-loss-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -12592,7 +15295,7 @@
     },
     {
       "from": "https://findagym.co.uk/best-gyms-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -12622,7 +15325,12 @@
     },
     {
       "from": "https://findagym.co.uk/best-gyms-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/best-gyms-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -12722,7 +15430,22 @@
     },
     {
       "from": "https://findagym.co.uk/best-gyms-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/best-gyms-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/best-gyms-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/best-gyms-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -12782,7 +15505,7 @@
     },
     {
       "from": "https://findagym.co.uk/24-hour-gyms-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -12812,7 +15535,12 @@
     },
     {
       "from": "https://findagym.co.uk/24-hour-gyms-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/24-hour-gyms-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -12892,7 +15620,22 @@
     },
     {
       "from": "https://findagym.co.uk/24-hour-gyms-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/24-hour-gyms-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/24-hour-gyms-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/24-hour-gyms-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -12952,7 +15695,7 @@
     },
     {
       "from": "https://findagym.co.uk/david-lloyd-vs-anytime-fitness-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -12982,7 +15725,12 @@
     },
     {
       "from": "https://findagym.co.uk/david-lloyd-vs-anytime-fitness-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/david-lloyd-vs-anytime-fitness-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -13057,7 +15805,22 @@
     },
     {
       "from": "https://findagym.co.uk/david-lloyd-vs-anytime-fitness-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/david-lloyd-vs-anytime-fitness-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/david-lloyd-vs-anytime-fitness-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/david-lloyd-vs-anytime-fitness-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -13117,7 +15880,7 @@
     },
     {
       "from": "https://findagym.co.uk/hyrox-prep-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -13147,7 +15910,12 @@
     },
     {
       "from": "https://findagym.co.uk/hyrox-prep-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/hyrox-prep-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -13212,7 +15980,22 @@
     },
     {
       "from": "https://findagym.co.uk/hyrox-prep-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/hyrox-prep-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/hyrox-prep-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/hyrox-prep-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -13272,7 +16055,7 @@
     },
     {
       "from": "https://findagym.co.uk/jd-gyms-colchester-review/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -13302,7 +16085,12 @@
     },
     {
       "from": "https://findagym.co.uk/jd-gyms-colchester-review/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/jd-gyms-colchester-review/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -13347,7 +16135,22 @@
     },
     {
       "from": "https://findagym.co.uk/jd-gyms-colchester-review/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/jd-gyms-colchester-review/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/jd-gyms-colchester-review/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/jd-gyms-colchester-review/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -13407,7 +16210,7 @@
     },
     {
       "from": "https://findagym.co.uk/david-lloyd-vs-the-gym-group-colchester/",
-      "to": "https://findagym.co.uk/_astro/404.DGMwSWZ4.css",
+      "to": "https://findagym.co.uk/_astro/404.D5SzvQK9.css",
       "type": "internal"
     },
     {
@@ -13437,7 +16240,12 @@
     },
     {
       "from": "https://findagym.co.uk/david-lloyd-vs-the-gym-group-colchester/",
-      "to": "https://findagym.co.uk/how-we-rate-gyms/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/david-lloyd-vs-the-gym-group-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
       "type": "internal"
     },
     {
@@ -13512,7 +16320,22 @@
     },
     {
       "from": "https://findagym.co.uk/david-lloyd-vs-the-gym-group-colchester/",
+      "to": "https://findagym.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/david-lloyd-vs-the-gym-group-colchester/",
+      "to": "https://findagym.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/david-lloyd-vs-the-gym-group-colchester/",
       "to": "https://findagym.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://findagym.co.uk/david-lloyd-vs-the-gym-group-colchester/",
+      "to": "https://findagym.co.uk/api/",
       "type": "internal"
     },
     {
@@ -13591,6 +16414,11 @@
       {
         "name": "leisure-world-colchester-review",
         "path": "/leisure-world-colchester-review/",
+        "children": []
+      },
+      {
+        "name": "statistics",
+        "path": "/statistics/",
         "children": []
       },
       {
@@ -13786,6 +16614,32 @@
         "children": []
       },
       {
+        "name": "guides",
+        "path": "/guides/",
+        "children": [
+          {
+            "name": "how-to-cancel-a-gym-membership",
+            "path": "/guides/how-to-cancel-a-gym-membership/",
+            "children": []
+          },
+          {
+            "name": "average-uk-gym-cost",
+            "path": "/guides/average-uk-gym-cost/",
+            "children": []
+          },
+          {
+            "name": "how-to-choose-a-gym",
+            "path": "/guides/how-to-choose-a-gym/",
+            "children": []
+          },
+          {
+            "name": "gym-vs-home-workout",
+            "path": "/guides/gym-vs-home-workout/",
+            "children": []
+          }
+        ]
+      },
+      {
         "name": "cheap-gyms-colchester",
         "path": "/cheap-gyms-colchester/",
         "children": []
@@ -13818,6 +16672,11 @@
       {
         "name": "reformer-pilates-colchester",
         "path": "/reformer-pilates-colchester/",
+        "children": []
+      },
+      {
+        "name": "api",
+        "path": "/api/",
         "children": []
       },
       {
@@ -13924,6 +16783,17 @@
       "signals": [
         "OG",
         "Schema:9",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/statistics/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:8",
         "Author",
         "Substantive",
         "Breadcrumbs"
@@ -14317,6 +17187,61 @@
       ]
     },
     {
+      "path": "/guides/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:6",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/guides/how-to-cancel-a-gym-membership/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:7",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/guides/average-uk-gym-cost/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:7",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/guides/how-to-choose-a-gym/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:7",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/guides/gym-vs-home-workout/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:7",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
       "path": "/cheap-gyms-colchester/",
       "score": 4,
       "signals": [
@@ -14384,6 +17309,17 @@
         "Schema:5",
         "Author",
         "Substantive"
+      ]
+    },
+    {
+      "path": "/api/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:6",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
       ]
     },
     {
