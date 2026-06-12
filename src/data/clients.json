@@ -1222,5 +1222,81 @@
       }
     ],
     "siteStatus": "prelaunch"
+  },
+  {
+    "id": "invoicefinance",
+    "name": "Invoice Finance (2nd IF site)",
+    "domain": "",
+    "logo": "",
+    "flavour": "leadgen",
+    "dashboard": "fleet",
+    "clientCode": "IF2ND",
+    "notes": "THE single 2nd invoice-finance site (besides MarketInvoice). Consolidates ALL the prior threads: the held '2nd IF site' (niche 22/25), the Guavas rebuild plan, and the IF-gaps research now sit within THIS one build. Fleet rule (Adam, 12 Jun 2026): for invoice finance the fleet has exactly TWO sites, MarketInvoice + this. BUILT domain-agnostically at ~/invoicefinance-site: 163 pages, build green, fleet-lint strict clean, page-content gate 100%, 0 broken links, real JSON-LD @graph, agent-data/MCP layer. Lead on the embedded-finance wedge (+196% YoY, wide-open), classic IF capture underneath. Every undecided value is a single __TODO__ in src/data/site.ts so launch = ~10-min fill + first deploy. Brand may be Guavas or an owned name (open decision). Build map: ~/control-panel/invoice-finance-OWNED-site/BUILD-MAP.md. Memory: project_owned_invoice_finance_site_built.",
+    "clientViewSections": [
+      "overview",
+      "site-tree",
+      "content-plan",
+      "recommendations",
+      "ai-readiness",
+      "page-compliance"
+    ],
+    "allSections": [
+      "overview",
+      "ai-readiness",
+      "ai-citations",
+      "site-manager",
+      "page-compliance",
+      "traffic",
+      "search-performance",
+      "competitors",
+      "site-tree",
+      "uptime",
+      "site-speed",
+      "crawl-activity",
+      "recommendations",
+      "content-plan",
+      "daily-audit",
+      "ecosystem"
+    ],
+    "sections": [],
+    "pre_launch": true,
+    "pending_decisions": [
+      {
+        "id": "domain_brand",
+        "label": "Pick the domain + brand",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "Available 11 Jun 2026: invoiceauthority / fundyourinvoices / earlypaid / factoringfacts / chasecash / paidnowuk .co.uk. Brand may also be Guavas. Drives canonical, schema @id, llms.txt, IndexNow domain."
+      },
+      {
+        "id": "owner_entity",
+        "label": "Owner Ltd + Companies House + FCA/FRN",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "Drives Organization schema, footer, FCA disclosure, accreditations/TrustRegistrations. Until set, those render as neutral __TODO__ placeholders."
+      },
+      {
+        "id": "cloudflare_account",
+        "label": "Which Cloudflare account",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "info@rank4ai.online (main) or adam@muswellrose.com."
+      },
+      {
+        "id": "author_persona",
+        "label": "Named author / E-E-A-T persona",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "Default could be Oliver Mackman (as other owned sites) or a new persona. Unblocks author hub + ExpertCounterOpinion + ORCID bylines."
+      },
+      {
+        "id": "lender_panel",
+        "label": "Final lender-buyer panel list",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "Leads currently route to the MarketInvoice panel; Adam to send the fuller panel list to add."
+      }
+    ],
+    "siteStatus": "prelaunch"
   }
 ]
