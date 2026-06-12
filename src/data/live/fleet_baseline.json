@@ -1,10 +1,10 @@
 {
-  "checked_at": "2026-06-10T10:47:23.440444+00:00",
+  "checked_at": "2026-06-12T06:50:15.619088+00:00",
   "summary": {
     "total_sites": 8,
-    "passing_sites": 5,
+    "passing_sites": 6,
     "total_checks": 120,
-    "failed_checks": 3
+    "failed_checks": 2
   },
   "sites": {
     "rank4ai": {
@@ -395,8 +395,8 @@
           "detail": "HTTP 200"
         },
         "robots_ai_bots": {
-          "pass": false,
-          "detail": "robots.txt HTTP 0"
+          "pass": true,
+          "detail": "all 4 bots allowed"
         },
         "org_schema": {
           "pass": true,
@@ -429,8 +429,8 @@
       },
       "summary": {
         "checks": 15,
-        "failed": 1,
-        "pass_rate": 93.3
+        "failed": 0,
+        "pass_rate": 100.0
       }
     },
     "peptideclear": {

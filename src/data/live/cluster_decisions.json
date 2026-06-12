@@ -1,19 +1,19 @@
 {
-  "computed_at": "2026-06-10T10:46:57.064462+00:00",
+  "computed_at": "2026-06-11T08:16:12.769918+00:00",
   "method": "SERP-overlap clustering from cannibalisation co-ranking data; decision engine joins decay + impression-concentration signals.",
   "sites": {
     "rank4ai": {
-      "cluster_count": 2,
+      "cluster_count": 3,
       "recommendation_counts": {
         "Consolidate": 1,
-        "Keep": 1
+        "Keep": 2
       },
       "clusters": [
         {
-          "theme": "ai search agency",
+          "theme": "ai seo company",
           "recommendation": "Consolidate",
           "confidence": "high",
-          "reason": "31 pages split 2707 impressions across 24 shared queries; one clear winner.",
+          "reason": "31 pages split 2672 impressions across 23 shared queries; one clear winner.",
           "winner": "https://www.rank4ai.co.uk/research/rankings/ai-search-agencies-compared/",
           "urls": [
             "https://www.rank4ai.co.uk/",
@@ -27,7 +27,6 @@
             "https://www.rank4ai.co.uk/research/rankings/ai-search-agencies-for-small-business-uk/",
             "https://www.rank4ai.co.uk/research/rankings/ai-search-agencies-manchester/",
             "https://www.rank4ai.co.uk/research/rankings/ai-search-agencies-nottingham/",
-            "https://www.rank4ai.co.uk/research/rankings/ai-seo-agencies-london/",
             "https://www.rank4ai.co.uk/research/rankings/ai-seo-agency-comparison-uk/",
             "https://www.rank4ai.co.uk/research/rankings/ai-seo-near-me/",
             "https://www.rank4ai.co.uk/research/rankings/best-ai-search-agencies-uk/",
@@ -44,26 +43,27 @@
             "https://www.rank4ai.co.uk/research/rankings/top-ai-seo-companies-uk/",
             "https://www.rank4ai.co.uk/research/rankings/top-ai-visibility-agencies-uk/",
             "https://www.rank4ai.co.uk/uk/birmingham/accountants/",
+            "https://www.rank4ai.co.uk/uk/london/accountants/",
             "https://www.rank4ai.co.uk/uk/manchester/accountants/",
             "https://www.rank4ai.co.uk/who-we-help/london/",
             "https://www.rank4ai.co.uk/who-we-help/professional-services/"
           ],
           "n_urls": 31,
-          "n_queries": 24,
-          "total_impressions": 2707,
-          "winner_impression_share": 0.28,
-          "best_position": 1.0,
+          "n_queries": 23,
+          "total_impressions": 2672,
+          "winner_impression_share": 0.26,
+          "best_position": 1,
           "decaying": false,
           "queries": [
-            "ai search agency",
             "ai seo company",
+            "ai search agency",
             "rank4ai",
             "ai seo companies",
             "best ai search agency",
             "best ai search agencies uk",
+            "ai seo agency uk",
             "ai search agency uk",
             "ai visibility london",
-            "ai seo agency uk",
             "ai search visibility agency uk"
           ]
         },
@@ -71,7 +71,7 @@
           "theme": "ai visibility for estate agents uk",
           "recommendation": "Keep",
           "confidence": "high",
-          "reason": "Only 31 shared impressions \u2014 below the action threshold; monitor.",
+          "reason": "Only 32 shared impressions \u2014 below the action threshold; monitor.",
           "winner": "https://www.rank4ai.co.uk/research/rankings/ai-search-agencies-for-property/",
           "urls": [
             "https://www.rank4ai.co.uk/research/rankings/ai-search-agencies-for-property/",
@@ -79,12 +79,33 @@
           ],
           "n_urls": 2,
           "n_queries": 1,
-          "total_impressions": 31,
+          "total_impressions": 32,
           "winner_impression_share": 0.97,
-          "best_position": 7,
+          "best_position": 6.9,
           "decaying": false,
           "queries": [
             "ai visibility for estate agents uk"
+          ]
+        },
+        {
+          "theme": "ai visibility for sra solicitors in the uk",
+          "recommendation": "Keep",
+          "confidence": "high",
+          "reason": "Only 21 shared impressions \u2014 below the action threshold; monitor.",
+          "winner": "https://www.rank4ai.co.uk/who-we-help/solicitors/",
+          "urls": [
+            "https://www.rank4ai.co.uk/uk/london/law-firms/",
+            "https://www.rank4ai.co.uk/uk/manchester/law-firms/",
+            "https://www.rank4ai.co.uk/who-we-help/solicitors/"
+          ],
+          "n_urls": 3,
+          "n_queries": 1,
+          "total_impressions": 21,
+          "winner_impression_share": 0.86,
+          "best_position": 1,
+          "decaying": false,
+          "queries": [
+            "ai visibility for sra solicitors in the uk"
           ]
         }
       ]
@@ -93,15 +114,14 @@
       "cluster_count": 4,
       "recommendation_counts": {
         "Consolidate": 1,
-        "Keep": 2,
-        "Prune": 1
+        "Keep": 3
       },
       "clusters": [
         {
           "theme": "barclays invoice finance",
           "recommendation": "Consolidate",
           "confidence": "high",
-          "reason": "10 pages split 191 impressions across 10 shared queries; one clear winner.",
+          "reason": "10 pages split 190 impressions across 10 shared queries; one clear winner.",
           "winner": "https://marketinvoice.co.uk/blog/did-barclays-stop-invoice-finance/",
           "urls": [
             "https://marketinvoice.co.uk/alternatives/barclays-invoice-finance/",
@@ -117,48 +137,28 @@
           ],
           "n_urls": 10,
           "n_queries": 10,
-          "total_impressions": 191,
-          "winner_impression_share": 0.46,
+          "total_impressions": 190,
+          "winner_impression_share": 0.41,
           "best_position": 1,
           "decaying": false,
           "queries": [
             "barclays invoice finance",
-            "barclays invoice financing",
             "evaluate the barclays - business bank - updated company hsbc on invoice finance",
-            "evaluate the barclays - business bank - updated company natwest on invoice finance",
+            "barclays invoice financing",
             "barclays invoice factoring",
-            "invoice finance barclays",
+            "evaluate the barclays - business bank - updated company natwest on invoice finance",
             "barclays invoice discounting",
+            "barclays factoring",
             "evaluate the barclays - business bank - updated company chase on invoice finance",
             "evaluate the barclays - business bank - updated company lloyds on invoice finance",
             "evaluate the barclays - business bank - updated company nationwide on invoice finance"
           ]
         },
         {
-          "theme": "\"bibby financial services\" -site:reddit.com -site:twitter.com -site:x.com -site:wykop.pl -site:tripadvisor.com -site:youtube.com -site:yelp.com -site:booking.com -site:facebook.com -site:instagram.com -site:tiktok.com",
-          "recommendation": "Keep",
-          "confidence": "high",
-          "reason": "Only 15 shared impressions \u2014 below the action threshold; monitor.",
-          "winner": "https://marketinvoice.co.uk/best/",
-          "urls": [
-            "https://marketinvoice.co.uk/best/",
-            "https://marketinvoice.co.uk/guides/bbl-refinance-via-invoice-finance/"
-          ],
-          "n_urls": 2,
-          "n_queries": 1,
-          "total_impressions": 15,
-          "winner_impression_share": 0.67,
-          "best_position": 1.9,
-          "decaying": false,
-          "queries": [
-            "\"bibby financial services\" -site:reddit.com -site:twitter.com -site:x.com -site:wykop.pl -site:tripadvisor.com -site:youtube.com -site:yelp.com -site:booking.com -site:facebook.com -site:instagram.com -site:tiktok.com"
-          ]
-        },
-        {
           "theme": "aldermore factoring",
           "recommendation": "Keep",
           "confidence": "high",
-          "reason": "Only 14 shared impressions \u2014 below the action threshold; monitor.",
+          "reason": "Only 15 shared impressions \u2014 below the action threshold; monitor.",
           "winner": "https://marketinvoice.co.uk/providers/aldermore/",
           "urls": [
             "https://marketinvoice.co.uk/alternatives-to/aldermore/",
@@ -166,8 +166,8 @@
           ],
           "n_urls": 2,
           "n_queries": 1,
-          "total_impressions": 14,
-          "winner_impression_share": 0.86,
+          "total_impressions": 15,
+          "winner_impression_share": 0.87,
           "best_position": 11.3,
           "decaying": false,
           "queries": [
@@ -175,10 +175,30 @@
           ]
         },
         {
+          "theme": "\"bibby financial services\" -site:reddit.com -site:twitter.com -site:x.com -site:wykop.pl -site:tripadvisor.com -site:youtube.com -site:yelp.com -site:booking.com -site:facebook.com -site:instagram.com -site:tiktok.com",
+          "recommendation": "Keep",
+          "confidence": "high",
+          "reason": "Only 14 shared impressions \u2014 below the action threshold; monitor.",
+          "winner": "https://marketinvoice.co.uk/best/",
+          "urls": [
+            "https://marketinvoice.co.uk/best/",
+            "https://marketinvoice.co.uk/guides/bbl-refinance-via-invoice-finance/"
+          ],
+          "n_urls": 2,
+          "n_queries": 1,
+          "total_impressions": 14,
+          "winner_impression_share": 0.71,
+          "best_position": 1.9,
+          "decaying": false,
+          "queries": [
+            "\"bibby financial services\" -site:reddit.com -site:twitter.com -site:x.com -site:wykop.pl -site:tripadvisor.com -site:youtube.com -site:yelp.com -site:booking.com -site:facebook.com -site:instagram.com -site:tiktok.com"
+          ]
+        },
+        {
           "theme": "hydr invoice finance",
-          "recommendation": "Prune",
-          "confidence": "low",
-          "reason": "Negligible impressions on duplicate URLs \u2014 candidate to noindex/merge.",
+          "recommendation": "Keep",
+          "confidence": "high",
+          "reason": "Only 11 shared impressions \u2014 below the action threshold; monitor.",
           "winner": "https://marketinvoice.co.uk/alternatives/hydr/",
           "urls": [
             "https://marketinvoice.co.uk/alternatives/hydr/",
@@ -187,8 +207,8 @@
           ],
           "n_urls": 3,
           "n_queries": 1,
-          "total_impressions": 10,
-          "winner_impression_share": 0.4,
+          "total_impressions": 11,
+          "winner_impression_share": 0.45,
           "best_position": 13.5,
           "decaying": false,
           "queries": [
@@ -212,7 +232,7 @@
           "theme": "resilience builder",
           "recommendation": "Consolidate",
           "confidence": "high",
-          "reason": "24 pages split 1226 impressions across 25 shared queries; one clear winner.",
+          "reason": "25 pages split 1228 impressions across 25 shared queries; one clear winner.",
           "winner": "https://resiliencebuilder.co.uk/the-journey-of-a-resilience-coach",
           "urls": [
             "https://resiliencebuilder.co.uk/",
@@ -222,6 +242,7 @@
             "https://resiliencebuilder.co.uk/coaching-for-stress-management",
             "https://resiliencebuilder.co.uk/elevating-your-coaching-game-the-rise-of-the-resilience-coach",
             "https://resiliencebuilder.co.uk/integrating-resilience-coaching-into-your-business-strategy-for-greater-success",
+            "https://resiliencebuilder.co.uk/mental-resilience-training",
             "https://resiliencebuilder.co.uk/my-resilience",
             "https://resiliencebuilder.co.uk/path-to-resilience-building-strength-and-wellbeing-at-work",
             "https://resiliencebuilder.co.uk/resilience-characteristics",
@@ -240,10 +261,10 @@
             "https://resiliencebuilder.co.uk/why-coaches-should-consider-adding-resilience-coaching-to-their-skills",
             "https://resiliencebuilder.co.uk/workplace-resilience-training"
           ],
-          "n_urls": 24,
+          "n_urls": 25,
           "n_queries": 25,
-          "total_impressions": 1226,
-          "winner_impression_share": 0.18,
+          "total_impressions": 1228,
+          "winner_impression_share": 0.19,
           "best_position": 1,
           "decaying": true,
           "queries": [
@@ -295,9 +316,9 @@
       ]
     },
     "cardmachines": {
-      "cluster_count": 2,
+      "cluster_count": 3,
       "recommendation_counts": {
-        "Keep": 2
+        "Keep": 3
       },
       "clusters": [
         {
@@ -312,9 +333,9 @@
           ],
           "n_urls": 2,
           "n_queries": 1,
-          "total_impressions": 51,
-          "winner_impression_share": 0.96,
-          "best_position": 5.5,
+          "total_impressions": 56,
+          "winner_impression_share": 0.95,
+          "best_position": 6.7,
           "decaying": false,
           "queries": [
             "best card readers for gas engineers"
@@ -339,6 +360,26 @@
           "decaying": false,
           "queries": [
             "card machines for gyms"
+          ]
+        },
+        {
+          "theme": "bbpos wisepos e",
+          "recommendation": "Keep",
+          "confidence": "high",
+          "reason": "Only 11 shared impressions \u2014 below the action threshold; monitor.",
+          "winner": "https://merchanthq.co.uk/reviews/bbpos-wisepos-e/",
+          "urls": [
+            "https://merchanthq.co.uk/reviews/bbpos-wisepos-e/",
+            "https://merchanthq.co.uk/vs/bbpos-wisepos-e-vs-stripe-reader-s700/"
+          ],
+          "n_urls": 2,
+          "n_queries": 1,
+          "total_impressions": 11,
+          "winner_impression_share": 0.91,
+          "best_position": 7,
+          "decaying": false,
+          "queries": [
+            "bbpos wisepos e"
           ]
         }
       ]
@@ -414,14 +455,14 @@
             "https://peptideclear.co.uk/books/",
             "https://peptideclear.co.uk/cosmetic-peptides/",
             "https://peptideclear.co.uk/research-peptides/",
-            "https://peptideclear.co.uk/retailer/peptagenix/",
+            "https://peptideclear.co.uk/shop/",
             "https://peptideclear.co.uk/videos/02-bpc-157-uk-legal/"
           ],
           "n_urls": 7,
           "n_queries": 2,
-          "total_impressions": 66,
-          "winner_impression_share": 0.7,
-          "best_position": 4,
+          "total_impressions": 72,
+          "winner_impression_share": 0.68,
+          "best_position": 4.2,
           "decaying": false,
           "queries": [
             "peptideclear",
@@ -432,7 +473,7 @@
           "theme": "\"nad+ therapy uk\"",
           "recommendation": "Keep",
           "confidence": "high",
-          "reason": "Only 12 shared impressions \u2014 below the action threshold; monitor.",
+          "reason": "Only 21 shared impressions \u2014 below the action threshold; monitor.",
           "winner": "https://peptideclear.co.uk/iv-therapy/",
           "urls": [
             "https://peptideclear.co.uk/blog/",
@@ -441,9 +482,9 @@
           ],
           "n_urls": 3,
           "n_queries": 1,
-          "total_impressions": 12,
-          "winner_impression_share": 0.58,
-          "best_position": 2,
+          "total_impressions": 21,
+          "winner_impression_share": 0.48,
+          "best_position": 1.8,
           "decaying": false,
           "queries": [
             "\"nad+ therapy uk\""
