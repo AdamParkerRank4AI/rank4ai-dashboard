@@ -12,6 +12,7 @@ export function getStaticPaths() {
     'cardmachines': 'cardmachines_leads.json',
     'kartapay': 'kartapay_leads.json',
     'peptideclear': 'peptideclear_leads.json',
+    'seocompare': 'seocompare_leads.json',
   };
   return Object.keys(LEADS_FILE).map((site) => ({ params: { site } }));
 }
@@ -23,6 +24,7 @@ const LEADS_FILE: Record<string, string> = {
   'cardmachines': 'cardmachines_leads.json',
   'kartapay': 'kartapay_leads.json',
   'peptideclear': 'peptideclear_leads.json',
+  'seocompare': 'seocompare_leads.json',
 };
 
 const { site } = Astro.params;
