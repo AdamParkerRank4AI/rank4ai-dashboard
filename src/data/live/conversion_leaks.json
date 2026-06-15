@@ -1,7 +1,7 @@
 {
   "sites": {
     "market-invoice": {
-      "lead_count": 9,
+      "lead_count": 10,
       "converting_paths": [
         "/",
         "/best/best-for-export",
@@ -10,9 +10,19 @@
         "/guides/spot-factoring-uk",
         "/invoice-finance-quote",
         "/providers",
-        "/purchase-order-finance"
+        "/purchase-order-finance",
+        "/questions/getting-out-of-invoice-finance"
       ],
       "pages": [
+        {
+          "path": "/construction-finance/pay-less-notice",
+          "humans": 2,
+          "scroll": 60.5,
+          "active_s": 21.0,
+          "dead_clicks": 0,
+          "quickbacks": 0,
+          "class": "DEAD_WEIGHT"
+        },
         {
           "path": "/questions/what-is-a-service-charge",
           "humans": 2,
@@ -23,10 +33,19 @@
           "class": "DEAD_WEIGHT"
         },
         {
+          "path": "/stats/uk-late-payment-statistics-2026",
+          "humans": 2,
+          "scroll": 88.0,
+          "active_s": 27.0,
+          "dead_clicks": 0,
+          "quickbacks": 0,
+          "class": "DEAD_WEIGHT"
+        },
+        {
           "path": "/best",
-          "humans": 4,
-          "scroll": 49.8,
-          "active_s": 12.0,
+          "humans": 8,
+          "scroll": 53.9,
+          "active_s": 6.0,
           "dead_clicks": 0,
           "quickbacks": 2,
           "class": "LEAK"
@@ -41,28 +60,10 @@
           "class": "LEAK"
         },
         {
-          "path": "/thank-you",
-          "humans": 2,
-          "scroll": 62.0,
-          "active_s": 4.0,
-          "dead_clicks": 0,
-          "quickbacks": 1,
-          "class": "LEAK"
-        },
-        {
           "path": "/guides/invoice-finance-after-high-street-bank-exit",
-          "humans": 10,
-          "scroll": 18.3,
+          "humans": 13,
+          "scroll": 17.1,
           "active_s": 3.0,
-          "dead_clicks": 0,
-          "quickbacks": 0,
-          "class": "BOUNCE"
-        },
-        {
-          "path": "/blog/invoice-finance-for-export-smes-managing-currency-risk-and-overseas-debtor-delays",
-          "humans": 4,
-          "scroll": 11.0,
-          "active_s": 1.0,
           "dead_clicks": 0,
           "quickbacks": 0,
           "class": "BOUNCE"
@@ -71,15 +72,6 @@
           "path": "/providers/flex-abl",
           "humans": 3,
           "scroll": 0,
-          "active_s": 0,
-          "dead_clicks": 0,
-          "quickbacks": 0,
-          "class": "BOUNCE"
-        },
-        {
-          "path": "/providers/wedo-finance",
-          "humans": 2,
-          "scroll": 12.0,
           "active_s": 0,
           "dead_clicks": 0,
           "quickbacks": 0,
@@ -104,10 +96,19 @@
           "class": "BOUNCE"
         },
         {
-          "path": "/providers/secure-trust",
+          "path": "/research",
           "humans": 2,
-          "scroll": 13.0,
+          "scroll": 17.0,
           "active_s": 0,
+          "dead_clicks": 0,
+          "quickbacks": 0,
+          "class": "BOUNCE"
+        },
+        {
+          "path": "/blog/invoice-finance-for-export-smes-managing-currency-risk-and-overseas-debtor-delays",
+          "humans": 2,
+          "scroll": 9.0,
+          "active_s": 1.0,
           "dead_clicks": 0,
           "quickbacks": 0,
           "class": "BOUNCE"
@@ -149,10 +150,37 @@
           "class": "OK"
         },
         {
+          "path": "/best/invoice-finance-companies-uk-2026",
+          "humans": 2,
+          "scroll": 15.0,
+          "active_s": 8.0,
+          "dead_clicks": 0,
+          "quickbacks": 0,
+          "class": "OK"
+        },
+        {
           "path": "/best/invoice-finance-for-amazon-fba-sellers",
           "humans": 2,
           "scroll": 23.3,
           "active_s": 40.0,
+          "dead_clicks": 0,
+          "quickbacks": 0,
+          "class": "OK"
+        },
+        {
+          "path": "/industries/recruitment",
+          "humans": 2,
+          "scroll": 65.0,
+          "active_s": 2.0,
+          "dead_clicks": 0,
+          "quickbacks": 0,
+          "class": "OK"
+        },
+        {
+          "path": "/guides/invoice-finance-vs-revolving-credit-facility",
+          "humans": 2,
+          "scroll": 23.5,
+          "active_s": 112.0,
           "dead_clicks": 0,
           "quickbacks": 0,
           "class": "OK"
@@ -194,73 +222,28 @@
       "pages": [
         {
           "path": "/shop",
-          "humans": 7,
-          "scroll": 38.7,
-          "active_s": 20.0,
-          "dead_clicks": 0,
-          "quickbacks": 0,
-          "class": "DEAD_WEIGHT"
-        },
-        {
-          "path": "/retailer",
           "humans": 3,
-          "scroll": 51.7,
-          "active_s": 162.0,
+          "scroll": 44.7,
+          "active_s": 22.0,
           "dead_clicks": 0,
           "quickbacks": 0,
           "class": "DEAD_WEIGHT"
         },
         {
-          "path": "/icb/kent-medway",
+          "path": "/icb/nottingham-nottinghamshire",
           "humans": 2,
-          "scroll": 49.0,
-          "active_s": 30.0,
-          "dead_clicks": 0,
-          "quickbacks": 0,
-          "class": "DEAD_WEIGHT"
-        },
-        {
-          "path": "/explained/mhra-medicines-classification",
-          "humans": 2,
-          "scroll": 42.0,
-          "active_s": 69.0,
+          "scroll": 64.0,
+          "active_s": 82.0,
           "dead_clicks": 0,
           "quickbacks": 0,
           "class": "DEAD_WEIGHT"
         },
         {
           "path": "/coa-trust-index",
-          "humans": 11,
-          "scroll": 16.9,
-          "active_s": 15.0,
-          "dead_clicks": 3,
-          "quickbacks": 0,
-          "class": "LEAK"
-        },
-        {
-          "path": "/retailer/xl-peptides",
           "humans": 4,
-          "scroll": 30.2,
-          "active_s": 11.0,
+          "scroll": 17.8,
+          "active_s": 36.0,
           "dead_clicks": 2,
-          "quickbacks": 0,
-          "class": "LEAK"
-        },
-        {
-          "path": "/shop/tesamorelin",
-          "humans": 4,
-          "scroll": 17.0,
-          "active_s": 9.0,
-          "dead_clicks": 0,
-          "quickbacks": 1,
-          "class": "LEAK"
-        },
-        {
-          "path": "/research-peptides/uk-retailers",
-          "humans": 3,
-          "scroll": 19.3,
-          "active_s": 23.0,
-          "dead_clicks": 6,
           "quickbacks": 0,
           "class": "LEAK"
         },
@@ -274,19 +257,19 @@
           "class": "BOUNCE"
         },
         {
-          "path": "/best/collagen-uk",
-          "humans": 3,
-          "scroll": 25.0,
-          "active_s": 165.0,
+          "path": "/shop/tesamorelin",
+          "humans": 4,
+          "scroll": 18.0,
+          "active_s": 6.0,
           "dead_clicks": 0,
           "quickbacks": 0,
           "class": "OK"
         },
         {
-          "path": "/retailer/anglo-peptides",
-          "humans": 2,
-          "scroll": 56.5,
-          "active_s": 17.0,
+          "path": "/retailer",
+          "humans": 3,
+          "scroll": 27.3,
+          "active_s": 8.0,
           "dead_clicks": 0,
           "quickbacks": 0,
           "class": "OK"
@@ -296,6 +279,24 @@
           "humans": 2,
           "scroll": 18.5,
           "active_s": 11.0,
+          "dead_clicks": 0,
+          "quickbacks": 0,
+          "class": "OK"
+        },
+        {
+          "path": "/retailer/xl-peptides",
+          "humans": 2,
+          "scroll": 27.0,
+          "active_s": 5.0,
+          "dead_clicks": 0,
+          "quickbacks": 0,
+          "class": "OK"
+        },
+        {
+          "path": "/mounjaro/nottingham",
+          "humans": 2,
+          "scroll": 36.0,
+          "active_s": 16.0,
           "dead_clicks": 0,
           "quickbacks": 0,
           "class": "OK"
@@ -309,40 +310,24 @@
       ],
       "pages": [
         {
-          "path": "/how-we-work",
+          "path": "/vs/pax-a77-vs-pax-a920-pro",
           "humans": 2,
-          "scroll": 69.0,
-          "active_s": 67.0,
+          "scroll": 56.0,
+          "active_s": 136.0,
           "dead_clicks": 0,
           "quickbacks": 0,
           "class": "DEAD_WEIGHT"
         },
         {
           "path": "/",
-          "humans": 5,
-          "scroll": 62.6,
-          "active_s": 30.0,
-          "dead_clicks": 0,
-          "quickbacks": 2,
-          "class": "LEAK"
-        },
-        {
-          "path": "/about",
           "humans": 2,
-          "scroll": 42.4,
+          "scroll": 78.0,
           "active_s": 16.0,
           "dead_clicks": 0,
-          "quickbacks": 1,
-          "class": "LEAK"
+          "quickbacks": 0,
+          "class": "OK"
         }
       ]
-    },
-    "kartapay": {
-      "lead_count": 4,
-      "converting_paths": [
-        "/contact"
-      ],
-      "pages": []
     }
   }
 }

@@ -124,8 +124,42 @@ def check_feed(filename, max_age_hours, label, ts_path):
     }
 
 
+# Files that are static reference / legacy and should NOT be flagged stale by the
+# catch-all (they have no daily schedule). Anything else in live/ not in FEEDS is
+# auto-tracked by mtime so a silently-failing fetcher can no longer hide.
+CATCHALL_IGNORE = {
+    "data_freshness.json",  # this file itself
+}
+CATCHALL_MAX_AGE_H = 48  # any unlisted feed older than 2 days is flagged
+
+
+def auto_feeds(listed_files):
+    """Every live/*.json not already in FEEDS gets an mtime-based check, so the
+    freshness widget covers the WHOLE data dir, not just a hand-maintained 27."""
+    extra = []
+    try:
+        for name in sorted(os.listdir(LIVE)):
+            if not name.endswith(".json"):
+                continue
+            if name in listed_files or name in CATCHALL_IGNORE:
+                continue
+            extra.append((name, CATCHALL_MAX_AGE_H, name.replace(".json", ""), None))
+    except FileNotFoundError:
+        pass
+    return extra
+
+
 def main():
-    results = [check_feed(*f) for f in FEEDS]
+    listed = {f[0] for f in FEEDS}
+    all_feeds = list(FEEDS) + auto_feeds(listed)
+    results = [check_feed(*f) for f in all_feeds]
+
+    # Tag each feed: "core" = a curated feed that backs a number shown on the board
+    # (GSC/GA4/leads/audit/etc). "auto" = catch-all mtime tracking of every other
+    # live/*.json (one-off research dumps, logs). The main-board freshness banner
+    # only trusts "core" so a stale research artifact never cries wolf; /ops shows both.
+    for r in results:
+        r["tier"] = "core" if r["file"] in listed else "auto"
 
     fresh = sum(1 for r in results if r["status"] == "fresh")
     stale = sum(1 for r in results if r["status"] == "stale")

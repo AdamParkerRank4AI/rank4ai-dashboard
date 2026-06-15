@@ -1,0 +1,75 @@
+---
+/**
+ * LeadsSummaryTile — real-lead headline, pinned at the top of Home.
+ *
+ * Leads are the point of the fleet, so surface them first. Reads the per-site
+ * *_leads.json (already internal/test-stripped by fetch_leads.py) and shows real
+ * lead counts (7d / 30d / total) per board site plus a fleet total. Links to the
+ * full /leads tab. Board-filtered (fleet vs current).
+ */
+import fs from 'node:fs';
+import path from 'node:path';
+import clients from '../utils/dashboardClients';
+
+const LEADS_FILE: Record<string, string> = {
+  'market-invoice': 'mi_leads.json',
+  'bestbusinessloans': 'bbl_leads.json',
+  'fundbiz': 'fundbiz_leads.json',
+  'cardmachines': 'cardmachines_leads.json',
+  'kartapay': 'kartapay_leads.json',
+  'peptideclear': 'peptideclear_leads.json',
+};
+
+function loadJson(filename: string) {
+  try {
+    const fp = path.join(process.cwd(), 'src', 'data', 'live', filename);
+    if (fs.existsSync(fp)) return JSON.parse(fs.readFileSync(fp, 'utf-8'));
+  } catch {}
+  return null;
+}
+
+const boardClients = clients as any[];
+const clientIds = new Set(boardClients.map((c) => c.id));
+const nameOf = (id: string) => boardClients.find((c) => c.id === id)?.name || id;
+
+const rows = Object.entries(LEADS_FILE)
+  .filter(([id]) => clientIds.has(id))
+  .map(([id, file]) => {
+    const d = loadJson(file) || {};
+    return {
+      id, name: nameOf(id),
+      total: d.count_total || 0,
+      d30: d.count_30d || 0,
+      d7: d.count_7d || 0,
+      topSource: (d.sources_30d || [])[0]?.source || null,
+    };
+  })
+  .sort((a, b) => b.d30 - a.d30 || b.total - a.total);
+
+const fleet = rows.reduce((a, r) => ({ total: a.total + r.total, d30: a.d30 + r.d30, d7: a.d7 + r.d7 }), { total: 0, d30: 0, d7: 0 });
+const withLeads = rows.filter((r) => r.total > 0);
+---
+<section data-copy-tile="Leads" class="rounded-xl bg-slate-900 text-slate-100 p-5 mb-6 border border-emerald-800/40">
+  <div class="flex items-center justify-between flex-wrap gap-2 mb-3">
+    <div class="flex items-baseline gap-4">
+      <h2 class="text-lg font-bold">Leads</h2>
+      <span class="text-sm"><span class="text-2xl font-bold text-emerald-300">{fleet.d7}</span><span class="text-slate-400 text-xs"> last 7d</span></span>
+      <span class="text-sm"><span class="text-xl font-bold text-emerald-200">{fleet.d30}</span><span class="text-slate-400 text-xs"> 30d</span></span>
+      <span class="text-sm"><span class="text-xl font-bold text-slate-200">{fleet.total}</span><span class="text-slate-400 text-xs"> total</span></span>
+    </div>
+    <a href="/leads" class="text-xs px-3 py-1.5 bg-emerald-700 hover:bg-emerald-600 text-white rounded transition">Open Leads tab →</a>
+  </div>
+  <p class="text-[11px] text-slate-500 mb-2">Real leads only — internal/test sources excluded.</p>
+  <div class="flex flex-wrap gap-2">
+    {withLeads.length === 0 ? (
+      <span class="text-sm text-slate-400">No real leads captured yet across these sites.</span>
+    ) : withLeads.map((r) => (
+      <a href={`/leads/${r.id}`} class="inline-flex items-center gap-2 bg-slate-950/50 border border-slate-800 rounded-lg px-3 py-1.5 hover:border-emerald-700 transition">
+        <span class="text-sm text-slate-200">{r.name}</span>
+        <span class="text-emerald-300 font-bold">{r.d30}</span>
+        <span class="text-[10px] text-slate-500">30d</span>
+        {r.d7 > 0 && <span class="text-[10px] text-emerald-400">+{r.d7} this wk</span>}
+      </a>
+    ))}
+  </div>
+</section>

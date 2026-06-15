@@ -4,6 +4,7 @@ import SiteTree from '../../../components/SiteTree.jsx';
 import LinkGraph from '../../../components/LinkGraph.jsx';
 import clients from '../../../utils/dashboardClients';
 import sections from '../../../data/sections.json';
+import siteToolsData from '../../../data/site-tools.json';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -101,6 +102,11 @@ const SITE_REPOS: Record<string, string> = {
   'seocompare': 'AdamParkerRank4AI/seocompare',
 };
 const siteRepo = SITE_REPOS[clientId];
+
+// Tools & Calculators: per-site list of interactive tools, full URLs built from the live domain.
+const siteTools = (siteToolsData as Record<string, { name: string; path: string }[]>)[clientId] || [];
+const toolsBaseDomain = (client as any).liveDomain || client.domain;
+const toolsBaseUrl = `https://${String(toolsBaseDomain).replace(/\/$/, '')}`;
 
 const ga4 = ga4All?.[clientId];
 const gsc = gscAll?.[clientId];
@@ -5318,6 +5324,42 @@ const botHitsDaily = JSON.stringify(botHits?.days || []);
               </tbody>
             </table>
           </div>
+        </>
+      )}
+    </div>
+  )}
+
+  {sectionId === 'tools-calculators' && (
+    <div data-copy-tile="Tools & Calculators">
+      {siteTools.length === 0 && (
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-8 text-center">
+          <p class="text-gray-400">No interactive tools or calculators logged for this site.</p>
+          <p class="text-xs text-gray-500 mt-2">Tool inventories live in <code class="text-gray-400">src/data/site-tools.json</code>.</p>
+        </div>
+      )}
+      {siteTools.length > 0 && (
+        <>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="text-2xl font-bold text-white">{siteTools.length}</div>
+            <div class="text-sm text-gray-400">interactive {siteTools.length === 1 ? 'tool' : 'tools'} live on {client.name}</div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {siteTools.map((tool: any) => (
+              <a
+                href={`${toolsBaseUrl}${tool.path}`}
+                target="_blank"
+                rel="noopener"
+                class="group flex items-center justify-between gap-3 bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 hover:border-blue-700 hover:bg-gray-900/60 transition"
+              >
+                <div class="min-w-0">
+                  <div class="text-sm font-medium text-white group-hover:text-blue-300 truncate">{tool.name}</div>
+                  <div class="text-[11px] text-gray-500 truncate">{tool.path}</div>
+                </div>
+                <span class="text-blue-400 text-xs shrink-0 group-hover:translate-x-0.5 transition-transform">Open ↗</span>
+              </a>
+            ))}
+          </div>
+          <p class="text-[11px] text-gray-600 mt-4">Links open the live page on {toolsBaseDomain} in a new tab. Inventory source: <code class="text-gray-500">src/data/site-tools.json</code>.</p>
         </>
       )}
     </div>

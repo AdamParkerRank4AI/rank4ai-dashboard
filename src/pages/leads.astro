@@ -227,7 +227,11 @@ const siteSlugForUrl = (id: string) => {
                 {l.phone && <div class="text-gray-500 text-[10px]">{l.phone}</div>}
                 {!l.contact_name && !l.email && <span class="text-gray-600">—</span>}
               </td>
-              <td class="py-2 pr-2 text-gray-300">{l.source || <span class="text-gray-600">unknown</span>}</td>
+              <td class="py-2 pr-2 text-gray-300">
+                <div>{l.attr_first_source || l.source || <span class="text-gray-600">unknown</span>}</div>
+                {(l.utm_source || l.utm_campaign) && <div class="text-gray-500 text-[10px]">{[l.utm_source, l.utm_medium, l.utm_campaign].filter(Boolean).join(' / ')}</div>}
+                {l.referrer_host && <div class="text-gray-600 text-[10px]">ref: {l.referrer_host}</div>}
+              </td>
               <td class="py-2 pr-2 text-gray-400 text-[10px] max-w-[200px] truncate">{l.page_url ? l.page_url.replace(/^https?:\/\/[^/]+/, '') : '—'}</td>
               <td class="py-2 pr-2 text-gray-400">
                 {l.finance_type && <div>{l.finance_type}</div>}

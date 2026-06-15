@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-06-12T06:50:15.619088+00:00",
+  "checked_at": "2026-06-12T10:30:22.056272+00:00",
   "summary": {
     "total_sites": 8,
     "passing_sites": 6,
@@ -32,8 +32,8 @@
           "detail": "skipped (fleet rejected llms.txt 21 May 2026)"
         },
         "ai_txt": {
-          "pass": true,
-          "detail": "HTTP 200"
+          "pass": false,
+          "detail": "HTTP 0"
         },
         "indexnow_key": {
           "pass": true,
@@ -74,8 +74,8 @@
       },
       "summary": {
         "checks": 15,
-        "failed": 0,
-        "pass_rate": 100.0
+        "failed": 1,
+        "pass_rate": 93.3
       }
     },
     "market-invoice": {
@@ -132,7 +132,7 @@
         },
         "sitemap": {
           "pass": true,
-          "detail": "sitemap-index:200 sitemap:404"
+          "detail": "sitemap-index:200 sitemap:200"
         },
         "hsts": {
           "pass": true,
@@ -249,8 +249,8 @@
           "detail": "HTTP 200"
         },
         "indexnow_key": {
-          "pass": false,
-          "detail": "HTTP 0"
+          "pass": true,
+          "detail": "HTTP 200"
         },
         "robots_ai_bots": {
           "pass": true,
@@ -287,8 +287,8 @@
       },
       "summary": {
         "checks": 15,
-        "failed": 1,
-        "pass_rate": 93.3
+        "failed": 0,
+        "pass_rate": 100.0
       }
     },
     "fundbiz": {
@@ -558,7 +558,7 @@
         },
         "sitemap": {
           "pass": true,
-          "detail": "sitemap-index:200 sitemap:404"
+          "detail": "sitemap-index:200 sitemap:200"
         },
         "hsts": {
           "pass": true,

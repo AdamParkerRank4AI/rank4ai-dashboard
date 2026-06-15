@@ -1,0 +1,88 @@
+---
+/**
+ * TopPagesByClicksTile — "Top pages by clicks" (per-URL clicks, fleet-wide).
+ *
+ * gsc.json already holds top_pages[] per site ({page, clicks, impressions, ctr,
+ * position}, ~100 rows) but the home dashboard only used it to gate a link — the
+ * per-page click data was never rendered. This tile flattens it across the
+ * dashboard's sites and shows which actual URLs earn the clicks. Answers the
+ * literal "clicks on the site and certain pages". Dark-card style.
+ *
+ * Props: siteIds — restrict to the current dashboard's clients (else all sites).
+ */
+import fs from 'node:fs';
+import path from 'node:path';
+
+interface Props { siteIds?: string[] }
+const { siteIds } = Astro.props as Props;
+
+function loadJson(filename: string) {
+  try {
+    const fp = path.join(process.cwd(), 'src', 'data', 'live', filename);
+    if (fs.existsSync(fp)) return JSON.parse(fs.readFileSync(fp, 'utf-8'));
+  } catch {}
+  return null;
+}
+
+const gsc = loadJson('gsc.json') ?? {};
+const allow = siteIds && siteIds.length ? new Set(siteIds) : null;
+
+type Row = { site: string; page: string; clicks: number; impressions: number; ctr: number; position: number };
+const rows: Row[] = [];
+for (const [site, blk] of Object.entries<any>(gsc)) {
+  if (allow && !allow.has(site)) continue;
+  for (const p of (blk?.top_pages ?? [])) {
+    if ((p.clicks ?? 0) <= 0) continue;
+    let short = p.page as string;
+    try { const u = new URL(p.page); short = u.pathname === '/' ? u.hostname : u.pathname; } catch {}
+    rows.push({ site, page: short, clicks: p.clicks ?? 0, impressions: p.impressions ?? 0, ctr: p.ctr ?? 0, position: p.position ?? 0 });
+  }
+}
+rows.sort((a, b) => b.clicks - a.clicks);
+const totalClicks = rows.reduce((s, r) => s + r.clicks, 0);
+const hasData = rows.length > 0;
+---
+<section data-copy-tile="Top pages by clicks" class="rounded-xl bg-slate-900 text-slate-100 p-6 my-6 border border-slate-800">
+  <div class="flex items-baseline justify-between flex-wrap gap-2 mb-1">
+    <h2 class="text-lg font-bold">Top pages by clicks</h2>
+    <span class="text-xs text-slate-400">Per-URL Google clicks · GSC 28–30d</span>
+  </div>
+
+  {!hasData ? (
+    <p class="text-sm text-slate-400 mt-3">No page-level click data. <code>gsc.json</code> top_pages is empty for these sites.</p>
+  ) : (
+    <>
+      <div class="my-3 text-sm text-slate-300">
+        <span class="text-2xl font-bold text-emerald-300">{totalClicks.toLocaleString()}</span>
+        <span class="text-slate-400"> clicks across {rows.length} pages that earned at least one — which URLs actually pull traffic</span>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="text-left text-xs text-slate-500 border-b border-slate-800">
+              <th class="py-1 pr-3">Page</th>
+              <th class="py-1 pr-3">Site</th>
+              <th class="py-1 pr-3 text-right">Clicks</th>
+              <th class="py-1 pr-3 text-right">Impr</th>
+              <th class="py-1 pr-3 text-right">CTR</th>
+              <th class="py-1 pr-3 text-right">Pos</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.slice(0, 25).map(r => (
+              <tr class="border-b border-slate-800/50">
+                <td class="py-1 pr-3 font-mono text-xs">{r.page}</td>
+                <td class="py-1 pr-3 text-slate-400 text-xs">{r.site}</td>
+                <td class="py-1 pr-3 text-right text-emerald-300 font-semibold">{r.clicks.toLocaleString()}</td>
+                <td class="py-1 pr-3 text-right text-slate-400">{r.impressions.toLocaleString()}</td>
+                <td class="py-1 pr-3 text-right text-slate-400">{r.ctr.toFixed(1)}%</td>
+                <td class="py-1 pr-3 text-right text-slate-400">{r.position.toFixed(1)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-[11px] text-slate-500 mt-3">Pages with zero clicks are hidden. CTR/position from the same 28–30d GSC window. This is the page-level view that the per-site total alone hides.</p>
+    </>
+  )}
+</section>

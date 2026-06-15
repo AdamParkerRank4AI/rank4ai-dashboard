@@ -1,0 +1,127 @@
+---
+/**
+ * LosingClicksTile — "Losing clicks" (content decay).
+ *
+ * The flip side of striking distance: queries/pages that have SLIPPED since the
+ * comparison window — dropped position, fell off page 1/2, or had impressions
+ * collapse. Reads pre-computed src/data/live/content_decay.json (written daily
+ * by the GSC pipeline). Per site: total_decayed + arrays position_drop[],
+ * dropped_off_page_1[], dropped_off_page_2[], impressions_collapse[], each row
+ * {query, position_now, position_before, impressions_now, impressions_before}.
+ * Directly answers "which pages are losing clicks". Dark-card style.
+ */
+import fs from 'node:fs';
+import path from 'node:path';
+import clients from '../utils/dashboardClients';
+
+function loadJson(filename: string) {
+  try {
+    const fp = path.join(process.cwd(), 'src', 'data', 'live', filename);
+    if (fs.existsSync(fp)) return JSON.parse(fs.readFileSync(fp, 'utf-8'));
+  } catch {}
+  return null;
+}
+
+// Only show sites that belong to THIS board (fleet vs current). Without this the
+// tile leaks current-board-only sites (rank4ai, resiliencebuilder) onto the fleet
+// board. Mirrors ClusterDecisionsTile's clientIds filter.
+const clientIds = new Set((clients as any[]).map((c) => c.id));
+
+const d = loadJson('content_decay.json');
+const sites = Object.fromEntries(
+  Object.entries<any>(d?.sites ?? {}).filter(([id]) => clientIds.has(id))
+);
+const today = d?.today ?? null;
+const comparedTo = d?.compared_to ?? null;
+
+const KINDS: { key: string; label: string; colour: string }[] = [
+  { key: 'dropped_off_page_1', label: 'Off page 1', colour: 'text-rose-300' },
+  { key: 'dropped_off_page_2', label: 'Off page 2', colour: 'text-orange-300' },
+  { key: 'position_drop',      label: 'Slipped',    colour: 'text-amber-300' },
+  { key: 'impressions_collapse', label: 'Impr collapse', colour: 'text-rose-300' },
+];
+
+type Row = { site: string; query: string; kind: string; colour: string; posNow: number; posBefore: number; imprNow: number; imprBefore: number; severity: number };
+const rows: Row[] = [];
+const perSite: { site: string; total: number }[] = [];
+for (const [site, blk] of Object.entries<any>(sites)) {
+  perSite.push({ site, total: blk?.total_decayed ?? 0 });
+  for (const k of KINDS) {
+    for (const q of (blk?.[k.key] ?? [])) {
+      rows.push({
+        site,
+        query: q.query,
+        kind: k.label,
+        colour: k.colour,
+        posNow: q.position_now ?? 0,
+        posBefore: q.position_before ?? 0,
+        imprNow: q.impressions_now ?? 0,
+        imprBefore: q.impressions_before ?? 0,
+        severity: (q.position_now ?? 0) - (q.position_before ?? 0),
+      });
+    }
+  }
+}
+rows.sort((a, b) => b.severity - a.severity);
+perSite.sort((a, b) => b.total - a.total);
+const fleetTotal = perSite.reduce((s, p) => s + p.total, 0);
+const hasData = rows.length > 0;
+---
+<section data-copy-tile="Losing clicks" class="rounded-xl bg-slate-900 text-slate-100 p-6 my-6 border border-slate-800">
+  <div class="flex items-baseline justify-between flex-wrap gap-2 mb-1">
+    <h2 class="text-lg font-bold">Losing clicks <span class="text-xs font-normal text-slate-500">· content decay</span></h2>
+    <span class="text-xs text-slate-400">{today && comparedTo ? `${comparedTo} → ${today}` : 'vs prior window'}</span>
+  </div>
+
+  {!hasData ? (
+    <p class="text-sm text-slate-400 mt-3">No decay detected (or no data). <code>content_decay.json</code> compares current GSC vs a prior snapshot daily.</p>
+  ) : (
+    <>
+      <div class="my-3 text-sm text-slate-300">
+        <span class="text-2xl font-bold text-rose-300">{fleetTotal}</span>
+        <span class="text-slate-400"> queries/pages slipping across the fleet — fix or refresh before the clicks are gone</span>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 my-3">
+        {perSite.filter(p => p.total > 0).map(p => (
+          <div class="bg-slate-800/60 rounded-lg p-2">
+            <div class="text-xs font-semibold truncate">{p.site}</div>
+            <div class="text-[11px] text-rose-300 mt-0.5">{p.total} slipping</div>
+          </div>
+        ))}
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="text-left text-xs text-slate-500 border-b border-slate-800">
+              <th class="py-1 pr-3">Query</th>
+              <th class="py-1 pr-3">Site</th>
+              <th class="py-1 pr-3">What</th>
+              <th class="py-1 pr-3 text-right">Pos</th>
+              <th class="py-1 pr-3 text-right">Impr</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.slice(0, 20).map(r => (
+              <tr class="border-b border-slate-800/50">
+                <td class="py-1 pr-3">{r.query}</td>
+                <td class="py-1 pr-3 text-slate-400 text-xs">{r.site}</td>
+                <td class={`py-1 pr-3 text-xs font-semibold ${r.colour}`}>{r.kind}</td>
+                <td class="py-1 pr-3 text-right whitespace-nowrap">
+                  <span class="text-slate-500">{r.posBefore.toFixed(0)}</span>
+                  <span class="text-slate-600"> → </span>
+                  <span class="text-rose-300">{r.posNow.toFixed(0)}</span>
+                </td>
+                <td class="py-1 pr-3 text-right whitespace-nowrap">
+                  <span class="text-slate-500">{r.imprBefore.toLocaleString()}</span>
+                  <span class="text-slate-600"> → </span>
+                  <span class={r.imprNow < r.imprBefore ? 'text-rose-300' : 'text-slate-300'}>{r.imprNow.toLocaleString()}</span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-[11px] text-slate-500 mt-3">Position shown as before → now (higher number = worse). These had clicks/visibility and are sliding — the early-warning side of the click story.</p>
+    </>
+  )}
+</section>

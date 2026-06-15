@@ -1,17 +1,17 @@
 {
   "site_name": "Kartapay",
   "url": "https://kartapay.co.uk",
-  "audit_date": "2026-06-10",
-  "pages_checked": 6,
-  "issues_total": 0,
-  "pages_with_issues": 0,
+  "audit_date": "2026-06-14",
+  "pages_checked": 9,
+  "issues_total": 21,
+  "pages_with_issues": 3,
   "all_pages": [
     {
       "url": "https://kartapay.co.uk/",
       "status": 200,
       "title": "Kartapay: UK card payments and finance, in your language",
       "h1": "Card terminals, online payments and business finance for UK ",
-      "schema_count": 1,
+      "schema_count": 3,
       "image_count": 2,
       "word_count": 1999,
       "issues": []
@@ -65,7 +65,116 @@
       "image_count": 1,
       "word_count": 1107,
       "issues": []
+    },
+    {
+      "url": "https://kartapay.co.uk/sitemap-en.xml",
+      "status": 200,
+      "title": "MISSING",
+      "h1": "MISSING",
+      "schema_count": 0,
+      "image_count": 0,
+      "word_count": 28,
+      "issues": [
+        "Missing H1",
+        "Missing title tag",
+        "Missing meta description",
+        "Missing canonical tag",
+        "Missing og:title",
+        "No structured data found",
+        "Missing msvalidate.01 (Bing verification)"
+      ]
+    },
+    {
+      "url": "https://kartapay.co.uk/sitemap-pl.xml",
+      "status": 200,
+      "title": "MISSING",
+      "h1": "MISSING",
+      "schema_count": 0,
+      "image_count": 0,
+      "word_count": 57,
+      "issues": [
+        "Missing H1",
+        "Missing title tag",
+        "Missing meta description",
+        "Missing canonical tag",
+        "Missing og:title",
+        "No structured data found",
+        "Missing msvalidate.01 (Bing verification)"
+      ]
+    },
+    {
+      "url": "https://kartapay.co.uk/sitemap-ro.xml",
+      "status": 200,
+      "title": "MISSING",
+      "h1": "MISSING",
+      "schema_count": 0,
+      "image_count": 0,
+      "word_count": 57,
+      "issues": [
+        "Missing H1",
+        "Missing title tag",
+        "Missing meta description",
+        "Missing canonical tag",
+        "Missing og:title",
+        "No structured data found",
+        "Missing msvalidate.01 (Bing verification)"
+      ]
     }
   ],
-  "flagged_pages": []
+  "flagged_pages": [
+    {
+      "url": "https://kartapay.co.uk/sitemap-en.xml",
+      "status": 200,
+      "title": "MISSING",
+      "h1": "MISSING",
+      "schema_count": 0,
+      "image_count": 0,
+      "word_count": 28,
+      "issues": [
+        "Missing H1",
+        "Missing title tag",
+        "Missing meta description",
+        "Missing canonical tag",
+        "Missing og:title",
+        "No structured data found",
+        "Missing msvalidate.01 (Bing verification)"
+      ]
+    },
+    {
+      "url": "https://kartapay.co.uk/sitemap-pl.xml",
+      "status": 200,
+      "title": "MISSING",
+      "h1": "MISSING",
+      "schema_count": 0,
+      "image_count": 0,
+      "word_count": 57,
+      "issues": [
+        "Missing H1",
+        "Missing title tag",
+        "Missing meta description",
+        "Missing canonical tag",
+        "Missing og:title",
+        "No structured data found",
+        "Missing msvalidate.01 (Bing verification)"
+      ]
+    },
+    {
+      "url": "https://kartapay.co.uk/sitemap-ro.xml",
+      "status": 200,
+      "title": "MISSING",
+      "h1": "MISSING",
+      "schema_count": 0,
+      "image_count": 0,
+      "word_count": 57,
+      "issues": [
+        "Missing H1",
+        "Missing title tag",
+        "Missing meta description",
+        "Missing canonical tag",
+        "Missing og:title",
+        "No structured data found",
+        "Missing msvalidate.01 (Bing verification)"
+      ]
+    }
+  ]
 }

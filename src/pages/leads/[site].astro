@@ -122,7 +122,8 @@ const liveDomain = c?.liveDomain || c?.domain;
               <th class="py-2 pr-2 text-right">Amount</th>
               <th class="py-2 pr-2 text-right">Turnover</th>
               <th class="py-2 pr-2">Finance type</th>
-              <th class="py-2 pr-2">Source</th>
+              <th class="py-2 pr-2">Detail</th>
+              <th class="py-2 pr-2">Source / channel</th>
             </tr>
           </thead>
           <tbody>
@@ -152,7 +153,16 @@ const liveDomain = c?.liveDomain || c?.domain;
                 <td class="py-2 pr-2 text-right text-gray-300">{l.amount || '—'}</td>
                 <td class="py-2 pr-2 text-right text-gray-300">{l.turnover || '—'}</td>
                 <td class="py-2 pr-2 text-gray-300">{l.finance_type || '—'}</td>
-                <td class="py-2 pr-2 text-gray-500">{l.source || '—'}</td>
+                <td class="py-2 pr-2 text-gray-400">
+                  {[l.industry, l.payments_where, l.business_type].filter(Boolean).join(' · ') || '—'}
+                  {l.notes && (<div class="text-gray-600 max-w-[220px] truncate" title={l.notes}>{l.notes}</div>)}
+                </td>
+                <td class="py-2 pr-2 text-gray-500">
+                  <div class="text-gray-300">{l.attr_first_source || l.source || '—'}</div>
+                  {(l.utm_source || l.utm_campaign) && (<div class="text-[10px]">{[l.utm_source, l.utm_medium, l.utm_campaign].filter(Boolean).join(' / ')}</div>)}
+                  {l.referrer_host && (<div class="text-[10px] text-gray-600">ref: {l.referrer_host}</div>)}
+                  {l.attr_journey && (<div class="text-[10px] text-gray-600 max-w-[200px] truncate" title={l.attr_journey}>{l.attr_journey}</div>)}
+                </td>
               </tr>
             ))}
           </tbody>

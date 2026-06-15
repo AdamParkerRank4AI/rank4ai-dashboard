@@ -1,10 +1,10 @@
 {
   "rank4ai": {
-    "generated_at": "2026-06-15T06:02:53.533251",
-    "total": 13,
+    "generated_at": "2026-06-12T10:40:26.313066",
+    "total": 15,
     "critical": 2,
     "high": 2,
-    "medium": 9,
+    "medium": 11,
     "low": 0,
     "recommendations": [
       {
@@ -47,24 +47,44 @@
       },
       {
         "priority": "medium",
+        "category": "Search Visibility",
+        "title": "1 URL pattern(s) have 0 GSC impressions",
+        "detail": "These content patterns exist on the site but Google isn't crawling/showing them for any query: /guides/ (23 pages). Actions: 1) Add each pattern's index page to the main nav OR footer 2) Internal-link from the homepage to the pattern hub 3) Submit pattern pages to GSC URL Inspection 4) Re-check robots.txt isn't crawl-blocking the path.",
+        "impact": "medium",
+        "pages": [
+          "/guides/"
+        ]
+      },
+      {
+        "priority": "medium",
+        "category": "Internal Links",
+        "title": "1 orphan pages with no internal links pointing to them",
+        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /commissioncrowd/",
+        "impact": "medium",
+        "pages": [
+          "/commissioncrowd/"
+        ]
+      },
+      {
+        "priority": "medium",
         "category": "Schema",
         "title": "Schema gaps: No Organization or LocalBusiness schema \u2014 AI can't identify who you are; Missing content schema types: FAQPage",
-        "detail": "Currently using: VideoObject, WebSite, BreadcrumbList, Quotation, HowTo, TechArticle, WebAPI, WebPage, Dataset, Article, LocalBusiness ProfessionalService Organization, DefinedTermSet, Person, Service. No Organization or LocalBusiness schema \u2014 AI can't identify who you are Missing content schema types: FAQPage. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
+        "detail": "Currently using: BreadcrumbList, Article, VideoObject, Service, TechArticle, WebSite, LocalBusiness ProfessionalService Organization, DefinedTermSet, WebPage, HowTo, Dataset, Person, WebAPI, Quotation. No Organization or LocalBusiness schema \u2014 AI can't identify who you are Missing content schema types: FAQPage. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Traffic",
-        "title": "High bounce rate: 80.1%",
-        "detail": "Bounce rate is 80.1% \u2014 over 60% suggests visitors aren't finding what they need. Improve: 1) Page load speed 2) Content relevance to search queries 3) Clear CTAs and navigation 4) Mobile experience 5) Internal linking to related content.",
+        "title": "High bounce rate: 79.0%",
+        "detail": "Bounce rate is 79.0% \u2014 over 60% suggests visitors aren't finding what they need. Improve: 1) Page load speed 2) Content relevance to search queries 3) Clear CTAs and navigation 4) Mobile experience 5) Internal linking to related content.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "AI Readiness",
-        "title": "7 pages score below 40/100 for AI readiness",
+        "title": "8 pages score below 40/100 for AI readiness",
         "detail": "These pages have poor AI citation potential. Improve by adding: FAQ sections, clear definitions, comparison tables, statistics, author credentials. Low-scoring pages: /research/case-studies/, /ecosystem/, /who-we-help/birmingham/, /who-we-help/ecommerce/, /who-we-help/leeds/, /who-we-help/retail/...",
         "impact": "medium",
         "pages": [
@@ -74,46 +94,47 @@
           "/who-we-help/ecommerce/",
           "/who-we-help/leeds/",
           "/who-we-help/retail/",
-          "/who-we-help/bristol/"
+          "/who-we-help/bristol/",
+          "/who-we-help/b2b/"
         ]
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'ai search agency' \u2014 875 impressions, 0.11% CTR",
-        "detail": "This query gets 875 impressions but only 1 clicks (CTR: 0.11%). Position: 16.3. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'ai search agency' \u2014 872 impressions, 0.11% CTR",
+        "detail": "This query gets 872 impressions but only 1 clicks (CTR: 0.11%). Position: 16.9. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'ai based seo services' \u2014 249 impressions, 0% CTR",
-        "detail": "This query gets 249 impressions but only 0 clicks (CTR: 0%). Position: 48.5. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'ai based seo services' \u2014 221 impressions, 0% CTR",
+        "detail": "This query gets 221 impressions but only 0 clicks (CTR: 0%). Position: 51.3. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'ai overview optimisation agency' \u2014 220 impressions, 0% CTR",
-        "detail": "This query gets 220 impressions but only 0 clicks (CTR: 0%). Position: 13.2. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'best ai seo agency' \u2014 182 impressions, 0.55% CTR",
+        "detail": "This query gets 182 impressions but only 1 clicks (CTR: 0.55%). Position: 22.7. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'best ai seo agency' \u2014 189 impressions, 0.53% CTR",
-        "detail": "This query gets 189 impressions but only 1 clicks (CTR: 0.53%). Position: 19.9. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'ai in seo' \u2014 107 impressions, 0% CTR",
+        "detail": "This query gets 107 impressions but only 0 clicks (CTR: 0%). Position: 27.0. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'ai in seo' \u2014 124 impressions, 0% CTR",
-        "detail": "This query gets 124 impressions but only 0 clicks (CTR: 0%). Position: 27.0. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'ai and seo' \u2014 82 impressions, 0% CTR",
+        "detail": "This query gets 82 impressions but only 0 clicks (CTR: 0%). Position: 27.7. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
@@ -128,11 +149,11 @@
     ]
   },
   "market-invoice": {
-    "generated_at": "2026-06-15T06:02:53.559213",
-    "total": 12,
+    "generated_at": "2026-06-12T10:40:26.349132",
+    "total": 13,
     "critical": 2,
     "high": 2,
-    "medium": 8,
+    "medium": 9,
     "low": 0,
     "recommendations": [
       {
@@ -176,9 +197,19 @@
       },
       {
         "priority": "medium",
+        "category": "Internal Links",
+        "title": "1 orphan pages with no internal links pointing to them",
+        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /thank-you/",
+        "impact": "medium",
+        "pages": [
+          "/thank-you/"
+        ]
+      },
+      {
+        "priority": "medium",
         "category": "Schema",
         "title": "Schema gaps: Missing content schema types: FAQPage",
-        "detail": "Currently using: FinancialProduct, Quotation, Report, PodcastEpisode, DigitalDocument, ProfilePage, DefinedTermSet, ScholarlyArticle, WebSite, WebAPI, Organization, ContactPage, CollectionPage, BreadcrumbList, Product FinancialProduct FinancialService, DefinedTerm, SoftwareApplication, PodcastSeries, WebPage, QAPage, Dataset, Article, WebApplication, Product FinancialService, AboutPage, VideoObject, HowTo, TechArticle, ItemList, Book, Person, Service. Missing content schema types: FAQPage. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
+        "detail": "Currently using: CollectionPage, PodcastSeries, DigitalDocument, SoftwareApplication, QAPage, DefinedTermSet, Person, Product FinancialService, BreadcrumbList, Article, FinancialProduct, VideoObject, AboutPage, ItemList, TechArticle, ScholarlyArticle, DefinedTerm, HowTo, Dataset, Organization, Product FinancialProduct FinancialService, Service, WebSite, PodcastEpisode, Report, WebPage, ProfilePage, Book, WebAPI, WebApplication, ContactPage, Quotation. Missing content schema types: FAQPage. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
         "impact": "medium",
         "pages": []
       },
@@ -195,40 +226,40 @@
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'aldermore invoice finance' \u2014 87 impressions, 0% CTR",
-        "detail": "This query gets 87 impressions but only 0 clicks (CTR: 0%). Position: 42.5. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'aldermore invoice finance' \u2014 71 impressions, 0% CTR",
+        "detail": "This query gets 71 impressions but only 0 clicks (CTR: 0%). Position: 43.2. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'invoice finance for manufacturing' \u2014 68 impressions, 1.47% CTR",
-        "detail": "This query gets 68 impressions but only 1 clicks (CTR: 1.47%). Position: 47.6. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'barclays invoice finance' \u2014 66 impressions, 0% CTR",
+        "detail": "This query gets 66 impressions but only 0 clicks (CTR: 0%). Position: 16.9. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'barclays invoice finance' \u2014 62 impressions, 0% CTR",
-        "detail": "This query gets 62 impressions but only 0 clicks (CTR: 0%). Position: 18.5. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'invoice finance for manufacturing' \u2014 57 impressions, 1.75% CTR",
+        "detail": "This query gets 57 impressions but only 1 clicks (CTR: 1.75%). Position: 47.4. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'accident credit group' \u2014 38 impressions, 0% CTR",
-        "detail": "This query gets 38 impressions but only 0 clicks (CTR: 0%). Position: 18.5. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'best invoice finance' \u2014 34 impressions, 0% CTR",
+        "detail": "This query gets 34 impressions but only 0 clicks (CTR: 0%). Position: 64.1. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'best invoice finance' \u2014 35 impressions, 0% CTR",
-        "detail": "This query gets 35 impressions but only 0 clicks (CTR: 0%). Position: 66.0. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'accident credit group' \u2014 32 impressions, 0% CTR",
+        "detail": "This query gets 32 impressions but only 0 clicks (CTR: 0%). Position: 18.5. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
@@ -243,7 +274,7 @@
     ]
   },
   "seocompare": {
-    "generated_at": "2026-06-15T06:02:53.575139",
+    "generated_at": "2026-06-12T10:40:26.370326",
     "total": 13,
     "critical": 3,
     "high": 1,
@@ -302,34 +333,33 @@
         "priority": "medium",
         "category": "Schema",
         "title": "Schema gaps: Missing content schema types: FAQPage",
-        "detail": "Currently using: Organization, CollectionPage, BreadcrumbList, Quotation, HowTo, Service, WebPage, ItemList, Dataset, Blog, Article, WebApplication, ProfilePage, Person, WebSite. Missing content schema types: FAQPage. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
+        "detail": "Currently using: Organization, Article, BreadcrumbList, CollectionPage, Service, ItemList, WebSite, WebPage, ProfilePage, HowTo, Blog, Dataset, Person, Quotation, WebApplication. Missing content schema types: FAQPage. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Traffic",
-        "title": "High bounce rate: 87.3%",
-        "detail": "Bounce rate is 87.3% \u2014 over 60% suggests visitors aren't finding what they need. Improve: 1) Page load speed 2) Content relevance to search queries 3) Clear CTAs and navigation 4) Mobile experience 5) Internal linking to related content.",
+        "title": "High bounce rate: 87.8%",
+        "detail": "Bounce rate is 87.8% \u2014 over 60% suggests visitors aren't finding what they need. Improve: 1) Page load speed 2) Content relevance to search queries 3) Clear CTAs and navigation 4) Mobile experience 5) Internal linking to related content.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "AI Readiness",
-        "title": "2 pages score below 40/100 for AI readiness",
-        "detail": "These pages have poor AI citation potential. Improve by adding: FAQ sections, clear definitions, comparison tables, statistics, author credentials. Low-scoring pages: /tools/, /authors/oliver-mackman/",
+        "title": "1 pages score below 40/100 for AI readiness",
+        "detail": "These pages have poor AI citation potential. Improve by adding: FAQ sections, clear definitions, comparison tables, statistics, author credentials. Low-scoring pages: /tools/",
         "impact": "medium",
         "pages": [
-          "/tools/",
-          "/authors/oliver-mackman/"
+          "/tools/"
         ]
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'ai search agency' \u2014 116 impressions, 0% CTR",
-        "detail": "This query gets 116 impressions but only 0 clicks (CTR: 0%). Position: 79.9. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'ai search agency' \u2014 115 impressions, 0% CTR",
+        "detail": "This query gets 115 impressions but only 0 clicks (CTR: 0%). Position: 79.8. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
@@ -352,16 +382,16 @@
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'best ai search agency' \u2014 38 impressions, 0% CTR",
-        "detail": "This query gets 38 impressions but only 0 clicks (CTR: 0%). Position: 69. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'best ai search agency' \u2014 35 impressions, 0% CTR",
+        "detail": "This query gets 35 impressions but only 0 clicks (CTR: 0%). Position: 69.4. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'aeo services' \u2014 31 impressions, 0% CTR",
-        "detail": "This query gets 31 impressions but only 0 clicks (CTR: 0%). Position: 76.9. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'chatgpt seo services uk ai visibility' \u2014 32 impressions, 0% CTR",
+        "detail": "This query gets 32 impressions but only 0 clicks (CTR: 0%). Position: 87.9. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
@@ -376,12 +406,12 @@
     ]
   },
   "rochellemarashi": {
-    "generated_at": "2026-06-15T06:02:53.580802",
-    "total": 2,
+    "generated_at": "2026-06-12T10:40:26.381793",
+    "total": 7,
     "critical": 1,
     "high": 0,
-    "medium": 1,
-    "low": 0,
+    "medium": 4,
+    "low": 2,
     "recommendations": [
       {
         "priority": "critical",
@@ -400,11 +430,82 @@
         "pages": [
           "/guides/"
         ]
+      },
+      {
+        "priority": "medium",
+        "category": "SEO Health",
+        "title": "8 pages with thin content",
+        "detail": "These pages have fewer than 200 words. Expand with detailed, authoritative content. AI models prefer pages with 500+ words. Affected pages: /videos/, /blog/just-feelings-wont-keep-clients-safe/, /blog/surviving-stalking/, /contact/, /whitepapers/, /podcast/, /blog/dont-bite-your-tongue/, /blog/lifting-the-veil-of-invisibility/",
+        "impact": "medium",
+        "pages": [
+          "/videos/",
+          "/blog/just-feelings-wont-keep-clients-safe/",
+          "/blog/surviving-stalking/",
+          "/contact/",
+          "/whitepapers/",
+          "/podcast/",
+          "/blog/dont-bite-your-tongue/",
+          "/blog/lifting-the-veil-of-invisibility/"
+        ]
+      },
+      {
+        "priority": "medium",
+        "category": "Internal Links",
+        "title": "5 orphan pages with no internal links pointing to them",
+        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /anxiety/, /relationship-difficulties/, /bullying/, /work-related-stress/, /gaslighting/",
+        "impact": "medium",
+        "pages": [
+          "/anxiety/",
+          "/relationship-difficulties/",
+          "/bullying/",
+          "/work-related-stress/",
+          "/gaslighting/"
+        ]
+      },
+      {
+        "priority": "medium",
+        "category": "Content",
+        "title": "Only 2 pillar pages have 2,000+ words (excluding Q&A pages)",
+        "detail": "Pillar pages with 2,000+ words get 3x more AI citations. Q&A pages at 120-180 words are fine \u2014 this applies to guides, service pages, and definitive content. Expand 5-10 key pillar pages.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "low",
+        "category": "SEO Health",
+        "title": "19 pages with multiple h1",
+        "detail": "These pages have more than one H1 tag. Each page should have exactly one H1. Affected pages: /blog/what-is-integrative-therapy/, /blog/what-is-nervous-system-dysregulation/, /blog/what-is-stalking-and-why-is-it-hard-to-name/, /blog/what-is-gender-based-violence-and-why-it-matters-in-therapy/, /blog/rebuilding-trust-after-abuse/, /blog/understanding-trauma-responses/, /blog/what-to-expect-first-online-therapy-session/, /blog/darvo-when-the-person-who-hurt-you-plays-the-victim/...",
+        "impact": "medium",
+        "pages": [
+          "/blog/what-is-integrative-therapy/",
+          "/blog/what-is-nervous-system-dysregulation/",
+          "/blog/what-is-stalking-and-why-is-it-hard-to-name/",
+          "/blog/what-is-gender-based-violence-and-why-it-matters-in-therapy/",
+          "/blog/rebuilding-trust-after-abuse/",
+          "/blog/understanding-trauma-responses/",
+          "/blog/what-to-expect-first-online-therapy-session/",
+          "/blog/darvo-when-the-person-who-hurt-you-plays-the-victim/",
+          "/blog/what-does-trauma-recovery-look-like/",
+          "/blog/why-therapy-is-not-the-same-as-talking-to-a-friend/",
+          "/blog/gas-light-its-not-me-its-you/",
+          "/blog/understanding-institutional-betrayal/",
+          "/blog/impact-of-racism-on-mental-health/",
+          "/blog/stalking-theres-nothing-romantic-about-it/",
+          "/blog/the-link-between-workplace-stress-and-trauma/"
+        ]
+      },
+      {
+        "priority": "low",
+        "category": "Content",
+        "title": "No comparison tables detected",
+        "detail": "Pages with comparison tables have 2.5x higher AI citation rate. Consider adding comparison tables to key pages where relevant.",
+        "impact": "medium",
+        "pages": []
       }
     ]
   },
   "bestbusinessloans": {
-    "generated_at": "2026-06-15T06:02:53.602326",
+    "generated_at": "2026-06-12T10:40:26.411836",
     "total": 8,
     "critical": 3,
     "high": 0,
@@ -440,30 +541,30 @@
       {
         "priority": "medium",
         "category": "Search Visibility",
-        "title": "1 URL pattern(s) have 0 GSC impressions",
-        "detail": "These content patterns exist on the site but Google isn't crawling/showing them for any query: /vs/ (85 pages). Actions: 1) Add each pattern's index page to the main nav OR footer 2) Internal-link from the homepage to the pattern hub 3) Submit pattern pages to GSC URL Inspection 4) Re-check robots.txt isn't crawl-blocking the path.",
+        "title": "2 URL pattern(s) have 0 GSC impressions",
+        "detail": "These content patterns exist on the site but Google isn't crawling/showing them for any query: /vs/ (85 pages), /alternatives/ (13 pages). Actions: 1) Add each pattern's index page to the main nav OR footer 2) Internal-link from the homepage to the pattern hub 3) Submit pattern pages to GSC URL Inspection 4) Re-check robots.txt isn't crawl-blocking the path.",
         "impact": "medium",
         "pages": [
-          "/vs/"
+          "/vs/",
+          "/alternatives/"
         ]
       },
       {
         "priority": "medium",
         "category": "Internal Links",
-        "title": "3 orphan pages with no internal links pointing to them",
-        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /schemes/, /thank-you/, /what-trading-history-turnover-or-affordability-do-providers-usually-require/",
+        "title": "2 orphan pages with no internal links pointing to them",
+        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /schemes/, /thank-you/",
         "impact": "medium",
         "pages": [
           "/schemes/",
-          "/thank-you/",
-          "/what-trading-history-turnover-or-affordability-do-providers-usually-require/"
+          "/thank-you/"
         ]
       },
       {
         "priority": "medium",
         "category": "Traffic",
-        "title": "High bounce rate: 84.6%",
-        "detail": "Bounce rate is 84.6% \u2014 over 60% suggests visitors aren't finding what they need. Improve: 1) Page load speed 2) Content relevance to search queries 3) Clear CTAs and navigation 4) Mobile experience 5) Internal linking to related content.",
+        "title": "High bounce rate: 86.7%",
+        "detail": "Bounce rate is 86.7% \u2014 over 60% suggests visitors aren't finding what they need. Improve: 1) Page load speed 2) Content relevance to search queries 3) Clear CTAs and navigation 4) Mobile experience 5) Internal linking to related content.",
         "impact": "medium",
         "pages": []
       },
@@ -486,7 +587,7 @@
     ]
   },
   "fundbiz": {
-    "generated_at": "2026-06-15T06:02:53.616719",
+    "generated_at": "2026-06-12T10:40:26.436618",
     "total": 11,
     "critical": 3,
     "high": 0,
@@ -525,35 +626,19 @@
       },
       {
         "priority": "medium",
-        "category": "Search Visibility",
-        "title": "1 URL pattern(s) have 0 GSC impressions",
-        "detail": "These content patterns exist on the site but Google isn't crawling/showing them for any query: /vs/ (70 pages). Actions: 1) Add each pattern's index page to the main nav OR footer 2) Internal-link from the homepage to the pattern hub 3) Submit pattern pages to GSC URL Inspection 4) Re-check robots.txt isn't crawl-blocking the path.",
+        "category": "Internal Links",
+        "title": "1 orphan pages with no internal links pointing to them",
+        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /thank-you/",
         "impact": "medium",
         "pages": [
-          "/vs/"
+          "/thank-you/"
         ]
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'365 business finance' \u2014 42 impressions, 0% CTR",
-        "detail": "This query gets 42 impressions but only 0 clicks (CTR: 0%). Position: 22.0. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
-        "impact": "medium",
-        "pages": []
-      },
-      {
-        "priority": "medium",
-        "category": "Content Gap",
-        "title": "'aldermore offers' \u2014 22 impressions, 0% CTR",
-        "detail": "This query gets 22 impressions but only 0 clicks (CTR: 0%). Position: 8.5. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
-        "impact": "medium",
-        "pages": []
-      },
-      {
-        "priority": "medium",
-        "category": "Content Gap",
-        "title": "'best bank for business loan' \u2014 16 impressions, 0% CTR",
-        "detail": "This query gets 16 impressions but only 0 clicks (CTR: 0%). Position: 29.4. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'365 business finance' \u2014 26 impressions, 0% CTR",
+        "detail": "This query gets 26 impressions but only 0 clicks (CTR: 0%). Position: 22.6. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
@@ -575,6 +660,22 @@
       },
       {
         "priority": "medium",
+        "category": "Content Gap",
+        "title": "'amazon seller loans uk' \u2014 12 impressions, 0% CTR",
+        "detail": "This query gets 12 impressions but only 0 clicks (CTR: 0%). Position: 48.7. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Content Gap",
+        "title": "'business loan eligibility checker' \u2014 10 impressions, 0% CTR",
+        "detail": "This query gets 10 impressions but only 0 clicks (CTR: 0%). Position: 78. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
         "category": "Content",
         "title": "Low multi-modal content (0 pages with images+video, 0 with video)",
         "detail": "Pages with images AND video get 156-317% more AI citations. Add charts, infographics, and short videos to key pillar pages. Note: inline SVG graphics may not be detected by this check.",
@@ -584,7 +685,7 @@
       {
         "priority": "low",
         "category": "Indexing",
-        "title": "Only 83/291 pages indexed in Bing",
+        "title": "Only 71/288 pages indexed in Bing",
         "detail": "Bing feeds Copilot. If URLs were recently submitted via IndexNow, allow 7-14 days for propagation. Re-check after that period. Submit: python3 scripts/submit_indexnow.py fundbiz",
         "impact": "medium",
         "pages": []
@@ -592,7 +693,7 @@
     ]
   },
   "cardmachines": {
-    "generated_at": "2026-06-15T06:02:53.679045",
+    "generated_at": "2026-06-12T10:40:26.519381",
     "total": 10,
     "critical": 2,
     "high": 0,
@@ -628,40 +729,40 @@
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'best card machine' \u2014 108 impressions, 0% CTR",
-        "detail": "This query gets 108 impressions but only 0 clicks (CTR: 0%). Position: 83.2. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'best card machine' \u2014 93 impressions, 0% CTR",
+        "detail": "This query gets 93 impressions but only 0 clicks (CTR: 0%). Position: 83.0. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'bbpos wisepad 3' \u2014 75 impressions, 0% CTR",
-        "detail": "This query gets 75 impressions but only 0 clicks (CTR: 0%). Position: 21.4. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'best card reader' \u2014 62 impressions, 0% CTR",
+        "detail": "This query gets 62 impressions but only 0 clicks (CTR: 0%). Position: 76.5. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'best card machines' \u2014 64 impressions, 0% CTR",
-        "detail": "This query gets 64 impressions but only 0 clicks (CTR: 0%). Position: 81.3. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'best card payment machine' \u2014 55 impressions, 0% CTR",
+        "detail": "This query gets 55 impressions but only 0 clicks (CTR: 0%). Position: 72.2. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'best card machine for small business' \u2014 33 impressions, 0% CTR",
-        "detail": "This query gets 33 impressions but only 0 clicks (CTR: 0%). Position: 77.2. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'bbpos wisepad 3' \u2014 54 impressions, 0% CTR",
+        "detail": "This query gets 54 impressions but only 0 clicks (CTR: 0%). Position: 24.1. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'best card machine deals' \u2014 32 impressions, 0% CTR",
-        "detail": "This query gets 32 impressions but only 0 clicks (CTR: 0%). Position: 82.7. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'best card machines' \u2014 53 impressions, 0% CTR",
+        "detail": "This query gets 53 impressions but only 0 clicks (CTR: 0%). Position: 82.0. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
@@ -676,7 +777,7 @@
       {
         "priority": "low",
         "category": "Indexing",
-        "title": "Only 280/1614 pages indexed in Bing",
+        "title": "Only 193/1615 pages indexed in Bing",
         "detail": "Bing feeds Copilot. If URLs were recently submitted via IndexNow, allow 7-14 days for propagation. Re-check after that period. Submit: python3 scripts/submit_indexnow.py cardmachines",
         "impact": "medium",
         "pages": []
@@ -684,7 +785,7 @@
     ]
   },
   "merchanthq": {
-    "generated_at": "2026-06-15T06:02:53.686171",
+    "generated_at": "2026-06-12T10:40:26.527722",
     "total": 0,
     "critical": 0,
     "high": 0,
@@ -693,11 +794,11 @@
     "recommendations": []
   },
   "peptideclear": {
-    "generated_at": "2026-06-15T06:02:53.701281",
-    "total": 8,
+    "generated_at": "2026-06-12T10:40:26.547044",
+    "total": 10,
     "critical": 1,
     "high": 0,
-    "medium": 7,
+    "medium": 9,
     "low": 0,
     "recommendations": [
       {
@@ -720,55 +821,73 @@
       },
       {
         "priority": "medium",
-        "category": "Internal Links",
-        "title": "5 orphan pages with no internal links pointing to them",
-        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /glp1/, /faq/, /longevity/, /shop/melanotan-1/, /best/",
+        "category": "Search Visibility",
+        "title": "1 URL pattern(s) have 0 GSC impressions",
+        "detail": "These content patterns exist on the site but Google isn't crawling/showing them for any query: /vs/ (21 pages). Actions: 1) Add each pattern's index page to the main nav OR footer 2) Internal-link from the homepage to the pattern hub 3) Submit pattern pages to GSC URL Inspection 4) Re-check robots.txt isn't crawl-blocking the path.",
         "impact": "medium",
         "pages": [
-          "/glp1/",
-          "/faq/",
-          "/longevity/",
-          "/shop/melanotan-1/",
-          "/best/"
+          "/vs/"
         ]
       },
       {
         "priority": "medium",
-        "category": "Content Gap",
-        "title": "'best collagen' \u2014 56 impressions, 0% CTR",
-        "detail": "This query gets 56 impressions but only 0 clicks (CTR: 0%). Position: 59.4. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "category": "Internal Links",
+        "title": "5 orphan pages with no internal links pointing to them",
+        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /glp1/, /shop/melanotan-1/, /best/, /questions/, /vetting-queue/",
+        "impact": "medium",
+        "pages": [
+          "/glp1/",
+          "/shop/melanotan-1/",
+          "/best/",
+          "/questions/",
+          "/vetting-queue/"
+        ]
+      },
+      {
+        "priority": "medium",
+        "category": "Performance",
+        "title": "Slow server response time: 13594ms",
+        "detail": "Server response time is 13594ms \u2014 should be under 500ms. Check server configuration, caching, CDN setup, and database queries.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'asda online pharmacy' \u2014 41 impressions, 0% CTR",
-        "detail": "This query gets 41 impressions but only 0 clicks (CTR: 0%). Position: 13.6. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'best collagen' \u2014 45 impressions, 0% CTR",
+        "detail": "This query gets 45 impressions but only 0 clicks (CTR: 0%). Position: 59.6. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'best collagen supplement uk' \u2014 40 impressions, 0% CTR",
-        "detail": "This query gets 40 impressions but only 0 clicks (CTR: 0%). Position: 63.9. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'best collagen supplements' \u2014 35 impressions, 0% CTR",
+        "detail": "This query gets 35 impressions but only 0 clicks (CTR: 0%). Position: 65.9. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'best collagen supplements' \u2014 37 impressions, 0% CTR",
-        "detail": "This query gets 37 impressions but only 0 clicks (CTR: 0%). Position: 65.9. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'best collagen supplement uk' \u2014 34 impressions, 0% CTR",
+        "detail": "This query gets 34 impressions but only 0 clicks (CTR: 0%). Position: 63.8. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
       {
         "priority": "medium",
         "category": "Content Gap",
-        "title": "'best collagen supplements uk' \u2014 33 impressions, 0% CTR",
-        "detail": "This query gets 33 impressions but only 0 clicks (CTR: 0%). Position: 63.9. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "title": "'best collagen supplements uk' \u2014 32 impressions, 0% CTR",
+        "detail": "This query gets 32 impressions but only 0 clicks (CTR: 0%). Position: 63.9. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Content Gap",
+        "title": "'boots glp1' \u2014 15 impressions, 0% CTR",
+        "detail": "This query gets 15 impressions but only 0 clicks (CTR: 0%). Position: 39.3. Actions: 1) Improve the meta title and description for this query 2) Create or improve a dedicated page targeting this topic 3) Add FAQ schema addressing this query.",
         "impact": "medium",
         "pages": []
       },
@@ -783,13 +902,21 @@
     ]
   },
   "kartapay": {
-    "generated_at": "2026-06-15T06:02:53.707376",
-    "total": 5,
+    "generated_at": "2026-06-12T10:40:26.554978",
+    "total": 6,
     "critical": 0,
     "high": 0,
-    "medium": 5,
+    "medium": 6,
     "low": 0,
     "recommendations": [
+      {
+        "priority": "medium",
+        "category": "Performance",
+        "title": "Slow server response time: 3047ms",
+        "detail": "Server response time is 3047ms \u2014 should be under 500ms. Check server configuration, caching, CDN setup, and database queries.",
+        "impact": "medium",
+        "pages": []
+      },
       {
         "priority": "medium",
         "category": "Content Gap",

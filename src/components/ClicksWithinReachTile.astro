@@ -1,0 +1,115 @@
+---
+/**
+ * ClicksWithinReachTile — "Clicks within reach" (striking distance).
+ *
+ * Surfaces queries already ranking on page 2 (position ~11-20) with real
+ * impressions — the clicks we'd earn by nudging them onto page 1. Reads the
+ * pre-computed src/data/live/striking_distance.json (written daily by the GSC
+ * pipeline). Each site has count / total_impressions / potential_clicks_at_page_1
+ * and a `top[]` of {query, clicks, impressions, position, potential_clicks_at_page_1}.
+ * Answers "where do the next clicks come from" — the opportunity side of the
+ * click story the dashboard otherwise hides. Dark-card style like siblings.
+ */
+import fs from 'node:fs';
+import path from 'node:path';
+import clients from '../utils/dashboardClients';
+
+function loadJson(filename: string) {
+  try {
+    const fp = path.join(process.cwd(), 'src', 'data', 'live', filename);
+    if (fs.existsSync(fp)) return JSON.parse(fs.readFileSync(fp, 'utf-8'));
+  } catch {}
+  return null;
+}
+
+// Restrict to THIS board's sites (fleet vs current) so current-board-only sites
+// (rank4ai, resiliencebuilder) don't leak onto the fleet board.
+const clientIds = new Set((clients as any[]).map((c) => c.id));
+
+const d = loadJson('striking_distance.json');
+const sites = Object.fromEntries(
+  Object.entries<any>(d?.sites ?? {}).filter(([id]) => clientIds.has(id))
+);
+// Recompute the headline from the filtered set, not the file's all-sites total.
+const fleetTotal = Object.values<any>(sites).reduce(
+  (sum, s) => sum + (s?.potential_clicks_at_page_1 ?? 0), 0) || null;
+
+type Row = { site: string; query: string; clicks: number; impressions: number; position: number; potential: number; lift: number | null };
+const rows: Row[] = [];
+const perSite: { site: string; count: number; potential: number; impressions: number }[] = [];
+for (const [site, blk] of Object.entries<any>(sites)) {
+  perSite.push({
+    site,
+    count: blk?.count ?? 0,
+    potential: blk?.potential_clicks_at_page_1 ?? 0,
+    impressions: blk?.total_impressions ?? 0,
+  });
+  for (const q of (blk?.top ?? [])) {
+    rows.push({
+      site,
+      query: q.query,
+      clicks: q.clicks ?? 0,
+      impressions: q.impressions ?? 0,
+      position: q.position ?? 0,
+      potential: q.potential_clicks_at_page_1 ?? 0,
+      lift: q.potential_lift_pct ?? null,
+    });
+  }
+}
+rows.sort((a, b) => (b.potential - a.potential) || (b.impressions - a.impressions));
+perSite.sort((a, b) => b.potential - a.potential);
+const fleetPotential = perSite.reduce((s, p) => s + p.potential, 0);
+const hasData = rows.length > 0;
+---
+<section data-copy-tile="Clicks within reach" class="rounded-xl bg-slate-900 text-slate-100 p-6 my-6 border border-slate-800">
+  <div class="flex items-baseline justify-between flex-wrap gap-2 mb-1">
+    <h2 class="text-lg font-bold">Clicks within reach <span class="text-xs font-normal text-slate-500">· striking distance</span></h2>
+    <span class="text-xs text-slate-400">Page-2 queries (pos ~11–20) one nudge from page-1 clicks</span>
+  </div>
+
+  {!hasData ? (
+    <p class="text-sm text-slate-400 mt-3">No striking-distance data yet. <code>striking_distance.json</code> is written daily by the GSC pipeline.</p>
+  ) : (
+    <>
+      <div class="my-3 text-sm text-slate-300">
+        <span class="text-2xl font-bold text-emerald-300">{(fleetTotal ?? fleetPotential).toLocaleString()}</span>
+        <span class="text-slate-400"> potential extra clicks/mo if these reach page 1, across {perSite.reduce((s, p) => s + p.count, 0)} queries</span>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 my-3">
+        {perSite.filter(p => p.count > 0).map(p => (
+          <div class="bg-slate-800/60 rounded-lg p-2">
+            <div class="text-xs font-semibold truncate">{p.site}</div>
+            <div class="text-[11px] text-slate-400 mt-0.5"><span class="text-emerald-300">+{p.potential}</span> clk · {p.count} q</div>
+          </div>
+        ))}
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="text-left text-xs text-slate-500 border-b border-slate-800">
+              <th class="py-1 pr-3">Query</th>
+              <th class="py-1 pr-3">Site</th>
+              <th class="py-1 pr-3 text-right">Pos</th>
+              <th class="py-1 pr-3 text-right">Impr</th>
+              <th class="py-1 pr-3 text-right">Clicks now</th>
+              <th class="py-1 pr-3 text-right">+ at page 1</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.slice(0, 20).map(r => (
+              <tr class="border-b border-slate-800/50">
+                <td class="py-1 pr-3">{r.query}</td>
+                <td class="py-1 pr-3 text-slate-400 text-xs">{r.site}</td>
+                <td class="py-1 pr-3 text-right text-amber-300">{r.position.toFixed(1)}</td>
+                <td class="py-1 pr-3 text-right">{r.impressions.toLocaleString()}</td>
+                <td class="py-1 pr-3 text-right text-slate-400">{r.clicks}</td>
+                <td class="py-1 pr-3 text-right text-emerald-300 font-semibold">+{r.potential}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-[11px] text-slate-500 mt-3">"+ at page 1" = estimated extra clicks if the query moved to a page-1 position, from its current impressions × a page-1 CTR. The cheapest clicks to win — content already ranks, just not high enough.</p>
+    </>
+  )}
+</section>

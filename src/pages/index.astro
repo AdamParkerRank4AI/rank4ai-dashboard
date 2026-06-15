@@ -8,6 +8,11 @@ import ConversionLeakTile from '../components/ConversionLeakTile.astro';
 import FeatureCoverageTile from '../components/FeatureCoverageTile.astro';
 import FleetBotHitsTile from '../components/FleetBotHitsTile.astro';
 import AiVisibilityTile from '../components/AiVisibilityTile.astro';
+import ClicksWithinReachTile from '../components/ClicksWithinReachTile.astro';
+import PerSiteEnhancementsTile from '../components/PerSiteEnhancementsTile.astro';
+import LeadsSummaryTile from '../components/LeadsSummaryTile.astro';
+import LosingClicksTile from '../components/LosingClicksTile.astro';
+import TopPagesByClicksTile from '../components/TopPagesByClicksTile.astro';
 import clients from '../utils/dashboardClients';
 import { statusOf, STATUS_RANK, STATUS_PILL, STATUS_LABEL } from '../utils/siteStatus';
 import fs from 'node:fs';
@@ -113,6 +118,37 @@ try {
   }
 } catch {}
 
+// Honest "is what you're looking at actually current?" banner. The board is a
+// static build, so a viewer can't tell a stale number from a live one — the only
+// safe signal is the data-freshness guardrail (check_data_freshness.py), which
+// stamps every live/*.json with its real age. Surface the WORST case here on the
+// main board (not just /ops) so nobody is ever misled by a stale headline. The
+// old "Last refresh" stamp read a single feed and lied when others rotted.
+const freshness = loadJson('data_freshness.json') || null;
+let freshBanner: { tone: 'ok' | 'warn' | 'bad'; asOf: string; line: string; stale: string[] } | null = null;
+if (freshness?.feeds) {
+  // Only the curated "core" feeds back numbers shown on this board — judge the
+  // banner on those, not the catch-all research dumps (those live on /ops).
+  const core = (freshness.feeds || []).filter((f: any) => f.tier !== 'auto');
+  const bad = core.filter((f: any) => f.status === 'very_stale' || f.status === 'missing');
+  const stale = core.filter((f: any) => f.status === 'stale');
+  const asOf = freshness.checked_at
+    ? new Date(freshness.checked_at).toLocaleString('en-GB', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })
+    : lastRefresh;
+  const names = [...bad, ...stale].slice(0, 6).map((f: any) =>
+    `${f.label}${f.age_hours != null ? ` (${f.age_hours >= 48 ? Math.round(f.age_hours / 24) + 'd' : Math.round(f.age_hours) + 'h'})` : ''}`);
+  if (bad.length) {
+    freshBanner = { tone: 'bad', asOf, stale: names,
+      line: `${bad.length} core feed${bad.length > 1 ? 's' : ''} dead or very stale${stale.length ? ` · ${stale.length} more stale` : ''} — numbers below may be wrong` };
+  } else if (stale.length) {
+    freshBanner = { tone: 'warn', asOf, stale: names,
+      line: `${stale.length} core feed${stale.length > 1 ? 's' : ''} stale — those numbers are lagging` };
+  } else {
+    freshBanner = { tone: 'ok', asOf, stale: [],
+      line: `All ${core.length} core feeds fresh` };
+  }
+}
+
 // Full categorised changelog
 const fullChangelog = loadJson('full_changelog.json') || [];
 const allCommits = fullChangelog;
@@ -147,6 +183,25 @@ for (const c of clients) {
   };
 }
 
+// Fleet clicks trend — sum per-day clicks across all dashboard sites (last 28
+// calendar days) so the home page shows the click STREAM over time, not just a
+// frozen 28d total. Built from gsc_daily.json (dimension=date), already loaded.
+function fleetClicksSeries(days: number): number[] {
+  const byDate: Record<string, number> = {};
+  for (const c of clients) {
+    const arr = ((gscDaily as any)[c.id]?.days || []) as any[];
+    for (const d of arr.slice(-days)) {
+      byDate[d.date] = (byDate[d.date] || 0) + (d.clicks || 0);
+    }
+  }
+  return Object.keys(byDate).sort().map((k) => byDate[k]);
+}
+const clicksSeries = fleetClicksSeries(28);
+const clicksSeriesMax = Math.max(1, ...clicksSeries);
+const clicksLast7 = clicksSeries.slice(-7).reduce((s, n) => s + n, 0);
+const clicksPrev7 = clicksSeries.slice(-14, -7).reduce((s, n) => s + n, 0);
+const clicksWoW = clicksPrev7 ? Math.round(((clicksLast7 - clicksPrev7) / clicksPrev7) * 100) : null;
+
 // Three search funnels at the top — Google clicks (GSC 28-30d) · Bing clicks (BWT 5-7d) · AI visits (GA4 30d)
 // Bing clicks sum the per-day traffic_stats rows (the real signal) instead of top_queries (which is capped at 25 + per-day).
 function bingClicksFor(siteId: string): number {
@@ -165,6 +220,23 @@ const totalAiVisits = fleetSiteIds.reduce((sum, sid) => sum + aiVisitsFor(sid), 
 // dashboard (R4 + RB) isn't in YT tracking scope yet, so gate the render.
 // Mirrors the isFleet pattern in src/layouts/DashboardLayout.astro:27.
 const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
+
+// Site type / monetisation pill. `monetisation` (clients.json) is the money model;
+// banner = display-ad cluster, leadgen = form funnels, editorial = content/SEO,
+// saas / client = the outliers. Falls back to `flavour` when monetisation absent.
+const TYPE_META: Record<string, { label: string; pill: string }> = {
+  'banner':            { label: 'Banner',        pill: 'bg-fuchsia-900/40 text-fuchsia-300' },
+  'banner+affiliate':  { label: 'Banner+Aff',    pill: 'bg-fuchsia-900/40 text-fuchsia-300' },
+  'affiliate':         { label: 'Affiliate',     pill: 'bg-pink-900/40 text-pink-300' },
+  'leadgen':           { label: 'Lead-gen',      pill: 'bg-cyan-900/40 text-cyan-300' },
+  'editorial':         { label: 'Editorial',     pill: 'bg-indigo-900/40 text-indigo-300' },
+  'saas':              { label: 'SaaS',          pill: 'bg-teal-900/40 text-teal-300' },
+  'client':            { label: 'Client',        pill: 'bg-gray-700 text-gray-300' },
+};
+function typeOf(c: any) {
+  const key = (c?.monetisation || c?.flavour || '').toLowerCase();
+  return TYPE_META[key] || (key ? { label: key, pill: 'bg-gray-700 text-gray-300' } : null);
+}
 ---
 
 <DashboardLayout title="Dashboard">
@@ -178,7 +250,7 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
       llms-full.txt, ai.txt, agent-data layer, no FAQPage.
     </p>
     <p class="text-[11px] text-amber-200/70 mt-1">
-      Reference builds (complete): Company Rescue, Invoice Finance. Known-thin (need bringing up): equity-release, womens-health, findagym, homesandhedge, steve-site.
+      Reference builds (complete): Company Rescue, Invoice Finance. Known-thin (need bringing up): equity-release, womens-health, homesandhedge, steve-site.
     </p>
   </section>
 
@@ -228,7 +300,7 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
           <button type="button" data-period="week" class="fqv-period px-2.5 py-1 text-gray-400 hover:text-white border-l border-gray-700">Week</button>
           <button type="button" data-period="month" class="fqv-period px-2.5 py-1 bg-indigo-600 text-white border-l border-gray-700">Month</button>
         </div>
-        <span class="text-[10px] text-gray-500">Google clk/Impr/Pos by period · sorted by impressions · click ▸ for detail</span>
+        <span class="text-[10px] text-gray-500">Period changes Google clk/Impr/Pos only · click any header to sort ▲▼ · click ▸ for detail</span>
       </div>
     </div>
     <div class="overflow-x-auto rounded-lg border border-gray-800 bg-gray-900">
@@ -256,7 +328,7 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
         <tbody id="fqv-tbody">
           {(clients as any[])
             .filter((c) => clientIds.has(c.id))
-            // Live sites only — drop pre-launch / paused builds (FindAGym, FindATradey, BuilderWeb, Nordic, legal-leadgen)
+            // Live sites only — drop pre-launch / paused builds (BuilderWeb, Nordic, legal-leadgen)
             .filter((c) => c.siteStatus === 'live' || (c.dashboard === 'current' && c.pre_launch !== true && c.siteStatus !== 'paused' && c.siteStatus !== 'needs'))
             // Top performers first — by Google impressions (month). Re-sorts client-side on period toggle.
             .sort((a, b) => (periodData[b.id]?.month?.impressions ?? 0) - (periodData[a.id]?.month?.impressions ?? 0))
@@ -378,6 +450,40 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
     </div>
   </section>
 
+  {/* The ranked, per-site action queue built from every finding feed — the layer
+      that turns diagnosis into a to-do. Sits above the raw click tiles below. */}
+  <PerSiteEnhancementsTile />
+
+  {/* CLICKS — the full click story the per-site total alone hides: trend over time,
+      page-level clicks, within-reach opportunities, and what's slipping. */}
+  {clicksSeries.length > 1 && (
+    <section data-copy-tile="Fleet clicks trend" class="mb-6 rounded-lg border border-emerald-800/50 bg-emerald-950/20 px-4 py-3">
+      <div class="flex items-baseline justify-between flex-wrap gap-2">
+        <span class="text-[10px] uppercase tracking-wider text-emerald-300 font-semibold">Fleet clicks trend · last 28 days</span>
+        <span class="text-[11px] text-gray-400">
+          {clicksLast7.toLocaleString()} clicks last 7d
+          {clicksWoW !== null && (
+            <span class={clicksWoW >= 0 ? 'text-emerald-300' : 'text-rose-300'}> · {clicksWoW >= 0 ? '+' : ''}{clicksWoW}% WoW</span>
+          )}
+        </span>
+      </div>
+      <div class="flex items-end gap-[2px] h-12 mt-2">
+        {clicksSeries.map((n) => (
+          <div
+            class="flex-1 bg-emerald-500/70 rounded-t-sm min-h-[1px]"
+            style={`height:${Math.max(2, Math.round((n / clicksSeriesMax) * 100))}%`}
+            title={`${n} clicks`}
+          ></div>
+        ))}
+      </div>
+      <div class="text-[10px] text-gray-500 mt-1">Per-day Google clicks summed across the fleet (GSC, dimension=date). The stream over time — not the frozen 28-day total.</div>
+    </section>
+  )}
+
+  <ClicksWithinReachTile />
+  <LosingClicksTile />
+  <TopPagesByClicksTile siteIds={[...clientIds]} />
+
   {/* Fleet Feature Coverage — headline grid: which site has which high-end fleet feature */}
   {isFleet && (
     <div data-copy-tile="Fleet feature coverage" class="mb-6">
@@ -403,7 +509,21 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
   <div class="flex items-center justify-between mb-6">
     <div>
       <h1 class="text-xl font-bold text-white">Dashboard</h1>
-      <p class="text-xs text-gray-500">Last refresh: {lastRefresh}</p>
+      {freshBanner ? (
+        <a href="/ops" class={`inline-flex items-center gap-2 mt-1 px-2.5 py-1 rounded text-xs font-medium ${
+          freshBanner.tone === 'bad' ? 'bg-red-950 text-red-300 border border-red-800'
+          : freshBanner.tone === 'warn' ? 'bg-amber-950 text-amber-300 border border-amber-800'
+          : 'bg-emerald-950 text-emerald-300 border border-emerald-900'}`}>
+          <span class={`h-1.5 w-1.5 rounded-full ${
+            freshBanner.tone === 'bad' ? 'bg-red-400' : freshBanner.tone === 'warn' ? 'bg-amber-400' : 'bg-emerald-400'}`}></span>
+          <span>Data as of {freshBanner.asOf} · {freshBanner.line}</span>
+        </a>
+      ) : (
+        <p class="text-xs text-gray-500">Last refresh: {lastRefresh}</p>
+      )}
+      {freshBanner && freshBanner.stale.length > 0 && (
+        <p class="text-[11px] text-gray-500 mt-1">Lagging: {freshBanner.stale.join(' · ')}</p>
+      )}
     </div>
     <div class="flex gap-2">
       <button id="refresh-btn" class="px-3 py-1.5 bg-blue-600 text-white rounded text-sm hover:bg-blue-500 transition">
@@ -419,6 +539,9 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
       )}
     </div>
   </div>
+
+  {/* Leads pinned at the very top of Home — leads are the point of the fleet */}
+  <LeadsSummaryTile />
 
   {/* Wins This Week — daily progress diff */}
   {wins && (
@@ -838,7 +961,10 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
                   <h3 class="text-gray-300 font-semibold group-hover:text-white transition text-sm">{client.name}</h3>
                   <p class="text-[10px] text-gray-600">{client.domain}</p>
                 </div>
-                <span class={`text-[9px] px-1.5 py-0.5 rounded uppercase ${STATUS_PILL[st]}`}>{STATUS_LABEL[st]}</span>
+                <div class="flex items-center gap-1">
+                  {typeOf(client) && <span class={`text-[9px] px-1.5 py-0.5 rounded uppercase ${typeOf(client)!.pill}`}>{typeOf(client)!.label}</span>}
+                  <span class={`text-[9px] px-1.5 py-0.5 rounded uppercase ${STATUS_PILL[st]}`}>{STATUS_LABEL[st]}</span>
+                </div>
               </div>
               <div class="flex gap-4 text-[10px] text-gray-500">
                 <span>{h.pages} pages</span>
@@ -856,6 +982,7 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
               <p class="text-xs text-gray-400">{client.domain} · {h.pages} pages</p>
             </div>
             <div class="flex items-center gap-2">
+              {typeOf(client) && <span class={`text-[9px] px-1.5 py-0.5 rounded uppercase ${typeOf(client)!.pill}`}>{typeOf(client)!.label}</span>}
               <span class={`text-[9px] px-1.5 py-0.5 rounded uppercase ${STATUS_PILL[st]}`}>{STATUS_LABEL[st]}</span>
               {h.recsCritical > 0 && <span class="text-[9px] px-1.5 py-0.5 rounded bg-red-900 text-red-300">{h.recsCritical} critical</span>}
               {h.recsTotal > 0 && !h.recsCritical && <span class="text-[9px] px-1.5 py-0.5 rounded bg-yellow-900 text-yellow-300">{h.recsTotal} fixes</span>}
@@ -1088,6 +1215,60 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
           btn.classList.remove('text-gray-400');
           apply(btn.getAttribute('data-period'));
         });
+      });
+    })();
+
+    // Sortable headers — click any Quick View column header to sort high/low. Arrows (↕ ▲ ▼) show state.
+    (function () {
+      var tbody = document.getElementById('fqv-tbody');
+      if (!tbody) return;
+      var table = tbody.closest('table');
+      if (!table) return;
+      var ths = Array.prototype.slice.call(table.querySelectorAll('thead th'));
+      var state = { col: -1, dir: 1 };
+      function cellText(row, idx) {
+        var c = row.children[idx];
+        return c ? (c.textContent || '').trim() : '';
+      }
+      function toNum(t) {
+        if (t === '' || t === '—') return null;
+        var n = parseFloat(t.replace(/[,%]/g, ''));
+        return isNaN(n) ? null : n;
+      }
+      function sortBy(idx) {
+        state = { col: idx, dir: state.col === idx ? -state.dir : 1 };
+        var rows = Array.prototype.slice.call(tbody.querySelectorAll('tr[data-site]'));
+        rows.sort(function (a, b) {
+          var va = cellText(a, idx), vb = cellText(b, idx);
+          var na = toNum(va), nb = toNum(vb), cmp;
+          if (na !== null && nb !== null) cmp = na - nb;
+          else cmp = va.toLowerCase().localeCompare(vb.toLowerCase());
+          return cmp * state.dir;
+        });
+        rows.forEach(function (r) {
+          tbody.appendChild(r);
+          var det = tbody.querySelector('tr[data-detail="' + r.getAttribute('data-site') + '"]');
+          if (det) tbody.appendChild(det);
+        });
+        ths.forEach(function (th, i) {
+          var ar = th.querySelector('.fqv-arrow');
+          if (ar) {
+            ar.textContent = i === idx ? (state.dir > 0 ? ' ▲' : ' ▼') : ' ↕';
+            ar.className = 'fqv-arrow ' + (i === idx ? 'text-indigo-300' : 'text-gray-600');
+          }
+        });
+      }
+      ths.forEach(function (th, i) {
+        if (i === 0) return; // skip the ▸ expander column
+        th.style.cursor = 'pointer';
+        th.classList.add('select-none');
+        if (!th.querySelector('.fqv-arrow')) {
+          var ar = document.createElement('span');
+          ar.className = 'fqv-arrow text-gray-600';
+          ar.textContent = ' ↕';
+          th.appendChild(ar);
+        }
+        th.addEventListener('click', function () { sortBy(i); });
       });
     })();
   </script>

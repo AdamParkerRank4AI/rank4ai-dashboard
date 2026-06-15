@@ -1,0 +1,150 @@
+---
+/**
+ * PerSiteEnhancementsTile — the persistent, per-site action queue.
+ *
+ * Reads the durable ledger (enhancement_backlog.json, built by
+ * scripts/build_enhancement_backlog.py) rather than the raw snapshot feeds, so:
+ *   - it shows the BACKLOG (incl. opportunities first seen weeks ago, surfaced
+ *     via the gsc_history backfill) with a "since <date>" age, not just today
+ *   - DONE items drop out (tracked in enhancement_done.json by stable id), so the
+ *     copy box only ever emits what's still open
+ *   - a "Copy open items" button gives you a markdown checklist (with links + ids)
+ *     to paste straight into a working session; mark items done afterwards with
+ *     scripts/mark_enhancement_done.py <id> --note "..."
+ *
+ * Board-filtered: only this board's sites (fleet vs current).
+ */
+import fs from 'node:fs';
+import path from 'node:path';
+import clients from '../utils/dashboardClients';
+
+function loadJson(filename: string) {
+  try {
+    const fp = path.join(process.cwd(), 'src', 'data', 'live', filename);
+    if (fs.existsSync(fp)) return JSON.parse(fs.readFileSync(fp, 'utf-8'));
+  } catch {}
+  return null;
+}
+
+const boardClients = clients as any[];
+const clientIds = new Set(boardClients.map((c) => c.id));
+const nameOf = (id: string) => boardClients.find((c) => c.id === id)?.name || id;
+
+const KIND_META: Record<string, { label: string; pill: string }> = {
+  index:       { label: 'Indexing',     pill: 'bg-red-950 text-red-300' },
+  consolidate: { label: 'Consolidate',  pill: 'bg-amber-950 text-amber-300' },
+  rank:        { label: 'Rank win',     pill: 'bg-emerald-950 text-emerald-300' },
+  decay:       { label: 'Losing clicks', pill: 'bg-rose-950 text-rose-300' },
+  cro:         { label: 'Conversion',   pill: 'bg-orange-950 text-orange-300' },
+  hygiene:     { label: 'Hygiene',      pill: 'bg-slate-800 text-slate-300' },
+};
+
+const bl = loadJson('enhancement_backlog.json') ?? { items: [], generated_at: null, done_count: 0 };
+const allOpen = (bl.items ?? []).filter((i: any) => i.status !== 'done' && clientIds.has(i.site));
+const doneForBoard = (bl.items ?? []).filter((i: any) => i.status === 'done' && clientIds.has(i.site)).length;
+
+const todayMs = Date.now();
+function ageDays(firstSeen: string): number {
+  const t = Date.parse(firstSeen);
+  return Number.isNaN(t) ? 0 : Math.max(0, Math.round((todayMs - t) / 86400000));
+}
+
+// Group by site, ranked by total score
+const grouped = [...clientIds]
+  .map((id) => {
+    const items = allOpen.filter((i: any) => i.site === id).sort((a: any, b: any) => (b.score ?? 0) - (a.score ?? 0));
+    return { id, name: nameOf(id), items, total: items.reduce((s: number, a: any) => s + (a.score ?? 0), 0) };
+  })
+  .filter((s) => s.items.length)
+  .sort((a, b) => b.total - a.total);
+
+const totalOpen = allOpen.length;
+const staleCount = allOpen.filter((i: any) => ageDays(i.first_seen) >= 14).length;
+
+// Build the copy-into-a-session checklist (markdown, with ids + links)
+const lines: string[] = [
+  `Per-site enhancements — ${totalOpen} open items`,
+  `(do the work, then: python3 scripts/mark_enhancement_done.py <id> ... --note "what you did")`,
+  '',
+];
+for (const s of grouped) {
+  lines.push(`## ${s.name}`);
+  for (const it of s.items) {
+    const age = ageDays(it.first_seen);
+    lines.push(`- [ ] (${it.id}) ${it.label} — ${it.metric}${age ? ` — open ${age}d (since ${it.first_seen})` : ''}`);
+    if (it.link) lines.push(`      ${it.link}`);
+  }
+  lines.push('');
+}
+const checklist = lines.join('\n');
+---
+<section data-copy-tile="Per-site enhancements" class="rounded-xl bg-slate-900 text-slate-100 p-6 my-6 border border-slate-800">
+  <div class="flex items-baseline justify-between flex-wrap gap-2 mb-1">
+    <h2 class="text-lg font-bold">Per-site enhancements</h2>
+    <span class="text-xs text-slate-400">Persistent backlog · ranked · marks done · {bl.generated_at ? new Date(bl.generated_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }) : ''}</span>
+  </div>
+
+  {totalOpen === 0 ? (
+    <p class="text-sm text-slate-400 mt-3">No open enhancements for this board's sites. {doneForBoard ? `${doneForBoard} marked done.` : ''}</p>
+  ) : (
+    <>
+      <div class="my-3 flex items-center gap-4 flex-wrap">
+        <p class="text-sm text-slate-300">
+          <span class="text-2xl font-bold text-emerald-300">{totalOpen}</span>
+          <span class="text-slate-400"> open across {grouped.length} sites</span>
+          {staleCount > 0 && <span class="text-amber-300"> · {staleCount} open 14d+</span>}
+          {doneForBoard > 0 && <span class="text-slate-500"> · {doneForBoard} done</span>}
+        </p>
+        <button data-enh-copy class="text-xs px-3 py-1.5 bg-emerald-700 hover:bg-emerald-600 text-white rounded transition">Copy open items</button>
+      </div>
+
+      <div class="max-h-[28rem] overflow-y-auto pr-1 space-y-4">
+        {grouped.map((s) => (
+          <div class="rounded-lg border border-slate-800 bg-slate-950/40 p-4">
+            <div class="flex items-baseline justify-between mb-2 sticky top-0 bg-slate-950/80 backdrop-blur -mx-4 -mt-4 px-4 pt-4 pb-2">
+              <h3 class="font-semibold text-white">{s.name}</h3>
+              <span class="text-[11px] text-slate-500">{s.items.length} open</span>
+            </div>
+            <ol class="space-y-2">
+              {s.items.map((a: any) => {
+                const age = ageDays(a.first_seen);
+                return (
+                  <li class="text-sm">
+                    <div class="flex items-start gap-2">
+                      <span class={`text-[9px] uppercase font-bold px-1.5 py-0.5 rounded shrink-0 mt-0.5 ${KIND_META[a.kind]?.pill || 'bg-slate-800 text-slate-300'}`}>{KIND_META[a.kind]?.label || a.kind}</span>
+                      <div class="min-w-0 flex-1">
+                        <div class="text-slate-100 leading-snug">{a.label}</div>
+                        <div class="text-[11px] text-slate-500">
+                          {a.detail} · <span class="text-slate-400">{a.metric}</span>
+                          {age >= 14 && <span class="text-amber-400"> · open {age}d</span>}
+                          {a.link && <span class="text-slate-600"> · <span class="font-mono">{a.link}</span></span>}
+                        </div>
+                      </div>
+                      <span class="text-[9px] text-slate-600 font-mono shrink-0 mt-0.5">{a.id}</span>
+                    </div>
+                  </li>
+                );
+              })}
+            </ol>
+          </div>
+        ))}
+      </div>
+      <p class="text-[11px] text-slate-500 mt-3">Scroll the box, hit <span class="text-emerald-300">Copy open items</span>, paste into a session. Each row carries its id — mark finished ones done so they drop off next refresh. Items first seen weeks ago show their age (backfilled from GSC history).</p>
+      <pre id="enh-copy-src" class="hidden" set:text={checklist}></pre>
+    </>
+  )}
+</section>
+
+<script is:inline>
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest && e.target.closest('[data-enh-copy]');
+    if (!btn) return;
+    const src = document.getElementById('enh-copy-src');
+    if (!src) return;
+    navigator.clipboard.writeText(src.textContent || '').then(() => {
+      const prev = btn.textContent;
+      btn.textContent = 'Copied ✓';
+      setTimeout(() => { btn.textContent = prev; }, 1500);
+    });
+  });
+</script>

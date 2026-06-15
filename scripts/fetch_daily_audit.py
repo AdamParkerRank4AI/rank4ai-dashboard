@@ -26,12 +26,17 @@ SITE_ID_MAP = {
     "Rank4AI": "rank4ai",
     "Market Invoice": "market-invoice",
     "SEO Compare": "seocompare",
-    "Rochelle Marashi Therapy": "rochellemarashi",
+    # Rochelle Marashi Therapy — legacy client, removed from clients.json; dropped
+    # here so the daily audit stops regenerating an orphaned daily_audit_rochellemarashi.json.
     "Best Business Loans": "bestbusinessloans",
     "FundBiz": "fundbiz",
     "AcceptCard": "cardmachines",
-    # Added 18 May 2026 — fleet expanded with MerchantHQ rebrand + 2 new sites.
-    "MerchantHQ": "merchanthq",
+    # MerchantHQ is the rebrand of AcceptCard (18 May 2026) but the dashboard
+    # client id stayed "cardmachines" — every other feed (gsc/ga4/crawl/leads)
+    # keys on it. Map the new brand name to the SAME id so the daily audit lands
+    # in daily_audit_cardmachines.json (what the dashboard reads) instead of an
+    # orphaned daily_audit_merchanthq.json that nothing renders.
+    "MerchantHQ": "cardmachines",
     "PeptideClear": "peptideclear",
     "Kartapay": "kartapay",
 }

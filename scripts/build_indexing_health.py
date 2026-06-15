@@ -63,7 +63,31 @@ def submission_breakdown(submissions, since=None):
     }
 
 
-def site_health(site_id, log_data, activity_last_run, coverage_data, queue_data):
+# The per-URL Google log (google_indexing_log.json) froze on 20 May, but indexing
+# is NOT dead: the Google Indexing API rollup (indexing_activity.json) and IndexNow
+# (indexnow_log.json) both submit daily. Counting only the stale per-URL log made the
+# dashboard falsely report "no submissions today / last 20 May". These two helpers let
+# site_health treat the rollup + IndexNow as real submission evidence.
+# The activity rollup keys cardmachines as "merchanthq" — alias so the lookup hits.
+ROLLUP_ALIAS = {"cardmachines": "merchanthq"}
+
+
+def indexnow_recency(indexnow_log, site_id):
+    """Latest IndexNow submitted_at + count-today for a site, across the append log."""
+    last_at, today_n = None, 0
+    for entry in (indexnow_log or []):
+        for sid, r in (entry.get("results") or {}).items():
+            if sid != site_id:
+                continue
+            at = r.get("submitted_at") or entry.get("date")
+            if at and (last_at is None or at > last_at):
+                last_at = at
+            if at and at[:10] == TODAY_STR and (r.get("submitted") or 0) > 0:
+                today_n += r.get("submitted") or 0
+    return last_at, today_n
+
+
+def site_health(site_id, log_data, activity_last_run, coverage_data, queue_data, indexnow_log=None):
     submissions = (log_data.get(site_id) or {}).get("submissions", [])
 
     # Per-URL ground truth (last 500 entries kept by submit_google_indexing.py)
@@ -72,8 +96,14 @@ def site_health(site_id, log_data, activity_last_run, coverage_data, queue_data)
     last_7d = submission_breakdown(submissions, since=seven_days_ago)
     all_time = submission_breakdown(submissions)
 
-    # Activity rollup view (what the script *thinks* happened — kept for diff)
-    activity_today = (activity_last_run.get("per_site") or {}).get(site_id, {}) if activity_last_run else {}
+    # Activity rollup view (Google Indexing API daily run) — alias cardmachines→merchanthq
+    rollup_key = ROLLUP_ALIAS.get(site_id, site_id)
+    activity_today = (activity_last_run.get("per_site") or {}).get(rollup_key, {}) if activity_last_run else {}
+    rollup_run_at = activity_last_run.get("run_at") if activity_last_run else None
+    rollup_success = activity_today.get("success", 0) or 0
+
+    # IndexNow (Bing/Yandex) recency
+    indexnow_last, indexnow_today = indexnow_recency(indexnow_log, site_id)
 
     # GSC coverage — only present where Adam has uploaded an XLSX
     coverage = (coverage_data.get(site_id) or {}).get("coverage")
@@ -81,13 +111,22 @@ def site_health(site_id, log_data, activity_last_run, coverage_data, queue_data)
     # Manual queue
     queue = (queue_data.get("per_site") or {}).get(site_id, {}) if queue_data else {}
 
-    # Last submission timestamp (regardless of status)
-    last_sub = submissions[-1].get("submitted_at") if submissions else None
+    # Effective submission signal: the stale per-URL log is only ONE source. Count
+    # the Google API rollup + IndexNow so "submitted today" reflects reality.
+    submitted_today_eff = today["submitted"] + rollup_success + indexnow_today
+
+    # Most-recent submission across all three sources
+    candidates = [
+        submissions[-1].get("submitted_at") if submissions else None,
+        rollup_run_at if rollup_success else None,
+        indexnow_last,
+    ]
+    last_sub = max([c for c in candidates if c], default=None)
 
     # Status assessment
     reasons = []
     status = "healthy"
-    if today["submitted"] == 0:
+    if submitted_today_eff == 0:
         status = "warning"
         reasons.append("No submissions recorded today")
     elif today["success_rate"] is not None:
@@ -109,6 +148,9 @@ def site_health(site_id, log_data, activity_last_run, coverage_data, queue_data)
         "last_7d": last_7d,
         "all_time": all_time,
         "activity_rollup_today": activity_today,
+        "indexnow_today": indexnow_today,
+        "indexnow_last_at": indexnow_last,
+        "submitted_today_effective": submitted_today_eff,
         "last_submission_at": last_sub,
         "gsc_coverage": coverage,
         "manual_queue": {
@@ -126,12 +168,13 @@ def main():
     activity, _ = load_json("indexing_activity.json", {})
     coverage_data, _ = load_json("gsc_coverage.json", {})
     queue_data, _ = load_json("manual_indexing_queue.json", {})
+    indexnow_log, _ = load_json("indexnow_log.json", [])
 
     activity_last_run = activity.get("last_run") if isinstance(activity, dict) else None
 
     per_site = {}
     for site in SITES:
-        per_site[site] = site_health(site, log_data, activity_last_run, coverage_data, queue_data)
+        per_site[site] = site_health(site, log_data, activity_last_run, coverage_data, queue_data, indexnow_log)
 
     # Fleet summary
     total_today = sum(per_site[s]["today"]["submitted"] for s in SITES)

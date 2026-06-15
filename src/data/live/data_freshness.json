@@ -1,255 +1,1102 @@
 {
-  "checked_at": "2026-05-20T09:47:16.438272",
+  "checked_at": "2026-06-15T11:47:12.242315",
   "summary": {
-    "fresh": 25,
-    "stale": 2,
-    "very_stale": 0,
+    "fresh": 83,
+    "stale": 17,
+    "very_stale": 9,
     "missing": 0,
-    "total": 27
+    "total": 109
   },
   "feeds": [
     {
-      "file": "google_trends.json",
-      "label": "Google Trends",
+      "file": "agency_database.json",
+      "label": "agency_database",
+      "status": "very_stale",
+      "age_hours": 1557.5,
+      "ts": "2026-04-11T14:16:50.824333",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "agency_rankings.json",
+      "label": "agency_rankings",
+      "status": "very_stale",
+      "age_hours": 1557.3,
+      "ts": "2026-04-11T14:28:32.550063",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "vernacular_cardmachines.json",
+      "label": "vernacular_cardmachines",
+      "status": "very_stale",
+      "age_hours": 842.5,
+      "ts": "2026-05-11T09:15:05.126484",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "site_structure_resiliencebuilder.json",
+      "label": "site_structure_resiliencebuilder",
+      "status": "very_stale",
+      "age_hours": 814.4,
+      "ts": "2026-05-12T13:23:27.690200",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "site_structure_adhdhelper.json",
+      "label": "site_structure_adhdhelper",
+      "status": "very_stale",
+      "age_hours": 182.6,
+      "ts": "2026-06-07T21:13:37.572785",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "site_structure_homesandhedge.json",
+      "label": "site_structure_homesandhedge",
+      "status": "very_stale",
+      "age_hours": 182.5,
+      "ts": "2026-06-07T21:15:45.020206",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "site_structure_womenshealth.json",
+      "label": "site_structure_womenshealth",
+      "status": "very_stale",
+      "age_hours": 182.5,
+      "ts": "2026-06-07T21:14:29.559911",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "keyword_gaps.json",
+      "label": "keyword_gaps",
+      "status": "very_stale",
+      "age_hours": 169.1,
+      "ts": "2026-06-08T10:39:17.456147",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "site_structure_propertoasty.json",
+      "label": "site_structure_propertoasty",
+      "status": "very_stale",
+      "age_hours": 168.7,
+      "ts": "2026-06-08T11:06:48.940532",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "deploy_parity.json",
+      "label": "deploy_parity",
       "status": "stale",
-      "age_hours": 215.5,
-      "ts": "2026-05-11T10:16:57.235301",
-      "max_age_hours": 192,
-      "used_mtime_fallback": false
+      "age_hours": 121.4,
+      "ts": "2026-06-10T10:24:45.619469",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "entity_coherence.json",
+      "label": "entity_coherence",
+      "status": "stale",
+      "age_hours": 121.4,
+      "ts": "2026-06-10T10:24:45.621612",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "full_changelog.json",
+      "label": "full_changelog",
+      "status": "stale",
+      "age_hours": 121.4,
+      "ts": "2026-06-10T10:24:45.627982",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "google_indexing_log.json",
+      "label": "google_indexing_log",
+      "status": "stale",
+      "age_hours": 121.4,
+      "ts": "2026-06-10T10:24:45.629565",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "gsc_previous.json",
+      "label": "gsc_previous",
+      "status": "stale",
+      "age_hours": 121.4,
+      "ts": "2026-06-10T10:24:45.643295",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "site_changelog.json",
+      "label": "site_changelog",
+      "status": "stale",
+      "age_hours": 121.4,
+      "ts": "2026-06-10T10:24:45.684926",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "youtube_ai_citations.json",
+      "label": "youtube_ai_citations",
+      "status": "stale",
+      "age_hours": 121.4,
+      "ts": "2026-06-10T10:24:45.718272",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "youtube_ai_citations_history.json",
+      "label": "youtube_ai_citations_history",
+      "status": "stale",
+      "age_hours": 121.4,
+      "ts": "2026-06-10T10:24:45.721143",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "wikidata.json",
+      "label": "wikidata",
+      "status": "stale",
+      "age_hours": 121.3,
+      "ts": "2026-06-10T10:27:26.337304",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "content_plan_bestbusinessloans.json",
+      "label": "content_plan_bestbusinessloans",
+      "status": "stale",
+      "age_hours": 119.7,
+      "ts": "2026-06-10T12:04:46.539860",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "content_plan_cardmachines.json",
+      "label": "content_plan_cardmachines",
+      "status": "stale",
+      "age_hours": 119.7,
+      "ts": "2026-06-10T12:04:46.554914",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "content_plan_fundbiz.json",
+      "label": "content_plan_fundbiz",
+      "status": "stale",
+      "age_hours": 119.7,
+      "ts": "2026-06-10T12:04:46.555913",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "content_plan_market-invoice.json",
+      "label": "content_plan_market-invoice",
+      "status": "stale",
+      "age_hours": 119.7,
+      "ts": "2026-06-10T12:04:46.582362",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "content_plan_rank4ai.json",
+      "label": "content_plan_rank4ai",
+      "status": "stale",
+      "age_hours": 119.7,
+      "ts": "2026-06-10T12:04:46.598702",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "content_plan_seocompare.json",
+      "label": "content_plan_seocompare",
+      "status": "stale",
+      "age_hours": 119.7,
+      "ts": "2026-06-10T12:04:46.603010",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "gsc_coverage_drilldown.json",
+      "label": "gsc_coverage_drilldown",
+      "status": "stale",
+      "age_hours": 118.9,
+      "ts": "2026-06-10T12:52:52.554647",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "site_structure_invoicefinance.json",
+      "label": "site_structure_invoicefinance",
+      "status": "stale",
+      "age_hours": 74.8,
+      "ts": "2026-06-12T09:01:11.336188",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
     },
     {
       "file": "daily_audit_summary.json",
       "label": "Daily site audit",
-      "status": "stale",
-      "age_hours": 37.4,
-      "ts": "2026-05-18T20:26:07.483535",
+      "status": "fresh",
+      "age_hours": 21.9,
+      "ts": "2026-06-14T13:50:16.309505",
       "max_age_hours": 30,
-      "used_mtime_fallback": false
-    },
-    {
-      "file": "citation_results.json",
-      "label": "Citation baseline",
-      "status": "fresh",
-      "age_hours": 48.8,
-      "ts": "2026-05-18T09:01:29.358035",
-      "max_age_hours": 192,
-      "used_mtime_fallback": false
-    },
-    {
-      "file": "pagespeed.json",
-      "label": "PageSpeed (weekly)",
-      "status": "fresh",
-      "age_hours": 47.9,
-      "ts": "2026-05-18T09:55:54.201112",
-      "max_age_hours": 192,
-      "used_mtime_fallback": false
-    },
-    {
-      "file": "citations_by_type.json",
-      "label": "Citation by type",
-      "status": "fresh",
-      "age_hours": 46.3,
-      "ts": "2026-05-18T11:28:27.361097",
-      "max_age_hours": 192,
-      "used_mtime_fallback": false
+      "used_mtime_fallback": false,
+      "tier": "core"
     },
     {
       "file": "bot_hits.json",
       "label": "AI bot hits",
       "status": "fresh",
-      "age_hours": 1.8,
-      "ts": "2026-05-20T08:01:31.893482",
+      "age_hours": 6.8,
+      "ts": "2026-06-15T05:01:47.025610",
       "max_age_hours": 30,
-      "used_mtime_fallback": false
+      "used_mtime_fallback": false,
+      "tier": "core"
     },
     {
       "file": "mi_leads.json",
       "label": "MI leads (Supabase)",
       "status": "fresh",
-      "age_hours": 1.6,
-      "ts": "2026-05-20T08:12:01.530432",
+      "age_hours": 6.6,
+      "ts": "2026-06-15T05:10:34.046676",
       "max_age_hours": 30,
-      "used_mtime_fallback": false
+      "used_mtime_fallback": false,
+      "tier": "core"
     },
     {
       "file": "bbl_leads.json",
       "label": "BBL leads (Supabase)",
       "status": "fresh",
-      "age_hours": 1.6,
-      "ts": "2026-05-20T08:12:01.530432",
+      "age_hours": 6.6,
+      "ts": "2026-06-15T05:10:34.046676",
       "max_age_hours": 30,
-      "used_mtime_fallback": false
+      "used_mtime_fallback": false,
+      "tier": "core"
     },
     {
       "file": "fundbiz_leads.json",
       "label": "FundBiz leads (Supabase)",
       "status": "fresh",
-      "age_hours": 1.6,
-      "ts": "2026-05-20T08:12:01.530432",
+      "age_hours": 6.6,
+      "ts": "2026-06-15T05:10:34.046676",
       "max_age_hours": 30,
-      "used_mtime_fallback": false
+      "used_mtime_fallback": false,
+      "tier": "core"
     },
     {
       "file": "cardmachines_leads.json",
       "label": "AcceptCard leads (Supabase)",
       "status": "fresh",
-      "age_hours": 1.6,
-      "ts": "2026-05-20T08:12:01.530432",
+      "age_hours": 6.6,
+      "ts": "2026-06-15T05:10:34.046676",
       "max_age_hours": 30,
-      "used_mtime_fallback": false
+      "used_mtime_fallback": false,
+      "tier": "core"
+    },
+    {
+      "file": "ga4.json",
+      "label": "GA4 (traffic)",
+      "status": "fresh",
+      "age_hours": 5.8,
+      "ts": "2026-06-15T06:00:22.999977",
+      "max_age_hours": 30,
+      "used_mtime_fallback": false,
+      "tier": "core"
+    },
+    {
+      "file": "gsc.json",
+      "label": "GSC (search perf)",
+      "status": "fresh",
+      "age_hours": 5.8,
+      "ts": "2026-06-15T06:01:02.184572",
+      "max_age_hours": 30,
+      "used_mtime_fallback": false,
+      "tier": "core"
+    },
+    {
+      "file": "bing.json",
+      "label": "Bing Webmaster",
+      "status": "fresh",
+      "age_hours": 5.8,
+      "ts": "2026-06-15T06:01:12.255670",
+      "max_age_hours": 30,
+      "used_mtime_fallback": false,
+      "tier": "core"
+    },
+    {
+      "file": "uptime.json",
+      "label": "Uptime",
+      "status": "fresh",
+      "age_hours": 5.8,
+      "ts": "2026-06-15T06:00:09.839577",
+      "max_age_hours": 30,
+      "used_mtime_fallback": false,
+      "tier": "core"
+    },
+    {
+      "file": "crawl_activity.json",
+      "label": "Bing crawl stats",
+      "status": "fresh",
+      "age_hours": 5.8,
+      "ts": "2026-06-15T06:01:41.131130",
+      "max_age_hours": 30,
+      "used_mtime_fallback": false,
+      "tier": "core"
+    },
+    {
+      "file": "competitor_serp.json",
+      "label": "Competitor SERP",
+      "status": "fresh",
+      "age_hours": 5.8,
+      "ts": "2026-06-15T06:02:05.795777",
+      "max_age_hours": 30,
+      "used_mtime_fallback": false,
+      "tier": "core"
+    },
+    {
+      "file": "recommendations.json",
+      "label": "Recommendations",
+      "status": "fresh",
+      "age_hours": 5.7,
+      "ts": "2026-06-15T06:02:53.533251",
+      "max_age_hours": 30,
+      "used_mtime_fallback": false,
+      "tier": "core"
+    },
+    {
+      "file": "new_pages.json",
+      "label": "New-page scan",
+      "status": "fresh",
+      "age_hours": 5.7,
+      "ts": "2026-06-15T06:02:53.241353",
+      "max_age_hours": 30,
+      "used_mtime_fallback": false,
+      "tier": "core"
+    },
+    {
+      "file": "google_trends.json",
+      "label": "Google Trends",
+      "status": "fresh",
+      "age_hours": 5.7,
+      "ts": "2026-06-15T06:02:54.767718",
+      "max_age_hours": 192,
+      "used_mtime_fallback": false,
+      "tier": "core"
+    },
+    {
+      "file": "ai_audit.json",
+      "label": "AI audit",
+      "status": "fresh",
+      "age_hours": 5.6,
+      "ts": "2026-06-15T06:10:09.550594",
+      "max_age_hours": 30,
+      "used_mtime_fallback": false,
+      "tier": "core"
+    },
+    {
+      "file": "pagespeed.json",
+      "label": "PageSpeed (weekly)",
+      "status": "fresh",
+      "age_hours": 5.6,
+      "ts": "2026-06-15T06:09:56.563483",
+      "max_age_hours": 192,
+      "used_mtime_fallback": false,
+      "tier": "core"
+    },
+    {
+      "file": "citations_by_type.json",
+      "label": "Citation by type",
+      "status": "fresh",
+      "age_hours": 5.6,
+      "ts": "2026-06-15T06:09:57.326723",
+      "max_age_hours": 192,
+      "used_mtime_fallback": false,
+      "tier": "core"
+    },
+    {
+      "file": "kartapay_leads.json",
+      "label": "kartapay_leads",
+      "status": "fresh",
+      "age_hours": 5.6,
+      "ts": "2026-06-15T06:10:35.343567",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "peptideclear_leads.json",
+      "label": "peptideclear_leads",
+      "status": "fresh",
+      "age_hours": 5.6,
+      "ts": "2026-06-15T06:10:35.658630",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "citation_results.json",
+      "label": "Citation baseline",
+      "status": "fresh",
+      "age_hours": 4.1,
+      "ts": "2026-06-15T07:38:36.820874",
+      "max_age_hours": 192,
+      "used_mtime_fallback": false,
+      "tier": "core"
     },
     {
       "file": "crawl_rank4ai.json",
       "label": "R4 site crawl",
       "status": "fresh",
       "age_hours": 1.1,
-      "ts": "2026-05-20T08:42:41.688824",
+      "ts": "2026-06-15T10:43:24.519194",
       "max_age_hours": 30,
-      "used_mtime_fallback": false
+      "used_mtime_fallback": false,
+      "tier": "core"
     },
     {
       "file": "crawl_market-invoice.json",
       "label": "MI site crawl",
       "status": "fresh",
       "age_hours": 1.1,
-      "ts": "2026-05-20T08:42:36.427836",
+      "ts": "2026-06-15T10:43:19.248165",
       "max_age_hours": 30,
-      "used_mtime_fallback": false
+      "used_mtime_fallback": false,
+      "tier": "core"
     },
     {
       "file": "crawl_seocompare.json",
       "label": "SC site crawl",
       "status": "fresh",
       "age_hours": 1.1,
-      "ts": "2026-05-20T08:42:38.383852",
+      "ts": "2026-06-15T10:43:21.037273",
       "max_age_hours": 30,
-      "used_mtime_fallback": false
-    },
-    {
-      "file": "ga4.json",
-      "label": "GA4 (traffic)",
-      "status": "fresh",
-      "age_hours": 0.8,
-      "ts": "2026-05-20T09:00:18.376151",
-      "max_age_hours": 30,
-      "used_mtime_fallback": false
-    },
-    {
-      "file": "gsc.json",
-      "label": "GSC (search perf)",
-      "status": "fresh",
-      "age_hours": 0.8,
-      "ts": "2026-05-20T09:00:57.410598",
-      "max_age_hours": 30,
-      "used_mtime_fallback": false
-    },
-    {
-      "file": "bing.json",
-      "label": "Bing Webmaster",
-      "status": "fresh",
-      "age_hours": 0.8,
-      "ts": "2026-05-20T09:01:02.098361",
-      "max_age_hours": 30,
-      "used_mtime_fallback": false
-    },
-    {
-      "file": "uptime.json",
-      "label": "Uptime",
-      "status": "fresh",
-      "age_hours": 0.8,
-      "ts": "2026-05-20T09:00:07.013916",
-      "max_age_hours": 30,
-      "used_mtime_fallback": false
-    },
-    {
-      "file": "crawl_activity.json",
-      "label": "Bing crawl stats",
-      "status": "fresh",
-      "age_hours": 0.8,
-      "ts": "2026-05-20T09:01:26.065217",
-      "max_age_hours": 30,
-      "used_mtime_fallback": false
+      "used_mtime_fallback": false,
+      "tier": "core"
     },
     {
       "file": "knowledge_graph.json",
       "label": "Knowledge Graph",
       "status": "fresh",
-      "age_hours": 0.7,
-      "ts": "2026-05-20T09:02:35.021655",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.661606",
       "max_age_hours": 30,
-      "used_mtime_fallback": true
+      "used_mtime_fallback": true,
+      "tier": "core"
     },
     {
       "file": "nlp_entities.json",
       "label": "NLP entities",
       "status": "fresh",
-      "age_hours": 0.7,
-      "ts": "2026-05-20T09:02:22.522473",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.670514",
       "max_age_hours": 30,
-      "used_mtime_fallback": true
+      "used_mtime_fallback": true,
+      "tier": "core"
     },
     {
       "file": "ai_overview_serp.json",
       "label": "AI Overviews SERP",
       "status": "fresh",
-      "age_hours": 0.6,
-      "ts": "2026-05-20T09:09:43.653726",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.620416",
       "max_age_hours": 30,
-      "used_mtime_fallback": true
-    },
-    {
-      "file": "recommendations.json",
-      "label": "Recommendations",
-      "status": "fresh",
-      "age_hours": 0.6,
-      "ts": "2026-05-20T09:12:00.883138",
-      "max_age_hours": 30,
-      "used_mtime_fallback": false
-    },
-    {
-      "file": "competitor_serp.json",
-      "label": "Competitor SERP",
-      "status": "fresh",
-      "age_hours": 0.6,
-      "ts": "2026-05-20T09:10:47.101827",
-      "max_age_hours": 30,
-      "used_mtime_fallback": false
-    },
-    {
-      "file": "new_pages.json",
-      "label": "New-page scan",
-      "status": "fresh",
-      "age_hours": 0.6,
-      "ts": "2026-05-20T09:12:01.103518",
-      "max_age_hours": 30,
-      "used_mtime_fallback": false
+      "used_mtime_fallback": true,
+      "tier": "core"
     },
     {
       "file": "serp_data.json",
       "label": "SERP data",
       "status": "fresh",
-      "age_hours": 0.6,
-      "ts": "2026-05-20T09:10:32.021183",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.672314",
       "max_age_hours": 30,
-      "used_mtime_fallback": true
+      "used_mtime_fallback": true,
+      "tier": "core"
     },
     {
       "file": "citation_prompts.json",
       "label": "Citation prompts",
       "status": "fresh",
-      "age_hours": 0.6,
-      "ts": "2026-05-20T09:12:01.418278",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.628920",
       "max_age_hours": 30,
-      "used_mtime_fallback": true
+      "used_mtime_fallback": true,
+      "tier": "core"
     },
     {
-      "file": "ai_audit.json",
-      "label": "AI audit",
+      "file": "aeo_scorecard.json",
+      "label": "aeo_scorecard",
       "status": "fresh",
       "age_hours": 0.1,
-      "ts": "2026-05-20T09:44:05.137808",
-      "max_age_hours": 30,
-      "used_mtime_fallback": false
+      "ts": "2026-06-15T11:43:29.618397",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "cannibalisation.json",
+      "label": "cannibalisation",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.622335",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "cf_ai_crawls.json",
+      "label": "cf_ai_crawls",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.622693",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "clarity.json",
+      "label": "clarity",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.636764",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "clarity_pages.json",
+      "label": "clarity_pages",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.637147",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "cluster_decisions.json",
+      "label": "cluster_decisions",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.637651",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "content_decay.json",
+      "label": "content_decay",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.638501",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "content_freshness.json",
+      "label": "content_freshness",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.639122",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "conversion_leaks.json",
+      "label": "conversion_leaks",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.639739",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "crawl_bestbusinessloans.json",
+      "label": "crawl_bestbusinessloans",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:08.891043",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "crawl_builderweb.json",
+      "label": "crawl_builderweb",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:24.827246",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "crawl_cardmachines.json",
+      "label": "crawl_cardmachines",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:14.044908",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "crawl_findagym.json",
+      "label": "crawl_findagym",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:27.793629",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "crawl_findatradey.json",
+      "label": "crawl_findatradey",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:27.634601",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "crawl_fundbiz.json",
+      "label": "crawl_fundbiz",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:09.772027",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "crawl_peptideclear.json",
+      "label": "crawl_peptideclear",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:27.632658",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "crawl_takecardpayments.json",
+      "label": "crawl_takecardpayments",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:27.794014",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "daily_audit_bestbusinessloans.json",
+      "label": "daily_audit_bestbusinessloans",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.640475",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "daily_audit_cardmachines.json",
+      "label": "daily_audit_cardmachines",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.640867",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "daily_audit_fundbiz.json",
+      "label": "daily_audit_fundbiz",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.641876",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "daily_audit_history.json",
+      "label": "daily_audit_history",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.642267",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "daily_audit_kartapay.json",
+      "label": "daily_audit_kartapay",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.642800",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "daily_audit_market-invoice.json",
+      "label": "daily_audit_market-invoice",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.643128",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "daily_audit_peptideclear.json",
+      "label": "daily_audit_peptideclear",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.643453",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "daily_audit_rank4ai.json",
+      "label": "daily_audit_rank4ai",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.644282",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "daily_audit_seocompare.json",
+      "label": "daily_audit_seocompare",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.644927",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "daily_history.json",
+      "label": "daily_history",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.645809",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "drift_report.json",
+      "label": "drift_report",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.646487",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "feature_coverage.json",
+      "label": "feature_coverage",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.646818",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "fleet_baseline.json",
+      "label": "fleet_baseline",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.647356",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "fleet_baseline_audit.json",
+      "label": "fleet_baseline_audit",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.647747",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "fleet_bot_hits.json",
+      "label": "fleet_bot_hits",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.647996",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "gsc_daily.json",
+      "label": "gsc_daily",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.651593",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "gsc_history.json",
+      "label": "gsc_history",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.653517",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "gsc_indexed_history.json",
+      "label": "gsc_indexed_history",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.654105",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "indexing_activity.json",
+      "label": "indexing_activity",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.654609",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "indexing_health.json",
+      "label": "indexing_health",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.655283",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "indexing_status.json",
+      "label": "indexing_status",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.658075",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "indexnow_log.json",
+      "label": "indexnow_log",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.660134",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "intent_split.json",
+      "label": "intent_split",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.661280",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "llms_validation.json",
+      "label": "llms_validation",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.661918",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "manual_indexing_queue.json",
+      "label": "manual_indexing_queue",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.662237",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "podcast.json",
+      "label": "podcast",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.671379",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "striking_distance.json",
+      "label": "striking_distance",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.672804",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "syndication.json",
+      "label": "syndication",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.673275",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "target_queries.json",
+      "label": "target_queries",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.675587",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "title_lint.json",
+      "label": "title_lint",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.676064",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "top_linkers.json",
+      "label": "top_linkers",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.676484",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "upcoming_pages.json",
+      "label": "upcoming_pages",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.676813",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "uptime_history.json",
+      "label": "uptime_history",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.677727",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "wins_this_week.json",
+      "label": "wins_this_week",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.678418",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "youtube.json",
+      "label": "youtube",
+      "status": "fresh",
+      "age_hours": 0.1,
+      "ts": "2026-06-15T11:43:29.678813",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "enhancement_backlog.json",
+      "label": "enhancement_backlog",
+      "status": "fresh",
+      "age_hours": 0.0,
+      "ts": "2026-06-15T11:44:30.291005",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
+    },
+    {
+      "file": "enhancement_done.json",
+      "label": "enhancement_done",
+      "status": "fresh",
+      "age_hours": 0.0,
+      "ts": "2026-06-15T11:44:30.218466",
+      "max_age_hours": 48,
+      "used_mtime_fallback": true,
+      "tier": "auto"
     }
   ]
 }

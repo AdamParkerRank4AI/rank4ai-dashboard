@@ -12,6 +12,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import clients from '../utils/dashboardClients';
+
 function loadJson(filename: string) {
   try {
     const fp = path.join(process.cwd(), 'src', 'data', 'live', filename);
@@ -20,10 +22,14 @@ function loadJson(filename: string) {
   return null;
 }
 
+// Per-site table is filtered to THIS board's sites (rank4ai/resiliencebuilder
+// stay on the current board). Aggregate bot/recent rollups are left fleet-wide.
+const clientIds = new Set((clients as any[]).map((c) => c.id));
+
 const d = loadJson('fleet_bot_hits.json');
 const totals = d?.fleet_totals ?? { hits: 0, ai_bot_hits: 0, asset_hits: 0, distinct_bots: 0 };
 const byBot = (d?.by_bot ?? []).slice(0, 12);
-const bySite = d?.by_site ?? [];
+const bySite = (d?.by_site ?? []).filter((s: any) => clientIds.has(s.site));
 const assetReaders = d?.ai_asset_readers ?? [];
 const recent = (d?.recent ?? []).slice(0, 12);
 const win = d?.window_days ?? 30;

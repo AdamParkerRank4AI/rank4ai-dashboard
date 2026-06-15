@@ -5,6 +5,7 @@
     "domain": "rank4ai.co.uk",
     "logo": "",
     "flavour": "editorial",
+    "monetisation": "editorial",
     "dashboard": "current",
     "clientViewSections": [
       "ai-readiness",
@@ -42,6 +43,7 @@
     "liveDomain": "resiliencebuilder.co.uk",
     "logo": "",
     "flavour": "client",
+    "monetisation": "client",
     "dashboard": "current",
     "clientCode": "STEVE",
     "notes": "Steve Howe's resilience consultancy. Current WordPress site at resiliencebuilder.co.uk. New Astro build in ~/steve-site (3 candidate designs K1/K2/K3 + v4 refactor live at 49k.co.uk/demos/resiliencebuilder/). Domain not yet cut over. Siteplan focused on upgrades to existing pages + new pages we need to talk about (5-facet model, coach certification, case studies, governance).",
@@ -80,6 +82,8 @@
     "domain": "marketinvoice.co.uk",
     "logo": "",
     "flavour": "leadgen",
+    "monetisation": "leadgen",
+    "blurb": "UK invoice-finance comparison and data authority. Lead-gen.",
     "dashboard": "fleet",
     "clientViewSections": [
       "ai-readiness",
@@ -106,7 +110,8 @@
       "recommendations",
       "content-plan",
       "daily-audit",
-      "ecosystem"
+      "ecosystem",
+      "tools-calculators"
     ],
     "sections": [],
     "siteStatus": "live",
@@ -118,6 +123,7 @@
     "domain": "seocompare.co.uk",
     "logo": "",
     "flavour": "editorial",
+    "monetisation": "editorial",
     "dashboard": "fleet",
     "clientViewSections": [
       "ai-readiness",
@@ -156,6 +162,7 @@
     "liveDomain": "bestbusinessloans.ai",
     "logo": "",
     "flavour": "leadgen",
+    "monetisation": "leadgen",
     "dashboard": "fleet",
     "clientCode": "BBL",
     "notes": "LIVE since 8 May 2026 (custom domain bestbusinessloans.ai on CF Pages, RANK4AI account). Indexing API service account added as Owner 8 May. GSC verified. Daily fetchers can run.",
@@ -198,6 +205,7 @@
     "liveDomain": "fundbiz.co.uk",
     "logo": "",
     "flavour": "leadgen",
+    "monetisation": "leadgen",
     "dashboard": "fleet",
     "clientCode": "FUNDBIZ",
     "notes": "LIVE since 8 May 2026 (custom domain fundbiz.co.uk on CF Pages, RANK4AI account). GSC service-account Owner status still pending (Adam action). Daily fetchers can run, Indexing API blocked until ownership added.",
@@ -240,6 +248,8 @@
     "liveDomain": "merchanthq.co.uk",
     "logo": "",
     "flavour": "leadgen",
+    "monetisation": "leadgen",
+    "blurb": "UK card-machine and merchant-services comparison. Lead-gen.",
     "dashboard": "fleet",
     "clientCode": "CARDMACHINES",
     "notes": "Rebranded to MerchantHQ 18 May 2026 after TM concern on AcceptCard. Previously acceptcard.co.uk (live since 12 May), before that working name TakeCardPayments/CardMachines. Local at ~/cardmachines, repo AdamParkerRank4AI/cardmachines. CF Pages project: cardmachines (RANK4AI account), custom domain merchanthq.co.uk. ~400 pages including terminals, trade pages, high-risk verticals, faith institutions, vernacular bolt-ons.",
@@ -269,7 +279,8 @@
       "recommendations",
       "content-plan",
       "daily-audit",
-      "ecosystem"
+      "ecosystem",
+      "tools-calculators"
     ],
     "sections": [],
     "pre_launch": false,
@@ -283,6 +294,7 @@
     "liveDomain": "kartapay.co.uk",
     "logo": "",
     "flavour": "leadgen",
+    "monetisation": "leadgen",
     "dashboard": "fleet",
     "clientCode": "KP",
     "pre_launch": false,
@@ -321,94 +333,13 @@
     "sidebarOrder": 6
   },
   {
-    "id": "findatradey",
-    "name": "FindATradey",
-    "domain": "findatradey.pages.dev",
-    "liveDomain": "findatradey.co.uk",
-    "logo": "",
-    "flavour": "leadgen",
-    "dashboard": "fleet",
-    "clientCode": "FAT",
-    "pre_launch": true,
-    "notes": "FOLDING INTO Sorted Property /trades/ (findatradey.co.uk to 301 there at launch). Pre-launch. Local at ~/findatradey, repo AdamParkerRank4AI/findatradey. CF Pages live at findatradey.pages.dev. UK trade lead matching by Best Business Loans Ltd. 8 districts, 3 trades, 11 intents = 88 dynamic + 21 static = 109 URLs. Daily-audit/CWV fetchers should skip until preLaunch flips.",
-    "clientViewSections": [
-      "site-structure",
-      "site-manager",
-      "page-compliance",
-      "ai-readiness",
-      "uptime"
-    ],
-    "allSections": [
-      "overview",
-      "site-structure",
-      "ai-readiness",
-      "ai-citations",
-      "site-manager",
-      "page-compliance",
-      "traffic",
-      "search-performance",
-      "competitors",
-      "site-tree",
-      "uptime",
-      "site-speed",
-      "crawl-activity",
-      "recommendations",
-      "content-plan",
-      "daily-audit",
-      "ecosystem"
-    ],
-    "sections": [],
-    "siteStatus": "paused",
-    "sidebarOrder": 99
-  },
-  {
-    "id": "findagym",
-    "name": "FindAGym",
-    "domain": "findagym.pages.dev",
-    "liveDomain": "findagym.co.uk",
-    "logo": "",
-    "flavour": "leadgen",
-    "dashboard": "fleet",
-    "clientCode": "FAG",
-    "pre_launch": true,
-    "notes": "Pre-launch. Local at ~/findagym, repo AdamParkerRank4AI/findagym. CF Pages live at findagym.pages.dev. UK gym + fitness reviews by Best Business Loans Ltd. Colchester pilot, 35 URLs + 10 foundation. Differentiator: honest verdict + worst-for section on every review. Daily-audit/CWV fetchers should skip until preLaunch flips.",
-    "clientViewSections": [
-      "site-structure",
-      "site-manager",
-      "page-compliance",
-      "ai-readiness",
-      "uptime"
-    ],
-    "allSections": [
-      "overview",
-      "site-structure",
-      "ai-readiness",
-      "ai-citations",
-      "site-manager",
-      "page-compliance",
-      "traffic",
-      "search-performance",
-      "competitors",
-      "site-tree",
-      "uptime",
-      "site-speed",
-      "crawl-activity",
-      "recommendations",
-      "content-plan",
-      "daily-audit",
-      "ecosystem"
-    ],
-    "sections": [],
-    "siteStatus": "paused",
-    "sidebarOrder": 100
-  },
-  {
     "id": "builderweb",
     "name": "BuilderWeb",
     "domain": "builderweb.online",
     "liveDomain": "builderweb.online",
     "logo": "",
     "flavour": "saas",
+    "monetisation": "saas",
     "dashboard": "fleet",
     "clientCode": "BUILDERWEB",
     "notes": "Self-serve AI website builder. Marketing repo ~/builderweb-marketing (Adam-owned, builderweb.online). App repo ~/builderweb-app (Oliver-owned, app.builderweb.online). Old ~/lovinlovable repo is DORMANT.",
@@ -449,9 +380,11 @@
     "liveDomain": "peptideclear.co.uk",
     "logo": "",
     "flavour": "leadgen",
+    "monetisation": "leadgen",
+    "blurb": "UK peptide and GLP-1 research authority. Lead-gen.",
     "dashboard": "fleet",
     "clientCode": "PEPTIDECLEAR",
-    "notes": "LIVE 2026-05-18 at https://peptideclear.co.uk. Renamed from working name UK Metabolic. GitHub repo: AdamParkerRank4AI/peptideclear. CF Pages project: ukmetabolic (rename pending — Pages projects cannot be renamed via API). 268 pages. Brand: broad UK peptides hub covering cosmetic peptide skincare + ingestible collagen + research peptides + GLP-1 prescription routes. Editorial / affiliate, no own retail, single byline (Oliver Mackman), no clinical advice. CoA Trust Index is the moat. Operating company: Best Business Loans Ltd (16833937).",
+    "notes": "LIVE 2026-05-18 at https://peptideclear.co.uk. Renamed from working name UK Metabolic. GitHub repo: AdamParkerRank4AI/peptideclear. CF Pages project: ukmetabolic (rename pending \u2014 Pages projects cannot be renamed via API). 268 pages. Brand: broad UK peptides hub covering cosmetic peptide skincare + ingestible collagen + research peptides + GLP-1 prescription routes. Editorial / affiliate, no own retail, single byline (Oliver Mackman), no clinical advice. CoA Trust Index is the moat. Operating company: Best Business Loans Ltd (16833937).",
     "clientViewSections": [
       "site-structure",
       "site-manager",
@@ -494,7 +427,7 @@
         "label": "Toggle off CF Managed robots.txt (AI Audit)",
         "status": "TBD",
         "owner": "Adam",
-        "note": "CF injects Disallow rules for GPTBot/ClaudeBot/Google-Extended/CCBot above our Allow rules. CF Dashboard → Security → Settings → AI Audit. Critical for AI search indexability."
+        "note": "CF injects Disallow rules for GPTBot/ClaudeBot/Google-Extended/CCBot above our Allow rules. CF Dashboard \u2192 Security \u2192 Settings \u2192 AI Audit. Critical for AI search indexability."
       },
       {
         "id": "lead_destination",
@@ -505,7 +438,7 @@
       },
       {
         "id": "cf_pages_rename",
-        "label": "CF Pages project rename ukmetabolic → peptideclear",
+        "label": "CF Pages project rename ukmetabolic \u2192 peptideclear",
         "status": "deferred",
         "owner": "Claude",
         "note": "Pages projects cannot be renamed via API. Migrate (new project + bind domains + delete old) OR keep ukmetabolic as the internal .pages.dev URL since public traffic is on peptideclear.co.uk."
@@ -536,14 +469,14 @@
         "label": "Research peptide retailer affiliate apps",
         "status": "TBD",
         "owner": "Claude",
-        "note": "28 retailers in retailers.json. Priority: green-tier first (pure-peptides-uk, xl-peptides, imperial-peptides). Most don't run on affiliate networks — direct outreach."
+        "note": "28 retailers in retailers.json. Priority: green-tier first (pure-peptides-uk, xl-peptides, imperial-peptides). Most don't run on affiliate networks \u2014 direct outreach."
       },
       {
         "id": "affiliate_applications_glp1",
         "label": "GLP-1 clinic + pharmacy affiliate apps",
         "status": "TBD",
         "owner": "Claude",
-        "note": "Numan (£100 published), Voy, Manual, Juniper (high-touch clinics). Phlo, Pharmacy2U, SimplyMeds, Boots Online Doctor, Asda Online Doctor (low-touch pharmacies)."
+        "note": "Numan (\u00a3100 published), Voy, Manual, Juniper (high-touch clinics). Phlo, Pharmacy2U, SimplyMeds, Boots Online Doctor, Asda Online Doctor (low-touch pharmacies)."
       }
     ],
     "siteStatus": "live",
@@ -556,6 +489,7 @@
     "liveDomain": "nordiccentre.co.uk",
     "logo": "",
     "flavour": "client",
+    "monetisation": "client",
     "dashboard": "fleet",
     "clientCode": "NORDIC",
     "pre_launch": true,
@@ -595,6 +529,7 @@
     "domain": "49k.co.uk/legal-leadgen",
     "logo": "",
     "flavour": "leadgen",
+    "monetisation": "leadgen",
     "dashboard": "fleet",
     "clientViewSections": [
       "overview",
@@ -610,7 +545,8 @@
       "ecosystem"
     ],
     "sections": [],
-    "siteStatus": "live"
+    "siteStatus": "prelaunch",
+    "pre_launch": true
   },
   {
     "id": "womenshealth",
@@ -619,9 +555,11 @@
     "liveDomain": "hervitals.co.uk",
     "logo": "",
     "flavour": "editorial",
+    "monetisation": "banner+affiliate",
+    "blurb": "UK women's life-stage health and supplement authority. Editorial plus affiliate.",
     "dashboard": "fleet",
     "clientCode": "WH",
-    "notes": "BUILT + LIVE (preLaunch) hervitals.pages.dev. SCAFFOLDED + DEPLOYED 2026-06-08 to https://hervitals.pages.dev (info@rank4ai CF Pages, gate-green, patch-free fleet-core 95c9e3d0, BBL Ltd, Oliver byline, preLaunch noindex). GitHub: AdamParkerRank4AI/hervitals. BRAND DECIDED 7 Jun 2026: 'Her Vitals' (domain hervitals.co.uk, available + trademark-clear; replaces the Hearst-owned 'Women's Health' working name). Working name 'Women's Health' (placeholder — .com/.co.uk are Hearst-owned via the US magazine; expect rename before launch). UK women's life-stage health AFFILIATE AUTHORITY site (Wirecutter-shape). No own SKUs at launch — curates + reviews existing branded supplements (MyProtein / Bulk / Wild Nutrition / H&B / Boots / Form / Innermost / Vital Proteins / Ancient + Brave / Trinny London) via Amazon Associates + Awin + direct programs. 6 life-stage pillars (TTC -> prenatal -> postnatal -> perimenopause -> menopause -> senior) + 6 cross-stage SKU pillars (protein / creatine / pre-workout / magnesium / collagen / ashwagandha-ayurveda). The brand wedge: named UK RD + GP + strength coach + quarterly heavy-metals lab + annual UK perimenopause survey + the life-stage quiz. ~400-500k+/mo addressable UK. Sister to PeptideClear (men's athletic-longevity + peptide therapeutics). GitHub: AdamParkerRank4AI/womens-health. CF Pages project: womens-health (account 927d3dd61a9375f0c8185df7b2a1764e adam@muswellrose.com). Live at https://womens-health-1pt.pages.dev (scaffold only, June 2026). Research pack: iCloud/.../niche-attack-supplements-2026-05-29/. 49k research-presentation demo at 49k.co.uk/demos/perimenopause-stack/.",
+    "notes": "BUILT + LIVE (preLaunch) hervitals.pages.dev. SCAFFOLDED + DEPLOYED 2026-06-08 to https://hervitals.pages.dev (info@rank4ai CF Pages, gate-green, patch-free fleet-core 95c9e3d0, BBL Ltd, Oliver byline, preLaunch noindex). GitHub: AdamParkerRank4AI/hervitals. BRAND DECIDED 7 Jun 2026: 'Her Vitals' (domain hervitals.co.uk, available + trademark-clear; replaces the Hearst-owned 'Women's Health' working name). Working name 'Women's Health' (placeholder \u2014 .com/.co.uk are Hearst-owned via the US magazine; expect rename before launch). UK women's life-stage health AFFILIATE AUTHORITY site (Wirecutter-shape). No own SKUs at launch \u2014 curates + reviews existing branded supplements (MyProtein / Bulk / Wild Nutrition / H&B / Boots / Form / Innermost / Vital Proteins / Ancient + Brave / Trinny London) via Amazon Associates + Awin + direct programs. 6 life-stage pillars (TTC -> prenatal -> postnatal -> perimenopause -> menopause -> senior) + 6 cross-stage SKU pillars (protein / creatine / pre-workout / magnesium / collagen / ashwagandha-ayurveda). The brand wedge: named UK RD + GP + strength coach + quarterly heavy-metals lab + annual UK perimenopause survey + the life-stage quiz. ~400-500k+/mo addressable UK. Sister to PeptideClear (men's athletic-longevity + peptide therapeutics). GitHub: AdamParkerRank4AI/womens-health. CF Pages project: womens-health (account 927d3dd61a9375f0c8185df7b2a1764e adam@muswellrose.com). Live at https://womens-health-1pt.pages.dev (scaffold only, June 2026). Research pack: iCloud/.../niche-attack-supplements-2026-05-29/. 49k research-presentation demo at 49k.co.uk/demos/perimenopause-stack/.",
     "clientViewSections": [
       "overview",
       "site-tree",
@@ -646,7 +584,8 @@
       "recommendations",
       "content-plan",
       "daily-audit",
-      "ecosystem"
+      "ecosystem",
+      "tools-calculators"
     ],
     "sections": [],
     "pre_launch": true,
@@ -684,28 +623,28 @@
         "label": "Recruit named UK RD + menopause-specialist GP + Level-4 strength coach (freelance per-page)",
         "status": "TBD",
         "owner": "Adam",
-        "note": "AfN-registered RD (£100-200/page) + BMS-affiliated GP NOT Louise Newson (£200-400/page) + CIMSPA Level-4 coach (£100-200/page). Editorial team brief in 49k demo at /demos/perimenopause-stack/manufacturer-brief.html (page is titled 'Editorial Team Brief' despite the filename). Y1 budget £6-17k."
+        "note": "AfN-registered RD (\u00a3100-200/page) + BMS-affiliated GP NOT Louise Newson (\u00a3200-400/page) + CIMSPA Level-4 coach (\u00a3100-200/page). Editorial team brief in 49k demo at /demos/perimenopause-stack/manufacturer-brief.html (page is titled 'Editorial Team Brief' despite the filename). Y1 budget \u00a36-17k."
       },
       {
         "id": "affiliate_signups",
         "label": "Sign up to affiliate programs (Day 1)",
         "status": "TBD",
         "owner": "Adam",
-        "note": "Amazon Associates UK + Awin (12+ UK supplement brands in one network) + direct: Ancient + Brave / Trinny London / Pure Encapsulations / BetterYou / Solgar. Awin takes 5-10 days — apply first."
+        "note": "Amazon Associates UK + Awin (12+ UK supplement brands in one network) + direct: Ancient + Brave / Trinny London / Pure Encapsulations / BetterYou / Solgar. Awin takes 5-10 days \u2014 apply first."
       },
       {
         "id": "tier1_product_buy",
-        "label": "Buy Tier-1 product test batch (£550-850, 20-25 SKUs)",
+        "label": "Buy Tier-1 product test batch (\u00a3550-850, 20-25 SKUs)",
         "status": "TBD",
         "owner": "Adam",
-        "note": "Full SKU list in iCloud/.../niche-attack-supplements-2026-05-29/PRODUCT-LIST-TO-TEST.md. Buy via our own affiliate links once approved (earns back ~£30-60 cashback)."
+        "note": "Full SKU list in iCloud/.../niche-attack-supplements-2026-05-29/PRODUCT-LIST-TO-TEST.md. Buy via our own affiliate links once approved (earns back ~\u00a330-60 cashback)."
       },
       {
         "id": "first_uk_perimenopause_survey",
         "label": "Commission first UK perimenopause supplement use survey (Month 3-4)",
         "status": "TBD",
         "owner": "Adam",
-        "note": "n=500-1,000 via OnePoll or Censuswide (£3-5k). Becomes the original-data citation asset; published as the annual reference URL."
+        "note": "n=500-1,000 via OnePoll or Censuswide (\u00a33-5k). Becomes the original-data citation asset; published as the annual reference URL."
       },
       {
         "id": "keyword_earmark_pickup",
@@ -718,163 +657,17 @@
     "siteStatus": "prelaunch"
   },
   {
-    "id": "evchargers",
-    "name": "EV Chargers (UK)",
-    "domain": "ev-chargers-3dy.pages.dev",
-    "logo": "",
-    "flavour": "leadgen",
-    "dashboard": "fleet",
-    "clientCode": "EVCHG",
-    "notes": "SUPERSEDED by 'propertoasty' (8 Jun 2026): the EV-charger deepdive is now one pillar inside the Proper Toasty takeover (whole home-electrification hub). Keep for the EV build-map research only. Scaffold live at https://ev-chargers-3dy.pages.dev (placeholder + /plan/ hub) as of 1 Jun 2026. BANKED 26 May 2026 (research-stage only, no build yet). UK EV charger compatibility + installer lead-gen site. Dual-model: (a) own-product compatibility tool (which charger fits my car / my home / my use-case), (b) installer leads sold to OZEV-approved installers. Scored 19/25. Fully unregulated (no FCA/ASA wall beyond standard advertising rules). Grant-driven demand (OZEV EV chargepoint grant for flats/rental ~£350; Workplace Charging Scheme up to £350 per socket; Homeowners-with-driveways grant ended Mar 2022 but flat/rental + workplace still live). Working name placeholder evmatch.co.uk per research. Research files: iCloud/.../niche-discovery-2026-05-26/10-deepdive-ev-charger.md.",
-    "clientViewSections": [
-      "overview",
-      "site-tree",
-      "content-plan",
-      "recommendations"
-    ],
-    "allSections": [
-      "overview",
-      "site-tree",
-      "content-plan",
-      "recommendations",
-      "ecosystem"
-    ],
-    "sections": [],
-    "pre_launch": true,
-    "pending_decisions": [
-      {
-        "id": "brand_name_domain",
-        "label": "Pick brand name + register .co.uk domain (working: evmatch.co.uk)",
-        "status": "TBD",
-        "owner": "Adam",
-        "note": "Working name from research: evmatch.co.uk. Verify availability + alternatives."
-      },
-      {
-        "id": "compatibility_data_source",
-        "label": "Source EV charger × EV car compatibility dataset",
-        "status": "TBD",
-        "owner": "Adam or Claude",
-        "note": "Connector types (Type 2 / CCS / CHAdeMO), kW ratings, smart-charging compatibility, V2H/V2G support. Data sources: ZapMap, EV Database (ev-database.org), manufacturer datasheets, OCPP standards. The compatibility tool is the brand differentiator."
-      },
-      {
-        "id": "installer_panel",
-        "label": "Build OZEV-approved installer panel (lead destinations)",
-        "status": "TBD",
-        "owner": "Adam",
-        "note": "OZEV-approved installer list is public (gov.uk). Target: 20-50 installer firms across UK regions for geographic coverage."
-      },
-      {
-        "id": "grant_data_feed",
-        "label": "Live OZEV grant eligibility checker + amounts",
-        "status": "TBD",
-        "owner": "Claude",
-        "note": "Workplace Charging Scheme + EV chargepoint grant for flat/rental occupants. Eligibility flow on-site. Drives lead capture."
-      },
-      {
-        "id": "lead_capture_routing",
-        "label": "Lead capture form + routing to installer panel (round-robin or geo-match)",
-        "status": "TBD",
-        "owner": "Claude",
-        "note": "Standard fleet pattern: Astro form → Supabase capture → API routing to installer panel. Same shape as MerchantHQ / FundBiz."
-      }
-    ],
-    "liveDomain": "ev-chargers-3dy.pages.dev",
-    "siteStatus": "paused"
-  },
-  {
-    "id": "golftech",
-    "name": "Golf Tech",
-    "domain": "golf-tech.pages.dev",
-    "liveDomain": "golf-tech.pages.dev",
-    "logo": "",
-    "flavour": "editorial",
-    "dashboard": "fleet",
-    "clientCode": "GOLF",
-    "notes": "Working name 'Golf Tech' (placeholder, not final). Owner legal entity TBC. UK golf-tech COMPARISON / AFFILIATE authority. Hero product = Shot Scope LM1 launch monitor: Adam owns the sales side (his own stock + checkout + Meta ads); the site features it as hero and drives to that channel. Everything else = affiliate or white-label (Awin: Scottsdale Golf / Golf Gear Direct / Affordable Golf; Amazon Associates UK; American Golf via Partnerize). Structure: Tier 1 launch-monitor comparison hub + GPS watches + rangefinders + 'best under X' guides; Tier 2 home-sim/nets/mats winter cluster (counter-seasonal); Tier 3 golf balls + used clubs. Live UK volumes: golf launch monitor 3,600/mo, golf simulator home 3,600, golf gps watch 2,400, best golf rangefinder 1,300; LM1-exact terms tiny (low hundreds) which is why it is a hub not a one-SKU page. Outtabounds.co.uk proves a UK affiliate site can break the SERP; win on comparison + best-under-X + live-UK-price intent. GitHub: AdamParkerRank4AI/golf-tech. CF Pages project: golf-tech (account 927d3dd61a9375f0c8185df7b2a1764e adam@muswellrose.com). Live at https://golf-tech.pages.dev (scaffold only, 2 June 2026). Research pack: iCloud/claude/Research/golf-launch-monitor-2026-06-02/RESEARCH.md.",
-    "clientViewSections": [
-      "overview",
-      "site-tree",
-      "content-plan",
-      "recommendations",
-      "ai-readiness",
-      "page-compliance"
-    ],
-    "allSections": [
-      "overview",
-      "ai-readiness",
-      "ai-citations",
-      "site-manager",
-      "page-compliance",
-      "traffic",
-      "search-performance",
-      "competitors",
-      "site-tree",
-      "uptime",
-      "site-speed",
-      "crawl-activity",
-      "recommendations",
-      "content-plan",
-      "daily-audit",
-      "ecosystem"
-    ],
-    "sections": [],
-    "pre_launch": true,
-    "pending_decisions": [
-      {
-        "id": "final_brand_name",
-        "label": "Pick final brand name + domain (working name 'Golf Tech')",
-        "status": "TBD",
-        "owner": "Adam",
-        "note": "Working placeholder. Check .co.uk + .com availability for the chosen golf-tech brand."
-      },
-      {
-        "id": "owner_entity",
-        "label": "Confirm owning legal entity (TBC)",
-        "status": "TBD",
-        "owner": "Adam",
-        "note": "Used as placeholder in schema/footer. Sets the LM1 VAT/sales legal entity too."
-      },
-      {
-        "id": "github_cf_pages_link",
-        "label": "Connect GitHub auto-deploy on CF Pages project",
-        "status": "TBD",
-        "owner": "Adam",
-        "note": "Created as Direct Upload project via API. To auto-deploy on git push: CF Pages dashboard -> golf-tech -> Settings -> Builds & deployments -> Connect to Git -> grant the CF GitHub App access to AdamParkerRank4AI/golf-tech."
-      },
-      {
-        "id": "affiliate_signups",
-        "label": "Sign up to affiliate programs",
-        "status": "TBD",
-        "owner": "Adam",
-        "note": "Awin (Scottsdale Golf, Golf Gear Direct, Affordable Golf) + Amazon Associates UK + American Golf via Partnerize. Awin approval takes days, apply first."
-      },
-      {
-        "id": "lm1_sales_link",
-        "label": "Provide the LM1 sales channel URL to link the hero to",
-        "status": "TBD",
-        "owner": "Adam",
-        "note": "Site features the LM1 as hero and drives to Adam's own checkout/sales page. Need that destination URL."
-      },
-      {
-        "id": "content_build",
-        "label": "Build Tier 1 comparison content (launch monitors, GPS, rangefinders, best-under-X)",
-        "status": "TBD",
-        "owner": "Claude",
-        "note": "Scaffold only currently. Tier 1 is the ranking engine. Add agent-data layer when content goes live."
-      }
-    ],
-    "siteStatus": "prelaunch"
-  },
-  {
     "id": "homesandhedge",
     "name": "HomesAndHedge",
     "domain": "homesandhedge.co.uk",
     "liveDomain": "homesandhedge.co.uk",
     "logo": "",
     "flavour": "editorial",
+    "monetisation": "banner",
+    "blurb": "UK home and garden problem-solver: identify, judge, fix, or find who to call (pests, damp, knotweed, drainage). Display-ad funded.",
     "dashboard": "fleet",
     "clientCode": "HEDGE",
-    "notes": "BUILT + LIVE (preLaunch) homesandhedge.pages.dev. RENAMED homeandhedge->homesandhedge 2026-06-10 (registered domain is homesandhedge.co.uk WITH an s). SCAFFOLDED + DEPLOYED 2026-06-08 to https://homesandhedge.pages.dev (info@rank4ai CF Pages, gate-green, patch-free fleet-core 95c9e3d0, BBL Ltd, Oliver byline, preLaunch noindex). GitHub: AdamParkerRank4AI/homesandhedge. UK 'Home & Garden Problem-Solver' DISPLAY-AD content authority (grew out of japanese knotweed). Model = traffic at scale -> ad RPM (lead-skim PARKED). Answers 'what is this / how serious / how to fix / who to call' across 5 clusters: pests (insects), invasive plants/weeds/tree disease, damp/mould/structural/rot, drainage/surfaces/lawn, wildlife intruders. Niche-attack 7 Jun (live DataForSEO, 5 cluster agents): ~3-4 MILLION searches/mo true universe; pests alone ~2-3M with AIO NOT firing yet (first-mover citation land-grab). Build: programmatic from problems.json (MHQ-style), ~85-90 problems -> ~500-900 pages; day1 ~40-60 cornerstone (>=1 strong page per topic, all clusters), week1 ~250, daily auto-add to 1,000+ in 6-8 weeks. Ad path: Ezoic day1 -> Mediavine 50k sessions -> Raptive 25k pageviews (~£15-30 RPM); dense clean display + sticky video, NO pop-unders. Moats: neutrality (incumbents sell the fix), no-AIO-on-pests, the 'what's legal' wildlife pillar, lookalike/ID hubs. Account: info@rank4ai. Domain homesandhedge.co.uk (Adam registering). Plan: iCloud/claude/Research/niche-discovery-restart-2026-06-07/HOMEANDHEDGE-BUILD-PLAN.md + NA-home-garden-MASTER.md. 49k card: /demos/home-garden-problems/.",
+    "notes": "BUILT + LIVE (preLaunch) homesandhedge.pages.dev. RENAMED homeandhedge->homesandhedge 2026-06-10 (registered domain is homesandhedge.co.uk WITH an s). SCAFFOLDED + DEPLOYED 2026-06-08 to https://homesandhedge.pages.dev (info@rank4ai CF Pages, gate-green, patch-free fleet-core 95c9e3d0, BBL Ltd, Oliver byline, preLaunch noindex). GitHub: AdamParkerRank4AI/homesandhedge. UK 'Home & Garden Problem-Solver' DISPLAY-AD content authority (grew out of japanese knotweed). Model = traffic at scale -> ad RPM (lead-skim PARKED). Answers 'what is this / how serious / how to fix / who to call' across 5 clusters: pests (insects), invasive plants/weeds/tree disease, damp/mould/structural/rot, drainage/surfaces/lawn, wildlife intruders. Niche-attack 7 Jun (live DataForSEO, 5 cluster agents): ~3-4 MILLION searches/mo true universe; pests alone ~2-3M with AIO NOT firing yet (first-mover citation land-grab). Build: programmatic from problems.json (MHQ-style), ~85-90 problems -> ~500-900 pages; day1 ~40-60 cornerstone (>=1 strong page per topic, all clusters), week1 ~250, daily auto-add to 1,000+ in 6-8 weeks. Ad path: Ezoic day1 -> Mediavine 50k sessions -> Raptive 25k pageviews (~\u00a315-30 RPM); dense clean display + sticky video, NO pop-unders. Moats: neutrality (incumbents sell the fix), no-AIO-on-pests, the 'what's legal' wildlife pillar, lookalike/ID hubs. Account: info@rank4ai. Domain homesandhedge.co.uk (Adam registering). Plan: iCloud/claude/Research/niche-discovery-restart-2026-06-07/HOMEANDHEDGE-BUILD-PLAN.md + NA-home-garden-MASTER.md. 49k card: /demos/home-garden-problems/.",
     "clientViewSections": [
       "overview",
       "site-tree",
@@ -899,7 +692,8 @@
       "recommendations",
       "content-plan",
       "daily-audit",
-      "ecosystem"
+      "ecosystem",
+      "tools-calculators"
     ],
     "sections": [],
     "pre_launch": true,
@@ -942,9 +736,11 @@
     "liveDomain": "adhdhelper.co.uk",
     "logo": "",
     "flavour": "editorial",
+    "monetisation": "banner+affiliate",
+    "blurb": "UK ADHD authority: find an assessment, compare what helps, understand ADHD. Display-ad plus affiliate/introducer.",
     "dashboard": "fleet",
     "clientCode": "ADHD",
-    "notes": "BUILT + LIVE (preLaunch) adhdhelper.pages.dev. SCAFFOLDED + DEPLOYED 2026-06-08 to https://adhdhelper.pages.dev (info@rank4ai CF Pages, gate-green, patch-free fleet-core 95c9e3d0, BBL Ltd, Oliver byline, preLaunch noindex). GitHub: AdamParkerRank4AI/adhdhelper. BRAND: ADHD Helper (adhdhelper.co.uk, available + trademark-clear). UK ADHD authority stacking THREE money models on one audience: (1) lead-gen to private/Right-to-Choose assessment clinics (assessment £500-1,500, high CAC), (2) affiliate shop on products ADHD adults buy (magnesium glycinate, omega-3, L-theanine, weighted blankets, fidget/focus tools, planners) via Amazon Associates + Awin + direct, (3) own-brand supplement layered later (leverages PeptideClear sourcing). Neutral named-clinician hub = AI-citation wedge vs clinic-sold assessments. YMYL: needs medical reviewer, no treat-ADHD claims. Account: info@rank4ai. NOT deep-dived to full niche-attack yet (lead sizing + clinic-buyer map pending). 49k card: /demos/adhd-stack/. Plan pack: iCloud/.../Research/niche-discovery-restart-2026-06-07/.",
+    "notes": "BUILT + LIVE (preLaunch) adhdhelper.pages.dev. SCAFFOLDED + DEPLOYED 2026-06-08 to https://adhdhelper.pages.dev (info@rank4ai CF Pages, gate-green, patch-free fleet-core 95c9e3d0, BBL Ltd, Oliver byline, preLaunch noindex). GitHub: AdamParkerRank4AI/adhdhelper. BRAND: ADHD Helper (adhdhelper.co.uk, available + trademark-clear). UK ADHD authority stacking THREE money models on one audience: (1) lead-gen to private/Right-to-Choose assessment clinics (assessment \u00a3500-1,500, high CAC), (2) affiliate shop on products ADHD adults buy (magnesium glycinate, omega-3, L-theanine, weighted blankets, fidget/focus tools, planners) via Amazon Associates + Awin + direct, (3) own-brand supplement layered later (leverages PeptideClear sourcing). Neutral named-clinician hub = AI-citation wedge vs clinic-sold assessments. YMYL: needs medical reviewer, no treat-ADHD claims. Account: info@rank4ai. NOT deep-dived to full niche-attack yet (lead sizing + clinic-buyer map pending). 49k card: /demos/adhd-stack/. Plan pack: iCloud/.../Research/niche-discovery-restart-2026-06-07/.",
     "clientViewSections": [
       "overview",
       "site-tree",
@@ -969,10 +765,11 @@
       "recommendations",
       "content-plan",
       "daily-audit",
-      "ecosystem"
+      "ecosystem",
+      "tools-calculators"
     ],
     "sections": [],
-    "pre_launch": true,
+    "pre_launch": false,
     "pending_decisions": [
       {
         "id": "domain_register",
@@ -986,7 +783,7 @@
         "label": "Run full niche-attack (live volumes + SERP gap + clinic lead-buyer map + lead sizing)",
         "status": "TBD",
         "owner": "Claude",
-        "note": "Only discovery-level done. Confirm assessment-clinic buyers + £/lead before build."
+        "note": "Only discovery-level done. Confirm assessment-clinic buyers + \u00a3/lead before build."
       },
       {
         "id": "ymyl_reviewer",
@@ -996,7 +793,7 @@
         "note": "YMYL: claims-safe editorial policy, no treat-ADHD claims."
       }
     ],
-    "siteStatus": "prelaunch"
+    "siteStatus": "live"
   },
   {
     "id": "laterlifeborrowing",
@@ -1005,6 +802,7 @@
     "liveDomain": "laterlifeborrowing.co.uk",
     "logo": "",
     "flavour": "editorial",
+    "monetisation": "leadgen",
     "dashboard": "fleet",
     "clientCode": "RETB",
     "notes": "RENAMED from retiredborrowing 12 Jun (domain laterlifeborrowing.co.uk). SCAFFOLDED + DEPLOYED 2026-06-10 to https://retiredborrowing.pages.dev (info@rank4ai CF Pages, gate-green, patch-free fleet-core 95c9e3d0, BBL Ltd, Oliver byline, preLaunch noindex, YMYL+FCA boundary, NO lead capture). GitHub: AdamParkerRank4AI/retiredborrowing (push pending - transient GH timeout). UK later-life borrowing & equity release comparison/introducer authority (equity release, lifetime mortgage, RIO, later-life lending) for over-55s; mere-introducer exemption. Domain retiredborrowing.co.uk/.uk/.com all available + TM-clear (Adam buying). NICHE ANGLES to deep-dive (in repo NICHE-ANGLES.md): lease extensions (leasehold blocker), flats/leasehold equity release, returning expats (mainly Spain), divorce/'silver splitters', + interest-only shortfall/care/gifting/bereavement. Money SERP is an authority fortress (L&G/Aviva/Key/MoneyHelper/Unbiased) - win on lay-language + trigger/blocker layer + AI-citation, not head-on. | MERGED the duplicate 'Equity Release (UK)' (equityrelease) entry into this one on 12 Jun 2026: same site (equity-release repo = laterlifeborrowing.co.uk). Absorbed its FCA/compliance pending decisions (IAR principal, adviser panel, payment structure, GDPR consent, vulnerable-customers framework).",
@@ -1032,7 +830,8 @@
       "recommendations",
       "content-plan",
       "daily-audit",
-      "ecosystem"
+      "ecosystem",
+      "tools-calculators"
     ],
     "sections": [],
     "pre_launch": true,
@@ -1124,9 +923,11 @@
     "liveDomain": "propertoasty.com",
     "logo": "",
     "flavour": "editorial",
+    "monetisation": "leadgen",
+    "blurb": "Takeover IDEA only, not owned (propertoasty.com is the existing owner's site). The home-energy lead-gen play was folded into sortedproperty's /energy/ arm (solar, heat pump, battery, insulation, grants, EV, MCS installer finder).",
     "dashboard": "fleet",
     "clientCode": "TOASTY",
-    "notes": "ENTITY DECIDED (8 Jun 2026): FLEET site under a NEW/DIFFERENT Ltd (name TBC). TAKEOVER PROSPECT (8 Jun 2026). Existing Next.js + Supabase home-energy lead-gen platform (heat pump / solar / battery / EV eligibility + MCS installer leads, 'not a lender or broker'). Currently invisible: 9 keywords all pos 76-110, ~16 visits/mo, no schema, no entity. PLAN = run as-is, layer the fleet stack. Strategy flip from live DataForSEO: lead with BATTERY (wide-open SERP, +87-97% YoY) not solar; build the GRANT-ELIGIBILITY CHECKER (EV/BUS/solar, gov-locked head terms but +24-98% surging, no checker exists) + EPC-IMPROVEMENT TOOL as the two router tools; add INSULATION (~48k/mo, fabric-first) + AIR-CON (seasonal) pillars; bolt on SPRAY-FOAM removal (highest lead value, £35.73 CPC) per Adam. Money: resell leads day one (Leads 2 Trade / Lead Pronto / Profitise) then installer retainers. Lead sizing: bad ~30/mo (£1.2k) m6, good ~175/mo (£9.6k) 12-18mo. Absorbs old 'evchargers' prospect. 49k board: 49k.co.uk/demos/propertoasty (code 1210). Research: iCloud/claude/Research/niche-attack-propertoasty-2026-06-08/RESEARCH_PROPERTOASTY.md.",
+    "notes": "ENTITY DECIDED (8 Jun 2026): FLEET site under a NEW/DIFFERENT Ltd (name TBC). TAKEOVER PROSPECT (8 Jun 2026). Existing Next.js + Supabase home-energy lead-gen platform (heat pump / solar / battery / EV eligibility + MCS installer leads, 'not a lender or broker'). Currently invisible: 9 keywords all pos 76-110, ~16 visits/mo, no schema, no entity. PLAN = run as-is, layer the fleet stack. Strategy flip from live DataForSEO: lead with BATTERY (wide-open SERP, +87-97% YoY) not solar; build the GRANT-ELIGIBILITY CHECKER (EV/BUS/solar, gov-locked head terms but +24-98% surging, no checker exists) + EPC-IMPROVEMENT TOOL as the two router tools; add INSULATION (~48k/mo, fabric-first) + AIR-CON (seasonal) pillars; bolt on SPRAY-FOAM removal (highest lead value, \u00a335.73 CPC) per Adam. Money: resell leads day one (Leads 2 Trade / Lead Pronto / Profitise) then installer retainers. Lead sizing: bad ~30/mo (\u00a31.2k) m6, good ~175/mo (\u00a39.6k) 12-18mo. Absorbs old 'evchargers' prospect. 49k board: 49k.co.uk/demos/propertoasty (code 1210). Research: iCloud/claude/Research/niche-attack-propertoasty-2026-06-08/RESEARCH_PROPERTOASTY.md.",
     "clientViewSections": [
       "overview",
       "site-tree",
@@ -1192,7 +993,7 @@
         "note": "Form currently demands an energy bill + a floor plan = kills conversion. Drop bill from step 1 (optional, post-enquiry). Floor plan: auto-pull floor area from the EPC register public API (gov.uk Open Data) instead of asking the user. BUILD BLOCKER until EPC API coverage + licensing confirmed. KEEP the existing roof visualiser (postcode->satellite roof view) and reuse it for sizing."
       }
     ],
-    "siteStatus": "prelaunch"
+    "siteStatus": "paused"
   },
   {
     "id": "invoicefinance",
@@ -1200,6 +1001,8 @@
     "domain": "",
     "logo": "",
     "flavour": "leadgen",
+    "monetisation": "leadgen",
+    "blurb": "Owned greenfield invoice-finance authority site, built for data products. Parked pre-launch.",
     "dashboard": "fleet",
     "clientCode": "IF2ND",
     "notes": "THE single 2nd invoice-finance site (besides MarketInvoice). Consolidates ALL the prior threads: the held '2nd IF site' (niche 22/25), the Guavas rebuild plan, and the IF-gaps research now sit within THIS one build. Fleet rule (Adam, 12 Jun 2026): for invoice finance the fleet has exactly TWO sites, MarketInvoice + this. BUILT domain-agnostically at ~/invoicefinance-site: 163 pages, build green, fleet-lint strict clean, page-content gate 100%, 0 broken links, real JSON-LD @graph, agent-data/MCP layer. Lead on the embedded-finance wedge (+196% YoY, wide-open), classic IF capture underneath. Every undecided value is a single __TODO__ in src/data/site.ts so launch = ~10-min fill + first deploy. Brand may be Guavas or an owned name (open decision). Build map: ~/control-panel/invoice-finance-OWNED-site/BUILD-MAP.md. Memory: project_owned_invoice_finance_site_built.",
@@ -1277,9 +1080,11 @@
     "liveDomain": "sortedproperty.pages.dev",
     "logo": "",
     "flavour": "editorial",
+    "monetisation": "leadgen",
+    "blurb": "UK property-fixes, trades and home-energy lead-gen site (absorbed the old FindATradey into /trades/).",
     "dashboard": "fleet",
     "clientCode": "SORTP",
-    "notes": "BUILT (preLaunch) 12 Jun. 3-tier UK home-services lead-gen hub: /energy/ (solar/EV/heat pump/battery/insulation) + /property-fixes/ (spray foam/damp/cavity/septic/EWS1) + /trades/ (FindATradey 60 pages folding in, findatradey.co.uk to 301 here). ~70 pages wave1, staged-release (releaseWave + LIVE_THROUGH_WAVE, never push all live at once). MHQ core, BBL Ltd, Oliver. Working name; may split later (Proper Toasty). Repo ~/sortedproperty. Research: Research/home-services-3tier-2026-06-11/.",
+    "notes": "BUILT (preLaunch) 12 Jun. 3-tier UK home-services lead-gen hub: /energy/ (solar/EV/heat pump/battery/insulation) + /property-fixes/ (spray foam/damp/cavity/septic/EWS1) + /trades/ (FindATradey folded in 13 Jun, standalone repo retired; findatradey.co.uk to 301 here at launch). ~70 pages wave1, staged-release (releaseWave + LIVE_THROUGH_WAVE, never push all live at once). MHQ core, BBL Ltd, Oliver. Working name; may split later (Proper Toasty). Repo ~/sortedproperty. Research: Research/home-services-3tier-2026-06-11/.",
     "clientViewSections": [
       "overview",
       "site-tree",
@@ -1345,6 +1150,7 @@
     "liveDomain": "",
     "logo": "",
     "flavour": "leadgen",
+    "monetisation": "leadgen",
     "dashboard": "fleet",
     "clientCode": "CRES",
     "notes": "BUILT + DEPLOYED 2026-06-12 to https://company-rescue.pages.dev (info@rank4ai CF Pages, gate-green, lean standalone Astro NO fleet-core dep, BBL Ltd 16833937, preLaunch noindex + banner). GitHub: AdamParkerRank4AI/company-rescue (main). The Business Distress vertical of the distress-network research (Employment + Later-Life Legal went into legal-leadgen; Consumer Debt parked). ~90 pages: 35 clusters + 12 honest tools + UK Business Distress Nowcast + 9 data trackers + /statistics/ + /compare/ master table + /guides/ + /sectors/ (8) + /authors/ + /accreditations/. STAGGERED ROLLOUT (SITE.liveWaves; see ROLLOUT-PLAN.md). Working brand 'Company Rescue' swappable. Lead = introduce to a Licensed Insolvency Practitioner.",
@@ -1405,5 +1211,158 @@
         "note": "Set liveWaves:[1] first, then 2, then 3. Real OG image + agent-data layer also outstanding (logged in CLAUDE.md)."
       }
     ]
+  },
+  {
+    "id": "fitgauge",
+    "name": "FitGauge",
+    "domain": "fitgauge.co.uk",
+    "logo": "",
+    "flavour": "editorial",
+    "monetisation": "editorial",
+    "blurb": "UK fitness, body and diet calculators built on official data (NHS, Sport England, NDNS). Display-ad funded.",
+    "dashboard": "fleet",
+    "clientCode": "FITGAUGE",
+    "notes": "Working-name fleet site (repo ~/fitgauge-site). UK fitness/diet/running calculator authority. Domain fitgauge.co.uk is a WORKING-NAME GUESS pending real domain (site.manifest.ts / src/data/site.ts still carries __TODO_DOMAIN__ + placeholder siteUrl). Added to dashboard 15 Jun 2026 so its Tools & Calculators section renders; all other sections show pending/-- until data fetchers run.",
+    "clientViewSections": [
+      "overview",
+      "site-tree",
+      "content-plan",
+      "recommendations",
+      "ai-readiness",
+      "page-compliance"
+    ],
+    "allSections": [
+      "overview",
+      "ai-readiness",
+      "ai-citations",
+      "site-manager",
+      "page-compliance",
+      "traffic",
+      "search-performance",
+      "competitors",
+      "site-tree",
+      "uptime",
+      "site-speed",
+      "crawl-activity",
+      "recommendations",
+      "content-plan",
+      "daily-audit",
+      "ecosystem",
+      "tools-calculators"
+    ],
+    "sections": [],
+    "pre_launch": true,
+    "pending_decisions": [
+      {
+        "id": "brand_domain",
+        "label": "Confirm brand name + register real domain (working-name guess fitgauge.co.uk)",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "site.manifest.ts / src/data/site.ts still has __TODO_DOMAIN__ + placeholder siteUrl. Tool links in the dashboard use the guessed fitgauge.co.uk."
+      }
+    ],
+    "siteStatus": "prelaunch"
+  },
+  {
+    "id": "namenest",
+    "name": "NameNest",
+    "domain": "namenest.co.uk",
+    "logo": "",
+    "flavour": "editorial",
+    "monetisation": "editorial",
+    "blurb": "UK baby names and pregnancy tools built on ONS data. Display-ad funded.",
+    "dashboard": "fleet",
+    "clientCode": "NAMENEST",
+    "notes": "Working-name fleet site (repo ~/namenest-site). UK baby-name + pregnancy + parenting-money calculator authority. Domain namenest.co.uk is a WORKING-NAME GUESS pending real domain (site.manifest.ts / src/data/site.ts still carries __TODO_DOMAIN__ + placeholder siteUrl). Added to dashboard 15 Jun 2026 so its Tools & Calculators section renders; all other sections show pending/-- until data fetchers run.",
+    "clientViewSections": [
+      "overview",
+      "site-tree",
+      "content-plan",
+      "recommendations",
+      "ai-readiness",
+      "page-compliance"
+    ],
+    "allSections": [
+      "overview",
+      "ai-readiness",
+      "ai-citations",
+      "site-manager",
+      "page-compliance",
+      "traffic",
+      "search-performance",
+      "competitors",
+      "site-tree",
+      "uptime",
+      "site-speed",
+      "crawl-activity",
+      "recommendations",
+      "content-plan",
+      "daily-audit",
+      "ecosystem",
+      "tools-calculators"
+    ],
+    "sections": [],
+    "pre_launch": true,
+    "pending_decisions": [
+      {
+        "id": "brand_domain",
+        "label": "Confirm brand name + register real domain (working-name guess namenest.co.uk)",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "site.manifest.ts / src/data/site.ts still has __TODO_DOMAIN__ + placeholder siteUrl. Tool links in the dashboard use the guessed namenest.co.uk."
+      }
+    ],
+    "siteStatus": "prelaunch"
+  },
+  {
+    "id": "datekit",
+    "name": "DateKit",
+    "domain": "datekit.co.uk",
+    "logo": "",
+    "flavour": "editorial",
+    "monetisation": "editorial",
+    "blurb": "UK date and calendar tools (bank holidays, pension age, annual leave). Display-ad funded.",
+    "dashboard": "fleet",
+    "clientCode": "DATEKIT",
+    "notes": "Working-name fleet site (repo ~/datekit-site). UK date/time/calendar/leave calculator authority. Domain datekit.co.uk is a WORKING-NAME GUESS pending real domain (site.manifest.ts / src/data/site.ts still carries __TODO_DOMAIN__ + placeholder siteUrl). Added to dashboard 15 Jun 2026 so its Tools & Calculators section renders; all other sections show pending/-- until data fetchers run.",
+    "clientViewSections": [
+      "overview",
+      "site-tree",
+      "content-plan",
+      "recommendations",
+      "ai-readiness",
+      "page-compliance"
+    ],
+    "allSections": [
+      "overview",
+      "ai-readiness",
+      "ai-citations",
+      "site-manager",
+      "page-compliance",
+      "traffic",
+      "search-performance",
+      "competitors",
+      "site-tree",
+      "uptime",
+      "site-speed",
+      "crawl-activity",
+      "recommendations",
+      "content-plan",
+      "daily-audit",
+      "ecosystem",
+      "tools-calculators"
+    ],
+    "sections": [],
+    "pre_launch": true,
+    "pending_decisions": [
+      {
+        "id": "brand_domain",
+        "label": "Confirm brand name + register real domain (working-name guess datekit.co.uk)",
+        "status": "TBD",
+        "owner": "Adam",
+        "note": "site.manifest.ts / src/data/site.ts still has __TODO_DOMAIN__ + placeholder siteUrl. Tool links in the dashboard use the guessed datekit.co.uk."
+      }
+    ],
+    "siteStatus": "prelaunch"
   }
 ]

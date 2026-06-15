@@ -27,6 +27,9 @@ SITES = {
     "cardmachines": "https://merchanthq.co.uk",
     "peptideclear": "https://peptideclear.co.uk",
     "kartapay": "https://kartapay.co.uk",
+    "homesandhedge": "https://homesandhedge.co.uk",
+    "hervitals": "https://hervitals.co.uk",
+    "adhdhelper": "https://adhdhelper.co.uk",
 }
 
 INDEXNOW_URL = "https://api.indexnow.org/indexnow"
@@ -44,6 +47,9 @@ SITE_KEYS = {
     "cardmachines":      "0090cd828ef442e38aa2c00baca23c6d",
     "peptideclear":      "9b4e84786bf3482db8081609777b3811",
     "kartapay":          "e7ac3dd5700130fb675be39a3a0effc5",
+    "homesandhedge":     "4109de09679304557367b5b3e1b90c9b",
+    "hervitals":         "4d36b67015e69fd2c5009095402cac74",
+    "adhdhelper":        "a39ace08e7ac01f94c8fadff07824ebd",
 }
 
 

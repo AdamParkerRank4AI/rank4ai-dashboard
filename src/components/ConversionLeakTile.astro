@@ -16,6 +16,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import clients from '../utils/dashboardClients';
 
 function loadJson(filename: string) {
   try {
@@ -25,8 +26,13 @@ function loadJson(filename: string) {
   return null;
 }
 
+// Only this board's sites (fleet vs current).
+const clientIds = new Set((clients as any[]).map((c) => c.id));
+
 const d = loadJson('conversion_leaks.json');
-const sites = d?.sites ?? {};
+const sites = Object.fromEntries(
+  Object.entries<any>(d?.sites ?? {}).filter(([id]) => clientIds.has(id))
+);
 
 const classMeta: Record<string, { label: string; colour: string }> = {
   DEAD_WEIGHT: { label: 'Dead weight', colour: 'text-amber-300' },

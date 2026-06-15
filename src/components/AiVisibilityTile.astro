@@ -17,6 +17,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import clients from '../utils/dashboardClients';
 
 function loadJson(filename: string) {
   try {
@@ -29,12 +30,15 @@ function loadJson(filename: string) {
 const aeo = loadJson('aeo_scorecard.json') ?? {};
 const cit = loadJson('citation_results.json') ?? {};
 
+// Restrict to THIS board's sites so current-board-only sites (rank4ai,
+// resiliencebuilder) don't appear on the fleet board.
+const clientIds = new Set((clients as any[]).map((c) => c.id));
 const EXCLUDE = new Set(['_meta', 'rochellemarashi']);
 const ENGINES = ['claude', 'chatgpt', 'gemini', 'perplexity'] as const;
 
 const siteIds = Array.from(
   new Set([...Object.keys(aeo), ...Object.keys(cit)])
-).filter((s) => !EXCLUDE.has(s));
+).filter((s) => !EXCLUDE.has(s) && clientIds.has(s));
 
 type Row = {
   id: string;

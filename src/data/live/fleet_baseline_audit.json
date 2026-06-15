@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-12T05:50:57.290450+00:00",
+  "generated_at": "2026-06-15T05:49:36.978965+00:00",
   "sites": {
     "rank4ai": {
       "flavour": "editorial",
@@ -108,8 +108,8 @@
           "id": "date_modified",
           "label": "dateModified ISO 8601 with TZ (#1)",
           "severity": "p2",
-          "status": "pass",
-          "note": "2026-06-07T13:04:06"
+          "status": "fail",
+          "note": "2026-06-10 \u2014 date only, needs ISO 8601 with TZ"
         },
         {
           "id": "speakable",
@@ -150,8 +150,8 @@
           "id": "comparison_contract",
           "label": "comparison pages: capsule+FAQ+table by type",
           "severity": "p2",
-          "status": "skip",
-          "note": "gate output unparsed"
+          "status": "pass",
+          "note": "all comparison pages meet the contract"
         },
         {
           "id": "indexnow_unique",
@@ -270,7 +270,7 @@
           "label": "dateModified ISO 8601 with TZ (#1)",
           "severity": "p2",
           "status": "pass",
-          "note": "2026-06-04T12:00:00"
+          "note": "2026-06-12T12:00:00"
         },
         {
           "id": "speakable",
@@ -298,7 +298,7 @@
           "label": "sitemap lastmod ISO 8601 + varies (#17)",
           "severity": "p2",
           "status": "pass",
-          "note": "9 distinct lastmods in sample of 20"
+          "note": "10 distinct lastmods in sample of 20"
         },
         {
           "id": "faqpage_misuse",
@@ -410,7 +410,7 @@
           "label": "homepage has imagery",
           "severity": "p1",
           "status": "pass",
-          "note": "1 img + 40 svg"
+          "note": "1 img + 39 svg"
         },
         {
           "id": "alt_text",
@@ -732,7 +732,7 @@
           "label": "homepage has imagery",
           "severity": "p1",
           "status": "pass",
-          "note": "2 img + 9 svg"
+          "note": "2 img + 11 svg"
         },
         {
           "id": "alt_text",
@@ -753,7 +753,7 @@
           "label": "dateModified ISO 8601 with TZ (#1)",
           "severity": "p2",
           "status": "pass",
-          "note": "2026-06-04T12:00:00"
+          "note": "2026-06-13T12:00:00"
         },
         {
           "id": "speakable",
@@ -1207,71 +1207,71 @@
           "id": "og_image",
           "label": "og:image (not placeholder)",
           "severity": "p1",
-          "status": "pass",
-          "note": "og-default.png"
+          "status": "skip",
+          "note": "no live URL"
         },
         {
           "id": "homepage_imagery",
           "label": "homepage has imagery",
           "severity": "p1",
-          "status": "pass",
-          "note": "2 img + 3 svg"
+          "status": "skip",
+          "note": "no live URL"
         },
         {
           "id": "alt_text",
           "label": "all imgs alt-tagged",
           "severity": "p2",
-          "status": "pass",
-          "note": "2 imgs all alt-tagged"
+          "status": "skip",
+          "note": "no live URL"
         },
         {
           "id": "schema_graph",
           "label": "nested @graph schema (#3)",
           "severity": "p1",
-          "status": "pass",
-          "note": "@graph + Org-class + WebPage-class"
+          "status": "skip",
+          "note": "no live URL"
         },
         {
           "id": "date_modified",
           "label": "dateModified ISO 8601 with TZ (#1)",
           "severity": "p2",
-          "status": "pass",
-          "note": "2026-06-10T12:37:23"
+          "status": "skip",
+          "note": "no live URL"
         },
         {
           "id": "speakable",
           "label": "SpeakableSpecification (#13)",
           "severity": "p2",
-          "status": "pass",
-          "note": ""
+          "status": "skip",
+          "note": "no live URL"
         },
         {
           "id": "fleet_xlinks",
           "label": ">=3 fleet xlinks in footer",
           "severity": "p2",
-          "status": "pass",
-          "note": "5/5 sister-site links"
+          "status": "skip",
+          "note": "no live URL"
         },
         {
           "id": "link_rel_related",
           "label": "<link rel=related> in head (#22)",
           "severity": "p2",
-          "status": "pass",
-          "note": "no <link rel=related> in head"
+          "status": "skip",
+          "note": "no live URL"
         },
         {
           "id": "sitemap_lastmod",
           "label": "sitemap lastmod ISO 8601 + varies (#17)",
           "severity": "p2",
-          "status": "skip",
-          "note": "sitemap not fetchable"
+          "status": "fail",
+          "note": "all 3 sampled lastmods identical \u2014 build-time stamp"
         },
         {
           "id": "faqpage_misuse",
           "label": "NO FAQPage schema anywhere (#12, banned)",
           "severity": "p1",
-          "status": "pass",
-          "note": "no FAQPage schema (correct)"
+          "status": "skip",
+          "note": "no live URL"
         },
         {
           "id": "comparison_contract",
@@ -1291,78 +1291,78 @@
     },
     "findatradey": {
       "flavour": "leadgen",
-      "pre_launch": false,
+      "pre_launch": true,
       "live_url": "https://findatradey.pages.dev/",
       "checks": [
         {
           "id": "claude_md",
           "label": "CLAUDE.md present",
           "severity": "p2",
-          "status": "pass",
+          "status": "fail",
           "note": ""
         },
         {
           "id": "robots_txt",
           "label": "robots.txt valid + AI bots named",
           "severity": "p1",
-          "status": "fail",
-          "note": "robots blocks all crawlers under * \u2014 flip from prelaunch missed"
+          "status": "pass",
+          "note": "pre-launch should block-all"
         },
         {
           "id": "llms_txt",
           "label": "llms.txt",
           "severity": "p1",
-          "status": "pass",
+          "status": "fail",
           "note": ""
         },
         {
           "id": "llms_full",
           "label": "llms-full.txt",
           "severity": "p2",
-          "status": "pass",
+          "status": "fail",
           "note": ""
         },
         {
           "id": "llms_instructions",
           "label": "llms.txt has ## Instructions (#9)",
           "severity": "p2",
-          "status": "pass",
-          "note": "no `## Instructions` section per Stripe pattern"
+          "status": "skip",
+          "note": "no llms.txt"
         },
         {
           "id": "ai_txt",
           "label": "ai.txt (#10)",
           "severity": "p2",
-          "status": "pass",
+          "status": "fail",
           "note": "no public/ai.txt"
         },
         {
           "id": "indexnow_key",
           "label": "IndexNow key file in public/",
           "severity": "p1",
-          "status": "pass",
-          "note": "eeac7b3a49d740fa9e22b65c0a018138.txt"
+          "status": "fail",
+          "note": "no public/"
         },
         {
           "id": "deploy_site_host",
           "label": "deploy.cjs SITE_HOST matches live",
           "severity": "p0",
-          "status": "fail",
-          "note": "deploy.cjs SITE_HOST=findatradey.co.uk but live=findatradey.pages.dev"
+          "status": "skip",
+          "note": "pre-launch: SITE_HOST may legitimately differ from pages.dev URL"
         },
         {
           "id": "fleet_core_v",
           "label": "fleet-core >= v0.6.3",
           "severity": "p1",
-          "status": "pass",
-          "note": "v0.6.7 \u2014 needs >= v0.6.3"
+          "status": "skip",
+          "note": "no package.json"
         },
         {
           "id": "3tier_safepayload",
           "label": "3-tier safe-payload write",
           "severity": "p0",
-          "status": "pass",
-          "note": "via fleet-core"
+          "status": "skip",
+          "note": "no client-side Supabase form"
         },
         {
           "id": "og_image",
@@ -1445,14 +1445,14 @@
           "id": "indexnow_unique",
           "label": "IndexNow key file present (#18)",
           "severity": "p2",
-          "status": "pass",
-          "note": "key eeac7b3a... (1 key files)"
+          "status": "skip",
+          "note": "no public/"
         }
       ]
     },
     "findagym": {
       "flavour": "leadgen",
-      "pre_launch": false,
+      "pre_launch": true,
       "live_url": "https://findagym.pages.dev/",
       "checks": [
         {
@@ -1466,8 +1466,8 @@
           "id": "robots_txt",
           "label": "robots.txt valid + AI bots named",
           "severity": "p1",
-          "status": "fail",
-          "note": "robots blocks all crawlers under * \u2014 flip from prelaunch missed"
+          "status": "pass",
+          "note": "pre-launch should block-all"
         },
         {
           "id": "llms_txt",
@@ -1508,8 +1508,8 @@
           "id": "deploy_site_host",
           "label": "deploy.cjs SITE_HOST matches live",
           "severity": "p0",
-          "status": "fail",
-          "note": "deploy.cjs SITE_HOST=findagym.co.uk but live=findagym.pages.dev"
+          "status": "skip",
+          "note": "pre-launch: SITE_HOST may legitimately differ from pages.dev URL"
         },
         {
           "id": "fleet_core_v",
@@ -1747,7 +1747,7 @@
           "label": "sitemap lastmod ISO 8601 + varies (#17)",
           "severity": "p2",
           "status": "pass",
-          "note": "8 distinct lastmods in sample of 20"
+          "note": "6 distinct lastmods in sample of 20"
         },
         {
           "id": "faqpage_misuse",
@@ -2096,10 +2096,10 @@
     }
   },
   "summary": {
-    "p0_fails": 2,
+    "p0_fails": 0,
     "p1_fails": 4,
-    "p2_fails": 6,
-    "pass": 238,
+    "p2_fails": 11,
+    "pass": 222,
     "total": 286
   }
 }

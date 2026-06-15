@@ -52,6 +52,7 @@ SITE_TABLES = {
     "cardmachines":      ("merchanthq_leads",        "cardmachines_leads.json"),
     "kartapay":          ("kartapay_leads",          "kartapay_leads.json"),
     "peptideclear":      ("peptideclear_leads",      "peptideclear_leads.json"),
+    "seocompare":        ("seocompare_leads",        "seocompare_leads.json"),
 }
 
 
@@ -69,9 +70,22 @@ def fetch(path: str, params: dict):
         return json.loads(r.read().decode())
 
 
+# Sources that are NOT real external leads — internal/test submissions, staff
+# fills, fee/admin rows. These must never be counted as leads (Adam 15 Jun: an
+# "internal"-source row was showing on the lead tab as if it were a real lead).
+INTERNAL_SOURCES = {"internal", "test", "fee", "admin", "staff", "qa"}
+
+
+def _is_internal(row: dict) -> bool:
+    return str(row.get("source") or "").strip().lower() in INTERNAL_SOURCES
+
+
 def head_count(table: str) -> int:
+    # Count only real leads — exclude internal/test sources at the query level so
+    # the all-time total matches the (internal-stripped) recent counts.
+    src_filter = ",".join(sorted(INTERNAL_SOURCES))
     req = urllib.request.Request(
-        f"{SUPABASE_URL}/rest/v1/{table}?select=id",
+        f"{SUPABASE_URL}/rest/v1/{table}?select=id&source=not.in.({src_filter})",
         headers={
             "apikey": SUPABASE_KEY,
             "Authorization": f"Bearer {SUPABASE_KEY}",
@@ -105,6 +119,10 @@ def build_payload(site_id: str, table: str, now: datetime, week_ago: str, month_
         r for r in recent
         if not (r.get("event_type") == "step_1_complete" and r["created_at"] >= holdback_cutoff)
     ]
+
+    # Strip internal/test rows so they never count as real leads or pollute the
+    # source breakdown (e.g. a "fee"/"internal"-source row is not a lead).
+    recent = [r for r in recent if not _is_internal(r)]
 
     # Submit-shaped event types across the fleet. 2026-05-28: added
     # form_submit_serverside (MI/MHQ server-side capture) and quote_request
