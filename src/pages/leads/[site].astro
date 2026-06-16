@@ -156,7 +156,7 @@ const liveDomain = c?.liveDomain || c?.domain;
                 <td class="py-2 pr-2 text-right text-gray-300">{l.turnover || '—'}</td>
                 <td class="py-2 pr-2 text-gray-300">{l.finance_type || '—'}</td>
                 <td class="py-2 pr-2 text-gray-400">
-                  {[l.industry, l.payments_where, l.business_type].filter(Boolean).join(' · ') || '—'}
+                  {[l.industry, l.payments_where, l.business_type, l.current_provider, l.avg_transaction].filter(Boolean).join(' · ') || '—'}
                   {l.notes && (<div class="text-gray-600 max-w-[220px] truncate" title={l.notes}>{l.notes}</div>)}
                 </td>
                 <td class="py-2 pr-2 text-gray-500">
