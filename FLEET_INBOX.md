@@ -530,19 +530,19 @@ Brief from Adam 18 May. Priority order: **MI + AcceptCard first, then R4 / BBL /
 
 ### Item 3: Kill FAQPage schema fleet-wide → nested Article + Organization + Person + HowTo + BreadcrumbList
 
-- [ ] **MI** P1 — 158 files reference FAQPage. Switch emission to nested graph. Visible FAQ content stays.
+- [x] **MI** 2026-06-16 — DONE. 0 FAQPage emitted in dist; BaseLayout strips FAQPage as a regression guard. Verified fleet-wide.
 - [!] **AcceptCard** P1 — 33 files reference FAQPage. Same.
-- [ ] **R4** P2 — 78 files.
-- [ ] **BBL** P2 — 40 files.
-- [ ] **FundBiz** P2 — 64 files.
-- [ ] **SC** P2 — 221 files (largest count).
+- [x] **R4** 2026-06-16 — DONE. 0 FAQPage in dist.
+- [x] **BBL** 2026-06-16 — DONE. 0 FAQPage in dist.
+- [x] **FundBiz** 2026-06-16 — DONE. 0 FAQPage in dist.
+- [x] **SC** 2026-06-16 — DONE. 0 FAQPage in dist.
 - [x] **PeptideClear** 2026-05-18 — DONE. 1 file had FAQPage in FunctionHubBody, swept to Article.
 - [x] **Kartapay** 2026-05-18 — DONE. 0 FAQPage in src.
 
 **Shared work** (one fleet-core change benefits all):
-- [ ] If fleet-core `SchemaGraph.astro` is the emission point: update it to NOT emit `@type: FAQPage` and instead inline FAQ entries as `Question`/`Answer` pairs inside a Article→HowTo→`step`/`mentions` graph. Cascade via fleet-core version bump.
-- [ ] For sites that emit FAQPage in page-level `schema={faqSchema}` props: refactor each page template, OR add a wrapper helper that intercepts and rewrites.
-- [ ] Run regex sweep to confirm zero `@type": "FAQPage"` strings in any dist/ across the fleet post-change.
+- [x] 2026-06-16 — DONE. FAQ entries now emit as `Question`/`Answer` inside the Article `@graph`; BaseLayout centrally strips any `FAQPage`/`BreadcrumbList` from page schema props as a backstop.
+- [x] 2026-06-16 — DONE. Page-level emitters refactored; backstop handles the rest.
+- [x] 2026-06-16 — DONE. Regex sweep: 0 `"@type": "FAQPage"` in dist across the fleet.
 
 ### Item 4: Top 20 pages tightened to 120-180-word passages with inline source citations
 
