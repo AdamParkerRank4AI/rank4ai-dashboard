@@ -30,6 +30,7 @@ SITES = {
     "homesandhedge": "https://homesandhedge.co.uk",
     "hervitals": "https://hervitals.co.uk",
     "adhdhelper": "https://adhdhelper.co.uk",
+    "company-rescue": "https://ltdturnaround.co.uk",
 }
 
 INDEXNOW_URL = "https://api.indexnow.org/indexnow"
@@ -50,6 +51,7 @@ SITE_KEYS = {
     "homesandhedge":     "4109de09679304557367b5b3e1b90c9b",
     "hervitals":         "4d36b67015e69fd2c5009095402cac74",
     "adhdhelper":        "a39ace08e7ac01f94c8fadff07824ebd",
+    "company-rescue":    "9d318eda937ea7aa30c3f0eba4ad62bc",
 }
 
 
