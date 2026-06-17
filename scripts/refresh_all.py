@@ -132,6 +132,7 @@ def main():
         ("fetch_crawl_activity.py", 120),  # was 30s — consistently timed out
         ("fetch_bot_hits.py", 30),
         ("fetch_fleet_bot_hits.py", 45),  # AI-bot intelligence from Supabase fleet_bot_hits (per-site middleware logger) -> fleet_bot_hits.json
+        ("fetch_human_traffic.py", 90),  # accurate per-site HUMAN count (no bots) via count=exact -> human_traffic.json (dashboard source of truth)
 
         ("fetch_cf_ai_crawls.py", 180),  # 13 sites now; 60s too tight
         # PageSpeed — run weekly only (Sunday) to avoid rate limits

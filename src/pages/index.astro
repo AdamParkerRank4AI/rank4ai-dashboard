@@ -38,6 +38,9 @@ const uptime = loadJson('uptime.json') || {};
 const audit = loadJson('ai_audit.json') || {};
 const citations = loadJson('citation_results.json') || {};
 const botHits = loadJson('bot_hits.json') || {};
+const humanTraffic = loadJson('human_traffic.json') || {};
+const htBySite = (humanTraffic as any).by_site || {};
+const totalHumans = Object.values(htBySite).reduce((s: number, d: any) => s + (d.human_30d || 0), 0);
 const changelog = loadJson('site_changelog.json') || {};
 const bing = loadJson('bing.json') || {};
 const crawlActivity = loadJson('crawl_activity.json') || {};
@@ -255,14 +258,22 @@ function typeOf(c: any) {
   </section>
 
   {/* SEARCH FUNNELS — the click streams that bring real visitors, headlined */}
-  <section data-copy-tile="Search funnels" class="mb-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+  <section data-copy-tile="Search funnels" class="mb-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3">
+    <div class="rounded-lg border border-cyan-700/60 bg-cyan-950/40 px-4 py-3">
+      <div class="flex items-center justify-between">
+        <span class="text-[10px] uppercase tracking-wider text-cyan-300 font-semibold">Humans (no bots)</span>
+        <span class="text-[9px] text-gray-500">first-party · 30d</span>
+      </div>
+      <div class="text-3xl font-bold text-white mt-1">{totalHumans.toLocaleString()}</div>
+      <div class="text-[10px] text-gray-500 mt-1">Real human visits, ALL channels, with bots / AI-crawlers / SEO-tools removed. The source of truth for traffic (~76% of raw hits are bots).</div>
+    </div>
     <div class="rounded-lg border border-emerald-800/50 bg-emerald-950/30 px-4 py-3">
       <div class="flex items-center justify-between">
         <span class="text-[10px] uppercase tracking-wider text-emerald-300 font-semibold">Google clicks</span>
         <span class="text-[9px] text-gray-500">GSC · 28–30d</span>
       </div>
       <div class="text-3xl font-bold text-white mt-1">{totalClicks.toLocaleString()}</div>
-      <div class="text-[10px] text-gray-500 mt-1">Clicks from a google.com search-result page. Doesn't include Bing or AI tools.</div>
+      <div class="text-[10px] text-gray-500 mt-1">Clicks from a google.com search-result page (already bot-free). Doesn't include Bing or AI tools.</div>
     </div>
     <div class="rounded-lg border border-amber-800/50 bg-amber-950/30 px-4 py-3">
       <div class="flex items-center justify-between">
@@ -309,6 +320,7 @@ function typeOf(c: any) {
           <tr class="text-gray-400 border-b border-gray-800 bg-gray-950/50">
             <th class="text-left py-2 px-3"></th>
             <th class="text-left py-2 px-3">Site</th>
+            <th class="text-right py-2 px-3 text-cyan-300" title="Real human visitors (no bots) — first-party server-side count over 30 days, with bots / AI crawlers / SEO tools excluded. The source of truth for real traffic.">Humans (no bots)</th>
             <th class="text-right py-2 px-3" title="GA4 sessions — total visits from ALL sources (search, direct, AI, social), last 30 days">Users</th>
             <th class="text-right py-2 px-3" title="GA4 sessions — total visits from ALL sources (search, direct, AI, social), last 30 days">Sessions</th>
             <th class="text-right py-2 px-3" title="Google clicks — clicks from a google.com search-result page (GSC, last 28-30 days)">Google clk</th>
@@ -366,6 +378,8 @@ function typeOf(c: any) {
             const topQueries = (g.top_queries || []).slice(0, 5);
             const topPages = (g.top_pages || []).slice(0, 5);
             const pd = (periodData as any)[siteId] || { day: {}, week: {}, month: {} };
+            const ht = (htBySite as any)[siteId] || {};
+            const humanNoBots = ht.human_30d ?? null;
             return (
               <>
                 <tr
@@ -377,6 +391,7 @@ function typeOf(c: any) {
                   onclick={`document.getElementById('fqv-${siteId}').classList.toggle('hidden')`}>
                   <td class="py-2 px-3 text-gray-500">▸</td>
                   <td class="py-2 px-3"><a href={`/agency/${siteId}`} class="font-semibold text-indigo-400 hover:text-indigo-300">{displayName}</a></td>
+                  <td class="py-2 px-3 text-right font-bold text-cyan-300" title={ht.bot_pct != null ? `${ht.bot_pct}% of raw hits were bots (removed)` : ''}>{humanNoBots != null ? humanNoBots.toLocaleString() : '—'}</td>
                   <td class="py-2 px-3 text-right text-white">{(ov.active_users ?? 0).toLocaleString()}</td>
                   <td class="py-2 px-3 text-right text-white">{(ov.sessions ?? 0).toLocaleString()}</td>
                   <td data-col="clicks" class="py-2 px-3 text-right text-emerald-400 font-semibold">{(totals.clicks ?? 0).toLocaleString()}</td>
@@ -393,7 +408,7 @@ function typeOf(c: any) {
                   <td class={`py-2 px-3 text-right font-semibold ${ch > 3 ? 'text-red-400' : ch > 0 ? 'text-amber-400' : 'text-emerald-400'}`}>{ch}</td>
                 </tr>
                 <tr id={`fqv-${siteId}`} data-detail={siteId} class="hidden">
-                  <td colspan="16" class="bg-gray-950/70 px-6 py-4 border-b border-gray-800">
+                  <td colspan="17" class="bg-gray-950/70 px-6 py-4 border-b border-gray-800">
                     <div class="grid md:grid-cols-3 gap-6">
                       <div>
                         <h4 class="text-[11px] uppercase tracking-wider text-gray-500 mb-2 font-semibold">SEO health</h4>
