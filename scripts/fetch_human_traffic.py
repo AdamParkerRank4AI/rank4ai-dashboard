@@ -62,13 +62,27 @@ def main():
         total30 = count(f"fleet_bot_hits?site=eq.{sq}&created_at=gte.{since30}")
         human7 = count(f"fleet_bot_hits?site=eq.{sq}&bot_category=eq.human&created_at=gte.{since7}")
         leads30 = 0
+        leads_by_source = {}
         if table:
             st = ",".join(SUBMIT_TYPES)
             leads30 = count(f"{table}?event_type=in.({st})&created_at=gte.{since30}&email=not.is.null")
+            # leads-by-source from our own attribution (`source` = acquisition channel;
+            # falls back to own-domain/internal where first-touch didn't persist)
+            try:
+                req = urllib.request.Request(
+                    f"{SUPABASE_URL}/rest/v1/{table}?select=source&event_type=in.({st})&created_at=gte.{since30}&email=not.is.null",
+                    headers={"apikey": SK, "Authorization": f"Bearer {SK}"}, method="GET")
+                with urllib.request.urlopen(req, timeout=30) as r:
+                    for row in json.load(r):
+                        s = (row.get("source") or "unknown").strip() or "unknown"
+                        leads_by_source[s] = leads_by_source.get(s, 0) + 1
+            except Exception:
+                pass
         out["by_site"][site] = {
             "human_30d": human30, "total_30d": total30, "human_7d": human7,
             "bot_pct": round(100 * (1 - human30 / total30)) if total30 else 0,
             "leads_30d": leads30,
+            "leads_by_source": leads_by_source,
         }
         print(f"  {site}: human30={human30}  total30={total30}  bot%={out['by_site'][site]['bot_pct']}  leads30={leads30}")
     with open(OUT, "w") as f:

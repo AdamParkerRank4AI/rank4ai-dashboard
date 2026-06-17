@@ -41,6 +41,21 @@ const botHits = loadJson('bot_hits.json') || {};
 const humanTraffic = loadJson('human_traffic.json') || {};
 const htBySite = (humanTraffic as any).by_site || {};
 const totalHumans = Object.values(htBySite).reduce((s: number, d: any) => s + (d.human_30d || 0), 0);
+// Conversion funnel: Impressions → Clicks → Leads per site (+ leads-by-source from our own attribution)
+const funnelRows = (clients as any[])
+  .filter((c: any) => clientIds.has(c.id))
+  .map((c: any) => {
+    const t = (gsc as any)[c.id]?.totals || {};
+    const ht = (htBySite as any)[c.id] || {};
+    const impr = t.impressions || 0, clicks = t.clicks || 0, leads = ht.leads_30d || 0;
+    return {
+      name: c.name || c.id, impr, clicks, leads,
+      ctr: impr ? +(100 * clicks / impr).toFixed(1) : 0,
+      sources: (Object.entries(ht.leads_by_source || {}) as [string, number][]).sort((a, b) => b[1] - a[1]),
+    };
+  })
+  .filter((r: any) => r.leads > 0 || r.impr > 200)
+  .sort((a: any, b: any) => b.leads - a.leads || b.impr - a.impr);
 const changelog = loadJson('site_changelog.json') || {};
 const bing = loadJson('bing.json') || {};
 const crawlActivity = loadJson('crawl_activity.json') || {};
@@ -299,6 +314,30 @@ function typeOf(c: any) {
       <div class="text-3xl font-bold text-white mt-1">{totalAiVisits.toLocaleString()}</div>
       <div class="text-[10px] text-gray-500 mt-1">Real GA4 sessions referred by ChatGPT / Perplexity / Gemini / Claude / Copilot. User clicked the link and the page loaded.</div>
     </div>
+  </section>
+
+  {/* CONVERSION FUNNEL — Impressions → Clicks → Leads, leads-by-source from our own attribution */}
+  <section data-copy-tile="Conversion funnel" class="mb-6 rounded-lg border border-cyan-800/50 bg-cyan-950/20 px-4 py-3">
+    <h2 class="text-sm font-semibold text-cyan-300 uppercase tracking-wider mb-2">
+      Funnel · Impressions → Clicks → Leads
+      <span class="text-[10px] text-gray-500 normal-case">(Google GSC 28d · leads 30d, our own attribution)</span>
+    </h2>
+    <div class="space-y-1">
+      {funnelRows.map((r: any) => (
+        <div class="flex items-center gap-2 text-xs border-b border-gray-800/40 py-1.5">
+          <span class="w-32 shrink-0 font-semibold text-indigo-300 truncate">{r.name}</span>
+          <span class="text-amber-300 tabular-nums w-24 text-right">{r.impr.toLocaleString()}<span class="text-gray-600 text-[10px]"> impr</span></span>
+          <span class="text-gray-600">→</span>
+          <span class="text-emerald-400 tabular-nums w-24 text-right">{r.clicks.toLocaleString()}<span class="text-gray-600 text-[10px]"> clk {r.ctr}%</span></span>
+          <span class="text-gray-600">→</span>
+          <span class="font-bold text-cyan-300 tabular-nums w-16 text-right">{r.leads}<span class="text-gray-600 text-[10px]"> leads</span></span>
+          {r.sources.length > 0 && (
+            <span class="text-[10px] text-gray-500 ml-3 truncate">{r.sources.map(([s, n]: [string, number]) => `${s} ${n}`).join(' · ')}</span>
+          )}
+        </div>
+      ))}
+    </div>
+    <p class="text-[10px] text-gray-600 mt-2">Leads-by-source = our own first-party attribution. "internal" / own-domain means the first-touch source didn't persist (attribution fix pending on FundBiz + MHQ; MarketInvoice is accurate — note Bing drives most MI leads).</p>
   </section>
 
   {/* FLEET QUICK VIEW — one row per site, all key signals at a glance, click site name to expand details */}
