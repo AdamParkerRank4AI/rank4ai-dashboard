@@ -61,6 +61,7 @@ def main():
         human30 = count(f"fleet_bot_hits?site=eq.{sq}&bot_category=eq.human&created_at=gte.{since30}")
         total30 = count(f"fleet_bot_hits?site=eq.{sq}&created_at=gte.{since30}")
         human7 = count(f"fleet_bot_hits?site=eq.{sq}&bot_category=eq.human&created_at=gte.{since7}")
+        human1 = count(f"fleet_bot_hits?site=eq.{sq}&bot_category=eq.human&created_at=gte.{iso(1)}")
         leads30 = 0
         leads_by_source = {}
         if table:
@@ -79,7 +80,7 @@ def main():
             except Exception:
                 pass
         out["by_site"][site] = {
-            "human_30d": human30, "total_30d": total30, "human_7d": human7,
+            "human_30d": human30, "total_30d": total30, "human_7d": human7, "human_1d": human1,
             "bot_pct": round(100 * (1 - human30 / total30)) if total30 else 0,
             "leads_30d": leads30,
             "leads_by_source": leads_by_source,

@@ -350,7 +350,7 @@ function typeOf(c: any) {
           <button type="button" data-period="week" class="fqv-period px-2.5 py-1 text-gray-400 hover:text-white border-l border-gray-700">Week</button>
           <button type="button" data-period="month" class="fqv-period px-2.5 py-1 bg-indigo-600 text-white border-l border-gray-700">Month</button>
         </div>
-        <span class="text-[10px] text-gray-500">Period changes Google clk/Impr/Pos only · click any header to sort ▲▼ · click ▸ for detail</span>
+        <span class="text-[10px] text-gray-500">Period changes Humans + Google clk/Impr/Pos · other columns are fixed 30-day (GA4/Bing have no daily feed) · click ▸ for detail</span>
       </div>
     </div>
     <div class="overflow-x-auto rounded-lg border border-gray-800 bg-gray-900">
@@ -427,10 +427,11 @@ function typeOf(c: any) {
                   data-cday={pd.day.clicks ?? 0} data-cweek={pd.week.clicks ?? 0} data-cmonth={pd.month.clicks ?? 0}
                   data-iday={pd.day.impressions ?? 0} data-iweek={pd.week.impressions ?? 0} data-imonth={pd.month.impressions ?? 0}
                   data-pday={pd.day.position ?? ''} data-pweek={pd.week.position ?? ''} data-pmonth={pd.month.position ?? ''}
+                  data-hday={ht.human_1d ?? ''} data-hweek={ht.human_7d ?? ''} data-hmonth={ht.human_30d ?? ''}
                   onclick={`document.getElementById('fqv-${siteId}').classList.toggle('hidden')`}>
                   <td class="py-2 px-3 text-gray-500">▸</td>
                   <td class="py-2 px-3"><a href={`/agency/${siteId}`} class="font-semibold text-indigo-400 hover:text-indigo-300">{displayName}</a></td>
-                  <td class="py-2 px-3 text-right font-bold text-cyan-300" title={ht.bot_pct != null ? `${ht.bot_pct}% of raw hits were bots (removed)` : ''}>{humanNoBots != null ? humanNoBots.toLocaleString() : '—'}</td>
+                  <td data-col="humans" class="py-2 px-3 text-right font-bold text-cyan-300" title={ht.bot_pct != null ? `${ht.bot_pct}% of raw hits were bots (removed)` : ''}>{humanNoBots != null ? humanNoBots.toLocaleString() : '—'}</td>
                   <td class="py-2 px-3 text-right text-white">{(ov.active_users ?? 0).toLocaleString()}</td>
                   <td class="py-2 px-3 text-right text-white">{(ov.sessions ?? 0).toLocaleString()}</td>
                   <td data-col="clicks" class="py-2 px-3 text-right text-emerald-400 font-semibold">{(totals.clicks ?? 0).toLocaleString()}</td>
@@ -1246,6 +1247,9 @@ function typeOf(c: any) {
           var cC = r.querySelector('[data-col="clicks"]');
           var cI = r.querySelector('[data-col="impr"]');
           var cP = r.querySelector('[data-col="pos"]');
+          var cH = r.querySelector('[data-col="humans"]');
+          var hum = r.getAttribute('data-h' + period);
+          if (cH && hum !== null && hum !== '') cH.textContent = nf.format(Number(hum || 0));
           if (cC) cC.textContent = nf.format(Number(clk || 0));
           if (cI) cI.textContent = nf.format(Number(imp || 0));
           if (cP) cP.textContent = (pos === '' || pos == null) ? '—' : Number(pos).toFixed(1);
