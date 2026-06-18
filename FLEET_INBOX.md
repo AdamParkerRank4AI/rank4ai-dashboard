@@ -4,6 +4,9 @@
 
 > ⏰ **REMINDER FOR ADAM (added 2026-06-08):** Rename the **MerchantHQ Medium handle** from the auto-generated `@info_76290` to the brand (e.g. `@merchanthq`) on Medium's side. The profile is already wired into MHQ's Org `sameAs` (`https://medium.com/@info_76290`) — once renamed, update that URL in `~/cardmachines/site.manifest.ts`. Cosmetic/entity-tidiness, not urgent.
 
+> 🔀 **CROSS-SESSION OWNERSHIP (added 2026-06-18):** **Equity Release / LaterLifeBorrowing (`~/equity-release`) is Adam's lane — he is building the whole TIER 3 guide backlog himself.** Other Claude sessions: do **NOT** build ER guide pages (a parallel session duplicated `/guides/switching-equity-release-plan/` on 18 Jun before catching it). Claude's fleet effort goes on the OTHER sites: the **Bing on-page exact-match pass** (money pages: FundBiz/MHQ/BBL near-invisible on Bing = the fast win), MHQ + Kartapay GEO `DataAsText`/`ExpertCounterOpinion` caveats, page consolidation, and non-ER new pages. Full 18-Jun content+technical to-do + live build tracker: `iCloud/claude/Research/beyond-serp-fleet-2026-06-17/FLEET-UPGRADES-AND-NEW-PAGES.md`.
+> ⚠️ **DEPLOY GOTCHA:** MarketInvoice + rank4ai auto-build from `main` (nightly content cron); manual wrangler deploys get overwritten — commit to `main` AND verify against the live URL ("a record saying live ≠ live").
+
 The shared queue between the dashboard and Claude Code sessions.
 
 **GEO DataAsText backlog (added 2026-06-12, full list in `astro/plan/GEO_DATAASTEXT_TODO.md`):**
@@ -37,6 +40,31 @@ The shared queue between the dashboard and Claude Code sessions.
 **Multilingual playbook:** `astro/FLEET/multilingual/README.md` — canonical reference when any site (existing or new) considers vernacular / non-English content. Read BEFORE scaffolding any /lang/ route. Built from cardmachines opportunity research + ai-search-framework research + takecardpayments PL+RO 3-pass translation pilot. Includes decision checklist, implementation blueprint, code snippets ready to copy.
 
 ---
+
+## 2026-06-18 — Fleet content + technical to-do (full doc: `~/control-panel/FLEET_CONTENT_TECH_TODO.md`)
+
+**Frame:** bottleneck is RANKING not the form (sites sit pos 30-60). **Bing = fast win** (ranks on on-page not backlinks; MI proves it converts — 7/12 MI leads are Bing; FundBiz/MHQ/BBL/Kartapay near-invisible on Bing = headroom). **Google = slow** (push striking-distance pos 6-30, consolidate thin pages, neutral data/citation assets for AIO). One on-page pass lifts Bing+Google+AI together.
+
+**CONTENT — per site:**
+- [ ] **MI** P1 — deploy the built **Lender League Table** (`data/uk-invoice-finance-lender-league-table/`, never deployed, fastest AIO-citation win); P1 consolidate 80+ pages → money pages; P2 push buried `invoice finance for manufacturing/hospitality` + Bing on-page. Plan: `~/compare-invoice-finance/MI-INVOICE-FINANCE-PUSH-PLAN.md`
+- [ ] **MHQ** P2 — "best card machine" buried pos 80+; nudge `bbpos wisepad 3 price` (pos 7.6); Bing on-page
+- [ ] **FundBiz** P2 — strengthen specialty clusters (MCA/asset/bridging/VAT/HMRC/decline); Bing ~invisible (8 impr) → on-page exact-match
+- [ ] **BBL** P3 — slow editorial top-of-funnel only (new domain, bank-locked, backlinks ruled out)
+- [ ] **Kartapay** P2 — PL/RO vernacular head-terms; P3 charge-decoder PL/RO (parked); tech: lead not persisting to Supabase on fallback
+- [ ] **PeptideClear** P2 — on-page pass on money pages
+- [ ] **SEOCompare** P1 — deploy pending (orphan `/best/` fix on main, muswellrose acct); Clarity tag + IndexNow gaps
+- [ ] **New sites** — go-live gate (legal pages + GA4/Clarity IDs + OG + affiliate tags + clinical reviewer) before `preLaunch:false`
+
+**TECHNICAL (baseline clean — daily crawl 0 issues):**
+- [x] First-touch attribution — DONE 18 Jun (FundBiz fleet-core 0.9.5 + MHQ get-quotes; MI already OK). leads-by-source now accurate fleet-wide on next real lead.
+- [x] Function-clobber 405 self-heal — DONE 18 Jun (`~/fleet-tools/functions-guard.sh` + `com.fleet.functions-guard` hourly).
+- [ ] P1 — DataAsText + ExpertCounterOpinion on new calculators (MHQ charge-decoder, Kartapay calcs, MI tools — trips GEO gate)
+- [ ] P1 — Dashboard reliability: ~26/112 feeds silently stale → per-tile freshness badges + stale-feed alert + prune dead feeds
+- [ ] P1 — SEOCompare Clarity tag (Adam) + IndexNow on muswellrose Bing account
+- [ ] P2 — Lead-quality scoring + Turnstile (blocked: CF Turnstile keys from Adam); FormSubmit activation per origin (Adam)
+- [ ] P3 — Per-page OG images (fleet shares one default)
+
+**⚠️ DEPLOY GOTCHA:** MI + rank4ai CF auto-build from `main` (daily-content cron pushes main → CF rebuilds) → manual wrangler deploys to MI get overwritten. MI changes MUST be committed to `main` AND verified against the LIVE URL (a record saying "live" ≠ live — this hid a 2-week-stale MI form).
 
 ## 2026-06-11 — Mystery Charge Decoder shipped; 3 builds parked on inputs
 
