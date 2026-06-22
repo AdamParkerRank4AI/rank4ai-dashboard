@@ -41,19 +41,27 @@ LIVE = PROJECT_DIR / "src" / "data" / "live"
 DOWNLOADS = Path.home() / "Downloads"
 OUTPUT = LIVE / "gsc_coverage_drilldown.json"
 
-# Map domain prefix in filename → site_id
+# Map domain in filename → site_id. GSC names URL-prefix exports
+# "<domain>-Coverage-Drilldown-..." and domain-property exports
+# "https___<domain>_-Coverage-Drilldown-..." — so match the domain anywhere.
 DOMAIN_TO_SITE = {
     "rank4ai.co.uk": "rank4ai",
     "marketinvoice.co.uk": "market-invoice",
     "seocompare.co.uk": "seocompare",
+    "merchanthq.co.uk": "cardmachines",
+    "peptideclear.co.uk": "peptideclear",
+    "fundbiz.co.uk": "fundbiz",
+    "bestbusinessloans.ai": "bestbusinessloans",
+    "kartapay.com": "kartapay",
 }
 
 
 def detect_site(filename):
     name = os.path.basename(filename).lower()
-    for domain, site_id in DOMAIN_TO_SITE.items():
-        if name.startswith(domain.lower()):
-            return site_id, domain
+    # Longest domain first so e.g. a sub-brand never shadows the full domain.
+    for domain in sorted(DOMAIN_TO_SITE, key=len, reverse=True):
+        if domain in name:
+            return DOMAIN_TO_SITE[domain], domain
     return None, None
 
 
