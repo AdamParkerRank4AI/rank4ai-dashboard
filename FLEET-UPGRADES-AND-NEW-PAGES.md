@@ -84,9 +84,9 @@
 # 🔵 BANKED NEXT — scoped/queued, not built yet (the drip queue)
 
 **📂 QUEUED CONTENT STORED IN THE REPOS (the per-site banks — build-ready, just not built):**
-- **MerchantHQ `~/cardmachines/briefs/`** — **36 build-ready content briefs** (trade + community niche pages, e.g. corner-shop/Punjabi, Birmingham, high-risk-domination plan). Each has full frontmatter + audience + key terms.
-- **Kartapay `~/kartapay/briefs/`** — **~50 PL/RO briefs**, priority-tagged p1-p4 (provider reviews, sumup-vs-square, PCI/chargeback, cost calculator, London/city, invoice-pay-link). The biggest in-language bank.
-- **LLB `~/equity-release/docs/TARGET-BACKLOG.md`** — the explicit **banked target list** ("BANK" = to build vs "BUILT✅(held)" rows), with volumes/SERP-status/suggested-page, across the whole later-life-borrowing space + `CONTENT-ROADMAP.md` + `EXPANSION-low-comp-angles.md`.
+- **MerchantHQ `~/cardmachines/briefs/`** — 36 briefs → **15 already built, ~19 still queued** (verified 23 Jun). The queued ones are mostly **vernacular community pages** (-pa Punjabi / -bn Bengali / -gu Gujarati: corner-shop, takeaway, jewellery, pharmacy, taxi, Birmingham/Leicester/Wembley/Southall) + worldpay-cancel/leave (now covered by B14 exit hub) + 2 plan docs. **Vernacular ones need native-quality copy — flag, don't auto-build.**
+- **Kartapay `~/kartapay/briefs/`** — ~48 PL/RO briefs → **most already built, ~4 still queued** (verified). Built-out is largely done; remaining need native PL/RO QA.
+- **LLB `~/equity-release/docs/TARGET-BACKLOG.md`** — the explicit **banked target list**: **30 rows marked "BANK" (to build) vs 17 "BUILT✅(held)"** (verified), with volumes/SERP-status/suggested-page across the whole later-life-borrowing space + `CONTENT-ROADMAP.md` + `EXPANSION-low-comp-angles.md`. *(Theme-A retirement/pensioner-mortgage rows being built this session, banked.)*
 - **Per-site `docs/BUILD-IDEAS.md` + `IDEAS-BRIEF.md`** — queued ideas/strategy on **PeptideClear, FundBiz, Her Vitals (+clinical-tools), ADHD Helper, HomesAndHedge**. PeptideClear also has `docs/PEPTIDECLEAR_BACKLOG_HANDOFF.md`.
 - **VettedHome `~/sortedproperty/docs/`** — `findatradey-trades-play.md` + `trades-kitchen-bathroom-scope.md` (= B5).
 - **iCloud `claude/Research/`** — the niche-attack harvests + per-niche build maps (source material: equity-release, supplements, home-services, kartapay-keyword-attack, niche-attack batches, etc.).

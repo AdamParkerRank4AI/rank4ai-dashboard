@@ -34,7 +34,7 @@ PROPERTIES = {
     "rank4ai": "526657151",
     "market-invoice": "531285218",
     "seocompare": "532266658",
-    "cardmachines": "537291192",        # AcceptCard, G-9Q5QGGE1ZP
+    "cardmachines": "538211285",        # MerchantHQ "merchant 1", G-F3M88RNZWB (the live site sends here = 91 sess/30d; was wrongly pointed at AcceptCard 537291192/G-9Q5QGGE1ZP = 0, fixed 23 Jun)
     "bestbusinessloans": "538202642",   # G-P7G336KY9C
     "fundbiz": "538211877",             # G-9L5BSC5H1R
     "kartapay": "538191589",            # karta12 account

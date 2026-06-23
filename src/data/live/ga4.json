@@ -2,24 +2,24 @@
   "rank4ai": {
     "site_id": "rank4ai",
     "property_id": "526657151",
-    "fetched_at": "2026-06-23T10:30:22.040866",
+    "fetched_at": "2026-06-23T15:45:45.852533",
     "period": "last_30_days",
     "overview": {
-      "active_users": 432,
-      "sessions": 525,
-      "pageviews": 776,
-      "bounce_rate": 77.0,
-      "avg_session_duration": 78.9
+      "active_users": 442,
+      "sessions": 535,
+      "pageviews": 801,
+      "bounce_rate": 75.7,
+      "avg_session_duration": 77.4
     },
     "top_pages": [
       {
         "path": "/",
-        "pageviews": 248,
-        "users": 173
+        "pageviews": 255,
+        "users": 178
       },
       {
         "path": "/about/",
-        "pageviews": 33,
+        "pageviews": 34,
         "users": 25
       },
       {
@@ -28,13 +28,13 @@
         "users": 19
       },
       {
-        "path": "/what-we-do/full-agency/",
+        "path": "/contact/",
         "pageviews": 17,
         "users": 11
       },
       {
-        "path": "/contact/",
-        "pageviews": 16,
+        "path": "/what-we-do/full-agency/",
+        "pageviews": 17,
         "users": 11
       },
       {
@@ -49,7 +49,7 @@
       },
       {
         "path": "/what-we-do/ai-visibility-audit/",
-        "pageviews": 9,
+        "pageviews": 10,
         "users": 8
       },
       {
@@ -59,8 +59,8 @@
       },
       {
         "path": "/research/rankings/top-geo-agencies-uk-2026/",
-        "pageviews": 7,
-        "users": 5
+        "pageviews": 8,
+        "users": 6
       },
       {
         "path": "/what-we-do/pricing/",
@@ -83,12 +83,12 @@
         "users": 6
       },
       {
-        "path": "/accessibility",
-        "pageviews": 5,
+        "path": "/learn/guides/geo/",
+        "pageviews": 6,
         "users": 5
       },
       {
-        "path": "/learn/guides/geo/",
+        "path": "/accessibility",
         "pageviews": 5,
         "users": 5
       },
@@ -116,13 +116,13 @@
     "sources": [
       {
         "channel": "Direct",
-        "sessions": 322,
-        "users": 292
+        "sessions": 326,
+        "users": 296
       },
       {
         "channel": "Organic Search",
-        "sessions": 142,
-        "users": 100
+        "sessions": 151,
+        "users": 107
       },
       {
         "channel": "Referral",
@@ -130,14 +130,14 @@
         "users": 20
       },
       {
-        "channel": "Unassigned",
-        "sessions": 23,
-        "users": 17
+        "channel": "AI Assistant",
+        "sessions": 17,
+        "users": 12
       },
       {
-        "channel": "AI Assistant",
-        "sessions": 14,
-        "users": 10
+        "channel": "Unassigned",
+        "sessions": 15,
+        "users": 13
       },
       {
         "channel": "Organic Social",
@@ -149,26 +149,26 @@
       {
         "source": "(direct)",
         "medium": "(none)",
-        "sessions": 322,
-        "users": 292
+        "sessions": 326,
+        "users": 296
       },
       {
         "source": "google",
         "medium": "organic",
-        "sessions": 133,
-        "users": 95
-      },
-      {
-        "source": "(not set)",
-        "medium": "(not set)",
-        "sessions": 14,
-        "users": 9
+        "sessions": 142,
+        "users": 102
       },
       {
         "source": "chatgpt.com",
         "medium": "ai-assistant",
-        "sessions": 13,
-        "users": 9
+        "sessions": 16,
+        "users": 11
+      },
+      {
+        "source": "(not set)",
+        "medium": "(not set)",
+        "sessions": 6,
+        "users": 5
       },
       {
         "source": "goodfirms.co",
@@ -445,31 +445,35 @@
       },
       {
         "date": "20260622",
-        "users": 12,
-        "sessions": 17
+        "users": 15,
+        "sessions": 19
       },
       {
         "date": "20260623",
-        "users": 5,
-        "sessions": 6
+        "users": 12,
+        "sessions": 14
       }
     ],
     "countries": [
       {
         "country": "United States",
-        "users": 212
+        "users": 215
       },
       {
         "country": "United Kingdom",
-        "users": 108
+        "users": 110
       },
       {
         "country": "India",
-        "users": 27
+        "users": 28
       },
       {
         "country": "Germany",
         "users": 12
+      },
+      {
+        "country": "Singapore",
+        "users": 7
       },
       {
         "country": "Australia",
@@ -477,10 +481,6 @@
       },
       {
         "country": "Canada",
-        "users": 5
-      },
-      {
-        "country": "Singapore",
         "users": 5
       },
       {
@@ -499,20 +499,20 @@
     "ai_assistant": {
       "last_7d": {
         "channel_label": "AI Assistant",
-        "sessions": 6,
-        "users": 4
+        "sessions": 9,
+        "users": 6
       },
       "prior_7d": {
         "channel_label": "AI Assistant",
         "sessions": 8,
         "users": 7
       },
-      "delta_pct": -25.0,
+      "delta_pct": 12.5,
       "sources_30d": [
         {
           "source": "chatgpt.com",
-          "sessions": 22,
-          "users": 17
+          "sessions": 25,
+          "users": 19
         },
         {
           "source": "gemini.google.com",
@@ -533,13 +533,18 @@
         },
         {
           "path": "/contact/",
-          "sessions": 4,
+          "sessions": 5,
           "users": 1
         },
         {
           "path": "/ai-seo-agency-london/",
           "sessions": 3,
           "users": 3
+        },
+        {
+          "path": "/research/rankings/top-ai-seo-agencies-uk-2026/",
+          "sessions": 2,
+          "users": 2
         },
         {
           "path": "/about/",
@@ -570,11 +575,6 @@
           "path": "/research/rankings/ai-search-optimisation-agencies-uk/",
           "sessions": 1,
           "users": 1
-        },
-        {
-          "path": "/research/rankings/best-chatgpt-seo-agencies-uk/",
-          "sessions": 1,
-          "users": 1
         }
       ]
     }
@@ -582,25 +582,25 @@
   "market-invoice": {
     "site_id": "market-invoice",
     "property_id": "531285218",
-    "fetched_at": "2026-06-23T10:30:28.268649",
+    "fetched_at": "2026-06-23T15:45:52.913603",
     "period": "last_30_days",
     "overview": {
-      "active_users": 117,
-      "sessions": 173,
-      "pageviews": 316,
-      "bounce_rate": 41.0,
-      "avg_session_duration": 155.9
+      "active_users": 121,
+      "sessions": 182,
+      "pageviews": 332,
+      "bounce_rate": 34.6,
+      "avg_session_duration": 168.3
     },
     "top_pages": [
       {
         "path": "/",
-        "pageviews": 61,
+        "pageviews": 63,
         "users": 22
       },
       {
         "path": "/guides/invoice-finance-after-high-street-bank-exit/",
-        "pageviews": 34,
-        "users": 37
+        "pageviews": 38,
+        "users": 39
       },
       {
         "path": "/invoice-finance-quote/",
@@ -609,13 +609,13 @@
       },
       {
         "path": "/providers/directory/",
-        "pageviews": 15,
+        "pageviews": 16,
         "users": 6
       },
       {
         "path": "/providers/",
-        "pageviews": 13,
-        "users": 8
+        "pageviews": 15,
+        "users": 9
       },
       {
         "path": "/thank-you/",
@@ -624,13 +624,13 @@
       },
       {
         "path": "/industries/",
-        "pageviews": 9,
+        "pageviews": 10,
         "users": 5
       },
       {
         "path": "/working-capital/",
-        "pageviews": 8,
-        "users": 7
+        "pageviews": 9,
+        "users": 8
       },
       {
         "path": "/import-finance/",
@@ -668,6 +668,21 @@
         "users": 2
       },
       {
+        "path": "/providers/igf/",
+        "pageviews": 3,
+        "users": 3
+      },
+      {
+        "path": "/providers/skipton/",
+        "pageviews": 3,
+        "users": 3
+      },
+      {
+        "path": "/vs/",
+        "pageviews": 3,
+        "users": 2
+      },
+      {
         "path": "/aW52b2ljZS",
         "pageviews": 2,
         "users": 2
@@ -676,43 +691,28 @@
         "path": "/best/",
         "pageviews": 2,
         "users": 2
-      },
-      {
-        "path": "/best/best-for-sole-traders/",
-        "pageviews": 2,
-        "users": 2
-      },
-      {
-        "path": "/best/same-day-invoice-finance/",
-        "pageviews": 2,
-        "users": 2
-      },
-      {
-        "path": "/blog/invoice-finance-for-manufacturing-smes-supply-chain-pressure-and-working-capital/",
-        "pageviews": 2,
-        "users": 2
       }
     ],
     "sources": [
       {
         "channel": "Direct",
-        "sessions": 105,
-        "users": 81
+        "sessions": 110,
+        "users": 85
       },
       {
         "channel": "Organic Search",
-        "sessions": 54,
-        "users": 31
-      },
-      {
-        "channel": "Unassigned",
-        "sessions": 8,
-        "users": 8
+        "sessions": 55,
+        "users": 32
       },
       {
         "channel": "Organic Social",
         "sessions": 6,
         "users": 1
+      },
+      {
+        "channel": "Unassigned",
+        "sessions": 6,
+        "users": 3
       },
       {
         "channel": "Referral",
@@ -723,26 +723,31 @@
         "channel": "AI Assistant",
         "sessions": 2,
         "users": 2
+      },
+      {
+        "channel": "Cross-network",
+        "sessions": 1,
+        "users": 1
       }
     ],
     "source_medium": [
       {
         "source": "(direct)",
         "medium": "(none)",
-        "sessions": 105,
-        "users": 81
+        "sessions": 110,
+        "users": 85
       },
       {
         "source": "google",
         "medium": "organic",
-        "sessions": 42,
-        "users": 24
+        "sessions": 43,
+        "users": 25
       },
       {
         "source": "(not set)",
         "medium": "(not set)",
-        "sessions": 8,
-        "users": 8
+        "sessions": 6,
+        "users": 3
       },
       {
         "source": "bing",
@@ -778,6 +783,12 @@
         "source": "fleet-designs.pages.dev",
         "medium": "referral",
         "sessions": 2,
+        "users": 1
+      },
+      {
+        "source": "(data not available)",
+        "medium": "(data not available)",
+        "sessions": 1,
         "users": 1
       },
       {
@@ -925,14 +936,19 @@
       },
       {
         "date": "20260622",
-        "users": 17,
-        "sessions": 19
+        "users": 18,
+        "sessions": 21
+      },
+      {
+        "date": "20260623",
+        "users": 5,
+        "sessions": 7
       }
     ],
     "countries": [
       {
         "country": "United Kingdom",
-        "users": 56
+        "users": 59
       },
       {
         "country": "United States",
@@ -944,7 +960,7 @@
       },
       {
         "country": "Ireland",
-        "users": 11
+        "users": 12
       },
       {
         "country": "Australia",
@@ -1005,7 +1021,7 @@
   "seocompare": {
     "site_id": "seocompare",
     "property_id": "532266658",
-    "fetched_at": "2026-06-23T10:30:34.880368",
+    "fetched_at": "2026-06-23T15:45:59.866705",
     "period": "last_30_days",
     "overview": {
       "active_users": 2,
@@ -1072,54 +1088,447 @@
   },
   "cardmachines": {
     "site_id": "cardmachines",
-    "property_id": "537291192",
-    "fetched_at": "2026-06-23T10:30:41.200704",
+    "property_id": "538211285",
+    "fetched_at": "2026-06-23T15:46:07.312578",
     "period": "last_30_days",
     "overview": {
-      "active_users": 0,
-      "sessions": 0,
-      "pageviews": 0,
-      "bounce_rate": 0.0,
-      "avg_session_duration": 0.0
+      "active_users": 69,
+      "sessions": 91,
+      "pageviews": 129,
+      "bounce_rate": 41.8,
+      "avg_session_duration": 161.6
     },
-    "top_pages": [],
-    "sources": [],
-    "source_medium": [],
-    "daily": [],
-    "countries": [],
+    "top_pages": [
+      {
+        "path": "/",
+        "pageviews": 41,
+        "users": 14
+      },
+      {
+        "path": "/get-quotes/",
+        "pageviews": 16,
+        "users": 13
+      },
+      {
+        "path": "/lp/online-payments/",
+        "pageviews": 12,
+        "users": 11
+      },
+      {
+        "path": "/blog/card-machine-fees-explained-uk-2026/",
+        "pageviews": 11,
+        "users": 11
+      },
+      {
+        "path": "/about/",
+        "pageviews": 6,
+        "users": 2
+      },
+      {
+        "path": "/best/best-card-machine-small-business/",
+        "pageviews": 4,
+        "users": 4
+      },
+      {
+        "path": "/questions/card-machine-with-no-monthly-fee/",
+        "pageviews": 4,
+        "users": 4
+      },
+      {
+        "path": "/questions/how-fast-can-card-machine-arrive-uk/",
+        "pageviews": 4,
+        "users": 4
+      },
+      {
+        "path": "/pl/",
+        "pageviews": 3,
+        "users": 3
+      },
+      {
+        "path": "/best/cheapest-card-machine-uk/",
+        "pageviews": 2,
+        "users": 2
+      },
+      {
+        "path": "/how-we-work/",
+        "pageviews": 2,
+        "users": 2
+      },
+      {
+        "path": "/vs/pax-a77-vs-pax-a920-pro/",
+        "pageviews": 2,
+        "users": 1
+      },
+      {
+        "path": "/ai-instructions/",
+        "pageviews": 1,
+        "users": 1
+      },
+      {
+        "path": "/best/best-card-machine-for-aesthetics-clinic/",
+        "pageviews": 1,
+        "users": 1
+      },
+      {
+        "path": "/best/by-trade/mobile-massage-therapist/",
+        "pageviews": 1,
+        "users": 1
+      },
+      {
+        "path": "/card-machines",
+        "pageviews": 1,
+        "users": 1
+      },
+      {
+        "path": "/hi/kirana-store-card-machine-hi/",
+        "pageviews": 1,
+        "users": 1
+      },
+      {
+        "path": "/learn/peptide-merchant-account-uk/",
+        "pageviews": 1,
+        "users": 1
+      },
+      {
+        "path": "/learn/uk-card-interchange-2026/",
+        "pageviews": 1,
+        "users": 1
+      },
+      {
+        "path": "/lp/",
+        "pageviews": 1,
+        "users": 1
+      }
+    ],
+    "sources": [
+      {
+        "channel": "Organic Social",
+        "sessions": 30,
+        "users": 30
+      },
+      {
+        "channel": "Direct",
+        "sessions": 25,
+        "users": 15
+      },
+      {
+        "channel": "Organic Search",
+        "sessions": 17,
+        "users": 10
+      },
+      {
+        "channel": "Unassigned",
+        "sessions": 15,
+        "users": 13
+      },
+      {
+        "channel": "AI Assistant",
+        "sessions": 5,
+        "users": 5
+      },
+      {
+        "channel": "Cross-network",
+        "sessions": 4,
+        "users": 4
+      },
+      {
+        "channel": "Paid Social",
+        "sessions": 4,
+        "users": 2
+      }
+    ],
+    "source_medium": [
+      {
+        "source": "(direct)",
+        "medium": "(none)",
+        "sessions": 25,
+        "users": 15
+      },
+      {
+        "source": "m.facebook.com",
+        "medium": "referral",
+        "sessions": 16,
+        "users": 16
+      },
+      {
+        "source": "facebook.com",
+        "medium": "referral",
+        "sessions": 14,
+        "users": 14
+      },
+      {
+        "source": "google",
+        "medium": "organic",
+        "sessions": 13,
+        "users": 9
+      },
+      {
+        "source": "(not set)",
+        "medium": "(not set)",
+        "sessions": 12,
+        "users": 10
+      },
+      {
+        "source": "(data not available)",
+        "medium": "(data not available)",
+        "sessions": 4,
+        "users": 4
+      },
+      {
+        "source": "chatgpt.com",
+        "medium": "ai-assistant",
+        "sessions": 4,
+        "users": 4
+      },
+      {
+        "source": "fb",
+        "medium": "paid",
+        "sessions": 3,
+        "users": 1
+      },
+      {
+        "source": "search.google.com",
+        "medium": "referral",
+        "sessions": 3,
+        "users": 1
+      },
+      {
+        "source": "chatgpt.com",
+        "medium": "(not set)",
+        "sessions": 2,
+        "users": 2
+      },
+      {
+        "source": "bing",
+        "medium": "organic",
+        "sessions": 1,
+        "users": 1
+      },
+      {
+        "source": "chatgpt.com",
+        "medium": "(none)",
+        "sessions": 1,
+        "users": 1
+      },
+      {
+        "source": "copilot.com",
+        "medium": "ai-assistant",
+        "sessions": 1,
+        "users": 1
+      },
+      {
+        "source": "ig",
+        "medium": "paid",
+        "sessions": 1,
+        "users": 1
+      }
+    ],
+    "daily": [
+      {
+        "date": "20260525",
+        "users": 1,
+        "sessions": 1
+      },
+      {
+        "date": "20260527",
+        "users": 2,
+        "sessions": 2
+      },
+      {
+        "date": "20260529",
+        "users": 1,
+        "sessions": 1
+      },
+      {
+        "date": "20260601",
+        "users": 1,
+        "sessions": 1
+      },
+      {
+        "date": "20260603",
+        "users": 1,
+        "sessions": 2
+      },
+      {
+        "date": "20260604",
+        "users": 1,
+        "sessions": 1
+      },
+      {
+        "date": "20260605",
+        "users": 3,
+        "sessions": 3
+      },
+      {
+        "date": "20260606",
+        "users": 1,
+        "sessions": 1
+      },
+      {
+        "date": "20260607",
+        "users": 1,
+        "sessions": 1
+      },
+      {
+        "date": "20260608",
+        "users": 14,
+        "sessions": 15
+      },
+      {
+        "date": "20260609",
+        "users": 3,
+        "sessions": 6
+      },
+      {
+        "date": "20260610",
+        "users": 1,
+        "sessions": 2
+      },
+      {
+        "date": "20260611",
+        "users": 6,
+        "sessions": 7
+      },
+      {
+        "date": "20260612",
+        "users": 1,
+        "sessions": 1
+      },
+      {
+        "date": "20260613",
+        "users": 2,
+        "sessions": 3
+      },
+      {
+        "date": "20260614",
+        "users": 1,
+        "sessions": 1
+      },
+      {
+        "date": "20260615",
+        "users": 2,
+        "sessions": 3
+      },
+      {
+        "date": "20260616",
+        "users": 10,
+        "sessions": 11
+      },
+      {
+        "date": "20260617",
+        "users": 6,
+        "sessions": 6
+      },
+      {
+        "date": "20260618",
+        "users": 3,
+        "sessions": 4
+      },
+      {
+        "date": "20260620",
+        "users": 1,
+        "sessions": 1
+      },
+      {
+        "date": "20260621",
+        "users": 1,
+        "sessions": 1
+      },
+      {
+        "date": "20260622",
+        "users": 12,
+        "sessions": 14
+      },
+      {
+        "date": "20260623",
+        "users": 2,
+        "sessions": 4
+      }
+    ],
+    "countries": [
+      {
+        "country": "United Kingdom",
+        "users": 33
+      },
+      {
+        "country": "United States",
+        "users": 24
+      },
+      {
+        "country": "Sweden",
+        "users": 5
+      },
+      {
+        "country": "Ireland",
+        "users": 4
+      },
+      {
+        "country": "Australia",
+        "users": 1
+      },
+      {
+        "country": "India",
+        "users": 1
+      },
+      {
+        "country": "Isle of Man",
+        "users": 1
+      },
+      {
+        "country": "Portugal",
+        "users": 1
+      }
+    ],
     "ai_assistant": {
       "last_7d": {
-        "channel_label": null,
-        "sessions": 0,
-        "users": 0
+        "channel_label": "AI Assistant",
+        "sessions": 3,
+        "users": 3
       },
       "prior_7d": {
-        "channel_label": null,
-        "sessions": 0,
-        "users": 0
+        "channel_label": "AI Assistant",
+        "sessions": 2,
+        "users": 2
       },
-      "delta_pct": null,
-      "sources_30d": [],
-      "top_landing_pages_30d": []
+      "delta_pct": 50.0,
+      "sources_30d": [
+        {
+          "source": "chatgpt.com",
+          "sessions": 6,
+          "users": 6
+        }
+      ],
+      "top_landing_pages_30d": [
+        {
+          "path": "/best/best-card-machine-small-business/",
+          "sessions": 4,
+          "users": 4
+        },
+        {
+          "path": "/best/cheapest-card-machine-uk/",
+          "sessions": 2,
+          "users": 2
+        }
+      ]
     }
   },
   "bestbusinessloans": {
     "site_id": "bestbusinessloans",
     "property_id": "538202642",
-    "fetched_at": "2026-06-23T10:30:49.057366",
+    "fetched_at": "2026-06-23T15:46:15.614360",
     "period": "last_30_days",
     "overview": {
-      "active_users": 49,
-      "sessions": 55,
-      "pageviews": 85,
-      "bounce_rate": 85.5,
-      "avg_session_duration": 44.5
+      "active_users": 50,
+      "sessions": 56,
+      "pageviews": 89,
+      "bounce_rate": 80.4,
+      "avg_session_duration": 36.9
     },
     "top_pages": [
       {
         "path": "/",
-        "pageviews": 40,
-        "users": 29
+        "pageviews": 42,
+        "users": 30
       },
       {
         "path": "/get-quotes/",
@@ -1207,12 +1616,12 @@
         "users": 1
       },
       {
-        "path": "/reviews/capify/",
+        "path": "/privacy/",
         "pageviews": 1,
         "users": 1
       },
       {
-        "path": "/reviews/mt-finance/",
+        "path": "/reviews/capify/",
         "pageviews": 1,
         "users": 1
       }
@@ -1220,8 +1629,8 @@
     "sources": [
       {
         "channel": "Direct",
-        "sessions": 47,
-        "users": 42
+        "sessions": 49,
+        "users": 43
       },
       {
         "channel": "Referral",
@@ -1248,8 +1657,8 @@
       {
         "source": "(direct)",
         "medium": "(none)",
-        "sessions": 47,
-        "users": 42
+        "sessions": 49,
+        "users": 43
       },
       {
         "source": "(not set)",
@@ -1388,14 +1797,14 @@
       },
       {
         "date": "20260623",
-        "users": 1,
-        "sessions": 1
+        "users": 2,
+        "sessions": 2
       }
     ],
     "countries": [
       {
         "country": "United Kingdom",
-        "users": 18
+        "users": 19
       },
       {
         "country": "United States",
@@ -1465,14 +1874,14 @@
   "fundbiz": {
     "site_id": "fundbiz",
     "property_id": "538211877",
-    "fetched_at": "2026-06-23T10:30:53.981844",
+    "fetched_at": "2026-06-23T15:46:21.684255",
     "period": "last_30_days",
     "overview": {
-      "active_users": 25,
-      "sessions": 33,
-      "pageviews": 60,
-      "bounce_rate": 72.7,
-      "avg_session_duration": 137.4
+      "active_users": 27,
+      "sessions": 35,
+      "pageviews": 61,
+      "bounce_rate": 74.3,
+      "avg_session_duration": 129.5
     },
     "top_pages": [
       {
@@ -1486,13 +1895,13 @@
         "users": 5
       },
       {
-        "path": "/thank-you/",
+        "path": "/alternatives/iwoca/",
         "pageviews": 4,
-        "users": 3
+        "users": 4
       },
       {
-        "path": "/alternatives/iwoca/",
-        "pageviews": 3,
+        "path": "/thank-you/",
+        "pageviews": 4,
         "users": 3
       },
       {
@@ -1594,8 +2003,8 @@
       },
       {
         "channel": "Unassigned",
-        "sessions": 3,
-        "users": 3
+        "sessions": 5,
+        "users": 5
       },
       {
         "channel": "Referral",
@@ -1617,16 +2026,16 @@
         "users": 12
       },
       {
+        "source": "(not set)",
+        "medium": "(not set)",
+        "sessions": 5,
+        "users": 5
+      },
+      {
         "source": "chatgpt.com",
         "medium": "ai-assistant",
         "sessions": 5,
         "users": 4
-      },
-      {
-        "source": "(not set)",
-        "medium": "(not set)",
-        "sessions": 3,
-        "users": 3
       },
       {
         "source": "mi",
@@ -1700,12 +2109,17 @@
         "date": "20260622",
         "users": 5,
         "sessions": 6
+      },
+      {
+        "date": "20260623",
+        "users": 2,
+        "sessions": 2
       }
     ],
     "countries": [
       {
         "country": "United Kingdom",
-        "users": 23
+        "users": 24
       },
       {
         "country": "Germany",
@@ -1713,6 +2127,10 @@
       },
       {
         "country": "Russia",
+        "users": 1
+      },
+      {
+        "country": "Saudi Arabia",
         "users": 1
       }
     ],
@@ -1752,7 +2170,7 @@
   "kartapay": {
     "site_id": "kartapay",
     "property_id": "538191589",
-    "fetched_at": "2026-06-23T10:31:00.534589",
+    "fetched_at": "2026-06-23T15:46:27.925923",
     "period": "last_30_days",
     "overview": {
       "active_users": 6,
@@ -1901,7 +2319,7 @@
   "peptideclear": {
     "site_id": "peptideclear",
     "property_id": "538285241",
-    "fetched_at": "2026-06-23T10:31:06.027290",
+    "fetched_at": "2026-06-23T15:46:33.865644",
     "period": "last_30_days",
     "overview": {
       "active_users": 53,
