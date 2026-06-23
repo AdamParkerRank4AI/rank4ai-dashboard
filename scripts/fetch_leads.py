@@ -151,10 +151,15 @@ def build_payload(site_id: str, table: str, now: datetime, week_ago: str, month_
     # as a submit (some sites' forms don't set event_type explicitly).
     SUBMIT_TYPES = {"form_submit", "form_submit_serverside", "quote_request", "submit"}
     def is_submit(r):
+        # A real lead is always contactable — require an email. This drops the
+        # malformed 'form_submit_serverside' rows with no email/company/phone
+        # (diagnostic/empty server writes) that were inflating the count (MI had 7).
+        if not (r.get("email") or "").strip():
+            return False
         et = (r.get("event_type") or "").strip()
         if et in SUBMIT_TYPES:
             return True
-        return (not et) and bool(r.get("email")) and bool(r.get("phone"))
+        return (not et) and bool(r.get("phone"))
 
     # Dedup near-duplicate submits 2026-05-30: the defense-in-depth pattern
     # writes BOTH form_submit (client-side direct write from fleet-core) AND
