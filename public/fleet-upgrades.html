@@ -170,6 +170,65 @@
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
+  <style>
+    :root{
+      --navy:#0f2540; --teal:#1f8a8a; --ink:#1c2530; --muted:#5b6776;
+      --line:#e6e9ee; --bg:#f6f8fb; --card:#ffffff; --accent:#0a7d7d;
+    }
+    *{box-sizing:border-box}
+    html{ -webkit-text-size-adjust:100% }
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--ink); background:var(--bg);
+      max-width:1180px; margin:0 auto; padding:32px 28px 96px;
+      line-height:1.55; font-size:15px; -webkit-font-smoothing:antialiased;
+    }
+    h1{
+      font-size:1.9rem; font-weight:800; letter-spacing:-.02em; color:var(--navy);
+      margin:0 0 4px; padding-bottom:14px; border-bottom:3px solid var(--teal);
+    }
+    h2{
+      font-size:1.28rem; font-weight:750; color:var(--navy); letter-spacing:-.01em;
+      margin:38px 0 12px; padding-top:10px;
+    }
+    h3{ font-size:1.02rem; font-weight:700; color:var(--ink); margin:22px 0 8px }
+    h2::before{ content:""; }
+    a{ color:var(--accent); text-decoration:none } a:hover{ text-decoration:underline }
+    p{ margin:.5em 0 }
+    blockquote{
+      margin:14px 0; padding:10px 16px; background:#eef3f8; border-left:4px solid var(--teal);
+      color:var(--muted); font-size:.92rem; border-radius:0 8px 8px 0;
+    }
+    blockquote p{ margin:.2em 0 }
+    hr{ border:none; border-top:1px solid var(--line); margin:34px 0 }
+    code{ font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace; font-size:.86em;
+      background:#eef1f5; padding:1px 6px; border-radius:5px; color:#0f3d3d }
+    /* tables */
+    .table-wrap, table{ width:100% }
+    table{
+      border-collapse:separate; border-spacing:0; margin:14px 0 26px;
+      background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden;
+      box-shadow:0 1px 3px rgba(16,37,64,.06); font-size:13.5px;
+    }
+    thead th{
+      background:var(--navy); color:#fff; font-weight:650; text-align:left;
+      padding:11px 12px; font-size:12.5px; letter-spacing:.01em; vertical-align:bottom;
+      position:sticky; top:0; z-index:1;
+    }
+    tbody td{ padding:10px 12px; border-top:1px solid var(--line); vertical-align:top; overflow-wrap:anywhere; word-break:normal }
+    tbody tr:nth-child(even){ background:#f9fbfd }
+    tbody tr:hover{ background:#f0f7f7 }
+    table strong{ color:var(--navy) }
+    /* compact + readable lists */
+    ul,ol{ margin:.4em 0 .8em; padding-left:1.4em } li{ margin:.25em 0 }
+    pre{
+      background:#0f2540; color:#dbe7f0; padding:16px 18px; border-radius:10px;
+      overflow:auto; font-size:12.5px; line-height:1.5;
+    }
+    pre code{ background:none; color:inherit; padding:0 }
+    strong{ font-weight:700 }
+    @media (max-width:640px){ body{ padding:18px 12px } table{ font-size:12px } h1{font-size:1.45rem} }
+  </style>
 </head>
 <body>
 <h1 id="fleet-upgrades-new-pages-status-updated-23-jun-2026">Fleet
@@ -476,8 +535,8 @@ gets the “declined → loan” funnel</td>
 first)</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>— ⭐ LEAD BUILDS (say the code, I run it) —</strong></td>
+<td><strong>⭐ LEAD BUILDS</strong></td>
+<td><strong>— say the code, I run it —</strong></td>
 </tr>
 <tr>
 <td><strong>B14</strong> MerchantHQ contract-exit hub (pillar + 14

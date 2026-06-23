@@ -76,9 +76,29 @@ def fetch(path: str, params: dict):
 # "internal"-source row was showing on the lead tab as if it were a real lead).
 INTERNAL_SOURCES = {"internal", "test", "fee", "admin", "staff", "qa"}
 
+# Synthetic rows from the fleet test/watchdog harness leak past the exact-match
+# source list (e.g. source "fleet-test-2026-06-23", email "fleettest+x@...",
+# "wizard-e2e-...@pipeline...", company "ZZ TEST FULL LEAD (delete)"). Match them
+# by substring across source/email/company so they never count as real leads.
+# Adam confirms additions; keep these unambiguous (a real lead must never match).
+TEST_SOURCE_PREFIXES = ("fleet-test", "synthetic", "watchdog", "e2e")
+TEST_EMAIL_MARKERS = ("fleettest+", "wizard-e2e", "@pipeline.", "@example.", "+test@", "noreply@", "fakeemail@")
+TEST_COMPANY_MARKERS = ("zz test", "test full lead", "(delete)")
+
 
 def _is_internal(row: dict) -> bool:
-    return str(row.get("source") or "").strip().lower() in INTERNAL_SOURCES
+    src = str(row.get("source") or "").strip().lower()
+    if src in INTERNAL_SOURCES:
+        return True
+    if any(src.startswith(p) for p in TEST_SOURCE_PREFIXES):
+        return True
+    email = str(row.get("email") or "").strip().lower()
+    if any(m in email for m in TEST_EMAIL_MARKERS):
+        return True
+    company = str(row.get("company_name") or "").strip().lower()
+    if any(m in company for m in TEST_COMPANY_MARKERS):
+        return True
+    return False
 
 
 def head_count(table: str) -> int:

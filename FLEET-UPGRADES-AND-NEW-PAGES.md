@@ -43,7 +43,7 @@
 | **B11** make passage-shape stick (tooling) | ✅ **DONE** — `passage-shape-gate.py` wired into `fleet-validate.sh` + regression #16 |
 | **B12** **FundBiz** business-credit-cards cluster (Ltd-framed, risk wording: representative APR, for-limited-companies, subject-to-status). ~15–20k/mo, £55–98 CPC. BBL gets the "declined → loan" funnel | ⏸ parked — proportionate compliance check |
 | **B13** MHQ payments cards (expense/corporate/prepaid) + **form cross-sell** ("also interested in?") | ⏸ **parked — FCA gate** (form add needs Supabase column first) |
-| | **— ⭐ LEAD BUILDS (say the code, I run it) —** | |
+| **⭐ LEAD BUILDS** | **— say the code, I run it —** |
 | **B14** MerchantHQ contract-exit hub (pillar + 14 provider cancel guides + cancellation templates) | ✅ **DONE + LIVE** (23 Jun) |
 | **B15** PeptideClear next-gen GLP-1 hub (retatrutide / CagriSema / survodutide; "in trials, not UK-legal" framing) | ⏳ ready |
 | **B16** FundBiz refinance / "stuck in a contract" hub + BBL MCA escalator-trap guide (interlinked) | ⏳ ready · FundBiz/BBL 🅿️ reskin parked → build off main |
