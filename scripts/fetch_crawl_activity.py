@@ -20,6 +20,8 @@ SITES = {
     "fundbiz": "https://fundbiz.co.uk/",
     "cardmachines": "https://merchanthq.co.uk/",
 }
+import fleet_sites  # cover all live fleet sites (LTD Turnaround, LLB, banner + health sites), not just the original core
+SITES = fleet_sites.merge(SITES)
 
 AI_BOTS = [
     "GPTBot", "ChatGPT-User", "Google-Extended", "GoogleOther",

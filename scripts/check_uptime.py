@@ -23,6 +23,8 @@ SITES = {
     "peptideclear": "https://peptideclear.co.uk",
     "kartapay": "https://kartapay.co.uk",
 }
+import fleet_sites  # add any live fleet sites missing above (LTD Turnaround, LLB, banner + health sites)
+SITES = fleet_sites.merge(SITES)
 
 HEADERS = {
     "User-Agent": "Rank4AI-Uptime-Check/1.0"

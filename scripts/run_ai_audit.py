@@ -21,6 +21,8 @@ SITES = {
     "market-invoice": "https://www.marketinvoice.co.uk",
     "seocompare": "https://www.seocompare.co.uk",
 }
+import fleet_sites  # was only 3 sites — cover the whole live fleet
+SITES = fleet_sites.merge(SITES)
 
 AI_CRAWLERS = [
     "GPTBot", "ChatGPT-User", "Google-Extended", "GoogleOther",
