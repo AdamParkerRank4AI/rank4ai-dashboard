@@ -169,9 +169,13 @@ def build_payload(site_id: str, table: str, now: datetime, week_ago: str, month_
     total_30d = len(recent)
     total_all = head_count(table) if recent else 0
 
+    # "Step 1 start" = first identifiable partial. Multi-step fleet forms write
+    # 'step_1_complete'; single-step forms (MerchantHQ, Kartapay) write
+    # 'partial_lead'. Count both so the drop-off funnel works for every site.
+    STEP1_TYPES = {"step_1_complete", "partial_lead"}
     step1_7d = sum(
         1 for r in recent
-        if r["created_at"] >= week_ago and r.get("event_type") == "step_1_complete"
+        if r["created_at"] >= week_ago and (r.get("event_type") or "") in STEP1_TYPES
     )
     # Use deduped set so client+server pair counts as 1
     submit_7d = sum(1 for r in recent if r["created_at"] >= week_ago and r["id"] in deduped_submit_ids)
@@ -179,7 +183,7 @@ def build_payload(site_id: str, table: str, now: datetime, week_ago: str, month_
 
     sources_counter = Counter()
     for r in recent:
-        if is_submit(r) or r.get("event_type") == "step_1_complete":
+        if is_submit(r) or (r.get("event_type") or "") in STEP1_TYPES:
             src = r.get("source") or "unknown"
             sources_counter[src] += 1
     sources = [{"source": k, "count": v} for k, v in sources_counter.most_common(10)]
@@ -196,7 +200,7 @@ def build_payload(site_id: str, table: str, now: datetime, week_ago: str, month_
         et = (r.get("event_type") or "")
         if et == "step_2_complete":
             return 2
-        if et == "step_1_complete":
+        if et in STEP1_TYPES:
             return 1
         return 0
 

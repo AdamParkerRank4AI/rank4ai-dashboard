@@ -7,7 +7,7 @@
 | # | Brand | New pages | Upgrades | Tools | Answer blocks | Status |
 |--:|---|--:|--:|--:|--:|---|
 | 1 | MarketInvoice | 0 / 60 | **43** / 680 | **1** / 3 | 0 / ~300 | ✅ B3 funnel + GEO + league table + **FAQPage on 326pp** LIVE · next: barclays consolidate, tighten ~64 thin capsules |
-| 2 | MerchantHQ 🅿️ | 0 / 55 | 0 / 149 | 0 / 3 | 0 / 560 | mature; rate ticker live · ⭐ provider-contract exit hub · un-gated fee table · methodology |
+| 2 | MerchantHQ 🅿️ | **15** / 55 | 0 / 149 | 0 / 3 | 0 / 560 | ✅ **contract-exit hub LIVE** (pillar + 14 provider cancel guides) + FAQPage re-enabled · next: un-gated fee table · methodology · 🅿️ reskin still parked |
 | 3 | PeptideClear | 0 / 49 | 0 / 268 | 0 / 4 | 0 / ~200 | 3 surge pages + 34 citations · ⭐ next-gen GLP-1 hub · /medical vs /research split |
 | 4 | FundBiz 🅿️ | 0 / 124 | 0 / 142 | 0 / 3 | 0 / 230 | trade-credit surge · ⭐ refinance / "stuck in a contract" hub · 17 decline guides |
 | 5 | Best Business Loans 🅿️ | 0 / 73 | 0 / 112 | 0 / 3 | 0 / ~150 | mature · ⭐ MCA escalator-trap guide · real rate numbers (kill "see lender quote") · fix 398w capsule |
@@ -43,6 +43,17 @@
 | **B11** make passage-shape stick (tooling) | ✅ **DONE** — `passage-shape-gate.py` wired into `fleet-validate.sh` + regression #16 |
 | **B12** **FundBiz** business-credit-cards cluster (Ltd-framed, risk wording: representative APR, for-limited-companies, subject-to-status). ~15–20k/mo, £55–98 CPC. BBL gets the "declined → loan" funnel | ⏸ parked — proportionate compliance check |
 | **B13** MHQ payments cards (expense/corporate/prepaid) + **form cross-sell** ("also interested in?") | ⏸ **parked — FCA gate** (form add needs Supabase column first) |
+| | **— ⭐ LEAD BUILDS (say the code, I run it) —** | |
+| **B14** MerchantHQ contract-exit hub (pillar + 14 provider cancel guides + cancellation templates) | ✅ **DONE + LIVE** (23 Jun) |
+| **B15** PeptideClear next-gen GLP-1 hub (retatrutide / CagriSema / survodutide; "in trials, not UK-legal" framing) | ⏳ ready |
+| **B16** FundBiz refinance / "stuck in a contract" hub + BBL MCA escalator-trap guide (interlinked) | ⏳ ready · FundBiz/BBL 🅿️ reskin parked → build off main |
+| **B17** VettedHome spray-foam-removal crisis hub + cost guide *(my lane)* | ⏳ ready |
+| **B18** BabyData ONS name-trend visualiser *(my lane)* | ⏳ ready |
+| **B19** ADHD Helper Right-to-Choose navigation hub (editorial model) | ⏳ ready |
+| **B20** Her Vitals menopause / perimenopause evidence hub (editorial model) | ⏳ ready |
+| **B21** HomesAndHedge answer-first Quick-Triage + safety/legal boxes *(my lane)* | ⏳ ready |
+| **B22** Kartapay "business loan, no UK credit history" PL + RO + fix EN-header bleed | ⏳ ready |
+| **B23** MarketInvoice SERP cleanup: consolidate "barclays invoice finance" (10→1) + prune southall dupes | ⏳ ready |
 
 ## Build log (what shipped, with real deploy status)
 - **B7 · LLB** — 10 TIER-3 guides + og-default → `b51310d`, wrangler-deployed, **LIVE**. ✅
@@ -54,6 +65,7 @@
 - **DatesAndTimes downloads** (22–23 Jun) — bank-holiday JSON/CSV/iCal endpoints + Dataset `distribution` → merged main, **wrangler-deployed, 200-verified LIVE**. ✅
 - **MI brand + bank-exit** (23 Jun) — visible operator/identity line + answer-first bank-exit capsule → **LIVE** (`e058e03`). 5 dashboard items marked done. Brand-term ranking = low-ROI (legacy brand). ✅
 - **Reviewer lock** (23 Jun) — health named-reviewer recs **LOCKED OFF** (editorial model). ✅
+- **MHQ ⭐ contract-exit hub** (23 Jun) — pillar `/cancel-card-machine-contract/` + 14 per-provider `/cancel/[slug]/` guides (Worldpay, Barclaycard, Dojo…), grounded in verified `uk-acquirers` contract terms (no fabricated fees) + cancellation-letter templates + FAQPage/ItemList schema. Built off main (independent of the parked reskin), wrangler-deployed, **200-verified LIVE** + IndexNow-submitted (910 URLs → Bing). Verify-first: switching-help was a service-pitch, not a how-to-cancel → genuinely net-new. ✅
 
 ## Pending merges (reviewed, not yet merged)
 - **PeptideClear citation refresh** (`citation-refresh/2026-06-22`) — 44 PubMed papers reviewed: **~34 keep / ~10 reject** (selank false-match · kpv author-initial · cerebrolysin retractions). **Merge blocked** by active WIP + 404-sweep conflict; plan = compounds.json-only with rejects dropped once free.

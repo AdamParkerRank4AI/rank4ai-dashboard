@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-06-23T12:00:47.709889+00:00",
+  "fetched_at": "2026-06-23T12:49:38.504404+00:00",
   "site_id": "cardmachines",
   "table": "merchanthq_leads",
   "submits_total": 7,
@@ -27,26 +27,26 @@
   "count_30d": 27,
   "count_7d": 9,
   "funnel_7d": {
-    "step_1_complete": 0,
+    "step_1_complete": 3,
     "form_submit": 3,
-    "conversion_pct": 0.0
+    "conversion_pct": 100.0
   },
   "sources_30d": [
     {
       "source": "merchanthq.co.uk",
-      "count": 9
+      "count": 17
     },
     {
       "source": "direct",
-      "count": 1
+      "count": 2
     },
     {
       "source": "ig",
-      "count": 1
+      "count": 2
     },
     {
       "source": "fb",
-      "count": 1
+      "count": 2
     }
   ],
   "recent_leads": [
@@ -189,7 +189,7 @@
       "website_url": "https://www.sportsbreaks.com/",
       "stages": [
         "submit",
-        "other"
+        "step 1"
       ],
       "_event_count": 3
     },
@@ -345,7 +345,7 @@
       "website_url": "www.snrorientalfoods.com",
       "stages": [
         "submit",
-        "other"
+        "step 1"
       ],
       "_event_count": 3
     },
@@ -487,7 +487,7 @@
       "website_url": null,
       "stages": [
         "submit",
-        "other"
+        "step 1"
       ],
       "_event_count": 3
     },
@@ -784,79 +784,6 @@
       "_event_count": 1
     },
     {
-      "id": "72487d87-6ac5-4509-9635-7f8317245594",
-      "created_at": "2026-06-16T09:39:58.409974+00:00",
-      "event_type": "canary",
-      "turnover": null,
-      "industry": null,
-      "terminal_type": null,
-      "business_type": null,
-      "payments_where": null,
-      "company_name": null,
-      "company_number": null,
-      "contact_name": "p",
-      "email": "x@x.test",
-      "phone": null,
-      "page_url": null,
-      "applied_from": null,
-      "user_agent": null,
-      "notes": null,
-      "source": null,
-      "landing_path": null,
-      "referrer": null,
-      "referrer_host": null,
-      "utm_source": null,
-      "utm_medium": null,
-      "utm_campaign": null,
-      "utm_term": null,
-      "utm_content": null,
-      "gclid": null,
-      "fbclid": null,
-      "msclkid": null,
-      "attribution_full": null,
-      "attr_first_source": null,
-      "attr_first_landing_url": null,
-      "attr_first_landing_path": null,
-      "attr_first_referrer": null,
-      "attr_first_referrer_host": null,
-      "attr_first_utm_source": null,
-      "attr_first_utm_medium": null,
-      "attr_first_utm_campaign": null,
-      "attr_first_utm_term": null,
-      "attr_first_utm_content": null,
-      "attr_first_gclid": null,
-      "attr_first_fbclid": null,
-      "attr_first_msclkid": null,
-      "attr_first_seen_at": null,
-      "attr_last_source": null,
-      "attr_last_url": null,
-      "attr_last_path": null,
-      "attr_last_referrer": null,
-      "attr_session_first_landing": null,
-      "attr_session_started_at": null,
-      "attr_session_page_count": null,
-      "attr_journey": null,
-      "attr_journey_count": null,
-      "attr_user_agent": null,
-      "attr_platform": null,
-      "attr_language": null,
-      "attr_timezone": null,
-      "attr_viewport": null,
-      "attr_screen": null,
-      "attr_submitted_at": null,
-      "attr_submitted_from": null,
-      "business_postcode": null,
-      "finance_type": null,
-      "amount": null,
-      "current_provider": null,
-      "avg_transaction": null,
-      "website_url": null,
-      "stages": [
-        "other"
-      ],
-      "_event_count": 4
-    },
-    {
       "id": "4f03e022-656e-4878-b8ce-ecec8ed25ebd",
       "created_at": "2026-06-15T12:19:27.674666+00:00",
       "event_type": "partial_lead",
@@ -925,7 +852,7 @@
       "avg_transaction": null,
       "website_url": null,
       "stages": [
-        "other"
+        "step 1"
       ],
       "_event_count": 1
     },
@@ -998,7 +925,7 @@
       "avg_transaction": null,
       "website_url": null,
       "stages": [
-        "other"
+        "step 1"
       ],
       "_event_count": 1
     },
@@ -1071,7 +998,7 @@
       "avg_transaction": null,
       "website_url": null,
       "stages": [
-        "other"
+        "step 1"
       ],
       "_event_count": 1
     },
@@ -1144,7 +1071,7 @@
       "avg_transaction": null,
       "website_url": null,
       "stages": [
-        "other"
+        "step 1"
       ],
       "_event_count": 1
     },
@@ -1217,7 +1144,7 @@
       "avg_transaction": null,
       "website_url": null,
       "stages": [
-        "other"
+        "step 1"
       ],
       "_event_count": 1
     },
@@ -1290,7 +1217,7 @@
       "avg_transaction": null,
       "website_url": null,
       "stages": [
-        "other"
+        "step 1"
       ],
       "_event_count": 1
     },
@@ -1363,7 +1290,7 @@
       "avg_transaction": null,
       "website_url": null,
       "stages": [
-        "other"
+        "step 1"
       ],
       "_event_count": 1
     },
@@ -1436,9 +1363,82 @@
       "avg_transaction": null,
       "website_url": null,
       "stages": [
-        "other"
+        "step 1"
       ],
       "_event_count": 1
+    },
+    {
+      "id": "72487d87-6ac5-4509-9635-7f8317245594",
+      "created_at": "2026-06-16T09:39:58.409974+00:00",
+      "event_type": "canary",
+      "turnover": null,
+      "industry": null,
+      "terminal_type": null,
+      "business_type": null,
+      "payments_where": null,
+      "company_name": null,
+      "company_number": null,
+      "contact_name": "p",
+      "email": "x@x.test",
+      "phone": null,
+      "page_url": null,
+      "applied_from": null,
+      "user_agent": null,
+      "notes": null,
+      "source": null,
+      "landing_path": null,
+      "referrer": null,
+      "referrer_host": null,
+      "utm_source": null,
+      "utm_medium": null,
+      "utm_campaign": null,
+      "utm_term": null,
+      "utm_content": null,
+      "gclid": null,
+      "fbclid": null,
+      "msclkid": null,
+      "attribution_full": null,
+      "attr_first_source": null,
+      "attr_first_landing_url": null,
+      "attr_first_landing_path": null,
+      "attr_first_referrer": null,
+      "attr_first_referrer_host": null,
+      "attr_first_utm_source": null,
+      "attr_first_utm_medium": null,
+      "attr_first_utm_campaign": null,
+      "attr_first_utm_term": null,
+      "attr_first_utm_content": null,
+      "attr_first_gclid": null,
+      "attr_first_fbclid": null,
+      "attr_first_msclkid": null,
+      "attr_first_seen_at": null,
+      "attr_last_source": null,
+      "attr_last_url": null,
+      "attr_last_path": null,
+      "attr_last_referrer": null,
+      "attr_session_first_landing": null,
+      "attr_session_started_at": null,
+      "attr_session_page_count": null,
+      "attr_journey": null,
+      "attr_journey_count": null,
+      "attr_user_agent": null,
+      "attr_platform": null,
+      "attr_language": null,
+      "attr_timezone": null,
+      "attr_viewport": null,
+      "attr_screen": null,
+      "attr_submitted_at": null,
+      "attr_submitted_from": null,
+      "business_postcode": null,
+      "finance_type": null,
+      "amount": null,
+      "current_provider": null,
+      "avg_transaction": null,
+      "website_url": null,
+      "stages": [
+        "other"
+      ],
+      "_event_count": 4
     }
   ]
 }
