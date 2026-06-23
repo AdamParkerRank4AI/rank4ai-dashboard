@@ -1,14 +1,18 @@
 {
-  "fetched_at": "2026-06-23T10:59:52.820464+00:00",
+  "fetched_at": "2026-06-23T12:00:47.709889+00:00",
   "site_id": "cardmachines",
   "table": "merchanthq_leads",
-  "submits_total": 6,
-  "submits_30d": 6,
-  "submits_7d": 2,
+  "submits_total": 7,
+  "submits_30d": 7,
+  "submits_7d": 3,
   "submit_sources_30d": [
     {
       "source": "merchanthq.co.uk",
       "count": 4
+    },
+    {
+      "source": "direct",
+      "count": 1
     },
     {
       "source": "ig",
@@ -19,18 +23,22 @@
       "count": 1
     }
   ],
-  "count_total": 21,
-  "count_30d": 24,
-  "count_7d": 6,
+  "count_total": 24,
+  "count_30d": 27,
+  "count_7d": 9,
   "funnel_7d": {
     "step_1_complete": 0,
-    "form_submit": 2,
+    "form_submit": 3,
     "conversion_pct": 0.0
   },
   "sources_30d": [
     {
       "source": "merchanthq.co.uk",
-      "count": 8
+      "count": 9
+    },
+    {
+      "source": "direct",
+      "count": 1
     },
     {
       "source": "ig",
@@ -42,6 +50,149 @@
     }
   ],
   "recent_leads": [
+    {
+      "id": "5917b7a8-b96c-4730-a310-1637a40ae5bc",
+      "created_at": "2026-06-23T11:24:26.86859+00:00",
+      "event_type": "form_submit_serverside",
+      "turnover": "200k+",
+      "industry": "hotel",
+      "terminal_type": null,
+      "business_type": "ltd",
+      "payments_where": "website",
+      "company_name": "DESTINATION SPORT LIMITED",
+      "company_number": "09564446",
+      "contact_name": "Richard Woolhouse",
+      "email": "Richard.Woolhouse@ClarityBT.com",
+      "phone": "07732649392",
+      "page_url": "https://merchanthq.co.uk/get-quotes/",
+      "applied_from": "/get-quotes/",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 Edg/149.0.0.0",
+      "notes": "Takes card now: yes",
+      "source": "merchanthq.co.uk",
+      "landing_path": "/learn/uk-card-interchange-2026/",
+      "referrer": "https://merchanthq.co.uk/learn/uk-card-interchange-2026/",
+      "referrer_host": "merchanthq.co.uk",
+      "utm_source": null,
+      "utm_medium": null,
+      "utm_campaign": null,
+      "utm_term": null,
+      "utm_content": null,
+      "gclid": null,
+      "fbclid": null,
+      "msclkid": null,
+      "attribution_full": {
+        "site": "mhq",
+        "device": {
+          "online": true,
+          "screen": "1600x900",
+          "language": "en-GB",
+          "platform": "Win32",
+          "timezone": "Europe/London",
+          "viewport": "1592x734",
+          "languages": [
+            "en-GB",
+            "en",
+            "en-US"
+          ],
+          "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 Edg/149.0.0.0",
+          "cookies_enabled": true
+        },
+        "journey": [
+          {
+            "ts": "2026-06-23T11:20:48.653Z",
+            "url": "https://merchanthq.co.uk/learn/uk-card-interchange-2026/",
+            "path": "/learn/uk-card-interchange-2026/"
+          },
+          {
+            "ts": "2026-06-23T11:21:16.293Z",
+            "url": "https://merchanthq.co.uk/get-quotes/",
+            "path": "/get-quotes/"
+          }
+        ],
+        "last_touch": {
+          "ts": "2026-06-23T11:21:16.293Z",
+          "url": "https://merchanthq.co.uk/get-quotes/",
+          "path": "/get-quotes/",
+          "gclid": null,
+          "fbclid": null,
+          "source": "internal",
+          "msclkid": null,
+          "referrer": "https://merchanthq.co.uk/learn/uk-card-interchange-2026/",
+          "utm_term": null,
+          "utm_medium": null,
+          "utm_source": null,
+          "utm_content": null,
+          "utm_campaign": null,
+          "referrer_host": "merchanthq.co.uk"
+        },
+        "first_touch": {
+          "ts": "2026-06-23T11:20:48.653Z",
+          "url": "https://merchanthq.co.uk/learn/uk-card-interchange-2026/",
+          "path": "/learn/uk-card-interchange-2026/",
+          "gclid": null,
+          "fbclid": null,
+          "source": "direct",
+          "msclkid": null,
+          "referrer": null,
+          "utm_term": null,
+          "utm_medium": null,
+          "utm_source": null,
+          "utm_content": null,
+          "utm_campaign": null,
+          "referrer_host": null
+        },
+        "submitted_at": "2026-06-23T11:24:27.422Z",
+        "first_seen_at": "2026-06-23T11:20:48.653Z",
+        "journey_length": 2,
+        "submitted_from": "https://merchanthq.co.uk/get-quotes/",
+        "submitted_path": "/get-quotes/",
+        "session_page_count": 2,
+        "session_started_at": "2026-06-23T11:20:48.653Z",
+        "session_first_landing": "/learn/uk-card-interchange-2026/"
+      },
+      "attr_first_source": "direct",
+      "attr_first_landing_url": "https://merchanthq.co.uk/learn/uk-card-interchange-2026/",
+      "attr_first_landing_path": "/learn/uk-card-interchange-2026/",
+      "attr_first_referrer": null,
+      "attr_first_referrer_host": null,
+      "attr_first_utm_source": null,
+      "attr_first_utm_medium": null,
+      "attr_first_utm_campaign": null,
+      "attr_first_utm_term": null,
+      "attr_first_utm_content": null,
+      "attr_first_gclid": null,
+      "attr_first_fbclid": null,
+      "attr_first_msclkid": null,
+      "attr_first_seen_at": "2026-06-23T11:20:48.653+00:00",
+      "attr_last_source": "internal",
+      "attr_last_url": "https://merchanthq.co.uk/get-quotes/",
+      "attr_last_path": "/get-quotes/",
+      "attr_last_referrer": "https://merchanthq.co.uk/learn/uk-card-interchange-2026/",
+      "attr_session_first_landing": "/learn/uk-card-interchange-2026/",
+      "attr_session_started_at": "2026-06-23T11:20:48.653+00:00",
+      "attr_session_page_count": 2,
+      "attr_journey": "/learn/uk-card-interchange-2026/ \u2192 /get-quotes/",
+      "attr_journey_count": 2,
+      "attr_user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 Edg/149.0.0.0",
+      "attr_platform": "Win32",
+      "attr_language": "en-GB",
+      "attr_timezone": "Europe/London",
+      "attr_viewport": "1592x734",
+      "attr_screen": "1600x900",
+      "attr_submitted_at": "2026-06-23T11:24:27.421+00:00",
+      "attr_submitted_from": "https://merchanthq.co.uk/get-quotes/",
+      "business_postcode": null,
+      "finance_type": null,
+      "amount": null,
+      "current_provider": "stripe",
+      "avg_transaction": "0-15",
+      "website_url": "https://www.sportsbreaks.com/",
+      "stages": [
+        "submit",
+        "other"
+      ],
+      "_event_count": 3
+    },
     {
       "id": "05e07672-af97-48b6-9eb3-4786a54c1569",
       "created_at": "2026-06-22T23:20:08.850735+00:00",
