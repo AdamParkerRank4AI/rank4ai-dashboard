@@ -270,6 +270,36 @@ function typeOf(c: any) {
   const key = (c?.monetisation || c?.flavour || '').toLowerCase();
   return TYPE_META[key] || (key ? { label: key, pill: 'bg-gray-700 text-gray-300' } : null);
 }
+
+// Fleet Quick View grouping — split the board into business verticals (Adam, 23 Jun).
+// Category comes from clients.json `category` (leadgen / banner / health / other).
+const FQV_GROUPS = [
+  { key: 'leadgen', label: 'Lead-gen', hue: 'text-cyan-300' },
+  { key: 'banner',  label: 'Banner sites', hue: 'text-fuchsia-300' },
+  { key: 'health',  label: 'Health', hue: 'text-emerald-300' },
+  { key: 'other',   label: 'Other', hue: 'text-gray-400' },
+];
+const fqvLive = (clients as any[])
+  .filter((c) => clientIds.has(c.id))
+  // Live sites only — drop pre-launch / paused builds
+  .filter((c) => c.siteStatus === 'live' || (c.dashboard === 'current' && c.pre_launch !== true && c.siteStatus !== 'paused' && c.siteStatus !== 'needs'));
+const _byImpr = (a: any, b: any) => (periodData[b.id]?.month?.impressions ?? 0) - (periodData[a.id]?.month?.impressions ?? 0);
+// Build a flat render list. On the fleet board, interleave group-header sentinels
+// ({__header}) so the Quick View renders one map with category dividers; on the
+// current board, just the sorted sites (no grouping).
+let fqvRows: any[];
+if (isFleet) {
+  fqvRows = [];
+  for (const g of FQV_GROUPS) {
+    const sites = fqvLive.filter((c) => (c.category || 'other') === g.key).sort(_byImpr);
+    if (sites.length) {
+      fqvRows.push({ __header: true, key: g.key, label: g.label, hue: g.hue, count: sites.length });
+      fqvRows.push(...sites);
+    }
+  }
+} else {
+  fqvRows = [...fqvLive].sort(_byImpr);
+}
 ---
 
 <DashboardLayout title="Dashboard">
@@ -392,13 +422,16 @@ function typeOf(c: any) {
           </tr>
         </thead>
         <tbody id="fqv-tbody">
-          {(clients as any[])
-            .filter((c) => clientIds.has(c.id))
-            // Live sites only — drop pre-launch / paused builds (BuilderWeb, Nordic, legal-leadgen)
-            .filter((c) => c.siteStatus === 'live' || (c.dashboard === 'current' && c.pre_launch !== true && c.siteStatus !== 'paused' && c.siteStatus !== 'needs'))
-            // Top performers first — by Google impressions (month). Re-sorts client-side on period toggle.
-            .sort((a, b) => (periodData[b.id]?.month?.impressions ?? 0) - (periodData[a.id]?.month?.impressions ?? 0))
-            .map((clientMeta: any) => {
+          {fqvRows.map((clientMeta: any) => {
+            // Category divider row (fleet board only) — splits the table into
+            // Lead-gen / Banner / Health / Other groups.
+            if (clientMeta.__header) {
+              return (
+                <tr data-cat-header={clientMeta.key}>
+                  <td colspan="17" class={`py-1.5 px-3 text-[11px] uppercase tracking-wider font-bold border-y border-gray-800 bg-gray-950/70 ${clientMeta.hue}`}>{clientMeta.label} <span class="text-gray-600 font-normal">· {clientMeta.count} site{clientMeta.count === 1 ? '' : 's'}</span></td>
+                </tr>
+              );
+            }
             const siteId = clientMeta.id;
             const displayName = clientMeta.name || siteId;
             const ga = (ga4 as any)[siteId] || {};
@@ -439,6 +472,7 @@ function typeOf(c: any) {
                 <tr
                   class="border-b border-gray-800/50 hover:bg-gray-800/30 transition group cursor-pointer"
                   data-site={siteId}
+                  data-cat={clientMeta.category || 'other'}
                   data-cday={pd.day.clicks ?? 0} data-cweek={pd.week.clicks ?? 0} data-cmonth={pd.month.clicks ?? 0}
                   data-iday={pd.day.impressions ?? 0} data-iweek={pd.week.impressions ?? 0} data-imonth={pd.month.impressions ?? 0}
                   data-pday={pd.day.position ?? ''} data-pweek={pd.week.position ?? ''} data-pmonth={pd.month.position ?? ''}
@@ -1259,6 +1293,36 @@ function typeOf(c: any) {
   </script>
 
   <script>
+    // Re-order Quick View data rows WITHIN each category group (Lead-gen / Banner /
+    // Health / Other), keeping the group-header dividers in place. Used by both the
+    // period toggle and the column-sort so neither scrambles the grouping. Falls
+    // back to a flat sort when there are no group headers (the current board).
+    window.fqvRebuild = function (tbody, cmp) {
+      var children = Array.prototype.slice.call(tbody.children);
+      var groups = [], cur = null;
+      children.forEach(function (tr) {
+        if (tr.hasAttribute && tr.hasAttribute('data-cat-header')) { cur = { header: tr, rows: [] }; groups.push(cur); }
+        else if (tr.hasAttribute && tr.hasAttribute('data-site') && cur) { cur.rows.push(tr); }
+      });
+      function placeRow(r) {
+        tbody.appendChild(r);
+        var det = tbody.querySelector('tr[data-detail="' + r.getAttribute('data-site') + '"]');
+        if (det) tbody.appendChild(det);
+      }
+      if (!groups.length) { // flat (no group headers)
+        var flat = Array.prototype.slice.call(tbody.querySelectorAll('tr[data-site]'));
+        if (cmp) flat.sort(cmp);
+        flat.forEach(placeRow);
+        return;
+      }
+      groups.forEach(function (g) {
+        tbody.appendChild(g.header);
+        var rows = g.rows.slice();
+        if (cmp) rows.sort(cmp);
+        rows.forEach(placeRow);
+      });
+    };
+
     // Fleet Quick View — Day/Week/Month toggle: swap Google clk / Impr / Pos per period and re-sort by impressions.
     (function () {
       var tbody = document.getElementById('fqv-tbody');
@@ -1281,13 +1345,8 @@ function typeOf(c: any) {
           if (cI) cI.textContent = nf.format(Number(imp || 0));
           if (cP) cP.textContent = (pos === '' || pos == null) ? '—' : Number(pos).toFixed(1);
         });
-        rows.sort(function (a, b) {
+        window.fqvRebuild(tbody, function (a, b) {
           return Number(b.getAttribute('data-i' + period) || 0) - Number(a.getAttribute('data-i' + period) || 0);
-        });
-        rows.forEach(function (r) {
-          tbody.appendChild(r);
-          var det = tbody.querySelector('tr[data-detail="' + r.getAttribute('data-site') + '"]');
-          if (det) tbody.appendChild(det);
         });
       }
       toggle.querySelectorAll('.fqv-period').forEach(function (btn) {
@@ -1328,18 +1387,13 @@ function typeOf(c: any) {
       }
       function sortBy(idx) {
         state = { col: idx, dir: state.col === idx ? -state.dir : 1 };
-        var rows = Array.prototype.slice.call(tbody.querySelectorAll('tr[data-site]'));
-        rows.sort(function (a, b) {
+        // Sort WITHIN each category group (keeps Lead-gen / Banner / Health split intact).
+        window.fqvRebuild(tbody, function (a, b) {
           var va = cellText(a, idx), vb = cellText(b, idx);
           var na = toNum(va), nb = toNum(vb), cmp;
           if (na !== null && nb !== null) cmp = na - nb;
           else cmp = va.toLowerCase().localeCompare(vb.toLowerCase());
           return cmp * state.dir;
-        });
-        rows.forEach(function (r) {
-          tbody.appendChild(r);
-          var det = tbody.querySelector('tr[data-detail="' + r.getAttribute('data-site') + '"]');
-          if (det) tbody.appendChild(det);
         });
         ths.forEach(function (th, i) {
           var ar = th.querySelector('.fqv-arrow');

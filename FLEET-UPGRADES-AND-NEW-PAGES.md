@@ -60,12 +60,17 @@
 
 # 🟢 BANKED — built, ready to push
 
-**A. Ready-to-push lead builds (this session — dev branches, gate-green, push in ~1 week):**
-- B17 VettedHome spray-foam hub → `dev-b17-vettedhome-sprayfoam` (`20f3c84`)
+**A. Ready-to-push lead builds (this session — dev branches, gate-green, push when ready). ⚖️ all under an adversarial anti-slop review pass (23 Jun) before any drip:**
+- B15 PeptideClear next-gen GLP-1 hub + CagriSema page → `dev-b15-peptideclear-glp1`
+- B16 FundBiz refinance hub → `dev-b16-fundbiz-refinance` (`23043bf`)
+- B16 BBL MCA-factor-rate-trap guide → `dev-b16-bbl-mca-trap` (`cccdd9f`) — interlinked pair w/ FundBiz
+- B17 VettedHome spray-foam hub (+ mortgage-refused + scams) → `dev-b17-vettedhome-sprayfoam` (`20f3c84`)
 - B18 BabyData name checker → `dev-b18-babydata-visualiser` (`414a1e1`)
 - B19 ADHD RTC hub + GP-letter → `dev-b19-adhd-rtc-hub` (`f29722c`)
-- B20 Her Vitals menopause hub (+5 symptom pages) → `dev-b20-hervitals-menopause` (`2139412`)
+- B20 Her Vitals menopause hub (+symptom pages) → `dev-b20-hervitals-menopause` (`2139412`)
 - B21 HomesAndHedge triage + safety/legal boxes → `dev-b21-homesandhedge-triage` (`3a7db28`)
+- LLB Theme-A 4 retirement-mortgage guides (held) → `dev-llb-theme-a-retirement`
+- *(B15/B16/LLB agents hit a git/Bash sandbox block — I committed + gate-verified them in-session.)*
 
 **B. Big banked SITE (the major one): 2nd Invoice-Finance site** (`~/invoicefinance-site`) — **167 pages built, NOT live.** Awaiting your 5 go-live decisions (brand/domain, owning Ltd, CF account, author, lender panel).
 

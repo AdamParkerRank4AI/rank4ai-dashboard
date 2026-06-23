@@ -9,6 +9,7 @@ from google.analytics.admin_v1alpha import AnalyticsAdminServiceClient
 
 SCOPES = [
     'https://www.googleapis.com/auth/analytics.readonly',
+    'https://www.googleapis.com/auth/analytics.edit',  # added 23 Jun 2026 — lets us CREATE GA4 properties + data streams for the ~9 fleet sites that have none
     'https://www.googleapis.com/auth/analytics.manage.users.readonly',
     'https://www.googleapis.com/auth/webmasters.readonly',
     'https://www.googleapis.com/auth/indexing',
@@ -20,8 +21,29 @@ CLIENT_SECRET = os.path.expanduser(
 TOKEN_FILE = os.path.expanduser('~/rank4ai-dashboard/scripts/ga4_token.json')
 
 
+def _client_config():
+    """Prefer the downloaded client_secret file; fall back to the client_id/secret
+    already embedded in ga4_token.json (the Downloads file went missing 23 Jun)."""
+    if os.path.exists(CLIENT_SECRET):
+        return None  # signal: use from_client_secrets_file
+    tok = json.load(open(TOKEN_FILE))
+    return {
+        "installed": {
+            "client_id": tok["client_id"],
+            "client_secret": tok["client_secret"],
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+            "token_uri": "https://oauth2.googleapis.com/token",
+            "redirect_uris": ["http://localhost"],
+        }
+    }
+
+
 def main():
-    flow = InstalledAppFlow.from_client_secrets_file(CLIENT_SECRET, SCOPES)
+    cfg = _client_config()
+    if cfg is None:
+        flow = InstalledAppFlow.from_client_secrets_file(CLIENT_SECRET, SCOPES)
+    else:
+        flow = InstalledAppFlow.from_client_config(cfg, SCOPES)
     creds = flow.run_local_server(port=0)
 
     # Save token
