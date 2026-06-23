@@ -55,8 +55,10 @@
 | **B22** Kartapay "business loan, no UK credit history" PL + RO + fix EN-header bleed | ⏳ ready |
 | **B23** MarketInvoice SERP cleanup: consolidate "barclays invoice finance" (10→1) + prune southall dupes | ⏳ ready |
 
-## 📦 BANKED REGISTER — built, NOT live (where all the banked stuff is)
-> The full "built but not pushed" inventory. Verified via git branches + prelaunch flags + release waves, 23 Jun.
+## 📦 BANKED REGISTER — the bank/drip pile (where all the banked stuff is)
+> Model (Adam, 18 Jun): upgrades → main; **new pages → BANK + drip-feed, never dump.** Two tiers: **🟢 BANKED** = built + ready to push · **🔵 BANKED NEXT** = scoped/queued, not built yet. Verified via git branches + prelaunch flags + release waves, 23 Jun.
+
+# 🟢 BANKED — built, ready to push
 
 **A. Ready-to-push lead builds (this session — dev branches, gate-green, push in ~1 week):**
 - B17 VettedHome spray-foam hub → `dev-b17-vettedhome-sprayfoam` (`20f3c84`)
@@ -79,7 +81,18 @@
 
 **F. Committed, not yet deployed (safe, my lane):** FitCalcs + BabyData analytics-parity + ad-safety commits (a quick wrangler push when you want).
 
-**G. Scoped, not built yet:** B5 VettedHome kitchens/bathrooms · B15 PeptideClear GLP-1 · B16 FundBiz/BBL refinance · B22 Kartapay · B23 MI SERP cleanup.
+# 🔵 BANKED NEXT — scoped/queued, not built yet (the drip queue)
+
+**📂 QUEUED CONTENT STORED IN THE REPOS (the per-site banks — build-ready, just not built):**
+- **MerchantHQ `~/cardmachines/briefs/`** — **36 build-ready content briefs** (trade + community niche pages, e.g. corner-shop/Punjabi, Birmingham, high-risk-domination plan). Each has full frontmatter + audience + key terms.
+- **Kartapay `~/kartapay/briefs/`** — **~50 PL/RO briefs**, priority-tagged p1-p4 (provider reviews, sumup-vs-square, PCI/chargeback, cost calculator, London/city, invoice-pay-link). The biggest in-language bank.
+- **LLB `~/equity-release/docs/TARGET-BACKLOG.md`** — the explicit **banked target list** ("BANK" = to build vs "BUILT✅(held)" rows), with volumes/SERP-status/suggested-page, across the whole later-life-borrowing space + `CONTENT-ROADMAP.md` + `EXPANSION-low-comp-angles.md`.
+- **Per-site `docs/BUILD-IDEAS.md` + `IDEAS-BRIEF.md`** — queued ideas/strategy on **PeptideClear, FundBiz, Her Vitals (+clinical-tools), ADHD Helper, HomesAndHedge**. PeptideClear also has `docs/PEPTIDECLEAR_BACKLOG_HANDOFF.md`.
+- **VettedHome `~/sortedproperty/docs/`** — `findatradey-trades-play.md` + `trades-kitchen-bathroom-scope.md` (= B5).
+- **iCloud `claude/Research/`** — the niche-attack harvests + per-niche build maps (source material: equity-release, supplements, home-services, kartapay-keyword-attack, niche-attack batches, etc.).
+
+**G. Coded + ready to build (say the code):** B5 VettedHome kitchens/bathrooms · B15 PeptideClear GLP-1 hub · B16 FundBiz/BBL refinance · B22 Kartapay no-credit-history loan · B23 MI SERP cleanup.
+**H. Grow-brief ⏸ HOLD bets (need your go / live-data validation first):** MI recourse-vs-non-recourse tool + hidden-fees catalogue + sector deep-hubs · MHQ hidden-fee calculator + settlement matrix · PeptideClear legality pillar + CoA guide · Her Vitals brand-comparison index + form/dose guides · ADHD private-cost + by-region FOI data · VettedHome heat-pump/cavity-wall + by-trade×town rollout · banner data-assets (SMP calc, working-days API). Full per-site list in the GROW-BRIEF doc.
 
 ## Build log (what shipped, with real deploy status)
 - **B7 · LLB** — 10 TIER-3 guides + og-default → `b51310d`, wrangler-deployed, **LIVE**. ✅
