@@ -18,6 +18,8 @@ const LEADS_FILE: Record<string, string> = {
   'cardmachines': 'cardmachines_leads.json',
   'kartapay': 'kartapay_leads.json',
   'peptideclear': 'peptideclear_leads.json',
+  'seocompare': 'seocompare_leads.json',
+  'company-rescue': 'ltdturnaround_leads.json',
 };
 
 function loadJson(filename: string) {
@@ -36,12 +38,14 @@ const rows = Object.entries(LEADS_FILE)
   .filter(([id]) => clientIds.has(id))
   .map(([id, file]) => {
     const d = loadJson(file) || {};
+    // Real, deduplicated submissions — NOT count_* (raw funnel events, ~5x higher).
+    // Falls back to count_* only for an older JSON without the submits_* fields.
     return {
       id, name: nameOf(id),
-      total: d.count_total || 0,
-      d30: d.count_30d || 0,
-      d7: d.count_7d || 0,
-      topSource: (d.sources_30d || [])[0]?.source || null,
+      total: d.submits_total ?? d.count_total ?? 0,
+      d30: d.submits_30d ?? d.count_30d ?? 0,
+      d7: d.submits_7d ?? d.count_7d ?? 0,
+      topSource: (d.submit_sources_30d || d.sources_30d || [])[0]?.source || null,
     };
   })
   .sort((a, b) => b.d30 - a.d30 || b.total - a.total);

@@ -52,7 +52,7 @@ DOMAIN_TO_SITE = {
     "peptideclear.co.uk": "peptideclear",
     "fundbiz.co.uk": "fundbiz",
     "bestbusinessloans.ai": "bestbusinessloans",
-    "kartapay.com": "kartapay",
+    "kartapay.co.uk": "kartapay",
 }
 
 

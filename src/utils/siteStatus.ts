@@ -1,6 +1,12 @@
 // Single shared derivation of a site's lifecycle status, so the overview and
-// the sidebar can't drift apart. clients.json `siteStatus` is canonical;
-// `pre_launch:true` and `staging` are honoured as fallbacks during migration.
+// the sidebar can't drift apart. clients.json `siteStatus` is the SOLE source
+// of truth (one of: live | prelaunch | needs | paused | staging).
+//
+// NOTE (19 Jun 2026): the legacy `pre_launch` boolean is deliberately NOT read
+// here any more. It used to be an OR-fallback, which caused silent drift — a
+// site could be set live via siteStatus but still show PRE-LAUNCH because an
+// old pre_launch:true was left behind (the Her Vitals bug). Edit ONLY siteStatus.
+// All 23 clients carry siteStatus, so there is nothing to fall back to.
 
 export type SiteStatus = 'live' | 'prelaunch' | 'needs' | 'paused' | 'staging';
 
@@ -8,7 +14,8 @@ export function statusOf(c: any): SiteStatus {
   if (c?.staging) return 'staging';
   if (c?.siteStatus === 'paused') return 'paused';
   if (c?.siteStatus === 'needs') return 'needs';
-  if (c?.siteStatus === 'prelaunch' || c?.pre_launch === true) return 'prelaunch';
+  if (c?.siteStatus === 'prelaunch') return 'prelaunch';
+  if (c?.siteStatus === 'staging') return 'staging';
   return 'live';
 }
 

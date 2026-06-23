@@ -9,6 +9,14 @@ LOG=/tmp/dashboard_refresh.log
 ACC=a29a9e6a4fa4965762858586f129b445
 echo "==== $(date) dashboard refresh start ====" >> "$LOG"
 
+# Once-a-day guard. The old single 6am launchd slot silently never fired (Mac asleep
+# at 6am — macOS does not catch up missed calendar jobs), so the board froze 15 Jun.
+# Fix: multiple morning/afternoon slots run this at the first slot the Mac is awake for.
+# This marker (touched at the END, on full success) makes later slots skip; a partial or
+# aborted run leaves no marker so the next slot retries.
+MARKER="$HOME/.dashboard_refresh_$(date +%Y-%m-%d)"
+if [ -f "$MARKER" ]; then echo "$(date) already refreshed today — skipping." >> "$LOG"; exit 0; fi
+
 # 1. Stats fetch (legacy HTML stats cache; kept because the standalone HTML board reads it)
 /usr/bin/python3 "$HOME/rank4ai_content_pipeline/dashboard.py" >> "$LOG" 2>&1 || echo "WARN dashboard.py nonzero" >> "$LOG"
 
@@ -31,6 +39,7 @@ for s in \
   fetch_crawl_activity.py \
   fetch_bot_hits.py \
   fetch_fleet_bot_hits.py \
+  fetch_human_traffic.py \
   fetch_competitor_serp.py \
   track_new_pages.py \
   build_gsc_history.py \
@@ -87,14 +96,19 @@ cd "$HOME/rank4ai-dashboard"
 # 14 Jun). Now both are rebuilt and redeployed every run. Abort on a broken build.
 TOKEN="$(cat "$HOME/.cloudflare-dashboard-token")"
 
-# 3a. Current board → rank4ai-dashboard
+# 3a. Current board → rank4ai-dashboard. rm -rf dist first: building both boards
+# into the same dist/ without cleaning intermittently leaves a stale .prerender
+# chunk and the second build dies with ERR_MODULE_NOT_FOUND (hit manually 23 Jun).
+rm -rf dist .astro/.prerender
 DASHBOARD=current npm run build >> "$LOG" 2>&1
 CLOUDFLARE_API_TOKEN="$TOKEN" CLOUDFLARE_ACCOUNT_ID="$ACC" \
   npx wrangler pages deploy dist --project-name=rank4ai-dashboard --branch=main --commit-dirty=true >> "$LOG" 2>&1
 
 # 3b. Fleet board → fleet-dashboard
+rm -rf dist .astro/.prerender
 DASHBOARD=fleet npm run build >> "$LOG" 2>&1
 CLOUDFLARE_API_TOKEN="$TOKEN" CLOUDFLARE_ACCOUNT_ID="$ACC" \
   npx wrangler pages deploy dist --project-name=fleet-dashboard --branch=main --commit-dirty=true >> "$LOG" 2>&1
 
+touch "$MARKER"
 echo "==== $(date) dashboard refresh + deploy done (both boards) ====" >> "$LOG"

@@ -41,17 +41,27 @@ const botHits = loadJson('bot_hits.json') || {};
 const humanTraffic = loadJson('human_traffic.json') || {};
 const htBySite = (humanTraffic as any).by_site || {};
 const totalHumans = Object.values(htBySite).reduce((s: number, d: any) => s + (d.human_30d || 0), 0);
+// Leads come from the per-site *_leads.json (single source of truth: deduplicated
+// REAL submits via fetch_leads.py), NOT human_traffic.leads_30d — so the funnel
+// matches the Leads headline tile exactly instead of showing two different numbers.
+const LEADS_FILE: Record<string, string> = {
+  'market-invoice': 'mi_leads.json', 'bestbusinessloans': 'bbl_leads.json',
+  'fundbiz': 'fundbiz_leads.json', 'cardmachines': 'cardmachines_leads.json',
+  'kartapay': 'kartapay_leads.json', 'peptideclear': 'peptideclear_leads.json',
+  'seocompare': 'seocompare_leads.json',
+};
 // Conversion funnel: Impressions → Clicks → Leads per site (+ leads-by-source from our own attribution)
 const funnelRows = (clients as any[])
   .filter((c: any) => clientIds.has(c.id))
   .map((c: any) => {
     const t = (gsc as any)[c.id]?.totals || {};
-    const ht = (htBySite as any)[c.id] || {};
-    const impr = t.impressions || 0, clicks = t.clicks || 0, leads = ht.leads_30d || 0;
+    const ld = LEADS_FILE[c.id] ? (loadJson(LEADS_FILE[c.id]) || {}) : {};
+    const impr = t.impressions || 0, clicks = t.clicks || 0, leads = ld.submits_30d || 0;
     return {
       name: c.name || c.id, impr, clicks, leads,
       ctr: impr ? +(100 * clicks / impr).toFixed(1) : 0,
-      sources: (Object.entries(ht.leads_by_source || {}) as [string, number][]).sort((a, b) => b[1] - a[1]),
+      sources: ((ld.submit_sources_30d || []) as { source: string; count: number }[])
+        .map((s) => [s.source, s.count] as [string, number]).sort((a, b) => b[1] - a[1]),
     };
   })
   .filter((r: any) => r.leads > 0 || r.impr > 200)
@@ -592,6 +602,18 @@ function typeOf(c: any) {
           CRM Pipeline
         </a>
       )}
+    </div>
+  </div>
+
+  {/* New-site pipeline — pre-build niche-attack plans (static, no data deps) */}
+  <div class="rounded-lg px-4 py-3 mb-4 border bg-amber-950/30 border-amber-800/50">
+    <div class="flex items-center justify-between flex-wrap gap-3">
+      <div>
+        <span class="text-xs font-semibold text-amber-300 uppercase tracking-wider">New-site pipeline</span>
+        <span class="text-sm text-white font-semibold ml-2">KBB Company Finder · Essex+Suffolk</span>
+        <span class="text-xs text-gray-400 ml-2">niche-attack 23/25 · buyer panel verified (35–83 cos/town) · awaiting name + monetisation call</span>
+      </div>
+      <a href="https://49k.co.uk/demos/kbb-finder/" target="_blank" rel="noopener" class="px-3 py-1.5 bg-gray-800 text-amber-300 rounded text-sm hover:bg-gray-700 transition">49k board →</a>
     </div>
   </div>
 

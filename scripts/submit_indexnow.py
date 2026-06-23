@@ -31,6 +31,10 @@ SITES = {
     "hervitals": "https://hervitals.co.uk",
     "adhdhelper": "https://adhdhelper.co.uk",
     "company-rescue": "https://ltdturnaround.co.uk",
+    "datesandtimes": "https://datesandtimes.co.uk",
+    "fitcalcs": "https://fitcalcs.co.uk",
+    "babydata": "https://babydata.co.uk",
+    "vettedhome": "https://vettedhome.co.uk",
 }
 
 INDEXNOW_URL = "https://api.indexnow.org/indexnow"
@@ -52,17 +56,42 @@ SITE_KEYS = {
     "hervitals":         "4d36b67015e69fd2c5009095402cac74",
     "adhdhelper":        "a39ace08e7ac01f94c8fadff07824ebd",
     "company-rescue":    "1644a63379414ee2be55d249cffa2d7d",
+    "datesandtimes":     "b77809bc20917b53ed29bef15cf3fb64",
+    "fitcalcs":          "34efe4973ea9b6923b1bb736aad21f75",
+    "babydata":          "723526312aa65870fda148e84ca0b79a",
+    "vettedhome":        "e8ac7f2771ef3889025ba977c4ace41e",
 }
 
 
+STATE_FILE = os.path.join(OUTPUT_DIR, "indexnow_state.json")
+
+
+def load_state():
+    """url->lastmod map per client of what we've already submitted, so we only
+    ping IndexNow for NEW or CHANGED urls instead of re-submitting the whole
+    sitemap every run (Bing flags that as over-use)."""
+    if os.path.exists(STATE_FILE):
+        try:
+            with open(STATE_FILE) as f:
+                return json.load(f)
+        except Exception:
+            return {}
+    return {}
+
+
+def save_state(state):
+    with open(STATE_FILE, "w") as f:
+        json.dump(state, f, indent=2)
+
+
 def get_urls_from_crawl(client_id):
-    """Get all URLs from the latest crawl."""
+    """Get all URLs from the latest crawl as {url: ""} (no lastmod available)."""
     crawl_file = os.path.join(OUTPUT_DIR, f"crawl_{client_id}.json")
     if not os.path.exists(crawl_file):
-        return []
+        return {}
     with open(crawl_file) as f:
         data = json.load(f)
-    return [p["url"] for p in data.get("pages", [])]
+    return {p["url"]: "" for p in data.get("pages", []) if p.get("url")}
 
 
 def get_urls_from_sitemap(base_url):
@@ -76,6 +105,23 @@ def get_urls_from_sitemap(base_url):
     import re
     base = base_url.rstrip("/")
     headers = {"User-Agent": "Mozilla/5.0"}
+
+    def parse_urlset(xml):
+        # Map each <loc> to its <lastmod> (empty string if absent), so callers
+        # can detect changed pages, not just new ones.
+        out = {}
+        for block in re.findall(r"<url>(.*?)</url>", xml, re.S):
+            loc = re.search(r"<loc>([^<]+)</loc>", block)
+            if not loc:
+                continue
+            lm = re.search(r"<lastmod>([^<]+)</lastmod>", block)
+            out[loc.group(1).strip()] = (lm.group(1).strip() if lm else "")
+        # Fallback for sitemaps without <url> wrappers
+        if not out:
+            for loc in re.findall(r"<loc>([^<]+)</loc>", xml):
+                out[loc.strip()] = ""
+        return out
+
     for path in ("sitemap-index.xml", "sitemap.xml", "sitemap-0.xml"):
         try:
             r = requests.get(f"{base}/{path}", timeout=20, allow_redirects=True, headers=headers)
@@ -83,23 +129,23 @@ def get_urls_from_sitemap(base_url):
                 continue
             xml = r.text
             if "<sitemapindex" in xml:
-                urls = []
+                urls = {}
                 for child in re.findall(r"<loc>([^<]+)</loc>", xml):
                     try:
                         cr = requests.get(child, timeout=20, allow_redirects=True, headers=headers)
                         if cr.status_code == 200:
-                            urls += re.findall(r"<loc>([^<]+)</loc>", cr.text)
+                            urls.update(parse_urlset(cr.text))
                     except Exception:
                         pass
                 if urls:
-                    return sorted(set(urls))
+                    return urls
             else:
-                urls = re.findall(r"<loc>([^<]+)</loc>", xml)
+                urls = parse_urlset(xml)
                 if urls:
-                    return sorted(set(urls))
+                    return urls
         except Exception:
             pass
-    return []
+    return {}
 
 
 def submit_urls(client_id, urls):
@@ -154,10 +200,15 @@ def main():
         print("Usage: python3 submit_indexnow.py <client_id|all>")
         return
 
-    target = sys.argv[1]
+    # --force / --all-urls re-submits everything (first run, or a manual reset).
+    # Default behaviour now only submits NEW or CHANGED urls vs indexnow_state.json.
+    force = "--force" in sys.argv or "--all-urls" in sys.argv
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    target = args[0] if args else "all"
     clients = list(SITES.keys()) if target == "all" else [target]
 
     results = {}
+    state = load_state()
     import sys as _sys2, os as _os2; _sys2.path.insert(0, _os2.path.dirname(_os2.path.abspath(__file__)))
     from site_status import skip as _skip
     for client_id in clients:
@@ -169,24 +220,42 @@ def main():
 
         # Prefer the live sitemap (always current, includes new pages); fall
         # back to crawl data only if the sitemap is unreachable.
-        urls = get_urls_from_sitemap(SITES[client_id])
+        url_map = get_urls_from_sitemap(SITES[client_id])
         source = "sitemap"
-        if not urls:
-            urls = get_urls_from_crawl(client_id)
+        if not url_map:
+            url_map = get_urls_from_crawl(client_id)
             source = "crawl"
-        print(f"\n{client_id}: {len(urls)} URLs to submit (from {source})")
 
-        if urls:
-            submitted = submit_urls(client_id, urls)
+        # Only submit NEW or CHANGED urls — never re-ping the whole sitemap
+        # (that's what triggered Bing's IndexNow over-use warning).
+        prev = state.get(client_id, {})
+        if force:
+            to_submit = list(url_map.keys())
+        else:
+            to_submit = [u for u, lm in url_map.items() if prev.get(u) != lm]
+        print(f"\n{client_id}: {len(to_submit)} new/changed of {len(url_map)} URLs (from {source})")
+
+        if to_submit:
+            submitted = submit_urls(client_id, to_submit)
+            # Record current lastmod for everything we just submitted.
+            merged = dict(prev)
+            for u in to_submit:
+                merged[u] = url_map.get(u, "")
+            state[client_id] = merged
             results[client_id] = {
                 "submitted": submitted,
-                "total_urls": len(urls),
+                "new_or_changed": len(to_submit),
+                "total_urls": len(url_map),
                 "source": source,
                 "submitted_at": datetime.now().isoformat(),
             }
-            print(f"  Done: {submitted}/{len(urls)} submitted")
+            print(f"  Done: {submitted}/{len(to_submit)} submitted ({len(url_map)} total, rest unchanged)")
+        elif url_map:
+            print(f"  Nothing new or changed since last run — skipped (no re-submit)")
         else:
             print(f"  No URLs found (sitemap unreachable and no crawl data)")
+
+    save_state(state)
 
     # Save submission log
     log_file = os.path.join(OUTPUT_DIR, "indexnow_log.json")

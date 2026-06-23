@@ -53,6 +53,7 @@ SITE_TABLES = {
     "kartapay":          ("kartapay_leads",          "kartapay_leads.json"),
     "peptideclear":      ("peptideclear_leads",      "peptideclear_leads.json"),
     "seocompare":        ("seocompare_leads",        "seocompare_leads.json"),
+    "company-rescue":    ("ltdturnaround_leads",     "ltdturnaround_leads.json"),
 }
 
 
@@ -231,10 +232,43 @@ def build_payload(site_id: str, table: str, now: datetime, week_ago: str, month_
     collapsed.sort(key=lambda r: (_stage_rank(r), r["created_at"]), reverse=True)
     recent_display = collapsed[:20]
 
+    # ---- SINGLE SOURCE OF TRUTH for "a lead" ---------------------------------
+    # count_* above are RAW funnel-row counts (every step_1/step_2/abandon/submit
+    # event), which over-state leads ~5-7x and conflicted with the funnel tile.
+    # submits_* are deduplicated REAL submissions (client+server pair counted
+    # once, internal/test stripped) — this is the number the whole dashboard
+    # should show. Same definition as funnel_7d.form_submit, exposed per window.
+    submit_rows = [r for r in recent if r["id"] in deduped_submit_ids]
+    submits_30d = len(submit_rows)
+    submits_7d = sum(1 for r in submit_rows if r["created_at"] >= week_ago)
+    submit_sources = Counter((r.get("source") or "unknown").strip() or "unknown" for r in submit_rows)
+    submit_sources_30d = [{"source": k, "count": v} for k, v in submit_sources.most_common(10)]
+
+    # All-time real submits: fetch only submit-shaped rows (cheap — dozens, not
+    # the whole event log) and dedup the same way, so the "total" is real leads
+    # too rather than total funnel events.
+    try:
+        st_all = fetch(table, {
+            "select": "id,email,created_at,event_type,source",
+            "event_type": f"in.({','.join(SUBMIT_TYPES)})",
+            "order": "created_at.desc",
+            "limit": 5000,
+        })
+        st_all = [r for r in st_all if not _is_internal(r)]
+        submits_total = len(dedup_submits(st_all))
+    except Exception:
+        submits_total = submits_30d  # fall back to what we know
+
     return {
         "fetched_at": now.isoformat(),
         "site_id": site_id,
         "table": table,
+        # Real leads (deduplicated submissions) — use these everywhere.
+        "submits_total": submits_total,
+        "submits_30d": submits_30d,
+        "submits_7d": submits_7d,
+        "submit_sources_30d": submit_sources_30d,
+        # Raw funnel-event counts — kept for the funnel/abandon views only.
         "count_total": total_all,
         "count_30d": total_30d,
         "count_7d": total_7d,

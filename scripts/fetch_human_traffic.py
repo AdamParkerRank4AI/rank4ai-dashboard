@@ -9,10 +9,21 @@ count=exact (HEAD, no rows pulled) to get true counts per site over 30/7 days:
 Then folds in GSC clicks (already bot-free) + real leads so the dashboard shows
 1-2 trustworthy sources of truth. Output: src/data/live/human_traffic.json
 """
-import os, json, urllib.request, urllib.parse, datetime
+import os, json, time, urllib.request, urllib.parse, datetime
 
 SUPABASE_URL = "https://tsscscjcxbzhicuuhter.supabase.co"
-SK = os.environ.get("SUPABASE_SERVICE_KEY", "")
+# Match fetch_leads.py: env first, then ~/.supabase-service-key file. launchd's
+# environment has no SUPABASE_SERVICE_KEY, so env-only would (and did, 18-23 Jun)
+# fail silently here while fetch_leads.py kept working via the file fallback —
+# leaving human_traffic.json 5 days stale and the overview showing two lead numbers.
+def _service_key_from_file():
+    p = os.path.expanduser("~/.supabase-service-key")
+    try:
+        return open(p).read().strip() if os.path.exists(p) else ""
+    except Exception:
+        return ""
+
+SK = os.environ.get("SUPABASE_SERVICE_KEY", "") or _service_key_from_file()
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(HERE, "src", "data", "live", "human_traffic.json")
 
@@ -31,19 +42,31 @@ SUBMIT_TYPES = ("form_submit", "form_submit_serverside", "quote_request", "submi
 
 
 def count(path):
-    """Return exact row count via PostgREST Content-Range, no rows pulled."""
-    req = urllib.request.Request(
-        f"{SUPABASE_URL}/rest/v1/{path}",
-        headers={"apikey": SK, "Authorization": f"Bearer {SK}",
-                 "Prefer": "count=exact", "Range-Unit": "items", "Range": "0-0"},
-        method="HEAD",
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=30) as r:
-            cr = r.headers.get("Content-Range", "")  # e.g. "0-0/12345"
-            return int(cr.split("/")[-1]) if "/" in cr and cr.split("/")[-1].isdigit() else 0
-    except Exception:
-        return 0
+    """Exact row count via PostgREST Content-Range, no rows pulled.
+
+    Returns None (NOT 0) on persistent error. A filtered count=exact over a large
+    table can intermittently hit Supabase's statement timeout; the old code
+    swallowed that and returned 0, which rendered as a confident "0 humans /
+    100% bots" on the dashboard (it did exactly this for MarketInvoice, 23 Jun).
+    Caller treats None as "unknown" and keeps the previous value rather than
+    overwriting good data with a false zero.
+    """
+    for attempt in range(3):
+        req = urllib.request.Request(
+            f"{SUPABASE_URL}/rest/v1/{path}",
+            headers={"apikey": SK, "Authorization": f"Bearer {SK}",
+                     "Prefer": "count=exact", "Range-Unit": "items", "Range": "0-0"},
+            method="HEAD",
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=30) as r:
+                cr = r.headers.get("Content-Range", "")  # e.g. "0-0/12345"
+                tail = cr.split("/")[-1]
+                return int(tail) if "/" in cr and tail.isdigit() else 0
+        except Exception:
+            if attempt < 2:
+                time.sleep(1.5 * (attempt + 1))
+    return None
 
 
 def iso(days_ago):
@@ -53,6 +76,15 @@ def iso(days_ago):
 def main():
     if not SK:
         raise SystemExit("SUPABASE_SERVICE_KEY missing")
+    # Previous file = fallback when a count errors out, so a transient Supabase
+    # timeout keeps the last-known-good number instead of writing a false 0.
+    prev_by_site = {}
+    try:
+        with open(OUT) as f:
+            prev_by_site = (json.load(f) or {}).get("by_site", {})
+    except Exception:
+        pass
+
     since30, since7 = iso(30), iso(7)
     out = {"generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(), "window": "30d", "by_site": {}}
     for site, table in SITES.items():
@@ -62,11 +94,23 @@ def main():
         total30 = count(f"fleet_bot_hits?site=eq.{sq}&created_at=gte.{since30}")
         human7 = count(f"fleet_bot_hits?site=eq.{sq}&bot_category=eq.human&created_at=gte.{since7}")
         human1 = count(f"fleet_bot_hits?site=eq.{sq}&bot_category=eq.human&created_at=gte.{iso(1)}")
+
+        # If the core human/total counts errored (None), don't publish a false 0 —
+        # carry forward the previous block for this site and move on.
+        if human30 is None or total30 is None:
+            prev = prev_by_site.get(site)
+            if prev:
+                out["by_site"][site] = {**prev, "stale": True}
+                print(f"  {site}: count ERROR — kept previous (human30={prev.get('human_30d')})")
+            else:
+                print(f"  {site}: count ERROR and no previous value — skipping")
+            continue
+
         leads30 = 0
         leads_by_source = {}
         if table:
             st = ",".join(SUBMIT_TYPES)
-            leads30 = count(f"{table}?event_type=in.({st})&created_at=gte.{since30}&email=not.is.null")
+            leads30 = count(f"{table}?event_type=in.({st})&created_at=gte.{since30}&email=not.is.null") or 0
             # leads-by-source from our own attribution (`source` = acquisition channel;
             # falls back to own-domain/internal where first-touch didn't persist)
             try:
@@ -80,7 +124,9 @@ def main():
             except Exception:
                 pass
         out["by_site"][site] = {
-            "human_30d": human30, "total_30d": total30, "human_7d": human7, "human_1d": human1,
+            "human_30d": human30, "total_30d": total30,
+            "human_7d": human7 if human7 is not None else 0,
+            "human_1d": human1 if human1 is not None else 0,
             "bot_pct": round(100 * (1 - human30 / total30)) if total30 else 0,
             "leads_30d": leads30,
             "leads_by_source": leads_by_source,

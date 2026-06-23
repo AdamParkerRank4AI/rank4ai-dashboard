@@ -2,7 +2,7 @@
   "rank4ai": {
     "site_id": "rank4ai",
     "domain": "https://www.rank4ai.co.uk",
-    "audited_at": "2026-06-15T06:10:09.550594",
+    "audited_at": "2026-06-23T10:33:19.839231",
     "pages_audited": 20,
     "overall_score": 45,
     "readiness": "Fair",
@@ -14,7 +14,7 @@
     },
     "llms_txt": {
       "exists": true,
-      "content_length": 8211,
+      "content_length": 7602,
       "preview": "# Rank4AI\n# https://www.rank4ai.co.uk\n\n> Rank4AI is a UK based AI search agency focused on improving visibility and recommendation likelihood across ChatGPT, Claude, Gemini, Perplexity, Copilot and Google AI.\n\nCompany Name: Rank4AI\nLegal Name: Rank4AI Ltd\nLocation: Colchester, Essex, United Kingdom\n"
     },
     "robots_txt": {
@@ -409,7 +409,7 @@
         "schemas": [
           "BreadcrumbList"
         ],
-        "word_count": 385,
+        "word_count": 383,
         "h2_count": 13,
         "question_headings": 0,
         "list_count": 6,
@@ -453,7 +453,7 @@
         "schemas": [
           "BreadcrumbList"
         ],
-        "word_count": 387,
+        "word_count": 385,
         "h2_count": 13,
         "question_headings": 0,
         "list_count": 6,
@@ -488,15 +488,15 @@
   "market-invoice": {
     "site_id": "market-invoice",
     "domain": "https://www.marketinvoice.co.uk",
-    "audited_at": "2026-06-15T06:10:21.682106",
+    "audited_at": "2026-06-23T10:33:33.745981",
     "pages_audited": 20,
-    "overall_score": 56,
+    "overall_score": 60,
     "readiness": "Good",
     "scores": {
-      "schema": 52,
+      "schema": 62,
       "content_structure": 68,
       "eeat": 80,
-      "citation_potential": 59
+      "citation_potential": 67
     },
     "llms_txt": {
       "exists": true,
@@ -533,41 +533,44 @@
         "scores": {
           "schema": 100,
           "content_structure": 75,
-          "passage_quality": 11.538461538461538,
+          "passage_quality": 11.25,
           "eeat": 75,
           "citation_potential": 100
         },
         "schemas": [
           "Report",
-          "Article"
+          "Article",
+          "FAQPage"
         ],
-        "word_count": 2224,
+        "word_count": 2267,
         "h2_count": 13,
         "question_headings": 0,
         "list_count": 9,
         "table_count": 3,
         "good_passages": 9,
-        "total_paragraphs": 78
+        "total_paragraphs": 80
       },
       {
         "url": "https://marketinvoice.co.uk/vs/",
-        "overall_score": 46,
-        "readiness": "Fair",
+        "overall_score": 71,
+        "readiness": "Good",
         "scores": {
-          "schema": 0,
+          "schema": 100,
           "content_structure": 75,
           "passage_quality": 0.0,
           "eeat": 75,
           "citation_potential": 80
         },
-        "schemas": [],
-        "word_count": 601,
-        "h2_count": 7,
+        "schemas": [
+          "FAQPage"
+        ],
+        "word_count": 707,
+        "h2_count": 8,
         "question_headings": 0,
-        "list_count": 7,
+        "list_count": 8,
         "table_count": 1,
         "good_passages": 0,
-        "total_paragraphs": 11
+        "total_paragraphs": 12
       },
       {
         "url": "https://marketinvoice.co.uk/specialty-finance/",
@@ -582,7 +585,8 @@
         },
         "schemas": [
           "Article",
-          "Article"
+          "Article",
+          "FAQPage"
         ],
         "word_count": 1319,
         "h2_count": 7,
@@ -594,26 +598,27 @@
       },
       {
         "url": "https://marketinvoice.co.uk/pre-shipment-finance/",
-        "overall_score": 72,
-        "readiness": "Good",
+        "overall_score": 76,
+        "readiness": "Excellent",
         "scores": {
           "schema": 100,
           "content_structure": 75,
-          "passage_quality": 8.0,
+          "passage_quality": 7.6923076923076925,
           "eeat": 75,
-          "citation_potential": 80
+          "citation_potential": 100
         },
         "schemas": [
           "Article",
-          "Article"
+          "Article",
+          "FAQPage"
         ],
-        "word_count": 1357,
+        "word_count": 1400,
         "h2_count": 11,
         "question_headings": 0,
         "list_count": 6,
         "table_count": 1,
         "good_passages": 4,
-        "total_paragraphs": 50
+        "total_paragraphs": 52
       },
       {
         "url": "https://marketinvoice.co.uk/complaints/",
@@ -659,25 +664,26 @@
       },
       {
         "url": "https://marketinvoice.co.uk/calculator/",
-        "overall_score": 66,
-        "readiness": "Good",
+        "overall_score": 82,
+        "readiness": "Excellent",
         "scores": {
-          "schema": 50,
+          "schema": 100,
           "content_structure": 100,
-          "passage_quality": 15.254237288135593,
+          "passage_quality": 14.0625,
           "eeat": 75,
-          "citation_potential": 80
+          "citation_potential": 100
         },
         "schemas": [
-          "Quotation"
+          "Quotation",
+          "FAQPage"
         ],
-        "word_count": 2499,
+        "word_count": 2577,
         "h2_count": 12,
         "question_headings": 2,
         "list_count": 5,
         "table_count": 3,
         "good_passages": 9,
-        "total_paragraphs": 59
+        "total_paragraphs": 64
       },
       {
         "url": "https://marketinvoice.co.uk/privacy/",
@@ -761,26 +767,27 @@
       },
       {
         "url": "https://marketinvoice.co.uk/recruitment-finance/",
-        "overall_score": 73,
-        "readiness": "Good",
+        "overall_score": 77,
+        "readiness": "Excellent",
         "scores": {
           "schema": 100,
           "content_structure": 75,
-          "passage_quality": 12.0,
+          "passage_quality": 11.538461538461538,
           "eeat": 75,
-          "citation_potential": 80
+          "citation_potential": 100
         },
         "schemas": [
           "Article",
-          "Article"
+          "Article",
+          "FAQPage"
         ],
-        "word_count": 1382,
+        "word_count": 1425,
         "h2_count": 12,
         "question_headings": 0,
         "list_count": 7,
         "table_count": 1,
         "good_passages": 6,
-        "total_paragraphs": 50
+        "total_paragraphs": 52
       },
       {
         "url": "https://marketinvoice.co.uk/how-we-are-funded/",
@@ -804,48 +811,50 @@
       },
       {
         "url": "https://marketinvoice.co.uk/contract-finance/",
-        "overall_score": 72,
-        "readiness": "Good",
+        "overall_score": 76,
+        "readiness": "Excellent",
         "scores": {
           "schema": 100,
           "content_structure": 75,
-          "passage_quality": 8.0,
+          "passage_quality": 7.6923076923076925,
           "eeat": 75,
-          "citation_potential": 80
+          "citation_potential": 100
         },
         "schemas": [
           "Article",
-          "Article"
+          "Article",
+          "FAQPage"
         ],
-        "word_count": 1373,
+        "word_count": 1416,
         "h2_count": 11,
         "question_headings": 0,
         "list_count": 6,
         "table_count": 1,
         "good_passages": 4,
-        "total_paragraphs": 50
+        "total_paragraphs": 52
       },
       {
         "url": "https://marketinvoice.co.uk/providers/",
-        "overall_score": 72,
-        "readiness": "Good",
+        "overall_score": 76,
+        "readiness": "Excellent",
         "scores": {
           "schema": 100,
           "content_structure": 75,
-          "passage_quality": 4.807692307692308,
+          "passage_quality": 4.716981132075472,
           "eeat": 75,
-          "citation_potential": 80
+          "citation_potential": 100
         },
         "schemas": [
-          "Article"
+          "Article",
+          "FAQPage"
         ],
-        "word_count": 2379,
+        "word_count": 2422,
         "h2_count": 40,
         "question_headings": 0,
         "list_count": 8,
         "table_count": 1,
         "good_passages": 5,
-        "total_paragraphs": 104
+        "total_paragraphs": 106
       },
       {
         "url": "https://marketinvoice.co.uk/providers/directory/",
@@ -892,88 +901,91 @@
       },
       {
         "url": "https://marketinvoice.co.uk/industries/",
-        "overall_score": 51,
-        "readiness": "Good",
-        "scores": {
-          "schema": 50,
-          "content_structure": 50,
-          "passage_quality": 1.4285714285714286,
-          "eeat": 100,
-          "citation_potential": 40
-        },
-        "schemas": [
-          "Service"
-        ],
-        "word_count": 1045,
-        "h2_count": 44,
-        "question_headings": 0,
-        "list_count": 5,
-        "table_count": 0,
-        "good_passages": 1,
-        "total_paragraphs": 70
-      },
-      {
-        "url": "https://marketinvoice.co.uk/best/cheapest-invoice-finance/",
-        "overall_score": 72,
+        "overall_score": 67,
         "readiness": "Good",
         "scores": {
           "schema": 100,
+          "content_structure": 50,
+          "passage_quality": 1.3888888888888888,
+          "eeat": 100,
+          "citation_potential": 60
+        },
+        "schemas": [
+          "Service",
+          "FAQPage"
+        ],
+        "word_count": 1115,
+        "h2_count": 45,
+        "question_headings": 0,
+        "list_count": 6,
+        "table_count": 0,
+        "good_passages": 1,
+        "total_paragraphs": 72
+      },
+      {
+        "url": "https://marketinvoice.co.uk/best/cheapest-invoice-finance/",
+        "overall_score": 76,
+        "readiness": "Excellent",
+        "scores": {
+          "schema": 100,
           "content_structure": 75,
-          "passage_quality": 6.521739130434782,
+          "passage_quality": 6.25,
           "eeat": 75,
-          "citation_potential": 80
+          "citation_potential": 100
         },
         "schemas": [
           "Article",
           "ItemList",
-          "Article"
+          "Article",
+          "FAQPage"
         ],
-        "word_count": 1280,
+        "word_count": 1323,
         "h2_count": 8,
         "question_headings": 0,
         "list_count": 6,
         "table_count": 2,
         "good_passages": 3,
-        "total_paragraphs": 46
+        "total_paragraphs": 48
       },
       {
         "url": "https://marketinvoice.co.uk/best/invoice-finance-for-small-business/",
-        "overall_score": 79,
+        "overall_score": 83,
         "readiness": "Excellent",
         "scores": {
           "schema": 100,
           "content_structure": 75,
-          "passage_quality": 18.333333333333332,
+          "passage_quality": 17.741935483870968,
           "eeat": 100,
-          "citation_potential": 80
+          "citation_potential": 100
         },
         "schemas": [
           "Article",
           "ItemList",
-          "Article"
+          "Article",
+          "FAQPage"
         ],
-        "word_count": 2001,
+        "word_count": 2044,
         "h2_count": 12,
         "question_headings": 0,
         "list_count": 5,
         "table_count": 1,
         "good_passages": 11,
-        "total_paragraphs": 60
+        "total_paragraphs": 62
       }
     ]
   },
   "seocompare": {
     "site_id": "seocompare",
     "domain": "https://www.seocompare.co.uk",
-    "audited_at": "2026-06-15T06:10:33.574255",
+    "audited_at": "2026-06-23T10:33:47.795578",
     "pages_audited": 20,
-    "overall_score": 71,
+    "overall_score": 70,
     "readiness": "Good",
     "scores": {
-      "schema": 90,
-      "content_structure": 86,
+      "schema": 88,
+      "content_structure": 85,
       "eeat": 86,
-      "citation_potential": 51
+      "citation_potential": 54
     },
     "llms_txt": {
       "exists": true,
@@ -1041,7 +1053,7 @@
           "citation_potential": 60
         },
         "schemas": [],
-        "word_count": 737,
+        "word_count": 770,
         "h2_count": 12,
         "question_headings": 2,
         "list_count": 4,
@@ -1188,12 +1200,12 @@
       },
       {
         "url": "https://seocompare.co.uk/best-llmo-agencies/",
-        "overall_score": 85,
+        "overall_score": 86,
         "readiness": "Excellent",
         "scores": {
           "schema": 100,
           "content_structure": 100,
-          "passage_quality": 55.55555555555556,
+          "passage_quality": 59.25925925925925,
           "eeat": 100,
           "citation_potential": 60
         },
@@ -1202,12 +1214,12 @@
           "Article",
           "BreadcrumbList"
         ],
-        "word_count": 2577,
+        "word_count": 2595,
         "h2_count": 24,
         "question_headings": 4,
         "list_count": 37,
         "table_count": 1,
-        "good_passages": 15,
+        "good_passages": 16,
         "total_paragraphs": 27
       },
       {
@@ -1442,27 +1454,26 @@
         "total_paragraphs": 26
       },
       {
-        "url": "https://seocompare.co.uk/terms/",
-        "overall_score": 67,
+        "url": "https://seocompare.co.uk/site-index/",
+        "overall_score": 58,
         "readiness": "Good",
         "scores": {
-          "schema": 100,
-          "content_structure": 75,
-          "passage_quality": 22.727272727272727,
+          "schema": 50,
+          "content_structure": 50,
+          "passage_quality": 0.0,
           "eeat": 100,
-          "citation_potential": 20
+          "citation_potential": 80
         },
         "schemas": [
-          "Article",
-          "BreadcrumbList"
+          "CollectionPage"
         ],
-        "word_count": 719,
+        "word_count": 11329,
         "h2_count": 16,
-        "question_headings": 1,
-        "list_count": 4,
+        "question_headings": 0,
+        "list_count": 16,
         "table_count": 0,
-        "good_passages": 5,
-        "total_paragraphs": 22
+        "good_passages": 0,
+        "total_paragraphs": 2
       }
     ]
   }

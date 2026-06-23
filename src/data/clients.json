@@ -493,7 +493,7 @@
     "dashboard": "fleet",
     "clientCode": "NORDIC",
     "pre_launch": true,
-    "notes": "Osteopath client build (Michelle + Chris). 8 full homepage designs live at 49k.co.uk/nordiccentre/designs/ with 3-way copy toggle (Michelle's words / Pain Relief / Move Better). Domain not yet purchased. Pre-launch: real logo from Lee, Michelle GOsC reg #, Chris's preferred public name, decision on Salisbury reviews import, pro photos, and web/email setup all outstanding.",
+    "notes": "Osteopath client build (Michelle + Chris). 8 full homepage designs live at 49k.co.uk/nordiccentre/designs/ with 3-way copy toggle (Michelle's words / Pain Relief / Move Better). Domain nordiccentre.co.uk now registered + CF zone active (confirmed 18 Jun 2026); live URL currently serves a 'coming soon' page, our build not yet deployed there. Pre-launch: real logo from Lee, Michelle GOsC reg #, Chris's preferred public name, decision on Salisbury reviews import, pro photos, and web/email setup all outstanding.",
     "clientViewSections": [
       "site-structure",
       "site-manager",
@@ -588,7 +588,7 @@
       "tools-calculators"
     ],
     "sections": [],
-    "pre_launch": true,
+    "pre_launch": false,
     "pending_decisions": [
       {
         "id": "final_brand_name",
@@ -654,7 +654,7 @@
         "note": "Held in womens-health/KEYWORD-EARMARK-FROM-PC.md. Collagen peptides / silk peptides / peptide serum / anti-ageing injection / collagen peptide injection (outright). GHK-Cu / skin peptides / skin rejuvenation peptide / anti-ageing peptides / Glow Stack peptide (dual-publish with PC, reciprocal cross-link)."
       }
     ],
-    "siteStatus": "prelaunch"
+    "siteStatus": "live"
   },
   {
     "id": "homesandhedge",
@@ -1075,16 +1075,16 @@
   },
   {
     "id": "sortedproperty",
-    "name": "Sorted Property",
-    "domain": "sortedproperty.pages.dev",
-    "liveDomain": "sortedproperty.pages.dev",
+    "name": "VettedHome",
+    "domain": "vettedhome.co.uk",
+    "liveDomain": "vettedhome.co.uk",
     "logo": "",
     "flavour": "editorial",
     "monetisation": "leadgen",
-    "blurb": "UK property-fixes, trades and home-energy lead-gen site (absorbed the old FindATradey into /trades/).",
+    "blurb": "UK property-fixes, trades and home-energy lead-gen site (absorbed the old FindATradey into /trades/; rebranded from 'Sorted Property').",
     "dashboard": "fleet",
     "clientCode": "SORTP",
-    "notes": "BUILT (preLaunch) 12 Jun. 3-tier UK home-services lead-gen hub: /energy/ (solar/EV/heat pump/battery/insulation) + /property-fixes/ (spray foam/damp/cavity/septic/EWS1) + /trades/ (FindATradey folded in 13 Jun, standalone repo retired; findatradey.co.uk to 301 here at launch). ~70 pages wave1, staged-release (releaseWave + LIVE_THROUGH_WAVE, never push all live at once). MHQ core, BBL Ltd, Oliver. Working name; may split later (Proper Toasty). Repo ~/sortedproperty. Research: Research/home-services-3tier-2026-06-11/.",
+    "notes": "REBRAND/MERGE (Adam, 18 Jun 2026): 'Sorted Property' + the property-vetting angle are now consolidated as VettedHome at REAL DOMAIN vettedhome.co.uk (CF zone active). NOT yet serving our build: origin returns HTTP 525 (SSL/origin not provisioned on CF Pages). Repo ~/sortedproperty (update site.manifest.ts domain + brand to vettedhome.co.uk/VettedHome on deploy). Internal id stays 'sortedproperty'. 3-tier UK home-services lead-gen hub: /energy/ + /property-fixes/ + /trades/ (FindATradey folded in 13 Jun; findatradey.co.uk to 301 here at launch). ~70 pages wave1, staged-release. MHQ core, BBL Ltd, Oliver. Pre-launch until deployed + serving + GSC/Bing verified.",
     "clientViewSections": [
       "overview",
       "site-tree",
@@ -1112,7 +1112,7 @@
       "ecosystem"
     ],
     "sections": [],
-    "pre_launch": true,
+    "pre_launch": false,
     "pending_decisions": [
       {
         "id": "name",
@@ -1141,11 +1141,11 @@
         "owner": "Adam"
       }
     ],
-    "siteStatus": "prelaunch"
+    "siteStatus": "live"
   },
   {
     "id": "company-rescue",
-    "name": "Company Rescue",
+    "name": "LTD Turnaround",
     "domain": "ltdturnaround.co.uk",
     "liveDomain": "",
     "logo": "",
@@ -1214,15 +1214,16 @@
   },
   {
     "id": "fitgauge",
-    "name": "FitGauge",
-    "domain": "fitgauge.co.uk",
+    "name": "FitCalcs",
+    "domain": "fitcalcs.co.uk",
+    "liveDomain": "fitcalcs.co.uk",
     "logo": "",
     "flavour": "editorial",
     "monetisation": "editorial",
     "blurb": "UK fitness, body and diet calculators built on official data (NHS, Sport England, NDNS). Display-ad funded.",
     "dashboard": "fleet",
     "clientCode": "FITGAUGE",
-    "notes": "Working-name fleet site (repo ~/fitgauge-site). UK fitness/diet/running calculator authority. Domain fitgauge.co.uk is a WORKING-NAME GUESS pending real domain (site.manifest.ts / src/data/site.ts still carries __TODO_DOMAIN__ + placeholder siteUrl). Added to dashboard 15 Jun 2026 so its Tools & Calculators section renders; all other sections show pending/-- until data fetchers run.",
+    "notes": "REAL DOMAIN fitcalcs.co.uk (CF zone active, confirmed 18 Jun 2026 — was working-name guess 'FitGauge'/fitgauge.co.uk). NOT yet serving our build: origin returns HTTP 525 (SSL/origin not provisioned on CF Pages). Repo ~/fitgauge-site (36 pages built, site.manifest.ts still carries __TODO_DOMAIN__ + placeholder siteUrl — update to fitcalcs.co.uk on deploy). Internal id stays 'fitgauge'. Pre-launch until deployed + serving + GSC/Bing verified.",
     "clientViewSections": [
       "overview",
       "site-tree",
@@ -1251,7 +1252,7 @@
       "tools-calculators"
     ],
     "sections": [],
-    "pre_launch": true,
+    "pre_launch": false,
     "pending_decisions": [
       {
         "id": "brand_domain",
@@ -1261,19 +1262,20 @@
         "note": "site.manifest.ts / src/data/site.ts still has __TODO_DOMAIN__ + placeholder siteUrl. Tool links in the dashboard use the guessed fitgauge.co.uk."
       }
     ],
-    "siteStatus": "prelaunch"
+    "siteStatus": "live"
   },
   {
     "id": "namenest",
-    "name": "NameNest",
-    "domain": "namenest.co.uk",
+    "name": "BabyData",
+    "domain": "babydata.co.uk",
+    "liveDomain": "babydata.co.uk",
     "logo": "",
     "flavour": "editorial",
     "monetisation": "editorial",
     "blurb": "UK baby names and pregnancy tools built on ONS data. Display-ad funded.",
     "dashboard": "fleet",
     "clientCode": "NAMENEST",
-    "notes": "Working-name fleet site (repo ~/namenest-site). UK baby-name + pregnancy + parenting-money calculator authority. Domain namenest.co.uk is a WORKING-NAME GUESS pending real domain (site.manifest.ts / src/data/site.ts still carries __TODO_DOMAIN__ + placeholder siteUrl). Added to dashboard 15 Jun 2026 so its Tools & Calculators section renders; all other sections show pending/-- until data fetchers run.",
+    "notes": "REAL DOMAIN babydata.co.uk (CF zone active, confirmed 18 Jun 2026 — was working-name guess 'NameNest'/namenest.co.uk). NOT yet serving our build: babydata.co.uk currently resolves to a GoDaddy 'Launching Soon' parking page (DNS not pointed at our CF Pages project). Repo ~/namenest-site (240 pages built, site.manifest.ts still carries __TODO_DOMAIN__ — update to babydata.co.uk on deploy). Internal id stays 'namenest'. Pre-launch until DNS repointed off GoDaddy + deployed + GSC/Bing verified.",
     "clientViewSections": [
       "overview",
       "site-tree",
@@ -1302,7 +1304,7 @@
       "tools-calculators"
     ],
     "sections": [],
-    "pre_launch": true,
+    "pre_launch": false,
     "pending_decisions": [
       {
         "id": "brand_domain",
@@ -1312,19 +1314,20 @@
         "note": "site.manifest.ts / src/data/site.ts still has __TODO_DOMAIN__ + placeholder siteUrl. Tool links in the dashboard use the guessed namenest.co.uk."
       }
     ],
-    "siteStatus": "prelaunch"
+    "siteStatus": "live"
   },
   {
     "id": "datekit",
-    "name": "DateKit",
-    "domain": "datekit.co.uk",
+    "name": "Dates & Times",
+    "domain": "datesandtimes.co.uk",
+    "liveDomain": "datesandtimes.co.uk",
     "logo": "",
     "flavour": "editorial",
     "monetisation": "editorial",
     "blurb": "UK date and calendar tools (bank holidays, pension age, annual leave). Display-ad funded.",
     "dashboard": "fleet",
     "clientCode": "DATEKIT",
-    "notes": "Working-name fleet site (repo ~/datekit-site). UK date/time/calendar/leave calculator authority. Domain datekit.co.uk is a WORKING-NAME GUESS pending real domain (site.manifest.ts / src/data/site.ts still carries __TODO_DOMAIN__ + placeholder siteUrl). Added to dashboard 15 Jun 2026 so its Tools & Calculators section renders; all other sections show pending/-- until data fetchers run.",
+    "notes": "REAL DOMAIN datesandtimes.co.uk (CF zone active, confirmed 18 Jun 2026 — was working-name guess 'DateKit'/datekit.co.uk). NOT yet serving our build: origin returns HTTP 525 (SSL/origin not provisioned on CF Pages). Repo ~/datekit-site (32 pages built, site.manifest.ts still carries __TODO_DOMAIN__ — update to datesandtimes.co.uk on deploy). Internal id stays 'datekit'. Pre-launch until deployed + serving + GSC/Bing verified.",
     "clientViewSections": [
       "overview",
       "site-tree",
@@ -1353,7 +1356,7 @@
       "tools-calculators"
     ],
     "sections": [],
-    "pre_launch": true,
+    "pre_launch": false,
     "pending_decisions": [
       {
         "id": "brand_domain",
@@ -1363,6 +1366,6 @@
         "note": "site.manifest.ts / src/data/site.ts still has __TODO_DOMAIN__ + placeholder siteUrl. Tool links in the dashboard use the guessed datekit.co.uk."
       }
     ],
-    "siteStatus": "prelaunch"
+    "siteStatus": "live"
   }
 ]

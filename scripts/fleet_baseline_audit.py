@@ -38,7 +38,9 @@ SITES = [
     ("findatradey",      "findatradey",             "leadgen",   True,  "https://findatradey.pages.dev/"),
     ("findagym",         "findagym",                "leadgen",   True,  "https://findagym.pages.dev/"),
     ("peptideclear",     "ukmetabolic",             "leadgen",   False, "https://peptideclear.co.uk/"),
-    ("builderweb",       "lovinlovable",            "saas",      False, "https://lovinlovable.dawn-field-3d16.workers.dev/"),
+    # PAUSED 16 Jun 2026 (Adam): builderweb/lovinlovable on hold — excluded from the baseline audit
+    # so its banned-FAQPage P1 + other flags stop surfacing. Re-add this line to resume.
+    # ("builderweb",       "lovinlovable",            "saas",      False, "https://lovinlovable.dawn-field-3d16.workers.dev/"),
     ("resiliencebuilder","steve-site",              "client",    False, None),
 ]
 
