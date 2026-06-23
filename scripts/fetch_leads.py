@@ -84,15 +84,19 @@ INTERNAL_SOURCES = {"internal", "test", "fee", "admin", "staff", "qa"}
 TEST_SOURCE_PREFIXES = ("fleet-test", "synthetic", "watchdog", "e2e")
 TEST_EMAIL_MARKERS = ("fleettest+", "wizard-e2e", "@pipeline.", "@example.", "+test@", "noreply@", "fakeemail@")
 TEST_COMPANY_MARKERS = ("zz test", "test full lead", "(delete)")
+# Specific addresses Adam has confirmed are NOT real leads (own tests / Oliver etc).
+EXCLUDED_EMAILS = {"oscarmacky@outlook.com"}
 
 
 def _is_internal(row: dict) -> bool:
+    email = str(row.get("email") or "").strip().lower()
+    if email in EXCLUDED_EMAILS:
+        return True
     src = str(row.get("source") or "").strip().lower()
     if src in INTERNAL_SOURCES:
         return True
     if any(src.startswith(p) for p in TEST_SOURCE_PREFIXES):
         return True
-    email = str(row.get("email") or "").strip().lower()
     if any(m in email for m in TEST_EMAIL_MARKERS):
         return True
     company = str(row.get("company_name") or "").strip().lower()

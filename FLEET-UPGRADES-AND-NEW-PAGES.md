@@ -55,6 +55,32 @@
 | **B22** Kartapay "business loan, no UK credit history" PL + RO + fix EN-header bleed | ⏳ ready |
 | **B23** MarketInvoice SERP cleanup: consolidate "barclays invoice finance" (10→1) + prune southall dupes | ⏳ ready |
 
+## 📦 BANKED REGISTER — built, NOT live (where all the banked stuff is)
+> The full "built but not pushed" inventory. Verified via git branches + prelaunch flags + release waves, 23 Jun.
+
+**A. Ready-to-push lead builds (this session — dev branches, gate-green, push in ~1 week):**
+- B17 VettedHome spray-foam hub → `dev-b17-vettedhome-sprayfoam` (`20f3c84`)
+- B18 BabyData name checker → `dev-b18-babydata-visualiser` (`414a1e1`)
+- B19 ADHD RTC hub + GP-letter → `dev-b19-adhd-rtc-hub` (`f29722c`)
+- B20 Her Vitals menopause hub (+5 symptom pages) → `dev-b20-hervitals-menopause` (`2139412`)
+- B21 HomesAndHedge triage + safety/legal boxes → `dev-b21-homesandhedge-triage` (`3a7db28`)
+
+**B. Big banked SITE (the major one): 2nd Invoice-Finance site** (`~/invoicefinance-site`) — **167 pages built, NOT live.** Awaiting your 5 go-live decisions (brand/domain, owning Ltd, CF account, author, lender panel).
+
+**C. Held on live sites (built + deployed but hidden):**
+- VettedHome — 3 tools (cost-to-sell, EPC, agent-fee) noindex/held + the wave-3 spray-foam hub (LIVE_THROUGH_WAVE=2, so wave 3+ stays dark until bumped).
+
+**D. Banked feature / content branches (finance + peptide — older, need triage before push):**
+- PeptideClear: `citation-refresh/2026-06-22` (reviewed, ready) + 3 older citation-refresh branches (May 27 / Jun 1 / Jun 8 — likely superseded) + `feat/book-entity-asset`
+- MerchantHQ: `feat/niche-batch-2-26may`, `feat/niche-batch-3-26may`, `feat/pl-ro-expansion-briefs` + `dev-ticker-tidy` (accessibility/search/site-index/stats work I preserved)
+- Kartapay: `feat/behavioural-tracking`, `feat/easy-data-tools`
+
+**E. Banked reskins (design, parked till you say ship):** MI `dev-navy-teal-reskin` · BBL `restyle-pilot` · FundBiz `dev-rolex-reskin` · MHQ `dev-ticker-tidy`.
+
+**F. Committed, not yet deployed (safe, my lane):** FitCalcs + BabyData analytics-parity + ad-safety commits (a quick wrangler push when you want).
+
+**G. Scoped, not built yet:** B5 VettedHome kitchens/bathrooms · B15 PeptideClear GLP-1 · B16 FundBiz/BBL refinance · B22 Kartapay · B23 MI SERP cleanup.
+
 ## Build log (what shipped, with real deploy status)
 - **B7 · LLB** — 10 TIER-3 guides + og-default → `b51310d`, wrangler-deployed, **LIVE**. ✅
 - **B3 · MI** — 37 industry funnels (`e80877b`) + 5 dedupe 301s (`e47ab9d`) → **LIVE** (200-verified). ✅
