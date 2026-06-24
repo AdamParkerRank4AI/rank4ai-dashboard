@@ -79,10 +79,15 @@ for (const s of grouped) {
 const checklist = lines.join('\n');
 ---
 <section data-copy-tile="Per-site enhancements" class="rounded-xl bg-slate-900 text-slate-100 p-6 my-6 border border-slate-800">
-  <div class="flex items-baseline justify-between flex-wrap gap-2 mb-1">
-    <h2 class="text-lg font-bold">Per-site enhancements</h2>
-    <span class="text-xs text-slate-400">Persistent backlog · ranked · marks done · {bl.generated_at ? new Date(bl.generated_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }) : ''}</span>
-  </div>
+  <details>
+  <summary class="flex items-baseline justify-between flex-wrap gap-2 mb-1 cursor-pointer list-none [&::-webkit-details-marker]:hidden select-none">
+    <h2 class="text-lg font-bold flex items-center gap-2">
+      <span class="enh-caret text-slate-500 text-sm inline-block transition-transform">▸</span>
+      Per-site enhancements
+      {totalOpen > 0 && <span class="rounded-full bg-emerald-700/40 text-emerald-300 text-xs font-semibold px-2.5 py-0.5">{totalOpen} open</span>}
+    </h2>
+    <span class="text-xs text-slate-400">Persistent backlog · ranked · marks done · {bl.generated_at ? new Date(bl.generated_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }) : ''} · <span class="text-emerald-400">click to open</span></span>
+  </summary>
 
   {totalOpen === 0 ? (
     <p class="text-sm text-slate-400 mt-3">No open enhancements for this board's sites. {doneForBoard ? `${doneForBoard} marked done.` : ''}</p>
@@ -133,8 +138,12 @@ const checklist = lines.join('\n');
       <pre id="enh-copy-src" class="hidden" set:text={checklist}></pre>
     </>
   )}
+  </details>
 </section>
 
+<style>
+  details[open] .enh-caret { transform: rotate(90deg); }
+</style>
 <script is:inline>
   document.addEventListener('click', (e) => {
     const btn = e.target.closest && e.target.closest('[data-enh-copy]');

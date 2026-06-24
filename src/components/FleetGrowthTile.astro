@@ -1,0 +1,101 @@
+---
+/**
+ * FleetGrowthTile — fleet-wide growth chart. Aggregates gsc_daily.json (per-site
+ * daily clicks/impressions, ~90d) into one fleet series and plots impressions +
+ * clicks over time, y-axis from zero. Board-filtered. Added 24 Jun (Adam: a graph
+ * starting at 0 showing growth on everything). Chart.js (loaded via CDN on the page).
+ */
+import fs from 'node:fs';
+import path from 'node:path';
+import clients from '../utils/dashboardClients';
+
+function loadJson(filename: string) {
+  try {
+    const fp = path.join(process.cwd(), 'src', 'data', 'live', filename);
+    if (fs.existsSync(fp)) return JSON.parse(fs.readFileSync(fp, 'utf-8'));
+  } catch {}
+  return null;
+}
+
+const daily = loadJson('gsc_daily.json') || {};
+const clientIds = new Set((clients as any[]).map((c) => c.id));
+
+// Merge every board site's daily series into fleet totals keyed by date.
+const byDate: Record<string, { impressions: number; clicks: number }> = {};
+for (const [siteId, blk] of Object.entries(daily as Record<string, any>)) {
+  if (!clientIds.has(siteId)) continue;
+  for (const d of (blk?.days || [])) {
+    if (!d?.date) continue;
+    const cur = byDate[d.date] || { impressions: 0, clicks: 0 };
+    cur.impressions += d.impressions || 0;
+    cur.clicks += d.clicks || 0;
+    byDate[d.date] = cur;
+  }
+}
+const dates = Object.keys(byDate).sort();
+const labels = dates;
+const impressions = dates.map((d) => byDate[d].impressions);
+const clicks = dates.map((d) => byDate[d].clicks);
+
+const totalImpr = impressions.reduce((s, n) => s + n, 0);
+const totalClicks = clicks.reduce((s, n) => s + n, 0);
+// crude growth signal: last 7d avg vs first 7d avg of the window
+const avg = (arr: number[]) => arr.length ? Math.round(arr.reduce((s, n) => s + n, 0) / arr.length) : 0;
+const firstWk = avg(impressions.slice(0, 7));
+const lastWk = avg(impressions.slice(-7));
+const growthPct = firstWk > 0 ? Math.round(((lastWk - firstWk) / firstWk) * 100) : null;
+
+const chartData = JSON.stringify({ labels, impressions, clicks });
+---
+{labels.length > 1 && (
+  <section data-copy-tile="Fleet growth" class="rounded-xl bg-slate-900 border border-emerald-800/40 p-5 mb-6">
+    <div class="flex items-center justify-between flex-wrap gap-2 mb-3">
+      <div class="flex items-baseline gap-3">
+        <h2 class="text-lg font-bold text-emerald-200">Fleet growth</h2>
+        <span class="text-xs text-slate-400">
+          <span class="text-emerald-300 font-bold">{totalImpr.toLocaleString()}</span> impressions ·
+          <span class="text-emerald-300 font-bold">{totalClicks.toLocaleString()}</span> clicks · {labels.length}d
+          {growthPct != null && (
+            <span class={growthPct >= 0 ? 'text-emerald-400' : 'text-rose-400'}> · {growthPct >= 0 ? '+' : ''}{growthPct}% impressions wk/wk</span>
+          )}
+        </span>
+      </div>
+    </div>
+    <canvas id="fleetGrowthChart" height="120"></canvas>
+    <script type="application/json" id="fleetGrowthData" set:html={chartData}></script>
+    <script is:inline>
+      (function () {
+        function draw() {
+          if (!window.Chart) { return setTimeout(draw, 120); }
+          var el = document.getElementById('fleetGrowthData');
+          var canvas = document.getElementById('fleetGrowthChart');
+          if (!el || !canvas || canvas.dataset.drawn) return;
+          canvas.dataset.drawn = '1';
+          var d = JSON.parse(el.textContent || '{}');
+          new window.Chart(canvas, {
+            type: 'line',
+            data: {
+              labels: d.labels,
+              datasets: [
+                { label: 'Impressions', data: d.impressions, borderColor: 'rgb(16,185,129)', backgroundColor: 'rgba(16,185,129,0.12)', fill: true, tension: 0.3, pointRadius: 0, borderWidth: 2, yAxisID: 'y' },
+                { label: 'Clicks', data: d.clicks, borderColor: 'rgb(59,130,246)', backgroundColor: 'rgba(59,130,246,0.10)', fill: true, tension: 0.3, pointRadius: 0, borderWidth: 2, yAxisID: 'y1' }
+              ]
+            },
+            options: {
+              responsive: true, maintainAspectRatio: false,
+              interaction: { mode: 'index', intersect: false },
+              plugins: { legend: { labels: { color: '#cbd5e1', font: { size: 11 }, usePointStyle: true } } },
+              scales: {
+                x: { ticks: { color: '#64748b', font: { size: 9 }, maxTicksLimit: 10, autoSkip: true }, grid: { display: false } },
+                y: { position: 'left', beginAtZero: true, ticks: { color: '#10b981', font: { size: 10 } }, grid: { color: '#1e293b' }, title: { display: true, text: 'Impressions', color: '#10b981', font: { size: 10 } } },
+                y1: { position: 'right', beginAtZero: true, ticks: { color: '#3b82f6', font: { size: 10 } }, grid: { drawOnChartArea: false }, title: { display: true, text: 'Clicks', color: '#3b82f6', font: { size: 10 } } }
+              }
+            }
+          });
+        }
+        draw();
+      })();
+    </script>
+    <p class="text-[11px] text-slate-500 mt-2">Fleet-wide Google impressions + clicks per day (GSC) · y-axis from zero.</p>
+  </section>
+)}
