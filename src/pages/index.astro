@@ -15,6 +15,7 @@ import PerSiteEnhancementsTile from '../components/PerSiteEnhancementsTile.astro
 import LeadsSummaryTile from '../components/LeadsSummaryTile.astro';
 import LosingClicksTile from '../components/LosingClicksTile.astro';
 import TopPagesByClicksTile from '../components/TopPagesByClicksTile.astro';
+import RankingsSummaryTile from '../components/RankingsSummaryTile.astro';
 import clients from '../utils/dashboardClients';
 import { statusOf, STATUS_RANK, STATUS_PILL, STATUS_LABEL } from '../utils/siteStatus';
 import fs from 'node:fs';
@@ -325,6 +326,10 @@ if (isFleet) {
   <div data-copy-tile="AI citations (live)" class="mb-6">
     <AiCitationsTile />
   </div>
+
+  {/* RANKINGS — per-site GSC position + impressions/clicks summary, near the top
+      (Adam, 24 Jun). Full per-query detail at /rankings/. */}
+  <RankingsSummaryTile />
 
   {/* SEARCH FUNNELS — the click streams that bring real visitors, headlined */}
   <section data-copy-tile="Search funnels" class="mb-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3">
