@@ -68,6 +68,9 @@ cd "$HOME/rank4ai-dashboard"
 # which this deploy job never ran, so the leads pages + audit tiles drifted a
 # cycle (or more) behind. Pull them here so what the dashboard shows is current.
 /usr/bin/python3 scripts/fetch_leads.py >> "$LOG" 2>&1 || echo "WARN fetch_leads.py nonzero" >> "$LOG"
+# Bing AI Performance (real ChatGPT/Copilot citations) — ingests the weekly CSV
+# exports Adam drops in ~/Downloads (no API yet). Monday email reminder = com.fleet.bing-ai-reminder.
+/usr/bin/python3 scripts/ingest_bing_ai_performance.py >> "$LOG" 2>&1 || echo "WARN ingest_bing_ai_performance.py nonzero" >> "$LOG"
 /usr/bin/python3 scripts/fetch_daily_audit.py >> "$LOG" 2>&1 || echo "WARN fetch_daily_audit.py nonzero" >> "$LOG"
 
 # 2b-i. INDEXING. IndexNow (free, instant Bing/Yandex) wasn't scheduled anywhere —

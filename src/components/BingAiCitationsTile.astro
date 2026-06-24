@@ -1,0 +1,53 @@
+---
+/**
+ * BingAiCitationsTile — REAL AI-citation counts from Bing Webmaster "AI Performance"
+ * (Microsoft Copilot + partners, which includes ChatGPT since it rides Bing). This is
+ * measured citations, not a probe sample. Fed by ingest_bing_ai_performance.py from the
+ * weekly CSV exports (Bing has no API for this yet). Board-filtered.
+ */
+import fs from 'node:fs';
+import path from 'node:path';
+import clients from '../utils/dashboardClients';
+
+function loadJson(filename: string) {
+  try {
+    const fp = path.join(process.cwd(), 'src', 'data', 'live', filename);
+    if (fs.existsSync(fp)) return JSON.parse(fs.readFileSync(fp, 'utf-8'));
+  } catch {}
+  return null;
+}
+
+const data = loadJson('bing_ai_citations.json') || { by_site: {} };
+const bySite = data.by_site || {};
+const boardIds = new Set((clients as any[]).map((c) => c.id));
+const nameOf = (id: string) => (clients as any[]).find((c) => c.id === id)?.name || id;
+
+const rows = Object.entries(bySite)
+  .filter(([id]) => boardIds.has(id))
+  .map(([id, d]: [string, any]) => ({ id, name: nameOf(id), ...d }))
+  .sort((a, b) => (b.citations_30d || 0) - (a.citations_30d || 0));
+const fleet30 = rows.reduce((s, r) => s + (r.citations_30d || 0), 0);
+const exportDate = rows[0]?.export_date;
+---
+{rows.length > 0 && (
+  <section data-copy-tile="AI citations (Bing)" class="rounded-xl bg-slate-900 border border-violet-800/40 p-5 mb-6">
+    <div class="flex items-center justify-between flex-wrap gap-2 mb-1">
+      <div class="flex items-baseline gap-3">
+        <h2 class="text-lg font-bold text-violet-200">AI citations</h2>
+        <span class="text-sm"><span class="text-2xl font-bold text-violet-300">{fleet30.toLocaleString()}</span><span class="text-slate-400 text-xs"> last 30d</span></span>
+      </div>
+      <span class="text-[10px] text-slate-500">Real Microsoft Copilot + ChatGPT citations (Bing AI Performance){exportDate ? ` · export ${exportDate}` : ''}</span>
+    </div>
+    <p class="text-[11px] text-slate-500 mb-3">Measured citations where AI answers cited the site — not a probe sample. ChatGPT rides Bing, so this captures it. Google AI Overviews/AI Mode are tracked separately (no clean feed).</p>
+    <div class="flex flex-wrap gap-2">
+      {rows.map((r) => (
+        <div class="inline-flex items-center gap-2 bg-slate-950/50 border border-slate-800 rounded-lg px-3 py-1.5">
+          <span class="text-sm text-slate-200">{r.name}</span>
+          <span class="text-violet-300 font-bold">{(r.citations_30d || 0).toLocaleString()}</span>
+          <span class="text-[10px] text-slate-500">30d</span>
+          {r.citations_7d > 0 && <span class="text-[10px] text-violet-400">+{r.citations_7d} 7d</span>}
+        </div>
+      ))}
+    </div>
+  </section>
+)}

@@ -8,6 +8,7 @@ import ConversionLeakTile from '../components/ConversionLeakTile.astro';
 import FeatureCoverageTile from '../components/FeatureCoverageTile.astro';
 import FleetBotHitsTile from '../components/FleetBotHitsTile.astro';
 import AiVisibilityTile from '../components/AiVisibilityTile.astro';
+import BingAiCitationsTile from '../components/BingAiCitationsTile.astro';
 import ClicksWithinReachTile from '../components/ClicksWithinReachTile.astro';
 import PerSiteEnhancementsTile from '../components/PerSiteEnhancementsTile.astro';
 import LeadsSummaryTile from '../components/LeadsSummaryTile.astro';
@@ -601,6 +602,9 @@ if (isFleet) {
       <FleetBotHitsTile />
     </div>
   )}
+
+  {/* Real AI citations from Bing AI Performance (Copilot + ChatGPT). Both boards. */}
+  <BingAiCitationsTile />
 
   {/* AI Visibility — AEO readiness vs actual citation rate per engine. Shown on
       BOTH boards (Adam, 24 Jun) — citation tracking is core, not fleet-only. */}
