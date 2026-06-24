@@ -1,0 +1,243 @@
+{
+  "generated": "2026-06-24",
+  "note": "Skills + the models inside them. 'session model' = orchestrates on the Claude Code session model (Opus 4.8), no separate model call.",
+  "skills": [
+    {
+      "skill": "antislop-check",
+      "models": [
+        "claude-sonnet-4-6"
+      ],
+      "own_model_call": true,
+      "what": "Run the fleet anti-slop quality check: a skeptical LLM editor reads built pages"
+    },
+    {
+      "skill": "conversion-review",
+      "models": [
+        "session model (Opus 4.8)"
+      ],
+      "own_model_call": false,
+      "what": "Fleet conversion review \u2014 diagnose \"lots of clicks/traffic but few leads\" for any owned site."
+    },
+    {
+      "skill": "entity-relationship-audit",
+      "models": [
+        "session model (Opus 4.8)"
+      ],
+      "own_model_call": false,
+      "what": "Go Fish Digital entity-relationship gap audit."
+    },
+    {
+      "skill": "niche-attack",
+      "models": [
+        "claude-sonnet-4-5",
+        "gemini-2.5-flash",
+        "gpt-4o"
+      ],
+      "own_model_call": true,
+      "what": "End-to-end niche-attack research for a new lead-gen / authority site: score a"
+    },
+    {
+      "skill": "niche-expansion",
+      "models": [
+        "session model (Opus 4.8)"
+      ],
+      "own_model_call": false,
+      "what": "Go deep on an angle/cluster that ALREADY exists on a CURRENT fleet site and work out how"
+    },
+    {
+      "skill": "seo-audit",
+      "models": [
+        "session model (Opus 4.8)"
+      ],
+      "own_model_call": false,
+      "what": "Full website SEO audit with parallel subagent delegation."
+    },
+    {
+      "skill": "seo-backlinks",
+      "models": [
+        "session model (Opus 4.8)"
+      ],
+      "own_model_call": false,
+      "what": "Backlink profile analysis: referring domains, anchor text distribution, toxic link detection, competitor gap analysis."
+    },
+    {
+      "skill": "seo-competitor-pages",
+      "models": [
+        "session model (Opus 4.8)"
+      ],
+      "own_model_call": false,
+      "what": "Generate SEO-optimized competitor comparison and alternatives pages."
+    },
+    {
+      "skill": "seo-content",
+      "models": [
+        "session model (Opus 4.8)"
+      ],
+      "own_model_call": false,
+      "what": "Content quality and E-E-A-T analysis with AI citation readiness assessment."
+    },
+    {
+      "skill": "seo-dataforseo",
+      "models": [
+        "session model (Opus 4.8)"
+      ],
+      "own_model_call": false,
+      "what": "Live SEO data via DataForSEO MCP server."
+    },
+    {
+      "skill": "seo-geo",
+      "models": [
+        "session model (Opus 4.8)"
+      ],
+      "own_model_call": false,
+      "what": "Optimize content for AI Overviews (formerly SGE), ChatGPT web search,"
+    },
+    {
+      "skill": "seo-google",
+      "models": [
+        "session model (Opus 4.8)"
+      ],
+      "own_model_call": false,
+      "what": "Google SEO APIs: Search Console (Search Analytics, URL Inspection, Sitemaps),"
+    },
+    {
+      "skill": "seo-hreflang",
+      "models": [
+        "session model (Opus 4.8)"
+      ],
+      "own_model_call": false,
+      "what": "Hreflang and international SEO audit, validation, and generation."
+    },
+    {
+      "skill": "seo-image-gen",
+      "models": [
+        "gemini-2.0-flash-exp",
+        "gemini-2.5-flash-image (image)",
+        "gemini-3-pro-image-preview (image)",
+        "gemini-3.1-flash",
+        "gemini-3.1-flash-image-preview (image)"
+      ],
+      "own_model_call": true,
+      "what": "AI image generation for SEO assets: OG/social preview images, blog hero images, schema images, product photography, infographics."
+    },
+    {
+      "skill": "seo-images",
+      "models": [
+        "session model (Opus 4.8)"
+      ],
+      "own_model_call": false,
+      "what": "Image optimization analysis for SEO and performance."
+    },
+    {
+      "skill": "seo-local",
+      "models": [
+        "session model (Opus 4.8)"
+      ],
+      "own_model_call": false,
+      "what": "Local SEO analysis covering Google Business Profile optimization, NAP"
+    },
+    {
+      "skill": "seo-maps",
+      "models": [
+        "session model (Opus 4.8)"
+      ],
+      "own_model_call": false,
+      "what": "Maps intelligence for local SEO \u2014 geo-grid rank tracking, GBP profile"
+    },
+    {
+      "skill": "seo-page",
+      "models": [
+        "session model (Opus 4.8)"
+      ],
+      "own_model_call": false,
+      "what": "Deep single-page SEO analysis covering on-page elements, content quality,"
+    },
+    {
+      "skill": "seo-plan",
+      "models": [
+        "session model (Opus 4.8)"
+      ],
+      "own_model_call": false,
+      "what": "Strategic SEO planning for new or existing websites."
+    },
+    {
+      "skill": "seo-programmatic",
+      "models": [
+        "session model (Opus 4.8)"
+      ],
+      "own_model_call": false,
+      "what": "Programmatic SEO planning and analysis for pages generated at scale from data"
+    },
+    {
+      "skill": "seo-schema",
+      "models": [
+        "session model (Opus 4.8)"
+      ],
+      "own_model_call": false,
+      "what": "Detect, validate, and generate Schema.org structured data."
+    },
+    {
+      "skill": "seo-sitemap",
+      "models": [
+        "session model (Opus 4.8)"
+      ],
+      "own_model_call": false,
+      "what": "Analyze existing XML sitemaps or generate new ones with industry templates."
+    },
+    {
+      "skill": "seo-technical",
+      "models": [
+        "session model (Opus 4.8)"
+      ],
+      "own_model_call": false,
+      "what": "Technical SEO audit across 9 categories: crawlability, indexability, security,"
+    },
+    {
+      "skill": "seo",
+      "models": [
+        "session model (Opus 4.8)"
+      ],
+      "own_model_call": false,
+      "what": "Comprehensive SEO analysis for any website or business type."
+    },
+    {
+      "skill": "ui-ux-pro-max",
+      "models": [
+        "session model (Opus 4.8)"
+      ],
+      "own_model_call": false,
+      "what": "UI/UX design intelligence."
+    }
+  ],
+  "automations": [
+    {
+      "engine": "antislop_spotcheck.py",
+      "skill": "/antislop-check",
+      "models": [
+        "claude-sonnet-4-6"
+      ],
+      "what": "skeptical-editor anti-slop check on built pages (3 layers)"
+    },
+    {
+      "engine": "run_questions.py",
+      "models": [
+        "claude-sonnet-4-6"
+      ],
+      "what": "daily 5 AI-search questions to Supabase"
+    },
+    {
+      "engine": "run_blogs.py",
+      "models": [
+        "claude-sonnet-4-6"
+      ],
+      "what": "daily blog post to Supabase"
+    },
+    {
+      "engine": "run_weekly_intelligence.py",
+      "models": [
+        "claude-sonnet-4-6"
+      ],
+      "what": "Sunday RSS intelligence briefing email"
+    }
+  ]
+}

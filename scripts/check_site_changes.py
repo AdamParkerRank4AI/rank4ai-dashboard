@@ -19,6 +19,12 @@ REPOS = {
         "local": os.path.expanduser("~/rank4ai-site"),
         "crawl_file": "crawl_rank4ai.json",
     },
+    "trustedinteriors": {
+        "owner": "AdamParkerRank4AI",
+        "repo": "trustedinteriors",
+        "local": os.path.expanduser("~/trustedinteriors"),
+        "crawl_file": "crawl_trustedinteriors.json",
+    },
     "market-invoice": {
         "owner": "AdamParkerRank4AI",
         "repo": "market-invoice",

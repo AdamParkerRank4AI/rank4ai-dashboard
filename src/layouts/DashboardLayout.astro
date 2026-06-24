@@ -49,8 +49,9 @@ const isFleet = (process.env.DASHBOARD || 'current').toLowerCase() === 'fleet';
       )}
       {isAgency && (
         <>
-          <span class="text-gray-500">|</span>
-          <span class="text-sm text-gray-400">Agency View</span>
+          <span class="text-gray-500 hidden sm:inline">|</span>
+          <a href="/rankings" class="text-sm text-gray-300 hover:text-white">Rankings</a>
+          <a href="/leads" class="text-sm text-gray-300 hover:text-white">Leads</a>
         </>
       )}
     </div>

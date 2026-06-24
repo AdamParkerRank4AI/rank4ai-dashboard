@@ -12,6 +12,7 @@ REPOS = {
     "marketinvoice.co.uk": os.path.expanduser("~/compare-invoice-finance"),
     "seocompare.co.uk": os.path.expanduser("~/compareaiseo"),
     "rochellemarashi.pages.dev": os.path.expanduser("~/rochellemarashi"),
+    "trustedinteriors.pages.dev": os.path.expanduser("~/trustedinteriors"),
     "dashboard": os.path.expanduser("~/rank4ai-dashboard"),
 }
 

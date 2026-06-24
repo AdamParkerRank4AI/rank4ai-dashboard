@@ -1161,6 +1161,46 @@
   "category": "leadgen"
  },
  {
+  "id": "trustedinteriors",
+  "name": "Trusted Interiors",
+  "domain": "trustedinteriors.co.uk",
+  "liveDomain": "trustedinteriors.pages.dev",
+  "logo": "",
+  "flavour": "leadgen",
+  "monetisation": "leadgen",
+  "dashboard": "fleet",
+  "clientCode": "TINT",
+  "notes": "SCAFFOLDED 2026-06-24 from the company-rescue leadgen baseline, stripped to a neutral interiors skeleton. Deployed to https://trustedinteriors.pages.dev (info@rank4ai CF Pages, wrangler direct-upload, indexable). Domain trustedinteriors.co.uk zone is live on CF but still the GoDaddy parking page; custom-domain DNS cutover HELD pending Adam's design sign-off. GitHub: AdamParkerRank4AI/trustedinteriors (main). UK home-interiors leadgen + content/authority/reviews/data. Lean standalone Astro (NO fleet-core dep), config-driven via src/data/site.ts. OPEN: owner entity undecided (placeholder), design held, content sections to be built, og placeholder, create trustedinteriors_leads Supabase tables. Lead = introduce to a vetted interiors professional (capture-first -> Supabase + FormSubmit to adam@muswellrose.com).",
+  "clientViewSections": [
+   "overview",
+   "site-tree",
+   "content-plan",
+   "recommendations",
+   "ai-readiness",
+   "page-compliance"
+  ],
+  "allSections": [
+   "overview",
+   "ai-readiness",
+   "ai-citations",
+   "site-manager",
+   "page-compliance",
+   "traffic",
+   "search-performance",
+   "competitors",
+   "site-tree",
+   "uptime",
+   "site-speed",
+   "crawl-activity",
+   "recommendations",
+   "content-plan",
+   "daily-audit",
+   "ecosystem"
+  ],
+  "siteStatus": "live",
+  "category": "leadgen"
+ },
+ {
   "id": "company-rescue",
   "name": "LTD Turnaround",
   "domain": "ltdturnaround.co.uk",

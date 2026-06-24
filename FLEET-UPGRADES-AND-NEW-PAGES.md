@@ -1,4 +1,4 @@
-# Fleet Upgrades & New Pages — status (updated 23 Jun 2026)
+# Fleet Upgrades & New Pages — status (updated 24 Jun 2026)
 > Working copy in a writable path. The iCloud original (`iCloud/.../Research/beyond-serp-fleet-2026-06-17/`) is **dataless/evicted + needs Full Disk Access** for this process to write — that's the "lock" seen all session. Use this copy until FDA is granted.
 
 ## Site numbering = Adam's order (core 1–6 · newer lead/content 7–12 · display-ad 13–16)
@@ -6,8 +6,8 @@
 
 | # | Brand | New pages | Upgrades | Tools | Answer blocks | Status |
 |--:|---|--:|--:|--:|--:|---|
-| 1 | MarketInvoice | 0 / 60 | **43** / 680 | **1** / 3 | 0 / ~300 | ✅ B3 funnel + GEO + league table + **FAQPage on 326pp** LIVE · next: barclays consolidate, tighten ~64 thin capsules |
-| 2 | MerchantHQ 🅿️ | **15** / 55 | 0 / 149 | 0 / 3 | 0 / 560 | ✅ **contract-exit hub LIVE** (pillar + 14 provider cancel guides) + FAQPage re-enabled · next: un-gated fee table · methodology · 🅿️ reskin still parked |
+| 1 | MarketInvoice | 0 / 60 | **43** / 680 | **1** / 3 | 0 / ~300 | ✅ B3 funnel + GEO + league table + **FAQPage on 326pp** LIVE · **anti-slop sweep ✅ 24 Jun: Allianz/Funding-Circle non-IF mislabel fixed LIVE** · next: barclays consolidate, tighten ~64 thin capsules |
+| 2 | MerchantHQ 🅿️ | **15** / 55 | 0 / 149 | 0 / 3 | 0 / 560 | ✅ **contract-exit hub LIVE** (pillar + 14 provider cancel guides) + FAQPage re-enabled · **anti-slop sweep ✅ 24 Jun: Zettle price + trade-location label fixed LIVE** · next: un-gated fee table · methodology · 🅿️ reskin still parked |
 | 3 | PeptideClear | 0 / 49 | 0 / 268 | 0 / 4 | 0 / ~200 | 3 surge pages + 34 citations · ⭐ next-gen GLP-1 hub · /medical vs /research split |
 | 4 | FundBiz 🅿️ | 0 / 124 | 0 / 142 | 0 / 3 | 0 / 230 | trade-credit surge · ⭐ refinance / "stuck in a contract" hub · 17 decline guides |
 | 5 | Best Business Loans 🅿️ | 0 / 73 | 0 / 112 | 0 / 3 | 0 / ~150 | mature · ⭐ MCA escalator-trap guide · real rate numbers (kill "see lender quote") · fix 398w capsule |
@@ -22,6 +22,7 @@
 | 14 | DateKit → datesandtimes.co.uk | 32 / 216 | 0 / 32 | **10** / 5 | ~24 / 1,455 | ✅ live; **bank-holiday JSON/CSV/iCal downloads LIVE** + 10 tools + data-asset |
 | 15 | FitGauge → fitcalcs.co.uk | 36 / 380 | 0 / 36 | **18** / 6 | ~28 / 1,990 | ✅ live; **18 calculators (exceeds target)** · deploy tracking/ad-safety · verify formula |
 | 16 | NameNest → babydata.co.uk | 34 / 373 | 0 / 34 | **7** / 3 | ~26 / 694 | ✅ live; ONS names + 7 tools · ⭐ ONS name-trend visualiser · deploy tracking/ad-safety |
+| 17 | TrustedInteriors 🔒 | 0 / TBD | — | — | — | 🔒 **HELD** — new owned site, **interiors / KBB-company vertical** (sister to VettedHome; owns whole-kitchen/bathroom design + showroom + "new kitchen cost" authority/leadgen). Built off this fleet baseline. Blocked: owner-entity + design decision. Research banked (iCloud `Research/home-improvement/`). Resume via `/build-site` |
 | | **FLEET** | **~2,800** | **~2,010** | **~55** | **~7,540** | |
 
 **Health YMYL ⭐ items** (PeptideClear/HerVitals/ADHD/FitCalcs/BabyData/HomesAndHedge) build on the **editorial model** — no hired reviewer (locked 23 Jun). **🅿️ reskins** (MHQ/FundBiz/BBL) parked until Adam says ship.
@@ -29,11 +30,12 @@
 ## Batches
 | Code | Status |
 |---|---|
+| **QA · Anti-slop sweep** (per-site `/antislop-check`, standing gate) | 🔄 **MI ✅ + MHQ ✅ + LTD-Turnaround ✅ + HomesAndHedge ✅ + VettedHome ✅ (24 Jun)** — sweeps done, ledger-tracked · daily `--new` delta live (`com.fleet.antislop-spotcheck`). **Smaller sites much cleaner:** H&H 0 major, VettedHome 0 major; **LTD-Turnaround 3 major = 3 hollow `/data/` "tracker" pages** (director-disqualifications, late-payment-index, strike-off-objections) that claim to show figures but contain none + verbatim-repeated padding → **populate with real Insolvency Service/PPR data or reframe the over-claim** (logged, not auto-fixed). **~10 sites still pending.** ⚠️ skeptic over-flags ~50% on concrete claims (false "future date" on 2026 stamps; uncited≠fabricated) — verify live before fixing |
 | **B1** GEO caveats (MHQ/Kartapay) | ✅ **DONE** — verified already clean (nothing to ship) |
 | **B2** on-page GEO pass | ✅ MI verified already-done · other mature sites likely same (low headroom) · value only on net-new |
 | **B3** MI consolidation | ✅ **DONE + LIVE** (37 industry links + 5 dedupe 301s, 200-verified) |
 | **B4** VettedHome tools | ✅ **DONE** — 3 honest tools (cost-to-sell, EPC checker, agent-fee benchmark), held/noindex |
-| **B5** VettedHome new pages (~316) | ⏳ queued (BANKED). Incl. **/trades/ kitchen & bathroom FITTER cluster** (bathroom fitters 6,600, kitchen fitters 5,400, near-me variants, installation, wet-room, per-town leaves, installer how/cost). Data → trades-types/geo/services.ts, staged-release. Research: `~/sortedproperty/docs/kbb-kitchens-bathrooms-research.md` |
+| **B5** VettedHome new pages (~316) | ⏳ queued (BANKED). Incl. **/trades/ kitchen & bathroom FITTER cluster** (bathroom fitters 6,600, kitchen fitters 5,400, near-me variants, installation, wet-room, per-town leaves, installer how/cost). Data → trades-types/geo/services.ts, staged-release. Research: `~/sortedproperty/docs/trades-kitchen-bathroom-scope.md`. ⚠️ **FITTER/installer intent ONLY** — the whole-kitchen/bathroom **company + showroom + design + "new kitchen cost"** authority/leadgen belongs to **TrustedInteriors** (sister site, currently HELD); research banked at iCloud `Research/home-improvement/RESEARCH_KITCHENS_BATHROOMS_2026-06-22.md`. Do NOT build the company/design side on VettedHome. |
 | **B6** ADHD screener + women-w-ADHD + RTC | ✅ **already built** (ASRS, RTC checker, cost-tool suite, women pillar, RTC-vs-private-vs-NHS) — live |
 | **B7** LLB TIER-3 guides + OG | ✅ **DONE + LIVE** (10 guides, og-default) |
 | **B8** citation data-assets (datesandtimes/babydata) | ✅ **DONE + LIVE** — datesandtimes bank-holidays (+ JSON/CSV/iCal downloads) + babydata ONS top-100 |
@@ -52,8 +54,8 @@
 | **B19** ADHD Helper Right-to-Choose navigation hub (editorial model) | ⏳ ready |
 | **B20** Her Vitals menopause / perimenopause evidence hub (editorial model) | ⏳ ready |
 | **B21** HomesAndHedge answer-first Quick-Triage + safety/legal boxes *(my lane)* | ⏳ ready |
-| **B22** Kartapay "business loan, no UK credit history" PL + RO + fix EN-header bleed | ⏳ ready |
-| **B23** MarketInvoice SERP cleanup: consolidate "barclays invoice finance" (10→1) + prune southall dupes | ⏳ ready |
+| **B22** Kartapay "business loan, no UK credit history" PL + RO + fix EN-header bleed | 🟢 **EN-bleed fix BANKED** on `dev-b22-kartapay-langfix` (24 Jun) — footer/nav labels now lang-aware (PL/RO); needs a native PL/RO spot-check before merge to main (Kartapay doctrine). New "no-credit-history" PL/RO pages NOT built yet (need native content). |
+| **B23** MarketInvoice SERP cleanup: consolidate "barclays invoice finance" (10→1) + prune southall dupes | ✅ **DONE + LIVE (24 Jun)** — removed thin `/alternatives/barclays-invoice-finance/`, 301'd to `/providers/barclays/` (no chain), verified live. Southall dupes: none found (already clean). Verified Barclays still offers IF before acting. |
 
 ## 📦 BANKED REGISTER — the bank/drip pile (where all the banked stuff is)
 > Model (Adam, 18 Jun): upgrades → main; **new pages → BANK + drip-feed, never dump.** Two tiers: **🟢 BANKED** = built + ready to push · **🔵 BANKED NEXT** = scoped/queued, not built yet. Verified via git branches + prelaunch flags + release waves, 23 Jun.
@@ -100,6 +102,8 @@
 **H. Grow-brief ⏸ HOLD bets (need your go / live-data validation first):** MI recourse-vs-non-recourse tool + hidden-fees catalogue + sector deep-hubs · MHQ hidden-fee calculator + settlement matrix · PeptideClear legality pillar + CoA guide · Her Vitals brand-comparison index + form/dose guides · ADHD private-cost + by-region FOI data · VettedHome heat-pump/cavity-wall + by-trade×town rollout · banner data-assets (SMP calc, working-days API). Full per-site list in the GROW-BRIEF doc.
 
 ## Build log (what shipped, with real deploy status)
+- **24 Jun — anti-slop sweeps + fixes LIVE** — MI + MHQ full sweeps reviewed; real bugs fixed + live: MI non-IF mislabel (Allianz/Funding Circle, `9963454`), MHQ Zettle price + trade label (`e135e38`/`67125d9`). **B23** barclays consolidation LIVE (`5e7d2a6`, 301 verified). **B22** Kartapay EN-bleed footer/nav fix BANKED on dev (`c8443e6`, needs native spot-check). Smaller-site sweeps: H&H + VettedHome 0 major; LTD-Turnaround 3 hollow `/data/` pages (logged). `/antislop-check` skill built + daily `--new` delta cron live. ✅
+- **⚠️ Open finding (LTD Turnaround)** — `/data/director-disqualifications/`, `/data/late-payment-index/`, `/data/strike-off-objections/` claim to be data trackers but show no figures (hollow over-claim + repeated padding). Fix = populate with real Insolvency Service / Payment Practices Reporting data, or reframe so they don't promise data they lack. Not auto-fixed (would mean inventing numbers).
 - **B7 · LLB** — 10 TIER-3 guides + og-default → `b51310d`, wrangler-deployed, **LIVE**. ✅
 - **B3 · MI** — 37 industry funnels (`e80877b`) + 5 dedupe 301s (`e47ab9d`) → **LIVE** (200-verified). ✅
 - **B4 · VettedHome** — 3 tools: cost-to-sell (`da3fd6f`) + EPC + fee benchmark (`de839a9`) → built, held/noindex. ✅
@@ -197,5 +201,6 @@ A fleet-wide analytics-parity + ad-safety pass committed but not deployed: **dat
 ## 🛠️ Brief-execution order (my lane first, away from active sessions)
 DatesAndTimes ✅ → BabyData (⭐ name-trend visualiser) → FitCalcs → HomesAndHedge (⭐ Quick-Triage) → VettedHome (⭐ spray-foam) → ADHD (⭐ RTC) → Her Vitals (⭐ menopause). Finance + Kartapay = now also workable (other session closed). SEOCompare grow skipped (niche-attack not run).
 
-## Deploy discipline (Adam, 22–23 Jun)
+## Deploy discipline (Adam, 22–24 Jun)
 Dev branch · wrangler (auth = token file `~/.cloudflare-dashboard-token` + account id; `npm run deploy` is indexing-only) · never auto-push main · ask before every deploy · verify-first per item · don't clobber. Display sites = wrangler from local (no auto-build). MI + SEOCompare = git-autobuild from main.
+**🧹 Anti-slop gate (standing, 24 Jun):** every new/changed page passes `/antislop-check` (engine `~/fleet-tools/antislop_spotcheck.py`, model claude-sonnet-4-6) BEFORE drip — `--pages` on the built page, or the ultracode adversarial workflow for a batch. Daily `--new` delta runs automatically. **Always verify a flagged factual error against a live source before editing copy — the skeptic over-flags (~50% of concrete claims wrong: false "future date" stamps, uncited≠fabricated, occasional hallucinated quotes).**

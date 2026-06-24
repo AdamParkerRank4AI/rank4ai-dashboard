@@ -1,0 +1,112 @@
+---
+/**
+ * Rankings — Google position tracking per site, from the GSC Search Analytics API
+ * (no BigQuery needed). Current position from gsc.json top_queries; movement from
+ * gsc_history.json (90-day rolling snapshots). Flags page-1 + striking-distance.
+ * Board-filtered (fleet vs current).
+ */
+import DashboardLayout from '../layouts/DashboardLayout.astro';
+import fs from 'node:fs';
+import path from 'node:path';
+import clients from '../utils/dashboardClients';
+
+function loadJson(filename: string) {
+  try {
+    const fp = path.join(process.cwd(), 'src', 'data', 'live', filename);
+    if (fs.existsSync(fp)) return JSON.parse(fs.readFileSync(fp, 'utf-8'));
+  } catch {}
+  return null;
+}
+
+const gsc = loadJson('gsc.json') || {};
+const history = loadJson('gsc_history.json') || {};
+const boardClients = clients as any[];
+const clientIds = new Set(boardClients.map((c) => c.id));
+
+// earliest history snapshot (for movement baseline) + most recent
+const histDates = Object.keys(history).sort();
+const baselineDate = histDates[0];
+const baseline = baselineDate ? history[baselineDate] : {};
+
+function movementFor(siteId: string, query: string, currentPos: number): number | null {
+  const oldQ = baseline?.[siteId]?.queries?.[query];
+  if (!oldQ || typeof oldQ.position !== 'number') return null;
+  // positive Δ = improved (moved to a lower/better position number)
+  return Math.round((oldQ.position - currentPos) * 10) / 10;
+}
+
+const sites = boardClients
+  .filter((c) => clientIds.has(c.id) && (gsc as any)[c.id]?.top_queries?.length)
+  .map((c) => {
+    const g = (gsc as any)[c.id] || {};
+    const rows = (g.top_queries || [])
+      .filter((q: any) => q.query && q.impressions > 0)
+      .sort((a: any, b: any) => b.impressions - a.impressions)
+      .slice(0, 20)
+      .map((q: any) => ({
+        query: q.query,
+        position: q.position,
+        impressions: q.impressions,
+        clicks: q.clicks,
+        ctr: q.ctr,
+        delta: movementFor(c.id, q.query, q.position),
+      }));
+    const page1 = rows.filter((r: any) => r.position <= 10).length;
+    const striking = rows.filter((r: any) => r.position > 10 && r.position <= 20).length;
+    return { id: c.id, name: c.name || c.id, avgPos: g.totals?.position, rows, page1, striking };
+  })
+  .sort((a, b) => (b.rows.reduce((s: number, r: any) => s + r.impressions, 0)) - (a.rows.reduce((s: number, r: any) => s + r.impressions, 0)));
+
+const posColor = (p: number) => p <= 3 ? 'text-emerald-300' : p <= 10 ? 'text-emerald-400' : p <= 20 ? 'text-amber-300' : 'text-gray-400';
+---
+<DashboardLayout title="Rankings — Rank4AI" view="agency">
+  <div class="mb-4">
+    <h1 class="text-xl font-bold text-white">Rankings</h1>
+    <p class="text-sm text-gray-500">Google position per tracked query (GSC, last 28d) · movement vs {baselineDate || 'baseline'} · 🟢 page 1 (≤10) · 🟡 striking distance (11–20, almost page 1).</p>
+  </div>
+
+  {sites.length === 0 && <p class="text-gray-400">No GSC query data yet for this board's sites.</p>}
+
+  <div class="space-y-6">
+    {sites.map((s) => (
+      <section data-copy-tile={`Rankings ${s.name}`} class="rounded-lg border border-gray-800 bg-gray-900">
+        <div class="flex items-center justify-between flex-wrap gap-2 px-4 py-3 border-b border-gray-800">
+          <div class="flex items-baseline gap-3">
+            <a href={`/agency/${s.id}`} class="text-base font-bold text-indigo-300 hover:text-indigo-200">{s.name}</a>
+            {s.avgPos != null && <span class="text-xs text-gray-500">avg pos {Math.round(s.avgPos)}</span>}
+          </div>
+          <div class="flex gap-2 text-[11px]">
+            <span class="px-2 py-0.5 rounded bg-emerald-900/40 text-emerald-300">{s.page1} on page 1</span>
+            <span class="px-2 py-0.5 rounded bg-amber-900/40 text-amber-300">{s.striking} striking distance</span>
+          </div>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-xs">
+            <thead>
+              <tr class="text-left text-gray-500 border-b border-gray-800/60">
+                <th class="py-2 px-4">Query</th>
+                <th class="py-2 px-3 text-right">Position</th>
+                <th class="py-2 px-3 text-right">Move</th>
+                <th class="py-2 px-3 text-right">Impressions</th>
+                <th class="py-2 px-3 text-right">Clicks</th>
+                <th class="py-2 px-3 text-right">CTR</th>
+              </tr>
+            </thead>
+            <tbody>
+              {s.rows.map((r: any) => (
+                <tr class="border-b border-gray-800/40 hover:bg-gray-800/30">
+                  <td class="py-1.5 px-4 text-gray-200 max-w-md truncate">{r.query}{r.position <= 20 && r.position > 10 && <span class="ml-2 text-[10px] text-amber-400">🟡</span>}{r.position <= 10 && <span class="ml-2 text-[10px]">🟢</span>}</td>
+                  <td class={`py-1.5 px-3 text-right font-semibold tabular-nums ${posColor(r.position)}`}>{r.position?.toFixed(1)}</td>
+                  <td class="py-1.5 px-3 text-right tabular-nums">{r.delta == null ? <span class="text-gray-700">·</span> : r.delta > 0 ? <span class="text-emerald-400">▲ {r.delta}</span> : r.delta < 0 ? <span class="text-red-400">▼ {Math.abs(r.delta)}</span> : <span class="text-gray-500">–</span>}</td>
+                  <td class="py-1.5 px-3 text-right text-gray-300 tabular-nums">{r.impressions.toLocaleString()}</td>
+                  <td class="py-1.5 px-3 text-right text-gray-400 tabular-nums">{r.clicks}</td>
+                  <td class="py-1.5 px-3 text-right text-gray-500 tabular-nums">{r.ctr}%</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    ))}
+  </div>
+</DashboardLayout>

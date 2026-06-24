@@ -44,6 +44,7 @@ SITE_ID_MAP = {
     # their dashboard detail (pages/schema/content) stayed empty (Adam, 23 Jun).
     "Later Life Borrowing": "laterlifeborrowing",
     "LTD Turnaround": "company-rescue",
+    "Trusted Interiors": "trustedinteriors",
     "HerVitals": "womenshealth",
     "ADHD Helper": "adhdhelper",
     "Homes and Hedge": "homesandhedge",
