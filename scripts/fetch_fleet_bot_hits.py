@@ -108,27 +108,38 @@ def fetch_ai_user_rows(key):
     """Dedicated pull of ai-user rows (a real citation = an AI fetched us live for
     a user). Separate from the mixed fetch because Supabase hard-caps each page at
     1000 rows and ai-user would otherwise be crowded out by crawler volume.
-    Returns (most_recent_rows[:1000], true_total_in_window)."""
+    Paginates through the FULL 30-day window (not just the newest 1000) so the
+    per-site 24h/7d/30d windows are accurate — sampling the newest 1000 only
+    collapses every window into ~24h when volume is high. Rows stay created_at.desc.
+    Returns (all_rows_in_window, true_total_in_window)."""
     if not key:
         return [], 0
     since = (datetime.now(timezone.utc) - timedelta(days=WINDOW_DAYS)).strftime("%Y-%m-%dT%H:%M:%SZ")
     cols = "site,bot_name,bot_category,path,asn,asn_org,country,user_agent,created_at"
-    url = (f"{SUPABASE_URL}/rest/v1/fleet_bot_hits?select={cols}"
-           f"&bot_category=eq.ai-user&created_at=gte.{since}&order=created_at.desc&limit=1000")
+    base = (f"{SUPABASE_URL}/rest/v1/fleet_bot_hits?select={cols}"
+            f"&bot_category=eq.ai-user&created_at=gte.{since}&order=created_at.desc")
+    PAGE = 1000
+    MAX_PAGES = 60  # safety backstop (60k rows)
+    rows, total = [], 0
     try:
-        r = requests.get(url, headers={
-            "apikey": key, "Authorization": f"Bearer {key}",
-            "Prefer": "count=exact",  # returns true total in Content-Range
-        }, timeout=30)
-        r.raise_for_status()
-        total = len(r.json())
-        cr = r.headers.get("Content-Range", "")  # e.g. "0-999/4823"
-        if "/" in cr and cr.split("/")[-1].isdigit():
-            total = int(cr.split("/")[-1])
-        return r.json(), total
+        for page in range(MAX_PAGES):
+            lo = page * PAGE
+            r = requests.get(f"{base}&limit={PAGE}&offset={lo}", headers={
+                "apikey": key, "Authorization": f"Bearer {key}",
+                "Prefer": "count=exact",  # returns true total in Content-Range
+            }, timeout=30)
+            r.raise_for_status()
+            batch = r.json()
+            cr = r.headers.get("Content-Range", "")  # e.g. "0-999/16907"
+            if "/" in cr and cr.split("/")[-1].isdigit():
+                total = int(cr.split("/")[-1])
+            rows.extend(batch)
+            if len(batch) < PAGE or len(rows) >= total:
+                break
+        return rows, (total or len(rows))
     except Exception as e:
         print(f"ai-user fetch error: {e}")
-        return [], 0
+        return rows, (total or len(rows))
 
 
 def build_ai_citations(key):
