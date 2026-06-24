@@ -15,6 +15,10 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import clients from '../utils/dashboardClients';
+
+// Map raw site ids (e.g. "cardmachines") to friendly client names ("MerchantHQ").
+const nameOf = (id: string) => (clients as any[]).find((c) => c.id === id)?.name || id;
 
 function loadJson(filename: string) {
   try {
@@ -106,7 +110,7 @@ const engineLabel = (s: any) => Object.keys(s.engines || {}).join(' · ');
             <tbody>
               {bySite.map((s: any) => (
                 <tr class="border-b border-slate-800/70">
-                  <td class="py-1.5 pr-2 font-medium">{s.site}</td>
+                  <td class="py-1.5 pr-2 font-medium">{nameOf(s.site)}</td>
                   <td class="py-1.5 pr-2 text-right tabular-nums">
                     <span class="ai-c ai-c-24h">{(s.count_24h ?? 0).toLocaleString()}</span>
                     <span class="ai-c ai-c-7d hidden">{(s.count_7d ?? 0).toLocaleString()}</span>
@@ -129,7 +133,7 @@ const engineLabel = (s: any) => Object.keys(s.engines || {}).join(' · ');
             {topPages.map((p: any) => (
               <li class="flex items-baseline gap-2 border-b border-slate-800/70 py-1">
                 <span class="tabular-nums text-slate-400 w-10">×{p.count}</span>
-                <span class="truncate"><span class="text-slate-400">{p.site}</span>{p.path}</span>
+                <span class="truncate"><span class="text-slate-400">{nameOf(p.site)}</span>{p.path}</span>
               </li>
             ))}
           </ul>
@@ -144,7 +148,7 @@ const engineLabel = (s: any) => Object.keys(s.engines || {}).join(' · ');
               ? <span class="rounded bg-rose-500/20 text-rose-300 text-[10px] font-bold px-1.5 py-0.5">NEW</span>
               : <span class="w-9"></span>}
             <span class={`rounded px-1.5 py-0.5 text-[10px] font-semibold ${engChip(r.engine)}`}>{r.bot}</span>
-            <span class="truncate flex-1"><span class="text-slate-400">{r.site}</span>{r.path}</span>
+            <span class="truncate flex-1"><span class="text-slate-400">{nameOf(r.site)}</span>{r.path}</span>
             <span class="text-xs text-slate-500 whitespace-nowrap">{fmtTime(r.created_at)}</span>
           </div>
         ))}

@@ -7,6 +7,8 @@
  * later. Renders defensively against status='auth_pending' | 'error'.
  */
 import fs from 'node:fs';
+import clients from '../utils/dashboardClients';
+const nameOf = (id) => ((clients as any[]).find((c) => c.id === id) || {}).name || id;
 import path from 'node:path';
 
 function loadJson(filename: string) {
@@ -76,7 +78,7 @@ function fmtDur(sec: number | null | undefined): string {
       <div class="mb-1">
         <div class="flex items-baseline justify-between mb-3">
           <div class="text-sm text-white font-medium">
-            {key} <span class="text-gray-500 font-normal">· {s.site}</span>
+            {key} <span class="text-gray-500 font-normal">· {nameOf(s.site)}</span>
           </div>
           <a href={`https://www.buzzsprout.com/${s.podcast_id}`} target="_blank" rel="noopener"
              class="text-[10px] text-purple-300 hover:text-purple-200">Open show ↗</a>

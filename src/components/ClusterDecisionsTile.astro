@@ -13,6 +13,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import clients from '../utils/dashboardClients';
+const nameOf = (id) => ((clients as any[]).find((c) => c.id === id) || {}).name || id;
 
 function loadJson(filename: string) {
   try {
@@ -69,7 +70,7 @@ const totalClusters = sites.reduce((n, [, s]: any) => n + (s.cluster_count || 0)
     {sites.map(([siteId, s]: [string, any]) => (
       <div>
         <div class="flex items-center gap-2 mb-2">
-          <span class="text-sm font-semibold text-gray-800">{siteId}</span>
+          <span class="text-sm font-semibold text-gray-800">{nameOf(siteId)}</span>
           <span class="text-xs text-gray-400">
             {Object.entries(s.recommendation_counts || {})
               .map(([r, n]) => `${n} ${r}`).join(' · ')}

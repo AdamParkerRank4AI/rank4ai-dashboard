@@ -13,6 +13,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 import clients from '../utils/dashboardClients';
+const nameOf = (id) => ((clients as any[]).find((c) => c.id === id) || {}).name || id;
 
 function loadJson(filename: string) {
   try {
@@ -116,7 +117,7 @@ const fmt = (s: string | null) => {
           <div class="flex flex-wrap gap-2">
             {bySite.map((s: any) => (
               <span class="bg-slate-800/60 rounded px-2 py-1 text-xs">
-                {s.site} <span class="text-emerald-300 tabular-nums">{s.ai_bot_hits}</span>
+                {nameOf(s.site)} <span class="text-emerald-300 tabular-nums">{s.ai_bot_hits}</span>
                 {s.top_bot ? <span class="text-slate-500"> · {s.top_bot}</span> : null}
               </span>
             ))}
@@ -134,7 +135,7 @@ const fmt = (s: string | null) => {
             {recent.map((r: any) => (
               <tr class="border-t border-slate-800">
                 <td class="py-1 text-slate-400">{fmt(r.created_at)}</td>
-                <td>{r.site}</td>
+                <td>{nameOf(r.site)}</td>
                 <td class="font-medium">{r.bot_name ?? '-'}</td>
                 <td class="text-slate-400 max-w-[220px] truncate">{r.path}</td>
                 <td class="text-slate-400 max-w-[160px] truncate">{r.asn_org ?? ''}</td>

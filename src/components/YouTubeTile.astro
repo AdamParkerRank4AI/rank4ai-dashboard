@@ -10,6 +10,8 @@
  * 'error' so a half-wired fleet doesn't break the dashboard.
  */
 import fs from 'node:fs';
+import clients from '../utils/dashboardClients';
+const nameOf = (id) => ((clients as any[]).find((c) => c.id === id) || {}).name || id;
 import path from 'node:path';
 
 function loadJson(filename: string) {
@@ -96,7 +98,7 @@ function aiRowValue(refs: Record<string, number> | undefined, key: string): numb
         return (
           <div class="rounded-md border border-gray-700/60 bg-gray-900/40 p-4 opacity-70">
             <div class="flex items-center justify-between mb-2">
-              <div class="text-sm font-semibold text-gray-300">{c.site || key}</div>
+              <div class="text-sm font-semibold text-gray-300">{nameOf(c.site || key)}</div>
               <span class="text-[9px] uppercase tracking-wider text-gray-500 border border-gray-700 rounded px-1.5 py-0.5">
                 {status.replace('_', ' ')}
               </span>
@@ -118,7 +120,7 @@ function aiRowValue(refs: Record<string, number> | undefined, key: string): numb
         <div class="rounded-md border border-gray-700 bg-gray-900/60 p-4">
           <div class="flex items-center justify-between mb-3">
             <div>
-              <div class="text-sm font-semibold text-white">{c.site || key}</div>
+              <div class="text-sm font-semibold text-white">{nameOf(c.site || key)}</div>
               <div class="text-[10px] text-gray-500">Channel {c.channel_id}</div>
             </div>
             <span class="text-[9px] uppercase tracking-wider text-emerald-300 bg-emerald-900/40 border border-emerald-800/60 rounded px-1.5 py-0.5">

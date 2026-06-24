@@ -934,7 +934,7 @@ if (isFleet) {
       <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
         {Object.entries(cfCrawls.per_site || {}).filter(inDash).map(([siteId, data]: [string, any]) => (
           <div data-copy-subtile={`CF AI Crawls — ${siteId}`} class="bg-gray-900/60 border border-gray-800 rounded p-2.5">
-            <div class="text-[11px] font-semibold text-white mb-1.5">{siteId}</div>
+            <div class="text-[11px] font-semibold text-white mb-1.5">{((clients as any[]).find((c: any) => c.id === siteId)?.name) || siteId}</div>
             {data.error ? (
               <div class="text-[10px] text-red-400">
                 {data.error.includes('analytics.read') || data.error.includes('permission') ? (
