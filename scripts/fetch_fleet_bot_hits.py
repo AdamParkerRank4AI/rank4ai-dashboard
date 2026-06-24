@@ -71,6 +71,123 @@ def classify_ai_referer(referer: str):
     return None
 
 
+# ── AI-citation detector (mirrors ~/fleet-tools/ai-citation-watch.py) ────────
+# An 'ai-user' hit (ChatGPT-User / Perplexity-User / Claude-User) = a human asked
+# an AI a question and the AI fetched OUR page live to answer it — i.e. we were
+# just cited. Verify against the operator's network so spoofed UAs (~5-8% of AI
+# bot traffic) don't count: own-network org = VERIFIED, the cloud the operator
+# egresses from = PLAUSIBLE (still genuine), anything else = SPOOF (ignored).
+CITATION_OPERATORS = {
+    "openai":     (["OPENAI"],     ["MICROSOFT", "AZURE"]),
+    "anthropic":  (["ANTHROPIC"],  ["AMAZON", "AWS"]),
+    "perplexity": (["PERPLEXITY"], ["GOOGLE", "AMAZON", "AWS"]),
+    "mistral":    (["MISTRAL"],    ["OVH", "SCALEWAY", "AMAZON"]),
+}
+
+def citation_operator(bot_name, ua):
+    s = f"{bot_name or ''} {ua or ''}".lower()
+    if "perplexity" in s: return "perplexity"
+    if "claude" in s or "anthropic" in s: return "anthropic"
+    if "chatgpt" in s or "oai-" in s or "gptbot" in s or "openai" in s: return "openai"
+    if "mistral" in s: return "mistral"
+    return None
+
+def citation_verdict(bot_name, ua, asn_org):
+    op = citation_operator(bot_name, ua)
+    if not op:
+        return ("unknown", None)
+    own, cloud = CITATION_OPERATORS[op]
+    o = (asn_org or "").upper()
+    if any(x in o for x in own):
+        return ("verified", op)
+    if any(x in o for x in cloud):
+        return ("plausible", op)
+    return ("spoof?", op)
+
+def fetch_ai_user_rows(key):
+    """Dedicated pull of ai-user rows (a real citation = an AI fetched us live for
+    a user). Separate from the mixed fetch because Supabase hard-caps each page at
+    1000 rows and ai-user would otherwise be crowded out by crawler volume.
+    Returns (most_recent_rows[:1000], true_total_in_window)."""
+    if not key:
+        return [], 0
+    since = (datetime.now(timezone.utc) - timedelta(days=WINDOW_DAYS)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    cols = "site,bot_name,bot_category,path,asn,asn_org,country,user_agent,created_at"
+    url = (f"{SUPABASE_URL}/rest/v1/fleet_bot_hits?select={cols}"
+           f"&bot_category=eq.ai-user&created_at=gte.{since}&order=created_at.desc&limit=1000")
+    try:
+        r = requests.get(url, headers={
+            "apikey": key, "Authorization": f"Bearer {key}",
+            "Prefer": "count=exact",  # returns true total in Content-Range
+        }, timeout=30)
+        r.raise_for_status()
+        total = len(r.json())
+        cr = r.headers.get("Content-Range", "")  # e.g. "0-999/4823"
+        if "/" in cr and cr.split("/")[-1].isdigit():
+            total = int(cr.split("/")[-1])
+        return r.json(), total
+    except Exception as e:
+        print(f"ai-user fetch error: {e}")
+        return [], 0
+
+
+def build_ai_citations(key):
+    """Aggregate verified 'we were just cited' ai-user fetches from the window."""
+    rows, true_total = fetch_ai_user_rows(key)
+    now = datetime.now(timezone.utc)
+    def parse_ts(ts):
+        try:
+            return datetime.fromisoformat((ts or "").replace("Z", "+00:00"))
+        except Exception:
+            return None
+    by_site = defaultdict(lambda: {"count": 0, "last_seen": None, "engines": defaultdict(int)})
+    pages = defaultdict(lambda: {"count": 0, "last_seen": None, "bot": None, "site": None, "path": None})
+    recent, total, spoofed, fresh = [], 0, 0, 0
+    for r in rows:
+        if (r.get("bot_category") or "") != "ai-user":
+            continue
+        verdict, eng = citation_verdict(r.get("bot_name"), r.get("user_agent"), r.get("asn_org"))
+        if verdict == "spoof?":
+            spoofed += 1
+            continue
+        if verdict == "unknown":
+            continue
+        total += 1
+        site = r.get("site") or "?"
+        pth = r.get("path") or "/"
+        ts = r.get("created_at")
+        cs = by_site[site]
+        cs["count"] += 1
+        cs["engines"][eng or "?"] += 1
+        if not cs["last_seen"] or (ts and ts > cs["last_seen"]):
+            cs["last_seen"] = ts
+        cp = pages[(site, pth)]
+        cp["count"] += 1
+        cp["site"], cp["path"], cp["bot"] = site, pth, r.get("bot_name")
+        if not cp["last_seen"] or (ts and ts > cp["last_seen"]):
+            cp["last_seen"] = ts
+        dt = parse_ts(ts)
+        is_fresh = bool(dt and (now - dt) <= timedelta(hours=24))
+        if is_fresh:
+            fresh += 1
+        if len(recent) < 30:  # rows are created_at.desc, so this is the newest
+            recent.append({"site": site, "path": pth, "bot": r.get("bot_name"),
+                           "engine": eng, "asn_org": r.get("asn_org"),
+                           "created_at": ts, "verdict": verdict, "fresh": is_fresh})
+    return {
+        "total": total, "spoofed": spoofed, "fresh_24h": fresh,
+        "window_total_raw": true_total, "sampled": len(rows),
+        "capped": true_total > len(rows),
+        "by_site": sorted([{"site": s, "count": v["count"], "last_seen": v["last_seen"],
+                            "engines": dict(v["engines"])} for s, v in by_site.items()],
+                           key=lambda x: -x["count"]),
+        "top_pages": sorted([{"site": v["site"], "path": v["path"], "count": v["count"],
+                              "last_seen": v["last_seen"], "bot": v["bot"]} for v in pages.values()],
+                            key=lambda x: -x["count"])[:20],
+        "recent": recent,
+    }
+
+
 def main():
     key = service_key()
     if not key:
@@ -198,6 +315,7 @@ def main():
         "by_bot": by_bot_list,
         "by_site": by_site_list,
         "ai_asset_readers": asset_readers_list,
+        "ai_citations": build_ai_citations(key),
         "recent": recent,
     }
 

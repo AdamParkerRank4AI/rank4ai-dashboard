@@ -1,0 +1,148 @@
+---
+/**
+ * AiCitationsTile — "AI Citations (live)" headline tile.
+ *
+ * The real-time "we were just cited" signal: an ai-user fetch (ChatGPT-User /
+ * Perplexity-User / Claude-User) means a human asked an AI a question and the AI
+ * fetched OUR page live to answer it. Reads the `ai_citations` block of
+ * src/data/live/fleet_bot_hits.json (written by scripts/fetch_fleet_bot_hits.py,
+ * which verifies each hit against the operator's network so spoofed UAs don't
+ * count). This is distinct from AiVisibilityTile (prompt-based "does engine X
+ * recommend us") — this is server-log proof of live citation.
+ *
+ * Companion: ~/fleet-tools/ai-citation-watch.py Telegram-alerts on new hits.
+ * Dark-card inline style like sibling tiles. Defensive against missing data.
+ */
+import fs from 'node:fs';
+import path from 'node:path';
+
+function loadJson(filename: string) {
+  try {
+    const fp = path.join(process.cwd(), 'src', 'data', 'live', filename);
+    if (fs.existsSync(fp)) return JSON.parse(fs.readFileSync(fp, 'utf-8'));
+  } catch {}
+  return null;
+}
+
+const d = loadJson('fleet_bot_hits.json');
+const c = d?.ai_citations ?? null;
+const win = d?.window_days ?? 30;
+
+const total = c?.window_total_raw ?? 0;       // true ai-user fetches in window
+const fresh = c?.fresh_24h ?? 0;              // the flag
+const spoofed = c?.spoofed ?? 0;
+const capped = c?.capped ?? false;
+const bySite = (c?.by_site ?? []).slice(0, 12);
+const topPages = (c?.top_pages ?? []).slice(0, 10);
+const recent = (c?.recent ?? []).slice(0, 14);
+
+const engColour: Record<string, string> = {
+  openai: 'bg-emerald-500/20 text-emerald-300',
+  perplexity: 'bg-sky-500/20 text-sky-300',
+  anthropic: 'bg-violet-500/20 text-violet-300',
+  mistral: 'bg-amber-500/20 text-amber-300',
+};
+const engChip = (e: string) => engColour[e] ?? 'bg-slate-700 text-slate-300';
+const fmtDay = (s: string | null) => {
+  if (!s) return '';
+  try { return new Date(s).toLocaleDateString('en-GB', { day: '2-digit', month: 'short' }); } catch { return ''; }
+};
+const fmtTime = (s: string | null) => {
+  if (!s) return '';
+  try { return new Date(s).toLocaleString('en-GB', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }); } catch { return ''; }
+};
+const engineLabel = (s: any) => Object.keys(s.engines || {}).join(' · ');
+---
+<section class="rounded-xl bg-slate-900 text-slate-100 p-6 my-6 border border-slate-800">
+  <div class="flex items-baseline justify-between flex-wrap gap-2 mb-1">
+    <h2 class="text-lg font-bold flex items-center gap-2">
+      AI Citations <span class="text-xs font-normal text-slate-400">(live — we were just fetched into an AI answer)</span>
+    </h2>
+    {fresh > 0 && (
+      <span class="inline-flex items-center gap-1.5 rounded-full bg-rose-500/15 text-rose-300 text-xs font-semibold px-3 py-1">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-rose-400"></span>
+        </span>
+        {fresh.toLocaleString()} in last 24h
+      </span>
+    )}
+  </div>
+
+  {!c || total === 0 ? (
+    <p class="text-sm text-slate-400 mt-3">No verified AI-citation fetches in the last {win} days yet.</p>
+  ) : (
+    <>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4 mb-5">
+        <div class="rounded-lg bg-slate-800/60 p-3">
+          <div class="text-2xl font-bold">{total.toLocaleString()}</div>
+          <div class="text-xs text-slate-400">AI-answer fetches · {win}d</div>
+        </div>
+        <div class="rounded-lg bg-slate-800/60 p-3">
+          <div class="text-2xl font-bold text-rose-300">{fresh.toLocaleString()}</div>
+          <div class="text-xs text-slate-400">last 24h</div>
+        </div>
+        <div class="rounded-lg bg-slate-800/60 p-3">
+          <div class="text-2xl font-bold">{bySite.length}</div>
+          <div class="text-xs text-slate-400">sites cited</div>
+        </div>
+        <div class="rounded-lg bg-slate-800/60 p-3">
+          <div class="text-2xl font-bold text-slate-400">{spoofed.toLocaleString()}</div>
+          <div class="text-xs text-slate-400">spoofed UAs blocked</div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-5">
+        <div>
+          <h3 class="text-sm font-semibold text-slate-300 mb-2">By site</h3>
+          <table class="w-full text-sm">
+            <tbody>
+              {bySite.map((s: any) => (
+                <tr class="border-b border-slate-800/70">
+                  <td class="py-1.5 pr-2 font-medium">{s.site}</td>
+                  <td class="py-1.5 pr-2 text-right tabular-nums">{s.count.toLocaleString()}</td>
+                  <td class="py-1.5 text-right">
+                    {Object.keys(s.engines || {}).map((e: string) => (
+                      <span class={`ml-1 rounded px-1.5 py-0.5 text-[10px] font-semibold ${engChip(e)}`}>{e}</span>
+                    ))}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h3 class="text-sm font-semibold text-slate-300 mb-2">Most-cited pages</h3>
+          <ul class="text-sm space-y-1">
+            {topPages.map((p: any) => (
+              <li class="flex items-baseline gap-2 border-b border-slate-800/70 py-1">
+                <span class="tabular-nums text-slate-400 w-10">×{p.count}</span>
+                <span class="truncate"><span class="text-slate-400">{p.site}</span>{p.path}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="text-sm font-semibold text-slate-300 mt-5 mb-2">Recent live fetches</h3>
+      <div class="space-y-1">
+        {recent.map((r: any) => (
+          <div class="flex items-center gap-2 text-sm border-b border-slate-800/60 py-1">
+            {r.fresh
+              ? <span class="rounded bg-rose-500/20 text-rose-300 text-[10px] font-bold px-1.5 py-0.5">NEW</span>
+              : <span class="w-9"></span>}
+            <span class={`rounded px-1.5 py-0.5 text-[10px] font-semibold ${engChip(r.engine)}`}>{r.bot}</span>
+            <span class="truncate flex-1"><span class="text-slate-400">{r.site}</span>{r.path}</span>
+            <span class="text-xs text-slate-500 whitespace-nowrap">{fmtTime(r.created_at)}</span>
+          </div>
+        ))}
+      </div>
+
+      <p class="text-xs text-slate-500 mt-3">
+        Verified against operator networks (OpenAI/Azure, Anthropic/AWS, Perplexity) — spoofed user-agents excluded.
+        {capped && ` Breakdown sampled from the most recent 1,000 of ${total.toLocaleString()} fetches.`}
+      </p>
+    </>
+  )}
+</section>

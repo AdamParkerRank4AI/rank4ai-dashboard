@@ -7,6 +7,7 @@ import ClarityDropoffTile from '../components/ClarityDropoffTile.astro';
 import ConversionLeakTile from '../components/ConversionLeakTile.astro';
 import FeatureCoverageTile from '../components/FeatureCoverageTile.astro';
 import FleetBotHitsTile from '../components/FleetBotHitsTile.astro';
+import AiCitationsTile from '../components/AiCitationsTile.astro';
 import AiVisibilityTile from '../components/AiVisibilityTile.astro';
 import BingAiCitationsTile from '../components/BingAiCitationsTile.astro';
 import ClicksWithinReachTile from '../components/ClicksWithinReachTile.astro';
@@ -602,6 +603,12 @@ if (isFleet) {
       <FleetBotHitsTile />
     </div>
   )}
+
+  {/* AI Citations (live) — server-log proof we were just fetched into an AI answer
+      (ai-user fetches, verified vs operator network). Both boards. */}
+  <div data-copy-tile="AI citations (live)" class="mb-6">
+    <AiCitationsTile />
+  </div>
 
   {/* Real AI citations from Bing AI Performance (Copilot + ChatGPT). Both boards. */}
   <BingAiCitationsTile />
