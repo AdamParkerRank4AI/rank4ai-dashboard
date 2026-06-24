@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-23T05:45:01.196896+00:00",
+  "generated_at": "2026-06-24T05:45:04.863250+00:00",
   "sites": {
     "rank4ai": {
       "flavour": "editorial",
@@ -270,7 +270,7 @@
           "label": "dateModified ISO 8601 with TZ (#1)",
           "severity": "p2",
           "status": "pass",
-          "note": "2026-06-16T12:00:00"
+          "note": "2026-06-23T12:00:00"
         },
         {
           "id": "speakable",
@@ -304,8 +304,8 @@
           "id": "faqpage_misuse",
           "label": "NO FAQPage schema anywhere (#12, banned)",
           "severity": "p1",
-          "status": "pass",
-          "note": "no FAQPage schema (correct)"
+          "status": "fail",
+          "note": "FAQPage schema present (6 Question entries) - banned fleet-wide, strip it"
         },
         {
           "id": "comparison_contract",
@@ -1054,7 +1054,7 @@
           "label": "homepage has imagery",
           "severity": "p1",
           "status": "pass",
-          "note": "8 img + 63 svg"
+          "note": "8 img + 64 svg"
         },
         {
           "id": "alt_text",
@@ -1109,8 +1109,8 @@
           "id": "faqpage_misuse",
           "label": "NO FAQPage schema anywhere (#12, banned)",
           "severity": "p1",
-          "status": "pass",
-          "note": "no FAQPage schema (correct)"
+          "status": "fail",
+          "note": "FAQPage schema present (7 Question entries) - banned fleet-wide, strip it"
         },
         {
           "id": "comparison_contract",
@@ -1215,7 +1215,7 @@
           "label": "homepage has imagery",
           "severity": "p1",
           "status": "pass",
-          "note": "2 img + 3 svg"
+          "note": "2 img + 4 svg"
         },
         {
           "id": "alt_text",
@@ -1236,7 +1236,7 @@
           "label": "dateModified ISO 8601 with TZ (#1)",
           "severity": "p2",
           "status": "pass",
-          "note": "2026-06-18T14:11:39"
+          "note": "2026-06-23T11:47:28"
         },
         {
           "id": "speakable",
@@ -1263,8 +1263,8 @@
           "id": "sitemap_lastmod",
           "label": "sitemap lastmod ISO 8601 + varies (#17)",
           "severity": "p2",
-          "status": "pass",
-          "note": "10 distinct lastmods in sample of 20"
+          "status": "fail",
+          "note": "all 3 sampled lastmods identical \u2014 build-time stamp"
         },
         {
           "id": "faqpage_misuse",
@@ -1936,9 +1936,9 @@
   },
   "summary": {
     "p0_fails": 0,
-    "p1_fails": 3,
-    "p2_fails": 10,
-    "pass": 216,
+    "p1_fails": 5,
+    "p2_fails": 11,
+    "pass": 213,
     "total": 264
   }
 }

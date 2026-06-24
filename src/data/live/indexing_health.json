@@ -1,5 +1,5 @@
 {
-  "computed_at": "2026-06-23T09:34:02.570780+00:00",
+  "computed_at": "2026-06-24T07:06:27.449544+00:00",
   "per_site": {
     "rank4ai": {
       "site_id": "rank4ai",
@@ -29,9 +29,9 @@
         "quota_hit": false,
         "total_ever_submitted": 758
       },
-      "indexnow_today": 758,
+      "indexnow_today": 0,
       "indexnow_last_at": "2026-06-23T08:04:19.369588",
-      "submitted_today_effective": 758,
+      "submitted_today_effective": 0,
       "last_submission_at": "2026-06-23T08:04:19.369588",
       "gsc_coverage": null,
       "manual_queue": {
@@ -65,8 +65,10 @@
           }
         ]
       },
-      "status": "healthy",
-      "status_reasons": []
+      "status": "warning",
+      "status_reasons": [
+        "No submissions recorded today"
+      ]
     },
     "market-invoice": {
       "site_id": "market-invoice",
@@ -96,10 +98,10 @@
         "quota_hit": false,
         "total_ever_submitted": 820
       },
-      "indexnow_today": 827,
-      "indexnow_last_at": "2026-06-23T10:33:53.450789",
-      "submitted_today_effective": 827,
-      "last_submission_at": "2026-06-23T10:33:53.450789",
+      "indexnow_today": 1,
+      "indexnow_last_at": "2026-06-24T08:06:06.009588",
+      "submitted_today_effective": 1,
+      "last_submission_at": "2026-06-24T08:06:06.009588",
       "gsc_coverage": null,
       "manual_queue": {
         "never_api_submitted": 10,
@@ -163,10 +165,10 @@
         "quota_hit": false,
         "total_ever_submitted": 0
       },
-      "indexnow_today": 469,
-      "indexnow_last_at": "2026-06-23T08:04:31.034947",
-      "submitted_today_effective": 469,
-      "last_submission_at": "2026-06-23T08:04:31.034947",
+      "indexnow_today": 2,
+      "indexnow_last_at": "2026-06-24T08:06:07.857942",
+      "submitted_today_effective": 2,
+      "last_submission_at": "2026-06-24T08:06:07.857942",
       "gsc_coverage": null,
       "manual_queue": {
         "never_api_submitted": 14,
@@ -230,9 +232,9 @@
         "quota_hit": false,
         "total_ever_submitted": 472
       },
-      "indexnow_today": 480,
+      "indexnow_today": 0,
       "indexnow_last_at": "2026-06-23T08:04:35.344452",
-      "submitted_today_effective": 485,
+      "submitted_today_effective": 5,
       "last_submission_at": "2026-06-23T08:04:35.344452",
       "gsc_coverage": null,
       "manual_queue": {
@@ -297,9 +299,9 @@
         "quota_hit": false,
         "total_ever_submitted": 290
       },
-      "indexnow_today": 290,
+      "indexnow_today": 0,
       "indexnow_last_at": "2026-06-23T08:04:38.105868",
-      "submitted_today_effective": 290,
+      "submitted_today_effective": 0,
       "last_submission_at": "2026-06-23T08:04:38.105868",
       "gsc_coverage": null,
       "manual_queue": {
@@ -333,8 +335,10 @@
           }
         ]
       },
-      "status": "healthy",
-      "status_reasons": []
+      "status": "warning",
+      "status_reasons": [
+        "No submissions recorded today"
+      ]
     },
     "cardmachines": {
       "site_id": "cardmachines",
@@ -364,10 +368,10 @@
         "quota_hit": false,
         "total_ever_submitted": 898
       },
-      "indexnow_today": 898,
-      "indexnow_last_at": "2026-06-23T08:04:45.073232",
-      "submitted_today_effective": 903,
-      "last_submission_at": "2026-06-23T08:04:45.073232",
+      "indexnow_today": 794,
+      "indexnow_last_at": "2026-06-24T08:06:14.561810",
+      "submitted_today_effective": 799,
+      "last_submission_at": "2026-06-24T08:06:14.561810",
       "gsc_coverage": null,
       "manual_queue": {
         "never_api_submitted": 107,
@@ -431,10 +435,10 @@
         "quota_hit": false,
         "total_ever_submitted": 142
       },
-      "indexnow_today": 142,
-      "indexnow_last_at": "2026-06-23T08:04:52.113053",
-      "submitted_today_effective": 147,
-      "last_submission_at": "2026-06-23T08:04:52.113053",
+      "indexnow_today": 115,
+      "indexnow_last_at": "2026-06-24T08:06:21.684566",
+      "submitted_today_effective": 120,
+      "last_submission_at": "2026-06-24T08:06:21.684566",
       "gsc_coverage": null,
       "manual_queue": {
         "never_api_submitted": null,
@@ -472,9 +476,9 @@
         "quota_hit": false,
         "total_ever_submitted": 507
       },
-      "indexnow_today": 507,
+      "indexnow_today": 0,
       "indexnow_last_at": "2026-06-23T08:04:49.887487",
-      "submitted_today_effective": 512,
+      "submitted_today_effective": 5,
       "last_submission_at": "2026-06-23T08:04:49.887487",
       "gsc_coverage": null,
       "manual_queue": {
@@ -491,8 +495,8 @@
     "ok_today": 0,
     "error_today": 0,
     "fleet_success_rate_today": null,
-    "sites_healthy": 8,
-    "sites_warning": 0,
+    "sites_healthy": 6,
+    "sites_warning": 2,
     "sites_error": 0,
     "sites_with_gsc_coverage": 0
   }

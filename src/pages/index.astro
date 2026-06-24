@@ -602,12 +602,11 @@ if (isFleet) {
     </div>
   )}
 
-  {/* AI Visibility — AEO readiness vs actual citation rate per engine */}
-  {isFleet && (
-    <div data-copy-tile="AI visibility" class="mb-6">
-      <AiVisibilityTile />
-    </div>
-  )}
+  {/* AI Visibility — AEO readiness vs actual citation rate per engine. Shown on
+      BOTH boards (Adam, 24 Jun) — citation tracking is core, not fleet-only. */}
+  <div data-copy-tile="AI visibility" class="mb-6">
+    <AiVisibilityTile />
+  </div>
 
   <!-- Header -->
   <div class="flex items-center justify-between mb-6">

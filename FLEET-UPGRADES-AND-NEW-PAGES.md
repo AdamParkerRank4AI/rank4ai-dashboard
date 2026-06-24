@@ -60,7 +60,7 @@
 
 # 🟢 BANKED — built, ready to push
 
-**A. Ready-to-push lead builds (this session — dev branches, gate-green, push when ready). ⚖️ all under an adversarial anti-slop review pass (23 Jun) before any drip:**
+**A. Ready-to-push lead builds (dev branches, gate-green, push when ready). ✅ ALL passed the adversarial anti-slop review (23 Jun): 9-build skeptic pass → 8 minor-fixes + 1 clean (BabyData), ZERO majors/kills. Every fix applied + committed (incl. real factual/legal catches: FundBiz APR maths, HomesAndHedge glue-trap/Awaab's law, VettedHome false template line, PeptideClear uncited £45m). Banked clean, ready to drip:**
 - B15 PeptideClear next-gen GLP-1 hub + CagriSema page → `dev-b15-peptideclear-glp1`
 - B16 FundBiz refinance hub → `dev-b16-fundbiz-refinance` (`23043bf`)
 - B16 BBL MCA-factor-rate-trap guide → `dev-b16-bbl-mca-trap` (`cccdd9f`) — interlinked pair w/ FundBiz
@@ -109,6 +109,8 @@
 - **DatesAndTimes downloads** (22–23 Jun) — bank-holiday JSON/CSV/iCal endpoints + Dataset `distribution` → merged main, **wrangler-deployed, 200-verified LIVE**. ✅
 - **MI brand + bank-exit** (23 Jun) — visible operator/identity line + answer-first bank-exit capsule → **LIVE** (`e058e03`). 5 dashboard items marked done. Brand-term ranking = low-ROI (legacy brand). ✅
 - **Reviewer lock** (23 Jun) — health named-reviewer recs **LOCKED OFF** (editorial model). ✅
+- **B15/B16/LLB banked** (23 Jun) — PeptideClear GLP-1 hub + CagriSema, FundBiz refinance + BBL MCA-trap pair, LLB 4 retirement guides — built (verify-first), gate-green, committed to dev branches. ✅
+- **⚖️ ANTI-SLOP REVIEW + FIXES** (23 Jun, ultracode workflow) — 9 banked builds adversarially reviewed (1 skeptic each + verifier on majors): **8 minor-fixes, 1 clean, 0 major/kill**. All fixes applied + committed on dev branches. Real catches: FundBiz MCA-APR maths was contradictory/wrong (fixed); HomesAndHedge glue-trap law + Awaab's-Law scope wrong (fixed); VettedHome scams page had a false template line + mismatched H2s (fixed); PeptideClear uncited £45m figure (removed); cross-page templating de-duplicated on LLB/ADHD/HerVitals/VettedHome. The guardrail working as intended — caught before any drip. ✅
 - **MHQ ⭐ contract-exit hub** (23 Jun) — pillar `/cancel-card-machine-contract/` + 14 per-provider `/cancel/[slug]/` guides (Worldpay, Barclaycard, Dojo…), grounded in verified `uk-acquirers` contract terms (no fabricated fees) + cancellation-letter templates + FAQPage/ItemList schema. Built off main (independent of the parked reskin), wrangler-deployed, **200-verified LIVE** + IndexNow-submitted (910 URLs → Bing). Verify-first: switching-help was a service-pitch, not a how-to-cancel → genuinely net-new. ✅
 
 ## Pending merges (reviewed, not yet merged)

@@ -1,51 +1,68 @@
 {
-  "generated_at": "2026-06-23T09:32:05.654703+00:00",
+  "generated_at": "2026-06-24T07:02:31.077019+00:00",
   "window_days": 30,
   "fleet_totals": {
-    "hits": 692,
-    "ai_bot_hits": 670,
-    "asset_hits": 22,
-    "human_hits": 308,
-    "ai_referral_hits": 1,
-    "distinct_bots": 19
+    "hits": 828,
+    "ai_bot_hits": 794,
+    "asset_hits": 35,
+    "human_hits": 172,
+    "ai_referral_hits": 0,
+    "distinct_bots": 15
   },
-  "ai_referrers": {
-    "ChatGPT": 1
-  },
+  "ai_referrers": {},
   "by_category": {
-    "search-engine": 269,
-    "ai-training": 193,
-    "ai-user": 92,
-    "seo-tool": 78,
-    "ai-search": 38,
-    "unknown": 22
+    "seo-tool": 364,
+    "ai-training": 322,
+    "search-engine": 54,
+    "unknown": 34,
+    "ai-search": 27,
+    "ai-user": 27
   },
   "by_bot": [
     {
-      "bot": "Bingbot",
-      "category": "search-engine",
-      "hits": 122,
-      "asset_hits": 0,
+      "bot": "AhrefsBot",
+      "category": "seo-tool",
+      "hits": 296,
+      "asset_hits": 1,
       "sites": [
         "bestbusinessloans",
         "cardmachines",
         "fundbiz",
-        "ltdturnaround",
+        "kartapay",
+        "laterlifeborrowing",
         "market-invoice",
         "peptideclear",
         "rank4ai",
         "seocompare"
       ],
-      "site_count": 8,
-      "first_seen": "2026-06-23T07:49:41.393945+00:00",
-      "last_seen": "2026-06-23T09:21:31.396239+00:00",
-      "asn_org": "Microsoft Corporation",
+      "site_count": 9,
+      "first_seen": "2026-06-24T05:55:45.920126+00:00",
+      "last_seen": "2026-06-24T07:01:26.973113+00:00",
+      "asn_org": "Ahrefs Pte Ltd Dmytro",
+      "country": "FR"
+    },
+    {
+      "bot": "ClaudeBot",
+      "category": "ai-training",
+      "hits": 242,
+      "asset_hits": 0,
+      "sites": [
+        "adhdhelper",
+        "bestbusinessloans",
+        "fundbiz",
+        "laterlifeborrowing",
+        "ltdturnaround"
+      ],
+      "site_count": 5,
+      "first_seen": "2026-06-24T05:55:37.452818+00:00",
+      "last_seen": "2026-06-24T07:02:03.285778+00:00",
+      "asn_org": "Anthropic, PBC",
       "country": "US"
     },
     {
       "bot": "Amazonbot",
       "category": "ai-training",
-      "hits": 106,
+      "hits": 74,
       "asset_hits": 0,
       "sites": [
         "cardmachines",
@@ -54,246 +71,202 @@
         "peptideclear"
       ],
       "site_count": 4,
-      "first_seen": "2026-06-23T07:45:57.18595+00:00",
-      "last_seen": "2026-06-23T09:23:31.358718+00:00",
+      "first_seen": "2026-06-24T05:56:59.705309+00:00",
+      "last_seen": "2026-06-24T07:00:24.315776+00:00",
       "asn_org": "Amazon Data Services Northern Virginia",
-      "country": "US"
-    },
-    {
-      "bot": "ChatGPT-User",
-      "category": "ai-user",
-      "hits": 92,
-      "asset_hits": 0,
-      "sites": [
-        "adhdhelper",
-        "bestbusinessloans",
-        "cardmachines",
-        "fundbiz",
-        "market-invoice",
-        "peptideclear",
-        "rank4ai",
-        "seocompare"
-      ],
-      "site_count": 8,
-      "first_seen": "2026-06-23T07:44:21.145554+00:00",
-      "last_seen": "2026-06-23T09:32:00.874781+00:00",
-      "asn_org": "Microsoft Limited",
-      "country": "DE"
-    },
-    {
-      "bot": "Applebot",
-      "category": "search-engine",
-      "hits": 78,
-      "asset_hits": 0,
-      "sites": [
-        "cardmachines",
-        "laterlifeborrowing",
-        "market-invoice"
-      ],
-      "site_count": 3,
-      "first_seen": "2026-06-23T07:45:04.367539+00:00",
-      "last_seen": "2026-06-23T09:30:35.428081+00:00",
-      "asn_org": "Apple Inc.",
-      "country": "US"
-    },
-    {
-      "bot": "GoogleOther",
-      "category": "ai-training",
-      "hits": 65,
-      "asset_hits": 0,
-      "sites": [
-        "adhdhelper",
-        "cardmachines",
-        "market-invoice",
-        "peptideclear",
-        "rank4ai"
-      ],
-      "site_count": 5,
-      "first_seen": "2026-06-23T07:49:00.690215+00:00",
-      "last_seen": "2026-06-23T09:30:56.634525+00:00",
-      "asn_org": "Google LLC",
-      "country": "US"
-    },
-    {
-      "bot": "Googlebot",
-      "category": "search-engine",
-      "hits": 61,
-      "asset_hits": 0,
-      "sites": [
-        "adhdhelper",
-        "bestbusinessloans",
-        "cardmachines",
-        "fundbiz",
-        "laterlifeborrowing",
-        "market-invoice",
-        "peptideclear",
-        "rank4ai",
-        "seocompare"
-      ],
-      "site_count": 9,
-      "first_seen": "2026-06-23T07:44:19.895014+00:00",
-      "last_seen": "2026-06-23T09:24:58.670761+00:00",
-      "asn_org": "Google LLC",
-      "country": "US"
-    },
-    {
-      "bot": "OAI-SearchBot",
-      "category": "ai-search",
-      "hits": 29,
-      "asset_hits": 0,
-      "sites": [
-        "cardmachines",
-        "fundbiz",
-        "homesandhedge",
-        "peptideclear",
-        "rank4ai"
-      ],
-      "site_count": 5,
-      "first_seen": "2026-06-23T07:46:10.605701+00:00",
-      "last_seen": "2026-06-23T09:18:20.308453+00:00",
-      "asn_org": "Microsoft Limited",
-      "country": "US"
-    },
-    {
-      "bot": "DotBot",
-      "category": "seo-tool",
-      "hits": 28,
-      "asset_hits": 0,
-      "sites": [
-        "bestbusinessloans",
-        "cardmachines",
-        "market-invoice",
-        "seocompare"
-      ],
-      "site_count": 4,
-      "first_seen": "2026-06-23T08:01:30.324408+00:00",
-      "last_seen": "2026-06-23T09:30:50.247606+00:00",
-      "asn_org": "Wowrack.com",
       "country": "US"
     },
     {
       "bot": "Unknown / unmatched",
       "category": "unknown",
-      "hits": 22,
-      "asset_hits": 22,
+      "hits": 34,
+      "asset_hits": 34,
       "sites": [
+        "adhdhelper",
         "bestbusinessloans",
         "cardmachines",
-        "kartapay",
-        "market-invoice",
-        "peptideclear",
-        "rank4ai",
-        "sortedproperty"
-      ],
-      "site_count": 7,
-      "first_seen": "2026-06-23T07:58:12.020926+00:00",
-      "last_seen": "2026-06-23T09:25:01.192081+00:00",
-      "asn_org": "NIB (National Internet Backbone)",
-      "country": "IN"
-    },
-    {
-      "bot": "AhrefsBot",
-      "category": "seo-tool",
-      "hits": 21,
-      "asset_hits": 0,
-      "sites": [
-        "bestbusinessloans",
+        "datekit",
+        "fitgauge",
         "fundbiz",
         "hervitals",
         "homesandhedge",
         "kartapay",
         "laterlifeborrowing",
-        "rank4ai"
+        "ltdturnaround",
+        "market-invoice",
+        "namenest",
+        "peptideclear",
+        "rank4ai",
+        "seocompare",
+        "sortedproperty"
       ],
-      "site_count": 7,
-      "first_seen": "2026-06-23T08:01:40.430444+00:00",
-      "last_seen": "2026-06-23T09:30:22.658511+00:00",
-      "asn_org": "Ahrefs Pte Ltd Dmytro",
-      "country": "GB"
+      "site_count": 17,
+      "first_seen": "2026-06-24T05:56:02.098298+00:00",
+      "last_seen": "2026-06-24T06:54:07.920839+00:00",
+      "asn_org": "Microsoft Corporation",
+      "country": "BR"
+    },
+    {
+      "bot": "DotBot",
+      "category": "seo-tool",
+      "hits": 33,
+      "asset_hits": 0,
+      "sites": [
+        "bestbusinessloans",
+        "cardmachines",
+        "fundbiz",
+        "market-invoice",
+        "peptideclear",
+        "seocompare"
+      ],
+      "site_count": 6,
+      "first_seen": "2026-06-24T06:03:16.315999+00:00",
+      "last_seen": "2026-06-24T06:56:43.308931+00:00",
+      "asn_org": "Wowrack.com",
+      "country": "US"
     },
     {
       "bot": "SemrushBot",
       "category": "seo-tool",
-      "hits": 19,
+      "hits": 30,
       "asset_hits": 0,
       "sites": [
         "bestbusinessloans",
-        "market-invoice"
+        "cardmachines",
+        "fundbiz",
+        "kartapay",
+        "market-invoice",
+        "peptideclear"
       ],
-      "site_count": 2,
-      "first_seen": "2026-06-23T07:46:41.256308+00:00",
-      "last_seen": "2026-06-23T09:31:19.684644+00:00",
+      "site_count": 6,
+      "first_seen": "2026-06-24T06:00:24.987588+00:00",
+      "last_seen": "2026-06-24T07:01:34.531978+00:00",
       "asn_org": "SEMrush CY LTD",
       "country": "US"
     },
     {
-      "bot": "ClaudeBot",
-      "category": "ai-training",
-      "hits": 17,
+      "bot": "OAI-SearchBot",
+      "category": "ai-search",
+      "hits": 27,
       "asset_hits": 0,
       "sites": [
-        "adhdhelper",
-        "bestbusinessloans",
-        "fundbiz",
-        "homesandhedge",
+        "cardmachines",
         "kartapay",
-        "laterlifeborrowing",
-        "ltdturnaround",
-        "rank4ai"
+        "market-invoice",
+        "peptideclear",
+        "rank4ai",
+        "seocompare"
       ],
-      "site_count": 8,
-      "first_seen": "2026-06-23T07:46:53.711534+00:00",
-      "last_seen": "2026-06-23T09:05:04.751245+00:00",
-      "asn_org": "Anthropic, PBC",
+      "site_count": 6,
+      "first_seen": "2026-06-24T06:20:51.251432+00:00",
+      "last_seen": "2026-06-24T07:00:39.027334+00:00",
+      "asn_org": "Microsoft Limited",
       "country": "US"
     },
     {
-      "bot": "MJ12bot",
-      "category": "seo-tool",
-      "hits": 10,
+      "bot": "ChatGPT-User",
+      "category": "ai-user",
+      "hits": 27,
       "asset_hits": 0,
       "sites": [
+        "bestbusinessloans",
+        "cardmachines",
+        "market-invoice",
+        "peptideclear",
+        "rank4ai",
+        "seocompare"
+      ],
+      "site_count": 6,
+      "first_seen": "2026-06-24T05:56:38.052786+00:00",
+      "last_seen": "2026-06-24T06:59:59.356464+00:00",
+      "asn_org": "Microsoft Corporation",
+      "country": "ES"
+    },
+    {
+      "bot": "Applebot",
+      "category": "search-engine",
+      "hits": 20,
+      "asset_hits": 0,
+      "sites": [
+        "cardmachines",
+        "datekit",
+        "hervitals",
         "laterlifeborrowing",
+        "seocompare",
+        "sortedproperty"
+      ],
+      "site_count": 6,
+      "first_seen": "2026-06-24T05:55:35.771638+00:00",
+      "last_seen": "2026-06-24T06:51:55.26746+00:00",
+      "asn_org": "Apple Inc.",
+      "country": "US"
+    },
+    {
+      "bot": "Bingbot",
+      "category": "search-engine",
+      "hits": 16,
+      "asset_hits": 0,
+      "sites": [
+        "cardmachines",
+        "fundbiz",
         "market-invoice",
         "rank4ai",
         "seocompare"
       ],
-      "site_count": 4,
-      "first_seen": "2026-06-23T07:56:11.336322+00:00",
-      "last_seen": "2026-06-23T09:03:16.107528+00:00",
+      "site_count": 5,
+      "first_seen": "2026-06-24T05:59:06.822639+00:00",
+      "last_seen": "2026-06-24T07:01:19.191612+00:00",
+      "asn_org": "Microsoft Corporation",
+      "country": "US"
+    },
+    {
+      "bot": "Googlebot",
+      "category": "search-engine",
+      "hits": 16,
+      "asset_hits": 0,
+      "sites": [
+        "bestbusinessloans",
+        "fitgauge",
+        "market-invoice",
+        "peptideclear",
+        "rank4ai",
+        "seocompare"
+      ],
+      "site_count": 6,
+      "first_seen": "2026-06-24T06:05:07.8131+00:00",
+      "last_seen": "2026-06-24T07:00:23.391503+00:00",
+      "asn_org": "Private Customer",
+      "country": "CA"
+    },
+    {
+      "bot": "MJ12bot",
+      "category": "seo-tool",
+      "hits": 5,
+      "asset_hits": 0,
+      "sites": [
+        "adhdhelper",
+        "bestbusinessloans",
+        "peptideclear"
+      ],
+      "site_count": 3,
+      "first_seen": "2026-06-24T05:56:18.664705+00:00",
+      "last_seen": "2026-06-24T06:56:08.50858+00:00",
       "asn_org": "OVH SAS",
       "country": "FR"
     },
     {
-      "bot": "PerplexityBot",
-      "category": "ai-search",
-      "hits": 9,
+      "bot": "GPTBot",
+      "category": "ai-training",
+      "hits": 3,
       "asset_hits": 0,
       "sites": [
-        "cardmachines",
         "rank4ai"
       ],
-      "site_count": 2,
-      "first_seen": "2026-06-23T08:08:25.611356+00:00",
-      "last_seen": "2026-06-23T08:45:23.168957+00:00",
-      "asn_org": "Amazon Technologies Inc.",
+      "site_count": 1,
+      "first_seen": "2026-06-24T06:57:59.776499+00:00",
+      "last_seen": "2026-06-24T06:58:05.616725+00:00",
+      "asn_org": "Microsoft Limited",
       "country": "US"
-    },
-    {
-      "bot": "YandexBot",
-      "category": "search-engine",
-      "hits": 5,
-      "asset_hits": 0,
-      "sites": [
-        "bestbusinessloans",
-        "kartapay",
-        "market-invoice"
-      ],
-      "site_count": 3,
-      "first_seen": "2026-06-23T08:05:14.913319+00:00",
-      "last_seen": "2026-06-23T09:05:13.61716+00:00",
-      "asn_org": "Yandex enterprise network",
-      "country": "RU"
     },
     {
       "bot": "Bytespider",
@@ -301,14 +274,14 @@
       "hits": 3,
       "asset_hits": 0,
       "sites": [
-        "bestbusinessloans",
-        "kartapay"
+        "market-invoice",
+        "rank4ai"
       ],
       "site_count": 2,
-      "first_seen": "2026-06-23T07:47:57.266474+00:00",
-      "last_seen": "2026-06-23T07:52:02.871809+00:00",
-      "asn_org": "Amazon Data Services Singapore",
-      "country": "SG"
+      "first_seen": "2026-06-24T06:34:36.889973+00:00",
+      "last_seen": "2026-06-24T06:44:11.953928+00:00",
+      "asn_org": "China Unicom Hebei province network",
+      "country": "CN"
     },
     {
       "bot": "DuckDuckBot",
@@ -319,215 +292,194 @@
         "market-invoice"
       ],
       "site_count": 1,
-      "first_seen": "2026-06-23T08:37:34.969261+00:00",
-      "last_seen": "2026-06-23T08:37:35.278319+00:00",
+      "first_seen": "2026-06-24T06:42:16.582933+00:00",
+      "last_seen": "2026-06-24T06:42:16.693098+00:00",
       "asn_org": "Microsoft Corporation",
       "country": "IE"
-    },
-    {
-      "bot": "GPTBot",
-      "category": "ai-training",
-      "hits": 2,
-      "asset_hits": 0,
-      "sites": [
-        "cardmachines",
-        "homesandhedge"
-      ],
-      "site_count": 2,
-      "first_seen": "2026-06-23T07:46:21.498754+00:00",
-      "last_seen": "2026-06-23T08:04:29.305633+00:00",
-      "asn_org": "Microsoft Limited",
-      "country": "US"
-    },
-    {
-      "bot": "PetalBot",
-      "category": "search-engine",
-      "hits": 1,
-      "asset_hits": 0,
-      "sites": [
-        "market-invoice"
-      ],
-      "site_count": 1,
-      "first_seen": "2026-06-23T07:55:06.03114+00:00",
-      "last_seen": "2026-06-23T07:55:06.03114+00:00",
-      "asn_org": "Huawei-Cloud-SG",
-      "country": "SG"
     }
   ],
   "by_site": [
     {
-      "site": "cardmachines",
-      "hits": 219,
-      "ai_bot_hits": 217,
-      "asset_hits": 2,
-      "human_hits": 72,
-      "ai_referral_hits": 1,
-      "ai_referrers": {
-        "ChatGPT": 1
-      },
-      "top_bot": "Amazonbot"
-    },
-    {
-      "site": "rank4ai",
-      "hits": 105,
-      "ai_bot_hits": 103,
-      "asset_hits": 2,
-      "human_hits": 52,
-      "ai_referral_hits": 0,
-      "ai_referrers": {},
-      "top_bot": "GoogleOther"
-    },
-    {
-      "site": "ltdturnaround",
-      "hits": 94,
-      "ai_bot_hits": 94,
-      "asset_hits": 0,
-      "human_hits": 49,
-      "ai_referral_hits": 0,
-      "ai_referrers": {},
-      "top_bot": "Bingbot"
-    },
-    {
       "site": "market-invoice",
-      "hits": 80,
-      "ai_bot_hits": 77,
-      "asset_hits": 3,
-      "human_hits": 38,
+      "hits": 292,
+      "ai_bot_hits": 288,
+      "asset_hits": 5,
+      "human_hits": 69,
       "ai_referral_hits": 0,
       "ai_referrers": {},
-      "top_bot": "ChatGPT-User"
+      "top_bot": "AhrefsBot"
     },
     {
       "site": "bestbusinessloans",
-      "hits": 40,
-      "ai_bot_hits": 37,
-      "asset_hits": 3,
-      "human_hits": 12,
+      "hits": 253,
+      "ai_bot_hits": 241,
+      "asset_hits": 12,
+      "human_hits": 4,
       "ai_referral_hits": 0,
       "ai_referrers": {},
-      "top_bot": "SemrushBot"
+      "top_bot": "ClaudeBot"
     },
     {
-      "site": "fundbiz",
-      "hits": 33,
-      "ai_bot_hits": 33,
-      "asset_hits": 0,
-      "human_hits": 32,
+      "site": "cardmachines",
+      "hits": 95,
+      "ai_bot_hits": 94,
+      "asset_hits": 1,
+      "human_hits": 49,
       "ai_referral_hits": 0,
       "ai_referrers": {},
-      "top_bot": "ChatGPT-User"
+      "top_bot": "Amazonbot"
     },
     {
       "site": "seocompare",
-      "hits": 33,
-      "ai_bot_hits": 33,
-      "asset_hits": 0,
-      "human_hits": 21,
+      "hits": 60,
+      "ai_bot_hits": 58,
+      "asset_hits": 2,
+      "human_hits": 25,
       "ai_referral_hits": 0,
       "ai_referrers": {},
-      "top_bot": "DotBot"
+      "top_bot": "AhrefsBot"
+    },
+    {
+      "site": "rank4ai",
+      "hits": 31,
+      "ai_bot_hits": 29,
+      "asset_hits": 2,
+      "human_hits": 8,
+      "ai_referral_hits": 0,
+      "ai_referrers": {},
+      "top_bot": "AhrefsBot"
     },
     {
       "site": "peptideclear",
-      "hits": 30,
-      "ai_bot_hits": 29,
+      "hits": 24,
+      "ai_bot_hits": 23,
       "asset_hits": 1,
-      "human_hits": 18,
+      "human_hits": 7,
       "ai_referral_hits": 0,
       "ai_referrers": {},
-      "top_bot": "ChatGPT-User"
+      "top_bot": "Googlebot"
+    },
+    {
+      "site": "fundbiz",
+      "hits": 20,
+      "ai_bot_hits": 19,
+      "asset_hits": 1,
+      "human_hits": 1,
+      "ai_referral_hits": 0,
+      "ai_referrers": {},
+      "top_bot": "ClaudeBot"
     },
     {
       "site": "laterlifeborrowing",
-      "hits": 20,
-      "ai_bot_hits": 20,
-      "asset_hits": 0,
+      "hits": 15,
+      "ai_bot_hits": 14,
+      "asset_hits": 1,
+      "human_hits": 2,
+      "ai_referral_hits": 0,
+      "ai_referrers": {},
+      "top_bot": "AhrefsBot"
+    },
+    {
+      "site": "kartapay",
+      "hits": 14,
+      "ai_bot_hits": 13,
+      "asset_hits": 1,
       "human_hits": 3,
+      "ai_referral_hits": 0,
+      "ai_referrers": {},
+      "top_bot": "Amazonbot"
+    },
+    {
+      "site": "sortedproperty",
+      "hits": 6,
+      "ai_bot_hits": 5,
+      "asset_hits": 1,
+      "human_hits": 0,
       "ai_referral_hits": 0,
       "ai_referrers": {},
       "top_bot": "Applebot"
     },
     {
-      "site": "kartapay",
-      "hits": 12,
-      "ai_bot_hits": 11,
+      "site": "datekit",
+      "hits": 4,
+      "ai_bot_hits": 3,
       "asset_hits": 1,
       "human_hits": 2,
       "ai_referral_hits": 0,
       "ai_referrers": {},
-      "top_bot": "AhrefsBot"
+      "top_bot": "Applebot"
     },
     {
-      "site": "sortedproperty",
-      "hits": 10,
+      "site": "adhdhelper",
+      "hits": 4,
+      "ai_bot_hits": 3,
+      "asset_hits": 1,
+      "human_hits": 0,
+      "ai_referral_hits": 0,
+      "ai_referrers": {},
+      "top_bot": "ClaudeBot"
+    },
+    {
+      "site": "fitgauge",
+      "hits": 3,
+      "ai_bot_hits": 2,
+      "asset_hits": 1,
+      "human_hits": 0,
+      "ai_referral_hits": 0,
+      "ai_referrers": {},
+      "top_bot": "Googlebot"
+    },
+    {
+      "site": "homesandhedge",
+      "hits": 2,
       "ai_bot_hits": 0,
-      "asset_hits": 10,
-      "human_hits": 2,
+      "asset_hits": 2,
+      "human_hits": 0,
       "ai_referral_hits": 0,
       "ai_referrers": {},
       "top_bot": "Unknown / unmatched"
     },
     {
-      "site": "adhdhelper",
-      "hits": 8,
-      "ai_bot_hits": 8,
-      "asset_hits": 0,
-      "human_hits": 0,
-      "ai_referral_hits": 0,
-      "ai_referrers": {},
-      "top_bot": "GoogleOther"
-    },
-    {
-      "site": "homesandhedge",
-      "hits": 6,
-      "ai_bot_hits": 6,
-      "asset_hits": 0,
+      "site": "ltdturnaround",
+      "hits": 2,
+      "ai_bot_hits": 1,
+      "asset_hits": 1,
       "human_hits": 1,
       "ai_referral_hits": 0,
       "ai_referrers": {},
-      "top_bot": "AhrefsBot"
+      "top_bot": "ClaudeBot"
     },
     {
       "site": "hervitals",
       "hits": 2,
-      "ai_bot_hits": 2,
-      "asset_hits": 0,
-      "human_hits": 1,
+      "ai_bot_hits": 1,
+      "asset_hits": 1,
+      "human_hits": 0,
       "ai_referral_hits": 0,
       "ai_referrers": {},
-      "top_bot": "AhrefsBot"
+      "top_bot": "Unknown / unmatched"
     },
     {
       "site": "namenest",
-      "hits": 0,
+      "hits": 1,
       "ai_bot_hits": 0,
-      "asset_hits": 0,
-      "human_hits": 2,
+      "asset_hits": 1,
+      "human_hits": 1,
       "ai_referral_hits": 0,
       "ai_referrers": {},
-      "top_bot": null
-    },
-    {
-      "site": "datekit",
-      "hits": 0,
-      "ai_bot_hits": 0,
-      "asset_hits": 0,
-      "human_hits": 3,
-      "ai_referral_hits": 0,
-      "ai_referrers": {},
-      "top_bot": null
+      "top_bot": "Unknown / unmatched"
     }
   ],
   "ai_asset_readers": [
     {
-      "path": "/ai-instructions/",
-      "total": 4,
+      "path": "/llms.txt",
+      "total": 19,
       "bots": {
-        "Unknown / unmatched": 4
+        "Unknown / unmatched": 19
       }
     },
     {
-      "path": "/.well-known/traffic-advice",
+      "path": "/.well-known/",
       "total": 3,
       "bots": {
         "Unknown / unmatched": 3
@@ -541,21 +493,15 @@
       }
     },
     {
-      "path": "/.well-known/mcp.json",
-      "total": 1,
+      "path": "/ai-instructions/",
+      "total": 2,
       "bots": {
+        "AhrefsBot": 1,
         "Unknown / unmatched": 1
       }
     },
     {
-      "path": "/.well-known/passkey-endpoints",
-      "total": 1,
-      "bots": {
-        "Unknown / unmatched": 1
-      }
-    },
-    {
-      "path": "/llms.txt",
+      "path": "/.well-known/ucp",
       "total": 1,
       "bots": {
         "Unknown / unmatched": 1
@@ -576,14 +522,14 @@
       }
     },
     {
-      "path": "/.well-known/acme-challenge/*",
+      "path": "/.well-known/acme-challenge/",
       "total": 1,
       "bots": {
         "Unknown / unmatched": 1
       }
     },
     {
-      "path": "/.well-known/acme-challenge/",
+      "path": "/.well-known/acme-challenge/*",
       "total": 1,
       "bots": {
         "Unknown / unmatched": 1
@@ -616,94 +562,20 @@
       "bots": {
         "Unknown / unmatched": 1
       }
-    },
-    {
-      "path": "/.well-known/openid-configuration",
-      "total": 1,
-      "bots": {
-        "Unknown / unmatched": 1
-      }
-    },
-    {
-      "path": "/.well-known/security.txt",
-      "total": 1,
-      "bots": {
-        "Unknown / unmatched": 1
-      }
     }
   ],
   "recent": [
-    {
-      "site": "fundbiz",
-      "bot_name": "ChatGPT-User",
-      "category": "ai-user",
-      "path": "/banks/tide/",
-      "method": "GET",
-      "asn_org": "Microsoft Limited",
-      "country": "DE",
-      "tls": "TLSv1.3",
-      "protocol": "HTTP/2",
-      "created_at": "2026-06-23T09:32:00.874781+00:00"
-    },
-    {
-      "site": "rank4ai",
-      "bot_name": "ChatGPT-User",
-      "category": "ai-user",
-      "path": "/research/rankings/top-ai-seo-agencies-birmingham-2026/",
-      "method": "GET",
-      "asn_org": "Microsoft Corporation",
-      "country": "US",
-      "tls": "",
-      "protocol": "HTTP/1.1",
-      "created_at": "2026-06-23T09:31:42.947485+00:00"
-    },
-    {
-      "site": "fundbiz",
-      "bot_name": null,
-      "category": "human",
-      "path": "/declined/funding-circle/",
-      "method": "GET",
-      "asn_org": "L'ile aux surfers s.a.r.l.",
-      "country": "FR",
-      "tls": "TLSv1.3",
-      "protocol": "HTTP/1.1",
-      "created_at": "2026-06-23T09:31:35.701368+00:00"
-    },
-    {
-      "site": "peptideclear",
-      "bot_name": "ChatGPT-User",
-      "category": "ai-user",
-      "path": "/",
-      "method": "GET",
-      "asn_org": "Microsoft Corporation",
-      "country": "GB",
-      "tls": "TLSv1.3",
-      "protocol": "HTTP/2",
-      "created_at": "2026-06-23T09:31:30.113481+00:00"
-    },
-    {
-      "site": "market-invoice",
-      "bot_name": "SemrushBot",
-      "category": "seo-tool",
-      "path": "/stats/uk-invoice-finance-statistics-2026/",
-      "method": "GET",
-      "asn_org": "SEMrush CY LTD",
-      "country": "US",
-      "tls": "",
-      "protocol": "HTTP/1.1",
-      "created_at": "2026-06-23T09:31:19.684644+00:00"
-    },
     {
       "site": "cardmachines",
       "bot_name": null,
       "category": "human",
       "path": "/lp/online-payments/",
       "method": "GET",
-      "asn_org": "BTBROADBAND-AGG-56",
+      "asn_org": "TalkTalk Communications Limited",
       "country": "GB",
       "tls": "TLSv1.3",
       "protocol": "HTTP/3",
-      "created_at": "2026-06-23T09:31:14.152903+00:00"
+      "created_at": "2026-06-24T07:02:08.707008+00:00"
     },
     {
       "site": "cardmachines",
@@ -711,134 +583,230 @@
       "category": "human",
       "path": "/lp/online-payments",
       "method": "GET",
-      "asn_org": "BTBROADBAND-AGG-56",
+      "asn_org": "TalkTalk Communications Limited",
       "country": "GB",
       "tls": "TLSv1.3",
       "protocol": "HTTP/3",
-      "created_at": "2026-06-23T09:31:14.064437+00:00"
+      "created_at": "2026-06-24T07:02:08.674628+00:00"
     },
     {
-      "site": "homesandhedge",
-      "bot_name": null,
-      "category": "human",
-      "path": "//feed/",
-      "method": "GET",
-      "asn_org": "Google LLC",
-      "country": "NL",
-      "tls": "TLSv1.2",
-      "protocol": "HTTP/1.1",
-      "created_at": "2026-06-23T09:31:12.128217+00:00"
-    },
-    {
-      "site": "rank4ai",
-      "bot_name": "GoogleOther",
+      "site": "bestbusinessloans",
+      "bot_name": "ClaudeBot",
       "category": "ai-training",
-      "path": "/blog/can-small-uk-businesses-compete-in-ai-search/",
+      "path": "/get-quotes/",
       "method": "GET",
-      "asn_org": "Google LLC",
+      "asn_org": "Anthropic, PBC",
       "country": "US",
-      "tls": "",
-      "protocol": "HTTP/1.1",
-      "created_at": "2026-06-23T09:30:56.634525+00:00"
+      "tls": "TLSv1.3",
+      "protocol": "HTTP/2",
+      "created_at": "2026-06-24T07:02:03.285778+00:00"
     },
     {
-      "site": "seocompare",
-      "bot_name": "DotBot",
-      "category": "seo-tool",
-      "path": "/robots.txt",
+      "site": "bestbusinessloans",
+      "bot_name": "ClaudeBot",
+      "category": "ai-training",
+      "path": "/get-quotes/",
       "method": "GET",
-      "asn_org": "Wowrack.com",
+      "asn_org": "Anthropic, PBC",
       "country": "US",
-      "tls": "",
-      "protocol": "HTTP/1.1",
-      "created_at": "2026-06-23T09:30:50.247606+00:00"
-    },
-    {
-      "site": "seocompare",
-      "bot_name": "DotBot",
-      "category": "seo-tool",
-      "path": "/robots.txt",
-      "method": "GET",
-      "asn_org": "Wowrack.com",
-      "country": "US",
-      "tls": "",
-      "protocol": "HTTP/1.1",
-      "created_at": "2026-06-23T09:30:50.013404+00:00"
-    },
-    {
-      "site": "seocompare",
-      "bot_name": null,
-      "category": "human",
-      "path": "/questions/how-to-know-if-ai-seo-is-working/",
-      "method": "GET",
-      "asn_org": "ACEVILLE PTE.LTD.",
-      "country": "SG",
-      "tls": "",
-      "protocol": "HTTP/1.1",
-      "created_at": "2026-06-23T09:30:45.557927+00:00"
-    },
-    {
-      "site": "seocompare",
-      "bot_name": null,
-      "category": "human",
-      "path": "/questions/how-to-know-if-ai-seo-is-working",
-      "method": "GET",
-      "asn_org": "ACEVILLE PTE.LTD.",
-      "country": "SG",
-      "tls": "",
-      "protocol": "HTTP/1.1",
-      "created_at": "2026-06-23T09:30:45.181389+00:00"
+      "tls": "TLSv1.3",
+      "protocol": "HTTP/2",
+      "created_at": "2026-06-24T07:01:54.261583+00:00"
     },
     {
       "site": "market-invoice",
-      "bot_name": "Applebot",
-      "category": "search-engine",
-      "path": "/blog/invoice-finance-for-transport-and-haulage-smes-managing-fuel-costs-and-slow-freight-payment-terms/",
+      "bot_name": "SemrushBot",
+      "category": "seo-tool",
+      "path": "/construction-finance/",
       "method": "GET",
-      "asn_org": "Apple Inc.",
+      "asn_org": "SEMrush CY LTD",
       "country": "US",
       "tls": "",
       "protocol": "HTTP/1.1",
-      "created_at": "2026-06-23T09:30:35.428081+00:00"
+      "created_at": "2026-06-24T07:01:34.531978+00:00"
     },
     {
-      "site": "rank4ai",
-      "bot_name": "ChatGPT-User",
-      "category": "ai-user",
-      "path": "/research/rankings/chatgpt-usage-statistics-uk-businesses-2026/",
+      "site": "seocompare",
+      "bot_name": "AhrefsBot",
+      "category": "seo-tool",
+      "path": "/ai-seo-audit-southampton/",
+      "method": "GET",
+      "asn_org": "Ahrefs Pte Ltd Dmytro",
+      "country": "FR",
+      "tls": "",
+      "protocol": "HTTP/1.1",
+      "created_at": "2026-06-24T07:01:26.973113+00:00"
+    },
+    {
+      "site": "bestbusinessloans",
+      "bot_name": "ClaudeBot",
+      "category": "ai-training",
+      "path": "/hmrc/paye-cis-arrears/",
+      "method": "GET",
+      "asn_org": "Anthropic, PBC",
+      "country": "US",
+      "tls": "TLSv1.3",
+      "protocol": "HTTP/2",
+      "created_at": "2026-06-24T07:01:19.558228+00:00"
+    },
+    {
+      "site": "seocompare",
+      "bot_name": "Bingbot",
+      "category": "search-engine",
+      "path": "/compare/mrs-digital-vs-targeted-seo/",
       "method": "GET",
       "asn_org": "Microsoft Corporation",
       "country": "US",
       "tls": "",
       "protocol": "HTTP/1.1",
-      "created_at": "2026-06-23T09:30:27.533469+00:00"
+      "created_at": "2026-06-24T07:01:19.191612+00:00"
     },
     {
-      "site": "cardmachines",
+      "site": "rank4ai",
+      "bot_name": "OAI-SearchBot",
+      "category": "ai-search",
+      "path": "/research/rankings/top-ai-seo-agencies-liverpool-2026/",
+      "method": "GET",
+      "asn_org": "Microsoft Limited",
+      "country": "US",
+      "tls": "",
+      "protocol": "HTTP/1.1",
+      "created_at": "2026-06-24T07:00:39.027334+00:00"
+    },
+    {
+      "site": "seocompare",
+      "bot_name": null,
+      "category": "human",
+      "path": "/20-best-ai-seo-agencies/",
+      "method": "GET",
+      "asn_org": "Host Wagon LLC",
+      "country": "CA",
+      "tls": "",
+      "protocol": "HTTP/1.1",
+      "created_at": "2026-06-24T07:00:31.957521+00:00"
+    },
+    {
+      "site": "kartapay",
+      "bot_name": "Amazonbot",
+      "category": "ai-training",
+      "path": "/romanian-card-machine-uk/",
+      "method": "GET",
+      "asn_org": "Amazon Data Services Northern Virginia",
+      "country": "US",
+      "tls": "TLSv1.3",
+      "protocol": "HTTP/1.1",
+      "created_at": "2026-06-24T07:00:24.315776+00:00"
+    },
+    {
+      "site": "peptideclear",
+      "bot_name": "Googlebot",
+      "category": "search-engine",
+      "path": "/retailers/",
+      "method": "GET",
+      "asn_org": "Private Customer",
+      "country": "CA",
+      "tls": "TLSv1.3",
+      "protocol": "HTTP/1.1",
+      "created_at": "2026-06-24T07:00:23.391503+00:00"
+    },
+    {
+      "site": "peptideclear",
+      "bot_name": "Googlebot",
+      "category": "search-engine",
+      "path": "/lang/",
+      "method": "GET",
+      "asn_org": "EGIHosting",
+      "country": "FR",
+      "tls": "TLSv1.3",
+      "protocol": "HTTP/1.1",
+      "created_at": "2026-06-24T07:00:23.234769+00:00"
+    },
+    {
+      "site": "peptideclear",
+      "bot_name": "Googlebot",
+      "category": "search-engine",
+      "path": "/retailer/",
+      "method": "GET",
+      "asn_org": "Private Customer",
+      "country": "DE",
+      "tls": "TLSv1.3",
+      "protocol": "HTTP/1.1",
+      "created_at": "2026-06-24T07:00:23.202482+00:00"
+    },
+    {
+      "site": "peptideclear",
+      "bot_name": "Googlebot",
+      "category": "search-engine",
+      "path": "/trust-review/",
+      "method": "GET",
+      "asn_org": "Aventice LLC",
+      "country": "US",
+      "tls": "TLSv1.3",
+      "protocol": "HTTP/1.1",
+      "created_at": "2026-06-24T07:00:23.013196+00:00"
+    },
+    {
+      "site": "kartapay",
+      "bot_name": "Amazonbot",
+      "category": "ai-training",
+      "path": "/ro/operatori/worldpay-recenzie/",
+      "method": "GET",
+      "asn_org": "Amazon Technologies Inc.",
+      "country": "US",
+      "tls": "TLSv1.3",
+      "protocol": "HTTP/1.1",
+      "created_at": "2026-06-24T07:00:22.48694+00:00"
+    },
+    {
+      "site": "kartapay",
+      "bot_name": "Amazonbot",
+      "category": "ai-training",
+      "path": "/ro/operatori/dojo-recenzie/",
+      "method": "GET",
+      "asn_org": "Amazon Data Services Northern Virginia",
+      "country": "US",
+      "tls": "TLSv1.3",
+      "protocol": "HTTP/1.1",
+      "created_at": "2026-06-24T07:00:17.608466+00:00"
+    },
+    {
+      "site": "seocompare",
+      "bot_name": "AhrefsBot",
+      "category": "seo-tool",
+      "path": "/ai-seo-audit-cardiff/",
+      "method": "GET",
+      "asn_org": "Ahrefs Pte Ltd Dmytro",
+      "country": "FR",
+      "tls": "",
+      "protocol": "HTTP/1.1",
+      "created_at": "2026-06-24T07:00:12.629918+00:00"
+    },
+    {
+      "site": "market-invoice",
       "bot_name": "ChatGPT-User",
       "category": "ai-user",
       "path": "/",
       "method": "GET",
       "asn_org": "Microsoft Corporation",
-      "country": "GB",
-      "tls": "TLSv1.3",
-      "protocol": "HTTP/2",
-      "created_at": "2026-06-23T09:30:25.386297+00:00"
-    },
-    {
-      "site": "seocompare",
-      "bot_name": "ChatGPT-User",
-      "category": "ai-user",
-      "path": "/stats/ai-search-market-share/",
-      "method": "GET",
-      "asn_org": "Microsoft Corporation",
-      "country": "US",
+      "country": "ES",
       "tls": "",
       "protocol": "HTTP/1.1",
-      "created_at": "2026-06-23T09:30:23.811247+00:00"
+      "created_at": "2026-06-24T06:59:59.356464+00:00"
     },
     {
-      "site": "bestbusinessloans",
+      "site": "market-invoice",
+      "bot_name": "ChatGPT-User",
+      "category": "ai-user",
+      "path": "/providers/",
+      "method": "GET",
+      "asn_org": "Microsoft Corporation",
+      "country": "ES",
+      "tls": "",
+      "protocol": "HTTP/1.1",
+      "created_at": "2026-06-24T06:59:59.346987+00:00"
+    },
+    {
+      "site": "laterlifeborrowing",
       "bot_name": "AhrefsBot",
       "category": "seo-tool",
       "path": "/sitemap-0.xml",
@@ -847,10 +815,10 @@
       "country": "GB",
       "tls": "TLSv1.3",
       "protocol": "HTTP/2",
-      "created_at": "2026-06-23T09:30:22.658511+00:00"
+      "created_at": "2026-06-24T06:59:55.004114+00:00"
     },
     {
-      "site": "bestbusinessloans",
+      "site": "laterlifeborrowing",
       "bot_name": "AhrefsBot",
       "category": "seo-tool",
       "path": "/sitemap-index.xml",
@@ -859,31 +827,79 @@
       "country": "GB",
       "tls": "TLSv1.3",
       "protocol": "HTTP/2",
-      "created_at": "2026-06-23T09:30:21.443764+00:00"
+      "created_at": "2026-06-24T06:59:53.583+00:00"
     },
     {
       "site": "market-invoice",
-      "bot_name": "ChatGPT-User",
-      "category": "ai-user",
-      "path": "/research/uk-late-payment-index/",
+      "bot_name": "OAI-SearchBot",
+      "category": "ai-search",
+      "path": "/providers/skipton/",
       "method": "GET",
       "asn_org": "Microsoft Limited",
-      "country": "BE",
+      "country": "US",
       "tls": "",
       "protocol": "HTTP/1.1",
-      "created_at": "2026-06-23T09:29:31.121391+00:00"
+      "created_at": "2026-06-24T06:59:31.483414+00:00"
+    },
+    {
+      "site": "cardmachines",
+      "bot_name": null,
+      "category": "human",
+      "path": "/lp/online-payments/",
+      "method": "GET",
+      "asn_org": "BTBROADBAND-AGG-56",
+      "country": "GB",
+      "tls": "TLSv1.3",
+      "protocol": "HTTP/3",
+      "created_at": "2026-06-24T06:59:20.811706+00:00"
+    },
+    {
+      "site": "cardmachines",
+      "bot_name": null,
+      "category": "human",
+      "path": "/lp/online-payments",
+      "method": "GET",
+      "asn_org": "BTBROADBAND-AGG-56",
+      "country": "GB",
+      "tls": "TLSv1.3",
+      "protocol": "HTTP/3",
+      "created_at": "2026-06-24T06:59:20.75975+00:00"
     },
     {
       "site": "market-invoice",
-      "bot_name": "ChatGPT-User",
-      "category": "ai-user",
-      "path": "/stats/uk-late-payment-statistics-2026/",
+      "bot_name": "OAI-SearchBot",
+      "category": "ai-search",
+      "path": "/alternatives/kriya/",
       "method": "GET",
       "asn_org": "Microsoft Limited",
-      "country": "BE",
+      "country": "US",
       "tls": "",
       "protocol": "HTTP/1.1",
-      "created_at": "2026-06-23T09:29:30.973676+00:00"
+      "created_at": "2026-06-24T06:58:49.161064+00:00"
+    },
+    {
+      "site": "seocompare",
+      "bot_name": "AhrefsBot",
+      "category": "seo-tool",
+      "path": "/ai-search-hospitality/",
+      "method": "GET",
+      "asn_org": "Ahrefs Pte Ltd Dmytro",
+      "country": "FR",
+      "tls": "",
+      "protocol": "HTTP/1.1",
+      "created_at": "2026-06-24T06:58:47.867384+00:00"
+    },
+    {
+      "site": "fundbiz",
+      "bot_name": "SemrushBot",
+      "category": "seo-tool",
+      "path": "/declined/low-turnover/",
+      "method": "GET",
+      "asn_org": "SEMrush CY LTD",
+      "country": "US",
+      "tls": "TLSv1.3",
+      "protocol": "HTTP/1.1",
+      "created_at": "2026-06-24T06:58:45.903297+00:00"
     },
     {
       "site": "market-invoice",
@@ -892,106 +908,22 @@
       "path": "/",
       "method": "GET",
       "asn_org": "Microsoft Corporation",
-      "country": "US",
+      "country": "PL",
       "tls": "",
       "protocol": "HTTP/1.1",
-      "created_at": "2026-06-23T09:29:28.039249+00:00"
-    },
-    {
-      "site": "rank4ai",
-      "bot_name": "GoogleOther",
-      "category": "ai-training",
-      "path": "/learn/questions/can-over-optimisation-harm-ai-visibility-for-uk-businesses/",
-      "method": "GET",
-      "asn_org": "Google LLC",
-      "country": "US",
-      "tls": "",
-      "protocol": "HTTP/1.1",
-      "created_at": "2026-06-23T09:29:24.499206+00:00"
+      "created_at": "2026-06-24T06:58:35.04637+00:00"
     },
     {
       "site": "cardmachines",
-      "bot_name": null,
-      "category": "human",
-      "path": "/lp/online-payments/",
+      "bot_name": "OAI-SearchBot",
+      "category": "ai-search",
+      "path": "/blog/2026-uk-card-processing-rate-benchmarks/",
       "method": "GET",
-      "asn_org": "Virgin Media Limited",
-      "country": "GB",
-      "tls": "TLSv1.3",
-      "protocol": "HTTP/3",
-      "created_at": "2026-06-23T09:29:12.406404+00:00"
-    },
-    {
-      "site": "cardmachines",
-      "bot_name": null,
-      "category": "human",
-      "path": "/lp/online-payments",
-      "method": "GET",
-      "asn_org": "Virgin Media Limited",
-      "country": "GB",
-      "tls": "TLSv1.3",
-      "protocol": "HTTP/3",
-      "created_at": "2026-06-23T09:29:12.376486+00:00"
-    },
-    {
-      "site": "cardmachines",
-      "bot_name": "Applebot",
-      "category": "search-engine",
-      "path": "/trade/garden-centre/",
-      "method": "GET",
-      "asn_org": "Apple Inc.",
+      "asn_org": "Microsoft Limited",
       "country": "US",
       "tls": "TLSv1.3",
       "protocol": "HTTP/2",
-      "created_at": "2026-06-23T09:28:40.691063+00:00"
-    },
-    {
-      "site": "cardmachines",
-      "bot_name": "Applebot",
-      "category": "search-engine",
-      "path": "/best/by-trade-and-city/grocery-store-in-leicester/",
-      "method": "GET",
-      "asn_org": "Apple Inc.",
-      "country": "US",
-      "tls": "TLSv1.3",
-      "protocol": "HTTP/2",
-      "created_at": "2026-06-23T09:28:01.338651+00:00"
-    },
-    {
-      "site": "cardmachines",
-      "bot_name": "Applebot",
-      "category": "search-engine",
-      "path": "/questions/card-machine-for-mobile-mechanic/",
-      "method": "GET",
-      "asn_org": "Apple Inc.",
-      "country": "US",
-      "tls": "TLSv1.3",
-      "protocol": "HTTP/2",
-      "created_at": "2026-06-23T09:27:47.472573+00:00"
-    },
-    {
-      "site": "cardmachines",
-      "bot_name": null,
-      "category": "human",
-      "path": "/lp/online-payments/",
-      "method": "GET",
-      "asn_org": "Virgin Media Limited",
-      "country": "GB",
-      "tls": "TLSv1.3",
-      "protocol": "HTTP/3",
-      "created_at": "2026-06-23T09:27:40.783818+00:00"
-    },
-    {
-      "site": "cardmachines",
-      "bot_name": null,
-      "category": "human",
-      "path": "/lp/online-payments",
-      "method": "GET",
-      "asn_org": "Virgin Media Limited",
-      "country": "GB",
-      "tls": "TLSv1.3",
-      "protocol": "HTTP/3",
-      "created_at": "2026-06-23T09:27:40.756161+00:00"
+      "created_at": "2026-06-24T06:58:34.682997+00:00"
     }
   ]
 }

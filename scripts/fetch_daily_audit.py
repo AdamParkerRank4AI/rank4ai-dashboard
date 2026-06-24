@@ -39,6 +39,18 @@ SITE_ID_MAP = {
     "MerchantHQ": "cardmachines",
     "PeptideClear": "peptideclear",
     "Kartapay": "kartapay",
+    # Newer fleet sites — run_daily_site_audit.py already audits all of these, but
+    # without these name->id mappings their audit data was being dropped here, so
+    # their dashboard detail (pages/schema/content) stayed empty (Adam, 23 Jun).
+    "Later Life Borrowing": "laterlifeborrowing",
+    "LTD Turnaround": "company-rescue",
+    "HerVitals": "womenshealth",
+    "ADHD Helper": "adhdhelper",
+    "Homes and Hedge": "homesandhedge",
+    "VettedHome": "sortedproperty",
+    "FitCalcs": "fitgauge",
+    "BabyData": "namenest",
+    "Dates and Times": "datekit",
 }
 
 
