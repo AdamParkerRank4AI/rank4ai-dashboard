@@ -1164,13 +1164,13 @@
   "id": "trustedinteriors",
   "name": "Trusted Interiors",
   "domain": "trustedinteriors.co.uk",
-  "liveDomain": "trustedinteriors.pages.dev",
+  "liveDomain": "trustedinteriors.co.uk",
   "logo": "",
   "flavour": "leadgen",
   "monetisation": "leadgen",
   "dashboard": "fleet",
   "clientCode": "TINT",
-  "notes": "SCAFFOLDED 2026-06-24 from the company-rescue leadgen baseline, stripped to a neutral interiors skeleton. Deployed to https://trustedinteriors.pages.dev (info@rank4ai CF Pages, wrangler direct-upload, indexable). Domain trustedinteriors.co.uk zone is live on CF but still the GoDaddy parking page; custom-domain DNS cutover HELD pending Adam's design sign-off. GitHub: AdamParkerRank4AI/trustedinteriors (main). UK home-interiors leadgen + content/authority/reviews/data. Lean standalone Astro (NO fleet-core dep), config-driven via src/data/site.ts. OPEN: owner entity undecided (placeholder), design held, content sections to be built, og placeholder, create trustedinteriors_leads Supabase tables. Lead = introduce to a vetted interiors professional (capture-first -> Supabase + FormSubmit to adam@muswellrose.com).",
+  "notes": "SCAFFOLDED 2026-06-24 from the company-rescue leadgen baseline, stripped to a neutral interiors skeleton. Deployed to https://trustedinteriors.pages.dev (info@rank4ai CF Pages, wrangler direct-upload, indexable). Domain trustedinteriors.co.uk zone is live on CF but still the GoDaddy parking page; LIVE on the apex 2026-06-24 (apex+www CNAME -> Pages, GoDaddy parking removed, DMARC kept). GitHub: AdamParkerRank4AI/trustedinteriors (main). UK home-interiors leadgen + content/authority/reviews/data. Lean standalone Astro (NO fleet-core dep), config-driven via src/data/site.ts. OPEN: owner entity undecided (placeholder), design held, content sections to be built, og placeholder, create trustedinteriors_leads Supabase tables. Lead = introduce to a vetted interiors professional (capture-first -> Supabase + FormSubmit to adam@muswellrose.com).",
   "clientViewSections": [
    "overview",
    "site-tree",
@@ -1429,5 +1429,62 @@
   ],
   "siteStatus": "live",
   "category": "banner"
+ },
+ {
+  "id": "printgauge",
+  "name": "PrintGauge (3D printing) — TO BUILD",
+  "domain": "",
+  "logo": "",
+  "flavour": "editorial",
+  "monetisation": "affiliate",
+  "blurb": "PLANNED new fleet site — UK 3D-printing authority + tools (Model B citation authority + C tools). Plan LOCKED, not yet scaffolded.",
+  "dashboard": "fleet",
+  "clientCode": "PGAUGE",
+  "notes": "TO BUILD (codename 'printgauge', real brand/domain deferred). Full surface-matrix niche-attack done 23 Jun 2026: AI-citation vacuum confirmed across ChatGPT/Perplexity/Claude, Bing displaceable, filament long-tail winnable. Plan is LOCKED & executable. Moat = the only neutral UK source holding live £ price + UK stock + cost-per-print + a filament £/kg index. CF account = info@rank4ai.online. Scope = authority + 4 tools core (Phase 1 ~30 pages: 9 data files, cost-per-print calc, filament £/kg index, price/stock tracker, printer-picker quiz); lead-gen 'get something printed' lane deferred to Phase 3. KEEP FAQPage JSON-LD (Bing/Copilot citation play). Build docs: ~/control-panel/fleet-review-prompts/3DP-MASTER-BUILD-PLAN.md (+ 3DP-BUILD-PLAYBOOK-fleet-patterns.md, NICHE-ATTACK-3d-printing-2026-06-23.md). Build via /build-site under codename printgauge, preLaunch:true.",
+  "clientViewSections": [
+   "overview",
+   "site-tree",
+   "content-plan",
+   "recommendations"
+  ],
+  "allSections": [
+   "overview",
+   "ai-readiness",
+   "ai-citations",
+   "site-manager",
+   "page-compliance",
+   "traffic",
+   "search-performance",
+   "competitors",
+   "site-tree",
+   "uptime",
+   "site-speed",
+   "crawl-activity",
+   "recommendations",
+   "content-plan",
+   "daily-audit",
+   "ecosystem",
+   "tools-calculators"
+  ],
+  "sections": [],
+  "pre_launch": true,
+  "pending_decisions": [
+   {
+    "id": "brand_domain",
+    "label": "Pick real brand name + register domain (working codename 'printgauge')",
+    "status": "TBD",
+    "owner": "Adam",
+    "note": "Adam deferred the brand (\"worry about that later\"). Scaffold under codename printgauge, set public brand in site.manifest.ts on build."
+   },
+   {
+    "id": "kick_off_build",
+    "label": "Give the go to start the one-push build (plan is locked)",
+    "status": "TBD",
+    "owner": "Adam",
+    "note": "Plan locked in 3DP-MASTER-BUILD-PLAN.md. Say go and the foundation (repo + 9 data files + 4 tools + ~30 pages) gets built in one push."
+   }
+  ],
+  "siteStatus": "needs",
+  "category": "editorial"
  }
 ]
