@@ -17,6 +17,7 @@ import LosingClicksTile from '../components/LosingClicksTile.astro';
 import TopPagesByClicksTile from '../components/TopPagesByClicksTile.astro';
 import RankingsSummaryTile from '../components/RankingsSummaryTile.astro';
 import FleetGrowthTile from '../components/FleetGrowthTile.astro';
+import DataFreshnessTile from '../components/DataFreshnessTile.astro';
 import clients from '../utils/dashboardClients';
 import { statusOf, STATUS_RANK, STATUS_PILL, STATUS_LABEL } from '../utils/siteStatus';
 import fs from 'node:fs';
@@ -307,6 +308,9 @@ if (isFleet) {
 ---
 
 <DashboardLayout title="Dashboard">
+  {/* DATA FRESHNESS — loud last-run + stale flag for every feed (Adam, 24 Jun). */}
+  <DataFreshnessTile />
+
   {/* FLEET PARITY NOTE — standing reminder to bring every site up to the completeness checklist */}
   <section data-copy-tile="Fleet parity check" class="mb-6 rounded-lg border border-amber-700/50 bg-amber-950/30 px-4 py-3">
     <div class="text-[10px] uppercase tracking-wider text-amber-300 font-semibold">Fleet parity check &middot; do this at some point</div>
