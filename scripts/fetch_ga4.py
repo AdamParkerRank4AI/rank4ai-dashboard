@@ -39,6 +39,18 @@ PROPERTIES = {
     "fundbiz": "538211877",             # G-9L5BSC5H1R
     "kartapay": "538191589",            # karta12 account
     "peptideclear": "538285241",        # peptidesa account
+    # 9 newer fleet sites — GA4 properties created 24 Jun 2026 (under the Marketinvoice
+    # account, movable later). Each still needs its measurement ID wired into the site
+    # manifest before it COLLECTS data — until then these read 0.
+    "laterlifeborrowing": "543036235",  # G-2F9G644GE6
+    "womenshealth": "543081822",        # HerVitals, G-15BBQ4CZGZ
+    "sortedproperty": "543009885",      # VettedHome, G-SX9L7T0TED
+    "adhdhelper": "543011387",          # G-LQNSE6G297
+    "homesandhedge": "543067090",       # G-NZXN4KKLZG
+    "company-rescue": "543028960",      # LTD Turnaround, G-9XMRZ8DH9K
+    "datekit": "543047906",             # Dates and Times, G-7C1VHH35J1
+    "fitgauge": "542994782",            # FitCalcs, G-N3KLPR7NFR
+    "namenest": "543102438",            # BabyData, G-DGF0X3H8ED
     # builderweb: no GA4 property yet (20 May 2026). Add when Oliver wires it.
 }
 
