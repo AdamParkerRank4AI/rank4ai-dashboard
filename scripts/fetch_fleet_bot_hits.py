@@ -140,9 +140,9 @@ def build_ai_citations(key):
             return datetime.fromisoformat((ts or "").replace("Z", "+00:00"))
         except Exception:
             return None
-    by_site = defaultdict(lambda: {"count": 0, "last_seen": None, "engines": defaultdict(int)})
+    by_site = defaultdict(lambda: {"count": 0, "c24": 0, "c7": 0, "c30": 0, "last_seen": None, "engines": defaultdict(int)})
     pages = defaultdict(lambda: {"count": 0, "last_seen": None, "bot": None, "site": None, "path": None})
-    recent, total, spoofed, fresh = [], 0, 0, 0
+    recent, total, spoofed, fresh, total_7d = [], 0, 0, 0, 0
     for r in rows:
         if (r.get("bot_category") or "") != "ai-user":
             continue
@@ -168,6 +168,14 @@ def build_ai_citations(key):
             cp["last_seen"] = ts
         dt = parse_ts(ts)
         is_fresh = bool(dt and (now - dt) <= timedelta(hours=24))
+        # Per-site rolling windows (24h / 7d / 30d). c30 == the full window count.
+        age = (now - dt) if dt else None
+        cs["c30"] += 1
+        if age is not None and age <= timedelta(days=7):
+            cs["c7"] += 1
+            total_7d += 1
+        if age is not None and age <= timedelta(hours=24):
+            cs["c24"] += 1
         if is_fresh:
             fresh += 1
         if len(recent) < 30:  # rows are created_at.desc, so this is the newest
@@ -175,10 +183,12 @@ def build_ai_citations(key):
                            "engine": eng, "asn_org": r.get("asn_org"),
                            "created_at": ts, "verdict": verdict, "fresh": is_fresh})
     return {
-        "total": total, "spoofed": spoofed, "fresh_24h": fresh,
+        "total": total, "spoofed": spoofed, "fresh_24h": fresh, "total_7d": total_7d,
         "window_total_raw": true_total, "sampled": len(rows),
         "capped": true_total > len(rows),
-        "by_site": sorted([{"site": s, "count": v["count"], "last_seen": v["last_seen"],
+        "by_site": sorted([{"site": s, "count": v["count"],
+                            "count_24h": v["c24"], "count_7d": v["c7"], "count_30d": v["c30"],
+                            "last_seen": v["last_seen"],
                             "engines": dict(v["engines"])} for s, v in by_site.items()],
                            key=lambda x: -x["count"]),
         "top_pages": sorted([{"site": v["site"], "path": v["path"], "count": v["count"],

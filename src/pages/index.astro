@@ -319,6 +319,13 @@ if (isFleet) {
     </p>
   </section>
 
+  {/* AI Citations (live) — server-log proof we were just fetched into an AI answer
+      (ai-user fetches, verified vs operator network). Moved to top + 24h/Week/Month
+      per-site toggle (Adam, 24 Jun). Both boards. */}
+  <div data-copy-tile="AI citations (live)" class="mb-6">
+    <AiCitationsTile />
+  </div>
+
   {/* SEARCH FUNNELS — the click streams that bring real visitors, headlined */}
   <section data-copy-tile="Search funnels" class="mb-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3">
     <div class="rounded-lg border border-cyan-700/60 bg-cyan-950/40 px-4 py-3">
@@ -603,12 +610,6 @@ if (isFleet) {
       <FleetBotHitsTile />
     </div>
   )}
-
-  {/* AI Citations (live) — server-log proof we were just fetched into an AI answer
-      (ai-user fetches, verified vs operator network). Both boards. */}
-  <div data-copy-tile="AI citations (live)" class="mb-6">
-    <AiCitationsTile />
-  </div>
 
   {/* Real AI citations from Bing AI Performance (Copilot + ChatGPT). Both boards. */}
   <BingAiCitationsTile />

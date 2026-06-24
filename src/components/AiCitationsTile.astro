@@ -93,14 +93,25 @@ const engineLabel = (s: any) => Object.keys(s.engines || {}).join(' · ');
       </div>
 
       <div class="grid md:grid-cols-2 gap-5">
-        <div>
-          <h3 class="text-sm font-semibold text-slate-300 mb-2">By site</h3>
+        <div data-ai-bysite data-period="24h">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-sm font-semibold text-slate-300">By site</h3>
+            <div class="inline-flex rounded-lg bg-slate-800/70 p-0.5 text-xs" role="tablist" aria-label="Citation period">
+              <button type="button" data-aiwin="24h" class="ai-win-btn rounded-md px-2.5 py-1 font-semibold">24h</button>
+              <button type="button" data-aiwin="7d" class="ai-win-btn rounded-md px-2.5 py-1 font-semibold">Week</button>
+              <button type="button" data-aiwin="30d" class="ai-win-btn rounded-md px-2.5 py-1 font-semibold">Month</button>
+            </div>
+          </div>
           <table class="w-full text-sm">
             <tbody>
               {bySite.map((s: any) => (
                 <tr class="border-b border-slate-800/70">
                   <td class="py-1.5 pr-2 font-medium">{s.site}</td>
-                  <td class="py-1.5 pr-2 text-right tabular-nums">{s.count.toLocaleString()}</td>
+                  <td class="py-1.5 pr-2 text-right tabular-nums">
+                    <span class="ai-c ai-c-24h">{(s.count_24h ?? 0).toLocaleString()}</span>
+                    <span class="ai-c ai-c-7d hidden">{(s.count_7d ?? 0).toLocaleString()}</span>
+                    <span class="ai-c ai-c-30d hidden">{(s.count_30d ?? s.count ?? 0).toLocaleString()}</span>
+                  </td>
                   <td class="py-1.5 text-right">
                     {Object.keys(s.engines || {}).map((e: string) => (
                       <span class={`ml-1 rounded px-1.5 py-0.5 text-[10px] font-semibold ${engChip(e)}`}>{e}</span>
@@ -145,4 +156,25 @@ const engineLabel = (s: any) => Object.keys(s.engines || {}).join(' · ');
       </p>
     </>
   )}
+
+  <style>
+    .ai-win-btn { color: #94a3b8; transition: all .12s; }
+    .ai-win-btn.active { background: #475569; color: #fff; }
+  </style>
+  <script is:inline>
+    (function () {
+      document.querySelectorAll('[data-ai-bysite]').forEach(function (box) {
+        var btns = box.querySelectorAll('.ai-win-btn');
+        function show(win) {
+          box.setAttribute('data-period', win);
+          btns.forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-aiwin') === win); });
+          box.querySelectorAll('.ai-c').forEach(function (s) {
+            s.classList.toggle('hidden', !s.classList.contains('ai-c-' + win));
+          });
+        }
+        btns.forEach(function (b) { b.addEventListener('click', function () { show(b.getAttribute('data-aiwin')); }); });
+        show('24h');
+      });
+    })();
+  </script>
 </section>
