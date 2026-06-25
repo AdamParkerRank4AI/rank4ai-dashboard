@@ -699,3 +699,28 @@ Weekly auto-check (conversion-review skill). Top commercial terms to push for re
 > 🔧 **404 / BROKEN-LINK FIX WORKSTREAM (added 2026-06-19):** another session is fixing real 404s on live sites — **PeptideClear ~57** (commerce `/buy//shop//retailer/` blocked on Adam's affiliate list; ~15 blog 301s; section indexes `/guides//faq//calculators//longevity//regulatory/`), **MarketInvoice** broken `/vs/` + `/providers/` (slug drift → 301/repoint), **MerchantHQ 5** (`/reviews/square|sumup`, `/locations/london`, kirana, `/gu//bn/` stubs). Fix rule: 301 if moved, else repoint/remove. Ignore false 404s (`/cdn-cgi/`, `/~partytown/`, `/api`, schema search-template). ⚠️ **COORDINATION:** this overlaps the main build session's PeptideClear (B9/B10) + MI work — the 404 session owns the bug-fix sweep; the build session holds PeptideClear new-content until it lands; **both check git + this INBOX before pushing** (we already had one duplicate-collision on equity-release).
 
 > 🛒 **MHQ FORM CROSS-SELL (added 2026-06-22):** add an "Also interested in?" step at the **end of the MerchantHQ get-quotes form** — business credit card (+ business loan / invoice finance / business bank account) → route to BBL/FundBiz/MI/affiliates; then roll to other fleet lead forms. Same SME buyer = more lead value at ~zero cost. ⚠️ needs a Supabase column + the form field-allowlist updated first (else the insert drops the row — known bug). Context: business-credit-cards niche-attack (BBL = main credit-card cluster, MHQ = payments-targeted cards) in `~/rank4ai-dashboard/business-credit-cards-niche-attack.md`.
+
+## 🔴 PeptideClear — fabricated/unverifiable health content LIVE (anti-slop sweep, 24 Jun 2026)
+The 24 Jun one-time anti-slop sweep flagged 16 majors on PeptideClear (YMYL/health). Verified real ones to remediate (verify each against a live source first; remove fabrications, do NOT invent replacements):
+- [ ] /perimenopause-and-glp1/ + /best/glp1-clinics-women-uk/ — "The Lancet published a UK RCT in Jan 2026 (HRT+GLP-1, ~25% more weight loss)" = CONFIRMED FABRICATION (no such trial; real evidence is a Mayo cohort). Remove/replace. Also uncited "78% of UK private GLP-1 patients are women".
+- [ ] /explained/asa-weight-loss-rules/ — "ASA issued an enforcement notice Sept 2025" = unverifiable, remove or source.
+- [ ] /shop/wegovy/ — "April 2026 cardiovascular outcome indication approved" = unverifiable MHRA claim.
+- [ ] /explained/protein-on-glp1/ + /sarcopenia-and-glp1/ — "25-40% of GLP-1 weight loss is lean mass (SURMOUNT/STEP)" = verify the figure + attribution or soften.
+- [ ] /compounds/selank/ + /compounds/ghrp-6/ — PubMed citation-feed noise (unrelated citations / suspect PMIDs). Citation-integrity fix.
+- [ ] /best/ghk-cu-serums-uk/ — Drunk Elephant T.L.C. Framboos listed as containing copper peptides; INCI doesn't include GHK-Cu. Correct.
+- [ ] /research-peptides/mazdutide/ + /retailer/tide-labs/ — vendor purity/"sole-in-UK" marketing claims presented as fact. Attribute or remove.
+- NOTE: NICE TA1026 citations are CORRECT (it IS the tirzepatide obesity appraisal, 23 Dec 2024) — the sweep's "TA1026 miscited" flags were false positives, leave them.
+
+## ✅ PeptideClear fabrications — REMEDIATED LIVE (24 Jun 2026, wave 1)
+Fixed + deployed: fake Lancet RCT removed, Wegovy CV date corrected to July 2024, ASA notice softened, GHK-Cu product error fixed. B15 banked content reverted off-live; main reconciled with origin + pushed. WAVE 2 STILL OPEN: selank/ghrp-6 PubMed citation-feed noise (data audit) + mazdutide/tide-labs vendor-claim attribution.
+
+## 🟠 LLB (equity-release) — 2 hollow/wrong /data/ pages (anti-slop sweep 24 Jun, NOT yet fixed)
+- [ ] /data/equity-release-rate-history/ — verify 2022 BoE base rate (page shows 1.75%; it ended 2022 ~3.5% after hikes). Correct or clarify it is a point-in-time figure.
+- [ ] /data/equity-release-adviser-density/ — presents invented regional adviser figures as a "worked illustration". Either source real figures or label clearly as illustrative / reframe (same pattern as the LTD /data/ pages, now fixed).
+
+## Anti-slop sweep — verify-first reclassifications + genuine remaining (24 Jun 2026 eod)
+NOT bugs (verified, left as-is): FitCalcs steps-to-distance (0.415 stride ratio + MET calorie method are standard + labelled an estimate = FP). LLB /data/ rate-history + adviser-density are explicitly labelled "illustrative, to be replaced with sourced data" ~6x = honest placeholders; real fix = source the data at LLB go-live (compliance-gated), not an urgent slop fix.
+GENUINE REMAINING (need a focused pass, NOT an end-of-session rush):
+- [ ] PeptideClear wave-2 (LIVE YMYL, repo on dev-b15 -> use a main worktree): (a) vendor claims on mazdutide / retailer/tide-labs / retailer/rainbow-labs presented as fact -> attribute as "claimed"; (b) selank + ghrp-6 PubMed citation-feed noise (unrelated/suspect citations) -> per-citation audit of compounds.json. NOTE: exact text locations need re-locating (grep on the assumed paths/structure came up empty 24 Jun eod).
+- [ ] Kartapay visa-vs-mastercard interchange figures (PL + RO) -> wrong/uncited EEA->UK rates; bank on dev-b22, needs factual + native review.
+- [ ] BabyData /names/themes/short-baby-names "ONS top 50" but lists 51-100 (pre-launch, on dev-b18, low urgency).
