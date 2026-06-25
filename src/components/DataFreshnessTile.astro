@@ -26,9 +26,22 @@ const checkedAt = fr?.checked_at
   : '—';
 
 const rank = (s: string) => (s === 'missing' ? 0 : s === 'very_stale' ? 1 : s === 'stale' ? 2 : 3);
-const stale = feeds
+const allStale = feeds
   .filter((f) => f.status === 'very_stale' || f.status === 'stale' || f.status === 'missing')
   .sort((a, b) => rank(a.status) - rank(b.status) || (b.age_hours || 0) - (a.age_hours || 0));
+
+// Feeds with no live producer (the job that made them was retired) — can't be
+// refreshed by running anything; need a decision, not a re-run.
+const DEAD = new Set(['agency_database', 'agency_rankings', 'keyword_gaps', 'vernacular_cardmachines']);
+// Old on purpose / produced on their own slower cadence or under cron only —
+// not actually a problem when behind the blanket 48h limit.
+const EXPECTED = new Set(['gsc_previous', 'podcast', 'full_changelog', 'site_changelog', 'google_indexing_log', 'AI Overviews SERP']);
+const isExpected = (f: any) => EXPECTED.has(f.label) || String(f.label || '').startsWith('site_structure_');
+
+const dead = allStale.filter((f) => DEAD.has(f.label));
+const expected = allStale.filter((f) => !DEAD.has(f.label) && isExpected(f));
+// The only bucket that should raise alarm: a live producer that hasn't run.
+const stale = allStale.filter((f) => !DEAD.has(f.label) && !isExpected(f));
 
 const fresh = summary.fresh ?? feeds.filter((f) => f.status === 'fresh').length;
 const total = summary.total ?? feeds.length;
@@ -54,8 +67,10 @@ const flagCls = (s: string) => s === 'stale' ? 'bg-amber-500/20 text-amber-300' 
       <span class="text-xs text-slate-400">
         <span class="text-emerald-300 font-bold">{fresh}</span> fresh ·
         {badCount > 0
-          ? <span class={`font-bold ${toneText}`}>{badCount} need a refresh</span>
-          : <span class="text-emerald-300 font-bold">all current</span>}
+          ? <span class={`font-bold ${toneText}`}>{badCount} need running</span>
+          : <span class="text-emerald-300 font-bold">all live feeds current</span>}
+        {dead.length > 0 && <span class="text-slate-500"> · {dead.length} retired</span>}
+        {expected.length > 0 && <span class="text-slate-500"> · {expected.length} scheduled</span>}
         · checked {checkedAt}
       </span>
     </div>
@@ -64,30 +79,55 @@ const flagCls = (s: string) => s === 'stale' ? 'bg-amber-500/20 text-amber-300' 
     )}
   </div>
 
-  {badCount > 0 && (
+  {(badCount > 0 || dead.length > 0 || expected.length > 0) && (
     <details class="mt-3">
       <summary class="cursor-pointer text-xs text-slate-400 hover:text-slate-200 select-none list-none [&::-webkit-details-marker]:hidden">
-        ▸ Show {badCount} stale feed{badCount > 1 ? 's' : ''} — last-run dates
+        ▸ Show feed last-run dates{badCount > 0 ? ` — ${badCount} need running` : ' — all live feeds current'}
       </summary>
-      <div class="mt-2 max-h-72 overflow-y-auto pr-1">
-        <table class="w-full text-xs">
-          <tbody>
-            {stale.map((f) => (
-              <tr class="border-b border-slate-800/60">
-                <td class="py-1 pr-2 font-medium text-slate-200">{f.label || f.file}</td>
-                <td class="py-1 pr-2 text-slate-400 whitespace-nowrap">{lastRun(f)}</td>
-                <td class="py-1 text-right">
-                  <span class={`rounded px-1.5 py-0.5 text-[10px] font-bold ${flagCls(f.status)}`}>{flag(f.status)}</span>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div class="mt-2 max-h-80 overflow-y-auto pr-1 space-y-3">
+        {badCount > 0 && (
+          <div>
+            <div class="text-[10px] uppercase tracking-wider text-rose-300 font-semibold mb-1">Needs running — run refresh_all.py</div>
+            <table class="w-full text-xs"><tbody>
+              {stale.map((f) => (
+                <tr class="border-b border-slate-800/60">
+                  <td class="py-1 pr-2 font-medium text-slate-200">{f.label || f.file}</td>
+                  <td class="py-1 pr-2 text-slate-400 whitespace-nowrap">{lastRun(f)}</td>
+                  <td class="py-1 text-right"><span class={`rounded px-1.5 py-0.5 text-[10px] font-bold ${flagCls(f.status)}`}>{flag(f.status)}</span></td>
+                </tr>
+              ))}
+            </tbody></table>
+          </div>
+        )}
+        {expected.length > 0 && (
+          <div>
+            <div class="text-[10px] uppercase tracking-wider text-amber-300/80 font-semibold mb-1">Scheduled / by design — no action (weekly cron, prev-period baseline, or cron-token feeds)</div>
+            <table class="w-full text-xs"><tbody>
+              {expected.map((f) => (
+                <tr class="border-b border-slate-800/40">
+                  <td class="py-1 pr-2 text-slate-300">{f.label || f.file}</td>
+                  <td class="py-1 pr-2 text-slate-500 whitespace-nowrap">{lastRun(f)}</td>
+                  <td class="py-1 text-right"><span class="rounded px-1.5 py-0.5 text-[10px] font-semibold bg-slate-700/50 text-slate-400">SCHEDULED</span></td>
+                </tr>
+              ))}
+            </tbody></table>
+          </div>
+        )}
+        {dead.length > 0 && (
+          <div>
+            <div class="text-[10px] uppercase tracking-wider text-slate-500 font-semibold mb-1">Retired — no producer (decide: rebuild job or remove feed)</div>
+            <table class="w-full text-xs"><tbody>
+              {dead.map((f) => (
+                <tr class="border-b border-slate-800/40">
+                  <td class="py-1 pr-2 text-slate-400">{f.label || f.file}</td>
+                  <td class="py-1 pr-2 text-slate-600 whitespace-nowrap">{lastRun(f)}</td>
+                  <td class="py-1 text-right"><span class="rounded px-1.5 py-0.5 text-[10px] font-semibold bg-slate-800 text-slate-500">RETIRED</span></td>
+                </tr>
+              ))}
+            </tbody></table>
+          </div>
+        )}
       </div>
-      <p class="text-[11px] text-slate-500 mt-2">
-        Daily board feeds refresh automatically each morning. The feeds above are heavier / weekly research pulls
-        (DataForSEO, SERP, Knowledge Graph, NLP, citation prompts) — run <code class="text-slate-300">refresh_all.py</code> to bring them current.
-      </p>
     </details>
   )}
 </section>
