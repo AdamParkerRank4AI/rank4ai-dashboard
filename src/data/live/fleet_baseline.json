@@ -1,10 +1,10 @@
 {
-  "checked_at": "2026-06-12T10:30:22.056272+00:00",
+  "checked_at": "2026-06-24T20:10:35.483642+00:00",
   "summary": {
     "total_sites": 8,
-    "passing_sites": 6,
+    "passing_sites": 5,
     "total_checks": 120,
-    "failed_checks": 2
+    "failed_checks": 3
   },
   "sites": {
     "rank4ai": {
@@ -32,8 +32,8 @@
           "detail": "skipped (fleet rejected llms.txt 21 May 2026)"
         },
         "ai_txt": {
-          "pass": false,
-          "detail": "HTTP 0"
+          "pass": true,
+          "detail": "HTTP 200"
         },
         "indexnow_key": {
           "pass": true,
@@ -74,8 +74,8 @@
       },
       "summary": {
         "checks": 15,
-        "failed": 1,
-        "pass_rate": 93.3
+        "failed": 0,
+        "pass_rate": 100.0
       }
     },
     "market-invoice": {
@@ -123,8 +123,8 @@
           "detail": "WebSite present"
         },
         "no_faqpage": {
-          "pass": true,
-          "detail": "FAQPage absent (correct)"
+          "pass": false,
+          "detail": "FAQPage EMITTED \u2014 violates fleet baseline"
         },
         "og_image_png": {
           "pass": true,
@@ -145,8 +145,8 @@
       },
       "summary": {
         "checks": 15,
-        "failed": 0,
-        "pass_rate": 100.0
+        "failed": 1,
+        "pass_rate": 93.3
       }
     },
     "seocompare": {
@@ -407,8 +407,8 @@
           "detail": "WebSite present"
         },
         "no_faqpage": {
-          "pass": true,
-          "detail": "FAQPage absent (correct)"
+          "pass": false,
+          "detail": "FAQPage EMITTED \u2014 violates fleet baseline"
         },
         "og_image_png": {
           "pass": true,
@@ -429,8 +429,8 @@
       },
       "summary": {
         "checks": 15,
-        "failed": 0,
-        "pass_rate": 100.0
+        "failed": 1,
+        "pass_rate": 93.3
       }
     },
     "peptideclear": {
