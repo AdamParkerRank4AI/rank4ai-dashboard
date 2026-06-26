@@ -18,6 +18,7 @@ import TopPagesByClicksTile from '../components/TopPagesByClicksTile.astro';
 import RankingsSummaryTile from '../components/RankingsSummaryTile.astro';
 import FleetGrowthTile from '../components/FleetGrowthTile.astro';
 import DataFreshnessTile from '../components/DataFreshnessTile.astro';
+import AreaFreshnessTile from '../components/AreaFreshnessTile.astro';
 import clients from '../utils/dashboardClients';
 import { statusOf, STATUS_RANK, STATUS_PILL, STATUS_LABEL } from '../utils/siteStatus';
 import fs from 'node:fs';
@@ -308,6 +309,9 @@ if (isFleet) {
 ---
 
 <DashboardLayout title="Dashboard">
+  {/* LAST UPDATED BY AREA — per-area freshness so "looks live but isn't" is obvious (Adam, 26 Jun). */}
+  <AreaFreshnessTile />
+
   {/* DATA FRESHNESS — loud last-run + stale flag for every feed (Adam, 24 Jun). */}
   <DataFreshnessTile />
 

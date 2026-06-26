@@ -1,0 +1,127 @@
+---
+/**
+ * AreaFreshnessTile — "Last updated by area". The fix for "it looks like it's all
+ * live but it's not": maps each dashboard AREA (the user-facing tiles) to the data
+ * file behind it and shows when that file was last refreshed, colour-coded by age
+ * and sorted stalest-first so the not-actually-current areas surface immediately.
+ * Reads data_freshness.json (per-file age_hours + ts, written by check_data_freshness.py);
+ * falls back to a file's own generated_at/fetched_at if not tracked there.
+ * Added 26 Jun 2026 (Adam: show when each area was last updated).
+ */
+import fs from 'node:fs';
+import path from 'node:path';
+
+function loadJson(filename: string) {
+  try {
+    const fp = path.join(process.cwd(), 'src', 'data', 'live', filename);
+    if (fs.existsSync(fp)) return JSON.parse(fs.readFileSync(fp, 'utf-8'));
+  } catch {}
+  return null;
+}
+
+// AREA -> the data file behind it + expected cadence (daily feeds should be <~30h;
+// weekly feeds <~8d). cadence tunes the colour so a weekly feed isn't flagged red
+// just for being 3 days old.
+const AREAS: { name: string; file: string; cadence: 'daily' | 'weekly' }[] = [
+  { name: 'AI Citations (live)',     file: 'fleet_bot_hits.json',   cadence: 'daily' },
+  { name: 'AI Citations (Bing)',     file: 'bing_ai_citations.json',cadence: 'weekly' },
+  { name: 'Rankings (GSC)',          file: 'gsc.json',              cadence: 'daily' },
+  { name: 'Fleet growth (GSC daily)',file: 'gsc_daily.json',        cadence: 'daily' },
+  { name: 'Bing search',             file: 'bing.json',             cadence: 'daily' },
+  { name: 'AI visibility (citations)',file: 'citation_results.json',cadence: 'weekly' },
+  { name: 'Human / AI traffic (GA4)',file: 'ga4.json',              cadence: 'daily' },
+  { name: 'Site audit',              file: 'daily_audit_summary.json', cadence: 'daily' },
+  { name: 'AI bot intelligence',     file: 'fleet_bot_hits.json',   cadence: 'daily' },
+  { name: 'Crawl activity',          file: 'crawl_activity.json',   cadence: 'daily' },
+  { name: 'CF AI crawls',            file: 'cf_ai_crawls.json',     cadence: 'daily' },
+  { name: 'Recommendations',         file: 'recommendations.json',  cadence: 'daily' },
+  { name: 'Indexing health',         file: 'indexing_health.json',  cadence: 'daily' },
+  { name: 'Content freshness',       file: 'content_freshness.json',cadence: 'weekly' },
+  { name: 'SERP / AI Overviews',     file: 'serp_data.json',        cadence: 'weekly' },
+  { name: 'Knowledge graph / entities', file: 'knowledge_graph.json', cadence: 'weekly' },
+  { name: 'Google Trends',           file: 'google_trends.json',    cadence: 'weekly' },
+  { name: 'PageSpeed',               file: 'pagespeed.json',        cadence: 'weekly' },
+];
+
+const fr = loadJson('data_freshness.json');
+const byFile: Record<string, any> = {};
+for (const f of (fr?.feeds || [])) byFile[f.file] = f;
+
+function tsFor(file: string): { ageH: number | null; ts: string | null } {
+  const e = byFile[file];
+  if (e && e.age_hours != null) return { ageH: e.age_hours, ts: e.ts || null };
+  // fallback: read the file's own timestamp field
+  const d = loadJson(file);
+  const raw = d?.generated_at || d?.fetched_at || d?.checked_at || d?.updated_at || null;
+  if (raw) { try { const ageH = (Date.parse(raw) ? (Date.now() - Date.parse(raw)) / 3.6e6 : null); return { ageH, ts: raw }; } catch {} }
+  return { ageH: null, ts: null };
+}
+
+const rows = AREAS.map((a) => {
+  const { ageH, ts } = tsFor(a.file);
+  // stale thresholds by cadence
+  const okMax = a.cadence === 'daily' ? 30 : 8 * 24;   // green up to
+  const warnMax = a.cadence === 'daily' ? 3 * 24 : 14 * 24; // amber up to
+  let status: 'ok' | 'warn' | 'bad' | 'missing' = 'missing';
+  if (ageH != null) status = ageH <= okMax ? 'ok' : ageH <= warnMax ? 'warn' : 'bad';
+  return { ...a, ageH, ts, status };
+}).sort((x, y) => (y.ageH ?? 1e9) - (x.ageH ?? 1e9)); // stalest first
+
+const ago = (h: number | null) => h == null ? 'never' : h < 1 ? `${Math.round(h * 60)}m ago` : h < 48 ? `${Math.round(h)}h ago` : `${Math.round(h / 24)}d ago`;
+const when = (ts: string | null) => { if (!ts) return ''; try { return new Date(ts).toLocaleString('en-GB', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }); } catch { return ''; } };
+const dot = (s: string) => s === 'ok' ? 'bg-emerald-400' : s === 'warn' ? 'bg-amber-400' : s === 'bad' ? 'bg-rose-500' : 'bg-slate-600';
+const txt = (s: string) => s === 'ok' ? 'text-emerald-300' : s === 'warn' ? 'text-amber-300' : s === 'bad' ? 'text-rose-300' : 'text-slate-500';
+
+const bad = rows.filter((r) => r.status === 'bad' || r.status === 'missing').length;
+const warn = rows.filter((r) => r.status === 'warn').length;
+---
+<section data-copy-tile="Last updated by area" class="rounded-xl bg-slate-900 border border-slate-800 p-4 mb-6">
+  <div class="flex items-baseline justify-between flex-wrap gap-2 mb-3">
+    <h2 class="text-sm font-bold uppercase tracking-wider text-slate-300">Last updated by area</h2>
+    <span class="text-xs text-slate-400">
+      <span class="text-emerald-300 font-bold">{rows.filter((r) => r.status === 'ok').length}</span> current
+      {warn > 0 && <span> · <span class="text-amber-300 font-bold">{warn}</span> lagging</span>}
+      {bad > 0 && <span> · <span class="text-rose-300 font-bold">{bad}</span> stale</span>}
+      <span class="text-slate-500"> · stalest first</span>
+    </span>
+  </div>
+  <div data-area-fresh class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-1.5">
+    {rows.map((r) => (
+      <div class="area-row flex items-center gap-2 text-sm py-0.5" data-ts={r.ts || ''} data-cadence={r.cadence}>
+        <span class={`area-dot h-2 w-2 rounded-full shrink-0 ${dot(r.status)}`}></span>
+        <span class="text-slate-200 truncate flex-1">{r.name}</span>
+        <span class={`area-age tabular-nums whitespace-nowrap ${txt(r.status)}`} title={when(r.ts)}>{ago(r.ageH)}</span>
+      </div>
+    ))}
+  </div>
+  <p class="text-[11px] text-slate-500 mt-2.5">🟢 current · 🟡 lagging · 🔴 stale (daily feeds &gt;3d, weekly &gt;14d). The static board can't refresh itself — these ages are computed live in your browser, so they're true whenever you look. A stale area means its tile below is showing OLD numbers.</p>
+
+  <script is:inline>
+    (function () {
+      // Compute age live in-browser from each row's embedded timestamp, so the
+      // freshness panel can't itself go stale between static deploys.
+      var now = Date.now();
+      function ago(h) { return h == null ? 'never' : h < 1 ? Math.round(h * 60) + 'm ago' : h < 48 ? Math.round(h) + 'h ago' : Math.round(h / 24) + 'd ago'; }
+      document.querySelectorAll('[data-area-fresh] .area-row').forEach(function (row) {
+        var ts = row.getAttribute('data-ts');
+        var cad = row.getAttribute('data-cadence');
+        var ageEl = row.querySelector('.area-age');
+        var dotEl = row.querySelector('.area-dot');
+        var t = ts ? Date.parse(ts) : NaN;
+        var h = isNaN(t) ? null : (now - t) / 3.6e6;
+        var okMax = cad === 'daily' ? 30 : 192, warnMax = cad === 'daily' ? 72 : 336;
+        var st = h == null ? 'missing' : h <= okMax ? 'ok' : h <= warnMax ? 'warn' : 'bad';
+        var dotC = { ok: 'bg-emerald-400', warn: 'bg-amber-400', bad: 'bg-rose-500', missing: 'bg-slate-600' }[st];
+        var txtC = { ok: 'text-emerald-300', warn: 'text-amber-300', bad: 'text-rose-300', missing: 'text-slate-500' }[st];
+        if (ageEl) { ageEl.textContent = ago(h); ageEl.className = 'area-age tabular-nums whitespace-nowrap ' + txtC; }
+        if (dotEl) { dotEl.className = 'area-dot h-2 w-2 rounded-full shrink-0 ' + dotC; }
+        row.dataset.ageh = (h == null ? 1e9 : h);
+      });
+      // re-sort stalest-first using the live ages
+      var box = document.querySelector('[data-area-fresh]');
+      if (box) Array.from(box.querySelectorAll('.area-row'))
+        .sort(function (a, b) { return (b.dataset.ageh - a.dataset.ageh); })
+        .forEach(function (el) { box.appendChild(el); });
+    })();
+  </script>
+</section>
