@@ -19,6 +19,7 @@ import clients from '../utils/dashboardClients';
 
 // Map raw site ids (e.g. "cardmachines") to friendly client names ("MerchantHQ").
 const nameOf = (id: string) => (clients as any[]).find((c) => c.id === id)?.name || id;
+const idNameMap = JSON.stringify(Object.fromEntries((clients as any[]).map((c) => [c.id, c.name])));
 
 function loadJson(filename: string) {
   try {
@@ -60,17 +61,16 @@ const engineLabel = (s: any) => Object.keys(s.engines || {}).join(' · ');
 <section class="rounded-xl bg-slate-900 text-slate-100 p-6 my-6 border border-slate-800">
   <div class="flex items-baseline justify-between flex-wrap gap-2 mb-1">
     <h2 class="text-lg font-bold flex items-center gap-2">
-      AI Citations <span class="text-xs font-normal text-slate-400">(live — we were just fetched into an AI answer)</span>
+      AI Citations <span class="text-xs font-normal text-slate-400">(we were just fetched into an AI answer)</span>
+      <span id="aic-live" title="Refreshed live from Supabase on load + every 60s" class="text-[10px] font-semibold text-slate-400 rounded px-1.5 py-0.5 bg-slate-800">snapshot</span>
     </h2>
-    {fresh > 0 && (
-      <span class="inline-flex items-center gap-1.5 rounded-full bg-rose-500/15 text-rose-300 text-xs font-semibold px-3 py-1">
-        <span class="relative flex h-2 w-2">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-rose-400"></span>
-        </span>
-        {fresh.toLocaleString()} in last 24h
+    <span id="aic-24h-pill" class={`inline-flex items-center gap-1.5 rounded-full bg-rose-500/15 text-rose-300 text-xs font-semibold px-3 py-1 ${fresh > 0 ? '' : 'hidden'}`}>
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-rose-400"></span>
       </span>
-    )}
+      <span id="aic-24h-pill-n">{fresh.toLocaleString()}</span> in last 24h
+    </span>
   </div>
 
   {!c || total === 0 ? (
@@ -83,7 +83,7 @@ const engineLabel = (s: any) => Object.keys(s.engines || {}).join(' · ');
           <div class="text-xs text-slate-400">AI-answer fetches · {win}d</div>
         </div>
         <div class="rounded-lg bg-slate-800/60 p-3">
-          <div class="text-2xl font-bold text-rose-300">{fresh.toLocaleString()}</div>
+          <div class="text-2xl font-bold text-rose-300"><span id="aic-24h-stat">{fresh.toLocaleString()}</span></div>
           <div class="text-xs text-slate-400">last 24h</div>
         </div>
         <div class="rounded-lg bg-slate-800/60 p-3">
@@ -141,7 +141,7 @@ const engineLabel = (s: any) => Object.keys(s.engines || {}).join(' · ');
       </div>
 
       <h3 class="text-sm font-semibold text-slate-300 mt-5 mb-2">Recent live fetches</h3>
-      <div class="space-y-1">
+      <div id="aic-recent" class="space-y-1">
         {recent.map((r: any) => (
           <div class="flex items-center gap-2 text-sm border-b border-slate-800/60 py-1">
             {r.fresh
@@ -179,6 +179,44 @@ const engineLabel = (s: any) => Object.keys(s.engines || {}).join(' · ');
         btns.forEach(function (b) { b.addEventListener('click', function () { show(b.getAttribute('data-aiwin')); }); });
         show('24h');
       });
+    })();
+  </script>
+
+  {/* LIVE feed — fetch /api/ai-citations (Pages Function -> Supabase) on load + every
+      60s so the "recent fetches" + 24h count are actually live, not the daily snapshot. */}
+  <script type="application/json" id="aic-names" set:html={idNameMap}></script>
+  <script is:inline>
+    (function () {
+      var names = {};
+      try { names = JSON.parse(document.getElementById('aic-names').textContent || '{}'); } catch (e) {}
+      var nameOf = function (id) { return names[id] || id; };
+      var engCol = { openai: 'background:rgba(16,185,129,.2);color:#6ee7b7', perplexity: 'background:rgba(14,165,233,.2);color:#7dd3fc', anthropic: 'background:rgba(139,92,246,.2);color:#c4b5fd', mistral: 'background:rgba(245,158,11,.2);color:#fcd34d' };
+      function chip(e) { return engCol[e] || 'background:#334155;color:#cbd5e1'; }
+      function ago(ts) { var d = (Date.now() - Date.parse(ts)) / 1000; if (isNaN(d)) return ''; if (d < 60) return Math.round(d) + 's ago'; if (d < 3600) return Math.round(d / 60) + 'm ago'; if (d < 86400) return Math.round(d / 3600) + 'h ago'; return Math.round(d / 86400) + 'd ago'; }
+      function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+      function paint(d) {
+        var live = document.getElementById('aic-live');
+        if (!d || !d.live) { if (live) { live.textContent = 'snapshot · daily'; } return; }
+        if (live) { live.textContent = '● LIVE · updated now'; live.style.cssText = 'color:#6ee7b7;background:rgba(16,185,129,.15)'; }
+        var s24 = document.getElementById('aic-24h-stat'); if (s24) s24.textContent = (d.total_24h || 0).toLocaleString();
+        var pn = document.getElementById('aic-24h-pill-n'); var pill = document.getElementById('aic-24h-pill');
+        if (pn) pn.textContent = (d.total_24h || 0).toLocaleString();
+        if (pill) pill.classList.toggle('hidden', !(d.total_24h > 0));
+        var box = document.getElementById('aic-recent');
+        if (box && Array.isArray(d.recent)) {
+          box.innerHTML = d.recent.map(function (r) {
+            return '<div class="flex items-center gap-2 text-sm border-b border-slate-800/60 py-1">' +
+              (r.fresh ? '<span class="rounded bg-rose-500/20 text-rose-300 text-[10px] font-bold px-1.5 py-0.5">NEW</span>' : '<span class="w-9"></span>') +
+              '<span class="rounded px-1.5 py-0.5 text-[10px] font-semibold" style="' + chip(r.engine) + '">' + esc(r.bot) + '</span>' +
+              '<span class="truncate flex-1"><span class="text-slate-400">' + esc(nameOf(r.site)) + '</span>' + esc(r.path) + '</span>' +
+              '<span class="text-xs text-slate-500 whitespace-nowrap">' + ago(r.created_at) + '</span></div>';
+          }).join('') || '<p class="text-sm text-slate-400">No verified AI fetches yet.</p>';
+        }
+      }
+      function refresh() { fetch('/api/ai-citations', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(paint).catch(function () {}); }
+      refresh();
+      setInterval(refresh, 60000);
     })();
   </script>
 </section>
