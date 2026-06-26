@@ -200,8 +200,10 @@ def build_payload(site_id: str, table: str, now: datetime, week_ago: str, month_
 
     # "Step 1 start" = first identifiable partial. Multi-step fleet forms write
     # 'step_1_complete'; single-step forms (MerchantHQ, Kartapay) write
-    # 'partial_lead'. Count both so the drop-off funnel works for every site.
-    STEP1_TYPES = {"step_1_complete", "partial_lead"}
+    # 'partial_lead'. 'step_1_started' (added 25 Jun 2026) fires the moment a
+    # visitor first engages — captures early drop-offs that bail before completing
+    # the heavy step 1 (previously invisible). Count all so the funnel is honest.
+    STEP1_TYPES = {"step_1_complete", "partial_lead", "step_1_started"}
     step1_7d = sum(
         1 for r in recent
         if r["created_at"] >= week_ago and (r.get("event_type") or "") in STEP1_TYPES

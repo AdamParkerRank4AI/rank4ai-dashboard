@@ -479,19 +479,28 @@ says ship.</p>
 <tr>
 <td><strong>QA · Anti-slop sweep</strong> (per-site
 <code>/antislop-check</code>, standing gate)</td>
-<td>🔄 <strong>MI ✅ + MHQ ✅ + LTD-Turnaround ✅ + HomesAndHedge ✅ +
-VettedHome ✅ (24 Jun)</strong> — sweeps done, ledger-tracked · daily
-<code>--new</code> delta live
-(<code>com.fleet.antislop-spotcheck</code>). <strong>Smaller sites much
-cleaner:</strong> H&amp;H 0 major, VettedHome 0 major;
-<strong>LTD-Turnaround 3 major = 3 hollow <code>/data/</code> “tracker”
-pages</strong> (director-disqualifications, late-payment-index,
-strike-off-objections) that claim to show figures but contain none +
-verbatim-repeated padding → <strong>populate with real Insolvency
-Service/PPR data or reframe the over-claim</strong> (logged, not
-auto-fixed). <strong>~10 sites still pending.</strong> ⚠️ skeptic
-over-flags ~50% on concrete claims (false “future date” on 2026 stamps;
-uncited≠fabricated) — verify live before fixing</td>
+<td>✅ <strong>ONE-TIME SWEEP COMPLETE — all 13 in-scope sites except
+BBL + FundBiz (other session’s lane), 24 Jun.</strong> All
+ledger-tracked; daily <code>--new</code> delta live. <strong>Clean (0
+major):</strong> HomesAndHedge, VettedHome, ADHD Helper, Her Vitals.
+<strong>Real findings to action (verified, ~50% of raw flags were
+skeptic FPs):</strong> 🔴 <strong>PeptideClear (16 maj) = URGENT,
+YMYL</strong> — fabricated/unverifiable health content LIVE:
+confirmed-fake “Lancet Jan 2026 UK HRT+GLP-1 RCT” (×2 pages), plus “ASA
+enforcement notice Sept 2025”, “April 2026 Wegovy CV indication”,
+uncited “78% women”/“25-40% lean-mass” stats, GHK-Cu product
+misattribution, vendor purity claims, + PubMed citation-feed noise
+(selank/ghrp-6). NICE TA1026 flags were FALSE (it IS the real
+tirzepatide appraisal, 23 Dec 2024 — verified, leave). 🟠
+<strong>Kartapay (6)</strong> = wrong finance figures (EEA→UK
+interchange; “£100 contactless removed Oct 2021” is backwards — it was
+<em>introduced</em> then; FCA decline-reason overclaim; uncited BNPL
+uplift). 🟠 <strong>LTD-Turnaround (3) + LLB (2)</strong> =
+hollow/illustrative <code>/data/</code> “tracker” pages (fleet pattern →
+real data or reframe). <strong>DatesAndTimes (1)</strong> = invented
+“World Cup bank holiday 15 Jun 2026” (fix — it’s a data site). FitCalcs
+(1) minor formula. BabyData (2, pre-launch) = ONS top-50 vs 51-100
+mislabel. ⚠️ verify each before fixing</td>
 </tr>
 <tr>
 <td><strong>B1</strong> GEO caveats (MHQ/Kartapay)</td>
@@ -749,6 +758,16 @@ list in the GROW-BRIEF doc.</p>
 <h2 id="build-log-what-shipped-with-real-deploy-status">Build log (what
 shipped, with real deploy status)</h2>
 <ul>
+<li><strong>24 Jun (pm) — anti-slop MAJOR remediation</strong> —
+PeptideClear (YMYL) fabrications removed + LIVE (fake Lancet RCT, wrong
+Wegovy CV date-&gt;July 2024, ASA notice, GHK-Cu product error);
+premature banked-B15 deploy reverted + main reconciled with
+origin/pushed. LTD Turnaround 3 hollow /data/ trackers reframed + LIVE.
+DatesAndTimes “World Cup BH” verified REAL (Scotland gov.uk) = no fix.
+Kartapay contactless+tipping factfix BANKED on dev-b22. REMAINING
+(FLEET_INBOX): PeptideClear wave-2 citation/vendor, Kartapay
+interchange, LLB 2 /data/ majors. ~50% of skeptic flags were FPs
+(verify-first essential). ✅</li>
 <li><strong>24 Jun — anti-slop sweeps + fixes LIVE</strong> — MI + MHQ
 full sweeps reviewed; real bugs fixed + live: MI non-IF mislabel
 (Allianz/Funding Circle, <code>9963454</code>), MHQ Zettle price + trade
@@ -1146,6 +1165,16 @@ BabyData ONS labelling/SMP currency, DatesAndTimes substitute-days.</li>
 </ul>
 <h2 id="linked-build-plan-docs">📄 Linked build-plan docs</h2>
 <ul>
+<li><strong>⭐
+<code>~/control-panel/fleet-review-prompts/FLEET-SUGGESTIONS-LIST.md</code></strong>
+(24 Jun) — the clean per-site MASTER build list: data assets · tools ·
+content/question pages · authority anchor, for all 19 sites (Finterra +
+ResilienceBuilder excluded). Cross-engine collated
+(GPT-5/Gemini/Qwen/Grok), ⭐ = top picks. Bottom has the status split
+(build-now / YMYL-hold-the-expert / greenfield-bank) + cross-fleet
+shared engines. Full sourcing + verify/conflict flags + expert audit in
+<code>CITATION-MOAT-HANDOFF-2026-06-24.md</code>. <strong>This is the
+build queue to work from next.</strong></li>
 <li><strong><code>~/control-panel/INVOICE_FINANCE_BUILD_PLAN.md</code></strong>
 — MI (#1) + 2nd IF site (#12): MI plumbing (Bing WMT, citation checks,
 ItemList, sector×turnover, lead-qual); 2nd-IF (85-provider DB,
