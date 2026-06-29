@@ -22,6 +22,14 @@ SITES = {
     "kartapay": "https://kartapay.co.uk/",
     "peptideclear": "https://peptideclear.co.uk/",
 }
+# Wire every fleet site (Adam 29 Jun: "wire everything in as we don't know when it
+# will start to move"). Sites without a verified Bing property just error-skip per
+# site until verified — no false data, ready to flow the moment they're added.
+try:
+    import fleet_sites
+    SITES = fleet_sites.merge(SITES)
+except Exception:
+    pass
 
 
 def fetch_site(site_url, site_id):

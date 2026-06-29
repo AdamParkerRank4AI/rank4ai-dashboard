@@ -39,6 +39,18 @@ SITES_FALLBACK = {
     "peptideclear": "https://peptideclear.co.uk/",
 }
 
+# Wire every fleet site (Adam 29 Jun: "wire everything in"). Newer sites are added as
+# sc-domain properties; until the domain is verified in Search Console the API call
+# error-skips per site (no false data), then flows automatically once verified.
+try:
+    import fleet_sites
+    for _sid, _url in fleet_sites.all_fetchable().items():
+        if _sid not in SITES:
+            _host = _url.replace("https://", "").replace("http://", "").rstrip("/")
+            SITES[_sid] = f"sc-domain:{_host}"
+except Exception:
+    pass
+
 
 def get_creds():
     with open(TOKEN_FILE) as f:

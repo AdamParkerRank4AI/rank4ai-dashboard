@@ -35,9 +35,37 @@ def live_fleet():
     return out
 
 
-def merge(existing):
-    """Add any live fleet sites missing from `existing` (keeps existing URLs)."""
+def all_fetchable():
+    """Return {site_id: https-url} for EVERY client that has a real host domain,
+    regardless of siteStatus (live / paused / needs / prelaunch). Adam (29 Jun 2026):
+    'wire everything in as we don't know when it will start to move' — so the board
+    has a row ready the moment a site gets traffic, no manual roster edit needed.
+    Excludes: clients with no domain (e.g. printgauge, invoicefinance) and path-only
+    entries that aren't standalone sites (e.g. 49k.co.uk/legal-leadgen)."""
+    out = {}
+    try:
+        clients = json.load(open(_CLIENTS))
+    except Exception:
+        return out
+    for c in clients:
+        dom = c.get("liveDomain") or c.get("domain")
+        if not dom:
+            continue
+        host = str(dom).replace("https://", "").replace("http://", "")
+        if "/" in host:          # path-only entry (e.g. 49k.co.uk/legal-leadgen) — not a site
+            continue
+        if not str(dom).startswith("http"):
+            dom = "https://" + dom
+        out[c["id"]] = dom
+    return out
+
+
+def merge(existing, include_all=True):
+    """Add any missing fleet sites to `existing` (keeps existing URLs). Default
+    include_all=True wires EVERY site with a real domain (any status); pass
+    include_all=False for live-only."""
     merged = dict(existing or {})
-    for sid, url in live_fleet().items():
+    source = all_fetchable() if include_all else live_fleet()
+    for sid, url in source.items():
         merged.setdefault(sid, url)
     return merged
