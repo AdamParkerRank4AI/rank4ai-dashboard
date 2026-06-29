@@ -45,6 +45,7 @@ for s in \
   fetch_crawl_activity.py \
   fetch_bot_hits.py \
   fetch_fleet_bot_hits.py \
+  archive_ai_fetches.py \
   fetch_cf_ai_crawls.py \
   fetch_human_traffic.py \
   fetch_competitor_serp.py \

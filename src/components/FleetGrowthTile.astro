@@ -46,22 +46,31 @@ for (const [siteId, blk] of Object.entries((bingCit.by_site || {}) as Record<str
   }
 }
 
+// Live AI fetches over time — the bigger signal (ChatGPT/Perplexity/Claude pulling
+// our pages live to answer a user). Daily archive from Supabase fleet_bot_hits
+// (archive_ai_fetches.py). Added 29 Jun (Adam: "yes wire").
+const fetchHist = loadJson('ai_fetch_history.json') || { days: [] };
+const fetchByDate: Record<string, number> = {};
+for (const d of (fetchHist.days || [])) if (d?.date) fetchByDate[d.date] = d.total || 0;
+
 const dates = Object.keys(byDate).sort();
 const labels = dates;
 const impressions = dates.map((d) => byDate[d].impressions);
 const clicks = dates.map((d) => byDate[d].clicks);
 const citations = dates.map((d) => (d in citByDate ? citByDate[d] : null));
+const aifetches = dates.map((d) => (d in fetchByDate ? fetchByDate[d] : null));
 
 const totalImpr = impressions.reduce((s, n) => s + n, 0);
 const totalClicks = clicks.reduce((s, n) => s + n, 0);
 const totalCit = citations.reduce((s: number, n) => s + (n || 0), 0);
+const totalFetch = aifetches.reduce((s: number, n) => s + (n || 0), 0);
 // crude growth signal: last 7d avg vs first 7d avg of the window
 const avg = (arr: number[]) => arr.length ? Math.round(arr.reduce((s, n) => s + n, 0) / arr.length) : 0;
 const firstWk = avg(impressions.slice(0, 7));
 const lastWk = avg(impressions.slice(-7));
 const growthPct = firstWk > 0 ? Math.round(((lastWk - firstWk) / firstWk) * 100) : null;
 
-const chartData = JSON.stringify({ labels, impressions, clicks, citations });
+const chartData = JSON.stringify({ labels, impressions, clicks, citations, aifetches });
 ---
 {labels.length > 1 && (
   <section data-copy-tile="Fleet growth" class="rounded-xl bg-slate-900 border border-emerald-800/40 p-5 mb-6">
@@ -71,7 +80,8 @@ const chartData = JSON.stringify({ labels, impressions, clicks, citations });
         <span class="text-xs text-slate-400">
           <span class="text-emerald-300 font-bold">{totalImpr.toLocaleString()}</span> impressions ·
           <span class="text-emerald-300 font-bold">{totalClicks.toLocaleString()}</span> clicks ·
-          <span class="text-violet-300 font-bold">{totalCit.toLocaleString()}</span> AI citations · {labels.length}d
+          <span class="text-violet-300 font-bold">{totalCit.toLocaleString()}</span> Bing citations ·
+          <span class="text-amber-300 font-bold">{totalFetch.toLocaleString()}</span> AI fetches · {labels.length}d
           {growthPct != null && (
             <span class={growthPct >= 0 ? 'text-emerald-400' : 'text-rose-400'}> · {growthPct >= 0 ? '+' : ''}{growthPct}% impressions wk/wk</span>
           )}
@@ -96,7 +106,8 @@ const chartData = JSON.stringify({ labels, impressions, clicks, citations });
               datasets: [
                 { label: 'Impressions', data: d.impressions, borderColor: 'rgb(16,185,129)', backgroundColor: 'rgba(16,185,129,0.08)', fill: true, tension: 0.35, pointRadius: 0, borderWidth: 1.5, yAxisID: 'y' },
                 { label: 'Clicks', data: d.clicks, borderColor: 'rgb(59,130,246)', backgroundColor: 'transparent', fill: false, tension: 0.35, pointRadius: 0, borderWidth: 1.5, yAxisID: 'y1' },
-                { label: 'AI citations (Bing)', data: d.citations, borderColor: 'rgb(167,139,250)', backgroundColor: 'transparent', fill: false, tension: 0.35, pointRadius: 0, borderWidth: 1.5, borderDash: [4,3], yAxisID: 'y1', spanGaps: false }
+                { label: 'AI citations (Bing)', data: d.citations, borderColor: 'rgb(167,139,250)', backgroundColor: 'transparent', fill: false, tension: 0.35, pointRadius: 0, borderWidth: 1.5, borderDash: [4,3], yAxisID: 'y1', spanGaps: false },
+                { label: 'AI fetches (ChatGPT etc.)', data: d.aifetches, borderColor: 'rgb(251,146,60)', backgroundColor: 'transparent', fill: false, tension: 0.35, pointRadius: 0, borderWidth: 1.5, yAxisID: 'y1', spanGaps: false }
               ]
             },
             options: {
@@ -115,6 +126,6 @@ const chartData = JSON.stringify({ labels, impressions, clicks, citations });
         draw();
       })();
     </script>
-    <p class="text-[11px] text-slate-500 mt-2">Fleet-wide Google impressions + clicks (GSC) and AI citations (Bing AI Performance, dashed) per day · y-axis from zero. Citation line ends at the last Bing export.</p>
+    <p class="text-[11px] text-slate-500 mt-2">Fleet-wide per day · Google impressions + clicks (GSC), AI citations (Bing, dashed violet), live AI fetches (ChatGPT/Perplexity/Claude, orange) · y-axis from zero. Today's fetch point is partial until the day closes.</p>
   </section>
 )}
