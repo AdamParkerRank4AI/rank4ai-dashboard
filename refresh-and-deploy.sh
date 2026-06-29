@@ -30,6 +30,12 @@ if [ -f "$MARKER" ]; then echo "$(date) already refreshed today — skipping." >
 # on the board is actually current. Heavy passes (URL inspection, dataforseo, crawl)
 # are intentionally left to refresh_all.py / their own jobs — this stays lightweight.
 cd "$HOME/rank4ai-dashboard"
+# NOTE (29 Jun 2026): the comprehensive fetcher (refresh_all.py via com.rank4ai.dashboard-refresh)
+# was disabled ~27 May, but only SOME of its board-facing fetchers were migrated here. The rest
+# (cf_ai_crawls, serp, entities, knowledge_graph, clarity, content_freshness, content_plans,
+# target_queries, cannibalisation, cluster_decisions, conversion_leaks, aeo, wins) had NOTHING
+# running them for a month and silently drifted. They are added below so the whole board stays
+# current from this one daily job. Order matters: data fetchers first, derived feeds after leads.
 for s in \
   check_uptime.py \
   fetch_ga4.py \
@@ -39,13 +45,19 @@ for s in \
   fetch_crawl_activity.py \
   fetch_bot_hits.py \
   fetch_fleet_bot_hits.py \
+  fetch_cf_ai_crawls.py \
   fetch_human_traffic.py \
   fetch_competitor_serp.py \
+  fetch_serp.py \
+  extract_entities.py \
+  fetch_knowledge_graph.py \
+  fetch_clarity.py \
+  compute_content_freshness.py \
+  fetch_content_plans.py \
   track_new_pages.py \
   build_gsc_history.py \
   detect_content_decay.py \
-  build_striking_distance.py \
-  generate_recommendations.py ; do
+  build_striking_distance.py ; do
     /usr/bin/python3 "scripts/$s" >> "$LOG" 2>&1 || echo "WARN $s nonzero" >> "$LOG"
 done
 
@@ -72,6 +84,23 @@ cd "$HOME/rank4ai-dashboard"
 # exports Adam drops in ~/Downloads (no API yet). Monday email reminder = com.fleet.bing-ai-reminder.
 /usr/bin/python3 scripts/ingest_bing_ai_performance.py >> "$LOG" 2>&1 || echo "WARN ingest_bing_ai_performance.py nonzero" >> "$LOG"
 /usr/bin/python3 scripts/fetch_daily_audit.py >> "$LOG" 2>&1 || echo "WARN fetch_daily_audit.py nonzero" >> "$LOG"
+
+# 2b-0. DERIVED feeds — must run AFTER the data fetchers (loop) AND leads/clarity above,
+# because they join those sources. Orphaned since refresh_all.py was disabled (~27 May),
+# so the SERP-cluster, conversion-leak, target-query, intent, AEO and recommendation tiles
+# silently drifted for a month. Dependency order: queries/intent -> cannibalisation ->
+# cluster decisions -> conversion leaks -> aeo/wins -> recommendations (needs all the above).
+for s in \
+  build_target_queries.py \
+  classify_queries.py \
+  detect_cannibalisation.py \
+  build_cluster_decisions.py \
+  analyze_conversion_leaks.py \
+  compute_aeo_score.py \
+  compute_wins.py \
+  generate_recommendations.py ; do
+    /usr/bin/python3 "scripts/$s" >> "$LOG" 2>&1 || echo "WARN $s nonzero" >> "$LOG"
+done
 
 # 2b-i. INDEXING. IndexNow (free, instant Bing/Yandex) wasn't scheduled anywhere —
 # it had gone dark. Submit the live sitemaps daily, then rebuild indexing_health so
