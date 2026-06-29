@@ -32,20 +32,36 @@ for (const [siteId, blk] of Object.entries(daily as Record<string, any>)) {
     byDate[d.date] = cur;
   }
 }
+// AI citations over time — fleet daily total from Bing AI Performance (the only
+// engine with a daily citation feed). Added 29 Jun (Adam: "shouldn't we have
+// citations in fleet growth as well?"). Mapped onto the GSC date axis; days with no
+// export yet are null so the line just doesn't plot there.
+const bingCit = loadJson('bing_ai_citations.json') || { by_site: {} };
+const citByDate: Record<string, number> = {};
+for (const [siteId, blk] of Object.entries((bingCit.by_site || {}) as Record<string, any>)) {
+  if (!clientIds.has(siteId)) continue;
+  for (const r of (blk?.daily || [])) {
+    if (!r?.date) continue;
+    citByDate[r.date] = (citByDate[r.date] || 0) + (r.citations || 0);
+  }
+}
+
 const dates = Object.keys(byDate).sort();
 const labels = dates;
 const impressions = dates.map((d) => byDate[d].impressions);
 const clicks = dates.map((d) => byDate[d].clicks);
+const citations = dates.map((d) => (d in citByDate ? citByDate[d] : null));
 
 const totalImpr = impressions.reduce((s, n) => s + n, 0);
 const totalClicks = clicks.reduce((s, n) => s + n, 0);
+const totalCit = citations.reduce((s: number, n) => s + (n || 0), 0);
 // crude growth signal: last 7d avg vs first 7d avg of the window
 const avg = (arr: number[]) => arr.length ? Math.round(arr.reduce((s, n) => s + n, 0) / arr.length) : 0;
 const firstWk = avg(impressions.slice(0, 7));
 const lastWk = avg(impressions.slice(-7));
 const growthPct = firstWk > 0 ? Math.round(((lastWk - firstWk) / firstWk) * 100) : null;
 
-const chartData = JSON.stringify({ labels, impressions, clicks });
+const chartData = JSON.stringify({ labels, impressions, clicks, citations });
 ---
 {labels.length > 1 && (
   <section data-copy-tile="Fleet growth" class="rounded-xl bg-slate-900 border border-emerald-800/40 p-5 mb-6">
@@ -54,7 +70,8 @@ const chartData = JSON.stringify({ labels, impressions, clicks });
         <h2 class="text-lg font-bold text-emerald-200">Fleet growth</h2>
         <span class="text-xs text-slate-400">
           <span class="text-emerald-300 font-bold">{totalImpr.toLocaleString()}</span> impressions ·
-          <span class="text-emerald-300 font-bold">{totalClicks.toLocaleString()}</span> clicks · {labels.length}d
+          <span class="text-emerald-300 font-bold">{totalClicks.toLocaleString()}</span> clicks ·
+          <span class="text-violet-300 font-bold">{totalCit.toLocaleString()}</span> AI citations · {labels.length}d
           {growthPct != null && (
             <span class={growthPct >= 0 ? 'text-emerald-400' : 'text-rose-400'}> · {growthPct >= 0 ? '+' : ''}{growthPct}% impressions wk/wk</span>
           )}
@@ -78,7 +95,8 @@ const chartData = JSON.stringify({ labels, impressions, clicks });
               labels: d.labels,
               datasets: [
                 { label: 'Impressions', data: d.impressions, borderColor: 'rgb(16,185,129)', backgroundColor: 'rgba(16,185,129,0.08)', fill: true, tension: 0.35, pointRadius: 0, borderWidth: 1.5, yAxisID: 'y' },
-                { label: 'Clicks', data: d.clicks, borderColor: 'rgb(59,130,246)', backgroundColor: 'transparent', fill: false, tension: 0.35, pointRadius: 0, borderWidth: 1.5, yAxisID: 'y1' }
+                { label: 'Clicks', data: d.clicks, borderColor: 'rgb(59,130,246)', backgroundColor: 'transparent', fill: false, tension: 0.35, pointRadius: 0, borderWidth: 1.5, yAxisID: 'y1' },
+                { label: 'AI citations (Bing)', data: d.citations, borderColor: 'rgb(167,139,250)', backgroundColor: 'transparent', fill: false, tension: 0.35, pointRadius: 0, borderWidth: 1.5, borderDash: [4,3], yAxisID: 'y1', spanGaps: false }
               ]
             },
             options: {
@@ -89,7 +107,7 @@ const chartData = JSON.stringify({ labels, impressions, clicks });
               scales: {
                 x: { ticks: { color: '#64748b', font: { size: 9 }, maxTicksLimit: 10, autoSkip: true }, grid: { display: false } },
                 y: { position: 'left', beginAtZero: true, ticks: { color: '#10b981', font: { size: 10 } }, grid: { color: '#1e293b' }, title: { display: true, text: 'Impressions', color: '#10b981', font: { size: 10 } } },
-                y1: { position: 'right', beginAtZero: true, ticks: { color: '#3b82f6', font: { size: 10 } }, grid: { drawOnChartArea: false }, title: { display: true, text: 'Clicks', color: '#3b82f6', font: { size: 10 } } }
+                y1: { position: 'right', beginAtZero: true, ticks: { color: '#3b82f6', font: { size: 10 } }, grid: { drawOnChartArea: false }, title: { display: true, text: 'Clicks / AI citations', color: '#94a3b8', font: { size: 10 } } }
               }
             }
           });
@@ -97,6 +115,6 @@ const chartData = JSON.stringify({ labels, impressions, clicks });
         draw();
       })();
     </script>
-    <p class="text-[11px] text-slate-500 mt-2">Fleet-wide Google impressions + clicks per day (GSC) · y-axis from zero.</p>
+    <p class="text-[11px] text-slate-500 mt-2">Fleet-wide Google impressions + clicks (GSC) and AI citations (Bing AI Performance, dashed) per day · y-axis from zero. Citation line ends at the last Bing export.</p>
   </section>
 )}
