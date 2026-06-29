@@ -44,6 +44,25 @@
 
 **Health YMYL ⭐ items** (PeptideClear/HerVitals/ADHD/FitCalcs/BabyData/HomesAndHedge) build on the **editorial model** — no hired reviewer (locked 23 Jun). **🅿️ reskins** (MHQ/FundBiz/BBL) parked until Adam says ship.
 
+## 🔧 Upgrades build queue (Step-2 on-page levers)
+> The on-page lever queue, folded together with the money-page/schema audit (other session). Lane = who owns it: **mine** (mechanical/data-driven, safe to run) · **other session** (coordinate, don't clobber) · **Adam/mixed** (off-site or needs a decision). Priority **#1** and **urgent** are flagged. No em dashes.
+
+| Lever | Sites | Lane | Priority |
+|---|---|---|---|
+| Front-loaded "best for" answer block on money pages | All 6 leadgen money sites (MI · MHQ · FundBiz · BBL · LTD · equity-release); partial on all 6 | mixed (other session started on MI) | **#1** |
+| Schema + last-updated stamps sweep (FAQ/Review/Org/Author/Dataset/FinancialService/SoftwareApplication) | fleet-wide | mine (mechanical) | high |
+| Schema hygiene specifics: FundBiz +Review · LTD +FinancialService +FAQ | FundBiz (other session) · LTD (mine) | mixed | high |
+| Fan-out / PAA sub-query coverage on money pages (Qforia / DataForSEO PAA) | money pages fleet-wide | mine (data-driven) | high |
+| "How we make money" + methodology + independence box beside every CTA | fleet-wide leadgen | mine | high |
+| "Before you enquire" reassurance + form-safety microcopy above every lead form | fleet-wide leadgen | mine | high |
+| Answer-first "Quick Triage + Safety/Legal" block on top guide pages | HomesAndHedge (start), YMYL sites | mine | high |
+| Un-gated live comparison tables / real indicative numbers up front | MI (85-provider DB) · MHQ (fee table) · BBL (real rate numbers) | other session / data-gated | medium |
+| Tables on tableless head-to-heads | FundBiz /mca/ + /lenders/ (other session) · LTD "X vs Y" pages (mine) | mixed | medium |
+| Grok lever: live calculators/quote tools + X/community mentions | fleet-wide (calculators partly done; X/community = off-site) | mixed (Adam/social) | medium |
+| MI capsule-tightening: ~64 thin/answer-first capsules to 40-180w liftable answers | MarketInvoice | OTHER SESSION | high (theirs) |
+| Bing Webmaster + IndexNow money-page submissions | fleet-wide | mine/Adam | medium |
+| LTD Privacy-Policy 404 fix + LTD managed-robots conflict investigation | LTD Turnaround | mine | **urgent** (live trust-killer) |
+
 ## Batches
 | Code | Status |
 |---|---|
@@ -147,6 +166,7 @@
 **H. Grow-brief ⏸ HOLD bets (need your go / live-data validation first):** MI recourse-vs-non-recourse tool + hidden-fees catalogue + sector deep-hubs · MHQ hidden-fee calculator + settlement matrix · PeptideClear legality pillar + CoA guide · Her Vitals brand-comparison index + form/dose guides · ADHD private-cost + by-region FOI data · VettedHome heat-pump/cavity-wall + by-trade×town rollout · banner data-assets (SMP calc, working-days API). Full per-site list in the GROW-BRIEF doc.
 
 ## Build log (what shipped, with real deploy status)
+- **29 Jun** — folded the money-page/schema audit (other session) into the Upgrades build queue: front-loaded best-for (#1), PAA fan-out, schema hygiene (FundBiz Review / LTD FinancialService+FAQ), Grok calculators+mentions lever.
 - **29 Jun · fleet · backup pass** — pushed all previously laptop-only branches to origin (company-rescue main + dev-b33, hervitals dev-b38, trustedinteriors dev-b43, homesandhedge main + dev-b37, adhdhelper dev-b39, sortedproperty main, peptideclear dev-b29-mhra-data). Nothing is laptop-only any more. ✅
 - **29 Jun · LTD Turnaround · IndexNow** — built `scripts/indexnow-submit.cjs` + postbuild hook, submitted 92 URLs to Bing (200). Committed `feat/ltd-indexnow`. ✅
 - **28 Jun · Kartapay · B34** — 6 guides → **DEPLOYED LIVE** (0 unreadable, 200s), branch pushed. ⚠️ pages indexable, not noindex (review). ✅
