@@ -14,8 +14,21 @@ echo "==== $(date) dashboard refresh start ====" >> "$LOG"
 # Fix: multiple morning/afternoon slots run this at the first slot the Mac is awake for.
 # This marker (touched at the END, on full success) makes later slots skip; a partial or
 # aborted run leaves no marker so the next slot retries.
+# Refresh (the expensive API fetchers below) runs ONCE/day, marker-guarded. The
+# BUILD+DEPLOY at the end now runs EVERY slot regardless — so freshly-committed
+# source-reader/fleet-sync data (and any same-day code/data change) goes live within
+# the next slot instead of waiting for tomorrow's refresh. This closes the "same-day
+# deploy gap" where the board committed every 15 min but only deployed once a day.
+# "This should be live always" (Adam, 29 Jun 2026).
 MARKER="$HOME/.dashboard_refresh_$(date +%Y-%m-%d)"
-if [ -f "$MARKER" ]; then echo "$(date) already refreshed today — skipping." >> "$LOG"; exit 0; fi
+if [ -f "$MARKER" ]; then
+  echo "$(date) already refreshed today — skipping fetchers, still rebuilding+deploying." >> "$LOG"
+  DO_REFRESH=0
+else
+  DO_REFRESH=1
+fi
+
+if [ "$DO_REFRESH" = 1 ]; then
 
 # 1. Stats fetch (legacy HTML stats cache; kept because the standalone HTML board reads it)
 /usr/bin/python3 "$HOME/rank4ai_content_pipeline/dashboard.py" >> "$LOG" 2>&1 || echo "WARN dashboard.py nonzero" >> "$LOG"
@@ -121,7 +134,12 @@ done
 # "Data feeds" tile will surface any silently-failed fetcher.
 /usr/bin/python3 scripts/check_data_freshness.py >> "$LOG" 2>&1 || echo "WARN check_data_freshness.py nonzero" >> "$LOG"
 
-# 3. Build + deploy BOTH boards from the same fresh data. There are two CF Pages
+# Refresh done for today — mark it so later slots skip the fetchers (but still deploy).
+touch "$MARKER"
+fi  # end DO_REFRESH
+
+# 3. Build + deploy BOTH boards from the same fresh data. Runs EVERY slot (outside
+# the refresh guard) so the live URL always reflects the latest committed repo data. There are two CF Pages
 # projects: `rank4ai-dashboard` (the DASHBOARD=current board → dashboard.rank4ai.co.uk,
 # rank4ai + resiliencebuilder) and `fleet-dashboard` (DASHBOARD=fleet board →
 # fleet-dashboard-1nt.pages.dev, the whole fleet). This job used to build+deploy
@@ -143,5 +161,4 @@ DASHBOARD=fleet npm run build >> "$LOG" 2>&1
 CLOUDFLARE_API_TOKEN="$TOKEN" CLOUDFLARE_ACCOUNT_ID="$ACC" \
   npx wrangler pages deploy dist --project-name=fleet-dashboard --branch=main --commit-dirty=true >> "$LOG" 2>&1
 
-touch "$MARKER"
 echo "==== $(date) dashboard refresh + deploy done (both boards) ====" >> "$LOG"

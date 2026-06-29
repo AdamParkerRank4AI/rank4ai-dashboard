@@ -81,6 +81,11 @@ FLEET = {
         "domain": "takecardpayments.co.uk",
         "live": "takecardpayments.co.uk",
     },
+    "mortgageexplained": {
+        "repo": "~/mortgageexplained",
+        "domain": "mortgageexplained.co.uk",
+        "live": "mortgageexplained.co.uk",
+    },
 }
 
 WORD_RE = re.compile(r"\b\w+\b")
