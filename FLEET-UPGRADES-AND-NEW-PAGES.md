@@ -1,14 +1,51 @@
 # Fleet Upgrades & New Pages — status (updated 29 Jun 2026)
 > Working copy in a writable path. The iCloud original (`iCloud/.../Research/beyond-serp-fleet-2026-06-17/`) is **dataless/evicted + needs Full Disk Access** for this process to write — that's the "lock" seen all session. Use this copy until FDA is granted.
 
-## 🚨 Anti-slop SWEEP (29 Jun) — quality risk on MarketInvoice + MerchantHQ (CLEANUP IN PROGRESS)
+## 🚨 Anti-slop SWEEP (29 Jun) — MI + MHQ cleanup DEPLOYED
 > An anti-slop sweep of **1,359 existing LIVE pages** found **219 MAJOR issues**, clustered almost entirely on the **PROGRAMMATIC** pages: MarketInvoice `/vs/` and MerchantHQ `/best/by-trade-and-city/`, `/trade/`, `/vs/`. These are NOT 219 separate fixes · they trace to a handful of **template root causes**:
 > - **(a) Fabricated ratings** — programmatic `4.x/5` and `5/5` provider ratings with **no methodology** = ASA/FCA + EEAT liability. Being **removed** (verify-first, no invented numbers).
 > - **(b) Factual / category errors** — non-invoice-finance products (**iwoca, Funding Circle, Swoop, Capitalise, Allianz Trade**) compared as IF rivals; plus a repeated likely-**hallucinated** "**Bibby acquired Aldermore Working Capital Finance 2023**" claim, a Kriya/Allica date, Ultimate/Recognise, Skipton "mutual", Novuna · all verify-first before any copy change.
 > - **(c) MHQ template bleed** — wrong-trade watch-outs (gold-jewellery warnings on **nail-salon / taxi** pages), a broken variable rendering "**Same as the underlying acquirer on a same as...**", and **leaked internal notes** in public copy.
 > - **(d) Missing FCA referral-fee disclosure** on lead pages.
 >
-> **Status: CLEANUP IN PROGRESS this session** — ratings being removed, facts verified-first before edit. **FALSE POSITIVES to ignore:** the "future date 2026-xx" flags are wrong (today IS 29 Jun 2026) and the "Copy for AI" widget is likely intended, not slop.
+> **Status: MI + MHQ cleanup DEPLOYED** — fabricated programmatic ratings removed, category/factual errors verified-first and fixed, MHQ template bleed cleared, FCA referral-fee disclosure added; both shipped live. **FALSE POSITIVES that were ignored:** the "future date 2026-xx" flags were wrong (today IS 29 Jun 2026) and the "Copy for AI" widget is intended, not slop.
+
+## ✅ Upgrades batch DEPLOYED / LIVE (29 Jun)
+> The Step-2 on-page upgrade work is now live, verified by curl + git (not changelog claims).
+- **LTD Turnaround** upgrade LIVE: `/how-we-match-you/` + `/our-experts/` both 200.
+- **Kartapay** upgrade LIVE: `upg-kartapay` merged into the live deploy branch (`dev-b34-kartapay-questions`).
+- **VettedHome** upgrade LIVE: `upg-vettedhome` merged into `main` (the live branch).
+- **HerVitals** upgrade + B38 question set LIVE on main (author model stays **Oliver Mackman**, editorial; `/authors/adam-parker/` correctly NOT present here).
+- **ADHD Helper** upgrade LIVE on main (author model **Oliver**).
+- **HomesAndHedge** upgrade LIVE on main.
+- **Author model:** corrected to **Oliver Mackman** across the leadgen/health sites; **Adam Parker** named-editor pages are the **banner-site** (FitCalcs / BabyData / DatesAndTimes / HomesAndHedge) AdSense remediation only.
+
+## 🌱 Freshness + 📦 Drip backlog (verified 29 Jun, git + live curl)
+> **Freshness verdict: ZERO stale sites.** Every live site has shipped a new page within the last ~14 days; none is 30+ days quiet. "Live new pages" = added on the live-serving branch (main, or the checked-out deploy branch for FundBiz/BBL/Kartapay). 🔵 drip-ready = built + committed/pushed but NOT live (curl 404). 🟠 = blocked (locked or pre-launch).
+
+| Site | Last new live page | New 14d / 30d | Drip-ready (built, NOT live) | Stale? |
+|---|---|---|---|---|
+| MarketInvoice | 29 Jun | 14 / 121 | reskin/feature branches (superseded; drop `dev-navy-teal-reskin`) | No (daily auto) |
+| MerchantHQ | 28 Jun | 8 / 37 | 🔵 B24 card-cost data (1) + `dev-ticker-tidy` reskin (4) + ~19 vernacular briefs queued (not built) | No |
+| PeptideClear | 28 Jun | 23 / 97 | 🔵 full-build-batch / research-gap / supermarkets-hub (~9, Jun 1) + citation-refresh branches (triage) | No (full posting engine) |
+| FundBiz | 26 Jun (B31 now LIVE) | 17 / 41 | — (B31 4 guides verified LIVE; tracker label was stale) | No |
+| Best Business Loans | 28 Jun | 20 / 38 | 🔵 **B36 6 MCA Q-pages** (`dev-b36-bbl-mca-questions`, 404) | No |
+| Kartapay | 27 Jun (B34 LIVE) | 9 / 28 | — | No |
+| VettedHome | 27 Jun | 15 / 32 | 🔵 spray-foam hub + data-asset bank (wave-gated) | No |
+| LTD Turnaround | 28 Jun | 3 / 43 | 🔵 **B33 4 insolvency Q-pages** (`dev-b33-ltd-questions`, 404) HELD on named IP | No |
+| ADHD Helper | 29 Jun | 18 / 63 | 🔵 **B39 4 RTC / shared-care guides** (`dev-b39-adhdhelper-questions`, 404) | No |
+| Her Vitals | 29 Jun (B38 now LIVE) | 42 / 91 | — (B38 7 Q + menopause hub + HRT tracker verified LIVE; tracker label was stale) | No |
+| Later Life Borrowing | main 18 Jun | n/a | 🟠 4 Theme-A retirement guides (`dev-llb-theme-a-retirement`) blocked: whole site 401 password-locked | N/A (locked) |
+| 2nd IF site | NOT LIVE | n/a | 🟠 whole site ~167 pages built (`fix-answercapsule-prop`), pre-launch, 5 decisions | N/A (pre-launch) |
+| Homes & Hedge | 26 Jun | 20 / 51 | 🔵 **B37 7 renter-disrepair Q-pages** (`dev-b37-homesandhedge-questions`, 404) | No |
+| DatesAndTimes | 26 Jun | 37 / 37 | 🔵 **B41 6 guides** (`dev-b41-datesandtimes-questions`, 404) | No (new site) |
+| FitCalcs | 28 Jun | 40 / 40 | 🔵 **B40 7 guides** (`dev-b40-fitcalcs-questions`, 404) | No (new site) |
+| BabyData | 26 Jun | 40 / 40 | 🔵 **B42 7 guides** (`dev-b42-babydata-questions`, 404) | No (new site) |
+| TrustedInteriors | 29 Jun (B43 now LIVE) | 19 / 19 | — (B43 7 Q + site-index hub verified LIVE 200; "held pre-launch" label was stale) | No |
+
+**🔵 Drip-ready inventory (built, committed/pushed, NOT live, safe-to-release count):** BBL B36 (6) · LTD B33 (4, held on named IP) · ADHD B39 (4) · H&H B37 (7) · DatesAndTimes B41 (6) · FitCalcs B40 (7) · BabyData B42 (7) · MHQ B24 (1). **≈42 content pages across 8 live sites ready to drip.** Plus blocked: LLB 4 (site locked), 2nd-IF whole site (pre-launch).
+
+**⚠️ Tracker-vs-reality drift found (now corrected above):** B31 FundBiz, B38 HerVitals, and B43 TrustedInteriors were labelled banked/held but are **LIVE** (200 verified). B34 Kartapay correctly live.
 
 ## 🔄 29 Jun 2026 — this session's changes (banked tranche shipped + banner AdSense + full backup)
 > Verified against `~/control-panel/FLEET_REALITY.md` (07:33, 17 sites; only intentional drift = LLB 401-locked + trustedinteriors CF AI-block) + CHANGELOG newest entries.
@@ -175,6 +212,7 @@
 **H. Grow-brief ⏸ HOLD bets (need your go / live-data validation first):** MI recourse-vs-non-recourse tool + hidden-fees catalogue + sector deep-hubs · MHQ hidden-fee calculator + settlement matrix · PeptideClear legality pillar + CoA guide · Her Vitals brand-comparison index + form/dose guides · ADHD private-cost + by-region FOI data · VettedHome heat-pump/cavity-wall + by-trade×town rollout · banner data-assets (SMP calc, working-days API). Full per-site list in the GROW-BRIEF doc.
 
 ## Build log (what shipped, with real deploy status)
+- **29 Jun · fleet · freshness + drip-backlog audit** — git + live-curl audit of all 17 owned repos. **Freshness: 0 stale sites** (every live site shipped a new page within ~14 days). **Drip-ready ≈42 content pages across 8 sites** (BBL B36, LTD B33, ADHD B39, H&H B37, DatesAndTimes B41, FitCalcs B40, BabyData B42, MHQ B24), all curl-404-verified not-live. Found + corrected tracker drift: **B31 FundBiz / B38 HerVitals / B43 TrustedInteriors are actually LIVE** (200), not banked/held. Upgrades batch (LTD, Kartapay, VettedHome, HerVitals, ADHD, H&H) verified DEPLOYED. Anti-slop MI + MHQ cleanup marked deployed. ✅
 - **29 Jun · anti-slop SWEEP + cleanup** — swept 1,359 live pages → 219 MAJORS, clustered on the programmatic MI `/vs/` + MHQ `/best/by-trade-and-city/` `/trade/` `/vs/` templates. Root causes (not 219 fixes): fabricated 4.x/5 ratings w/ no methodology (ASA/FCA + EEAT), category errors (iwoca/Funding Circle/Swoop/Capitalise/Allianz Trade mislabelled as IF rivals + likely-hallucinated "Bibby acquired Aldermore WCF 2023" + Kriya/Allica/Skipton/Novuna claims), MHQ template bleed (wrong-trade watch-outs, broken "Same as the underlying acquirer on a same as..." variable, leaked internal notes), missing FCA referral-fee disclosure. **CLEANUP IN PROGRESS** (ratings removed, facts verify-first). FALSE POSITIVES: "future date 2026-xx" flags (today IS 29 Jun 2026) + "Copy for AI" widget (intended). Also: **2nd-IF site** built right, all gates pass, invisible "Get a quote" button fixed (contrast 4→0), component future-proofed, committed `fix-answercapsule-prop` (banked, config-only launch pending Adam's 5 decisions). **LTD Turnaround** LIVE empty-capsule bug on `/data/company-insolvency-by-type/` being fixed.
 - **29 Jun** — answer-blocks column corrected (was a broken ~1% tally; capsules are fleet-wide). Real per-site counts computed from source (class-in-pages + class-in-content-collections + AnswerCapsule component usages): MI 650, Peptide 267, FundBiz 138, Kartapay 137, MHQ 126, BBL 115, HerVitals 80, ADHD 50, LTD 41, H&H 36, BabyData 36, FitCalcs 35, DatesAndTimes 33, VettedHome 19, TrustedInteriors 18, plus 2nd-IF 170. Real gaps flagged: LLB (0 capsules across 125 pages), 2nd-IF-site (170 present but empty-prop bug renders them blank), TrustedInteriors (18, thin/pre-launch).
 - **29 Jun** — folded the money-page/schema audit (other session) into the Upgrades build queue: front-loaded best-for (#1), PAA fan-out, schema hygiene (FundBiz Review / LTD FinancialService+FAQ), Grok calculators+mentions lever.
