@@ -170,69 +170,10 @@
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <style>
-    :root{
-      --navy:#0f2540; --teal:#1f8a8a; --ink:#1c2530; --muted:#5b6776;
-      --line:#e6e9ee; --bg:#f6f8fb; --card:#ffffff; --accent:#0a7d7d;
-    }
-    *{box-sizing:border-box}
-    html{ -webkit-text-size-adjust:100% }
-    body{
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
-      color:var(--ink); background:var(--bg);
-      max-width:1180px; margin:0 auto; padding:32px 28px 96px;
-      line-height:1.55; font-size:15px; -webkit-font-smoothing:antialiased;
-    }
-    h1{
-      font-size:1.9rem; font-weight:800; letter-spacing:-.02em; color:var(--navy);
-      margin:0 0 4px; padding-bottom:14px; border-bottom:3px solid var(--teal);
-    }
-    h2{
-      font-size:1.28rem; font-weight:750; color:var(--navy); letter-spacing:-.01em;
-      margin:38px 0 12px; padding-top:10px;
-    }
-    h3{ font-size:1.02rem; font-weight:700; color:var(--ink); margin:22px 0 8px }
-    h2::before{ content:""; }
-    a{ color:var(--accent); text-decoration:none } a:hover{ text-decoration:underline }
-    p{ margin:.5em 0 }
-    blockquote{
-      margin:14px 0; padding:10px 16px; background:#eef3f8; border-left:4px solid var(--teal);
-      color:var(--muted); font-size:.92rem; border-radius:0 8px 8px 0;
-    }
-    blockquote p{ margin:.2em 0 }
-    hr{ border:none; border-top:1px solid var(--line); margin:34px 0 }
-    code{ font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace; font-size:.86em;
-      background:#eef1f5; padding:1px 6px; border-radius:5px; color:#0f3d3d }
-    /* tables */
-    .table-wrap, table{ width:100% }
-    table{
-      border-collapse:separate; border-spacing:0; margin:14px 0 26px;
-      background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden;
-      box-shadow:0 1px 3px rgba(16,37,64,.06); font-size:13.5px;
-    }
-    thead th{
-      background:var(--navy); color:#fff; font-weight:650; text-align:left;
-      padding:11px 12px; font-size:12.5px; letter-spacing:.01em; vertical-align:bottom;
-      position:sticky; top:0; z-index:1;
-    }
-    tbody td{ padding:10px 12px; border-top:1px solid var(--line); vertical-align:top; overflow-wrap:anywhere; word-break:normal }
-    tbody tr:nth-child(even){ background:#f9fbfd }
-    tbody tr:hover{ background:#f0f7f7 }
-    table strong{ color:var(--navy) }
-    /* compact + readable lists */
-    ul,ol{ margin:.4em 0 .8em; padding-left:1.4em } li{ margin:.25em 0 }
-    pre{
-      background:#0f2540; color:#dbe7f0; padding:16px 18px; border-radius:10px;
-      overflow:auto; font-size:12.5px; line-height:1.5;
-    }
-    pre code{ background:none; color:inherit; padding:0 }
-    strong{ font-weight:700 }
-    @media (max-width:640px){ body{ padding:18px 12px } table{ font-size:12px } h1{font-size:1.45rem} }
-  </style>
 </head>
 <body>
-<h1 id="fleet-upgrades-new-pages-status-updated-24-jun-2026">Fleet
-Upgrades &amp; New Pages — status (updated 24 Jun 2026)</h1>
+<h1 id="fleet-upgrades-new-pages-status-updated-29-jun-2026">Fleet
+Upgrades &amp; New Pages — status (updated 29 Jun 2026)</h1>
 <blockquote>
 <p>Working copy in a writable path. The iCloud original
 (<code>iCloud/.../Research/beyond-serp-fleet-2026-06-17/</code>) is
@@ -240,6 +181,95 @@ Upgrades &amp; New Pages — status (updated 24 Jun 2026)</h1>
 process to write — that’s the “lock” seen all session. Use this copy
 until FDA is granted.</p>
 </blockquote>
+<h2
+id="jun-2026-this-sessions-changes-banked-tranche-shipped-banner-adsense-full-backup">🔄
+29 Jun 2026 — this session’s changes (banked tranche shipped + banner
+AdSense + full backup)</h2>
+<blockquote>
+<p>Verified against <code>~/control-panel/FLEET_REALITY.md</code>
+(07:33, 17 sites; only intentional drift = LLB 401-locked +
+trustedinteriors CF AI-block) + CHANGELOG newest entries. -
+<strong>DEPLOYED LIVE (noindex unless noted):</strong> <strong>B34
+Kartapay 6 guides</strong> (⚠️ pages are INDEXABLE not noindex: flag to
+review) · <strong>B35 VettedHome questions</strong> (noindex, correct) ·
+<strong>MerchantHQ</strong> last hard contrast fail fixed (fleet-core
+AIComprehension “Quick Reference” gray-400 2.49:1, overridden in site
+CSS) → gate <strong>0 unreadable</strong> live. - <strong>BANNER ADSENSE
+REMEDIATION SHIPPED LIVE (4 sites: HomesAndHedge, BabyData, FitCalcs,
+DatesAndTimes):</strong> Adam-Parker named-editor
+<code>/authors/adam-parker/</code> pages (Person schema + ORCID),
+Privacy / Contact / Editorial-policy pages, footer legal nav,
+oliver→adam 301, fake “registered reviewer/midwife” claims stripped.
+Headshot + LinkedIn being wired in now (in progress). <strong>PENDING
+ADAM: resubmit each to AdSense.</strong> Caught + preserved a real
+factual line a prior commit had wrongly deleted (DatesAndTimes “World
+Cup bank holiday” Mon 15 Jun 2026 — verified real via gov.scot). -
+<strong>NEW BANKED CONTENT TRANCHE (built + committed + pushed to
+origin, noindex, NOT live):</strong> B31 FundBiz 4 guides · B33 LTD
+Turnaround 4 insolvency Q-pages (HELD on named Licensed IP) · B36 BBL
+(other session; antislop flagged PERG-cite + BoE-base-rate fixes, not
+shipped) · B37 HomesAndHedge renter-disrepair · B38 HerVitals 7 Q +
+menopause hub + HRT tracker · B39 ADHD RTC/shared-care · B40 FitCalcs 6
+guides · B41 DatesAndTimes 6 guides · B42 BabyData 7 guides · B43
+TrustedInteriors 7 Q + site-index hub (HELD pre-launch). Health/legal
+ones need a Claude <strong>finishing pass</strong> (Adam-Parker
+named-editor + a date/figure re-verify) before drip; <strong>no hired
+clinician</strong> (editorial model, locked 22 Jun). - <strong>FAQPage
+RETROFIT + stale-rule reconcile across all 12 banked branches:</strong>
+FAQPage is WANTED (Bing/AI, reversed 22 Jun); the stale “no-FAQPage”
+fleet-lint was a HARD build-fail under <code>FLEET_LINT_STRICT=1</code>
+in ~7 repos = a deploy landmine. Reconciled fleet-wide (lint →
+info/conditional-on-visible-FAQ); added real visible+JSON-LD FAQ to the
+banked Q-pages that had skipped it. - <strong>BACKUP PASS (29 Jun) —
+nothing laptop-only any more:</strong> pushed previously laptop-only
+branches to origin: company-rescue (main + dev-b33), hervitals
+(dev-b38), trustedinteriors (dev-b43), homesandhedge (main + dev-b37),
+adhdhelper (dev-b39), sortedproperty (main). PeptideClear live source
+<code>dev-b29-mhra-data</code> also pushed (main stays the 6-behind
+trap, do NOT deploy main). - <strong>Drip-gate run across all banked
+batches:</strong> all build clean + pass a11y + <strong>0 antislop
+MAJORS</strong> in new content; only blockers were contrast (shared
+<code>.text-xs</code> byline, fleet-core root cause) + reviewer
+gates.</p>
+</blockquote>
+<h2 id="jun-2026-this-sessions-changes-deploy-coordination">🔄 26 Jun
+2026 — this session’s changes (deploy-coordination)</h2>
+<ul>
+<li><strong>DEPLOYED LIVE:</strong> B18 BabyData ONS name-trend
+visualiser (<code>/names/trends/</code>) · B21 HomesAndHedge
+Quick-Triage + Safety/Legal boxes · FitCalcs + DatesAndTimes +
+VettedHome + MerchantHQ + LTD logos/contrast/ad-safety.</li>
+<li><strong>Confirmed ALREADY live (the “banked” labels were
+stale):</strong> B15 PeptideClear GLP-1/CagriSema · B19 ADHD
+Right-to-Choose hub · B20 HerVitals menopause hub (verified on the live
+URLs, not the commit prose).</li>
+<li><strong>LLB (#11):</strong> the real <strong>125-page Richard
+build</strong> went live with the <strong>corrected entity</strong>
+(Lending for Later Life / <strong>One Stop 4 Equity Release Ltd</strong>
+/ <strong>FRN 952887</strong>), replacing the stale 9-page wrong-entity
+build. ⚠️ <strong>Now going PASSWORD-LOCKED</strong>
+(<code>llb-gate.sh on</code>) — holding out One Stop’s FRN publicly
+needs their <strong>BAT approval first</strong>; build it out fully
+behind the lock, unlock on One Stop sign-off. CTA stays off; Theme-A
+guides held.</li>
+<li>🔴 <strong>BANNER sites AdSense REJECTED</strong>
+(FitCalcs/BabyData/DatesAndTimes/HomesAndHedge) — “Low value content”,
+NOT a flip-a-switch: need Privacy + Contact + editorial-policy pages,
+cut the programmatic % (babydata 87% / ~7% unique), and a real named
+editor (replace “Oliver Mackman”), then resubmit. <strong>Owned by the
+banner-AdSense session.</strong> (FitCalcs + BabyData also left
+live-failing the contrast gate by an un-gated deploy — routed to that
+session.)</li>
+<li><strong>Reskins (E):</strong> BBL <code>restyle-pilot</code> +
+FundBiz <code>dev-rolex-reskin</code> are ALREADY LIVE (the reskin IS
+the live branch); MHQ design live on main; <strong>MI
+<code>dev-navy-teal-reskin</code> = a 26-line non-change, not a real
+redesign</strong> → drop it.</li>
+<li><strong>Deploy infra:</strong> root cause = GitHub Actions disabled
+account-wide (~Jun 8). Reliable manual deploy
+<code>~/fleet-deploy.sh</code> (now gates contrast). Verified live state
+in <code>~/control-panel/FLEET_DEPLOY_TRUTH.md</code>.</li>
+</ul>
 <h2
 id="site-numbering-adams-order-core-16-newer-leadcontent-712-display-ad-1316">Site
 numbering = Adam’s order (core 1–6 · newer lead/content 7–12 ·
@@ -290,9 +320,10 @@ barclays consolidate, tighten ~64 thin capsules</td>
 <td style="text-align: right;">0 / 3</td>
 <td style="text-align: right;">0 / 560</td>
 <td>✅ <strong>contract-exit hub LIVE</strong> (pillar + 14 provider
-cancel guides) + FAQPage re-enabled · <strong>anti-slop sweep ✅ 24 Jun:
-Zettle price + trade-location label fixed LIVE</strong> · next: un-gated
-fee table · methodology · 🅿️ reskin still parked</td>
+cancel guides) + FAQPage re-enabled · <strong>last hard contrast fail
+fixed → LIVE 28 Jun (gate 0 unreadable)</strong> · <strong>anti-slop
+sweep ✅ 24 Jun: Zettle price + trade-location label fixed LIVE</strong>
+· next: un-gated fee table · methodology · 🅿️ reskin still parked</td>
 </tr>
 <tr>
 <td style="text-align: right;">3</td>
@@ -307,12 +338,13 @@ fee table · methodology · 🅿️ reskin still parked</td>
 <tr>
 <td style="text-align: right;">4</td>
 <td>FundBiz 🅿️</td>
-<td style="text-align: right;">0 / 124</td>
+<td style="text-align: right;"><strong>4</strong> / 124</td>
 <td style="text-align: right;">0 / 142</td>
 <td style="text-align: right;">0 / 3</td>
 <td style="text-align: right;">0 / 230</td>
-<td>trade-credit surge · ⭐ refinance / “stuck in a contract” hub · 17
-decline guides</td>
+<td>trade-credit surge · <strong>B31 4 guides BANKED</strong> (PG /
+FCA-regulation / PG-house-risk / late-filing) · ⭐ refinance / “stuck in
+a contract” hub · 17 decline guides</td>
 </tr>
 <tr>
 <td style="text-align: right;">5</td>
@@ -321,18 +353,21 @@ decline guides</td>
 <td style="text-align: right;">0 / 112</td>
 <td style="text-align: right;">0 / 3</td>
 <td style="text-align: right;">0 / ~150</td>
-<td>mature · ⭐ MCA escalator-trap guide · real rate numbers (kill “see
-lender quote”) · fix 398w capsule</td>
+<td>mature · <strong>B36 BANKED</strong> (other session; antislop
+PERG-cite + BoE base-rate fixes pending, not shipped) · ⭐ MCA
+escalator-trap guide · real rate numbers (kill “see lender quote”) · fix
+398w capsule</td>
 </tr>
 <tr>
 <td style="text-align: right;">6</td>
 <td>Kartapay</td>
-<td style="text-align: right;">⏸ PL/RO</td>
+<td style="text-align: right;"><strong>6</strong> / —</td>
 <td style="text-align: right;">0 / 37</td>
 <td style="text-align: right;">0 / 3</td>
 <td style="text-align: right;">—</td>
-<td>PL+RO live (~40pp each) · ⭐ “loan, no UK credit history” PL/RO ·
-fix EN-header bleed</td>
+<td>PL+RO live (~40pp each) · <strong>B34 6 guides DEPLOYED LIVE 28
+Jun</strong> (⚠️ pages indexable not noindex: review) · ⭐ “loan, no UK
+credit history” PL/RO · fix EN-header bleed</td>
 </tr>
 <tr>
 <td style="text-align: right;">7</td>
@@ -347,30 +382,36 @@ fix EN-header bleed</td>
 <tr>
 <td style="text-align: right;">8</td>
 <td>Company Rescue / LTD Turnaround</td>
-<td style="text-align: right;">0 / ~50</td>
+<td style="text-align: right;"><strong>4</strong> / ~50</td>
 <td style="text-align: right;">0 / 41</td>
 <td style="text-align: right;"><strong>13</strong> / 2</td>
 <td style="text-align: right;">0 / 535</td>
-<td>launched live + lead pipeline · verify privacy-404 · named-IP page ·
-a11y labels</td>
+<td>launched live + lead pipeline · <strong>B33 4 insolvency Q-pages
+BANKED, HELD on named Licensed IP</strong> · IndexNow automated 29 Jun ·
+verify privacy-404 · named-IP page · a11y labels</td>
 </tr>
 <tr>
 <td style="text-align: right;">9</td>
 <td>ADHD Helper</td>
-<td style="text-align: right;">0 / 296</td>
+<td style="text-align: right;">banked / 296</td>
 <td style="text-align: right;">0 / 55</td>
 <td style="text-align: right;"><strong>4+</strong> / 4</td>
 <td style="text-align: right;">0 / 265</td>
-<td>full tool suite live (ASRS/RTC/cost) · ⭐ Right-to-Choose hub</td>
+<td>full tool suite live (ASRS/RTC/cost) · <strong>B39 RTC / shared-care
+guides BANKED</strong> (finishing pass: named-editor + CLAUDE.md
+FAQ-config fix) · ⭐ Right-to-Choose hub</td>
 </tr>
 <tr>
 <td style="text-align: right;">10</td>
 <td>Her Vitals</td>
-<td style="text-align: right;">0 / 328</td>
+<td style="text-align: right;"><strong>7</strong> / 328</td>
 <td style="text-align: right;">0 / 70</td>
-<td style="text-align: right;">0 / 3</td>
+<td style="text-align: right;"><strong>1</strong> / 3</td>
 <td style="text-align: right;">0 / 1,070</td>
-<td>live (YMYL editorial) · ⭐ menopause/perimenopause evidence hub</td>
+<td>live (YMYL editorial) · <strong>B38 7 Q-pages + menopause hub + HRT
+tracker BANKED</strong> (finishing pass: Adam-Parker named-editor +
+verify “6-month unscheduled bleeding” line; NO clinician, editorial
+model) · ⭐ menopause/perimenopause evidence hub</td>
 </tr>
 <tr>
 <td style="text-align: right;">11</td>
@@ -399,8 +440,11 @@ embedded-finance + halal · 5 go-live decisions = Adam</td>
 <td style="text-align: right;">0 / 44</td>
 <td style="text-align: right;">0 / 3</td>
 <td style="text-align: right;">~26 / 13</td>
-<td>21 content pages live · ⭐ answer-first Quick-Triage + safety/legal
-boxes · photography</td>
+<td>21 content pages live · <strong>AdSense remediation (author /
+privacy / contact / editorial) SHIPPED LIVE 28 Jun</strong> ·
+<strong>B37 renter-disrepair Q-pages BANKED</strong> (finishing pass:
+named-editor + verify Renters’-Rights-Act / Awaab dates) · ⭐
+answer-first Quick-Triage + safety/legal boxes</td>
 </tr>
 <tr>
 <td style="text-align: right;">14</td>
@@ -410,7 +454,9 @@ boxes · photography</td>
 <td style="text-align: right;"><strong>10</strong> / 5</td>
 <td style="text-align: right;">~24 / 1,455</td>
 <td>✅ live; <strong>bank-holiday JSON/CSV/iCal downloads LIVE</strong>
-+ 10 tools + data-asset</td>
++ 10 tools + data-asset · <strong>AdSense remediation SHIPPED LIVE 28
+Jun</strong> (World-Cup BH line verified real + preserved) · <strong>B41
+6 guides BANKED</strong></td>
 </tr>
 <tr>
 <td style="text-align: right;">15</td>
@@ -419,8 +465,9 @@ boxes · photography</td>
 <td style="text-align: right;">0 / 36</td>
 <td style="text-align: right;"><strong>18</strong> / 6</td>
 <td style="text-align: right;">~28 / 1,990</td>
-<td>✅ live; <strong>18 calculators (exceeds target)</strong> · deploy
-tracking/ad-safety · verify formula</td>
+<td>✅ live; <strong>18 calculators (exceeds target)</strong> ·
+<strong>AdSense remediation SHIPPED LIVE 28 Jun</strong> · <strong>B40 6
+guides BANKED</strong> · verify formula</td>
 </tr>
 <tr>
 <td style="text-align: right;">16</td>
@@ -429,23 +476,22 @@ tracking/ad-safety · verify formula</td>
 <td style="text-align: right;">0 / 34</td>
 <td style="text-align: right;"><strong>7</strong> / 3</td>
 <td style="text-align: right;">~26 / 694</td>
-<td>✅ live; ONS names + 7 tools · ⭐ ONS name-trend visualiser · deploy
-tracking/ad-safety</td>
+<td>✅ live; ONS names + 7 tools + name-trend visualiser ·
+<strong>AdSense remediation SHIPPED LIVE 28 Jun</strong> · <strong>B42 7
+guides BANKED</strong></td>
 </tr>
 <tr>
 <td style="text-align: right;">17</td>
 <td>TrustedInteriors 🔒</td>
-<td style="text-align: right;">0 / TBD</td>
+<td style="text-align: right;"><strong>7</strong> / TBD</td>
 <td style="text-align: right;">—</td>
 <td style="text-align: right;">—</td>
 <td style="text-align: right;">—</td>
-<td>🔒 <strong>HELD</strong> — new owned site, <strong>interiors /
-KBB-company vertical</strong> (sister to VettedHome; owns
-whole-kitchen/bathroom design + showroom + “new kitchen cost”
-authority/leadgen). Built off this fleet baseline. Blocked: owner-entity
-+ design decision. Research banked (iCloud
-<code>Research/home-improvement/</code>). Resume via
-<code>/build-site</code></td>
+<td>🟡 <strong>LIVE on apex</strong> (Neptune editorial design + section
+hubs + bespoke photography, per FLEET_REALITY) but <strong>B43 7 Q-pages
++ site-index hub BANKED (held pre-launch)</strong>. Open: owner Ltd
+entity (placeholders) + turn OFF CF “Block AI bots” (currently 403 to
+GPTBot = drift). Sister to VettedHome (interiors / KBB vertical).</td>
 </tr>
 <tr>
 <td style="text-align: right;"></td>
@@ -646,6 +692,103 @@ lang-aware (PL/RO); needs a native PL/RO spot-check before merge to main
 dupes: none found (already clean). Verified Barclays still offers IF
 before acting.</td>
 </tr>
+<tr>
+<td><strong>B24–B30</strong> data-asset bank (VettedHome BUS-grant /
+heat-pump-cost / EPC-band-C · DatesAndTimes SPA-timetable / clock-change
+· BabyData child-benefit-HICBC / birth-rate)</td>
+<td>🟢 <strong>BANKED (25 Jun)</strong>, all sourced
+(Ofgem/DESNZ/EST/MCS/EHS/HMRC/ONS), gated 0-major, noindex, on dev
+branches. Drip needs a <code>/data/</code> index + nav + figure
+re-verify. Manifest:
+<code>~/control-panel/DATA-ASSET-BANK-2026-06-25.md</code>.</td>
+</tr>
+<tr>
+<td><strong>B31</strong> FundBiz 4 guides (personal guarantee /
+is-business-lending-FCA-regulated / partner-signed-PG-house-risk /
+late-Companies-House-filing → loan call-in)</td>
+<td>🟢 <strong>BANKED (27 Jun)</strong> — real legal grounding, noindex,
+pushed to origin. Other session’s site.</td>
+</tr>
+<tr>
+<td><del><strong>B32</strong> MI + MHQ question sets</del></td>
+<td>❌ <strong>CANCELLED (verify-first)</strong> — both sites’
+<code>/questions/</code> already dense (would duplicate).</td>
+</tr>
+<tr>
+<td><strong>B33</strong> LTD Turnaround 4 insolvency Q-pages (s127 wages
+after petition / director redundancy via RPS / director-loan-or-BBL
+repay = s239 preference / liquidation &amp; personal mortgage)</td>
+<td>🟢 <strong>BANKED, HELD (27 Jun)</strong> — Insolvency Act 1986
+grounding + “take advice from Licensed IP” disclaimers. <strong>Gated on
+Adam naming the Licensed IP</strong>
+(<code>SITE.author.reviewer __TODO__</code>) before drip. Pushed to
+origin.</td>
+</tr>
+<tr>
+<td><strong>B34</strong> Kartapay 6 guides</td>
+<td>✅ <strong>DEPLOYED LIVE 28 Jun</strong> — ⚠️ pages are
+<strong>indexable not noindex</strong> (flag to review). Pushed to
+origin.</td>
+</tr>
+<tr>
+<td><strong>B35</strong> VettedHome questions</td>
+<td>✅ <strong>DEPLOYED LIVE 28 Jun</strong> — noindex (correct), 0
+unreadable, 200s.</td>
+</tr>
+<tr>
+<td><strong>B36</strong> BBL banked</td>
+<td>🟢 <strong>BANKED (other session)</strong> — antislop flagged
+factual fixes (PERG cite, BoE base rate), <strong>not
+shipped</strong>.</td>
+</tr>
+<tr>
+<td><strong>B37</strong> HomesAndHedge renter-disrepair Q-pages</td>
+<td>🟢 <strong>BANKED (27 Jun)</strong> — pushed to origin. Needs Claude
+finishing pass (named-editor + verify Renters’-Rights-Act / Awaab
+dates).</td>
+</tr>
+<tr>
+<td><strong>B38</strong> HerVitals 7 Q-pages + menopause hub + HRT
+tracker</td>
+<td>🟢 <strong>BANKED (27 Jun)</strong> — pushed to origin. Needs Claude
+finishing pass (Adam-Parker named-editor + verify “6-month unscheduled
+bleeding” line). <strong>No hired clinician</strong> (editorial model,
+22 Jun).</td>
+</tr>
+<tr>
+<td><strong>B39</strong> ADHD Helper RTC / shared-care guides</td>
+<td>🟢 <strong>BANKED (27 Jun)</strong> — pushed to origin. Needs Claude
+finishing pass (named-editor + a CLAUDE.md FAQPage-policy conflict to
+reconcile).</td>
+</tr>
+<tr>
+<td><strong>B40</strong> FitCalcs 6 guides</td>
+<td>🟢 <strong>BANKED</strong> (banner site / other session).</td>
+</tr>
+<tr>
+<td><strong>B41</strong> DatesAndTimes 6 guides</td>
+<td>🟢 <strong>BANKED</strong> (banner site / other session).</td>
+</tr>
+<tr>
+<td><strong>B42</strong> BabyData 7 guides</td>
+<td>🟢 <strong>BANKED</strong> (banner site / other session).</td>
+</tr>
+<tr>
+<td><strong>B43</strong> TrustedInteriors 7 Q-pages + site-index
+hub</td>
+<td>🟢 <strong>BANKED, HELD pre-launch (27 Jun)</strong> — pushed to
+origin. Blocked: owner Ltd entity + CF “Block AI bots” OFF. Site itself
+is live on apex.</td>
+</tr>
+<tr>
+<td><strong>FAQPage RETROFIT + stale-rule reconcile</strong> (across all
+12 banked branches)</td>
+<td>✅ <strong>DONE (27 Jun)</strong> — FAQPage is WANTED (Bing/AI,
+reversed 22 Jun); added real visible + JSON-LD FAQ to banked Q-pages
+that skipped it; reconciled the stale “no-FAQPage” fleet-lint HARD-fail
+(<code>FLEET_LINT_STRICT=1</code>) fleet-wide → info/conditional. Was a
+deploy landmine in ~7 repos.</td>
+</tr>
 </tbody>
 </table>
 <h2
@@ -667,24 +810,50 @@ when ready). ✅ ALL passed the adversarial anti-slop review (23 Jun):
 majors/kills. Every fix applied + committed (incl. real factual/legal
 catches: FundBiz APR maths, HomesAndHedge glue-trap/Awaab’s law,
 VettedHome false template line, PeptideClear uncited £45m). Banked
-clean, ready to drip:</strong> - B15 PeptideClear next-gen GLP-1 hub +
-CagriSema page → <code>dev-b15-peptideclear-glp1</code> - B16 FundBiz
-refinance hub → <code>dev-b16-fundbiz-refinance</code>
-(<code>23043bf</code>) - B16 BBL MCA-factor-rate-trap guide →
-<code>dev-b16-bbl-mca-trap</code> (<code>cccdd9f</code>) — interlinked
-pair w/ FundBiz - B17 VettedHome spray-foam hub (+ mortgage-refused +
-scams) → <code>dev-b17-vettedhome-sprayfoam</code>
-(<code>20f3c84</code>) - B18 BabyData name checker →
-<code>dev-b18-babydata-visualiser</code> (<code>414a1e1</code>) - B19
-ADHD RTC hub + GP-letter → <code>dev-b19-adhd-rtc-hub</code>
-(<code>f29722c</code>) - B20 Her Vitals menopause hub (+symptom pages) →
-<code>dev-b20-hervitals-menopause</code> (<code>2139412</code>) - B21
-HomesAndHedge triage + safety/legal boxes →
-<code>dev-b21-homesandhedge-triage</code> (<code>3a7db28</code>) - LLB
+clean, ready to drip:</strong> - ✅ <strong>B15 PeptideClear GLP-1 hub +
+CagriSema → LIVE</strong> (confirmed on the live URL 26 Jun; “banked”
+label was stale) → <code>dev-b15-peptideclear-glp1</code> - ⏳ B16
+FundBiz refinance hub → <code>dev-b16-fundbiz-refinance</code>
+(<code>23043bf</code>) — HELD (interlinked w/ BBL) - ⏳ B16 BBL
+MCA-factor-rate-trap guide → <code>dev-b16-bbl-mca-trap</code>
+(<code>cccdd9f</code>) — HELD (all BBL on hold) - ⏳ B17 VettedHome
+spray-foam hub → <code>dev-b17-vettedhome-sprayfoam</code>
+(<code>20f3c84</code>) — HELD (wave-3 gated, not a clean deploy) - ✅
+<strong>B18 BabyData name-trend visualiser → DEPLOYED LIVE 26
+Jun</strong> (<code>/names/trends/</code>) - ✅ <strong>B19 ADHD RTC hub
+→ LIVE</strong> (confirmed 26 Jun) - ✅ <strong>B20 Her Vitals menopause
+hub → LIVE</strong> (confirmed 26 Jun) - ✅ <strong>B21 HomesAndHedge
+triage + safety/legal boxes → DEPLOYED LIVE 26 Jun</strong> - ⏳ LLB
 Theme-A 4 retirement-mortgage guides (held) →
 <code>dev-llb-theme-a-retirement</code> - <em>(B15/B16/LLB agents hit a
 git/Bash sandbox block — I committed + gate-verified them
 in-session.)</em></p>
+<p><strong>A2. 27–29 Jun banked content tranche — built, gated (0
+antislop majors), noindex, NOW PUSHED TO ORIGIN (no longer
+laptop-only):</strong> - 🟢 <strong>B31 FundBiz</strong> 4 guides → on
+dev branch (origin). Other session’s site. - ✅ <strong>B34
+Kartapay</strong> 6 guides → <strong>DEPLOYED LIVE 28 Jun</strong> (⚠️
+indexable, not noindex — review). - ✅ <strong>B35 VettedHome</strong>
+questions → <strong>DEPLOYED LIVE 28 Jun</strong> (noindex, correct). -
+🟢 <strong>B33 LTD Turnaround</strong> 4 insolvency Q-pages →
+<code>dev-b33</code> (origin). <strong>HELD</strong> on named Licensed
+IP. - 🟢 <strong>B36 BBL</strong> banked (other session) — antislop
+PERG-cite + BoE-base-rate fixes pending, not shipped. - 🟢 <strong>B37
+HomesAndHedge</strong> renter-disrepair → <code>dev-b37</code> (origin).
+Finishing pass pending. - 🟢 <strong>B38 HerVitals</strong> 7 Q +
+menopause hub + HRT tracker → <code>dev-b38</code> (origin). Finishing
+pass pending. - 🟢 <strong>B39 ADHD Helper</strong> RTC / shared-care →
+<code>dev-b39</code> (origin). Finishing pass + FAQ-config fix pending.
+- 🟢 <strong>B40 FitCalcs · B41 DatesAndTimes · B42 BabyData</strong>
+6/6/7 guides → banked (banner sites / other session). - 🟢 <strong>B43
+TrustedInteriors</strong> 7 Q + site-index hub → <code>dev-b43</code>
+(origin). <strong>HELD pre-launch.</strong> - <strong>Backup pass (29
+Jun):</strong> pushed previously laptop-only branches to origin —
+company-rescue (main + dev-b33), hervitals (dev-b38), trustedinteriors
+(dev-b43), homesandhedge (main + dev-b37), adhdhelper (dev-b39),
+sortedproperty (main). PeptideClear live source
+<code>dev-b29-mhra-data</code> also pushed (main stays the 6-behind trap
+— do NOT deploy main).</p>
 <p><strong>B. Big banked SITE (the major one): 2nd Invoice-Finance
 site</strong> (<code>~/invoicefinance-site</code>) — <strong>167 pages
 built, NOT live.</strong> Awaiting your 5 go-live decisions
@@ -758,6 +927,47 @@ list in the GROW-BRIEF doc.</p>
 <h2 id="build-log-what-shipped-with-real-deploy-status">Build log (what
 shipped, with real deploy status)</h2>
 <ul>
+<li><strong>29 Jun · fleet · backup pass</strong> — pushed all
+previously laptop-only branches to origin (company-rescue main +
+dev-b33, hervitals dev-b38, trustedinteriors dev-b43, homesandhedge main
++ dev-b37, adhdhelper dev-b39, sortedproperty main, peptideclear
+dev-b29-mhra-data). Nothing is laptop-only any more. ✅</li>
+<li><strong>29 Jun · LTD Turnaround · IndexNow</strong> — built
+<code>scripts/indexnow-submit.cjs</code> + postbuild hook, submitted 92
+URLs to Bing (200). Committed <code>feat/ltd-indexnow</code>. ✅</li>
+<li><strong>28 Jun · Kartapay · B34</strong> — 6 guides →
+<strong>DEPLOYED LIVE</strong> (0 unreadable, 200s), branch pushed. ⚠️
+pages indexable, not noindex (review). ✅</li>
+<li><strong>28 Jun · VettedHome · B35</strong> — questions →
+<strong>DEPLOYED LIVE</strong> (noindex, 0 unreadable). ✅</li>
+<li><strong>28 Jun · MerchantHQ · contrast</strong> — last hard contrast
+fail fixed (fleet-core AIComprehension “Quick Reference”
+<code>text-xs gray-400</code> 2.49:1, overridden in site
+<code>global.css</code>) → <strong>DEPLOYED LIVE</strong>, gate 0
+unreadable; main pushed. ✅</li>
+<li><strong>28 Jun · banner ×4 · AdSense remediation</strong> —
+HomesAndHedge / BabyData / FitCalcs / DatesAndTimes <strong>SHIPPED
+LIVE</strong> through build → contrast-gate → deploy → live-verify:
+Adam-Parker named-editor <code>/authors/adam-parker/</code> (Person +
+ORCID), Privacy / Contact / Editorial-policy pages, footer legal nav,
+oliver→adam 301, fake “registered reviewer/midwife” claims stripped.
+Caught + preserved DatesAndTimes “World Cup BH” line (verified real via
+gov.scot, a prior commit had wrongly deleted it). Patched a latent
+fleet-core AuthorBox “Last reviewed” <code>text-gray-400</code> 2.45:1
+contrast bug. <strong>PENDING ADAM: resubmit each to AdSense.</strong>
+✅</li>
+<li><strong>27 Jun · FAQPage retrofit + stale-rule reconcile</strong> —
+added real visible + JSON-LD FAQ to the banked
+B31/B33/B34/B36/B40/B41/B42/B43 Q-pages that had skipped it; reconciled
+the stale “no-FAQPage” fleet-lint HARD-fail
+(<code>FLEET_LINT_STRICT=1</code>, a deploy landmine in ~7 repos) →
+info/conditional. FAQPage is WANTED (Bing/AI). ✅</li>
+<li><strong>27 Jun · banked content tranche</strong> — B31 (FundBiz 4) ·
+B33 (LTD 4, held) · B37 (H&amp;H) · B38 (HerVitals 7 + hub + tracker) ·
+B39 (ADHD) · B40/B41/B42 (banner 6/6/7) · B43 (TrustedInteriors 7 + hub,
+held) built (verify-first, real sources), gated 0-major, noindex,
+committed to dev branches. B32 (MI+MHQ Q-sets) CANCELLED as duplicative.
+✅</li>
 <li><strong>24 Jun (pm) — anti-slop MAJOR remediation</strong> —
 PeptideClear (YMYL) fabrications removed + LIVE (fake Lancet RCT, wrong
 Wegovy CV date-&gt;July 2024, ASA notice, GHK-Cu product error);

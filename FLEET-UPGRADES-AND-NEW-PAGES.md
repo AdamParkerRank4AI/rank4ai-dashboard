@@ -1,5 +1,22 @@
-# Fleet Upgrades & New Pages — status (updated 24 Jun 2026)
+# Fleet Upgrades & New Pages — status (updated 29 Jun 2026)
 > Working copy in a writable path. The iCloud original (`iCloud/.../Research/beyond-serp-fleet-2026-06-17/`) is **dataless/evicted + needs Full Disk Access** for this process to write — that's the "lock" seen all session. Use this copy until FDA is granted.
+
+## 🔄 29 Jun 2026 — this session's changes (banked tranche shipped + banner AdSense + full backup)
+> Verified against `~/control-panel/FLEET_REALITY.md` (07:33, 17 sites; only intentional drift = LLB 401-locked + trustedinteriors CF AI-block) + CHANGELOG newest entries.
+- **DEPLOYED LIVE (noindex unless noted):** **B34 Kartapay 6 guides** (⚠️ pages are INDEXABLE not noindex: flag to review) · **B35 VettedHome questions** (noindex, correct) · **MerchantHQ** last hard contrast fail fixed (fleet-core AIComprehension "Quick Reference" gray-400 2.49:1, overridden in site CSS) → gate **0 unreadable** live.
+- **BANNER ADSENSE REMEDIATION SHIPPED LIVE (4 sites: HomesAndHedge, BabyData, FitCalcs, DatesAndTimes):** Adam-Parker named-editor `/authors/adam-parker/` pages (Person schema + ORCID), Privacy / Contact / Editorial-policy pages, footer legal nav, oliver→adam 301, fake "registered reviewer/midwife" claims stripped. Headshot + LinkedIn being wired in now (in progress). **PENDING ADAM: resubmit each to AdSense.** Caught + preserved a real factual line a prior commit had wrongly deleted (DatesAndTimes "World Cup bank holiday" Mon 15 Jun 2026 — verified real via gov.scot).
+- **NEW BANKED CONTENT TRANCHE (built + committed + pushed to origin, noindex, NOT live):** B31 FundBiz 4 guides · B33 LTD Turnaround 4 insolvency Q-pages (HELD on named Licensed IP) · B36 BBL (other session; antislop flagged PERG-cite + BoE-base-rate fixes, not shipped) · B37 HomesAndHedge renter-disrepair · B38 HerVitals 7 Q + menopause hub + HRT tracker · B39 ADHD RTC/shared-care · B40 FitCalcs 6 guides · B41 DatesAndTimes 6 guides · B42 BabyData 7 guides · B43 TrustedInteriors 7 Q + site-index hub (HELD pre-launch). Health/legal ones need a Claude **finishing pass** (Adam-Parker named-editor + a date/figure re-verify) before drip; **no hired clinician** (editorial model, locked 22 Jun).
+- **FAQPage RETROFIT + stale-rule reconcile across all 12 banked branches:** FAQPage is WANTED (Bing/AI, reversed 22 Jun); the stale "no-FAQPage" fleet-lint was a HARD build-fail under `FLEET_LINT_STRICT=1` in ~7 repos = a deploy landmine. Reconciled fleet-wide (lint → info/conditional-on-visible-FAQ); added real visible+JSON-LD FAQ to the banked Q-pages that had skipped it.
+- **BACKUP PASS (29 Jun) — nothing laptop-only any more:** pushed previously laptop-only branches to origin: company-rescue (main + dev-b33), hervitals (dev-b38), trustedinteriors (dev-b43), homesandhedge (main + dev-b37), adhdhelper (dev-b39), sortedproperty (main). PeptideClear live source `dev-b29-mhra-data` also pushed (main stays the 6-behind trap, do NOT deploy main).
+- **Drip-gate run across all banked batches:** all build clean + pass a11y + **0 antislop MAJORS** in new content; only blockers were contrast (shared `.text-xs` byline, fleet-core root cause) + reviewer gates.
+
+## 🔄 26 Jun 2026 — this session's changes (deploy-coordination)
+- **DEPLOYED LIVE:** B18 BabyData ONS name-trend visualiser (`/names/trends/`) · B21 HomesAndHedge Quick-Triage + Safety/Legal boxes · FitCalcs + DatesAndTimes + VettedHome + MerchantHQ + LTD logos/contrast/ad-safety.
+- **Confirmed ALREADY live (the "banked" labels were stale):** B15 PeptideClear GLP-1/CagriSema · B19 ADHD Right-to-Choose hub · B20 HerVitals menopause hub (verified on the live URLs, not the commit prose).
+- **LLB (#11):** the real **125-page Richard build** went live with the **corrected entity** (Lending for Later Life / **One Stop 4 Equity Release Ltd** / **FRN 952887**), replacing the stale 9-page wrong-entity build. ⚠️ **Now going PASSWORD-LOCKED** (`llb-gate.sh on`) — holding out One Stop's FRN publicly needs their **BAT approval first**; build it out fully behind the lock, unlock on One Stop sign-off. CTA stays off; Theme-A guides held.
+- 🔴 **BANNER sites AdSense REJECTED** (FitCalcs/BabyData/DatesAndTimes/HomesAndHedge) — "Low value content", NOT a flip-a-switch: need Privacy + Contact + editorial-policy pages, cut the programmatic % (babydata 87% / ~7% unique), and a real named editor (replace "Oliver Mackman"), then resubmit. **Owned by the banner-AdSense session.** (FitCalcs + BabyData also left live-failing the contrast gate by an un-gated deploy — routed to that session.)
+- **Reskins (E):** BBL `restyle-pilot` + FundBiz `dev-rolex-reskin` are ALREADY LIVE (the reskin IS the live branch); MHQ design live on main; **MI `dev-navy-teal-reskin` = a 26-line non-change, not a real redesign** → drop it.
+- **Deploy infra:** root cause = GitHub Actions disabled account-wide (~Jun 8). Reliable manual deploy `~/fleet-deploy.sh` (now gates contrast). Verified live state in `~/control-panel/FLEET_DEPLOY_TRUTH.md`.
 
 ## Site numbering = Adam's order (core 1–6 · newer lead/content 7–12 · display-ad 13–16)
 > Counts = `done / target`. ⭐ in Status = the #1 lead build to do next. 🅿️ = reskin parked.
@@ -7,22 +24,22 @@
 | # | Brand | New pages | Upgrades | Tools | Answer blocks | Status |
 |--:|---|--:|--:|--:|--:|---|
 | 1 | MarketInvoice | 0 / 60 | **43** / 680 | **1** / 3 | 0 / ~300 | ✅ B3 funnel + GEO + league table + **FAQPage on 326pp** LIVE · **anti-slop sweep ✅ 24 Jun: Allianz/Funding-Circle non-IF mislabel fixed LIVE** · next: barclays consolidate, tighten ~64 thin capsules |
-| 2 | MerchantHQ 🅿️ | **15** / 55 | 0 / 149 | 0 / 3 | 0 / 560 | ✅ **contract-exit hub LIVE** (pillar + 14 provider cancel guides) + FAQPage re-enabled · **anti-slop sweep ✅ 24 Jun: Zettle price + trade-location label fixed LIVE** · next: un-gated fee table · methodology · 🅿️ reskin still parked |
+| 2 | MerchantHQ 🅿️ | **15** / 55 | 0 / 149 | 0 / 3 | 0 / 560 | ✅ **contract-exit hub LIVE** (pillar + 14 provider cancel guides) + FAQPage re-enabled · **last hard contrast fail fixed → LIVE 28 Jun (gate 0 unreadable)** · **anti-slop sweep ✅ 24 Jun: Zettle price + trade-location label fixed LIVE** · next: un-gated fee table · methodology · 🅿️ reskin still parked |
 | 3 | PeptideClear | 0 / 49 | 0 / 268 | 0 / 4 | 0 / ~200 | 3 surge pages + 34 citations · ⭐ next-gen GLP-1 hub · /medical vs /research split |
-| 4 | FundBiz 🅿️ | 0 / 124 | 0 / 142 | 0 / 3 | 0 / 230 | trade-credit surge · ⭐ refinance / "stuck in a contract" hub · 17 decline guides |
-| 5 | Best Business Loans 🅿️ | 0 / 73 | 0 / 112 | 0 / 3 | 0 / ~150 | mature · ⭐ MCA escalator-trap guide · real rate numbers (kill "see lender quote") · fix 398w capsule |
-| 6 | Kartapay | ⏸ PL/RO | 0 / 37 | 0 / 3 | — | PL+RO live (~40pp each) · ⭐ "loan, no UK credit history" PL/RO · fix EN-header bleed |
+| 4 | FundBiz 🅿️ | **4** / 124 | 0 / 142 | 0 / 3 | 0 / 230 | trade-credit surge · **B31 4 guides BANKED** (PG / FCA-regulation / PG-house-risk / late-filing) · ⭐ refinance / "stuck in a contract" hub · 17 decline guides |
+| 5 | Best Business Loans 🅿️ | 0 / 73 | 0 / 112 | 0 / 3 | 0 / ~150 | mature · **B36 BANKED** (other session; antislop PERG-cite + BoE base-rate fixes pending, not shipped) · ⭐ MCA escalator-trap guide · real rate numbers (kill "see lender quote") · fix 398w capsule |
+| 6 | Kartapay | **6** / — | 0 / 37 | 0 / 3 | — | PL+RO live (~40pp each) · **B34 6 guides DEPLOYED LIVE 28 Jun** (⚠️ pages indexable not noindex: review) · ⭐ "loan, no UK credit history" PL/RO · fix EN-header bleed |
 | 7 | VettedHome (Sorted) | 0 / 316 | 0 / 22 | **3** / 5 | 0 / 10 | 3 tools live (cost-to-sell, EPC, fees) · ⭐ spray-foam crisis hub · "How We Vet" · cost bands |
-| 8 | Company Rescue / LTD Turnaround | 0 / ~50 | 0 / 41 | **13** / 2 | 0 / 535 | launched live + lead pipeline · verify privacy-404 · named-IP page · a11y labels |
-| 9 | ADHD Helper | 0 / 296 | 0 / 55 | **4+** / 4 | 0 / 265 | full tool suite live (ASRS/RTC/cost) · ⭐ Right-to-Choose hub |
-| 10 | Her Vitals | 0 / 328 | 0 / 70 | 0 / 3 | 0 / 1,070 | live (YMYL editorial) · ⭐ menopause/perimenopause evidence hub |
+| 8 | Company Rescue / LTD Turnaround | **4** / ~50 | 0 / 41 | **13** / 2 | 0 / 535 | launched live + lead pipeline · **B33 4 insolvency Q-pages BANKED, HELD on named Licensed IP** · IndexNow automated 29 Jun · verify privacy-404 · named-IP page · a11y labels |
+| 9 | ADHD Helper | banked / 296 | 0 / 55 | **4+** / 4 | 0 / 265 | full tool suite live (ASRS/RTC/cost) · **B39 RTC / shared-care guides BANKED** (finishing pass: named-editor + CLAUDE.md FAQ-config fix) · ⭐ Right-to-Choose hub |
+| 10 | Her Vitals | **7** / 328 | 0 / 70 | **1** / 3 | 0 / 1,070 | live (YMYL editorial) · **B38 7 Q-pages + menopause hub + HRT tracker BANKED** (finishing pass: Adam-Parker named-editor + verify "6-month unscheduled bleeding" line; NO clinician, editorial model) · ⭐ menopause/perimenopause evidence hub |
 | 11 | Later Life Borrowing | **10** / ~20 | 0 / 115 | 0 / 4 | 0 / 250 | ✅ 10 guides + OG LIVE · remove "finalising" notice · rest = Richard/compliance |
 | 12 | New IF site (2nd) | 0 / 90 | 0 / 167 | 2 / 4 | 8 / 40 | most-built, **not live** · port 85-provider DB · embedded-finance + halal · 5 go-live decisions = Adam |
-| 13 | Homes & Hedge | 21 / 367 | 0 / 44 | 0 / 3 | ~26 / 13 | 21 content pages live · ⭐ answer-first Quick-Triage + safety/legal boxes · photography |
-| 14 | DateKit → datesandtimes.co.uk | 32 / 216 | 0 / 32 | **10** / 5 | ~24 / 1,455 | ✅ live; **bank-holiday JSON/CSV/iCal downloads LIVE** + 10 tools + data-asset |
-| 15 | FitGauge → fitcalcs.co.uk | 36 / 380 | 0 / 36 | **18** / 6 | ~28 / 1,990 | ✅ live; **18 calculators (exceeds target)** · deploy tracking/ad-safety · verify formula |
-| 16 | NameNest → babydata.co.uk | 34 / 373 | 0 / 34 | **7** / 3 | ~26 / 694 | ✅ live; ONS names + 7 tools · ⭐ ONS name-trend visualiser · deploy tracking/ad-safety |
-| 17 | TrustedInteriors 🔒 | 0 / TBD | — | — | — | 🔒 **HELD** — new owned site, **interiors / KBB-company vertical** (sister to VettedHome; owns whole-kitchen/bathroom design + showroom + "new kitchen cost" authority/leadgen). Built off this fleet baseline. Blocked: owner-entity + design decision. Research banked (iCloud `Research/home-improvement/`). Resume via `/build-site` |
+| 13 | Homes & Hedge | 21 / 367 | 0 / 44 | 0 / 3 | ~26 / 13 | 21 content pages live · **AdSense remediation (author / privacy / contact / editorial) SHIPPED LIVE 28 Jun** · **B37 renter-disrepair Q-pages BANKED** (finishing pass: named-editor + verify Renters'-Rights-Act / Awaab dates) · ⭐ answer-first Quick-Triage + safety/legal boxes |
+| 14 | DateKit → datesandtimes.co.uk | 32 / 216 | 0 / 32 | **10** / 5 | ~24 / 1,455 | ✅ live; **bank-holiday JSON/CSV/iCal downloads LIVE** + 10 tools + data-asset · **AdSense remediation SHIPPED LIVE 28 Jun** (World-Cup BH line verified real + preserved) · **B41 6 guides BANKED** |
+| 15 | FitGauge → fitcalcs.co.uk | 36 / 380 | 0 / 36 | **18** / 6 | ~28 / 1,990 | ✅ live; **18 calculators (exceeds target)** · **AdSense remediation SHIPPED LIVE 28 Jun** · **B40 6 guides BANKED** · verify formula |
+| 16 | NameNest → babydata.co.uk | 34 / 373 | 0 / 34 | **7** / 3 | ~26 / 694 | ✅ live; ONS names + 7 tools + name-trend visualiser · **AdSense remediation SHIPPED LIVE 28 Jun** · **B42 7 guides BANKED** |
+| 17 | TrustedInteriors 🔒 | **7** / TBD | — | — | — | 🟡 **LIVE on apex** (Neptune editorial design + section hubs + bespoke photography, per FLEET_REALITY) but **B43 7 Q-pages + site-index hub BANKED (held pre-launch)**. Open: owner Ltd entity (placeholders) + turn OFF CF "Block AI bots" (currently 403 to GPTBot = drift). Sister to VettedHome (interiors / KBB vertical). |
 | | **FLEET** | **~2,800** | **~2,010** | **~55** | **~7,540** | |
 
 **Health YMYL ⭐ items** (PeptideClear/HerVitals/ADHD/FitCalcs/BabyData/HomesAndHedge) build on the **editorial model** — no hired reviewer (locked 23 Jun). **🅿️ reskins** (MHQ/FundBiz/BBL) parked until Adam says ship.
@@ -56,6 +73,21 @@
 | **B21** HomesAndHedge answer-first Quick-Triage + safety/legal boxes *(my lane)* | ⏳ ready |
 | **B22** Kartapay "business loan, no UK credit history" PL + RO + fix EN-header bleed | 🟢 **EN-bleed fix BANKED** on `dev-b22-kartapay-langfix` (24 Jun) — footer/nav labels now lang-aware (PL/RO); needs a native PL/RO spot-check before merge to main (Kartapay doctrine). New "no-credit-history" PL/RO pages NOT built yet (need native content). |
 | **B23** MarketInvoice SERP cleanup: consolidate "barclays invoice finance" (10→1) + prune southall dupes | ✅ **DONE + LIVE (24 Jun)** — removed thin `/alternatives/barclays-invoice-finance/`, 301'd to `/providers/barclays/` (no chain), verified live. Southall dupes: none found (already clean). Verified Barclays still offers IF before acting. |
+| **B24–B30** data-asset bank (VettedHome BUS-grant / heat-pump-cost / EPC-band-C · DatesAndTimes SPA-timetable / clock-change · BabyData child-benefit-HICBC / birth-rate) | 🟢 **BANKED (25 Jun)**, all sourced (Ofgem/DESNZ/EST/MCS/EHS/HMRC/ONS), gated 0-major, noindex, on dev branches. Drip needs a `/data/` index + nav + figure re-verify. Manifest: `~/control-panel/DATA-ASSET-BANK-2026-06-25.md`. |
+| **B31** FundBiz 4 guides (personal guarantee / is-business-lending-FCA-regulated / partner-signed-PG-house-risk / late-Companies-House-filing → loan call-in) | 🟢 **BANKED (27 Jun)** — real legal grounding, noindex, pushed to origin. Other session's site. |
+| ~~**B32** MI + MHQ question sets~~ | ❌ **CANCELLED (verify-first)** — both sites' `/questions/` already dense (would duplicate). |
+| **B33** LTD Turnaround 4 insolvency Q-pages (s127 wages after petition / director redundancy via RPS / director-loan-or-BBL repay = s239 preference / liquidation & personal mortgage) | 🟢 **BANKED, HELD (27 Jun)** — Insolvency Act 1986 grounding + "take advice from Licensed IP" disclaimers. **Gated on Adam naming the Licensed IP** (`SITE.author.reviewer __TODO__`) before drip. Pushed to origin. |
+| **B34** Kartapay 6 guides | ✅ **DEPLOYED LIVE 28 Jun** — ⚠️ pages are **indexable not noindex** (flag to review). Pushed to origin. |
+| **B35** VettedHome questions | ✅ **DEPLOYED LIVE 28 Jun** — noindex (correct), 0 unreadable, 200s. |
+| **B36** BBL banked | 🟢 **BANKED (other session)** — antislop flagged factual fixes (PERG cite, BoE base rate), **not shipped**. |
+| **B37** HomesAndHedge renter-disrepair Q-pages | 🟢 **BANKED (27 Jun)** — pushed to origin. Needs Claude finishing pass (named-editor + verify Renters'-Rights-Act / Awaab dates). |
+| **B38** HerVitals 7 Q-pages + menopause hub + HRT tracker | 🟢 **BANKED (27 Jun)** — pushed to origin. Needs Claude finishing pass (Adam-Parker named-editor + verify "6-month unscheduled bleeding" line). **No hired clinician** (editorial model, 22 Jun). |
+| **B39** ADHD Helper RTC / shared-care guides | 🟢 **BANKED (27 Jun)** — pushed to origin. Needs Claude finishing pass (named-editor + a CLAUDE.md FAQPage-policy conflict to reconcile). |
+| **B40** FitCalcs 6 guides | 🟢 **BANKED** (banner site / other session). |
+| **B41** DatesAndTimes 6 guides | 🟢 **BANKED** (banner site / other session). |
+| **B42** BabyData 7 guides | 🟢 **BANKED** (banner site / other session). |
+| **B43** TrustedInteriors 7 Q-pages + site-index hub | 🟢 **BANKED, HELD pre-launch (27 Jun)** — pushed to origin. Blocked: owner Ltd entity + CF "Block AI bots" OFF. Site itself is live on apex. |
+| **FAQPage RETROFIT + stale-rule reconcile** (across all 12 banked branches) | ✅ **DONE (27 Jun)** — FAQPage is WANTED (Bing/AI, reversed 22 Jun); added real visible + JSON-LD FAQ to banked Q-pages that skipped it; reconciled the stale "no-FAQPage" fleet-lint HARD-fail (`FLEET_LINT_STRICT=1`) fleet-wide → info/conditional. Was a deploy landmine in ~7 repos. |
 
 ## 📦 BANKED REGISTER — the bank/drip pile (where all the banked stuff is)
 > Model (Adam, 18 Jun): upgrades → main; **new pages → BANK + drip-feed, never dump.** Two tiers: **🟢 BANKED** = built + ready to push · **🔵 BANKED NEXT** = scoped/queued, not built yet. Verified via git branches + prelaunch flags + release waves, 23 Jun.
@@ -63,16 +95,29 @@
 # 🟢 BANKED — built, ready to push
 
 **A. Ready-to-push lead builds (dev branches, gate-green, push when ready). ✅ ALL passed the adversarial anti-slop review (23 Jun): 9-build skeptic pass → 8 minor-fixes + 1 clean (BabyData), ZERO majors/kills. Every fix applied + committed (incl. real factual/legal catches: FundBiz APR maths, HomesAndHedge glue-trap/Awaab's law, VettedHome false template line, PeptideClear uncited £45m). Banked clean, ready to drip:**
-- B15 PeptideClear next-gen GLP-1 hub + CagriSema page → `dev-b15-peptideclear-glp1`
-- B16 FundBiz refinance hub → `dev-b16-fundbiz-refinance` (`23043bf`)
-- B16 BBL MCA-factor-rate-trap guide → `dev-b16-bbl-mca-trap` (`cccdd9f`) — interlinked pair w/ FundBiz
-- B17 VettedHome spray-foam hub (+ mortgage-refused + scams) → `dev-b17-vettedhome-sprayfoam` (`20f3c84`)
-- B18 BabyData name checker → `dev-b18-babydata-visualiser` (`414a1e1`)
-- B19 ADHD RTC hub + GP-letter → `dev-b19-adhd-rtc-hub` (`f29722c`)
-- B20 Her Vitals menopause hub (+symptom pages) → `dev-b20-hervitals-menopause` (`2139412`)
-- B21 HomesAndHedge triage + safety/legal boxes → `dev-b21-homesandhedge-triage` (`3a7db28`)
-- LLB Theme-A 4 retirement-mortgage guides (held) → `dev-llb-theme-a-retirement`
+- ✅ **B15 PeptideClear GLP-1 hub + CagriSema → LIVE** (confirmed on the live URL 26 Jun; "banked" label was stale) → `dev-b15-peptideclear-glp1`
+- ⏳ B16 FundBiz refinance hub → `dev-b16-fundbiz-refinance` (`23043bf`) — HELD (interlinked w/ BBL)
+- ⏳ B16 BBL MCA-factor-rate-trap guide → `dev-b16-bbl-mca-trap` (`cccdd9f`) — HELD (all BBL on hold)
+- ⏳ B17 VettedHome spray-foam hub → `dev-b17-vettedhome-sprayfoam` (`20f3c84`) — HELD (wave-3 gated, not a clean deploy)
+- ✅ **B18 BabyData name-trend visualiser → DEPLOYED LIVE 26 Jun** (`/names/trends/`)
+- ✅ **B19 ADHD RTC hub → LIVE** (confirmed 26 Jun)
+- ✅ **B20 Her Vitals menopause hub → LIVE** (confirmed 26 Jun)
+- ✅ **B21 HomesAndHedge triage + safety/legal boxes → DEPLOYED LIVE 26 Jun**
+- ⏳ LLB Theme-A 4 retirement-mortgage guides (held) → `dev-llb-theme-a-retirement`
 - *(B15/B16/LLB agents hit a git/Bash sandbox block — I committed + gate-verified them in-session.)*
+
+**A2. 27–29 Jun banked content tranche — built, gated (0 antislop majors), noindex, NOW PUSHED TO ORIGIN (no longer laptop-only):**
+- 🟢 **B31 FundBiz** 4 guides → on dev branch (origin). Other session's site.
+- ✅ **B34 Kartapay** 6 guides → **DEPLOYED LIVE 28 Jun** (⚠️ indexable, not noindex — review).
+- ✅ **B35 VettedHome** questions → **DEPLOYED LIVE 28 Jun** (noindex, correct).
+- 🟢 **B33 LTD Turnaround** 4 insolvency Q-pages → `dev-b33` (origin). **HELD** on named Licensed IP.
+- 🟢 **B36 BBL** banked (other session) — antislop PERG-cite + BoE-base-rate fixes pending, not shipped.
+- 🟢 **B37 HomesAndHedge** renter-disrepair → `dev-b37` (origin). Finishing pass pending.
+- 🟢 **B38 HerVitals** 7 Q + menopause hub + HRT tracker → `dev-b38` (origin). Finishing pass pending.
+- 🟢 **B39 ADHD Helper** RTC / shared-care → `dev-b39` (origin). Finishing pass + FAQ-config fix pending.
+- 🟢 **B40 FitCalcs · B41 DatesAndTimes · B42 BabyData** 6/6/7 guides → banked (banner sites / other session).
+- 🟢 **B43 TrustedInteriors** 7 Q + site-index hub → `dev-b43` (origin). **HELD pre-launch.**
+- **Backup pass (29 Jun):** pushed previously laptop-only branches to origin — company-rescue (main + dev-b33), hervitals (dev-b38), trustedinteriors (dev-b43), homesandhedge (main + dev-b37), adhdhelper (dev-b39), sortedproperty (main). PeptideClear live source `dev-b29-mhra-data` also pushed (main stays the 6-behind trap — do NOT deploy main).
 
 **B. Big banked SITE (the major one): 2nd Invoice-Finance site** (`~/invoicefinance-site`) — **167 pages built, NOT live.** Awaiting your 5 go-live decisions (brand/domain, owning Ltd, CF account, author, lender panel).
 
@@ -102,6 +147,14 @@
 **H. Grow-brief ⏸ HOLD bets (need your go / live-data validation first):** MI recourse-vs-non-recourse tool + hidden-fees catalogue + sector deep-hubs · MHQ hidden-fee calculator + settlement matrix · PeptideClear legality pillar + CoA guide · Her Vitals brand-comparison index + form/dose guides · ADHD private-cost + by-region FOI data · VettedHome heat-pump/cavity-wall + by-trade×town rollout · banner data-assets (SMP calc, working-days API). Full per-site list in the GROW-BRIEF doc.
 
 ## Build log (what shipped, with real deploy status)
+- **29 Jun · fleet · backup pass** — pushed all previously laptop-only branches to origin (company-rescue main + dev-b33, hervitals dev-b38, trustedinteriors dev-b43, homesandhedge main + dev-b37, adhdhelper dev-b39, sortedproperty main, peptideclear dev-b29-mhra-data). Nothing is laptop-only any more. ✅
+- **29 Jun · LTD Turnaround · IndexNow** — built `scripts/indexnow-submit.cjs` + postbuild hook, submitted 92 URLs to Bing (200). Committed `feat/ltd-indexnow`. ✅
+- **28 Jun · Kartapay · B34** — 6 guides → **DEPLOYED LIVE** (0 unreadable, 200s), branch pushed. ⚠️ pages indexable, not noindex (review). ✅
+- **28 Jun · VettedHome · B35** — questions → **DEPLOYED LIVE** (noindex, 0 unreadable). ✅
+- **28 Jun · MerchantHQ · contrast** — last hard contrast fail fixed (fleet-core AIComprehension "Quick Reference" `text-xs gray-400` 2.49:1, overridden in site `global.css`) → **DEPLOYED LIVE**, gate 0 unreadable; main pushed. ✅
+- **28 Jun · banner ×4 · AdSense remediation** — HomesAndHedge / BabyData / FitCalcs / DatesAndTimes **SHIPPED LIVE** through build → contrast-gate → deploy → live-verify: Adam-Parker named-editor `/authors/adam-parker/` (Person + ORCID), Privacy / Contact / Editorial-policy pages, footer legal nav, oliver→adam 301, fake "registered reviewer/midwife" claims stripped. Caught + preserved DatesAndTimes "World Cup BH" line (verified real via gov.scot, a prior commit had wrongly deleted it). Patched a latent fleet-core AuthorBox "Last reviewed" `text-gray-400` 2.45:1 contrast bug. **PENDING ADAM: resubmit each to AdSense.** ✅
+- **27 Jun · FAQPage retrofit + stale-rule reconcile** — added real visible + JSON-LD FAQ to the banked B31/B33/B34/B36/B40/B41/B42/B43 Q-pages that had skipped it; reconciled the stale "no-FAQPage" fleet-lint HARD-fail (`FLEET_LINT_STRICT=1`, a deploy landmine in ~7 repos) → info/conditional. FAQPage is WANTED (Bing/AI). ✅
+- **27 Jun · banked content tranche** — B31 (FundBiz 4) · B33 (LTD 4, held) · B37 (H&H) · B38 (HerVitals 7 + hub + tracker) · B39 (ADHD) · B40/B41/B42 (banner 6/6/7) · B43 (TrustedInteriors 7 + hub, held) built (verify-first, real sources), gated 0-major, noindex, committed to dev branches. B32 (MI+MHQ Q-sets) CANCELLED as duplicative. ✅
 - **24 Jun (pm) — anti-slop MAJOR remediation** — PeptideClear (YMYL) fabrications removed + LIVE (fake Lancet RCT, wrong Wegovy CV date->July 2024, ASA notice, GHK-Cu product error); premature banked-B15 deploy reverted + main reconciled with origin/pushed. LTD Turnaround 3 hollow /data/ trackers reframed + LIVE. DatesAndTimes "World Cup BH" verified REAL (Scotland gov.uk) = no fix. Kartapay contactless+tipping factfix BANKED on dev-b22. REMAINING (FLEET_INBOX): PeptideClear wave-2 citation/vendor, Kartapay interchange, LLB 2 /data/ majors. ~50% of skeptic flags were FPs (verify-first essential). ✅
 - **24 Jun — anti-slop sweeps + fixes LIVE** — MI + MHQ full sweeps reviewed; real bugs fixed + live: MI non-IF mislabel (Allianz/Funding Circle, `9963454`), MHQ Zettle price + trade label (`e135e38`/`67125d9`). **B23** barclays consolidation LIVE (`5e7d2a6`, 301 verified). **B22** Kartapay EN-bleed footer/nav fix BANKED on dev (`c8443e6`, needs native spot-check). Smaller-site sweeps: H&H + VettedHome 0 major; LTD-Turnaround 3 hollow `/data/` pages (logged). `/antislop-check` skill built + daily `--new` delta cron live. ✅
 - **⚠️ Open finding (LTD Turnaround)** — `/data/director-disqualifications/`, `/data/late-payment-index/`, `/data/strike-off-objections/` claim to be data trackers but show no figures (hollow over-claim + repeated padding). Fix = populate with real Insolvency Service / Payment Practices Reporting data, or reframe so they don't promise data they lack. Not auto-fixed (would mean inventing numbers).
