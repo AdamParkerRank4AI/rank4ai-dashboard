@@ -43,6 +43,12 @@ const uptime = loadJson('uptime.json') || {};
 const audit = loadJson('ai_audit.json') || {};
 const citations = loadJson('citation_results.json') || {};
 const botHits = loadJson('bot_hits.json') || {};
+// AI-bot hits per site — fleet-wide truth from Supabase fleet_bot_hits (covers ALL
+// sites via the per-site middleware logger, not just the 7 the legacy worker feed had).
+// Falls back to the legacy bot_hits.json per site if fleet data is absent. (29 Jun 2026)
+const fleetBotHits = loadJson('fleet_bot_hits.json') || {};
+const fleetAiBySite: Record<string, number> = {};
+for (const r of (fleetBotHits.by_site || [])) fleetAiBySite[r.site] = r.ai_bot_hits || 0;
 const humanTraffic = loadJson('human_traffic.json') || {};
 const htBySite = (humanTraffic as any).by_site || {};
 const totalHumans = Object.values(htBySite).reduce((s: number, d: any) => s + (d.human_30d || 0), 0);
@@ -476,7 +482,7 @@ if (isFleet) {
               cit.perplexity?.rate ?? 0,
             );
             const bh = (botHits as any)[siteId]?.by_type || {};
-            const aiBots = bh.ai || 0;
+            const aiBots = fleetAiBySite[siteId] ?? (bh.ai || 0);
             const aios = (aioSerp as any)[siteId] || {};
             const aioCount = aios.ai_overviews_detected || 0;
             const up = (uptime as any)[siteId] || {};

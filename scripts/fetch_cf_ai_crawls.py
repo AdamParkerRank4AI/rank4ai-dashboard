@@ -37,7 +37,7 @@ ZONES = {
     "seocompare":        {"zone": "464d0139c2f9c598664ec89a731a3e87", "token_env": "CF_TOKEN_MUSWELLROSE"},
     "bestbusinessloans": {"zone": "649994cd427b2d06058a547e3c60506b", "token_env": "CF_TOKEN_RANK4AI"},
     "fundbiz":           {"zone": "3291eada7963421b0d53e02ea513d635", "token_env": "CF_TOKEN_RANK4AI"},
-    "cardmachines":      {"zone": "b49dfd54c982812ae16f52f6af5cfbf3", "token_env": "CF_TOKEN_RANK4AI"},
+    "cardmachines":      {"zone": "3c82b977389ddf96fd8aa4c1f0144e87", "token_env": "CF_TOKEN_RANK4AI"},  # merchanthq.co.uk real zone (was stale b49dfd54 → "invalid zone access", fixed 29 Jun)
     "kartapay":          {"zone": "dba48e86afba16f28cdecd873f58dbce", "token_env": "CF_TOKEN_RANK4AI"},
     "peptideclear":      {"zone": "a849080f6d22a324d9604110dbf43a54", "token_env": "CF_TOKEN_RANK4AI"},
     "builderweb":        {"zone": "b962563469d865db68fb5be0599f4416", "token_env": "CF_TOKEN_RANK4AI"},
