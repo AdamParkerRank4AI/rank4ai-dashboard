@@ -186,12 +186,32 @@ def fetch_zone(site_id, zone_id, token):
     }
 
 
+# Token-file fallback so cron works without env vars (env still wins if set).
+# Analytics:Read tokens, one per CF account. Created 29 Jun 2026.
+TOKEN_FILES = {
+    "CF_TOKEN_RANK4AI": "~/.cloudflare-analytics-rank4ai-token",
+    "CF_TOKEN_MUSWELLROSE": "~/.cloudflare-analytics-muswellrose-token",
+}
+
+
+def read_token(token_env):
+    tok = os.environ.get(token_env)
+    if tok:
+        return tok
+    fp = TOKEN_FILES.get(token_env)
+    if fp:
+        fp = os.path.expanduser(fp)
+        if os.path.exists(fp):
+            return open(fp).read().strip()
+    return None
+
+
 def main():
     os.makedirs(LIVE, exist_ok=True)
     result = {"fetched_at": datetime.utcnow().isoformat() + "Z", "per_site": {}}
 
     for site_id, cfg in ZONES.items():
-        token = os.environ.get(cfg["token_env"])
+        token = read_token(cfg["token_env"])
         if not token:
             print(f"  {site_id}: {cfg['token_env']} not set — skipping")
             result["per_site"][site_id] = {"error": f"{cfg['token_env']} env var missing"}

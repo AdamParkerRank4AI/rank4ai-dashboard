@@ -1,9 +1,20 @@
 ---
 /**
- * BingAiCitationsTile — REAL AI-citation counts from Bing Webmaster "AI Performance"
- * (Microsoft Copilot + partners, which includes ChatGPT since it rides Bing). This is
- * measured citations, not a probe sample. Fed by ingest_bing_ai_performance.py from the
- * weekly CSV exports (Bing has no API for this yet). Board-filtered.
+ * BingAiCitationsTile — AI visibility, two columns that measure DIFFERENT things:
+ *
+ *   CITED (Bing)   = Microsoft's own count of when Bing Copilot put your LINK in an
+ *                    AI answer. From Bing's index — no fetch of your server happens.
+ *                    Fed by ingest_bing_ai_performance.py from the weekly CSV exports
+ *                    (Bing has no API yet). Microsoft Copilot + Bing-grounded partners,
+ *                    NOT ChatGPT (ChatGPT now runs its own crawler).
+ *   FETCHED (live) = YOUR server log of an AI bot downloading the page in real time
+ *                    to answer someone. ~95% OpenAI/ChatGPT. From fleet_bot_hits
+ *                    (ai_citations.by_site, paginated true counts).
+ *
+ * They are NOT the same event counted twice — different engines, different stages,
+ * different counters. A site can be fetched by ChatGPT 18x more than Bing cites it
+ * (peptideclear) or roughly in line (market-invoice). The gap is the story, so we
+ * show both side by side instead of pretending one number is "AI citations".
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -17,37 +28,96 @@ function loadJson(filename: string) {
   return null;
 }
 
-const data = loadJson('bing_ai_citations.json') || { by_site: {} };
-const bySite = data.by_site || {};
+const bing = (loadJson('bing_ai_citations.json') || { by_site: {} }).by_site || {};
+const botHits = loadJson('fleet_bot_hits.json') || {};
+const exportDate = (Object.values(bing) as any[]).find((d) => d?.export_date)?.export_date;
+
+// live fetches (ai_citations.by_site is a list keyed by site, with true 7d/30d counts)
+const fetchList: any[] = botHits?.ai_citations?.by_site || [];
+const fetchBy: Record<string, any> = {};
+for (const f of fetchList) fetchBy[f.site] = f;
+const topEngine = (eng: Record<string, number> | undefined) => {
+  if (!eng) return null;
+  const e = Object.entries(eng).sort((a, b) => b[1] - a[1])[0];
+  if (!e) return null;
+  return { name: e[0] === 'openai' ? 'ChatGPT' : e[0] === 'perplexity' ? 'Perplexity' : e[0], n: e[1] };
+};
+
 const boardIds = new Set((clients as any[]).map((c) => c.id));
 const nameOf = (id: string) => (clients as any[]).find((c) => c.id === id)?.name || id;
 
-const rows = Object.entries(bySite)
-  .filter(([id]) => boardIds.has(id))
-  .map(([id, d]: [string, any]) => ({ id, name: nameOf(id), ...d }))
-  .sort((a, b) => (b.citations_30d || 0) - (a.citations_30d || 0));
-const fleet30 = rows.reduce((s, r) => s + (r.citations_30d || 0), 0);
-const exportDate = rows[0]?.export_date;
+// union of sites that have either signal, on this board
+const ids = new Set<string>([...Object.keys(bing), ...Object.keys(fetchBy)].filter((id) => boardIds.has(id)));
+const rows = [...ids]
+  .map((id) => {
+    const b = bing[id] || {};
+    const f = fetchBy[id] || {};
+    return {
+      id,
+      name: nameOf(id),
+      bing30: b.citations_30d || 0,
+      bing7: b.citations_7d || 0,
+      fetch30: f.count_30d || 0,
+      fetch7: f.count_7d || 0,
+      engine: topEngine(f.engines),
+    };
+  })
+  .filter((r) => r.bing30 > 0 || r.fetch30 > 0)
+  .sort((a, b) => (b.bing30 + b.fetch30) - (a.bing30 + a.fetch30));
+
+const fleetBing30 = rows.reduce((s, r) => s + r.bing30, 0);
+const fleetFetch30 = rows.reduce((s, r) => s + r.fetch30, 0);
+const ratio = (r: any) => (r.bing30 > 0 ? r.fetch30 / r.bing30 : null);
 ---
 {rows.length > 0 && (
-  <section data-copy-tile="AI citations (Bing)" class="rounded-xl bg-slate-900 border border-violet-800/40 p-5 mb-6">
+  <section data-copy-tile="AI visibility — cited vs fetched" class="rounded-xl bg-slate-900 border border-violet-800/40 p-5 mb-6">
     <div class="flex items-center justify-between flex-wrap gap-2 mb-1">
-      <div class="flex items-baseline gap-3">
-        <h2 class="text-lg font-bold text-violet-200">AI citations</h2>
-        <span class="text-sm"><span class="text-2xl font-bold text-violet-300">{fleet30.toLocaleString()}</span><span class="text-slate-400 text-xs"> last 30d</span></span>
-      </div>
-      <span class="text-[10px] text-slate-500">Real Microsoft Copilot + ChatGPT citations (Bing AI Performance){exportDate ? ` · export ${exportDate}` : ''}</span>
+      <h2 class="text-lg font-bold text-violet-200">AI visibility — cited vs fetched</h2>
+      <span class="text-[10px] text-slate-500">Bing export {exportDate || '—'} · live fetches 30d</span>
     </div>
-    <p class="text-[11px] text-slate-500 mb-3">Measured citations where AI answers cited the site — not a probe sample. ChatGPT rides Bing, so this captures it. Google AI Overviews/AI Mode are tracked separately (no clean feed).</p>
-    <div class="flex flex-wrap gap-2">
-      {rows.map((r) => (
-        <div class="inline-flex items-center gap-2 bg-slate-950/50 border border-slate-800 rounded-lg px-3 py-1.5">
-          <span class="text-sm text-slate-200">{r.name}</span>
-          <span class="text-violet-300 font-bold">{(r.citations_30d || 0).toLocaleString()}</span>
-          <span class="text-[10px] text-slate-500">30d</span>
-          {r.citations_7d > 0 && <span class="text-[10px] text-violet-400">+{r.citations_7d} 7d</span>}
-        </div>
-      ))}
+    <p class="text-[11px] text-slate-400 mb-3 leading-relaxed">
+      Two <strong class="text-slate-300">different</strong> measures — not the same number twice.
+      <span class="text-violet-300 font-semibold">Cited</span> = Microsoft's count of <strong class="text-slate-300">Bing&nbsp;Copilot</strong> (+ Bing-grounded partners) putting your link in an answer — from Bing's index, no fetch. <strong class="text-slate-300">Not ChatGPT.</strong>
+      <span class="text-emerald-300 font-semibold">Fetched</span> = your server log of an AI bot (≈95% <strong class="text-slate-300">ChatGPT</strong>) downloading the page live to answer someone.
+      A page can be fetched by ChatGPT far more than Bing cites it — that gap is normal. Google AI Overviews/Gemini give no comparable feed.
+    </p>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm border-collapse">
+        <thead>
+          <tr class="text-left text-[11px] uppercase tracking-wide text-slate-500 border-b border-slate-800">
+            <th class="py-1.5 pr-3 font-medium">Site</th>
+            <th class="py-1.5 px-3 font-medium text-violet-300">Cited · Bing Copilot</th>
+            <th class="py-1.5 px-3 font-medium text-emerald-300">Fetched · live (ChatGPT)</th>
+            <th class="py-1.5 pl-3 font-medium text-slate-400">Fetch : cite</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr class="border-b border-slate-800/60">
+              <td class="py-2 pr-3 text-slate-200">{r.name}</td>
+              <td class="py-2 px-3">
+                <span class="text-violet-300 font-bold text-base">{r.bing30.toLocaleString()}</span>
+                {r.bing7 > 0 && <span class="text-[10px] text-violet-400/80 ml-1">+{r.bing7} 7d</span>}
+              </td>
+              <td class="py-2 px-3">
+                <span class="text-emerald-300 font-bold text-base">{r.fetch30.toLocaleString()}</span>
+                {r.fetch7 > 0 && <span class="text-[10px] text-emerald-400/80 ml-1">+{r.fetch7} 7d</span>}
+              </td>
+              <td class="py-2 pl-3 text-slate-400 text-xs">
+                {ratio(r) === null ? '—' : `${ratio(r)!.toFixed(ratio(r)! >= 10 ? 0 : 1)}×`}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+        <tfoot>
+          <tr class="text-[11px] text-slate-500">
+            <td class="pt-2 pr-3">Fleet (30d)</td>
+            <td class="pt-2 px-3 text-violet-400 font-semibold">{fleetBing30.toLocaleString()}</td>
+            <td class="pt-2 px-3 text-emerald-400 font-semibold">{fleetFetch30.toLocaleString()}</td>
+            <td class="pt-2 pl-3"></td>
+          </tr>
+        </tfoot>
+      </table>
     </div>
   </section>
 )}
