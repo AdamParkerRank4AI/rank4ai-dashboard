@@ -1,20 +1,20 @@
 {
   "site_id": "mortgageexplained",
   "domain": "mortgageexplained.co.uk",
-  "crawled_at": "2026-06-29T20:37:18.914893+00:00",
+  "crawled_at": "2026-06-29T20:53:00.339059+00:00",
   "source": "fleet-source-reader",
-  "pages_crawled": 70,
+  "pages_crawled": 71,
   "total_issues": 0,
-  "orphan_pages": 0,
-  "avg_depth": 1.7571428571428571,
-  "avg_word_count": 2342,
-  "pages_with_schema": 70,
+  "orphan_pages": 1,
+  "avg_depth": 1.7464788732394365,
+  "avg_word_count": 2328,
+  "pages_with_schema": 71,
   "pages_with_multimodal": 0,
   "pages_with_comparison_table": 8,
   "pages_with_video": 0,
   "pages_over_2000_words": 63,
   "images_missing_alt": 7,
-  "pages_with_date": 70,
+  "pages_with_date": 71,
   "crawler_access": {
     "GPTBot": true,
     "ClaudeBot": true,
@@ -38,6 +38,10 @@
     },
     "privacy": {
       "hub": "/privacy/",
+      "page_count": 1
+    },
+    "thank-you": {
+      "hub": "/thank-you/",
       "page_count": 1
     },
     "remortgage": {
@@ -97,9 +101,9 @@
       "page_count": 1
     }
   },
-  "topic_cluster_count": 18,
+  "topic_cluster_count": 19,
   "term_consistency": {
-    "mortgage": 103,
+    "mortgage": 104,
     "mortgages": 35,
     "explained": 34,
     "rate": 31,
@@ -108,16 +112,16 @@
     "fixed": 18,
     "deposit": 17,
     "after": 14,
+    "mortgageexplained": 14,
     "income": 14,
     "remortgage": 14,
-    "mortgageexplained": 13,
+    "broker": 13,
     "works": 13,
-    "broker": 12,
     "plain": 12
   },
   "content_freshness": {
-    "pages_with_dates": 70,
-    "fresh_30_days": 70,
+    "pages_with_dates": 71,
+    "fresh_30_days": 71,
     "fresh_90_days": 0,
     "stale": 0
   },
@@ -129,7 +133,7 @@
       "title": "Adverse-credit mortgages, explained",
       "h1": "Adverse-credit mortgages, explained",
       "meta_desc": "A mortgage with bad credit is possible in the UK. How specialist lenders treat CCJs, defaults, missed payments, DMPs, IVAs and bankruptcy, and how time heals.",
-      "word_count": 2482,
+      "word_count": 2481,
       "status": 200,
       "schemas": [
         "Person",
@@ -161,7 +165,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 70,
+      "internal_links_in": 71,
       "depth": 1
     },
     {
@@ -170,7 +174,7 @@
       "title": "Mortgage after an IVA",
       "h1": "Mortgage after an IVA",
       "meta_desc": "Getting a mortgage after an IVA: borrowing while it is active, on completion, and once it drops off your file after six years. What specialist lenders look for.",
-      "word_count": 2412,
+      "word_count": 2411,
       "status": 200,
       "schemas": [
         "Person",
@@ -211,7 +215,7 @@
       "title": "Mortgage after missed payments",
       "h1": "Mortgage after missed payments",
       "meta_desc": "Missed or late payments do not always stop a mortgage. How lenders read them by account type and recency, with mortgage and loan arrears mattering most.",
-      "word_count": 2362,
+      "word_count": 2361,
       "status": 200,
       "schemas": [
         "Person",
@@ -252,7 +256,7 @@
       "title": "Mortgage with a default",
       "h1": "Mortgage with a default",
       "meta_desc": "A default does not block a mortgage. How lenders judge a default by age, amount and type, why recency matters most, and how the picture improves over time.",
-      "word_count": 2388,
+      "word_count": 2387,
       "status": 200,
       "schemas": [
         "Person",
@@ -293,7 +297,7 @@
       "title": "Mortgage with a CCJ",
       "h1": "Mortgage with a CCJ",
       "meta_desc": "Can you get a mortgage with a CCJ? Often yes. How county court judgments are judged by age, amount and whether satisfied, and how options widen over time.",
-      "word_count": 2389,
+      "word_count": 2388,
       "status": 200,
       "schemas": [
         "Person",
@@ -334,7 +338,7 @@
       "title": "Mortgage after a debt management plan (DMP)",
       "h1": "Mortgage after a debt management plan (DMP)",
       "meta_desc": "Can you get a mortgage during or after a DMP? Often yes with a specialist lender. How lenders view an active vs completed plan and the conduct they want to see.",
-      "word_count": 2443,
+      "word_count": 2442,
       "status": 200,
       "schemas": [
         "Person",
@@ -375,7 +379,7 @@
       "title": "Mortgage after bankruptcy (discharged)",
       "h1": "Mortgage after bankruptcy (discharged)",
       "meta_desc": "A mortgage after a discharged bankruptcy is possible in the UK. How time since discharge, deposit and clean conduct shape your options with specialist lenders.",
-      "word_count": 2384,
+      "word_count": 2383,
       "status": 200,
       "schemas": [
         "Person",
@@ -416,7 +420,7 @@
       "title": "Contact MortgageExplained",
       "h1": "Contact",
       "meta_desc": "Get in touch with MortgageExplained, operated by Muswell Rose Ltd, or send an enquiry to be introduced to a regulated mortgage broker.",
-      "word_count": 1658,
+      "word_count": 1657,
       "status": 200,
       "schemas": [
         "Person",
@@ -447,7 +451,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 70,
+      "internal_links_in": 71,
       "depth": 1
     },
     {
@@ -456,7 +460,7 @@
       "title": "Mortgage declined? What to do next",
       "h1": "Mortgage declined? What to do next",
       "meta_desc": "A declined mortgage usually means the wrong lender, not the end. Why banks say no, what not to do next, and how a different lender can accept the same case.",
-      "word_count": 2479,
+      "word_count": 2478,
       "status": 200,
       "schemas": [
         "Person",
@@ -488,7 +492,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 70,
+      "internal_links_in": 71,
       "depth": 1
     },
     {
@@ -497,7 +501,7 @@
       "title": "Bank said no because I am self-employed",
       "h1": "Bank said no because I am self-employed",
       "meta_desc": "Declined for being self-employed? The bank read your income narrowly. How another lender can use retained profit, a day rate or one year of accounts.",
-      "word_count": 2407,
+      "word_count": 2406,
       "status": 200,
       "schemas": [
         "Person",
@@ -538,7 +542,7 @@
       "title": "A broker said no. Can I try another?",
       "h1": "A broker said no. Can I try another?",
       "meta_desc": "Yes, you can use a different mortgage broker. Why one broker no is not the whole market, when a second opinion helps, and how broker panels and access differ.",
-      "word_count": 2443,
+      "word_count": 2442,
       "status": 200,
       "schemas": [
         "Person",
@@ -579,7 +583,7 @@
       "title": "Mortgage declined on affordability",
       "h1": "Mortgage declined on affordability",
       "meta_desc": "Declined on affordability? Lenders use different income multiples, stress rates and expenditure models, so one bank no can be another lender yes.",
-      "word_count": 2401,
+      "word_count": 2400,
       "status": 200,
       "schemas": [
         "Person",
@@ -620,7 +624,7 @@
       "title": "Mortgage declined for bad credit",
       "h1": "Mortgage declined for bad credit",
       "meta_desc": "Declined for bad credit? A high-street no is often a specialist lender yes. How recency and type of credit issue decide your options, and what to do next.",
-      "word_count": 2419,
+      "word_count": 2418,
       "status": 200,
       "schemas": [
         "Person",
@@ -661,7 +665,7 @@
       "title": "Privacy notice",
       "h1": "Privacy notice",
       "meta_desc": "How MortgageExplained, operated by Muswell Rose Ltd, collects and uses the information you send when you ask to be introduced to a regulated broker.",
-      "word_count": 1656,
+      "word_count": 1655,
       "status": 200,
       "schemas": [
         "Person",
@@ -692,7 +696,45 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 70,
+      "internal_links_in": 71,
+      "depth": 1
+    },
+    {
+      "url": "https://mortgageexplained.co.uk/thank-you/",
+      "path": "/thank-you/",
+      "title": "Thanks, your details are on their way",
+      "h1": "Thanks, your details are on their way",
+      "meta_desc": "Thank you for your enquiry. A regulated mortgage broker will be in touch. In the meantime, browse the MortgageExplained guides.",
+      "word_count": 1416,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage"
+      ],
+      "internal_links_out": 26,
+      "external_links_out": -22,
+      "canonical": "https://mortgageexplained.co.uk/thank-you/",
+      "response_time_ms": 0,
+      "image_count": 1,
+      "images_with_alt": 1,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 3,
+      "question_h2s": 0,
+      "h2_count": 0,
+      "last_modified": "2026-06-29",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": false,
+      "has_viewport": true,
+      "internal_links_in": 0,
       "depth": 1
     },
     {
@@ -701,7 +743,7 @@
       "title": "Remortgage, explained",
       "h1": "Remortgage, explained",
       "meta_desc": "How remortgaging works in the UK: switch lender or take a product transfer, what happens when your fix ends, 2 vs 5 year fixes, and early repayment charges.",
-      "word_count": 2419,
+      "word_count": 2418,
       "status": 200,
       "schemas": [
         "Person",
@@ -733,7 +775,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 70,
+      "internal_links_in": 71,
       "depth": 1
     },
     {
@@ -742,7 +784,7 @@
       "title": "What happens when my fixed rate ends",
       "h1": "What happens when my fixed rate ends",
       "meta_desc": "When your fixed-rate mortgage ends you move onto the lender standard variable rate unless you act. What the SVR is, why it is dear, and how to avoid it.",
-      "word_count": 2553,
+      "word_count": 2552,
       "status": 200,
       "schemas": [
         "Person",
@@ -783,7 +825,7 @@
       "title": "Should you switch or stay? Remortgage tool",
       "h1": "Should you switch or stay?",
       "meta_desc": "A free, no-email-gate tool to compare staying on a product transfer against remortgaging to a new lender, including fees and any early repayment charge.",
-      "word_count": 2657,
+      "word_count": 2656,
       "status": 200,
       "schemas": [
         "Person",
@@ -815,7 +857,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 70,
+      "internal_links_in": 71,
       "depth": 2
     },
     {
@@ -824,7 +866,7 @@
       "title": "Remortgage vs product transfer",
       "h1": "Remortgage vs product transfer",
       "meta_desc": "Remortgage to a new lender or take a product transfer with your current one? An honest side-by-side on rates, fees, affordability checks and speed.",
-      "word_count": 2476,
+      "word_count": 2475,
       "status": 200,
       "schemas": [
         "Person",
@@ -865,7 +907,7 @@
       "title": "2-year vs 5-year fixed mortgage",
       "h1": "2-year vs 5-year fixed mortgage",
       "meta_desc": "Should you fix for 2 years or 5? An honest comparison of certainty, flexibility, early repayment charges and what tips the balance for your situation.",
-      "word_count": 2542,
+      "word_count": 2541,
       "status": 200,
       "schemas": [
         "Person",
@@ -906,7 +948,7 @@
       "title": "Early repayment charges explained",
       "h1": "Early repayment charges explained",
       "meta_desc": "What an early repayment charge (ERC) is, how it is usually a percentage of the balance, when it applies, and when leaving your deal early can still be worth it.",
-      "word_count": 2595,
+      "word_count": 2594,
       "status": 200,
       "schemas": [
         "Person",
@@ -947,7 +989,7 @@
       "title": "Mortgage questions, answered in plain English",
       "h1": "Mortgage questions, answered in plain English",
       "meta_desc": "Plain-English answers to the mortgage questions people actually ask, in their own words. Short, honest answers, then where to go next. Information, not advice.",
-      "word_count": 1853,
+      "word_count": 1852,
       "status": 200,
       "schemas": [
         "Person",
@@ -978,7 +1020,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 70,
+      "internal_links_in": 71,
       "depth": 1
     },
     {
@@ -987,7 +1029,7 @@
       "title": "We want to buy but only one of us earns enough",
       "h1": "We want to buy but only one of us earns enough",
       "meta_desc": "Buying as a couple when one income does most of the work? How lenders combine two incomes, and the options if one of you earns much more than the other.",
-      "word_count": 2072,
+      "word_count": 2071,
       "status": 200,
       "schemas": [
         "Person",
@@ -1027,7 +1069,7 @@
       "title": "I want to help my child buy their first home",
       "h1": "I want to help my child buy their first home",
       "meta_desc": "The main ways parents help a child buy: a gifted deposit, JBSP, or a guarantor mortgage. How each works, and the trade-offs, in plain English.",
-      "word_count": 2081,
+      "word_count": 2080,
       "status": 200,
       "schemas": [
         "Person",
@@ -1067,7 +1109,7 @@
       "title": "Can I borrow more on my house?",
       "h1": "Can I borrow more on my house?",
       "meta_desc": "Want to release equity or borrow more against your home for an extension, debt or a deposit? How a further advance or a remortgage works, in plain English.",
-      "word_count": 2074,
+      "word_count": 2073,
       "status": 200,
       "schemas": [
         "Person",
@@ -1107,7 +1149,7 @@
       "title": "I missed a mortgage payment, what happens?",
       "h1": "I missed a mortgage payment, what happens?",
       "meta_desc": "Missed a mortgage payment? What happens next, why contacting your lender fast matters, the effect on your credit file, and how to recover. Plain English.",
-      "word_count": 2041,
+      "word_count": 2040,
       "status": 200,
       "schemas": [
         "Person",
@@ -1147,7 +1189,7 @@
       "title": "My mortgage is going up and I cannot afford it",
       "h1": "My mortgage is going up and I cannot afford it",
       "meta_desc": "If your mortgage payment is rising and you are worried, here is what to do first, what options exist, and where to get help. Plain English, not advice.",
-      "word_count": 2077,
+      "word_count": 2076,
       "status": 200,
       "schemas": [
         "Person",
@@ -1187,7 +1229,7 @@
       "title": "I am self-employed, can I get a mortgage?",
       "h1": "I am self-employed, can I get a mortgage?",
       "meta_desc": "Yes, self-employed people get mortgages all the time. The plain-English version of how lenders read your income and why the right lender matters most.",
-      "word_count": 2070,
+      "word_count": 2069,
       "status": 200,
       "schemas": [
         "Person",
@@ -1227,7 +1269,7 @@
       "title": "My fixed rate is ending, what do I do?",
       "h1": "My fixed rate is ending, what do I do?",
       "meta_desc": "Your fixed rate is ending soon? The simple steps: start early, avoid the standard variable rate, and compare staying with your lender against remortgaging.",
-      "word_count": 2054,
+      "word_count": 2053,
       "status": 200,
       "schemas": [
         "Person",
@@ -1267,7 +1309,7 @@
       "title": "Is now a good time to remortgage?",
       "h1": "Is now a good time to remortgage?",
       "meta_desc": "Whether now is a good time to remortgage depends on your deal, not the headlines. When to start, why timing is about your fix ending, and the honest answer.",
-      "word_count": 2104,
+      "word_count": 2103,
       "status": 200,
       "schemas": [
         "Person",
@@ -1307,7 +1349,7 @@
       "title": "Mortgage after divorce or buying out a partner",
       "h1": "Mortgage after divorce or buying out a partner",
       "meta_desc": "Separating and need to take over the mortgage or buy out a partner? How a transfer of equity and a remortgage in one name work, and what affordability decides.",
-      "word_count": 2047,
+      "word_count": 2046,
       "status": 200,
       "schemas": [
         "Person",
@@ -1347,7 +1389,7 @@
       "title": "Should I overpay my mortgage or save?",
       "h1": "Should I overpay my mortgage or save?",
       "meta_desc": "Overpay the mortgage or save? The plain-English trade-off: your mortgage rate vs your savings rate, your overpayment allowance, and your safety net.",
-      "word_count": 2025,
+      "word_count": 2024,
       "status": 200,
       "schemas": [
         "Person",
@@ -1387,7 +1429,7 @@
       "title": "Trust and governance",
       "h1": "Trust and governance",
       "meta_desc": "How MortgageExplained operates: information not advice, the repossession warning, complaints, FOS and FSCS, privacy, and our operating company Muswell Rose Ltd.",
-      "word_count": 1960,
+      "word_count": 1959,
       "status": 200,
       "schemas": [
         "Person",
@@ -1418,7 +1460,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 70,
+      "internal_links_in": 71,
       "depth": 1
     },
     {
@@ -1427,7 +1469,7 @@
       "title": "Adam Parker, CeMAP CF: author and expert",
       "h1": "Adam Parker",
       "meta_desc": "Adam Parker is the founder of MortgageExplained. CeMAP and CF qualified, nearly a decade as a mortgage adviser at Just Mortgages, plus commercial finance.",
-      "word_count": 2156,
+      "word_count": 2155,
       "status": 200,
       "schemas": [
         "Person",
@@ -1459,7 +1501,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 70,
+      "internal_links_in": 71,
       "depth": 2
     },
     {
@@ -1468,7 +1510,7 @@
       "title": "Site index",
       "h1": "Site index",
       "meta_desc": "Every page on MortgageExplained in one place: guides, the Lender Criteria Index, and company information.",
-      "word_count": 1854,
+      "word_count": 1853,
       "status": 200,
       "schemas": [
         "Person",
@@ -1499,7 +1541,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 70,
+      "internal_links_in": 71,
       "depth": 1
     },
     {
@@ -1508,7 +1550,7 @@
       "title": "First-time buyer mortgages, explained",
       "h1": "First-time buyer mortgages, explained",
       "meta_desc": "How a first mortgage works in the UK: the deposit you need, gifted deposits, JBSP and guarantor help, 95% mortgages, shared ownership and Right to Buy.",
-      "word_count": 2518,
+      "word_count": 2517,
       "status": 200,
       "schemas": [
         "Person",
@@ -1540,7 +1582,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 70,
+      "internal_links_in": 71,
       "depth": 1
     },
     {
@@ -1549,7 +1591,7 @@
       "title": "New build mortgage explained",
       "h1": "New build mortgage explained",
       "meta_desc": "New build mortgages need extra care: offer timing and exchange deadlines, valuations, higher deposits on some flats, and incentives. How to get it right.",
-      "word_count": 2461,
+      "word_count": 2460,
       "status": 200,
       "schemas": [
         "Person",
@@ -1590,7 +1632,7 @@
       "title": "JBSP mortgage (joint borrower sole proprietor)",
       "h1": "JBSP mortgage (joint borrower sole proprietor)",
       "meta_desc": "A JBSP mortgage lets a parent boost your borrowing without owning the home. How joint borrower sole proprietor works, who it suits, and the stamp duty angle.",
-      "word_count": 2504,
+      "word_count": 2503,
       "status": 200,
       "schemas": [
         "Person",
@@ -1631,7 +1673,7 @@
       "title": "Gifted deposit (Bank of Mum and Dad)",
       "h1": "Gifted deposit (Bank of Mum and Dad)",
       "meta_desc": "Using gifted money for your mortgage deposit: who can gift, the gifted deposit letter lenders want, and how a gift differs from a family loan.",
-      "word_count": 2520,
+      "word_count": 2519,
       "status": 200,
       "schemas": [
         "Person",
@@ -1672,7 +1714,7 @@
       "title": "How much deposit do I need for a mortgage?",
       "h1": "How much deposit do I need for a mortgage?",
       "meta_desc": "Most UK lenders want at least a 5% deposit, but 10% or more opens more lenders and lower rates. How loan-to-value works and what size deposit to aim for.",
-      "word_count": 2482,
+      "word_count": 2481,
       "status": 200,
       "schemas": [
         "Person",
@@ -1713,7 +1755,7 @@
       "title": "Shared ownership mortgage explained",
       "h1": "Shared ownership mortgage explained",
       "meta_desc": "Shared ownership lets you buy a share of a home and pay rent on the rest. How the mortgage works, staircasing, leasehold points, and which lenders offer it.",
-      "word_count": 2477,
+      "word_count": 2476,
       "status": 200,
       "schemas": [
         "Person",
@@ -1754,7 +1796,7 @@
       "title": "Guarantor mortgage explained",
       "h1": "Guarantor mortgage explained",
       "meta_desc": "A guarantor mortgage lets family back your borrowing with their income, savings or property. How it works, the difference from JBSP, and the guarantor risks.",
-      "word_count": 2483,
+      "word_count": 2482,
       "status": 200,
       "schemas": [
         "Person",
@@ -1795,7 +1837,7 @@
       "title": "95% mortgage (5% deposit) explained",
       "h1": "95% mortgage (5% deposit) explained",
       "meta_desc": "A 95% mortgage lets you buy with a 5% deposit. How 95% loan-to-value deals work, what to expect on rates, and how to strengthen your application.",
-      "word_count": 2494,
+      "word_count": 2493,
       "status": 200,
       "schemas": [
         "Person",
@@ -1836,7 +1878,7 @@
       "title": "Right to Buy mortgage explained",
       "h1": "Right to Buy mortgage explained",
       "meta_desc": "Right to Buy lets eligible council and housing-association tenants buy their home at a discount. How the discount can act as your deposit on the mortgage.",
-      "word_count": 2523,
+      "word_count": 2522,
       "status": 200,
       "schemas": [
         "Person",
@@ -1877,7 +1919,7 @@
       "title": "About MortgageExplained",
       "h1": "About MortgageExplained",
       "meta_desc": "MortgageExplained explains UK mortgages in plain English, then introduces you to a regulated broker. Independent, operated by Muswell Rose Ltd.",
-      "word_count": 1869,
+      "word_count": 1868,
       "status": 200,
       "schemas": [
         "Person",
@@ -1908,7 +1950,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 70,
+      "internal_links_in": 71,
       "depth": 1
     },
     {
@@ -1917,7 +1959,7 @@
       "title": "Mortgage eligibility edge cases, explained",
       "h1": "Mortgage eligibility edge cases, explained",
       "meta_desc": "The situations that trip up a standard mortgage: maternity or parental leave, expats, visa holders, a new job or probation, and second homes.",
-      "word_count": 2391,
+      "word_count": 2390,
       "status": 200,
       "schemas": [
         "Person",
@@ -1949,7 +1991,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 70,
+      "internal_links_in": 71,
       "depth": 1
     },
     {
@@ -1958,7 +2000,7 @@
       "title": "Visa holder and foreign national mortgages",
       "h1": "Visa holder and foreign national mortgages",
       "meta_desc": "A foreign national on a UK visa can get a mortgage. How visa type, time left and UK residence history affect lender choice, and what improves your application.",
-      "word_count": 2443,
+      "word_count": 2442,
       "status": 200,
       "schemas": [
         "Person",
@@ -1999,7 +2041,7 @@
       "title": "Expat and non-UK resident mortgages",
       "h1": "Expat and non-UK resident mortgages",
       "meta_desc": "Living abroad but buying or remortgaging in the UK? How expat mortgages work, the income and currency checks lenders make, and why this is specialist lending.",
-      "word_count": 2408,
+      "word_count": 2407,
       "status": 200,
       "schemas": [
         "Person",
@@ -2040,7 +2082,7 @@
       "title": "Second home mortgage explained",
       "h1": "Second home mortgage explained",
       "meta_desc": "A second home mortgage is for a property you use yourself, like a holiday home, not a let. How it differs from buy-to-let and the stamp duty surcharge.",
-      "word_count": 2499,
+      "word_count": 2498,
       "status": 200,
       "schemas": [
         "Person",
@@ -2081,7 +2123,7 @@
       "title": "Mortgage with a new job or on probation",
       "h1": "Mortgage with a new job or on probation",
       "meta_desc": "A new job or probation period need not stop a mortgage. How lenders treat a recent start, a signed contract, and probation, and which are most flexible.",
-      "word_count": 2486,
+      "word_count": 2485,
       "status": 200,
       "schemas": [
         "Person",
@@ -2122,7 +2164,7 @@
       "title": "Mortgage on maternity or parental leave",
       "h1": "Mortgage on maternity or parental leave",
       "meta_desc": "On maternity or parental leave? Many UK lenders assess your return-to-work income, not your reduced leave pay. What they ask for and how to evidence it.",
-      "word_count": 2469,
+      "word_count": 2468,
       "status": 200,
       "schemas": [
         "Person",
@@ -2163,7 +2205,7 @@
       "title": "Buy-to-let mortgages, explained",
       "h1": "Buy-to-let mortgages, explained",
       "meta_desc": "How buy-to-let mortgages work in the UK: rental stress tests, personal name vs limited company, portfolio rules, HMOs and holiday lets. Most BTL is unregulated.",
-      "word_count": 2633,
+      "word_count": 2632,
       "status": 200,
       "schemas": [
         "Person",
@@ -2195,7 +2237,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 70,
+      "internal_links_in": 71,
       "depth": 1
     },
     {
@@ -2204,7 +2246,7 @@
       "title": "Buy-to-let remortgage explained",
       "h1": "Buy-to-let remortgage explained",
       "meta_desc": "Buy-to-let remortgage in 2026: passing the rental stress test at higher rates, releasing equity, and whether to switch lender or take a product transfer.",
-      "word_count": 2581,
+      "word_count": 2580,
       "status": 200,
       "schemas": [
         "Person",
@@ -2245,7 +2287,7 @@
       "title": "HMO mortgages explained",
       "h1": "HMO mortgages explained",
       "meta_desc": "HMO mortgages for houses in multiple occupation: room-by-room valuation, licensing, Article 4 areas and experience requirements. Specialist buy-to-let lending.",
-      "word_count": 2428,
+      "word_count": 2427,
       "status": 200,
       "schemas": [
         "Person",
@@ -2286,7 +2328,7 @@
       "title": "Limited company and SPV buy-to-let mortgages",
       "h1": "Limited company and SPV buy-to-let mortgages",
       "meta_desc": "How limited company (SPV) buy-to-let mortgages work: why landlords use an SPV, the SIC codes lenders expect, rates and personal guarantees.",
-      "word_count": 2522,
+      "word_count": 2521,
       "status": 200,
       "schemas": [
         "Person",
@@ -2327,7 +2369,7 @@
       "title": "Buy-to-let: personal name vs SPV company",
       "h1": "Buy-to-let: personal name vs SPV company",
       "meta_desc": "Own a buy-to-let in your own name or a limited company (SPV)? A plain side-by-side on tax, rates, the rental stress test and admin to help you decide.",
-      "word_count": 2521,
+      "word_count": 2520,
       "status": 200,
       "schemas": [
         "Person",
@@ -2368,7 +2410,7 @@
       "title": "Holiday let mortgages explained",
       "h1": "Holiday let mortgages explained",
       "meta_desc": "Holiday let mortgages: how UK lenders assess seasonal rental income, the deposit and personal-income rules, and how a holiday let differs from buy-to-let.",
-      "word_count": 2437,
+      "word_count": 2436,
       "status": 200,
       "schemas": [
         "Person",
@@ -2409,7 +2451,7 @@
       "title": "Portfolio landlord mortgages (4+ properties)",
       "h1": "Portfolio landlord mortgages (4+ properties)",
       "meta_desc": "Portfolio landlord mortgages: the 4-property rule, the extra underwriting on your whole portfolio, and how background stress tests apply across the board.",
-      "word_count": 2500,
+      "word_count": 2499,
       "status": 200,
       "schemas": [
         "Person",
@@ -2450,7 +2492,7 @@
       "title": "How MortgageExplained works",
       "h1": "How MortgageExplained works",
       "meta_desc": "We are an information and introducer site, not an adviser or lender. We explain UK mortgages in plain English, then introduce you to a regulated broker.",
-      "word_count": 2283,
+      "word_count": 2282,
       "status": 200,
       "schemas": [
         "Person",
@@ -2482,7 +2524,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 70,
+      "internal_links_in": 71,
       "depth": 1
     },
     {
@@ -2491,7 +2533,7 @@
       "title": "Self-employed mortgages, explained",
       "h1": "Self-employed mortgages, explained",
       "meta_desc": "How self-employed mortgages really work in the UK: how lenders read your income, how many years of accounts you need, and the cases banks get wrong.",
-      "word_count": 2504,
+      "word_count": 2503,
       "status": 200,
       "schemas": [
         "Person",
@@ -2523,7 +2565,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 70,
+      "internal_links_in": 71,
       "depth": 1
     },
     {
@@ -2532,7 +2574,7 @@
       "title": "Mortgage with 1 year of accounts",
       "h1": "Mortgage with 1 year of accounts",
       "meta_desc": "Can you get a mortgage with only one year of accounts? Yes, with the right lender. How it works, what they want to see, and where it falls down.",
-      "word_count": 2555,
+      "word_count": 2554,
       "status": 200,
       "schemas": [
         "Person",
@@ -2573,7 +2615,7 @@
       "title": "Limited company director mortgage",
       "h1": "Limited company director mortgage",
       "meta_desc": "Salary plus dividends, or retained profit? How UK lenders assess a limited company director for a mortgage, and why the choice changes how much you borrow.",
-      "word_count": 2504,
+      "word_count": 2503,
       "status": 200,
       "schemas": [
         "Person",
@@ -2614,7 +2656,7 @@
       "title": "CIS subcontractor mortgage",
       "h1": "CIS subcontractor mortgage",
       "meta_desc": "CIS subcontractors can be assessed on gross CIS pay, not just net profit. How it works and why it can raise how much you borrow.",
-      "word_count": 2413,
+      "word_count": 2412,
       "status": 200,
       "schemas": [
         "Person",
@@ -2655,7 +2697,7 @@
       "title": "Contractor and day-rate mortgage",
       "h1": "Contractor and day-rate mortgage",
       "meta_desc": "How contractor mortgages work in the UK: lenders that annualise your day rate instead of demanding accounts, and the contract history they want to see.",
-      "word_count": 2520,
+      "word_count": 2519,
       "status": 200,
       "schemas": [
         "Person",
@@ -2696,7 +2738,7 @@
       "title": "Complex income mortgage: bonus, commission, overtime",
       "h1": "Complex income: bonus, commission, overtime",
       "meta_desc": "Bonus, commission, overtime and second income are read differently by UK lenders. How much counts toward a mortgage, and how to find a lender that uses more.",
-      "word_count": 2452,
+      "word_count": 2451,
       "status": 200,
       "schemas": [
         "Person",
@@ -2737,7 +2779,7 @@
       "title": "How we introduce you to a broker",
       "h1": "How we introduce you to a broker",
       "meta_desc": "When you are ready, MortgageExplained introduces you to a regulated mortgage broker who advises you and arranges the mortgage. Here is exactly how that works.",
-      "word_count": 2191,
+      "word_count": 2190,
       "status": 200,
       "schemas": [
         "Person",
@@ -2769,7 +2811,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 70,
+      "internal_links_in": 71,
       "depth": 1
     },
     {
@@ -2778,7 +2820,7 @@
       "title": "Mortgage data and tools",
       "h1": "Mortgage data and tools",
       "meta_desc": "MortgageExplained data and tools: the Lender Criteria Index, the 2026 fixed-rate cliff tracker, and free no-email calculators for payment shock and switching.",
-      "word_count": 1686,
+      "word_count": 1685,
       "status": 200,
       "schemas": [
         "Person",
@@ -2809,7 +2851,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 70,
+      "internal_links_in": 71,
       "depth": 1
     },
     {
@@ -2818,7 +2860,7 @@
       "title": "Lender Criteria Index",
       "h1": "Lender Criteria Index",
       "meta_desc": "A structured index of how UK lenders treat complex income: 1 year accounts, day rate, retained profit, adverse credit and SPV buy-to-let, by max LTV.",
-      "word_count": 2246,
+      "word_count": 2245,
       "status": 200,
       "schemas": [
         "Person",
@@ -2850,7 +2892,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 70,
+      "internal_links_in": 71,
       "depth": 2
     },
     {
@@ -2859,7 +2901,7 @@
       "title": "The 2026 fixed-rate cliff, tracked",
       "h1": "The 2026 fixed-rate cliff, tracked",
       "meta_desc": "Around 1.8 million UK fixed-rate mortgages end in 2026. What the fixed-rate cliff means for payments, the verified figures, and a payment-shock illustration.",
-      "word_count": 2695,
+      "word_count": 2694,
       "status": 200,
       "schemas": [
         "Person",
@@ -2892,7 +2934,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 70,
+      "internal_links_in": 71,
       "depth": 2
     },
     {
@@ -2901,7 +2943,7 @@
       "title": "Fixed-rate cliff payment-shock calculator",
       "h1": "Fixed-rate cliff payment-shock calculator",
       "meta_desc": "A free, no-email-gate calculator: see how much your monthly mortgage payment changes when your fixed rate ends and you move to a new rate.",
-      "word_count": 2543,
+      "word_count": 2542,
       "status": 200,
       "schemas": [
         "Person",
@@ -2933,7 +2975,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 70,
+      "internal_links_in": 71,
       "depth": 2
     },
     {
@@ -2942,7 +2984,7 @@
       "title": "Swap rate vs base rate, explained",
       "h1": "Swap rate vs base rate, explained",
       "meta_desc": "The base rate is 3.75%, so why is your fixed mortgage rate higher? Because fixed rates are priced off swap rates, the market price of fixing, not the base rate.",
-      "word_count": 2690,
+      "word_count": 2689,
       "status": 200,
       "schemas": [
         "Person",
@@ -2974,7 +3016,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 70,
+      "internal_links_in": 71,
       "depth": 1
     }
   ],
@@ -2991,7 +3033,12 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/./",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/img/hero.webp",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/./",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -3022,11 +3069,6 @@
     {
       "from": "https://mortgageexplained.co.uk/./",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/./",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -3281,7 +3323,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/404/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -3312,11 +3354,6 @@
     {
       "from": "https://mortgageexplained.co.uk/404/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/404/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -3526,7 +3563,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -3557,11 +3594,6 @@
     {
       "from": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -3801,7 +3833,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/adverse-credit-mortgages/after-iva/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -3832,11 +3864,6 @@
     {
       "from": "https://mortgageexplained.co.uk/adverse-credit-mortgages/after-iva/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/adverse-credit-mortgages/after-iva/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -4081,7 +4108,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/adverse-credit-mortgages/missed-payments/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -4112,11 +4139,6 @@
     {
       "from": "https://mortgageexplained.co.uk/adverse-credit-mortgages/missed-payments/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/adverse-credit-mortgages/missed-payments/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -4361,7 +4383,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/adverse-credit-mortgages/default/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -4392,11 +4414,6 @@
     {
       "from": "https://mortgageexplained.co.uk/adverse-credit-mortgages/default/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/adverse-credit-mortgages/default/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -4641,7 +4658,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/adverse-credit-mortgages/ccj/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -4672,11 +4689,6 @@
     {
       "from": "https://mortgageexplained.co.uk/adverse-credit-mortgages/ccj/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/adverse-credit-mortgages/ccj/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -4921,7 +4933,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/adverse-credit-mortgages/after-dmp/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -4952,11 +4964,6 @@
     {
       "from": "https://mortgageexplained.co.uk/adverse-credit-mortgages/after-dmp/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/adverse-credit-mortgages/after-dmp/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -5201,7 +5208,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/adverse-credit-mortgages/after-bankruptcy/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -5232,11 +5239,6 @@
     {
       "from": "https://mortgageexplained.co.uk/adverse-credit-mortgages/after-bankruptcy/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/adverse-credit-mortgages/after-bankruptcy/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -5481,7 +5483,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/contact/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -5512,11 +5514,6 @@
     {
       "from": "https://mortgageexplained.co.uk/contact/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/contact/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -5716,7 +5713,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/mortgage-declined/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -5747,11 +5744,6 @@
     {
       "from": "https://mortgageexplained.co.uk/mortgage-declined/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/mortgage-declined/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -5986,7 +5978,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/mortgage-declined/self-employed/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -6017,11 +6009,6 @@
     {
       "from": "https://mortgageexplained.co.uk/mortgage-declined/self-employed/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/mortgage-declined/self-employed/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -6271,7 +6258,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/mortgage-declined/try-another-broker/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -6302,11 +6289,6 @@
     {
       "from": "https://mortgageexplained.co.uk/mortgage-declined/try-another-broker/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/mortgage-declined/try-another-broker/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -6536,7 +6518,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/mortgage-declined/affordability/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -6567,11 +6549,6 @@
     {
       "from": "https://mortgageexplained.co.uk/mortgage-declined/affordability/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/mortgage-declined/affordability/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -6801,7 +6778,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/mortgage-declined/bad-credit/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -6832,11 +6809,6 @@
     {
       "from": "https://mortgageexplained.co.uk/mortgage-declined/bad-credit/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/mortgage-declined/bad-credit/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -7066,7 +7038,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/privacy/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -7097,11 +7069,6 @@
     {
       "from": "https://mortgageexplained.co.uk/privacy/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/privacy/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -7295,6 +7262,256 @@
       "type": "internal"
     },
     {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/first-time-buyer-mortgages/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/self-employed-mortgages/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/buy-to-let-mortgages/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/remortgage/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/answers/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/first-time-buyer-mortgages/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/self-employed-mortgages/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/buy-to-let-mortgages/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/remortgage/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/eligibility/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/answers/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/data/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/swap-rate-vs-base-rate/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/how-we-work/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/how-we-introduce-you/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/authors/adam-parker/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/trust-and-governance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/site-index/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/remortgage/should-you-switch-or-stay/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/data/fixed-rate-cliff-calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/answers/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/first-time-buyer-mortgages/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/self-employed-mortgages/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/buy-to-let-mortgages/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/remortgage/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/eligibility/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/answers/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/swap-rate-vs-base-rate/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/data/lender-criteria-index/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/data/fixed-rate-cliff-2026/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/data/fixed-rate-cliff-calculator/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/remortgage/should-you-switch-or-stay/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/how-we-work/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/how-we-introduce-you/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/authors/adam-parker/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/trust-and-governance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/thank-you/",
+      "to": "https://mortgageexplained.co.uk/site-index/",
+      "type": "internal"
+    },
+    {
       "from": "https://mortgageexplained.co.uk/remortgage/",
       "to": "https://mortgageexplained.co.uk/favicon.svg",
       "type": "internal"
@@ -7306,7 +7523,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/remortgage/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -7337,11 +7554,6 @@
     {
       "from": "https://mortgageexplained.co.uk/remortgage/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/remortgage/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -7581,7 +7793,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/remortgage/when-fixed-rate-ends/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -7612,11 +7824,6 @@
     {
       "from": "https://mortgageexplained.co.uk/remortgage/when-fixed-rate-ends/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/remortgage/when-fixed-rate-ends/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -7856,7 +8063,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/remortgage/should-you-switch-or-stay/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -7887,11 +8094,6 @@
     {
       "from": "https://mortgageexplained.co.uk/remortgage/should-you-switch-or-stay/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/remortgage/should-you-switch-or-stay/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -8131,7 +8333,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/remortgage/vs-product-transfer/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -8162,11 +8364,6 @@
     {
       "from": "https://mortgageexplained.co.uk/remortgage/vs-product-transfer/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/remortgage/vs-product-transfer/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -8401,7 +8598,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/remortgage/2-year-vs-5-year-fix/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -8432,11 +8629,6 @@
     {
       "from": "https://mortgageexplained.co.uk/remortgage/2-year-vs-5-year-fix/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/remortgage/2-year-vs-5-year-fix/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -8671,7 +8863,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/remortgage/early-repayment-charges/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -8702,11 +8894,6 @@
     {
       "from": "https://mortgageexplained.co.uk/remortgage/early-repayment-charges/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/remortgage/early-repayment-charges/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -8941,7 +9128,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/answers/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -8972,11 +9159,6 @@
     {
       "from": "https://mortgageexplained.co.uk/answers/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/answers/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -9231,7 +9413,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/answers/only-one-of-us-earns-enough/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -9262,11 +9444,6 @@
     {
       "from": "https://mortgageexplained.co.uk/answers/only-one-of-us-earns-enough/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/answers/only-one-of-us-earns-enough/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -9526,7 +9703,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/answers/help-my-child-buy-first-home/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -9557,11 +9734,6 @@
     {
       "from": "https://mortgageexplained.co.uk/answers/help-my-child-buy-first-home/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/answers/help-my-child-buy-first-home/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -9816,7 +9988,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/answers/borrow-more-on-my-house/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -9847,11 +10019,6 @@
     {
       "from": "https://mortgageexplained.co.uk/answers/borrow-more-on-my-house/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/answers/borrow-more-on-my-house/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -10096,7 +10263,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/answers/missed-a-mortgage-payment/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -10127,11 +10294,6 @@
     {
       "from": "https://mortgageexplained.co.uk/answers/missed-a-mortgage-payment/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/answers/missed-a-mortgage-payment/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -10376,7 +10538,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/answers/mortgage-going-up-cant-afford/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -10407,11 +10569,6 @@
     {
       "from": "https://mortgageexplained.co.uk/answers/mortgage-going-up-cant-afford/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/answers/mortgage-going-up-cant-afford/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -10671,7 +10828,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/answers/self-employed-can-i-get-a-mortgage/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -10702,11 +10859,6 @@
     {
       "from": "https://mortgageexplained.co.uk/answers/self-employed-can-i-get-a-mortgage/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/answers/self-employed-can-i-get-a-mortgage/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -10971,7 +11123,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/answers/fixed-rate-ending-what-to-do/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -11002,11 +11154,6 @@
     {
       "from": "https://mortgageexplained.co.uk/answers/fixed-rate-ending-what-to-do/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/answers/fixed-rate-ending-what-to-do/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -11261,7 +11408,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/answers/is-now-a-good-time-to-remortgage/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -11292,11 +11439,6 @@
     {
       "from": "https://mortgageexplained.co.uk/answers/is-now-a-good-time-to-remortgage/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/answers/is-now-a-good-time-to-remortgage/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -11546,7 +11688,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/answers/mortgage-after-divorce/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -11577,11 +11719,6 @@
     {
       "from": "https://mortgageexplained.co.uk/answers/mortgage-after-divorce/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/answers/mortgage-after-divorce/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -11826,7 +11963,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/answers/overpay-or-save/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -11857,11 +11994,6 @@
     {
       "from": "https://mortgageexplained.co.uk/answers/overpay-or-save/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/answers/overpay-or-save/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -12111,7 +12243,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/trust-and-governance/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -12142,11 +12274,6 @@
     {
       "from": "https://mortgageexplained.co.uk/trust-and-governance/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/trust-and-governance/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -12356,7 +12483,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/authors/adam-parker/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -12387,11 +12514,6 @@
     {
       "from": "https://mortgageexplained.co.uk/authors/adam-parker/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/authors/adam-parker/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -12601,7 +12723,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/site-index/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -12632,11 +12754,6 @@
     {
       "from": "https://mortgageexplained.co.uk/site-index/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/site-index/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -13181,7 +13298,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/first-time-buyer-mortgages/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -13212,11 +13329,6 @@
     {
       "from": "https://mortgageexplained.co.uk/first-time-buyer-mortgages/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/first-time-buyer-mortgages/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -13471,7 +13583,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/first-time-buyer-mortgages/new-build/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -13502,11 +13614,6 @@
     {
       "from": "https://mortgageexplained.co.uk/first-time-buyer-mortgages/new-build/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/first-time-buyer-mortgages/new-build/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -13751,7 +13858,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/first-time-buyer-mortgages/jbsp/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -13782,11 +13889,6 @@
     {
       "from": "https://mortgageexplained.co.uk/first-time-buyer-mortgages/jbsp/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/first-time-buyer-mortgages/jbsp/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -14036,7 +14138,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/first-time-buyer-mortgages/gifted-deposit/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -14067,11 +14169,6 @@
     {
       "from": "https://mortgageexplained.co.uk/first-time-buyer-mortgages/gifted-deposit/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/first-time-buyer-mortgages/gifted-deposit/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -14321,7 +14418,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/first-time-buyer-mortgages/how-much-deposit/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -14352,11 +14449,6 @@
     {
       "from": "https://mortgageexplained.co.uk/first-time-buyer-mortgages/how-much-deposit/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/first-time-buyer-mortgages/how-much-deposit/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -14611,7 +14703,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/first-time-buyer-mortgages/shared-ownership/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -14642,11 +14734,6 @@
     {
       "from": "https://mortgageexplained.co.uk/first-time-buyer-mortgages/shared-ownership/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/first-time-buyer-mortgages/shared-ownership/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -14896,7 +14983,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/first-time-buyer-mortgages/guarantor/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -14927,11 +15014,6 @@
     {
       "from": "https://mortgageexplained.co.uk/first-time-buyer-mortgages/guarantor/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/first-time-buyer-mortgages/guarantor/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -15181,7 +15263,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/first-time-buyer-mortgages/95-mortgage/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -15212,11 +15294,6 @@
     {
       "from": "https://mortgageexplained.co.uk/first-time-buyer-mortgages/95-mortgage/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/first-time-buyer-mortgages/95-mortgage/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -15466,7 +15543,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/first-time-buyer-mortgages/right-to-buy/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -15497,11 +15574,6 @@
     {
       "from": "https://mortgageexplained.co.uk/first-time-buyer-mortgages/right-to-buy/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/first-time-buyer-mortgages/right-to-buy/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -15751,7 +15823,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/about/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -15782,11 +15854,6 @@
     {
       "from": "https://mortgageexplained.co.uk/about/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/about/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -16006,7 +16073,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/eligibility/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -16037,11 +16104,6 @@
     {
       "from": "https://mortgageexplained.co.uk/eligibility/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/eligibility/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -16281,7 +16343,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/eligibility/visa-holder/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -16312,11 +16374,6 @@
     {
       "from": "https://mortgageexplained.co.uk/eligibility/visa-holder/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/eligibility/visa-holder/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -16551,7 +16608,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/eligibility/expat/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -16582,11 +16639,6 @@
     {
       "from": "https://mortgageexplained.co.uk/eligibility/expat/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/eligibility/expat/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -16821,7 +16873,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/eligibility/second-home/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -16852,11 +16904,6 @@
     {
       "from": "https://mortgageexplained.co.uk/eligibility/second-home/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/eligibility/second-home/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -17096,7 +17143,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/eligibility/new-job/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -17127,11 +17174,6 @@
     {
       "from": "https://mortgageexplained.co.uk/eligibility/new-job/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/eligibility/new-job/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -17366,7 +17408,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/eligibility/maternity-leave/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -17397,11 +17439,6 @@
     {
       "from": "https://mortgageexplained.co.uk/eligibility/maternity-leave/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/eligibility/maternity-leave/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -17636,7 +17673,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/buy-to-let-mortgages/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -17667,11 +17704,6 @@
     {
       "from": "https://mortgageexplained.co.uk/buy-to-let-mortgages/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/buy-to-let-mortgages/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -17916,7 +17948,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/buy-to-let-mortgages/remortgage/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -17947,11 +17979,6 @@
     {
       "from": "https://mortgageexplained.co.uk/buy-to-let-mortgages/remortgage/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/buy-to-let-mortgages/remortgage/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -18196,7 +18223,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/buy-to-let-mortgages/hmo/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -18227,11 +18254,6 @@
     {
       "from": "https://mortgageexplained.co.uk/buy-to-let-mortgages/hmo/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/buy-to-let-mortgages/hmo/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -18471,7 +18493,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/buy-to-let-mortgages/limited-company-spv/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -18502,11 +18524,6 @@
     {
       "from": "https://mortgageexplained.co.uk/buy-to-let-mortgages/limited-company-spv/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/buy-to-let-mortgages/limited-company-spv/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -18746,7 +18763,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/buy-to-let-mortgages/personal-name-vs-spv/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -18777,11 +18794,6 @@
     {
       "from": "https://mortgageexplained.co.uk/buy-to-let-mortgages/personal-name-vs-spv/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/buy-to-let-mortgages/personal-name-vs-spv/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -19021,7 +19033,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/buy-to-let-mortgages/holiday-let/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -19052,11 +19064,6 @@
     {
       "from": "https://mortgageexplained.co.uk/buy-to-let-mortgages/holiday-let/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/buy-to-let-mortgages/holiday-let/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -19296,7 +19303,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/buy-to-let-mortgages/portfolio-landlord/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -19327,11 +19334,6 @@
     {
       "from": "https://mortgageexplained.co.uk/buy-to-let-mortgages/portfolio-landlord/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/buy-to-let-mortgages/portfolio-landlord/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -19571,7 +19573,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/how-we-work/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -19602,11 +19604,6 @@
     {
       "from": "https://mortgageexplained.co.uk/how-we-work/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/how-we-work/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -19811,7 +19808,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/self-employed-mortgages/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -19842,11 +19839,6 @@
     {
       "from": "https://mortgageexplained.co.uk/self-employed-mortgages/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/self-employed-mortgages/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -20076,7 +20068,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/self-employed-mortgages/one-years-accounts/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -20107,11 +20099,6 @@
     {
       "from": "https://mortgageexplained.co.uk/self-employed-mortgages/one-years-accounts/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/self-employed-mortgages/one-years-accounts/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -20341,7 +20328,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/self-employed-mortgages/limited-company-director/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -20372,11 +20359,6 @@
     {
       "from": "https://mortgageexplained.co.uk/self-employed-mortgages/limited-company-director/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/self-employed-mortgages/limited-company-director/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -20606,7 +20588,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/self-employed-mortgages/cis-subcontractor/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -20637,11 +20619,6 @@
     {
       "from": "https://mortgageexplained.co.uk/self-employed-mortgages/cis-subcontractor/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/self-employed-mortgages/cis-subcontractor/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -20871,7 +20848,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/self-employed-mortgages/contractor-day-rate/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -20902,11 +20879,6 @@
     {
       "from": "https://mortgageexplained.co.uk/self-employed-mortgages/contractor-day-rate/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/self-employed-mortgages/contractor-day-rate/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -21136,7 +21108,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/self-employed-mortgages/complex-income/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -21167,11 +21139,6 @@
     {
       "from": "https://mortgageexplained.co.uk/self-employed-mortgages/complex-income/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/self-employed-mortgages/complex-income/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -21401,7 +21368,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/how-we-introduce-you/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -21432,11 +21399,6 @@
     {
       "from": "https://mortgageexplained.co.uk/how-we-introduce-you/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/how-we-introduce-you/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -21641,7 +21603,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/data/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -21672,11 +21634,6 @@
     {
       "from": "https://mortgageexplained.co.uk/data/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/data/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -21901,7 +21858,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/data/lender-criteria-index/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -21932,11 +21889,6 @@
     {
       "from": "https://mortgageexplained.co.uk/data/lender-criteria-index/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/data/lender-criteria-index/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -22156,7 +22108,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/data/fixed-rate-cliff-2026/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -22187,11 +22139,6 @@
     {
       "from": "https://mortgageexplained.co.uk/data/fixed-rate-cliff-2026/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/data/fixed-rate-cliff-2026/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -22421,7 +22368,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/data/fixed-rate-cliff-calculator/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -22452,11 +22399,6 @@
     {
       "from": "https://mortgageexplained.co.uk/data/fixed-rate-cliff-calculator/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/data/fixed-rate-cliff-calculator/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -22686,7 +22628,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/swap-rate-vs-base-rate/",
-      "to": "https://mortgageexplained.co.uk/_astro/404.DqpCZVwA.css",
+      "to": "https://mortgageexplained.co.uk/_astro/404.xbN3WGON.css",
       "type": "internal"
     },
     {
@@ -22717,11 +22659,6 @@
     {
       "from": "https://mortgageexplained.co.uk/swap-rate-vs-base-rate/",
       "to": "https://mortgageexplained.co.uk/adverse-credit-mortgages/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/swap-rate-vs-base-rate/",
-      "to": "https://mortgageexplained.co.uk/mortgage-declined/",
       "type": "internal"
     },
     {
@@ -22916,7 +22853,12 @@
     }
   ],
   "issues": [],
-  "orphans": [],
+  "orphans": [
+    {
+      "path": "/thank-you/",
+      "url": "https://mortgageexplained.co.uk/thank-you/"
+    }
+  ],
   "tree": {
     "name": "/",
     "path": "/",
@@ -22991,6 +22933,11 @@
       {
         "name": "privacy",
         "path": "/privacy/",
+        "children": []
+      },
+      {
+        "name": "thank-you",
+        "path": "/thank-you/",
         "children": []
       },
       {
@@ -23441,6 +23388,16 @@
         "Author",
         "Substantive",
         "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/thank-you/",
+      "score": 4,
+      "signals": [
+        "OG",
+        "Schema:4",
+        "Author",
+        "Substantive"
       ]
     },
     {
