@@ -23,6 +23,7 @@ OUTPUT_DIR = os.path.expanduser("~/rank4ai-dashboard/src/data/live")
 
 # Map audit file site name → dashboard client id (from clients.json)
 SITE_ID_MAP = {
+    "MortgageExplained": "mortgageexplained",
     "Rank4AI": "rank4ai",
     "Market Invoice": "market-invoice",
     "SEO Compare": "seocompare",

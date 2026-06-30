@@ -19,6 +19,7 @@ ICLOUD = os.path.expanduser("~/Library/Mobile Documents/com~apple~CloudDocs/clau
 OUTPUT_DIR = os.path.expanduser("~/rank4ai-dashboard/src/data/live")
 
 SITE_PLAN_DIRS = {
+    "mortgageexplained": [],
     "rank4ai": [
         f"{ICLOUD}/astro/rank4ai",
     ],

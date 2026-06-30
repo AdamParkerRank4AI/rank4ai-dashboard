@@ -13,6 +13,12 @@ LIVE_DIR = os.path.expanduser("~/rank4ai-dashboard/src/data/live")
 OUTPUT = os.path.join(LIVE_DIR, "site_changelog.json")
 
 REPOS = {
+    "mortgageexplained": {
+        "owner": "AdamParkerRank4AI",
+        "repo": "mortgageexplained",
+        "local": os.path.expanduser("~/mortgageexplained"),
+        "crawl_file": "crawl_mortgageexplained.json",
+    },
     "rank4ai": {
         "owner": "AdamParkerRank4AI",
         "repo": "rank4ai-preview",
