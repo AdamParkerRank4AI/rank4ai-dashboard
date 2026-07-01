@@ -12,7 +12,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import clients from '../utils/dashboardClients';
+import clients, { toClientId } from '../utils/dashboardClients';
 const nameOf = (id) => ((clients as any[]).find((c) => c.id === id) || {}).name || id;
 
 function loadJson(filename: string) {
@@ -30,7 +30,11 @@ const clientIds = new Set((clients as any[]).map((c) => c.id));
 const d = loadJson('fleet_bot_hits.json');
 const totals = d?.fleet_totals ?? { hits: 0, ai_bot_hits: 0, asset_hits: 0, distinct_bots: 0 };
 const byBot = (d?.by_bot ?? []).slice(0, 12);
-const bySite = (d?.by_site ?? []).filter((s: any) => clientIds.has(s.site));
+// Normalise the domain-keyed site slug (hervitals/ltdturnaround) to the client id
+// BEFORE filtering, else womenshealth + company-rescue drop out of the table.
+const bySite = (d?.by_site ?? [])
+  .map((s: any) => ({ ...s, site: toClientId(s.site) }))
+  .filter((s: any) => clientIds.has(s.site));
 const assetReaders = d?.ai_asset_readers ?? [];
 const recent = (d?.recent ?? []).slice(0, 12);
 const win = d?.window_days ?? 30;

@@ -15,10 +15,11 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
-import clients from '../utils/dashboardClients';
+import clients, { toClientId } from '../utils/dashboardClients';
 
 // Map raw site ids (e.g. "cardmachines") to friendly client names ("MerchantHQ").
-const nameOf = (id: string) => (clients as any[]).find((c) => c.id === id)?.name || id;
+// toClientId first so domain-keyed feed slugs (hervitals/ltdturnaround) resolve.
+const nameOf = (id: string) => (clients as any[]).find((c) => c.id === toClientId(id))?.name || id;
 const idNameMap = JSON.stringify(Object.fromEntries((clients as any[]).map((c) => [c.id, c.name])));
 
 function loadJson(filename: string) {

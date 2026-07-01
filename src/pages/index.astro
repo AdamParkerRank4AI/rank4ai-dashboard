@@ -18,7 +18,7 @@ import RankingsSummaryTile from '../components/RankingsSummaryTile.astro';
 import FleetGrowthTile from '../components/FleetGrowthTile.astro';
 import DataFreshnessTile from '../components/DataFreshnessTile.astro';
 import AreaFreshnessTile from '../components/AreaFreshnessTile.astro';
-import clients from '../utils/dashboardClients';
+import clients, { toClientId } from '../utils/dashboardClients';
 import { statusOf, STATUS_RANK, STATUS_PILL, STATUS_LABEL } from '../utils/siteStatus';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -48,7 +48,7 @@ const botHits = loadJson('bot_hits.json') || {};
 // Falls back to the legacy bot_hits.json per site if fleet data is absent. (29 Jun 2026)
 const fleetBotHits = loadJson('fleet_bot_hits.json') || {};
 const fleetAiBySite: Record<string, number> = {};
-for (const r of (fleetBotHits.by_site || [])) fleetAiBySite[r.site] = r.ai_bot_hits || 0;
+for (const r of (fleetBotHits.by_site || [])) fleetAiBySite[toClientId(r.site)] = r.ai_bot_hits || 0;
 const humanTraffic = loadJson('human_traffic.json') || {};
 const htBySite = (humanTraffic as any).by_site || {};
 const totalHumans = Object.values(htBySite).reduce((s: number, d: any) => s + (d.human_30d || 0), 0);
