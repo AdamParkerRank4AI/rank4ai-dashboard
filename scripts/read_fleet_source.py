@@ -86,6 +86,24 @@ FLEET = {
         "domain": "mortgageexplained.co.uk",
         "live": "mortgageexplained.co.uk",
     },
+    # Live owned sites added 30 Jun 2026 so their dashboard site-tree area is built
+    # from source. KEY = the dashboard clients.json `id` (a codename), NOT the domain.
+    "kartapay":          {"repo": "~/kartapay",       "domain": "kartapay.co.uk",        "live": "kartapay.co.uk"},
+    "womenshealth":      {"repo": "~/hervitals",      "domain": "hervitals.co.uk",       "live": "hervitals.co.uk"},
+    "homesandhedge":     {"repo": "~/homesandhedge",  "domain": "homesandhedge.co.uk",   "live": "homesandhedge.co.uk"},
+    "adhdhelper":        {"repo": "~/adhdhelper",     "domain": "adhdhelper.co.uk",      "live": "adhdhelper.co.uk"},
+    "sortedproperty":    {"repo": "~/sortedproperty", "domain": "vettedhome.co.uk",      "live": "vettedhome.co.uk"},
+    "trustedinteriors":  {"repo": "~/trustedinteriors","domain": "trustedinteriors.co.uk","live": "trustedinteriors.co.uk"},
+    "company-rescue":    {"repo": "~/company-rescue", "domain": "ltdturnaround.co.uk",   "live": "ltdturnaround.co.uk"},
+    "fitgauge":          {"repo": "~/fitgauge-site",  "domain": "fitcalcs.co.uk",        "live": "fitcalcs.co.uk"},
+    "namenest":          {"repo": "~/namenest-site",  "domain": "babydata.co.uk",        "live": "babydata.co.uk"},
+    "datekit":           {"repo": "~/datekit-site",   "domain": "datesandtimes.co.uk",   "live": "datesandtimes.co.uk"},
+    # laterlifeborrowing: the REAL build is ~/equity-release (125 pages, Richard Parker),
+    # NOT ~/laterlifeborrowing (the 9-page ghost template). See memory llb_two_repos_ghost_clobber.
+    "laterlifeborrowing":{"repo": "~/equity-release", "domain": "laterlifeborrowing.co.uk","live": "laterlifeborrowing.co.uk"},
+    # resiliencebuilder (~/steve-site) intentionally NOT here: it's a 49k-Worker client
+    # site with a non-standard layout the source-reader reads as 0 pages — an empty
+    # site-tree is worse than none. Revisit if it moves to a standard Astro build.
 }
 
 WORD_RE = re.compile(r"\b\w+\b")

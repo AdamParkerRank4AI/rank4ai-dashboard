@@ -80,7 +80,8 @@ done
 # Monday branch, which died with that job, leaving them ~weeks stale. Run them here on
 # Mondays so the weekly tiles stay current too. (citation-by-type costs ~$1-2/run.)
 if [ "$(date +%u)" = "1" ]; then
-  for s in fetch_trends.py fetch_pagespeed.py check_citations_by_type.py ; do
+  for s in fetch_trends.py fetch_pagespeed.py check_citations_by_type.py \
+           run_citation_baseline.py youtube_ai_tracking.py ; do
     /usr/bin/python3 "scripts/$s" >> "$LOG" 2>&1 || echo "WARN $s nonzero" >> "$LOG"
   done
 fi
@@ -127,6 +128,31 @@ done
 # (never loses an open item), backfills missed opportunities from gsc_history, and
 # applies enhancement_done.json so finished items stop resurfacing.
 /usr/bin/python3 scripts/build_enhancement_backlog.py >> "$LOG" 2>&1 || echo "WARN build_enhancement_backlog.py nonzero" >> "$LOG"
+
+# 2b-iii. AUDIT / LINT / DRIFT feeds — orphaned when refresh_all.py was retired
+# (last ran ~25 Jun), so drift_report / deploy_parity / title_lint / entity_coherence /
+# top_linkers / llms_validation / feature_coverage / fleet_baseline / daily_history /
+# syndication / gsc_coverage_drilldown / upcoming_pages froze 5+ days on the board.
+# All verified to run clean 01 Jul 2026 (rewired here). save_daily_metrics runs last so
+# its snapshot captures the day's fully-refreshed feeds. The expensive AI producers
+# (run_citation_baseline -> citation_prompts, youtube_ai_tracking -> youtube_ai_citations)
+# are in the Monday block above; push_to_fleet (writes fleet repos), daily_dashboard_digest
+# (emails) and fetch_url_inspection (slow, chunked) are intentionally NOT wired here.
+for s in \
+  check_drift.py \
+  verify_deploy_parity.py \
+  check_title_truncation.py \
+  check_llms_txt.py \
+  build_feature_coverage.py \
+  fleet_baseline_check.py \
+  compute_syndication.py \
+  daily_top_linkers.py \
+  ingest_gsc_drilldown.py \
+  sync_upcoming_pages.py \
+  check_entity_coherence.py \
+  save_daily_metrics.py ; do
+    /usr/bin/python3 "scripts/$s" >> "$LOG" 2>&1 || echo "WARN $s nonzero" >> "$LOG"
+done
 
 # 2c. Data-freshness guardrail. Must run LAST (after every fetch) so it reflects
 # reality at deploy time. It was never invoked by this job before, so its output
