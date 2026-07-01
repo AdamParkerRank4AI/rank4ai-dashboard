@@ -1,9 +1,11 @@
 ---
 /**
- * RankingsSummaryTile — compact per-site rankings overview for the homepage top.
- * Same GSC feed as /rankings/ (gsc.json top_queries, last 28d), board-filtered.
- * Shows avg position, page-1 / striking-distance counts, impressions + clicks per
- * site; links to the full Rankings page. Added 24 Jun (Adam: rankings near the top).
+ * RankingsSummaryTile — per-site search performance overview for the homepage top.
+ * Leads with CLICKS + IMPRESSIONS per site (big, with a 28d-vs-prior-28d trend delta)
+ * — the headline Adam wants prominent. Position / page-1 / striking are secondary.
+ * Sources: gsc.json (totals: ctr, position) + gsc_daily.json (28d + prior-28d for the
+ * delta). Board-filtered. Full per-query detail at /rankings/.
+ * Rebuilt 01 Jul 2026 (Adam: "see clicks and impressions more prominently for each site").
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -18,19 +20,38 @@ function loadJson(filename: string) {
 }
 
 const gsc = loadJson('gsc.json') || {};
+const gscDaily = loadJson('gsc_daily.json') || {};
 const boardClients = clients as any[];
 const clientIds = new Set(boardClients.map((c) => c.id));
 
+const sumDays = (days: any[]) => days.reduce(
+  (a: any, d: any) => ({ clicks: a.clicks + (d.clicks || 0), impressions: a.impressions + (d.impressions || 0) }),
+  { clicks: 0, impressions: 0 },
+);
+
 const sites = boardClients
-  .filter((c) => clientIds.has(c.id) && (gsc as any)[c.id]?.top_queries?.length)
+  .filter((c) => clientIds.has(c.id) && ((gsc as any)[c.id]?.top_queries?.length || (gscDaily as any)[c.id]?.days?.length))
   .map((c) => {
     const g = (gsc as any)[c.id] || {};
+    const days = ((gscDaily as any)[c.id]?.days || []) as any[];
+    const cur = days.length ? sumDays(days.slice(-28)) : null;
+    const prev = days.length >= 56 ? sumDays(days.slice(-56, -28)) : null;
+    // Prefer the internally-consistent 28d daily sum; fall back to GSC totals.
+    const clicks = cur ? cur.clicks : (g.totals?.clicks || 0);
+    const impressions = cur ? cur.impressions : (g.totals?.impressions || 0);
+    const ctr = impressions > 0 ? (clicks / impressions) * 100 : (g.totals?.ctr ?? null);
     const rows = (g.top_queries || []).filter((q: any) => q.query && q.impressions > 0);
-    const impressions = rows.reduce((s: number, r: any) => s + (r.impressions || 0), 0);
-    const clicks = rows.reduce((s: number, r: any) => s + (r.clicks || 0), 0);
     const page1 = rows.filter((r: any) => r.position <= 10).length;
     const striking = rows.filter((r: any) => r.position > 10 && r.position <= 20).length;
-    return { id: c.id, name: c.name || c.id, avgPos: g.totals?.position, page1, striking, impressions, clicks };
+    const pct = (now: number, was: number | null) =>
+      was == null || was === 0 ? null : Math.round(((now - was) / was) * 100);
+    return {
+      id: c.id, name: c.name || c.id,
+      avgPos: g.totals?.position, page1, striking,
+      impressions, clicks, ctr,
+      dImpr: prev ? pct(impressions, prev.impressions) : null,
+      dClicks: prev ? pct(clicks, prev.clicks) : null,
+    };
   })
   .sort((a, b) => b.impressions - a.impressions);
 
@@ -39,48 +60,65 @@ const fleetClicks = sites.reduce((s, x) => s + x.clicks, 0);
 const fleetPage1 = sites.reduce((s, x) => s + x.page1, 0);
 const fmt = (n: number) => (n || 0).toLocaleString();
 const posColor = (p: number) => p == null ? 'text-gray-500' : p <= 10 ? 'text-emerald-300' : p <= 20 ? 'text-amber-300' : 'text-gray-400';
+const delta = (d: number | null) =>
+  d == null ? { txt: '', cls: 'text-slate-600' }
+  : d > 0 ? { txt: `▲ ${d}%`, cls: 'text-emerald-400' }
+  : d < 0 ? { txt: `▼ ${Math.abs(d)}%`, cls: 'text-rose-400' }
+  : { txt: '±0%', cls: 'text-slate-500' };
 ---
 {sites.length > 0 && (
   <section data-copy-tile="Rankings" class="rounded-xl bg-slate-900 border border-indigo-800/40 p-5 mb-6">
-    <div class="flex items-center justify-between flex-wrap gap-2 mb-1">
-      <div class="flex items-baseline gap-3">
-        <h2 class="text-lg font-bold text-indigo-200">Rankings</h2>
-        <span class="text-xs text-slate-400">
-          <span class="text-emerald-300 font-bold">{fmt(fleetImpr)}</span> impressions ·
-          <span class="text-emerald-300 font-bold">{fmt(fleetClicks)}</span> clicks ·
-          <span class="text-emerald-300 font-bold">{fleetPage1}</span> on page 1 · last 28d
+    <div class="flex items-center justify-between flex-wrap gap-2 mb-3">
+      <div class="flex items-baseline gap-3 flex-wrap">
+        <h2 class="text-lg font-bold text-indigo-200">Search performance</h2>
+        <span class="text-sm text-slate-300">
+          <span class="text-emerald-300 font-bold text-base">{fmt(fleetImpr)}</span> impressions ·
+          <span class="text-emerald-300 font-bold text-base">{fmt(fleetClicks)}</span> clicks ·
+          <span class="text-emerald-300 font-bold">{fleetPage1}</span> on page 1
+          <span class="text-slate-500">· last 28d</span>
         </span>
       </div>
       <a href="/rankings/" class="text-xs text-indigo-300 hover:text-indigo-200 font-semibold">Full rankings →</a>
     </div>
-    <div class="overflow-x-auto mt-3">
+    <div class="overflow-x-auto">
       <table class="w-full text-sm">
         <thead>
           <tr class="text-left text-slate-500 text-xs border-b border-slate-800">
             <th class="py-1.5 pr-2 font-medium">Site</th>
+            <th class="py-1.5 px-3 text-right font-semibold text-slate-300">Impressions</th>
+            <th class="py-1.5 px-3 text-right font-semibold text-slate-300">Clicks</th>
+            <th class="py-1.5 px-2 text-right font-medium">CTR</th>
             <th class="py-1.5 px-2 text-right font-medium">Avg pos</th>
             <th class="py-1.5 px-2 text-right font-medium">Page 1</th>
-            <th class="py-1.5 px-2 text-right font-medium">Striking</th>
-            <th class="py-1.5 px-2 text-right font-medium">Impressions</th>
-            <th class="py-1.5 pl-2 text-right font-medium">Clicks</th>
+            <th class="py-1.5 pl-2 text-right font-medium">Striking</th>
           </tr>
         </thead>
         <tbody>
-          {sites.map((s) => (
+          {sites.map((s) => {
+            const di = delta(s.dImpr); const dc = delta(s.dClicks);
+            return (
             <tr class="border-b border-slate-800/70">
-              <td class="py-1.5 pr-2">
+              <td class="py-2 pr-2">
                 <a href={`/rankings/#${s.id}`} class="font-medium text-slate-200 hover:text-white">{s.name}</a>
               </td>
-              <td class={`py-1.5 px-2 text-right tabular-nums ${posColor(s.avgPos)}`}>{s.avgPos != null ? Math.round(s.avgPos) : '—'}</td>
-              <td class="py-1.5 px-2 text-right tabular-nums text-emerald-300">{s.page1}</td>
-              <td class="py-1.5 px-2 text-right tabular-nums text-amber-300">{s.striking}</td>
-              <td class="py-1.5 px-2 text-right tabular-nums">{fmt(s.impressions)}</td>
-              <td class="py-1.5 pl-2 text-right tabular-nums">{fmt(s.clicks)}</td>
+              <td class="py-2 px-3 text-right">
+                <div class="text-lg font-bold text-white tabular-nums leading-none">{fmt(s.impressions)}</div>
+                {di.txt && <div class={`text-[11px] font-semibold tabular-nums ${di.cls}`}>{di.txt}</div>}
+              </td>
+              <td class="py-2 px-3 text-right">
+                <div class="text-lg font-bold text-emerald-300 tabular-nums leading-none">{fmt(s.clicks)}</div>
+                {dc.txt && <div class={`text-[11px] font-semibold tabular-nums ${dc.cls}`}>{dc.txt}</div>}
+              </td>
+              <td class="py-2 px-2 text-right tabular-nums text-slate-300">{s.ctr != null ? `${s.ctr.toFixed(1)}%` : '—'}</td>
+              <td class={`py-2 px-2 text-right tabular-nums ${posColor(s.avgPos)}`}>{s.avgPos != null ? Math.round(s.avgPos) : '—'}</td>
+              <td class="py-2 px-2 text-right tabular-nums text-emerald-300">{s.page1}</td>
+              <td class="py-2 pl-2 text-right tabular-nums text-amber-300">{s.striking}</td>
             </tr>
-          ))}
+            );
+          })}
         </tbody>
       </table>
     </div>
-    <p class="text-[11px] text-slate-500 mt-2">Google position per tracked query (GSC) · 🟢 page 1 (≤10) · 🟡 striking distance (11–20).</p>
+    <p class="text-[11px] text-slate-500 mt-2">Clicks &amp; impressions = last 28 days (GSC), with Δ vs the prior 28 days · 🟢 page 1 (≤10) · 🟡 striking distance (11–20).</p>
   </section>
 )}

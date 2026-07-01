@@ -334,16 +334,17 @@ if (isFleet) {
     </p>
   </section>
 
+  {/* SEARCH PERFORMANCE — per-site clicks + impressions (with 28d trend), headlined
+      at the top (Adam, 01 Jul: "see clicks and impressions more prominently for each
+      site"). Full per-query detail at /rankings/. */}
+  <RankingsSummaryTile />
+
   {/* AI Citations (live) — server-log proof we were just fetched into an AI answer
       (ai-user fetches, verified vs operator network). Moved to top + 24h/Week/Month
       per-site toggle (Adam, 24 Jun). Both boards. */}
   <div data-copy-tile="AI citations (live)" class="mb-6">
     <AiCitationsTile />
   </div>
-
-  {/* RANKINGS — per-site GSC position + impressions/clicks summary, near the top
-      (Adam, 24 Jun). Full per-query detail at /rankings/. */}
-  <RankingsSummaryTile />
 
   {/* FLEET GROWTH — from-zero impressions + clicks over time (Adam, 24 Jun). */}
   <script is:inline src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.js"></script>

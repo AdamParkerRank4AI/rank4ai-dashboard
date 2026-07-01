@@ -36,7 +36,33 @@ from bs4 import BeautifulSoup
 HOME = Path.home()
 LIVE = HOME / "rank4ai-dashboard/src/data/live"
 OUT = HOME / "Library/Mobile Documents/com~apple~CloudDocs/claude/Audits/content-refresh"
-OUT.mkdir(parents=True, exist_ok=True)
+# Local mirror — the iCloud file-provider intermittently throws
+# OSError(EDEADLK, "Resource deadlock avoided") mid-write, which used to crash
+# the whole cron. We always write here (reliable) and best-effort copy to iCloud.
+LOCAL_OUT = HOME / ".rank4ai-content-refresh"
+for _d in (OUT, LOCAL_OUT):
+    try:
+        _d.mkdir(parents=True, exist_ok=True)
+    except OSError:
+        pass
+
+
+def safe_write(rel_name, data):
+    """Write to the local mirror (authoritative) then best-effort to iCloud,
+    retrying the iCloud write through transient EDEADLK locks."""
+    import time as _t
+    (LOCAL_OUT / rel_name).write_text(data)
+    for attempt in range(3):
+        try:
+            (OUT / rel_name).write_text(data)
+            return
+        except OSError as e:
+            if attempt == 2:
+                print(f"     (iCloud copy skipped for {rel_name}: {e})")
+                return
+            _t.sleep(1.5)
+
+
 MODEL = "claude-sonnet-4-6"
 TODAY = None  # set in main() from arg to keep runs reproducible / resumable
 
@@ -186,9 +212,9 @@ def run_site(client, site_id, domain, top_n):
               "traffic + decay + age.\n")
     for it in items:
         md += [f"## {it['title'] or it['path']}", f"`{it['url']}`  ·  score {it['score']}", "", it["brief"], "", "---", ""]
-    (OUT / f"{site_id}_{TODAY}.md").write_text("\n".join(md))
-    json.dump({"site": site_id, "date": TODAY, "items": items},
-              open(OUT / f"{site_id}_{TODAY}.json", "w"), indent=2)
+    safe_write(f"{site_id}_{TODAY}.md", "\n".join(md))
+    safe_write(f"{site_id}_{TODAY}.json",
+               json.dumps({"site": site_id, "date": TODAY, "items": items}, indent=2))
     return len(items)
 
 
