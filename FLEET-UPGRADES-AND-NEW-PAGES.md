@@ -1,4 +1,6 @@
-# Fleet Upgrades & New Pages — status (updated 29 Jun 2026)
+# Fleet Upgrades & New Pages — status (updated 30 Jun 2026)
+
+> **▶ To pick this up next session: read `~/control-panel/MASTER-TODO-2026-06-30.md`** (the single consolidated outstanding-work list). This doc + `49k.co.uk/demos/fleet-status/` are the status board. 30 Jun batch shipped live (9 repos): anti-slop quality pass (MHQ stats/bleed/noindex, MI boilerplate/base-rate/author, BabyData real name-meanings, Copy-for-AI de-verbosed), LTD B33 + ADHD B39 dripped indexable, Trusted Interiors author=Adam, PeptideClear buy-flow, fitcalcs+datesandtimes Oliver LinkedIn. `fleet-deploy.sh` behind-main guard added.
 > Working copy in a writable path. The iCloud original (`iCloud/.../Research/beyond-serp-fleet-2026-06-17/`) is **dataless/evicted + needs Full Disk Access** for this process to write — that's the "lock" seen all session. Use this copy until FDA is granted.
 
 ## 🚨 Anti-slop SWEEP (29 Jun) — MI + MHQ cleanup DEPLOYED
