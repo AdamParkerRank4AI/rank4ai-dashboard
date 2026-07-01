@@ -169,7 +169,9 @@ def fetch_html(url):
         req = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "text/html"})
         with urlopen(req, timeout=TIMEOUT) as r:
             return r.read().decode("utf-8", errors="replace")
-    except (HTTPError, URLError, TimeoutError) as e:
+    except (HTTPError, URLError, TimeoutError, OSError) as e:
+        # OSError catches socket.timeout, which on Python 3.9 is NOT a
+        # TimeoutError subclass and otherwise crashes the whole run.
         print(f"  fetch failed {url}: {e}")
         return None
 
@@ -225,7 +227,8 @@ def head_check(url):
             if e.code == 405 and method == "HEAD":
                 continue
             return out
-        except (URLError, TimeoutError) as e:
+        except (URLError, TimeoutError, OSError) as e:
+            # OSError also catches socket.timeout (not a TimeoutError on 3.9).
             out["status"] = 0
             out["error"] = str(e)[:100]
             out["verdict"] = "error"
