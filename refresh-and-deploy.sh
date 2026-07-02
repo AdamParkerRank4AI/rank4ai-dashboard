@@ -160,6 +160,12 @@ done
 # "Data feeds" tile will surface any silently-failed fetcher.
 /usr/bin/python3 scripts/check_data_freshness.py >> "$LOG" 2>&1 || echo "WARN check_data_freshness.py nonzero" >> "$LOG"
 
+# Keep EVERY bit of data (Adam, 2 Jul 2026): gzip the full live data dir into a
+# dated snapshot in Supabase Storage (bucket 'dashboard-archive', ~2.5MB/day,
+# durable + off-laptop). Runs AFTER all fetchers so it captures the day's final
+# data. Non-fatal by design — archiving must never block the build/deploy.
+/usr/bin/python3 scripts/archive_all.py >> "$LOG" 2>&1 || echo "WARN archive_all.py nonzero" >> "$LOG"
+
 # Refresh done for today — mark it so later slots skip the fetchers (but still deploy).
 touch "$MARKER"
 fi  # end DO_REFRESH
