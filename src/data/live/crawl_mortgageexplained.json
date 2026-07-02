@@ -1,13 +1,13 @@
 {
   "site_id": "mortgageexplained",
   "domain": "mortgageexplained.co.uk",
-  "crawled_at": "2026-07-02T12:35:36.222502+00:00",
+  "crawled_at": "2026-07-02T12:52:01.610919+00:00",
   "source": "fleet-source-reader",
   "pages_crawled": 107,
   "total_issues": 0,
   "orphan_pages": 1,
   "avg_depth": 1.7102803738317758,
-  "avg_word_count": 2499,
+  "avg_word_count": 2504,
   "pages_with_schema": 107,
   "pages_with_multimodal": 0,
   "pages_with_comparison_table": 15,
@@ -155,13 +155,13 @@
   },
   "topic_cluster_count": 32,
   "term_consistency": {
-    "mortgage": 159,
+    "mortgage": 158,
     "mortgages": 41,
     "lender": 41,
     "explained": 40,
     "rate": 40,
     "lenders": 31,
-    "broker": 31,
+    "broker": 29,
     "declined": 28,
     "deposit": 21,
     "mortgageexplained": 20,
@@ -471,7 +471,7 @@
       "path": "/complaints/",
       "title": "Complaints",
       "h1": "Complaints",
-      "meta_desc": "How to complain about MortgageExplained. We handle complaints about our information and introduction service directly. Complaints about mortgage advice are handled by the regulated broker.",
+      "meta_desc": "How to complain about MortgageExplained. We handle complaints about our information and introduction service directly. Complaints about mortgage advice are\u2026",
       "word_count": 1839,
       "status": 200,
       "schemas": [
@@ -1080,7 +1080,7 @@
       "path": "/disclaimer/",
       "title": "Disclaimer",
       "h1": "Disclaimer",
-      "meta_desc": "MortgageExplained provides general information, not financial advice. We are not a lender or a regulated advice firm. Always confirm your position with a regulated mortgage broker before you act.",
+      "meta_desc": "MortgageExplained provides general information, not financial advice. We are not a lender or a regulated advice firm. Always confirm your position with a\u2026",
       "word_count": 1899,
       "status": 200,
       "schemas": [
@@ -1968,8 +1968,8 @@
       "path": "/terms/",
       "title": "Terms of use",
       "h1": "Terms of use",
-      "meta_desc": "The terms on which you can use MortgageExplained, operated by Muswell Rose Ltd. We provide information and introduce you to a regulated mortgage broker. We do not give financial advice.",
-      "word_count": 2016,
+      "meta_desc": "The terms on which you can use MortgageExplained, operated by Muswell Rose Ltd. We provide information and introduce you to a regulated mortgage broker. We\u2026",
+      "word_count": 2523,
       "status": 200,
       "schemas": [
         "Person",
@@ -1991,7 +1991,7 @@
       "table_count": 0,
       "list_count": 3,
       "question_h2s": 0,
-      "h2_count": 7,
+      "h2_count": 14,
       "last_modified": "2026-07-01",
       "has_answer_capsule": true,
       "has_og_tags": true,
@@ -3319,7 +3319,7 @@
       "path": "/data-protection/",
       "title": "Data protection and your GDPR rights",
       "h1": "Data protection and your GDPR rights",
-      "meta_desc": "Your rights under UK GDPR when you use MortgageExplained: who controls your data, the lawful basis we rely on, how long we keep it, and how to complain to the ICO.",
+      "meta_desc": "Your rights under UK GDPR when you use MortgageExplained: who controls your data, the lawful basis we rely on, how long we keep it, and how to complain to\u2026",
       "word_count": 1991,
       "status": 200,
       "schemas": [
@@ -3687,7 +3687,7 @@
       "path": "/accessibility/",
       "title": "Accessibility and clarity",
       "h1": "Accessibility and clarity",
-      "meta_desc": "How MortgageExplained works to be clear, readable and accessible: plain English, answer-first structure, strong colour contrast and a design that reduces ambiguity for everyone.",
+      "meta_desc": "How MortgageExplained works to be clear, readable and accessible: plain English, answer-first structure, strong colour contrast and a design that reduces\u2026",
       "word_count": 1887,
       "status": 200,
       "schemas": [
@@ -4511,7 +4511,7 @@
       "path": "/cookies/",
       "title": "Cookie policy",
       "h1": "Cookie policy",
-      "meta_desc": "How MortgageExplained uses cookies. The site currently sets no tracking or advertising cookies. If we add analytics we will update this policy and ask for your consent first.",
+      "meta_desc": "How MortgageExplained uses cookies. The site currently sets no tracking or advertising cookies. If we add analytics we will update this policy and ask for\u2026",
       "word_count": 1847,
       "status": 200,
       "schemas": [
@@ -23100,7 +23100,17 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/terms/",
+      "to": "https://mortgageexplained.co.uk/cookies/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/terms/",
       "to": "https://mortgageexplained.co.uk/trust-and-governance/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/terms/",
+      "to": "https://mortgageexplained.co.uk/privacy/",
       "type": "internal"
     },
     {
@@ -29536,16 +29546,6 @@
     {
       "from": "https://mortgageexplained.co.uk/eligibility/new-job/",
       "to": "https://mortgageexplained.co.uk/terms/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/eligibility/new-job/",
-      "to": "https://mortgageexplained.co.uk/accessibility/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/eligibility/new-job/",
-      "to": "https://mortgageexplained.co.uk/contact/",
       "type": "internal"
     }
   ],

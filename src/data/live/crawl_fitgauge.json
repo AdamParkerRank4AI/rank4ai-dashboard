@@ -1,20 +1,20 @@
 {
   "site_id": "fitgauge",
   "domain": "fitcalcs.co.uk",
-  "crawled_at": "2026-07-02T12:35:39.442448+00:00",
+  "crawled_at": "2026-07-02T12:52:04.117549+00:00",
   "source": "fleet-source-reader",
-  "pages_crawled": 36,
+  "pages_crawled": 37,
   "total_issues": 0,
   "orphan_pages": 0,
-  "avg_depth": 1.5833333333333333,
-  "avg_word_count": 2510,
-  "pages_with_schema": 36,
+  "avg_depth": 1.5675675675675675,
+  "avg_word_count": 2509,
+  "pages_with_schema": 37,
   "pages_with_multimodal": 0,
   "pages_with_comparison_table": 4,
   "pages_with_video": 0,
-  "pages_over_2000_words": 34,
+  "pages_over_2000_words": 35,
   "images_missing_alt": 0,
-  "pages_with_date": 36,
+  "pages_with_date": 37,
   "crawler_access": {
     "GPTBot": true,
     "ClaudeBot": true,
@@ -52,6 +52,10 @@
       "hub": "/site-index/",
       "page_count": 1
     },
+    "terms": {
+      "hub": "/terms/",
+      "page_count": 1
+    },
     "about": {
       "hub": "/about/",
       "page_count": 1
@@ -85,27 +89,27 @@
       "page_count": 1
     }
   },
-  "topic_cluster_count": 15,
+  "topic_cluster_count": 16,
   "term_consistency": {
-    "fitcalcs": 43,
+    "fitcalcs": 44,
     "calculator": 37,
     "calories": 20,
-    "weight": 20,
-    "body": 17,
-    "fitness": 15,
-    "protein": 12,
-    "race": 11,
-    "using": 10,
-    "height": 10,
-    "time": 9,
+    "weight": 19,
+    "fitness": 16,
+    "body": 15,
+    "using": 11,
+    "race": 10,
+    "protein": 10,
     "activity": 8,
-    "england": 7,
-    "marathon": 7,
-    "work": 7
+    "work": 8,
+    "height": 8,
+    "time": 7,
+    "estimate": 7,
+    "intake": 6
   },
   "content_freshness": {
-    "pages_with_dates": 36,
-    "fresh_30_days": 36,
+    "pages_with_dates": 37,
+    "fresh_30_days": 37,
     "fresh_90_days": 0,
     "stale": 0
   },
@@ -116,7 +120,7 @@
       "path": "/statistics/",
       "title": "UK fitness, activity and body statistics 2026 | FitCalcs",
       "h1": "UK fitness, activity and body statistics",
-      "meta_desc": "Headline UK statistics on physical activity, overweight and obesity, calorie intake and running, each cited to its primary source: the NHS Health Survey for England, Sport England Active Lives, the NDNS, parkrun and the London Marathon.",
+      "meta_desc": "Headline UK statistics on physical activity, overweight and obesity, calorie intake and running, each cited to its primary source: the NHS Health Survey for\u2026",
       "word_count": 2542,
       "status": 200,
       "schemas": [
@@ -149,16 +153,16 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 36,
+      "internal_links_in": 37,
       "depth": 1
     },
     {
       "url": "https://fitcalcs.co.uk/running/",
       "path": "/running/",
-      "title": "Running pace and race time predictor (5K, 10K, half, marathon) | FitCalcs",
+      "title": "Running pace and race time predictor (5K, 10K, | FitCalcs",
       "h1": "Running pace and race prediction",
       "meta_desc": "Predict your 5K, 10K, half marathon and marathon times from one recent result, with per-kilometre pace, using the Riegel endurance formula.",
-      "word_count": 2357,
+      "word_count": 2355,
       "status": 200,
       "schemas": [
         "Person",
@@ -190,16 +194,16 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 36,
+      "internal_links_in": 37,
       "depth": 1
     },
     {
       "url": "https://fitcalcs.co.uk/running/age-grade-calculator/",
       "path": "/running/age-grade-calculator/",
-      "title": "Age grade calculator for runners: your race time, scored fairly | FitCalcs",
+      "title": "Age grade calculator for runners: your race | FitCalcs",
       "h1": "Age grade calculator",
       "meta_desc": "Score your 5K, 10K, half or marathon time as an age grade, your performance against the world best for your age and sex, using fitted WMA age factors.",
-      "word_count": 2552,
+      "word_count": 2549,
       "status": 200,
       "schemas": [
         "Person",
@@ -278,7 +282,7 @@
       "path": "/running/steps-to-distance-calculator/",
       "title": "Steps to distance and calories calculator | FitCalcs",
       "h1": "Steps to distance and calories calculator",
-      "meta_desc": "Convert your step count into distance in kilometres and miles and the calories you burned, using a stride estimated from your height and the MET method for walking.",
+      "meta_desc": "Convert your step count into distance in kilometres and miles and the calories you burned, using a stride estimated from your height and the MET method for\u2026",
       "word_count": 2543,
       "status": 200,
       "schemas": [
@@ -316,10 +320,10 @@
     {
       "url": "https://fitcalcs.co.uk/running/vo2-max-calculator/",
       "path": "/running/vo2-max-calculator/",
-      "title": "VO2 max calculator: Cooper run and Rockport walk tests | FitCalcs",
+      "title": "VO2 max calculator: Cooper run and Rockport walk | FitCalcs",
       "h1": "VO2 max calculator",
       "meta_desc": "Estimate your VO2 max, the standard measure of aerobic fitness, from the Cooper 12-minute run or the Rockport 1-mile walk test, with a fitness rating.",
-      "word_count": 2481,
+      "word_count": 2480,
       "status": 200,
       "schemas": [
         "Person",
@@ -431,16 +435,16 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 36,
+      "internal_links_in": 37,
       "depth": 1
     },
     {
       "url": "https://fitcalcs.co.uk/tools/",
       "path": "/tools/",
-      "title": "All fitness calculators: calories, BMI, macros, running pace | FitCalcs",
+      "title": "All fitness calculators: calories, BMI, macros, | FitCalcs",
       "h1": "Fitness calculators",
-      "meta_desc": "Every FitCalcs calculator in one place. Calorie and TDEE, BMI and waist-to-height, and a running race-time predictor, each showing the equation and UK data behind it.",
-      "word_count": 3041,
+      "meta_desc": "Every FitCalcs calculator in one place. Calorie and TDEE, BMI and waist-to-height, and a running race-time predictor, each showing the equation and UK data\u2026",
+      "word_count": 3039,
       "status": 200,
       "schemas": [
         "Person",
@@ -472,16 +476,16 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 36,
+      "internal_links_in": 37,
       "depth": 1
     },
     {
       "url": "https://fitcalcs.co.uk/tools/one-rep-max-calculator/",
       "path": "/tools/one-rep-max-calculator/",
-      "title": "One rep max calculator (Epley and Brzycki) with training percentages | FitCalcs",
+      "title": "One rep max calculator (Epley and Brzycki) with | FitCalcs",
       "h1": "One rep max calculator",
       "meta_desc": "Estimate your one-rep max from a weight and reps you can already lift, using the Epley and Brzycki formulas, with a percentage table to set your training loads.",
-      "word_count": 2443,
+      "word_count": 2441,
       "status": 200,
       "schemas": [
         "Person",
@@ -518,10 +522,10 @@
     {
       "url": "https://fitcalcs.co.uk/tools/calories-burned-calculator/",
       "path": "/tools/calories-burned-calculator/",
-      "title": "Calories burned calculator: by activity, using the MET method | FitCalcs",
+      "title": "Calories burned calculator: by activity, using | FitCalcs",
       "h1": "Calories burned calculator",
       "meta_desc": "Work out the calories you burn in any activity from your body weight and how long you did it, using MET values from the Compendium of Physical Activities.",
-      "word_count": 2479,
+      "word_count": 2476,
       "status": 200,
       "schemas": [
         "Person",
@@ -593,7 +597,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 36,
+      "internal_links_in": 37,
       "depth": 1
     },
     {
@@ -601,7 +605,7 @@
       "path": "/authors/",
       "title": "Editorial team",
       "h1": "Editorial team",
-      "meta_desc": "The named editor behind FitCalcs. Every health figure is cited to a named UK source such as the NHS, Sport England or the NDNS, and tools are informational only, not medical advice.",
+      "meta_desc": "The named editor behind FitCalcs. Every health figure is cited to a named UK source such as the NHS, Sport England or the NDNS, and tools are informational\u2026",
       "word_count": 2012,
       "status": 200,
       "schemas": [
@@ -634,7 +638,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 36,
+      "internal_links_in": 37,
       "depth": 1
     },
     {
@@ -642,7 +646,7 @@
       "path": "/authors/oliver-mackman/",
       "title": "Oliver Mackman, Editor, FitCalcs",
       "h1": "Oliver Mackman",
-      "meta_desc": "Oliver Mackman is the named editor of FitCalcs, the UK fitness, body and diet calculator site, and a director of its operating company, accountable for the site",
+      "meta_desc": "Oliver Mackman is the named editor of FitCalcs, the UK fitness, body and diet calculator site, and a director of its operating company, accountable for the\u2026",
       "word_count": 2454,
       "status": 200,
       "schemas": [
@@ -685,7 +689,7 @@
       "title": "Site index | FitCalcs",
       "h1": "Site index",
       "meta_desc": "A complete index of every calculator, guide and UK data page on FitCalcs, in one place.",
-      "word_count": 3229,
+      "word_count": 3253,
       "status": 200,
       "schemas": [
         "Person",
@@ -696,8 +700,8 @@
         "Article",
         "CollectionPage"
       ],
-      "internal_links_out": 42,
-      "external_links_out": -23,
+      "internal_links_out": 43,
+      "external_links_out": -24,
       "canonical": "https://fitcalcs.co.uk/site-index/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -706,9 +710,9 @@
       "has_multimodal": false,
       "has_comparison_table": false,
       "table_count": 0,
-      "list_count": 16,
+      "list_count": 17,
       "question_h2s": 0,
-      "h2_count": 14,
+      "h2_count": 15,
       "last_modified": "2026-06-19",
       "has_answer_capsule": true,
       "has_og_tags": true,
@@ -717,7 +721,48 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 36,
+      "internal_links_in": 37,
+      "depth": 1
+    },
+    {
+      "url": "https://fitcalcs.co.uk/terms/",
+      "path": "/terms/",
+      "title": "Terms of use",
+      "h1": "Terms of use",
+      "meta_desc": "The terms for using FitCalcs: fitness and health calculators and information, not medical advice, plus how advertising and links work.",
+      "word_count": 2484,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Organization",
+        "Article",
+        "WebPage"
+      ],
+      "internal_links_out": 20,
+      "external_links_out": -1,
+      "canonical": "https://fitcalcs.co.uk/terms/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 3,
+      "question_h2s": 0,
+      "h2_count": 12,
+      "last_modified": "2026-06-08",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": false,
+      "has_viewport": true,
+      "internal_links_in": 1,
       "depth": 1
     },
     {
@@ -725,7 +770,7 @@
       "path": "/about/",
       "title": "About FitCalcs",
       "h1": "About FitCalcs",
-      "meta_desc": "FitCalcs is an independent UK fitness, body and diet calculator site, operated by Best Business Loans Ltd, where every tool shows its working and cites the official UK source behind the number.",
+      "meta_desc": "FitCalcs is an independent UK fitness, body and diet calculator site, operated by Best Business Loans Ltd, where every tool shows its working and cites the\u2026",
       "word_count": 2221,
       "status": 200,
       "schemas": [
@@ -758,16 +803,16 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 36,
+      "internal_links_in": 37,
       "depth": 1
     },
     {
       "url": "https://fitcalcs.co.uk/diet/",
       "path": "/diet/",
-      "title": "Calories and diet: TDEE, deficit and BMI calculators | FitCalcs",
+      "title": "Calories and diet: TDEE, deficit and BMI | FitCalcs",
       "h1": "Calories and diet",
       "meta_desc": "Work out your maintenance calories, a safe deficit and your BMI and waist-to-height ratio. The Mifflin-St Jeor equation and NHS categories, laid out in full.",
-      "word_count": 2700,
+      "word_count": 2699,
       "status": 200,
       "schemas": [
         "Person",
@@ -799,16 +844,16 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 36,
+      "internal_links_in": 37,
       "depth": 1
     },
     {
       "url": "https://fitcalcs.co.uk/diet/healthy-weight-calculator/",
       "path": "/diet/healthy-weight-calculator/",
-      "title": "Healthy weight calculator: your ideal weight range for your height | FitCalcs",
+      "title": "Healthy weight calculator: your ideal weight | FitCalcs",
       "h1": "Healthy weight calculator",
       "meta_desc": "See your healthy weight range in kilograms for your height, from the NHS BMI band of 18.5 to 24.9, plus how far your current weight sits from it.",
-      "word_count": 2513,
+      "word_count": 2509,
       "status": 200,
       "schemas": [
         "Person",
@@ -845,10 +890,10 @@
     {
       "url": "https://fitcalcs.co.uk/diet/bmr-calculator/",
       "path": "/diet/bmr-calculator/",
-      "title": "BMR calculator: basal metabolic rate (Mifflin-St Jeor and Cunningham) | FitCalcs",
+      "title": "BMR calculator: basal metabolic rate (Mifflin-St | FitCalcs",
       "h1": "BMR calculator",
-      "meta_desc": "Work out your basal metabolic rate, the calories you burn fully at rest, with the Mifflin-St Jeor equation, or the Cunningham equation if you know your body-fat percentage.",
-      "word_count": 2517,
+      "meta_desc": "Work out your basal metabolic rate, the calories you burn fully at rest, with the Mifflin-St Jeor equation, or the Cunningham equation if you know your\u2026",
+      "word_count": 2514,
       "status": 200,
       "schemas": [
         "Person",
@@ -885,10 +930,10 @@
     {
       "url": "https://fitcalcs.co.uk/diet/protein-calculator/",
       "path": "/diet/protein-calculator/",
-      "title": "Protein calculator: how much protein per day, by goal | FitCalcs",
+      "title": "Protein calculator: how much protein per day, by | FitCalcs",
       "h1": "Protein calculator",
       "meta_desc": "Work out your daily protein in grams, set per kilogram of body weight for your goal: general health, fat loss, muscle gain or endurance, using the ISSN ranges.",
-      "word_count": 2484,
+      "word_count": 2483,
       "status": 200,
       "schemas": [
         "Person",
@@ -925,10 +970,10 @@
     {
       "url": "https://fitcalcs.co.uk/diet/macro-calculator/",
       "path": "/diet/macro-calculator/",
-      "title": "Macro calculator: protein, carbs and fat split from your TDEE | FitCalcs",
+      "title": "Macro calculator: protein, carbs and fat split | FitCalcs",
       "h1": "Macro calculator",
-      "meta_desc": "Turn your daily calories into a protein, carbohydrate and fat split for your goal. Protein is set per kilogram of body weight first, the way the research supports.",
-      "word_count": 2481,
+      "meta_desc": "Turn your daily calories into a protein, carbohydrate and fat split for your goal. Protein is set per kilogram of body weight first, the way the research\u2026",
+      "word_count": 2478,
       "status": 200,
       "schemas": [
         "Person",
@@ -965,10 +1010,10 @@
     {
       "url": "https://fitcalcs.co.uk/diet/weight-loss-date-calculator/",
       "path": "/diet/weight-loss-date-calculator/",
-      "title": "Weight loss date calculator: when will I reach my goal weight? | FitCalcs",
+      "title": "Weight loss date calculator: when will I reach | FitCalcs",
       "h1": "Weight loss date calculator",
       "meta_desc": "Estimate the date you reach your target weight from your current weight and a daily calorie deficit, using 7,700 kcal per kilogram, capped at a safe rate.",
-      "word_count": 2554,
+      "word_count": 2551,
       "status": 200,
       "schemas": [
         "Person",
@@ -1007,7 +1052,7 @@
       "path": "/diet/body-fat-calculator/",
       "title": "Body fat calculator: US Navy tape-measure method | FitCalcs",
       "h1": "Body fat calculator",
-      "meta_desc": "Estimate your body-fat percentage with the US Navy circumference method, using neck, waist and height (plus hip for women). Just a tape measure, no scales needed.",
+      "meta_desc": "Estimate your body-fat percentage with the US Navy circumference method, using neck, waist and height (plus hip for women). Just a tape measure, no scales\u2026",
       "word_count": 2458,
       "status": 200,
       "schemas": [
@@ -1085,10 +1130,10 @@
     {
       "url": "https://fitcalcs.co.uk/diet/water-intake-calculator/",
       "path": "/diet/water-intake-calculator/",
-      "title": "Daily water intake calculator: how much water should I drink? | FitCalcs",
+      "title": "Daily water intake calculator: how much water | FitCalcs",
       "h1": "Daily water intake calculator",
       "meta_desc": "Estimate how much water to drink a day from your body weight, exercise and the weather, with a baseline near the EFSA and NHS adequate-intake figures.",
-      "word_count": 2465,
+      "word_count": 2462,
       "status": 200,
       "schemas": [
         "Person",
@@ -1125,10 +1170,10 @@
     {
       "url": "https://fitcalcs.co.uk/guides/",
       "path": "/guides/",
-      "title": "Fitness guides: calories, BMI, race times and protein | FitCalcs",
+      "title": "Fitness guides: calories, BMI, race times and | FitCalcs",
       "h1": "Fitness guides",
-      "meta_desc": "Plain-English UK fitness guides that explain the numbers and link to the calculator behind each one: how many calories to lose weight, BMI vs waist-to-height, predicting your race time, and how much protein you really need.",
-      "word_count": 2176,
+      "meta_desc": "Plain-English UK fitness guides that explain the numbers and link to the calculator behind each one: how many calories to lose weight, BMI vs\u2026",
+      "word_count": 2175,
       "status": 200,
       "schemas": [
         "Person",
@@ -1160,7 +1205,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 36,
+      "internal_links_in": 37,
       "depth": 1
     },
     {
@@ -1168,7 +1213,7 @@
       "path": "/guides/how-to-predict-your-race-time/",
       "title": "How to predict your race time | FitCalcs",
       "h1": "How to predict your race time",
-      "meta_desc": "Use one recent race result to estimate your 5K, 10K, half marathon and marathon times with the Riegel formula. How it works, why longer distances are best-case estimates, and how to use the prediction sensibly.",
+      "meta_desc": "Use one recent race result to estimate your 5K, 10K, half marathon and marathon times with the Riegel formula. How it works, why longer distances are\u2026",
       "word_count": 2526,
       "status": 200,
       "schemas": [
@@ -1210,7 +1255,7 @@
       "path": "/guides/how-many-calories-to-lose-weight/",
       "title": "How many calories should I eat to lose weight? | FitCalcs",
       "h1": "How many calories should I eat to lose weight?",
-      "meta_desc": "Work out an honest calorie target to lose weight: estimate your TDEE, subtract a modest deficit of around 500 calories a day for about half a kilo a week, and adjust from there. With the Mifflin-St Jeor maths and UK guidance.",
+      "meta_desc": "Work out an honest calorie target to lose weight: estimate your TDEE, subtract a modest deficit of around 500 calories a day for about half a kilo a week,\u2026",
       "word_count": 2652,
       "status": 200,
       "schemas": [
@@ -1252,7 +1297,7 @@
       "path": "/guides/how-much-protein-do-you-need/",
       "title": "How much protein do you really need? | FitCalcs",
       "h1": "How much protein do you really need?",
-      "meta_desc": "The UK reference intake is 0.75 g of protein per kilogram of body weight a day, enough to avoid deficiency. Active people, older adults and anyone in a calorie deficit usually do better nearer 1.2 to 2.0 g per kg. Here is how to set a sensible target.",
+      "meta_desc": "The UK reference intake is 0.75 g of protein per kilogram of body weight a day, enough to avoid deficiency. Active people, older adults and anyone in a\u2026",
       "word_count": 2608,
       "status": 200,
       "schemas": [
@@ -1294,7 +1339,7 @@
       "path": "/guides/bmi-vs-waist-to-height/",
       "title": "BMI vs waist-to-height: which actually matters? | FitCalcs",
       "h1": "BMI vs waist-to-height: which actually matters?",
-      "meta_desc": "BMI is a quick population screen but it cannot tell muscle from fat or say where you carry it. Waist-to-height ratio, the measure the NHS now prefers, captures the central fat that drives health risk. Here is when to use each.",
+      "meta_desc": "BMI is a quick population screen but it cannot tell muscle from fat or say where you carry it. Waist-to-height ratio, the measure the NHS now prefers,\u2026",
       "word_count": 2588,
       "status": 200,
       "schemas": [
@@ -1369,16 +1414,16 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 36,
+      "internal_links_in": 37,
       "depth": 1
     },
     {
       "url": "https://fitcalcs.co.uk/api/",
       "path": "/api/",
-      "title": "FitCalcs Calculator API and MCP server: TDEE, BMI, race times",
+      "title": "FitCalcs Calculator API and MCP server: TDEE, BMI, race",
       "h1": "FitCalcs Calculator API",
-      "meta_desc": "Read-only public API and MCP server for FitCalcs fitness calculators. REST endpoints for TDEE, BMI and race-time prediction, an OpenAPI 3.1 spec, and three MCP tools. CC BY 4.0.",
-      "word_count": 2638,
+      "meta_desc": "Read-only public API and MCP server for FitCalcs fitness calculators. REST endpoints for TDEE, BMI and race-time prediction, an OpenAPI 3.1 spec, and three\u2026",
+      "word_count": 2637,
       "status": 200,
       "schemas": [
         "Person",
@@ -1412,16 +1457,16 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 36,
+      "internal_links_in": 37,
       "depth": 1
     },
     {
       "url": "https://fitcalcs.co.uk/data/",
       "path": "/data/",
-      "title": "How you compare to the UK: fitness, activity and body data | FitCalcs",
+      "title": "How you compare to the UK: fitness, activity and | FitCalcs",
       "h1": "How you compare to the UK",
-      "meta_desc": "See how your activity, calorie intake and body stats compare to the UK population, using the NHS Health Survey for England, Sport England Active Lives and the National Diet and Nutrition Survey.",
-      "word_count": 2331,
+      "meta_desc": "See how your activity, calorie intake and body stats compare to the UK population, using the NHS Health Survey for England, Sport England Active Lives and\u2026",
+      "word_count": 2329,
       "status": 200,
       "schemas": [
         "Person",
@@ -1453,16 +1498,16 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 36,
+      "internal_links_in": 37,
       "depth": 1
     },
     {
       "url": "https://fitcalcs.co.uk/data/uk-fitness-benchmarks/",
       "path": "/data/uk-fitness-benchmarks/",
-      "title": "UK fitness and body benchmarks: real figures with sources | FitCalcs",
+      "title": "UK fitness and body benchmarks: real figures | FitCalcs",
       "h1": "UK fitness and body benchmarks",
-      "meta_desc": "The real UK population figures for physical activity, overweight and obesity and diet, each with its sex or age breakdown, period, named primary source and access date. Drawn from the NHS Health Survey for England, Sport England Active Lives and the National Diet and Nutrition Survey.",
-      "word_count": 3842,
+      "meta_desc": "The real UK population figures for physical activity, overweight and obesity and diet, each with its sex or age breakdown, period, named primary source and\u2026",
+      "word_count": 3840,
       "status": 200,
       "schemas": [
         "Person",
@@ -1535,7 +1580,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 36,
+      "internal_links_in": 37,
       "depth": 1
     },
     {
@@ -1578,7 +1623,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 37,
+      "internal_links_in": 38,
       "depth": 1
     }
   ],
@@ -5325,6 +5370,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/site-index/",
+      "to": "https://fitcalcs.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/site-index/",
       "to": "https://fitcalcs.co.uk/",
       "type": "internal"
     },
@@ -5410,6 +5460,216 @@
     },
     {
       "from": "https://fitcalcs.co.uk/site-index/",
+      "to": "https://fitcalcs.co.uk/cookies/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/diet/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/running/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/diet/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/running/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/data/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/search/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/cookies/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/diet/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/running/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/data/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/api/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/site-index/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/accreditations",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/cookies/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -7926,6 +8186,11 @@
     {
       "from": "https://fitcalcs.co.uk/search/",
       "to": "https://fitcalcs.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/search/",
+      "to": "https://fitcalcs.co.uk/terms/",
       "type": "internal"
     },
     {
@@ -10484,6 +10749,11 @@
         "children": []
       },
       {
+        "name": "terms",
+        "path": "/terms/",
+        "children": []
+      },
+      {
         "name": "about",
         "path": "/about/",
         "children": []
@@ -10737,6 +11007,16 @@
     },
     {
       "path": "/site-index/",
+      "score": 4,
+      "signals": [
+        "OG",
+        "Schema:7",
+        "Author",
+        "Substantive"
+      ]
+    },
+    {
+      "path": "/terms/",
       "score": 4,
       "signals": [
         "OG",
