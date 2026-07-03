@@ -1,13 +1,13 @@
 {
   "site_id": "mortgageexplained",
   "domain": "mortgageexplained.co.uk",
-  "crawled_at": "2026-07-03T08:32:06.918355+00:00",
+  "crawled_at": "2026-07-03T08:48:13.862627+00:00",
   "source": "fleet-source-reader",
   "pages_crawled": 107,
   "total_issues": 0,
   "orphan_pages": 1,
   "avg_depth": 1.7102803738317758,
-  "avg_word_count": 2504,
+  "avg_word_count": 2500,
   "pages_with_schema": 107,
   "pages_with_multimodal": 0,
   "pages_with_comparison_table": 15,
@@ -1003,7 +1003,7 @@
       "title": "Privacy notice",
       "h1": "Privacy notice",
       "meta_desc": "How MortgageExplained, operated by Muswell Rose Ltd, collects and uses the information you send when you ask to be introduced to a regulated broker.",
-      "word_count": 1731,
+      "word_count": 1801,
       "status": 200,
       "schemas": [
         "Person",
@@ -1025,8 +1025,8 @@
       "table_count": 0,
       "list_count": 3,
       "question_h2s": 0,
-      "h2_count": 3,
-      "last_modified": "2026-07-01",
+      "h2_count": 4,
+      "last_modified": "2026-07-03",
       "has_answer_capsule": true,
       "has_og_tags": true,
       "has_author": true,
@@ -1969,7 +1969,7 @@
       "title": "Terms of use",
       "h1": "Terms of use",
       "meta_desc": "The terms on which you can use MortgageExplained, operated by Muswell Rose Ltd. We provide information and introduce you to a regulated mortgage broker. We\u2026",
-      "word_count": 2523,
+      "word_count": 2016,
       "status": 200,
       "schemas": [
         "Person",
@@ -1991,7 +1991,7 @@
       "table_count": 0,
       "list_count": 3,
       "question_h2s": 0,
-      "h2_count": 14,
+      "h2_count": 7,
       "last_modified": "2026-07-01",
       "has_answer_capsule": true,
       "has_og_tags": true,
@@ -23100,17 +23100,7 @@
     },
     {
       "from": "https://mortgageexplained.co.uk/terms/",
-      "to": "https://mortgageexplained.co.uk/cookies/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/terms/",
       "to": "https://mortgageexplained.co.uk/trust-and-governance/",
-      "type": "internal"
-    },
-    {
-      "from": "https://mortgageexplained.co.uk/terms/",
-      "to": "https://mortgageexplained.co.uk/privacy/",
       "type": "internal"
     },
     {
@@ -29546,6 +29536,16 @@
     {
       "from": "https://mortgageexplained.co.uk/eligibility/new-job/",
       "to": "https://mortgageexplained.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/eligibility/new-job/",
+      "to": "https://mortgageexplained.co.uk/accessibility/",
+      "type": "internal"
+    },
+    {
+      "from": "https://mortgageexplained.co.uk/eligibility/new-job/",
+      "to": "https://mortgageexplained.co.uk/contact/",
       "type": "internal"
     }
   ],
