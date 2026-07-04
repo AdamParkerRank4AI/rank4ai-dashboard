@@ -27,6 +27,7 @@ DOMAIN_TO_ID = {
     "kartapay.co.uk": "kartapay",
     "bestbusinessloans.ai": "bestbusinessloans",
     "fundbiz.co.uk": "fundbiz",
+    "ltdturnaround.co.uk": "company-rescue",
 }
 
 
