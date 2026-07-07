@@ -1,20 +1,20 @@
 {
   "site_id": "trustedinteriors",
   "domain": "trustedinteriors.co.uk",
-  "crawled_at": "2026-07-07T09:59:54.449388+00:00",
+  "crawled_at": "2026-07-07T10:17:53.486677+00:00",
   "source": "fleet-source-reader",
-  "pages_crawled": 30,
+  "pages_crawled": 36,
   "total_issues": 0,
   "orphan_pages": 0,
-  "avg_depth": 1.5,
-  "avg_word_count": 2630,
-  "pages_with_schema": 30,
+  "avg_depth": 1.5555555555555556,
+  "avg_word_count": 2701,
+  "pages_with_schema": 36,
   "pages_with_multimodal": 0,
   "pages_with_comparison_table": 6,
   "pages_with_video": 0,
-  "pages_over_2000_words": 23,
+  "pages_over_2000_words": 29,
   "images_missing_alt": 0,
-  "pages_with_date": 30,
+  "pages_with_date": 36,
   "crawler_access": {
     "GPTBot": true,
     "ClaudeBot": true,
@@ -26,7 +26,7 @@
   "topic_clusters": {
     "kitchens": {
       "hub": "/kitchens/",
-      "page_count": 3
+      "page_count": 6
     },
     "fitted-wardrobes": {
       "hub": "/fitted-wardrobes/",
@@ -66,7 +66,7 @@
     },
     "bathrooms": {
       "hub": "/bathrooms/",
-      "page_count": 1
+      "page_count": 3
     },
     "guides": {
       "hub": "/guides/",
@@ -74,6 +74,10 @@
     },
     "how-we-vet": {
       "hub": "/how-we-vet/",
+      "page_count": 1
+    },
+    "trust": {
+      "hub": "/trust/",
       "page_count": 1
     },
     "accessibility": {
@@ -85,27 +89,27 @@
       "page_count": 1
     }
   },
-  "topic_cluster_count": 15,
+  "topic_cluster_count": 16,
   "term_consistency": {
-    "interiors": 23,
-    "trusted": 15,
+    "interiors": 25,
+    "kitchen": 18,
+    "trusted": 17,
+    "costs": 16,
     "cost": 14,
-    "costs": 14,
     "interior": 14,
+    "quote": 13,
     "wood": 13,
+    "2026": 12,
     "designer": 12,
-    "2026": 11,
     "flooring": 11,
     "engineered": 11,
+    "should": 10,
     "fitted": 10,
-    "kitchen": 9,
-    "brief": 9,
-    "honest": 9,
-    "home": 9
+    "bathroom": 10
   },
   "content_freshness": {
-    "pages_with_dates": 30,
-    "fresh_30_days": 30,
+    "pages_with_dates": 36,
+    "fresh_30_days": 36,
     "fresh_90_days": 0,
     "stale": 0
   },
@@ -117,7 +121,7 @@
       "title": "New Kitchen Cost UK: 2026 Prices, Planning and How to Brief",
       "h1": "New Kitchen Cost UK",
       "meta_desc": "What a new kitchen really costs in the UK in 2026: indicative price ranges, what good looks like, how to brief a fitter, and how to compare quotes fairly.",
-      "word_count": 2845,
+      "word_count": 2913,
       "status": 200,
       "schemas": [
         "Organization",
@@ -128,8 +132,8 @@
         "Article",
         "FAQPage"
       ],
-      "internal_links_out": 22,
-      "external_links_out": -17,
+      "internal_links_out": 26,
+      "external_links_out": -21,
       "canonical": "https://trustedinteriors.co.uk/kitchens/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -149,7 +153,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 30,
+      "internal_links_in": 36,
       "depth": 1
     },
     {
@@ -158,7 +162,7 @@
       "title": "Quartz vs Granite Worktops: An Independent UK Comparison",
       "h1": "Quartz vs granite worktops",
       "meta_desc": "Quartz or granite worktops? An independent UK comparison of cost per m\u00b2, heat resistance, sealing and maintenance, colour, and which suits your kitchen.",
-      "word_count": 3047,
+      "word_count": 3049,
       "status": 200,
       "schemas": [
         "Organization",
@@ -168,8 +172,8 @@
         "BreadcrumbList",
         "Article"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -15,
+      "internal_links_out": 21,
+      "external_links_out": -16,
       "canonical": "https://trustedinteriors.co.uk/kitchens/quartz-vs-granite/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -193,12 +197,12 @@
       "depth": 2
     },
     {
-      "url": "https://trustedinteriors.co.uk/kitchens/worktop-materials-compared/",
-      "path": "/kitchens/worktop-materials-compared/",
-      "title": "Kitchen Worktop Materials Compared: Costs and Which to",
-      "h1": "Kitchen worktop materials compared",
-      "meta_desc": "Laminate, solid wood, granite, quartz or porcelain? An independent UK comparison of kitchen worktop materials: real costs per m\u00b2, heat resistance,\u2026",
-      "word_count": 3013,
+      "url": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "path": "/kitchens/what-a-quote-should-include/",
+      "title": "What Should a Kitchen Quote Include? The Itemised Checklist",
+      "h1": "What should a kitchen quote include?",
+      "meta_desc": "Exactly what a proper kitchen quote should list, item by item, and the costs that are most often left out. Use it to compare quotes fairly and avoid nasty\u2026",
+      "word_count": 2954,
       "status": 200,
       "schemas": [
         "Organization",
@@ -208,8 +212,88 @@
         "BreadcrumbList",
         "Article"
       ],
-      "internal_links_out": 19,
-      "external_links_out": -14,
+      "internal_links_out": 22,
+      "external_links_out": -17,
+      "canonical": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 2,
+      "question_h2s": 4,
+      "h2_count": 11,
+      "last_modified": "2026-06-12",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 3,
+      "depth": 2
+    },
+    {
+      "url": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "path": "/kitchens/deposits-and-staged-payments/",
+      "title": "How Much Deposit Should You Pay a Kitchen Fitter? (UK, 2026)",
+      "h1": "How much deposit should you pay a kitchen fitter?",
+      "meta_desc": "How much deposit is normal for a kitchen, how to structure staged payments so you stay protected, how to pay safely, and the payment red flags that mean\u2026",
+      "word_count": 3034,
+      "status": 200,
+      "schemas": [
+        "Organization",
+        "Person",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Article"
+      ],
+      "internal_links_out": 22,
+      "external_links_out": -17,
+      "canonical": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 3,
+      "question_h2s": 4,
+      "h2_count": 12,
+      "last_modified": "2026-06-12",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 4,
+      "depth": 2
+    },
+    {
+      "url": "https://trustedinteriors.co.uk/kitchens/worktop-materials-compared/",
+      "path": "/kitchens/worktop-materials-compared/",
+      "title": "Kitchen Worktop Materials Compared: Costs and Which to",
+      "h1": "Kitchen worktop materials compared",
+      "meta_desc": "Laminate, solid wood, granite, quartz or porcelain? An independent UK comparison of kitchen worktop materials: real costs per m\u00b2, heat resistance,\u2026",
+      "word_count": 3015,
+      "status": 200,
+      "schemas": [
+        "Organization",
+        "Person",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Article"
+      ],
+      "internal_links_out": 20,
+      "external_links_out": -15,
       "canonical": "https://trustedinteriors.co.uk/kitchens/worktop-materials-compared/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -233,12 +317,52 @@
       "depth": 2
     },
     {
+      "url": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "path": "/kitchens/fitter-went-bust-mid-job/",
+      "title": "Kitchen Fitter Went Bust or Disappeared Mid-Job? What to Do",
+      "h1": "Your kitchen fitter went bust or disappeared mid-job",
+      "meta_desc": "Your kitchen fitter has gone bust, vanished or abandoned the job part-way. Calm, step-by-step UK guidance: protect your money, your card rights, insolvency,\u2026",
+      "word_count": 3477,
+      "status": 200,
+      "schemas": [
+        "Organization",
+        "Person",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Article"
+      ],
+      "internal_links_out": 22,
+      "external_links_out": -17,
+      "canonical": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 1,
+      "question_h2s": 4,
+      "h2_count": 14,
+      "last_modified": "2026-06-12",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 4,
+      "depth": 2
+    },
+    {
       "url": "https://trustedinteriors.co.uk/fitted-wardrobes/",
       "path": "/fitted-wardrobes/",
       "title": "Fitted Wardrobes Cost UK: 2026 Prices, Options and Buying",
       "h1": "Fitted Wardrobes Cost UK",
       "meta_desc": "What fitted wardrobes cost in the UK in 2026: price ranges for modular, semi-bespoke and bespoke, when fitted beats freestanding, and how to brief a maker.",
-      "word_count": 2782,
+      "word_count": 2784,
       "status": 200,
       "schemas": [
         "Organization",
@@ -249,8 +373,8 @@
         "Article",
         "FAQPage"
       ],
-      "internal_links_out": 21,
-      "external_links_out": -16,
+      "internal_links_out": 22,
+      "external_links_out": -17,
       "canonical": "https://trustedinteriors.co.uk/fitted-wardrobes/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -270,7 +394,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 30,
+      "internal_links_in": 36,
       "depth": 1
     },
     {
@@ -279,7 +403,7 @@
       "title": "Fitted vs Built-in vs Freestanding Wardrobes: Honest UK",
       "h1": "Fitted vs built-in vs freestanding wardrobes",
       "meta_desc": "Fitted, built-in or freestanding wardrobes? An independent UK comparison of real costs, space efficiency, fit for awkward rooms, resale value and which\u2026",
-      "word_count": 3360,
+      "word_count": 3362,
       "status": 200,
       "schemas": [
         "Organization",
@@ -290,8 +414,8 @@
         "Article",
         "FAQPage"
       ],
-      "internal_links_out": 19,
-      "external_links_out": -14,
+      "internal_links_out": 20,
+      "external_links_out": -15,
       "canonical": "https://trustedinteriors.co.uk/fitted-wardrobes/fitted-vs-built-in/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -320,7 +444,7 @@
       "title": "Contact Trusted Interiors",
       "h1": "Contact us",
       "meta_desc": "Get in touch with Trusted Interiors, or request a free, no obligation recommendation for your interiors project.",
-      "word_count": 1666,
+      "word_count": 1668,
       "status": 200,
       "schemas": [
         "Organization",
@@ -329,8 +453,8 @@
         "WebPage",
         "BreadcrumbList"
       ],
-      "internal_links_out": 18,
-      "external_links_out": -13,
+      "internal_links_out": 19,
+      "external_links_out": -14,
       "canonical": "https://trustedinteriors.co.uk/contact/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -350,7 +474,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 30,
+      "internal_links_in": 36,
       "depth": 1
     },
     {
@@ -359,7 +483,7 @@
       "title": "Editorial Team | Trusted Interiors",
       "h1": "Our editorial team",
       "meta_desc": "Who stands behind the reviews and guidance on this site: Adam Parker, named editor, working from real research and primary sources. Information only.",
-      "word_count": 1597,
+      "word_count": 1599,
       "status": 200,
       "schemas": [
         "Organization",
@@ -369,8 +493,8 @@
         "BreadcrumbList",
         "Person"
       ],
-      "internal_links_out": 19,
-      "external_links_out": -14,
+      "internal_links_out": 20,
+      "external_links_out": -15,
       "canonical": "https://trustedinteriors.co.uk/authors/",
       "response_time_ms": 0,
       "image_count": 1,
@@ -390,7 +514,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 30,
+      "internal_links_in": 36,
       "depth": 1
     },
     {
@@ -399,7 +523,7 @@
       "title": "Adam Parker, Editor, Trusted Interiors",
       "h1": "Adam Parker",
       "meta_desc": "Adam Parker is the editor of Trusted Interiors, accountable for its editorial standards and sourcing. Honest reviews and plain-English guidance for UK home\u2026",
-      "word_count": 1915,
+      "word_count": 1917,
       "status": 200,
       "schemas": [
         "Organization",
@@ -410,8 +534,8 @@
         "Person",
         "ProfilePage"
       ],
-      "internal_links_out": 18,
-      "external_links_out": -11,
+      "internal_links_out": 19,
+      "external_links_out": -12,
       "canonical": "https://trustedinteriors.co.uk/authors/adam-parker/",
       "response_time_ms": 0,
       "image_count": 1,
@@ -440,7 +564,7 @@
       "title": "Cookie Policy | Trusted Interiors",
       "h1": "Cookie policy",
       "meta_desc": "How this site uses cookies and similar technologies.",
-      "word_count": 1445,
+      "word_count": 1447,
       "status": 200,
       "schemas": [
         "Organization",
@@ -449,8 +573,8 @@
         "WebPage",
         "BreadcrumbList"
       ],
-      "internal_links_out": 18,
-      "external_links_out": -13,
+      "internal_links_out": 19,
+      "external_links_out": -14,
       "canonical": "https://trustedinteriors.co.uk/cookie-policy/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -470,7 +594,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 30,
+      "internal_links_in": 36,
       "depth": 1
     },
     {
@@ -479,7 +603,7 @@
       "title": "Privacy Policy | Trusted Interiors",
       "h1": "Privacy policy",
       "meta_desc": "How we collect, use and protect your personal information when you use this site or request a call.",
-      "word_count": 1601,
+      "word_count": 1603,
       "status": 200,
       "schemas": [
         "Organization",
@@ -488,8 +612,8 @@
         "WebPage",
         "BreadcrumbList"
       ],
-      "internal_links_out": 18,
-      "external_links_out": -13,
+      "internal_links_out": 19,
+      "external_links_out": -14,
       "canonical": "https://trustedinteriors.co.uk/privacy-policy/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -509,7 +633,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 30,
+      "internal_links_in": 36,
       "depth": 1
     },
     {
@@ -518,7 +642,7 @@
       "title": "Terms of Use | Trusted Interiors",
       "h1": "Terms of use",
       "meta_desc": "The terms on which you may use this website and its tools: who we are, our role, introductions to interior professionals, liability, complaints and\u2026",
-      "word_count": 2303,
+      "word_count": 2305,
       "status": 200,
       "schemas": [
         "Organization",
@@ -527,8 +651,8 @@
         "WebPage",
         "BreadcrumbList"
       ],
-      "internal_links_out": 18,
-      "external_links_out": -13,
+      "internal_links_out": 19,
+      "external_links_out": -14,
       "canonical": "https://trustedinteriors.co.uk/terms/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -548,7 +672,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 30,
+      "internal_links_in": 36,
       "depth": 1
     },
     {
@@ -557,7 +681,7 @@
       "title": "About Trusted Interiors",
       "h1": "About Trusted Interiors",
       "meta_desc": "Who Trusted Interiors is, how we work, and why we lead with honest reviews and free guidance rather than sales pressure.",
-      "word_count": 1861,
+      "word_count": 1863,
       "status": 200,
       "schemas": [
         "Organization",
@@ -566,8 +690,8 @@
         "WebPage",
         "BreadcrumbList"
       ],
-      "internal_links_out": 19,
-      "external_links_out": -13,
+      "internal_links_out": 20,
+      "external_links_out": -14,
       "canonical": "https://trustedinteriors.co.uk/about/",
       "response_time_ms": 0,
       "image_count": 1,
@@ -587,7 +711,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 30,
+      "internal_links_in": 36,
       "depth": 1
     },
     {
@@ -596,7 +720,7 @@
       "title": "Flooring in the UK: Engineered Wood, LVT, Tile and Carpet",
       "h1": "Flooring in the UK",
       "meta_desc": "An honest comparison of UK flooring options: engineered wood, luxury vinyl (LVT), tiles, laminate and carpet, with costs, durability and which room each suits.",
-      "word_count": 2834,
+      "word_count": 2836,
       "status": 200,
       "schemas": [
         "Organization",
@@ -607,8 +731,8 @@
         "Article",
         "FAQPage"
       ],
-      "internal_links_out": 23,
-      "external_links_out": -18,
+      "internal_links_out": 24,
+      "external_links_out": -19,
       "canonical": "https://trustedinteriors.co.uk/flooring/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -628,7 +752,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 30,
+      "internal_links_in": 36,
       "depth": 1
     },
     {
@@ -637,7 +761,7 @@
       "title": "Solid Hardwood vs Engineered Wood Flooring: UK Comparison",
       "h1": "Solid hardwood vs engineered wood flooring",
       "meta_desc": "Solid hardwood or engineered wood? An independent UK comparison: real costs per m\u00b2, lifespan, refinishing, stability, underfloor heating, and which is right\u2026",
-      "word_count": 3155,
+      "word_count": 3157,
       "status": 200,
       "schemas": [
         "Organization",
@@ -647,8 +771,8 @@
         "BreadcrumbList",
         "Article"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -15,
+      "internal_links_out": 21,
+      "external_links_out": -16,
       "canonical": "https://trustedinteriors.co.uk/flooring/hardwood-vs-engineered-wood/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -677,7 +801,7 @@
       "title": "Engineered Wood vs Laminate Flooring: An Independent UK",
       "h1": "Engineered wood vs laminate flooring: which is right for your home?",
       "meta_desc": "Engineered wood or laminate? An independent, plain-English comparison for UK homes: real costs per m\u00b2, lifespan, refinishing, underfloor heating, and which\u2026",
-      "word_count": 3401,
+      "word_count": 3403,
       "status": 200,
       "schemas": [
         "Organization",
@@ -688,8 +812,8 @@
         "Article",
         "FAQPage"
       ],
-      "internal_links_out": 19,
-      "external_links_out": -14,
+      "internal_links_out": 20,
+      "external_links_out": -15,
       "canonical": "https://trustedinteriors.co.uk/flooring/engineered-wood-vs-laminate/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -718,7 +842,7 @@
       "title": "What Is Engineered Wood Flooring? A Plain-English UK Guide",
       "h1": "What is engineered wood flooring?",
       "meta_desc": "What engineered wood flooring actually is, how it is made, how it differs from solid wood and laminate, what it costs in the UK, and whether it suits your home.",
-      "word_count": 2925,
+      "word_count": 2927,
       "status": 200,
       "schemas": [
         "Organization",
@@ -728,8 +852,8 @@
         "BreadcrumbList",
         "Article"
       ],
-      "internal_links_out": 21,
-      "external_links_out": -16,
+      "internal_links_out": 22,
+      "external_links_out": -17,
       "canonical": "https://trustedinteriors.co.uk/flooring/what-is-engineered-wood-flooring/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -758,7 +882,7 @@
       "title": "Hiring an Interior Designer in the UK: When It Pays Off and",
       "h1": "Hiring an Interior Designer in the UK",
       "meta_desc": "Honest guidance on hiring an interior designer in the UK: when it is worth it, how designers charge, what to expect, and how to brief one well.",
-      "word_count": 2856,
+      "word_count": 2858,
       "status": 200,
       "schemas": [
         "Organization",
@@ -769,8 +893,8 @@
         "Article",
         "FAQPage"
       ],
-      "internal_links_out": 23,
-      "external_links_out": -18,
+      "internal_links_out": 24,
+      "external_links_out": -19,
       "canonical": "https://trustedinteriors.co.uk/interior-design/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -790,7 +914,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 30,
+      "internal_links_in": 36,
       "depth": 1
     },
     {
@@ -799,7 +923,7 @@
       "title": "Is It Worth Hiring an Interior Designer? An Honest UK Guide",
       "h1": "Is it worth hiring an interior designer?",
       "meta_desc": "An honest, UK-specific look at whether an interior designer is worth it: what they cost, when they pay for themselves, when they do not, and the cheaper\u2026",
-      "word_count": 3257,
+      "word_count": 3259,
       "status": 200,
       "schemas": [
         "Organization",
@@ -810,8 +934,8 @@
         "Article",
         "FAQPage"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -15,
+      "internal_links_out": 21,
+      "external_links_out": -16,
       "canonical": "https://trustedinteriors.co.uk/interior-design/is-it-worth-hiring-an-interior-designer/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -840,7 +964,7 @@
       "title": "How to Brief an Interior Designer: A UK Homeowner\u2019s Guide",
       "h1": "How to brief an interior designer",
       "meta_desc": "A clear, UK-specific guide to briefing an interior designer: what a good brief includes, how to set budget and scope, the mistakes to avoid, and a checklist\u2026",
-      "word_count": 3105,
+      "word_count": 3107,
       "status": 200,
       "schemas": [
         "Organization",
@@ -851,8 +975,8 @@
         "Article",
         "FAQPage"
       ],
-      "internal_links_out": 21,
-      "external_links_out": -16,
+      "internal_links_out": 22,
+      "external_links_out": -17,
       "canonical": "https://trustedinteriors.co.uk/interior-design/how-to-brief-an-interior-designer/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -881,7 +1005,7 @@
       "title": "Questions to Ask an Interior Designer Before You Hire (UK,",
       "h1": "Questions to ask an interior designer before you hire",
       "meta_desc": "The questions worth asking an interior designer before you commit: fees and what they include, process, who does the work, timelines, and the answers that\u2026",
-      "word_count": 2990,
+      "word_count": 2992,
       "status": 200,
       "schemas": [
         "Organization",
@@ -892,8 +1016,8 @@
         "Article",
         "FAQPage"
       ],
-      "internal_links_out": 21,
-      "external_links_out": -16,
+      "internal_links_out": 22,
+      "external_links_out": -17,
       "canonical": "https://trustedinteriors.co.uk/interior-design/questions-to-ask-an-interior-designer/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -922,7 +1046,7 @@
       "title": "Bathroom Renovation Cost UK: 2026 Prices, Layouts and",
       "h1": "Bathroom Renovation Cost UK",
       "meta_desc": "What a bathroom renovation costs in the UK in 2026: realistic price ranges, layouts that work, waterproofing and tiling, and how to brief a fitter and\u2026",
-      "word_count": 2767,
+      "word_count": 2818,
       "status": 200,
       "schemas": [
         "Organization",
@@ -933,8 +1057,8 @@
         "Article",
         "FAQPage"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -15,
+      "internal_links_out": 23,
+      "external_links_out": -18,
       "canonical": "https://trustedinteriors.co.uk/bathrooms/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -945,7 +1069,7 @@
       "table_count": 0,
       "list_count": 2,
       "question_h2s": 4,
-      "h2_count": 12,
+      "h2_count": 13,
       "last_modified": "2026-06-12",
       "has_answer_capsule": true,
       "has_og_tags": true,
@@ -954,8 +1078,88 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 30,
+      "internal_links_in": 36,
       "depth": 1
+    },
+    {
+      "url": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "path": "/bathrooms/what-a-quote-should-include/",
+      "title": "What Should a Bathroom Quote Include? The Itemised",
+      "h1": "What should a bathroom quote include?",
+      "meta_desc": "Exactly what a proper bathroom quote should list, from sanitaryware and tanking to moving the soil pipe, and the costs most often left out. Compare quotes\u2026",
+      "word_count": 3074,
+      "status": 200,
+      "schemas": [
+        "Organization",
+        "Person",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Article"
+      ],
+      "internal_links_out": 22,
+      "external_links_out": -17,
+      "canonical": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 2,
+      "question_h2s": 4,
+      "h2_count": 11,
+      "last_modified": "2026-06-12",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 2,
+      "depth": 2
+    },
+    {
+      "url": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "path": "/bathrooms/deposits-and-staged-payments/",
+      "title": "How Much Deposit Should You Pay a Bathroom Fitter? (UK,",
+      "h1": "How much deposit should you pay a bathroom fitter?",
+      "meta_desc": "How much deposit is normal for a bathroom, how to stage payments across a wet-trade job (strip-out, first fix, tanking, tiling, second fix), how to pay\u2026",
+      "word_count": 3117,
+      "status": 200,
+      "schemas": [
+        "Organization",
+        "Person",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Article"
+      ],
+      "internal_links_out": 21,
+      "external_links_out": -16,
+      "canonical": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 3,
+      "question_h2s": 4,
+      "h2_count": 11,
+      "last_modified": "2026-06-12",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 3,
+      "depth": 2
     },
     {
       "url": "https://trustedinteriors.co.uk/guides/",
@@ -963,7 +1167,7 @@
       "title": "Home Interiors Guides: Honest UK Advice | Trusted Interiors",
       "h1": "Honest guides to every part of your home",
       "meta_desc": "Plain-English guides to kitchens, bathrooms, flooring, fitted storage, decorating and interior design in the UK, with indicative costs and how to brief a pro.",
-      "word_count": 2317,
+      "word_count": 2432,
       "status": 200,
       "schemas": [
         "Organization",
@@ -973,8 +1177,8 @@
         "BreadcrumbList",
         "CollectionPage"
       ],
-      "internal_links_out": 32,
-      "external_links_out": -27,
+      "internal_links_out": 38,
+      "external_links_out": -33,
       "canonical": "https://trustedinteriors.co.uk/guides/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -994,7 +1198,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 30,
+      "internal_links_in": 36,
       "depth": 1
     },
     {
@@ -1003,7 +1207,7 @@
       "title": "Is My Quote Fair? Check a UK Interiors Quote Against 2026",
       "h1": "Is my quote fair?",
       "meta_desc": "Paste your kitchen, bathroom or fitted-wardrobe quote and your region to see where it sits against typical 2026 UK prices, and what to ask if it looks too\u2026",
-      "word_count": 3145,
+      "word_count": 3147,
       "status": 200,
       "schemas": [
         "Organization",
@@ -1013,8 +1217,8 @@
         "BreadcrumbList",
         "Article"
       ],
-      "internal_links_out": 22,
-      "external_links_out": -17,
+      "internal_links_out": 23,
+      "external_links_out": -18,
       "canonical": "https://trustedinteriors.co.uk/guides/is-my-quote-fair/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1034,7 +1238,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 1,
+      "internal_links_in": 3,
       "depth": 2
     },
     {
@@ -1043,7 +1247,7 @@
       "title": "UK Interiors Costs by Region: How Much More You Pay Where",
       "h1": "UK interiors costs by region",
       "meta_desc": "An independent regional cost index for UK home interiors: how much kitchens, bathrooms and more cost in London vs the South East, Midlands, North, Scotland\u2026",
-      "word_count": 3095,
+      "word_count": 3097,
       "status": 200,
       "schemas": [
         "Organization",
@@ -1053,8 +1257,8 @@
         "BreadcrumbList",
         "Article"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -15,
+      "internal_links_out": 21,
+      "external_links_out": -16,
       "canonical": "https://trustedinteriors.co.uk/guides/uk-interiors-costs-by-region/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1083,7 +1287,7 @@
       "title": "Red Flags in a Quote: How to Spot a Bad One (UK, 2026)",
       "h1": "Red flags in a quote: how to spot a bad one",
       "meta_desc": "The warning signs to watch for in a quote from any trade: prices that are too good to be true, no itemised breakdown, large deposits, cash-only, no\u2026",
-      "word_count": 3019,
+      "word_count": 3021,
       "status": 200,
       "schemas": [
         "Organization",
@@ -1093,8 +1297,8 @@
         "BreadcrumbList",
         "Article"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -15,
+      "internal_links_out": 21,
+      "external_links_out": -16,
       "canonical": "https://trustedinteriors.co.uk/guides/red-flags-in-a-quote/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1123,7 +1327,7 @@
       "title": "How to Find a Good Tradesperson in the UK (and Avoid the",
       "h1": "How to find a good tradesperson, and avoid the cowboys",
       "meta_desc": "A practical UK guide to finding a good tradesperson: the checks that matter, the questions to ask, how to pay safely, and the warning signs that tell you to\u2026",
-      "word_count": 3018,
+      "word_count": 3020,
       "status": 200,
       "schemas": [
         "Organization",
@@ -1133,8 +1337,8 @@
         "BreadcrumbList",
         "Article"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -15,
+      "internal_links_out": 21,
+      "external_links_out": -16,
       "canonical": "https://trustedinteriors.co.uk/guides/how-to-find-a-good-tradesperson/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1154,7 +1358,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 3,
+      "internal_links_in": 4,
       "depth": 2
     },
     {
@@ -1163,7 +1367,7 @@
       "title": "Home Interiors Cost Calculator (UK, 2026): Kitchen,",
       "h1": "Home interiors cost calculator",
       "meta_desc": "A free UK cost calculator for kitchens, bathrooms and fitted wardrobes. Pick the project, quality level and your region for an indicative 2026 price range,\u2026",
-      "word_count": 3075,
+      "word_count": 3077,
       "status": 200,
       "schemas": [
         "Organization",
@@ -1173,8 +1377,8 @@
         "BreadcrumbList",
         "Article"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -15,
+      "internal_links_out": 21,
+      "external_links_out": -16,
       "canonical": "https://trustedinteriors.co.uk/guides/cost-calculator/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1203,7 +1407,7 @@
       "title": "How We Vet Professionals | Trusted Interiors",
       "h1": "How we vet professionals",
       "meta_desc": "Exactly how Trusted Interiors checks the professionals we introduce: the checks we run, what disqualifies a pro, how we match to your budget, and what\u2026",
-      "word_count": 2327,
+      "word_count": 2329,
       "status": 200,
       "schemas": [
         "Organization",
@@ -1213,8 +1417,8 @@
         "BreadcrumbList",
         "Article"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -15,
+      "internal_links_out": 21,
+      "external_links_out": -16,
       "canonical": "https://trustedinteriors.co.uk/how-we-vet/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1234,16 +1438,16 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 30,
+      "internal_links_in": 36,
       "depth": 1
     },
     {
-      "url": "https://trustedinteriors.co.uk/accessibility/",
-      "path": "/accessibility/",
-      "title": "Accessibility | Trusted Interiors",
-      "h1": "Accessibility",
-      "meta_desc": "Our commitment to making this site usable for everyone, and how to tell us about problems.",
-      "word_count": 1440,
+      "url": "https://trustedinteriors.co.uk/trust/",
+      "path": "/trust/",
+      "title": "Trust centre | Trusted Interiors",
+      "h1": "Trust centre",
+      "meta_desc": "How Trusted Interiors uses AI, checks facts, corrects mistakes, handles complaints and protects your data. One place for our editorial, AI-use and data\u2026",
+      "word_count": 2394,
       "status": 200,
       "schemas": [
         "Organization",
@@ -1252,8 +1456,47 @@
         "WebPage",
         "BreadcrumbList"
       ],
-      "internal_links_out": 18,
+      "internal_links_out": 19,
       "external_links_out": -13,
+      "canonical": "https://trustedinteriors.co.uk/trust/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 2,
+      "question_h2s": 4,
+      "h2_count": 13,
+      "last_modified": "2026-06-12",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 36,
+      "depth": 1
+    },
+    {
+      "url": "https://trustedinteriors.co.uk/accessibility/",
+      "path": "/accessibility/",
+      "title": "Accessibility | Trusted Interiors",
+      "h1": "Accessibility",
+      "meta_desc": "Our commitment to making this site usable for everyone, and how to tell us about problems.",
+      "word_count": 1442,
+      "status": 200,
+      "schemas": [
+        "Organization",
+        "Person",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "internal_links_out": 19,
+      "external_links_out": -14,
       "canonical": "https://trustedinteriors.co.uk/accessibility/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1273,7 +1516,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 30,
+      "internal_links_in": 36,
       "depth": 1
     },
     {
@@ -1282,7 +1525,7 @@
       "title": "Painting and Decorating in the UK: Costs, Finishes and",
       "h1": "Painting and Decorating in the UK",
       "meta_desc": "Plain-English guidance on painting and decorating a home in the UK: choosing colour and finish, what preparation matters, costs, and when to hire a decorator.",
-      "word_count": 2762,
+      "word_count": 2764,
       "status": 200,
       "schemas": [
         "Organization",
@@ -1293,8 +1536,8 @@
         "Article",
         "FAQPage"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -15,
+      "internal_links_out": 21,
+      "external_links_out": -16,
       "canonical": "https://trustedinteriors.co.uk/decorating/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1314,7 +1557,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 30,
+      "internal_links_in": 36,
       "depth": 1
     }
   ],
@@ -1471,6 +1714,11 @@
     },
     {
       "from": "https://trustedinteriors.co.uk/./",
+      "to": "https://trustedinteriors.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/./",
       "to": "https://trustedinteriors.co.uk/privacy-policy/",
       "type": "internal"
     },
@@ -1597,6 +1845,11 @@
     {
       "from": "https://trustedinteriors.co.uk/404/",
       "to": "https://trustedinteriors.co.uk/accessibility/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/404/",
+      "to": "https://trustedinteriors.co.uk/trust/",
       "type": "internal"
     },
     {
@@ -1711,6 +1964,21 @@
     },
     {
       "from": "https://trustedinteriors.co.uk/kitchens/",
+      "to": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/",
+      "to": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/",
+      "to": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/",
       "to": "https://trustedinteriors.co.uk/flooring/",
       "type": "internal"
     },
@@ -1767,6 +2035,11 @@
     {
       "from": "https://trustedinteriors.co.uk/kitchens/",
       "to": "https://trustedinteriors.co.uk/accessibility/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/",
+      "to": "https://trustedinteriors.co.uk/trust/",
       "type": "internal"
     },
     {
@@ -1916,6 +2189,11 @@
     },
     {
       "from": "https://trustedinteriors.co.uk/kitchens/quartz-vs-granite/",
+      "to": "https://trustedinteriors.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/quartz-vs-granite/",
       "to": "https://trustedinteriors.co.uk/privacy-policy/",
       "type": "internal"
     },
@@ -1926,6 +2204,306 @@
     },
     {
       "from": "https://trustedinteriors.co.uk/kitchens/quartz-vs-granite/",
+      "to": "https://trustedinteriors.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/img/kitchens.jpg",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/_astro/BaseLayout.CE_KtOlT.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/kitchens/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/bathrooms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/flooring/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/fitted-wardrobes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/decorating/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/interior-design/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/how-we-vet/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/kitchens/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/guides/is-my-quote-fair/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/how-we-vet/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/kitchens/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/bathrooms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/flooring/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/accessibility/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/privacy-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/cookie-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/img/kitchens.jpg",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/_astro/BaseLayout.CE_KtOlT.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/kitchens/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/bathrooms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/flooring/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/fitted-wardrobes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/decorating/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/interior-design/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/how-we-vet/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/kitchens/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/how-we-vet/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/kitchens/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/bathrooms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/flooring/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/accessibility/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/privacy-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/cookie-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
       "to": "https://trustedinteriors.co.uk/terms/",
       "type": "internal"
     },
@@ -2056,6 +2634,11 @@
     },
     {
       "from": "https://trustedinteriors.co.uk/kitchens/worktop-materials-compared/",
+      "to": "https://trustedinteriors.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/worktop-materials-compared/",
       "to": "https://trustedinteriors.co.uk/privacy-policy/",
       "type": "internal"
     },
@@ -2066,6 +2649,156 @@
     },
     {
       "from": "https://trustedinteriors.co.uk/kitchens/worktop-materials-compared/",
+      "to": "https://trustedinteriors.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "to": "https://trustedinteriors.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "to": "https://trustedinteriors.co.uk/img/kitchens.jpg",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "to": "https://trustedinteriors.co.uk/_astro/BaseLayout.CE_KtOlT.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "to": "https://trustedinteriors.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "to": "https://trustedinteriors.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "to": "https://trustedinteriors.co.uk/kitchens/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "to": "https://trustedinteriors.co.uk/bathrooms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "to": "https://trustedinteriors.co.uk/flooring/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "to": "https://trustedinteriors.co.uk/fitted-wardrobes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "to": "https://trustedinteriors.co.uk/decorating/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "to": "https://trustedinteriors.co.uk/interior-design/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "to": "https://trustedinteriors.co.uk/how-we-vet/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "to": "https://trustedinteriors.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "to": "https://trustedinteriors.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "to": "https://trustedinteriors.co.uk/kitchens/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "to": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "to": "https://trustedinteriors.co.uk/guides/how-to-find-a-good-tradesperson/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "to": "https://trustedinteriors.co.uk/how-we-vet/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "to": "https://trustedinteriors.co.uk/kitchens/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "to": "https://trustedinteriors.co.uk/bathrooms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "to": "https://trustedinteriors.co.uk/flooring/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "to": "https://trustedinteriors.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "to": "https://trustedinteriors.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "to": "https://trustedinteriors.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "to": "https://trustedinteriors.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "to": "https://trustedinteriors.co.uk/accessibility/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "to": "https://trustedinteriors.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "to": "https://trustedinteriors.co.uk/privacy-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "to": "https://trustedinteriors.co.uk/cookie-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
       "to": "https://trustedinteriors.co.uk/terms/",
       "type": "internal"
     },
@@ -2221,6 +2954,11 @@
     },
     {
       "from": "https://trustedinteriors.co.uk/fitted-wardrobes/",
+      "to": "https://trustedinteriors.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/fitted-wardrobes/",
       "to": "https://trustedinteriors.co.uk/privacy-policy/",
       "type": "internal"
     },
@@ -2361,6 +3099,11 @@
     },
     {
       "from": "https://trustedinteriors.co.uk/fitted-wardrobes/fitted-vs-built-in/",
+      "to": "https://trustedinteriors.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/fitted-wardrobes/fitted-vs-built-in/",
       "to": "https://trustedinteriors.co.uk/privacy-policy/",
       "type": "internal"
     },
@@ -2486,6 +3229,11 @@
     },
     {
       "from": "https://trustedinteriors.co.uk/contact/",
+      "to": "https://trustedinteriors.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/contact/",
       "to": "https://trustedinteriors.co.uk/privacy-policy/",
       "type": "internal"
     },
@@ -2616,6 +3364,11 @@
     },
     {
       "from": "https://trustedinteriors.co.uk/authors/",
+      "to": "https://trustedinteriors.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/authors/",
       "to": "https://trustedinteriors.co.uk/privacy-policy/",
       "type": "internal"
     },
@@ -2741,6 +3494,11 @@
     },
     {
       "from": "https://trustedinteriors.co.uk/authors/adam-parker/",
+      "to": "https://trustedinteriors.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/authors/adam-parker/",
       "to": "https://trustedinteriors.co.uk/privacy-policy/",
       "type": "internal"
     },
@@ -2866,6 +3624,11 @@
     },
     {
       "from": "https://trustedinteriors.co.uk/cookie-policy/",
+      "to": "https://trustedinteriors.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/cookie-policy/",
       "to": "https://trustedinteriors.co.uk/privacy-policy/",
       "type": "internal"
     },
@@ -2991,6 +3754,11 @@
     },
     {
       "from": "https://trustedinteriors.co.uk/privacy-policy/",
+      "to": "https://trustedinteriors.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/privacy-policy/",
       "to": "https://trustedinteriors.co.uk/privacy-policy/",
       "type": "internal"
     },
@@ -3127,6 +3895,11 @@
     {
       "from": "https://trustedinteriors.co.uk/terms/",
       "to": "https://trustedinteriors.co.uk/accessibility/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/terms/",
+      "to": "https://trustedinteriors.co.uk/trust/",
       "type": "internal"
     },
     {
@@ -3257,6 +4030,11 @@
     {
       "from": "https://trustedinteriors.co.uk/about/",
       "to": "https://trustedinteriors.co.uk/accessibility/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/about/",
+      "to": "https://trustedinteriors.co.uk/trust/",
       "type": "internal"
     },
     {
@@ -3436,6 +4214,11 @@
     },
     {
       "from": "https://trustedinteriors.co.uk/flooring/",
+      "to": "https://trustedinteriors.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/flooring/",
       "to": "https://trustedinteriors.co.uk/privacy-policy/",
       "type": "internal"
     },
@@ -3581,6 +4364,11 @@
     },
     {
       "from": "https://trustedinteriors.co.uk/flooring/hardwood-vs-engineered-wood/",
+      "to": "https://trustedinteriors.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/flooring/hardwood-vs-engineered-wood/",
       "to": "https://trustedinteriors.co.uk/privacy-policy/",
       "type": "internal"
     },
@@ -3722,6 +4510,11 @@
     {
       "from": "https://trustedinteriors.co.uk/flooring/engineered-wood-vs-laminate/",
       "to": "https://trustedinteriors.co.uk/accessibility/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/flooring/engineered-wood-vs-laminate/",
+      "to": "https://trustedinteriors.co.uk/trust/",
       "type": "internal"
     },
     {
@@ -3877,6 +4670,11 @@
     {
       "from": "https://trustedinteriors.co.uk/flooring/what-is-engineered-wood-flooring/",
       "to": "https://trustedinteriors.co.uk/accessibility/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/flooring/what-is-engineered-wood-flooring/",
+      "to": "https://trustedinteriors.co.uk/trust/",
       "type": "internal"
     },
     {
@@ -4056,6 +4854,11 @@
     },
     {
       "from": "https://trustedinteriors.co.uk/interior-design/",
+      "to": "https://trustedinteriors.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/interior-design/",
       "to": "https://trustedinteriors.co.uk/privacy-policy/",
       "type": "internal"
     },
@@ -4197,6 +5000,11 @@
     {
       "from": "https://trustedinteriors.co.uk/interior-design/is-it-worth-hiring-an-interior-designer/",
       "to": "https://trustedinteriors.co.uk/accessibility/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/interior-design/is-it-worth-hiring-an-interior-designer/",
+      "to": "https://trustedinteriors.co.uk/trust/",
       "type": "internal"
     },
     {
@@ -4346,6 +5154,11 @@
     },
     {
       "from": "https://trustedinteriors.co.uk/interior-design/how-to-brief-an-interior-designer/",
+      "to": "https://trustedinteriors.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/interior-design/how-to-brief-an-interior-designer/",
       "to": "https://trustedinteriors.co.uk/privacy-policy/",
       "type": "internal"
     },
@@ -4487,6 +5300,11 @@
     {
       "from": "https://trustedinteriors.co.uk/interior-design/questions-to-ask-an-interior-designer/",
       "to": "https://trustedinteriors.co.uk/accessibility/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/interior-design/questions-to-ask-an-interior-designer/",
+      "to": "https://trustedinteriors.co.uk/trust/",
       "type": "internal"
     },
     {
@@ -4591,6 +5409,16 @@
     },
     {
       "from": "https://trustedinteriors.co.uk/bathrooms/",
+      "to": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/",
+      "to": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/",
       "to": "https://trustedinteriors.co.uk/flooring/",
       "type": "internal"
     },
@@ -4651,6 +5479,11 @@
     },
     {
       "from": "https://trustedinteriors.co.uk/bathrooms/",
+      "to": "https://trustedinteriors.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/",
       "to": "https://trustedinteriors.co.uk/privacy-policy/",
       "type": "internal"
     },
@@ -4661,6 +5494,301 @@
     },
     {
       "from": "https://trustedinteriors.co.uk/bathrooms/",
+      "to": "https://trustedinteriors.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/img/bathrooms.jpg",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/_astro/BaseLayout.CE_KtOlT.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/kitchens/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/bathrooms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/flooring/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/fitted-wardrobes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/decorating/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/interior-design/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/how-we-vet/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/bathrooms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/guides/is-my-quote-fair/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/how-we-vet/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/kitchens/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/bathrooms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/flooring/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/accessibility/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/privacy-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/cookie-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "to": "https://trustedinteriors.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/img/bathrooms.jpg",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/_astro/BaseLayout.CE_KtOlT.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/kitchens/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/bathrooms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/flooring/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/fitted-wardrobes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/decorating/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/interior-design/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/how-we-vet/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/bathrooms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/how-we-vet/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/kitchens/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/bathrooms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/flooring/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/accessibility/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/privacy-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
+      "to": "https://trustedinteriors.co.uk/cookie-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
       "to": "https://trustedinteriors.co.uk/terms/",
       "type": "internal"
     },
@@ -4762,6 +5890,31 @@
     {
       "from": "https://trustedinteriors.co.uk/guides/",
       "to": "https://trustedinteriors.co.uk/kitchens/quartz-vs-granite/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/guides/",
+      "to": "https://trustedinteriors.co.uk/kitchens/what-a-quote-should-include/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/guides/",
+      "to": "https://trustedinteriors.co.uk/kitchens/deposits-and-staged-payments/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/guides/",
+      "to": "https://trustedinteriors.co.uk/kitchens/fitter-went-bust-mid-job/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/guides/",
+      "to": "https://trustedinteriors.co.uk/bathrooms/what-a-quote-should-include/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/guides/",
+      "to": "https://trustedinteriors.co.uk/bathrooms/deposits-and-staged-payments/",
       "type": "internal"
     },
     {
@@ -4876,6 +6029,11 @@
     },
     {
       "from": "https://trustedinteriors.co.uk/guides/",
+      "to": "https://trustedinteriors.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/guides/",
       "to": "https://trustedinteriors.co.uk/privacy-policy/",
       "type": "internal"
     },
@@ -5026,6 +6184,11 @@
     },
     {
       "from": "https://trustedinteriors.co.uk/guides/is-my-quote-fair/",
+      "to": "https://trustedinteriors.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/guides/is-my-quote-fair/",
       "to": "https://trustedinteriors.co.uk/privacy-policy/",
       "type": "internal"
     },
@@ -5172,6 +6335,11 @@
     {
       "from": "https://trustedinteriors.co.uk/guides/uk-interiors-costs-by-region/",
       "to": "https://trustedinteriors.co.uk/accessibility/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/guides/uk-interiors-costs-by-region/",
+      "to": "https://trustedinteriors.co.uk/trust/",
       "type": "internal"
     },
     {
@@ -5321,6 +6489,11 @@
     },
     {
       "from": "https://trustedinteriors.co.uk/guides/red-flags-in-a-quote/",
+      "to": "https://trustedinteriors.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/guides/red-flags-in-a-quote/",
       "to": "https://trustedinteriors.co.uk/privacy-policy/",
       "type": "internal"
     },
@@ -5462,6 +6635,11 @@
     {
       "from": "https://trustedinteriors.co.uk/guides/how-to-find-a-good-tradesperson/",
       "to": "https://trustedinteriors.co.uk/accessibility/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/guides/how-to-find-a-good-tradesperson/",
+      "to": "https://trustedinteriors.co.uk/trust/",
       "type": "internal"
     },
     {
@@ -5626,6 +6804,11 @@
     },
     {
       "from": "https://trustedinteriors.co.uk/guides/cost-calculator/",
+      "to": "https://trustedinteriors.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/guides/cost-calculator/",
       "to": "https://trustedinteriors.co.uk/privacy-policy/",
       "type": "internal"
     },
@@ -5761,6 +6944,11 @@
     },
     {
       "from": "https://trustedinteriors.co.uk/how-we-vet/",
+      "to": "https://trustedinteriors.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/how-we-vet/",
       "to": "https://trustedinteriors.co.uk/privacy-policy/",
       "type": "internal"
     },
@@ -5771,6 +6959,216 @@
     },
     {
       "from": "https://trustedinteriors.co.uk/how-we-vet/",
+      "to": "https://trustedinteriors.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/_astro/BaseLayout.CE_KtOlT.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/kitchens/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/bathrooms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/flooring/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/fitted-wardrobes/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/decorating/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/interior-design/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/how-we-vet/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/how-we-vet/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/privacy-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/how-we-vet/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/privacy-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/cookie-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/privacy-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/cookie-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/accessibility/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/how-we-vet/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/how-we-vet/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/kitchens/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/bathrooms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/flooring/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/accessibility/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/privacy-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
+      "to": "https://trustedinteriors.co.uk/cookie-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/trust/",
       "to": "https://trustedinteriors.co.uk/terms/",
       "type": "internal"
     },
@@ -5882,6 +7280,11 @@
     {
       "from": "https://trustedinteriors.co.uk/accessibility/",
       "to": "https://trustedinteriors.co.uk/accessibility/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/accessibility/",
+      "to": "https://trustedinteriors.co.uk/trust/",
       "type": "internal"
     },
     {
@@ -6046,6 +7449,11 @@
     },
     {
       "from": "https://trustedinteriors.co.uk/decorating/",
+      "to": "https://trustedinteriors.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://trustedinteriors.co.uk/decorating/",
       "to": "https://trustedinteriors.co.uk/privacy-policy/",
       "type": "internal"
     },
@@ -6076,8 +7484,23 @@
             "children": []
           },
           {
+            "name": "what-a-quote-should-include",
+            "path": "/kitchens/what-a-quote-should-include/",
+            "children": []
+          },
+          {
+            "name": "deposits-and-staged-payments",
+            "path": "/kitchens/deposits-and-staged-payments/",
+            "children": []
+          },
+          {
             "name": "worktop-materials-compared",
             "path": "/kitchens/worktop-materials-compared/",
+            "children": []
+          },
+          {
+            "name": "fitter-went-bust-mid-job",
+            "path": "/kitchens/fitter-went-bust-mid-job/",
             "children": []
           }
         ]
@@ -6174,7 +7597,18 @@
       {
         "name": "bathrooms",
         "path": "/bathrooms/",
-        "children": []
+        "children": [
+          {
+            "name": "what-a-quote-should-include",
+            "path": "/bathrooms/what-a-quote-should-include/",
+            "children": []
+          },
+          {
+            "name": "deposits-and-staged-payments",
+            "path": "/bathrooms/deposits-and-staged-payments/",
+            "children": []
+          }
+        ]
       },
       {
         "name": "guides",
@@ -6213,6 +7647,11 @@
         "children": []
       },
       {
+        "name": "trust",
+        "path": "/trust/",
+        "children": []
+      },
+      {
         "name": "accessibility",
         "path": "/accessibility/",
         "children": []
@@ -6248,7 +7687,40 @@
       ]
     },
     {
+      "path": "/kitchens/what-a-quote-should-include/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:6",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/kitchens/deposits-and-staged-payments/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:6",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
       "path": "/kitchens/worktop-materials-compared/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:6",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/kitchens/fitter-went-bust-mid-job/",
       "score": 5,
       "signals": [
         "OG",
@@ -6457,6 +7929,28 @@
       ]
     },
     {
+      "path": "/bathrooms/what-a-quote-should-include/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:6",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/bathrooms/deposits-and-staged-payments/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:6",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
       "path": "/guides/",
       "score": 5,
       "signals": [
@@ -6528,6 +8022,17 @@
       "signals": [
         "OG",
         "Schema:6",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/trust/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:5",
         "Author",
         "Substantive",
         "Breadcrumbs"
