@@ -1,20 +1,20 @@
 {
   "site_id": "datekit",
   "domain": "datesandtimes.co.uk",
-  "crawled_at": "2026-07-07T11:10:51.072300+00:00",
+  "crawled_at": "2026-07-07T11:31:36.229356+00:00",
   "source": "fleet-source-reader",
-  "pages_crawled": 35,
+  "pages_crawled": 36,
   "total_issues": 0,
   "orphan_pages": 0,
-  "avg_depth": 1.542857142857143,
-  "avg_word_count": 2630,
-  "pages_with_schema": 35,
+  "avg_depth": 1.5277777777777777,
+  "avg_word_count": 2652,
+  "pages_with_schema": 36,
   "pages_with_multimodal": 0,
   "pages_with_comparison_table": 8,
   "pages_with_video": 0,
-  "pages_over_2000_words": 32,
+  "pages_over_2000_words": 34,
   "images_missing_alt": 0,
-  "pages_with_date": 35,
+  "pages_with_date": 36,
   "crawler_access": {
     "GPTBot": true,
     "ClaudeBot": true,
@@ -72,6 +72,10 @@
       "hub": "/api/",
       "page_count": 1
     },
+    "trust": {
+      "hub": "/trust/",
+      "page_count": 1
+    },
     "data": {
       "hub": "/data/",
       "page_count": 4
@@ -89,10 +93,10 @@
       "page_count": 1
     }
   },
-  "topic_cluster_count": 16,
+  "topic_cluster_count": 17,
   "term_consistency": {
-    "dates": 50,
-    "times": 40,
+    "dates": 51,
+    "times": 41,
     "bank": 21,
     "holidays": 19,
     "date": 17,
@@ -102,14 +106,14 @@
     "2026": 14,
     "time": 12,
     "working": 11,
+    "data": 10,
     "leave": 10,
-    "data": 9,
     "week": 9,
     "entitlement": 8
   },
   "content_freshness": {
-    "pages_with_dates": 35,
-    "fresh_30_days": 35,
+    "pages_with_dates": 36,
+    "fresh_30_days": 36,
     "fresh_90_days": 0,
     "stale": 0
   },
@@ -121,7 +125,7 @@
       "title": "UK bank holidays and working days | Dates &amp; Times",
       "h1": "UK bank holidays and working days statistics",
       "meta_desc": "How many bank holidays and working days the UK has in 2026, per nation, against other countries, with every figure cited to gov.uk, ONS and OECD.",
-      "word_count": 2510,
+      "word_count": 2530,
       "status": 200,
       "schemas": [
         "Person",
@@ -134,8 +138,8 @@
         "BreadcrumbList",
         "BreadcrumbList"
       ],
-      "internal_links_out": 19,
-      "external_links_out": 12,
+      "internal_links_out": 20,
+      "external_links_out": 11,
       "canonical": "https://datesandtimes.co.uk/statistics/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -164,7 +168,7 @@
       "title": "Contact",
       "h1": "Contact",
       "meta_desc": "How to contact Dates &amp; Times: editorial corrections, data protection, and the registered operator.",
-      "word_count": 1971,
+      "word_count": 1991,
       "status": 200,
       "schemas": [
         "Person",
@@ -175,8 +179,8 @@
         "Article",
         "ContactPage"
       ],
-      "internal_links_out": 18,
-      "external_links_out": 1,
+      "internal_links_out": 19,
+      "external_links_out": 0,
       "canonical": "https://datesandtimes.co.uk/contact/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -196,7 +200,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 35,
+      "internal_links_in": 36,
       "depth": 1
     },
     {
@@ -205,7 +209,7 @@
       "title": "All date and time calculators: countdown, | Dates &amp; Times",
       "h1": "Date and time calculators",
       "meta_desc": "Every Dates &amp; Times calculator in one place. Countdown, exact age, days between dates, the long-weekend maximiser and statutory holiday entitlement, each\u2026",
-      "word_count": 4083,
+      "word_count": 4103,
       "status": 200,
       "schemas": [
         "Person",
@@ -216,8 +220,8 @@
         "Article",
         "CollectionPage"
       ],
-      "internal_links_out": 29,
-      "external_links_out": -10,
+      "internal_links_out": 30,
+      "external_links_out": -11,
       "canonical": "https://datesandtimes.co.uk/tools/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -237,7 +241,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 35,
+      "internal_links_in": 36,
       "depth": 1
     },
     {
@@ -246,7 +250,7 @@
       "title": "Time-zone converter and meeting planner: | Dates &amp; Times",
       "h1": "Time-zone converter and meeting planner",
       "meta_desc": "Convert a date and time from one time zone to several others at once, with a working-hours flag for each city, so you can plan an international meeting.\u2026",
-      "word_count": 2861,
+      "word_count": 2881,
       "status": 200,
       "schemas": [
         "Person",
@@ -258,8 +262,8 @@
         "WebApplication",
         "BreadcrumbList"
       ],
-      "internal_links_out": 24,
-      "external_links_out": -5,
+      "internal_links_out": 25,
+      "external_links_out": -6,
       "canonical": "https://datesandtimes.co.uk/tools/time-zone-converter/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -288,7 +292,7 @@
       "title": "HMRC Statutory Residence Test day counter: | Dates &amp; Times",
       "h1": "HMRC Statutory Residence Test day counter",
       "meta_desc": "Check which day-count band of the HMRC Statutory Residence Test your UK days fall in, including the 183-day automatic-residence threshold and the\u2026",
-      "word_count": 2793,
+      "word_count": 2813,
       "status": 200,
       "schemas": [
         "Person",
@@ -300,8 +304,8 @@
         "WebApplication",
         "BreadcrumbList"
       ],
-      "internal_links_out": 25,
-      "external_links_out": -6,
+      "internal_links_out": 26,
+      "external_links_out": -7,
       "canonical": "https://datesandtimes.co.uk/tools/statutory-residence-day-counter/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -330,7 +334,7 @@
       "title": "Sleep calculator: best bedtime and wake | Dates &amp; Times",
       "h1": "Sleep calculator",
       "meta_desc": "Work out when to go to bed, or when to wake, so you finish a full 90-minute sleep cycle and wake less groggy. Free, instant, and it shows the cycle maths\u2026",
-      "word_count": 2741,
+      "word_count": 2761,
       "status": 200,
       "schemas": [
         "Person",
@@ -342,8 +346,8 @@
         "WebApplication",
         "BreadcrumbList"
       ],
-      "internal_links_out": 24,
-      "external_links_out": -5,
+      "internal_links_out": 25,
+      "external_links_out": -6,
       "canonical": "https://datesandtimes.co.uk/tools/sleep-calculator/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -372,7 +376,7 @@
       "title": "School holiday overlap detector: does your | Dates &amp; Times",
       "h1": "School holiday overlap detector",
       "meta_desc": "Check whether a date range lands in the England school holidays or term time, and how many days overlap each holiday, so you can line up your leave with the\u2026",
-      "word_count": 2802,
+      "word_count": 2822,
       "status": 200,
       "schemas": [
         "Person",
@@ -384,8 +388,8 @@
         "WebApplication",
         "BreadcrumbList"
       ],
-      "internal_links_out": 24,
-      "external_links_out": -5,
+      "internal_links_out": 25,
+      "external_links_out": -6,
       "canonical": "https://datesandtimes.co.uk/tools/school-holiday-overlap/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -414,7 +418,7 @@
       "title": "Moon phase calculator: phase, illumination | Dates &amp; Times",
       "h1": "Moon phase calculator",
       "meta_desc": "Find the moon phase, illuminated percentage and the moon age for any date, plus the next new and full moon. Uses the standard 29.53-day synodic-month formula.",
-      "word_count": 2607,
+      "word_count": 2627,
       "status": 200,
       "schemas": [
         "Person",
@@ -426,8 +430,8 @@
         "WebApplication",
         "BreadcrumbList"
       ],
-      "internal_links_out": 24,
-      "external_links_out": -5,
+      "internal_links_out": 25,
+      "external_links_out": -6,
       "canonical": "https://datesandtimes.co.uk/tools/moon-phase-calculator/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -456,7 +460,7 @@
       "title": "Sunrise and sunset calculator: times, solar | Dates &amp; Times",
       "h1": "Sunrise and sunset calculator",
       "meta_desc": "Sunrise, sunset, solar noon and day length for any UK location and date, using the standard NOAA solar formula. Pick a city or enter your own latitude and\u2026",
-      "word_count": 2840,
+      "word_count": 2860,
       "status": 200,
       "schemas": [
         "Person",
@@ -468,8 +472,8 @@
         "WebApplication",
         "BreadcrumbList"
       ],
-      "internal_links_out": 24,
-      "external_links_out": -5,
+      "internal_links_out": 25,
+      "external_links_out": -6,
       "canonical": "https://datesandtimes.co.uk/tools/sunrise-sunset-calculator/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -498,7 +502,7 @@
       "title": "Week number calculator: ISO week from a | Dates &amp; Times",
       "h1": "Week number calculator",
       "meta_desc": "Find the ISO 8601 week number for any date, or turn a week number back into its Monday-to-Sunday dates. Uses the international standard where week 1 holds\u2026",
-      "word_count": 2824,
+      "word_count": 2844,
       "status": 200,
       "schemas": [
         "Person",
@@ -510,8 +514,8 @@
         "WebApplication",
         "BreadcrumbList"
       ],
-      "internal_links_out": 24,
-      "external_links_out": -5,
+      "internal_links_out": 25,
+      "external_links_out": -6,
       "canonical": "https://datesandtimes.co.uk/tools/week-number-calculator/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -540,7 +544,7 @@
       "title": "Shift pattern generator: project a | Dates &amp; Times",
       "h1": "Shift pattern generator",
       "meta_desc": "Project a shift rota such as 4 on 4 off forward from your start date and see every work day and rest day, week by week, with totals. Supports common\u2026",
-      "word_count": 2819,
+      "word_count": 2839,
       "status": 200,
       "schemas": [
         "Person",
@@ -552,8 +556,8 @@
         "WebApplication",
         "BreadcrumbList"
       ],
-      "internal_links_out": 25,
-      "external_links_out": -6,
+      "internal_links_out": 26,
+      "external_links_out": -7,
       "canonical": "https://datesandtimes.co.uk/tools/shift-pattern-generator/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -582,7 +586,7 @@
       "title": "UK bank holidays 2026: dates for all four | Dates &amp; Times",
       "h1": "UK bank holidays 2026",
       "meta_desc": "The 2026 UK bank holidays for England and Wales, Scotland and Northern Ireland, when the next one falls, and when Easter and the clocks change, with the\u2026",
-      "word_count": 2506,
+      "word_count": 2526,
       "status": 200,
       "schemas": [
         "Person",
@@ -593,8 +597,8 @@
         "Article",
         "Dataset"
       ],
-      "internal_links_out": 20,
-      "external_links_out": 0,
+      "internal_links_out": 21,
+      "external_links_out": -1,
       "canonical": "https://datesandtimes.co.uk/calendar/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -614,7 +618,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 35,
+      "internal_links_in": 36,
       "depth": 1
     },
     {
@@ -623,7 +627,7 @@
       "title": "UK tax year deadline countdown: 31 January, | Dates &amp; Times",
       "h1": "UK tax year deadline countdown",
       "meta_desc": "A live countdown to the next UK tax-year and Self Assessment deadlines: 5 April year end, 31 January online filing, 31 July payment on account, 31 October\u2026",
-      "word_count": 2657,
+      "word_count": 2677,
       "status": 200,
       "schemas": [
         "Person",
@@ -635,8 +639,8 @@
         "WebApplication",
         "BreadcrumbList"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -1,
+      "internal_links_out": 21,
+      "external_links_out": -2,
       "canonical": "https://datesandtimes.co.uk/calendar/tax-year-deadline-countdown/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -665,7 +669,7 @@
       "title": "State Pension age calculator: your pension | Dates &amp; Times",
       "h1": "State Pension age calculator",
       "meta_desc": "Find your UK State Pension age and the date you reach it from your date of birth, under the current Pensions Act rules: 66 now, rising to 67 then 68. Free,\u2026",
-      "word_count": 2837,
+      "word_count": 2857,
       "status": 200,
       "schemas": [
         "Person",
@@ -677,8 +681,8 @@
         "WebApplication",
         "BreadcrumbList"
       ],
-      "internal_links_out": 19,
-      "external_links_out": 1,
+      "internal_links_out": 20,
+      "external_links_out": 0,
       "canonical": "https://datesandtimes.co.uk/calendar/state-pension-age-calculator/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -707,7 +711,7 @@
       "title": "Privacy policy",
       "h1": "Privacy policy",
       "meta_desc": "How Dates &amp; Times handles data: who the operator is, the analytics we use, and your rights.",
-      "word_count": 2353,
+      "word_count": 2373,
       "status": 200,
       "schemas": [
         "Person",
@@ -718,8 +722,8 @@
         "Article",
         "WebPage"
       ],
-      "internal_links_out": 18,
-      "external_links_out": 2,
+      "internal_links_out": 19,
+      "external_links_out": 1,
       "canonical": "https://datesandtimes.co.uk/privacy/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -739,7 +743,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 35,
+      "internal_links_in": 36,
       "depth": 1
     },
     {
@@ -748,7 +752,7 @@
       "title": "Editorial team",
       "h1": "Editorial team",
       "meta_desc": "The named editor behind Dates &amp; Times.",
-      "word_count": 1941,
+      "word_count": 1961,
       "status": 200,
       "schemas": [
         "Person",
@@ -759,8 +763,8 @@
         "Article",
         "CollectionPage"
       ],
-      "internal_links_out": 18,
-      "external_links_out": 1,
+      "internal_links_out": 19,
+      "external_links_out": 0,
       "canonical": "https://datesandtimes.co.uk/authors/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -780,7 +784,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 35,
+      "internal_links_in": 36,
       "depth": 1
     },
     {
@@ -789,7 +793,7 @@
       "title": "Oliver Mackman, Editor, Dates &amp; Times",
       "h1": "Oliver Mackman",
       "meta_desc": "Oliver Mackman is the named editor of Dates &amp; Times, the UK calendar, dates and time tools site, and a director of its operating company, accountable for\u2026",
-      "word_count": 2458,
+      "word_count": 2478,
       "status": 200,
       "schemas": [
         "Person",
@@ -801,8 +805,8 @@
         "Person",
         "ProfilePage"
       ],
-      "internal_links_out": 17,
-      "external_links_out": 6,
+      "internal_links_out": 18,
+      "external_links_out": 5,
       "canonical": "https://datesandtimes.co.uk/authors/oliver-mackman/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -822,7 +826,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 29,
+      "internal_links_in": 30,
       "depth": 2
     },
     {
@@ -831,7 +835,7 @@
       "title": "Site index",
       "h1": "Site index",
       "meta_desc": "A complete index of every calculator, bank holiday page, guide and UK data page on Dates &amp; Times.",
-      "word_count": 3297,
+      "word_count": 3350,
       "status": 200,
       "schemas": [
         "Person",
@@ -842,8 +846,8 @@
         "Article",
         "CollectionPage"
       ],
-      "internal_links_out": 41,
-      "external_links_out": -22,
+      "internal_links_out": 42,
+      "external_links_out": -23,
       "canonical": "https://datesandtimes.co.uk/site-index/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -852,9 +856,9 @@
       "has_multimodal": false,
       "has_comparison_table": false,
       "table_count": 0,
-      "list_count": 18,
+      "list_count": 19,
       "question_h2s": 0,
-      "h2_count": 17,
+      "h2_count": 18,
       "last_modified": "2026-06-19",
       "has_answer_capsule": true,
       "has_og_tags": true,
@@ -863,7 +867,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 35,
+      "internal_links_in": 36,
       "depth": 1
     },
     {
@@ -872,7 +876,7 @@
       "title": "Terms of use",
       "h1": "Terms of use",
       "meta_desc": "The terms for using Dates &amp; Times: general calendar and time information and calculators, not professional advice, plus how advertising and links work.",
-      "word_count": 2469,
+      "word_count": 2489,
       "status": 200,
       "schemas": [
         "Person",
@@ -883,8 +887,8 @@
         "Article",
         "WebPage"
       ],
-      "internal_links_out": 17,
-      "external_links_out": 2,
+      "internal_links_out": 18,
+      "external_links_out": 1,
       "canonical": "https://datesandtimes.co.uk/terms/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -904,7 +908,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 1,
+      "internal_links_in": 2,
       "depth": 1
     },
     {
@@ -913,7 +917,7 @@
       "title": "About Dates &amp; Times",
       "h1": "About Dates & Times",
       "meta_desc": "Dates &amp; Times is an independent UK calendar, dates and time information service, operated by Best Business Loans Ltd, with a named editor and cited official\u2026",
-      "word_count": 2135,
+      "word_count": 2155,
       "status": 200,
       "schemas": [
         "Person",
@@ -924,8 +928,8 @@
         "Article",
         "AboutPage"
       ],
-      "internal_links_out": 18,
-      "external_links_out": 1,
+      "internal_links_out": 19,
+      "external_links_out": 0,
       "canonical": "https://datesandtimes.co.uk/about/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -945,7 +949,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 35,
+      "internal_links_in": 36,
       "depth": 1
     },
     {
@@ -954,7 +958,7 @@
       "title": "Date and leave guides: bank holidays, | Dates &amp; Times",
       "h1": "Date and leave guides",
       "meta_desc": "Plain-English guides to UK bank holidays, annual leave, holiday entitlement and working days, each citing the official gov.uk source and linking to the\u2026",
-      "word_count": 2272,
+      "word_count": 2292,
       "status": 200,
       "schemas": [
         "Person",
@@ -966,8 +970,8 @@
         "CollectionPage",
         "BreadcrumbList"
       ],
-      "internal_links_out": 22,
-      "external_links_out": -3,
+      "internal_links_out": 23,
+      "external_links_out": -4,
       "canonical": "https://datesandtimes.co.uk/guides/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -987,7 +991,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 35,
+      "internal_links_in": 36,
       "depth": 1
     },
     {
@@ -996,7 +1000,7 @@
       "title": "UK holiday entitlement explained: part-time | Dates &amp; Times",
       "h1": "UK holiday entitlement explained",
       "meta_desc": "How statutory UK holiday entitlement works: the 5.6 weeks minimum, the 28-day cap, pro-rata for part-time staff and the 12.07% method for irregular and\u2026",
-      "word_count": 2584,
+      "word_count": 2604,
       "status": 200,
       "schemas": [
         "Person",
@@ -1008,8 +1012,8 @@
         "Article",
         "BreadcrumbList"
       ],
-      "internal_links_out": 21,
-      "external_links_out": 0,
+      "internal_links_out": 22,
+      "external_links_out": -1,
       "canonical": "https://datesandtimes.co.uk/guides/uk-holiday-entitlement-explained/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1038,7 +1042,7 @@
       "title": "How to calculate working days between two | Dates &amp; Times",
       "h1": "How to calculate working days between two dates",
       "meta_desc": "What counts as a working day, how to count Monday to Friday between two dates, and where UK bank holidays fit in. With a worked example and the calculator\u2026",
-      "word_count": 2546,
+      "word_count": 2566,
       "status": 200,
       "schemas": [
         "Person",
@@ -1050,8 +1054,8 @@
         "Article",
         "BreadcrumbList"
       ],
-      "internal_links_out": 21,
-      "external_links_out": -1,
+      "internal_links_out": 22,
+      "external_links_out": -2,
       "canonical": "https://datesandtimes.co.uk/guides/calculate-working-days-between-two-dates/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1080,7 +1084,7 @@
       "title": "How to maximise your annual leave with UK | Dates &amp; Times",
       "h1": "How to maximise your annual leave with UK bank holidays",
       "meta_desc": "Book your annual leave around the 2026 UK bank holidays to turn a few days off into long breaks. The bridging method explained, with the official gov.uk dates.",
-      "word_count": 2592,
+      "word_count": 2612,
       "status": 200,
       "schemas": [
         "Person",
@@ -1092,8 +1096,8 @@
         "Article",
         "BreadcrumbList"
       ],
-      "internal_links_out": 21,
-      "external_links_out": 0,
+      "internal_links_out": 22,
+      "external_links_out": -1,
       "canonical": "https://datesandtimes.co.uk/guides/maximise-annual-leave-uk-bank-holidays/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1122,7 +1126,7 @@
       "title": "When are the 2026 UK bank holidays? All | Dates &amp; Times",
       "h1": "When are the 2026 UK bank holidays?",
       "meta_desc": "Every 2026 UK bank-holiday date for England and Wales, Scotland and Northern Ireland, with the day of the week and which nations each one applies in.\u2026",
-      "word_count": 2621,
+      "word_count": 2641,
       "status": 200,
       "schemas": [
         "Person",
@@ -1134,8 +1138,8 @@
         "Article",
         "BreadcrumbList"
       ],
-      "internal_links_out": 21,
-      "external_links_out": -1,
+      "internal_links_out": 22,
+      "external_links_out": -2,
       "canonical": "https://datesandtimes.co.uk/guides/when-are-the-2026-uk-bank-holidays/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1164,7 +1168,7 @@
       "title": "Editorial policy",
       "h1": "Editorial policy",
       "meta_desc": "How Dates &amp; Times sources, checks and corrects its calculators and data: named UK sources, a named editor, and how we use AI tools.",
-      "word_count": 2321,
+      "word_count": 2341,
       "status": 200,
       "schemas": [
         "Person",
@@ -1175,8 +1179,8 @@
         "Article",
         "WebPage"
       ],
-      "internal_links_out": 18,
-      "external_links_out": 1,
+      "internal_links_out": 19,
+      "external_links_out": 0,
       "canonical": "https://datesandtimes.co.uk/editorial-policy/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1196,7 +1200,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 35,
+      "internal_links_in": 36,
       "depth": 1
     },
     {
@@ -1205,7 +1209,7 @@
       "title": "Dates &amp; Times Data API and MCP: UK date | Dates &amp; Times",
       "h1": "Dates & Times Data API and MCP",
       "meta_desc": "Read-only public API and MCP server for UK date maths: age, date difference and working days, statutory holiday entitlement, the long-weekend maximiser, and\u2026",
-      "word_count": 2701,
+      "word_count": 2721,
       "status": 200,
       "schemas": [
         "Person",
@@ -1218,8 +1222,8 @@
         "Dataset",
         "BreadcrumbList"
       ],
-      "internal_links_out": 19,
-      "external_links_out": 8,
+      "internal_links_out": 20,
+      "external_links_out": 7,
       "canonical": "https://datesandtimes.co.uk/api/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1243,12 +1247,53 @@
       "depth": 1
     },
     {
+      "url": "https://datesandtimes.co.uk/trust/",
+      "path": "/trust/",
+      "title": "Trust centre",
+      "h1": "Trust centre",
+      "meta_desc": "How Dates &amp; Times uses AI, checks facts against official UK sources, corrects mistakes, handles complaints and protects your data. One place for our\u2026",
+      "word_count": 2682,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Organization",
+        "Article",
+        "WebPage"
+      ],
+      "internal_links_out": 20,
+      "external_links_out": 2,
+      "canonical": "https://datesandtimes.co.uk/trust/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 4,
+      "question_h2s": 0,
+      "h2_count": 8,
+      "last_modified": "2026-07-07",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 36,
+      "depth": 1
+    },
+    {
       "url": "https://datesandtimes.co.uk/data/",
       "path": "/data/",
       "title": "UK calendar data: working days, bank | Dates &amp; Times",
       "h1": "UK calendar data",
       "meta_desc": "How the UK calendar compares: working days in 2026, public holidays against other countries, and the official gov.uk Bank Holidays feed behind it all.",
-      "word_count": 2294,
+      "word_count": 2314,
       "status": 200,
       "schemas": [
         "Person",
@@ -1259,8 +1304,8 @@
         "Article",
         "Dataset"
       ],
-      "internal_links_out": 19,
-      "external_links_out": 1,
+      "internal_links_out": 20,
+      "external_links_out": 0,
       "canonical": "https://datesandtimes.co.uk/data/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1280,7 +1325,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 35,
+      "internal_links_in": 36,
       "depth": 1
     },
     {
@@ -1289,7 +1334,7 @@
       "title": "When do the clocks change? UK dates",
       "h1": "When do the clocks change in the UK?",
       "meta_desc": "UK clock-change dates: forward one hour on the last Sunday of March (BST begins) and back on the last Sunday of October (GMT). 2026 and 2027 dates and the rule.",
-      "word_count": 2419,
+      "word_count": 2439,
       "status": 200,
       "schemas": [
         "Person",
@@ -1300,8 +1345,8 @@
         "Article",
         "Dataset"
       ],
-      "internal_links_out": 19,
-      "external_links_out": 1,
+      "internal_links_out": 20,
+      "external_links_out": 0,
       "canonical": "https://datesandtimes.co.uk/data/when-clocks-change-uk/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1330,7 +1375,7 @@
       "title": "State Pension age timetable (UK)",
       "h1": "UK State Pension age timetable",
       "meta_desc": "When you reach State Pension age in the UK by birth date: 66 now, rising to 67 from April 2026, with 68 legislated for 2044 to 2046.",
-      "word_count": 2437,
+      "word_count": 2457,
       "status": 200,
       "schemas": [
         "Person",
@@ -1341,8 +1386,8 @@
         "Article",
         "Dataset"
       ],
-      "internal_links_out": 19,
-      "external_links_out": 2,
+      "internal_links_out": 20,
+      "external_links_out": 1,
       "canonical": "https://datesandtimes.co.uk/data/state-pension-age-timetable/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1371,7 +1416,7 @@
       "title": "UK bank holidays by nation, 2026 and 2027 | Dates &amp; Times",
       "h1": "UK bank holidays by nation",
       "meta_desc": "Every UK bank holiday for England and Wales, Scotland and Northern Ireland in 2026 and 2027, as a clean data table. Auto-updated from the official gov.uk\u2026",
-      "word_count": 3415,
+      "word_count": 3435,
       "status": 200,
       "schemas": [
         "Person",
@@ -1382,8 +1427,8 @@
         "Article",
         "Dataset"
       ],
-      "internal_links_out": 23,
-      "external_links_out": -2,
+      "internal_links_out": 24,
+      "external_links_out": -3,
       "canonical": "https://datesandtimes.co.uk/data/uk-bank-holidays/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1395,7 +1440,7 @@
       "list_count": 2,
       "question_h2s": 0,
       "h2_count": 9,
-      "last_modified": "2026-07-03",
+      "last_modified": "2026-07-07",
       "has_answer_capsule": true,
       "has_og_tags": true,
       "has_author": true,
@@ -1412,7 +1457,7 @@
       "title": "Cookies",
       "h1": "Cookies",
       "meta_desc": "How Dates &amp; Times uses cookies and how to control them.",
-      "word_count": 1984,
+      "word_count": 2004,
       "status": 200,
       "schemas": [
         "Person",
@@ -1423,8 +1468,8 @@
         "Article",
         "WebPage"
       ],
-      "internal_links_out": 17,
-      "external_links_out": 2,
+      "internal_links_out": 18,
+      "external_links_out": 1,
       "canonical": "https://datesandtimes.co.uk/cookies/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1444,7 +1489,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 35,
+      "internal_links_in": 36,
       "depth": 1
     },
     {
@@ -1453,7 +1498,7 @@
       "title": "Annual leave: long-weekend maximiser and | Dates &amp; Times",
       "h1": "Annual leave and entitlement",
       "meta_desc": "Turn a few annual leave days into long breaks by booking around the 2026 UK bank holidays, and work out your statutory holiday entitlement, with the gov.uk\u2026",
-      "word_count": 3287,
+      "word_count": 3307,
       "status": 200,
       "schemas": [
         "Person",
@@ -1464,8 +1509,8 @@
         "Article",
         "CollectionPage"
       ],
-      "internal_links_out": 19,
-      "external_links_out": 1,
+      "internal_links_out": 20,
+      "external_links_out": 0,
       "canonical": "https://datesandtimes.co.uk/leave/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1485,7 +1530,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 35,
+      "internal_links_in": 36,
       "depth": 1
     },
     {
@@ -1494,7 +1539,7 @@
       "title": "Irregular hours holiday accrual calculator: | Dates &amp; Times",
       "h1": "Irregular hours holiday accrual calculator",
       "meta_desc": "Work out paid holiday for irregular-hours and part-year workers at 12.07% of hours worked, in hours, days and rolled-up holiday pay. Follows the GOV.UK\u2026",
-      "word_count": 2619,
+      "word_count": 2639,
       "status": 200,
       "schemas": [
         "Person",
@@ -1506,8 +1551,8 @@
         "WebApplication",
         "BreadcrumbList"
       ],
-      "internal_links_out": 19,
-      "external_links_out": 0,
+      "internal_links_out": 20,
+      "external_links_out": -1,
       "canonical": "https://datesandtimes.co.uk/leave/irregular-hours-holiday-accrual/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1536,7 +1581,7 @@
       "title": "Accreditations and registrations",
       "h1": "Accreditations and registrations",
       "meta_desc": "The public registrations and identifiers for Best Business Loans Ltd, the company that operates Dates &amp; Times, each linked to its primary register.",
-      "word_count": 2474,
+      "word_count": 2494,
       "status": 200,
       "schemas": [
         "Person",
@@ -1549,8 +1594,8 @@
         "AboutPage",
         "BreadcrumbList"
       ],
-      "internal_links_out": 17,
-      "external_links_out": 6,
+      "internal_links_out": 18,
+      "external_links_out": 5,
       "canonical": "https://datesandtimes.co.uk/accreditations/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1570,7 +1615,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 36,
+      "internal_links_in": 37,
       "depth": 1
     }
   ],
@@ -1587,7 +1632,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/./",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -1762,6 +1807,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/./",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/./",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -1797,7 +1847,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/404/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -1942,6 +1992,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/404/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/404/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -1977,7 +2032,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/statistics/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -2132,6 +2187,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/statistics/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/statistics/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -2167,7 +2227,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/contact/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -2307,6 +2367,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/contact/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/contact/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -2342,7 +2407,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/tools/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -2542,6 +2607,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/tools/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/tools/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -2577,7 +2647,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/tools/time-zone-converter/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -2762,6 +2832,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/tools/time-zone-converter/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/tools/time-zone-converter/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -2797,7 +2872,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/tools/statutory-residence-day-counter/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -2982,6 +3057,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/tools/statutory-residence-day-counter/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/tools/statutory-residence-day-counter/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -3017,7 +3097,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/tools/sleep-calculator/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -3202,6 +3282,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/tools/sleep-calculator/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/tools/sleep-calculator/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -3237,7 +3322,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/tools/school-holiday-overlap/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -3422,6 +3507,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/tools/school-holiday-overlap/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/tools/school-holiday-overlap/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -3457,7 +3547,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/tools/moon-phase-calculator/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -3642,6 +3732,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/tools/moon-phase-calculator/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/tools/moon-phase-calculator/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -3677,7 +3772,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/tools/sunrise-sunset-calculator/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -3862,6 +3957,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/tools/sunrise-sunset-calculator/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/tools/sunrise-sunset-calculator/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -3897,7 +3997,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/tools/week-number-calculator/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -4082,6 +4182,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/tools/week-number-calculator/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/tools/week-number-calculator/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -4117,7 +4222,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/tools/shift-pattern-generator/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -4302,6 +4407,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/tools/shift-pattern-generator/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/tools/shift-pattern-generator/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -4337,7 +4447,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/calendar/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -4487,6 +4597,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/calendar/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/calendar/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -4522,7 +4637,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/calendar/tax-year-deadline-countdown/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -4682,6 +4797,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/calendar/tax-year-deadline-countdown/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/calendar/tax-year-deadline-countdown/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -4717,7 +4837,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/calendar/state-pension-age-calculator/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -4877,6 +4997,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/calendar/state-pension-age-calculator/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/calendar/state-pension-age-calculator/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -4912,7 +5037,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/privacy/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -5057,6 +5182,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/privacy/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/privacy/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -5092,7 +5222,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/authors/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -5227,6 +5357,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/authors/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/authors/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -5262,7 +5397,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/authors/oliver-mackman/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -5407,6 +5542,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/authors/oliver-mackman/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/authors/oliver-mackman/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -5442,7 +5582,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/site-index/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -5702,6 +5842,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/site-index/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/site-index/",
       "to": "https://datesandtimes.co.uk/",
       "type": "internal"
     },
@@ -5752,6 +5897,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/site-index/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/site-index/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -5787,7 +5937,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/terms/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -5937,6 +6087,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/terms/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/terms/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -5972,7 +6127,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/about/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -6107,6 +6262,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/about/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/about/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -6142,7 +6302,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/search/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -6397,6 +6557,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/search/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/search/",
       "to": "https://datesandtimes.co.uk/",
       "type": "internal"
     },
@@ -6447,6 +6612,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/search/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/search/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -6482,7 +6652,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/guides/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -6657,6 +6827,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/guides/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/guides/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -6692,7 +6867,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/guides/uk-holiday-entitlement-explained/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -6862,6 +7037,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/guides/uk-holiday-entitlement-explained/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/guides/uk-holiday-entitlement-explained/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -6897,7 +7077,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/guides/calculate-working-days-between-two-dates/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -7072,6 +7252,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/guides/calculate-working-days-between-two-dates/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/guides/calculate-working-days-between-two-dates/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -7107,7 +7292,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/guides/maximise-annual-leave-uk-bank-holidays/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -7277,6 +7462,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/guides/maximise-annual-leave-uk-bank-holidays/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/guides/maximise-annual-leave-uk-bank-holidays/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -7312,7 +7502,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/guides/when-are-the-2026-uk-bank-holidays/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -7482,6 +7672,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/guides/when-are-the-2026-uk-bank-holidays/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/guides/when-are-the-2026-uk-bank-holidays/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -7517,7 +7712,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/editorial-policy/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -7653,6 +7848,11 @@
     {
       "from": "https://datesandtimes.co.uk/editorial-policy/",
       "to": "https://datesandtimes.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/editorial-policy/",
+      "to": "https://datesandtimes.co.uk/trust/",
       "type": "internal"
     },
     {
@@ -7692,7 +7892,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/api/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -7852,6 +8052,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/api/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/api/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -7876,6 +8081,246 @@
       "type": "internal"
     },
     {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/calendar/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/leave/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/data/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/calendar/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/leave/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/data/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/authors/oliver-mackman/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/cookies/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/cookies/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/calendar/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/leave/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/data/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/cookies/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/site-index/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/accreditations",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/trust/",
+      "to": "https://datesandtimes.co.uk/cookies/",
+      "type": "internal"
+    },
+    {
       "from": "https://datesandtimes.co.uk/data/",
       "to": "https://datesandtimes.co.uk/favicon.svg",
       "type": "internal"
@@ -7887,7 +8332,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/data/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -8027,6 +8472,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/data/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/data/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -8062,7 +8512,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/data/when-clocks-change-uk/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -8212,6 +8662,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/data/when-clocks-change-uk/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/data/when-clocks-change-uk/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -8247,7 +8702,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/data/state-pension-age-timetable/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -8397,6 +8852,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/data/state-pension-age-timetable/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/data/state-pension-age-timetable/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -8432,7 +8892,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/data/uk-bank-holidays/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -8592,6 +9052,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/data/uk-bank-holidays/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/data/uk-bank-holidays/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -8627,7 +9092,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/cookies/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -8757,6 +9222,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/cookies/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/cookies/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -8792,7 +9262,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/leave/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -8937,6 +9407,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/leave/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/leave/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -8972,7 +9447,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/leave/irregular-hours-holiday-accrual/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -9127,6 +9602,11 @@
     },
     {
       "from": "https://datesandtimes.co.uk/leave/irregular-hours-holiday-accrual/",
+      "to": "https://datesandtimes.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/leave/irregular-hours-holiday-accrual/",
       "to": "https://datesandtimes.co.uk/cookies/",
       "type": "internal"
     },
@@ -9162,7 +9642,7 @@
     },
     {
       "from": "https://datesandtimes.co.uk/accreditations/",
-      "to": "https://datesandtimes.co.uk/_astro/404.D6Lq11Rz.css",
+      "to": "https://datesandtimes.co.uk/_astro/404.DJ5fySlu.css",
       "type": "internal"
     },
     {
@@ -9323,6 +9803,11 @@
     {
       "from": "https://datesandtimes.co.uk/accreditations/",
       "to": "https://datesandtimes.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://datesandtimes.co.uk/accreditations/",
+      "to": "https://datesandtimes.co.uk/trust/",
       "type": "internal"
     },
     {
@@ -9494,6 +9979,11 @@
       {
         "name": "api",
         "path": "/api/",
+        "children": []
+      },
+      {
+        "name": "trust",
+        "path": "/trust/",
         "children": []
       },
       {
@@ -9824,6 +10314,17 @@
       "signals": [
         "OG",
         "Schema:9",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/trust/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:7",
         "Author",
         "Substantive",
         "Breadcrumbs"
