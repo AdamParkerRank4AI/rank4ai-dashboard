@@ -1,20 +1,20 @@
 {
   "site_id": "homesandhedge",
   "domain": "homesandhedge.co.uk",
-  "crawled_at": "2026-07-07T11:31:29.628100+00:00",
+  "crawled_at": "2026-07-07T11:47:37.250652+00:00",
   "source": "fleet-source-reader",
-  "pages_crawled": 104,
+  "pages_crawled": 105,
   "total_issues": 0,
   "orphan_pages": 0,
-  "avg_depth": 1.7692307692307692,
-  "avg_word_count": 3205,
-  "pages_with_schema": 104,
+  "avg_depth": 1.7619047619047619,
+  "avg_word_count": 3221,
+  "pages_with_schema": 105,
   "pages_with_multimodal": 0,
   "pages_with_comparison_table": 8,
   "pages_with_video": 0,
-  "pages_over_2000_words": 104,
+  "pages_over_2000_words": 105,
   "images_missing_alt": 0,
-  "pages_with_date": 104,
+  "pages_with_date": 105,
   "crawler_access": {
     "GPTBot": true,
     "ClaudeBot": true,
@@ -100,6 +100,10 @@
       "hub": "/api/",
       "page_count": 1
     },
+    "trust": {
+      "hub": "/trust/",
+      "page_count": 1
+    },
     "accessibility": {
       "hub": "/accessibility/",
       "page_count": 1
@@ -121,7 +125,7 @@
       "page_count": 7
     }
   },
-  "topic_cluster_count": 24,
+  "topic_cluster_count": 25,
   "term_consistency": {
     "damp": 64,
     "identify": 50,
@@ -140,8 +144,8 @@
     "mould": 19
   },
   "content_freshness": {
-    "pages_with_dates": 104,
-    "fresh_30_days": 104,
+    "pages_with_dates": 105,
+    "fresh_30_days": 105,
     "fresh_90_days": 0,
     "stale": 0
   },
@@ -153,7 +157,7 @@
       "title": "UK Home and Garden Problems Statistics 2026",
       "h1": "UK Home and Garden Problems Statistics 2026",
       "meta_desc": "Key statistics on UK home and garden problems for 2026, each linked to its primary source. Updated June 2026.",
-      "word_count": 2786,
+      "word_count": 2806,
       "status": 200,
       "schemas": [
         "Person",
@@ -166,8 +170,8 @@
         "Person",
         "BreadcrumbList"
       ],
-      "internal_links_out": 32,
-      "external_links_out": 5,
+      "internal_links_out": 33,
+      "external_links_out": 4,
       "canonical": "https://homesandhedge.co.uk/statistics/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -187,7 +191,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 104,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -196,7 +200,7 @@
       "title": "How Many UK Homes Are at Flood Risk? (2024 Data)",
       "h1": "How many UK homes are at flood risk?",
       "meta_desc": "Around 6.3 million properties in England are in areas at risk of flooding, 4.6 million from surface water alone. Environment Agency figures, sourced.",
-      "word_count": 3695,
+      "word_count": 3715,
       "status": 200,
       "schemas": [
         "Person",
@@ -211,8 +215,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 34,
-      "external_links_out": -6,
+      "internal_links_out": 35,
+      "external_links_out": -7,
       "canonical": "https://homesandhedge.co.uk/statistics/uk-homes-at-flood-risk/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -241,7 +245,7 @@
       "title": "Identify and Compare: UK Home and Garden Lookalikes",
       "h1": "Identify and compare: is it this, or that?",
       "meta_desc": "Tell common UK home and garden problems apart: knotweed lookalikes, damp types, what is biting you and whether holes in wood are active woodworm.",
-      "word_count": 2610,
+      "word_count": 2630,
       "status": 200,
       "schemas": [
         "Person",
@@ -254,8 +258,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 33,
-      "external_links_out": -12,
+      "internal_links_out": 34,
+      "external_links_out": -13,
       "canonical": "https://homesandhedge.co.uk/identify/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -275,7 +279,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 104,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -284,7 +288,7 @@
       "title": "What Is Biting Me? UK Insect Bite Identifier",
       "h1": "What is biting me? A UK insect bite identifier",
       "meta_desc": "Work out what is biting you indoors in the UK, from bed bugs and fleas to mosquitoes and mites, by the bite pattern, timing and where it happens.",
-      "word_count": 3274,
+      "word_count": 3294,
       "status": 200,
       "schemas": [
         "Person",
@@ -297,8 +301,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 33,
-      "external_links_out": -10,
+      "internal_links_out": 34,
+      "external_links_out": -11,
       "canonical": "https://homesandhedge.co.uk/identify/whats-biting-me-uk-insect-bites/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -327,7 +331,7 @@
       "title": "Woodworm or Not? Holes in Wood Compared",
       "h1": "Woodworm or not? Holes in wood compared",
       "meta_desc": "Tell active woodworm from old dormant holes, nail and screw holes and mechanical damage, and learn the frass sign that shows an infestation is live.",
-      "word_count": 3148,
+      "word_count": 3168,
       "status": 200,
       "schemas": [
         "Person",
@@ -340,8 +344,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 32,
-      "external_links_out": -9,
+      "internal_links_out": 33,
+      "external_links_out": -10,
       "canonical": "https://homesandhedge.co.uk/identify/woodworm-or-not-holes-in-wood/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -370,7 +374,7 @@
       "title": "What Looks Like Japanese Knotweed? UK Lookalikes",
       "h1": "What looks like Japanese knotweed? A side-by-side guide",
       "meta_desc": "Tell Japanese knotweed apart from bindweed, dogwood, lilac and houttuynia using leaf shape, stems and growth, so you know whether to worry.",
-      "word_count": 3172,
+      "word_count": 3192,
       "status": 200,
       "schemas": [
         "Person",
@@ -383,8 +387,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 32,
-      "external_links_out": -9,
+      "internal_links_out": 33,
+      "external_links_out": -10,
       "canonical": "https://homesandhedge.co.uk/identify/what-looks-like-japanese-knotweed/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -413,7 +417,7 @@
       "title": "Rising Damp vs Condensation vs Penetrating Damp",
       "h1": "Rising damp, condensation or penetrating damp: how to tell",
       "meta_desc": "Tell rising damp, condensation and penetrating damp apart by where they appear, the pattern, the season and the signs, before paying for treatment.",
-      "word_count": 3045,
+      "word_count": 3065,
       "status": 200,
       "schemas": [
         "Person",
@@ -426,8 +430,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 34,
-      "external_links_out": -11,
+      "internal_links_out": 35,
+      "external_links_out": -12,
       "canonical": "https://homesandhedge.co.uk/identify/rising-damp-vs-condensation-penetrating-damp/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -456,7 +460,7 @@
       "title": "UK Home and Garden Cost Guides: Indicative Prices",
       "h1": "What should it cost? Indicative UK prices",
       "meta_desc": "Indicative UK costs for pest control, damp proofing, Japanese knotweed removal, drain unblocking, roof moss removal and tree surgery. Get a written quote.",
-      "word_count": 2610,
+      "word_count": 2630,
       "status": 200,
       "schemas": [
         "Person",
@@ -469,8 +473,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 36,
-      "external_links_out": -15,
+      "internal_links_out": 37,
+      "external_links_out": -16,
       "canonical": "https://homesandhedge.co.uk/costs/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -490,7 +494,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 104,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -499,7 +503,7 @@
       "title": "Roof Moss Removal Cost UK",
       "h1": "Roof moss removal cost UK",
       "meta_desc": "Indicative UK roof moss removal and roof cleaning costs, why scraping plus treatment varies, and why pressure washing tiles can do more harm than good.",
-      "word_count": 2876,
+      "word_count": 2896,
       "status": 200,
       "schemas": [
         "Person",
@@ -512,8 +516,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 32,
-      "external_links_out": -10,
+      "internal_links_out": 33,
+      "external_links_out": -11,
       "canonical": "https://homesandhedge.co.uk/costs/roof-moss-removal-cost/",
       "response_time_ms": 0,
       "image_count": 1,
@@ -542,7 +546,7 @@
       "title": "Damp Proofing Cost UK: What It Should Cost",
       "h1": "Damp proofing cost UK: what it should cost",
       "meta_desc": "Indicative UK damp proofing costs, what a damp proof course and replastering involve, and why an independent diagnosis comes before any quote.",
-      "word_count": 2919,
+      "word_count": 2939,
       "status": 200,
       "schemas": [
         "Person",
@@ -555,8 +559,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 33,
-      "external_links_out": -10,
+      "internal_links_out": 34,
+      "external_links_out": -11,
       "canonical": "https://homesandhedge.co.uk/costs/damp-proofing-cost/",
       "response_time_ms": 0,
       "image_count": 1,
@@ -585,7 +589,7 @@
       "title": "Japanese Knotweed Removal Cost UK",
       "h1": "Japanese knotweed removal cost UK",
       "meta_desc": "Indicative UK Japanese knotweed treatment and removal costs, why herbicide is cheaper than excavation, and what a management plan with a guarantee covers.",
-      "word_count": 2912,
+      "word_count": 2932,
       "status": 200,
       "schemas": [
         "Person",
@@ -598,8 +602,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 31,
-      "external_links_out": -8,
+      "internal_links_out": 32,
+      "external_links_out": -9,
       "canonical": "https://homesandhedge.co.uk/costs/japanese-knotweed-removal-cost/",
       "response_time_ms": 0,
       "image_count": 1,
@@ -628,7 +632,7 @@
       "title": "Tree Surgery Cost UK: Pruning to Felling",
       "h1": "Tree surgery cost UK: pruning to felling",
       "meta_desc": "Indicative UK tree surgeon costs for pruning, crown reduction, felling and stump removal, plus why a TPO or conservation area can stop the work.",
-      "word_count": 2913,
+      "word_count": 2933,
       "status": 200,
       "schemas": [
         "Person",
@@ -641,8 +645,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 32,
-      "external_links_out": -9,
+      "internal_links_out": 33,
+      "external_links_out": -10,
       "canonical": "https://homesandhedge.co.uk/costs/tree-surgery-cost/",
       "response_time_ms": 0,
       "image_count": 1,
@@ -671,7 +675,7 @@
       "title": "Pest Control Cost UK: What to Expect to Pay",
       "h1": "Pest control cost UK: what to expect to pay",
       "meta_desc": "Indicative UK pest control costs for wasps, mice, rats, bed bugs and more, what drives the price, and how to get an accurate written quote.",
-      "word_count": 2941,
+      "word_count": 2961,
       "status": 200,
       "schemas": [
         "Person",
@@ -684,8 +688,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 32,
-      "external_links_out": -9,
+      "internal_links_out": 33,
+      "external_links_out": -10,
       "canonical": "https://homesandhedge.co.uk/costs/pest-control-cost-uk/",
       "response_time_ms": 0,
       "image_count": 1,
@@ -714,7 +718,7 @@
       "title": "Drain Unblocking Cost UK: What to Expect",
       "h1": "Drain unblocking cost UK: what to expect",
       "meta_desc": "Indicative UK drain unblocking costs for rodding, jetting and a CCTV survey, what drives the price, and when your water company may do it free.",
-      "word_count": 2939,
+      "word_count": 2959,
       "status": 200,
       "schemas": [
         "Person",
@@ -727,8 +731,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 31,
-      "external_links_out": -8,
+      "internal_links_out": 32,
+      "external_links_out": -9,
       "canonical": "https://homesandhedge.co.uk/costs/drain-unblocking-cost/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -757,7 +761,7 @@
       "title": "Contact",
       "h1": "Contact",
       "meta_desc": "How to contact HomesAndHedge: editorial corrections, data protection, and the registered operator.",
-      "word_count": 2028,
+      "word_count": 2048,
       "status": 200,
       "schemas": [
         "Person",
@@ -768,8 +772,8 @@
         "Article",
         "ContactPage"
       ],
-      "internal_links_out": 29,
-      "external_links_out": -8,
+      "internal_links_out": 30,
+      "external_links_out": -9,
       "canonical": "https://homesandhedge.co.uk/contact/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -789,7 +793,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 104,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -798,7 +802,7 @@
       "title": "Free UK Home Problem Calculators and Tools",
       "h1": "Free calculators: what should this actually cost?",
       "meta_desc": "Free interactive calculators for UK home and garden problems. Instant results from published trade ranges, no forms, no email gates, sources shown.",
-      "word_count": 2871,
+      "word_count": 2891,
       "status": 200,
       "schemas": [
         "Person",
@@ -811,8 +815,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 41,
-      "external_links_out": -20,
+      "internal_links_out": 42,
+      "external_links_out": -21,
       "canonical": "https://homesandhedge.co.uk/tools/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -832,7 +836,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 104,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -841,7 +845,7 @@
       "title": "Rising Damp Checker UK: Do You Actually Have It?",
       "h1": "Do you actually have rising damp?",
       "meta_desc": "Free symptom checklist that tells you whether your damp is likely rising damp, condensation or penetrating damp, and what to do, before you pay for a damp\u2026",
-      "word_count": 3639,
+      "word_count": 3659,
       "status": 200,
       "schemas": [
         "Person",
@@ -856,8 +860,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 32,
-      "external_links_out": -7,
+      "internal_links_out": 33,
+      "external_links_out": -8,
       "canonical": "https://homesandhedge.co.uk/tools/rising-damp-checker/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -886,7 +890,7 @@
       "title": "Do You Legally Need a Professional or a Licence? UK Home",
       "h1": "Do you legally need a professional or a licence?",
       "meta_desc": "Free legal gate for UK home and garden jobs: bats, nesting birds, knotweed waste, protected trees, rodenticides. Find out when DIY is lawful and when you\u2026",
-      "word_count": 3096,
+      "word_count": 3116,
       "status": 200,
       "schemas": [
         "Person",
@@ -901,8 +905,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 31,
-      "external_links_out": -5,
+      "internal_links_out": 32,
+      "external_links_out": -6,
       "canonical": "https://homesandhedge.co.uk/tools/do-you-legally-need-a-professional/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -931,7 +935,7 @@
       "title": "Japanese Knotweed Removal Cost Estimator UK (Indicative)",
       "h1": "Japanese knotweed removal cost estimator",
       "meta_desc": "Estimate UK Japanese knotweed removal cost from published trade ranges: treatment method and stand size. Instant result, no form, no quote, sources shown.",
-      "word_count": 3451,
+      "word_count": 3471,
       "status": 200,
       "schemas": [
         "Person",
@@ -946,8 +950,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 32,
-      "external_links_out": -6,
+      "internal_links_out": 33,
+      "external_links_out": -7,
       "canonical": "https://homesandhedge.co.uk/tools/knotweed-removal-cost-estimator/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -976,7 +980,7 @@
       "title": "Drain Unblocking Cost Estimator UK (Indicative)",
       "h1": "Drain unblocking cost estimator",
       "meta_desc": "Estimate UK drain unblocking cost from published trade ranges by blockage location and method, and check when it is the water company s job, not yours. No\u2026",
-      "word_count": 3562,
+      "word_count": 3582,
       "status": 200,
       "schemas": [
         "Person",
@@ -991,8 +995,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 32,
-      "external_links_out": -7,
+      "internal_links_out": 33,
+      "external_links_out": -8,
       "canonical": "https://homesandhedge.co.uk/tools/drain-unblocking-cost-estimator/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1021,7 +1025,7 @@
       "title": "Pest Control Cost Estimator UK (Indicative)",
       "h1": "Pest control cost estimator",
       "meta_desc": "Estimate what UK pest control should cost from published trade ranges: pest type, property size and how widespread it is. Instant result, no form, no quote.",
-      "word_count": 3454,
+      "word_count": 3474,
       "status": 200,
       "schemas": [
         "Person",
@@ -1036,8 +1040,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 32,
-      "external_links_out": -6,
+      "internal_links_out": 33,
+      "external_links_out": -7,
       "canonical": "https://homesandhedge.co.uk/tools/pest-control-cost-estimator/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1066,7 +1070,7 @@
       "title": "Roof Moss Removal Cost Estimator UK (Indicative)",
       "h1": "Roof and gutter moss removal cost estimator",
       "meta_desc": "Estimate UK roof and gutter moss removal cost from published trade ranges by roof type, storeys and access. Instant result, no form, no quote, sources shown.",
-      "word_count": 3391,
+      "word_count": 3411,
       "status": 200,
       "schemas": [
         "Person",
@@ -1081,8 +1085,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 32,
-      "external_links_out": -8,
+      "internal_links_out": 33,
+      "external_links_out": -9,
       "canonical": "https://homesandhedge.co.uk/tools/moss-roof-clean-cost-estimator/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1111,7 +1115,7 @@
       "title": "Quote Sense-Check UK: Is Your Home Repair Quote Fair?",
       "h1": "Quote sense-check: is your quote fair?",
       "meta_desc": "Paste a quote total and job type to see where it sits against published UK trade benchmark ranges, plus the questions to ask before you pay. Free, no form,\u2026",
-      "word_count": 3643,
+      "word_count": 3663,
       "status": 200,
       "schemas": [
         "Person",
@@ -1126,8 +1130,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 31,
-      "external_links_out": -8,
+      "internal_links_out": 32,
+      "external_links_out": -9,
       "canonical": "https://homesandhedge.co.uk/tools/quote-sense-check/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1156,7 +1160,7 @@
       "title": "Is This Even Japanese Knotweed? Free ID Checker UK",
       "h1": "Is this even Japanese knotweed?",
       "meta_desc": "A free feature-by-feature checklist that tells you whether your plant is likely Japanese knotweed or a common lookalike, and the safe next step. Not a\u2026",
-      "word_count": 3531,
+      "word_count": 3551,
       "status": 200,
       "schemas": [
         "Person",
@@ -1171,8 +1175,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 32,
-      "external_links_out": -7,
+      "internal_links_out": 33,
+      "external_links_out": -8,
       "canonical": "https://homesandhedge.co.uk/tools/is-this-even-knotweed/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1201,7 +1205,7 @@
       "title": "Should You Even Treat This? Free DIY-or-Leave-It Triage",
       "h1": "Should you even treat this?",
       "meta_desc": "A free triage that scores risk, severity, height and legal exposure for a home or garden problem and tells you honestly whether to monitor it, do it\u2026",
-      "word_count": 3494,
+      "word_count": 3514,
       "status": 200,
       "schemas": [
         "Person",
@@ -1216,8 +1220,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 31,
-      "external_links_out": -9,
+      "internal_links_out": 32,
+      "external_links_out": -10,
       "canonical": "https://homesandhedge.co.uk/tools/should-you-even-treat-this/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1246,7 +1250,7 @@
       "title": "Tree Surgery Cost Estimator UK (Indicative)",
       "h1": "Tree surgery cost estimator",
       "meta_desc": "Estimate UK tree surgery cost from published trade ranges by work type, tree height and access, with a TPO and conservation-area check first. No form, no quote.",
-      "word_count": 3514,
+      "word_count": 3534,
       "status": 200,
       "schemas": [
         "Person",
@@ -1261,8 +1265,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 32,
-      "external_links_out": -7,
+      "internal_links_out": 33,
+      "external_links_out": -8,
       "canonical": "https://homesandhedge.co.uk/tools/tree-work-cost-estimator/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1291,7 +1295,7 @@
       "title": "Damp Treatment Cost Calculator UK (Indicative)",
       "h1": "Damp treatment cost calculator",
       "meta_desc": "Estimate what damp treatment should cost from published UK trade ranges: damp type, rooms affected and replastering. Instant result, no form, no quote.",
-      "word_count": 3324,
+      "word_count": 3344,
       "status": 200,
       "schemas": [
         "Person",
@@ -1306,8 +1310,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 32,
-      "external_links_out": -5,
+      "internal_links_out": 33,
+      "external_links_out": -6,
       "canonical": "https://homesandhedge.co.uk/tools/damp-treatment-cost-calculator/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1336,7 +1340,7 @@
       "title": "DIY or Professional? When to Call Someone In",
       "h1": "Do it yourself, or call someone in?",
       "meta_desc": "Decide whether to tackle a home or garden job yourself or call a professional, for pest control, damp and tree work, by risk, severity and the law.",
-      "word_count": 2596,
+      "word_count": 2616,
       "status": 200,
       "schemas": [
         "Person",
@@ -1349,8 +1353,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 32,
-      "external_links_out": -11,
+      "internal_links_out": 33,
+      "external_links_out": -12,
       "canonical": "https://homesandhedge.co.uk/decide/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1370,7 +1374,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 104,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -1379,7 +1383,7 @@
       "title": "When to Call a Tree Surgeon vs Prune Yourself",
       "h1": "When to call a tree surgeon (and when you can prune yourself)",
       "meta_desc": "When light pruning is a safe DIY job and when to call a qualified arborist, for large trees, work at height, diseased trees and protected trees.",
-      "word_count": 2921,
+      "word_count": 2941,
       "status": 200,
       "schemas": [
         "Person",
@@ -1392,8 +1396,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 32,
-      "external_links_out": -9,
+      "internal_links_out": 33,
+      "external_links_out": -10,
       "canonical": "https://homesandhedge.co.uk/decide/when-to-call-a-tree-surgeon/",
       "response_time_ms": 0,
       "image_count": 1,
@@ -1422,7 +1426,7 @@
       "title": "Can I Treat Damp Myself? When to Call a Specialist",
       "h1": "Can I treat damp myself, or do I need a specialist?",
       "meta_desc": "When you can fix damp yourself, such as condensation and mould, and when to get an independent specialist, for rising damp, rot and structural problems.",
-      "word_count": 2926,
+      "word_count": 2946,
       "status": 200,
       "schemas": [
         "Person",
@@ -1435,8 +1439,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 32,
-      "external_links_out": -9,
+      "internal_links_out": 33,
+      "external_links_out": -10,
       "canonical": "https://homesandhedge.co.uk/decide/can-i-treat-damp-myself/",
       "response_time_ms": 0,
       "image_count": 1,
@@ -1465,7 +1469,7 @@
       "title": "DIY or Professional Pest Control: When to Call",
       "h1": "DIY or professional pest control: when to call someone",
       "meta_desc": "When you can safely treat a pest yourself and when to call a professional, by pest, severity and risk, from ants and fruit flies to rats and bed bugs.",
-      "word_count": 3038,
+      "word_count": 3058,
       "status": 200,
       "schemas": [
         "Person",
@@ -1478,8 +1482,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 32,
-      "external_links_out": -10,
+      "internal_links_out": 33,
+      "external_links_out": -11,
       "canonical": "https://homesandhedge.co.uk/decide/diy-or-professional-pest-control/",
       "response_time_ms": 0,
       "image_count": 1,
@@ -1508,7 +1512,7 @@
       "title": "Drainage, Surfaces and Lawn Problems UK: Plain Guides",
       "h1": "Drainage, outdoor surfaces and lawn problems: what to do",
       "meta_desc": "Fix blocked drains, clogged gutters, mossy roofs and patios, a waterlogged garden and a damaged lawn, and know when to call a drainage or lawn specialist.",
-      "word_count": 2764,
+      "word_count": 2784,
       "status": 200,
       "schemas": [
         "Person",
@@ -1521,8 +1525,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 37,
-      "external_links_out": -16,
+      "internal_links_out": 38,
+      "external_links_out": -17,
       "canonical": "https://homesandhedge.co.uk/drainage/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1542,7 +1546,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 104,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -1551,7 +1555,7 @@
       "title": "Roof Moss UK: Should You Remove It and How?",
       "h1": "Roof moss: should you remove it and how is it done?",
       "meta_desc": "Understand why moss grows on a roof, whether it actually damages tiles, how moss is removed safely, and why pressure washing a roof is usually a bad idea.",
-      "word_count": 3418,
+      "word_count": 3438,
       "status": 200,
       "schemas": [
         "Person",
@@ -1566,8 +1570,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 36,
-      "external_links_out": -13,
+      "internal_links_out": 37,
+      "external_links_out": -14,
       "canonical": "https://homesandhedge.co.uk/drainage/roof-moss/",
       "response_time_ms": 0,
       "image_count": 1,
@@ -1596,7 +1600,7 @@
       "title": "Waterlogged Garden UK: Causes and Drainage Fixes",
       "h1": "Waterlogged garden: why it happens and how to fix drainage",
       "meta_desc": "Find out why your garden stays wet and waterlogged, how to improve heavy clay soil, and the drainage options from soakaways to French drains.",
-      "word_count": 3431,
+      "word_count": 3451,
       "status": 200,
       "schemas": [
         "Person",
@@ -1611,8 +1615,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 35,
-      "external_links_out": -12,
+      "internal_links_out": 36,
+      "external_links_out": -13,
       "canonical": "https://homesandhedge.co.uk/drainage/waterlogged-garden/",
       "response_time_ms": 0,
       "image_count": 1,
@@ -1641,7 +1645,7 @@
       "title": "Soakaway Problems UK: Signs It Has Failed and What to Do",
       "h1": "Soakaway problems: when a soakaway stops working",
       "meta_desc": "Learn what a soakaway does, the signs it has failed or silted up, why heavy clay soil defeats them, and how a failed soakaway is repaired or replaced.",
-      "word_count": 3399,
+      "word_count": 3419,
       "status": 200,
       "schemas": [
         "Person",
@@ -1656,8 +1660,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 35,
-      "external_links_out": -12,
+      "internal_links_out": 36,
+      "external_links_out": -13,
       "canonical": "https://homesandhedge.co.uk/drainage/soakaway-problems/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1686,7 +1690,7 @@
       "title": "Gutter Cleaning UK: Why It Matters and How to Do It Safely",
       "h1": "Gutter cleaning: why it matters and how to do it safely",
       "meta_desc": "Learn why blocked gutters cause damp and overflow, how to clean them safely, how often to do it, and when working at height means calling a professional.",
-      "word_count": 3400,
+      "word_count": 3420,
       "status": 200,
       "schemas": [
         "Person",
@@ -1701,8 +1705,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 35,
-      "external_links_out": -12,
+      "internal_links_out": 36,
+      "external_links_out": -13,
       "canonical": "https://homesandhedge.co.uk/drainage/gutter-cleaning/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1731,7 +1735,7 @@
       "title": "Lawn Moss UK: Why It Spreads and How to Get Rid of It",
       "h1": "Lawn moss: why it takes over and how to get rid of it",
       "meta_desc": "Find out why moss invades a lawn, how to kill and rake it out, and the longer-term fixes for shade, compaction and poor drainage per RHS guidance.",
-      "word_count": 3402,
+      "word_count": 3422,
       "status": 200,
       "schemas": [
         "Person",
@@ -1746,8 +1750,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 35,
-      "external_links_out": -12,
+      "internal_links_out": 36,
+      "external_links_out": -13,
       "canonical": "https://homesandhedge.co.uk/drainage/lawn-moss/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1776,7 +1780,7 @@
       "title": "Leatherjackets and Chafer Grubs UK: Lawn Damage Fixes",
       "h1": "Leatherjackets and chafer grubs: the lawn pests that cause bare patches",
       "meta_desc": "Identify leatherjackets and chafer grubs in your lawn, spot the bird and animal damage they cause, and learn the RHS control options including nematodes.",
-      "word_count": 3491,
+      "word_count": 3511,
       "status": 200,
       "schemas": [
         "Person",
@@ -1791,8 +1795,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 35,
-      "external_links_out": -12,
+      "internal_links_out": 36,
+      "external_links_out": -13,
       "canonical": "https://homesandhedge.co.uk/drainage/leatherjackets-and-chafer-grubs/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1821,7 +1825,7 @@
       "title": "Blocked Drains UK: How to Clear Them and Who Pays",
       "h1": "Blocked drains: how to clear them and who is responsible",
       "meta_desc": "Find the cause of a blocked drain, clear it safely yourself, learn who is responsible for the blockage, and know when to call a drainage specialist.",
-      "word_count": 3425,
+      "word_count": 3445,
       "status": 200,
       "schemas": [
         "Person",
@@ -1836,8 +1840,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 35,
-      "external_links_out": -12,
+      "internal_links_out": 36,
+      "external_links_out": -13,
       "canonical": "https://homesandhedge.co.uk/drainage/blocked-drains/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1866,7 +1870,7 @@
       "title": "Patio Cleaning UK: How to Clean Paving Without Damage",
       "h1": "Patio cleaning: how to clean a patio without wrecking it",
       "meta_desc": "Learn how to clean a patio of algae, moss and grime, when a pressure washer helps and when it harms the joints, and the safer methods for different paving.",
-      "word_count": 3415,
+      "word_count": 3435,
       "status": 200,
       "schemas": [
         "Person",
@@ -1881,8 +1885,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 35,
-      "external_links_out": -12,
+      "internal_links_out": 36,
+      "external_links_out": -13,
       "canonical": "https://homesandhedge.co.uk/drainage/patio-cleaning/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1911,7 +1915,7 @@
       "title": "Privacy policy",
       "h1": "Privacy policy",
       "meta_desc": "How HomesAndHedge handles data: who the operator is, the analytics we use, and your rights.",
-      "word_count": 2371,
+      "word_count": 2391,
       "status": 200,
       "schemas": [
         "Person",
@@ -1922,8 +1926,8 @@
         "Article",
         "WebPage"
       ],
-      "internal_links_out": 29,
-      "external_links_out": -7,
+      "internal_links_out": 30,
+      "external_links_out": -8,
       "canonical": "https://homesandhedge.co.uk/privacy/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1943,7 +1947,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 104,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -1952,7 +1956,7 @@
       "title": "Invasive Plants and Tree Disease UK: Identify and Act",
       "h1": "Invasive plants, weeds and tree disease: identify, judge, act",
       "meta_desc": "Identify invasive plants, problem weeds and tree disease in your garden, judge how serious each is, deal with what you safely can, and know who to call.",
-      "word_count": 2785,
+      "word_count": 2805,
       "status": 200,
       "schemas": [
         "Person",
@@ -1965,8 +1969,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 37,
-      "external_links_out": -16,
+      "internal_links_out": 38,
+      "external_links_out": -17,
       "canonical": "https://homesandhedge.co.uk/plants/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1986,7 +1990,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 104,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -1995,7 +1999,7 @@
       "title": "Giant Hogweed UK: Identify It Safely and Remove It",
       "h1": "Giant hogweed: identify it safely and get rid of it",
       "meta_desc": "Identify giant hogweed and avoid its skin-burning sap, tell it from cow parsley and common hogweed, and learn how to remove it and who to call.",
-      "word_count": 3626,
+      "word_count": 3646,
       "status": 200,
       "schemas": [
         "Person",
@@ -2010,8 +2014,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 37,
-      "external_links_out": -13,
+      "internal_links_out": 38,
+      "external_links_out": -14,
       "canonical": "https://homesandhedge.co.uk/plants/giant-hogweed/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2040,7 +2044,7 @@
       "title": "Ash Dieback UK: How to Tell and Whether to Fell",
       "h1": "Ash dieback: how to tell if your tree has it and what to do",
       "meta_desc": "Identify ash dieback by its leaf loss, dark lesions and crown thinning, understand the safety risk, and learn when a tree needs an arborist or felling.",
-      "word_count": 3622,
+      "word_count": 3642,
       "status": 200,
       "schemas": [
         "Person",
@@ -2055,8 +2059,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 37,
-      "external_links_out": -14,
+      "internal_links_out": 38,
+      "external_links_out": -15,
       "canonical": "https://homesandhedge.co.uk/plants/ash-dieback/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2085,7 +2089,7 @@
       "title": "Bamboo UK: Is It the Running Kind and How to Remove It",
       "h1": "Bamboo: is it the invasive running kind and how to remove it",
       "meta_desc": "Tell running bamboo from clumping bamboo, understand how running bamboo spreads into neighbouring gardens, and learn how to contain or remove it.",
-      "word_count": 3600,
+      "word_count": 3620,
       "status": 200,
       "schemas": [
         "Person",
@@ -2100,8 +2104,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 37,
-      "external_links_out": -15,
+      "internal_links_out": 38,
+      "external_links_out": -16,
       "canonical": "https://homesandhedge.co.uk/plants/bamboo/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2130,7 +2134,7 @@
       "title": "Japanese Knotweed UK: Identify It and the House Risk",
       "h1": "Japanese knotweed: identify it and what it means for your home",
       "meta_desc": "Identify Japanese knotweed by its bamboo-like stems and shield leaves, understand the law and the effect on mortgages, and learn who to call to treat it.",
-      "word_count": 3679,
+      "word_count": 3699,
       "status": 200,
       "schemas": [
         "Person",
@@ -2145,8 +2149,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 37,
-      "external_links_out": -13,
+      "internal_links_out": 38,
+      "external_links_out": -14,
       "canonical": "https://homesandhedge.co.uk/plants/japanese-knotweed/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2175,7 +2179,7 @@
       "title": "Bindweed UK: Why It Returns and How to Control It",
       "h1": "Bindweed: why it keeps coming back and how to control it",
       "meta_desc": "Identify hedge and field bindweed, understand why its deep roots make it so persistent, and control it with digging, training and careful treatment.",
-      "word_count": 3527,
+      "word_count": 3547,
       "status": 200,
       "schemas": [
         "Person",
@@ -2190,8 +2194,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 37,
-      "external_links_out": -15,
+      "internal_links_out": 38,
+      "external_links_out": -16,
       "canonical": "https://homesandhedge.co.uk/plants/bindweed/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2220,7 +2224,7 @@
       "title": "Leylandii UK: Too Tall? Your Rights and What to Do",
       "h1": "Leylandii: too tall? your options, rights and what it costs",
       "meta_desc": "Manage an overgrown leylandii hedge, understand the high hedges law and your rights with a neighbour, and weigh reduction against removal.",
-      "word_count": 3675,
+      "word_count": 3695,
       "status": 200,
       "schemas": [
         "Person",
@@ -2235,8 +2239,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 37,
-      "external_links_out": -14,
+      "internal_links_out": 38,
+      "external_links_out": -15,
       "canonical": "https://homesandhedge.co.uk/plants/leylandii/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2265,7 +2269,7 @@
       "title": "Honey Fungus UK: Confirm It and What It Kills",
       "h1": "Honey fungus: confirm it and what it means for your garden",
       "meta_desc": "Identify honey fungus by its white fungal sheets and black bootlaces, understand why it kills trees and shrubs, and learn how to limit its spread.",
-      "word_count": 3584,
+      "word_count": 3604,
       "status": 200,
       "schemas": [
         "Person",
@@ -2280,8 +2284,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 37,
-      "external_links_out": -15,
+      "internal_links_out": 38,
+      "external_links_out": -16,
       "canonical": "https://homesandhedge.co.uk/plants/honey-fungus/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2310,7 +2314,7 @@
       "title": "Himalayan Balsam UK: Identify It and How to Remove It",
       "h1": "Himalayan balsam: identify it and how to get rid of it",
       "meta_desc": "Identify Himalayan balsam by its pink helmet flowers and exploding seed pods, understand why it spreads so fast, and pull or cut it before it seeds.",
-      "word_count": 3586,
+      "word_count": 3606,
       "status": 200,
       "schemas": [
         "Person",
@@ -2325,8 +2329,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 37,
-      "external_links_out": -14,
+      "internal_links_out": 38,
+      "external_links_out": -15,
       "canonical": "https://homesandhedge.co.uk/plants/himalayan-balsam/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2355,7 +2359,7 @@
       "title": "Editorial team",
       "h1": "Editorial team",
       "meta_desc": "The named editorial team behind HomesAndHedge.",
-      "word_count": 2008,
+      "word_count": 2028,
       "status": 200,
       "schemas": [
         "Person",
@@ -2366,8 +2370,8 @@
         "Article",
         "CollectionPage"
       ],
-      "internal_links_out": 29,
-      "external_links_out": -8,
+      "internal_links_out": 30,
+      "external_links_out": -9,
       "canonical": "https://homesandhedge.co.uk/authors/",
       "response_time_ms": 0,
       "image_count": 1,
@@ -2387,7 +2391,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 104,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -2396,7 +2400,7 @@
       "title": "Adam Parker, Editor, HomesAndHedge",
       "h1": "Adam Parker",
       "meta_desc": "Adam Parker is the editor of HomesAndHedge, the UK home and garden problem-solver.",
-      "word_count": 2397,
+      "word_count": 2417,
       "status": 200,
       "schemas": [
         "Person",
@@ -2408,8 +2412,8 @@
         "Person",
         "ProfilePage"
       ],
-      "internal_links_out": 29,
-      "external_links_out": -6,
+      "internal_links_out": 30,
+      "external_links_out": -7,
       "canonical": "https://homesandhedge.co.uk/authors/adam-parker/",
       "response_time_ms": 0,
       "image_count": 1,
@@ -2429,7 +2433,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 104,
+      "internal_links_in": 105,
       "depth": 2
     },
     {
@@ -2438,7 +2442,7 @@
       "title": "Site index",
       "h1": "Site index",
       "meta_desc": "A complete index of every guide, calculator, cost guide and data page on HomesAndHedge: UK home and garden problems explained.",
-      "word_count": 3400,
+      "word_count": 3451,
       "status": 200,
       "schemas": [
         "Person",
@@ -2449,8 +2453,8 @@
         "Article",
         "CollectionPage"
       ],
-      "internal_links_out": 56,
-      "external_links_out": -35,
+      "internal_links_out": 57,
+      "external_links_out": -36,
       "canonical": "https://homesandhedge.co.uk/site-index/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2459,9 +2463,9 @@
       "has_multimodal": false,
       "has_comparison_table": false,
       "table_count": 0,
-      "list_count": 24,
+      "list_count": 25,
       "question_h2s": 0,
-      "h2_count": 22,
+      "h2_count": 23,
       "last_modified": "2026-06-16",
       "has_answer_capsule": true,
       "has_og_tags": true,
@@ -2470,7 +2474,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 104,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -2479,7 +2483,7 @@
       "title": "Terms of use",
       "h1": "Terms of use",
       "meta_desc": "The terms for using HomesAndHedge: information only, not professional advice, how advertising works, liability and governing law.",
-      "word_count": 2499,
+      "word_count": 2519,
       "status": 200,
       "schemas": [
         "Person",
@@ -2490,8 +2494,8 @@
         "Article",
         "WebPage"
       ],
-      "internal_links_out": 29,
-      "external_links_out": -8,
+      "internal_links_out": 30,
+      "external_links_out": -9,
       "canonical": "https://homesandhedge.co.uk/terms/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2511,7 +2515,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 104,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -2520,7 +2524,7 @@
       "title": "Household Pests UK: Identify, Treat and Who to Call",
       "h1": "Household pests: identify it, judge it, fix it, find who to call",
       "meta_desc": "Identify common UK household pests, judge how serious each is, fix what you safely can, and know when to call a professional. Plain guides, cited sources.",
-      "word_count": 2796,
+      "word_count": 2816,
       "status": 200,
       "schemas": [
         "Person",
@@ -2533,8 +2537,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 39,
-      "external_links_out": -18,
+      "internal_links_out": 40,
+      "external_links_out": -19,
       "canonical": "https://homesandhedge.co.uk/pests/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2554,7 +2558,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 104,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -2563,7 +2567,7 @@
       "title": "Fruit Flies UK: How to Get Rid of Them Fast",
       "h1": "Fruit flies: how to get rid of them in the kitchen",
       "meta_desc": "Identify fruit flies, find the rotting food or drain breeding them, clear the source, and use a simple trap to get rid of them quickly at home.",
-      "word_count": 3521,
+      "word_count": 3541,
       "status": 200,
       "schemas": [
         "Person",
@@ -2578,8 +2582,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 36,
-      "external_links_out": -14,
+      "internal_links_out": 37,
+      "external_links_out": -15,
       "canonical": "https://homesandhedge.co.uk/pests/fruit-flies/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2608,7 +2612,7 @@
       "title": "Silverfish: Why You Have Them and How to Get Rid",
       "h1": "Silverfish: why you have them and how to get rid of them",
       "meta_desc": "Identify silverfish, learn why they appear in UK bathrooms and kitchens, fix the damp that draws them, and know when they signal a bigger moisture problem.",
-      "word_count": 3412,
+      "word_count": 3432,
       "status": 200,
       "schemas": [
         "Person",
@@ -2623,8 +2627,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 36,
-      "external_links_out": -13,
+      "internal_links_out": 37,
+      "external_links_out": -14,
       "canonical": "https://homesandhedge.co.uk/pests/silverfish/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2653,7 +2657,7 @@
       "title": "Ants in the House UK: How to Get Rid of Them",
       "h1": "Ants in the house: how to get rid of them",
       "meta_desc": "Identify common UK house and garden ants, follow the trail to the nest, clear them with bait and good hygiene, and know when a professional is worth calling.",
-      "word_count": 3438,
+      "word_count": 3458,
       "status": 200,
       "schemas": [
         "Person",
@@ -2668,8 +2672,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 36,
-      "external_links_out": -14,
+      "internal_links_out": 37,
+      "external_links_out": -15,
       "canonical": "https://homesandhedge.co.uk/pests/ants/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2698,7 +2702,7 @@
       "title": "Woodworm UK: Signs, Treatment and Survey Costs",
       "h1": "Woodworm: signs, how serious it is and treatment",
       "meta_desc": "Identify woodworm by its exit holes and fresh frass, judge whether an infestation is active, and learn when a survey and professional treatment are needed.",
-      "word_count": 3461,
+      "word_count": 3481,
       "status": 200,
       "schemas": [
         "Person",
@@ -2713,8 +2717,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 38,
-      "external_links_out": -15,
+      "internal_links_out": 39,
+      "external_links_out": -16,
       "canonical": "https://homesandhedge.co.uk/pests/woodworm/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2743,7 +2747,7 @@
       "title": "Mice and Rats UK: Signs, Risks and How to Get Rid",
       "h1": "Mice and rats: signs, risks and how to get rid of them",
       "meta_desc": "Spot the signs of mice and rats, understand the health risks, take first steps to block and trap them, and know when a professional or council is needed.",
-      "word_count": 3580,
+      "word_count": 3600,
       "status": 200,
       "schemas": [
         "Person",
@@ -2758,8 +2762,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 36,
-      "external_links_out": -13,
+      "internal_links_out": 37,
+      "external_links_out": -14,
       "canonical": "https://homesandhedge.co.uk/pests/mice-and-rats/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2788,7 +2792,7 @@
       "title": "Wasp Nest UK: How Serious It Is and Safe Removal",
       "h1": "Wasp nest: how serious is it and how to remove it safely",
       "meta_desc": "Identify a wasp nest, judge the risk near your home, and understand why removing an active nest is usually a job for a professional pest controller.",
-      "word_count": 3546,
+      "word_count": 3566,
       "status": 200,
       "schemas": [
         "Person",
@@ -2803,8 +2807,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 36,
-      "external_links_out": -13,
+      "internal_links_out": 37,
+      "external_links_out": -14,
       "canonical": "https://homesandhedge.co.uk/pests/wasp-nest/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2833,7 +2837,7 @@
       "title": "Bed Bugs UK: How to Identify and Get Rid of Them",
       "h1": "Bed bugs: how to identify them and get rid of them",
       "meta_desc": "Spot the signs of bed bugs, tell their bites from other insects, take first steps yourself, and understand why this is usually a job for a professional.",
-      "word_count": 3487,
+      "word_count": 3507,
       "status": 200,
       "schemas": [
         "Person",
@@ -2848,8 +2852,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 36,
-      "external_links_out": -13,
+      "internal_links_out": 37,
+      "external_links_out": -14,
       "canonical": "https://homesandhedge.co.uk/pests/bed-bugs/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2878,7 +2882,7 @@
       "title": "Cockroaches UK: How to Identify and When to Call a Pro",
       "h1": "Cockroaches: how to identify them and when to call a pro",
       "meta_desc": "Identify German and Oriental cockroaches, understand the health risks, take first hygiene steps, and know why a cockroach infestation needs a professional.",
-      "word_count": 3393,
+      "word_count": 3413,
       "status": 200,
       "schemas": [
         "Person",
@@ -2893,8 +2897,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 36,
-      "external_links_out": -13,
+      "internal_links_out": 37,
+      "external_links_out": -14,
       "canonical": "https://homesandhedge.co.uk/pests/cockroaches/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2923,7 +2927,7 @@
       "title": "Carpet Beetle UK: Identify Larvae and Get Rid of Them",
       "h1": "Carpet beetle and its larvae: identify and get rid of them",
       "meta_desc": "Identify carpet beetles and their woolly bear larvae, tell the damage from clothes moths, and clear them from carpets, wardrobes and natural fabrics.",
-      "word_count": 3465,
+      "word_count": 3485,
       "status": 200,
       "schemas": [
         "Person",
@@ -2938,8 +2942,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 36,
-      "external_links_out": -14,
+      "internal_links_out": 37,
+      "external_links_out": -15,
       "canonical": "https://homesandhedge.co.uk/pests/carpet-beetle/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -2968,7 +2972,7 @@
       "title": "Clothes Moths UK: Protect Clothes and Carpets",
       "h1": "Clothes moths: protect your clothes and carpets",
       "meta_desc": "Identify clothes moths and the larvae that eat wool and silk, tell the damage from carpet beetles, and clear and protect your clothes and carpets.",
-      "word_count": 3445,
+      "word_count": 3465,
       "status": 200,
       "schemas": [
         "Person",
@@ -2983,8 +2987,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 36,
-      "external_links_out": -14,
+      "internal_links_out": 37,
+      "external_links_out": -15,
       "canonical": "https://homesandhedge.co.uk/pests/clothes-moths/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -3013,7 +3017,7 @@
       "title": "About HomesAndHedge",
       "h1": "About HomesAndHedge",
       "meta_desc": "HomesAndHedge is an independent UK home and garden information service, operated by Best Business Loans Ltd, with a named editor and cited sources.",
-      "word_count": 2170,
+      "word_count": 2190,
       "status": 200,
       "schemas": [
         "Person",
@@ -3024,8 +3028,8 @@
         "Article",
         "AboutPage"
       ],
-      "internal_links_out": 29,
-      "external_links_out": -8,
+      "internal_links_out": 30,
+      "external_links_out": -9,
       "canonical": "https://homesandhedge.co.uk/about/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -3045,7 +3049,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 104,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -3054,7 +3058,7 @@
       "title": "Wildlife Intruders UK: What to Do and What Is Legal",
       "h1": "Wildlife and animal intruders: what to do and what is legal",
       "meta_desc": "Deal with rats, mice, squirrels, moles, bats, pigeons and foxes in and around your home, the right way, and know which animals are legally protected.",
-      "word_count": 2826,
+      "word_count": 2846,
       "status": 200,
       "schemas": [
         "Person",
@@ -3067,8 +3071,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 36,
-      "external_links_out": -15,
+      "internal_links_out": 37,
+      "external_links_out": -16,
       "canonical": "https://homesandhedge.co.uk/wildlife/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -3088,7 +3092,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 104,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -3097,7 +3101,7 @@
       "title": "Squirrels in the Loft UK: What to Do and the Law",
       "h1": "Squirrels in the loft: what to do and the law you must know",
       "meta_desc": "Identify squirrels in your loft from the noise and damage, deal with them legally, and learn why it is illegal to release a trapped grey squirrel alive.",
-      "word_count": 3509,
+      "word_count": 3529,
       "status": 200,
       "schemas": [
         "Person",
@@ -3112,8 +3116,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 34,
-      "external_links_out": -11,
+      "internal_links_out": 35,
+      "external_links_out": -12,
       "canonical": "https://homesandhedge.co.uk/wildlife/squirrels-in-loft/",
       "response_time_ms": 0,
       "image_count": 1,
@@ -3142,7 +3146,7 @@
       "title": "Bats in the Loft UK: The Law and What You Must Do",
       "h1": "Bats in the loft: a protected species you must not disturb",
       "meta_desc": "Bats and their roosts are strictly protected by UK law. Learn how to identify a bat roost, why you must not disturb it, and who to call before doing any work.",
-      "word_count": 3586,
+      "word_count": 3606,
       "status": 200,
       "schemas": [
         "Person",
@@ -3157,8 +3161,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 34,
-      "external_links_out": -11,
+      "internal_links_out": 35,
+      "external_links_out": -12,
       "canonical": "https://homesandhedge.co.uk/wildlife/bats-in-loft/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -3187,7 +3191,7 @@
       "title": "UK Wildlife and Pest Law for Homeowners",
       "h1": "What is legal: UK wildlife and pest law for homeowners",
       "meta_desc": "A plain guide to what is legal when wildlife enters your home: bats and birds are protected, grey squirrels must not be released alive, and welfare rules apply.",
-      "word_count": 3649,
+      "word_count": 3669,
       "status": 200,
       "schemas": [
         "Person",
@@ -3200,8 +3204,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 36,
-      "external_links_out": -6,
+      "internal_links_out": 37,
+      "external_links_out": -7,
       "canonical": "https://homesandhedge.co.uk/wildlife/what-is-legal/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -3221,7 +3225,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 104,
+      "internal_links_in": 105,
       "depth": 2
     },
     {
@@ -3230,7 +3234,7 @@
       "title": "Rats UK: Signs, Risks and How to Get Rid of Them",
       "h1": "Rats in the house or garden: signs, risks and how to get rid of them",
       "meta_desc": "Identify rats in your home or garden, understand the health risk, deal with them safely, and know when to call your council or a BPCA pest controller.",
-      "word_count": 3438,
+      "word_count": 3458,
       "status": 200,
       "schemas": [
         "Person",
@@ -3245,8 +3249,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 34,
-      "external_links_out": -11,
+      "internal_links_out": 35,
+      "external_links_out": -12,
       "canonical": "https://homesandhedge.co.uk/wildlife/rats/",
       "response_time_ms": 0,
       "image_count": 1,
@@ -3275,7 +3279,7 @@
       "title": "Pigeons UK: Deterrents, Mess and the Law on Nests",
       "h1": "Pigeons on the house: deterrents, mess and the law on nests",
       "meta_desc": "Stop pigeons roosting and nesting on your home with spikes and netting, deal with the mess safely, and learn why you must not disturb active nests.",
-      "word_count": 3409,
+      "word_count": 3429,
       "status": 200,
       "schemas": [
         "Person",
@@ -3290,8 +3294,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 34,
-      "external_links_out": -11,
+      "internal_links_out": 35,
+      "external_links_out": -12,
       "canonical": "https://homesandhedge.co.uk/wildlife/pigeons/",
       "response_time_ms": 0,
       "image_count": 1,
@@ -3320,7 +3324,7 @@
       "title": "Moles in the Garden UK: Molehills and What to Do",
       "h1": "Moles in the garden: the molehills and what you can do",
       "meta_desc": "Identify mole activity from molehills and ridges, understand the limited damage they cause, and learn the deterrent, trapping and welfare rules in the UK.",
-      "word_count": 3358,
+      "word_count": 3378,
       "status": 200,
       "schemas": [
         "Person",
@@ -3335,8 +3339,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 34,
-      "external_links_out": -11,
+      "internal_links_out": 35,
+      "external_links_out": -12,
       "canonical": "https://homesandhedge.co.uk/wildlife/moles/",
       "response_time_ms": 0,
       "image_count": 1,
@@ -3365,7 +3369,7 @@
       "title": "Foxes in the Garden UK: Humane Deterrents and the Law",
       "h1": "Foxes in the garden: deterrents and the humane, legal approach",
       "meta_desc": "Deter foxes from your garden humanely with the methods that work, understand the limited harm they cause, and learn what you can and cannot legally do.",
-      "word_count": 3435,
+      "word_count": 3455,
       "status": 200,
       "schemas": [
         "Person",
@@ -3380,8 +3384,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 34,
-      "external_links_out": -11,
+      "internal_links_out": 35,
+      "external_links_out": -12,
       "canonical": "https://homesandhedge.co.uk/wildlife/foxes/",
       "response_time_ms": 0,
       "image_count": 1,
@@ -3410,7 +3414,7 @@
       "title": "Mice in the House UK: Signs and How to Get Rid of Them",
       "h1": "Mice in the house: signs and how to get rid of them",
       "meta_desc": "Identify a mouse problem from droppings, noises and gnawing, deal with it by proofing and trapping, and know when to call your council or a pest controller.",
-      "word_count": 3403,
+      "word_count": 3423,
       "status": 200,
       "schemas": [
         "Person",
@@ -3425,8 +3429,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 34,
-      "external_links_out": -11,
+      "internal_links_out": 35,
+      "external_links_out": -12,
       "canonical": "https://homesandhedge.co.uk/wildlife/mice/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -3455,7 +3459,7 @@
       "title": "Damp, Mould and Structural Problems UK: A Plain Guide",
       "h1": "Damp, mould and structural problems: identify it, judge it, act",
       "meta_desc": "Work out whether you have rising damp, condensation, mould, cracks or rot, how serious each is, what you can fix, and when to get an independent survey.",
-      "word_count": 2816,
+      "word_count": 2836,
       "status": 200,
       "schemas": [
         "Person",
@@ -3468,8 +3472,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 37,
-      "external_links_out": -16,
+      "internal_links_out": 38,
+      "external_links_out": -17,
       "canonical": "https://homesandhedge.co.uk/damp/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -3489,7 +3493,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 104,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -3498,7 +3502,7 @@
       "title": "Condensation in the Home UK: Causes and How to Stop It",
       "h1": "Condensation: why it happens and how to stop it",
       "meta_desc": "Understand why condensation forms on windows and walls, why it causes most household mould, and the ventilation and heating changes that actually stop it.",
-      "word_count": 3360,
+      "word_count": 3380,
       "status": 200,
       "schemas": [
         "Person",
@@ -3513,8 +3517,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 36,
-      "external_links_out": -13,
+      "internal_links_out": 37,
+      "external_links_out": -14,
       "canonical": "https://homesandhedge.co.uk/damp/condensation/",
       "response_time_ms": 0,
       "image_count": 1,
@@ -3543,7 +3547,7 @@
       "title": "Black Mould UK: Is It Dangerous and How to Remove It",
       "h1": "Black mould: how dangerous is it and how to get rid of it",
       "meta_desc": "Identify black mould, understand the real health risk per the NHS, remove it safely, and fix the condensation and damp that cause it to keep coming back.",
-      "word_count": 3580,
+      "word_count": 3600,
       "status": 200,
       "schemas": [
         "Person",
@@ -3558,8 +3562,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 36,
-      "external_links_out": -13,
+      "internal_links_out": 37,
+      "external_links_out": -14,
       "canonical": "https://homesandhedge.co.uk/damp/black-mould/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -3588,7 +3592,7 @@
       "title": "Efflorescence UK: White Bloom on Brick and Walls Explained",
       "h1": "Efflorescence: the white bloom on bricks and walls explained",
       "meta_desc": "Identify efflorescence, the harmless white salt bloom on new brick and damp walls, tell it from mould, and learn how to remove it and when it signals damp.",
-      "word_count": 3341,
+      "word_count": 3361,
       "status": 200,
       "schemas": [
         "Person",
@@ -3603,8 +3607,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 36,
-      "external_links_out": -13,
+      "internal_links_out": 37,
+      "external_links_out": -14,
       "canonical": "https://homesandhedge.co.uk/damp/efflorescence/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -3633,7 +3637,7 @@
       "title": "Cracks in Walls UK: Which Are Serious and Which Are Not",
       "h1": "Cracks in walls: which are cosmetic and which are serious?",
       "meta_desc": "Tell the difference between harmless hairline cracks and warning-sign structural cracks, what each width means, and when to call a structural engineer.",
-      "word_count": 3427,
+      "word_count": 3447,
       "status": 200,
       "schemas": [
         "Person",
@@ -3648,8 +3652,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 36,
-      "external_links_out": -13,
+      "internal_links_out": 37,
+      "external_links_out": -14,
       "canonical": "https://homesandhedge.co.uk/damp/cracks-in-walls/",
       "response_time_ms": 0,
       "image_count": 1,
@@ -3678,7 +3682,7 @@
       "title": "Rising Damp UK: Signs, Causes and the Honest Diagnosis",
       "h1": "Rising damp: is that really what you have?",
       "meta_desc": "Learn the real signs of rising damp, why it is often misdiagnosed as condensation, how a damp proof course works, and when to get an independent survey.",
-      "word_count": 3600,
+      "word_count": 3620,
       "status": 200,
       "schemas": [
         "Person",
@@ -3693,8 +3697,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 36,
-      "external_links_out": -13,
+      "internal_links_out": 37,
+      "external_links_out": -14,
       "canonical": "https://homesandhedge.co.uk/damp/rising-damp/",
       "response_time_ms": 0,
       "image_count": 1,
@@ -3723,7 +3727,7 @@
       "title": "Damp Proofing UK: Do You Actually Need It?",
       "h1": "Damp proofing: do you actually need it?",
       "meta_desc": "Understand what damp proofing is, when a new damp proof course is genuinely needed, why it is often oversold, and how to get an independent diagnosis first.",
-      "word_count": 3426,
+      "word_count": 3446,
       "status": 200,
       "schemas": [
         "Person",
@@ -3738,8 +3742,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 36,
-      "external_links_out": -13,
+      "internal_links_out": 37,
+      "external_links_out": -14,
       "canonical": "https://homesandhedge.co.uk/damp/damp-proofing/",
       "response_time_ms": 0,
       "image_count": 1,
@@ -3768,7 +3772,7 @@
       "title": "Subsidence UK: Signs, Causes and What to Do Next",
       "h1": "Subsidence: the signs, the causes and what to do",
       "meta_desc": "Learn the signs of subsidence, the common causes such as clay shrinkage and trees, how it differs from harmless settlement, and who to call to assess it.",
-      "word_count": 3407,
+      "word_count": 3427,
       "status": 200,
       "schemas": [
         "Person",
@@ -3783,8 +3787,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 36,
-      "external_links_out": -13,
+      "internal_links_out": 37,
+      "external_links_out": -14,
       "canonical": "https://homesandhedge.co.uk/damp/subsidence/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -3813,7 +3817,7 @@
       "title": "Dry Rot UK: How to Identify and Treat Timber Decay",
       "h1": "Dry rot: how to identify and treat the most serious timber decay",
       "meta_desc": "Identify dry rot and tell it from wet rot, understand why it spreads through dry masonry, and learn how it is treated and who to call to deal with it.",
-      "word_count": 3435,
+      "word_count": 3455,
       "status": 200,
       "schemas": [
         "Person",
@@ -3828,8 +3832,8 @@
         "Article",
         "HowTo"
       ],
-      "internal_links_out": 37,
-      "external_links_out": -14,
+      "internal_links_out": 38,
+      "external_links_out": -15,
       "canonical": "https://homesandhedge.co.uk/damp/dry-rot/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -3858,7 +3862,7 @@
       "title": "UK Home and Garden Guides: In-Depth Explainers",
       "h1": "In-depth home and garden guides",
       "meta_desc": "In-depth UK home and garden guides: identify Japanese knotweed, tell damp types apart, deal with loft rats lawfully, and damp and mould health risks.",
-      "word_count": 2334,
+      "word_count": 2354,
       "status": 200,
       "schemas": [
         "Person",
@@ -3870,8 +3874,8 @@
         "CollectionPage",
         "BreadcrumbList"
       ],
-      "internal_links_out": 33,
-      "external_links_out": -12,
+      "internal_links_out": 34,
+      "external_links_out": -13,
       "canonical": "https://homesandhedge.co.uk/guides/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -3891,7 +3895,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 104,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -3900,7 +3904,7 @@
       "title": "Rising Damp vs Condensation: Tell Them Apart",
       "h1": "Rising damp vs condensation: how to tell them apart",
       "meta_desc": "How to tell rising damp, condensation and penetrating damp apart before you pay for treatment. The tell-tale signs, why diagnosis matters, and who to ask.",
-      "word_count": 3500,
+      "word_count": 3520,
       "status": 200,
       "schemas": [
         "Person",
@@ -3913,8 +3917,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 40,
-      "external_links_out": -14,
+      "internal_links_out": 41,
+      "external_links_out": -15,
       "canonical": "https://homesandhedge.co.uk/guides/rising-damp-vs-condensation/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -3943,7 +3947,7 @@
       "title": "Damp and Mould: The Health Risks Explained",
       "h1": "Damp and mould: the health risks",
       "meta_desc": "What the NHS and gov.uk say about the health effects of damp and mould, who is most at risk, the warning signs, and how to deal with it safely.",
-      "word_count": 3696,
+      "word_count": 3716,
       "status": 200,
       "schemas": [
         "Person",
@@ -3956,8 +3960,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 35,
-      "external_links_out": -6,
+      "internal_links_out": 36,
+      "external_links_out": -7,
       "canonical": "https://homesandhedge.co.uk/guides/damp-and-mould-health-risks/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -3986,7 +3990,7 @@
       "title": "How to Identify Japanese Knotweed: A UK Guide",
       "h1": "How to identify Japanese knotweed",
       "meta_desc": "Identify Japanese knotweed by season: red-purple spring shoots, bamboo-like canes, zig-zag shield-shaped leaves, creamy late-summer flowers. Plus the\u2026",
-      "word_count": 3661,
+      "word_count": 3681,
       "status": 200,
       "schemas": [
         "Person",
@@ -3999,8 +4003,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 35,
-      "external_links_out": -4,
+      "internal_links_out": 36,
+      "external_links_out": -5,
       "canonical": "https://homesandhedge.co.uk/guides/how-to-identify-japanese-knotweed/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -4029,7 +4033,7 @@
       "title": "Dealing With Rats in the Loft Lawfully: UK Guide",
       "h1": "Dealing with rats in the loft lawfully",
       "meta_desc": "A safe, lawful way to deal with rats in the loft: proofing first, the rules on rodenticides and welfare, and when to call a professional pest controller.",
-      "word_count": 3858,
+      "word_count": 3878,
       "status": 200,
       "schemas": [
         "Person",
@@ -4042,8 +4046,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 36,
-      "external_links_out": -2,
+      "internal_links_out": 37,
+      "external_links_out": -3,
       "canonical": "https://homesandhedge.co.uk/guides/rats-in-the-loft-lawfully/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -4072,7 +4076,7 @@
       "title": "Editorial policy",
       "h1": "Editorial policy",
       "meta_desc": "How HomesAndHedge sources, fact-checks and edits its guides: named primary sources, a named editor, and clear corrections.",
-      "word_count": 2441,
+      "word_count": 2461,
       "status": 200,
       "schemas": [
         "Person",
@@ -4083,8 +4087,8 @@
         "Article",
         "WebPage"
       ],
-      "internal_links_out": 29,
-      "external_links_out": -8,
+      "internal_links_out": 30,
+      "external_links_out": -9,
       "canonical": "https://homesandhedge.co.uk/editorial-policy/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -4104,7 +4108,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 104,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -4113,7 +4117,7 @@
       "title": "HomesAndHedge Data API and MCP Server",
       "h1": "HomesAndHedge data API and MCP server",
       "meta_desc": "Read-only public JSON for UK home and garden problems and indicative costs. REST endpoints plus an MCP server for AI agents, CC BY 4.0.",
-      "word_count": 2977,
+      "word_count": 2997,
       "status": 200,
       "schemas": [
         "Person",
@@ -4127,8 +4131,8 @@
         "BreadcrumbList",
         "BreadcrumbList"
       ],
-      "internal_links_out": 32,
-      "external_links_out": -10,
+      "internal_links_out": 33,
+      "external_links_out": -11,
       "canonical": "https://homesandhedge.co.uk/api/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -4148,16 +4152,16 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 104,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
-      "url": "https://homesandhedge.co.uk/accessibility/",
-      "path": "/accessibility/",
-      "title": "Accessibility statement",
-      "h1": "Accessibility statement",
-      "meta_desc": "How HomesAndHedge is designed to be easy to read and use, including site search, the site index, plain English, and keyboard and screen-reader support.",
-      "word_count": 2294,
+      "url": "https://homesandhedge.co.uk/trust/",
+      "path": "/trust/",
+      "title": "Trust centre",
+      "h1": "Trust centre",
+      "meta_desc": "How HomesAndHedge uses AI, checks facts against named UK sources, corrects mistakes, handles complaints and protects your data. One place for our editorial,\u2026",
+      "word_count": 2760,
       "status": 200,
       "schemas": [
         "Person",
@@ -4169,7 +4173,48 @@
         "WebPage"
       ],
       "internal_links_out": 30,
-      "external_links_out": -9,
+      "external_links_out": -5,
+      "canonical": "https://homesandhedge.co.uk/trust/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 5,
+      "question_h2s": 0,
+      "h2_count": 8,
+      "last_modified": "2026-07-07",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 105,
+      "depth": 1
+    },
+    {
+      "url": "https://homesandhedge.co.uk/accessibility/",
+      "path": "/accessibility/",
+      "title": "Accessibility statement",
+      "h1": "Accessibility statement",
+      "meta_desc": "How HomesAndHedge is designed to be easy to read and use, including site search, the site index, plain English, and keyboard and screen-reader support.",
+      "word_count": 2314,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Organization",
+        "Article",
+        "WebPage"
+      ],
+      "internal_links_out": 31,
+      "external_links_out": -10,
       "canonical": "https://homesandhedge.co.uk/accessibility/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -4189,7 +4234,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 104,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -4198,7 +4243,7 @@
       "title": "UK Home and Garden Data: Sourced Indexes",
       "h1": "Sourced data: one place for the numbers",
       "meta_desc": "Sourced data assets from HomesAndHedge, including the UK Home Repair and Problem Cost Index. Every figure traces to a named public source.",
-      "word_count": 2397,
+      "word_count": 2417,
       "status": 200,
       "schemas": [
         "Person",
@@ -4211,8 +4256,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 30,
-      "external_links_out": -9,
+      "internal_links_out": 31,
+      "external_links_out": -10,
       "canonical": "https://homesandhedge.co.uk/data/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -4241,7 +4286,7 @@
       "title": "UK Home Repair and Problem Cost Index (2026)",
       "h1": "UK Home Repair and Problem Cost Index",
       "meta_desc": "A sourced index of indicative UK costs for pest control, damp proofing, Japanese knotweed removal, drain unblocking, roof moss removal and tree surgery.",
-      "word_count": 4381,
+      "word_count": 4401,
       "status": 200,
       "schemas": [
         "Person",
@@ -4256,8 +4301,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 36,
-      "external_links_out": 16,
+      "internal_links_out": 37,
+      "external_links_out": 15,
       "canonical": "https://homesandhedge.co.uk/data/uk-home-repair-cost-index/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -4286,7 +4331,7 @@
       "title": "Damp and mould in English homes: how common?",
       "h1": "How common is damp and mould in English homes?",
       "meta_desc": "How common is damp and mould in England: 1.3 million homes (5%) had a damp problem in 2023-24, the highest in five years, with private rented and council\u2026",
-      "word_count": 2450,
+      "word_count": 2470,
       "status": 200,
       "schemas": [
         "Person",
@@ -4297,8 +4342,8 @@
         "Article",
         "Dataset"
       ],
-      "internal_links_out": 30,
-      "external_links_out": -8,
+      "internal_links_out": 31,
+      "external_links_out": -9,
       "canonical": "https://homesandhedge.co.uk/data/damp-and-mould-prevalence/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -4327,7 +4372,7 @@
       "title": "Cookies",
       "h1": "Cookies",
       "meta_desc": "How HomesAndHedge uses cookies and how to control them.",
-      "word_count": 2053,
+      "word_count": 2073,
       "status": 200,
       "schemas": [
         "Person",
@@ -4338,8 +4383,8 @@
         "Article",
         "WebPage"
       ],
-      "internal_links_out": 29,
-      "external_links_out": -8,
+      "internal_links_out": 30,
+      "external_links_out": -9,
       "canonical": "https://homesandhedge.co.uk/cookies/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -4359,7 +4404,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 104,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -4368,7 +4413,7 @@
       "title": "Accreditations and registrations",
       "h1": "Accreditations and registrations",
       "meta_desc": "The public registrations and identifiers for Best Business Loans Ltd, the company that operates HomesAndHedge, each linked to its primary register.",
-      "word_count": 2537,
+      "word_count": 2557,
       "status": 200,
       "schemas": [
         "Person",
@@ -4381,8 +4426,8 @@
         "AboutPage",
         "BreadcrumbList"
       ],
-      "internal_links_out": 29,
-      "external_links_out": -4,
+      "internal_links_out": 30,
+      "external_links_out": -5,
       "canonical": "https://homesandhedge.co.uk/accreditations/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -4402,7 +4447,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 105,
+      "internal_links_in": 106,
       "depth": 1
     },
     {
@@ -4411,7 +4456,7 @@
       "title": "Renting and the Law: Tenant Questions Answered (UK)",
       "h1": "Renting and the law: your questions answered",
       "meta_desc": "Plain-English answers to common UK renting and housing-hazard questions: withholding rent, retaliatory eviction, Awaab\u2019s Law, proving damp, pest control and\u2026",
-      "word_count": 2394,
+      "word_count": 2414,
       "status": 200,
       "schemas": [
         "Person",
@@ -4423,8 +4468,8 @@
         "CollectionPage",
         "BreadcrumbList"
       ],
-      "internal_links_out": 35,
-      "external_links_out": -12,
+      "internal_links_out": 36,
+      "external_links_out": -13,
       "canonical": "https://homesandhedge.co.uk/questions/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -4444,7 +4489,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 104,
+      "internal_links_in": 105,
       "depth": 1
     },
     {
@@ -4453,7 +4498,7 @@
       "title": "Does Awaab&#39;s Law Cover Private Renters Yet? UK Guide (2026)",
       "h1": "Does Awaab's Law cover private renters yet?",
       "meta_desc": "Awaab",
-      "word_count": 3476,
+      "word_count": 3496,
       "status": 200,
       "schemas": [
         "Person",
@@ -4466,8 +4511,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 33,
-      "external_links_out": -4,
+      "internal_links_out": 34,
+      "external_links_out": -5,
       "canonical": "https://homesandhedge.co.uk/questions/does-awaabs-law-cover-private-renters/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -4496,7 +4541,7 @@
       "title": "Can I Be Evicted for Complaining About Disrepair? UK Guide",
       "h1": "Can I be evicted for complaining about disrepair?",
       "meta_desc": "Retaliatory or revenge eviction explained: the Deregulation Act 2015 protection, and how the Renters\u2019 Rights Act 2025 ending section 21 changes the picture.",
-      "word_count": 3469,
+      "word_count": 3489,
       "status": 200,
       "schemas": [
         "Person",
@@ -4509,8 +4554,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 33,
-      "external_links_out": -5,
+      "internal_links_out": 34,
+      "external_links_out": -6,
       "canonical": "https://homesandhedge.co.uk/questions/can-i-be-evicted-for-complaining-about-disrepair/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -4539,7 +4584,7 @@
       "title": "How Do I Prove Damp Is Structural, Not &#39;Lifestyle&#39;? UK Guide",
       "h1": "How do I prove damp is structural, not lifestyle?",
       "meta_desc": "How to gather evidence that damp is a building fault rather than condensation from how you live, so a landlord cannot dismiss it as a lifestyle problem.",
-      "word_count": 3492,
+      "word_count": 3512,
       "status": 200,
       "schemas": [
         "Person",
@@ -4552,8 +4597,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 33,
-      "external_links_out": -5,
+      "internal_links_out": 34,
+      "external_links_out": -6,
       "canonical": "https://homesandhedge.co.uk/questions/how-to-prove-damp-is-structural-not-lifestyle/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -4582,7 +4627,7 @@
       "title": "Who Pays for Pest Control, Landlord or Tenant? UK Guide",
       "h1": "Who pays for pest control, landlord or tenant?",
       "meta_desc": "Whether the landlord or tenant pays for pest control in a rented home in England depends on the cause and the tenancy. This guide explains the rules and the\u2026",
-      "word_count": 3456,
+      "word_count": 3476,
       "status": 200,
       "schemas": [
         "Person",
@@ -4595,8 +4640,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 33,
-      "external_links_out": -5,
+      "internal_links_out": 34,
+      "external_links_out": -6,
       "canonical": "https://homesandhedge.co.uk/questions/who-pays-for-pest-control-landlord-or-tenant/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -4625,7 +4670,7 @@
       "title": "Am I Entitled to Alternative Accommodation During Repairs?",
       "h1": "Am I entitled to alternative accommodation during major repairs?",
       "meta_desc": "Whether a tenant gets alternative accommodation during major repairs in England depends on the tenancy, the council and the courts. Section 11 alone does\u2026",
-      "word_count": 3460,
+      "word_count": 3480,
       "status": 200,
       "schemas": [
         "Person",
@@ -4638,8 +4683,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 33,
-      "external_links_out": -5,
+      "internal_links_out": 34,
+      "external_links_out": -6,
       "canonical": "https://homesandhedge.co.uk/questions/am-i-entitled-to-alternative-accommodation-during-repairs/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -4668,7 +4713,7 @@
       "title": "Can I Withhold Rent Because of Damp and Mould? UK Tenant",
       "h1": "Can I withhold rent because of damp and mould?",
       "meta_desc": "There is no automatic right to withhold rent for damp and mould in England. This guide explains the proper routes: reporting, repair and deduct, set-off and\u2026",
-      "word_count": 3528,
+      "word_count": 3548,
       "status": 200,
       "schemas": [
         "Person",
@@ -4681,8 +4726,8 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "internal_links_out": 33,
-      "external_links_out": -5,
+      "internal_links_out": 34,
+      "external_links_out": -6,
       "canonical": "https://homesandhedge.co.uk/questions/can-i-withhold-rent-for-damp-and-mould/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -4719,7 +4764,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/./",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -5064,6 +5109,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/./",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/./",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -5094,7 +5144,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/404/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -5354,6 +5404,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/404/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/404/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -5384,7 +5439,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/statistics/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -5674,6 +5729,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/statistics/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/statistics/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -5704,7 +5764,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/statistics/uk-homes-at-flood-risk/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -6004,6 +6064,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/statistics/uk-homes-at-flood-risk/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/statistics/uk-homes-at-flood-risk/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -6034,7 +6099,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/identify/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -6309,6 +6374,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/identify/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/identify/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -6339,7 +6409,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/identify/whats-biting-me-uk-insect-bites/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -6634,6 +6704,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/identify/whats-biting-me-uk-insect-bites/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/identify/whats-biting-me-uk-insect-bites/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -6664,7 +6739,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/identify/woodworm-or-not-holes-in-wood/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -6954,6 +7029,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/identify/woodworm-or-not-holes-in-wood/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/identify/woodworm-or-not-holes-in-wood/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -6984,7 +7064,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/identify/what-looks-like-japanese-knotweed/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -7279,6 +7359,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/identify/what-looks-like-japanese-knotweed/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/identify/what-looks-like-japanese-knotweed/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -7309,7 +7394,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/identify/rising-damp-vs-condensation-penetrating-damp/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -7609,6 +7694,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/identify/rising-damp-vs-condensation-penetrating-damp/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/identify/rising-damp-vs-condensation-penetrating-damp/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -7639,7 +7729,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/costs/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -7939,6 +8029,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/costs/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/costs/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -7969,7 +8064,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/costs/roof-moss-removal-cost/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -8254,6 +8349,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/costs/roof-moss-removal-cost/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/costs/roof-moss-removal-cost/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -8284,7 +8384,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/costs/damp-proofing-cost/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -8569,6 +8669,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/costs/damp-proofing-cost/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/costs/damp-proofing-cost/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -8599,7 +8704,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/costs/japanese-knotweed-removal-cost/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -8884,6 +8989,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/costs/japanese-knotweed-removal-cost/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/costs/japanese-knotweed-removal-cost/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -8914,7 +9024,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/costs/tree-surgery-cost/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -9199,6 +9309,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/costs/tree-surgery-cost/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/costs/tree-surgery-cost/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -9229,7 +9344,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/costs/pest-control-cost-uk/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -9514,6 +9629,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/costs/pest-control-cost-uk/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/costs/pest-control-cost-uk/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -9544,7 +9664,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/costs/drain-unblocking-cost/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -9829,6 +9949,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/costs/drain-unblocking-cost/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/costs/drain-unblocking-cost/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -9859,7 +9984,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/contact/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -10114,6 +10239,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/contact/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/contact/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -10144,7 +10274,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/tools/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -10474,6 +10604,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/tools/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/tools/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -10504,7 +10639,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/tools/rising-damp-checker/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -10784,6 +10919,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/tools/rising-damp-checker/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/tools/rising-damp-checker/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -10814,7 +10954,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/tools/do-you-legally-need-a-professional/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -11094,6 +11234,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/tools/do-you-legally-need-a-professional/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/tools/do-you-legally-need-a-professional/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -11124,7 +11269,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/tools/knotweed-removal-cost-estimator/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -11404,6 +11549,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/tools/knotweed-removal-cost-estimator/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/tools/knotweed-removal-cost-estimator/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -11434,7 +11584,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/tools/drain-unblocking-cost-estimator/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -11714,6 +11864,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/tools/drain-unblocking-cost-estimator/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/tools/drain-unblocking-cost-estimator/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -11744,7 +11899,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/tools/pest-control-cost-estimator/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -12024,6 +12179,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/tools/pest-control-cost-estimator/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/tools/pest-control-cost-estimator/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -12054,7 +12214,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/tools/moss-roof-clean-cost-estimator/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -12334,6 +12494,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/tools/moss-roof-clean-cost-estimator/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/tools/moss-roof-clean-cost-estimator/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -12364,7 +12529,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/tools/quote-sense-check/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -12644,6 +12809,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/tools/quote-sense-check/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/tools/quote-sense-check/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -12674,7 +12844,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/tools/is-this-even-knotweed/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -12954,6 +13124,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/tools/is-this-even-knotweed/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/tools/is-this-even-knotweed/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -12984,7 +13159,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/tools/should-you-even-treat-this/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -13264,6 +13439,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/tools/should-you-even-treat-this/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/tools/should-you-even-treat-this/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -13294,7 +13474,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/tools/tree-work-cost-estimator/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -13574,6 +13754,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/tools/tree-work-cost-estimator/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/tools/tree-work-cost-estimator/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -13604,7 +13789,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/tools/damp-treatment-cost-calculator/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -13884,6 +14069,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/tools/damp-treatment-cost-calculator/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/tools/damp-treatment-cost-calculator/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -13914,7 +14104,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/decide/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -14184,6 +14374,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/decide/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/decide/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -14214,7 +14409,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/decide/when-to-call-a-tree-surgeon/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -14499,6 +14694,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/decide/when-to-call-a-tree-surgeon/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/decide/when-to-call-a-tree-surgeon/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -14529,7 +14729,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/decide/can-i-treat-damp-myself/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -14814,6 +15014,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/decide/can-i-treat-damp-myself/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/decide/can-i-treat-damp-myself/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -14844,7 +15049,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/decide/diy-or-professional-pest-control/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -15129,6 +15334,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/decide/diy-or-professional-pest-control/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/decide/diy-or-professional-pest-control/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -15159,7 +15369,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/drainage/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -15454,6 +15664,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/drainage/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/drainage/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -15484,7 +15699,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/drainage/roof-moss/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -15784,6 +15999,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/drainage/roof-moss/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/drainage/roof-moss/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -15814,7 +16034,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/drainage/waterlogged-garden/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -16109,6 +16329,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/drainage/waterlogged-garden/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/drainage/waterlogged-garden/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -16139,7 +16364,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/drainage/soakaway-problems/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -16434,6 +16659,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/drainage/soakaway-problems/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/drainage/soakaway-problems/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -16464,7 +16694,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/drainage/gutter-cleaning/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -16759,6 +16989,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/drainage/gutter-cleaning/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/drainage/gutter-cleaning/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -16789,7 +17024,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/drainage/lawn-moss/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -17084,6 +17319,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/drainage/lawn-moss/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/drainage/lawn-moss/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -17114,7 +17354,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/drainage/leatherjackets-and-chafer-grubs/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -17409,6 +17649,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/drainage/leatherjackets-and-chafer-grubs/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/drainage/leatherjackets-and-chafer-grubs/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -17439,7 +17684,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/drainage/blocked-drains/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -17734,6 +17979,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/drainage/blocked-drains/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/drainage/blocked-drains/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -17764,7 +18014,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/drainage/patio-cleaning/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -18059,6 +18309,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/drainage/patio-cleaning/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/drainage/patio-cleaning/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -18089,7 +18344,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/privacy/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -18344,6 +18599,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/privacy/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/privacy/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -18374,7 +18634,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/plants/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -18669,6 +18929,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/plants/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/plants/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -18699,7 +18964,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/plants/giant-hogweed/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -19004,6 +19269,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/plants/giant-hogweed/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/plants/giant-hogweed/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -19034,7 +19304,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/plants/ash-dieback/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -19339,6 +19609,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/plants/ash-dieback/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/plants/ash-dieback/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -19369,7 +19644,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/plants/bamboo/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -19674,6 +19949,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/plants/bamboo/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/plants/bamboo/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -19704,7 +19984,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/plants/japanese-knotweed/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -20014,6 +20294,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/plants/japanese-knotweed/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/plants/japanese-knotweed/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -20044,7 +20329,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/plants/bindweed/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -20349,6 +20634,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/plants/bindweed/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/plants/bindweed/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -20379,7 +20669,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/plants/leylandii/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -20684,6 +20974,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/plants/leylandii/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/plants/leylandii/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -20714,7 +21009,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/plants/honey-fungus/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -21019,6 +21314,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/plants/honey-fungus/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/plants/honey-fungus/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -21049,7 +21349,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/plants/himalayan-balsam/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -21354,6 +21654,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/plants/himalayan-balsam/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/plants/himalayan-balsam/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -21384,7 +21689,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/authors/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -21634,6 +21939,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/authors/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/authors/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -21664,7 +21974,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/authors/adam-parker/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -21915,6 +22225,11 @@
     {
       "from": "https://homesandhedge.co.uk/authors/adam-parker/",
       "to": "https://homesandhedge.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/authors/adam-parker/",
+      "to": "https://homesandhedge.co.uk/trust/",
       "type": "internal"
     },
     {
@@ -21949,7 +22264,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/site-index/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -22319,6 +22634,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/site-index/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/site-index/",
       "to": "https://homesandhedge.co.uk/",
       "type": "internal"
     },
@@ -22429,6 +22749,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/site-index/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/site-index/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -22459,7 +22784,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/terms/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -22724,6 +23049,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/terms/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/terms/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -22754,7 +23084,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/pests/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -23059,6 +23389,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/pests/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/pests/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -23089,7 +23424,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/pests/fruit-flies/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -23389,6 +23724,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/pests/fruit-flies/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/pests/fruit-flies/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -23419,7 +23759,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/pests/silverfish/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -23719,6 +24059,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/pests/silverfish/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/pests/silverfish/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -23749,7 +24094,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/pests/ants/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -24049,6 +24394,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/pests/ants/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/pests/ants/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -24079,7 +24429,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/pests/woodworm/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -24389,6 +24739,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/pests/woodworm/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/pests/woodworm/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -24419,7 +24774,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/pests/mice-and-rats/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -24719,6 +25074,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/pests/mice-and-rats/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/pests/mice-and-rats/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -24749,7 +25109,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/pests/wasp-nest/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -25049,6 +25409,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/pests/wasp-nest/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/pests/wasp-nest/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -25079,7 +25444,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/pests/bed-bugs/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -25379,6 +25744,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/pests/bed-bugs/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/pests/bed-bugs/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -25409,7 +25779,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/pests/cockroaches/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -25709,6 +26079,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/pests/cockroaches/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/pests/cockroaches/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -25739,7 +26114,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/pests/carpet-beetle/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -26039,6 +26414,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/pests/carpet-beetle/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/pests/carpet-beetle/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -26069,7 +26449,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/pests/clothes-moths/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -26369,6 +26749,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/pests/clothes-moths/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/pests/clothes-moths/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -26399,7 +26784,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/about/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -26649,6 +27034,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/about/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/about/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -26679,7 +27069,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/search/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -27044,6 +27434,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/search/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/search/",
       "to": "https://homesandhedge.co.uk/",
       "type": "internal"
     },
@@ -27154,6 +27549,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/search/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/search/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -27184,7 +27584,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/wildlife/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -27479,6 +27879,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/wildlife/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/wildlife/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -27509,7 +27914,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/wildlife/squirrels-in-loft/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -27804,6 +28209,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/wildlife/squirrels-in-loft/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/wildlife/squirrels-in-loft/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -27834,7 +28244,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/wildlife/bats-in-loft/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -28129,6 +28539,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/wildlife/bats-in-loft/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/wildlife/bats-in-loft/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -28159,7 +28574,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/wildlife/what-is-legal/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -28494,6 +28909,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/wildlife/what-is-legal/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/wildlife/what-is-legal/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -28524,7 +28944,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/wildlife/rats/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -28819,6 +29239,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/wildlife/rats/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/wildlife/rats/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -28849,7 +29274,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/wildlife/pigeons/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -29144,6 +29569,11 @@
     },
     {
       "from": "https://homesandhedge.co.uk/wildlife/pigeons/",
+      "to": "https://homesandhedge.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://homesandhedge.co.uk/wildlife/pigeons/",
       "to": "https://homesandhedge.co.uk/terms/",
       "type": "internal"
     },
@@ -29174,7 +29604,7 @@
     },
     {
       "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
+      "to": "https://homesandhedge.co.uk/_astro/404.yNxVtuBF.css",
       "type": "internal"
     },
     {
@@ -29320,391 +29750,6 @@
     {
       "from": "https://homesandhedge.co.uk/wildlife/moles/",
       "to": "https://homesandhedge.co.uk/wildlife/what-is-legal/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/costs/pest-control-cost-uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/wildlife/bats-in-loft/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/wildlife/pigeons/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/wildlife/rats/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/wildlife/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/authors/adam-parker/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/pests/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/plants/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/damp/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/drainage/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/wildlife/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/wildlife/what-is-legal/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/identify/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/costs/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/guides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/questions/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/decide/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/statistics/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/api/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/site-index/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/accessibility/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/about/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/authors/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/authors/adam-parker/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/editorial-policy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/accreditations",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/privacy/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/terms/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/cookies/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/contact/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/moles/",
-      "to": "https://homesandhedge.co.uk/cookies/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/favicon.svg",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/favicon.ico",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/_astro/404.5WDGZ8_X.css",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/pests/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/plants/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/damp/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/drainage/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/wildlife/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/identify/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/costs/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/tools/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/guides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/about/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/pests/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/plants/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/damp/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/drainage/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/wildlife/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/identify/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/costs/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/tools/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/guides/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/questions/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/decide/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/statistics/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/about/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/authors/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/wildlife/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/wildlife/what-is-legal/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/costs/pest-control-cost-uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/wildlife/rats/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/wildlife/mice/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/wildlife/squirrels-in-loft/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/wildlife/moles/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/wildlife/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/authors/adam-parker/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/pests/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/plants/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/damp/",
-      "type": "internal"
-    },
-    {
-      "from": "https://homesandhedge.co.uk/wildlife/foxes/",
-      "to": "https://homesandhedge.co.uk/drainage/",
       "type": "internal"
     }
   ],
@@ -30179,6 +30224,11 @@
       {
         "name": "api",
         "path": "/api/",
+        "children": []
+      },
+      {
+        "name": "trust",
+        "path": "/trust/",
         "children": []
       },
       {
@@ -31240,6 +31290,17 @@
       "signals": [
         "OG",
         "Schema:10",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/trust/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:7",
         "Author",
         "Substantive",
         "Breadcrumbs"

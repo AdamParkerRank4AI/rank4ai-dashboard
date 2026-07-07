@@ -1,20 +1,20 @@
 {
   "site_id": "fitgauge",
   "domain": "fitcalcs.co.uk",
-  "crawled_at": "2026-07-07T11:31:33.021642+00:00",
+  "crawled_at": "2026-07-07T11:47:38.252055+00:00",
   "source": "fleet-source-reader",
-  "pages_crawled": 37,
+  "pages_crawled": 38,
   "total_issues": 0,
   "orphan_pages": 0,
-  "avg_depth": 1.5675675675675675,
-  "avg_word_count": 2511,
-  "pages_with_schema": 37,
+  "avg_depth": 1.5526315789473684,
+  "avg_word_count": 2535,
+  "pages_with_schema": 38,
   "pages_with_multimodal": 0,
   "pages_with_comparison_table": 4,
   "pages_with_video": 0,
-  "pages_over_2000_words": 35,
+  "pages_over_2000_words": 36,
   "images_missing_alt": 0,
-  "pages_with_date": 37,
+  "pages_with_date": 38,
   "crawler_access": {
     "GPTBot": true,
     "ClaudeBot": true,
@@ -76,6 +76,10 @@
       "hub": "/api/",
       "page_count": 1
     },
+    "trust": {
+      "hub": "/trust/",
+      "page_count": 1
+    },
     "data": {
       "hub": "/data/",
       "page_count": 2
@@ -89,9 +93,9 @@
       "page_count": 1
     }
   },
-  "topic_cluster_count": 16,
+  "topic_cluster_count": 17,
   "term_consistency": {
-    "fitcalcs": 44,
+    "fitcalcs": 45,
     "calculator": 37,
     "calories": 20,
     "weight": 19,
@@ -105,11 +109,11 @@
     "height": 8,
     "time": 7,
     "estimate": 7,
-    "intake": 6
+    "data": 7
   },
   "content_freshness": {
-    "pages_with_dates": 37,
-    "fresh_30_days": 37,
+    "pages_with_dates": 38,
+    "fresh_30_days": 38,
     "fresh_90_days": 0,
     "stale": 0
   },
@@ -121,7 +125,7 @@
       "title": "UK fitness, activity and body statistics 2026 | FitCalcs",
       "h1": "UK fitness, activity and body statistics",
       "meta_desc": "Headline UK statistics on physical activity, overweight and obesity, calorie intake and running, each cited to its primary source: the NHS Health Survey for\u2026",
-      "word_count": 2542,
+      "word_count": 2562,
       "status": 200,
       "schemas": [
         "Person",
@@ -132,8 +136,8 @@
         "Article",
         "Dataset"
       ],
-      "internal_links_out": 21,
-      "external_links_out": 2,
+      "internal_links_out": 22,
+      "external_links_out": 1,
       "canonical": "https://fitcalcs.co.uk/statistics/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -153,7 +157,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 37,
+      "internal_links_in": 38,
       "depth": 1
     },
     {
@@ -162,7 +166,7 @@
       "title": "Running pace and race time predictor (5K, 10K, | FitCalcs",
       "h1": "Running pace and race prediction",
       "meta_desc": "Predict your 5K, 10K, half marathon and marathon times from one recent result, with per-kilometre pace, using the Riegel endurance formula.",
-      "word_count": 2355,
+      "word_count": 2375,
       "status": 200,
       "schemas": [
         "Person",
@@ -173,8 +177,8 @@
         "Article",
         "CollectionPage"
       ],
-      "internal_links_out": 26,
-      "external_links_out": -7,
+      "internal_links_out": 27,
+      "external_links_out": -8,
       "canonical": "https://fitcalcs.co.uk/running/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -194,7 +198,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 37,
+      "internal_links_in": 38,
       "depth": 1
     },
     {
@@ -203,7 +207,7 @@
       "title": "Age grade calculator for runners: your race | FitCalcs",
       "h1": "Age grade calculator",
       "meta_desc": "Score your 5K, 10K, half or marathon time as an age grade, your performance against the world best for your age and sex, using fitted WMA age factors.",
-      "word_count": 2549,
+      "word_count": 2569,
       "status": 200,
       "schemas": [
         "Person",
@@ -213,8 +217,8 @@
         "Organization",
         "Article"
       ],
-      "internal_links_out": 25,
-      "external_links_out": -6,
+      "internal_links_out": 26,
+      "external_links_out": -7,
       "canonical": "https://fitcalcs.co.uk/running/age-grade-calculator/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -243,7 +247,7 @@
       "title": "Heart rate zones calculator (Karvonen method) | FitCalcs",
       "h1": "Heart rate zones calculator",
       "meta_desc": "Work out your five training heart-rate zones with the Karvonen method, which uses your resting pulse for a more personal result than a flat percentage of max.",
-      "word_count": 2486,
+      "word_count": 2506,
       "status": 200,
       "schemas": [
         "Person",
@@ -253,8 +257,8 @@
         "Organization",
         "Article"
       ],
-      "internal_links_out": 25,
-      "external_links_out": -6,
+      "internal_links_out": 26,
+      "external_links_out": -7,
       "canonical": "https://fitcalcs.co.uk/running/heart-rate-zones-calculator/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -283,7 +287,7 @@
       "title": "Steps to distance and calories calculator | FitCalcs",
       "h1": "Steps to distance and calories calculator",
       "meta_desc": "Convert your step count into distance in kilometres and miles and the calories you burned, using a stride estimated from your height and the MET method for\u2026",
-      "word_count": 2543,
+      "word_count": 2563,
       "status": 200,
       "schemas": [
         "Person",
@@ -293,8 +297,8 @@
         "Organization",
         "Article"
       ],
-      "internal_links_out": 26,
-      "external_links_out": -7,
+      "internal_links_out": 27,
+      "external_links_out": -8,
       "canonical": "https://fitcalcs.co.uk/running/steps-to-distance-calculator/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -323,7 +327,7 @@
       "title": "VO2 max calculator: Cooper run and Rockport walk | FitCalcs",
       "h1": "VO2 max calculator",
       "meta_desc": "Estimate your VO2 max, the standard measure of aerobic fitness, from the Cooper 12-minute run or the Rockport 1-mile walk test, with a fitness rating.",
-      "word_count": 2480,
+      "word_count": 2500,
       "status": 200,
       "schemas": [
         "Person",
@@ -333,8 +337,8 @@
         "Organization",
         "Article"
       ],
-      "internal_links_out": 25,
-      "external_links_out": -6,
+      "internal_links_out": 26,
+      "external_links_out": -7,
       "canonical": "https://fitcalcs.co.uk/running/vo2-max-calculator/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -363,7 +367,7 @@
       "title": "Couch to 5K progress and pace calculator | FitCalcs",
       "h1": "Couch to 5K progress calculator",
       "meta_desc": "See where you are in the nine-week Couch to 5K plan, the run and walk pattern for your week, and the pace you need for a goal 5K finish time.",
-      "word_count": 2576,
+      "word_count": 2596,
       "status": 200,
       "schemas": [
         "Person",
@@ -373,8 +377,8 @@
         "Organization",
         "Article"
       ],
-      "internal_links_out": 25,
-      "external_links_out": -6,
+      "internal_links_out": 26,
+      "external_links_out": -7,
       "canonical": "https://fitcalcs.co.uk/running/couch-to-5k-calculator/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -403,7 +407,7 @@
       "title": "Contact",
       "h1": "Contact",
       "meta_desc": "How to contact FitCalcs: editorial corrections, data protection, and the registered operator.",
-      "word_count": 1932,
+      "word_count": 1952,
       "status": 200,
       "schemas": [
         "Person",
@@ -414,8 +418,8 @@
         "Article",
         "ContactPage"
       ],
-      "internal_links_out": 21,
-      "external_links_out": -2,
+      "internal_links_out": 22,
+      "external_links_out": -3,
       "canonical": "https://fitcalcs.co.uk/contact/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -435,7 +439,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 37,
+      "internal_links_in": 38,
       "depth": 1
     },
     {
@@ -444,7 +448,7 @@
       "title": "All fitness calculators: calories, BMI, macros, | FitCalcs",
       "h1": "Fitness calculators",
       "meta_desc": "Every FitCalcs calculator in one place. Calorie and TDEE, BMI and waist-to-height, and a running race-time predictor, each showing the equation and UK data\u2026",
-      "word_count": 3039,
+      "word_count": 3059,
       "status": 200,
       "schemas": [
         "Person",
@@ -455,8 +459,8 @@
         "Article",
         "CollectionPage"
       ],
-      "internal_links_out": 36,
-      "external_links_out": -17,
+      "internal_links_out": 37,
+      "external_links_out": -18,
       "canonical": "https://fitcalcs.co.uk/tools/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -476,7 +480,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 37,
+      "internal_links_in": 38,
       "depth": 1
     },
     {
@@ -485,7 +489,7 @@
       "title": "One rep max calculator (Epley and Brzycki) with | FitCalcs",
       "h1": "One rep max calculator",
       "meta_desc": "Estimate your one-rep max from a weight and reps you can already lift, using the Epley and Brzycki formulas, with a percentage table to set your training loads.",
-      "word_count": 2441,
+      "word_count": 2461,
       "status": 200,
       "schemas": [
         "Person",
@@ -495,8 +499,8 @@
         "Organization",
         "Article"
       ],
-      "internal_links_out": 22,
-      "external_links_out": -3,
+      "internal_links_out": 23,
+      "external_links_out": -4,
       "canonical": "https://fitcalcs.co.uk/tools/one-rep-max-calculator/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -525,7 +529,7 @@
       "title": "Calories burned calculator: by activity, using | FitCalcs",
       "h1": "Calories burned calculator",
       "meta_desc": "Work out the calories you burn in any activity from your body weight and how long you did it, using MET values from the Compendium of Physical Activities.",
-      "word_count": 2476,
+      "word_count": 2496,
       "status": 200,
       "schemas": [
         "Person",
@@ -535,8 +539,8 @@
         "Organization",
         "Article"
       ],
-      "internal_links_out": 22,
-      "external_links_out": -3,
+      "internal_links_out": 23,
+      "external_links_out": -4,
       "canonical": "https://fitcalcs.co.uk/tools/calories-burned-calculator/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -565,7 +569,7 @@
       "title": "Privacy policy",
       "h1": "Privacy policy",
       "meta_desc": "How FitCalcs handles data: who the operator is, the analytics we use, and your rights.",
-      "word_count": 2312,
+      "word_count": 2332,
       "status": 200,
       "schemas": [
         "Person",
@@ -576,8 +580,8 @@
         "Article",
         "WebPage"
       ],
-      "internal_links_out": 20,
-      "external_links_out": 0,
+      "internal_links_out": 21,
+      "external_links_out": -1,
       "canonical": "https://fitcalcs.co.uk/privacy/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -597,7 +601,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 37,
+      "internal_links_in": 38,
       "depth": 1
     },
     {
@@ -606,7 +610,7 @@
       "title": "Editorial team",
       "h1": "Editorial team",
       "meta_desc": "The named editor behind FitCalcs. Every health figure is cited to a named UK source such as the NHS, Sport England or the NDNS, and tools are informational\u2026",
-      "word_count": 2012,
+      "word_count": 2032,
       "status": 200,
       "schemas": [
         "Person",
@@ -617,8 +621,8 @@
         "Article",
         "CollectionPage"
       ],
-      "internal_links_out": 21,
-      "external_links_out": -2,
+      "internal_links_out": 22,
+      "external_links_out": -3,
       "canonical": "https://fitcalcs.co.uk/authors/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -638,7 +642,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 37,
+      "internal_links_in": 38,
       "depth": 1
     },
     {
@@ -647,7 +651,7 @@
       "title": "Oliver Mackman, Editor, FitCalcs",
       "h1": "Oliver Mackman",
       "meta_desc": "Oliver Mackman is the named editor of FitCalcs, the UK fitness, body and diet calculator site, and a director of its operating company, accountable for the\u2026",
-      "word_count": 2454,
+      "word_count": 2474,
       "status": 200,
       "schemas": [
         "Person",
@@ -659,8 +663,8 @@
         "Person",
         "ProfilePage"
       ],
-      "internal_links_out": 20,
-      "external_links_out": 3,
+      "internal_links_out": 21,
+      "external_links_out": 2,
       "canonical": "https://fitcalcs.co.uk/authors/oliver-mackman/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -680,7 +684,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 32,
+      "internal_links_in": 33,
       "depth": 2
     },
     {
@@ -689,7 +693,7 @@
       "title": "Site index | FitCalcs",
       "h1": "Site index",
       "meta_desc": "A complete index of every calculator, guide and UK data page on FitCalcs, in one place.",
-      "word_count": 3253,
+      "word_count": 3300,
       "status": 200,
       "schemas": [
         "Person",
@@ -700,8 +704,8 @@
         "Article",
         "CollectionPage"
       ],
-      "internal_links_out": 43,
-      "external_links_out": -24,
+      "internal_links_out": 44,
+      "external_links_out": -25,
       "canonical": "https://fitcalcs.co.uk/site-index/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -710,9 +714,9 @@
       "has_multimodal": false,
       "has_comparison_table": false,
       "table_count": 0,
-      "list_count": 17,
+      "list_count": 18,
       "question_h2s": 0,
-      "h2_count": 15,
+      "h2_count": 16,
       "last_modified": "2026-06-19",
       "has_answer_capsule": true,
       "has_og_tags": true,
@@ -721,7 +725,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 37,
+      "internal_links_in": 38,
       "depth": 1
     },
     {
@@ -730,7 +734,7 @@
       "title": "Terms of use",
       "h1": "Terms of use",
       "meta_desc": "The terms for using FitCalcs: fitness and health calculators and information, not medical advice, plus how advertising and links work.",
-      "word_count": 2484,
+      "word_count": 2504,
       "status": 200,
       "schemas": [
         "Person",
@@ -741,8 +745,8 @@
         "Article",
         "WebPage"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -1,
+      "internal_links_out": 21,
+      "external_links_out": -2,
       "canonical": "https://fitcalcs.co.uk/terms/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -762,7 +766,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 1,
+      "internal_links_in": 2,
       "depth": 1
     },
     {
@@ -771,7 +775,7 @@
       "title": "About FitCalcs",
       "h1": "About FitCalcs",
       "meta_desc": "FitCalcs is an independent UK fitness, body and diet calculator site, operated by Best Business Loans Ltd, where every tool shows its working and cites the\u2026",
-      "word_count": 2221,
+      "word_count": 2241,
       "status": 200,
       "schemas": [
         "Person",
@@ -782,8 +786,8 @@
         "Article",
         "AboutPage"
       ],
-      "internal_links_out": 21,
-      "external_links_out": 1,
+      "internal_links_out": 22,
+      "external_links_out": 0,
       "canonical": "https://fitcalcs.co.uk/about/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -803,7 +807,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 37,
+      "internal_links_in": 38,
       "depth": 1
     },
     {
@@ -812,7 +816,7 @@
       "title": "Calories and diet: TDEE, deficit and BMI | FitCalcs",
       "h1": "Calories and diet",
       "meta_desc": "Work out your maintenance calories, a safe deficit and your BMI and waist-to-height ratio. The Mifflin-St Jeor equation and NHS categories, laid out in full.",
-      "word_count": 2699,
+      "word_count": 2719,
       "status": 200,
       "schemas": [
         "Person",
@@ -823,8 +827,8 @@
         "Article",
         "CollectionPage"
       ],
-      "internal_links_out": 29,
-      "external_links_out": -10,
+      "internal_links_out": 30,
+      "external_links_out": -11,
       "canonical": "https://fitcalcs.co.uk/diet/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -844,7 +848,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 37,
+      "internal_links_in": 38,
       "depth": 1
     },
     {
@@ -853,7 +857,7 @@
       "title": "Healthy weight calculator: your ideal weight | FitCalcs",
       "h1": "Healthy weight calculator",
       "meta_desc": "See your healthy weight range in kilograms for your height, from the NHS BMI band of 18.5 to 24.9, plus how far your current weight sits from it.",
-      "word_count": 2509,
+      "word_count": 2529,
       "status": 200,
       "schemas": [
         "Person",
@@ -863,8 +867,8 @@
         "Organization",
         "Article"
       ],
-      "internal_links_out": 28,
-      "external_links_out": -9,
+      "internal_links_out": 29,
+      "external_links_out": -10,
       "canonical": "https://fitcalcs.co.uk/diet/healthy-weight-calculator/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -893,7 +897,7 @@
       "title": "BMR calculator: basal metabolic rate (Mifflin-St | FitCalcs",
       "h1": "BMR calculator",
       "meta_desc": "Work out your basal metabolic rate, the calories you burn fully at rest, with the Mifflin-St Jeor equation, or the Cunningham equation if you know your\u2026",
-      "word_count": 2514,
+      "word_count": 2534,
       "status": 200,
       "schemas": [
         "Person",
@@ -903,8 +907,8 @@
         "Organization",
         "Article"
       ],
-      "internal_links_out": 27,
-      "external_links_out": -8,
+      "internal_links_out": 28,
+      "external_links_out": -9,
       "canonical": "https://fitcalcs.co.uk/diet/bmr-calculator/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -933,7 +937,7 @@
       "title": "Protein calculator: how much protein per day, by | FitCalcs",
       "h1": "Protein calculator",
       "meta_desc": "Work out your daily protein in grams, set per kilogram of body weight for your goal: general health, fat loss, muscle gain or endurance, using the ISSN ranges.",
-      "word_count": 2483,
+      "word_count": 2503,
       "status": 200,
       "schemas": [
         "Person",
@@ -943,8 +947,8 @@
         "Organization",
         "Article"
       ],
-      "internal_links_out": 27,
-      "external_links_out": -8,
+      "internal_links_out": 28,
+      "external_links_out": -9,
       "canonical": "https://fitcalcs.co.uk/diet/protein-calculator/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -973,7 +977,7 @@
       "title": "Macro calculator: protein, carbs and fat split | FitCalcs",
       "h1": "Macro calculator",
       "meta_desc": "Turn your daily calories into a protein, carbohydrate and fat split for your goal. Protein is set per kilogram of body weight first, the way the research\u2026",
-      "word_count": 2478,
+      "word_count": 2498,
       "status": 200,
       "schemas": [
         "Person",
@@ -983,8 +987,8 @@
         "Organization",
         "Article"
       ],
-      "internal_links_out": 27,
-      "external_links_out": -8,
+      "internal_links_out": 28,
+      "external_links_out": -9,
       "canonical": "https://fitcalcs.co.uk/diet/macro-calculator/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1013,7 +1017,7 @@
       "title": "Weight loss date calculator: when will I reach | FitCalcs",
       "h1": "Weight loss date calculator",
       "meta_desc": "Estimate the date you reach your target weight from your current weight and a daily calorie deficit, using 7,700 kcal per kilogram, capped at a safe rate.",
-      "word_count": 2551,
+      "word_count": 2571,
       "status": 200,
       "schemas": [
         "Person",
@@ -1023,8 +1027,8 @@
         "Organization",
         "Article"
       ],
-      "internal_links_out": 27,
-      "external_links_out": -8,
+      "internal_links_out": 28,
+      "external_links_out": -9,
       "canonical": "https://fitcalcs.co.uk/diet/weight-loss-date-calculator/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1053,7 +1057,7 @@
       "title": "Body fat calculator: US Navy tape-measure method | FitCalcs",
       "h1": "Body fat calculator",
       "meta_desc": "Estimate your body-fat percentage with the US Navy circumference method, using neck, waist and height (plus hip for women). Just a tape measure, no scales\u2026",
-      "word_count": 2458,
+      "word_count": 2478,
       "status": 200,
       "schemas": [
         "Person",
@@ -1063,8 +1067,8 @@
         "Organization",
         "Article"
       ],
-      "internal_links_out": 27,
-      "external_links_out": -8,
+      "internal_links_out": 28,
+      "external_links_out": -9,
       "canonical": "https://fitcalcs.co.uk/diet/body-fat-calculator/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1093,7 +1097,7 @@
       "title": "Alcohol units and calories calculator | FitCalcs",
       "h1": "Alcohol units and calories calculator",
       "meta_desc": "Work out the UK units and calories in your drinks from volume and strength, and see how it compares to the NHS 14-unit weekly low-risk guideline.",
-      "word_count": 2497,
+      "word_count": 2517,
       "status": 200,
       "schemas": [
         "Person",
@@ -1103,8 +1107,8 @@
         "Organization",
         "Article"
       ],
-      "internal_links_out": 27,
-      "external_links_out": -8,
+      "internal_links_out": 28,
+      "external_links_out": -9,
       "canonical": "https://fitcalcs.co.uk/diet/alcohol-calculator/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1133,7 +1137,7 @@
       "title": "Daily water intake calculator: how much water | FitCalcs",
       "h1": "Daily water intake calculator",
       "meta_desc": "Estimate how much water to drink a day from your body weight, exercise and the weather, with a baseline near the EFSA and NHS adequate-intake figures.",
-      "word_count": 2462,
+      "word_count": 2482,
       "status": 200,
       "schemas": [
         "Person",
@@ -1143,8 +1147,8 @@
         "Organization",
         "Article"
       ],
-      "internal_links_out": 27,
-      "external_links_out": -8,
+      "internal_links_out": 28,
+      "external_links_out": -9,
       "canonical": "https://fitcalcs.co.uk/diet/water-intake-calculator/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1173,7 +1177,7 @@
       "title": "Fitness guides: calories, BMI, race times and | FitCalcs",
       "h1": "Fitness guides",
       "meta_desc": "Plain-English UK fitness guides that explain the numbers and link to the calculator behind each one: how many calories to lose weight, BMI vs\u2026",
-      "word_count": 2175,
+      "word_count": 2195,
       "status": 200,
       "schemas": [
         "Person",
@@ -1184,8 +1188,8 @@
         "Article",
         "CollectionPage"
       ],
-      "internal_links_out": 25,
-      "external_links_out": -6,
+      "internal_links_out": 26,
+      "external_links_out": -7,
       "canonical": "https://fitcalcs.co.uk/guides/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1205,7 +1209,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 37,
+      "internal_links_in": 38,
       "depth": 1
     },
     {
@@ -1214,7 +1218,7 @@
       "title": "How to predict your race time | FitCalcs",
       "h1": "How to predict your race time",
       "meta_desc": "Use one recent race result to estimate your 5K, 10K, half marathon and marathon times with the Riegel formula. How it works, why longer distances are\u2026",
-      "word_count": 2526,
+      "word_count": 2546,
       "status": 200,
       "schemas": [
         "Person",
@@ -1226,8 +1230,8 @@
         "Article",
         "BreadcrumbList"
       ],
-      "internal_links_out": 24,
-      "external_links_out": -4,
+      "internal_links_out": 25,
+      "external_links_out": -5,
       "canonical": "https://fitcalcs.co.uk/guides/how-to-predict-your-race-time/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1256,7 +1260,7 @@
       "title": "How many calories should I eat to lose weight? | FitCalcs",
       "h1": "How many calories should I eat to lose weight?",
       "meta_desc": "Work out an honest calorie target to lose weight: estimate your TDEE, subtract a modest deficit of around 500 calories a day for about half a kilo a week,\u2026",
-      "word_count": 2652,
+      "word_count": 2672,
       "status": 200,
       "schemas": [
         "Person",
@@ -1268,8 +1272,8 @@
         "Article",
         "BreadcrumbList"
       ],
-      "internal_links_out": 24,
-      "external_links_out": -4,
+      "internal_links_out": 25,
+      "external_links_out": -5,
       "canonical": "https://fitcalcs.co.uk/guides/how-many-calories-to-lose-weight/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1298,7 +1302,7 @@
       "title": "How much protein do you really need? | FitCalcs",
       "h1": "How much protein do you really need?",
       "meta_desc": "The UK reference intake is 0.75 g of protein per kilogram of body weight a day, enough to avoid deficiency. Active people, older adults and anyone in a\u2026",
-      "word_count": 2608,
+      "word_count": 2628,
       "status": 200,
       "schemas": [
         "Person",
@@ -1310,8 +1314,8 @@
         "Article",
         "BreadcrumbList"
       ],
-      "internal_links_out": 24,
-      "external_links_out": -4,
+      "internal_links_out": 25,
+      "external_links_out": -5,
       "canonical": "https://fitcalcs.co.uk/guides/how-much-protein-do-you-need/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1340,7 +1344,7 @@
       "title": "BMI vs waist-to-height: which actually matters? | FitCalcs",
       "h1": "BMI vs waist-to-height: which actually matters?",
       "meta_desc": "BMI is a quick population screen but it cannot tell muscle from fat or say where you carry it. Waist-to-height ratio, the measure the NHS now prefers,\u2026",
-      "word_count": 2588,
+      "word_count": 2608,
       "status": 200,
       "schemas": [
         "Person",
@@ -1352,8 +1356,8 @@
         "Article",
         "BreadcrumbList"
       ],
-      "internal_links_out": 24,
-      "external_links_out": -4,
+      "internal_links_out": 25,
+      "external_links_out": -5,
       "canonical": "https://fitcalcs.co.uk/guides/bmi-vs-waist-to-height/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1382,7 +1386,7 @@
       "title": "Editorial policy",
       "h1": "Editorial policy",
       "meta_desc": "How FitCalcs sources, fact-checks and edits its calculators and data: named UK sources, the equation behind every number, a named editor, and clear corrections.",
-      "word_count": 2351,
+      "word_count": 2371,
       "status": 200,
       "schemas": [
         "Person",
@@ -1393,8 +1397,8 @@
         "Article",
         "WebPage"
       ],
-      "internal_links_out": 21,
-      "external_links_out": -2,
+      "internal_links_out": 22,
+      "external_links_out": -3,
       "canonical": "https://fitcalcs.co.uk/editorial-policy/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1414,7 +1418,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 37,
+      "internal_links_in": 38,
       "depth": 1
     },
     {
@@ -1423,7 +1427,7 @@
       "title": "FitCalcs Calculator API and MCP server: TDEE, BMI, race",
       "h1": "FitCalcs Calculator API",
       "meta_desc": "Read-only public API and MCP server for FitCalcs fitness calculators. REST endpoints for TDEE, BMI and race-time prediction, an OpenAPI 3.1 spec, and three\u2026",
-      "word_count": 2637,
+      "word_count": 2657,
       "status": 200,
       "schemas": [
         "Person",
@@ -1436,8 +1440,8 @@
         "Dataset",
         "BreadcrumbList"
       ],
-      "internal_links_out": 22,
-      "external_links_out": 3,
+      "internal_links_out": 23,
+      "external_links_out": 2,
       "canonical": "https://fitcalcs.co.uk/api/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1457,7 +1461,48 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 37,
+      "internal_links_in": 38,
+      "depth": 1
+    },
+    {
+      "url": "https://fitcalcs.co.uk/trust/",
+      "path": "/trust/",
+      "title": "Trust centre",
+      "h1": "Trust centre",
+      "meta_desc": "How FitCalcs uses AI, checks facts, corrects mistakes, handles complaints and protects your data. One place for our editorial, AI-use and data standards.",
+      "word_count": 2676,
+      "status": 200,
+      "schemas": [
+        "Person",
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Organization",
+        "Article",
+        "WebPage"
+      ],
+      "internal_links_out": 23,
+      "external_links_out": 1,
+      "canonical": "https://fitcalcs.co.uk/trust/",
+      "response_time_ms": 0,
+      "image_count": 0,
+      "images_with_alt": 0,
+      "video_count": 0,
+      "has_multimodal": false,
+      "has_comparison_table": false,
+      "table_count": 0,
+      "list_count": 5,
+      "question_h2s": 0,
+      "h2_count": 8,
+      "last_modified": "2026-07-07",
+      "has_answer_capsule": true,
+      "has_og_tags": true,
+      "has_author": true,
+      "has_definition": false,
+      "has_cta": true,
+      "has_breadcrumbs": true,
+      "has_viewport": true,
+      "internal_links_in": 38,
       "depth": 1
     },
     {
@@ -1466,7 +1511,7 @@
       "title": "How you compare to the UK: fitness, activity and | FitCalcs",
       "h1": "How you compare to the UK",
       "meta_desc": "See how your activity, calorie intake and body stats compare to the UK population, using the NHS Health Survey for England, Sport England Active Lives and\u2026",
-      "word_count": 2329,
+      "word_count": 2349,
       "status": 200,
       "schemas": [
         "Person",
@@ -1477,8 +1522,8 @@
         "Article",
         "Dataset"
       ],
-      "internal_links_out": 22,
-      "external_links_out": -3,
+      "internal_links_out": 23,
+      "external_links_out": -4,
       "canonical": "https://fitcalcs.co.uk/data/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1498,7 +1543,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 37,
+      "internal_links_in": 38,
       "depth": 1
     },
     {
@@ -1507,7 +1552,7 @@
       "title": "UK fitness and body benchmarks: real figures | FitCalcs",
       "h1": "UK fitness and body benchmarks",
       "meta_desc": "The real UK population figures for physical activity, overweight and obesity and diet, each with its sex or age breakdown, period, named primary source and\u2026",
-      "word_count": 3840,
+      "word_count": 3860,
       "status": 200,
       "schemas": [
         "Person",
@@ -1518,8 +1563,8 @@
         "Article",
         "Dataset"
       ],
-      "internal_links_out": 21,
-      "external_links_out": 12,
+      "internal_links_out": 22,
+      "external_links_out": 11,
       "canonical": "https://fitcalcs.co.uk/data/uk-fitness-benchmarks/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1548,7 +1593,7 @@
       "title": "Cookies",
       "h1": "Cookies",
       "meta_desc": "How FitCalcs uses cookies and how to control them.",
-      "word_count": 1960,
+      "word_count": 1980,
       "status": 200,
       "schemas": [
         "Person",
@@ -1559,8 +1604,8 @@
         "Article",
         "WebPage"
       ],
-      "internal_links_out": 20,
-      "external_links_out": -1,
+      "internal_links_out": 21,
+      "external_links_out": -2,
       "canonical": "https://fitcalcs.co.uk/cookies/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1580,7 +1625,7 @@
       "has_cta": true,
       "has_breadcrumbs": false,
       "has_viewport": true,
-      "internal_links_in": 37,
+      "internal_links_in": 38,
       "depth": 1
     },
     {
@@ -1589,7 +1634,7 @@
       "title": "Accreditations and registrations",
       "h1": "Accreditations and registrations",
       "meta_desc": "The public registrations and identifiers for Best Business Loans Ltd, the company that operates FitCalcs, each linked to its primary register.",
-      "word_count": 2441,
+      "word_count": 2461,
       "status": 200,
       "schemas": [
         "Person",
@@ -1602,8 +1647,8 @@
         "AboutPage",
         "BreadcrumbList"
       ],
-      "internal_links_out": 20,
-      "external_links_out": 3,
+      "internal_links_out": 21,
+      "external_links_out": 2,
       "canonical": "https://fitcalcs.co.uk/accreditations/",
       "response_time_ms": 0,
       "image_count": 0,
@@ -1623,7 +1668,7 @@
       "has_cta": true,
       "has_breadcrumbs": true,
       "has_viewport": true,
-      "internal_links_in": 38,
+      "internal_links_in": 39,
       "depth": 1
     }
   ],
@@ -1640,7 +1685,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/./",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -1875,6 +1920,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/./",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/./",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -1905,7 +1955,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/404/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -2080,6 +2130,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/404/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/404/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -2110,7 +2165,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/statistics/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -2285,6 +2340,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/statistics/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/statistics/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -2315,7 +2375,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/running/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -2505,6 +2565,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/running/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/running/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -2535,7 +2600,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/running/age-grade-calculator/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -2720,6 +2785,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/running/age-grade-calculator/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/running/age-grade-calculator/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -2750,7 +2820,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/running/heart-rate-zones-calculator/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -2935,6 +3005,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/running/heart-rate-zones-calculator/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/running/heart-rate-zones-calculator/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -2965,7 +3040,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/running/steps-to-distance-calculator/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -3155,6 +3230,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/running/steps-to-distance-calculator/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/running/steps-to-distance-calculator/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -3185,7 +3265,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/running/vo2-max-calculator/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -3370,6 +3450,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/running/vo2-max-calculator/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/running/vo2-max-calculator/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -3400,7 +3485,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/running/couch-to-5k-calculator/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -3585,6 +3670,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/running/couch-to-5k-calculator/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/running/couch-to-5k-calculator/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -3615,7 +3705,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/contact/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -3785,6 +3875,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/contact/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/contact/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -3815,7 +3910,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/tools/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -4065,6 +4160,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/tools/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/tools/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -4095,7 +4195,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/tools/one-rep-max-calculator/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -4265,6 +4365,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/tools/one-rep-max-calculator/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/tools/one-rep-max-calculator/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -4295,7 +4400,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/tools/calories-burned-calculator/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -4465,6 +4570,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/tools/calories-burned-calculator/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/tools/calories-burned-calculator/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -4495,7 +4605,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/privacy/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -4665,6 +4775,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/privacy/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/privacy/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -4695,7 +4810,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/authors/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -4860,6 +4975,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/authors/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/authors/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -4890,7 +5010,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/authors/oliver-mackman/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -5065,6 +5185,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/authors/oliver-mackman/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/authors/oliver-mackman/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -5095,7 +5220,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/site-index/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -5375,6 +5500,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/site-index/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/site-index/",
       "to": "https://fitcalcs.co.uk/",
       "type": "internal"
     },
@@ -5445,6 +5575,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/site-index/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/site-index/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -5475,7 +5610,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/terms/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -5655,6 +5790,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/terms/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/terms/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -5685,7 +5825,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/about/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -5850,6 +5990,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/about/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/about/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -5880,7 +6025,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/diet/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -6085,6 +6230,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/diet/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/diet/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -6115,7 +6265,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/diet/healthy-weight-calculator/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -6315,6 +6465,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/diet/healthy-weight-calculator/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/diet/healthy-weight-calculator/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -6345,7 +6500,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/diet/bmr-calculator/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -6540,6 +6695,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/diet/bmr-calculator/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/diet/bmr-calculator/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -6570,7 +6730,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/diet/protein-calculator/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -6765,6 +6925,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/diet/protein-calculator/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/diet/protein-calculator/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -6795,7 +6960,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/diet/macro-calculator/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -6990,6 +7155,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/diet/macro-calculator/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/diet/macro-calculator/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -7020,7 +7190,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/diet/weight-loss-date-calculator/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -7215,6 +7385,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/diet/weight-loss-date-calculator/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/diet/weight-loss-date-calculator/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -7245,7 +7420,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/diet/body-fat-calculator/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -7440,6 +7615,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/diet/body-fat-calculator/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/diet/body-fat-calculator/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -7470,7 +7650,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/diet/alcohol-calculator/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -7665,6 +7845,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/diet/alcohol-calculator/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/diet/alcohol-calculator/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -7695,7 +7880,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/diet/water-intake-calculator/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -7890,6 +8075,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/diet/water-intake-calculator/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/diet/water-intake-calculator/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -7920,7 +8110,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/search/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -8195,6 +8385,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/search/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/search/",
       "to": "https://fitcalcs.co.uk/",
       "type": "internal"
     },
@@ -8265,6 +8460,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/search/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/search/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -8295,7 +8495,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/guides/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -8480,6 +8680,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/guides/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/guides/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -8510,7 +8715,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/guides/how-to-predict-your-race-time/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -8715,6 +8920,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/guides/how-to-predict-your-race-time/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/guides/how-to-predict-your-race-time/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -8745,7 +8955,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/guides/how-many-calories-to-lose-weight/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -8950,6 +9160,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/guides/how-many-calories-to-lose-weight/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/guides/how-many-calories-to-lose-weight/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -8980,7 +9195,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/guides/how-much-protein-do-you-need/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -9180,6 +9395,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/guides/how-much-protein-do-you-need/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/guides/how-much-protein-do-you-need/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -9210,7 +9430,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/guides/bmi-vs-waist-to-height/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -9410,6 +9630,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/guides/bmi-vs-waist-to-height/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/guides/bmi-vs-waist-to-height/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -9440,7 +9665,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/editorial-policy/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -9606,6 +9831,11 @@
     {
       "from": "https://fitcalcs.co.uk/editorial-policy/",
       "to": "https://fitcalcs.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/editorial-policy/",
+      "to": "https://fitcalcs.co.uk/trust/",
       "type": "internal"
     },
     {
@@ -9640,7 +9870,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/api/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -9825,6 +10055,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/api/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/api/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -9844,6 +10079,266 @@
       "type": "internal"
     },
     {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/favicon.svg",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/favicon.ico",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/diet/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/running/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/diet/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/running/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/data/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/search/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/authors/oliver-mackman/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/cookies/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/cookies/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/terms/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/tools/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/guides/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/diet/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/running/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/statistics/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/data/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/api/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/about/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/authors/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/site-index/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/accreditations",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/cookies/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/contact/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/editorial-policy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/trust/",
+      "to": "https://fitcalcs.co.uk/cookies/",
+      "type": "internal"
+    },
+    {
       "from": "https://fitcalcs.co.uk/data/",
       "to": "https://fitcalcs.co.uk/favicon.svg",
       "type": "internal"
@@ -9855,7 +10350,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/data/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -10030,6 +10525,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/data/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/data/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -10060,7 +10560,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/data/uk-fitness-benchmarks/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -10230,6 +10730,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/data/uk-fitness-benchmarks/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/data/uk-fitness-benchmarks/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -10260,7 +10765,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/cookies/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -10420,6 +10925,11 @@
     },
     {
       "from": "https://fitcalcs.co.uk/cookies/",
+      "to": "https://fitcalcs.co.uk/trust/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/cookies/",
       "to": "https://fitcalcs.co.uk/cookies/",
       "type": "internal"
     },
@@ -10450,7 +10960,7 @@
     },
     {
       "from": "https://fitcalcs.co.uk/accreditations/",
-      "to": "https://fitcalcs.co.uk/_astro/404.DiaClEd3.css",
+      "to": "https://fitcalcs.co.uk/_astro/404.DzCXydBv.css",
       "type": "internal"
     },
     {
@@ -10641,6 +11151,11 @@
     {
       "from": "https://fitcalcs.co.uk/accreditations/",
       "to": "https://fitcalcs.co.uk/privacy/",
+      "type": "internal"
+    },
+    {
+      "from": "https://fitcalcs.co.uk/accreditations/",
+      "to": "https://fitcalcs.co.uk/trust/",
       "type": "internal"
     },
     {
@@ -10838,6 +11353,11 @@
       {
         "name": "api",
         "path": "/api/",
+        "children": []
+      },
+      {
+        "name": "trust",
+        "path": "/trust/",
         "children": []
       },
       {
@@ -11195,6 +11715,17 @@
       "signals": [
         "OG",
         "Schema:9",
+        "Author",
+        "Substantive",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "path": "/trust/",
+      "score": 5,
+      "signals": [
+        "OG",
+        "Schema:7",
         "Author",
         "Substantive",
         "Breadcrumbs"
