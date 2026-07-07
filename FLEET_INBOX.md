@@ -50,6 +50,37 @@ The shared queue between the dashboard and Claude Code sessions.
 
 ---
 
+## 2026-07-07 — Content-decay refresh queue (auto: content-decay-monitor.mjs)
+
+> Ranked by **decay score** (traffic-weight x market-normalised decay-rate x staleness). Data = `gsc_history.json`, **QUERY-level only** (no per-URL data in history), window 2026-05-24→2026-07-07, 27 snapshots. A flagged query = a page **losing clicks faster than its own site** and/or **sinking in ranking position** — refresh the page that ranks for it. Market-wide dips are normalised out. Score is relative, not an absolute; use it to prioritise, then verify the live page. Regenerate: `node ~/fleet-tools/content-decay-monitor.mjs`.
+
+**market-invoice** — site totals +21.08 clicks/wk, position -0.15/wk (now 146 clk @ pos 28.3)
+- `[ ]` **market invoice** _(clicks+position)_ — clicks 15→13 (peak 2026-07-02, lost 2), position best 8.9→now 15.8 (+1.48/wk), click trend +1.1/wk vs site median 0 [score 1.177]
+- `[ ]` **marketinvoice** _(clicks+position)_ — clicks 13→11 (peak 2026-07-02, lost 2), position best 6.1→now 14.2 (+1.25/wk), click trend +1.43/wk vs site median 0 [score 0.943]
+- `[ ]` **regency factors bury** _(position-slide)_ — clicks 1→1 (peak 2026-07-05), position best 4.7→now 6 (+4.55/wk), click trend 0/wk vs site median 0 [score 0.29]
+- `[ ]` **nhs supplier finance** _(position-slide)_ — clicks 1→1 (peak 2026-06-10), position best 13.3→now 21 (+2.52/wk), click trend 0/wk vs site median 0 [score 0.283]
+- `[ ]` **invoice finance calculator** _(position-slide)_ — clicks 1→1 (peak 2026-06-24), position best 63.8→now 68.6 (+2.34/wk), click trend 0/wk vs site median 0 [score 0.203]
+
+**resiliencebuilder** — site totals +0.57 clicks/wk, position +1.72/wk (now 60 clk @ pos 35.9)
+- `[ ]` **resilience coach certification** _(clicks+position)_ — clicks 2→1 (peak 2026-05-24, lost 1), position best 8.5→now 19.2 (+3.22/wk), click trend -0.3/wk vs site median 0 [score 0.894]
+- `[ ]` **the resilience coach** _(position-slide)_ — clicks 1→1 (peak 2026-06-10), position best 10→now 31 (+7.29/wk), click trend 0/wk vs site median 0 [score 0.789]
+- `[ ]` **resilience coaching** _(clicks+position)_ — clicks 2→1 (peak 2026-06-10, lost 1), position best 20.5→now 30.5 (+2.05/wk), click trend -0.14/wk vs site median 0 [score 0.602]
+- `[ ]` **resilience workshop** _(position-slide)_ — clicks 1→1 (peak 2026-06-10), position best 11.7→now 20.1 (+2.62/wk), click trend 0/wk vs site median 0 [score 0.294]
+- `[ ]` **resilience coaching certification** _(clicks+position)_ — clicks 2→1 (peak 2026-05-24, lost 1), position best 14→now 23.8 (+0.87/wk), click trend -0.08/wk vs site median 0 [score 0.28]
+
+**rank4ai** — site totals +10.47 clicks/wk, position -1.8/wk (now 131 clk @ pos 21.3)
+- `[ ]` **rank4ai** _(click-loss)_ — clicks 35→30 (peak 2026-05-24, lost 5), position best 1→now 1 (-0.07/wk), click trend -0.2/wk vs site median 0 [score 0.464]
+- `[ ]` **ai search agency birmingham** _(click-loss)_ — clicks 2→1 (peak 2026-06-14, lost 1), position best 3→now 3 (-0.12/wk), click trend -0.2/wk vs site median 0 [score 0.07]
+
+**cardmachines** — site totals +11.31 clicks/wk, position -0.58/wk (now 67 clk @ pos 46.8)
+- `[ ]` **card acquirers uk** _(position-slide)_ — clicks 1→1 (peak 2026-06-14), position best 19→now 30.5 (+4.25/wk), click trend 0/wk vs site median 0 [score 0.46]
+
+**peptideclear** — site totals +22.6 clicks/wk, position -0.93/wk (now 122 clk @ pos 32.7)
+- `[ ]` **anglo peptides reviews** _(position-slide)_ — clicks 2→2 (peak 2026-07-07), position best 10.6→now 10.6 (+0.86/wk), click trend +0.63/wk vs site median 0 [score 0.135]
+- `[ ]` **peptideclear** _(clicks+position)_ — clicks 4→3 (peak 2026-06-30, lost 1), position best 6.9→now 8.8 (+0.21/wk), click trend +0.35/wk vs site median 0 [score 0.085]
+
+_Limitation: query-level not URL-level (GSC page data absent from history); GSC returns only ~top-100 queries so deeper-tail decay is invisible; ~1mo irregular history so slopes are indicative. Do NOT wire a cron without Adam — schedule notes in the script header._
+
 ## 2026-06-18 — Fleet content + technical to-do (full doc: `~/control-panel/FLEET_CONTENT_TECH_TODO.md`)
 
 **Frame:** bottleneck is RANKING not the form (sites sit pos 30-60). **Bing = fast win** (ranks on on-page not backlinks; MI proves it converts — 7/12 MI leads are Bing; FundBiz/MHQ/BBL/Kartapay near-invisible on Bing = headroom). **Google = slow** (push striking-distance pos 6-30, consolidate thin pages, neutral data/citation assets for AIO). One on-page pass lifts Bing+Google+AI together.
