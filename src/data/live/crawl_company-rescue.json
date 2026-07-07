@@ -1,13 +1,13 @@
 {
   "site_id": "company-rescue",
   "domain": "ltdturnaround.co.uk",
-  "crawled_at": "2026-07-07T13:25:51.866518+00:00",
+  "crawled_at": "2026-07-07T13:42:14.672038+00:00",
   "source": "fleet-source-reader",
   "pages_crawled": 99,
   "total_issues": 0,
   "orphan_pages": 0,
   "avg_depth": 1.3838383838383839,
-  "avg_word_count": 2501,
+  "avg_word_count": 2522,
   "pages_with_schema": 99,
   "pages_with_multimodal": 0,
   "pages_with_comparison_table": 17,
@@ -1372,7 +1372,7 @@
       "title": "Members Voluntary Liquidation (MVL) Explained",
       "h1": "Members Voluntary Liquidation (MVL)",
       "meta_desc": "An MVL is the tax-efficient way to close a solvent company with retained profit. How it works and when it fits.",
-      "word_count": 2667,
+      "word_count": 3034,
       "status": 200,
       "schemas": [
         "Organization",
@@ -1456,7 +1456,7 @@
       "title": "Company Strike Off: When You Can and Cannot",
       "h1": "Company strike off (dissolution)",
       "meta_desc": "Striking a company off the register costs little but is only for solvent, dormant companies. The traps explained.",
-      "word_count": 2762,
+      "word_count": 3026,
       "status": 200,
       "schemas": [
         "Organization",
@@ -1948,7 +1948,7 @@
       "title": "Creditors Voluntary Liquidation (CVL) Explained",
       "h1": "Creditors Voluntary Liquidation (CVL)",
       "meta_desc": "A CVL is the director-led way to close an insolvent company. How it works, what it costs and what it means for you.",
-      "word_count": 2872,
+      "word_count": 3219,
       "status": 200,
       "schemas": [
         "Organization",
@@ -2320,7 +2320,7 @@
       "title": "Pre-Pack Administration Explained",
       "h1": "Pre-pack administration",
       "meta_desc": "A pre-pack sells a viable business the moment it enters administration. How it works and the rules around it.",
-      "word_count": 2623,
+      "word_count": 2998,
       "status": 200,
       "schemas": [
         "Organization",
@@ -3070,7 +3070,7 @@
       "title": "Compulsory Liquidation: Court Winding-Up Explained",
       "h1": "Compulsory liquidation",
       "meta_desc": "When a court forces a company to close after a winding-up petition. What it means and how to respond in time.",
-      "word_count": 2943,
+      "word_count": 3286,
       "status": 200,
       "schemas": [
         "Organization",
@@ -3277,7 +3277,7 @@
       "title": "Wrongful Trading: When Directors Become Liable",
       "h1": "Wrongful trading and director liability",
       "meta_desc": "Continuing to trade when you should have stopped can make a director personally liable. The red flags.",
-      "word_count": 2773,
+      "word_count": 3168,
       "status": 200,
       "schemas": [
         "Organization",
@@ -10752,6 +10752,11 @@
     },
     {
       "from": "https://ltdturnaround.co.uk/members-voluntary-liquidation/",
+      "to": "https://ltdturnaround.co.uk/company-strike-off/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ltdturnaround.co.uk/members-voluntary-liquidation/",
       "to": "https://ltdturnaround.co.uk/company-closure/",
       "type": "internal"
     },
@@ -14387,6 +14392,11 @@
     },
     {
       "from": "https://ltdturnaround.co.uk/creditors-voluntary-liquidation/",
+      "to": "https://ltdturnaround.co.uk/compulsory-liquidation/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ltdturnaround.co.uk/creditors-voluntary-liquidation/",
       "to": "https://ltdturnaround.co.uk/company-liquidation/",
       "type": "internal"
     },
@@ -20708,6 +20718,11 @@
     {
       "from": "https://ltdturnaround.co.uk/compulsory-liquidation/",
       "to": "https://ltdturnaround.co.uk/company-administration/",
+      "type": "internal"
+    },
+    {
+      "from": "https://ltdturnaround.co.uk/compulsory-liquidation/",
+      "to": "https://ltdturnaround.co.uk/creditors-voluntary-liquidation/",
       "type": "internal"
     },
     {
