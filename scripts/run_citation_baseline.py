@@ -292,7 +292,7 @@ def main():
     else:
         existing = {}
 
-    for client_id in ["rank4ai", "market-invoice", "seocompare", "bestbusinessloans", "fundbiz", "cardmachines", "peptideclear", "merchanthq", "kartapay"]:
+    for client_id in ["market-invoice", "fundbiz", "cardmachines", "peptideclear", "merchanthq", "kartapay"]:
         config = prompts.get(client_id, {})
         if not config:
             continue

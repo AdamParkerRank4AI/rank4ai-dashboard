@@ -27,11 +27,9 @@ OUT = ROOT / "rank4ai-dashboard/src/data/live/fleet_baseline_audit.json"
 
 SITES = [
     # (id, local_dir, flavour, pre_launch, live_url)
-    ("rank4ai",          "rank4ai-site",            "editorial", False, "https://www.rank4ai.co.uk/"),
+    # rank4ai, seocompare, bestbusinessloans EXCLUDED 2 Jul 2026 (Adam — no longer building on them).
     ("market-invoice",   "compare-invoice-finance", "leadgen",   False, "https://marketinvoice.co.uk/"),
-    ("seocompare",       "compareaiseo",            "editorial", False, "https://seocompare.co.uk/"),
     ("rochellemarashi",  "rochellemarashi",         "client",    False, "https://rochellemarashi.pages.dev/"),
-    ("bestbusinessloans","bestbusinessloans",       "leadgen",   False, "https://bestbusinessloans.ai/"),
     ("fundbiz",          "fundbiz",                 "leadgen",   False, "https://fundbiz.co.uk/"),
     ("cardmachines",     "cardmachines",            "leadgen",   False, "https://merchanthq.co.uk/"),
     ("kartapay",         "kartapay",                "leadgen",   False, "https://kartapay.co.uk/"),
