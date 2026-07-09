@@ -1,0 +1,804 @@
+{
+  "rank4ai": {
+    "generated_at": "2026-07-04T13:25:59.147246",
+    "total": 10,
+    "critical": 3,
+    "high": 2,
+    "medium": 4,
+    "low": 1,
+    "recommendations": [
+      {
+        "priority": "critical",
+        "category": "AI Visibility",
+        "title": "Not a known entity in Google Knowledge Graph",
+        "detail": "Google does not recognise this brand as an entity. This severely limits AI citation potential. Actions: 1) Create a Wikidata entry 2) Build a Wikipedia stub page 3) Add comprehensive Organization schema 4) Get mentioned on authoritative sources (Crunchbase, LinkedIn company page, Companies House link) 5) Ensure consistent NAP across all directories.",
+        "impact": "high",
+        "pages": []
+      },
+      {
+        "priority": "critical",
+        "category": "AI Citations",
+        "title": "0% AI citation rate across 55 industry queries",
+        "detail": "AI models do not recommend this brand for any industry queries. Actions: 1) Get mentioned on Reddit (r/SEO, r/digital_marketing, r/smallbusiness) 2) Contribute to relevant Wikipedia articles 3) Publish on high-authority platforms (Medium, LinkedIn articles, industry publications) 4) Build backlinks from sites AI models trust 5) Create definitive, quotable content with statistics and clear definitions.",
+        "impact": "high",
+        "pages": []
+      },
+      {
+        "priority": "critical",
+        "category": "Search Visibility",
+        "title": "38 target pages built but Google sees you for 0 queries",
+        "detail": "You've built 38 pages on real target patterns (/vs/, /best/, /alternatives/ etc) but GSC reports 0 non-branded query impressions \u226510 per query. This means Google has crawled but not indexed-with-intent. Actions: 1) Submit sitemap + IndexNow for these patterns 2) Add internal links from homepage to the strongest 5-10 pages 3) Earn 2-3 backlinks to anchor the pattern hub 4) Verify pages aren't blocked in robots.txt / canonical-stripped / noindexed.",
+        "impact": "high",
+        "pages": [
+          "/learn/guides/",
+          "/learn/guides/google-ai-overview-ranking-factors/",
+          "/learn/guides/ai-search-for-solicitors/",
+          "/learn/guides/google-ai-overview-optimisation/",
+          "/learn/guides/entity-seo-for-ai/",
+          "/learn/guides/complete-guide-ai-search/",
+          "/learn/guides/geo/",
+          "/learn/guides/check-ai-visibility/",
+          "/learn/guides/get-cited-chatgpt/",
+          "/learn/guides/ai-search-b2b/",
+          "/learn/guides/appear-in-perplexity/",
+          "/learn/guides/chatgpt-seo/",
+          "/learn/guides/who-should-i-hire/",
+          "/learn/guides/perplexity-seo/",
+          "/learn/guides/how-ai-chooses-businesses/"
+        ]
+      },
+      {
+        "priority": "high",
+        "category": "AI Readiness",
+        "title": "No llms.txt file \u2014 AI crawlers can't identify your site",
+        "detail": "Add /llms.txt to tell AI crawlers what your site is about. Include: site name, description, key topics, important pages, contact info. This is the new standard for AI discoverability. Use the astro-llms-txt plugin for auto-generation.",
+        "impact": "medium",
+        "pages": [
+          "/llms.txt"
+        ]
+      },
+      {
+        "priority": "high",
+        "category": "Entity",
+        "title": "Not listed on Wikidata",
+        "detail": "Wikidata feeds Google Knowledge Graph and AI models. Create a Wikidata entry with: company name, type (Q4830453 = business), founding date, website, industry, founders. This is free and takes 10 minutes.",
+        "impact": "high",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Search Visibility",
+        "title": "2 URL pattern(s) have 0 GSC impressions",
+        "detail": "These content patterns exist on the site but Google isn't crawling/showing them for any query: /guides/ (26 pages), /services/ (12 pages). Actions: 1) Add each pattern's index page to the main nav OR footer 2) Internal-link from the homepage to the pattern hub 3) Submit pattern pages to GSC URL Inspection 4) Re-check robots.txt isn't crawl-blocking the path.",
+        "impact": "medium",
+        "pages": [
+          "/guides/",
+          "/services/"
+        ]
+      },
+      {
+        "priority": "medium",
+        "category": "Schema",
+        "title": "Schema gaps: No Organization or LocalBusiness schema \u2014 AI can't identify who you are",
+        "detail": "Currently using: Article, LocalBusiness ProfessionalService Organization, WebPage, WebAPI, FAQPage, TechArticle, Person, CollectionPage, Service, BreadcrumbList, VideoObject, Dataset, Quotation, DefinedTermSet, WebSite, HowTo, WebApplication. No Organization or LocalBusiness schema \u2014 AI can't identify who you are. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Indexing",
+        "title": "No Bing crawl activity detected",
+        "detail": "Bing has not crawled any pages. Bing feeds Copilot (Microsoft's AI). Submit sitemap at bing.com/webmasters and run IndexNow submission: python3 scripts/submit_indexnow.py rank4ai",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Content",
+        "title": "Low multi-modal content (0 pages with images+video, 0 with video)",
+        "detail": "Pages with images AND video get 156-317% more AI citations. Add charts, infographics, and short videos to key pillar pages. Note: inline SVG graphics may not be detected by this check.",
+        "impact": "high",
+        "pages": []
+      },
+      {
+        "priority": "low",
+        "category": "Indexing",
+        "title": "Only 0/762 pages indexed in Bing",
+        "detail": "Bing feeds Copilot. If URLs were recently submitted via IndexNow, allow 7-14 days for propagation. Re-check after that period. Submit: python3 scripts/submit_indexnow.py rank4ai",
+        "impact": "medium",
+        "pages": []
+      }
+    ]
+  },
+  "market-invoice": {
+    "generated_at": "2026-07-04T13:25:59.164096",
+    "total": 8,
+    "critical": 3,
+    "high": 1,
+    "medium": 3,
+    "low": 1,
+    "recommendations": [
+      {
+        "priority": "critical",
+        "category": "AI Visibility",
+        "title": "Not a known entity in Google Knowledge Graph",
+        "detail": "Google does not recognise this brand as an entity. This severely limits AI citation potential. Actions: 1) Create a Wikidata entry 2) Build a Wikipedia stub page 3) Add comprehensive Organization schema 4) Get mentioned on authoritative sources (Crunchbase, LinkedIn company page, Companies House link) 5) Ensure consistent NAP across all directories.",
+        "impact": "high",
+        "pages": []
+      },
+      {
+        "priority": "critical",
+        "category": "AI Citations",
+        "title": "0% AI citation rate across 52 industry queries",
+        "detail": "AI models do not recommend this brand for any industry queries. Actions: 1) Get mentioned on Reddit (r/SEO, r/digital_marketing, r/smallbusiness) 2) Contribute to relevant Wikipedia articles 3) Publish on high-authority platforms (Medium, LinkedIn articles, industry publications) 4) Build backlinks from sites AI models trust 5) Create definitive, quotable content with statistics and clear definitions.",
+        "impact": "high",
+        "pages": []
+      },
+      {
+        "priority": "critical",
+        "category": "Search Visibility",
+        "title": "416 target pages built but Google sees you for 0 queries",
+        "detail": "You've built 416 pages on real target patterns (/vs/, /best/, /alternatives/ etc) but GSC reports 0 non-branded query impressions \u226510 per query. This means Google has crawled but not indexed-with-intent. Actions: 1) Submit sitemap + IndexNow for these patterns 2) Add internal links from homepage to the strongest 5-10 pages 3) Earn 2-3 backlinks to anchor the pattern hub 4) Verify pages aren't blocked in robots.txt / canonical-stripped / noindexed.",
+        "impact": "high",
+        "pages": [
+          "/vs/",
+          "/vs/skipton-business-finance-vs-ultimate-finance/",
+          "/vs/close-brothers-invoice-finance-vs-ecapital/",
+          "/vs/hsbc-invoice-finance-vs-natwest-invoice-finance/",
+          "/vs/quba-vs-marketinvoice/",
+          "/vs/bibby-financial-services-vs-touch-financial/",
+          "/vs/allianz-trade-vs-skipton-business-finance/",
+          "/vs/funding-circle-vs-hydr/",
+          "/vs/abc-finance-vs-allianz-trade/",
+          "/vs/allianz-trade-vs-bibby-financial-services/",
+          "/vs/capitalise-vs-marketinvoice/",
+          "/vs/ecapital-vs-ultimate-finance/",
+          "/vs/aldermore-invoice-finance-vs-allianz-trade/",
+          "/vs/ecapital-vs-novuna-business-finance/",
+          "/vs/allianz-trade-vs-ultimate-finance/"
+        ]
+      },
+      {
+        "priority": "high",
+        "category": "AI Readiness",
+        "title": "No llms.txt file \u2014 AI crawlers can't identify your site",
+        "detail": "Add /llms.txt to tell AI crawlers what your site is about. Include: site name, description, key topics, important pages, contact info. This is the new standard for AI discoverability. Use the astro-llms-txt plugin for auto-generation.",
+        "impact": "medium",
+        "pages": [
+          "/llms.txt"
+        ]
+      },
+      {
+        "priority": "medium",
+        "category": "Search Visibility",
+        "title": "7 URL pattern(s) have 0 GSC impressions",
+        "detail": "These content patterns exist on the site but Google isn't crawling/showing them for any query: /providers/ (97 pages), /vs/ (91 pages), /guides/ (71 pages). Actions: 1) Add each pattern's index page to the main nav OR footer 2) Internal-link from the homepage to the pattern hub 3) Submit pattern pages to GSC URL Inspection 4) Re-check robots.txt isn't crawl-blocking the path.",
+        "impact": "medium",
+        "pages": [
+          "/providers/",
+          "/vs/",
+          "/guides/",
+          "/best/",
+          "/industries/",
+          "/alternatives/",
+          "/compare/"
+        ]
+      },
+      {
+        "priority": "medium",
+        "category": "Indexing",
+        "title": "No Bing crawl activity detected",
+        "detail": "Bing has not crawled any pages. Bing feeds Copilot (Microsoft's AI). Submit sitemap at bing.com/webmasters and run IndexNow submission: python3 scripts/submit_indexnow.py market-invoice",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Content",
+        "title": "Low multi-modal content (0 pages with images+video, 0 with video)",
+        "detail": "Pages with images AND video get 156-317% more AI citations. Add charts, infographics, and short videos to key pillar pages. Note: inline SVG graphics may not be detected by this check.",
+        "impact": "high",
+        "pages": []
+      },
+      {
+        "priority": "low",
+        "category": "Indexing",
+        "title": "Only 0/834 pages indexed in Bing",
+        "detail": "Bing feeds Copilot. If URLs were recently submitted via IndexNow, allow 7-14 days for propagation. Re-check after that period. Submit: python3 scripts/submit_indexnow.py market-invoice",
+        "impact": "medium",
+        "pages": []
+      }
+    ]
+  },
+  "seocompare": {
+    "generated_at": "2026-07-04T13:25:59.176474",
+    "total": 10,
+    "critical": 3,
+    "high": 2,
+    "medium": 4,
+    "low": 1,
+    "recommendations": [
+      {
+        "priority": "critical",
+        "category": "AI Visibility",
+        "title": "Not a known entity in Google Knowledge Graph",
+        "detail": "Google does not recognise this brand as an entity. This severely limits AI citation potential. Actions: 1) Create a Wikidata entry 2) Build a Wikipedia stub page 3) Add comprehensive Organization schema 4) Get mentioned on authoritative sources (Crunchbase, LinkedIn company page, Companies House link) 5) Ensure consistent NAP across all directories.",
+        "impact": "high",
+        "pages": []
+      },
+      {
+        "priority": "critical",
+        "category": "AI Citations",
+        "title": "0% AI citation rate across 51 industry queries",
+        "detail": "AI models do not recommend this brand for any industry queries. Actions: 1) Get mentioned on Reddit (r/SEO, r/digital_marketing, r/smallbusiness) 2) Contribute to relevant Wikipedia articles 3) Publish on high-authority platforms (Medium, LinkedIn articles, industry publications) 4) Build backlinks from sites AI models trust 5) Create definitive, quotable content with statistics and clear definitions.",
+        "impact": "high",
+        "pages": []
+      },
+      {
+        "priority": "critical",
+        "category": "Search Visibility",
+        "title": "97 target pages built but Google sees you for 0 queries",
+        "detail": "You've built 97 pages on real target patterns (/vs/, /best/, /alternatives/ etc) but GSC reports 0 non-branded query impressions \u226510 per query. This means Google has crawled but not indexed-with-intent. Actions: 1) Submit sitemap + IndexNow for these patterns 2) Add internal links from homepage to the strongest 5-10 pages 3) Earn 2-3 backlinks to anchor the pattern hub 4) Verify pages aren't blocked in robots.txt / canonical-stripped / noindexed.",
+        "impact": "high",
+        "pages": [
+          "/best/",
+          "/best/ai-seo-agencies-for-ecommerce/",
+          "/best/ai-seo-agencies-for-llm-citations/",
+          "/best/ai-seo-agencies-startup-budget/",
+          "/best/ai-seo-agencies-for-perplexity/",
+          "/best/ai-seo-agencies-under-2k-month/",
+          "/best/ai-seo-agencies-for-professional-services/",
+          "/best/ai-seo-agencies-for-healthcare/",
+          "/best/ai-seo-agencies-10k-plus-month/",
+          "/best/ai-seo-agencies-for-chatgpt/",
+          "/best/ai-seo-agencies-for-saas/",
+          "/best/ai-seo-agencies-5k-to-10k-month/",
+          "/best/ai-seo-agencies-2k-to-5k-month/",
+          "/best/ai-seo-agencies-for-google-ai-overviews/",
+          "/best/ai-seo-agencies-for-financial-services/"
+        ]
+      },
+      {
+        "priority": "high",
+        "category": "AI Readiness",
+        "title": "No llms.txt file \u2014 AI crawlers can't identify your site",
+        "detail": "Add /llms.txt to tell AI crawlers what your site is about. Include: site name, description, key topics, important pages, contact info. This is the new standard for AI discoverability. Use the astro-llms-txt plugin for auto-generation.",
+        "impact": "medium",
+        "pages": [
+          "/llms.txt"
+        ]
+      },
+      {
+        "priority": "high",
+        "category": "Entity",
+        "title": "Not listed on Wikidata",
+        "detail": "Wikidata feeds Google Knowledge Graph and AI models. Create a Wikidata entry with: company name, type (Q4830453 = business), founding date, website, industry, founders. This is free and takes 10 minutes.",
+        "impact": "high",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Search Visibility",
+        "title": "3 URL pattern(s) have 0 GSC impressions",
+        "detail": "These content patterns exist on the site but Google isn't crawling/showing them for any query: /compare/ (67 pages), /best/ (16 pages), /alternatives/ (13 pages). Actions: 1) Add each pattern's index page to the main nav OR footer 2) Internal-link from the homepage to the pattern hub 3) Submit pattern pages to GSC URL Inspection 4) Re-check robots.txt isn't crawl-blocking the path.",
+        "impact": "medium",
+        "pages": [
+          "/compare/",
+          "/best/",
+          "/alternatives/"
+        ]
+      },
+      {
+        "priority": "medium",
+        "category": "Schema",
+        "title": "Schema gaps: Missing content schema types: FAQPage",
+        "detail": "Currently using: Article, WebPage, Person, ItemList, BreadcrumbList, Service, CollectionPage, Dataset, Quotation, WebSite, Organization, HowTo, Blog, WebApplication, ProfilePage. Missing content schema types: FAQPage. FAQPage and HowTo schema have the highest AI citation rates. Organization schema helps AI identify the business entity.",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Indexing",
+        "title": "No Bing crawl activity detected",
+        "detail": "Bing has not crawled any pages. Bing feeds Copilot (Microsoft's AI). Submit sitemap at bing.com/webmasters and run IndexNow submission: python3 scripts/submit_indexnow.py seocompare",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Content",
+        "title": "Low multi-modal content (0 pages with images+video, 0 with video)",
+        "detail": "Pages with images AND video get 156-317% more AI citations. Add charts, infographics, and short videos to key pillar pages. Note: inline SVG graphics may not be detected by this check.",
+        "impact": "high",
+        "pages": []
+      },
+      {
+        "priority": "low",
+        "category": "Indexing",
+        "title": "Only 0/485 pages indexed in Bing",
+        "detail": "Bing feeds Copilot. If URLs were recently submitted via IndexNow, allow 7-14 days for propagation. Re-check after that period. Submit: python3 scripts/submit_indexnow.py seocompare",
+        "impact": "medium",
+        "pages": []
+      }
+    ]
+  },
+  "rochellemarashi": {
+    "generated_at": "2026-07-04T13:25:59.180424",
+    "total": 1,
+    "critical": 1,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "recommendations": [
+      {
+        "priority": "critical",
+        "category": "AI Citations",
+        "title": "0% AI citation rate across 50 industry queries",
+        "detail": "AI models do not recommend this brand for any industry queries. Actions: 1) Get mentioned on Reddit (r/SEO, r/digital_marketing, r/smallbusiness) 2) Contribute to relevant Wikipedia articles 3) Publish on high-authority platforms (Medium, LinkedIn articles, industry publications) 4) Build backlinks from sites AI models trust 5) Create definitive, quotable content with statistics and clear definitions.",
+        "impact": "high",
+        "pages": []
+      }
+    ]
+  },
+  "bestbusinessloans": {
+    "generated_at": "2026-07-04T13:25:59.197357",
+    "total": 8,
+    "critical": 3,
+    "high": 1,
+    "medium": 3,
+    "low": 1,
+    "recommendations": [
+      {
+        "priority": "critical",
+        "category": "AI Visibility",
+        "title": "Not a known entity in Google Knowledge Graph",
+        "detail": "Google does not recognise this brand as an entity. This severely limits AI citation potential. Actions: 1) Create a Wikidata entry 2) Build a Wikipedia stub page 3) Add comprehensive Organization schema 4) Get mentioned on authoritative sources (Crunchbase, LinkedIn company page, Companies House link) 5) Ensure consistent NAP across all directories.",
+        "impact": "high",
+        "pages": []
+      },
+      {
+        "priority": "critical",
+        "category": "AI Citations",
+        "title": "0% AI citation rate across 24 industry queries",
+        "detail": "AI models do not recommend this brand for any industry queries. Actions: 1) Get mentioned on Reddit (r/SEO, r/digital_marketing, r/smallbusiness) 2) Contribute to relevant Wikipedia articles 3) Publish on high-authority platforms (Medium, LinkedIn articles, industry publications) 4) Build backlinks from sites AI models trust 5) Create definitive, quotable content with statistics and clear definitions.",
+        "impact": "high",
+        "pages": []
+      },
+      {
+        "priority": "critical",
+        "category": "Search Visibility",
+        "title": "303 target pages built but Google sees you for 0 queries",
+        "detail": "You've built 303 pages on real target patterns (/vs/, /best/, /alternatives/ etc) but GSC reports 0 non-branded query impressions \u226510 per query. This means Google has crawled but not indexed-with-intent. Actions: 1) Submit sitemap + IndexNow for these patterns 2) Add internal links from homepage to the strongest 5-10 pages 3) Earn 2-3 backlinks to anchor the pattern hub 4) Verify pages aren't blocked in robots.txt / canonical-stripped / noindexed.",
+        "impact": "high",
+        "pages": [
+          "/vs/",
+          "/vs/funding-circle-vs-propel/",
+          "/vs/funding-circle-vs-got-capital/",
+          "/vs/bizcap-vs-jpm-capital/",
+          "/vs/aldermore-vs-shawbrook/",
+          "/vs/capify-vs-liberis/",
+          "/vs/got-capital-vs-sonovate/",
+          "/vs/bizcap-vs-capify/",
+          "/vs/close-brothers-vs-iwoca/",
+          "/vs/capital-on-tap-vs-close-brothers/",
+          "/vs/capify-vs-youlend/",
+          "/vs/investec-vs-kuflink/",
+          "/vs/allica-bank-vs-haydock-finance/",
+          "/vs/investec-vs-iwoca/",
+          "/vs/capital-on-tap-vs-iwoca/"
+        ]
+      },
+      {
+        "priority": "high",
+        "category": "AI Readiness",
+        "title": "No llms.txt file \u2014 AI crawlers can't identify your site",
+        "detail": "Add /llms.txt to tell AI crawlers what your site is about. Include: site name, description, key topics, important pages, contact info. This is the new standard for AI discoverability. Use the astro-llms-txt plugin for auto-generation.",
+        "impact": "medium",
+        "pages": [
+          "/llms.txt"
+        ]
+      },
+      {
+        "priority": "medium",
+        "category": "Search Visibility",
+        "title": "6 URL pattern(s) have 0 GSC impressions",
+        "detail": "These content patterns exist on the site but Google isn't crawling/showing them for any query: /reviews/ (111 pages), /vs/ (85 pages), /guides/ (69 pages). Actions: 1) Add each pattern's index page to the main nav OR footer 2) Internal-link from the homepage to the pattern hub 3) Submit pattern pages to GSC URL Inspection 4) Re-check robots.txt isn't crawl-blocking the path.",
+        "impact": "medium",
+        "pages": [
+          "/reviews/",
+          "/vs/",
+          "/guides/",
+          "/best/",
+          "/alternatives/",
+          "/compare/"
+        ]
+      },
+      {
+        "priority": "medium",
+        "category": "Indexing",
+        "title": "No Bing crawl activity detected",
+        "detail": "Bing has not crawled any pages. Bing feeds Copilot (Microsoft's AI). Submit sitemap at bing.com/webmasters and run IndexNow submission: python3 scripts/submit_indexnow.py bestbusinessloans",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Content",
+        "title": "Low multi-modal content (0 pages with images+video, 0 with video)",
+        "detail": "Pages with images AND video get 156-317% more AI citations. Add charts, infographics, and short videos to key pillar pages. Note: inline SVG graphics may not be detected by this check.",
+        "impact": "high",
+        "pages": []
+      },
+      {
+        "priority": "low",
+        "category": "Indexing",
+        "title": "Only 0/489 pages indexed in Bing",
+        "detail": "Bing feeds Copilot. If URLs were recently submitted via IndexNow, allow 7-14 days for propagation. Re-check after that period. Submit: python3 scripts/submit_indexnow.py bestbusinessloans",
+        "impact": "medium",
+        "pages": []
+      }
+    ]
+  },
+  "fundbiz": {
+    "generated_at": "2026-07-04T13:25:59.216756",
+    "total": 9,
+    "critical": 3,
+    "high": 2,
+    "medium": 3,
+    "low": 1,
+    "recommendations": [
+      {
+        "priority": "critical",
+        "category": "AI Visibility",
+        "title": "Not a known entity in Google Knowledge Graph",
+        "detail": "Google does not recognise this brand as an entity. This severely limits AI citation potential. Actions: 1) Create a Wikidata entry 2) Build a Wikipedia stub page 3) Add comprehensive Organization schema 4) Get mentioned on authoritative sources (Crunchbase, LinkedIn company page, Companies House link) 5) Ensure consistent NAP across all directories.",
+        "impact": "high",
+        "pages": []
+      },
+      {
+        "priority": "critical",
+        "category": "AI Citations",
+        "title": "0% AI citation rate across 22 industry queries",
+        "detail": "AI models do not recommend this brand for any industry queries. Actions: 1) Get mentioned on Reddit (r/SEO, r/digital_marketing, r/smallbusiness) 2) Contribute to relevant Wikipedia articles 3) Publish on high-authority platforms (Medium, LinkedIn articles, industry publications) 4) Build backlinks from sites AI models trust 5) Create definitive, quotable content with statistics and clear definitions.",
+        "impact": "high",
+        "pages": []
+      },
+      {
+        "priority": "critical",
+        "category": "Search Visibility",
+        "title": "131 target pages built but Google sees you for 0 queries",
+        "detail": "You've built 131 pages on real target patterns (/vs/, /best/, /alternatives/ etc) but GSC reports 0 non-branded query impressions \u226510 per query. This means Google has crawled but not indexed-with-intent. Actions: 1) Submit sitemap + IndexNow for these patterns 2) Add internal links from homepage to the strongest 5-10 pages 3) Earn 2-3 backlinks to anchor the pattern hub 4) Verify pages aren't blocked in robots.txt / canonical-stripped / noindexed.",
+        "impact": "high",
+        "pages": [
+          "/vs/",
+          "/vs/funding-circle-vs-propel/",
+          "/vs/funding-circle-vs-got-capital/",
+          "/vs/bizcap-vs-jpm-capital/",
+          "/vs/capify-vs-liberis/",
+          "/vs/got-capital-vs-sonovate/",
+          "/vs/bizcap-vs-capify/",
+          "/vs/close-brothers-vs-iwoca/",
+          "/vs/capital-on-tap-vs-close-brothers/",
+          "/vs/capify-vs-youlend/",
+          "/vs/investec-vs-kuflink/",
+          "/vs/allica-bank-vs-haydock-finance/",
+          "/vs/investec-vs-iwoca/",
+          "/vs/capital-on-tap-vs-iwoca/",
+          "/vs/iwoca-vs-starling-bank/"
+        ]
+      },
+      {
+        "priority": "high",
+        "category": "AI Readiness",
+        "title": "No llms.txt file \u2014 AI crawlers can't identify your site",
+        "detail": "Add /llms.txt to tell AI crawlers what your site is about. Include: site name, description, key topics, important pages, contact info. This is the new standard for AI discoverability. Use the astro-llms-txt plugin for auto-generation.",
+        "impact": "medium",
+        "pages": [
+          "/llms.txt"
+        ]
+      },
+      {
+        "priority": "high",
+        "category": "Entity",
+        "title": "Not listed on Wikidata",
+        "detail": "Wikidata feeds Google Knowledge Graph and AI models. Create a Wikidata entry with: company name, type (Q4830453 = business), founding date, website, industry, founders. This is free and takes 10 minutes.",
+        "impact": "high",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Search Visibility",
+        "title": "4 URL pattern(s) have 0 GSC impressions",
+        "detail": "These content patterns exist on the site but Google isn't crawling/showing them for any query: /vs/ (79 pages), /guides/ (22 pages), /best/ (15 pages). Actions: 1) Add each pattern's index page to the main nav OR footer 2) Internal-link from the homepage to the pattern hub 3) Submit pattern pages to GSC URL Inspection 4) Re-check robots.txt isn't crawl-blocking the path.",
+        "impact": "medium",
+        "pages": [
+          "/vs/",
+          "/guides/",
+          "/best/",
+          "/alternatives/"
+        ]
+      },
+      {
+        "priority": "medium",
+        "category": "Indexing",
+        "title": "No Bing crawl activity detected",
+        "detail": "Bing has not crawled any pages. Bing feeds Copilot (Microsoft's AI). Submit sitemap at bing.com/webmasters and run IndexNow submission: python3 scripts/submit_indexnow.py fundbiz",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Content",
+        "title": "Low multi-modal content (0 pages with images+video, 0 with video)",
+        "detail": "Pages with images AND video get 156-317% more AI citations. Add charts, infographics, and short videos to key pillar pages. Note: inline SVG graphics may not be detected by this check.",
+        "impact": "high",
+        "pages": []
+      },
+      {
+        "priority": "low",
+        "category": "Indexing",
+        "title": "Only 0/461 pages indexed in Bing",
+        "detail": "Bing feeds Copilot. If URLs were recently submitted via IndexNow, allow 7-14 days for propagation. Re-check after that period. Submit: python3 scripts/submit_indexnow.py fundbiz",
+        "impact": "medium",
+        "pages": []
+      }
+    ]
+  },
+  "cardmachines": {
+    "generated_at": "2026-07-04T13:25:59.243483",
+    "total": 9,
+    "critical": 3,
+    "high": 1,
+    "medium": 4,
+    "low": 1,
+    "recommendations": [
+      {
+        "priority": "critical",
+        "category": "AI Visibility",
+        "title": "Not a known entity in Google Knowledge Graph",
+        "detail": "Google does not recognise this brand as an entity. This severely limits AI citation potential. Actions: 1) Create a Wikidata entry 2) Build a Wikipedia stub page 3) Add comprehensive Organization schema 4) Get mentioned on authoritative sources (Crunchbase, LinkedIn company page, Companies House link) 5) Ensure consistent NAP across all directories.",
+        "impact": "high",
+        "pages": []
+      },
+      {
+        "priority": "critical",
+        "category": "AI Citations",
+        "title": "0% AI citation rate across 30 industry queries",
+        "detail": "AI models do not recommend this brand for any industry queries. Actions: 1) Get mentioned on Reddit (r/SEO, r/digital_marketing, r/smallbusiness) 2) Contribute to relevant Wikipedia articles 3) Publish on high-authority platforms (Medium, LinkedIn articles, industry publications) 4) Build backlinks from sites AI models trust 5) Create definitive, quotable content with statistics and clear definitions.",
+        "impact": "high",
+        "pages": []
+      },
+      {
+        "priority": "critical",
+        "category": "Search Visibility",
+        "title": "485 target pages built but Google sees you for 0 queries",
+        "detail": "You've built 485 pages on real target patterns (/vs/, /best/, /alternatives/ etc) but GSC reports 0 non-branded query impressions \u226510 per query. This means Google has crawled but not indexed-with-intent. Actions: 1) Submit sitemap + IndexNow for these patterns 2) Add internal links from homepage to the strongest 5-10 pages 3) Earn 2-3 backlinks to anchor the pattern hub 4) Verify pages aren't blocked in robots.txt / canonical-stripped / noindexed.",
+        "impact": "high",
+        "pages": [
+          "/vs/",
+          "/vs/square-terminal-vs-stripe-reader-m2/",
+          "/vs/pax-a77-vs-tide-card-reader/",
+          "/vs/bbpos-wisepad-3-vs-stripe-reader-s700/",
+          "/vs/dojo-go-vs-tap-to-pay-iphone/",
+          "/vs/square-terminal-vs-sumup-solo/",
+          "/vs/tap-to-pay-iphone-vs-zettle-reader-2/",
+          "/vs/bbpos-wisepos-e-vs-tide-card-reader/",
+          "/vs/bbpos-wisepos-e-vs-pax-a77/",
+          "/vs/pax-a77-vs-sumup-solo/",
+          "/vs/stripe-reader-m2-vs-tide-card-reader/",
+          "/vs/square-terminal-vs-stripe-reader-s700/",
+          "/vs/bbpos-wisepos-e-vs-dojo-go/",
+          "/vs/stripe-reader-s700-vs-zettle-reader-2/",
+          "/vs/tide-card-reader-vs-tyl-by-natwest/"
+        ]
+      },
+      {
+        "priority": "high",
+        "category": "AI Readiness",
+        "title": "No llms.txt file \u2014 AI crawlers can't identify your site",
+        "detail": "Add /llms.txt to tell AI crawlers what your site is about. Include: site name, description, key topics, important pages, contact info. This is the new standard for AI discoverability. Use the astro-llms-txt plugin for auto-generation.",
+        "impact": "medium",
+        "pages": [
+          "/llms.txt"
+        ]
+      },
+      {
+        "priority": "medium",
+        "category": "Search Visibility",
+        "title": "5 URL pattern(s) have 0 GSC impressions",
+        "detail": "These content patterns exist on the site but Google isn't crawling/showing them for any query: /best/ (365 pages), /vs/ (73 pages), /alternatives/ (19 pages). Actions: 1) Add each pattern's index page to the main nav OR footer 2) Internal-link from the homepage to the pattern hub 3) Submit pattern pages to GSC URL Inspection 4) Re-check robots.txt isn't crawl-blocking the path.",
+        "impact": "medium",
+        "pages": [
+          "/best/",
+          "/vs/",
+          "/alternatives/",
+          "/reviews/",
+          "/guides/"
+        ]
+      },
+      {
+        "priority": "medium",
+        "category": "Internal Links",
+        "title": "10 orphan pages with no internal links pointing to them",
+        "detail": "Search engines and AI crawlers may not discover these pages. Add internal links from related content. Orphan pages: /vs/pax-a77-vs-tide-card-reader/, /vs/bbpos-wisepos-e-vs-pax-a77/, /vs/pax-a77-vs-sumup-solo/, /vs/dojo-go-vs-pax-a77/, /vs/pax-a77-vs-square-terminal/, /vs/pax-a77-vs-tap-to-pay-iphone/, /vs/pax-a77-vs-stripe-reader-m2/, /vs/pax-a77-vs-zettle-reader-2/...",
+        "impact": "medium",
+        "pages": [
+          "/vs/pax-a77-vs-tide-card-reader/",
+          "/vs/bbpos-wisepos-e-vs-pax-a77/",
+          "/vs/pax-a77-vs-sumup-solo/",
+          "/vs/dojo-go-vs-pax-a77/",
+          "/vs/pax-a77-vs-square-terminal/",
+          "/vs/pax-a77-vs-tap-to-pay-iphone/",
+          "/vs/pax-a77-vs-stripe-reader-m2/",
+          "/vs/pax-a77-vs-zettle-reader-2/",
+          "/vs/bbpos-wisepad-3-vs-pax-a77/",
+          "/vs/pax-a77-vs-stripe-reader-s700/"
+        ]
+      },
+      {
+        "priority": "medium",
+        "category": "Indexing",
+        "title": "No Bing crawl activity detected",
+        "detail": "Bing has not crawled any pages. Bing feeds Copilot (Microsoft's AI). Submit sitemap at bing.com/webmasters and run IndexNow submission: python3 scripts/submit_indexnow.py cardmachines",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Content",
+        "title": "Low multi-modal content (0 pages with images+video, 0 with video)",
+        "detail": "Pages with images AND video get 156-317% more AI citations. Add charts, infographics, and short videos to key pillar pages. Note: inline SVG graphics may not be detected by this check.",
+        "impact": "high",
+        "pages": []
+      },
+      {
+        "priority": "low",
+        "category": "Indexing",
+        "title": "Only 0/915 pages indexed in Bing",
+        "detail": "Bing feeds Copilot. If URLs were recently submitted via IndexNow, allow 7-14 days for propagation. Re-check after that period. Submit: python3 scripts/submit_indexnow.py cardmachines",
+        "impact": "medium",
+        "pages": []
+      }
+    ]
+  },
+  "merchanthq": {
+    "generated_at": "2026-07-04T13:25:59.246932",
+    "total": 0,
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "recommendations": []
+  },
+  "peptideclear": {
+    "generated_at": "2026-07-04T13:25:59.260042",
+    "total": 6,
+    "critical": 1,
+    "high": 1,
+    "medium": 3,
+    "low": 1,
+    "recommendations": [
+      {
+        "priority": "critical",
+        "category": "Search Visibility",
+        "title": "40 target pages built but Google sees you for 0 queries",
+        "detail": "You've built 40 pages on real target patterns (/vs/, /best/, /alternatives/ etc) but GSC reports 0 non-branded query impressions \u226510 per query. This means Google has crawled but not indexed-with-intent. Actions: 1) Submit sitemap + IndexNow for these patterns 2) Add internal links from homepage to the strongest 5-10 pages 3) Earn 2-3 backlinks to anchor the pattern hub 4) Verify pages aren't blocked in robots.txt / canonical-stripped / noindexed.",
+        "impact": "high",
+        "pages": [
+          "/vs/",
+          "/vs/ipamorelin-vs-sermorelin/",
+          "/vs/my-peptides-vs-direct-sarms/",
+          "/vs/phlo-vs-pharmacy2u/",
+          "/vs/numan-vs-voy/",
+          "/vs/bpc-157-vs-tb-500/",
+          "/vs/hooke-vs-echelon/",
+          "/vs/phlo-vs-simplymeds/",
+          "/vs/manual-vs-numan/",
+          "/vs/numan-vs-phlo/",
+          "/vs/my-peptides-vs-pure-peptides-uk/",
+          "/vs/numan-vs-juniper/",
+          "/vs/ghk-cu-vs-matrixyl/",
+          "/vs/type-i-vs-type-ii-collagen/",
+          "/vs/tesamorelin-vs-sermorelin/"
+        ]
+      },
+      {
+        "priority": "high",
+        "category": "AI Readiness",
+        "title": "No llms.txt file \u2014 AI crawlers can't identify your site",
+        "detail": "Add /llms.txt to tell AI crawlers what your site is about. Include: site name, description, key topics, important pages, contact info. This is the new standard for AI discoverability. Use the astro-llms-txt plugin for auto-generation.",
+        "impact": "medium",
+        "pages": [
+          "/llms.txt"
+        ]
+      },
+      {
+        "priority": "medium",
+        "category": "Search Visibility",
+        "title": "2 URL pattern(s) have 0 GSC impressions",
+        "detail": "These content patterns exist on the site but Google isn't crawling/showing them for any query: /vs/ (21 pages), /best/ (15 pages). Actions: 1) Add each pattern's index page to the main nav OR footer 2) Internal-link from the homepage to the pattern hub 3) Submit pattern pages to GSC URL Inspection 4) Re-check robots.txt isn't crawl-blocking the path.",
+        "impact": "medium",
+        "pages": [
+          "/vs/",
+          "/best/"
+        ]
+      },
+      {
+        "priority": "medium",
+        "category": "Indexing",
+        "title": "No Bing crawl activity detected",
+        "detail": "Bing has not crawled any pages. Bing feeds Copilot (Microsoft's AI). Submit sitemap at bing.com/webmasters and run IndexNow submission: python3 scripts/submit_indexnow.py peptideclear",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Content",
+        "title": "Low multi-modal content (0 pages with images+video, 0 with video)",
+        "detail": "Pages with images AND video get 156-317% more AI citations. Add charts, infographics, and short videos to key pillar pages. Note: inline SVG graphics may not be detected by this check.",
+        "impact": "high",
+        "pages": []
+      },
+      {
+        "priority": "low",
+        "category": "Indexing",
+        "title": "Only 0/521 pages indexed in Bing",
+        "detail": "Bing feeds Copilot. If URLs were recently submitted via IndexNow, allow 7-14 days for propagation. Re-check after that period. Submit: python3 scripts/submit_indexnow.py peptideclear",
+        "impact": "medium",
+        "pages": []
+      }
+    ]
+  },
+  "kartapay": {
+    "generated_at": "2026-07-04T13:25:59.268606",
+    "total": 5,
+    "critical": 0,
+    "high": 2,
+    "medium": 2,
+    "low": 1,
+    "recommendations": [
+      {
+        "priority": "high",
+        "category": "AI Readiness",
+        "title": "No llms.txt file \u2014 AI crawlers can't identify your site",
+        "detail": "Add /llms.txt to tell AI crawlers what your site is about. Include: site name, description, key topics, important pages, contact info. This is the new standard for AI discoverability. Use the astro-llms-txt plugin for auto-generation.",
+        "impact": "medium",
+        "pages": [
+          "/llms.txt"
+        ]
+      },
+      {
+        "priority": "high",
+        "category": "Entity",
+        "title": "Not listed on Wikidata",
+        "detail": "Wikidata feeds Google Knowledge Graph and AI models. Create a Wikidata entry with: company name, type (Q4830453 = business), founding date, website, industry, founders. This is free and takes 10 minutes.",
+        "impact": "high",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Indexing",
+        "title": "No Bing crawl activity detected",
+        "detail": "Bing has not crawled any pages. Bing feeds Copilot (Microsoft's AI). Submit sitemap at bing.com/webmasters and run IndexNow submission: python3 scripts/submit_indexnow.py kartapay",
+        "impact": "medium",
+        "pages": []
+      },
+      {
+        "priority": "medium",
+        "category": "Content",
+        "title": "Low multi-modal content (0 pages with images+video, 0 with video)",
+        "detail": "Pages with images AND video get 156-317% more AI citations. Add charts, infographics, and short videos to key pillar pages. Note: inline SVG graphics may not be detected by this check.",
+        "impact": "high",
+        "pages": []
+      },
+      {
+        "priority": "low",
+        "category": "Indexing",
+        "title": "Only 0/144 pages indexed in Bing",
+        "detail": "Bing feeds Copilot. If URLs were recently submitted via IndexNow, allow 7-14 days for propagation. Re-check after that period. Submit: python3 scripts/submit_indexnow.py kartapay",
+        "impact": "medium",
+        "pages": []
+      }
+    ]
+  }
+}

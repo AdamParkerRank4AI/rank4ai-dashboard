@@ -1,0 +1,51 @@
+{
+  "checked_at": "2026-07-09T08:22:20.322761",
+  "auto_redeploy_on_drift": false,
+  "any_drift": false,
+  "projects": [
+    {
+      "project": "rank4ai-dashboard",
+      "repo": "AdamParkerRank4AI/rank4ai-dashboard",
+      "git_sha": "70a0d74c2d60e3382a9ea422a35868e896d66eb5",
+      "git_subject": "Fleet sync: source-reader refresh (2026-07-09T06:35:00+01:00)",
+      "deploy_sha": null,
+      "deploy_id": null,
+      "deploy_created": null,
+      "status": "no_token",
+      "note": "CF_TOKEN_RANK4AI not set in environment"
+    },
+    {
+      "project": "rank4ai-preview",
+      "repo": "AdamParkerRank4AI/rank4ai-preview",
+      "git_sha": "e41a4bb0c4c032a4f301f3c1362c826494c1c590",
+      "git_subject": "Auto-sync fleet-structure.json (2026-07-01T15:59:56)",
+      "deploy_sha": null,
+      "deploy_id": null,
+      "deploy_created": null,
+      "status": "no_token",
+      "note": "CF_TOKEN_RANK4AI not set in environment"
+    },
+    {
+      "project": "market-invoice",
+      "repo": "AdamParkerRank4AI/market-invoice",
+      "git_sha": "c400d673479cdb9649aabbb4ea91f3848292177b",
+      "git_subject": "Embed YouTube videos on 4 priority question pages",
+      "deploy_sha": null,
+      "deploy_id": null,
+      "deploy_created": null,
+      "status": "no_token",
+      "note": "CF_TOKEN_RANK4AI not set in environment"
+    },
+    {
+      "project": "seocompare",
+      "repo": "AdamParkerRank4AI/seocompare",
+      "git_sha": "26390163e1449cc2e75e54de583ca558af99a710",
+      "git_subject": "fix(seo): shorten blog title to fit \u226465 chars with site suffix",
+      "deploy_sha": null,
+      "deploy_id": null,
+      "deploy_created": null,
+      "status": "no_token",
+      "note": "CF_TOKEN_MUSWELLROSE not set in environment"
+    }
+  ]
+}

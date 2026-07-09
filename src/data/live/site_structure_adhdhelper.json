@@ -1,0 +1,99 @@
+{
+  "generated_at": "2026-06-07T12:00:00+01:00",
+  "source": "ADHD Helper v1 plan — adhd-stack 49k card (NOT yet full niche-attack)",
+  "totals": {
+    "total_rows": 38,
+    "live": 0,
+    "not_started": 38,
+    "slots": {
+      "hub": { "filled": 0, "empty": 5 },
+      "lead-page": { "filled": 0, "empty": 9 },
+      "product-page": { "filled": 0, "empty": 10 },
+      "guide": { "filled": 0, "empty": 10 },
+      "trust": { "filled": 0, "empty": 4 }
+    }
+  },
+  "strategy_summary": {
+    "clusters": [
+      "Get assessed (lead-gen)",
+      "ADHD shop (affiliate)",
+      "Living with ADHD (content)",
+      "Trust/about"
+    ],
+    "authority_pillars": [
+      "Neutral named-clinician hub",
+      "Right-to-Choose navigator",
+      "Claims-safe YMYL editorial"
+    ],
+    "slot_rules": {
+      "Assessment/lead page": "High-intent route to a panel of private / Right-to-Choose providers. Capsule + visible FAQ + clinic-comparison (multi-provider = comparison table allowed). Qualified-enquiry CTA, no diagnosis on-page. Clinician-reviewed.",
+      "Product/shop page": "Wirecutter-shape curation, no inventory. Affiliate (Amazon Associates / Awin / direct). EFSA-anchored claims only, NEVER 'treats ADHD'. Multi-product roundups get a comparison table; single-product picks get key-facts. Reviewer byline + disclosure.",
+      "Guide": "Editorial answer to a real question (how to get assessed, RTC, waiting lists, med shortage, what helps). Capsule + visible FAQ, max-3 internal links, no FAQPage JSON-LD. Named medical reviewer + last-reviewed date.",
+      "Trust": "Entity / E-E-A-T spine: named clinical reviewer(s), editorial + claims policy, affiliate disclosure, about/contact. Person + Organization schema, sameAs to reviewer profiles."
+    }
+  },
+  "tree": [
+    {
+      "layer": "L1",
+      "label": "Layer 1 · Home & pillars",
+      "pages": [
+        { "id": "home", "page_number": "1", "page_name": "Homepage", "url_path": "/", "layer": "L1", "page_type": "hub", "status": "not_started", "action": "build", "note": "Neutral UK ADHD authority. Three-way split: get assessed / shop / living-with. Reviewer trust band + Right-to-Choose explainer above the fold." },
+        { "id": "pillar-get-assessed", "page_number": "2", "page_name": "Get an ADHD assessment (pillar)", "url_path": "/get-assessed/", "layer": "L1", "page_type": "hub", "status": "not_started", "action": "build", "note": "Lead-gen pillar. Routes to provider panel; explains private vs NHS vs Right-to-Choose. Top of the high-value funnel." },
+        { "id": "pillar-shop", "page_number": "3", "page_name": "ADHD shop (pillar)", "url_path": "/shop/", "layer": "L1", "page_type": "hub", "status": "not_started", "action": "build", "note": "Affiliate pillar. Curated product categories (supplements + tools). Disclosure + claims-safe framing across all children." },
+        { "id": "pillar-living-with-adhd", "page_number": "4", "page_name": "Living with ADHD (pillar)", "url_path": "/living-with-adhd/", "layer": "L1", "page_type": "hub", "status": "not_started", "action": "build", "note": "Content / citation pillar. Real-question editorial that feeds AI citations and internal links to lead + shop pillars." },
+        { "id": "pillar-about", "page_number": "5", "page_name": "About & trust (pillar)", "url_path": "/about/", "layer": "L1", "page_type": "hub", "status": "not_started", "action": "build", "note": "Trust pillar. Who we are, neutral stance, named reviewer panel, how we make money (disclosure)." }
+      ]
+    },
+    {
+      "layer": "L2",
+      "label": "Layer 2 · Get assessed (lead-gen)",
+      "pages": [
+        { "id": "find-a-provider", "page_number": "6", "page_name": "Find an ADHD assessment provider (UK)", "url_path": "/get-assessed/find-a-provider/", "layer": "L2", "page_type": "lead-page", "status": "not_started", "action": "build", "note": "Core lead capture. Comparison of private + RTC providers (multi-entity table). Qualified-enquiry form, no on-page diagnosis." },
+        { "id": "right-to-choose", "page_number": "7", "page_name": "Right to Choose ADHD assessment explained", "url_path": "/get-assessed/right-to-choose/", "layer": "L2", "page_type": "lead-page", "status": "not_started", "action": "build", "note": "RTC navigator: eligibility, GP referral wording, which providers accept RTC. The neutral wedge; routes to panel." },
+        { "id": "private-vs-nhs", "page_number": "8", "page_name": "Private vs NHS ADHD assessment", "url_path": "/get-assessed/private-vs-nhs/", "layer": "L2", "page_type": "lead-page", "status": "not_started", "action": "build", "note": "Decision page comparing routes (NHS / RTC / fully private) on cost, wait, what you get. Multi-entity comparison table." },
+        { "id": "assessment-cost", "page_number": "9", "page_name": "How much does an adult ADHD assessment cost?", "url_path": "/get-assessed/cost/", "layer": "L2", "page_type": "lead-page", "status": "not_started", "action": "build", "note": "£500–£1,500 cost breakdown by provider type + what's included (titration extra). High-intent commercial query." },
+        { "id": "waiting-times", "page_number": "10", "page_name": "ADHD assessment waiting times (NHS vs private)", "url_path": "/get-assessed/waiting-times/", "layer": "L2", "page_type": "lead-page", "status": "not_started", "action": "build", "note": "Wait-list reality drives the private/RTC decision. Data-led; converts paralysis into an enquiry." },
+        { "id": "adult-assessment", "page_number": "11", "page_name": "Adult ADHD assessment: what to expect", "url_path": "/get-assessed/adults/", "layer": "L2", "page_type": "lead-page", "status": "not_started", "action": "build", "note": "Adult-route lead page: process, DIVA/QbTest, who can diagnose. Routes to adult-friendly providers." },
+        { "id": "child-assessment", "page_number": "12", "page_name": "Child & teen ADHD assessment (UK)", "url_path": "/get-assessed/children/", "layer": "L2", "page_type": "lead-page", "status": "not_started", "action": "build", "note": "Child/teen route. School involvement, paediatric providers. Separate provider sub-panel." },
+        { "id": "online-assessment", "page_number": "13", "page_name": "Online ADHD assessment: is it valid?", "url_path": "/get-assessed/online/", "layer": "L2", "page_type": "lead-page", "status": "not_started", "action": "build", "note": "Addresses the remote-assessment trust question (post-Panorama scrutiny). Steers to vetted, GMC-clinician providers." },
+        { "id": "adhd-test-vs-assessment", "page_number": "14", "page_name": "Online ADHD test vs a real assessment", "url_path": "/get-assessed/adhd-test/", "layer": "L2", "page_type": "lead-page", "status": "not_started", "action": "build", "note": "Captures 'adhd test uk' top-of-funnel; reframes self-tests as screeners, routes to formal assessment. Claims-safe." }
+      ]
+    },
+    {
+      "layer": "L3",
+      "label": "Layer 3 · ADHD shop (affiliate)",
+      "pages": [
+        { "id": "best-adhd-supplements", "page_number": "15", "page_name": "Best supplements people with ADHD use", "url_path": "/shop/supplements/", "layer": "L3", "page_type": "product-page", "status": "not_started", "action": "build", "note": "Category roundup (multi-product table). EFSA-anchored, NEVER 'treats ADHD'. Hub for the supplement children." },
+        { "id": "magnesium-glycinate", "page_number": "16", "page_name": "Magnesium glycinate for ADHD adults", "url_path": "/shop/magnesium-glycinate/", "layer": "L3", "page_type": "product-page", "status": "not_started", "action": "build", "note": "Top-pick roundup of magnesium glycinate products. 'normal psychological function' EFSA framing only. Affiliate links + disclosure." },
+        { "id": "omega-3", "page_number": "17", "page_name": "Omega-3 (high-EPA) for ADHD", "url_path": "/shop/omega-3/", "layer": "L3", "page_type": "product-page", "status": "not_started", "action": "build", "note": "High-EPA fish-oil picks. Cite the strongest evidence neutrally, no treatment claim. Reviewer byline." },
+        { "id": "l-theanine", "page_number": "18", "page_name": "L-theanine for focus & calm", "url_path": "/shop/l-theanine/", "layer": "L3", "page_type": "product-page", "status": "not_started", "action": "build", "note": "L-theanine (often w/ caffeine) product picks. Focus/calm framing, claims-safe." },
+        { "id": "weighted-blankets", "page_number": "19", "page_name": "Best weighted blankets for ADHD", "url_path": "/shop/weighted-blankets/", "layer": "L3", "page_type": "product-page", "status": "not_started", "action": "build", "note": "Multi-product roundup (weight/size guide table). Sleep/regulation angle. Amazon + Awin affiliate." },
+        { "id": "fidget-focus-tools", "page_number": "20", "page_name": "Fidget & focus tools that actually help", "url_path": "/shop/fidget-focus-tools/", "layer": "L3", "page_type": "product-page", "status": "not_started", "action": "build", "note": "Fidget toys, focus aids, noise-cancelling picks. Roundup table. High affiliate volume, low YMYL risk." },
+        { "id": "planners", "page_number": "21", "page_name": "Best planners & organisers for ADHD", "url_path": "/shop/planners/", "layer": "L3", "page_type": "product-page", "status": "not_started", "action": "build", "note": "ADHD-friendly planners/journals roundup. Executive-function angle. Affiliate." },
+        { "id": "timers", "page_number": "22", "page_name": "Visual timers & time-blindness tools", "url_path": "/shop/timers/", "layer": "L3", "page_type": "product-page", "status": "not_started", "action": "build", "note": "Time-Timer / visual-timer picks for time-blindness. Roundup. Strong intent, easy affiliate." },
+        { "id": "supplement-stack", "page_number": "23", "page_name": "An ADHD supplement stack (what people combine)", "url_path": "/shop/supplement-stack/", "layer": "L3", "page_type": "product-page", "status": "not_started", "action": "build", "note": "Bundles the magnesium/omega-3/L-theanine picks. The own-brand bridge page (proves the converter before white-label). Claims-safe." },
+        { "id": "how-we-pick", "page_number": "24", "page_name": "How we choose products (methodology)", "url_path": "/shop/how-we-pick/", "layer": "L3", "page_type": "product-page", "status": "not_started", "action": "build", "note": "Wirecutter-style methodology + affiliate disclosure. E-E-A-T anchor for the whole shop cluster; links to reviewer panel." }
+      ]
+    },
+    {
+      "layer": "L4",
+      "label": "Layer 4 · Living with ADHD (content) + trust",
+      "pages": [
+        { "id": "medication-shortage", "page_number": "25", "page_name": "ADHD medication shortage: latest UK status", "url_path": "/living-with-adhd/medication-shortage/", "layer": "L4", "page_type": "guide", "status": "not_started", "action": "build", "note": "High-demand freshness page (elvanse/methylphenidate supply). Last-reviewed date; routes worried readers to assessment + non-med supports. No dosing advice." },
+        { "id": "what-helps", "page_number": "26", "page_name": "What actually helps with ADHD (evidence-led)", "url_path": "/living-with-adhd/what-helps/", "layer": "L4", "page_type": "guide", "status": "not_started", "action": "build", "note": "Neutral overview: meds, therapy, routines, products. The citation cornerstone; internal-links to shop + assessment. Reviewer-signed." },
+        { "id": "adhd-at-work", "page_number": "27", "page_name": "ADHD at work: reasonable adjustments & Access to Work", "url_path": "/living-with-adhd/adhd-at-work/", "layer": "L4", "page_type": "guide", "status": "not_started", "action": "build", "note": "Workplace rights + Access to Work grant. High-share editorial; broadens topical authority." },
+        { "id": "focus-tips", "page_number": "28", "page_name": "Focus & productivity tips for ADHD brains", "url_path": "/living-with-adhd/focus-tips/", "layer": "L4", "page_type": "guide", "status": "not_started", "action": "build", "note": "Practical strategies; naturally surfaces timers/planners/tools (links to shop). Low-risk, high-traffic." },
+        { "id": "diagnosed-now-what", "page_number": "29", "page_name": "Just diagnosed with ADHD: what next?", "url_path": "/living-with-adhd/just-diagnosed/", "layer": "L4", "page_type": "guide", "status": "not_started", "action": "build", "note": "Post-diagnosis pathway (titration, support, shared-care). Captures the moment readers start buying products." },
+        { "id": "is-it-adhd", "page_number": "30", "page_name": "Could it be ADHD? Signs in adults", "url_path": "/living-with-adhd/signs-in-adults/", "layer": "L4", "page_type": "guide", "status": "not_started", "action": "build", "note": "Top-of-funnel symptoms editorial. Screener framing not diagnosis; routes to get-assessed pillar." },
+        { "id": "adhd-and-sleep", "page_number": "31", "page_name": "ADHD and sleep", "url_path": "/living-with-adhd/sleep/", "layer": "L4", "page_type": "guide", "status": "not_started", "action": "build", "note": "Sleep/regulation editorial; links to weighted blankets + magnesium picks. Claims-safe." },
+        { "id": "adhd-and-women", "page_number": "32", "page_name": "ADHD in women & girls", "url_path": "/living-with-adhd/women/", "layer": "L4", "page_type": "guide", "status": "not_started", "action": "build", "note": "Under-diagnosed-cohort editorial. Shares the women's-health reviewer pool; strong AI-citation angle." },
+        { "id": "glossary", "page_number": "33", "page_name": "ADHD glossary (titration, RTC, shared care...)", "url_path": "/living-with-adhd/glossary/", "layer": "L4", "page_type": "guide", "status": "not_started", "action": "build", "note": "Entity/definition layer for AI citation + internal linking. DefinedTerm framing." },
+        { "id": "statistics", "page_number": "34", "page_name": "UK ADHD statistics (waits, prevalence, prescriptions)", "url_path": "/living-with-adhd/statistics/", "layer": "L4", "page_type": "guide", "status": "not_started", "action": "build", "note": "First-party curated-stat citation asset (Asset 1 pattern). Every stat outbound-linked to a primary source; Dataset framing." },
+        { "id": "reviewer-panel", "page_number": "35", "page_name": "Our medical reviewers", "url_path": "/about/reviewers/", "layer": "L4", "page_type": "trust", "status": "not_started", "action": "build", "note": "Named GP/psychiatrist + registered nutritionist. Person schema + sameAs (ORCID/GMC). The YMYL E-E-A-T spine." },
+        { "id": "editorial-policy", "page_number": "36", "page_name": "Editorial & claims policy", "url_path": "/about/editorial-policy/", "layer": "L4", "page_type": "trust", "status": "not_started", "action": "build", "note": "How we review, sources, last-reviewed cadence, and the no-treat-ADHD claims rule. EFSA-anchored." },
+        { "id": "affiliate-disclosure", "page_number": "37", "page_name": "Affiliate disclosure & how we make money", "url_path": "/about/affiliate-disclosure/", "layer": "L4", "page_type": "trust", "status": "not_started", "action": "build", "note": "Transparent disclosure (Amazon Associates / Awin / lead-gen panel). Neutrality statement reinforcing the citation wedge." },
+        { "id": "contact", "page_number": "38", "page_name": "Contact", "url_path": "/about/contact/", "layer": "L4", "page_type": "trust", "status": "not_started", "action": "build", "note": "Contact + Organization/ContactPoint schema. Provider-panel enquiry route for clinics wanting to join." }
+      ]
+    }
+  ]
+}

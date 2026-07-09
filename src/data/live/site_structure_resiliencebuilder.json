@@ -1,0 +1,517 @@
+{
+  "generated_at": "2026-05-12T10:30:00+01:00",
+  "source": "Live RB site inventory (12 May 2026) + Steve's v4/v4a build in ~/steve-site + site-rebuild-plan-2026-04-14.md",
+  "totals": {
+    "total_rows": 71,
+    "live": 30,
+    "not_started": 41,
+    "slots": {
+      "facet-page": { "filled": 0, "empty": 5 },
+      "case-study": { "filled": 0, "empty": 3 },
+      "industry-page": { "filled": 0, "empty": 4 },
+      "service-hub": { "filled": 0, "empty": 3 },
+      "trust-page": { "filled": 1, "empty": 3 },
+      "blog-post": { "filled": 39, "empty": 0 }
+    }
+  },
+  "gsc_data_pulled": "2026-05-12 (last 28 days)",
+  "gsc_totals": { "clicks": 76, "impressions": 20313, "avg_position": 24.0 },
+  "traffic_protection_rule": "Live URLs with >100 impressions stay. Rewrite in place with distinct keyword angles. Merges only for 0-3 impression pages (legacy homes, elementor-test). All other 'merge' actions from earlier plan have been downgraded to 'upgrade-in-place'.",
+  "strategy_summary": {
+    "clusters": [
+      "Enterprise (5 pages KEPT alive, each owns a distinct keyword cluster)",
+      "Individuals (3 pages KEPT alive, distinct angles)",
+      "Coaches & Certification (3 existing URLs preserved + expanded)",
+      "The 5-Facet Model (currently 0 dedicated pages — pure greenfield, no traffic risk)",
+      "Evidence & Proof (currently 0 pages — greenfield, no traffic risk)"
+    ],
+    "authority_pillars": [
+      "The ResilienceBuilder Assessment",
+      "The 5-Facet Model",
+      "Coach Certification",
+      "Research & Coventry MBA evidence",
+      "Steve Howe (Architect of the Model)"
+    ],
+    "slot_rules": {
+      "Service": "Each service page must link to /the-model, /assessment, /book-a-discovery-call, and at least 1 case study",
+      "Authority": "Each authority page (model, research, characteristics) must link to /assessment + 1 service",
+      "Hub": "Each cluster hub points to 3-5 service pages + 1 case study"
+    },
+    "rule_every_service_must_link_to": [
+      "/the-model",
+      "/assessment",
+      "/book-a-discovery-call"
+    ],
+    "rule_every_authority_page_must_link_to": [
+      "/the-model",
+      "/research",
+      "/case-studies"
+    ],
+    "urgent_actions": [
+      "noindex /coaches IMMEDIATELY — WordPress login page is publicly indexed (leak)",
+      "Remove Lorem Ipsum testimonials still live on /home-new-design and /home-new-design-v2",
+      "Decide on blog: 12+ posts earn 200–1,400 imp each. Restart cadence + migrate, or proxy from WP — DO NOT bin"
+    ],
+    "traffic_protected_urls": [
+      "/ (685 imp, 20 clicks)",
+      "/resilience-coach (1,069 imp, 10 clicks)",
+      "/resilience-workshops (1,837 imp, 5 clicks)",
+      "/coaching-for-stress-management (1,772 imp, 4 clicks)",
+      "/resilience-coach-qualification (721 imp, 4 clicks)",
+      "/about (299 imp, 14 clicks)",
+      "/resilience-characteristics (2,245 imp, 2 clicks, pos 3.4 for '5 characteristics of a resilient person')",
+      "/workplace-resilience-training (3,185 imp — highest impression page on the site)",
+      "/resilience-program (2,962 imp)",
+      "/corporate-wellness-consultant (1,274 imp, ranks pos 11.7 for 'corporate wellness consultant')"
+    ]
+  },
+  "tree": [
+    {
+      "layer": "L1",
+      "label": "Layer 1 · Identity & Conversion",
+      "pages": [
+        {
+          "id": "homepage",
+          "page_number": "1",
+          "page_name": "Homepage",
+          "url_path": "/",
+          "layer": "L1",
+          "page_type": "Identity",
+          "status": "live",
+          "action": "upgrade",
+          "note": "Live: ~1,900 words. Title 'Resilience Consultant | Resilience Training Services UK'. H1 'How to Build Resilience'. UPGRADE: adopt v4/v4a layout from steve-site. Pick v4a / v4a1 / v4a2 / v4a3 / v4a4 with Steve. Tighten H1 to the new tagline. Replace placeholder testimonials.",
+          "children": [
+            { "id": "homepage-v4a", "page_number": "1.1", "page_name": "v4a (baseline polish)", "url_path": "/v4a/", "page_type": "Identity", "status": "not_started", "action": "new", "note": "Polish pass on v4. Hero stays bright yellow on navy. Currently live on 49k demo." },
+            { "id": "homepage-v4a1", "page_number": "1.1.1", "page_name": "v4a1 — Editorial Premium", "url_path": "/v4a1/", "page_type": "Identity", "status": "not_started", "action": "new", "note": "Hero variant 1. Muted gold underline sweeps, deep textured navy, cream transition. Steve's strongest-overall direction per the spec." },
+            { "id": "homepage-v4a2", "page_number": "1.1.2", "page_name": "v4a2 — Softer Gold Enterprise", "url_path": "/v4a2/", "page_type": "Identity", "status": "not_started", "action": "new", "note": "Hero variant 2. Brass highlight, layered navy gradient. Safest client option." },
+            { "id": "homepage-v4a3", "page_number": "1.1.3", "page_name": "v4a3 — High Contrast Premium", "url_path": "/v4a3/", "page_type": "Identity", "status": "not_started", "action": "new", "note": "Hero variant 3. Cinematic vignette, single highlighted word, gradient gold text, immediate off-white break." },
+            { "id": "homepage-v4a4", "page_number": "1.1.4", "page_name": "v4a4 — Modern Gradient System", "url_path": "/v4a4/", "page_type": "Identity", "status": "not_started", "action": "new", "note": "Hero variant 4. Navy → steel-blue gradient, glassmorphism, gold gradient text. SaaS / digitally-advanced feel." },
+            { "id": "home-legacy-1", "page_number": "1.2", "page_name": "/home-new-design (legacy)", "url_path": "/home-new-design", "page_type": "Identity", "status": "live", "action": "redirect", "note": "~2,100 words. Contains Lorem Ipsum testimonials. 301 → /." },
+            { "id": "home-legacy-2", "page_number": "1.3", "page_name": "/home-new-design-v2 (legacy)", "url_path": "/home-new-design-v2", "page_type": "Identity", "status": "live", "action": "redirect", "note": "~1,300 words. Also has Lorem Ipsum. 301 → /." },
+            { "id": "home-lp", "page_number": "1.4", "page_name": "/resiliencebuilder-lp (broken legacy LP)", "url_path": "/resiliencebuilder-lp", "page_type": "Identity", "status": "live", "action": "redirect", "note": "~1,200 words. Broken H1 ('Personal, Trusted, Consultant Services / That Deliver Result'). Typo. 301 → /." }
+          ]
+        },
+        {
+          "id": "about",
+          "page_number": "2",
+          "page_name": "About",
+          "url_path": "/about",
+          "layer": "L1",
+          "page_type": "Authority",
+          "status": "live",
+          "action": "upgrade",
+          "note": "~1,200 words. H1 'Empowering Individuals & Teams to Thrive'. UPGRADE: reframe as Steve-as-founder entity-anchor. Coventry MBA, Associate Lecturer, 40+ years senior leadership. The page Wikipedia / AI engines should cite when defining ResilienceBuilder. Add Person + Organization schema.",
+          "children": []
+        },
+        {
+          "id": "team",
+          "page_number": "3",
+          "page_name": "Team / Steve Howe + certified coaches",
+          "url_path": "/team",
+          "layer": "L1",
+          "page_type": "Authority",
+          "status": "not_started",
+          "action": "new",
+          "note": "NEW. Named principals (Steve + certified coach leaders). Person schema per coach. E-E-A-T gap on current /about. Discoverable at /team.",
+          "children": []
+        },
+        {
+          "id": "contact",
+          "page_number": "4",
+          "page_name": "Contact",
+          "url_path": "/contact",
+          "layer": "L1",
+          "page_type": "Conversion",
+          "status": "live",
+          "action": "upgrade",
+          "note": "~325 words. H1 'Get In Touch'. UPGRADE: wire FormSubmit → adam@muswellrose.com + steve.howe@. Add inline Calendly or link to /book-a-discovery-call.",
+          "children": []
+        },
+        {
+          "id": "discovery-call",
+          "page_number": "5",
+          "page_name": "Book a discovery call",
+          "url_path": "/book-a-discovery-call",
+          "layer": "L1",
+          "page_type": "Conversion",
+          "status": "not_started",
+          "action": "new",
+          "note": "NEW. Primary CTA destination across the entire site. Embedded Calendly or FormSubmit form. Open decision #7 in site-rebuild-plan.",
+          "children": []
+        },
+        {
+          "id": "thank-you",
+          "page_number": "6",
+          "page_name": "Thank you",
+          "url_path": "/thank-you",
+          "layer": "L1",
+          "page_type": "Conversion",
+          "status": "live",
+          "action": "keep",
+          "note": "Confirmation page after form submit. No change.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "layer": "L2",
+      "label": "Layer 2 · Services · Enterprise (5 → 1 consolidation)",
+      "pages": [
+        {
+          "id": "enterprise-hub",
+          "page_number": "7",
+          "page_name": "Enterprise resilience (canonical)",
+          "url_path": "/workplace-resilience-training",
+          "layer": "L2",
+          "page_type": "Hub",
+          "status": "live",
+          "action": "upgrade",
+          "note": "CANONICAL after consolidation. Currently ~2,100 words, the strongest of the 5 overlapping enterprise pages. UPGRADE to be the cluster anchor. Pulls in workshops, programmes, consulting under one URL. Consider rename to /for-business/ if Steve prefers.",
+          "children": [
+            { "id": "wellbeing-consultants", "page_number": "7.1", "page_name": "/workplace-wellbeing-consultants-and-training", "url_path": "/workplace-wellbeing-consultants-and-training", "page_type": "Service", "status": "live", "action": "upgrade", "note": "GSC: 840 imp, pos 37.2, 0 clicks. KEEP — earns impressions on 'workplace wellbeing consultants'. Rewrite as the WELLBEING-BUYER entry point: positions resilience as the protective factor, then routes to /workplace-resilience-training for delivery. Distinct angle preserves the keyword." },
+            { "id": "corporate-wellness", "page_number": "7.2", "page_name": "/corporate-wellness-consultant", "url_path": "/corporate-wellness-consultant", "page_type": "Service", "status": "live", "action": "upgrade", "note": "GSC: 1,274 imp, pos 11.7 for 'corporate wellness consultant' (325 imp on that one query). KEEP — strong keyword ranking. Rewrite as ADVISORY/CONSULTING angle (diagnosis + plan, distinct from delivered training). Don't merge — risk to a near-page-1 ranking." },
+            { "id": "employees-wellness", "page_number": "7.3", "page_name": "/employees-wellness-program", "url_path": "/employees-wellness-program", "page_type": "Service", "status": "live", "action": "upgrade", "note": "GSC: 261 imp, pos 34.5, 0 clicks. KEEP — own the 'employees wellness program' keyword. Rewrite as PROGRAMME-BUYER angle (HR/People director language)." },
+            { "id": "training-employees", "page_number": "7.4", "page_name": "/resilience-training-for-employees", "url_path": "/resilience-training-for-employees", "page_type": "Service", "status": "live", "action": "upgrade", "note": "GSC: 489 imp, pos 69.3, 0 clicks. KEEP — earns impressions on 'resilience training for employees'. Rewrite as L&D-BUYER angle (training procurement language)." },
+            { "id": "resilience-program", "page_number": "7.5", "page_name": "Resilience programme (multi-session)", "url_path": "/resilience-program", "page_type": "Service", "status": "live", "action": "upgrade", "note": "~1,200 words. KEEP as a sub-page of /workplace-resilience-training. Flagship multi-session programme. Specific enough to survive consolidation." },
+            { "id": "workshops", "page_number": "7.6", "page_name": "Workshops (delivery format)", "url_path": "/resilience-workshops", "page_type": "Service", "status": "live", "action": "upgrade", "note": "~1,100 words. KEEP as delivery-format sub-page (1-day / 2-day / half-day). Differentiated from programme by format." },
+            { "id": "teams", "page_number": "7.7", "page_name": "Team workshops (with 5-driver model)", "url_path": "/teams", "page_type": "Service", "status": "live", "action": "upgrade", "note": "~1,300 words. H1 'Your Teams Deserve More Than Just a Wellness Tick-Box'. KEEP — only page with 5-driver framework. Becomes the link out to /the-model." }
+          ]
+        }
+      ]
+    },
+    {
+      "layer": "L3",
+      "label": "Layer 3 · Services · Individuals (4 → 2 consolidation)",
+      "pages": [
+        {
+          "id": "individuals-hub",
+          "page_number": "8",
+          "page_name": "For individuals (canonical)",
+          "url_path": "/personal-resilience-training",
+          "layer": "L3",
+          "page_type": "Hub",
+          "status": "live",
+          "action": "upgrade",
+          "note": "CANONICAL after consolidation. ~1,200 words. H1 'Build the Strength to Overcome Life's Challenges'. UPGRADE: become the canonical individuals page. Consider rename to /for-individuals/ if cleaner.",
+          "children": [
+            { "id": "my-resilience", "page_number": "8.1", "page_name": "/my-resilience", "url_path": "/my-resilience", "page_type": "Service", "status": "live", "action": "merge", "note": "GSC: 162 imp, 1 click, pos 19.0. Near-duplicate of /personal-resilience-training (279 imp). Both low. Decision: 301 → /personal-resilience-training and absorb the H1 'Developing Resilience' as a section heading on the canonical to preserve the keyword anchor. Lower risk than the enterprise cluster — only 1 click at stake." },
+            { "id": "coaching-stress", "page_number": "8.2", "page_name": "1:1 stress-management coaching", "url_path": "/coaching-for-stress-management", "page_type": "Service", "status": "live", "action": "upgrade", "note": "GSC: 1,772 imp, pos 22.4, 4 CLICKS. Ranks for 'stress coach' (227 imp, pos 24.3) — earning real traffic. KEEP — rewrite as STRESS-SPECIFIC differentiator (leans on Physical Stamina + Emotional Intelligence + Social Support facets). DO NOT MERGE." },
+            { "id": "mental-training", "page_number": "8.3", "page_name": "Mental resilience training", "url_path": "/mental-resilience-training", "page_type": "Service", "status": "live", "action": "upgrade", "note": "GSC: 816 imp, pos 18.2, 1 click. KEEP — rewrite with MENTAL-TOUGHNESS differentiator (Mental Strength + Purpose facets). DO NOT MERGE." }
+          ]
+        }
+      ]
+    },
+    {
+      "layer": "L4",
+      "label": "Layer 4 · Coaches & Certification (1 → 3 expansion, dual GTM)",
+      "pages": [
+        {
+          "id": "become-coach",
+          "page_number": "9",
+          "page_name": "Become a resilience coach (hub)",
+          "url_path": "/become-a-coach",
+          "layer": "L4",
+          "page_type": "Hub",
+          "status": "not_started",
+          "action": "new",
+          "note": "NEW single dual-GTM entry. Branches to: independent coach vs in-house L&D. Critical for the coach network growth lever per strategy doc.",
+          "children": [
+            { "id": "resilience-coach", "page_number": "9.1", "page_name": "What is a resilience coach (definition)", "url_path": "/resilience-coach", "page_type": "Authority", "status": "live", "action": "upgrade", "note": "GSC: 1,069 imp, 10 CLICKS, pos 36.0 — the biggest clicks-earner after the homepage. KEEP URL — entity-definition page. Rewrite for AI-citation: 'A resilience coach is …' answer-capsule. Don't risk the ranking." },
+            { "id": "resilience-coach-qualification", "page_number": "9.2", "page_name": "Resilience coach qualification (existing page)", "url_path": "/resilience-coach-qualification", "page_type": "Service", "status": "live", "action": "upgrade", "note": "GSC: 721 imp, 4 CLICKS, pos 21.1. URL EXISTS already — earns clicks on 'resilience coach qualification' / 'resilience coach training UK'. KEEP URL — upgrade content. Pair with /coach-certification below." },
+            { "id": "coach-certification", "page_number": "9.3", "page_name": "Coach certification — programme detail", "url_path": "/coach-certification", "page_type": "Service", "status": "not_started", "action": "new", "note": "NEW. Curriculum, cohort dates, pricing (Open decision #7), accreditation. The article cluster (~24 of 39 posts) targets this audience; finally give them a destination. Cross-link from /resilience-coach-qualification." },
+            { "id": "coaches-directory", "page_number": "9.4", "page_name": "Certified coach directory", "url_path": "/coaches-directory", "page_type": "Hub", "status": "not_started", "action": "new", "note": "NEW URL. The existing /coaches is the WordPress login leak — gets 410'd (don't 301 to here, the login URL has no SEO value). Directory at /coaches-directory/." }
+          ]
+        }
+      ]
+    },
+    {
+      "layer": "L5",
+      "label": "Layer 5 · The 5-Facet Model (entity anchor — currently 0 dedicated pages)",
+      "pages": [
+        {
+          "id": "the-model",
+          "page_number": "10",
+          "page_name": "The ResilienceBuilder Model",
+          "url_path": "/the-model",
+          "layer": "L5",
+          "page_type": "Authority",
+          "status": "not_started",
+          "action": "new",
+          "note": "NEW + CRITICAL GAP. The 5-driver model is referenced on /teams but has no canonical explainer page. This is the core IP. Pentagram diagram (rb-model.png). The page Wikipedia / AI engines should cite when defining 'the ResilienceBuilder Model'.",
+          "children": [
+            { "id": "facet-mental-strength", "page_number": "10.1", "page_name": "Mental Strength", "url_path": "/the-model/mental-strength", "page_type": "Authority", "status": "not_started", "action": "new", "note": "Facet 1 of 5. Cognitive habits under pressure." },
+            { "id": "facet-purpose", "page_number": "10.2", "page_name": "Purpose & Motivation", "url_path": "/the-model/purpose-and-motivation", "page_type": "Authority", "status": "not_started", "action": "new", "note": "Facet 2 of 5. The 'why' that aids recovery." },
+            { "id": "facet-physical", "page_number": "10.3", "page_name": "Physical Stamina", "url_path": "/the-model/physical-stamina", "page_type": "Authority", "status": "not_started", "action": "new", "note": "Facet 3 of 5. Sleep, recovery, energy. The foundation most programmes skip." },
+            { "id": "facet-emotional", "page_number": "10.4", "page_name": "Emotional Intelligence", "url_path": "/the-model/emotional-intelligence", "page_type": "Authority", "status": "not_started", "action": "new", "note": "Facet 4 of 5. Self-awareness + empathy under load." },
+            { "id": "facet-social", "page_number": "10.5", "page_name": "Social Support", "url_path": "/the-model/social-support", "page_type": "Authority", "status": "not_started", "action": "new", "note": "Facet 5 of 5. Quality of working relationships — the single biggest predictor of recovery." }
+          ]
+        }
+      ]
+    },
+    {
+      "layer": "L6",
+      "label": "Layer 6 · Evidence & Proof (currently 0 ungated pages)",
+      "pages": [
+        {
+          "id": "assessment",
+          "page_number": "11",
+          "page_name": "The Assessment (sales page)",
+          "url_path": "/assessment",
+          "layer": "L6",
+          "page_type": "Service",
+          "status": "not_started",
+          "action": "new",
+          "note": "NEW + CRITICAL GAP. Assessment is the product hook — mentioned everywhere on the live site, has no dedicated page. 15-minute validated psychometric across the 5 facets. Demo-on-site vs gated — open decision #4.",
+          "children": []
+        },
+        {
+          "id": "sample-report",
+          "page_number": "12",
+          "page_name": "Sample assessment report",
+          "url_path": "/assessment/sample-report",
+          "layer": "L6",
+          "page_type": "Resource",
+          "status": "not_started",
+          "action": "new",
+          "note": "NEW. Anonymised PDF or interactive sample. Proof artefact for enterprise buyers.",
+          "children": []
+        },
+        {
+          "id": "research",
+          "page_number": "13",
+          "page_name": "The research behind the model (ungated)",
+          "url_path": "/research",
+          "layer": "L6",
+          "page_type": "Authority",
+          "status": "not_started",
+          "action": "new",
+          "note": "NEW + CRITICAL GAP. Research is currently gated behind /tsoww2025 form only. Zero organic visibility. Build the ungated landing page = Coventry MBA + published research + validation evidence. Steve to provide real citations (replaces [source: ...] placeholders).",
+          "children": []
+        },
+        {
+          "id": "characteristics",
+          "page_number": "14",
+          "page_name": "Characteristics of resilient people",
+          "url_path": "/resilience-characteristics",
+          "layer": "L6",
+          "page_type": "Authority",
+          "status": "live",
+          "action": "upgrade",
+          "note": "GSC: 2,245 imp, 2 clicks, pos 14.1. Ranks pos 3.4 for '5 characteristics of a resilient person', pos 16.2 for 'characteristics of resilient people'. URL EXISTS ALREADY — original plan had this as /characteristics/ which would have lost the ranking. KEEP /resilience-characteristics URL, upgrade content using the 6-trait block from v4 homepage's site.ts.",
+          "children": []
+        },
+        {
+          "id": "case-studies-hub",
+          "page_number": "15",
+          "page_name": "Case studies (hub)",
+          "url_path": "/case-studies",
+          "layer": "L6",
+          "page_type": "Hub",
+          "status": "not_started",
+          "action": "new",
+          "note": "NEW + CRITICAL GAP. Zero proof-of-work pages on live site. Lorem Ipsum testimonials still live on /home-new-design variants. Build the hub, lead with AWS Automotive (Chris-Markus Kratz).",
+          "children": [
+            { "id": "case-aws", "page_number": "15.1", "page_name": "AWS Automotive case study", "url_path": "/case-studies/aws-automotive", "page_type": "Authority", "status": "not_started", "action": "new", "note": "Chris-Markus Kratz lead real testimonial. Quantify outcome." },
+            { "id": "case-slot-2", "page_number": "15.2", "page_name": "[CASE STUDY SLOT — HR buyer]", "url_path": "/case-studies/[slot-2]", "page_type": "Authority", "status": "not_started", "action": "new", "note": "Awaits Steve naming an HR/people director-level reference." },
+            { "id": "case-slot-3", "page_number": "15.3", "page_name": "[CASE STUDY SLOT — certified coach]", "url_path": "/case-studies/[slot-3]", "page_type": "Authority", "status": "not_started", "action": "new", "note": "Coach voice — different angle from corporate buyer." }
+          ]
+        },
+        {
+          "id": "resilience-vs-wellbeing",
+          "page_number": "16",
+          "page_name": "Resilience vs wellbeing (positioning)",
+          "url_path": "/resilience-vs-wellbeing",
+          "layer": "L6",
+          "page_type": "Authority",
+          "status": "not_started",
+          "action": "new",
+          "note": "NEW. Differentiator vs the consultant cluster. Why resilience is the protective factor + wellbeing is the symptom. Disambiguates Steve's offer from generic wellbeing consultancies (the same consultancies Steve currently competes with on /workplace-wellbeing pages).",
+          "children": []
+        },
+        {
+          "id": "comparison",
+          "page_number": "17",
+          "page_name": "ResilienceBuilder vs alternatives",
+          "url_path": "/resources/comparison-vs-alternatives",
+          "layer": "L6",
+          "page_type": "Authority",
+          "status": "not_started",
+          "action": "new",
+          "note": "NEW. Parked in current-state-2026-04-24.md. Comparison table vs Hello Self / Unmind / Headspace for Work / generic EAPs.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "layer": "L7",
+      "label": "Layer 7 · Articles & Resources (consolidate 2 hubs, decide on dormant blog)",
+      "pages": [
+        {
+          "id": "resources",
+          "page_number": "18",
+          "page_name": "Resources (canonical hub)",
+          "url_path": "/resources",
+          "layer": "L7",
+          "page_type": "Hub",
+          "status": "live",
+          "action": "upgrade",
+          "note": "~2,800 words. CANONICAL hub. UPGRADE: 301 /articles → /resources (or rename to /blog/). Restructure children around the 5 facets + assessment + coach certification topics.",
+          "children": [
+            { "id": "articles-thin", "page_number": "18.1", "page_name": "/articles (duplicate, thin)", "url_path": "/articles", "page_type": "Hub", "status": "live", "action": "redirect", "note": "~450 words. Duplicates /resources with longer treatment. 301 → /resources." },
+            { "id": "blog-posts-aggregate", "page_number": "18.2", "page_name": "39 published blog posts (Feb 2024 – Jan 2025)", "url_path": "/articles/*", "page_type": "Hub", "status": "live", "action": "review", "note": "39 posts. Dormant since 13 Jan 2025 (11 months silent). ~24 of 39 target the resilience-coach audience (cert funnel). 8 target the B2B buyer. DECISION: restart cadence + rebalance toward buyer-facing, or wind down cleanly." }
+          ]
+        },
+        {
+          "id": "shop",
+          "page_number": "19",
+          "page_name": "Shop (downloadables)",
+          "url_path": "/shop",
+          "layer": "L7",
+          "page_type": "Resource",
+          "status": "live",
+          "action": "upgrade",
+          "note": "~350 words. WooCommerce shop with 9 free downloadables (slide decks, worksheets). UPGRADE: rename to /downloads/ or fold into /resources/. WooCommerce is heavy infra for free downloads."
+        },
+        {
+          "id": "tsoww2025",
+          "page_number": "20",
+          "page_name": "/tsoww2025 (gated research LP)",
+          "url_path": "/tsoww2025",
+          "layer": "L7",
+          "page_type": "Resource",
+          "status": "live",
+          "action": "review",
+          "note": "~90 words. State of Workplace Wellbeing 2025 gated download. KEEP but noindex (thin-content flag). The ungated version becomes /research."
+        }
+      ]
+    },
+    {
+      "layer": "L8",
+      "label": "Layer 8 · Industries (NEW — vertical landers, currently 0 pages)",
+      "pages": [
+        {
+          "id": "industries-hub",
+          "page_number": "21",
+          "page_name": "Industries (hub)",
+          "url_path": "/industries",
+          "layer": "L8",
+          "page_type": "Hub",
+          "status": "not_started",
+          "action": "new",
+          "note": "NEW. Vertical landers. Existing client logos suggest 4 strong verticals: NHS / healthcare, financial services, professional services, technology/automotive. Each lander = 1,500-2,000 words with vertical-specific case study + facet emphasis.",
+          "children": [
+            { "id": "industry-healthcare", "page_number": "21.1", "page_name": "Healthcare & NHS", "url_path": "/industries/healthcare", "page_type": "Service", "status": "not_started", "action": "new", "note": "Vertical lander. NHS Trust + Maldon DC + Suffolk CC are existing client logos." },
+            { "id": "industry-finserv", "page_number": "21.2", "page_name": "Financial services", "url_path": "/industries/financial-services", "page_type": "Service", "status": "not_started", "action": "new", "note": "Vertical lander. Bloomberg is an existing client logo." },
+            { "id": "industry-tech", "page_number": "21.3", "page_name": "Technology", "url_path": "/industries/technology", "page_type": "Service", "status": "not_started", "action": "new", "note": "Vertical lander. AWS, Google, Vorwerk, VF, Catapult Digital are existing client logos." },
+            { "id": "industry-professional", "page_number": "21.4", "page_name": "Professional services", "url_path": "/industries/professional-services", "page_type": "Service", "status": "not_started", "action": "new", "note": "Vertical lander. Arch, TT are existing client logos." }
+          ]
+        }
+      ]
+    },
+    {
+      "layer": "L9",
+      "label": "Layer 9 · Trust & Footer",
+      "pages": [
+        {
+          "id": "governance",
+          "page_number": "22",
+          "page_name": "Governance (trust footer)",
+          "url_path": "/governance",
+          "layer": "L9",
+          "page_type": "Trust",
+          "status": "not_started",
+          "action": "new",
+          "note": "NEW. Company number · ICO registration · registered address · data-handling clause (key for enterprise buyer trust). Open decision #6. Currently placeholder in the Governance component on steve-site.",
+          "children": []
+        },
+        {
+          "id": "methodology",
+          "page_number": "23",
+          "page_name": "Methodology / data ethics",
+          "url_path": "/methodology",
+          "layer": "L9",
+          "page_type": "Trust",
+          "status": "not_started",
+          "action": "new",
+          "note": "NEW. Substantiates the 'data-driven' claim that runs through the site. Anonymisation policy, individual data ownership, dashboard access model. Cross-link from /assessment and /governance.",
+          "children": []
+        },
+        {
+          "id": "faq",
+          "page_number": "24",
+          "page_name": "FAQ",
+          "url_path": "/faq",
+          "layer": "L9",
+          "page_type": "Authority",
+          "status": "not_started",
+          "action": "new",
+          "note": "NEW. Live site has zero FAQ page. AEO-shaped Q&A pairs from the QuickAnswers component on steve-site. FAQPage schema.",
+          "children": []
+        },
+        {
+          "id": "privacy-policy",
+          "page_number": "25",
+          "page_name": "Privacy policy",
+          "url_path": "/privacy-policy",
+          "layer": "L9",
+          "page_type": "Trust",
+          "status": "live",
+          "action": "keep",
+          "note": "~3,800 words UK GDPR policy. KEEP. Remove the inappropriate research form in the footer.",
+          "children": []
+        },
+        {
+          "id": "credits",
+          "page_number": "26",
+          "page_name": "Credits (Flaticon attributions)",
+          "url_path": "/credits",
+          "layer": "L9",
+          "page_type": "Trust",
+          "status": "live",
+          "action": "keep",
+          "note": "~375 words. Icon attribution page. KEEP but add noindex (orphan utility, no SEO value).",
+          "children": []
+        }
+      ]
+    },
+    {
+      "layer": "L10",
+      "label": "Layer 10 · URGENT cleanup",
+      "pages": [
+        {
+          "id": "coaches-login-leak",
+          "page_number": "L1",
+          "page_name": "/coaches — WordPress login leaked publicly",
+          "url_path": "/coaches",
+          "layer": "L10",
+          "page_type": "Legacy",
+          "status": "live",
+          "action": "gone",
+          "note": "URGENT. /coaches is currently the WordPress login page indexed publicly. Title 'Log In ‹ ResilienceBuilder — WordPress'. Set noindex + Disallow in robots.txt + 410 or 301 to /coaches-directory (after the directory is built). Security + SEO risk."
+        },
+        {
+          "id": "elementor-test",
+          "page_number": "L2",
+          "page_name": "/elementor-test (dev artefact)",
+          "url_path": "/elementor-test",
+          "layer": "L10",
+          "page_type": "Legacy",
+          "status": "live",
+          "action": "gone",
+          "note": "410 Gone. Should never have been indexed."
+        },
+        {
+          "id": "my-account",
+          "page_number": "L3",
+          "page_name": "/my-account (WooCommerce)",
+          "url_path": "/my-account",
+          "layer": "L10",
+          "page_type": "Portal",
+          "status": "live",
+          "action": "keep",
+          "note": "WooCommerce user portal. KEEP but noindex (gated portal page, no SEO value)."
+        }
+      ]
+    }
+  ]
+}
